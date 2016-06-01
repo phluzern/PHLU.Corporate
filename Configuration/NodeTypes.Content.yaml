@@ -1,0 +1,15 @@
+'PHLU.Corporate:Content':
+  superTypes:
+    'PHLU.Neos.NodeTypes:Content': TRUE
+  abstract: TRUE
+
+
+'PHLU.Corporate:ContentCollection':
+  superTypes:
+    'PHLU.Neos.NodeTypes:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': false
+      'PHLU.Corporate:Content': true
+
+

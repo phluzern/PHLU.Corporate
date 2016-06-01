@@ -1,0 +1,10 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'PHLU.Corporate': TRUE
+
+    userInterface:
+      translation:
+        autoInclude:
+          'PHLU.Corporate': ['NodeTypes/*']
