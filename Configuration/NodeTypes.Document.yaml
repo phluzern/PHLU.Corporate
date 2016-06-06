@@ -1,6 +1,10 @@
 'PHLU.Corporate:Page':
   superTypes:
     'PHLU.Neos.NodeTypes:Page': TRUE
+  constraints:
+    nodeTypes:
+      'PHLU.Corporate:Page.Home': FALSE
+      'PHLU.Corporate:Page': TRUE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection'

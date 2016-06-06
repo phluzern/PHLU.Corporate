@@ -9,8 +9,8 @@
     'PHLU.Neos.NodeTypes:ContentCollection': TRUE
   constraints:
     nodeTypes:
-      '*': false
-      'PHLU.Corporate:Content': true
+      '*': FALSE
+      'PHLU.Corporate:Content': TRUE
 
 
 'TYPO3.Neos:ContentCollection':

@@ -1,0 +1,28 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<!--<f:render section="itemList" arguments="{items: items}" />
+
+<f:section name="itemList">
+    <f:if condition="{items}">
+        <nav class="navbar second-level-navigation" role="navigation">
+            <ul class="nav nav-pills">
+                <f:for each="{items}" as="item">
+                    <li class="{item.state}">
+                        <neos:link.node node="{item.node}">{item.label}</neos:link.node>
+                    </li>
+                </f:for>
+            </ul>
+        </nav>
+    </f:if>
+</f:section>-->
+
+<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+        aria-controls="navbar">
+    Beratungsangebote für Lehrpersonen
+</button>
+<div id="navbar" aria-expanded="false" class="collapse">
+    <nav class="nav navbar-nav">
+        <a class="level0" href="#">Startseite</a>
+        <a class="level1" href="#">Beratung & Angebote</a>
+        <a class="level2" href="#">Lehrpersonen</a>
+    </nav>
+</div>

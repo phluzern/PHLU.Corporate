@@ -3,24 +3,66 @@
  */
 page = Page {
 	head {
-		stylesheets.site = TYPO3.TypoScript:Template {
+		metadata = TYPO3.TypoScript:Template {
 			templatePath = 'resource://PHLU.Corporate/Private/Templates/Page/Default.html'
-			sectionName = 'stylesheets'
+			sectionName = 'metadata'
+		}
+		csslinks = TYPO3.TypoScript:Template {
+			templatePath = 'resource://PHLU.Corporate/Private/Templates/Page/Default.html'
+			sectionName = 'csslinks'
 		}
 
 		javascripts.site = TYPO3.TypoScript:Template {
 			templatePath = 'resource://PHLU.Corporate/Private/Templates/Page/Default.html'
 			sectionName = 'headScripts'
 		}
+
+
 	}
 
 	body {
 		templatePath = 'resource://PHLU.Corporate/Private/Templates/Page/Default.html'
 		sectionName = 'body'
 		parts {
-			menu = Menu
+			navBarMenu = Menu {
+				entryLevel = 0
+				templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/NavBarMenu.html'
+				maximumLevels = 4
+			}
+			sideBarLevel0Menu = Menu {
+				entryLevel = 1
+				templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel0.html'
+				maximumLevels = 1
+			}
+			sideBarLevel1Menu = Menu {
+				entryLevel = 2
+				templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1.html'
+				maximumLevels = 1
+			}
+
 			breadcrumb = Breadcrumb
 		}
+		pageLevelTypeClass = TYPO3.TypoScript:Case {
+			isStartpage {
+				condition = ${q(node).is('[instanceof PHLU.Corporate:Page.Home]')}
+				renderer = 'startpage'
+			}
+			isSubpage {
+				condition = ${q(node).is('[instanceof PHLU.Corporate:Page]')}
+				renderer = 'subpage'
+			}
+			fallback {
+				condition = ${true}
+				renderPath = 'startpage'
+			}
+		}
+
+		// A shared footer which can be edited from all pages
+		footer = ContentCollection {
+			nodePath = ${q('PHLU.Corporate').children('footer').property('_path')}
+			collection = ${q('PHLU.Corporate').children('footer').children()}
+		}
+
 		// These are your content areas, you can define as many as you want, just name them and the nodePath.
 		content {
 			// The default content section
@@ -33,5 +75,9 @@ page = Page {
 			templatePath = 'resource://PHLU.Corporate/Private/Templates/Page/Default.html'
 			sectionName = 'bodyScripts'
 		}
+	}
+	bodyTag.attributes {
+		data-spy = 'scroll'
+		id = 'top'
 	}
 }
