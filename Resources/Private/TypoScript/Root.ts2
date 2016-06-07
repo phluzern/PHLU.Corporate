@@ -42,6 +42,7 @@ page = Page {
 
 			breadcrumb = Breadcrumb
 		}
+
 		pageLevelTypeClass = TYPO3.TypoScript:Case {
 			isStartpage {
 				condition = ${q(node).is('[instanceof PHLU.Corporate:Page.Home]')}
@@ -53,13 +54,13 @@ page = Page {
 			}
 			fallback {
 				condition = ${true}
-				renderPath = 'startpage'
+				renderer = 'startpage'
 			}
 		}
 
 		// A shared footer which can be edited from all pages
 		footer = ContentCollection {
-			nodePath = ${q('PHLU.Corporate').children('footer').property('_path')}
+			nodePath = ${q(site).children('footer')}
 			collection = ${q('PHLU.Corporate').children('footer').children()}
 		}
 

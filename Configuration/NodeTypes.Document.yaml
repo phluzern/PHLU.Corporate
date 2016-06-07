@@ -1,13 +1,13 @@
 'PHLU.Corporate:Page':
   superTypes:
     'PHLU.Neos.NodeTypes:Page': TRUE
-  constraints:
-    nodeTypes:
-      'PHLU.Corporate:Page.Home': FALSE
-      'PHLU.Corporate:Page': TRUE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection'
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'TYPO3.Neos:Shortcut': FALSE
 
 
 'PHLU.Corporate:Page.Home':
@@ -17,6 +17,58 @@
     'PHLU.Corporate:Page': TRUE
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Page.Home': FALSE
-      'PHLU.Corporate:Page': TRUE
+      'PHLU.Corporate:Page.Overview.Tiles': TRUE
+      'PHLU.Corporate:Page.Service': TRUE
+
+
+
+'PHLU.Corporate:Page.Overview.Tiles':
+  ui:
+    label: 'Übersichtsseite (Kacheln)'
+  superTypes:
+    'PHLU.Corporate:Page': TRUE
+  constraints:
+    nodeTypes:
+      'PHLU.Corporate:Page.Overview.OnePage': TRUE
+      'PHLU.Corporate:Page.View.Detail': TRUE
+
+
+
+'PHLU.Corporate:Page.Overview.OnePage':
+  ui:
+    label: 'Übersichtsseite (OnePage)'
+  superTypes:
+    'PHLU.Corporate:Page': TRUE
+  constraints:
+    nodeTypes:
+      'PHLU.Corporate:Page.View.Detail': TRUE
+      'PHLU.Corporate:Page.View.Dossier': TRUE
+
+
+'PHLU.Corporate:Page.View.Detail':
+  ui:
+    label: 'Detailseite'
+  superTypes:
+    'PHLU.Corporate:Page': TRUE
+
+
+
+'PHLU.Corporate:Page.View.Dossier':
+  ui:
+    label: 'Dossier'
+  superTypes:
+    'PHLU.Corporate:Page': TRUE
+  constraints:
+    nodeTypes:
+      'PHLU.Corporate:Page.View.Detail': TRUE
+
+
+
+'PHLU.Corporate:Page.Service':
+  ui:
+    label: 'Service Seite'
+    icon: icon-wrench
+  superTypes:
+    'PHLU.Corporate:Page': TRUE
+
 
