@@ -2,9 +2,13 @@
   abstract: TRUE
   superTypes:
     'PHLU.Neos.NodeTypes:Page': TRUE
+    'PHLU.Neos.NodeTypes:TeaserMixin': TRUE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection'
+    lead:
+      type: 'PHLU.Corporate:Content.Lead'
+
   constraints:
     nodeTypes:
       '*': FALSE

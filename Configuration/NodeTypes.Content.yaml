@@ -26,3 +26,19 @@
   constraints:
     nodeTypes:
       'PHLU.Corporate:Content': FALSE
+
+
+
+'PHLU.Corporate:Content.Lead':
+  superTypes:
+    'PHLU.Neos.NodeTypes:ContentCollection': TRUE
+    'PHLU.Neos.NodeTypes:Content': TRUE
+  ui:
+    label: 'Lead'
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'PHLU.Corporate:Content': TRUE
+  properties:
+    text:
+      type: string

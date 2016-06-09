@@ -1,0 +1,8 @@
+
+prototype(PHLU.Corporate:Content.Lead) < prototype(TYPO3.Neos:Content) {
+
+        test = 1
+
+
+
+}
