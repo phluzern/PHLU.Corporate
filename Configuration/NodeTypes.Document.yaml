@@ -1,4 +1,5 @@
 'PHLU.Corporate:Page':
+  abstract: TRUE
   superTypes:
     'PHLU.Neos.NodeTypes:Page': TRUE
   childNodes:
@@ -8,6 +9,11 @@
     nodeTypes:
       '*': FALSE
       'TYPO3.Neos:Shortcut': FALSE
+
+
+'PHLU.Corporate:Page.NotInMenu':
+  superTypes:
+    'PHLU.Corporate:Page': TRUE
 
 
 'PHLU.Corporate:Page.Home':
@@ -50,7 +56,7 @@
     label: 'Detailseite'
   superTypes:
     'PHLU.Corporate:Page': TRUE
-
+    'PHLU.Corporate:PageMixin.Preview': TRUE
 
 
 'PHLU.Corporate:Page.View.Dossier':
@@ -69,6 +75,6 @@
     label: 'Service Seite'
     icon: icon-wrench
   superTypes:
-    'PHLU.Corporate:Page': TRUE
+    'PHLU.Corporate:Page.NotInMenu': TRUE
 
 

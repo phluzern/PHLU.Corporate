@@ -13,6 +13,15 @@
       'PHLU.Corporate:Content': TRUE
 
 
+'PHLU.Corporate:ContentCollection.Preview':
+  superTypes:
+    'PHLU.Neos.NodeTypes:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'PHLU.Corporate:Content': TRUE
+
+
 'TYPO3.Neos:ContentCollection':
   constraints:
     nodeTypes:

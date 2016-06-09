@@ -1,0 +1,5 @@
+# Page mixin
+'PHLU.Corporate:PageMixin.Preview':
+  childNodes:
+    preview:
+      type: 'PHLU.Corporate:ContentCollection.Preview'
