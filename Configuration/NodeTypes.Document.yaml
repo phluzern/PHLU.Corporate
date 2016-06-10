@@ -2,12 +2,22 @@
   abstract: TRUE
   superTypes:
     'PHLU.Neos.NodeTypes:Page': TRUE
-    'PHLU.Neos.NodeTypes:TeaserMixin': TRUE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection'
-    lead:
-      type: 'PHLU.Corporate:Content.Lead'
+    header:
+      type: 'PHLU.Corporate:Content.Page.HeaderDefault'
+    teaser:
+      type: 'PHLU.Corporate:Content.Page.TeaserDefault'
+    onepage:
+      type: 'PHLU.Corporate:ContentCollection.OnePage'
+    contact:
+      type: 'PHLU.Corporate:Contact'
+    targetgroup:
+      type: 'PHLU.Corporate:Content.Page.TargetGroup'
+    carouselnews:
+      type: 'PHLU.Corporate:Content.Page.CarouselNews'
+
 
   constraints:
     nodeTypes:
@@ -53,6 +63,10 @@
     nodeTypes:
       'PHLU.Corporate:Page.View.Detail': TRUE
       'PHLU.Corporate:Page.View.Dossier': TRUE
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.OverView.OnePage'
+    onepage: ~
 
 
 'PHLU.Corporate:Page.View.Detail':
@@ -60,7 +74,6 @@
     label: 'Detailseite'
   superTypes:
     'PHLU.Corporate:Page': TRUE
-    'PHLU.Corporate:PageMixin.Preview': TRUE
 
 
 'PHLU.Corporate:Page.View.Dossier':
@@ -71,7 +84,9 @@
   constraints:
     nodeTypes:
       'PHLU.Corporate:Page.View.Detail': TRUE
-
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.View.Dossier'
 
 
 'PHLU.Corporate:Page.Service':

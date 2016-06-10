@@ -1,0 +1,100 @@
+'TYPO3.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'PHLU.Corporate:Content': TRUE
+
+
+'PHLU.Corporate:ContentCollection':
+  superTypes:
+    'PHLU.Neos.NodeTypes:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'PHLU.Corporate:Content': TRUE
+
+
+'PHLU.Corporate:ContentCollection.OnePage':
+  ui:
+    label: 'One Page'
+    icon: icon-header
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'PHLU.Corporate:Content': FALSE
+      'TYPO3.Neos.NodeTypes:Text': TRUE
+      'TYPO3.Neos.NodeTypes:TextWithImage': TRUE
+
+
+
+'PHLU.Corporate:ContentCollection.OverView.OnePage':
+  ui:
+    label: 'Content Collection'
+    icon: icon-header
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'PHLU.Corporate:Content': FALSE
+      'PHLU.Corporate:AccordeonElement': TRUE
+
+
+
+'PHLU.Corporate:ContentCollection.Page.CarouselNews':
+  ui:
+    label: 'Content Collection'
+    icon: icon-header
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'PHLU.Corporate:Content': FALSE
+      'PHLU.Corporate:AccordeonElement': FALSE
+      'TYPO3.Neos.NodeTypes:Text': TRUE
+
+
+
+'PHLU.Corporate:ContentCollection.View.Dossier':
+  ui:
+    label: 'Content Collection'
+    icon: icon-header
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'PHLU.Corporate:Content': FALSE
+      'PHLU.Corporate:AccordeonElement': TRUE
+
+
+'PHLU.Corporate:ContentCollection.Accordeon':
+  ui:
+    label: 'Content Collection'
+    icon: icon-header
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'PHLU.Corporate:Content': FALSE
+      'PHLU.Corporate:AccordeonElement': FALSE
+      'TYPO3.Neos.NodeTypes:Text': TRUE
+
+
+
+'PHLU.Corporate:ContentCollection.Page.TargetGroup':
+  ui:
+    label: 'Content Collection'
+    icon: icon-header
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'PHLU.Corporate:Content': FALSE
+      'PHLU.Corporate:AccordeonElement': FALSE
+      'PHLU.Corporate:Content.Page.TargetGroupElement': TRUE
+

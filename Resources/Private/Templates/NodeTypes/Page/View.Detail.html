@@ -1,0 +1,19 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+
+
+<div class="row">
+
+    <div class="col-xs-12 col-lg-12">
+
+        {breadcrumb -> f:format.raw()}
+
+        <ts:render path="defaultRenderer" context="{node: header}" />
+
+        {teaserMenu -> f:format.raw()}
+
+    </div>
+
+</div>
+
+<div class="row ambient-img-footer"></div>

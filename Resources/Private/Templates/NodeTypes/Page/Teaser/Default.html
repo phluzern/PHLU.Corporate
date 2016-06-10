@@ -1,0 +1,4 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<p {attributes -> f:format.raw()}>
+      {neos:contentElement.editable(property: 'teaserText', tag: 'p')}
+</p>

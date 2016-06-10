@@ -68,7 +68,36 @@
         </div>
     </div>
 
-
+    <div class="container-fluid breadcrumb-bottom">
+        <div class="row ">
+            <div class="col-xl-2 sidebar level0">
+                <div class="row">
+                    <div class="col-xl-12">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 sidebar ">
+                <div class="row ">
+                    <div class="col-xl-12 ">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-xl-8 main">
+                <div class="row ">
+                    <div class="col-xs-12">
+                        <div>
+                            Sie sind hier:
+                        </div>
+                        <div>
+                            {parts.breadcrumb -> f:format.raw()}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container-fluid footer">
         <div class="row">

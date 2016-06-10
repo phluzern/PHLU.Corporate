@@ -1,7 +1,9 @@
 include: *.ts2
 include: NodeTypes/*.ts2
 include: NodeTypes/Page/*.ts2
-include: NodeTypes/Content/*.ts2
+include: NodeTypes/Page/Header/*.ts2
+include: NodeTypes/Page/Teaser/*.ts2
+include: NodeTypes/Page/TargetGroup/*.ts2
 
 
 /**
@@ -66,12 +68,16 @@ page = Page {
 						maximumLevels = 1
 						filter = '!PHLU.Corporate:Page.NotInMenu, PHLU.Corporate:Page'
 						startingPoint = ${q(site).get(0)}
+						pageClass = ''
+						itemClass = 'col-lg-4'
 					}
 				}
 			}
 
 
-			breadcrumb = Breadcrumb
+			breadcrumb = Breadcrumb {
+				templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/Breadcrumb.html'
+			}
 		}
 
 		pageLevelTypeClass = TYPO3.TypoScript:Case {

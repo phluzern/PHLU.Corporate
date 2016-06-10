@@ -1,44 +1,118 @@
+# Content
 'PHLU.Corporate:Content':
   superTypes:
     'PHLU.Neos.NodeTypes:Content': TRUE
   abstract: TRUE
 
-
-'PHLU.Corporate:ContentCollection':
-  superTypes:
-    'PHLU.Neos.NodeTypes:ContentCollection': TRUE
+# Header default
+'PHLU.Corporate:Content.Page.HeaderDefault':
+  ui:
+    label: 'Header'
+    icon: icon-header
   constraints:
     nodeTypes:
       '*': FALSE
-      'PHLU.Corporate:Content': TRUE
+  properties:
+    headerText:
+      type: string
+      defaultValue: 'Bitte geben Sie einen Lead-Text ein.'
+    headerTitle:
+      type: string
+      defaultValue: 'Hier kommt ein Titel'
 
-
-'PHLU.Corporate:ContentCollection.Preview':
-  superTypes:
-    'PHLU.Neos.NodeTypes:ContentCollection': TRUE
+# Teaser default
+'PHLU.Corporate:Content.Page.TeaserDefault':
+  ui:
+    label: 'Teaser'
+    icon: icon-header
   constraints:
     nodeTypes:
       '*': FALSE
-      'PHLU.Corporate:Content': TRUE
+  properties:
+    teaserText:
+      type: string
+      defaultValue: 'Bitte geben Sie einen Teaser-Text ein.'
 
 
-'TYPO3.Neos:ContentCollection':
+# Carousel news
+'PHLU.Corporate:Content.Page.CarouselNews':
+  ui:
+    label: 'Aktuelles'
+    icon: icon-header
+    inlineEditable: true
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Content': FALSE
+      '*': FALSE
+  properties:
+    title:
+      type: string
+      defaultValue: 'Aktuelles'
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.Page.CarouselNews'
 
 
+# Target group default
+'PHLU.Corporate:Content.Page.TargetGroup':
+  ui:
+    label: 'Zielpublikum'
+    icon: icon-header
+    inlineEditable: true
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  properties:
+    title:
+      type: string
+      defaultValue: 'Weitere Angebote für'
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.Page.TargetGroup'
 
-'PHLU.Corporate:Content.Lead':
+
+# Target group default
+'PHLU.Corporate:Content.Page.TargetGroupElement':
   superTypes:
-    'PHLU.Neos.NodeTypes:ContentCollection': TRUE
     'PHLU.Neos.NodeTypes:Content': TRUE
   ui:
-    label: 'Lead'
+    label: 'Zielpublikum'
+    inlineEditable: true
+    icon: icon-link
+    inspector:
+      groups:
+        general:
+          label: 'Allgemein'
   constraints:
     nodeTypes:
       '*': FALSE
-      'PHLU.Corporate:Content': TRUE
   properties:
-    text:
+    reference:
+      type: reference
+      ui:
+        label: 'Link'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+          position: 50
+
+
+
+# Accorden default
+'PHLU.Corporate:AccordeonElement':
+  superTypes:
+    'PHLU.Neos.NodeTypes:Content': TRUE
+  ui:
+    label: 'Accordeon Element'
+    icon: icon-header
+    inlineEditable: true
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  properties:
+    title:
       type: string
+      defaultValue: 'Hier kommt ein Titel'
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.Accordeon'
+

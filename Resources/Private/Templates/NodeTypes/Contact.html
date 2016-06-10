@@ -1,0 +1,52 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+
+<div class="row sephiabg contactperson" id="kontakt">
+    <div class="col-xs-12">
+        <h2>Kontakt</h2>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-8">
+                <div class="contactperson-role">
+                    {neos:contentElement.editable(property: 'function', tag: 'span')}
+                </div>
+                <address>
+                    {neos:contentElement.editable(property: 'name', tag: 'span')} {neos:contentElement.editable(property: 'lastname', tag: 'span')}<br>
+                    {neos:contentElement.editable(property: 'street', tag: 'span')}<br>
+                    {neos:contentElement.editable(property: 'street2', tag: 'span')}<br>
+                    {neos:contentElement.editable(property: 'zip', tag: 'span')} {neos:contentElement.editable(property: 'city', tag: 'span')}
+                </address>
+                <address>
+                    <span>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </span>
+                    {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
+                    <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{neos:contentElement.editable(property: 'email', tag: 'span')}</a><br>
+                    <a class="content-link-portrait" href="#">Portrait</a>
+                </address>
+            </div>
+            <div class="col-xs-12 col-sm-6 flexfirst col-md-4">
+
+                <f:if condition="{node.properties.image}">
+                    <f:then>
+                        <f:if condition="{link}">
+                            <f:then>
+                                <a href="{link}"><media:image class="img-fluid" asset="{node.properties.image}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" /></a>
+                            </f:then>
+                            <f:else>
+                                <media:image class="img-fluid" asset="{node.properties.image}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
+                            </f:else>
+                        </f:if>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{neos:rendering.inEditMode()}">
+                            <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image" alt="Dummy image" class="img-fluid" />
+                        </f:if>
+                    </f:else>
+                </f:if>
+
+            </div>
+        </div>
+    </div>
+</div>

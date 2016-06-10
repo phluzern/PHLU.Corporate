@@ -1,0 +1,65 @@
+# Content
+prototype(PHLU.Corporate:Content.Page.CarouselNews) < prototype(PHLU.Corporate:Content) {
+
+    templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/CarouselNews.html'
+
+
+
+
+    carouselContent = TYPO3.TypoScript:Collection {
+
+        collection = ${q(node).children('main').get()}
+
+        itemName = 'element'
+
+        itemRenderer = TYPO3.TypoScript:Template {
+            templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/CarouselNews.html'
+            sectionName = 'content'
+            renderer = TYPO3.Neos:ContentCase
+            node = ${q(element).get(0)}
+            items = ${q(element).children().get()}
+            renderer = TYPO3.Neos:ContentCase
+         }
+
+    }
+
+
+
+
+     carouselIndicators = TYPO3.TypoScript:Collection {
+
+        collection = ${q(node).children('main').get()}
+
+        itemName = 'element'
+
+        itemRenderer = TYPO3.TypoScript:Template {
+            templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/CarouselNews.html'
+            sectionName = 'indicators'
+            items = ${q(element).children().get()}
+         }
+
+    }
+
+
+
+
+}
+
+
+
+
+
+# Carousel content collection
+prototype(PHLU.Corporate:ContentCollection.Page.CarouselNews) < prototype(TYPO3.Neos:ContentCollection) {
+
+
+        @cache {
+        mode = 'uncached'
+                context {
+                1 = 'node'
+                2 = 'documentNode'
+                }
+            }
+
+}
+

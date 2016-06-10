@@ -1,0 +1,29 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<div class="col-xs-12 nav-teaser-item clickable">
+    <div class="row">
+        <div class="phlu-teaser-body col-xs-10">
+            <f:if condition="{node.properties.reference}">
+                <f:then>
+                    <h3>
+                        <neos:link.node node="{node.properties.reference}">
+                            {node.properties.reference.properties.title}
+                        </neos:link.node>
+                    </h3>
+                    <ts:render path="defaultRenderer" context="{node: node.properties.reference}"/>
+                </f:then>
+                <f:else>
+                    <h3></h3>
+                    <p></p>
+                </f:else>
+            </f:if>
+
+        </div>
+        <div class="phlu-teaser-caret-right col-xs-2"></div>
+    </div>
+</div>
+
+<f:section name="content">
+    <ts:render path="renderer" context="{node: teaser}"/>
+</f:section>

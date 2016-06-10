@@ -1,0 +1,57 @@
+# Contact
+'PHLU.Corporate:Contact':
+  superTypes:
+    'PHLU.Corporate:Content': TRUE
+  ui:
+    label: 'Kontakt'
+    icon: icon-male
+    inspector:
+      groups:
+        contact:
+          label: 'Kontakt'
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  properties:
+    lastname:
+      type: string
+      defaultValue: 'Name'
+    name:
+      type: string
+      defaultValue: 'Vorname'
+    street:
+      type: string
+      defaultValue: 'Strasse'
+    street2:
+      type: string
+      defaultValue: 'Zusatz'
+    zip:
+      type: string
+      defaultValue: 'PLZ'
+    city:
+      type: string
+      defaultValue: 'Ort'
+    phone:
+      type: string
+      defaultValue: 'Telefon'
+    email:
+      type: string
+      defaultValue: 'E-Mail'
+      ui:
+        label: 'E-Mail'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'contact'
+          position: 40
+    function:
+      type: string
+      defaultValue: 'Funktion'
+    image:
+      type: TYPO3\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'Bild'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'contact'
+          position: 50
+

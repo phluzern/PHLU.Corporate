@@ -6435,7 +6435,6 @@ body {
       body .phlu-teaser.navigation .nav-teaser-item .row {
         margin: 0; }
         body .phlu-teaser.navigation .nav-teaser-item .row a {
-          position: absolute;
           width: 93%;
           height: 100%;
           z-index: 99; }

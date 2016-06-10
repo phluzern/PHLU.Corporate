@@ -1,0 +1,8 @@
+# Content
+prototype(PHLU.Corporate:Contact) < prototype(PHLU.Corporate:Content) {
+
+    templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contact.html'
+
+}
+
+

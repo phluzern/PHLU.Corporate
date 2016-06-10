@@ -1,0 +1,4 @@
+# Page Overview Tiles
+prototype(PHLU.Corporate:Page.View.Dossier) < prototype(PHLU.Corporate:Page.Overview.OnePage) {
+    templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Dossier.html'
+}

@@ -837,7 +837,6 @@ body {
       .row {
         margin: 0;
         a {
-          position: absolute;
           width: 93%;
           @include media-breakpoint-down("sm") {
             width: 96%;

@@ -1,0 +1,7 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div {attributes -> f:format.raw()}>
+    <h1 class="page-header">{neos:contentElement.editable(property: 'headerTitle', tag: 'span')}</h1>
+    <p class="flowtext lead">
+        {neos:contentElement.editable(property: 'headerText', tag: 'span')}
+    </p>
+</div>
