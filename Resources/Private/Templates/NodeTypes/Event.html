@@ -2,35 +2,36 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
 
-<div class="{breakpointClass} event noimg singleitem">
+
+<div class="{breakpointClass} event {f:if(then: 'noimg', condition: {node.properties.teaserImage})}">
     <div class="event-date-day">
         16.
     </div>
     <div class="event-date-month-year-location">
         <b>
-            Februar -
-        </b><br>
-        <b>
-            24. März, 2016
+            November, 2016
         </b>
-        <div class="event-location">
-            Lernwerkstatt,
-            <br>
-            Uni/PH-Gebäude
-        </div>
+        <br>
+        {neos:contentElement.editable(property: 'location', tag: 'span')}
     </div>
-    <div class="phlu-teaser-body ">
-        <div class="scrollbody">
-            <h3>Lernwerkstatt</h3>
-            <p>
-                Die Jugentlichen und jungen Erwachsenen gewinnen durch Blick in
-                historische Schulschränke einen Überblich über den Schulalltag von
-                1933
-                bis 1945. An 13 Lernstationen können sie anhand von ... mehr &gt;
-            </p>
-        </div>
+    <div class="phlu-teaser-body">
+
+
+            {neos:contentElement.editable(property: 'teaserHeadline', tag: 'h3')}
+
+            {neos:contentElement.editable(property: 'teaserText', tag: 'p')}
+
+
     </div>
-    <img class="img-fluid" src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/spacer-white-teaser.png')}" alt="spacer">
+
+    <f:if condition="{node.properties.teaserImage}">
+        <f:then>
+           <media:image asset="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
+        </f:then>
+        <f:else>
+            <img class="img-fluid" src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/spacer-white-teaser.png')}" alt="spacer">
+        </f:else>
+    </f:if>
     <div class="phlu-teaser-type">
         Veranstaltung
     </div>

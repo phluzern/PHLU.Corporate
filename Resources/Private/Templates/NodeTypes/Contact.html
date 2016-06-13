@@ -40,9 +40,7 @@
                         </f:if>
                     </f:then>
                     <f:else>
-                        <f:if condition="{neos:rendering.inEditMode()}">
-                            <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image" alt="Dummy image" class="img-fluid" />
-                        </f:if>
+                      <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image" alt="Dummy image" class="img-fluid" style="height:330px" />
                     </f:else>
                 </f:if>
 
