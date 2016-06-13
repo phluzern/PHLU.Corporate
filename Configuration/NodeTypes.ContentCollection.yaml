@@ -53,7 +53,7 @@
       '*': FALSE
       'PHLU.Corporate:Content': FALSE
       'PHLU.Corporate:AccordeonElement': FALSE
-      'TYPO3.Neos.NodeTypes:Text': TRUE
+      'PHLU.Corporate:Event': TRUE
 
 
 

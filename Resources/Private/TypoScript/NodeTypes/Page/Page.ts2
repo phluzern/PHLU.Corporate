@@ -4,10 +4,13 @@ prototype(PHLU.Corporate:Page) < prototype(PHLU.Neos.NodeTypes:Page) {
 
     defaultRenderer = TYPO3.Neos:ContentCase
     collectionRenderer = TYPO3.Neos:ContentCollection
+
+
     header = ${q(node).children('header').get(0)}
     teaser = ${q(node).children('teaser').get(0)}
     onepage = ${q(node).children('onepage').get(0)}
     contact = ${q(node).children('contact').get(0)}
+
     targetgroup = ${q(node).children('targetgroup').get(0)}
     carouselnews = ${q(node).children('carouselnews').get(0)}
     main = ${q(node).children('main').get(0)}
