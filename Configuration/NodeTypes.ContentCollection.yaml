@@ -23,8 +23,9 @@
     nodeTypes:
       '*': FALSE
       'PHLU.Corporate:Content': FALSE
-      'TYPO3.Neos.NodeTypes:Text': TRUE
-      'TYPO3.Neos.NodeTypes:TextWithImage': TRUE
+      'PHLU.Corporate:Text': TRUE
+      'PHLU.Corporate:TextWithImage': TRUE
+
 
 
 
@@ -80,9 +81,9 @@
     nodeTypes:
       '*': FALSE
       'PHLU.Corporate:Content': FALSE
-      'TYPO3.Neos.NodeTypes:Text': TRUE
-      'TYPO3.Neos.NodeTypes:Headline': TRUE
-      'TYPO3.Neos.NodeTypes:TextWithImage': TRUE
+      'PHLU.Corporate:Text': TRUE
+      'PHLU.Corporate:Headline': TRUE
+      'PHLU.Corporate:TextWithImage': TRUE
 
 
 
@@ -97,7 +98,7 @@
       '*': FALSE
       'PHLU.Corporate:Content': FALSE
       'PHLU.Corporate:AccordeonElement': FALSE
-      'TYPO3.Neos.NodeTypes:Text': TRUE
+      'PHLU.Corporate:Text': TRUE
 
 
 

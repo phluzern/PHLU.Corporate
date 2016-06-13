@@ -6673,6 +6673,8 @@ body {
     display: none; }
   body.neos-backend.neos-full-screen .all {
     width: inherit; }
+  body .neos-contentcollection {
+    width: 100%; }
   @media (max-width: 991px) {
     body {
       margin-bottom: 681px; } }
@@ -6777,7 +6779,7 @@ body {
         margin-top: -11px; }
       body .navbar .navbar-toggler.close-btn {
         background-color: white;
-        background-image: url("../img/navbar-toggle-bg.png");
+        background-image: url("../Images/navbar-toggle-bg.png");
         background-repeat: no-repeat;
         background-position: bottom right;
         color: white; }
@@ -6893,7 +6895,7 @@ body {
         margin-left: -15px; }
       body .sidebar.level1::after {
         content: "";
-        background-image: url("../img/dreiecke-navi-links.svg");
+        background-image: url("../Images/dreiecke-navi-links.svg");
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: 0 100%;
@@ -7174,7 +7176,6 @@ body {
       body .phlu-teaser.navigation .nav-teaser-item .row {
         margin: 0; }
         body .phlu-teaser.navigation .nav-teaser-item .row a {
-          position: absolute;
           width: 93%;
           height: 100%;
           z-index: 99; }
@@ -7317,24 +7318,25 @@ body {
         float: left;
         margin: 9px 30px 0 0;
         width: 237px; } }
-    body .main > .row .img-and-caption .caption {
+    body .main > .row .img-and-caption .caption p {
       color: #5c5c5c;
       font-size: 0.8rem;
       padding-top: 12px;
       padding-bottom: 16px;
       text-align: left;
-      caption-side: bottom; }
+      caption-side: bottom;
+      margin-bottom: 0px; }
     body .main > .row .content-link-email {
       font-size: 1.125rem;
       color: #9f632a;
-      background-image: url("../img/linkbottomline.png");
+      background-image: url("../Images/linkbottomline.png");
       background-repeat: repeat-x;
       background-position: bottom;
       padding-bottom: 4px; }
     body .main > .row .content-link-email-contact-person {
       font-size: 1.125rem;
       color: #9f632a;
-      background-image: url("../img/linkbottomline.png");
+      background-image: url("../Images/linkbottomline.png");
       background-repeat: repeat-x;
       background-position: bottom;
       padding-bottom: 4px; }
@@ -7344,12 +7346,12 @@ body {
     body .main > .row .content-link-external {
       font-size: 1.125rem;
       color: #9f632a;
-      background-image: url("../img/linkbottomline.png");
+      background-image: url("../Images/linkbottomline.png");
       background-repeat: repeat-x;
       background-position: bottom;
       padding-bottom: 4px; }
       body .main > .row .content-link-external::after {
-        background-image: url("../img/externalLinkArrow.png");
+        background-image: url("../Images/externalLinkArrow.png");
         background-repeat: no-repeat;
         background-position: 0 3px;
         padding-right: 25px;
@@ -7357,7 +7359,7 @@ body {
     body .main > .row .content-link-portrait {
       font-size: 1.125rem;
       color: #9f632a;
-      background-image: url("../img/linkbottomline.png");
+      background-image: url("../Images/linkbottomline.png");
       background-repeat: repeat-x;
       background-position: bottom;
       padding-bottom: 4px; }
@@ -7446,7 +7448,7 @@ body {
         body .main > .row.contactperson address span .fa {
           margin-right: 6px; }
     body .main > .row.ambient-img-footer {
-      background-image: url("../img/ambienteexample.jpg");
+      background-image: url("../Images/ambienteexample.jpg");
       background-repeat: no-repeat;
       margin-top: 65px;
       padding-bottom: 330px;
@@ -7488,7 +7490,7 @@ body {
         padding-left: 28px; } }
     body .footer::after {
       content: "";
-      background-image: url("../img/dreiecke-footer.svg");
+      background-image: url("../Images/dreiecke-footer.svg");
       background-size: 130%;
       background-repeat: no-repeat;
       background-position: -80% 90%;
@@ -7633,7 +7635,7 @@ body .startpage .main {
       padding-bottom: 0; } }
   body .startpage .main::after {
     content: "";
-    background-image: url("../img/dreiecke-startseite.svg");
+    background-image: url("../Images/dreiecke-startseite.svg");
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: -1px -1px;
@@ -7645,7 +7647,7 @@ body .startpage .main {
     position: absolute;
     z-index: 1; }
   body .startpage .main > .row.aktuelles {
-    background-image: url("../img/ambienteexample.jpg");
+    background-image: url("../Images/ambienteexample.jpg");
     background-position: -120px 0;
     margin-bottom: 56px; }
     @media (min-width: 1280px) {

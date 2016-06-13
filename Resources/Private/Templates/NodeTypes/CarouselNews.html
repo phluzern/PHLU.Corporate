@@ -10,18 +10,19 @@
 
 
         <f:if condition="{neos:rendering.inBackend()}">
-
+            <f:then>
             <div id="carousel-phlu-teaser" class="phlu-teaser">
                 <ts:render path="collectionRenderer" context="{node: main}"/>
             </div>
-
+            </f:then>
         </f:if>
 
-        <f:if condition="!{neos:rendering.inBackend()}">
+        <f:if condition="{neos:rendering.inBackend()}">
+            <f:else>
 
             <div id="carousel-phlu-teaser-xl" class="phlu-teaser carousel slide">
                 <f:render section="carousel"
-                          arguments="{carouselItems: carouselItems, spliceNum: 3, itemClass: 'col-xl-4 ', targetId: 'carousel-phlu-teaser-xl'}"></f:render>
+                          arguments="{carouselItems: carouselItems, spliceNum: 3, itemClass: 'col-xl-4', targetId: 'carousel-phlu-teaser-xl'}"></f:render>
             </div>
 
             <div id="carousel-phlu-teaser-lg" class="phlu-teaser carousel slide">
@@ -43,7 +44,7 @@
                 <f:render section="carousel"
                           arguments="{carouselItems: carouselItems, spliceNum: 1 , itemClass: 'col-xs-12', targetId: 'carousel-phlu-teaser-xs'}"></f:render>
             </div>
-
+            </f:else>
 
         </f:if>
 
