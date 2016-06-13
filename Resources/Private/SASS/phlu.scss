@@ -185,46 +185,27 @@ html {
   min-height: 100%;
 }
 
-
-/*body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh; !* 1 *!
-}
-.sidebar, .main {
-  flex: 1 0 auto; !* 2 *!
-}
-.footer, .breadcrumb-bottom {
-  flex-shrink: 0; !* 2 *!
-}*/
 body {
-
   // backend only
   &.neos-backend {
     .all {
       width:1920px;
     }
-
     &.neos-navigate-panel-open {
       .sidebar.level0, .sidebar.level1 {
         display:none;
       }
     }
-
     &.neos-full-screen {
       .all {
         width:inherit;
       }
     }
-
-
   }
-
   // neos specific
   .neos-contentcollection {
     width:100%;
   }
-
 
   margin-bottom: 420px;
   @include media-breakpoint-down("md") {
@@ -472,17 +453,25 @@ body {
     .sidebar-nav {
       width: 100%;
       font-size: $font-size-lg;
-      a {
-        //white-space: nowrap;
-        color: $hazelbrownmedium;
-        text-align: right;
-        display: block;
-        padding: 12px 0;
-        border-top: 0;
-      }
-      a.active {
-        color: $font-color-level1;
-        background-color: $sephia;
+      ul {
+        list-style: none;
+        padding:0;
+        li {
+          a {
+            //white-space: nowrap;
+            color: $hazelbrownmedium;
+            text-align: right;
+            display: block;
+            padding: 12px 0;
+            border-top: 0;
+          }
+          &.current, &.active {
+            a {
+              color: $font-color-level1;
+              background-color: $sephia;
+            }
+          }
+        }
       }
     }
     &.level0 {
@@ -509,18 +498,24 @@ body {
         @include media-breakpoint-up("xl") {
           padding-left: 10px;
         }
-        a {
-          color: $font-color-level1;
-          text-align: left;
-        }
-        a.active {
-          &::before {
-            font-family: Icons;
-            font-size: 10px;
-            content: " \e02f";
-            position: absolute;
-            margin-top: 6px;
-            margin-left: -15px;
+        ul {
+          li {
+            a {
+              color: $font-color-level1;
+              text-align: left;
+            }
+            &.current {
+              a {
+                &::before {
+                  font-family: Icons;
+                  font-size: 10px;
+                  content: " \e02f";
+                  position: absolute;
+                  margin-top: 6px;
+                  margin-left: -15px;
+                }
+              }
+            }
           }
         }
       }

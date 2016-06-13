@@ -6652,17 +6652,6 @@ html {
   position: relative;
   min-height: 100%; }
 
-/*body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh; !* 1 *!
-}
-.sidebar, .main {
-  flex: 1 0 auto; !* 2 *!
-}
-.footer, .breadcrumb-bottom {
-  flex-shrink: 0; !* 2 *!
-}*/
 body {
   margin-bottom: 420px;
   color: #5c5c5c;
@@ -6854,15 +6843,18 @@ body {
     body .sidebar .sidebar-nav {
       width: 100%;
       font-size: 1.2rem; }
-      body .sidebar .sidebar-nav a {
-        color: #9f632a;
-        text-align: right;
-        display: block;
-        padding: 12px 0;
-        border-top: 0; }
-      body .sidebar .sidebar-nav a.active {
-        color: #685f56;
-        background-color: #e9e0d8; }
+      body .sidebar .sidebar-nav ul {
+        list-style: none;
+        padding: 0; }
+        body .sidebar .sidebar-nav ul li a {
+          color: #9f632a;
+          text-align: right;
+          display: block;
+          padding: 12px 0;
+          border-top: 0; }
+        body .sidebar .sidebar-nav ul li.current a, body .sidebar .sidebar-nav ul li.active a {
+          color: #685f56;
+          background-color: #e9e0d8; }
     body .sidebar.level0 {
       z-index: 99; }
       body .sidebar.level0 .sidebar-nav a {
@@ -6883,10 +6875,10 @@ body {
       @media (min-width: 1280px) {
         body .sidebar.level1 .sidebar-nav {
           padding-left: 10px; } }
-      body .sidebar.level1 .sidebar-nav a {
+      body .sidebar.level1 .sidebar-nav ul li a {
         color: #685f56;
         text-align: left; }
-      body .sidebar.level1 .sidebar-nav a.active::before {
+      body .sidebar.level1 .sidebar-nav ul li.current a::before {
         font-family: Icons;
         font-size: 10px;
         content: " \e02f";
