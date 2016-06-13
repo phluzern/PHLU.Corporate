@@ -577,6 +577,9 @@ body {
         margin: 5px 0 28px;
         letter-spacing: $h3-letter-spacing;
         @include word-wrap();
+        a {
+          color:$darkgrey;
+        }
       }
       p {
         font-size: $font-size-nav-teasers;

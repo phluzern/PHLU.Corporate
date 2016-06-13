@@ -6936,6 +6936,8 @@ body {
         -moz-hyphens: auto;
         -webkit-hyphens: auto;
         hyphens: auto; }
+        body .phlu-teaser .phlu-teaser-body h3 a {
+          color: #464340; }
       body .phlu-teaser .phlu-teaser-body p {
         font-size: 0.813rem; }
     body .phlu-teaser .event.noimg .phlu-teaser-body, body .phlu-teaser .publication.noimg .phlu-teaser-body, body .phlu-teaser .news.noimg .phlu-teaser-body {
