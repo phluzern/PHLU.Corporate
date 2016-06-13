@@ -70,6 +70,22 @@
       'PHLU.Corporate:AccordeonElement': TRUE
 
 
+'PHLU.Corporate:ContentCollection.View.Detail':
+  ui:
+    label: 'Content Collection'
+    icon: icon-header
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'PHLU.Corporate:Content': FALSE
+      'TYPO3.Neos.NodeTypes:Text': TRUE
+      'TYPO3.Neos.NodeTypes:Headline': TRUE
+      'TYPO3.Neos.NodeTypes:TextWithImage': TRUE
+
+
+
 'PHLU.Corporate:ContentCollection.Accordeon':
   ui:
     label: 'Content Collection'

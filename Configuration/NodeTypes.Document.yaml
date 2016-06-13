@@ -74,6 +74,12 @@
     label: 'Detailseite'
   superTypes:
     'PHLU.Corporate:Page': TRUE
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.View.Detail'
+    contact: ~
+    targetgroup: ~
+    carouselnews: ~
 
 
 'PHLU.Corporate:Page.View.Dossier':
