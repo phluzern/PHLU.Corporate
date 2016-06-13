@@ -180,7 +180,36 @@ html {
   min-height: 100%;
 }
 
+
+
+
+
+
 body {
+
+
+  // backend only
+  &.neos-backend {
+    .all {
+      width:1920px;
+    }
+
+    &.neos-navigate-panel-open {
+      .sidebar.level0, .sidebar.level1 {
+        display:none;
+      }
+    }
+
+    &.neos-full-screen {
+      .all {
+        width:inherit;
+      }
+    }
+
+
+  }
+
+
   margin-bottom: 420px;
   @include media-breakpoint-down("xxxl") {
     margin-bottom: 681px;
@@ -401,7 +430,7 @@ body {
       max-width: 264px;
     }
     @include media-breakpoint-down("lg") {
-      display: none;
+      display: none !important;
     }
     .nav-spacer-top {
       height: 205px;
@@ -1595,3 +1624,4 @@ body:after {
   }
 
 }
+

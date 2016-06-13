@@ -5946,6 +5946,12 @@ body {
   margin-bottom: 681px;
   color: #5c5c5c;
   font-size: 1rem; }
+  body.neos-backend .all {
+    width: 1920px; }
+  body.neos-backend.neos-navigate-panel-open .sidebar.level0, body.neos-backend.neos-navigate-panel-open .sidebar.level1 {
+    display: none; }
+  body.neos-backend.neos-full-screen .all {
+    width: inherit; }
   @media (min-width: 1600px) {
     body {
       background-color: #efefef; } }
