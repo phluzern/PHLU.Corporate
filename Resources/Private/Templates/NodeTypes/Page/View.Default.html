@@ -36,10 +36,10 @@
                     <div class="col-xs-12">
                         <ul class="nav nav-pills" role="menubar">
                             <li role="menuitem" ng-class="{active: filter['0'] === true}">
-                                <a class="nav-item nav-link alle" href="javascript:void(0);" ng-click="toggleFilter('0');">Alle</a>
+                                <a class="nav-item nav-link alle" href="javascript:void(0);" ng-click="toggleFilter(0);">Alle</a>
                             </li>
                             <f:for each="{tags}" as="tag" iteration="iterator">
-                                <li role="menuitem" ng-class="{active: filter['{tag.value}'] === true}">
+                                <li role="menuitem" ng-class="{active: filter['{tag.value}'] === true}" ng-init="filterAll['{tag.value}'] = true;">
                                     <a class="nav-item nav-link" href="javascript:void(0);" ng-click="toggleFilter('{tag.value}');"> <i class=" {tag.icon}"></i>
                                         {tag.label}</a>
                                 </li>
@@ -57,17 +57,16 @@
 
 
                             <f:for each="{items}" as="item" iteration="iterator">
-                                <div class="col-xs-12 nav-teaser-item clickable" ng-show="filteredIn['{item.node.Identifier}'] === undefined || filteredIn['{item.node.Identifier}'] === true">
+                                <div class="col-xs-12 nav-teaser-item clickable animated" ng-hide="filteredOut['{item.node.Identifier}'] === true" ng-class="{fadeIn: filteredIn['{item.node.Identifier}'] === true, lightSpeedOut: filteredIn['{item.node.Identifier}'] === false}">
                                     <div class="row">
 
                                         <div class="phlu-teaser-body col-xs-10">
 
-                                            <div class="phlu-teaser-caret-right col-xs-1">
+                                            <div class="phlu-teaser-caret-right col-xs-1" ng-init="addFilterItem('{item.node.Identifier}',0);">
                                                 <f:for each="{item.node.properties.tags}" as="tag">
                                                     <i class="{phlu:variable.get(name: 'tags.{tag}.icon')}" ng-init="addFilterItem('{item.node.Identifier}','{tag}');"></i>
                                                 </f:for>
                                             </div>
-
                                             <div class="phlu-teaser-caret-right col-xs-11">
                                                 <h3>
                                                     <neos:link.node node="{item.node}">{item.node.properties.title}
