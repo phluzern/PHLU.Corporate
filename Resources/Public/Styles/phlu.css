@@ -6662,13 +6662,13 @@ body {
     display: none; }
   body.neos-backend.neos-full-screen .all {
     width: inherit; }
-  body .neos-contentcollection {
-    width: 100%; }
-  body .strategieIco::before {
+  body.neos-backend .neos-select2-result-label .strategieIco::before {
     content: "\25B2";
     font-size: 21px;
     margin-left: -4px;
     margin-right: -3px; }
+  body .neos-contentcollection {
+    width: 100%; }
   @media (max-width: 991px) {
     body {
       margin-bottom: 681px; } }
@@ -7241,45 +7241,69 @@ body {
   body .row.subjectsfilternav .nav-pills {
     padding-top: 30px; }
     body .row.subjectsfilternav .nav-pills li a.nav-link {
-      background-color: #9b9b9b; }
+      background-color: #9b9b9b;
+      padding-left: 54px; }
+      body .row.subjectsfilternav .nav-pills li a.nav-link.all {
+        padding-left: 23px; }
   body .row.subjectsfilternav .faecherIco::before, body .row.subjectsfilternav .oi-media-stop::before {
     font-family: Icons;
     content: " \e099 \2001";
-    position: relative;
-    top: 3px; }
+    position: absolute;
+    margin-left: -32px;
+    margin-top: -15px;
+    font-size: 21px; }
   body .row.subjectsfilternav .strategieIco::before {
-    font-family: FontAwesome;
+    font-family: Arial;
     content: " \25B2 \2001";
-    position: relative;
-    top: 1px;
-    margin-left: -3px; }
+    position: absolute;
+    margin-left: -35px;
+    margin-top: -4px;
+    font-size: 24px; }
   body .row.subjectsfilternav .forschungIco::before, body .row.subjectsfilternav .icon-circle::before {
     font-family: FontAwesome;
     content: " \f111 \2001";
-    position: relative;
-    top: 1px; }
+    position: absolute;
+    margin-left: -33px;
+    margin-top: -17px;
+    font-size: 22px; }
   body .row.subjectsfilternav .themaIco::before, body .row.subjectsfilternav .icon-star::before {
     font-family: FontAwesome;
-    content: " \f005 \2001"; }
+    content: " \f005 \2001";
+    position: absolute;
+    margin-left: -32px;
+    margin-top: -16px;
+    font-size: 21px; }
+  body .row.subjectsfilternav .subjectfilternavResults i::before {
+    position: relative; }
   body .row.subjectsfilternav .phlu-teaser.navigation.subpage {
-    margin-top: 50px; }
+    margin: 50px 0; }
     body .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item {
       margin-top: 5px;
-      margin-bottom: 5px; }
+      margin-bottom: 5px;
+      padding: 0; }
       body .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
         height: inherit; }
+      body .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i {
+        float: left; }
+        body .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i::before {
+          color: #55a7b3;
+          font-size: 25px;
+          position: relative;
+          top: 50%;
+          margin: 0;
+          transform: translateY(-50%); }
+        body .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.strategieIco {
+          height: 25px;
+          width: 43px; }
+          body .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.strategieIco::before {
+            top: -12px;
+            left: -4px;
+            margin-left: 0px;
+            margin-top: 0px;
+            font-size: 30px; }
       body .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
         padding-left: 50px;
         margin: 0; }
-      body .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body::before {
-        color: #55a7b3;
-        font-size: 25px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%); }
-      body .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body.faecherIco::before {
-        top: 53%;
-        font-size: 24px; }
       body .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right::after {
         bottom: inherit;
         top: 50%;

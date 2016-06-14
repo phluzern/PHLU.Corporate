@@ -201,20 +201,24 @@ body {
         width:inherit;
       }
     }
+    .neos-select2-result-label {
+      .strategieIco {
+        &::before {
+          content: "\25B2";
+          font-size: 21px;
+          margin-left: -4px;
+          margin-right: -3px;
+
+        }
+      }
+    }
+
   }
   // neos specific
   .neos-contentcollection {
     width:100%;
   }
-  .strategieIco {
-    &::before {
-      content: "\25B2";
-      font-size: 21px;
-      margin-left: -4px;
-      margin-right: -3px;
 
-    }
-  }
 
   margin-bottom: 420px;
   @include media-breakpoint-down("md") {
@@ -1005,68 +1009,99 @@ body {
       li {
         a.nav-link {
           background-color: $grey5;
+          padding-left: 54px;
+          &.all {
+            padding-left: 23px;
+          }
         }
-      }
+        }
     }
     .faecherIco, .oi-media-stop {
       &::before {
         font-family: Icons;
         content: " \e099 \2001";
-        position: relative;
-        top: 3px;
+        position: absolute;
+        margin-left: -32px;
+        margin-top: -15px;
+        font-size: 21px;
       }
     }
     .strategieIco {
       &::before {
-        font-family: FontAwesome;
+        font-family: Arial;
         content: " \25B2 \2001";
-        position: relative;
-        top: 1px;
-        margin-left:-3px;
+        position: absolute;
+        margin-left:-35px;
+        margin-top:-4px;
+        font-size: 24px;
       }
     }
     .forschungIco, .icon-circle {
       &::before {
         font-family: FontAwesome;
         content: " \f111 \2001";
-        position: relative;
-        top: 1px;
+        position: absolute;
+        margin-left:-33px;
+        margin-top:-17px;
+        font-size: 22px;
       }
     }
     .themaIco, .icon-star {
       &::before {
         font-family: FontAwesome;
         content: " \f005 \2001";
+        position: absolute;
+        margin-left: -32px;
+        margin-top: -16px;
+        font-size: 21px;
+      }
+    }
+    .subjectfilternavResults {
+      i {
+        &::before {
+          position: relative;
+        }
+
       }
     }
     .phlu-teaser.navigation.subpage {
-      margin-top: 50px;
+      margin: 50px 0;
       .nav-teaser-item {
         margin-top: 5px;
         margin-bottom: 5px;
+        padding:0;
         .row {
           .phlu-teaser-body, .phlu-teaser-caret-right {
             height: inherit;
           }
           .phlu-teaser-body {
+            i {
+              float:left;
+              &::before {
+                color: $turquoise;
+                font-size: 25px;
+                position: relative;
+                top: 50%;
+                margin:0;
+                transform: translateY(-50%);
+              }
+              &.strategieIco {
+                height: 25px;
+                width: 43px;
+                &::before {
+                  top:-12px;
+                  left:-4px;
+                  margin-left:0px;
+                  margin-top:0px;
+                  font-size: 30px;
+
+                }
+              }
+            }
             h3 {
               padding-left: 50px;
               margin: 0;
             }
-            &::before {
-              color: $turquoise;
-              font-size: 25px;
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-            }
-          }
-          .phlu-teaser-body.faecherIco {
-            &::before {
-              top: 53%;
-              font-size: 24px;
-            }
-
           }
           .phlu-teaser-caret-right {
             &::after {
