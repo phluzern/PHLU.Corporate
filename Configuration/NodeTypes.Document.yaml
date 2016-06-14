@@ -41,6 +41,7 @@
       'PHLU.Corporate:Page.Service': TRUE
       'PHLU.Corporate:Page.Overview.OnePage': FALSE
       'PHLU.Corporate:Page.View.Default': TRUE
+      'PHLU.Corporate:Page.View.Default.Default': FALSE
 
 
 

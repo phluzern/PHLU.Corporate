@@ -21,13 +21,15 @@
     </f:section>
     <f:section name="headScripts">
         <!-- Put your scripts inclusions for the head here, they will be included in your website by TypoScript -->
+        <script src="{f:uri.resource(path: 'JavaScript/angular.min.js', package: 'PHLU.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'JavaScript/app.js', package: 'PHLU.Corporate')}"></script>
     </f:section>
 
 </head>
 <body>
 
 <f:section name="body">
-    <div class="all">
+    <div class="all" ng-app="phluApp">
     <nav class="navbar">
         <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
             <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogo.svg')}" alt="PH Luzern Logo" onerror="this.onerror=null; this.src='Images/phluLogo.png'" />
