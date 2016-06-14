@@ -7245,6 +7245,8 @@ body {
       padding-left: 54px; }
       body .row.subjectsfilternav .nav-pills li a.nav-link.all {
         padding-left: 23px; }
+    body .row.subjectsfilternav .nav-pills li.active a.nav-link {
+      background-color: #55696d; }
   body .row.subjectsfilternav .faecherIco::before, body .row.subjectsfilternav .oi-media-stop::before {
     font-family: Icons;
     content: " \e099 \2001";

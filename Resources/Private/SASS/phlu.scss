@@ -1014,6 +1014,12 @@ body {
             padding-left: 23px;
           }
         }
+        &.active {
+          a.nav-link {
+            background-color: $grey6;
+          }
+        }
+
         }
     }
     .faecherIco, .oi-media-stop {

@@ -4,91 +4,92 @@
 
 
 <div class="row">
+
     <div class="col-xs-12 col-xl-8">
+
         {breadcrumb -> f:format.raw()}
+
         <ts:render path="defaultRenderer" context="{node: header}"/>
+
         {filterContent -> f:format.raw()}
+
         <ts:render path="collectionRenderer" context="{node: main}"/>
+
+
     </div>
+
 </div>
 
+
 <f:section name="filterContent">
+
+
     <phlu:tags node="{node}" menuItems="{items}" as="tags">
+
         <div class="row subjectsfilternav" ng-controller="SubjectsFilterNavCtrl">
             <div class="col-xs-12">
+
                 <h4>Filter</h4>
+
+
                 <div class="row " id="anchornavigation">
                     <div class="col-xs-12">
                         <ul class="nav nav-pills" role="menubar">
                             <li role="menuitem" ng-class="{active: filter['0'] === true}">
-<<<<<<< HEAD
-                                <a class="nav-item nav-link alle" href="javascript:void(0);" ng-click="toggleFilter(0);">Alle</a>
+                                <a class="nav-item nav-link all" href="javascript:void(0);" ng-click="toggleFilter(0);">Alle</a>
                             </li>
                             <f:for each="{tags}" as="tag" iteration="iterator">
-                                <li role="menuitem" ng-class="{active: filter['{tag.value}'] === true}" ng-init="filterAll['{tag.value}'] = true;">
+                                <li role="menuitem" ng-class="{active: filter['{tag.value}'] === true}"  ng-init="filterAll['{tag.value}'] = true;">
                                     <a class="nav-item nav-link" href="javascript:void(0);" ng-click="toggleFilter('{tag.value}');"> <i class=" {tag.icon}"></i>
-=======
-                                <a class="nav-item nav-link all" href="javascript:void(0);"
-                                   ng-click="toggleFilter('0');">Alle</a>
-                            </li>
-                            <f:for each="{tags}" as="tag" iteration="iterator">
-                                <li role="menuitem" ng-class="{active: filter['{tag.value}'] === true}">
-                                    <a class="nav-item nav-link" href="javascript:void(0);"
-                                       ng-click="toggleFilter('{tag.value}');"> <i class=" {tag.icon}"></i>
->>>>>>> 160ce60e1fff40d1279064d4ce2280287182ce33
                                         {tag.label}</a>
                                 </li>
                             </f:for>
+
                         </ul>
+
                     </div>
                 </div>
 
-                <div class="row subjectfilternavResults">
+
+                <div class="row subjectsfilternav">
                     <div class="col-xs-12">
                         <div class="row phlu-teaser navigation subpage" id="teasernavigation">
-                            <f:for each="{items}" as="item" iteration="iterator">
-<<<<<<< HEAD
-                                <div class="col-xs-12 nav-teaser-item clickable animated" ng-hide="filteredOut['{item.node.Identifier}'] === true" ng-class="{fadeIn: filteredIn['{item.node.Identifier}'] === true, lightSpeedOut: filteredIn['{item.node.Identifier}'] === false}">
-=======
-                                <div class="col-xs-12 nav-teaser-item clickable"
-                                     ng-show="filteredIn['{item.node.Identifier}'] === undefined || filteredIn['{item.node.Identifier}'] === true">
->>>>>>> 160ce60e1fff40d1279064d4ce2280287182ce33
-                                    <div class="row">
-                                        <div class="phlu-teaser-body col-xs-10">
-<<<<<<< HEAD
 
-                                            <div class="phlu-teaser-caret-right col-xs-1" ng-init="addFilterItem('{item.node.Identifier}',0);">
+
+                            <f:for each="{items}" as="item" iteration="iterator">
+                                <div class="col-xs-12 nav-teaser-item clickable animated" ng-hide="filteredOut['{item.node.Identifier}'] === true" ng-class="{fadeIn: filteredIn['{item.node.Identifier}'] === true, lightSpeedOut: filteredIn['{item.node.Identifier}'] === false}">
+                                    <div class="row">
+
+                                        <div class="phlu-teaser-body col-xs-10" ng-init="addFilterItem('{item.node.Identifier}',0);">
+
+
                                                 <f:for each="{item.node.properties.tags}" as="tag">
                                                     <i class="{phlu:variable.get(name: 'tags.{tag}.icon')}" ng-init="addFilterItem('{item.node.Identifier}','{tag}');"></i>
                                                 </f:for>
-                                            </div>
-                                            <div class="phlu-teaser-caret-right col-xs-11">
+
+
                                                 <h3>
                                                     <neos:link.node node="{item.node}">{item.node.properties.title}
                                                     </neos:link.node>
                                                 </h3>
-                                            </div>
-=======
-                                            <f:for each="{item.node.properties.tags}" as="tag">
-                                                <i class="{phlu:variable.get(name: 'tags.{tag}.icon')}"
-                                                   ng-init="addFilterItem('{item.node.Identifier}','{tag}');"></i>
-                                            </f:for>
-                                            <h3>
-                                                <neos:link.node node="{item.node}">{item.node.properties.title}
-                                                </neos:link.node>
-                                            </h3>
->>>>>>> 160ce60e1fff40d1279064d4ce2280287182ce33
+
                                         </div>
+
                                         <div class="phlu-teaser-caret-right col-xs-2">
                                             &nbsp;
                                         </div>
                                     </div>
                                 </div>
                             </f:for>
+
+
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
+
     </phlu:tags>
+
 </f:section>
