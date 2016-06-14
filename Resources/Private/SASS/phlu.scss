@@ -206,6 +206,15 @@ body {
   .neos-contentcollection {
     width:100%;
   }
+  .strategieIco {
+    &::before {
+      content: "\25B2";
+      font-size: 21px;
+      margin-left: -4px;
+      margin-right: -3px;
+
+    }
+  }
 
   margin-bottom: 420px;
   @include media-breakpoint-down("md") {
@@ -255,6 +264,9 @@ body {
   }
   a:hover, a:focus {
     text-decoration: none;
+  }
+  .clickable, .clickable * {
+    cursor: pointer;
   }
   .btn {
     font-size: $font-size-btn;
@@ -504,7 +516,7 @@ body {
               color: $font-color-level1;
               text-align: left;
             }
-            &.current {
+            &.current, &.active {
               a {
                 &::before {
                   font-family: Icons;
@@ -585,21 +597,32 @@ body {
         font-size: $font-size-nav-teasers;
       }
     }
-    .event.noimg, .publication.noimg, .news.noimg {
+    .event.noimg, .publication.noimg {
       .phlu-teaser-body {
         z-index: 99;
         position: relative;
         height: 161px;
         @include media-breakpoint-up("sm") {
-          height: 146px;
+          height: 183px;
         }
+      }
+    }
+    .news.noimg {
+      .phlu-teaser-body {
+        z-index: 99;
+        position: relative;
+        height: 161px;
+        @include media-breakpoint-up("sm") {
+          height: 232px;
+         }
       }
     }
     .event, .publication, .news {
       .phlu-teaser-body {
-        height: 195px;
+        height: 232px;
       }
     }
+
     .event {
       .event-date-day {
         float: left;
@@ -615,6 +638,7 @@ body {
         background-color: white;
         padding-top: 8px;
         padding-bottom: 4px;
+        height:79px;
         .event-location {
           margin-top: 5px;
           line-height: 1rem;
@@ -636,12 +660,13 @@ body {
           .scrollbody {
             padding: 10px 20px 20px;
             overflow-y: auto;
-            height: 183%;
+            height: 172%;
+
             @include media-breakpoint-up("xxl") {
-              height: 195%;
+              height: 172%;
             }
             @include media-breakpoint-up("xxxl") {
-              height: 210%;
+              height: 175%;
             }
             p {
               margin-bottom: inherit;
@@ -983,7 +1008,7 @@ body {
         }
       }
     }
-    .faecherIco {
+    .faecherIco, .oi-media-stop {
       &::before {
         font-family: Icons;
         content: " \e099 \2001";
@@ -1000,7 +1025,7 @@ body {
         margin-left:-3px;
       }
     }
-    .forschungIco {
+    .forschungIco, .icon-circle {
       &::before {
         font-family: FontAwesome;
         content: " \f111 \2001";
@@ -1008,7 +1033,7 @@ body {
         top: 1px;
       }
     }
-    .themaIco {
+    .themaIco, .icon-star {
       &::before {
         font-family: FontAwesome;
         content: " \f005 \2001";

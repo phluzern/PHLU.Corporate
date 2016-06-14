@@ -3,7 +3,7 @@
 {namespace media=TYPO3\Media\ViewHelpers}
 
 
-<div class="{breakpointClass} event {f:if(then: 'noimg', condition: {node.properties.teaserImage})}">
+<div class="{breakpointClass} event singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)}">
     <div class="event-date-day">
         16.
     </div>
@@ -16,11 +16,12 @@
     </div>
     <div class="phlu-teaser-body">
 
-
+            <div class="scrollbody">
             {neos:contentElement.editable(property: 'teaserHeadline', tag: 'h3')}
 
             {neos:contentElement.editable(property: 'teaserText', tag: 'p')}
 
+            </div>
 
     </div>
 

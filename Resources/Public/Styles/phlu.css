@@ -6664,6 +6664,11 @@ body {
     width: inherit; }
   body .neos-contentcollection {
     width: 100%; }
+  body .strategieIco::before {
+    content: "\25B2";
+    font-size: 21px;
+    margin-left: -4px;
+    margin-right: -3px; }
   @media (max-width: 991px) {
     body {
       margin-bottom: 681px; } }
@@ -6703,6 +6708,8 @@ body {
     font-weight: 700; }
   body a:hover, body a:focus {
     text-decoration: none; }
+  body .clickable, body .clickable * {
+    cursor: pointer; }
   body .btn {
     font-size: 1rem;
     padding: 5px 25px;
@@ -6878,7 +6885,7 @@ body {
       body .sidebar.level1 .sidebar-nav ul li a {
         color: #685f56;
         text-align: left; }
-      body .sidebar.level1 .sidebar-nav ul li.current a::before {
+      body .sidebar.level1 .sidebar-nav ul li.current a::before, body .sidebar.level1 .sidebar-nav ul li.active a::before {
         font-family: Icons;
         font-size: 10px;
         content: " \e02f";
@@ -6940,15 +6947,22 @@ body {
           color: #464340; }
       body .phlu-teaser .phlu-teaser-body p {
         font-size: 0.813rem; }
-    body .phlu-teaser .event.noimg .phlu-teaser-body, body .phlu-teaser .publication.noimg .phlu-teaser-body, body .phlu-teaser .news.noimg .phlu-teaser-body {
+    body .phlu-teaser .event.noimg .phlu-teaser-body, body .phlu-teaser .publication.noimg .phlu-teaser-body {
       z-index: 99;
       position: relative;
       height: 161px; }
       @media (min-width: 544px) {
-        body .phlu-teaser .event.noimg .phlu-teaser-body, body .phlu-teaser .publication.noimg .phlu-teaser-body, body .phlu-teaser .news.noimg .phlu-teaser-body {
-          height: 146px; } }
+        body .phlu-teaser .event.noimg .phlu-teaser-body, body .phlu-teaser .publication.noimg .phlu-teaser-body {
+          height: 183px; } }
+    body .phlu-teaser .news.noimg .phlu-teaser-body {
+      z-index: 99;
+      position: relative;
+      height: 161px; }
+      @media (min-width: 544px) {
+        body .phlu-teaser .news.noimg .phlu-teaser-body {
+          height: 232px; } }
     body .phlu-teaser .event .phlu-teaser-body, body .phlu-teaser .publication .phlu-teaser-body, body .phlu-teaser .news .phlu-teaser-body {
-      height: 195px; }
+      height: 232px; }
     body .phlu-teaser .event .event-date-day {
       float: left;
       padding: 11px;
@@ -6961,7 +6975,8 @@ body {
       line-height: 1.2;
       background-color: white;
       padding-top: 8px;
-      padding-bottom: 4px; }
+      padding-bottom: 4px;
+      height: 79px; }
       body .phlu-teaser .event .event-date-month-year-location .event-location {
         margin-top: 5px;
         line-height: 1rem;
@@ -6978,13 +6993,13 @@ body {
       body .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody {
         padding: 10px 20px 20px;
         overflow-y: auto;
-        height: 183%; }
+        height: 172%; }
         @media (min-width: 1400px) {
           body .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody {
-            height: 195%; } }
+            height: 172%; } }
         @media (min-width: 1600px) {
           body .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody {
-            height: 210%; } }
+            height: 175%; } }
         body .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody p {
           margin-bottom: inherit; }
     body .phlu-teaser .event.listing .phlu-teaser-type {
@@ -7227,7 +7242,7 @@ body {
     padding-top: 30px; }
     body .row.subjectsfilternav .nav-pills li a.nav-link {
       background-color: #9b9b9b; }
-  body .row.subjectsfilternav .faecherIco::before {
+  body .row.subjectsfilternav .faecherIco::before, body .row.subjectsfilternav .oi-media-stop::before {
     font-family: Icons;
     content: " \e099 \2001";
     position: relative;
@@ -7238,12 +7253,12 @@ body {
     position: relative;
     top: 1px;
     margin-left: -3px; }
-  body .row.subjectsfilternav .forschungIco::before {
+  body .row.subjectsfilternav .forschungIco::before, body .row.subjectsfilternav .icon-circle::before {
     font-family: FontAwesome;
     content: " \f111 \2001";
     position: relative;
     top: 1px; }
-  body .row.subjectsfilternav .themaIco::before {
+  body .row.subjectsfilternav .themaIco::before, body .row.subjectsfilternav .icon-star::before {
     font-family: FontAwesome;
     content: " \f005 \2001"; }
   body .row.subjectsfilternav .phlu-teaser.navigation.subpage {

@@ -24,13 +24,17 @@
 
     {onePageContent -> f:format.raw()}
 
-    <div class="row" id="accordion-komponente-xy">
-        <div class="col-xs-12">
-            <div id="phlu-accordion" class="phlu-accordion" role="tablist" aria-multiselectable="true">
-                <ts:render path="collectionRenderer" context="{node: main}"/>
+    <f:if condition="{mainVisible}">
+        <f:then>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="phlu-accordion" class="phlu-accordion" role="tablist" aria-multiselectable="true">
+                        <ts:render path="collectionRenderer" context="{node: main}"/>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        </f:then>
+    </f:if>
 
 
 

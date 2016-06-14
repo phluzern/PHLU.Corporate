@@ -46,6 +46,15 @@ class SpliceCarouselViewHelper extends AbstractViewHelper
 
         }
 
+        $a = $spliceNum-1;
+        for ($i=0; $i<$spliceNum;$i++) {
+           if (isset($data[$counter][$i]) == false) {
+               $data[$counter][$i] = $data[1][$a];
+               $a--;
+           }
+        }
+
+
         return $data;
 
 

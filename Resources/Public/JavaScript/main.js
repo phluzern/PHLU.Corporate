@@ -5,6 +5,12 @@
 $(document).ready(function () {
     $('.carousel').carousel('pause');
 
+
+    $('.clickable').on('click', function (e) {
+        window.location.href = $(this).find('a').attr('href');
+    });
+
+
     /* smooth scrolling [href^="#"] */
     $('a.anchor-nav').on('click', function (e) {
         e.preventDefault();
@@ -46,10 +52,31 @@ $(document).ready(function () {
     /*
      Various height adjustments see further comments below
      */
+    /*
+     Adjust height of main content so that the footer navigation is visible after page ist loaded
+     On Startpage only!
+     */
+    // if($(document).height() > $( window ).height()) {
+    //     var marginTopHeight = 0;
+    //     if(($( window ).height() - $('#carousel-phlu-teaser-xl').height() - 70) >= 0) {
+    //
+    //         marginTopHeight = $( window ).height() -$('#carousel-phlu-teaser-xl').height() - 70;
+    //         console.log('main ist höher als fenster. fenster:', $( window ).height(), 'main:', $( window ).height());
+    //     }
+    //     else {
+    //         console.log('fenster ist höher als main & die level0 navi ist höher als main',$('.sidebar > .row').height() . $('.main').height());
+    //         if($('.sidebar > .row').height() < $('.main').height()) {
+    //
+    //         }
+    //         else {
+    //             /* Add enough margin to have same height as sidebar (otherwise the background image does not cover the whole content area) */
+    //             marginTopHeight = $('.sidebar > .row').height() - $('#carousel-phlu-teaser-xl > .carousel-inner').height() + 5;
+    //         }
+    //     }
+    //     $("#carousel-phlu-teaser-xl").css('margin-top',marginTopHeight);
+    // }
 
     var resize = function () {
-
-
         if ($(window).outerWidth() > 1266) {
             /* set content height if (on startpage) the .aktuelles container is smaller than main container  */
             // if ($(".row.aktuelles").innerHeight() < $(".main").innerHeight()) {
@@ -85,23 +112,23 @@ $(document).ready(function () {
     /*
      * load separate stylesheet file for ie11
      * */
-/*    window.location.hash = !!window.MSInputMethodContext;
-    console.log(window.location.hash);
-    if (window.location.hash !== '#false') {
-        var $head = $("head");
-        var $headlinklast = $head.find("link[rel='stylesheet']:last");
-        var $removeNonIeFile = $head.find("#phluCss");
-        var linkElement = "<link rel='stylesheet' href='../css/phluNoFlex.css' type='text/css' media='screen'>";
+    /*    window.location.hash = !!window.MSInputMethodContext;
+     console.log(window.location.hash);
+     if (window.location.hash !== '#false') {
+     var $head = $("head");
+     var $headlinklast = $head.find("link[rel='stylesheet']:last");
+     var $removeNonIeFile = $head.find("#phluCss");
+     var linkElement = "<link rel='stylesheet' href='../css/phluNoFlex.css' type='text/css' media='screen'>";
 
-        if ($headlinklast.length) {
-            $headlinklast.after(linkElement);
-        }
-        else {
-            $head.append(linkElement);
-        }
-        if($removeNonIeFile.length) {
-            $removeNonIeFile.remove();
-        }
-    }*/
+     if ($headlinklast.length) {
+     $headlinklast.after(linkElement);
+     }
+     else {
+     $head.append(linkElement);
+     }
+     if($removeNonIeFile.length) {
+     $removeNonIeFile.remove();
+     }
+     }*/
 
 });

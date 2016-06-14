@@ -19,7 +19,7 @@ prototype(PHLU.Corporate:Page.Overview.OnePage) < prototype(PHLU.Corporate:Page)
                     renderer = TYPO3.Neos:ContentCase
                     node = ${q(node).get(0)}
                     mainCount = ${q(node).is('[instanceof PHLU.Corporate:Page.View.Dossier]') ? 1 : q(node).children('main').children().count()}
-
+                    params = ${params}
                 }
 
         }
@@ -32,7 +32,7 @@ prototype(PHLU.Corporate:Page.Overview.OnePage) < prototype(PHLU.Corporate:Page)
                 maximumLevels = 1
                 filter = '!PHLU.Corporate:Page.NotInMenu, PHLU.Corporate:Page'
                 startingPoint = ${q(node).get(0)}
-            }
+       }
 
 
 

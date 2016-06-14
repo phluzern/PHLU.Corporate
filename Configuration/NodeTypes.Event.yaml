@@ -3,7 +3,6 @@
   superTypes:
     'PHLU.Neos.NodeTypes:Event': TRUE
     'PHLU.Corporate:Content': TRUE
-    'PHLU.Neos.NodeTypes:TeaserMixin': TRUE
 
 # Events
 'PHLU.Corporate:Events':

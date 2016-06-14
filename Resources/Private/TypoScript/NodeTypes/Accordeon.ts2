@@ -5,6 +5,7 @@ prototype(PHLU.Corporate:AccordeonElement) < prototype(PHLU.Corporate:Content) {
     collectionRenderer = TYPO3.Neos:ContentCollection
     main = ${q(node).children('main').get(0)}
 
+
 }
 
 # Content collection

@@ -52,11 +52,14 @@ page = Page {
 				maximumLevels = 1
 				filter = '!PHLU.Corporate:Page.NotInMenu, PHLU.Corporate:Page'
 			}
+
 			sideBarLevel1Menu = Menu {
 				entryLevel = 2
 				templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1.html'
+				filter = '!PHLU.Corporate:Page.NotInMenu, !PHLU.Corporate:Page.View.Default.Default, PHLU.Corporate:Page'
 				maximumLevels = 1
 			}
+			sideBarLevel1MenuCount = ${q(node).children().filter('[instanceof PHLU.Corporate:Page]').filter('[!instanceof PHLU.Corporate:Page.View.Default.Default]').count()}
 
 			teaserMenu = TYPO3.TypoScript:Case {
 
@@ -97,7 +100,7 @@ page = Page {
 
 		pageMainColWidth = TYPO3.TypoScript:Case {
 			hasLevel {
-				condition = ${q(node).children('[instanceof PHLU.Corporate:Page]').get(0)}
+				condition = ${sideBarLevel1MenuCount > 0}
 				renderer = 'col-xl-8'
 			}
 			fallback {

@@ -1,0 +1,95 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
+
+
+<div class="row">
+
+    <div class="col-xs-12 col-xl-8">
+
+        {breadcrumb -> f:format.raw()}
+
+        <ts:render path="defaultRenderer" context="{node: header}"/>
+
+        {filterContent -> f:format.raw()}
+
+        <ts:render path="collectionRenderer" context="{node: main}"/>
+
+
+    </div>
+
+</div>
+
+
+<f:section name="filterContent">
+
+
+    <phlu:tags node="{node}" menuItems="{items}" as="tags">
+
+        <div class="row subjectsfilternav">
+            <div class="col-xs-12">
+
+                <h4>Filter</h4>
+
+
+
+        <div class="row " id="anchornavigation">
+            <div class="col-xs-12">
+                <ul class="nav nav-pills" role="menubar">
+                    <li role="menuitem" class="active">
+                        <a class="nav-item nav-link anchor-nav" href="#alle">Alle</a>
+                    </li>
+                    <f:for each="{tags}" as="tag" iteration="iterator">
+                        <li role="menuitem">
+                            <a class="nav-item nav-link anchor-nav" href="#faecher"> <i class=" {tag.icon}"></i> {tag.label}</a>
+                        </li>
+                    </f:for>
+
+                </ul>
+
+            </div>
+        </div>
+
+
+            <div class="row subjectsfilternav">
+                <div class="col-xs-12">
+                    <div class="row phlu-teaser navigation subpage" id="teasernavigation">
+
+
+                        <f:for each="{items}" as="item" iteration="iterator">
+                            <div class="col-xs-12 nav-teaser-item clickable">
+                                <div class="row">
+
+                                    <div class="phlu-teaser-body col-xs-10">
+
+                                        <div class="phlu-teaser-caret-right col-xs-1">
+                                            <f:for each="{item.node.properties.tags}" as="tag">
+                                                <i class="{phlu:variable.get(name: 'tags.{tag}.icon')}"></i>
+                                            </f:for>
+                                        </div>
+
+                                        <div class="phlu-teaser-caret-right col-xs-11">
+                                            <h3>
+                                                <neos:link.node node="{item.node}">{item.node.properties.title}</neos:link.node>
+                                            </h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="phlu-teaser-caret-right col-xs-2">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                        </f:for>
+
+
+                    </div>
+                </div>
+            </div>
+</div>
+
+        </div>
+
+    </phlu:tags>
+
+</f:section>

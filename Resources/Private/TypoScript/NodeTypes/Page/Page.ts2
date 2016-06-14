@@ -14,6 +14,7 @@ prototype(PHLU.Corporate:Page) < prototype(PHLU.Neos.NodeTypes:Page) {
     targetgroup = ${q(node).children('targetgroup').get(0)}
     carouselnews = ${q(node).children('carouselnews').get(0)}
     main = ${q(node).children('main').get(0)}
+    mainVisible = ${node.context.workspace.name == 'live' ? (q(node).children('main').children().count() > 0 ? true : false) : true }
 
 
     @cache {

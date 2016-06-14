@@ -6,8 +6,8 @@
 
 <f:section name="default">
     <f:if condition="{items}">
-        <f:for each="{items}" as="item">
-            <ts:render path="defaultRenderer" context="{node: item.node}" />
+        <f:for each="{items}" as="item" iteration="iterator">
+            <ts:render path="defaultRenderer" context="{node: item.node, params: {iterator: iterator}}" />
         </f:for>
     </f:if>
 </f:section>
@@ -15,6 +15,7 @@
 <f:section name="content">
     <div class="row" id="{node.Identifier}">
         <div class="col-xs-12">
+
             <h2>{node.properties.title}</h2>
               <ts:render path="renderer" context="{node: onepage}" />
             <f:if condition="{mainCount} > 0">
@@ -22,7 +23,7 @@
                     <neos:link.node node="{node}" class="btn btn-primary"> Mehr zu {node.properties.title}</neos:link.node>
                 </f:then>
             </f:if>
-            <hr/>
+            <f:if condition="{params.iterator.isLast}"><f:else><hr/></f:else></f:if>
         </div>
     </div>
 </f:section>

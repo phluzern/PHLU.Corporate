@@ -55,6 +55,7 @@
       'PHLU.Corporate:Content': FALSE
       'PHLU.Corporate:AccordeonElement': FALSE
       'PHLU.Corporate:Event': TRUE
+      'PHLU.Corporate:NewsItem': TRUE
 
 
 

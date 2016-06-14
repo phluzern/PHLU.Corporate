@@ -4,14 +4,14 @@
 <div class="panel panel-default">
     <div class="panel-heading" role="tab">
         <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#phlu-accordion" href="#accordeon-{node.Identifier}"
+            <a data-toggle="collapse" data-parent="#phlu-accordion" href="#accordion-{node.Identifier}"
                aria-expanded="true" aria-controls="accordeon-{node.Identifier}">
                 {neos:contentElement.editable(property: 'title', tag: 'span')}
             </a>
         </h4>
     </div>
-    <div id="accordeon-{node.Identifier}" class="panel-collapse collapse" role="tabpanel"
-         aria-labelledby="accordeon-{node.Identifier}">
+    <div id="accordion-{node.Identifier}" class="panel-collapse collapse" role="tabpanel"
+         aria-labelledby="accordion-{node.Identifier}">
         <ts:render path="collectionRenderer" context="{node: main}"/>
     </div>
 </div>

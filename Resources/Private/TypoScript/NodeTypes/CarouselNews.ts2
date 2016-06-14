@@ -32,6 +32,12 @@ prototype(PHLU.Corporate:ContentCollection.Page.CarouselNews) < prototype(TYPO3.
 
             }
 
+        prototype(PHLU.Corporate:NewsItem) {
+
+                breakpointClass = 'col-xl-4'
+
+            }
+
 
         @cache {
         mode = 'uncached'

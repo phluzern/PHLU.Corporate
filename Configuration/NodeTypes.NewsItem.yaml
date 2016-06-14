@@ -1,0 +1,5 @@
+# Event
+'PHLU.Corporate:NewsItem':
+  superTypes:
+    'PHLU.Neos.NodeTypes:NewsItem': TRUE
+    'PHLU.Corporate:Content': TRUE

@@ -39,6 +39,8 @@
     nodeTypes:
       'PHLU.Corporate:Page.Overview.Tiles': TRUE
       'PHLU.Corporate:Page.Service': TRUE
+      'PHLU.Corporate:Page.Overview.OnePage': FALSE
+      'PHLU.Corporate:Page.View.Default': TRUE
 
 
 
@@ -50,7 +52,7 @@
   constraints:
     nodeTypes:
       'PHLU.Corporate:Page.Overview.OnePage': TRUE
-      'PHLU.Corporate:Page.View.Detail': TRUE
+      'PHLU.Corporate:Page.View.Default': TRUE
 
 
 
@@ -61,7 +63,7 @@
     'PHLU.Corporate:Page': TRUE
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Page.View.Detail': TRUE
+      'PHLU.Corporate:Page.View.Default': TRUE
       'PHLU.Corporate:Page.View.Dossier': TRUE
   childNodes:
     main:
@@ -69,9 +71,10 @@
     onepage: ~
 
 
-'PHLU.Corporate:Page.View.Detail':
+
+'PHLU.Corporate:Page.View.Default':
   ui:
-    label: 'Detailseite'
+    label: 'Standard-Seite'
   superTypes:
     'PHLU.Corporate:Page': TRUE
   childNodes:
@@ -80,6 +83,24 @@
     contact: ~
     targetgroup: ~
     carouselnews: ~
+  constraints:
+    nodeTypes:
+      'PHLU.Corporate:Page.Overview.OnePage': FALSE
+      'PHLU.Corporate:Page.Overview.Tiles': FALSE
+      'PHLU.Corporate:Page.View.Dossier': FALSE
+      'PHLU.Corporate:Page.View.Default': FALSE
+      'PHLU.Corporate:Page.View.Default.Default': TRUE
+      'TYPO3.Neos:Shortcut': FALSE
+
+
+'PHLU.Corporate:Page.View.Default.Default':
+  superTypes:
+    'PHLU.Corporate:Page.View.Default': TRUE
+    'PHLU.Neos.NodeTypes:TagMixin': TRUE
+  constraints:
+    nodeTypes:
+      'PHLU.Corporate:Page.View.Default.Default': FALSE
+
 
 
 'PHLU.Corporate:Page.View.Dossier':
@@ -89,7 +110,7 @@
     'PHLU.Corporate:Page': TRUE
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Page.View.Detail': TRUE
+      'PHLU.Corporate:Page.View.Default': TRUE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.View.Dossier'
