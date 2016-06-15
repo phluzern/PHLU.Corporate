@@ -5,17 +5,7 @@ prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
 
      templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
 
-     filterContent = Menu {
-
-                entryLevel = 0
-                templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
-                sectionName = 'filterContent'
-                maximumLevels = 1
-                filter = 'PHLU.Corporate:Page'
-                startingPoint = ${q(node).get(0)}
-
-        }
-
+     filterTags = PHLU.Corporate:Page.FilterTags
 
 
 }
