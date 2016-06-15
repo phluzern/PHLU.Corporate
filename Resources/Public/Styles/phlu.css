@@ -6822,6 +6822,7 @@ body {
     display: block;
     background-color: white;
     padding-top: 11px;
+    overflow-x: hidden;
     /*
        set fixed width on big screens
       */ }
