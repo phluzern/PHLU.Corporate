@@ -45,7 +45,8 @@
       'PHLU.Corporate:TextWithImage': TRUE
 
 
-'PHLU.Corporate:ContentCollection.Page.CarouselNews':
+
+'PHLU.Corporate:ContentCollection.Page.Carousel':
   ui:
     label: 'Content Collection'
     icon: icon-header
@@ -59,6 +60,10 @@
       'PHLU.Corporate:Event': TRUE
       'PHLU.Corporate:NewsItem': TRUE
 
+
+'PHLU.Corporate:ContentCollection.Page.CarouselNews':
+  superTypes:
+    'PHLU.Corporate:ContentCollection.Page.Carousel': TRUE
 
 
 'PHLU.Corporate:ContentCollection.View.Dossier':

@@ -54,6 +54,7 @@
     nodeTypes:
       'PHLU.Corporate:Page.Overview.OnePage': TRUE
       'PHLU.Corporate:Page.View.Default': TRUE
+      'PHLU.Corporate:Page.View.Default.Default': FALSE
 
 
 
@@ -65,6 +66,7 @@
   constraints:
     nodeTypes:
       'PHLU.Corporate:Page.View.Default': TRUE
+      'PHLU.Corporate:Page.View.Default.Default': FALSE
       'PHLU.Corporate:Page.View.Dossier': TRUE
   childNodes:
     main:
@@ -112,6 +114,7 @@
   constraints:
     nodeTypes:
       'PHLU.Corporate:Page.View.Default': TRUE
+      'PHLU.Corporate:Page.View.Default.Default': FALSE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.View.Dossier'

@@ -20,6 +20,7 @@
       type: string
       defaultValue: 'Hier kommt ein Titel'
 
+
 # Teaser default
 'PHLU.Corporate:Content.Page.TeaserDefault':
   ui:
@@ -34,19 +35,27 @@
       defaultValue: 'Bitte geben Sie einen Teaser-Text ein.'
 
 
-# Carousel news
-'PHLU.Corporate:Content.Page.CarouselNews':
+# Carousel abstract
+'PHLU.Corporate:Content.Page.Carousel':
+  abstract: true
   ui:
-    label: 'Aktuelles'
+    label: 'Karussell'
     icon: icon-header
     inlineEditable: true
-  constraints:
-    nodeTypes:
-      '*': FALSE
   properties:
     title:
       type: string
       defaultValue: 'Aktuelles'
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.Page.Carousel'
+
+
+# Carousel news
+'PHLU.Corporate:Content.Page.CarouselNews':
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.CarouselNews'
@@ -94,6 +103,14 @@
         inspector:
           group: 'general'
           position: 50
+    usepageheader:
+      type: boolean
+      defaultValue: true
+  childNodes:
+    header:
+      type: 'PHLU.Corporate:Content.Page.HeaderDefault'
+
+
 
 
 

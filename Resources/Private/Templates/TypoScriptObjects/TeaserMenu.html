@@ -15,8 +15,9 @@
 
                         <div class="row">
                             <div class="phlu-teaser-body col-xs-10">
-                                <h3><neos:link.node node="{item.node}">{item.label}</neos:link.node></h3>
                                 <ts:render path="defaultRenderer" context="{node: item.node}" />
+
+
                             </div>
                             <div class="phlu-teaser-caret-right col-xs-2">
                             </div>
@@ -29,7 +30,7 @@
     </f:if>
 </f:section>
 
-
 <f:section name="content">
-    <ts:render path="renderer" context="{node: teaser}" />
+    <h3><neos:link.node node="{teaser.parent}">{teaser.properties.headerTitle}</neos:link.node></h3>
+    <p>{teaser.properties.headerText}</p>
 </f:section>
