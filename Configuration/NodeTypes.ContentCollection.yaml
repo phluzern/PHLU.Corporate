@@ -72,7 +72,9 @@
       '*': FALSE
       'PHLU.Corporate:Content': FALSE
       'PHLU.Corporate:AccordeonElement': TRUE
-
+      'PHLU.Corporate:Text': TRUE
+      'PHLU.Corporate:Headline': TRUE
+      'PHLU.Corporate:TextWithImage': TRUE
 
 'PHLU.Corporate:ContentCollection.View.Detail':
   ui:
