@@ -67,6 +67,13 @@ page = Page {
 				maximumLevels = 1
 			}
 
+			sideBarLevel1MenuGetClassRow = Menu {
+				entryLevel = 2
+				templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1GetClassRow.html'
+				filter = '!PHLU.Corporate:Page.NotInMenu, !PHLU.Corporate:Page.View.Default.Default, PHLU.Corporate:Page'
+				maximumLevels = 1
+			}
+
 
 
 			sideBarLevel1MenuCount = ${q(node).children().filter('[instanceof PHLU.Corporate:Page]').filter('[!instanceof PHLU.Corporate:Page.View.Default.Default]').count()}
