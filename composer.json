@@ -1,5 +1,5 @@
 {
-    "description": "Add description here",
+    "description": "PHLU Corporate Neos Site",
     "type": "typo3-flow-site",
     "require": {
         "typo3/neos": "*",

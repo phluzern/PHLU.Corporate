@@ -1,0 +1,11 @@
+{
+  "name": "phlucorporate",
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.2",
+    "grunt-modernizr": "*",
+    "angularjs": "1.5.*",
+    "tether": "*",
+    "font-awesome": "4.6.*",
+    "animate.css": "*"
+  }
+}

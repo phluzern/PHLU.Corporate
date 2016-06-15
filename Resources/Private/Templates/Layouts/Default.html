@@ -14,16 +14,15 @@
         <!-- Put your stylesheet inclusions here, they will be included in your website by TypoScript -->
         <link rel="stylesheet"
               href="{f:uri.external(uri: 'https://fonts.googleapis.com/css?family=Droid+Sans:400,700')}" media="all"/>
-        <link rel="stylesheet"
-              href="{f:uri.external(uri: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css')}"
-              media="all"/>
+        <link rel="stylesheet" href="{f:uri.resource(path: 'Vendor/font-awesome/css/font-awesome.min.css', package: 'PHLU.Corporate')}" media="all"/>
         <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/phlu.css', package: 'PHLU.Corporate')}" media="all" />
-        <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/animate.min.css', package: 'PHLU.Corporate')}" media="all" />
+        <link rel="stylesheet" href="{f:uri.resource(path: 'Vendor/animate.css/animate.min.css', package: 'PHLU.Corporate')}" media="all" />
+
     </f:section>
     <f:section name="headScripts">
         <!-- Put your scripts inclusions for the head here, they will be included in your website by TypoScript -->
-        <script src="{f:uri.resource(path: 'JavaScript/angular.min.js', package: 'PHLU.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'JavaScript/app.js', package: 'PHLU.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'Vendor/angularjs/angular.min.js', package: 'PHLU.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'PHLU.Corporate')}"></script>
     </f:section>
 
 </head>
@@ -200,11 +199,11 @@
 </f:section>
 <f:section name="bodyScripts">
     <!-- Put your scripts inclusions for the end of the body here, they will be included in your website by TypoScript -->
-    <script src="{f:uri.external(uri: 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2010.07.06dev/modernizr.min.js')}"></script>
-    <script src="{f:uri.resource(path: 'Libraries/jQuery/jquery-1.10.1.min.js', package: 'TYPO3.Twitter.Bootstrap')}"></script>
-    <script src="{f:uri.resource(path: 'JavaScript/tether-1.2.0/dist/js/tether.min.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'JavaScript/bootstrap.min.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'JavaScript/main.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'Vendor/grunt-modernizr/lib/build-files/modernizr-latest.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'Vendor/tether/dist/js/tether.min.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'Vendor/bootstrap/dist/js/bootstrap.min.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'JavaScript/jquery/main.js', package: 'PHLU.Corporate')}"></script>
 </f:section>
 </body>
 </html>
