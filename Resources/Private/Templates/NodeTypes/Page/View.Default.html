@@ -25,7 +25,7 @@
 
 
     <phlu:tags node="{node}" menuItems="{items}" as="tags">
-
+      <f:if condition="{items}"><f:then>
         <div class="row subjectsfilternav" ng-controller="SubjectsFilterNavCtrl" id="{node.Identifier}">
             <div class="col-xs-12">
 
@@ -88,7 +88,7 @@
             </div>
 
         </div>
-
+      </f:then></f:if>
     </phlu:tags>
 
 </f:section>
