@@ -59,6 +59,16 @@ page = Page {
 				filter = '!PHLU.Corporate:Page.NotInMenu, !PHLU.Corporate:Page.View.Default.Default, PHLU.Corporate:Page'
 				maximumLevels = 1
 			}
+
+			sideBarLevel1MenuGetClass = Menu {
+				entryLevel = 2
+				templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1GetClass.html'
+				filter = '!PHLU.Corporate:Page.NotInMenu, !PHLU.Corporate:Page.View.Default.Default, PHLU.Corporate:Page'
+				maximumLevels = 1
+			}
+
+
+
 			sideBarLevel1MenuCount = ${q(node).children().filter('[instanceof PHLU.Corporate:Page]').filter('[!instanceof PHLU.Corporate:Page.View.Default.Default]').count()}
 
 			teaserMenu = TYPO3.TypoScript:Case {
@@ -95,17 +105,6 @@ page = Page {
 			fallback {
 				condition = ${true}
 				renderer = 'startpage'
-			}
-		}
-
-		pageMainColWidth = TYPO3.TypoScript:Case {
-			hasLevel {
-				condition = ${sideBarLevel1MenuCount > 0}
-				renderer = 'col-xl-8'
-			}
-			fallback {
-				condition = ${true}
-				renderer = 'col-xl-10'
 			}
 		}
 
