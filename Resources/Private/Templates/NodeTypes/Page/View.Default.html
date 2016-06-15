@@ -56,7 +56,7 @@
 
 
                             <f:for each="{items}" as="item" iteration="iterator">
-                                <div class="col-xs-12 nav-teaser-item clickable animated" ng-hide="filteredOut['{item.node.Identifier}'] === true" ng-class="{fadeInLeft: animate === true && filteredIn['{item.node.Identifier}'] === true, fadeOutRightBig: filteredIn['{item.node.Identifier}'] === false}">
+                                <div class="col-xs-12 nav-teaser-item clickable animated" ng-hide="filteredOut['{item.node.Identifier}'] === true" ng-class="{slideInLeft: filteredIn['{item.node.Identifier}'] === true, fadeOut: filteredIn['{item.node.Identifier}'] === false}">
                                     <div class="row">
 
                                         <div class="phlu-teaser-body col-xs-10" ng-init="addFilterItem('{item.node.Identifier}',0);">

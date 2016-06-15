@@ -16,14 +16,9 @@
         $scope.filteredIn = {};
         $scope.filteredOut = {};
         $scope.filterItems = {};
-        $scope.animate = true;
 
 
         $scope.toggleFilter = function(id) {
-
-            // reset filtered items
-            $scope.filteredIn = {};
-            $scope.filteredOut = {};
 
 
             // unset filter all if other filters are set
@@ -59,7 +54,8 @@
             // apply filters
             if (id == 0) {
                 // filter in all items
-                $scope.filteredIn[nodeId] = true;
+                $scope.filteredIn = {};
+                $scope.filteredOut = {};
             } else {
                 $scope.applyFilters(id);
             }
@@ -70,38 +66,30 @@
 
         $scope.applyFilters = function(animate) {
 
-            $scope.filteredOutNoAnimate = {};
 
             // apply filters to items list
             angular.forEach($scope.filterItems, function (tags, nodeId) {
 
                     // filter in items by tag
+                    var found = false;
                     angular.forEach(tags, function (val, tag) {
                         if ($scope.filter[tag] !== undefined && $scope.filter[tag] !== false) {
-                            $scope.filteredIn[nodeId] = true;
+                            found = true;
                         }
                     });
 
-
-                if (animate !== false) {
                     $scope.animate = true;
-                    if ($scope.filteredIn[nodeId] === undefined) {
+                    if (found === false) {
                         $scope.filteredIn[nodeId] = false;
                         $timeout(function () {
                             $scope.filteredOut[nodeId] = true;
-                        }, 500);
+                            $scope.filteredIn[nodeId] = false;
+                        }, animate === false ? 0 : 500);
+                    } else {
+                        $scope.filteredOut[nodeId] = false;
+                        $scope.filteredIn[nodeId] = true;
                     }
-                } else {
-                    $scope.animate = false;
-                    if ($scope.filteredIn[nodeId] === undefined) {
-                        $scope.filteredIn[nodeId] = false;
-                        $scope.filteredOut[nodeId] = true;
-                    }
-
-                }
-
-
-
+          
             });
         }
 
@@ -115,7 +103,7 @@
         // apply last states from cookies
         $scope.$watch("appId", function(appId) {
             $scope.filter = $cookies.get(appId) ? JSON.parse($cookies.get(appId)).filter : {};
-            $scope.applyFilters(false);
+            if ($cookies.get(appId)) $scope.applyFilters(false);
         })
 
 
