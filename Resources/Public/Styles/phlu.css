@@ -6662,6 +6662,8 @@ body {
     display: none; }
   body.neos-backend.neos-full-screen .all {
     width: inherit; }
+  body.neos-backend.neos-full-screen .sidebar.level0, body.neos-backend.neos-full-screen .sidebar.level1 {
+    display: block; }
   body.neos-backend .neos-select2-result-label .strategieIco::before {
     content: "\25B2";
     font-size: 21px;

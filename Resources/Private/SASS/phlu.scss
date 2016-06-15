@@ -200,6 +200,9 @@ body {
       .all {
         width:inherit;
       }
+      .sidebar.level0, .sidebar.level1 {
+        display:block;
+      }
     }
     .neos-select2-result-label {
       .strategieIco {
