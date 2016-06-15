@@ -26,21 +26,20 @@
 
     <phlu:tags node="{node}" menuItems="{items}" as="tags">
 
-        <div class="row subjectsfilternav" ng-controller="SubjectsFilterNavCtrl">
+        <div class="row subjectsfilternav" ng-controller="SubjectsFilterNavCtrl" id="{node.Identifier}">
             <div class="col-xs-12">
 
                 <h4>Filter</h4>
 
-
-                <div class="row " id="anchornavigation">
+                <div class="row" id="anchornavigation">
                     <div class="col-xs-12">
                         <ul class="nav nav-pills" role="menubar">
                             <li role="menuitem" ng-class="{active: filter['0'] === true}">
-                                <a class="nav-item nav-link all" href="javascript:void(0);" ng-click="toggleFilter(0);">Alle</a>
+                                <a class="nav-item nav-link all" href="#" ng-click="toggleFilter(0);">Alle</a>
                             </li>
                             <f:for each="{tags}" as="tag" iteration="iterator">
                                 <li role="menuitem" ng-class="{active: filter['{tag.value}'] === true}"  ng-init="filterAll['{tag.value}'] = true;">
-                                    <a class="nav-item nav-link" href="javascript:void(0);" ng-click="toggleFilter('{tag.value}');"> <i class=" {tag.icon}"></i>
+                                    <a class="nav-item nav-link " href="#" ng-click="toggleFilter('{tag.value}');"> <i class=" {tag.icon}"></i>
                                         {tag.label}</a>
                                 </li>
                             </f:for>

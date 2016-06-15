@@ -6656,7 +6656,7 @@ body {
   margin-bottom: 420px;
   color: #5c5c5c;
   font-size: 1rem; }
-  body.neos-backend .all {
+  body.neos-backend > .all {
     width: 1920px; }
   body.neos-backend.neos-navigate-panel-open .sidebar.level0, body.neos-backend.neos-navigate-panel-open .sidebar.level1 {
     display: none; }

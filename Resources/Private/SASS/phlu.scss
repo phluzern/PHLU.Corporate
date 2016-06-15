@@ -188,7 +188,7 @@ html {
 body {
   // backend only
   &.neos-backend {
-    .all {
+    > .all {
       width:1920px;
     }
     &.neos-navigate-panel-open {
