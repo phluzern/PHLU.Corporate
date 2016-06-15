@@ -1,19 +1,22 @@
 'use strict';
 
-    var phluAppModule = angular.module('phluApp', []);
+    var phluAppModule = angular.module('phluApp', ['ngCookies']);
 
 
 
     // PHLU.Corporate:Page.View.Default filter tag navigation
-    phluAppModule.controller('SubjectsFilterNavCtrl', ['$scope','$timeout',function($scope,$timeout) {
+    phluAppModule.controller('SubjectsFilterNavCtrl', ['$scope','$timeout','$cookies',function($scope,$timeout,$cookies) {
 
 
+
+        $scope.appId = null;
         $scope.filter = {};
         $scope.filter[0] = true;
         $scope.filterAll = {};
         $scope.filteredIn = {};
         $scope.filteredOut = {};
         $scope.filterItems = {};
+        $scope.animate = true;
 
 
         $scope.toggleFilter = function(id) {
@@ -53,43 +56,67 @@
             // set filter all if no other filters are set
             if (Object.keys($scope.filter).length === 0) $scope.filter[0] = true;
 
+            // apply filters
+            if (id == 0) {
+                // filter in all items
+                $scope.filteredIn[nodeId] = true;
+            } else {
+                $scope.applyFilters(id);
+            }
+
+            $cookies.put($scope.appId, JSON.stringify({'filter': $scope.filter}));
+
+        };
+
+        $scope.applyFilters = function(animate) {
+
+            $scope.filteredOutNoAnimate = {};
 
             // apply filters to items list
             angular.forEach($scope.filterItems, function (tags, nodeId) {
 
-                if (id == 0) {
-                    // filter in all items
-                    $scope.filteredIn[nodeId] = true;
-                } else {
                     // filter in items by tag
                     angular.forEach(tags, function (val, tag) {
                         if ($scope.filter[tag] !== undefined && $scope.filter[tag] !== false) {
                             $scope.filteredIn[nodeId] = true;
                         }
                     });
-                }
 
-                if ($scope.filteredIn[nodeId] === undefined) {
-                    $scope.filteredIn[nodeId] = false;
 
-                    $timeout(function() {
+                if (animate !== false) {
+                    $scope.animate = true;
+                    if ($scope.filteredIn[nodeId] === undefined) {
+                        $scope.filteredIn[nodeId] = false;
+                        $timeout(function () {
+                            $scope.filteredOut[nodeId] = true;
+                        }, 500);
+                    }
+                } else {
+                    $scope.animate = false;
+                    if ($scope.filteredIn[nodeId] === undefined) {
+                        $scope.filteredIn[nodeId] = false;
                         $scope.filteredOut[nodeId] = true;
-                    }, 500);
+                    }
 
                 }
+
+
+
             });
+        }
 
-
-
-
-
-        };
 
         $scope.addFilterItem = function(nodeId,filterId) {
             if ($scope.filterItems[nodeId] === undefined) $scope.filterItems[nodeId] = {};
             $scope.filterItems[nodeId][filterId] = true;
         };
 
+
+        // apply last states from cookies
+        $scope.$watch("appId", function(appId) {
+            $scope.filter = $cookies.get(appId) ? JSON.parse($cookies.get(appId)).filter : {};
+            $scope.applyFilters(false);
+        })
 
 
 
