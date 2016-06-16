@@ -105,6 +105,12 @@
           position: 50
     usepageheader:
       type: boolean
+      ui:
+        label: 'Verwende Text vom Seiten-Header'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+          position: 90
       defaultValue: true
   childNodes:
     header:

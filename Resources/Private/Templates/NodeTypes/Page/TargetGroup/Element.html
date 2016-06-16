@@ -1,21 +1,31 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
-<div class="col-xs-12 nav-teaser-item clickable">
+
+
+<div class="col-xs-12 nav-teaser-item {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')} ">
     <div class="row">
         <div class="phlu-teaser-body col-xs-10">
             <f:if condition="{node.properties.reference}">
                 <f:then>
-                    <h3>
-                        <neos:link.node node="{node.properties.reference}">
-                            {node.properties.reference.properties.title}
-                        </neos:link.node>
-                    </h3>
-                    <ts:render path="defaultRenderer" context="{node: node.properties.reference}"/>
+                    <f:if condition="{node.properties.usepageheader}">
+                        <f:then>
+                            <ts:render path="defaultRenderer" context="{node: node.properties.reference}"/>
+                        </f:then>
+                        <f:else>
+                            <ts:render path="headerRenderer" context="{node: header}"/>
+                        </f:else>
+                    </f:if>
+
                 </f:then>
                 <f:else>
-                    <h3></h3>
-                    <p></p>
+                    <f:if condition="{neos:rendering.inBackend()}">
+                        <f:then>
+                            <h3>Bitte wählen Sie einen Link auf eine Seite aus</h3>
+                            <p>Sie finden Sie Auswahlmöglichkeit auf der rechten Seite im Inspektor unter Allgemein -> Link.</p>
+                        </f:then>
+                        </f:if>
+
                 </f:else>
             </f:if>
 
@@ -25,5 +35,6 @@
 </div>
 
 <f:section name="content">
-    <ts:render path="renderer" context="{node: teaser}"/>
+    <h3><neos:link.node node="{header.parent}">{header.properties.headerTitle}</neos:link.node></h3>
+    <p>{header.properties.headerText}</p>
 </f:section>
