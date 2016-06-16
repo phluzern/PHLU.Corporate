@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 
     $('.clickable').on('click', function (e) {
-        window.location.href = $(this).find('a').attr('href');
+        if ($(this).find('a').attr('href') !== undefined) window.location.href = $(this).find('a').attr('href');
     });
 
 
