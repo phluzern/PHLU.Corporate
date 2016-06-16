@@ -59,7 +59,7 @@
     <f:render section="indicators" arguments="{carouselItems: carouselItems, spliceNum: spliceNum, itemClass: 'col-xs-12', targetId: targetId}"></f:render>
 
     <div class="carousel-inner" role="listbox">
-        <f:for each="{phlu:SpliceCarousel(items: carouselItems, spliceNum:spliceNum)}" as="item" iteration="iterator">
+        <f:for each="{phlu:SpliceArray(items: carouselItems, spliceNum:spliceNum)}" as="item" iteration="iterator">
             <div class="carousel-item {f:if(condition: iterator.isFirst, then: 'active', else: '')}">
                 <div class="row">
                     <f:for each="{item}" as="col" iteration="coliterator">
@@ -88,7 +88,7 @@
 
 <f:section name="indicators">
     <ol class="carousel-indicators">
-        <f:for each="{phlu:SpliceCarousel(items: carouselItems, spliceNum:spliceNum)}" as="item" iteration="iterator">
+        <f:for each="{phlu:SpliceArray(items: carouselItems, spliceNum:spliceNum)}" as="item" iteration="iterator">
             <li data-target="#{targetId}" data-slide-to="{iterator.index}"
                 class="{f:if(condition: iterator.isFirst, then: 'active', else: '')}"></li>
         </f:for>

@@ -4,19 +4,19 @@
     'PHLU.Neos.NodeTypes:Page': TRUE
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection'
+      type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
     header:
       type: 'PHLU.Corporate:Content.Page.HeaderDefault'
     teaser:
       type: 'PHLU.Corporate:Content.Page.TeaserDefault'
     onepage:
-      type: 'PHLU.Corporate:ContentCollection.OnePage'
+      type: 'PHLU.Corporate:ContentCollection.Page.Overview.OnePage'
     contact:
       type: 'PHLU.Corporate:Contact'
     targetgroup:
       type: 'PHLU.Corporate:Content.Page.TargetGroup'
     carouselnews:
-      type: 'PHLU.Corporate:Content.Page.CarouselNews'
+      type: 'PHLU.Corporate:Content.CarouselNews'
 
 
   constraints:
@@ -42,6 +42,9 @@
       'PHLU.Corporate:Page.Overview.OnePage': FALSE
       'PHLU.Corporate:Page.View.Default': TRUE
       'PHLU.Corporate:Page.View.Default.Default': FALSE
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.Page.Home'
 
 
 
@@ -55,7 +58,9 @@
       'PHLU.Corporate:Page.Overview.OnePage': TRUE
       'PHLU.Corporate:Page.View.Default': TRUE
       'PHLU.Corporate:Page.View.Default.Default': FALSE
-
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.Page.Overview.Tiles'
 
 
 'PHLU.Corporate:Page.Overview.OnePage':
@@ -69,9 +74,10 @@
       'PHLU.Corporate:Page.View.Default.Default': FALSE
       'PHLU.Corporate:Page.View.Dossier': TRUE
   childNodes:
-    main:
-      type: 'PHLU.Corporate:ContentCollection.OverView.OnePage'
     onepage: ~
+    main:
+      type: 'PHLU.Corporate:ContentCollection.Page.Overview.OnePage'
+
 
 
 
@@ -82,7 +88,7 @@
     'PHLU.Corporate:Page': TRUE
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.View.Detail'
+      type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
     contact: ~
     targetgroup: ~
     carouselnews: ~
@@ -103,7 +109,9 @@
   constraints:
     nodeTypes:
       'PHLU.Corporate:Page.View.Default.Default': FALSE
-
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.Page.View.Default.Default'
 
 
 'PHLU.Corporate:Page.View.Dossier':
@@ -117,7 +125,7 @@
       'PHLU.Corporate:Page.View.Default.Default': FALSE
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.View.Dossier'
+      type: 'PHLU.Corporate:ContentCollection.Page.View.Dossier'
 
 
 'PHLU.Corporate:Page.Service':
@@ -126,5 +134,7 @@
     icon: icon-wrench
   superTypes:
     'PHLU.Corporate:Page.NotInMenu': TRUE
-
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.Page.Service'
 

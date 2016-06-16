@@ -1,17 +1,33 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace phlu=PHLU\Corporate\ViewHelpers}
 
 <f:render section="itemList" arguments="{items: items}"/>
 
 <f:section name="itemList">
     <f:if condition="{items}">
-        <nav class="nav sidebar-nav" role="navigation">
-            <ul>
+
+
+        <div class="col-lg-12 col-xl-10 hidden-md-down">
+            <nav class="nav quicklinks" role="navigation">
                 <f:for each="{items}" as="item">
-                    <li class="{item.state}">
-                        <neos:link.node node="{item.node}">{item.label}</neos:link.node>
-                    </li>
+                    <neos:link.node node="{item.node}">{item.label}</neos:link.node>
                 </f:for>
-            </ul>
-        </nav>
+            </nav>
+        </div>
+
+        <f:for each="{phlu:SpliceArray(items: items, spliceNum:2, spliceType: 'column')}" as="item" iteration="iterator">
+
+            <div class="col-xs-6 hidden-lg-up">
+                <nav class="nav quicklinks">
+                    <f:for each="{item}" as="subitem">
+                        <neos:link.node node="{subitem.node}">{subitem.label}</neos:link.node>
+                    </f:for>
+                </nav>
+            </div>
+
+        </f:for>
+
+
     </f:if>
+
 </f:section>

@@ -7574,14 +7574,7 @@ body {
             display: inline;
             line-height: 1px;
             padding-right: 20px; } }
-    @media (max-width: 991px) {
-      body .footer .quicklinks {
-        display: none; }
-      body .footer .quicklinks.mobile {
-        display: block; } }
     @media (min-width: 992px) {
-      body .footer .quicklinks.mobile {
-        display: none; }
       body .footer .quicklinks a {
         margin-right: 40px; } }
     @media (min-width: 1280px) {

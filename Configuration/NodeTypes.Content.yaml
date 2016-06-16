@@ -4,6 +4,7 @@
     'PHLU.Neos.NodeTypes:Content': TRUE
   abstract: TRUE
 
+
 # Header default
 'PHLU.Corporate:Content.Page.HeaderDefault':
   ui:
@@ -36,7 +37,7 @@
 
 
 # Carousel abstract
-'PHLU.Corporate:Content.Page.Carousel':
+'PHLU.Corporate:Content.Carousel':
   abstract: true
   ui:
     label: 'Karussell'
@@ -51,14 +52,16 @@
       '*': FALSE
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.Page.Carousel'
+      type: 'PHLU.Corporate:ContentCollection.Carousel'
 
 
 # Carousel news
-'PHLU.Corporate:Content.Page.CarouselNews':
+'PHLU.Corporate:Content.CarouselNews':
+  superTypes:
+    'PHLU.Corporate:Content.Carousel': TRUE
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.Page.CarouselNews'
+      type: 'PHLU.Corporate:ContentCollection.CarouselNews'
 
 
 # Target group default

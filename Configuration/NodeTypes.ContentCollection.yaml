@@ -10,118 +10,119 @@
   constraints:
     nodeTypes:
       '*': FALSE
-      'PHLU.Corporate:Content': TRUE
+      'PHLU.Corporate:Content': FALSE
 
 
-'PHLU.Corporate:ContentCollection.OnePage':
-  ui:
-    label: 'One Page'
-    icon: icon-header
+'PHLU.Corporate:ContentCollection.Page.View.Default':
   superTypes:
     'PHLU.Corporate:ContentCollection': TRUE
   constraints:
     nodeTypes:
-      '*': FALSE
-      'PHLU.Corporate:Content': FALSE
-      'PHLU.Corporate:Text': TRUE
-      'PHLU.Corporate:TextWithImage': TRUE
-
-
-
-
-'PHLU.Corporate:ContentCollection.OverView.OnePage':
-  ui:
-    label: 'Content Collection'
-    icon: icon-header
-  superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
-  constraints:
-    nodeTypes:
-      '*': FALSE
-      'PHLU.Corporate:Content': FALSE
-      'PHLU.Corporate:AccordeonElement': TRUE
       'PHLU.Corporate:Text': TRUE
       'PHLU.Corporate:Headline': TRUE
       'PHLU.Corporate:TextWithImage': TRUE
 
 
+'PHLU.Corporate:ContentCollection.Page.View.Default.Default':
+  superTypes:
+    'PHLU.Corporate:ContentCollection.Page.View.Default': TRUE
 
-'PHLU.Corporate:ContentCollection.Page.Carousel':
-  ui:
-    label: 'Content Collection'
-    icon: icon-header
+
+'PHLU.Corporate:ContentCollection.Page.Home':
   superTypes:
     'PHLU.Corporate:ContentCollection': TRUE
   constraints:
     nodeTypes:
       '*': FALSE
-      'PHLU.Corporate:Content': FALSE
-      'PHLU.Corporate:AccordeonElement': FALSE
+
+
+'PHLU.Corporate:ContentCollection.Page.Overview.Tiles':
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+
+
+'PHLU.Corporate:ContentCollection.Page.Overview.OnePage':
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      'PHLU.Corporate:Text': TRUE
+      'PHLU.Corporate:TextWithImage': TRUE
+      'PHLU.Corporate:AccordeonElement': TRUE
+  ui:
+    label: 'Allgemein'
+    icon: icon-gear
+    inspector:
+      groups:
+        general:
+          label: 'Allgemein'
+  properties:
+    hideondetailpage:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: 'Auf Detailseite verbergen'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'general'
+          position: 40
+
+
+'PHLU.Corporate:ContentCollection.Carousel':
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
       'PHLU.Corporate:Event': TRUE
       'PHLU.Corporate:NewsItem': TRUE
 
 
-'PHLU.Corporate:ContentCollection.Page.CarouselNews':
+
+'PHLU.Corporate:ContentCollection.CarouselNews':
   superTypes:
-    'PHLU.Corporate:ContentCollection.Page.Carousel': TRUE
+    'PHLU.Corporate:ContentCollection.Carousel': TRUE
 
 
-'PHLU.Corporate:ContentCollection.View.Dossier':
-  ui:
-    label: 'Content Collection'
-    icon: icon-header
+'PHLU.Corporate:ContentCollection.Page.View.Dossier':
   superTypes:
     'PHLU.Corporate:ContentCollection': TRUE
   constraints:
     nodeTypes:
-      '*': FALSE
-      'PHLU.Corporate:Content': FALSE
+      'PHLU.Corporate:Text': TRUE
+      'PHLU.Corporate:Headline': TRUE
+      'PHLU.Corporate:TextWithImage': TRUE
       'PHLU.Corporate:AccordeonElement': TRUE
-      'PHLU.Corporate:Text': TRUE
-      'PHLU.Corporate:Headline': TRUE
-      'PHLU.Corporate:TextWithImage': TRUE
-
-'PHLU.Corporate:ContentCollection.View.Detail':
-  ui:
-    label: 'Content Collection'
-    icon: icon-header
-  superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
-  constraints:
-    nodeTypes:
-      '*': FALSE
-      'PHLU.Corporate:Content': FALSE
-      'PHLU.Corporate:Text': TRUE
-      'PHLU.Corporate:Headline': TRUE
-      'PHLU.Corporate:TextWithImage': TRUE
-
 
 
 'PHLU.Corporate:ContentCollection.Accordeon':
-  ui:
-    label: 'Content Collection'
-    icon: icon-header
   superTypes:
     'PHLU.Corporate:ContentCollection': TRUE
   constraints:
     nodeTypes:
       '*': FALSE
-      'PHLU.Corporate:Content': FALSE
-      'PHLU.Corporate:AccordeonElement': FALSE
       'PHLU.Corporate:Text': TRUE
-
+      'PHLU.Corporate:Headline': TRUE
+      'PHLU.Corporate:TextWithImage': TRUE
+      'PHLU.Corporate:AccordeonElement': FALSE
 
 
 'PHLU.Corporate:ContentCollection.Page.TargetGroup':
-  ui:
-    label: 'Content Collection'
-    icon: icon-header
   superTypes:
     'PHLU.Corporate:ContentCollection': TRUE
   constraints:
     nodeTypes:
-      '*': FALSE
-      'PHLU.Corporate:Content': FALSE
-      'PHLU.Corporate:AccordeonElement': FALSE
       'PHLU.Corporate:Content.Page.TargetGroupElement': TRUE
 
+
+
+'PHLU.Corporate:ContentCollection.Page.Service':
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      'PHLU.Corporate:Text': TRUE
+      'PHLU.Corporate:Headline': TRUE
+      'PHLU.Corporate:TextWithImage': TRUE

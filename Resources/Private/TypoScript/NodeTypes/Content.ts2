@@ -11,19 +11,3 @@ prototype(PHLU.Corporate:Content) < prototype(TYPO3.Neos:Content) {
     }
 
 }
-
-
-# OnePage content collection
-prototype(PHLU.Corporate:ContentCollection.OnePage) < prototype(TYPO3.Neos:ContentCollection) {
-
-
-    @cache {
-        mode = 'uncached'
-        context {
-            1 = 'node'
-            2 = 'documentNode'
-        }
-    }
-
-}
-

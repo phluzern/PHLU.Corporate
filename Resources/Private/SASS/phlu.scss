@@ -1450,18 +1450,7 @@ body {
         }
       }
     }
-    @include media-breakpoint-down("md") {
-      .quicklinks {
-        display: none;
-      }
-      .quicklinks.mobile {
-        display: block;
-      }
-    }
     @include media-breakpoint-up("lg") {
-      .quicklinks.mobile {
-        display: none;
-      }
       .quicklinks {
         a {
           margin-right: 40px;
