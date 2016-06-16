@@ -1,0 +1,104 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
+
+
+<div class="row">
+
+    <div class="col-xs-12 col-xl-8">
+
+        {breadcrumb -> f:format.raw()}
+
+        <!--        <ts:render path="defaultRenderer" context="{node: header}"/>
+
+                {filterTags -> f:format.raw()}
+
+                <ts:render path="collectionRenderer" context="{node: main}"/>-->
+
+        <h3>Modul-/Stundenplanung</h3>
+        <div class="row" id="accordion-komponente-xy">
+            <div class="col-xs-12">
+                <div id="phlu-accordion" class="phlu-accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#phlu-accordion" href="#collapseOne"
+                                           aria-expanded="true" aria-controls="collapseOne">
+                                            Bürgler Silvan
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div class="col-xs-4">
+                                    041 228 72 82
+                                </div>
+                                <div class="col-xs-4">
+                                    <a href="mailto:silvan.buergler@phlu.ch">silvan.buergler@phlu.ch</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                             aria-labelledby="headingOne">
+                            <div>
+                                <p>
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad
+                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                    truck
+                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                    bird
+                                    on it
+                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                    helvetica,
+                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                    excepteur
+                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
+                                    aesthetic
+                                    synth
+                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#phlu-accordion"
+                                   href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Accordeon-Komponente Item #2
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingTwo">
+                            <div>
+                                <p>
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad
+                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food
+                                    truck
+                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a
+                                    bird
+                                    on it
+                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                    helvetica,
+                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                    excepteur
+                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
+                                    aesthetic
+                                    synth
+                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
