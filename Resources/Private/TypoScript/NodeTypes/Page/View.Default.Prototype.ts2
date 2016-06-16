@@ -1,0 +1,16 @@
+# Page Overview Tiles
+prototype(PHLU.Corporate:Page.View.Default.Prototype) < prototype(PHLU.Corporate:Page) {
+
+
+
+     templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Default.Prototype.html'
+
+     filterTags = PHLU.Corporate:Page.FilterTags
+
+
+}
+
+
+prototype(PHLU.Corporate:Page.View.Default.Default) < prototype(PHLU.Corporate:Page.View.Default) {
+    templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Default.Prototype.html'
+}
