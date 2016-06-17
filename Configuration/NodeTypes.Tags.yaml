@@ -1,0 +1,30 @@
+
+'PHLU.Corporate:Tag':
+  superTypes:
+    'PHLU.Neos.NodeTypes:Tag': TRUE
+
+
+'PHLU.Corporate:Tags':
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      'PHLU.Corporate:Tag': TRUE
+
+
+'PHLU.Corporate:TagsWithMenu':
+  superTypes:
+    'PHLU.Corporate:Tags': TRUE
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:Tags.Menu'
+
+
+'PHLU.Corporate:Tags.Menu':
+  superTypes:
+    'PHLU.Corporate:Content': TRUE
+  ui:
+    label: 'Menu'
+  constraints:
+    nodeTypes:
+      '*': FALSE

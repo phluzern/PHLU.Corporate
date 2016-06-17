@@ -11,9 +11,28 @@
 
         <ts:render path="defaultRenderer" context="{node: header}"/>
 
-        {filterTags -> f:format.raw()}
 
-        <ts:render path="collectionRenderer" context="{node: onepage}"/>
+        <f:if condition="{tagsMenu}">
+            <f:then>
+                <ts:render path="defaultRenderer" context="{node: tagsMenu}"/>
+            </f:then>
+        </f:if>
+
+
+        <f:if condition="{onepage.properties.hideondetailpage} === true">
+            <f:then>
+                <f:if condition="{neos:rendering.inBackend()}">
+                    <f:then>
+                      <div class="hidden" style="display:none !important;"><ts:render path="collectionRenderer" context="{node: onepage}"/></div>
+                    </f:then>
+                </f:if>
+            </f:then>
+            <f:else>
+                <ts:render path="collectionRenderer" context="{node: onepage}"/>
+            </f:else>
+        </f:if>
+
+
 
         <ts:render path="collectionRenderer" context="{node: main}"/>
 

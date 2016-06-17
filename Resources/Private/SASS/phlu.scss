@@ -216,6 +216,10 @@ body {
       }
     }
 
+    a[typeof='typo3:PHLU.Corporate:Tag'] .neos-empty-contentcollection-overlay {
+      display:none;
+    }
+
   }
   // neos specific
   .neos-contentcollection {

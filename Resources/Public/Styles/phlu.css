@@ -6669,6 +6669,8 @@ body {
     font-size: 21px;
     margin-left: -4px;
     margin-right: -3px; }
+  body.neos-backend a[typeof='typo3:PHLU.Corporate:Tag'] .neos-empty-contentcollection-overlay {
+    display: none; }
   body .neos-contentcollection {
     width: 100%; }
   @media (max-width: 991px) {

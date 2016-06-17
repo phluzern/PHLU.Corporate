@@ -1,11 +1,8 @@
 # Page Overview Tiles
 prototype(PHLU.Corporate:Page.View.Default.Prototype) < prototype(PHLU.Corporate:Page) {
 
-
-
      templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Default.Prototype.html'
-
-     filterTags = PHLU.Corporate:Page.FilterTags
+     tagsMenu = PHLU.Corporate:Tags.Menu
 
 
 }

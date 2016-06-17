@@ -4,7 +4,7 @@ include: NodeTypes/Page/*.ts2
 include: NodeTypes/Page/Header/*.ts2
 include: NodeTypes/Page/Teaser/*.ts2
 include: NodeTypes/Page/TargetGroup/*.ts2
-include: NodeTypes/Page/FilterTags/*.ts2
+include: NodeTypes/Tags/*.ts2
 
 
 /**

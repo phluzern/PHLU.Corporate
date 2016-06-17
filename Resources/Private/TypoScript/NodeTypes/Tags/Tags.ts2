@@ -1,0 +1,15 @@
+prototype(PHLU.Corporate:Tag) < prototype(PHLU.Corporate:Content)  {
+
+
+}
+
+
+prototype(PHLU.Corporate:Tags) < prototype(PHLU.Corporate:ContentCollection)  {
+
+}
+
+prototype(PHLU.Corporate:TagsWithMenu) < prototype(PHLU.Corporate:ContentCollection)  {
+    prototype(PHLU.Corporate:Tags) {
+        templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Tags/M22enu.html'
+    }
+}

@@ -5,12 +5,15 @@ prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
 
      templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
 
-     filterTags = PHLU.Corporate:Page.FilterTags
+     tagsMenu = ${q(node).children('tagsmenu').children('main').get(0)}
 
 
 }
 
 
-prototype(PHLU.Corporate:Page.View.Default.Default) < prototype(PHLU.Corporate:Page.View.Default) {
+prototype(PHLU.Corporate:Page.View.Default.Default) < prototype(PHLU.Corporate:Page) {
+
+
     templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
+
 }

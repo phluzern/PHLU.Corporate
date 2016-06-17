@@ -64,7 +64,7 @@
       type: boolean
       defaultValue: false
       ui:
-        label: 'Auf Detailseite verbergen'
+        label: 'Auf Seite verbergen'
         reloadIfChanged: FALSE
         inspector:
           group: 'general'
@@ -126,3 +126,7 @@
       'PHLU.Corporate:Text': TRUE
       'PHLU.Corporate:Headline': TRUE
       'PHLU.Corporate:TextWithImage': TRUE
+
+
+
+
