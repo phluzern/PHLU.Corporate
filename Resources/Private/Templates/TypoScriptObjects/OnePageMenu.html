@@ -11,19 +11,19 @@
     <ul class="nav nav-pills">
 
         <f:if condition="{node.nodeType.name} == 'PHLU.Corporate:Page.View.Dossier'">
-            <li role="anchornavigation">
+            <li>
                 <a class="nav-item nav-link anchor-nav" href="#aktuelles">Aktuelles</a>
             </li>
         </f:if>
 
             <f:for each="{items}" as="item" iteration="iterator">
-                <li role="anchornavigation" class="{f:if(condition: iterator.isFirst, then: 'active', else: '')}">
+                <li class="{f:if(condition: iterator.isFirst, then: 'active', else: '')}">
                     <a class="nav-item nav-link anchor-nav" href="#{item.node.Identifier}">{item.label}</a>
                 </li>
             </f:for>
 
         <f:if condition="{node.nodeType.name} == 'PHLU.Corporate:Page.View.Dossier'">
-            <li role="anchornavigation">
+            <li>
                 <a class="nav-item nav-link anchor-nav" href="#kontakt">Kontakt</a>
             </li>
         </f:if>

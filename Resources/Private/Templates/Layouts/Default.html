@@ -14,9 +14,13 @@
         <!-- Put your stylesheet inclusions here, they will be included in your website by TypoScript -->
         <link rel="stylesheet"
               href="{f:uri.external(uri: 'https://fonts.googleapis.com/css?family=Droid+Sans:400,700')}" media="all"/>
-        <link rel="stylesheet" href="{f:uri.resource(path: 'Vendor/font-awesome/css/font-awesome.min.css', package: 'PHLU.Corporate')}" media="all"/>
-        <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/phlu.css', package: 'PHLU.Corporate')}" media="all" />
-        <link rel="stylesheet" href="{f:uri.resource(path: 'Vendor/animate.css/animate.min.css', package: 'PHLU.Corporate')}" media="all" />
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'Vendor/font-awesome/css/font-awesome.min.css', package: 'PHLU.Corporate')}"
+              media="all"/>
+        <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/phlu.css', package: 'PHLU.Corporate')}" media="all"/>
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'Vendor/animate.css/animate.min.css', package: 'PHLU.Corporate')}"
+              media="all"/>
 
     </f:section>
 
@@ -25,158 +29,174 @@
         <script src="{f:uri.resource(path: 'Vendor/angularjs/angular.min.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/angular-cookies/angular-cookies.min.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'PHLU.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'PHLU.Corporate')}"></script>
+
     </f:section>
 
 </head>
 <body>
 
-<f:section name="body">
-    <div class="all" ng-app="PHLUCorporateApp">
-    <nav class="navbar">
-        <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
-            <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogo.svg')}" alt="PH Luzern Logo" onerror="this.onerror=null; this.src='Images/phluLogo.png'" />
-        </a>
-        {parts.navBarMenu -> f:format.raw()}
-    </nav>
 
-    <div class="container-fluid {pageLevelTypeClass} ">
-        <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}">
-            <div class="col-xl-2 sidebar level0 ">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="nav-spacer-top">
-                            <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
-                                <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogo.svg')}" alt="PH Luzern Logo" onerror="this.onerror=null; this.src='Images/phluLogo.png'" />
-                            </a>
-                            <div class="site-search-field">
-                                <input type="text" class="c-input form-control" id="siteSearch">
-                                <i class="fa fa-search" aria-hidden="true"></i>
+<f:section name="body">
+
+
+    <div class="all" data-ng-app="PHLUCorporateApp">
+
+        <nav class="navbar">
+            <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
+                <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogo.svg')}"
+                     alt="PH Luzern Logo"
+                     onerror="this.onerror=null; this.src='Images/phluLogo.png'"/>
+            </a>
+            {parts.navBarMenu -> f:format.raw()}
+        </nav>
+
+        <div class="container-fluid {pageLevelTypeClass} ">
+            <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}">
+                <div class="col-xl-2 sidebar level0 ">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="nav-spacer-top">
+                                <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
+                                    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogo.svg')}"
+                                         alt="PH Luzern Logo"
+                                         onerror="this.onerror=null; this.src='Images/phluLogo.png'"/>
+                                </a>
+                                <div class="site-search-field">
+                                    <input type="text" class="c-input form-control" id="siteSearch">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                {parts.sideBarLevel0Menu -> f:format.raw()}
                             </div>
                         </div>
-                        <div class="row">
-                            {parts.sideBarLevel0Menu -> f:format.raw()}
-                        </div>
                     </div>
                 </div>
+                {parts.sideBarLevel1Menu -> f:format.raw()}
+
+
+                <div class="col-xs-12 {parts.sideBarLevel1MenuGetClass -> f:format.raw()} main">
+
+                    {content.main -> f:format.raw()}
+
+
+                    {parts.teaserMenu -> f:format.raw()}
+
+
+                </div>
+
             </div>
-            {parts.sideBarLevel1Menu -> f:format.raw()}
-
-
-            <div class="col-xs-12 {parts.sideBarLevel1MenuGetClass -> f:format.raw()} main">
-
-                {content.main -> f:format.raw()}
-
-
-                {parts.teaserMenu -> f:format.raw()}
-
-
-            </div>
-
         </div>
-    </div>
 
-    <div class="container-fluid breadcrumb-bottom">
-        <div class="row ">
-            <div class="col-xl-2 sidebar level0">
-                <div class="row">
-                    <div class="col-xl-12">
-                        &nbsp;
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-2 sidebar ">
-                <div class="row ">
-                    <div class="col-xl-12 ">
-                        &nbsp;
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-xl-8 main">
-                <div class="row ">
-                    <div class="col-xs-12">
-                        <div>
-                            Sie sind hier:
+        <div class="container-fluid breadcrumb-bottom">
+            <div class="row ">
+                <div class="col-xl-2 sidebar level0">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            &nbsp;
                         </div>
-                        <div>
-                            {parts.breadcrumb -> f:format.raw()}
+                    </div>
+                </div>
+                <div class="col-xl-2 sidebar ">
+                    <div class="row ">
+                        <div class="col-xl-12 ">
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-xl-8 main">
+                    <div class="row ">
+                        <div class="col-xs-12">
+                            <div>
+                                Sie sind hier:
+                            </div>
+                            <div>
+                                {parts.breadcrumb -> f:format.raw()}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container-fluid footer">
-        <div class="row">
-
+        <div class="container-fluid footer">
+            <div class="row">
 
 
-            <div class="col-xs-12 site-search-field">
-                <input type="text" class="c-input form-control" id="siteSearchMobile">
-                <i class="fa fa-search" aria-hidden="true"></i>
+                <div class="col-xs-12 site-search-field">
+                    <input type="text" class="c-input form-control" id="siteSearchMobile">
+                    <i class="fa fa-search" aria-hidden="true"></i>
 
-            </div>
+                </div>
 
-            {footer -> f:format.raw()}
+                {footer -> f:format.raw()}
 
-            <div class="col-xs-12 col-xl-2 flexfirst">
-                <nav class="nav langnav">
-                    <a class="active" href="#">DE</a>
-                    <a class="" href="#">FR</a>
-                    <a class="" href="#">IT</a>
-                    <a class="" href="#">EN</a>
-                </nav>
-                <hr>
-            </div>
-            <div class="col-xs-12 sociallinks">
-                <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/socialiconsexample.png')}" alt="sociallinks"/>
-            </div>
-            <div class="col-xs-6 footerLogoMobile">
-                <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogoFooter.svg')}" alt="Ph Luzern Logo"/>
-            </div>
-            <div class="col-xs-6 footerAddressMobile">
-                Pfistergasse 20<br>
-                Postfache 7660<br>
-                6000 Luzern 7<br>
-                T 041 228 71 11<br>
-                <a href="mailto:info@phlu.ch">info@phlu.ch</a>
-            </div>
-            <div class="col-lg-12 footerAddressLogoDesktop">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-4">
-                        <div>
-                            Pfistergasse 20<br>
-                            Postfache 7660<br>
-                            6000 Luzern 7<br>
+                <div class="col-xs-12 col-xl-2 flexfirst">
+                    <nav class="nav langnav">
+                        <a class="active" href="#">DE</a>
+                        <a class="" href="#">FR</a>
+                        <a class="" href="#">IT</a>
+                        <a class="" href="#">EN</a>
+                    </nav>
+                    <hr>
+                </div>
+                <div class="col-xs-12 sociallinks">
+                    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/socialiconsexample.png')}"
+                         alt="sociallinks"/>
+                </div>
+                <div class="col-xs-6 footerLogoMobile">
+                    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogoFooter.svg')}"
+                         alt="Ph Luzern Logo"/>
+                </div>
+                <div class="col-xs-6 footerAddressMobile">
+                    Pfistergasse 20<br>
+                    Postfache 7660<br>
+                    6000 Luzern 7<br>
+                    T 041 228 71 11<br>
+                    <a href="mailto:info@phlu.ch">info@phlu.ch</a>
+                </div>
+                <div class="col-lg-12 footerAddressLogoDesktop">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-4">
+                            <div>
+                                Pfistergasse 20<br>
+                                Postfache 7660<br>
+                                6000 Luzern 7<br>
+                            </div>
+                            <div>
+                                T 041 228 71 11<br>
+                                <a href="mailto:info@phlu.ch">info@phlu.ch</a>
+                            </div>
+                            <div>
+                                <img class="footerLogo"
+                                     src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogoFooter.svg')}"
+                                     alt="Ph Luzern Logo"/>
+                            </div>
                         </div>
-                        <div>
-                            T 041 228 71 11<br>
-                            <a href="mailto:info@phlu.ch">info@phlu.ch</a>
-                        </div>
-                        <div>
-                            <img class="footerLogo" src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogoFooter.svg')}" alt="Ph Luzern Logo"/>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-lg-offset-8 copyright">
+                            &copy; 2016 Pädagogische Hochschule Luzern
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-lg-offset-8 copyright">
-                        &copy; 2016 Pädagogische Hochschule Luzern
-                    </div>
+                <div class="col-xs-12 copyright">
+                    &copy; 2016 Pädagogische Hochschule Luzern
                 </div>
-            </div>
-            <div class="col-xs-12 copyright">
-                &copy; 2016 Pädagogische Hochschule Luzern
             </div>
         </div>
+
+                <span id="top-link-block" class="img-circle">
+                    <a href="#top" class="anchor-nav">
+                        <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/spacer.png')}" width="80"
+                             height="80"
+                             alt="spacer"/>
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </span>
     </div>
 
-    <span id="top-link-block" class="img-circle">
-    <a href="#top" class="anchor-nav">
-        <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/spacer.png')}" width="80" height="80" alt="spacer"/>
-        <i class="fa fa-angle-up" aria-hidden="true"></i>
-    </a>
-</span>
-</div>
 
 </f:section>
 <f:section name="bodyScripts">

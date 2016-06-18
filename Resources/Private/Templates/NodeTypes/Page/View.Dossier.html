@@ -20,35 +20,29 @@
 </div>
 
 
+<ts:render path="defaultRenderer" context="{node: carouselnews}"/>
 
 
-    <ts:render path="defaultRenderer" context="{node: carouselnews}" />
+{onePageContent -> f:format.raw()}
 
 
-    {onePageContent -> f:format.raw()}
-
-
-    <f:if condition="{mainVisible}">
-        <f:then>
-            <div class="row">
-                <div class="col-xs-12">
-                    <div id="phlu-accordion" class="phlu-accordion" role="tablist" aria-multiselectable="true">
-                        <ts:render path="collectionRenderer" context="{node: main}"/>
-                    </div>
+<f:if condition="{mainVisible}">
+    <f:then>
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="phlu-accordion" class="phlu-accordion" role="tablist" aria-multiselectable="true">
+                    <ts:render path="collectionRenderer" context="{node: main}"/>
                 </div>
             </div>
-        </f:then>
-    </f:if>
+        </div>
+    </f:then>
+</f:if>
 
 
-
-    <ts:render path="defaultRenderer" context="{node: contact}"/>
-
-
-    <ts:render path="defaultRenderer" context="{node: targetgroup}"/>
+<ts:render path="defaultRenderer" context="{node: contact}"/>
 
 
-
+<ts:render path="defaultRenderer" context="{node: targetgroup}"/>
 
 
 <div class="row ambient-img-footer"></div>
