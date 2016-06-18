@@ -216,9 +216,17 @@ body {
       }
     }
 
-    a[typeof='typo3:PHLU.Corporate:Tag'] .neos-empty-contentcollection-overlay {
+    a[typeof='typo3:PHLU.Corporate:Tag'] .neos-empty-contentcollection-overlay,
+    div[typeof='typo3:PHLU.Corporate:ContentCollection.Tags'] .neos-empty-contentcollection-overlay
+    {
       display:none;
     }
+    #anchornavigation-collection .neos-empty-contentcollection-overlay
+    {
+      display:block;
+    }
+
+
 
   }
   // neos specific

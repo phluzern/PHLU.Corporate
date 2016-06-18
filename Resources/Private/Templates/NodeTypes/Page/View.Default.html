@@ -11,12 +11,10 @@
 
         <ts:render path="defaultRenderer" context="{node: header}"/>
 
-
         <f:if condition="{tagsMenu}">
-            <f:then>
-                <ts:render path="defaultRenderer" context="{node: tagsMenu}"/>
-            </f:then>
+            <ts:render path="defaultRenderer" context="{node: tagsMenu}"/>
         </f:if>
+
 
 
         <f:if condition="{onepage.properties.hideondetailpage} === true">

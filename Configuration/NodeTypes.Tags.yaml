@@ -4,7 +4,7 @@
     'PHLU.Neos.NodeTypes:Tag': TRUE
 
 
-'PHLU.Corporate:Tags':
+'PHLU.Corporate:ContentCollection.Tags':
   superTypes:
     'PHLU.Corporate:ContentCollection': TRUE
   constraints:
@@ -12,19 +12,17 @@
       'PHLU.Corporate:Tag': TRUE
 
 
-'PHLU.Corporate:TagsWithMenu':
-  superTypes:
-    'PHLU.Corporate:Tags': TRUE
-  childNodes:
-    main:
-      type: 'PHLU.Corporate:Tags.Menu'
-
-
 'PHLU.Corporate:Tags.Menu':
   superTypes:
     'PHLU.Corporate:Content': TRUE
   ui:
     label: 'Menu'
-  constraints:
-    nodeTypes:
-      '*': FALSE
+  properties:
+    title:
+      type: string
+      defaultValue: 'Filter'
+      ui:
+        inlineEditable: TRUE
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.Tags'

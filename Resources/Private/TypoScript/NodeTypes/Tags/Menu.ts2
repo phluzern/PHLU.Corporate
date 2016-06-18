@@ -1,13 +1,25 @@
-prototype(PHLU.Corporate:Tags.Menu) < prototype(Menu) {
+prototype(PHLU.Corporate:Tags.Menu) <  prototype(PHLU.Corporate:Content) {
 
-
-        entryLevel = 0
         templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Tags/Menu.html'
-        sectionName = 'default'
-        maximumLevels = 1
-        filter = 'PHLU.Corporate:Page'
-        startingPoint = ${q(node).parentsUntil('[instanceof PHLU.Corporate:Page]').parent().get(0)}
 
-        alltags = ${q(node).parent().find('[instanceof PHLU.Neos.NodeTypes:Tag]').get()}
+
+        filterCollection =  ${q(node).children('main').get(0)}
+
+        filterMenu = Menu {
+                entryLevel = 0
+                templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Tags/MenuFilter.html'
+                sectionName = 'default'
+                maximumLevels = 1
+                filter = 'PHLU.Corporate:Page'
+                startingPoint = ${q(node).parent().get(0)}
+                alltags = ${q(node).find('[instanceof PHLU.Neos.NodeTypes:Tag]').get()}
+                node = ${q(node).children('main').get(0)}
+                title = ${q(node).property('title')}
+                filterCollection =  ${q(node).children('main').get(0)}
+
+        }
+
+
+        title = ${q(node).property('title')}
 
 }

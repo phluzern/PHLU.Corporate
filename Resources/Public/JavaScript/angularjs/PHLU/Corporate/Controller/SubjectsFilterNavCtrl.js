@@ -100,6 +100,7 @@ PHLUCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope','$timeout','$cook
 
     // apply last states from cookies
     $scope.$watch("appId", function(appId) {
+        if ($("#"+appId).find(".ng-tag").length === 0) $cookies.remove(appId);
         $scope.filter = $cookies.get(appId) ? JSON.parse($cookies.get(appId)).filter : {};
         if ($cookies.get(appId)) $scope.applyFilters(false);
     })

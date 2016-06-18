@@ -6669,8 +6669,11 @@ body {
     font-size: 21px;
     margin-left: -4px;
     margin-right: -3px; }
-  body.neos-backend a[typeof='typo3:PHLU.Corporate:Tag'] .neos-empty-contentcollection-overlay {
+  body.neos-backend a[typeof='typo3:PHLU.Corporate:Tag'] .neos-empty-contentcollection-overlay,
+  body.neos-backend div[typeof='typo3:PHLU.Corporate:ContentCollection.Tags'] .neos-empty-contentcollection-overlay {
     display: none; }
+  body.neos-backend #anchornavigation-collection .neos-empty-contentcollection-overlay {
+    display: block; }
   body .neos-contentcollection {
     width: 100%; }
   @media (max-width: 991px) {
