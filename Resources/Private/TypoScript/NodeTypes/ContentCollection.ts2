@@ -9,12 +9,21 @@ prototype(PHLU.Corporate:ContentCollection) < prototype(TYPO3.Neos:ContentCollec
         }
     }
 
+
+    prototype(PHLU.Corporate:Headline) {
+        tag = 'h3'
+    }
+
+
 }
 
 
 
 
 prototype(PHLU.Corporate:ContentCollection.Page.View.Default) < prototype(PHLU.Corporate:ContentCollection)  {
+
+
+
 
 }
 

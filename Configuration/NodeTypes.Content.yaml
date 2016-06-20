@@ -155,6 +155,7 @@
     text:
       ui:
         aloha:
+          autoparagraph: TRUE
           'format': # Enable specific formatting options.
             'strong': TRUE
             'b': FALSE

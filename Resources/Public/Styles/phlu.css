@@ -6676,6 +6676,8 @@ body {
     display: block; }
   body .neos-contentcollection {
     width: 100%; }
+    body .neos-contentcollection .neos.neos-empty-contentcollection-overlay {
+      width: 100%; }
   @media (max-width: 991px) {
     body {
       margin-bottom: 681px; } }

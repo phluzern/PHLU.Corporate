@@ -231,7 +231,10 @@ body {
   }
   // neos specific
   .neos-contentcollection {
-    width:100%;
+     width:100%;
+    .neos.neos-empty-contentcollection-overlay {
+      width:100%;
+    }
   }
 
 

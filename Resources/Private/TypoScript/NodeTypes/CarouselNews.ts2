@@ -23,7 +23,7 @@ prototype(PHLU.Corporate:Content.CarouselNews) < prototype(PHLU.Corporate:Conten
 # Carousel content collection
 prototype(PHLU.Corporate:ContentCollection.CarouselNews) < prototype(TYPO3.Neos:ContentCollection) {
 
-    attributes.class = 'row'
+        attributes.class = 'row'
 
 
         prototype(PHLU.Corporate:Event) {
