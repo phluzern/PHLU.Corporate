@@ -144,24 +144,20 @@
 
 
 
-
-
 # headline
 'PHLU.Corporate:Headline':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Headline': TRUE
+    'PHLU.Neos.NodeTypes:Headline': TRUE
 
 
 # Text default
 'PHLU.Corporate:Text':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Text': TRUE
+    'PHLU.Neos.NodeTypes:Text': TRUE
 
 
 # Text with image
 'PHLU.Corporate:TextWithImage':
   superTypes:
-    'TYPO3.Neos.NodeTypes:TextWithImage': TRUE
-
-
+    'PHLU.Neos.NodeTypes:TextWithImage': TRUE
 

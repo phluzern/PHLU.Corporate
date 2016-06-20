@@ -21,6 +21,7 @@
       'PHLU.Corporate:Text': TRUE
       'PHLU.Corporate:Headline': TRUE
       'PHLU.Corporate:TextWithImage': TRUE
+      'Neoslive.Nodeform:Form': TRUE
 
 
 'PHLU.Corporate:ContentCollection.Page.View.Default.Default':
