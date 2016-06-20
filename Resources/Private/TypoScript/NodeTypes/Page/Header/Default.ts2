@@ -1,6 +1,14 @@
 prototype(PHLU.Corporate:Content.Page.HeaderDefault) < prototype(PHLU.Corporate:Content) {
 
     templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/Header/Default.html'
+    defaultRenderer = TYPO3.Neos:ContentCase
+
+    title = ${q(node).children('title').get(0)}
+    text = ${q(node).children('text').get(0)}
+
+        prototype(PHLU.Corporate:Headline) {
+                attributes.class = 'page-header'
+        }
 
 
 }

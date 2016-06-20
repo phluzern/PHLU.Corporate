@@ -11,3 +11,8 @@ prototype(PHLU.Corporate:Content) < prototype(TYPO3.Neos:Content) {
     }
 
 }
+
+
+
+
+
