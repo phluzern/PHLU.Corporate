@@ -124,6 +124,7 @@
 'PHLU.Corporate:AccordeonElement':
   superTypes:
     'PHLU.Neos.NodeTypes:Content': TRUE
+    'PHLU.Neos.NodeTypes:PlainTitleMixin': TRUE
   ui:
     label: 'Accordeon Element'
     icon: icon-header
@@ -133,7 +134,6 @@
       '*': FALSE
   properties:
     title:
-      type: string
       defaultValue: 'Hier kommt ein Titel'
   childNodes:
     main:

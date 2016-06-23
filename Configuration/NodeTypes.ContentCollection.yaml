@@ -22,6 +22,7 @@
       'PHLU.Corporate:Headline': TRUE
       'PHLU.Corporate:TextWithImage': TRUE
       'PHLU.Corporate:Event': TRUE
+      'PHLU.Corporate:Contacts': TRUE
 
 
 'PHLU.Corporate:ContentCollection.Page.View.Default.Default':
@@ -127,6 +128,26 @@
       'PHLU.Corporate:Text': TRUE
       'PHLU.Corporate:Headline': TRUE
       'PHLU.Corporate:TextWithImage': TRUE
+
+
+
+
+'PHLU.Neos.NodeTypes:ContentCollection.Contacts':
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      'PHLU.Corporate:ContactsGroup': TRUE
+      'PHLU.Corporate:Contact': TRUE
+
+
+
+'PHLU.Neos.NodeTypes:ContentCollection.ContactsGroup':
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      'PHLU.Corporate:Contact': TRUE
 
 
 

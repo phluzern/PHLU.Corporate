@@ -215,6 +215,7 @@ body {
       }
     }
 
+
     a[typeof='typo3:PHLU.Corporate:Tag'] .neos-empty-contentcollection-overlay,
     div[typeof='typo3:PHLU.Corporate:ContentCollection.Tags'] .neos-empty-contentcollection-overlay {
       display: none;
@@ -226,7 +227,6 @@ body {
   }
   // neos specific
   .neos-contentcollection {
-    width: 100%;
     .neos.neos-empty-contentcollection-overlay {
       width: 100%;
     }
@@ -1179,6 +1179,11 @@ body {
     .phlu-teaser.navigation.subpage {
       .nav-teaser-item {
         .row {
+          &.detailView {
+            .phlu-teaser-body,.phlu-teaser-caret-right.col-xs-2 {
+              background-color: $lightgrey;
+            }
+          }
           .phlu-teaser-body {
             background-color: $sephia;
             .personName {
@@ -1216,16 +1221,6 @@ body {
                 right: 25px;
                 content: " \e0a5";
               }
-            }
-          }
-        }
-        &.detailview {
-          .row {
-            .phlu-teaser-body {
-              padding: 20px 10px;
-            }
-            .phlu-teaser-body, .phlu-teaser-caret-right.col-xs-2 {
-              background-color: $lightgrey;
             }
           }
         }

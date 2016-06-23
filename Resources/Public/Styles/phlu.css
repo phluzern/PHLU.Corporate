@@ -6674,10 +6674,8 @@ body {
     display: none; }
   body.neos-backend #anchornavigation-collection .neos-empty-contentcollection-overlay {
     display: block; }
-  body .neos-contentcollection {
+  body .neos-contentcollection .neos.neos-empty-contentcollection-overlay {
     width: 100%; }
-    body .neos-contentcollection .neos.neos-empty-contentcollection-overlay {
-      width: 100%; }
   @media (max-width: 991px) {
     body {
       margin-bottom: 681px; } }
@@ -7342,6 +7340,8 @@ body {
       body .phlu-accordion .panel .panel-collapse p {
         padding: 20px 0;
         margin: 0; }
+  body .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-body, body .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-caret-right.col-xs-2 {
+    background-color: #e1e1e1; }
   body .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body {
     background-color: #e9e0d8; }
     body .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body .personName {
@@ -7370,10 +7370,6 @@ body {
       transform: translateY(-50%);
       right: 25px;
       content: " \e0a5"; }
-  body .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item.detailview .row .phlu-teaser-body {
-    padding: 20px 10px; }
-  body .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item.detailview .row .phlu-teaser-body, body .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item.detailview .row .phlu-teaser-caret-right.col-xs-2 {
-    background-color: #e1e1e1; }
   body .phlu-team-members .panel-heading {
     border-bottom: solid 1px #9f632a;
     font-size: 1.313rem; }

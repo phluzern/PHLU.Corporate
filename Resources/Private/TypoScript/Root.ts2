@@ -5,6 +5,7 @@ include: NodeTypes/Page/Header/*.ts2
 include: NodeTypes/Page/Teaser/*.ts2
 include: NodeTypes/Page/TargetGroup/*.ts2
 include: NodeTypes/Tags/*.ts2
+include: NodeTypes/Contacts/*.ts2
 
 
 /**

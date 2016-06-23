@@ -5,6 +5,7 @@
   ui:
     label: 'Kontakt'
     icon: icon-male
+    inlineEditable: true
     inspector:
       groups:
         contact:
@@ -54,4 +55,36 @@
         inspector:
           group: 'contact'
           position: 50
+
+
+
+# Contacts (contact wrapper)
+'PHLU.Corporate:Contacts':
+  superTypes:
+    'PHLU.Corporate:Content': TRUE
+  ui:
+    label: 'Kontakte'
+    icon: icon-users
+    inlineEditable: true
+  childNodes:
+    main:
+      type: 'PHLU.Neos.NodeTypes:ContentCollection.Contacts'
+
+
+
+# Contacts (contacts group wrapper)
+'PHLU.Corporate:ContactsGroup':
+  superTypes:
+    'PHLU.Corporate:Content': TRUE
+    'PHLU.Neos.NodeTypes:PlainTitleMixin': TRUE
+  ui:
+    label: 'Team'
+    icon: icon-group
+  properties:
+    title:
+      type: string
+      defaultValue: 'Team Bezeichnung eingeben'
+  childNodes:
+    main:
+      type: 'PHLU.Neos.NodeTypes:ContentCollection.ContactsGroup'
 
