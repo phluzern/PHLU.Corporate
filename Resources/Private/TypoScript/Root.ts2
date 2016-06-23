@@ -39,10 +39,9 @@ page = Page {
 
 				isStartpage {
 					condition = ${q(node).is('[!instanceof PHLU.Corporate:Page.Home]')}
-					renderer = Menu {
-						entryLevel = 0
+					renderer = TYPO3.TypoScript:Template {
+						menuItems = BreadcrumbMenu
 						templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/NavBarMenu.html'
-						maximumLevels = 4
 					}
 				}
 			}
@@ -83,6 +82,7 @@ page = Page {
 
 				isStartpage {
 					condition = ${q(node).is('[instanceof PHLU.Corporate:Page.Home]')}
+
 					renderer = Menu {
 						entryLevel = 1
 						templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/TeaserMenu.html'
@@ -91,6 +91,9 @@ page = Page {
 						startingPoint = ${q(site).get(0)}
 						pageClass = ''
 						itemClass = 'col-lg-4'
+						defaultRenderer = TYPO3.Neos:ContentCase
+						header = ${q(node).children('header').get(0)}
+						teaser = ${q(node).children('teaser').get(0)}
 					}
 				}
 			}

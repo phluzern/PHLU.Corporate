@@ -1,0 +1,83 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
+
+<div id="aktuelles">
+
+    <div class="col-xs-12">
+
+
+
+
+            <div id="carousel-phlu-teaser-xl" class="phlu-teaser carousel slide">
+                <f:render section="carousel"
+                          arguments="{carouselItems: carouselItems, spliceNum: 4, itemClass: 'col-xl-3', targetId: 'carousel-phlu-teaser-xl'}"></f:render>
+            </div>
+
+            <div id="carousel-phlu-teaser-lg" class="phlu-teaser carousel slide">
+                <f:render section="carousel"
+                          arguments="{carouselItems: carouselItems, spliceNum: 3, itemClass: 'col-lg-4', targetId: 'carousel-phlu-teaser-lg'}"></f:render>
+            </div>
+
+            <div id="carousel-phlu-teaser-md" class="phlu-teaser carousel slide">
+                <f:render section="carousel"
+                          arguments="{carouselItems: carouselItems, spliceNum: 3, itemClass: 'col-md-4', targetId: 'carousel-phlu-teaser-md'}"></f:render>
+            </div>
+
+            <div id="carousel-phlu-teaser-sm" class="phlu-teaser carousel slide">
+                <f:render section="carousel"
+                          arguments="{carouselItems: carouselItems, spliceNum: 2, itemClass: 'col-sm-6', targetId: 'carousel-phlu-teaser-sm'}"></f:render>
+            </div>
+
+            <div id="carousel-phlu-teaser-xs" class="phlu-teaser carousel slide">
+                <f:render section="carousel"
+                          arguments="{carouselItems: carouselItems, spliceNum: 1 , itemClass: 'col-xs-12', targetId: 'carousel-phlu-teaser-xs'}"></f:render>
+            </div>
+
+
+    </div>
+
+</div>
+
+
+<f:section name="carousel">
+
+    <f:render section="indicators" arguments="{carouselItems: carouselItems, spliceNum: spliceNum, itemClass: 'col-xs-12', targetId: targetId}"></f:render>
+
+    <div class="carousel-inner" role="listbox">
+        <f:for each="{phlu:SpliceArray(items: carouselItems, spliceNum:spliceNum)}" as="item" iteration="iterator">
+            <div class="carousel-item {f:if(condition: iterator.isFirst, then: 'active', else: '')}">
+                <div class="row">
+                    <f:for each="{item}" as="col" iteration="coliterator">
+                        <div class="{itemClass}">
+                            <ts:render path="carouselItemsRenderer" context="{node: col}"/>
+                        </div>
+                    </f:for>
+                </div>
+            </div>
+        </f:for>
+    </div>
+
+    <a class="left carousel-control" href="#{targetId}" role="button" data-slide="prev">
+                            <span class="icon-prev" aria-hidden="true"></span>
+
+        <span class="sr-only">Previous</span>
+    </a>
+
+    <a class="right carousel-control" href="#{targetId}" role="button" data-slide="next">
+                            <span class="icon-next" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</f:section>
+
+
+
+<f:section name="indicators">
+    <ol class="carousel-indicators">
+        <f:for each="{phlu:SpliceArray(items: carouselItems, spliceNum:spliceNum)}" as="item" iteration="iterator">
+            <li data-target="#{targetId}" data-slide-to="{iterator.index}"
+                class="{f:if(condition: iterator.isFirst, then: 'active', else: '')}"></li>
+        </f:for>
+    </ol>
+</f:section>
+

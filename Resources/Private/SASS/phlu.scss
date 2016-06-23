@@ -1609,8 +1609,10 @@ body {
         background-image: url("../Images/ambienteexample.jpg");
         background-position: -120px 0;
         margin-bottom: 56px;
+
         @include media-breakpoint-up("xl") {
           margin-bottom: 0;
+          min-height: 800px;
         }
         > .col-xs-12 {
           @include media-breakpoint-up("xl") {

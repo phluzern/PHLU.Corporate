@@ -7690,7 +7690,8 @@ body .startpage .main {
     margin-bottom: 56px; }
     @media (min-width: 1280px) {
       body .startpage .main > .row.aktuelles {
-        margin-bottom: 0; } }
+        margin-bottom: 0;
+        min-height: 800px; } }
     @media (min-width: 1280px) {
       body .startpage .main > .row.aktuelles > .col-xs-12 {
         max-width: inherit; } }
