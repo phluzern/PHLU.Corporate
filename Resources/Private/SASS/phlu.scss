@@ -177,7 +177,6 @@ $input-padding-x: 0.3125rem; // 5px
 // convert px to rem
 // @import "rem-mixin";
 
-
 @import "open-iconic-bootstrap";
 
 html {
@@ -189,19 +188,19 @@ body {
   // backend only
   &.neos-backend {
     > .all {
-      width:1920px;
+      width: 1920px;
     }
     &.neos-navigate-panel-open {
       .sidebar.level0, .sidebar.level1 {
-        display:none;
+        display: none;
       }
     }
     &.neos-full-screen {
       .all {
-        width:inherit;
+        width: inherit;
       }
       .sidebar.level0, .sidebar.level1 {
-        display:block;
+        display: block;
       }
     }
     .neos-select2-result-label {
@@ -217,26 +216,21 @@ body {
     }
 
     a[typeof='typo3:PHLU.Corporate:Tag'] .neos-empty-contentcollection-overlay,
-    div[typeof='typo3:PHLU.Corporate:ContentCollection.Tags'] .neos-empty-contentcollection-overlay
-    {
-      display:none;
+    div[typeof='typo3:PHLU.Corporate:ContentCollection.Tags'] .neos-empty-contentcollection-overlay {
+      display: none;
     }
-    #anchornavigation-collection .neos-empty-contentcollection-overlay
-    {
-      display:block;
+    #anchornavigation-collection .neos-empty-contentcollection-overlay {
+      display: block;
     }
-
-
 
   }
   // neos specific
   .neos-contentcollection {
-     width:100%;
+    width: 100%;
     .neos.neos-empty-contentcollection-overlay {
-      width:100%;
+      width: 100%;
     }
   }
-
 
   margin-bottom: 420px;
   @include media-breakpoint-down("md") {
@@ -490,7 +484,7 @@ body {
       font-size: $font-size-lg;
       ul {
         list-style: none;
-        padding:0;
+        padding: 0;
         li {
           a {
             //white-space: nowrap;
@@ -613,7 +607,7 @@ body {
         letter-spacing: $h3-letter-spacing;
         @include word-wrap();
         a {
-          color:$darkgrey;
+          color: $darkgrey;
         }
       }
       p {
@@ -637,7 +631,7 @@ body {
         height: 161px;
         @include media-breakpoint-up("sm") {
           height: 232px;
-         }
+        }
       }
     }
     .event, .publication, .news {
@@ -661,7 +655,7 @@ body {
         background-color: white;
         padding-top: 8px;
         padding-bottom: 4px;
-        height:79px;
+        height: 79px;
         .event-location {
           margin-top: 5px;
           line-height: 1rem;
@@ -1039,7 +1033,7 @@ body {
           }
         }
 
-        }
+      }
     }
     .faecherIco, .oi-media-stop {
       &::before {
@@ -1056,8 +1050,8 @@ body {
         font-family: Arial;
         content: " \25B2 \2001";
         position: absolute;
-        margin-left:-35px;
-        margin-top:-4px;
+        margin-left: -35px;
+        margin-top: -4px;
         font-size: 24px;
       }
     }
@@ -1066,8 +1060,8 @@ body {
         font-family: FontAwesome;
         content: " \f111 \2001";
         position: absolute;
-        margin-left:-33px;
-        margin-top:-17px;
+        margin-left: -33px;
+        margin-top: -17px;
         font-size: 22px;
       }
     }
@@ -1094,30 +1088,30 @@ body {
       .nav-teaser-item {
         margin-top: 5px;
         margin-bottom: 5px;
-        padding:0;
+        padding: 0;
         .row {
           .phlu-teaser-body, .phlu-teaser-caret-right {
             height: inherit;
           }
           .phlu-teaser-body {
             i {
-              float:left;
+              float: left;
               &::before {
                 color: $turquoise;
                 font-size: 25px;
                 position: relative;
                 top: 50%;
-                margin:0;
+                margin: 0;
                 transform: translateY(-50%);
               }
               &.strategieIco {
                 height: 25px;
                 width: 43px;
                 &::before {
-                  top:-12px;
-                  left:-4px;
-                  margin-left:0px;
-                  margin-top:0px;
+                  top: -12px;
+                  left: -4px;
+                  margin-left: 0px;
+                  margin-top: 0px;
                   font-size: 30px;
 
                 }
@@ -1179,6 +1173,109 @@ body {
     }
   }
   //
+  // team members group
+  //
+  .phlu-team-members {
+    .phlu-teaser.navigation.subpage {
+      .nav-teaser-item {
+        .row {
+          .phlu-teaser-body {
+            background-color: $sephia;
+            .personName {
+              font-size: 0.813rem;
+              padding-bottom: 5px;
+              font-weight: $font-weight-bold;
+            }
+            p {
+              line-height: 1.6;
+            }
+          }
+          .phlu-teaser-caret-right.col-xs-2 {
+            background-color: $sephia;
+            font-size: 20px;
+            font-family: Icons;
+            &::after {
+              content: " ";
+            }
+            .emailLink {
+              &::after {
+                position: absolute;
+                color: $grey6;
+                top: 40%;
+                transform: translateY(-50%);
+                right: 25px;
+                content: " \e05c";
+              }
+            }
+            .portraitLink {
+              &::after {
+                position: absolute;
+                color: $grey6;
+                top: 60%;
+                transform: translateY(-50%);
+                right: 25px;
+                content: " \e0a5";
+              }
+            }
+          }
+        }
+        &.detailview {
+          .row {
+            .phlu-teaser-body {
+              padding: 20px 10px;
+            }
+            .phlu-teaser-body, .phlu-teaser-caret-right.col-xs-2 {
+              background-color: $lightgrey;
+            }
+          }
+        }
+      }
+    }
+
+    .panel-heading {
+      border-bottom: solid 1px $hazelbrowndark;
+      font-size: $font-size-h4-desktop;
+      .panel-email {
+        font-family: Icons;
+        &::after {
+          font-size: 19px;
+          position: absolute;
+          content: " \e05c";
+          right: 40px;
+          margin-top: 3px;
+        }
+      }
+      .panel-switch {
+        &::after {
+          font-size: 35px;
+          position: absolute;
+          content: " \002b";
+          right: 0;
+          margin-top: -10px;
+        }
+        &.collapsed {
+          &::after {
+            content: " \00D7";
+          }
+        }
+      }
+    }
+    .panel-heading, a {
+      color: $hazelbrowndark;
+    }
+    .panel-body {
+      padding: 30px 0 60px;
+    }
+    .nav-teaser-item {
+      .row {
+        .phlu-teaser-body.details {
+        }
+      }
+
+    }
+
+  }
+  //
   // main contents
   //
   .main {
@@ -1217,7 +1314,7 @@ body {
             caption-side: bottom;
             margin-bottom: 0px;
           }
-         }
+        }
       }
       .content-link-email {
         @include content-link("email");
