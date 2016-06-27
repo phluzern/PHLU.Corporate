@@ -1,0 +1,50 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+
+<div {attributes -> f:format.raw()}>
+
+    <div class="row panel-heading" role="tab" id="tab-{node.Identifier}" data-toggle="collapse" data-parent="#accordion-{wrapperNode.Identifier}"
+         href="#collapse-{node.Identifier}" aria-expanded="false" >
+
+        <div class="col-sm-6">
+            {neos:contentElement.editable(property: 'name', tag: 'span')}
+            {neos:contentElement.editable(property: 'lastname', tag: 'span')}
+        </div>
+        <div class="col-sm-4">
+            {neos:contentElement.editable(property: 'phone', tag: 'span')}
+        </div>
+        <div class="col-sm-2">
+            <a href="mailto:{node.properties.email}" class="panel-email">&nbsp;</a>
+            <a class="panel-switch" href="#">&nbsp;</a>
+        </div>
+
+    </div>
+
+    <div id="collapse-{node.Identifier}" class="panel-collapse collapse" role="tabpanel"
+         aria-labelledby="tab-{node.Identifier}">
+
+        <div class="row panel-body">
+            <div class="col-sm-2">
+                <img src="/_Resources/Static/Packages/PHLU.Corporate/Images/portraitBildTest.jpg" title="Dummy image"
+                     alt="Dummy image" class="img-fluid">
+            </div>
+            <div class="col-sm-10">
+                <address>
+                    {neos:contentElement.editable(property: 'name', tag: 'span')}
+                    {neos:contentElement.editable(property: 'lastname', tag: 'span')} <br>
+                    {neos:contentElement.editable(property: 'function', tag: 'span')}<br>
+                    {neos:contentElement.editable(property: 'street', tag: 'span')}<br>
+                    {neos:contentElement.editable(property: 'street2', tag: 'span')}<br>
+                    {neos:contentElement.editable(property: 'zip', tag: 'span')} {neos:contentElement.editable(property:
+                    'city', tag: 'span')} <br>
+                    {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
+                    <a href="mailto:{node.properties.email}">{neos:contentElement.editable(property: 'email', tag:
+                        'span')}</a>
+                </address>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1230,6 +1230,26 @@ body {
     .panel-heading {
       border-bottom: solid 1px $hazelbrowndark;
       font-size: $font-size-h4-desktop;
+
+
+      &[aria-expanded=true] {
+        .panel-switch {
+          &::after {
+            content: "\00D7";
+          }
+        }
+
+      }
+      &[aria-expanded=false] {
+        .panel-switch {
+          &::after {
+            content: "\002b";
+          }
+        }
+
+      }
+
+
       .panel-email {
         font-family: Icons;
         &::after {
@@ -1244,15 +1264,10 @@ body {
         &::after {
           font-size: 35px;
           position: absolute;
-          content: " \002b";
           right: 0;
           margin-top: -10px;
         }
-        &.collapsed {
-          &::after {
-            content: " \00D7";
-          }
-        }
+
       }
     }
     .panel-heading, a {

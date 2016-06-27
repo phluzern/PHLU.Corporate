@@ -7373,6 +7373,10 @@ body {
   body .phlu-team-members .panel-heading {
     border-bottom: solid 1px #9f632a;
     font-size: 1.313rem; }
+    body .phlu-team-members .panel-heading[aria-expanded=true] .panel-switch::after {
+      content: "\00D7"; }
+    body .phlu-team-members .panel-heading[aria-expanded=false] .panel-switch::after {
+      content: " \002b"; }
     body .phlu-team-members .panel-heading .panel-email {
       font-family: Icons; }
       body .phlu-team-members .panel-heading .panel-email::after {
@@ -7384,11 +7388,8 @@ body {
     body .phlu-team-members .panel-heading .panel-switch::after {
       font-size: 35px;
       position: absolute;
-      content: " \002b";
       right: 0;
       margin-top: -10px; }
-    body .phlu-team-members .panel-heading .panel-switch.collapsed::after {
-      content: " \00D7"; }
   body .phlu-team-members .panel-heading, body .phlu-team-members a {
     color: #9f632a; }
   body .phlu-team-members .panel-body {
