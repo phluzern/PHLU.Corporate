@@ -5,9 +5,9 @@ namespace PHLU\Corporate\Aspects;
 
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Aop\JoinPointInterface;
-use TYPO3\TYPO3CR\Domain\Model\NodeData;
 use PHLU\Neos\Models\Domain\Repository\ContactRepository;
-
+use TYPO3\TYPO3CR\Domain\Repository\NodeDataRepository;
+use TYPO3\Neos\Domain\Service\SiteService;
 
 /**
  * @Flow\Scope("singleton")
@@ -19,10 +19,49 @@ class ContactAspect
 
     /**
      * @Flow\Inject
+     * @var \TYPO3\TYPO3CR\Domain\Repository\WorkspaceRepository
+     */
+    protected $workspaceRepository;
+
+
+    /**
+     * @Flow\Inject
      * @var ContactRepository
      */
     protected $contactRepository;
 
+    /**
+     * @Flow\Inject
+     * @var ContactRepository
+     */
+    protected $siteService;
+
+
+
+    /**
+     * @Flow\Inject
+     * @var NodeDataRepository
+     */
+    protected $nodeDataRepository;
+
+
+
+
+
+    /**
+     * @Flow\After("method(PHLU\Neos\Models\Domain\Repository\ContactRepository->update())")
+     * @return void
+     */
+    public function findContactNodesAndUpdate(JoinPointInterface $joinPoint)
+    {
+
+        $workspace = 'live';
+             foreach ($this->nodeDataRepository->findByParentAndNodeTypeRecursively(SiteService::SITES_ROOT_PATH,'PHLU.Corporate:Contact',$this->workspaceRepository->findByName($workspace)->getFirst()) as $node) {
+            $this->nodeDataRepository->update($node);
+        }
+
+
+    }
 
     /**
      * @Flow\Before("method(TYPO3\TYPO3CR\Domain\Repository\NodeDataRepository->update(object.nodeType.name == 'PHLU.Corporate:Contact'))")
