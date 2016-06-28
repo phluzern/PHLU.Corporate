@@ -49,14 +49,17 @@ class ContactAspect
 
 
     /**
-     * @Flow\After("method(PHLU\Neos\Models\Domain\Repository\ContactRepository->update())")
+     * @Flow\Before("method(PHLU\Neos\Models\Domain\Repository\ContactRepository->update())")
      * @return void
      */
     public function findContactNodesAndUpdate(JoinPointInterface $joinPoint)
     {
 
+        $object = $joinPoint->getMethodArgument('object');
+        $object->setHasChanges(false);
+
         $workspace = 'live';
-             foreach ($this->nodeDataRepository->findByParentAndNodeTypeRecursively(SiteService::SITES_ROOT_PATH,'PHLU.Corporate:Contact',$this->workspaceRepository->findByName($workspace)->getFirst()) as $node) {
+        foreach ($this->nodeDataRepository->findByParentAndNodeTypeRecursively(SiteService::SITES_ROOT_PATH,'PHLU.Corporate:Contact',$this->workspaceRepository->findByName($workspace)->getFirst()) as $node) {
             $this->nodeDataRepository->update($node);
         }
 
