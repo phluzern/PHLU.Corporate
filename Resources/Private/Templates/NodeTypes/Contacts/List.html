@@ -8,7 +8,7 @@
          href="#collapse-{node.Identifier}" aria-expanded="false" >
 
         <div class="col-sm-6">
-            {neos:contentElement.editable(property: 'name', tag: 'span')}
+            {neos:contentElement.editable(property: 'firstname', tag: 'span')}
             {neos:contentElement.editable(property: 'lastname', tag: 'span')}
         </div>
         <div class="col-sm-4">
@@ -26,16 +26,19 @@
 
         <div class="row panel-body">
             <div class="col-sm-2">
-                <img src="/_Resources/Static/Packages/PHLU.Corporate/Images/portraitBildTest.jpg" title="Dummy image"
-                     alt="Dummy image" class="img-fluid">
+                <f:if condition="{node.properties.image}">
+                    <f:then>
+                        <media:image asset="{node.properties.image}" class="img-fluid" alt="{node.properties.firstname} {node.properties.lastname}" width="400" maximumWidth="400" height="300" maximumHeight="300" allowUpScaling="false" />
+                    </f:then>
+                </f:if>
             </div>
             <div class="col-sm-10">
                 <address>
-                    {neos:contentElement.editable(property: 'name', tag: 'span')}
+                    {neos:contentElement.editable(property: 'firstname', tag: 'span')}
                     {neos:contentElement.editable(property: 'lastname', tag: 'span')} <br>
-                    {neos:contentElement.editable(property: 'function', tag: 'span')}<br>
+                    <f:if condition="{node.properties.function}">{neos:contentElement.editable(property: 'function', tag: 'span')}</f:if><br>
                     {neos:contentElement.editable(property: 'street', tag: 'span')}<br>
-                    {neos:contentElement.editable(property: 'street2', tag: 'span')}<br>
+                    <f:if condition="{node.properties.street2} != ''">{neos:contentElement.editable(property: 'street2', tag: 'span')}<br></f:if>
                     {neos:contentElement.editable(property: 'zip', tag: 'span')} {neos:contentElement.editable(property:
                     'city', tag: 'span')} <br>
                     {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>

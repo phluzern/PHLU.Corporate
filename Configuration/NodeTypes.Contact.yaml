@@ -14,12 +14,17 @@
     nodeTypes:
       '*': FALSE
   properties:
+    text:
+      type: string
     lastname:
       type: string
       defaultValue: 'Name'
-    name:
+    firstname:
       type: string
       defaultValue: 'Vorname'
+    titlename:
+      type: string
+      defaultValue: ''
     street:
       type: string
       defaultValue: 'Strasse'
@@ -47,6 +52,15 @@
     function:
       type: string
       defaultValue: 'Funktion'
+      ui:
+        label: 'Funktion'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'contact'
+          position: 41
+    functionUserModified:
+      type: boolean
+      defaultValue: false
     image:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
@@ -55,7 +69,20 @@
         inspector:
           group: 'contact'
           position: 50
-
+    contact:
+      type: string
+      ui:
+        label: 'Kontakt'
+        reloadIfChanged: TRUE
+        reloadPageIfChanged: FALSE
+        inspector:
+          group: 'contact'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+           placeholder: 'Kontakt auswählen'
+           dataSourceIdentifier: 'phlu-corporate-contacts'
+           allowEmpty: TRUE
+           multiple: FALSE
 
 
 # Contacts (contact wrapper)
