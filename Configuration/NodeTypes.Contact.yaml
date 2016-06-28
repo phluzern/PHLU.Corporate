@@ -52,12 +52,6 @@
     function:
       type: string
       defaultValue: 'Funktion'
-      ui:
-        label: 'Funktion'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'contact'
-          position: 41
     functionUserModified:
       type: boolean
       defaultValue: false
