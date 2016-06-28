@@ -61,6 +61,12 @@
     functionUserModified:
       type: boolean
       defaultValue: false
+      ui:
+        label: 'Benutzerdefinierte Funktion'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'contact'
+          position: 42
     image:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
