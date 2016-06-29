@@ -39,25 +39,12 @@ class ContactsDataSource extends AbstractDataSource {
         $contacts = array();
 
         foreach ($this->contactRepository->findAllOrderedByName() as $contact) {
-
-
-            $group = $contact->getFunction();
-            if ($group == '') $group = "Allgemein";
-            $contacts[$group][$contact->getEventoid()] = array('value' => $contact->getEventoid(), 'label' => $contact->getName()->getLastName(). " ".$contact->getName()->getFirstName(), 'group' => $group, 'icon' => '');
-
+            $contacts[$contact->getEventoid()] = array('value' => $contact->getEventoid(), 'label' => $contact->getName()->getLastName(). " ".$contact->getName()->getFirstName());
         }
 
-        // TODO refactoring, see https://jira.neos.io/browse/NEOS-1476
-        $contactsfinal = array();
-        foreach ($contacts as $key => $val) {
-            foreach ($val as $id => $v) {
-                $contactsfinal[$id] = $v;
-            }
-        }
+        return $contacts;
 
 
-
-        return $contactsfinal;
     }
 
 
