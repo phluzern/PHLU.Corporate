@@ -70,7 +70,8 @@
           group: 'contact'
           position: 50
     contact:
-      type: string
+      type: integer
+      defaultValue: 0
       ui:
         label: 'Kontakt'
         reloadIfChanged: TRUE

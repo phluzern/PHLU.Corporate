@@ -38,11 +38,12 @@ class ContactsDataSource extends AbstractDataSource {
 
         $contacts = array();
 
-        foreach ($this->contactRepository->findAll() as $contact) {
+        foreach ($this->contactRepository->findAllOrderedByName() as $contact) {
 
 
-            $group = substr($contact->getName()->getLastName(),0,1);
-            $contacts[$group][$contact->getIdentifier()] = array('value' => $contact->getIdentifier(), 'label' => $contact->getName()->getLastName(). " ".$contact->getName()->getFirstName(), 'group' => $group, 'icon' => '');
+            $group = $contact->getFunction();
+            if ($group == '') $group = "Allgemein";
+            $contacts[$group][$contact->getEventoid()] = array('value' => $contact->getEventoid(), 'label' => $contact->getName()->getLastName(). " ".$contact->getName()->getFirstName(), 'group' => $group, 'icon' => '');
 
         }
 

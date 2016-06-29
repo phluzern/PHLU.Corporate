@@ -77,18 +77,11 @@ class ContactAspect
 
         $object = $joinPoint->getMethodArgument('object');
 
-
-
-
-
             if ($object->getProperty('contact')) {
 
-
-                $contact = $this->contactRepository->findByIdentifier($object->getProperty('contact'));
+                $contact = $this->contactRepository->getOneByEventoId($object->getProperty('contact'));
 
                 if ($contact) {
-
-
 
                     $object->setProperty('firstname', $contact->getName()->getFirstName());
                     $object->setProperty('lastname', $contact->getName()->getLastName());
@@ -105,7 +98,7 @@ class ContactAspect
                     if ($contact->getImage()) $object->setProperty('image', $contact->getImage());
 
                 } else {
-                    $object->setProperty('contact',null);
+                    $object->setProperty('contact',0);
                 }
 
 
