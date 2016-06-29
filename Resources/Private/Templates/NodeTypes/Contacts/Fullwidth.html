@@ -30,13 +30,8 @@
 
                 <f:if condition="{node.properties.image}">
                     <f:then>
-                        <f:if condition="{link}">
-                            <f:then>
-                                <a href="{link}"><media:image class="img-fluid" asset="{node.properties.image}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" /></a>
-                            </f:then>
-                            <f:else>
-                                <media:image class="img-fluid" asset="{node.properties.image}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
-                            </f:else>
+                        <f:if condition="{node.properties.image}">
+                                <media:image class="img-fluid" asset="{node.properties.image}" alt="{node.properties.firstname} {node.properties.lastname}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
                         </f:if>
                     </f:then>
                     <f:else>

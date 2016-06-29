@@ -5,7 +5,7 @@
 <div {attributes -> f:format.raw()}>
 
     <div class="row panel-heading" role="tab" id="tab-{node.Identifier}" data-toggle="collapse" data-parent="#accordion-{wrapperNode.Identifier}"
-         href="#collapse-{node.Identifier}" aria-expanded="false" >
+         data-target="#collapse-{node.Identifier}" aria-expanded="false" >
 
         <div class="col-sm-6">
             {neos:contentElement.editable(property: 'firstname', tag: 'span')}
