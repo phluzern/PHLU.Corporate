@@ -7376,7 +7376,7 @@ body {
     body .phlu-team-members .panel-heading[aria-expanded=true] .panel-switch::after {
       content: "\00D7"; }
     body .phlu-team-members .panel-heading[aria-expanded=false] .panel-switch::after {
-      content: " \002b"; }
+      content: "\002b"; }
     body .phlu-team-members .panel-heading .panel-email {
       font-family: Icons; }
       body .phlu-team-members .panel-heading .panel-email::after {
