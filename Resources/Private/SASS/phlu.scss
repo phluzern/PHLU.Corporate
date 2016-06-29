@@ -140,6 +140,12 @@ $input-padding-x: 0.3125rem; // 5px
       content: "\f007 \2000";
     }
   }
+  @else if $type == pdfFile {
+    &::before {
+      font-family: FontAwesome;
+      content: "\f1c1 \2000";
+    }
+  }
   font-size: $font-size-href;
   color: $hazelbrowndark;
   //border-bottom: 7px solid $lightgrey;
@@ -214,7 +220,6 @@ body {
         }
       }
     }
-
 
     a[typeof='typo3:PHLU.Corporate:Tag'] .neos-empty-contentcollection-overlay,
     div[typeof='typo3:PHLU.Corporate:ContentCollection.Tags'] .neos-empty-contentcollection-overlay {
@@ -1180,7 +1185,7 @@ body {
       .nav-teaser-item {
         .row {
           &.detailView {
-            .phlu-teaser-body,.phlu-teaser-caret-right.col-xs-2 {
+            .phlu-teaser-body, .phlu-teaser-caret-right.col-xs-2 {
               background-color: $lightgrey;
             }
           }
@@ -1286,6 +1291,55 @@ body {
 
   }
   //
+  // phlu-dozpage
+  //
+  .phlu-dozpage {
+    .row {
+      .col-xs-12 {
+        img {
+          padding-bottom: 20px;
+        }
+      }
+      address {
+        span {
+          margin-right: 10px;
+        }
+      }
+      &.function, &.working-priorities, &.consultation-priorities, &.achievements, &.talks, &.links {
+        ul {
+          list-style-type: square;
+          padding-left: 20px;
+        }
+      }
+      &.education, &.cv, &.professional-activities {
+        ul {
+          list-style-type: none;
+          padding-left: 0;
+          li {
+            clear: both;
+            div {
+              display: table-cell;
+            }
+            .dates {
+              width: 95px;
+            }
+          }
+        }
+      }
+      &.publications-list, &.science-projects {
+        .phlu-accordion {
+          margin: 0;
+        }
+      }
+    }
+    .row:last-child {
+      margin-bottom: 60px;
+      hr {
+        display: none;
+      }
+    }
+  }
+  //
   // main contents
   //
   .main {
@@ -1338,6 +1392,12 @@ body {
       .content-link-portrait {
         @include content-link("portrait");
       }
+      .content-link-pdf-file {
+        @include content-link("pdfFile");
+      }
+      //
+      // breadcrumb navigation
+      //
       .breadcrumb {
         display: none;
         @include media-breakpoint-up("xl") {

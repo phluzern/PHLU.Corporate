@@ -7376,7 +7376,7 @@ body {
     body .phlu-team-members .panel-heading[aria-expanded=true] .panel-switch::after {
       content: "\00D7"; }
     body .phlu-team-members .panel-heading[aria-expanded=false] .panel-switch::after {
-      content: " \002b"; }
+      content: "\002b"; }
     body .phlu-team-members .panel-heading .panel-email {
       font-family: Icons; }
       body .phlu-team-members .panel-heading .panel-email::after {
@@ -7394,6 +7394,28 @@ body {
     color: #9f632a; }
   body .phlu-team-members .panel-body {
     padding: 30px 0 60px; }
+  body .phlu-dozpage .row .col-xs-12 img {
+    padding-bottom: 20px; }
+  body .phlu-dozpage .row address span {
+    margin-right: 10px; }
+  body .phlu-dozpage .row.function ul, body .phlu-dozpage .row.working-priorities ul, body .phlu-dozpage .row.consultation-priorities ul, body .phlu-dozpage .row.achievements ul, body .phlu-dozpage .row.talks ul, body .phlu-dozpage .row.links ul {
+    list-style-type: square;
+    padding-left: 20px; }
+  body .phlu-dozpage .row.education ul, body .phlu-dozpage .row.cv ul, body .phlu-dozpage .row.professional-activities ul {
+    list-style-type: none;
+    padding-left: 0; }
+    body .phlu-dozpage .row.education ul li, body .phlu-dozpage .row.cv ul li, body .phlu-dozpage .row.professional-activities ul li {
+      clear: both; }
+      body .phlu-dozpage .row.education ul li div, body .phlu-dozpage .row.cv ul li div, body .phlu-dozpage .row.professional-activities ul li div {
+        display: table-cell; }
+      body .phlu-dozpage .row.education ul li .dates, body .phlu-dozpage .row.cv ul li .dates, body .phlu-dozpage .row.professional-activities ul li .dates {
+        width: 95px; }
+  body .phlu-dozpage .row.publications-list .phlu-accordion, body .phlu-dozpage .row.science-projects .phlu-accordion {
+    margin: 0; }
+  body .phlu-dozpage .row:last-child {
+    margin-bottom: 60px; }
+    body .phlu-dozpage .row:last-child hr {
+      display: none; }
   body .main {
     background-color: white; }
     body .main > .row p {
@@ -7463,6 +7485,16 @@ body {
       body .main > .row .content-link-portrait::before {
         font-family: FontAwesome;
         content: "\f007 \2000"; }
+    body .main > .row .content-link-pdf-file {
+      font-size: 1.125rem;
+      color: #9f632a;
+      background-image: url("../Images/linkbottomline.png");
+      background-repeat: repeat-x;
+      background-position: bottom;
+      padding-bottom: 4px; }
+      body .main > .row .content-link-pdf-file::before {
+        font-family: FontAwesome;
+        content: "\f1c1 \2000"; }
     body .main > .row .breadcrumb {
       display: none;
       font-family: "Arial", sans-serif;
