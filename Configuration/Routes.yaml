@@ -1,0 +1,18 @@
+#
+# PHLU corporate routes
+#
+-
+  name: 'Portrait Route'
+  uriPattern: '{node}/portrait/{contact}<defaultUriSuffix>'
+  defaults:
+    '@package': 'PHLU.Corporate'
+    '@controller': 'Portrait'
+    '@format': 'html'
+    '@action': 'view'
+  routeParts:
+    'node':
+      handler: 'TYPO3\Neos\Routing\FrontendNodeRoutePartHandlerInterface'
+      options:
+        onlyMatchSiteNodes: false
+    'contact':
+      handler: 'PHLU\Corporate\Routing\ContactNodeRoutePartHandler'

@@ -15,6 +15,7 @@ prototype(PHLU.Corporate:Tags.Menu) <  prototype(PHLU.Corporate:Content) {
                 alltags = ${q(node).find('[instanceof PHLU.Neos.NodeTypes:Tag]').get()}
                 node = ${q(node).children('main').get(0)}
                 title = ${q(node).property('title')}
+
                 filterCollection =  ${q(node).children('main').get(0)}
 
         }

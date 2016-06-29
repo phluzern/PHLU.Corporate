@@ -1,5 +1,7 @@
 prototype(PHLU.Corporate:Page) < prototype(PHLU.Neos.NodeTypes:Page) {
 
+
+
     breadcrumb = BreadcrumbMenu
 
     defaultRenderer = TYPO3.Neos:ContentCase

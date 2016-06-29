@@ -14,16 +14,16 @@ include: NodeTypes/Contacts/*.ts2
 page = Page {
 	head {
 		metadata = TYPO3.TypoScript:Template {
-			templatePath = 'resource://PHLU.Corporate/Private/Templates/Layouts/Default.html'
+			templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
 			sectionName = 'metadata'
 		}
 		csslinks = TYPO3.TypoScript:Template {
-			templatePath = 'resource://PHLU.Corporate/Private/Templates/Layouts/Default.html'
+			templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
 			sectionName = 'csslinks'
 		}
 
 		javascripts.site = TYPO3.TypoScript:Template {
-			templatePath = 'resource://PHLU.Corporate/Private/Templates/Layouts/Default.html'
+			templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
 			sectionName = 'headScripts'
 		}
 
@@ -31,7 +31,7 @@ page = Page {
 	}
 
 	body {
-		templatePath = 'resource://PHLU.Corporate/Private/Templates/Layouts/Default.html'
+		templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
 		sectionName = 'body'
 		parts {
 
@@ -92,9 +92,20 @@ page = Page {
 						startingPoint = ${q(site).get(0)}
 						pageClass = ''
 						itemClass = 'col-lg-4'
-						defaultRenderer = TYPO3.Neos:ContentCase
+						defaultRenderer = PHLU.Neos.NodeTypes:Page {
+
+							templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/TeaserMenuContent.html'
+							teaser = ${q(node).children('teaser').get(0)}
+							defaultRenderer = TYPO3.Neos:ContentCase
+
+						}
+
 						header = ${q(node).children('header').get(0)}
 						teaser = ${q(node).children('teaser').get(0)}
+
+
+
+
 					}
 				}
 			}
@@ -134,18 +145,15 @@ page = Page {
 
 
 
-
 		// These are your content areas, you can define as many as you want, just name them and the nodePath.
 		content {
-
 			// The default content section
 			main = TYPO3.Neos:ContentCase
-
 
 		}
 
 		javascripts.site = TYPO3.TypoScript:Template {
-			templatePath = 'resource://PHLU.Corporate/Private/Templates/Layouts/Default.html'
+			templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
 			sectionName = 'bodyScripts'
 		}
 	}
@@ -154,3 +162,5 @@ page = Page {
 		id = 'top'
 	}
 }
+
+

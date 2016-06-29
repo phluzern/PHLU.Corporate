@@ -1,0 +1,11 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<f:render section="default" arguments="{_all}"/>
+
+
+<f:section name="default">
+    <h3>{node.properties.title}</h3>
+    <ts:render path="defaultRenderer" context="{node: teaser}"/>
+</f:section>
+
