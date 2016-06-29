@@ -7416,6 +7416,38 @@ body {
     margin-bottom: 60px; }
     body .phlu-dozpage .row:last-child hr {
       display: none; }
+  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
+    padding-left: 0; }
+    body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3::before {
+      padding-right: 10px;
+      color: #55a7b3;
+      font-weight: bold; }
+  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
+    font-family: FontAwesome; }
+    body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right::after {
+      content: " \f019";
+      margin-top: 3px; }
+  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.pdfFile .row .phlu-teaser-body h3::before {
+    font-family: FontAwesome;
+    content: " \f1c1"; }
+  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.wordFile .row .phlu-teaser-body h3::before {
+    font-family: FontAwesome;
+    content: " \f1c2"; }
+  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.excelFile .row .phlu-teaser-body h3::before {
+    font-family: FontAwesome;
+    content: " \f1c3"; }
+  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.powerpointFile .row .phlu-teaser-body h3::before {
+    font-family: FontAwesome;
+    content: " \f1c4"; }
+  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.imageFile .row .phlu-teaser-body h3::before {
+    font-family: FontAwesome;
+    content: " \f1c5"; }
+  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.videoFile .row .phlu-teaser-body h3::before {
+    font-family: FontAwesome;
+    content: " \f1c8"; }
+  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.neutralFile .row .phlu-teaser-body h3::before {
+    font-family: FontAwesome;
+    content: " \f016"; }
   body .main {
     background-color: white; }
     body .main > .row p {

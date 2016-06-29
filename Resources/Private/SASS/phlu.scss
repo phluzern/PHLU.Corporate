@@ -1340,6 +1340,118 @@ body {
     }
   }
   //
+  // phlu-filelinks
+  //
+  .row.subjectsfilternav.phlu-filelinks {
+    .phlu-teaser.navigation.subpage {
+      .nav-teaser-item {
+        .row {
+          .phlu-teaser-body {
+            h3 {
+              padding-left: 0;
+              &::before {
+                padding-right:10px;
+                color:$turquoise;
+                font-weight: bold;
+              }
+            }
+          }
+          .phlu-teaser-caret-right {
+            font-family: FontAwesome;
+            &::after {
+              content: " \f019";
+              margin-top:3px;
+            }
+          }
+        }
+        &.pdfFile {
+          .row {
+            .phlu-teaser-body {
+              h3 {
+                &::before {
+                  font-family: FontAwesome;
+                  content: " \f1c1";
+                }
+              }
+            }
+          }
+        }
+        &.wordFile {
+          .row {
+            .phlu-teaser-body {
+              h3 {
+                &::before {
+                  font-family: FontAwesome;
+                  content: " \f1c2";
+                }
+              }
+            }
+          }
+        }
+        &.excelFile {
+          .row {
+            .phlu-teaser-body {
+              h3 {
+                &::before {
+                  font-family: FontAwesome;
+                  content: " \f1c3";
+                }
+              }
+            }
+          }
+        }
+        &.powerpointFile {
+          .row {
+            .phlu-teaser-body {
+              h3 {
+                &::before {
+                  font-family: FontAwesome;
+                  content: " \f1c4";
+                }
+              }
+            }
+          }
+        }
+        &.imageFile {
+          .row {
+            .phlu-teaser-body {
+              h3 {
+                &::before {
+                  font-family: FontAwesome;
+                  content: " \f1c5";
+                }
+              }
+            }
+          }
+        }
+        &.videoFile {
+          .row {
+            .phlu-teaser-body {
+              h3 {
+                &::before {
+                  font-family: FontAwesome;
+                  content: " \f1c8";
+                }
+              }
+            }
+          }
+        }
+        &.neutralFile {
+          .row {
+            .phlu-teaser-body {
+              h3 {
+                &::before {
+                  font-family: FontAwesome;
+                  content: " \f016";
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //
   // main contents
   //
   .main {
