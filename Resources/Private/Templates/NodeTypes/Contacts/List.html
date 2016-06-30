@@ -1,6 +1,7 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
+{namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
 
 <div {attributes -> f:format.raw()}>
 
@@ -42,8 +43,9 @@
                     {neos:contentElement.editable(property: 'zip', tag: 'span')} {neos:contentElement.editable(property:
                     'city', tag: 'span')} <br>
                     {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
-                    <a href="mailto:{node.properties.email}">{neos:contentElement.editable(property: 'email', tag:
-                        'span')}</a>
+                    {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
+                    <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{neos:contentElement.editable(property: 'email', tag: 'span')}</a><br>
+                    <a class="content-link-portrait" href="{portrait:uri(node:node)}">Portrait</a>
                 </address>
             </div>
         </div>

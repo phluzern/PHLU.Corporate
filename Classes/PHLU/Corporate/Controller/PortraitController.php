@@ -8,10 +8,29 @@ namespace PHLU\Corporate\Controller;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 use PHLU\Neos\Models\Domain\Model\Contact;
+use TYPO3\Eel\FlowQuery\FlowQuery;
+use TYPO3\TYPO3CR\Exception\PageNotFoundException;
 
 class PortraitController extends \TYPO3\Neos\Controller\Frontend\NodeController
 {
 
+
+    /**
+     * Shows the specified node and takes visibility and access restrictions into
+     * account.
+     *
+     * @param NodeInterface $node
+     * @return string View output for the specified node
+     * @Flow\SkipCsrfProtection We need to skip CSRF protection here because this action could be called with unsafe requests from widgets or plugins that are rendered on the node - For those the CSRF token is validated on the sub-request, so it is safe to be skipped here
+     * @Flow\IgnoreValidation("node")
+     * @throws NodeNotFoundException
+     */
+    public function testAction($node)
+    {
+
+        echo 1;
+
+    }
 
 
 
@@ -35,6 +54,12 @@ class PortraitController extends \TYPO3\Neos\Controller\Frontend\NodeController
         }
         if (!$node->getContext()->isLive() && !$this->privilegeManager->isPrivilegeTargetGranted('TYPO3.Neos:Backend.GeneralAccess')) {
             $this->redirect('index', 'Login', null, array('unauthorized' => true));
+        }
+
+         // show only pages with containing contact nodes inside
+         $flowQuery = new FlowQuery(array($node));
+         if ($flowQuery->find("[instanceof PHLU.Corporate:Contact][contact=".$contact->getEventoid()."]")->count() == 0) {
+           throw new PageNotFoundException('The requested node does not exist or isn\'t accessible to the current user', 1430218623);
         }
 
 

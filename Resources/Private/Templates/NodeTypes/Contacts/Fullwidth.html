@@ -1,6 +1,7 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
+{namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
 
 <div class="row sephiabg contactperson" id="kontakt">
     <div class="col-xs-12">
@@ -23,7 +24,7 @@
                     </span>
                     {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
                     <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{neos:contentElement.editable(property: 'email', tag: 'span')}</a><br>
-                    <a class="content-link-portrait" href="#">Portrait</a>
+                    <portrait:link node="{node}">Portrait</portrait:link>
                 </address>
             </div>
             <div class="col-xs-12 col-sm-6 flexfirst col-md-4">

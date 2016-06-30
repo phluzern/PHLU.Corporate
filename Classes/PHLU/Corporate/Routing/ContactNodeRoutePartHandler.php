@@ -50,8 +50,12 @@ class ContactNodeRoutePartHandler extends IdentityRoutePart
     protected function getObjectIdentifierFromPathSegment($pathSegment)
     {
 
+
             $contact = $this->contactRepository->getOneByEmailPart($pathSegment);
-            if ($contact) return $contact->getIdentifier();
+
+            if ($contact) {
+                return $contact->getIdentifier();
+            }
 
             return null;
     }
