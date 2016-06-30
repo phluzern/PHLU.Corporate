@@ -7416,6 +7416,12 @@ body {
     margin-bottom: 60px; }
     body .phlu-dozpage .row:last-child hr {
       display: none; }
+  body .row.subjectsfilternav.phlu-filelinks .nav-pills li .nav-link {
+    padding-left: 40px; }
+    body .row.subjectsfilternav.phlu-filelinks .nav-pills li .nav-link i {
+      position: absolute;
+      margin-left: -24px;
+      margin-top: 5px; }
   body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
     padding-left: 0; }
     body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3::before {
@@ -7451,13 +7457,13 @@ body {
   body .flowtext-phlu-event {
     padding-top: 30px; }
     body .flowtext-phlu-event.first {
-      padding-top: 60px; }
+      padding-top: 10px; }
     body .flowtext-phlu-event .event-date-day, body .flowtext-phlu-event .event-date-month-year, body .flowtext-phlu-event .event-location {
       float: left; }
     body .flowtext-phlu-event .event-date-day {
       font-size: 28px;
       color: white;
-      font-weight: 700;
+      font-weight: normal;
       background-color: #55a7b3;
       padding: 15px;
       width: 68px; }
