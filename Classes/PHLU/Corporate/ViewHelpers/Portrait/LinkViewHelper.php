@@ -53,7 +53,7 @@ class LinkViewHelper extends AbstractViewHelper
        $flowQuery = new FlowQuery(array($node));
        $pageNode = $flowQuery->closest("[instanceof PHLU.Corporate:Page]")->get(0);
 
-       $contact = $this->contactRepository->getOneByEventoId($node->getProperty('contact'));
+        $contact = $this->contactRepository->getOneByEventoId($node->getProperty('contact'));
 
         if ($contact && $contact->getEmailPart() != '') {
          return '<a class="content-link-portrait" href="'.$this->controllerContext->getUriBuilder()->reset()->setFormat('html')->uriFor('view',array('node'=>$pageNode,'contact'=>$contact->getEmailPart()),'Portrait','PHLU.Corporate').'">'.$this->renderChildren().'</a>';

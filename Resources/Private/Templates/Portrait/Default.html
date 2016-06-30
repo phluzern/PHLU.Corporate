@@ -1,6 +1,334 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
-{namespace phlu=PHLU\Corporate\ViewHelpers}
+
+<div class="row">
+
+    <div class="col-xs-12 phlu-dozpage">
+
+        {breadcrumb -> f:format.raw()}
+
+        <h1 class="page-header">{contact.name.fullname}</h1>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+
+                <f:if condition="{contact.image}">
+                    <media:image class="img-fluid" asset="{contact.image}" alt="{contact.name.fullname}"  width="400" maximumWidth="300" height="400" maximumHeight="300" />
+                </f:if>
+
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-9">
+                <address>
+                    <b>{contact.name.firstName} {contact.name.lastName}</b><br>
+                    <f:if condition="{contact.titlename} != ''">{contact.titlename}<br></f:if>
+                    {contact.street}<br>
+                    <f:if condition="{contact.street2} != ''">{contact.street2}<br></f:if>
+                    {contact.plz} {contact.city}<br>
+                    <span>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </span>
+                    {contact.phone}  <br>
+                    <a class="content-link-email-contact-person"
+                       href="mailto:{contact.email}">{contact.email}</a><br>
+                </address>
+            </div>
+
+        </div>
+
+        <hr>
+        <div class="row function">
+            <div class="col-xs-12">
+
+                <h2>Funktion/en</h2>
+
+                <ul>
+                    <li>Leiterin Berufspraxis Ausbildung Primar</li>
+                    <li>Fachkoordinatorin Mentorat Ausbildung Primar</li>
+                    <li>Fachkoordinatorin Bewegung und Sport Ausbildung Primar</li>
+                    <li>Dozentin Fachdidaktik Bewegung und Sport Ausbildung Primar</li>
+                    <li>Dozentin Mentorat Ausbildung Primar</li>
+                </ul>
+                <hr>
+            </div>
+
+        </div>
+        <div class="row cv">
+            <div class="col-xs-12">
+
+                <h2>Lebenslauf</h2>
+
+                <ul>
+                    <li>
+                        <div class="dates">
+                            1976 - 1981
+                        </div>
+                        <div>
+                            Primarleherausbildung Kant. Lehrerseminar Luzern
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dates">1981 - 1985</div>
+                        <div> Turn- und Sportlehrerausbildung II ETH Zürich</div>
+                    </li>
+                    <li>
+                        <div class="dates">1983 - 1987</div>
+                        <div> Fachlehrerausbildung Geografie Universität Zürich</div>
+                    </li>
+                    <li>
+                        <div class="dates">2000 - 2002</div>
+                        <div>
+                            Nachdiplomstudium Fachdidaktik Bewegung und Sport Universität Bern
+                        </div>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+        <div class="row education">
+            <div class="col-xs-12">
+                <h2>Ausbildung</h2>
+                <ul>
+                    <li>
+                        <div class="dates">
+                            1976 - 1981
+                        </div>
+                        <div>
+                            Primarleherausbildung Kant. Lehrerseminar Luzern
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dates">1981 - 1985</div>
+                        <div> Turn- und Sportlehrerausbildung II ETH Zürich</div>
+                    </li>
+                    <li>
+                        <div class="dates">1983 - 1987</div>
+                        <div> Fachlehrerausbildung Geografie Universität Zürich</div>
+                    </li>
+                    <li>
+                        <div class="dates">2000 - 2002</div>
+                        <div>
+                            Nachdiplomstudium Fachdidaktik Bewegung und Sport Universität Bern
+                        </div>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+        <div class="row working-priorities">
+            <div class="col-xs-12">
+                <h2>Arbeitsschwerpunkte</h2>
+                <ul>
+                    <li>Fachdidaktik Bewegung und Sport</li>
+                    <li>Mentorat und Praxisbegleitung</li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+        <div class="row consultation-priorities">
+            <div class="col-xs-12">
+
+                <h2>Beratungsschwerpunkte</h2>
+
+                <ul>
+                    <li>Fachdidaktik Bewegung und Sport</li>
+                    <li>Mentorat und Praxisbegleitung</li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+        <div class="row professional-activities">
+            <div class="col-xs-12">
+                <h2>Berufliche Tätigkeiten</h2>
+                <ul>
+                    <li>
+                        <div class="dates">
+                            1984 - 2002
+                        </div>
+                        <div>Sportlehrerin am Kant. Lehrerseminar Luzern
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dates">
+                            2000 - 2004
+                        </div>
+                        <div>
+                            Beauftragte Sport Amt für Volksschulbildung Luzern
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dates">
+                            2003 - 2007
+                        </div>
+                        <div>
+                            Fachbeauftragte Bewegung und Sport PHZ Luzern
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dates">
+                            seit 2003
+                        </div>
+                        <div>
+                            Dozentin Bewegung und Sport PHZ Luzern
+                        </div>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row publications-list">
+            <div class="col-xs-12">
+                <h2>Publikationen</h2>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="phlu-accordion1" class="phlu-accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne1">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#phlu-accordion1" href="#collapseOne1"
+                                           aria-expanded="false" aria-controls="collapseOne1">
+                                            Artikel, Rezension (1)
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne1" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingOne1">
+                                    <div>
+                                        <p>
+                                            Kellerhals, Ursina; Abplanalp, Richard; Demarmels, Sascha; MacKevett,
+                                            Douglas; Simon, Monika & Wehrli, Roger (2016). Measuring Meaning:
+                                            Culture-Specific Differences in the Linguistic Evocation of Emotionality and
+                                            Rationality. Journal of Research Design and Statistics in Linguistics and
+                                            Communication Science, 2015(2.1), 53-74.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo1">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#phlu-accordion1"
+                                           href="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+                                            Buchkapitel / Gesetzeskommentar / Lexikonartikel (2)
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo1" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingTwo1">
+                                    <div>
+                                        <p>
+                                            <a class="content-link-external" href="#">
+                                                Aplanalp, Richard (2014). Historisches Lexikon der Schweiz. In Stiftung
+                                                Historisches Lexikon der Schweiz (Hrsg.), -- (---). Basel: Schwabe. >
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div class="row science-projects">
+            <div class="col-xs-12">
+                <h2>Forschungsprojekte</h2>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="phlu-accordion" class="phlu-accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#phlu-accordion" href="#collapseOne"
+                                           aria-expanded="false" aria-controls="collapseOne">
+                                            Artikel, Rezension (1)
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <div>
+                                        <p>
+                                            Kellerhals, Ursina; Abplanalp, Richard; Demarmels, Sascha; MacKevett,
+                                            Douglas; Simon, Monika & Wehrli, Roger (2016). Measuring Meaning:
+                                            Culture-Specific Differences in the Linguistic Evocation of Emotionality and
+                                            Rationality. Journal of Research Design and Statistics in Linguistics and
+                                            Communication Science, 2015(2.1), 53-74.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#phlu-accordion"
+                                           href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Buchkapitel / Gesetzeskommentar / Lexikonartikel (2)
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingTwo">
+                                    <div>
+                                        <p>
+                                            <a class="content-link-external" href="#">
+                                                Aplanalp, Richard (2014). Historisches Lexikon der Schweiz. In Stiftung
+                                                Historisches Lexikon der Schweiz (Hrsg.), -- (---). Basel: Schwabe. >
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div class="row achievements">
+            <div class="col-xs-12">
+
+                <h2>Bedeutende Leistungen</h2>
+
+                <ul>
+                    <li>DOBS (Dozierende Bewegung und Sport an Pädagogischen Hochschulen)</li>
+                    <li>SVSS (Schweizerischer Verband für Sport in der Schule)</li>
+                    <li>LVSS (Luzerner Verband für Sport in der Schule)</li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+        <div class="row talks">
+            <div class="col-xs-12">
+
+                <h2>Vortragstätigkeit</h2>
+
+                <ul>
+                    <li>DOBS (Dozierende Bewegung und Sport an Pädagogischen Hochschulen)</li>
+                    <li>SVSS (Schweizerischer Verband für Sport in der Schule)</li>
+                    <li>LVSS (Luzerner Verband für Sport in der Schule)</li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+        <div class="row links">
+            <div class="col-xs-12">
+
+                <h2>Links / pers. Homepage</h2>
+
+                <ul>
+                    <li><a class="content-link-external" href="#">
+                        pers. Homepage
+                    </a></li>
+                </ul>
+                <hr>
+            </div>
+        </div>
 
 
+    </div>
+
+</div>

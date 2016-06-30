@@ -51,6 +51,7 @@ class ContactNodeRoutePartHandler extends IdentityRoutePart
     {
 
 
+
             $contact = $this->contactRepository->getOneByEmailPart($pathSegment);
 
             if ($contact) {

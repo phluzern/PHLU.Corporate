@@ -45,7 +45,7 @@
                     {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
                     {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
                     <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{neos:contentElement.editable(property: 'email', tag: 'span')}</a><br>
-                    <a class="content-link-portrait" href="{portrait:uri(node:node)}">Portrait</a>
+                    <portrait:link node="{node}">Portrait</portrait:link>
                 </address>
             </div>
         </div>
