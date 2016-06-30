@@ -2,7 +2,7 @@
 # PHLU corporate routes
 #
 -
-  name: 'Portrait Route'
+  name: 'Portrait Route Resolver'
   uriPattern: '{node}/portrait/{contact}<defaultUriSuffix>'
   defaults:
     '@package': 'PHLU.Corporate'
@@ -11,8 +11,25 @@
     '@action': 'view'
   routeParts:
     'node':
-      handler: 'TYPO3\Neos\Routing\FrontendNodeRoutePartHandlerInterface'
+      handler: 'TYPO3\Neos\Routing\FrontendNodeRoutePartHandler'
       options:
         onlyMatchSiteNodes: false
     'contact':
       handler: 'PHLU\Corporate\Routing\ContactNodeRoutePartHandler'
+
+#
+# PHLU corporate routes
+#
+-
+  name: 'Portrait Route Builder'
+  uriPattern: '{node}/portrait/{contact}<defaultUriSuffix>'
+  defaults:
+    '@package': 'PHLU.Corporate'
+    '@controller': 'Portrait'
+    '@format': 'html'
+    '@action': 'view'
+  routeParts:
+    'node':
+      handler: 'TYPO3\Neos\Routing\FrontendNodeRoutePartHandler'
+      options:
+        onlyMatchSiteNodes: false

@@ -8,3 +8,7 @@ TYPO3:
       translation:
         autoInclude:
           'PHLU.Corporate': ['NodeTypes/*']
+
+  TypoScript:
+    defaultContext:
+      'PHLU.Corporate': 'PHLU\Corporate\Eel\Helper\NodeHelper'

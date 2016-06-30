@@ -8,11 +8,11 @@ namespace PHLU\Corporate\Controller;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 use PHLU\Neos\Models\Domain\Model\Contact;
+use TYPO3\Eel\FlowQuery\FlowQuery;
+use TYPO3\TYPO3CR\Exception\PageNotFoundException;
 
 class PortraitController extends \TYPO3\Neos\Controller\Frontend\NodeController
 {
-
-
 
 
     /**
@@ -37,10 +37,19 @@ class PortraitController extends \TYPO3\Neos\Controller\Frontend\NodeController
             $this->redirect('index', 'Login', null, array('unauthorized' => true));
         }
 
+        $flowQuery = new FlowQuery(array($node));
+
+         // show only pages with containing contact nodes inside
+         $flowQuery = new FlowQuery(array($node));
+         if ($flowQuery->find("[instanceof PHLU.Corporate:Contact][contact=".$contact->getEventoid()."]")->count() == 0) {
+           throw new PageNotFoundException('The requested node does not exist or isn\'t accessible to the current user', 1430218623);
+        }
+
+      //  \TYPO3\Flow\var_dump($this->controllerContext->getRequest()->getMainRequest());
 
         $this->view->assignMultiple(array('value'=>$node,'contact'=>$contact));
-        $this->view->setTypoScriptPath('portrait');
 
+        $this->view->setTypoScriptPath('portrait');
 
 
     }
