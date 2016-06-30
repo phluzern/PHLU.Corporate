@@ -7448,6 +7448,61 @@ body {
   body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.neutralFile .row .phlu-teaser-body h3::before {
     font-family: FontAwesome;
     content: " \f016"; }
+  body .flowtext-phlu-event {
+    padding-top: 30px; }
+    body .flowtext-phlu-event.first {
+      padding-top: 60px; }
+    body .flowtext-phlu-event .event-date-day, body .flowtext-phlu-event .event-date-month-year, body .flowtext-phlu-event .event-location {
+      float: left; }
+    body .flowtext-phlu-event .event-date-day {
+      font-size: 28px;
+      color: white;
+      font-weight: 700;
+      background-color: #55a7b3;
+      padding: 15px;
+      width: 68px; }
+    body .flowtext-phlu-event .event-date-month-year {
+      font-weight: 700;
+      padding-left: 32px; }
+      body .flowtext-phlu-event .event-date-month-year .event-title {
+        position: absolute;
+        clear: both;
+        font-size: 20px;
+        font-weight: normal;
+        height: 45px;
+        width: 650px;
+        overflow: hidden;
+        margin-top: 1px; }
+    body .flowtext-phlu-event h2 {
+      clear: both;
+      padding-top: 32px; }
+    body .flowtext-phlu-event .phlu-teaser-type {
+      width: 135px;
+      background-color: #55a7b3; }
+      body .flowtext-phlu-event .phlu-teaser-type::before {
+        position: absolute;
+        margin-left: -52px;
+        color: white;
+        content: " \002b";
+        background-color: #55a7b3;
+        padding: 0 8px;
+        margin-top: -7px;
+        font-size: 20px; }
+      body .flowtext-phlu-event .phlu-teaser-type.collapsed::before {
+        content: " \00D7"; }
+  body .flowtext-phlu-news .phlu-teaser-type {
+    width: 75px;
+    background-color: #91a103;
+    bottom: -55px;
+    position: relative; }
+  body .flowtext-phlu-news .phlu-teaser-type, body .flowtext-phlu-event .phlu-teaser-type {
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    color: white;
+    font-weight: 700;
+    padding: 7px 20px;
+    text-transform: uppercase;
+    float: right; }
   body .main {
     background-color: white; }
     body .main > .row p {
