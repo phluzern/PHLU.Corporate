@@ -89,6 +89,8 @@
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
+    bottom:
+      type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
     contact: ~
     targetgroup: ~
     carouselnews: ~

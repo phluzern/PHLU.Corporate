@@ -13,9 +13,8 @@
 
 
 'PHLU.Corporate:Tags.Menu':
-  superTypes:
-    'PHLU.Corporate:Content': TRUE
   ui:
+    icon: icon-tag
     label: 'Menu'
   properties:
     title:

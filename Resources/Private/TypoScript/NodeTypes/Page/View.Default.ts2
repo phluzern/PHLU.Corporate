@@ -2,6 +2,8 @@
 prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
 
 
+     bottom = ${q(node).children('bottom').get(0)}
+
 
      templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
 

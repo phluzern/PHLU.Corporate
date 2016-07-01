@@ -11,13 +11,11 @@
 
         <ts:render path="defaultRenderer" context="{node: header}"/>
 
-
         <ts:render path="collectionRenderer" context="{node: main}"/>
 
         <f:if condition="{tagsMenu}">
             <ts:render path="defaultRenderer" context="{node: tagsMenu}"/>
         </f:if>
-
 
 
         <f:if condition="{onepage.properties.hideondetailpage} === true">
@@ -36,7 +34,7 @@
         </f:if>
 
 
-
+        <ts:render path="collectionRenderer" context="{node: bottom}"/>
 
 
     </div>
