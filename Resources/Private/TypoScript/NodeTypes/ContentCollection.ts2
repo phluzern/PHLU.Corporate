@@ -32,6 +32,7 @@ prototype(PHLU.Corporate:ContentCollection.Page.View.Default) < prototype(PHLU.C
 
 prototype(PHLU.Corporate:ContentCollection.Page.View.Default.Default) < prototype(PHLU.Corporate:ContentCollection.Page.View.Default)  {
 
+
 }
 
 prototype(PHLU.Corporate:ContentCollection.Page.Home) < prototype(PHLU.Corporate:ContentCollection)  {

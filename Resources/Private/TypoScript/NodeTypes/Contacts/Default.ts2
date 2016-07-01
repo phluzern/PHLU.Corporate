@@ -48,8 +48,6 @@ prototype(PHLU.Corporate:Contacts) {
 }
 
 
-
-
 # Contacts wrapper (list)
 prototype(PHLU.Corporate:Contacts) {
 
