@@ -18,3 +18,9 @@ prototype(PHLU.Corporate:TextWithImage) {
     width = 336
     height = 237
 }
+
+# Default Text with Image
+prototype(PHLU.Corporate:Image) {
+    width = 800
+    height = 1600
+}

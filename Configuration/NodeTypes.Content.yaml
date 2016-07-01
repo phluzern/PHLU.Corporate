@@ -210,3 +210,14 @@
     position: 400
 
 
+# Image
+'PHLU.Corporate:Image':
+  superTypes:
+    'PHLU.Corporate:Content': TRUE
+    'TYPO3.Neos.NodeTypes:ImageMixin': TRUE
+  ui:
+    label: 'Bild'
+    icon: 'icon-picture'
+    position: 400
+
+
