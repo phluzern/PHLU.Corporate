@@ -54,6 +54,7 @@
       'PHLU.Corporate:Text': TRUE
       'PHLU.Corporate:TextWithImage': TRUE
       'PHLU.Corporate:AccordeonElement': TRUE
+      'PHLU.Corporate:Contacts': TRUE
   ui:
     label: 'Allgemein'
     icon: icon-gear
