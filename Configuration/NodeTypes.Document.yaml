@@ -80,7 +80,6 @@
 
 
 
-
 'PHLU.Corporate:Page.View.Default':
   ui:
     label: 'Standard-Seite'
