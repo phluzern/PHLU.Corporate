@@ -1,7 +1,5 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
-
-<a class="nav-item nav-link " href="#" {f:if(condition: '{neos:rendering.inBackend()}', then:'rel="typo3:content-collection"', else: '')}
-data-ng-click="toggleFilter('{tag.Identifier}');">
+<div {attributes -> f:format.raw()}>
 <i class="{tag.properties.icon}"></i>
 {neos:contentElement.editable(property: 'label', tag: 'span')}
-</a>
+</div>
