@@ -1,4 +1,4 @@
-prototype(PHLU.Corporate:Tags.Menu) <  prototype(PHLU.Corporate:ContentCollection)  {
+prototype(PHLU.Corporate:Tags.Menu) <  prototype(PHLU.Corporate:Content)  {
 
         templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Tags/Menu.html'
 
@@ -18,7 +18,7 @@ prototype(PHLU.Corporate:Tags.Menu) <  prototype(PHLU.Corporate:ContentCollectio
 
                 tagRenderer = PHLU.Corporate:Tag
 
-                filterCollection =  ${q(node).children('main').get(0)}
+                filterCollection =  ${q(node).children().get(0)}
 
         }
 
