@@ -3,7 +3,7 @@ prototype(PHLU.Corporate:Tags.Menu) <  prototype(PHLU.Corporate:Content) {
         templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Tags/Menu.html'
 
 
-        filterCollection =  ${q(node).children('main').get(0)}
+        filterCollection =  ${q(node).children().get(0)}
 
         filterMenu = Menu {
                 entryLevel = 0
@@ -13,8 +13,10 @@ prototype(PHLU.Corporate:Tags.Menu) <  prototype(PHLU.Corporate:Content) {
                 filter = 'PHLU.Corporate:Page'
                 startingPoint = ${q(node).parent().get(0)}
                 alltags = ${q(node).find('[instanceof PHLU.Neos.NodeTypes:Tag]').get()}
-                node = ${q(node).children('main').get(0)}
+                label = ${q(node).property('lable')}
                 title = ${q(node).property('title')}
+
+                tagRenderer = PHLU.Corporate:Tag
 
                 filterCollection =  ${q(node).children('main').get(0)}
 

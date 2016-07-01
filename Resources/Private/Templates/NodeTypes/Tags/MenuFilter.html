@@ -39,15 +39,7 @@
                                                         class="ng-tag {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')} "
                                                         data-ng-class="{active: filter['{tag.Identifier}'] === true}"
                                                         data-ng-init="filterAll['{tag.Identifier}'] = true;">
-                                                        <neos:contentElement.wrap node="{tag}"><a
-                                                                class="nav-item nav-link "
-                                                                href="#"
-                                                                {f:if(condition: '{neos:rendering.inBackend()}', then:
-                                                            'rel="typo3:content-collection"', else: '')}
-                                                            data-ng-click="toggleFilter('{tag.Identifier}');">
-                                                            <i class="{tag.properties.icon}"></i>
-                                                            {tag.properties.label}
-                                                            </a></neos:contentElement.wrap>
+                                                        <neos:contentElement.wrap node="{tag}"><ts:render path="tagRenderer" context="{node: tag}"/></neos:contentElement.wrap>
                                                     </li>
 
                                                 </f:for>
