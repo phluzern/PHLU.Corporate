@@ -1,4 +1,4 @@
-prototype(PHLU.Corporate:Tags.Menu) <  prototype(PHLU.Corporate:Content) {
+prototype(PHLU.Corporate:Tags.Menu) <  prototype(PHLU.Corporate:ContentCollection)  {
 
         templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Tags/Menu.html'
 
