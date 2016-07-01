@@ -15,8 +15,8 @@ prototype(PHLU.Corporate:Content) < prototype(TYPO3.Neos:Content) {
 
 # Default Text with Image
 prototype(PHLU.Corporate:TextWithImage) {
-    width = 336
-    height = 237
+    width = 250
+    height = 250
 }
 
 # Default Text with Image
