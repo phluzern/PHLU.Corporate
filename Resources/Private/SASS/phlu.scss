@@ -1547,6 +1547,37 @@ body {
   //
   .main {
     background-color: white;
+    overflow-x:hidden;
+
+    .ambient-img-fullwidth {
+
+      width: 110%;
+      height: auto;
+      display: flex;
+      float: none;
+      clear: both;
+      background-size: cover;
+      padding: 0;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      margin-left: -30px;
+      margin-top: $spacer-y-desktop;
+      margin-bottom: $spacer-y-desktop;
+      background-position: center center;
+          img {
+            @include media-breakpoint-down("sm") {
+              height: 480px !important;
+              width: auto;
+            }
+            @include media-breakpoint-down("lg") {
+              width: 100%;
+            }
+            @include media-breakpoint-up("lg") {
+              width: 100%;
+            }
+          }
+     }
     > .row {
       p {
         margin-bottom: 31px;
@@ -1583,7 +1614,7 @@ body {
           }
         }
       }
-      .content-link-email {
+          .content-link-email {
         @include content-link("email");
       }
       .content-link-email-contact-person {

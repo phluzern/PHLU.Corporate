@@ -17,6 +17,12 @@ prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
         prototype(PHLU.Corporate:ContactsGroup).collectionRenderer.attributes.class = 'row'
         }
 
+        # Default Text with Image
+        prototype(PHLU.Corporate:Image) {
+            templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/Image/Fullwidth.html'
+            width = 800
+            height = 600
+        }
 
 }
 
@@ -40,6 +46,9 @@ prototype(PHLU.Corporate:Page.View.Default.Default) < prototype(PHLU.Corporate:P
         prototype(PHLU.Corporate:Contact).attributes.class = 'panel panel-default'
 
     }
+
+
+
 
 
 
