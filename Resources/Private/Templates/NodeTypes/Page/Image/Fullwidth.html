@@ -2,36 +2,56 @@
 {namespace media=TYPO3\Media\ViewHelpers}
 
 
-</div>
+<f:if condition="{neos:rendering.inBackend()}">
+	<f:then>
+		<f:if condition="{image}">
+			<f:then>
+				<media:image asset="{image}" alt="{alternativeText}" class="backend-img-fullwidth" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
+			</f:then>
+			<f:else>
+				<f:if condition="{neos:rendering.inEditMode()}">
+					<img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image" alt="Dummy image" class="neos-handle" />
+				</f:if>
+			</f:else>
+		</f:if>
+
+	</f:then>
+	<f:else>
+
+		</div>
 
 
-</div>
+		</div>
 
-</div>
-
-
-
-
-	<f:if condition="{image}">
-		<f:then>
-
-			<div class="ambient-img-fullwidth" style="background-image:url('<typo3.media:uri.image asset="{image}" width="1400" maximumWidth="1400"  maximumHeight="1400" allowUpScaling="false" />')">
-			<img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/spacer.png')}" width="{image.width}" height="{image.height}">
-			</div>
-		</f:then>
-	</f:if>
-
-
-
-
-
-<div class="row">
-
-	<div class="col-xs-12 col-xl-8">
+		</div>
 
 
 
 
+		<f:if condition="{image}">
+			<f:then>
+
+				<div class="ambient-img-fullwidth" style="background-image:url('<typo3.media:uri.image asset="{image}" width="1400" maximumWidth="1400"  maximumHeight="1400" allowUpScaling="false" />')">
+				<img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/spacer.png')}" width="{image.width}" height="{image.height}">
+				</div>
+			</f:then>
+		</f:if>
 
 
-		<div class="neos-contentcollection">
+
+
+
+		<div class="row">
+
+			<div class="col-xs-12 col-xl-8">
+
+
+
+
+
+
+				<div class="neos-contentcollection">
+
+	</f:else>
+
+</f:if>
