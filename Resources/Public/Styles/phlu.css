@@ -7556,7 +7556,8 @@ body {
 
       @media (max-width: 543px) {
         body .main .ambient-img-fullwidth {
-          background-position-x: center; } }
+          background-position-x: center;
+          margin-left: -15px; } }
       @media (max-width: 543px) {
         body .main .ambient-img-fullwidth img {
           height: 480px !important;

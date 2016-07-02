@@ -1594,6 +1594,7 @@ body {
       }
       @include media-breakpoint-only("xs") {
         background-position-x: center;
+        margin-left: -15px;
       }
 
 
