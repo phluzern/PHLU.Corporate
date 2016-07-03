@@ -5,10 +5,10 @@
 		<f:then>
 			<f:if condition="{link}">
 				<f:then>
-					<a href="{link}"><media:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" /></a>
+					<a href="{link}"><media:image asset="{image}" alt="{alternativeText}" title="{image.resource.filename}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" /></a>
 				</f:then>
 				<f:else>
-					<media:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
+					<media:image asset="{image}" alt="{alternativeText}" title="{image.resource.filename}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
 				</f:else>
 			</f:if>
 		</f:then>
