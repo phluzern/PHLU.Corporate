@@ -97,8 +97,6 @@ class ContactAspect
                     if ($object->getProperty('functionUserModified') == false) $object->setProperty('function', $contact->getFunction());
                     if ($contact->getImage()) $object->setProperty('image', $contact->getImage());
 
-                } else {
-                    $object->setProperty('contact',0);
                 }
 
 
