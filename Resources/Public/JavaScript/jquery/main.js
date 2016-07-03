@@ -3,6 +3,14 @@
  */
 
 $(document).ready(function () {
+
+
+    /* set preventDefault on links */
+    $('a.preventDefault').click(function(event) {
+        event.preventDefault();
+        return false;
+    });
+
     $('.carousel').carousel('pause');
 
 
