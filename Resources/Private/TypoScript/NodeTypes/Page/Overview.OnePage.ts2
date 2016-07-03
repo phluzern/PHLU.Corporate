@@ -20,6 +20,13 @@ prototype(PHLU.Corporate:Page.Overview.OnePage) < prototype(PHLU.Corporate:Page)
                     node = ${q(node).get(0)}
                     mainCount = ${q(node).is('[instanceof PHLU.Corporate:Page.View.Dossier]') ? 1 : q(node).children('main').children().count() ? 1 : q(node).children('[instanceof PHLU.Corporate:Page]').count()}
                     params = ${params}
+
+# Default Text with Image
+prototype(PHLU.Corporate:TextWithImage) {
+attributes.class = 'onepage'
+}
+
+
                 }
 
         }
