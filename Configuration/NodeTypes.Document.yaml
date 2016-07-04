@@ -75,7 +75,6 @@
       'PHLU.Corporate:Page.View.Dossier': TRUE
       'PHLU.Corporate:Page.Overview.OnePage': TRUE
   childNodes:
-    onepage: ~
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.Overview.OnePage'
 
