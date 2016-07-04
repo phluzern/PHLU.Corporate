@@ -12,23 +12,52 @@
     </f:if>
 </f:section>
 
-<f:section name="content">
+<f:section name="contentonepage">
     <div class="row" id="{node.Identifier}">
         <div class="col-xs-12">
 
             <h2>{node.properties.title}</h2>
-            <ts:render path="renderer" context="{node: onepage}"/>
+
+              <ts:render path="renderer" context="{node: teaser}"/>
+
+
+                <neos:link.node node="{node}" class="btn btn-primary"> Mehr zu {node.properties.title}
+                </neos:link.node>
+
+            <f:if condition="{params.iterator.isLast}">
+                <f:else>
+                    <hr/>
+                </f:else>
+            </f:if>
+
+        </div>
+    </div>
+</f:section>
+
+
+<f:section name="contentdossier">
+    <div class="row" id="{node.Identifier}">
+        <div class="col-xs-12">
+
+
+            <h2>{node.properties.title}</h2>
+
+              <ts:render path="renderer" context="{node: onepage}"/>
+
+
             <f:if condition="{mainCount} > 0">
                 <f:then>
                     <neos:link.node node="{node}" class="btn btn-primary"> Mehr zu {node.properties.title}
                     </neos:link.node>
                 </f:then>
             </f:if>
+
             <f:if condition="{params.iterator.isLast}">
                 <f:else>
                     <hr/>
                 </f:else>
             </f:if>
+
         </div>
     </div>
 </f:section>
