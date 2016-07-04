@@ -52,7 +52,7 @@
     'PHLU.Corporate:ContentCollection': TRUE
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Title': TRUE
+      'PHLU.Corporate:Headline': TRUE
       'PHLU.Corporate:Text': TRUE
       'PHLU.Corporate:TextWithImage': TRUE
       'PHLU.Corporate:AccordeonElement': TRUE
