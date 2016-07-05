@@ -73,7 +73,7 @@
       'PHLU.Corporate:Page.View.Default': TRUE
       'PHLU.Corporate:Page.View.Default.Default': FALSE
       'PHLU.Corporate:Page.View.Dossier': TRUE
-      'PHLU.Corporate:Page.Overview.OnePage': TRUE
+      'PHLU.Corporate:Page.Overview.OnePage': FALSE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.Overview.OnePage'

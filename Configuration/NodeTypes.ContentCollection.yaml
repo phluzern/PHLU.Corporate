@@ -97,9 +97,7 @@
   constraints:
     nodeTypes:
       'PHLU.Corporate:Text': TRUE
-      'PHLU.Corporate:Headline': TRUE
       'PHLU.Corporate:TextWithImage': TRUE
-      'PHLU.Corporate:AccordeonElement': TRUE
 
 
 'PHLU.Corporate:ContentCollection.Accordeon':
