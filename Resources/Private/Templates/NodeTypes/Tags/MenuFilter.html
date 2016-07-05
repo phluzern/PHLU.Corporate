@@ -27,7 +27,7 @@
 
 
                                 <div class="row" id="anchornavigation">
-                                    <neos:contentElement.wrap node="{filterCollection}">
+
                                         <div class="col-xs-12">
                                             <ul class="nav nav-pills" role="menubar">
                                                 <li role="menuitem" data-ng-class="{active: filter['0'] === true}">
@@ -40,7 +40,7 @@
                                                         data-ng-class="{active: filter['{tag.Identifier}'] === true}"
                                                         data-ng-init="filterAll['{tag.Identifier}'] = true;">
                                                         <neos:contentElement.wrap node="{tag}">
-                                                            <a class="nav-item nav-link preventDefault" href="" {f:if(condition: '{neos:rendering.inBackend()}', then:'rel="typo3:content-collection"', else: '')}
+                                                            <a class="nav-item nav-link preventDefault" href="#" {f:if(condition: '{neos:rendering.inBackend()}', then:'rel="typo3:content-collection"', else: '')}
                                                             data-ng-click="toggleFilter('{tag.Identifier}');"><ts:render path="tagRenderer" context="{node: tag}"/>
                                                             </a>
                                                         </neos:contentElement.wrap>
@@ -51,7 +51,7 @@
                                             </ul>
 
                                         </div>
-                                    </neos:contentElement.wrap>
+
                                 </div>
 
                             </f:then>

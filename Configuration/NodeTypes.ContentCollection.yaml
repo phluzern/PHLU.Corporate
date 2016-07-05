@@ -120,6 +120,14 @@
       'PHLU.Corporate:Content.Page.TargetGroupElement': TRUE
 
 
+'PHLU.Corporate:ContentCollection.Tags.Menu':
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:Tags.Menu'
+
+
 
 'PHLU.Corporate:ContentCollection.Page.Service':
   superTypes:

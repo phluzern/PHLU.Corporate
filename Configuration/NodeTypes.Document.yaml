@@ -94,7 +94,7 @@
     targetgroup: ~
     carouselnews: ~
     tagsmenu:
-      type: 'PHLU.Corporate:Tags.Menu'
+      type: 'PHLU.Corporate:ContentCollection.Tags.Menu'
   constraints:
     nodeTypes:
       'PHLU.Corporate:Page.Overview.OnePage': FALSE

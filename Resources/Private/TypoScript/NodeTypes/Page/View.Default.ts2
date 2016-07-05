@@ -7,6 +7,7 @@ prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
 
      tagsMenu = ${q(node).children('tagsmenu').get(0)}
 
+
         # Contacts wrapper (tile)
         prototype(PHLU.Corporate:Contacts) {
 

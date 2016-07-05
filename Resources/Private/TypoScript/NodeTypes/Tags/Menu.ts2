@@ -11,7 +11,7 @@ prototype(PHLU.Corporate:Tags.Menu) <  prototype(PHLU.Corporate:Content)  {
                 sectionName = 'default'
                 maximumLevels = 1
                 filter = 'PHLU.Corporate:Page'
-                startingPoint = ${q(node).parent().get(0)}
+                startingPoint = ${q(node).parent().parent().get(0)}
                 alltags = ${q(node).find('[instanceof PHLU.Neos.NodeTypes:Tag]').get()}
                 label = ${q(node).property('lable')}
                 title = ${q(node).property('title')}

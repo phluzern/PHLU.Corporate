@@ -8,7 +8,7 @@
 
 'PHLU.Corporate:Tags.Menu':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:Content': TRUE
   ui:
     icon: icon-tag
     label: 'Menu'

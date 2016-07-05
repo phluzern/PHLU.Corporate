@@ -7248,12 +7248,12 @@ body {
             margin: 0; }
   body .row.subjectsfilternav .nav-pills {
     padding-top: 30px; }
-    body .row.subjectsfilternav .nav-pills li a.nav-link {
+    body .row.subjectsfilternav .nav-pills li a.nav-link, body .row.subjectsfilternav .nav-pills div a.nav-link {
       background-color: #9b9b9b;
       padding-left: 54px; }
-      body .row.subjectsfilternav .nav-pills li a.nav-link.all {
+      body .row.subjectsfilternav .nav-pills li a.nav-link.all, body .row.subjectsfilternav .nav-pills div a.nav-link.all {
         padding-left: 23px; }
-    body .row.subjectsfilternav .nav-pills li.active a.nav-link {
+    body .row.subjectsfilternav .nav-pills li.active a.nav-link, body .row.subjectsfilternav .nav-pills div.active a.nav-link {
       background-color: #55696d; }
   body .row.subjectsfilternav .faecherIco::before, body .row.subjectsfilternav .oi-media-stop::before {
     font-family: Icons;
