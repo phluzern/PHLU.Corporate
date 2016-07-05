@@ -23,14 +23,22 @@ $(document).ready(function () {
     $('a.anchor-nav').on('click', function (e) {
         e.preventDefault();
 
-        var target = this.hash;
+
+
+        var target = this.hash != '' ? this.hash : $(e.target).closest("a").get(0).attr('href');
         var $target = $(target);
 
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top
-        }, 900, 'swing', function () {
-            window.location.hash = target;
-        });
+
+        if (target != "#") {
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 900, 'swing', function () {
+                window.location.hash = target;
+            });
+        }
+
+
     });
 
     /* top link nav */

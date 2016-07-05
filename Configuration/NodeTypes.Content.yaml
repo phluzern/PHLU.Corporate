@@ -120,6 +120,38 @@
 
 
 
+
+# Accorden default
+'PHLU.Corporate:Section':
+  superTypes:
+    'PHLU.Neos.NodeTypes:Content': TRUE
+    'PHLU.Neos.NodeTypes:PlainTitleMixin': TRUE
+  ui:
+    label: 'Abschnitt'
+    icon: icon-header
+    inlineEditable: true
+    inspector:
+      groups:
+        general:
+          label: 'Allgemein'
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  properties:
+    title:
+      type: string
+      defaultValue: ' Titel'
+      ui:
+        label: 'Abschnitts-Titel'
+        inspector:
+          group: 'general'
+          position: 50
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.Section'
+
+
+
 # Accorden default
 'PHLU.Corporate:AccordeonElement':
   superTypes:

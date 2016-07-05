@@ -18,7 +18,7 @@
 
             <f:for each="{items}" as="item" iteration="iterator">
                 <li class="{f:if(condition: iterator.isFirst, then: 'active', else: '')}">
-                    <a class="nav-item nav-link anchor-nav" href="#{item.node.Identifier}">{item.label}</a>
+                    <a class="nav-item nav-link anchor-nav" href="#{item.node.properties.uriPathSegment}">{item.label}</a>
                 </li>
             </f:for>
 
