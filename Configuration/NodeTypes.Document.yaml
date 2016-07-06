@@ -2,6 +2,7 @@
   abstract: TRUE
   superTypes:
     'PHLU.Neos.NodeTypes:Page': TRUE
+    'PHLU.Neos.NodeTypes:TagMixin': TRUE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
@@ -42,6 +43,7 @@
       'PHLU.Corporate:Page.View.Default': TRUE
       'PHLU.Corporate:Page.View.Default.Prototype': TRUE
       'PHLU.Corporate:Page.View.Default.Default': FALSE
+      'PHLU.Corporate:Page.View.Onepage': FALSE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.Home'
@@ -84,12 +86,14 @@
 'PHLU.Corporate:Page.View.Default':
   ui:
     label: 'Standard-Seite'
+    inspector:
+      groups:
+        navigation:
+          label: 'Navigation'
   superTypes:
     'PHLU.Corporate:Page': TRUE
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
-    bottom:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
     contact: ~
     targetgroup: ~
@@ -103,24 +107,23 @@
       'PHLU.Corporate:Page.View.Dossier': FALSE
       'PHLU.Corporate:Page.View.Default': FALSE
       'PHLU.Corporate:Page.View.Default.Default': TRUE
-      'PHLU.Corporate:Page.View.Onepage': TRUE
+      'PHLU.Corporate:Page.View.Onepage': FALSE
       'TYPO3.Neos:Shortcut': FALSE
-
 
 
 'PHLU.Corporate:Page.View.Default.Default':
   superTypes:
     'PHLU.Corporate:Page.View.Default': TRUE
     'PHLU.Neos.NodeTypes:TagMixin': TRUE
+    'PHLU.Corporate:Page.NotInMenu': TRUE
   constraints:
     nodeTypes:
+      'PHLU.Corporate:Page.View.Default': TRUE
       'PHLU.Corporate:Page.View.Default.Default': FALSE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default.Default'
-    bottom:
-      type: 'PHLU.Corporate:ContentCollection.Page.View.Default.Default'
-    tagsmenu: ~
+
 
 
 'PHLU.Corporate:Page.View.Default.Prototype':

@@ -2,7 +2,7 @@
 prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
 
 
-     bottom = ${q(node).children('bottom').get(0)}
+
      templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
 
      tagsMenu = ${q(node).children('tagsmenu').get(0)}
@@ -11,12 +11,27 @@ prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
         # Contacts wrapper (tile)
         prototype(PHLU.Corporate:Contacts) {
 
-        collectionRenderer.attributes.class = 'row phlu-teaser navigation subpage'
-        prototype(PHLU.Corporate:Contact).templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/Tile.html'
-        prototype(PHLU.Corporate:Contact).attributes.class = 'col-xs-12 col-md-6 nav-teaser-item'
-        prototype(PHLU.Corporate:ContactsGroup).attributes.class = 'col-xs-12'
-        prototype(PHLU.Corporate:ContactsGroup).collectionRenderer.attributes.class = 'row'
+            collectionRenderer.attributes.class = 'row phlu-teaser navigation subpage'
+            prototype(PHLU.Corporate:Contact).templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/Single.html'
+            prototype(PHLU.Corporate:Contact).attributes.class = 'col-xs-12 col-md-6 nav-teaser-item'
+            prototype(PHLU.Corporate:ContactsGroup).attributes.class = 'col-xs-12'
+            prototype(PHLU.Corporate:ContactsGroup).collectionRenderer.attributes.class = 'row'
+
+            # Contact in group
+            prototype(PHLU.Corporate:ContactsGroup) {
+                collectionRenderer.attributes.id = ${'accordion-'+q(node).parent().get(0).Identifier}
+                collectionRenderer.attributes.class = 'phlu-accordion'
+                collectionRenderer.attributes.role = 'tablist'
+                collectionRenderer.attributes.aria-multiselectable = 'true'
+                prototype(PHLU.Corporate:ContactsGroup).attributes.class = ''
+                prototype(PHLU.Corporate:ContactsGroup).collectionRenderer.attributes.class = ''
+                prototype(PHLU.Corporate:Contact).templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/List.html'
+                prototype(PHLU.Corporate:Contact).attributes.class = 'panel panel-default'
+            }
+
         }
+
+
 
         # Default Text with Image
         prototype(PHLU.Corporate:Image) {
@@ -28,29 +43,10 @@ prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
 }
 
 
-prototype(PHLU.Corporate:Page.View.Default.Default) < prototype(PHLU.Corporate:Page) {
+prototype(PHLU.Corporate:Page.View.Default.Default) < prototype(PHLU.Corporate:Page.View.Default) {
 
-    bottom = ${q(node).children('bottom').get(0)}
+
     templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
-
-
-    # Contacts wrapper (list)
-    prototype(PHLU.Corporate:Contacts) {
-
-        collectionRenderer.attributes.id = ${'accordion-'+q(node).parent().get(0).Identifier}
-        collectionRenderer.attributes.class = 'phlu-accordion'
-        collectionRenderer.attributes.role = 'tablist'
-        collectionRenderer.attributes.aria-multiselectable = 'true'
-        prototype(PHLU.Corporate:ContactsGroup).attributes.class = ''
-        prototype(PHLU.Corporate:ContactsGroup).collectionRenderer.attributes.class = ''
-        prototype(PHLU.Corporate:Contact).templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/List.html'
-        prototype(PHLU.Corporate:Contact).attributes.class = 'panel panel-default'
-
-    }
-
-
-
-
 
 
 

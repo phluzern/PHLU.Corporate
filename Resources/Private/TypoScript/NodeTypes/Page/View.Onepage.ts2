@@ -1,0 +1,14 @@
+prototype(PHLU.Corporate:Page.View.Onepage) < prototype(PHLU.Corporate:Page) {
+
+        templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Onepage.html'
+
+        sections = ${q(node).children('main').find('[instanceof PHLU.Corporate:Section]').get()}
+        sectioncollection = ${q(node).children('main').get(0)}
+        sectioncollectionItems = ${q(node).children('main').children()}
+        sectiontitle = ${q(node).property('sectiontitle')}
+        prototype(PHLU.Corporate:Section) {
+          templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/Section/Onepage.html'
+          attributes.id = ${'node-'+node.Identifier}
+        }
+
+}
