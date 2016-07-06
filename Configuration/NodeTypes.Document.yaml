@@ -164,6 +164,7 @@
     label: 'OnePage'
   superTypes:
     'PHLU.Corporate:Page': TRUE
+    'PHLU.Neos.NodeTypes:TagMixin': TRUE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Onepage'
