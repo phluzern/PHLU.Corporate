@@ -42,6 +42,7 @@
       'PHLU.Corporate:Page.View.Default': TRUE
       'PHLU.Corporate:Page.View.Default.Prototype': TRUE
       'PHLU.Corporate:Page.View.Default.Default': FALSE
+      'PHLU.Corporate:Page.View.Onepage': FALSE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.Home'
