@@ -144,6 +144,15 @@ $input-padding-x: 0.3125rem; // 5px
       font-family: FontAwesome;
       content: "\f1c1 \2000";
     }
+  } @else if $type == history-back {
+    padding-left: 25px;
+    &::before {
+      position: absolute;
+      margin-top: 1px;
+      margin-left: -25px;
+      font-family: Icons;
+      content: "\e095 \2000";
+    }
   }
   font-size: $font-size-href;
   color: $hazelbrowndark;
@@ -219,7 +228,6 @@ body {
         }
       }
     }
-
 
     a[typeof='typo3:PHLU.Corporate:Tag'] .neos-empty-contentcollection-overlay,
     a[typeof='typo3:PHLU.Corporate:Section'] .neos-empty-contentcollection-overlay,
@@ -1345,12 +1353,12 @@ body {
     .nav-pills {
       li {
         .nav-link {
-          padding-left:40px;
-         i {
-           position: absolute;
-           margin-left: -24px;
-           margin-top: 5px;
-         }
+          padding-left: 40px;
+          i {
+            position: absolute;
+            margin-left: -24px;
+            margin-top: 5px;
+          }
         }
       }
     }
@@ -1480,6 +1488,10 @@ body {
       background-color: $turquoise;
       padding: 15px;
       width: 68px;
+      &.exhibition {
+        font-size: 40px;
+        padding: 2px 0 2px 22px;
+      }
 
     }
     .event-date-month-year {
@@ -1494,6 +1506,9 @@ body {
         width: 650px;
         overflow: hidden;
         margin-top: 1px;
+        a {
+          color: $grey;
+        }
       }
     }
 
@@ -1502,25 +1517,26 @@ body {
       padding-top: 32px;
     }
     .phlu-teaser-type {
-      width: 135px;
-      background-color: $turquoise;
+      font-family: Icons;
       &::before {
         position: absolute;
-        margin-left: -52px;
-        color: white;
-        content: " \002b";
-        background-color: #55a7b3;
-        padding: 0 8px;
-        margin-top: -7px;
+        top: 0;
+        right: 0;
+        content: " \e02f";
+        color: $turquoise;
+        padding: 21px 10px;
         font-size: 20px;
 
       }
-      &.collapsed {
-        &::before {
-          content: " \00D7";
-        }
-
+    }
+    &.detailview {
+.event-date-month-year-location {
+  margin-left:100px;
+}
+      h2 {
+        margin-top: 42px;
       }
+
     }
   }
   .flowtext-phlu-news {
@@ -1549,16 +1565,16 @@ body {
   //
   .main {
     background-color: white;
-    overflow-x:hidden;
+    overflow-x: hidden;
 
     .onepage {
       img {
-        margin-bottom:$spacer-y;
+        margin-bottom: $spacer-y;
       }
     }
     .backend-img-fullwidth {
-      width:100%;
-      height:auto;
+      width: 100%;
+      height: auto;
       margin-top: $spacer-y-desktop;
       margin-bottom: $spacer-y-desktop;
     }
@@ -1580,7 +1596,6 @@ body {
       background-position: center center;
       background-position-x: center;
 
-
       @include media-breakpoint-only("sm") {
         min-height: 480px;
       }
@@ -1600,23 +1615,23 @@ body {
         background-position-x: -2*$spacer-x;
         min-height: 800px;
       }
-          img {
-            @include media-breakpoint-only("xs") {
-              height: 400px !important;
-              width: auto;
-            }
-            @include media-breakpoint-only("sm") {
-              height: 640px !important;
-              width: auto;
-            }
-            @include media-breakpoint-only("md") {
-              height: 100%;
-            }
-            @include media-breakpoint-only("lg") {
-              width: 100%;
-            }
-          }
-     }
+      img {
+        @include media-breakpoint-only("xs") {
+          height: 400px !important;
+          width: auto;
+        }
+        @include media-breakpoint-only("sm") {
+          height: 640px !important;
+          width: auto;
+        }
+        @include media-breakpoint-only("md") {
+          height: 100%;
+        }
+        @include media-breakpoint-only("lg") {
+          width: 100%;
+        }
+      }
+    }
     > .row {
       p {
         margin-bottom: 31px;
@@ -1653,7 +1668,7 @@ body {
           }
         }
       }
-          .content-link-email {
+      .content-link-email {
         @include content-link("email");
       }
       .content-link-email-contact-person {
@@ -1667,6 +1682,9 @@ body {
       }
       .content-link-pdf-file {
         @include content-link("pdfFile");
+      }
+      .content-link-history-back {
+        @include content-link("history-back");
       }
       //
       // breadcrumb navigation

@@ -7468,6 +7468,9 @@ body {
       background-color: #55a7b3;
       padding: 15px;
       width: 68px; }
+      body .flowtext-phlu-event .event-date-day.exhibition {
+        font-size: 40px;
+        padding: 2px 0 2px 22px; }
     body .flowtext-phlu-event .event-date-month-year {
       font-weight: 700;
       padding-left: 32px; }
@@ -7480,23 +7483,25 @@ body {
         width: 650px;
         overflow: hidden;
         margin-top: 1px; }
+        body .flowtext-phlu-event .event-date-month-year .event-title a {
+          color: #5c5c5c; }
     body .flowtext-phlu-event h2 {
       clear: both;
       padding-top: 32px; }
     body .flowtext-phlu-event .phlu-teaser-type {
-      width: 135px;
-      background-color: #55a7b3; }
+      font-family: Icons; }
       body .flowtext-phlu-event .phlu-teaser-type::before {
         position: absolute;
-        margin-left: -52px;
-        color: white;
-        content: " \002b";
-        background-color: #55a7b3;
-        padding: 0 8px;
-        margin-top: -7px;
+        top: 0;
+        right: 0;
+        content: " \e02f";
+        color: #55a7b3;
+        padding: 21px 10px;
         font-size: 20px; }
-      body .flowtext-phlu-event .phlu-teaser-type.collapsed::before {
-        content: " \00D7"; }
+    body .flowtext-phlu-event.detailview .event-date-month-year-location {
+      margin-left: 100px; }
+    body .flowtext-phlu-event.detailview h2 {
+      margin-top: 42px; }
   body .flowtext-phlu-news .phlu-teaser-type {
     width: 75px;
     background-color: #91a103;
@@ -7654,6 +7659,20 @@ body {
       body .main > .row .content-link-pdf-file::before {
         font-family: FontAwesome;
         content: "\f1c1 \2000"; }
+    body .main > .row .content-link-history-back {
+      padding-left: 25px;
+      font-size: 1.125rem;
+      color: #9f632a;
+      background-image: url("../Images/linkbottomline.png");
+      background-repeat: repeat-x;
+      background-position: bottom;
+      padding-bottom: 4px; }
+      body .main > .row .content-link-history-back::before {
+        position: absolute;
+        margin-top: 1px;
+        margin-left: -25px;
+        font-family: Icons;
+        content: "\e095 \2000"; }
     body .main > .row .breadcrumb {
       display: none;
       font-family: "Arial", sans-serif;
