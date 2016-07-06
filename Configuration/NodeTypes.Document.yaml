@@ -95,8 +95,6 @@
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
-    bottom:
-      type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
     contact: ~
     targetgroup: ~
     carouselnews: ~
@@ -125,8 +123,7 @@
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default.Default'
-    bottom:
-      type: 'PHLU.Corporate:ContentCollection.Page.View.Default.Default'
+
 
 
 'PHLU.Corporate:Page.View.Default.Prototype':
