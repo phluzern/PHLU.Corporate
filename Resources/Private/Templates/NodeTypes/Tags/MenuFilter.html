@@ -25,44 +25,62 @@
                                     {neos:contentElement.editable(property: 'title', tag: 'span')}
                                 </h4>
 
-
-                                <div class="row" id="anchornavigation">
-
-                                        <div class="col-xs-12">
-                                            <ul class="nav nav-pills" role="menubar">
-                                                <li role="menuitem" data-ng-class="{active: filter['0'] === true}">
-                                                    <a class="nav-item nav-link all preventDefault" href=""
-                                                       data-ng-click="toggleFilter(0);">Alle</a>
-                                                </li>
-                                                <f:for each="{tags}" as="tag" iteration="iterator">
-                                                    <li role="menuitem"
-                                                        class="ng-tag {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')} "
-                                                        data-ng-class="{active: filter['{tag.Identifier}'] === true}"
-                                                        data-ng-init="filterAll['{tag.Identifier}'] = true;">
-                                                        <neos:contentElement.wrap node="{tag}">
-                                                            <a class="nav-item nav-link preventDefault" href="#" {f:if(condition: '{neos:rendering.inBackend()}', then:'rel="typo3:content-collection"', else: '')}
-                                                            data-ng-click="toggleFilter('{tag.Identifier}');"><ts:render path="tagRenderer" context="{node: tag}"/>
-                                                            </a>
-                                                        </neos:contentElement.wrap>
-                                                    </li>
-
-                                                </f:for>
-
-                                            </ul>
-
-                                        </div>
-
-                                </div>
-
                             </f:then>
-                            <f:else>
-                                <neos:contentElement.wrap node="{filterCollection}">
-                                    <div id="anchornavigation-collection">
-
-                                    </div>
-                                </neos:contentElement.wrap>
-                            </f:else>
                         </f:if>
+
+                        <div class="row" id="anchornavigation">
+
+                            <div class="col-xs-12">
+                                <ul class="nav nav-pills" role="menubar">
+                                    <li role="menuitem" data-ng-class="{active: filter['0'] === true}">
+                                        <a class="nav-item nav-link all preventDefault" href=""
+                                           data-ng-click="toggleFilter(0);">Alle</a>
+                                    </li>
+
+
+                                    <f:for each="{items}" as="item" iteration="iterator">
+
+
+                                        <f:if condition="{item.subItems}">
+                                            <f:then>
+                                                <li role="menuitem"
+                                                    class="ng-tag {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')} "
+                                                    data-ng-class="{active: filter['{item.node.Identifier}'] === true}"
+                                                    data-ng-init="filterAll['{item.node.Identifier}'] = true;">
+
+                                                    <a class="nav-item nav-link preventDefault" href="#"
+                                                       data-ng-click="toggleFilter('{item.node.Identifier}');">
+                                                        {item.node.properties.title}
+                                                    </a>
+
+                                                </li>
+                                            </f:then>
+                                        </f:if>
+
+                                    </f:for>
+
+
+                                    <f:for each="{tags}" as="tag" iteration="iterator">
+                                        <li role="menuitem"
+                                            class="ng-tag {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')} "
+                                            data-ng-class="{active: filter['{tag.Identifier}'] === true}"
+                                            data-ng-init="filterAll['{tag.Identifier}'] = true;">
+                                            <neos:contentElement.wrap node="{tag}">
+                                                <a class="nav-item nav-link preventDefault" href="#"
+                                                   {f:if(condition: '{neos:rendering.inBackend()}',
+                                                then:'rel="typo3:content-collection"', else: '')}
+                                                data-ng-click="toggleFilter('{tag.Identifier}');">
+                                                <ts:render path="tagRenderer" context="{node: tag}"/>
+                                                </a>
+                                            </neos:contentElement.wrap>
+                                        </li>
+                                    </f:for>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
 
 
                         <div class="row subjectsfilternav">
@@ -71,40 +89,23 @@
 
                                 <div class="row phlu-teaser navigation subpage" id="teasernavigation">
 
-
                                     <f:for each="{items}" as="item" iteration="iterator">
-                                        <neos:contentElement.wrap node="{item.node}">
-                                            <div class="col-xs-12 nav-teaser-item  {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}  "
-                                                 data-ng-hide="filteredOut['{item.node.Identifier}'] === true"
-                                                 data-ng-class="{animated: animated === true, fadeIn: filteredIn['{item.node.Identifier}'] === true, fadeOut: filteredIn['{item.node.Identifier}'] === false}">
-
-                                                <div class="row">
-
-                                                    <div class="phlu-teaser-body col-xs-10"
-                                                         data-ng-init="addFilterItem('{item.node.Identifier}',0);">
 
 
-                                                        <f:for each="{item.node.properties.tags}" as="tag">
-                                                            <i class="{phlu:variable.get(name: 'tags.{tag}.icon')}"
-                                                               data-ng-init="addFilterItem('{item.node.Identifier}','{tag}');"></i>
-                                                        </f:for>
+                                        <f:if condition="{item.subItems}">
+                                            <f:then>
+                                                <f:render section="item" arguments="{item: item, parentItem: item, title: true}"/>
+                                                <f:for each="{item.subItems}" as="subitem" iteration="subiterator">
+                                                    <f:render section="item"
+                                                              arguments="{item: subitem, parentItem: item}"/>
+                                                </f:for>
+                                            </f:then>
+                                            <f:else>
+                                                <f:render section="item" arguments="{item: item}"/>
+                                            </f:else>
 
+                                        </f:if>
 
-                                                        <h3>
-                                                            <neos:link.node node="{item.node}">
-                                                                {item.node.properties.title}
-                                                            </neos:link.node>
-                                                        </h3>
-
-                                                    </div>
-
-                                                    <div class="phlu-teaser-caret-right col-xs-2">
-                                                        &nbsp;
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </neos:contentElement.wrap>
                                     </f:for>
 
 
@@ -126,3 +127,57 @@
     </f:if>
 
 </f:section>
+
+
+<f:section name="item">
+
+    <neos:contentElement.wrap node="{item.node}">
+        <div class="col-xs-12 nav-teaser-item  {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}  "
+             data-ng-hide="filteredOut['{item.node.Identifier}'] === true"
+             data-ng-class="{animated: animated === true, fadeIn: filteredIn['{item.node.Identifier}'] === true, fadeOut: filteredIn['{item.node.Identifier}'] === false}">
+
+
+            <f:if condition="{parentItem}">
+                <span data-ng-init="addFilterItem('{item.node.Identifier}','{parentItem.node.Identifier}');"></span>
+            </f:if>
+
+            <f:if condition="{title}">
+                <f:then>
+                    <h3>{item.node.properties.title}</h3>
+                </f:then>
+                <f:else>
+                    <div class="row">
+
+                        <div class="phlu-teaser-body col-xs-10"
+                             data-ng-init="addFilterItem('{item.node.Identifier}',0);">
+
+                            <f:for each="{item.node.properties.tags}" as="tag">
+                                <i class="{phlu:variable.get(name: 'tags.{tag}.icon')}"
+                                   data-ng-init="addFilterItem('{item.node.Identifier}','{tag}');"></i>
+                            </f:for>
+
+
+                            <h3>
+                                <neos:link.node node="{item.node}">
+                                    {item.node.properties.title}
+                                </neos:link.node>
+                            </h3>
+
+                        </div>
+
+                        <div class="phlu-teaser-caret-right col-xs-2">
+                            &nbsp;
+                        </div>
+                    </div>
+
+                </f:else>
+            </f:if>
+
+
+
+
+        </div>
+    </neos:contentElement.wrap>
+</f:section>
+
+
