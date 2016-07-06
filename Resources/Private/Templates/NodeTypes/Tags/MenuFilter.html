@@ -32,10 +32,28 @@
 
                             <div class="col-xs-12">
                                 <ul class="nav nav-pills" role="menubar">
-                                    <li role="menuitem" data-ng-class="{active: filter['0'] === true}">
-                                        <a class="nav-item nav-link all preventDefault" href=""
-                                           data-ng-click="toggleFilter(0);">Alle</a>
-                                    </li>
+
+                                    <f:if condition="{startingPoint.nodeType.name} != 'PHLU.Corporate:Page.View.Default.Default'">
+                                        <f:then>
+
+                                            <li role="menuitem" data-ng-class="{active: filter['0'] === true}">
+                                                <a class="nav-item nav-link all preventDefault" href=""
+                                                   data-ng-click="toggleFilter(0);">Alle</a>
+                                            </li>
+
+                                        </f:then>
+                                        <f:else>
+
+                                            <f:if condition="{tags}">
+                                                <li role="menuitem" data-ng-class="{active: filter['0'] === true}">
+                                                    <a class="nav-item nav-link all preventDefault" href=""
+                                                       data-ng-click="toggleFilter(0);">Alle</a>
+                                                </li>
+                                            </f:if>
+
+
+                                        </f:else>
+                                    </f:if>
 
 
                                     <f:for each="{items}" as="item" iteration="iterator">
@@ -94,7 +112,8 @@
 
                                         <f:if condition="{item.subItems}">
                                             <f:then>
-                                                <f:render section="item" arguments="{item: item, parentItem: item, title: true}"/>
+                                                <f:render section="item"
+                                                          arguments="{item: item, parentItem: item, title: true}"/>
                                                 <f:for each="{item.subItems}" as="subitem" iteration="subiterator">
                                                     <f:render section="item"
                                                               arguments="{item: subitem, parentItem: item}"/>
@@ -172,8 +191,6 @@
 
                 </f:else>
             </f:if>
-
-
 
 
         </div>

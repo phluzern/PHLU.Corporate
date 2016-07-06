@@ -18,6 +18,7 @@ prototype(PHLU.Corporate:Tags.Menu) <  prototype(PHLU.Corporate:Content)  {
                 tagRenderer = PHLU.Corporate:Tag
                 filterCollection =  ${q(node).children().get(0)}
 
+
         }
 
 

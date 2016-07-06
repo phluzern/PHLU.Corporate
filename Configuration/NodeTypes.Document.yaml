@@ -127,7 +127,6 @@
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default.Default'
     bottom:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default.Default'
-    tagsmenu: ~
 
 
 'PHLU.Corporate:Page.View.Default.Prototype':
