@@ -112,6 +112,7 @@
   superTypes:
     'PHLU.Corporate:Page.View.Default': TRUE
     'PHLU.Neos.NodeTypes:TagMixin': TRUE
+    'PHLU.Corporate:Page.NotInMenu': TRUE
   constraints:
     nodeTypes:
       'PHLU.Corporate:Page.View.Default.Default': FALSE
