@@ -5,46 +5,54 @@
 
 <div {attributes -> f:format.raw()}>
 
-    <div class="row panel-heading" role="tab" id="tab-{node.Identifier}" data-toggle="collapse" data-parent="#accordion-{wrapperNode.Identifier}"
-         data-target="#collapse-{node.Identifier}" aria-expanded="false" >
-
-        <div class="col-sm-6">
-            {neos:contentElement.editable(property: 'firstname', tag: 'span')}
-            {neos:contentElement.editable(property: 'lastname', tag: 'span')}
+    <div class=" panel-heading" role="tab" id="tab-{node.Identifier}" data-toggle="collapse"
+         data-parent="#accordion-{wrapperNode.Identifier}"
+         data-target="#collapse-{node.Identifier}" aria-expanded="false">
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                {neos:contentElement.editable(property: 'firstname', tag: 'span')}
+                {neos:contentElement.editable(property: 'lastname', tag: 'span')}
+            </div>
+            <div class="col-sm-4 col-xs-10">
+                {neos:contentElement.editable(property: 'phone', tag: 'span')}
+            </div>
+            <div class="col-sm-2 col-xs-2">
+                <a href="mailto:{node.properties.email}" class="panel-email">&nbsp;</a>
+                <a class="panel-switch" href="#">&nbsp;</a>
+            </div>
         </div>
-        <div class="col-sm-4">
-            {neos:contentElement.editable(property: 'phone', tag: 'span')}
-        </div>
-        <div class="col-sm-2">
-            <a href="mailto:{node.properties.email}" class="panel-email">&nbsp;</a>
-            <a class="panel-switch" href="#">&nbsp;</a>
-        </div>
-
     </div>
 
     <div id="collapse-{node.Identifier}" class="panel-collapse collapse" role="tabpanel"
          aria-labelledby="tab-{node.Identifier}">
 
         <div class="row panel-body">
-            <div class="col-sm-2">
+            <div class="col-xs-12 col-sm-2">
                 <f:if condition="{node.properties.image}">
                     <f:then>
-                        <media:image asset="{node.properties.image}" class="img-fluid" alt="{node.properties.firstname} {node.properties.lastname}" width="400" maximumWidth="400" height="300" maximumHeight="300" allowUpScaling="false" />
+                        <media:image asset="{node.properties.image}" class="img-fluid"
+                                     alt="{node.properties.firstname} {node.properties.lastname}" width="400"
+                                     maximumWidth="400" height="300" maximumHeight="300" allowUpScaling="false"/>
                     </f:then>
                 </f:if>
             </div>
-            <div class="col-sm-10">
+            <div class="col-xs-12 col-sm-10">
                 <address>
                     {neos:contentElement.editable(property: 'firstname', tag: 'span')}
                     {neos:contentElement.editable(property: 'lastname', tag: 'span')} <br>
-                    <f:if condition="{node.properties.function}">{neos:contentElement.editable(property: 'function', tag: 'span')}</f:if><br>
+                    <f:if condition="{node.properties.function}">{neos:contentElement.editable(property: 'function',
+                        tag: 'span')}
+                    </f:if>
+                    <br>
                     {neos:contentElement.editable(property: 'street', tag: 'span')}<br>
-                    <f:if condition="{node.properties.street2} != ''">{neos:contentElement.editable(property: 'street2', tag: 'span')}<br></f:if>
+                    <f:if condition="{node.properties.street2} != ''">{neos:contentElement.editable(property: 'street2',
+                        tag: 'span')}<br></f:if>
                     {neos:contentElement.editable(property: 'zip', tag: 'span')} {neos:contentElement.editable(property:
                     'city', tag: 'span')} <br>
                     {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
                     {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
-                    <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{neos:contentElement.editable(property: 'email', tag: 'span')}</a><br>
+                    <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{neos:contentElement.editable(property:
+                        'email', tag: 'span')}</a><br>
                     <portrait:link node="{node}">Portrait</portrait:link>
                 </address>
             </div>

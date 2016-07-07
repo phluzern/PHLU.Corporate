@@ -27,6 +27,7 @@ prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
                 prototype(PHLU.Corporate:ContactsGroup).collectionRenderer.attributes.class = ''
                 prototype(PHLU.Corporate:Contact).templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/List.html'
                 prototype(PHLU.Corporate:Contact).attributes.class = 'panel panel-default'
+
             }
 
         }

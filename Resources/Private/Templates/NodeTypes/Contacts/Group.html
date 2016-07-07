@@ -3,7 +3,7 @@
 {namespace media=TYPO3\Media\ViewHelpers}
 
 <div {attributes -> f:format.raw()}>
-    {neos:contentElement.editable(property: 'title', tag: 'h3')}
+    {neos:contentElement.editable(property: 'title', tag: 'h2')}
 
     <ts:render path="collectionRenderer" context="{node: main}"/>
 
