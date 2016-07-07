@@ -25,12 +25,7 @@
     'PHLU.Corporate:ContentCollection': TRUE
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Text': TRUE
-      'PHLU.Corporate:Headline': TRUE
-      'PHLU.Corporate:TextWithImage': TRUE
-      'PHLU.Corporate:Image': TRUE
-      'PHLU.Corporate:Event': TRUE
-      'PHLU.Corporate:Contacts': TRUE
+      'PHLU.Corporate:Section': TRUE
 
 
 'PHLU.Corporate:ContentCollection.Section':
