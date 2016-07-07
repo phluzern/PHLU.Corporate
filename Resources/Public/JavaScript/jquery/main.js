@@ -11,13 +11,19 @@ $(document).ready(function () {
         return false;
     });
 
+    /* set default paused carousel */
     $('.carousel').carousel('pause');
 
 
+    /* set clickable containers */
     $('.clickable').on('click', function (e) {
         if ($(this).find('a').attr('href') !== undefined) window.location.href = $(this).find('a').attr('href');
     });
 
+    /* set click event on accordion header containing links */
+    $('.panel-heading').on('click', function (e) {
+        if ($(e.target).attr('href') != undefined) window.location.href = $(e.target).attr('href');
+    });
 
     /* smooth scrolling [href^="#"] */
     $('a.anchor-nav').on('click', function (e) {
