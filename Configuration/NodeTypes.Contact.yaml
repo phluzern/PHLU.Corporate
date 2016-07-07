@@ -94,6 +94,10 @@
     label: 'Kontakte'
     icon: icon-users
     inlineEditable: true
+  properties:
+    title:
+      type: string
+      defaultValue: 'Kontakte'
   childNodes:
     main:
       type: 'PHLU.Neos.NodeTypes:ContentCollection.Contacts'

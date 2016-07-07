@@ -5,6 +5,9 @@
 
 
 <div {attributes -> f:format.raw()}>
+
+    {neos:contentElement.editable(property: 'title', tag: 'h2')}
+
         <f:for each="{items}" as="item">
             <ts:render path="collectionRenderer" context="{node: item}"/>
         </f:for>

@@ -11,7 +11,7 @@ prototype(PHLU.Corporate:ContentCollection) < prototype(TYPO3.Neos:ContentCollec
 
 
     prototype(PHLU.Corporate:Headline) {
-        tag = 'h3'
+        tag = 'h2'
     }
 
 

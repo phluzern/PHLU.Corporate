@@ -150,8 +150,8 @@
 
 <f:section name="item">
 
-    <neos:contentElement.wrap node="{item.node}">
-        <div class="col-xs-12 nav-teaser-item  {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}  "
+
+        <div class="col-xs-12 nav-teaser-item {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}  "
              data-ng-hide="filteredOut['{item.node.Identifier}'] === true"
              data-ng-class="{animated: animated === true, fadeIn: filteredIn['{item.node.Identifier}'] === true, fadeOut: filteredIn['{item.node.Identifier}'] === false}">
 
@@ -194,7 +194,7 @@
 
 
         </div>
-    </neos:contentElement.wrap>
+
 </f:section>
 
 
