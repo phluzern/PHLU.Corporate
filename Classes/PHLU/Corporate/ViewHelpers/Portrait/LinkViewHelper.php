@@ -56,7 +56,11 @@ class LinkViewHelper extends AbstractViewHelper
         $contact = $this->contactRepository->getOneByEventoId($node->getProperty('contact'));
 
         if ($contact && $contact->getEmailPart() != '') {
-         return '<a class="content-link-portrait" href="'.$this->controllerContext->getUriBuilder()->reset()->setFormat('html')->uriFor('view',array('node'=>$pageNode,'contact'=>$contact->getEmailPart()),'Portrait','PHLU.Corporate').'">'.$this->renderChildren().'</a>';
+
+            $contactShortId = substr_count($contact->getEmail(),"@phlu.ch") ? $contact->getEmailPart() : str_replace("@","-at-",$contact->getEmail());
+
+
+            return '<a class="content-link-portrait" href="'.$this->controllerContext->getUriBuilder()->reset()->setFormat('html')->uriFor('view',array('node'=>$pageNode,'contact'=>$contactShortId),'Portrait','PHLU.Corporate').'">'.$this->renderChildren().'</a>';
         }
 
 
