@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     /* set click event on accordion header containing links */
     $('.panel-heading').on('click', function (e) {
-        if ($(e.target).attr('href') != undefined) window.location.href = $(e.target).attr('href');
+        if ($(e.target).attr('href') != undefined && $(e.target).attr('href') != "#") window.location.href = $(e.target).attr('href');
     });
 
     /* smooth scrolling [href^="#"] */
