@@ -3,6 +3,7 @@
 {namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 
 
+
 <!--
 <div class="row subjectsfilternav phlu-filelinks" >
     <div class="col-xs-12">
@@ -795,29 +796,28 @@
 
     <f:then>
 <!-- Veranstaltungen and News flowtext variants -->
+
         <div class="row">
             <div class="col-xs-12">
 
                 {breadcrumb -> f:format.raw()}
-                <h1 class="page-header">Testseite</h1>
-
-                <h2>Veranstaltungen</h2>
+                <h1 class="page-header">Veranstaltungen</h1>
                 <div class="row flowtext-phlu-event clickable first">
                     <div class="col-xs-12">
-                        <div class="event-date-day exhibition">
+                        <div class="date-day exhibition">
                             A
                         </div>
-                        <div class="event-date-month-year">
+                        <div class="date-month-year">
                             <b>
                                 20. Februar - 24. März, 2016
                             </b>
-                            <div class="event-title">
+                            <div class="title">
                                 <a href="#" alt="Lawinen-Sonderausstellung „White Glory – White Risk“">
-                                    Lawinen-Sonderausstellung „White Glory – White Risk“
+                                    Lawinen-Sonderausstellung „White Glory – White Risk“ ... <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
-                        <div class="event-location">
+                        <div class="location">
                             &nbsp;/ Ausstellung im Gletschergarten, Luzern
                         </div>
                         <div class="phlu-teaser-type">
@@ -828,20 +828,20 @@
                 </div>
                 <div class="row flowtext-phlu-event clickable">
                     <div class="col-xs-12">
-                        <div class="event-date-day">
+                        <div class="date-day">
                             16.
                         </div>
-                        <div class="event-date-month-year">
+                        <div class="date-month-year">
                             <b>
                                 Februar 2016
                             </b>
-                            <div class="event-title">
+                            <div class="title">
                                 <a href="#" alt="Die Zentrale für Klassenlektüre ZKL der Bibliomedia in Solothurn">
-                                    Klassenlektüre ZKL der Bibliomedia in Solothurn
+                                    Klassenlektüre ZKL der Bibliomedia in Solothurn ... <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
-                        <div class="event-location">
+                        <div class="location">
                             &nbsp;/ Lernwerkstatt, Uni/PH-Gebäude
                         </div>
                         <div class="phlu-teaser-type">
@@ -852,20 +852,20 @@
                 </div>
                 <div class="row flowtext-phlu-event clickable">
                     <div class="col-xs-12">
-                        <div class="event-date-day">
+                        <div class="date-day">
                             18.
                         </div>
-                        <div class="event-date-month-year">
+                        <div class="date-month-year">
                             <b>
                                 März 2016
                             </b>
-                            <div class="event-title">
+                            <div class="title">
                                 <a href="#" alt="Für Schülerinnen und Schüler">
-                                    Für Schülerinnen und Schüler
+                                    Für Schülerinnen und Schüler ... <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
-                        <div class="event-location">
+                        <div class="location">
                             &nbsp;/ Bibliothek, Uni/PH-Gebäude
                         </div>
                         <div class="phlu-teaser-type">
@@ -892,10 +892,10 @@
                                 Klassenlektüre ZKL der Bibliomedia in Solothurn
                             </li>
                         </ul>
-                        <div class="event-date-day">
+                        <div class="date-day">
                             16.
                         </div>
-                        <div class="event-date-month-year-location">
+                        <div class="date-month-year-location">
                             <b>
                                 Februar 2016
                             </b>
@@ -944,6 +944,11 @@
                                     <a class="content-link-external" href="www.sbb.ch">Lesequiz</a>
                                 </p>
                                 <p>
+                                    <a class="content-link-pdf-file">Organigramm Rektorat</a> (PDF, 3 Seiten, 3.5 MB)<br/>
+                                    <a class="content-link-pdf-file">Lageplan Standorte PH Luzern</a> (PDF, 5 Seiten, 2 MB)<br/>
+                                    <a class="content-link-word-file">Konzept Stabsabteilung HE</a> (Word, 15 Seiten, 1 MB)
+                                </p>
+                                <p>
                                     <a class="content-link-history-back" href="#">Zurück</a>
                                 </p>
                             </div>
@@ -951,7 +956,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row flowtext-phlu-news">
+<!--                <div class="row flowtext-phlu-news">
 
                     <div class="col-xs-12">
                         <div class="phlu-teaser-type">
@@ -1008,9 +1013,151 @@
 
                 </div>
 
+                <hr>-->
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                {breadcrumb -> f:format.raw()}
+                <h1 class="page-header">News</h1>
+                <div class="row flowtext-phlu-news clickable first">
+                    <div class="col-xs-12">
+                        <div class="preview-image">
+                            <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/imgflowtextexample.png')}"
+                                 title="Dummy image"
+                                 alt="Dummy image" class="img-fluid" />
+                        </div>
+
+                        <div class="date-month-year">
+                            <b>
+                                16. Februar 2016
+                            </b>
+                            <div class="title">
+                                <a href="#" alt="Die Zentrale für Klassenlektüre ZKL der Bibliomedia in Solothurn">
+                                    Klassenlektüre ZKL der Bibliomedia in Solothurn
+                                </a>
+                            </div>
+                            <div class="preview-text">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod ... <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="phlu-teaser-type">
+                            &nbsp;
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row flowtext-phlu-news clickable ">
+                    <div class="col-xs-12">
+                        <div class="preview-image">
+                            <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/teaserimgexamplekind.png')}"
+                                 title="Dummy image"
+                                 alt="Dummy image" class="img-fluid" />
+                        </div>
+
+                        <div class="date-month-year">
+                            <b>
+                                5. März 2016
+                            </b>
+                            <div class="title">
+                                <a href="#" alt="Die Zentrale für Klassenlektüre ZKL der Bibliomedia in Solothurn">
+                                    Theaterclub
+                                </a>
+                            </div>
+                            <div class="preview-text">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod ... <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="phlu-teaser-type">
+                            &nbsp;
+                        </div>
+
+                    </div>
+                </div>
+                <hr>
+                <div class="row flowtext-phlu-news detailview">
+                    <div class="col-xs-12">
+                        <ul class="breadcrumb">
+                            <li class="normal">
+                                <a href="/">Über uns</a>
+                            </li>
+                            <li class="normal">
+                                <a href="/">Aktuell</a>
+                            </li>
+                            <li class="normal">
+                                <a href="/">Veranstaltungen</a>
+                            </li>
+                            <li class="current">
+                                Klassenlektüre ZKL der Bibliomedia in Solothurn
+                            </li>
+                        </ul>
+                        <div class="full-date"><b>
+                            16. Februar 2016
+                        </b></div>
+                        <h2>Klassenlektüre ZKL der Bibliomedia in Solothurn</h2>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="img-and-caption">
+                                    <img class="img-fluid"
+                                         src="http://neos.phlu.dev/_Resources/Static/Packages/PHLU.Corporate/Images/imgflowtextexample.png"
+                                         alt="Lesemagazin Unterstufe">
+                                    <div class="caption">
+                                        BILDUNTERSCHRIFT Lorem ipsum dolor sit amet, consectetuer.
+                                    </div>
+                                </div>
+                                <p>
+                                    Die Zentrale für Klassenlektüre ZKL der Bibliomedia in Solothurn fördert das Lesen,
+                                    indem sie
+                                    Literatur in Klassensätzen bereitstellt und an Schulklassen ausleiht. Sie
+                                    konzentriert
+                                    sich
+                                    dabei bewusst auf einen Aspekt der Leseförderung, den des gemeinsamen
+                                    Leseerlebnisses im
+                                    Klassenverband. Das Angebot umfasst rund 400 Titel für das 1.-9. Schuljahr und steht
+                                    den
+                                    Schulen
+                                    des Kantons Luzern unentgeltlich zur Verfügung. Ansichtsexemplare der jeweiligen
+                                    Bücher
+                                    stehen
+                                    in den Pädagogischen Medienzentren zur Verfügung.
+
+                                    Verzeichnisse können sie per Mail beim Zentrum Medienbildung anfordern:
+
+                                    <a class="content-link-email" href="mailto:medienzentrum@phlu.ch">medienzentrum@phlu.ch</a>
+                                </p>
+                                <h3>Lesequiz</h3>
+                                <p>
+                                    Zu vielen ZKL-Titeln ist ein Lesequiz erarbeitet worden, das von Lehrpersonen direkt
+                                    vom
+                                    Online-Verzeichnis aus eingesehen werden kann. Für Schülerinnen und Schüler ist ein
+                                    direkter
+                                    Zugriff eingerichtet worden.<br>
+                                    <a class="content-link-external" href="www.sbb.ch">Lesequiz</a>
+                                </p>
+                                <p>
+                                    <a class="content-link-pdf-file">Organigramm Rektorat</a> (PDF, 3 Seiten, 3.5 MB)<br/>
+                                    <a class="content-link-pdf-file">Lageplan Standorte PH Luzern</a> (PDF, 5 Seiten, 2 MB)<br/>
+                                    <a class="content-link-word-file">Konzept Stabsabteilung HE</a> (Word, 15 Seiten, 1 MB)
+                                </p>
+                                <p>
+                                    <a class="content-link-history-back" href="#">Zurück</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <hr>
             </div>
         </div>
+
+
+
+
         <!--
         <div class="row">
 

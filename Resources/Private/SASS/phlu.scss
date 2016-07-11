@@ -23,6 +23,7 @@ $component-active-bg: black;
 
 // phlu colors
 $sephia: #e9e0d8;
+$sephialight: #f0e7de;
 $teaserRed: #ba1541;
 $iceblue: #2a818d;
 $lightblue: #d7e6e9;
@@ -121,6 +122,7 @@ $input-padding-x: 0.3125rem; // 5px
 // phlu content links
 @mixin content-link($type) {
   @if $type == external {
+    background-image: url("../Images/linkbottomline.png");
     &::after {
       //background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkViZW5lXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE2IDE2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0EyNjkzMjt9LnN0MXtmaWxsOiM5RjYzMkI7fS5zdDJ7ZmlsbDojOUU2MzJBO308L3N0eWxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNiwxMWMtMC41LDAtMSwwLTEuOSwwYzAtMS45LDAtMy44LTAuMi01LjdjMC0wLjQtMC42LTAuOS0xLTEuM2MtMC4zLTAuMy0wLjctMC43LTEtMWMtMC4zLTAuMy0wLjUtMC45LTAuOC0xQzkuMywyLDcuMywyLDUsMmMwLTAuOCwwLTEuNCwwLTJjMy43LDAsNy4zLDAsMTEsMEMxNiwzLjcsMTYsNy4zLDE2LDExeiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik05LDhjLTAuNywwLjctMS4zLDEuMy0yLDJDNi43LDkuNyw2LjMsOS4zLDYsOWMwLjctMC43LDEuMy0xLjMsMi0yQzguMyw3LjMsOC43LDcuNyw5LDh6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTIsMTVjLTAuMy0wLjMtMC43LTAuNy0xLTFjMC4zLTAuMywwLjctMC43LDEtMWMwLjMsMC4zLDAuNywwLjcsMSwxQzIuNywxNC4zLDIuMywxNC43LDIsMTV6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTMsMTRjLTAuMy0wLjMtMC43LTAuNy0xLTFjMC4zLTAuMywwLjctMC43LDEtMWMwLjMsMC4zLDAuNywwLjcsMSwxQzMuNywxMy4zLDMuMywxMy43LDMsMTR6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTQsMTNjLTAuMy0wLjMtMC43LTAuNy0xLTFjMC4zLTAuMywwLjctMC43LDEtMWMwLjMsMC4zLDAuNywwLjcsMSwxQzQuNywxMi4zLDQuMywxMi43LDQsMTN6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTUsMTJjLTAuMy0wLjMtMC43LTAuNy0xLTFjMC4zLTAuMywwLjctMC43LDEtMWMwLjMsMC4zLDAuNywwLjcsMSwxQzUuNywxMS4zLDUuMywxMS43LDUsMTJ6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTYsMTFjLTAuMy0wLjMtMC43LTAuNy0xLTFjMC4zLTAuMywwLjctMC43LDEtMWMwLjMsMC4zLDAuNywwLjcsMSwxQzYuNywxMC4zLDYuMywxMC43LDYsMTF6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTksOEM4LjcsNy43LDguMyw3LjMsOCw3YzAuMy0wLjMsMC43LTAuNywxLTFjMC4zLDAuMywwLjcsMC43LDEsMUM5LjcsNy4zLDkuMyw3LjcsOSw4eiIvPjxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMCw3QzkuNyw2LjcsOS4zLDYuMyw5LDZjMC4zLTAuMywwLjctMC43LDEtMWMwLjMsMC4zLDAuNywwLjcsMSwxQzEwLjcsNi4zLDEwLjMsNi43LDEwLDd6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTEyLDVjLTAuMywwLjMtMC43LDAuNy0xLDFjLTAuMy0wLjMtMC43LTAuNy0xLTFjMC4zLTAuMywwLjctMC43LDEtMUMxMS4zLDQuMywxMS43LDQuNywxMiw1eiIvPjxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMiw1Yy0wLjMtMC4zLTAuNy0wLjctMS0xYzAuMy0wLjMsMC43LTAuNywxLTFjMC4zLDAuMywwLjcsMC43LDEsMUMxMi43LDQuMywxMi4zLDQuNywxMiw1eiIvPjwvc3ZnPg==);
       background-image: url("../Images/externalLinkArrow.png");
@@ -130,34 +132,43 @@ $input-padding-x: 0.3125rem; // 5px
       content: ""; // \2197
     }
   } @else if $type == email-contact-person {
+    background-image: url("../Images/linkbottomline.png");
     &::before {
       font-family: FontAwesome;
       content: "\f003 \2000";
     }
   } @else if $type == portrait {
+    background-image: url("../Images/linkbottomline.png");
     &::before {
       font-family: FontAwesome;
       content: "\f007 \2000";
     }
   } @else if $type == pdfFile {
+    background-image: inherit;
     &::before {
       font-family: FontAwesome;
       content: "\f1c1 \2000";
     }
+  } @else if $type == wordFile {
+    background-image: inherit;
+    &::before {
+      font-family: FontAwesome;
+      content: "\f1c2 \2000";
+    }
   } @else if $type == history-back {
-    padding-left: 25px;
+    background-image: url("../Images/linkbottomline.png");
+    padding-left: 20px;
     &::before {
       position: absolute;
       margin-top: 1px;
-      margin-left: -25px;
-      font-family: Icons;
-      content: "\e095 \2000";
+      margin-left: -20px;
+      font-family: FontAwesome;
+      content: "\f100 \2000";
     }
   }
   font-size: $font-size-href;
   color: $hazelbrowndark;
   //border-bottom: 7px solid $lightgrey;
-  background-image: url("../Images/linkbottomline.png");
   background-repeat: repeat-x;
   background-position: bottom;
   padding-bottom: 4px;
@@ -1242,7 +1253,7 @@ body {
       }
       .phlu-corporate-contactsgroup {
         .phlu-accordion {
-          margin:32px 0 0;
+          margin: 32px 0 0;
         }
       }
     }
@@ -1306,17 +1317,17 @@ body {
       }
 
     }
-&.phlu-corporate-contacts {
-  > .row {
-    > .col-xs-12 {
+    &.phlu-corporate-contacts {
       > .row {
         > .col-xs-12 {
-          margin-bottom: 32px;
+          > .row {
+            > .col-xs-12 {
+              margin-bottom: 32px;
+            }
+          }
         }
       }
     }
-  }
-}
   }
   //
   // phlu-dozpage
@@ -1371,6 +1382,7 @@ body {
   // phlu-filelinks
   //
   .row.subjectsfilternav.phlu-filelinks {
+    margin-bottom: 35px;
     .nav-pills {
       li {
         .nav-link {
@@ -1385,21 +1397,25 @@ body {
     }
     .phlu-teaser.navigation.subpage {
       .nav-teaser-item {
+        margin: 0 0 1px;
         .row {
           .phlu-teaser-body {
+            background-color: $sephialight;
             h3 {
               padding-left: 0;
               &::before {
                 padding-right: 10px;
-                color: $turquoise;
+                color: $hazelbrowndark;
                 font-weight: bold;
               }
             }
           }
           .phlu-teaser-caret-right {
+            background-color: $sephialight;
             font-family: FontAwesome;
             &::after {
-              content: " \f019";
+              //content: " \f019";
+              content: " ";
               margin-top: 3px;
             }
           }
@@ -1493,32 +1509,37 @@ body {
   }
   //
   // news and events flow text version
-  .flowtext-phlu-event {
+  .flowtext-phlu-event, .flowtext-phlu-news {
     &.first {
       padding-top: 10px;
     }
     padding-top: 30px;
-    .event-date-day, .event-date-month-year, .event-location {
+    .date-day, .preview-image, .date-month-year, .location {
       float: left;
-
     }
-    .event-date-day {
+    .preview-image {
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    .date-day {
       font-size: 28px;
       color: white;
       font-weight: normal;
-      background-color: $turquoise;
-      padding: 15px;
+      padding: 13px 15px;
       width: 68px;
       &.exhibition {
         font-size: 40px;
-        padding: 2px 0 2px 22px;
+        padding: 4px 0 4px 22px;
       }
 
     }
-    .event-date-month-year {
+    .date-month-year {
       font-weight: $font-weight-bold;
       padding-left: 32px;
-      .event-title {
+      .title {
         position: absolute;
         clear: both;
         font-size: 20px;
@@ -1531,6 +1552,16 @@ body {
           color: $grey;
         }
       }
+      .preview-text {
+        position: absolute;
+        clear: both;
+        font-weight: normal;
+        height: 75px;
+        width: 650px;
+        overflow: hidden;
+        margin-top: 40px;
+        font-weight: normal;
+      }
     }
 
     h2 {
@@ -1539,38 +1570,6 @@ body {
     }
     .phlu-teaser-type {
       font-family: Icons;
-      &::before {
-        position: absolute;
-        top: 0;
-        right: 0;
-        content: " \e02f";
-        color: $turquoise;
-        padding: 21px 10px;
-        font-size: 20px;
-
-      }
-    }
-    &.detailview {
-.event-date-month-year-location {
-  margin-left:100px;
-}
-      h2 {
-        margin-top: 42px;
-      }
-
-    }
-  }
-  .flowtext-phlu-news {
-    .phlu-teaser-type {
-      width: 75px;
-      background-color: $olivegreen;
-      bottom: -55px;
-      position: relative;
-    }
-  }
-  .flowtext-phlu-news, .flowtext-phlu-event {
-
-    .phlu-teaser-type {
       font-size: $teaser-type-font-size;
       letter-spacing: $teaser-letter-spacing;
       color: white;
@@ -1579,7 +1578,51 @@ body {
       text-transform: uppercase;
       float: right;
 
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        //content: " \e02f";
+        content: " ";
+        color: $turquoise;
+        padding: 21px 10px;
+        font-size: 20px;
+
+      }
     }
+    &.detailview {
+      .date-month-year-location {
+        margin-left: 100px;
+      }
+      h2 {
+        margin-top: 42px;
+      }
+
+    }
+  }
+
+  .flowtext-phlu-news {
+    .date-day {
+      background-color: $olivegreen;
+    }
+    &.detailview {
+      .full-date {
+        margin-top:0;
+      }
+      .date-month-year-location {
+        margin-left: 100px;
+      }
+      h2 {
+        margin-top: 0;
+      }
+
+    }
+  }
+  .flowtext-phlu-event {
+    .date-day {
+      background-color: $turquoise;
+    }
+
   }
   //
   // main contents
@@ -1703,6 +1746,9 @@ body {
       }
       .content-link-pdf-file {
         @include content-link("pdfFile");
+      }
+      .content-link-word-file {
+        @include content-link("wordFile");
       }
       .content-link-history-back {
         @include content-link("history-back");
