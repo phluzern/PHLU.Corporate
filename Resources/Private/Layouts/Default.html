@@ -41,8 +41,6 @@
 <f:section name="body">
 
 
-
-
     <div class="all" data-ng-app="PHLUCorporateApp">
 
         <nav class="navbar">
@@ -208,6 +206,9 @@
     <script src="{f:uri.resource(path: 'Vendor/tether/dist/js/tether.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/bootstrap/dist/js/bootstrap.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/jquery/main.js', package: 'PHLU.Corporate')}"></script>
+    <f:if condition="{neos:rendering.inBackend()}">
+        <script src="{f:uri.resource(path: 'JavaScript/jquery/backend.js', package: 'PHLU.Corporate')}"></script>
+    </f:if>
 </f:section>
 </body>
 </html>
