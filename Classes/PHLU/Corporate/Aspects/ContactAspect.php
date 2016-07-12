@@ -3,11 +3,13 @@
 namespace PHLU\Corporate\Aspects;
 
 
+use PHLU\Neos\Models\Domain\Model\Contact;
+use PHLU\Neos\Models\Domain\Repository\ContactRepository;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Aop\JoinPointInterface;
-use PHLU\Neos\Models\Domain\Repository\ContactRepository;
-use TYPO3\TYPO3CR\Domain\Repository\NodeDataRepository;
+use TYPO3\Flow\Persistence\Doctrine\PersistenceManager;
 use TYPO3\Neos\Domain\Service\SiteService;
+use TYPO3\TYPO3CR\Domain\Repository\NodeDataRepository;
 
 /**
  * @Flow\Scope("singleton")
@@ -26,6 +28,12 @@ class ContactAspect
 
     /**
      * @Flow\Inject
+     * @var PersistenceManager
+     */
+    protected $persistenceManager;
+
+    /**
+     * @Flow\Inject
      * @var ContactRepository
      */
     protected $contactRepository;
@@ -37,7 +45,6 @@ class ContactAspect
     protected $siteService;
 
 
-
     /**
      * @Flow\Inject
      * @var NodeDataRepository
@@ -45,27 +52,49 @@ class ContactAspect
     protected $nodeDataRepository;
 
 
-
-
-
     /**
-     * @Flow\Before("method(PHLU\Neos\Models\Domain\Repository\ContactRepository->update())")
-     * @return void
+     * @param Contact $contact
+     * @throws \TYPO3\Flow\Persistence\Exception\IllegalObjectTypeException
      */
-    public function findContactNodesAndUpdate(JoinPointInterface $joinPoint)
+    protected function findContactNodesAndUpdate(Contact $contact)
     {
 
-        $object = $joinPoint->getMethodArgument('object');
-        $object->setHasChanges(false);
-        $this->contactRepository->update($object);
+        $contact->setHasChanges(false);
+        $this->contactRepository->update($contact);
 
         $workspace = 'live';
-        foreach ($this->nodeDataRepository->findByParentAndNodeTypeRecursively(SiteService::SITES_ROOT_PATH,'PHLU.Corporate:Contact',$this->workspaceRepository->findByName($workspace)->getFirst()) as $node) {
-            if ($node->getProperty('contact') == $object->getEventoid()) $this->nodeDataRepository->update($node);
+        foreach ($this->nodeDataRepository->findByParentAndNodeTypeRecursively(SiteService::SITES_ROOT_PATH, 'PHLU.Corporate:Contact', $this->workspaceRepository->findByName($workspace)->getFirst()) as $node) {
+            if ($node->getProperty('contact') == $contact->getEventoid()) {
+
+                $node->setProperty('firstname', $contact->getName()->getFirstName());
+                $node->setProperty('lastname', $contact->getName()->getLastName());
+                $node->setProperty('titlename', $contact->getName()->getTitle());
+                $node->setProperty('street', $contact->getStreet());
+                $node->setProperty('street2', $contact->getStreetnote());
+                $node->setProperty('zip', $contact->getZip());
+                $node->setProperty('city', $contact->getCity());
+                $node->setProperty('email', $contact->getEmail());
+                $node->setProperty('phone', $contact->getPhone());
+                $node->setProperty('text', $contact->getName()->getFirstName() . " " . $contact->getName()->getLastName());
+
+                if ($node->getProperty('functionUserModified') == false) $node->setProperty('function', $contact->getFunction());
+                if ($contact->getImage()) $node->setProperty('image', $contact->getImage());
+            }
         }
 
 
     }
+
+
+    /**
+     * @Flow\After("method(PHLU\Neos\Models\Domain\Repository\ContactRepository->add|update())")
+     * @return void
+     */
+    public function update(JoinPointInterface $joinPoint)
+    {
+        $this->findContactNodesAndUpdate($joinPoint->getMethodArgument('object'));
+    }
+
 
     /**
      * @Flow\Before("method(TYPO3\TYPO3CR\Domain\Repository\NodeDataRepository->update(object.nodeType.name == 'PHLU.Corporate:Contact'))")
@@ -77,36 +106,21 @@ class ContactAspect
 
         $object = $joinPoint->getMethodArgument('object');
 
-            if ($object->getProperty('contact')) {
+        if ($object->getProperty('contact')) {
 
-                $contact = $this->contactRepository->getOneByEventoId($object->getProperty('contact'));
+            $contact = $this->contactRepository->getOneByEventoId($object->getProperty('contact'));
 
-                if ($contact) {
+            if ($contact) {
 
-                    $object->setProperty('firstname', $contact->getName()->getFirstName());
-                    $object->setProperty('lastname', $contact->getName()->getLastName());
-                    $object->setProperty('titlename', $contact->getName()->getTitle());
-                    $object->setProperty('street', $contact->getStreet());
-                    $object->setProperty('street2', $contact->getStreetnote());
-                    $object->setProperty('zip', $contact->getZip());
-                    $object->setProperty('city', $contact->getCity());
-                    $object->setProperty('email', $contact->getEmail());
-                    $object->setProperty('phone', $contact->getPhone());
-                    $object->setProperty('text', $contact->getName()->getFirstName() . " " . $contact->getName()->getLastName());
+                $this->findContactNodesAndUpdate($contact);
 
-                    if ($object->getProperty('functionUserModified') == false) $object->setProperty('function', $contact->getFunction());
-                    if ($contact->getImage()) $object->setProperty('image', $contact->getImage());
-
-                }
+            }
 
 
         }
 
 
     }
-
-
-
 
 
 }
