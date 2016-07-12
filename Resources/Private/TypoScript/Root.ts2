@@ -57,7 +57,7 @@ page = Page {
 			sideBarLevel1Menu = Menu {
 				entryLevel = 2
 				templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1.html'
-				filter = '!PHLU.Corporate:Page.View.Default.Default, !PHLU.Corporate:Page.View.Onepage, PHLU.Corporate:Page'
+				filter = 'PHLU.Corporate:Page, !PHLU.Corporate:Page.View.Default.Default, !PHLU.Corporate:Page.View.Onepage'
 				maximumLevels = 1
 			}
 

@@ -1,6 +1,8 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 <div {attributes -> f:format.raw()}>
-    {neos:contentElement.editable(property: 'title', tag: 'h2')}
+    <f:if condition="{sectionCount}>1">
+        {neos:contentElement.editable(property: 'title', tag: 'h2')}
+    </f:if>
     <ts:render path="collectionRenderer" context="{node: main}"/>
 </div>

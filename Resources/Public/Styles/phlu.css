@@ -7426,64 +7426,73 @@ body {
     margin-bottom: 60px; }
     body .phlu-dozpage .row:last-child hr {
       display: none; }
-  body .row.subjectsfilternav.phlu-filelinks .nav-pills li .nav-link {
-    padding-left: 40px; }
-    body .row.subjectsfilternav.phlu-filelinks .nav-pills li .nav-link i {
-      position: absolute;
-      margin-left: -24px;
-      margin-top: 5px; }
-  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
-    padding-left: 0; }
-    body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3::before {
-      padding-right: 10px;
-      color: #55a7b3;
-      font-weight: bold; }
-  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
-    font-family: FontAwesome; }
-    body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right::after {
-      content: " \f019";
-      margin-top: 3px; }
-  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.pdfFile .row .phlu-teaser-body h3::before {
-    font-family: FontAwesome;
-    content: " \f1c1"; }
-  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.wordFile .row .phlu-teaser-body h3::before {
-    font-family: FontAwesome;
-    content: " \f1c2"; }
-  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.excelFile .row .phlu-teaser-body h3::before {
-    font-family: FontAwesome;
-    content: " \f1c3"; }
-  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.powerpointFile .row .phlu-teaser-body h3::before {
-    font-family: FontAwesome;
-    content: " \f1c4"; }
-  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.imageFile .row .phlu-teaser-body h3::before {
-    font-family: FontAwesome;
-    content: " \f1c5"; }
-  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.videoFile .row .phlu-teaser-body h3::before {
-    font-family: FontAwesome;
-    content: " \f1c8"; }
-  body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.neutralFile .row .phlu-teaser-body h3::before {
-    font-family: FontAwesome;
-    content: " \f016"; }
-  body .flowtext-phlu-event {
+  body .row.subjectsfilternav.phlu-filelinks {
+    margin-bottom: 35px; }
+    body .row.subjectsfilternav.phlu-filelinks .nav-pills li .nav-link {
+      padding-left: 40px; }
+      body .row.subjectsfilternav.phlu-filelinks .nav-pills li .nav-link i {
+        position: absolute;
+        margin-left: -24px;
+        margin-top: 5px; }
+    body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item {
+      margin: 0 0 1px; }
+      body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body {
+        background-color: #f0e7de; }
+        body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
+          padding-left: 0; }
+          body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3::before {
+            padding-right: 10px;
+            color: #9f632a;
+            font-weight: bold; }
+      body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
+        background-color: #f0e7de;
+        font-family: FontAwesome; }
+        body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right::after {
+          content: " ";
+          margin-top: 3px; }
+      body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.pdfFile .row .phlu-teaser-body h3::before {
+        font-family: FontAwesome;
+        content: " \f1c1"; }
+      body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.wordFile .row .phlu-teaser-body h3::before {
+        font-family: FontAwesome;
+        content: " \f1c2"; }
+      body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.excelFile .row .phlu-teaser-body h3::before {
+        font-family: FontAwesome;
+        content: " \f1c3"; }
+      body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.powerpointFile .row .phlu-teaser-body h3::before {
+        font-family: FontAwesome;
+        content: " \f1c4"; }
+      body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.imageFile .row .phlu-teaser-body h3::before {
+        font-family: FontAwesome;
+        content: " \f1c5"; }
+      body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.videoFile .row .phlu-teaser-body h3::before {
+        font-family: FontAwesome;
+        content: " \f1c8"; }
+      body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.neutralFile .row .phlu-teaser-body h3::before {
+        font-family: FontAwesome;
+        content: " \f016"; }
+  body .flowtext-phlu-event, body .flowtext-phlu-news {
     padding-top: 30px; }
-    body .flowtext-phlu-event.first {
+    body .flowtext-phlu-event.first, body .flowtext-phlu-news.first {
       padding-top: 10px; }
-    body .flowtext-phlu-event .event-date-day, body .flowtext-phlu-event .event-date-month-year, body .flowtext-phlu-event .event-location {
+    body .flowtext-phlu-event .date-day, body .flowtext-phlu-event .preview-image, body .flowtext-phlu-event .date-month-year, body .flowtext-phlu-event .location, body .flowtext-phlu-news .date-day, body .flowtext-phlu-news .preview-image, body .flowtext-phlu-news .date-month-year, body .flowtext-phlu-news .location {
       float: left; }
-    body .flowtext-phlu-event .event-date-day {
+    body .flowtext-phlu-event .preview-image img, body .flowtext-phlu-news .preview-image img {
+      width: 150px;
+      height: 150px; }
+    body .flowtext-phlu-event .date-day, body .flowtext-phlu-news .date-day {
       font-size: 28px;
       color: white;
       font-weight: normal;
-      background-color: #55a7b3;
-      padding: 15px;
+      padding: 13px 15px;
       width: 68px; }
-      body .flowtext-phlu-event .event-date-day.exhibition {
+      body .flowtext-phlu-event .date-day.exhibition, body .flowtext-phlu-news .date-day.exhibition {
         font-size: 40px;
-        padding: 2px 0 2px 22px; }
-    body .flowtext-phlu-event .event-date-month-year {
+        padding: 4px 0 4px 22px; }
+    body .flowtext-phlu-event .date-month-year, body .flowtext-phlu-news .date-month-year {
       font-weight: 700;
       padding-left: 32px; }
-      body .flowtext-phlu-event .event-date-month-year .event-title {
+      body .flowtext-phlu-event .date-month-year .title, body .flowtext-phlu-news .date-month-year .title {
         position: absolute;
         clear: both;
         font-size: 20px;
@@ -7492,38 +7501,51 @@ body {
         width: 650px;
         overflow: hidden;
         margin-top: 1px; }
-        body .flowtext-phlu-event .event-date-month-year .event-title a {
+        body .flowtext-phlu-event .date-month-year .title a, body .flowtext-phlu-news .date-month-year .title a {
           color: #5c5c5c; }
-    body .flowtext-phlu-event h2 {
+      body .flowtext-phlu-event .date-month-year .preview-text, body .flowtext-phlu-news .date-month-year .preview-text {
+        position: absolute;
+        clear: both;
+        font-weight: normal;
+        height: 75px;
+        width: 650px;
+        overflow: hidden;
+        margin-top: 40px;
+        font-weight: normal; }
+    body .flowtext-phlu-event h2, body .flowtext-phlu-news h2 {
       clear: both;
       padding-top: 32px; }
-    body .flowtext-phlu-event .phlu-teaser-type {
-      font-family: Icons; }
-      body .flowtext-phlu-event .phlu-teaser-type::before {
+    body .flowtext-phlu-event .phlu-teaser-type, body .flowtext-phlu-news .phlu-teaser-type {
+      font-family: Icons;
+      font-size: 11px;
+      letter-spacing: 0.4px;
+      color: white;
+      font-weight: 700;
+      padding: 7px 20px;
+      text-transform: uppercase;
+      float: right; }
+      body .flowtext-phlu-event .phlu-teaser-type::before, body .flowtext-phlu-news .phlu-teaser-type::before {
         position: absolute;
         top: 0;
         right: 0;
-        content: " \e02f";
+        content: " ";
         color: #55a7b3;
         padding: 21px 10px;
         font-size: 20px; }
-    body .flowtext-phlu-event.detailview .event-date-month-year-location {
+    body .flowtext-phlu-event.detailview .date-month-year-location, body .flowtext-phlu-news.detailview .date-month-year-location {
       margin-left: 100px; }
-    body .flowtext-phlu-event.detailview h2 {
+    body .flowtext-phlu-event.detailview h2, body .flowtext-phlu-news.detailview h2 {
       margin-top: 42px; }
-  body .flowtext-phlu-news .phlu-teaser-type {
-    width: 75px;
-    background-color: #91a103;
-    bottom: -55px;
-    position: relative; }
-  body .flowtext-phlu-news .phlu-teaser-type, body .flowtext-phlu-event .phlu-teaser-type {
-    font-size: 11px;
-    letter-spacing: 0.4px;
-    color: white;
-    font-weight: 700;
-    padding: 7px 20px;
-    text-transform: uppercase;
-    float: right; }
+  body .flowtext-phlu-news .date-day {
+    background-color: #91a103; }
+  body .flowtext-phlu-news.detailview .full-date {
+    margin-top: 0; }
+  body .flowtext-phlu-news.detailview .date-month-year-location {
+    margin-left: 100px; }
+  body .flowtext-phlu-news.detailview h2 {
+    margin-top: 0; }
+  body .flowtext-phlu-event .date-day {
+    background-color: #55a7b3; }
   body .main {
     background-color: white;
     overflow-x: hidden; }
@@ -7621,14 +7643,13 @@ body {
     body .main > .row .content-link-email {
       font-size: 1.125rem;
       color: #9f632a;
-      background-image: url("../Images/linkbottomline.png");
       background-repeat: repeat-x;
       background-position: bottom;
       padding-bottom: 4px; }
     body .main > .row .content-link-email-contact-person {
+      background-image: url("../Images/linkbottomline.png");
       font-size: 1.125rem;
       color: #9f632a;
-      background-image: url("../Images/linkbottomline.png");
       background-repeat: repeat-x;
       background-position: bottom;
       padding-bottom: 4px; }
@@ -7636,9 +7657,9 @@ body {
         font-family: FontAwesome;
         content: "\f003 \2000"; }
     body .main > .row .content-link-external {
+      background-image: url("../Images/linkbottomline.png");
       font-size: 1.125rem;
       color: #9f632a;
-      background-image: url("../Images/linkbottomline.png");
       background-repeat: repeat-x;
       background-position: bottom;
       padding-bottom: 4px; }
@@ -7649,9 +7670,9 @@ body {
         padding-right: 25px;
         content: ""; }
     body .main > .row .content-link-portrait {
+      background-image: url("../Images/linkbottomline.png");
       font-size: 1.125rem;
       color: #9f632a;
-      background-image: url("../Images/linkbottomline.png");
       background-repeat: repeat-x;
       background-position: bottom;
       padding-bottom: 4px; }
@@ -7659,29 +7680,39 @@ body {
         font-family: FontAwesome;
         content: "\f007 \2000"; }
     body .main > .row .content-link-pdf-file {
+      background-image: inherit;
       font-size: 1.125rem;
       color: #9f632a;
-      background-image: url("../Images/linkbottomline.png");
       background-repeat: repeat-x;
       background-position: bottom;
       padding-bottom: 4px; }
       body .main > .row .content-link-pdf-file::before {
         font-family: FontAwesome;
         content: "\f1c1 \2000"; }
-    body .main > .row .content-link-history-back {
-      padding-left: 25px;
+    body .main > .row .content-link-word-file {
+      background-image: inherit;
       font-size: 1.125rem;
       color: #9f632a;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      padding-bottom: 4px; }
+      body .main > .row .content-link-word-file::before {
+        font-family: FontAwesome;
+        content: "\f1c2 \2000"; }
+    body .main > .row .content-link-history-back {
       background-image: url("../Images/linkbottomline.png");
+      padding-left: 20px;
+      font-size: 1.125rem;
+      color: #9f632a;
       background-repeat: repeat-x;
       background-position: bottom;
       padding-bottom: 4px; }
       body .main > .row .content-link-history-back::before {
         position: absolute;
         margin-top: 1px;
-        margin-left: -25px;
-        font-family: Icons;
-        content: "\e095 \2000"; }
+        margin-left: -20px;
+        font-family: FontAwesome;
+        content: "\f100 \2000"; }
     body .main > .row .breadcrumb {
       display: none;
       font-family: "Arial", sans-serif;
