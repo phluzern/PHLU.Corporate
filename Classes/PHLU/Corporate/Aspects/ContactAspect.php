@@ -62,17 +62,16 @@ class ContactAspect
 
 
 
-        $workspace = 'live';
-
-        foreach ($this->nodeDataRepository->findByParentAndNodeTypeRecursively(SiteService::SITES_ROOT_PATH, 'PHLU.Corporate:Contact', $this->workspaceRepository->findByName($workspace)->getFirst()) as $node) {
-
-            if ($node->getProperty('contact') == $contact->getEventoid()) {
-                    $this->updateContactNode($node,$contact);
+        foreach ($this->workspaceRepository->findAll() as $workspace) {
+            foreach ($this->nodeDataRepository->findByParentAndNodeTypeRecursively(SiteService::SITES_ROOT_PATH, 'PHLU.Corporate:Contact', $this->workspaceRepository->findByName($workspace)->getFirst()) as $node) {
+                if ($node->getProperty('contact') == $contact->getEventoid()) {
+                    $this->nodeDataRepository->update($this->updateContactNode($node, $contact));
+                }
             }
         }
 
-
-
+        $contact->setHasChanges(false);
+        $this->contactRepository->update($contact);
 
 
     }
@@ -85,6 +84,9 @@ class ContactAspect
      */
     public function updateContactNode(NodeData $node, Contact $contact)
     {
+
+
+
 
         $node->setProperty('firstname', $contact->getName()->getFirstName());
         $node->setProperty('lastname', $contact->getName()->getLastName());
@@ -100,8 +102,8 @@ class ContactAspect
         if ($node->getProperty('functionUserModified') == false) $node->setProperty('function', $contact->getFunction());
         if ($contact->getImage()) $node->setProperty('image', $contact->getImage());
 
-        $contact->setHasChanges(false);
-        $this->contactRepository->update($contact);
+
+
 
         return $node;
 
