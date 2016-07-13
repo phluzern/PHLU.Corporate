@@ -37,21 +37,7 @@
                 </f:if>
             </div>
             <div class="col-xs-12 col-sm-10">
-                <address>
-                    {neos:contentElement.editable(property: 'firstname', tag: 'span')}
-                    {neos:contentElement.editable(property: 'lastname', tag: 'span')} <br>
-                    {neos:contentElement.editable(property: 'function', tag: 'span')}<br>
-                    {neos:contentElement.editable(property: 'street', tag: 'span')}<br>
-                    <f:if condition="{node.properties.street2} != ''">{neos:contentElement.editable(property: 'street2',
-                        tag: 'span')}<br></f:if>
-                    {neos:contentElement.editable(property: 'zip', tag: 'span')} {neos:contentElement.editable(property:
-                    'city', tag: 'span')} <br>
-                    {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
-                    {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
-                    <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{neos:contentElement.editable(property:
-                        'email', tag: 'span')}</a><br>
-                    <portrait:link node="{node}">Portrait</portrait:link>
-                </address>
+                <f:render partial="Adressblock" arguments="{_all}"/>
             </div>
         </div>
 
