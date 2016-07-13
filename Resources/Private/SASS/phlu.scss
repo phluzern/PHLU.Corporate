@@ -249,8 +249,15 @@ body {
       display: block;
     }
 
-    .backend-helper {
-      color:$grey3;
+
+    .neos-contentelement .backend-helper {
+      color:rgba(0, 0, 0, 0);
+      position: absolute;
+      margin-left: -21px;
+      margin-top: 4px;
+    }
+    .neos-contentelement:hover .backend-helper {
+      color:rgba(0, 0, 0, 0.2);
     }
 
   }

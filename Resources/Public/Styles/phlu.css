@@ -6675,8 +6675,13 @@ body {
     display: none; }
   body.neos-backend #anchornavigation-collection .neos-empty-contentcollection-overlay {
     display: block; }
-  body.neos-backend .backend-helper {
-    color: #767676; }
+  body.neos-backend .neos-contentelement .backend-helper {
+    color: transparent;
+    position: absolute;
+    margin-left: -21px;
+    margin-top: 4px; }
+  body.neos-backend .neos-contentelement:hover .backend-helper {
+    color: rgba(0, 0, 0, 0.2); }
   body .neos-contentcollection .neos.neos-empty-contentcollection-overlay {
     width: 100%; }
   @media (max-width: 991px) {

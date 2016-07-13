@@ -4,14 +4,11 @@
 {namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 
 <div {attributes -> f:format.raw()}>
-
+    <phlu:backendHelper node="{node}"/>
     <f:if condition="{contactGroupsCount}>1">
         <f:then>
             {neos:contentElement.editable(property: 'title', tag: 'h3')}
         </f:then>
-        <f:else>
-            <phlu:backendHelper node="{node}"/>
-        </f:else>
     </f:if>
 
     <ts:render path="collectionRenderer" context="{node: main}"/>
