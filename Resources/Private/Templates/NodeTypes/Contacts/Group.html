@@ -1,6 +1,7 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
+{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 
 <div {attributes -> f:format.raw()}>
 
@@ -9,11 +10,7 @@
             {neos:contentElement.editable(property: 'title', tag: 'h3')}
         </f:then>
         <f:else>
-            <f:if condition="{neos:rendering.inBackend()}">
-                <div class="backend-helper neos"><i class=" {node.nodeType.fullConfiguration.ui.icon}"></i>
-                    {neos:contentElement.editable(property: 'title', tag: 'h3')}
-                </div>
-            </f:if>
+            <phlu:backendHelper node="{node}"/>
         </f:else>
     </f:if>
 
