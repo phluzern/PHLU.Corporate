@@ -1000,6 +1000,9 @@ body {
     }
     &.subpage {
       .nav-teaser-item {
+        h3 {
+          margin-top:30px;
+        }
         .row {
           .phlu-teaser-body {
             background-color: $lightblue;
