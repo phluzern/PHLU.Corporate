@@ -9,6 +9,7 @@ use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Aop\JoinPointInterface;
 use TYPO3\Flow\Persistence\Doctrine\PersistenceManager;
 use TYPO3\Neos\Domain\Service\SiteService;
+use TYPO3\TYPO3CR\Domain\Model\NodeData;
 use TYPO3\TYPO3CR\Domain\Repository\NodeDataRepository;
 
 /**
@@ -59,28 +60,51 @@ class ContactAspect
     protected function findContactNodesAndUpdate(Contact $contact)
     {
 
+
+
+        $workspace = 'live';
+
+        foreach ($this->nodeDataRepository->findByParentAndNodeTypeRecursively(SiteService::SITES_ROOT_PATH, 'PHLU.Corporate:Contact', $this->workspaceRepository->findByName($workspace)->getFirst()) as $node) {
+
+            if ($node->getProperty('contact') == $contact->getEventoid()) {
+                    $this->updateContactNode($node,$contact);
+            }
+        }
+
+
+
+
+
+    }
+
+
+    /**
+     * @param NodeData $node
+     * @param Contact $contact
+     * @return NodeData
+     */
+    public function updateContactNode(NodeData $node, Contact $contact)
+    {
+
+        $node->setProperty('firstname', $contact->getName()->getFirstName());
+        $node->setProperty('lastname', $contact->getName()->getLastName());
+        $node->setProperty('titlename', $contact->getName()->getTitle());
+        $node->setProperty('street', $contact->getStreet());
+        $node->setProperty('street2', $contact->getStreetnote());
+        $node->setProperty('zip', $contact->getZip());
+        $node->setProperty('city', $contact->getCity());
+        $node->setProperty('email', $contact->getEmail());
+        $node->setProperty('phone', $contact->getPhone());
+        $node->setProperty('text', $contact->getName()->getFirstName() . " " . $contact->getName()->getLastName());
+
+        if ($node->getProperty('functionUserModified') == false) $node->setProperty('function', $contact->getFunction());
+        if ($contact->getImage()) $node->setProperty('image', $contact->getImage());
+
         $contact->setHasChanges(false);
         $this->contactRepository->update($contact);
 
-        $workspace = 'live';
-        foreach ($this->nodeDataRepository->findByParentAndNodeTypeRecursively(SiteService::SITES_ROOT_PATH, 'PHLU.Corporate:Contact', $this->workspaceRepository->findByName($workspace)->getFirst()) as $node) {
-            if ($node->getProperty('contact') == $contact->getEventoid()) {
+        return $node;
 
-                $node->setProperty('firstname', $contact->getName()->getFirstName());
-                $node->setProperty('lastname', $contact->getName()->getLastName());
-                $node->setProperty('titlename', $contact->getName()->getTitle());
-                $node->setProperty('street', $contact->getStreet());
-                $node->setProperty('street2', $contact->getStreetnote());
-                $node->setProperty('zip', $contact->getZip());
-                $node->setProperty('city', $contact->getCity());
-                $node->setProperty('email', $contact->getEmail());
-                $node->setProperty('phone', $contact->getPhone());
-                $node->setProperty('text', $contact->getName()->getFirstName() . " " . $contact->getName()->getLastName());
-
-                if ($node->getProperty('functionUserModified') == false) $node->setProperty('function', $contact->getFunction());
-                if ($contact->getImage()) $node->setProperty('image', $contact->getImage());
-            }
-        }
 
 
     }
@@ -92,7 +116,10 @@ class ContactAspect
      */
     public function update(JoinPointInterface $joinPoint)
     {
+
+
         $this->findContactNodesAndUpdate($joinPoint->getMethodArgument('object'));
+
     }
 
 
@@ -112,7 +139,7 @@ class ContactAspect
 
             if ($contact) {
 
-                $this->findContactNodesAndUpdate($contact);
+                $object = $this->updateContactNode($object,$contact);
 
             }
 
