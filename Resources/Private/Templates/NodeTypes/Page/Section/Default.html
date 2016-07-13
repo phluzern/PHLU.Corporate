@@ -2,7 +2,16 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 <div {attributes -> f:format.raw()}>
     <f:if condition="{sectionCount}>1">
+        <f:then>
         {neos:contentElement.editable(property: 'title', tag: 'h2')}
+        </f:then>
+        <f:else>
+            <f:if condition="{neos:rendering.inBackend()}">
+                <div class="backend-helper neos"><i class=" {node.nodeType.fullConfiguration.ui.icon}"></i>
+                    {neos:contentElement.editable(property: 'title', tag: 'h2')}
+                </div>
+            </f:if>
+        </f:else>
     </f:if>
     <ts:render path="collectionRenderer" context="{node: main}"/>
 </div>

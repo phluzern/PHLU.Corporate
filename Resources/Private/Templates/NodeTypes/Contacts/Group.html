@@ -3,7 +3,19 @@
 {namespace media=TYPO3\Media\ViewHelpers}
 
 <div {attributes -> f:format.raw()}>
-    {neos:contentElement.editable(property: 'title', tag: 'h3')}
+
+    <f:if condition="{contactGroupsCount}>1">
+        <f:then>
+            {neos:contentElement.editable(property: 'title', tag: 'h3')}
+        </f:then>
+        <f:else>
+            <f:if condition="{neos:rendering.inBackend()}">
+                <div class="backend-helper neos"><i class=" {node.nodeType.fullConfiguration.ui.icon}"></i>
+                    {neos:contentElement.editable(property: 'title', tag: 'h3')}
+                </div>
+            </f:if>
+        </f:else>
+    </f:if>
 
     <ts:render path="collectionRenderer" context="{node: main}"/>
 
