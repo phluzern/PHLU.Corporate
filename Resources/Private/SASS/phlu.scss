@@ -249,6 +249,10 @@ body {
       display: block;
     }
 
+    .backend-helper {
+      color:$grey3;
+    }
+
   }
   // neos specific
   .neos-contentcollection {
@@ -1000,8 +1004,11 @@ body {
     }
     &.subpage {
       .nav-teaser-item {
-        h3 {
+        > h3 {
           margin-top:30px;
+          a {
+            color: $darkgrey;
+          }
         }
         .row {
           .phlu-teaser-body {
@@ -1015,6 +1022,11 @@ body {
             color: $darkgrey;
             background-color: $lightblue;
           }
+        }
+      }
+      .nav-teaser-item:first-child {
+        h3 {
+          margin-top:0;
         }
       }
     }
@@ -1051,9 +1063,10 @@ body {
         a.nav-link {
           background-color: $grey5;
           padding-left: 54px;
-          &.all {
+          &.all, &.no-icon {
             padding-left: 23px;
           }
+
         }
         &.active {
           a.nav-link {

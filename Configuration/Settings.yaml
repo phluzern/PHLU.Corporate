@@ -8,6 +8,12 @@ TYPO3:
       translation:
         autoInclude:
           'PHLU.Corporate': ['NodeTypes/*']
+      navigateComponent:
+        structureTree:
+          # number of levels inside the structure tree which shall be loaded eagerly, at start.
+          # 0 means unlimited
+          loadingDepth: 0
+
 
   TypoScript:
     defaultContext:

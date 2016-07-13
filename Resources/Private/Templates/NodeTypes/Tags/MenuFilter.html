@@ -66,9 +66,9 @@
                                                     data-ng-class="{active: filter['{item.node.Identifier}'] === true}"
                                                     data-ng-init="filterAll['{item.node.Identifier}'] = true;">
 
-                                                    <a class="nav-item nav-link preventDefault" href="#"
+                                                    <a class="nav-item nav-link no-icon preventDefault" href="#"
                                                        data-ng-click="toggleFilter('{item.node.Identifier}');">
-                                                        {item.node.properties.title}
+                                                       {item.node.properties.title}
                                                     </a>
 
                                                 </li>
@@ -162,7 +162,11 @@
 
             <f:if condition="{title}">
                 <f:then>
-                    <h3>{item.node.properties.title}</h3>
+                    <h3>
+                        <neos:link.node node="{item.node}">
+                            {item.node.properties.title}
+                        </neos:link.node>
+                    </h3>
                 </f:then>
                 <f:else>
                     <div class="row">

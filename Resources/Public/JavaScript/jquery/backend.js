@@ -5,13 +5,13 @@
 $(document).ready(function () {
 
     document.addEventListener('Neos.NodeCreated', function(event) {
-        if ($(event.detail.element).attr('typeof') == 'typo3:PHLU.Corporate:Section') {
+        if ($(event.detail.element).attr('typeof') == 'typo3:PHLU.Corporate:Section' || $(event.detail.element).attr('typeof') == 'typo3:PHLU.Corporate:ContactsGroup') {
             Typo3Neos.Content.reloadPage();
         }
     }, false);
 
     document.addEventListener('Neos.NodeRemoved', function(event) {
-        if ($(event.detail.element).attr('typeof') == 'typo3:PHLU.Corporate:Section') {
+        if ($(event.detail.element).attr('typeof') == 'typo3:PHLU.Corporate:Section' || $(event.detail.element).attr('typeof') == 'typo3:PHLU.Corporate:ContactsGroup') {
             Typo3Neos.Content.reloadPage();
         }
     }, false);
