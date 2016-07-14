@@ -250,7 +250,7 @@ body {
     }
 
     .backend-helper {
-      color:$grey3;
+      color: $grey;
     }
 
   }
@@ -1005,7 +1005,7 @@ body {
     &.subpage {
       .nav-teaser-item {
         > h3 {
-          margin-top:30px;
+          margin-top: 30px;
           a {
             color: $darkgrey;
           }
@@ -1026,7 +1026,7 @@ body {
       }
       .nav-teaser-item:first-child {
         h3 {
-          margin-top:0;
+          margin-top: 0;
         }
       }
     }
@@ -1527,9 +1527,9 @@ body {
   // news and events flow text version
   .flowtext-phlu-event, .flowtext-phlu-news {
     &.first {
-      padding-top: 10px;
+      padding-top: 36px;
     }
-    padding-top: 30px;
+    padding-top: 36px;
     .date-day, .preview-image, .date-month-year, .location {
       float: left;
     }
@@ -1539,7 +1539,6 @@ body {
         height: 150px;
       }
     }
-
     .date-day {
       font-size: 28px;
       color: white;
@@ -1550,11 +1549,57 @@ body {
         font-size: 40px;
         padding: 4px 0 4px 22px;
       }
-
+    }
+    &.flowtext-events-legend {
+      position: absolute;
+      margin-top: -107px;
+      margin-left: 610px;
+      .exhibition, .meeting, .event {
+        font-size: 16px;
+        padding-left: 11px;
+        color:lightgrey;
+        .date-day {
+          position: absolute;
+          margin-top: -3px;
+          font-size: 16px;
+          padding: 3px 11px;
+          width: 30px;
+          background-color: lightgrey;
+        }
+      }
+      .exhibition {
+        .event-type-text {
+          position: absolute;
+          margin-left: 31px;
+          padding-left: 5px;
+        }
+      }
+      .meeting {
+        margin-left:102px;
+        .date-day {
+          padding: 3px 11px;
+        }
+        .event-type-text {
+          position: absolute;
+          margin-left: 31px;
+          padding-left: 5px;
+        }
+      }
+      .event {
+        margin-left:78px;
+        .date-day {
+          padding: 3px 11px;
+        }
+        .event-type-text {
+          position: absolute;
+          margin-left: 31px;
+          padding-left: 5px;
+        }
+      }
     }
     .date-month-year {
       font-weight: $font-weight-bold;
-      padding-left: 32px;
+      padding-left: 28px;
       .title {
         position: absolute;
         clear: both;
@@ -1608,7 +1653,7 @@ body {
     }
     &.detailview {
       .date-month-year-location {
-        margin-left: 100px;
+        margin-left: 96px;
       }
       h2 {
         margin-top: 42px;
@@ -1616,14 +1661,13 @@ body {
 
     }
   }
-
   .flowtext-phlu-news {
     .date-day {
       background-color: $olivegreen;
     }
     &.detailview {
       .full-date {
-        margin-top:0;
+        margin-top: 0;
       }
       .date-month-year-location {
         margin-left: 100px;
@@ -1640,6 +1684,7 @@ body {
     }
 
   }
+
   //
   // main contents
   //
