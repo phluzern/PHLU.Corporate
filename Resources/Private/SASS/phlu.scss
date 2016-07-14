@@ -131,6 +131,8 @@ $input-padding-x: 0.3125rem; // 5px
       padding-right: 25px;
       content: ""; // \2197
     }
+  } @else if $type == internal {
+    background-image: url("../Images/linkbottomline.png");
   } @else if $type == email-contact-person {
     background-image: url("../Images/linkbottomline.png");
     &::before {
@@ -258,11 +260,11 @@ body {
       height: 34px;
       width: 34px;
       outline-offset: 0px !important;
-      margin-top:-8px;
+      margin-top: -8px;
 
       i {
-        padding-left:10px;
-        padding-top:10px;
+        padding-left: 10px;
+        padding-top: 10px;
 
       }
     }
@@ -279,7 +281,7 @@ body {
       i {
         color: #00b5ff;
         font-size: 20px;
-        padding-left: 6px!important;
+        padding-left: 6px !important;
       }
     }
 
@@ -1587,7 +1589,7 @@ body {
       .exhibition, .meeting, .event {
         font-size: 16px;
         padding-left: 11px;
-        color:lightgrey;
+        color: lightgrey;
         .date-day {
           position: absolute;
           margin-top: -3px;
@@ -1605,7 +1607,7 @@ body {
         }
       }
       .meeting {
-        margin-left:102px;
+        margin-left: 102px;
         .date-day {
           padding: 3px 11px;
         }
@@ -1616,7 +1618,7 @@ body {
         }
       }
       .event {
-        margin-left:78px;
+        margin-left: 78px;
         .date-day {
           padding: 3px 11px;
         }
@@ -1829,8 +1831,11 @@ body {
       .content-link-email-contact-person {
         @include content-link("email-contact-person");
       }
-      .content-link-external {
+      .content-link-external, a[target='_blank'] {
         @include content-link("external");
+      }
+      .content-link-internal, a[data-gentics-aloha-repository='node-repository'] {
+        @include content-link("internal");
       }
       .content-link-portrait {
         @include content-link("portrait");

@@ -7718,19 +7718,26 @@ body {
       body .main > .row .content-link-email-contact-person::before {
         font-family: FontAwesome;
         content: "\f003 \2000"; }
-    body .main > .row .content-link-external {
+    body .main > .row .content-link-external, body .main > .row a[target='_blank'] {
       background-image: url("../Images/linkbottomline.png");
       font-size: 1.125rem;
       color: #9f632a;
       background-repeat: repeat-x;
       background-position: bottom;
       padding-bottom: 4px; }
-      body .main > .row .content-link-external::after {
+      body .main > .row .content-link-external::after, body .main > .row a[target='_blank']::after {
         background-image: url("../Images/externalLinkArrow.png");
         background-repeat: no-repeat;
         background-position: 0 3px;
         padding-right: 25px;
         content: ""; }
+    body .main > .row .content-link-internal, body .main > .row a[data-gentics-aloha-repository='node-repository'] {
+      background-image: url("../Images/linkbottomline.png");
+      font-size: 1.125rem;
+      color: #9f632a;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      padding-bottom: 4px; }
     body .main > .row .content-link-portrait {
       background-image: url("../Images/linkbottomline.png");
       font-size: 1.125rem;
