@@ -8,6 +8,10 @@ prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
      tagsMenu = ${q(node).children('tagsmenu').get(0)}
 
 
+        prototype(PHLU.Corporate:Contact).templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/List.html'
+        prototype(PHLU.Corporate:Contact).attributes.class = 'phlu-team-members '
+
+
         # Contacts wrapper (tile)
         prototype(PHLU.Corporate:Contacts) {
 
