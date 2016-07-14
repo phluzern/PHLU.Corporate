@@ -131,6 +131,8 @@ $input-padding-x: 0.3125rem; // 5px
       padding-right: 25px;
       content: ""; // \2197
     }
+  } @else if $type == internal {
+    background-image: url("../Images/linkbottomline.png");
   } @else if $type == email-contact-person {
     background-image: url("../Images/linkbottomline.png");
     &::before {
@@ -258,11 +260,11 @@ body {
       height: 34px;
       width: 34px;
       outline-offset: 0px !important;
-      margin-top:-8px;
+      margin-top: -8px;
 
       i {
-        padding-left:10px;
-        padding-top:10px;
+        padding-left: 10px;
+        padding-top: 10px;
 
       }
     }
@@ -279,7 +281,7 @@ body {
       i {
         color: #00b5ff;
         font-size: 20px;
-        padding-left: 6px!important;
+        padding-left: 6px !important;
       }
     }
 
@@ -1557,9 +1559,9 @@ body {
   // news and events flow text version
   .flowtext-phlu-event, .flowtext-phlu-news {
     &.first {
-      padding-top: 10px;
+      padding-top: 36px;
     }
-    padding-top: 30px;
+    padding-top: 36px;
     .date-day, .preview-image, .date-month-year, .location {
       float: left;
     }
@@ -1569,7 +1571,6 @@ body {
         height: 150px;
       }
     }
-
     .date-day {
       font-size: 28px;
       color: white;
@@ -1580,11 +1581,57 @@ body {
         font-size: 40px;
         padding: 4px 0 4px 22px;
       }
-
+    }
+    &.flowtext-events-legend {
+      position: absolute;
+      margin-top: -107px;
+      margin-left: 610px;
+      .exhibition, .meeting, .event {
+        font-size: 16px;
+        padding-left: 11px;
+        color: lightgrey;
+        .date-day {
+          position: absolute;
+          margin-top: -3px;
+          font-size: 16px;
+          padding: 3px 11px;
+          width: 30px;
+          background-color: lightgrey;
+        }
+      }
+      .exhibition {
+        .event-type-text {
+          position: absolute;
+          margin-left: 31px;
+          padding-left: 5px;
+        }
+      }
+      .meeting {
+        margin-left: 102px;
+        .date-day {
+          padding: 3px 11px;
+        }
+        .event-type-text {
+          position: absolute;
+          margin-left: 31px;
+          padding-left: 5px;
+        }
+      }
+      .event {
+        margin-left: 78px;
+        .date-day {
+          padding: 3px 11px;
+        }
+        .event-type-text {
+          position: absolute;
+          margin-left: 31px;
+          padding-left: 5px;
+        }
+      }
     }
     .date-month-year {
       font-weight: $font-weight-bold;
-      padding-left: 32px;
+      padding-left: 28px;
       .title {
         position: absolute;
         clear: both;
@@ -1638,7 +1685,7 @@ body {
     }
     &.detailview {
       .date-month-year-location {
-        margin-left: 100px;
+        margin-left: 96px;
       }
       h2 {
         margin-top: 42px;
@@ -1646,7 +1693,6 @@ body {
 
     }
   }
-
   .flowtext-phlu-news {
     .date-day {
       background-color: $olivegreen;
@@ -1670,6 +1716,7 @@ body {
     }
 
   }
+
   //
   // main contents
   //
@@ -1784,8 +1831,11 @@ body {
       .content-link-email-contact-person {
         @include content-link("email-contact-person");
       }
-      .content-link-external {
+      .content-link-external, a[target='_blank'] {
         @include content-link("external");
+      }
+      .content-link-internal, a[data-gentics-aloha-repository='node-repository'] {
+        @include content-link("internal");
       }
       .content-link-portrait {
         @include content-link("portrait");
