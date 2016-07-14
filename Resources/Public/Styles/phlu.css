@@ -6682,7 +6682,8 @@ body {
     float: right;
     height: 34px;
     width: 34px;
-    outline-offset: 0px !important; }
+    outline-offset: 0px !important;
+    margin-top: -8px; }
     body.neos-backend .neos-contentelement .backend-helper i {
       padding-left: 10px;
       padding-top: 10px; }
