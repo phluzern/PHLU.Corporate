@@ -250,13 +250,37 @@ body {
     }
 
     .neos-contentelement .backend-helper {
-      color:rgba(0, 0, 0, 0);
-      position: absolute;
-      margin-left: -21px;
-      margin-top: 4px;
+      opacity: 0;
+
+      margin-top: 0px;
+      color: #dedede;
+      float: right;
+      height: 34px;
+      width: 34px;
+      outline-offset: 0px !important;
+      margin-top:-8px;
+
+      i {
+        padding-left:10px;
+        padding-top:10px;
+
+      }
     }
-    .neos-contentelement:hover .backend-helper {
-      color:rgba(0, 0, 0, 0.2);
+    .backend-helper:hover {
+      i {
+        color: #00b5ff;
+      }
+    }
+    .neos-contentelement:hover .backend-helper, .neos-contentelement-active.backend-helper {
+      opacity: 1 !important;
+      color: #dedede;
+    }
+    .neos-contentelement-active.backend-helper {
+      i {
+        color: #00b5ff;
+        font-size: 20px;
+        padding-left: 6px!important;
+      }
     }
 
   }
