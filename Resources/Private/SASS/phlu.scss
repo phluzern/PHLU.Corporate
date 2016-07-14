@@ -249,15 +249,36 @@ body {
       display: block;
     }
 
-
     .neos-contentelement .backend-helper {
-      color:rgba(0, 0, 0, 0);
-      position: absolute;
-      margin-left: -21px;
-      margin-top: 4px;
+      opacity: 0;
+
+      margin-top: 0px;
+      color: #dedede;
+      float: right;
+      height: 34px;
+      width: 34px;
+      outline-offset: 0px !important;
+      i {
+        padding-left:10px;
+        padding-top:10px;
+
+      }
     }
-    .neos-contentelement:hover .backend-helper {
-      color:rgba(0, 0, 0, 0.2);
+    .backend-helper:hover {
+      i {
+        color: #00b5ff;
+      }
+    }
+    .neos-contentelement:hover .backend-helper, .neos-contentelement-active.backend-helper {
+      opacity: 1 !important;
+      color: #dedede;
+    }
+    .neos-contentelement-active.backend-helper {
+      i {
+        color: #00b5ff;
+        font-size: 20px;
+        padding-left: 6px!important;
+      }
     }
 
   }
@@ -1012,7 +1033,7 @@ body {
     &.subpage {
       .nav-teaser-item {
         > h3 {
-          margin-top:30px;
+          margin-top: 30px;
           a {
             color: $darkgrey;
           }
@@ -1033,7 +1054,7 @@ body {
       }
       .nav-teaser-item:first-child {
         h3 {
-          margin-top:0;
+          margin-top: 0;
         }
       }
     }
@@ -1630,7 +1651,7 @@ body {
     }
     &.detailview {
       .full-date {
-        margin-top:0;
+        margin-top: 0;
       }
       .date-month-year-location {
         margin-left: 100px;

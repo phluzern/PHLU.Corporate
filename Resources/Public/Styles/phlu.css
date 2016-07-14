@@ -6676,12 +6676,25 @@ body {
   body.neos-backend #anchornavigation-collection .neos-empty-contentcollection-overlay {
     display: block; }
   body.neos-backend .neos-contentelement .backend-helper {
-    color: transparent;
-    position: absolute;
-    margin-left: -21px;
-    margin-top: 4px; }
-  body.neos-backend .neos-contentelement:hover .backend-helper {
-    color: rgba(0, 0, 0, 0.2); }
+    opacity: 0;
+    margin-top: 0px;
+    color: #dedede;
+    float: right;
+    height: 34px;
+    width: 34px;
+    outline-offset: 0px !important; }
+    body.neos-backend .neos-contentelement .backend-helper i {
+      padding-left: 10px;
+      padding-top: 10px; }
+  body.neos-backend .backend-helper:hover i {
+    color: #00b5ff; }
+  body.neos-backend .neos-contentelement:hover .backend-helper, body.neos-backend .neos-contentelement-active.backend-helper {
+    opacity: 1 !important;
+    color: #dedede; }
+  body.neos-backend .neos-contentelement-active.backend-helper i {
+    color: #00b5ff;
+    font-size: 20px;
+    padding-left: 6px !important; }
   body .neos-contentcollection .neos.neos-empty-contentcollection-overlay {
     width: 100%; }
   @media (max-width: 991px) {

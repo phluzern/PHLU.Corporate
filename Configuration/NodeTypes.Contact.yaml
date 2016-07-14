@@ -92,7 +92,7 @@
     'PHLU.Corporate:Content': TRUE
   ui:
     label: 'Kontakte'
-    icon: icon-users
+    icon: icon-phone
     inlineEditable: true
   childNodes:
     main:
@@ -107,6 +107,7 @@
     'PHLU.Neos.NodeTypes:PlainTitleMixin': TRUE
   ui:
     label: 'Team'
+    selectHelper: TRUE
     icon: icon-group
   properties:
     title:

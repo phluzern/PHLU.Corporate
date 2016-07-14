@@ -128,7 +128,8 @@
     'PHLU.Neos.NodeTypes:PlainTitleMixin': TRUE
   ui:
     label: 'Abschnitt'
-    icon: icon-header
+    icon: icon-chevron-down
+    selectHelper: TRUE
     inlineEditable: true
     inspector:
       groups:
