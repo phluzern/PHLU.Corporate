@@ -14,7 +14,6 @@ prototype(PHLU.Corporate:Page) < prototype(PHLU.Neos.NodeTypes:Page) {
     contact = ${q(node).children('contact').get(0)}
 
 
-
     targetgroup = ${q(node).children('targetgroup').get(0)}
     carouselnews = ${q(node).children('carouselnews').get(0)}
     main = ${q(node).children('main').get(0)}
