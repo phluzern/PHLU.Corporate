@@ -40,6 +40,7 @@
       'PHLU.Corporate:Event': TRUE
       'PHLU.Corporate:Contacts': TRUE
       'PHLU.Corporate:Contact': TRUE
+      'PHLU.Corporate:File': TRUE
 
 
 
@@ -174,7 +175,8 @@
   constraints:
     nodeTypes:
       'PHLU.Corporate:Contact': TRUE
-      'PHLU.Corporate:Text': TRUE
+      'PHLU.Corporate:TextPlain': TRUE
+      'PHLU.Corporate:Text': FALSE
       'PHLU.Corporate:TextWithImage': FALSE
 
 

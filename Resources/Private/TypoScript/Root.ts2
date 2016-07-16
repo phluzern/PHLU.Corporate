@@ -7,7 +7,6 @@ include: NodeTypes/Page/TargetGroup/*.ts2
 include: NodeTypes/Tags/*.ts2
 include: NodeTypes/Contacts/*.ts2
 
-
 /**
  * Root TypoScript template for the phlu.ch site
  */
