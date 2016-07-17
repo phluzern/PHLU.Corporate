@@ -92,7 +92,7 @@ class ContactAspect
         $node->setProperty('lastname', $contact->getName()->getLastName());
         $node->setProperty('titlename', $contact->getName()->getTitle());
         $node->setProperty('street', $contact->getStreet());
-        $node->setProperty('street2', $contact->getStreetnote());
+        //$node->setProperty('street2', $contact->getStreetnote());
         $node->setProperty('zip', $contact->getZip());
         $node->setProperty('city', $contact->getCity());
         $node->setProperty('email', $contact->getEmail());
