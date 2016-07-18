@@ -52,7 +52,7 @@ $font-size-h3: 1.25rem;
 $h3-letter-spacing: 0.2px;
 $font-size-h4: 1.1rem;
 $font-size-h4-desktop: 1.313rem;
-$lead-font-size: 1.188rem;
+$lead-font-size: 1.313rem;
 $teaser-type-font-size: 11px;
 $teaser-body-font-size: 13px;
 $teaser-letter-spacing: 0.4px;
@@ -342,6 +342,7 @@ body {
   a:hover, a:focus {
     text-decoration: none;
   }
+
   .clickable, .clickable * {
     cursor: pointer;
   }
@@ -1394,8 +1395,7 @@ body {
       }
       &.function, &.working-priorities, &.consultation-priorities, &.achievements, &.talks, &.links {
         ul {
-          list-style-type: square;
-          padding-left: 20px;
+          margin-bottom:inherit;
         }
       }
       &.education, &.cv, &.professional-activities {
@@ -1790,6 +1790,12 @@ body {
       }
     }
     > .row {
+      ul.flowtext-list {
+        list-style-type: square;
+        padding-left: 20px;
+        margin-bottom: 31px;
+        display: inline-block;
+      }
       p {
         margin-bottom: 31px;
       }
