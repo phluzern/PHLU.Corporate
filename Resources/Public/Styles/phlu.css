@@ -6696,6 +6696,8 @@ body {
     color: #00b5ff;
     font-size: 20px;
     padding-left: 6px !important; }
+  body.neos-backend .main.contents {
+    min-height: 500px; }
   body .neos-contentcollection .neos.neos-empty-contentcollection-overlay {
     width: 100%; }
   @media (max-width: 991px) {
@@ -6937,14 +6939,14 @@ body {
         z-index: -1; }
       body .sidebar.level1.phlu-pattern-top-margin::after {
         background-position: 0 500px; }
-  body .nosubnav .sidebar.level0 {
+  @media (min-width: 1600px) {
+    body .nosubnav .main {
+      max-width: 1384px; } }
+  body .subpage .nosubnav .sidebar.level0 {
     -webkit-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
     box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
     z-index: 99; }
-  @media (min-width: 1600px) {
-    body .nosubnav .main {
-      max-width: 1384px; } }
   body .phlu-teaser {
     padding: 0 25px 35px 25px; }
     @media (min-width: 992px) {

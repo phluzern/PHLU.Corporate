@@ -8,8 +8,8 @@ include: NodeTypes/Tags/*.ts2
 include: NodeTypes/Contacts/*.ts2
 
 /**
- * Root TypoScript template for the phlu.ch site
- */
+* Root TypoScript template for the phlu.ch site
+*/
 page = Page {
 	head {
 		metadata = TYPO3.TypoScript:Template {
@@ -33,8 +33,6 @@ page = Page {
 		templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
 		sectionName = 'body'
 		parts {
-
-
 			navBarMenu = TYPO3.TypoScript:Case {
 
 				isStartpage {
@@ -67,6 +65,17 @@ page = Page {
 				maximumLevels = 1
 			}
 
+			breadcrumbFooter = Menu {
+				entryLevel = 2
+				templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/BreadcrumbFooter.html'
+				filter = '!PHLU.Corporate:Page.NotInMenu, !PHLU.Corporate:Page.View.Default.Default, !PHLU.Corporate:Page.View.Onepage, PHLU.Corporate:Page'
+				maximumLevels = 1
+				attributes = sideBarLevel1MenuGetClassRow
+				breadcrumb = Breadcrumb {
+					templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/Breadcrumb.html'
+				}
+			}
+
 			sideBarLevel1MenuGetClassRow = Menu {
 				entryLevel = 2
 				templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1GetClassRow.html'
@@ -74,14 +83,9 @@ page = Page {
 				maximumLevels = 1
 			}
 
-
-			#sideBarLevel1MenuCount = ${q(node).children().filter('[instanceof PHLU.Corporate:Page]').filter('[!instanceof PHLU.Corporate:Page.View.Default.Default]').count()}
-
 			teaserMenu = TYPO3.TypoScript:Case {
-
 				isStartpage {
 					condition = ${q(node).is('[instanceof PHLU.Corporate:Page.Home]')}
-
 					renderer = Menu {
 						entryLevel = 1
 						templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/TeaserMenu.html'
@@ -91,23 +95,15 @@ page = Page {
 						pageClass = ''
 						itemClass = 'col-lg-4'
 						defaultRenderer = PHLU.Neos.NodeTypes:Page {
-
 							templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/TeaserMenuContent.html'
 							teaser = ${q(node).children('teaser').get(0)}
 							defaultRenderer = TYPO3.Neos:ContentCase
-
 						}
-
 						header = ${q(node).children('header').get(0)}
 						teaser = ${q(node).children('teaser').get(0)}
-
-
-
-
 					}
 				}
 			}
-
 
 			breadcrumb = Breadcrumb {
 				templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/Breadcrumb.html'
@@ -139,9 +135,6 @@ page = Page {
 			filter = 'PHLU.Corporate:Page.Service'
 			startingPoint = ${q(site).get(0)}
 		}
-
-
-
 
 		// These are your content areas, you can define as many as you want, just name them and the nodePath.
 		content {

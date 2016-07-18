@@ -284,7 +284,9 @@ body {
         padding-left: 6px !important;
       }
     }
-
+    .main.contents {
+      min-height: 500px;
+    }
   }
   // neos specific
   .neos-contentcollection {
@@ -631,16 +633,21 @@ body {
   }
   // hidden level1 subnav for filter navigation page
   .nosubnav {
-    .sidebar.level0 {
-      @include sidebar-shadow();
-      z-index: 99;
-    }
     .main {
       @include media-breakpoint-up("xxxl") {
         max-width: 1384px;
       }
     }
   }
+  .subpage {
+    .nosubnav {
+      .sidebar.level0 {
+        @include sidebar-shadow();
+        z-index: 99;
+      }
+    }
+  }
+
   //
   // news & events teasers
   //
@@ -1395,7 +1402,7 @@ body {
       }
       &.function, &.working-priorities, &.consultation-priorities, &.achievements, &.talks, &.links {
         ul {
-          margin-bottom:inherit;
+          margin-bottom: inherit;
         }
       }
       &.education, &.cv, &.professional-activities {

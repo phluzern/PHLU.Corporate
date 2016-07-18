@@ -75,63 +75,24 @@
                     </div>
                 </div>
                 {parts.sideBarLevel1Menu -> f:format.raw()}
-
-
-                <div class="col-xs-12 {parts.sideBarLevel1MenuGetClass -> f:format.raw()} main">
-
+                <div class="col-xs-12 {parts.sideBarLevel1MenuGetClass -> f:format.raw()} main contents">
                     {content.main -> f:format.raw()}
-
                     {parts.teaserMenu -> f:format.raw()}
-
-
                 </div>
-
             </div>
         </div>
-
         <div class="container-fluid breadcrumb-bottom">
-            <div class="row ">
-                <div class="col-xl-2 sidebar level0">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            &nbsp;
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 sidebar ">
-                    <div class="row ">
-                        <div class="col-xl-12 ">
-                            &nbsp;
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-xl-8 main">
-                    <div class="row ">
-                        <div class="col-xs-12">
-                            <div>
-                                Sie sind hier:
-                            </div>
-                            <div>
-                                {parts.breadcrumb -> f:format.raw()}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}">
+                {parts.breadcrumbFooter -> f:format.raw()}
             </div>
         </div>
-
         <div class="container-fluid footer">
             <div class="row">
-
-
                 <div class="col-xs-12 site-search-field">
                     <input type="text" class="c-input form-control" id="siteSearchMobile">
                     <i class="fa fa-search" aria-hidden="true"></i>
-
                 </div>
-
                 {footer -> f:format.raw()}
-
                 <div class="col-xs-12 col-xl-2 flexfirst">
                     <nav class="nav langnav">
                         <a class="active" href="#">DE</a>
