@@ -10,7 +10,7 @@
                 <f:then>
                     <f:if condition="{node.properties.usepageheader}">
                         <f:then>
-                            <ts:render path="defaultRenderer" context="{node: node.properties.reference}"/>
+                            <ts:render path="headerReferenceRenderer" context="{node: node.properties.reference}"/>
                         </f:then>
                         <f:else>
                             <ts:render path="headerRenderer" context="{node: header}"/>
@@ -35,6 +35,5 @@
 </div>
 
 <f:section name="content">
-    <h3><neos:link.node node="{header.parent}">{header.properties.headerTitle}</neos:link.node></h3>
-    <p>{header.properties.headerText}</p>
+    <ts:render path="defaultRenderer" context="{node: header}"/>
 </f:section>
