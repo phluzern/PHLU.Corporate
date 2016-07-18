@@ -10,11 +10,10 @@
          data-target="#collapse-{node.Identifier}" aria-expanded="false">
         <div class="row">
             <div class="col-sm-6 col-xs-12">
-                {neos:contentElement.editable(property: 'firstname', tag: 'span')}
-                {neos:contentElement.editable(property: 'lastname', tag: 'span')}
+                {node.properties.firstname} {node.properties.lastname}
             </div>
             <div class="col-sm-4 col-xs-10">
-                {neos:contentElement.editable(property: 'phone', tag: 'span')}
+                {node.properties.phone}
             </div>
             <div class="col-sm-2 col-xs-2">
                 <a href="mailto:{node.properties.email}" class="panel-email">&nbsp;</a>

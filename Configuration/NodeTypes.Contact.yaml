@@ -10,6 +10,10 @@
       groups:
         contact:
           label: 'Kontakt'
+          position: 20
+        evento:
+          label: 'Evento'
+          position: 10
   constraints:
     nodeTypes:
       '*': FALSE
@@ -18,49 +22,93 @@
       type: string
     lastname:
       type: string
-      defaultValue: 'Name'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Name'
+        inspector:
+          group: 'contact'
+          position: 10
     firstname:
       type: string
-      defaultValue: 'Vorname'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Vorname'
+        inspector:
+          group: 'contact'
+          position: 20
     titlename:
       type: string
-      defaultValue: ''
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Titel'
+        inspector:
+          group: 'contact'
+          position: 30
     street:
       type: string
-      defaultValue: 'Strasse'
-    street2:
-      type: string
-      defaultValue: 'Zusatz'
-    zip:
-      type: string
-      defaultValue: 'PLZ'
-    city:
-      type: string
-      defaultValue: 'Ort'
-    phone:
-      type: string
-      defaultValue: 'Telefon'
-    email:
-      type: string
-      defaultValue: 'E-Mail'
       ui:
-        label: 'E-Mail'
-        reloadIfChanged: FALSE
+        reloadIfChanged: TRUE
+        label: 'Street'
         inspector:
           group: 'contact'
           position: 40
+    street2:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Strasse Zusatz'
+        inspector:
+          group: 'contact'
+          position: 50
+    zip:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        label: 'PLZ'
+        inspector:
+          group: 'contact'
+          position: 60
+    city:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Ort'
+        inspector:
+          group: 'contact'
+          position: 70
+    phone:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Telefon'
+        inspector:
+          group: 'contact'
+          position: 80
+    email:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        label: 'E-Mail'
+        inspector:
+          group: 'contact'
+          position: 90
     function:
       type: string
-      defaultValue: 'Funktion'
-    functionUserModified:
-      type: boolean
-      defaultValue: false
+      ui:
+        label: 'Funktion'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'contact'
+          position: 25
+    functionCustom:
+      type: string
       ui:
         label: 'Benutzerdefinierte Funktion'
         reloadIfChanged: TRUE
         inspector:
-          group: 'contact'
-          position: 42
+          group: 'evento'
+          position: 1
+
     image:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
@@ -68,7 +116,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'contact'
-          position: 50
+          position: 140
     contact:
       type: integer
       defaultValue: 0
@@ -77,13 +125,18 @@
         reloadIfChanged: TRUE
         reloadPageIfChanged: FALSE
         inspector:
-          group: 'contact'
+          group: 'evento'
+          position: 1
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
-           placeholder: 'Kontakt auswählen'
-           dataSourceIdentifier: 'phlu-corporate-contacts'
-           allowEmpty: TRUE
-           multiple: FALSE
+            placeholder: 'Kontakt auswählen'
+            dataSourceIdentifier: 'phlu-corporate-contacts'
+            allowEmpty: TRUE
+            multiple: FALSE
+          editorListeners:
+            contact:
+              property: 'contact'
+              handler: 'PHLU.Corporate/Handlers/ContactHandler'
 
 
 # Contacts (contact wrapper)

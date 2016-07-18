@@ -241,7 +241,44 @@
     label: 'Text mit Bild'
     icon: 'icon-picture'
     position: 400
-
+  properties:
+    caption:
+      ui:
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
 
 # Image
 'PHLU.Corporate:Image':

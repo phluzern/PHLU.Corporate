@@ -92,14 +92,18 @@ class ContactAspect
         $node->setProperty('lastname', $contact->getName()->getLastName());
         $node->setProperty('titlename', $contact->getName()->getTitle());
         $node->setProperty('street', $contact->getStreet());
-        //$node->setProperty('street2', $contact->getStreetnote());
+        $node->setProperty('street2', $contact->getStreetnote());
         $node->setProperty('zip', $contact->getZip());
         $node->setProperty('city', $contact->getCity());
         $node->setProperty('email', $contact->getEmail());
         $node->setProperty('phone', $contact->getPhone());
         $node->setProperty('text', $contact->getName()->getFirstName() . " " . $contact->getName()->getLastName());
 
-        if ($node->getProperty('functionUserModified') == false) $node->setProperty('function', $contact->getFunction());
+        if ($node->getProperty('functionCustom') == '') {
+            $node->setProperty('function', $contact->getFunction());
+        } else {
+            $node->setProperty('function', $node->getProperty('functionCustom'));
+        }
         if ($contact->getImage()) $node->setProperty('image', $contact->getImage());
 
 
@@ -135,14 +139,12 @@ class ContactAspect
 
         $object = $joinPoint->getMethodArgument('object');
 
-        if ($object->getProperty('contact')) {
+        if ($object->getProperty('contact') != 0) {
 
             $contact = $this->contactRepository->getOneByEventoId($object->getProperty('contact'));
 
             if ($contact) {
-
-                $object = $this->updateContactNode($object,$contact);
-
+                $this->updateContactNode($object,$contact);
             }
 
 
