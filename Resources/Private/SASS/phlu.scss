@@ -215,8 +215,9 @@ body {
   // backend only
   &.neos-backend {
     > .all {
-      width: 1920px;
+      min-width: 1920px;
     }
+
     &.neos-navigate-panel-open {
       .sidebar.level0, .sidebar.level1 {
         display: none;
@@ -288,6 +289,7 @@ body {
   }
   // neos specific
   .neos-contentcollection {
+
     .neos.neos-empty-contentcollection-overlay {
       width: 100%;
     }
