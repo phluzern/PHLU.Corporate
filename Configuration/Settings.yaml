@@ -3,8 +3,9 @@ TYPO3:
     typoScript:
       autoInclude:
         'PHLU.Corporate': TRUE
-
     userInterface:
+      requireJsPathMapping:
+        'PHLU.Corporate/Handlers': 'resource://PHLU.Corporate/Public/JavaScript/Backend/Inspector/Handlers'
       translation:
         autoInclude:
           'PHLU.Corporate': ['NodeTypes/*']

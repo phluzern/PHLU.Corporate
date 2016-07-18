@@ -4,45 +4,17 @@
 {namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
 
 
+<address>
+    {node.properties.firstname} {node.properties.lastname}
+    <br>
+    <f:if condition="{node.properties.function} != ''">{node.properties.function}<br></f:if>
+    <span>{node.properties.street}</span>
+    <f:if condition="{node.properties.street2} != ''">{node.properties.street2}<br></f:if>
+    <br>
+    {node.properties.zip} {node.properties.city}<br>
+   <i class="fa fa-phone" aria-hidden="true"></i>
+    {node.properties.phone}<br>
+    <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{node.properties.email}</a><br>
+    <portrait:link node="{node}">Portrait</portrait:link>
+</address>
 
-<f:if condition="{node.properties.contact} == 0">
-    <f:then>
-        <address>
-            {neos:contentElement.editable(property: 'firstname', tag: 'span')} {neos:contentElement.editable(property:
-            'lastname', tag: 'span')}<br>
-            {neos:contentElement.editable(property: 'street', tag: 'span')}<br>
-            <f:if condition="{node.properties.street2} != ''">{neos:contentElement.editable(property: 'street2', tag:
-                'span')}<br></f:if>
-            {neos:contentElement.editable(property: 'zip', tag: 'span')} {neos:contentElement.editable(property: 'city',
-            tag: 'span')}
-        </address>
-        <address>
-                    <span>
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                    </span>
-            {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
-            <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{neos:contentElement.editable(property:
-                'email', tag: 'span')}</a><br>
-            <portrait:link node="{node}">Portrait</portrait:link>
-        </address>
-    </f:then>
-    <f:else>
-
-        <address>
-            <span>{node.properties.firstname}</span> <span>{node.properties.lastname}</span>
-            <br>
-            <span>{node.properties.street}</span>
-            <f:if condition="{node.properties.street2} != ''">  <span>{node.properties.street2}</span><br></f:if>
-            <br><span>{node.properties.zip}</span> <span>{node.properties.city}</span>
-        </address>
-        <address>
-                    <span>
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                    </span>
-            <span>{node.properties.phone}</span><br>
-            <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">  <span>{node.properties.email}</span></a><br>
-            <portrait:link node="{node}">Portrait</portrait:link>
-        </address>
-
-    </f:else>
-</f:if>
