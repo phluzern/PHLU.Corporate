@@ -1,5 +1,5 @@
 # Content
-prototype(PHLU.Corporate:File) < prototype(PHLU.Qmpilot.NodeTypes:File) {
+prototype(PHLU.Corporate:Files) < prototype(PHLU.Qmpilot.NodeTypes:Files) {
 
     templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Files/Default.html'
 
