@@ -1568,7 +1568,7 @@ body {
   // news and events flow text version
   .flowtext-phlu-event, .flowtext-phlu-news {
     &.first {
-      padding-top: 36px;
+      padding-top: 10px;
     }
     padding-top: 36px;
     .date-day, .preview-image, .date-month-year, .location {
@@ -1697,7 +1697,7 @@ body {
         margin-left: 96px;
       }
       h2 {
-        margin-top: 42px;
+        margin-top: 32px;
       }
 
     }
