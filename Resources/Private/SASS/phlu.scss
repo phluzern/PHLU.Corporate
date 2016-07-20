@@ -24,7 +24,7 @@ $component-active-bg: black;
 // phlu colors
 $sephia: #e9e0d8;
 $sephialight: #f0e7de;
-$teaserRed: #ba1541;
+$raspberryRed: #ba1541;
 $iceblue: #2a818d;
 $lightblue: #d7e6e9;
 $lightgrey: #e1e1e1;
@@ -659,7 +659,7 @@ body {
       padding: 0 0 65px;
     }
     .phlu-teaser-type {
-      background-color: $teaserRed;
+      background-color: $raspberryRed;
       font-size: $teaser-type-font-size;
       letter-spacing: $teaser-letter-spacing;
       color: white;
@@ -1436,6 +1436,17 @@ body {
     }
   }
   //
+  // ppdb-detail page
+  //
+  .ppdb-detail {
+    .phlu-team-members {
+      margin-bottom: 0;
+    }
+    .phlu-accordion {
+      margin-top: 10px;
+    }
+  }
+  //
   // phlu-filelinks
   //
   .row.subjectsfilternav.phlu-filelinks {
@@ -1561,6 +1572,25 @@ body {
             }
           }
         }
+        &.webLink {
+          .row {
+            .phlu-teaser-body {
+              h3 {
+                &::before {
+                  font-family: FontAwesome;
+                  content: " \f0c1";
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.nofilter {
+      margin-bottom: 10px;
+      .phlu-teaser {
+        margin-top:12px;
+        margin-bottom: 0;
       }
     }
   }
@@ -1803,6 +1833,9 @@ body {
         list-style-type: square;
         padding-left: 20px;
         margin-bottom: 31px;
+        @include media-breakpoint-up("xl") {
+          font-size: $font-size-paragraph-desktop;
+        }
         display: inline-block;
       }
       p {
@@ -1816,6 +1849,42 @@ body {
         margin-bottom: 0;
         border: 0;
         border-top: $hr-border-width solid $hr-border-color;
+      }
+
+      .table {
+        tr:first-child {
+          th {
+            border-top:4px solid black;
+          }
+          td {
+            border-top:4px solid $raspberryRed;
+          }
+        }
+        tr {
+          th, td {
+            padding: 0.75rem 0;
+            border-right: 2px solid white;
+            line-height: 1.5;
+            vertical-align: top;
+            border-top: 0;
+            background-repeat: repeat-x;
+            background-position: bottom left;
+          }
+          th {
+            width: 40%;
+            background-image: url("../Images/table-cell-dottedline.png");
+
+          }
+          td {
+            background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
+            border-left: 23px solid white;
+          }
+        }
+      }
+      .flowtext-smallwidth {
+        @include media-breakpoint-up("xl") {
+          width: 75%;
+        }
       }
       .img-fluid {
         @include media-breakpoint-down("md") {
@@ -1919,6 +1988,7 @@ body {
           padding: inherit;
         }
       }
+
       &.bluebg {
         background-color: $lightblue;
         margin-top: 70px;
