@@ -7469,15 +7469,18 @@ body {
     body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item {
       margin: 0 0 1px; }
       body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body {
-        background-color: #f0e7de; }
+        background-color: #e9e0d8; }
         body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
-          padding-left: 0; }
+          padding-left: 50px; }
           body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3::before {
-            padding-right: 10px;
+            position: absolute;
+            top: 50%;
+            left: 25px;
+            transform: translateY(-50%);
             color: #9f632a;
             font-weight: bold; }
       body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
-        background-color: #f0e7de;
+        background-color: #e9e0d8;
         font-family: FontAwesome; }
         body .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right::after {
           content: " ";
@@ -7691,8 +7694,7 @@ body {
     body .main > .row ul.flowtext-list {
       list-style-type: square;
       padding-left: 20px;
-      margin-bottom: 31px;
-      display: inline-block; }
+      margin-bottom: 31px; }
       @media (min-width: 1280px) {
         body .main > .row ul.flowtext-list {
           font-size: 1.125rem; } }
@@ -7744,6 +7746,8 @@ body {
       text-align: left;
       caption-side: bottom;
       margin-bottom: 0px; }
+    body .main > .row .phlu-corporate-textwithimage ul.flowtext-list {
+      display: inline-block; }
     body .main > .row .content-link-email {
       font-size: 1.125rem;
       color: #9f632a;

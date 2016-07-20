@@ -1468,18 +1468,21 @@ body {
         margin: 0 0 1px;
         .row {
           .phlu-teaser-body {
-            background-color: $sephialight;
+            background-color: $sephia;
             h3 {
-              padding-left: 0;
+              padding-left: 50px;
               &::before {
-                padding-right: 10px;
+                position: absolute;
+                top: 50%;
+                left:25px;
+                transform: translateY(-50%);
                 color: $hazelbrowndark;
                 font-weight: bold;
               }
             }
           }
           .phlu-teaser-caret-right {
-            background-color: $sephialight;
+            background-color: $sephia;
             font-family: FontAwesome;
             &::after {
               //content: " \f019";
@@ -1836,7 +1839,6 @@ body {
         @include media-breakpoint-up("xl") {
           font-size: $font-size-paragraph-desktop;
         }
-        display: inline-block;
       }
       p {
         margin-bottom: 31px;
@@ -1907,6 +1909,11 @@ body {
             caption-side: bottom;
             margin-bottom: 0px;
           }
+        }
+      }
+      .phlu-corporate-textwithimage {
+        ul.flowtext-list {
+          display: inline-block;
         }
       }
       .content-link-email {
