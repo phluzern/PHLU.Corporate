@@ -346,7 +346,14 @@ body {
   a:hover, a:focus {
     text-decoration: none;
   }
-
+  ul {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-bottom: 31px;
+    @include media-breakpoint-up("xl") {
+      font-size: $font-size-paragraph-desktop;
+    }
+  }
   .clickable, .clickable * {
     cursor: pointer;
   }
@@ -375,6 +382,7 @@ body {
   //
   .nav-pills {
     padding-top: 21px;
+    list-style-type: none;
     li {
       a.nav-link {
         color: white;
@@ -1454,9 +1462,9 @@ body {
       @include media-breakpoint-up("md") {
         width: 75%;
       }
-&.lead {
-  width: 100%;
-}
+      &.lead {
+        width: 100%;
+      }
     }
     .phlu-team-members {
       margin-bottom: 0;
@@ -1464,21 +1472,21 @@ body {
     .phlu-accordion {
       margin-top: 10px;
     }
-   .row {
-     &.fees {
-       table {
-         tr {
-           th {
-             width: 75%;
-           }
-           td {
-             text-align: right;
-           }
-         }
-       }
+    .row {
+      &.fees {
+        table {
+          tr {
+            th {
+              width: 75%;
+            }
+            td {
+              text-align: right;
+            }
+          }
+        }
 
-     }
-   }
+      }
+    }
   }
   //
   // phlu-filelinks
@@ -1508,7 +1516,7 @@ body {
               &::before {
                 position: absolute;
                 top: 50%;
-                left:25px;
+                left: 25px;
                 transform: translateY(-50%);
                 color: $hazelbrowndark;
                 font-weight: bold;
@@ -1626,7 +1634,7 @@ body {
     &.nofilter {
       margin-bottom: 0;
       .phlu-teaser {
-        margin-top:12px;
+        margin-top: 12px;
         margin-bottom: 0;
       }
     }
@@ -1866,14 +1874,6 @@ body {
       }
     }
     > .row {
-      ul {
-        list-style-type: square;
-        padding-left: 20px;
-        margin-bottom: 31px;
-        @include media-breakpoint-up("xl") {
-          font-size: $font-size-paragraph-desktop;
-        }
-      }
       p {
         margin-bottom: 31px;
       }
@@ -1886,14 +1886,13 @@ body {
         border: 0;
         border-top: $hr-border-width solid $hr-border-color;
       }
-
       .table {
         tr:first-child {
           th {
-            border-top:4px solid black;
+            border-top: 4px solid black;
           }
           td {
-            border-top:4px solid $raspberryRed;
+            border-top: 4px solid $raspberryRed;
           }
         }
         tr {

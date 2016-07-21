@@ -6739,6 +6739,13 @@ body {
     font-weight: 700; }
   body a:hover, body a:focus {
     text-decoration: none; }
+  body ul {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-bottom: 31px; }
+    @media (min-width: 1280px) {
+      body ul {
+        font-size: 1.125rem; } }
   body .clickable, body .clickable * {
     cursor: pointer; }
   body .btn {
@@ -6756,7 +6763,8 @@ body {
     color: black;
     display: block; }
   body .nav-pills {
-    padding-top: 21px; }
+    padding-top: 21px;
+    list-style-type: none; }
     body .nav-pills li a.nav-link {
       color: white;
       background-color: #a5682e;
@@ -7704,13 +7712,6 @@ body {
   body .main .ambient-img-fullwidth img {
     width: 100%; } }
 
-    body .main > .row ul {
-      list-style-type: square;
-      padding-left: 20px;
-      margin-bottom: 31px; }
-      @media (min-width: 1280px) {
-        body .main > .row ul {
-          font-size: 1.125rem; } }
     body .main > .row p {
       margin-bottom: 31px; }
     body .main > .row hr {
