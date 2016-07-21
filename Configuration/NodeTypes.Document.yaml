@@ -92,6 +92,15 @@
           label: 'Navigation'
   superTypes:
     'PHLU.Corporate:Page': TRUE
+  properties:
+    hasanchornavigation:
+      type: boolean
+      ui:
+        label: 'Ankernavigation'
+        defaultValue: false
+        inspector:
+          group: 'navigation'
+        reloadIfChanged: TRUE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default'

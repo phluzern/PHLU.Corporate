@@ -11,7 +11,21 @@
 
         <ts:render path="defaultRenderer" context="{node: header}"/>
 
+        <f:if condition="{hasanchornavigation}">
+            <ul class="nav nav-pills">
+                <f:for each="{sections}" as="item" iteration="iterator">
+                    <li class="{f:if(condition: iterator.isFirst, then: 'active', else: '')}">
+                        <a class="nav-item nav-link anchor-nav"
+                           href="#node-{item.Identifier}">{item.properties.title}</a>
+                    </li>
+                </f:for>
+
+            </ul>
+
+        </f:if>
+
         <ts:render path="collectionRenderer" context="{node: main}"/>
+
 
         <f:if condition="{tagsMenu}">
             <ts:render path="collectionRenderer" context="{node: tagsMenu}"/>
@@ -32,9 +46,6 @@
                 <ts:render path="collectionRenderer" context="{node: onepage}"/>
             </f:else>
         </f:if>
-
-
-
 
 
     </div>
