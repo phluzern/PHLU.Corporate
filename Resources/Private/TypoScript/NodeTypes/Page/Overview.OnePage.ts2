@@ -16,7 +16,7 @@ prototype(PHLU.Corporate:Page.Overview.OnePage) < prototype(PHLU.Corporate:Page)
                     templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/OnePageMenuContent.html'
                     sectionName = 'contentonepage'
                     onepage = ${q(node).children('onepage').get(0)}
-                    teaser = ${q(node).children('teaser').get(0)}
+                    header = ${q(node).children('header').get(0)}
                     renderer = TYPO3.Neos:ContentCase
                     node = ${q(node).get(0)}
                     mainCount = ${q(node).is('[instanceof PHLU.Corporate:Page.View.Dossier]') ? 1 : q(node).children('main').children().count() ? 1 : q(node).children('[instanceof PHLU.Corporate:Page]').count()}
@@ -25,6 +25,16 @@ prototype(PHLU.Corporate:Page.Overview.OnePage) < prototype(PHLU.Corporate:Page)
                         # Default Text with Image
                         prototype(PHLU.Corporate:TextWithImage) {
                             attributes.class = 'onepage'
+                        }
+
+                        # Default Text with Image
+                        prototype(PHLU.Corporate:Content.Page.HeaderDefault) {
+
+                            prototype(PHLU.Corporate:Headline) {
+                                    tag = 'h2'
+                            }
+
+
                         }
 
 

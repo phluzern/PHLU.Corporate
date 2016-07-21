@@ -43,7 +43,6 @@
       'PHLU.Corporate:Page.View.Default': TRUE
       'PHLU.Corporate:Page.View.Default.Prototype': TRUE
       'PHLU.Corporate:Page.View.Default.Default': FALSE
-      'PHLU.Corporate:Page.View.Onepage': FALSE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.Home'
@@ -73,7 +72,6 @@
   constraints:
     nodeTypes:
       'PHLU.Corporate:Page.View.Default': TRUE
-      'PHLU.Corporate:Page.View.Onepage': TRUE
       'PHLU.Corporate:Page.View.Default.Default': FALSE
       'PHLU.Corporate:Page.View.Dossier': TRUE
       'PHLU.Corporate:Page.Overview.OnePage': FALSE
@@ -116,7 +114,6 @@
       'PHLU.Corporate:Page.View.Dossier': FALSE
       'PHLU.Corporate:Page.View.Default': FALSE
       'PHLU.Corporate:Page.View.Default.Default': TRUE
-      'PHLU.Corporate:Page.View.Onepage': FALSE
       'TYPO3.Neos:Shortcut': FALSE
 
 
@@ -159,6 +156,10 @@
 'PHLU.Corporate:Page.View.Dossier':
   ui:
     label: 'Dossier'
+    inspector:
+      groups:
+        carouselnews:
+          label: 'Karussell'
   superTypes:
     'PHLU.Corporate:Page': TRUE
   constraints:
@@ -168,21 +169,16 @@
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Dossier'
+  properties:
+    ishidden:
+      type: boolean
+      ui:
+        label: 'Verbergen'
+        defaultValue: false
+        inspector:
+          group: 'carouselnews'
+        reloadIfChanged: TRUE
 
-
-
-'PHLU.Corporate:Page.View.Onepage':
-  ui:
-    label: 'OnePage'
-  superTypes:
-    'PHLU.Corporate:Page': TRUE
-  childNodes:
-    main:
-      type: 'PHLU.Corporate:ContentCollection.Page.View.Onepage'
-    carouselnews: ~
-    targetgroup: ~
-    onepage: ~
-    contact: ~
 
 'PHLU.Corporate:Page.Service':
   ui:

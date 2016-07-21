@@ -16,10 +16,7 @@
     <div class="row" id="{node.properties.uriPathSegment}">
         <div class="col-xs-12">
 
-            <h2>{node.properties.title}</h2>
-
-              <ts:render path="renderer" context="{node: teaser}"/>
-
+              <ts:render path="renderer" context="{node: header}"/>
 
                 <neos:link.node node="{node}" class="btn btn-primary"> Mehr zu {node.properties.title}
                 </neos:link.node>

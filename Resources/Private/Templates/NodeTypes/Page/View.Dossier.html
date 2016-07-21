@@ -19,9 +19,9 @@
 
 </div>
 
-
-<ts:render path="defaultRenderer" context="{node: carouselnews}"/>
-
+<f:if condition="{ishidden}">
+<f:else><ts:render path="defaultRenderer" context="{node: carouselnews}"/></f:else>
+</f:if>
 
 {onePageContent -> f:format.raw()}
 

@@ -1,4 +1,0 @@
-# Default file
-'PHLU.Corporate:Files':
-  superTypes:
-    'PHLU.Qmpilot.NodeTypes:Files': TRUE

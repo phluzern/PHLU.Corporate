@@ -40,7 +40,7 @@
       'PHLU.Corporate:Event': TRUE
       'PHLU.Corporate:Contacts': TRUE
       'PHLU.Corporate:Contact': TRUE
-      'PHLU.Corporate:Files': TRUE
+      'PHLU.Qmpilot.NodeTypes:Files': TRUE
 
 
 
@@ -107,7 +107,6 @@
 'PHLU.Corporate:ContentCollection.CarouselNews':
   superTypes:
     'PHLU.Corporate:ContentCollection.Carousel': TRUE
-
 
 'PHLU.Corporate:ContentCollection.Page.View.Dossier':
   superTypes:

@@ -4,6 +4,6 @@ prototype(PHLU.Corporate:Page.View.Dossier) < prototype(PHLU.Corporate:Page.Over
         templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Dossier.html'
         onePageContent.defaultRenderer.sectionName = 'contentdossier'
         onePageContent.defaultRenderer.mainCount = ${q(node).children('main').children().count()}
-
+        ishidden = ${q(node).property('ishidden')}
 
 }
