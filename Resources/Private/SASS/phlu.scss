@@ -1417,7 +1417,7 @@ body {
               display: table-cell;
             }
             .dates {
-              width: 95px;
+              width: 105px;
             }
           }
         }
@@ -1445,6 +1445,40 @@ body {
     .phlu-accordion {
       margin-top: 10px;
     }
+  }
+  //
+  // further education detail page (weiterbildung)
+  //
+  .further-education-detail {
+    p {
+      @include media-breakpoint-up("md") {
+        width: 75%;
+      }
+&.lead {
+  width: 100%;
+}
+    }
+    .phlu-team-members {
+      margin-bottom: 0;
+    }
+    .phlu-accordion {
+      margin-top: 10px;
+    }
+   .row {
+     &.fees {
+       table {
+         tr {
+           th {
+             width: 75%;
+           }
+           td {
+             text-align: right;
+           }
+         }
+       }
+
+     }
+   }
   }
   //
   // phlu-filelinks
@@ -1590,7 +1624,7 @@ body {
       }
     }
     &.nofilter {
-      margin-bottom: 10px;
+      margin-bottom: 0;
       .phlu-teaser {
         margin-top:12px;
         margin-bottom: 0;
@@ -1832,7 +1866,7 @@ body {
       }
     }
     > .row {
-      ul.flowtext-list {
+      ul {
         list-style-type: square;
         padding-left: 20px;
         margin-bottom: 31px;
@@ -1912,7 +1946,7 @@ body {
         }
       }
       .phlu-corporate-textwithimage {
-        ul.flowtext-list {
+        ul {
           display: inline-block;
         }
       }
@@ -1944,6 +1978,7 @@ body {
       // breadcrumb navigation
       //
       .breadcrumb {
+        list-style-type: none;
         display: none;
         @include media-breakpoint-up("xl") {
           display: block;

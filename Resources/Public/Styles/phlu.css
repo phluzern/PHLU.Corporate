@@ -7447,7 +7447,7 @@ body {
       body .phlu-dozpage .row.education ul li div, body .phlu-dozpage .row.cv ul li div, body .phlu-dozpage .row.professional-activities ul li div {
         display: table-cell; }
       body .phlu-dozpage .row.education ul li .dates, body .phlu-dozpage .row.cv ul li .dates, body .phlu-dozpage .row.professional-activities ul li .dates {
-        width: 95px; }
+        width: 105px; }
   body .phlu-dozpage .row.publications-list .phlu-accordion, body .phlu-dozpage .row.science-projects .phlu-accordion {
     margin: 0; }
   body .phlu-dozpage .row:last-child {
@@ -7458,6 +7458,19 @@ body {
     margin-bottom: 0; }
   body .ppdb-detail .phlu-accordion {
     margin-top: 10px; }
+  @media (min-width: 768px) {
+    body .further-education-detail p {
+      width: 75%; } }
+  body .further-education-detail p.lead {
+    width: 100%; }
+  body .further-education-detail .phlu-team-members {
+    margin-bottom: 0; }
+  body .further-education-detail .phlu-accordion {
+    margin-top: 10px; }
+  body .further-education-detail .row.fees table tr th {
+    width: 75%; }
+  body .further-education-detail .row.fees table tr td {
+    text-align: right; }
   body .row.subjectsfilternav.phlu-filelinks {
     margin-bottom: 35px; }
     body .row.subjectsfilternav.phlu-filelinks .nav-pills li .nav-link {
@@ -7510,7 +7523,7 @@ body {
         font-family: FontAwesome;
         content: " \f0c1"; }
     body .row.subjectsfilternav.phlu-filelinks.nofilter {
-      margin-bottom: 10px; }
+      margin-bottom: 0; }
       body .row.subjectsfilternav.phlu-filelinks.nofilter .phlu-teaser {
         margin-top: 12px;
         margin-bottom: 0; }
@@ -7691,12 +7704,12 @@ body {
   body .main .ambient-img-fullwidth img {
     width: 100%; } }
 
-    body .main > .row ul.flowtext-list {
+    body .main > .row ul {
       list-style-type: square;
       padding-left: 20px;
       margin-bottom: 31px; }
       @media (min-width: 1280px) {
-        body .main > .row ul.flowtext-list {
+        body .main > .row ul {
           font-size: 1.125rem; } }
     body .main > .row p {
       margin-bottom: 31px; }
@@ -7746,7 +7759,7 @@ body {
       text-align: left;
       caption-side: bottom;
       margin-bottom: 0px; }
-    body .main > .row .phlu-corporate-textwithimage ul.flowtext-list {
+    body .main > .row .phlu-corporate-textwithimage ul {
       display: inline-block; }
     body .main > .row .content-link-email {
       font-size: 1.125rem;
@@ -7829,6 +7842,7 @@ body {
         font-family: FontAwesome;
         content: "\f100 \2000"; }
     body .main > .row .breadcrumb {
+      list-style-type: none;
       display: none;
       font-family: "Arial", sans-serif;
       font-weight: bold;
