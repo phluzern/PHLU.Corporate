@@ -2,8 +2,17 @@
 <div{attributes -> f:format.raw()}>
 
 <f:if condition="{node.properties.assets}">
-    <f:if condition="{node.properties.assets.resource}">
-        <a href="{f:uri.resource(resource: node.properties.assets.resource)}" target="_blank">{node.properties.assets.title} ({node.properties.assets.resource.fileextension})</a><br>
-    </f:if>
+        <f:for each="{node.properties.assets}" as="asset">
+            <f:if condition="{asset.resource}">
+               <f:if condition="{asset.link} != ''">
+                   <f:then>
+                       <a href="{asset.link}" target="_blank">{asset.title}</a><br>
+                   </f:then>
+                   <f:else>
+                       <a href="{f:uri.resource(resource: asset.resource)}" target="_blank">{asset.title}</a><br>
+                   </f:else>
+               </f:if>
+            </f:if>
+        </f:for>
 </f:if>
 </div>
