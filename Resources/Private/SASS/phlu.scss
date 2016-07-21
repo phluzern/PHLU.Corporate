@@ -53,6 +53,7 @@ $h3-letter-spacing: 0.2px;
 $font-size-h4: 1.1rem;
 $font-size-h4-desktop: 1.313rem;
 $lead-font-size: 1.313rem;
+$lead-font-size-mobile: 1.188rem;
 $teaser-type-font-size: 11px;
 $teaser-body-font-size: 13px;
 $teaser-letter-spacing: 0.4px;
@@ -337,6 +338,7 @@ body {
       }
     }
     p {
+      width: 75%;
       line-height: $line-height-sm;
       @include media-breakpoint-up("xl") {
         font-size: $font-size-paragraph-desktop;
@@ -386,6 +388,7 @@ body {
     .nav-pills {
       padding-top: 21px;
       list-style-type: none;
+      padding-left:0;
       li {
         a.nav-link {
           color: white;
@@ -660,7 +663,6 @@ body {
         }
       }
     }
-
     //
     // news & events teasers
     //
@@ -1461,14 +1463,6 @@ body {
     // further education detail page (weiterbildung)
     //
     .further-education-detail {
-      p {
-        @include media-breakpoint-up("md") {
-          width: 75%;
-        }
-        &.lead {
-          width: 100%;
-        }
-      }
       .phlu-team-members {
         margin-bottom: 0;
       }
@@ -1816,6 +1810,11 @@ body {
           margin-bottom: $spacer-y;
         }
       }
+      .onepage-teaser-content {
+        p {
+          width: 100%;
+        }
+      }
       .backend-img-fullwidth {
         width: 100%;
         height: auto;
@@ -1823,7 +1822,6 @@ body {
         margin-bottom: $spacer-y-desktop;
       }
       .ambient-img-fullwidth {
-
         width: 110%;
         height: auto;
         display: flex;
@@ -1919,9 +1917,17 @@ body {
             }
           }
         }
-        .flowtext-smallwidth {
-          @include media-breakpoint-up("xl") {
-            width: 75%;
+        .phlu-corporate-content-page-headerdefault {
+          .phlu-corporate-textplain {
+            p {
+              width: 100%;
+              @include media-breakpoint-up("xl") {
+                font-size:$lead-font-size;
+              }
+              @include media-breakpoint-up("xs") {
+                font-size:$lead-font-size-mobile;
+              }
+            }
           }
         }
         .img-fluid {
@@ -1948,10 +1954,14 @@ body {
           }
         }
         .phlu-corporate-textwithimage {
+          p {
+            width: 100%;
+          }
           ul {
             display: inline-block;
           }
         }
+
         .content-link-email {
           @include content-link("email");
         }
