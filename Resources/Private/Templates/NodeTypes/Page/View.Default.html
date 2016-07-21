@@ -12,16 +12,18 @@
         <ts:render path="defaultRenderer" context="{node: header}"/>
 
         <f:if condition="{hasanchornavigation}">
-            <ul class="nav nav-pills">
-                <f:for each="{sections}" as="item" iteration="iterator">
-                    <li class="{f:if(condition: iterator.isFirst, then: 'active', else: '')}">
-                        <a class="nav-item nav-link anchor-nav"
-                           href="#node-{item.Identifier}">{item.properties.title}</a>
-                    </li>
-                </f:for>
+            <f:if condition="{sectionsCount}>1">
+                <ul class="nav nav-pills">
+                    <f:for each="{sections}" as="item" iteration="iterator">
+                        <li class="{f:if(condition: iterator.isFirst, then: 'active', else: '')}">
+                            <a class="nav-item nav-link anchor-nav"
+                               href="#node-{item.Identifier}">{item.properties.title}</a>
+                        </li>
+                    </f:for>
 
-            </ul>
+                </ul>
 
+            </f:if>
         </f:if>
 
         <ts:render path="collectionRenderer" context="{node: main}"/>
