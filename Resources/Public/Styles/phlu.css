@@ -6731,6 +6731,7 @@ body .all {
       body .all h4 {
         font-size: 1.313rem; } }
   body .all p {
+    width: 75%;
     line-height: 1.8; }
     @media (min-width: 1280px) {
       body .all p {
@@ -6765,7 +6766,8 @@ body .all {
     display: block; }
   body .all .nav-pills {
     padding-top: 21px;
-    list-style-type: none; }
+    list-style-type: none;
+    padding-left: 0; }
     body .all .nav-pills li a.nav-link {
       color: white;
       background-color: #a5682e;
@@ -7467,11 +7469,6 @@ body .all {
     margin-bottom: 0; }
   body .all .ppdb-detail .phlu-accordion {
     margin-top: 10px; }
-  @media (min-width: 768px) {
-    body .all .further-education-detail p {
-      width: 75%; } }
-  body .all .further-education-detail p.lead {
-    width: 100%; }
   body .all .further-education-detail .phlu-team-members {
     margin-bottom: 0; }
   body .all .further-education-detail .phlu-accordion {
@@ -7651,6 +7648,8 @@ body .all {
     overflow-x: hidden; }
     body .all .main .onepage img {
       margin-bottom: 40px; }
+    body .all .main .onepage-teaser-content p {
+      width: 100%; }
     body .all .main .backend-img-fullwidth {
       width: 100%;
       height: auto;
@@ -7741,9 +7740,12 @@ body .all {
     body .all .main > .row .table tr td {
       background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
       border-left: 23px solid white; }
-    @media (min-width: 1280px) {
-      body .all .main > .row .flowtext-smallwidth {
-        width: 75%; } }
+    body .all .main > .row .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
+      width: 100%;
+      font-size: 1.188rem; }
+      @media (min-width: 1280px) {
+        body .all .main > .row .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
+          font-size: 1.313rem; } }
     @media (max-width: 991px) {
       body .all .main > .row .img-fluid, body .all .main > .row .carousel-inner > .carousel-item > img,
       body .all .main > .row .carousel-inner > .carousel-item > a > img, body .all .main > .row .phlu-teaser img, body .all .phlu-teaser .main > .row img {
@@ -7761,6 +7763,8 @@ body .all {
       text-align: left;
       caption-side: bottom;
       margin-bottom: 0px; }
+    body .all .main > .row .phlu-corporate-textwithimage p {
+      width: 100%; }
     body .all .main > .row .phlu-corporate-textwithimage ul {
       display: inline-block; }
     body .all .main > .row .content-link-email {
