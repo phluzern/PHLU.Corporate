@@ -1905,22 +1905,13 @@ body {
               display: none;
             }
           }
-          .tablesaw-advance {
-            margin-bottom:-60px;
-          }
         }
 
         .table {
 
-          .tablesaw-cell-persist {
-            box-shadow: 0 0 0 0;
-            border-right: 0;
-          }
-
           thead {
             tr {
               th {
-                min-width:180px;
                 padding: 0.75rem 0;
                 line-height: 1.5;
                 vertical-align: top;

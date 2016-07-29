@@ -7732,13 +7732,7 @@ body .all {
         margin-top: 10px; }
         body .all .main > .row .table-phlu-saw .tablesaw-nav-btn.disabled {
           display: none; }
-      body .all .main > .row .table-phlu-saw .tablesaw-advance {
-        margin-bottom: -60px; }
-    body .all .main > .row .table .tablesaw-cell-persist {
-      box-shadow: 0 0 0 0;
-      border-right: 0; }
     body .all .main > .row .table thead tr th {
-      min-width: 180px;
       padding: 0.75rem 0;
       line-height: 1.5;
       vertical-align: top;
