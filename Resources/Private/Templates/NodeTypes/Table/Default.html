@@ -1,0 +1,53 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+
+<div {attributes -> f:format.raw()}>
+    <table class="table" data-tablesaw-mode="swipe">
+        <thead>
+        <tr>
+
+            <th scope="col" data-tablesaw-priority="persist">{neos:contentElement.editable(property: 'cell0', tag: 'h3')}</th>
+
+            <f:if condition="{cols} > 1">
+                <th scope="col">{neos:contentElement.editable(property: 'cell1', tag: 'span')}</th>
+            </f:if>
+
+            <f:if condition="{cols} > 2">
+                <th scope="col">{neos:contentElement.editable(property: 'cell2', tag: 'span')}</th>
+            </f:if>
+
+            <f:if condition="{cols} > 3">
+                <th scope="col">{neos:contentElement.editable(property: 'cell3', tag: 'span')}</th>
+            </f:if>
+
+            <f:if condition="{cols} > 4">
+                <th scope="col">{neos:contentElement.editable(property: 'cell4', tag: 'span')}</th>
+            </f:if>
+
+            <f:if condition="{cols} > 5">
+                <th scope="col">{neos:contentElement.editable(property: 'cell5', tag: 'span')}</th>
+            </f:if>
+
+            <f:if condition="{cols} > 6">
+                <th scope="col">{neos:contentElement.editable(property: 'cell6', tag: 'span')}</th>
+            </f:if>
+
+            <f:if condition="{cols} > 7">
+                <th scope="col">{neos:contentElement.editable(property: 'cell7', tag: 'span')}</th>
+            </f:if>
+
+            <f:if condition="{cols} > 8">
+                <th scope="col">{neos:contentElement.editable(property: 'cell8', tag: 'span')}</th>
+            </f:if>
+
+            <f:if condition="{cols} > 9">
+                <th scope="col">{neos:contentElement.editable(property: 'cell9', tag: 'span')}</th>
+            </f:if>
+
+
+        </tr>
+        </thead>
+        {body -> f:format.raw()}
+    </table>
+</div>

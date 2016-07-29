@@ -7,6 +7,7 @@
     "angular-cookies": "1.5.*",
     "tether": "*",
     "font-awesome": "4.6.*",
-    "animate.css": "*"
+    "animate.css": "*",
+    "filament-tablesaw": "*"
   }
 }

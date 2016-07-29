@@ -15,12 +15,16 @@
         <link rel="stylesheet"
               href="{f:uri.external(uri: 'https://fonts.googleapis.com/css?family=Droid+Sans:400,700')}" media="all"/>
         <link rel="stylesheet"
+              href="{f:uri.resource(path: 'Vendor/filament-tablesaw/dist/tablesaw.css', package: 'PHLU.Corporate')}"
+              media="all"/>
+        <link rel="stylesheet"
               href="{f:uri.resource(path: 'Vendor/font-awesome/css/font-awesome.min.css', package: 'PHLU.Corporate')}"
               media="all"/>
         <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/phlu.css', package: 'PHLU.Corporate')}" media="all"/>
         <link rel="stylesheet"
               href="{f:uri.resource(path: 'Vendor/animate.css/animate.min.css', package: 'PHLU.Corporate')}"
               media="all"/>
+
 
     </f:section>
 
@@ -166,6 +170,8 @@
     <script src="{f:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/tether/dist/js/tether.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/bootstrap/dist/js/bootstrap.min.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'Vendor/filament-tablesaw/dist/tablesaw.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'Vendor/filament-tablesaw/dist/tablesaw-init.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/jquery/main.js', package: 'PHLU.Corporate')}"></script>
     <f:if condition="{neos:rendering.inBackend()}">
         <script src="{f:uri.resource(path: 'JavaScript/jquery/backend.js', package: 'PHLU.Corporate')}"></script>

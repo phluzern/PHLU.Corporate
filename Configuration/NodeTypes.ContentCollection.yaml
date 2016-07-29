@@ -41,6 +41,7 @@
       'PHLU.Corporate:Contacts': TRUE
       'PHLU.Corporate:Contact': TRUE
       'PHLU.Qmpilot.NodeTypes:Files': TRUE
+      'PHLU.Corporate:Table': TRUE
 
 
 

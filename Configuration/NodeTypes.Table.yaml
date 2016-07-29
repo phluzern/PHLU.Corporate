@@ -1,0 +1,1011 @@
+# Table
+'PHLU.Corporate:Table':
+  superTypes:
+    'PHLU.Corporate:Content': TRUE
+  ui:
+    label: 'Tabelle'
+
+    icon: icon-table
+    inlineEditable: true
+    inspector:
+      groups:
+        table:
+          label: 'Tabelle'
+          position: 20
+  properties:
+    cols:
+      type: integer
+      defaultValue: 2
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Spalten'
+        inspector:
+          group: 'table'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              2:
+                label: '2'
+              3:
+                label: '3'
+              4:
+                label: '4'
+              5:
+                label: '5'
+              6:
+                label: '6'
+              7:
+                label: '7'
+              8:
+                label: '8'
+              9:
+                label: '9'
+              10:
+                label: '10'
+    cell0:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+    cell1:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+    cell2:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+    cell3:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+    cell4:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+    cell5:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+
+    cell5:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+
+    cell6:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+
+    cell7:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+
+    cell8:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+
+    cell9:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+
+
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  childNodes:
+    body:
+      type: 'PHLU.Neos.NodeTypes:ContentCollection.Table.Body'
+
+
+'PHLU.Neos.NodeTypes:ContentCollection.Table.Body':
+  superTypes:
+    'PHLU.Neos.NodeTypes:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'PHLU.Corporate:Content': FALSE
+      'PHLU.Corporate:Table.Row': TRUE
+  ui:
+    label: 'Zeilen'
+    icon: icon-th
+    inlineEditable: true
+
+# Row
+'PHLU.Corporate:Table.Row':
+  superTypes:
+    'PHLU.Corporate:Content': TRUE
+  ui:
+    label: 'Zeile'
+    icon: icon-th-list
+    inlineEditable: true
+  properties:
+    cell0:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+    cell1:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+    cell2:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+    cell3:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+    cell4:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+    cell5:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+
+    cell5:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+
+    cell6:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+
+    cell7:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+
+    cell8:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+
+    cell9:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: TRUE
+        reloadIfChanged: FALSE
+        reloadPageIfChanged: FALSE
+        aloha:
+          'format': # Enable specific formatting options.
+            'strong': FALSE
+            'b': FALSE
+            'em': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'h4': FALSE
+            'h5': FALSE
+            'h6': FALSE
+            'code': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'link':
+            'a': FALSE
+          'list':
+            'ul': FALSE
+            'ol': FALSE
+          'alignment':
+            'left': FALSE
+            'center': FALSE
+            'right': FALSE
+            'justify': FALSE
+          'formatlesspaste':
+            'button': FALSE # Show toggle button for formatless pasting.
+            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
+            'strippedElements': ['*'] # If not set the default setting is used.
+            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+

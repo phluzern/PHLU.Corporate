@@ -6665,6 +6665,10 @@ body.neos-backend .neos-select2-result-label .strategieIco::before {
   font-size: 21px;
   margin-left: -4px;
   margin-right: -3px; }
+body.neos-backend table > tbody span[data-neos-node-type="PHLU.Corporate:Table.Row"],
+body.neos-backend table > thead span[data-neos-node-type="PHLU.Corporate:Table"] {
+  display: block;
+  width: 100%; }
 body.neos-backend a[typeof='typo3:PHLU.Corporate:Tag'] .neos-empty-contentcollection-overlay,
 body.neos-backend a[typeof='typo3:PHLU.Corporate:Section'] .neos-empty-contentcollection-overlay,
 body.neos-backend div[typeof='typo3:PHLU.Corporate:ContentCollection.Tags'] .neos-empty-contentcollection-overlay {
@@ -7722,11 +7726,33 @@ body .all {
       @media (min-width: 992px) {
         body .all .main > .row hr {
           margin-top: 53px; } }
-    body .all .main > .row .table tr:first-child th {
+    body .all .main > .row .table-phlu-saw {
+      margin-bottom: 40px; }
+      body .all .main > .row .table-phlu-saw .tablesaw-nav-btn {
+        margin-top: 10px; }
+        body .all .main > .row .table-phlu-saw .tablesaw-nav-btn.disabled {
+          display: none; }
+      body .all .main > .row .table-phlu-saw .tablesaw-advance {
+        margin-bottom: -60px; }
+    body .all .main > .row .table .tablesaw-cell-persist {
+      box-shadow: 0 0 0 0;
+      border-right: 0; }
+    body .all .main > .row .table thead tr th {
+      min-width: 180px;
+      padding: 0.75rem 0;
+      line-height: 1.5;
+      vertical-align: top;
+      border-top: 0;
+      border-left: 23px solid white; }
+      body .all .main > .row .table thead tr th:first-child {
+        border-left: 0; }
+        body .all .main > .row .table thead tr th:first-child h3 {
+          margin: 0; }
+    body .all .main > .row .table tbody tr:first-child th {
       border-top: 4px solid black; }
-    body .all .main > .row .table tr:first-child td {
+    body .all .main > .row .table tbody tr:first-child td {
       border-top: 4px solid #ba1541; }
-    body .all .main > .row .table tr th, body .all .main > .row .table tr td {
+    body .all .main > .row .table tbody tr th, body .all .main > .row .table tbody tr td {
       padding: 0.75rem 0;
       border-right: 2px solid white;
       line-height: 1.5;
@@ -7734,10 +7760,10 @@ body .all {
       border-top: 0;
       background-repeat: repeat-x;
       background-position: bottom left; }
-    body .all .main > .row .table tr th {
+    body .all .main > .row .table tbody tr th {
       width: 40%;
       background-image: url("../Images/table-cell-dottedline.png"); }
-    body .all .main > .row .table tr td {
+    body .all .main > .row .table tbody tr td {
       background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
       border-left: 23px solid white; }
     body .all .main > .row .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {

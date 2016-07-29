@@ -1,0 +1,53 @@
+# Table
+prototype(PHLU.Corporate:Table) < prototype(PHLU.Corporate:Content) {
+
+    templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Table/Default.html'
+
+
+    body = PHLU.Neos.NodeTypes:ContentCollection.Table.Body {
+        nodePath = 'body'
+
+    }
+
+    attributes.class = 'table-responsive'
+    cell0 = ${q(node).property('cell0')}
+    cell1 = ${q(node).property('cell1')}
+    cell2 = ${q(node).property('cell2')}
+    cell3 = ${q(node).property('cell3')}
+    cell4 = ${q(node).property('cell4')}
+    cell5 = ${q(node).property('cell5')}
+    cell6 = ${q(node).property('cell6')}
+    cell7 = ${q(node).property('cell7')}
+    cell8 = ${q(node).property('cell8')}
+    cell9 = ${q(node).property('cell9')}
+    cols = ${q(node).property('cols')}
+
+    attributes.class = 'table-phlu-saw'
+
+}
+
+# Table
+prototype(PHLU.Corporate:Table.Row) < prototype(PHLU.Corporate:Content) {
+
+    templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Table/Row.html'
+    cell0 = ${q(node).property('cell0')}
+    cell1 = ${q(node).property('cell1')}
+    cell2 = ${q(node).property('cell2')}
+    cell3 = ${q(node).property('cell3')}
+    cell4 = ${q(node).property('cell4')}
+    cell5 = ${q(node).property('cell5')}
+    cell6 = ${q(node).property('cell6')}
+    cell7 = ${q(node).property('cell7')}
+    cell8 = ${q(node).property('cell8')}
+    cell9 = ${q(node).property('cell9')}
+
+    cols = ${q(node).parent().parent().property('cols')}
+
+}
+
+# Table
+prototype(PHLU.Neos.NodeTypes:ContentCollection.Table.Body) < prototype(PHLU.Corporate:ContentCollection) {
+
+    tagName = 'tbody'
+
+}
