@@ -1894,13 +1894,12 @@ body {
           border-top: $hr-border-width solid $hr-border-color;
         }
 
-
         .table-phlu-saw {
 
           margin-bottom: $form-group-margin-bottom;
 
           .tablesaw-nav-btn {
-            margin-top:10px;
+            margin-top: 10px;
             &.disabled {
               display: none;
             }
@@ -1920,7 +1919,7 @@ body {
                 &:first-child {
                   border-left: 0;
                   h3 {
-                    margin:0;
+                    margin: 0;
                   }
                 }
               }
@@ -2160,6 +2159,15 @@ body {
           margin-top: 65px;
           padding-bottom: 330px;
           background-position: bottom center;
+        }
+        //
+        // sections in content
+        //
+        .phlu-corporate-section:last-child {
+          hr {
+            border-top: 0;
+            padding-bottom: 53px;
+          }
         }
       }
     }
