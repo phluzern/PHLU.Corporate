@@ -297,6 +297,14 @@ body.neos-backend {
 }
 
 body {
+  margin-bottom: 420px;
+  @include media-breakpoint-down("md") {
+    margin-bottom: 681px;
+  }
+  @include media-breakpoint-up("xxxl") {
+    background-color: #efefef;
+  }
+  color: $grey;
   .all {
 
     // neos specific
@@ -307,14 +315,6 @@ body {
       }
     }
 
-    margin-bottom: 420px;
-    @include media-breakpoint-down("md") {
-      margin-bottom: 681px;
-    }
-    color: $grey;
-    @include media-breakpoint-up("xxxl") {
-      background-color: #efefef;
-    }
     font-size: $font-size-base;
     h1 {
       margin: 33px 0 12px;
@@ -344,9 +344,9 @@ body {
       }
     }
     p {
-      width: 75%;
       line-height: $line-height-sm;
       @include media-breakpoint-up("xl") {
+        width: 75%;
         font-size: $font-size-paragraph-desktop;
       }
     }
