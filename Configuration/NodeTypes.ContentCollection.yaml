@@ -76,6 +76,7 @@
       'PHLU.Corporate:TextWithImage': TRUE
       'PHLU.Corporate:AccordeonElement': TRUE
       'PHLU.Corporate:Contacts': TRUE
+      'PHLU.Corporate:Table': TRUE
   ui:
     label: 'Allgemein'
     icon: icon-gear
