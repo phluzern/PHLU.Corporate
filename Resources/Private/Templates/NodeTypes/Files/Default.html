@@ -2,10 +2,12 @@
 <div{attributes -> f:format.raw()}>
 
 <f:if condition="{node.properties.assets}">
-    <f:for each="{node.properties.assets}" as="asset">
-        <f:if condition="{asset.resource}">
-            <a href="{f:uri.resource(resource: asset.resource)}" target="_blank">{asset.title}</a><br>
-        </f:if>
-    </f:for>
+    <p>
+        <f:for each="{node.properties.assets}" as="asset">
+            <f:if condition="{asset.resource}">
+                <a href="{f:uri.resource(resource: asset.resource)}" target="_blank">{asset.title}</a><br>
+            </f:if>
+        </f:for>
+    </p>
 </f:if>
 </div>
