@@ -6698,6 +6698,8 @@ body.neos-backend .neos-contentelement-active.backend-helper i {
   padding-left: 6px !important; }
 body.neos-backend .main.contents {
   min-height: 500px; }
+body.neos-backend .neos-tooltip {
+  display: none; }
 
 body {
   margin-bottom: 420px;

@@ -294,6 +294,9 @@ body.neos-backend {
   .main.contents {
     min-height: 500px;
   }
+  .neos-tooltip {
+    display: none;
+  }
 }
 
 body {
