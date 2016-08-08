@@ -309,7 +309,6 @@ body {
   }
   color: $grey;
   .all {
-
     // neos specific
     .neos-contentcollection {
 
@@ -1109,7 +1108,7 @@ body {
         .nav-teaser-item {
           margin-top: 5px;
           margin-bottom: 5px;
-          padding:0;
+          padding: 0;
           .row {
             height: inherit;
             .phlu-teaser-body {
@@ -1139,6 +1138,16 @@ body {
             }
           }
 
+        }
+      }
+      .ico-family-iconic {
+        &::before {
+          font-family: Icons;
+        }
+      }
+      .ico-family-fa {
+        &::before {
+          font-family: FontAwesome;
         }
       }
       .faecherIco, .oi-media-stop {
@@ -1333,7 +1342,7 @@ body {
         }
         .phlu-corporate-contactsgroup {
           h3 {
-            margin-top:36px;
+            margin-top: 36px;
           }
           .phlu-accordion {
             margin: 32px 0 0;
@@ -1342,7 +1351,7 @@ body {
       }
 
       .panel-heading {
-        cursor:pointer;
+        cursor: pointer;
         border-bottom: solid 1px $hazelbrowndark;
         font-size: $font-size-h4-desktop;
 
@@ -1652,163 +1661,126 @@ body {
     //
     // news and events flow text version
     .flowtext-phlu-event, .flowtext-phlu-news {
-      &.first {
-        padding-top: 10px;
+      a, a:hover {
+        color: $grey;
       }
-      padding-top: 36px;
-      .date-day, .preview-image, .date-month-year, .location {
-        float: left;
-      }
-      .preview-image {
-        img {
-          width: 150px;
-          height: 150px;
+      > .row {
+        &.first {
+          padding-top: 10px;
         }
-      }
-      .date-day {
-        font-size: 28px;
-        color: white;
-        font-weight: normal;
-        padding: 13px 15px;
-        width: 68px;
-        &.exhibition {
-          font-size: 40px;
-          padding: 4px 0 4px 22px;
+        padding-top: 30px;
+        .initial, .date-location-title, .preview-image, .date-title-preview-text {
+          float: left;
         }
-      }
-      &.flowtext-events-legend {
-        position: absolute;
-        margin-top: -107px;
-        margin-left: 610px;
-        .exhibition, .meeting, .event {
-          font-size: 16px;
-          padding-left: 11px;
-          color: lightgrey;
-          .date-day {
-            position: absolute;
-            margin-top: -3px;
-            font-size: 16px;
-            padding: 3px 11px;
-            width: 30px;
-            background-color: lightgrey;
+        .initial {
+          width: 70px;
+          height: 70px;
+          color: white;
+          font-size: 28px;
+          padding: 14px 15px;
+          &.exhibition {
+            font-size: 40px;
+            padding: 4px 0 0 22px;
+          }
+          &.meeting {
+            font-size: 41px;
+            padding: 6px 0 0 24px;
           }
         }
-        .exhibition {
-          .event-type-text {
-            position: absolute;
-            margin-left: 31px;
-            padding-left: 5px;
+
+        .preview-image {
+
+          img {
+            width: 150px;
+            height: 150px;
+            @include media-breakpoint-down("xs") {
+              width: inherit;
+              height: auto;
+            }
+          }
+          @include media-breakpoint-down("xs") {
+            float:none;
           }
         }
-        .meeting {
-          margin-left: 102px;
-          .date-day {
-            padding: 3px 11px;
-          }
-          .event-type-text {
-            position: absolute;
-            margin-left: 31px;
-            padding-left: 5px;
-          }
-        }
-        .event {
-          margin-left: 78px;
-          .date-day {
-            padding: 3px 11px;
-          }
-          .event-type-text {
-            position: absolute;
-            margin-left: 31px;
-            padding-left: 5px;
-          }
-        }
-      }
-      .date-month-year {
-        font-weight: $font-weight-bold;
-        padding-left: 28px;
-        .title {
-          position: absolute;
-          clear: both;
-          font-size: 20px;
-          font-weight: normal;
-          height: 45px;
-          width: 650px;
+
+        .date-location-title, .date-title-preview-text {
+          padding-left: 20px;
           overflow: hidden;
-          margin-top: 1px;
           a {
-            color: $grey;
+            font-size: 20px;
+          }
+          .more-link {
+            padding-left: 5px;
+            font-size: 14px;
           }
         }
-        .preview-text {
-          position: absolute;
-          clear: both;
-          font-weight: normal;
-          height: 75px;
-          width: 650px;
-          overflow: hidden;
-          margin-top: 40px;
-          font-weight: normal;
+
+        .date-location-title {
+          @include media-breakpoint-up("xxxl") {
+            max-width: 92%;
+          }
+          @include media-breakpoint-up("xxl") {
+            max-width: 91%;
+          }
+          @include media-breakpoint-up("md") {
+            max-width: 90%;
+          }
+          @include media-breakpoint-up("sm") {
+            max-width: 86%;
+          }
+          @include media-breakpoint-up("xs") {
+            max-width: 80%;
+          }
+
+        }
+        .date-title-preview-text {
+          @include media-breakpoint-up("xxxl") {
+            max-width: 83%;
+          }
+          @include media-breakpoint-up("lg") {
+            max-width: 80%;
+          }
+          @include media-breakpoint-up("md") {
+            max-width: 79%;
+          }
+          @include media-breakpoint-up("sm") {
+            max-width: 70%;
+          }
+          @include media-breakpoint-down("xs") {
+            max-width: 100%;
+            padding-left:0;
+            padding-top:30px;
+            padding-bottom: 30px;
+          }
+
+          div {
+            padding-top:15px;
+          }
         }
       }
 
-      h2 {
-        clear: both;
-        padding-top: 32px;
-      }
-      .phlu-teaser-type {
-        font-family: Icons;
-        font-size: $teaser-type-font-size;
-        letter-spacing: $teaser-letter-spacing;
-        color: white;
-        font-weight: $font-weight-bold;
-        padding: 7px 20px;
-        text-transform: uppercase;
-        float: right;
-
-        &::before {
-          position: absolute;
-          top: 0;
-          right: 0;
-          //content: " \e02f";
-          content: " ";
-          color: $turquoise;
-          padding: 21px 10px;
-          font-size: 20px;
-
-        }
-      }
-      &.detailview {
-        .date-month-year-location {
-          margin-left: 96px;
-        }
-        h2 {
-          margin-top: 32px;
-        }
-
-      }
     }
     .flowtext-phlu-news {
-      .date-day {
-        background-color: $olivegreen;
-      }
-      &.detailview {
-        .full-date {
-          margin-top: 0;
+      > .row {
+        .initial {
+          background-color: $olivegreen;
         }
-        .date-month-year-location {
-          margin-left: 100px;
+      }
+      &.detailView {
+        .full-date {
+          margin:0;
         }
         h2 {
-          margin-top: 0;
+          margin: 32px 0;
         }
-
       }
     }
     .flowtext-phlu-event {
-      .date-day {
-        background-color: $turquoise;
+      > .row {
+        .initial {
+          background-color: $turquoise;
+        }
       }
-
     }
 
     //

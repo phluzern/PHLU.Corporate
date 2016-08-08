@@ -7304,6 +7304,10 @@ body {
           padding-left: 23px; }
       body .all .row.subjectsfilternav .nav-pills li.active a.nav-link {
         background-color: #55696d; }
+    body .all .row.subjectsfilternav .ico-family-iconic::before {
+      font-family: Icons; }
+    body .all .row.subjectsfilternav .ico-family-fa::before {
+      font-family: FontAwesome; }
     body .all .row.subjectsfilternav .faecherIco::before, body .all .row.subjectsfilternav .oi-media-stop::before {
       font-family: Icons;
       content: " \e099 \2001";
@@ -7542,115 +7546,85 @@ body {
         body .all .row.subjectsfilternav.phlu-filelinks.nofilter .phlu-teaser {
           margin-top: 12px;
           margin-bottom: 0; }
-    body .all .flowtext-phlu-event, body .all .flowtext-phlu-news {
-      padding-top: 36px; }
-      body .all .flowtext-phlu-event.first, body .all .flowtext-phlu-news.first {
+    body .all .flowtext-phlu-event a, body .all .flowtext-phlu-event a:hover, body .all .flowtext-phlu-news a, body .all .flowtext-phlu-news a:hover {
+      color: #5c5c5c; }
+    body .all .flowtext-phlu-event > .row, body .all .flowtext-phlu-news > .row {
+      padding-top: 30px; }
+      body .all .flowtext-phlu-event > .row.first, body .all .flowtext-phlu-news > .row.first {
         padding-top: 10px; }
-      body .all .flowtext-phlu-event .date-day, body .all .flowtext-phlu-event .preview-image, body .all .flowtext-phlu-event .date-month-year, body .all .flowtext-phlu-event .location, body .all .flowtext-phlu-news .date-day, body .all .flowtext-phlu-news .preview-image, body .all .flowtext-phlu-news .date-month-year, body .all .flowtext-phlu-news .location {
+      body .all .flowtext-phlu-event > .row .initial, body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-event > .row .preview-image, body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .initial, body .all .flowtext-phlu-news > .row .date-location-title, body .all .flowtext-phlu-news > .row .preview-image, body .all .flowtext-phlu-news > .row .date-title-preview-text {
         float: left; }
-      body .all .flowtext-phlu-event .preview-image img, body .all .flowtext-phlu-news .preview-image img {
+      body .all .flowtext-phlu-event > .row .initial, body .all .flowtext-phlu-news > .row .initial {
+        width: 70px;
+        height: 70px;
+        color: white;
+        font-size: 28px;
+        padding: 14px 15px; }
+        body .all .flowtext-phlu-event > .row .initial.exhibition, body .all .flowtext-phlu-news > .row .initial.exhibition {
+          font-size: 40px;
+          padding: 4px 0 0 22px; }
+        body .all .flowtext-phlu-event > .row .initial.meeting, body .all .flowtext-phlu-news > .row .initial.meeting {
+          font-size: 41px;
+          padding: 6px 0 0 24px; }
+      body .all .flowtext-phlu-event > .row .preview-image img, body .all .flowtext-phlu-news > .row .preview-image img {
         width: 150px;
         height: 150px; }
-      body .all .flowtext-phlu-event .date-day, body .all .flowtext-phlu-news .date-day {
-        font-size: 28px;
-        color: white;
-        font-weight: normal;
-        padding: 13px 15px;
-        width: 68px; }
-        body .all .flowtext-phlu-event .date-day.exhibition, body .all .flowtext-phlu-news .date-day.exhibition {
-          font-size: 40px;
-          padding: 4px 0 4px 22px; }
-      body .all .flowtext-phlu-event.flowtext-events-legend, body .all .flowtext-phlu-news.flowtext-events-legend {
-        position: absolute;
-        margin-top: -107px;
-        margin-left: 610px; }
-        body .all .flowtext-phlu-event.flowtext-events-legend .exhibition, body .all .flowtext-phlu-event.flowtext-events-legend .meeting, body .all .flowtext-phlu-event.flowtext-events-legend .event, body .all .flowtext-phlu-news.flowtext-events-legend .exhibition, body .all .flowtext-phlu-news.flowtext-events-legend .meeting, body .all .flowtext-phlu-news.flowtext-events-legend .event {
-          font-size: 16px;
-          padding-left: 11px;
-          color: lightgrey; }
-          body .all .flowtext-phlu-event.flowtext-events-legend .exhibition .date-day, body .all .flowtext-phlu-event.flowtext-events-legend .meeting .date-day, body .all .flowtext-phlu-event.flowtext-events-legend .event .date-day, body .all .flowtext-phlu-news.flowtext-events-legend .exhibition .date-day, body .all .flowtext-phlu-news.flowtext-events-legend .meeting .date-day, body .all .flowtext-phlu-news.flowtext-events-legend .event .date-day {
-            position: absolute;
-            margin-top: -3px;
-            font-size: 16px;
-            padding: 3px 11px;
-            width: 30px;
-            background-color: lightgrey; }
-        body .all .flowtext-phlu-event.flowtext-events-legend .exhibition .event-type-text, body .all .flowtext-phlu-news.flowtext-events-legend .exhibition .event-type-text {
-          position: absolute;
-          margin-left: 31px;
-          padding-left: 5px; }
-        body .all .flowtext-phlu-event.flowtext-events-legend .meeting, body .all .flowtext-phlu-news.flowtext-events-legend .meeting {
-          margin-left: 102px; }
-          body .all .flowtext-phlu-event.flowtext-events-legend .meeting .date-day, body .all .flowtext-phlu-news.flowtext-events-legend .meeting .date-day {
-            padding: 3px 11px; }
-          body .all .flowtext-phlu-event.flowtext-events-legend .meeting .event-type-text, body .all .flowtext-phlu-news.flowtext-events-legend .meeting .event-type-text {
-            position: absolute;
-            margin-left: 31px;
-            padding-left: 5px; }
-        body .all .flowtext-phlu-event.flowtext-events-legend .event, body .all .flowtext-phlu-news.flowtext-events-legend .event {
-          margin-left: 78px; }
-          body .all .flowtext-phlu-event.flowtext-events-legend .event .date-day, body .all .flowtext-phlu-news.flowtext-events-legend .event .date-day {
-            padding: 3px 11px; }
-          body .all .flowtext-phlu-event.flowtext-events-legend .event .event-type-text, body .all .flowtext-phlu-news.flowtext-events-legend .event .event-type-text {
-            position: absolute;
-            margin-left: 31px;
-            padding-left: 5px; }
-      body .all .flowtext-phlu-event .date-month-year, body .all .flowtext-phlu-news .date-month-year {
-        font-weight: 700;
-        padding-left: 28px; }
-        body .all .flowtext-phlu-event .date-month-year .title, body .all .flowtext-phlu-news .date-month-year .title {
-          position: absolute;
-          clear: both;
-          font-size: 20px;
-          font-weight: normal;
-          height: 45px;
-          width: 650px;
-          overflow: hidden;
-          margin-top: 1px; }
-          body .all .flowtext-phlu-event .date-month-year .title a, body .all .flowtext-phlu-news .date-month-year .title a {
-            color: #5c5c5c; }
-        body .all .flowtext-phlu-event .date-month-year .preview-text, body .all .flowtext-phlu-news .date-month-year .preview-text {
-          position: absolute;
-          clear: both;
-          font-weight: normal;
-          height: 75px;
-          width: 650px;
-          overflow: hidden;
-          margin-top: 40px;
-          font-weight: normal; }
-      body .all .flowtext-phlu-event h2, body .all .flowtext-phlu-news h2 {
-        clear: both;
-        padding-top: 32px; }
-      body .all .flowtext-phlu-event .phlu-teaser-type, body .all .flowtext-phlu-news .phlu-teaser-type {
-        font-family: Icons;
-        font-size: 11px;
-        letter-spacing: 0.4px;
-        color: white;
-        font-weight: 700;
-        padding: 7px 20px;
-        text-transform: uppercase;
-        float: right; }
-        body .all .flowtext-phlu-event .phlu-teaser-type::before, body .all .flowtext-phlu-news .phlu-teaser-type::before {
-          position: absolute;
-          top: 0;
-          right: 0;
-          content: " ";
-          color: #55a7b3;
-          padding: 21px 10px;
+        @media (max-width: 543px) {
+          body .all .flowtext-phlu-event > .row .preview-image img, body .all .flowtext-phlu-news > .row .preview-image img {
+            width: inherit;
+            height: auto; } }
+      @media (max-width: 543px) {
+        body .all .flowtext-phlu-event > .row .preview-image, body .all .flowtext-phlu-news > .row .preview-image {
+          float: none; } }
+      body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-title-preview-text {
+        padding-left: 20px;
+        overflow: hidden; }
+        body .all .flowtext-phlu-event > .row .date-location-title a, body .all .flowtext-phlu-event > .row .date-title-preview-text a, body .all .flowtext-phlu-news > .row .date-location-title a, body .all .flowtext-phlu-news > .row .date-title-preview-text a {
           font-size: 20px; }
-      body .all .flowtext-phlu-event.detailview .date-month-year-location, body .all .flowtext-phlu-news.detailview .date-month-year-location {
-        margin-left: 96px; }
-      body .all .flowtext-phlu-event.detailview h2, body .all .flowtext-phlu-news.detailview h2 {
-        margin-top: 32px; }
-    body .all .flowtext-phlu-news .date-day {
+        body .all .flowtext-phlu-event > .row .date-location-title .more-link, body .all .flowtext-phlu-event > .row .date-title-preview-text .more-link, body .all .flowtext-phlu-news > .row .date-location-title .more-link, body .all .flowtext-phlu-news > .row .date-title-preview-text .more-link {
+          padding-left: 5px;
+          font-size: 14px; }
+      body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
+        max-width: 80%; }
+        @media (min-width: 1600px) {
+          body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
+            max-width: 92%; } }
+        @media (min-width: 1400px) {
+          body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
+            max-width: 91%; } }
+        @media (min-width: 768px) {
+          body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
+            max-width: 90%; } }
+        @media (min-width: 544px) {
+          body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
+            max-width: 86%; } }
+      @media (min-width: 1600px) {
+        body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
+          max-width: 83%; } }
+      @media (min-width: 992px) {
+        body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
+          max-width: 80%; } }
+      @media (min-width: 768px) {
+        body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
+          max-width: 79%; } }
+      @media (min-width: 544px) {
+        body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
+          max-width: 70%; } }
+      @media (max-width: 543px) {
+        body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
+          max-width: 100%;
+          padding-left: 0;
+          padding-top: 30px;
+          padding-bottom: 30px; } }
+      body .all .flowtext-phlu-event > .row .date-title-preview-text div, body .all .flowtext-phlu-news > .row .date-title-preview-text div {
+        padding-top: 15px; }
+    body .all .flowtext-phlu-news > .row .initial {
       background-color: #91a103; }
-    body .all .flowtext-phlu-news.detailview .full-date {
-      margin-top: 0; }
-    body .all .flowtext-phlu-news.detailview .date-month-year-location {
-      margin-left: 100px; }
-    body .all .flowtext-phlu-news.detailview h2 {
-      margin-top: 0; }
-    body .all .flowtext-phlu-event .date-day {
+    body .all .flowtext-phlu-news.detailView .full-date {
+      margin: 0; }
+    body .all .flowtext-phlu-news.detailView h2 {
+      margin: 32px 0; }
+    body .all .flowtext-phlu-event > .row .initial {
       background-color: #55a7b3; }
     body .all .main {
       background-color: white;
