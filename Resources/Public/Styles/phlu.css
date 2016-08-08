@@ -1567,7 +1567,7 @@ pre {
 
   .col-xxl-offset-12 {
     margin-left: 100%; } }
-@media (min-width: 1600px) {
+@media (min-width: 1920px) {
   .col-xxxl-1 {
     flex: 0 0 8.33333%; }
 
@@ -1756,7 +1756,7 @@ pre {
 
   .col-xxl-last {
     order: 1; } }
-@media (min-width: 1600px) {
+@media (min-width: 1920px) {
   .col-xxxl-first {
     order: -1; }
 
@@ -1816,7 +1816,7 @@ pre {
 
   .row-xxl-bottom {
     align-items: flex-end; } }
-@media (min-width: 1600px) {
+@media (min-width: 1920px) {
   .row-xxxl-top {
     align-items: flex-start; }
 
@@ -1879,7 +1879,7 @@ pre {
 
   .col-xxl-bottom {
     align-self: flex-end; } }
-@media (min-width: 1600px) {
+@media (min-width: 1920px) {
   .col-xxxl-top {
     align-self: flex-start; }
 
@@ -5462,7 +5462,7 @@ button.close {
 
   .pull-xxl-none {
     float: none !important; } }
-@media (min-width: 1600px) {
+@media (min-width: 1920px) {
   .pull-xxxl-left {
     float: left !important; }
 
@@ -5564,7 +5564,7 @@ button.close {
 
   .text-xxl-center {
     text-align: center !important; } }
-@media (min-width: 1600px) {
+@media (min-width: 1920px) {
   .text-xxxl-left {
     text-align: left !important; }
 
@@ -5904,11 +5904,11 @@ a.bg-danger:focus, a.bg-danger:hover {
   .hidden-xxl-up {
     display: none !important; } }
 
-@media (max-width: 1599px) {
+@media (max-width: 1919px) {
   .hidden-xxl-down {
     display: none !important; } }
 
-@media (min-width: 1600px) {
+@media (min-width: 1920px) {
   .hidden-xxxl-up {
     display: none !important; } }
 
@@ -6703,13 +6703,11 @@ body.neos-backend .neos-tooltip {
 
 body {
   margin-bottom: 420px;
+  background-color: #efefef;
   color: #5c5c5c; }
   @media (max-width: 991px) {
     body {
       margin-bottom: 681px; } }
-  @media (min-width: 1600px) {
-    body {
-      background-color: #efefef; } }
   body .all {
     font-size: 1rem; }
     body .all .neos-contentcollection .neos.neos-empty-contentcollection-overlay {
@@ -6920,7 +6918,7 @@ body {
           @media (max-width: 1399px) {
             body .all .sidebar.level0 .sidebar-nav a {
               padding-right: 11%; } }
-          @media (max-width: 1599px) {
+          @media (max-width: 1919px) {
             body .all .sidebar.level0 .sidebar-nav a {
               padding-right: 10%; } }
       body .all .sidebar.level1 {
@@ -6957,9 +6955,9 @@ body {
           z-index: -1; }
         body .all .sidebar.level1.phlu-pattern-top-margin::after {
           background-position: 0 500px; }
-    @media (min-width: 1600px) {
+    @media (min-width: 1920px) {
       body .all .nosubnav .main {
-        max-width: 1384px; } }
+        max-width: 1534px; } }
     body .all .subpage .nosubnav .sidebar.level0 {
       -webkit-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
       -moz-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
@@ -7047,7 +7045,7 @@ body {
           @media (min-width: 1400px) {
             body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody {
               height: 172%; } }
-          @media (min-width: 1600px) {
+          @media (min-width: 1920px) {
             body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody {
               height: 175%; } }
           body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody p {
@@ -7071,7 +7069,7 @@ body {
           @media (min-width: 1400px) {
             body .all .phlu-teaser .event.listing .phlu-teaser-body .scrollbody {
               height: 180%; } }
-          @media (min-width: 1600px) {
+          @media (min-width: 1920px) {
             body .all .phlu-teaser .event.listing .phlu-teaser-body .scrollbody {
               height: 192%; } }
           body .all .phlu-teaser .event.listing .phlu-teaser-body .scrollbody .event-date-day {
@@ -7586,7 +7584,7 @@ body {
           font-size: 14px; }
       body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
         max-width: 80%; }
-        @media (min-width: 1600px) {
+        @media (min-width: 1920px) {
           body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
             max-width: 92%; } }
         @media (min-width: 1400px) {
@@ -7598,7 +7596,7 @@ body {
         @media (min-width: 544px) {
           body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
             max-width: 86%; } }
-      @media (min-width: 1600px) {
+      @media (min-width: 1920px) {
         body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
           max-width: 83%; } }
       @media (min-width: 992px) {
@@ -7627,7 +7625,7 @@ body {
     body .all .flowtext-phlu-event > .row .initial {
       background-color: #55a7b3; }
     body .all .main {
-      background-color: white;
+      background-color: #fbfaf4;
       overflow-x: hidden; }
       body .all .main .onepage img {
         margin-bottom: 40px; }
@@ -7670,11 +7668,11 @@ body {
   body .all .main .ambient-img-fullwidth {
     min-height: 640px; } }
 
-@media (min-width: 1400px) and (max-width: 1599px) {
+@media (min-width: 1400px) and (max-width: 1919px) {
   body .all .main .ambient-img-fullwidth {
     min-height: 800px; } }
 
-        @media (min-width: 1600px) {
+        @media (min-width: 1920px) {
           body .all .main .ambient-img-fullwidth {
             background-position-x: -2rem;
             min-height: 800px; } }
@@ -7716,7 +7714,7 @@ body {
         line-height: 1.5;
         vertical-align: top;
         border-top: 0;
-        border-left: 23px solid white; }
+        border-left: 23px solid #fbfaf4; }
         body .all .main > .row .table thead tr th:first-child {
           border-left: 0; }
           body .all .main > .row .table thead tr th:first-child h3 {
@@ -7738,7 +7736,7 @@ body {
         background-image: url("../Images/table-cell-dottedline.png"); }
       body .all .main > .row .table tbody tr td {
         background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
-        border-left: 23px solid white; }
+        border-left: 23px solid #fbfaf4; }
       body .all .main > .row .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
         width: 100%;
         font-size: 1.188rem; }
@@ -7874,7 +7872,7 @@ body {
       @media (min-width: 1280px) {
         body .all .main > .row > .col-xs-12 {
           max-width: 900px; } }
-      @media (min-width: 1600px) {
+      @media (min-width: 1920px) {
         body .all .main > .row > .col-xs-12 {
           margin: 0 111px;
           padding: inherit; } }
@@ -7997,9 +7995,9 @@ body {
         @media (min-width: 992px) {
           body .all .footer::after {
             background-position: 100% 0%; } }
-      @media (min-width: 1600px) {
+      @media (min-width: 1920px) {
         body .all .footer {
-          max-width: 1648px; } }
+          max-width: 1798px; } }
       body .all .footer a {
         color: white; }
       body .all .footer hr {
@@ -8082,9 +8080,9 @@ body {
       @media (min-width: 992px) {
         body .all .footer > div > .copyright {
           display: none; } }
-    @media (min-width: 1600px) {
+    @media (min-width: 1920px) {
       body .all .main {
-        max-width: 1120px; } }
+        max-width: 1390px; } }
 
 #top-link-block {
   position: fixed;
@@ -8125,7 +8123,7 @@ body .startpage .main {
     z-index: 1; }
   body .startpage .main > .row.aktuelles {
     background-image: url("../Images/ambienteexample.jpg");
-    background-position: -120px 0;
+    background-position: -85px 0;
     margin-bottom: 56px; }
     @media (min-width: 1280px) {
       body .startpage .main > .row.aktuelles {
@@ -8134,7 +8132,7 @@ body .startpage .main {
     @media (min-width: 1280px) {
       body .startpage .main > .row.aktuelles > .col-xs-12 {
         max-width: inherit; } }
-    @media (min-width: 1600px) {
+    @media (min-width: 1920px) {
       body .startpage .main > .row.aktuelles > .col-xs-12 {
         max-width: 1216px;
         padding: 0;
@@ -8145,7 +8143,7 @@ body .startpage .main {
     @media (min-width: 1280px) {
       body .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
         margin-top: 529px; } }
-  @media (min-width: 1600px) {
+  @media (min-width: 1920px) {
     body .startpage .main {
       max-width: 1384px; } }
 body .startpage .phlu-teaser {
@@ -8228,9 +8226,9 @@ body:after {
       content: "xxl: 1400px";
       background-color: lightblue;
       color: white; } }
-  @media (min-width: 1600px) {
+  @media (min-width: 1920px) {
     body:after {
-      content: "xxxl: 1600px";
+      content: "xxxl: 1920px";
       background-color: deepskyblue;
       color: white; } }
 
