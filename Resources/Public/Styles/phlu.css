@@ -6703,7 +6703,7 @@ body.neos-backend .neos-tooltip {
 
 body {
   margin-bottom: 420px;
-  background-color: #efefef;
+  background-color: #fbfaf4;
   color: #5c5c5c; }
   @media (max-width: 991px) {
     body {
@@ -7936,6 +7936,7 @@ body {
         border-top: 0;
         padding-bottom: 40px; }
     body .all .breadcrumb-bottom {
+      background-color: #e1e1e1;
       position: relative;
       z-index: 99; }
       @media (max-width: 1279px) {
@@ -7996,8 +7997,8 @@ body {
           body .all .footer::after {
             background-position: 100% 0%; } }
       @media (min-width: 1920px) {
-        body .all .footer {
-          max-width: 1798px; } }
+        body .all .footer > .row {
+          max-width: 1648px; } }
       body .all .footer a {
         color: white; }
       body .all .footer hr {

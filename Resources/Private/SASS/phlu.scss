@@ -302,12 +302,10 @@ body.neos-backend {
 
 body {
   margin-bottom: 420px;
+  background-color: $beigelight;
   @include media-breakpoint-down("md") {
     margin-bottom: 681px;
   }
-
-    background-color: #efefef;
-
   color: $grey;
   .all {
     // neos specific
@@ -2155,6 +2153,7 @@ body {
     // breadcrumb bottom
     //
     .breadcrumb-bottom {
+      background-color: $lightgrey;
       position: relative;
       z-index: 99;
       @include media-breakpoint-down("lg") {
@@ -2226,9 +2225,12 @@ body {
       /*
         Prevent main col from getting too wide to the right side on xxxl screens
       */
-      @include media-breakpoint-up("xxxl") {
-        max-width: 1798px;
+      > .row {
+        @include media-breakpoint-up("xxxl") {
+          max-width: 1648px;
+        }
       }
+
       a {
         color: white;
       }
