@@ -6703,13 +6703,11 @@ body.neos-backend .neos-tooltip {
 
 body {
   margin-bottom: 420px;
+  background-color: #fbfaf4;
   color: #5c5c5c; }
   @media (max-width: 991px) {
     body {
       margin-bottom: 681px; } }
-  @media (min-width: 1600px) {
-    body {
-      background-color: #efefef; } }
   body .all {
     font-size: 1rem; }
     body .all .neos-contentcollection .neos.neos-empty-contentcollection-overlay {
@@ -7627,7 +7625,6 @@ body {
     body .all .flowtext-phlu-event > .row .initial {
       background-color: #55a7b3; }
     body .all .main {
-      background-color: white;
       overflow-x: hidden; }
       body .all .main .onepage img {
         margin-bottom: 40px; }
@@ -7938,6 +7935,7 @@ body {
         border-top: 0;
         padding-bottom: 40px; }
     body .all .breadcrumb-bottom {
+      background-color: #e1e1e1;
       position: relative;
       z-index: 99; }
       @media (max-width: 1279px) {
@@ -7998,7 +7996,7 @@ body {
           body .all .footer::after {
             background-position: 100% 0%; } }
       @media (min-width: 1600px) {
-        body .all .footer {
+        body .all .footer > .row {
           max-width: 1648px; } }
       body .all .footer a {
         color: white; }
