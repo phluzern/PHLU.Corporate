@@ -1,0 +1,14 @@
+{
+  "name": "jquery-rcrumbs",
+  "homepage": "https://github.com/cm0s/jquery-rcrumbs",
+  "version": "1.1.0",
+  "_release": "1.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.1.0",
+    "commit": "732119a394f6fb6b057815ca1142fee6dbbbe61e"
+  },
+  "_source": "https://github.com/cm0s/jquery-rcrumbs.git",
+  "_target": "*",
+  "_originalSource": "jquery-rcrumbs"
+}
