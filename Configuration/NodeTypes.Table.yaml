@@ -545,7 +545,7 @@
         reloadPageIfChanged: FALSE
         aloha:
           'format': # Enable specific formatting options.
-            'strong': FALSE
+            'strong': TRUE
             'b': FALSE
             'em': FALSE
             'i': FALSE
@@ -587,7 +587,7 @@
         reloadPageIfChanged: FALSE
         aloha:
           'format': # Enable specific formatting options.
-            'strong': FALSE
+            'strong': TRUE
             'b': FALSE
             'em': FALSE
             'i': FALSE
@@ -629,7 +629,7 @@
         reloadPageIfChanged: FALSE
         aloha:
           'format': # Enable specific formatting options.
-            'strong': FALSE
+            'strong': TRUE
             'b': FALSE
             'em': FALSE
             'i': FALSE
@@ -671,7 +671,7 @@
         reloadPageIfChanged: FALSE
         aloha:
           'format': # Enable specific formatting options.
-            'strong': FALSE
+            'strong': TRUE
             'b': FALSE
             'em': FALSE
             'i': FALSE
@@ -713,7 +713,7 @@
         reloadPageIfChanged: FALSE
         aloha:
           'format': # Enable specific formatting options.
-            'strong': FALSE
+            'strong': TRUE
             'b': FALSE
             'em': FALSE
             'i': FALSE
@@ -755,7 +755,7 @@
         reloadPageIfChanged: FALSE
         aloha:
           'format': # Enable specific formatting options.
-            'strong': FALSE
+            'strong': TRUE
             'b': FALSE
             'em': FALSE
             'i': FALSE
@@ -797,7 +797,7 @@
         reloadPageIfChanged: FALSE
         aloha:
           'format': # Enable specific formatting options.
-            'strong': FALSE
+            'strong': TRUE
             'b': FALSE
             'em': FALSE
             'i': FALSE
@@ -839,7 +839,7 @@
         reloadPageIfChanged: FALSE
         aloha:
           'format': # Enable specific formatting options.
-            'strong': FALSE
+            'strong': TRUE
             'b': FALSE
             'em': FALSE
             'i': FALSE
@@ -881,7 +881,7 @@
         reloadPageIfChanged: FALSE
         aloha:
           'format': # Enable specific formatting options.
-            'strong': FALSE
+            'strong': TRUE
             'b': FALSE
             'em': FALSE
             'i': FALSE

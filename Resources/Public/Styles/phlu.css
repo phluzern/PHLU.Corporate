@@ -7844,13 +7844,44 @@ body {
           margin-left: -20px;
           font-family: FontAwesome;
           content: "\f100 \2000"; }
+      body .all .main > .row .rcrumbs {
+        height: 20px;
+        overflow: hidden; }
+      body .all .main > .row .rcrumbs-wrapper {
+        width: 100%;
+        display: block;
+        float: left;
+        padding: 25px 0 31px; }
+        body .all .main > .row .rcrumbs-wrapper .breadcrumb {
+          width: 10000px; }
+          body .all .main > .row .rcrumbs-wrapper .breadcrumb .expander {
+            width: auto;
+            height: 35px;
+            background-image: url(../Images/breadcrumb_expander.png);
+            background-position-x: 0px;
+            background-position-y: 60px;
+            background-size: cover;
+            cursor: pointer;
+            z-index: 9; }
+            body .all .main > .row .rcrumbs-wrapper .breadcrumb .expander.in {
+              background-image: none; }
+          body .all .main > .row .rcrumbs-wrapper .breadcrumb ul {
+            width: auto;
+            padding: 0;
+            margin: 0; }
+      body .all .main > .row .breadcrumb-title {
+        width: 13%;
+        display: block;
+        float: left;
+        white-space: nowrap; }
       body .all .main > .row .breadcrumb {
+        z-index: 8;
         list-style-type: none;
         display: none;
         font-family: "Arial", sans-serif;
         font-weight: bold;
         font-size: 0.875rem;
-        padding: 25px 0 31px;
+        padding: 0;
         margin-bottom: 0; }
         @media (min-width: 1280px) {
           body .all .main > .row .breadcrumb {
@@ -7862,6 +7893,9 @@ body {
           font-size: 9px;
           content: " \e02f";
           margin: 0 14px; }
+        body .all .main > .row .breadcrumb li ul {
+          display: block;
+          float: right; }
       body .all .main > .row > div > .row > div > *:last-child {
         margin-bottom: 0; }
       @media (min-width: 992px) {
@@ -7939,6 +7973,9 @@ body {
     body .all .breadcrumb-bottom {
       position: relative;
       z-index: 99; }
+      body .all .breadcrumb-bottom .rcrumbs-wrapper {
+        width: 87% !important;
+        padding: 11px 0 !important; }
       @media (max-width: 1279px) {
         body .all .breadcrumb-bottom {
           display: none; } }
@@ -7952,6 +7989,7 @@ body {
           font-size: 0.875rem; }
       body .all .breadcrumb-bottom > div > .main .breadcrumb {
         padding: 0;
+        padding-top: 1px;
         margin-left: 8px; }
     body .all .footer {
       position: absolute;

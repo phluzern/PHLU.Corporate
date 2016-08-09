@@ -2008,7 +2008,47 @@ body {
         //
         // breadcrumb navigation
         //
+        .rcrumbs {
+          height: 20px;
+          overflow: hidden;
+        }
+        .rcrumbs-wrapper {
+          width: 100%;
+          display: block;
+          float: left;
+          padding: $breadcrumb-padding-top $breadcrumb-padding-horizontal $breadcrumb-padding-bottom;
+          .breadcrumb {
+            width: 10000px;
+
+            .expander {
+                width:auto;
+                height:35px;
+                background-image: url(../Images/breadcrumb_expander.png);
+                background-position-x: 0px;
+                background-position-y: 60px;
+                background-size: cover;
+                cursor: pointer;
+                z-index:9;
+              &.in {
+                background-image: none;
+              }
+
+            }
+            ul {
+              width: auto;
+              padding: 0;
+              margin: 0;
+            }
+          }
+        }
+        .breadcrumb-title {
+          width: 13%;
+          display: block;
+          float: left;
+          white-space: nowrap;
+        }
         .breadcrumb {
+          z-index:8;
           list-style-type: none;
           display: none;
           @include media-breakpoint-up("xl") {
@@ -2017,7 +2057,7 @@ body {
           font-family: $breadcrumb-font-family;
           font-weight: $breadcrumb-font-weight;
           font-size: $font-size-breadcrumb;
-          padding: $breadcrumb-padding-top $breadcrumb-padding-horizontal $breadcrumb-padding-bottom;
+          padding: 0;
           margin-bottom: $breadcrumb-margin-bottom;
           li {
             a {
@@ -2031,6 +2071,10 @@ body {
                 content: " \e02f";
                 margin: 0 14px;
               }
+            }
+            ul {
+              display: block;
+              float: right;
             }
           }
         }
@@ -2154,6 +2198,10 @@ body {
     // breadcrumb bottom
     //
     .breadcrumb-bottom {
+      .rcrumbs-wrapper {
+        width: 87% !important;
+        padding: 11px 0 !important;
+      }
       position: relative;
       z-index: 99;
       @include media-breakpoint-down("lg") {
@@ -2174,6 +2222,7 @@ body {
       > div > .main {
         .breadcrumb {
           padding: 0;
+          padding-top: 1px;
           margin-left: 8px;
         }
       }

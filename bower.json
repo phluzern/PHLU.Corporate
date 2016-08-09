@@ -8,6 +8,7 @@
     "tether": "*",
     "font-awesome": "4.6.*",
     "animate.css": "*",
-    "filament-tablesaw": "*"
+    "filament-tablesaw": "*",
+    "jquery-rcrumbs": "*"
   }
 }
