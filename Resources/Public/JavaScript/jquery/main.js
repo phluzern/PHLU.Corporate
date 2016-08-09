@@ -99,16 +99,6 @@ $(document).ready(function () {
     // }
 
     var resize = function () {
-        if ($(window).outerWidth() > 1600) {
-            var contentWidth = 0;
-            console.log($( ".level1" ).length);
-            if ( $( ".level1" ).length > 1) { contentWidth = 528 } else { contentWidth = 264 }
-            contentWidth += $('.main').outerWidth();
-            $(".footer").attr('style','width:'+ contentWidth + 'px');
-        }
-        else { $(".footer").removeAttr('style'); }
-
-
         if ($(window).outerWidth() > 1266) {
             /* set content height if (on startpage) the .aktuelles container is smaller than main container  */
             // if ($(".row.aktuelles").innerHeight() < $(".main").innerHeight()) {

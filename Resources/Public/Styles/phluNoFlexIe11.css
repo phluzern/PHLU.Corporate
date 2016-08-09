@@ -7511,8 +7511,9 @@ body {
     body .all .flowtext-phlu-event > .row .initial {
       background-color: #55a7b3; }
     body .all .main {
-      background-color: white;
-      overflow-x: hidden; }
+      background-color: #fbfaf4;
+      overflow-x: hidden;
+      flex-grow: 1; }
       body .all .main .onepage img {
         margin-bottom: 40px; }
       body .all .main .onepage-teaser-content p {
@@ -7600,7 +7601,7 @@ body {
         line-height: 1.5;
         vertical-align: top;
         border-top: 0;
-        border-left: 23px solid white; }
+        border-left: 23px solid #fbfaf4; }
         body .all .main > .row .table thead tr th:first-child {
           border-left: 0; }
           body .all .main > .row .table thead tr th:first-child h3 {
@@ -7622,7 +7623,7 @@ body {
         background-image: url("../Images/table-cell-dottedline.png"); }
       body .all .main > .row .table tbody tr td {
         background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
-        border-left: 23px solid white; }
+        border-left: 23px solid #fbfaf4; }
       body .all .main > .row .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
         width: 100%;
         font-size: 1.188rem; }
@@ -7850,7 +7851,6 @@ body {
       color: white;
       /*
         Prevent main col from getting too wide to the right side on xxxl screens
-
       @include media-breakpoint-up("xxxl") {
         max-width: 1648px;
       }
@@ -8008,7 +8008,9 @@ body .startpage .main {
     z-index: 1; }
   body .startpage .main > .row.aktuelles {
     background-image: url("../Images/ambienteexample.jpg");
-    background-position: -120px 0;
+    background-position: 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
     margin-bottom: 56px; }
     @media (min-width: 1280px) {
       body .startpage .main > .row.aktuelles {
@@ -8028,9 +8030,6 @@ body .startpage .main {
     @media (min-width: 1280px) {
       body .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
         margin-top: 529px; } }
-  @media (min-width: 1600px) {
-    body .startpage .main {
-      max-width: 1384px; } }
 body .startpage .phlu-teaser {
   margin-top: 78px; }
   body .startpage .phlu-teaser .carousel-control {
@@ -8126,8 +8125,10 @@ body .startpage .phlu-teaser.navigation {
   .subpage .main > div > div {
     float: none; } }
 
-.breadcrumb-bottom .sidebar {
-  padding-bottom: 8px; }
+.breadcrumb-bottom {
+  background-color: #e1e1e1; }
+  .breadcrumb-bottom .sidebar {
+    padding-bottom: 8px; }
 
 body .navbar .navbar-toggler.open {
   color: black; }

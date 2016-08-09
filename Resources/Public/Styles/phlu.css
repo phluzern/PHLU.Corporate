@@ -7625,7 +7625,8 @@ body {
       background-color: #55a7b3; }
     body .all .main {
       background-color: #fbfaf4;
-      overflow-x: hidden; }
+      overflow-x: hidden;
+      flex-grow: 1; }
       body .all .main .onepage img {
         margin-bottom: 40px; }
       body .all .main .onepage-teaser-content p {
@@ -8120,7 +8121,9 @@ body .startpage .main {
     z-index: 1; }
   body .startpage .main > .row.aktuelles {
     background-image: url("../Images/ambienteexample.jpg");
-    background-position: -120px 0;
+    background-position: 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
     margin-bottom: 56px; }
     @media (min-width: 1280px) {
       body .startpage .main > .row.aktuelles {
@@ -8140,9 +8143,6 @@ body .startpage .main {
     @media (min-width: 1280px) {
       body .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
         margin-top: 529px; } }
-  @media (min-width: 1600px) {
-    body .startpage .main {
-      max-width: 1384px; } }
 body .startpage .phlu-teaser {
   margin-top: 78px; }
   body .startpage .phlu-teaser .carousel-control {

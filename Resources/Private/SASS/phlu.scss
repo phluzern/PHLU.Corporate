@@ -1788,7 +1788,7 @@ body {
     .main {
       background-color: $beigelight;
       overflow-x: hidden;
-
+      flex-grow:1;
       .onepage {
         img {
           margin-bottom: $spacer-y;
@@ -2399,7 +2399,9 @@ body {
       }
       > .row.aktuelles {
         background-image: url("../Images/ambienteexample.jpg");
-        background-position: -120px 0;
+        background-position: 0 0;
+        background-size: cover;
+        background-repeat: no-repeat;
         margin-bottom: 56px;
 
         @include media-breakpoint-up("xl") {
@@ -2429,9 +2431,9 @@ body {
       //
       // Prevent main col from getting too wide to the right side on xxxl screens
       //
-      @include media-breakpoint-up("xxxl") {
-        max-width: 1384px;
-      }
+      //@include media-breakpoint-up("xxxl") {
+      //  max-width: 1384px;
+      //}
     }
     .phlu-teaser {
       margin-top: 78px;

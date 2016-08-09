@@ -24,6 +24,7 @@ $component-active-bg: black;
 // phlu colors
 $sephia: #e9e0d8;
 $sephialight: #f0e7de;
+$beigelight: #fbfaf4;
 $raspberryRed: #ba1541;
 $iceblue: #2a818d;
 $lightblue: #d7e6e9;
@@ -311,12 +312,10 @@ body {
   .all {
     // neos specific
     .neos-contentcollection {
-
       .neos.neos-empty-contentcollection-overlay {
         width: 100%;
       }
     }
-
     font-size: $font-size-base;
     h1 {
       margin: 33px 0 12px;
@@ -656,6 +655,7 @@ body {
       }
     }
     // hidden level1 subnav for filter navigation page
+
     //.nosubnav {
     //  .main {
     //    @include media-breakpoint-up("xxxl") {
@@ -1003,7 +1003,6 @@ body {
           }
         }
       }
-
     }
     //
     // teaser navigation
@@ -1787,9 +1786,9 @@ body {
     // main contents
     //
     .main {
-      background-color: white;
+      background-color: $beigelight;
       overflow-x: hidden;
-
+      flex-grow:1;
       .onepage {
         img {
           margin-bottom: $spacer-y;
@@ -1894,7 +1893,7 @@ body {
                 line-height: 1.5;
                 vertical-align: top;
                 border-top: 0;
-                border-left: 23px solid white;
+                border-left: 23px solid $beigelight;
                 &:first-child {
                   border-left: 0;
                   h3 {
@@ -1931,7 +1930,7 @@ body {
               }
               td {
                 background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
-                border-left: 23px solid white;
+                border-left: 23px solid $beigelight;
               }
             }
           }
@@ -2225,11 +2224,11 @@ body {
       }
       /*
         Prevent main col from getting too wide to the right side on xxxl screens
-
       @include media-breakpoint-up("xxxl") {
         max-width: 1648px;
       }
       */
+
       a {
         color: white;
       }
@@ -2345,6 +2344,7 @@ body {
     //
     // Prevent main col from getting too wide to the right side on xxxl screens
     //
+
     //@include media-breakpoint-up("xxxl") {
     //  .main {
     //    max-width: 1120px;
@@ -2399,7 +2399,9 @@ body {
       }
       > .row.aktuelles {
         background-image: url("../Images/ambienteexample.jpg");
-        background-position: -120px 0;
+        background-position: 0 0;
+        background-size: cover;
+        background-repeat: no-repeat;
         margin-bottom: 56px;
 
         @include media-breakpoint-up("xl") {
@@ -2429,9 +2431,9 @@ body {
       //
       // Prevent main col from getting too wide to the right side on xxxl screens
       //
-      @include media-breakpoint-up("xxxl") {
-        max-width: 1384px;
-      }
+      //@include media-breakpoint-up("xxxl") {
+      //  max-width: 1384px;
+      //}
     }
     .phlu-teaser {
       margin-top: 78px;

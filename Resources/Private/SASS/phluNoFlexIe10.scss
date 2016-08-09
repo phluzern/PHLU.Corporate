@@ -1789,7 +1789,7 @@ body {
     .main {
       background-color: white;
       overflow-x: hidden;
-
+      flex-grow:1;
       .onepage {
         img {
           margin-bottom: $spacer-y;
