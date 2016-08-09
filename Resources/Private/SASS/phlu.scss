@@ -13,7 +13,7 @@ $grid-breakpoints: (
   // Extra large screen / wide desktop
         xl: 1280px,
         xxl: 1400px,
-        xxxl: 1920px,
+        xxxl: 1600px,
 );
 
 // phlu nav elements
@@ -302,20 +302,20 @@ body.neos-backend {
 
 body {
   margin-bottom: 420px;
-  background-color: $beigelight;
   @include media-breakpoint-down("md") {
     margin-bottom: 681px;
+  }
+  @include media-breakpoint-up("xxxl") {
+    background-color: #efefef;
   }
   color: $grey;
   .all {
     // neos specific
     .neos-contentcollection {
-
       .neos.neos-empty-contentcollection-overlay {
         width: 100%;
       }
     }
-
     font-size: $font-size-base;
     h1 {
       margin: 33px 0 12px;
@@ -655,13 +655,14 @@ body {
       }
     }
     // hidden level1 subnav for filter navigation page
-    .nosubnav {
-      .main {
-        @include media-breakpoint-up("xxxl") {
-          max-width: 1534px;
-        }
-      }
-    }
+
+    //.nosubnav {
+    //  .main {
+    //    @include media-breakpoint-up("xxxl") {
+    //      max-width: 1384px;
+    //    }
+    //  }
+    //}
     .subpage {
       .nosubnav {
         .sidebar.level0 {
@@ -2136,6 +2137,7 @@ body {
           margin-top: 65px;
           padding-bottom: 330px;
           background-position: bottom center;
+          background-size: cover;
         }
         //
         // sections in content
@@ -2152,7 +2154,6 @@ body {
     // breadcrumb bottom
     //
     .breadcrumb-bottom {
-      background-color: $lightgrey;
       position: relative;
       z-index: 99;
       @include media-breakpoint-down("lg") {
@@ -2223,12 +2224,10 @@ body {
       }
       /*
         Prevent main col from getting too wide to the right side on xxxl screens
-      */
-      > .row {
-        @include media-breakpoint-up("xxxl") {
-          max-width: 1648px;
-        }
+      @include media-breakpoint-up("xxxl") {
+        max-width: 1648px;
       }
+      */
 
       a {
         color: white;
@@ -2345,11 +2344,12 @@ body {
     //
     // Prevent main col from getting too wide to the right side on xxxl screens
     //
-    @include media-breakpoint-up("xxxl") {
-      .main {
-        max-width: 1390px;
-      }
-    }
+
+    //@include media-breakpoint-up("xxxl") {
+    //  .main {
+    //    max-width: 1120px;
+    //  }
+    //}
   }
 }
 
@@ -2399,7 +2399,7 @@ body {
       }
       > .row.aktuelles {
         background-image: url("../Images/ambienteexample.jpg");
-        background-position: -85px 0;
+        background-position: -120px 0;
         margin-bottom: 56px;
 
         @include media-breakpoint-up("xl") {
@@ -2537,7 +2537,7 @@ body:after {
     color: white;
   }
   @include media-breakpoint-up("xxxl") {
-    content: "xxxl: 1920px";
+    content: "xxxl: 1600px";
     background-color: deepskyblue;
     color: white;
   }
