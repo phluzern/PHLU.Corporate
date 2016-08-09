@@ -163,6 +163,7 @@ $('.rcrumbs-container').rcrumbs({
     nbUncollapsableCrumbs: 1,
     nbFixedCrumbs: 1,
     callback: {
+
         preCrumbsListDisplay: function (e) {
 
             var self = this;
@@ -178,7 +179,6 @@ $('.rcrumbs-container').rcrumbs({
             var expanderExpandedWidth = 0;
             var self = this;
             self.isExpanding = false;
-
 
             var hasHidden = $(e.element).find("li").length - 1 > e.nbCrumbDisplayed ? true : false;
 
@@ -223,10 +223,12 @@ $('.rcrumbs-container').rcrumbs({
                             expander.addClass('in').removeClass('out');
                             expander.width(expanderWidth);
                             expanderExpanded.show();
+
+
+                            expander.width(0);
+                            expanderExpanded.width(0);
                             expander.css('width', 'auto');
-                            expanderExpanded.css('width', expanderWidth);
                             expanderExpanded.animate({width: expanderExpandedWidth}, 'slow', function () {
-                                self.isExpanding = false;
                                 expanderExpanded.css('width', 'auto');
                             });
 

@@ -7868,6 +7868,8 @@ body {
             width: auto;
             padding: 0;
             margin: 0; }
+          body .all .main > .row .rcrumbs-wrapper .breadcrumb::after {
+            display: none; }
       body .all .main > .row .breadcrumb-title {
         width: 13%;
         display: block;
