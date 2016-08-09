@@ -14,122 +14,6 @@ $(document).ready(function () {
     /* set default paused carousel */
     $('.carousel').carousel('pause');
 
-
-    /* init rcrumbs */
-
-
-    $(document).mousemove(function (event) {
-        window.mouseLastEvent = event;
-    });
-
-    $('.rcrumbs-container').rcrumbs({
-        ellipsis: false,
-        nbUncollapsableCrumbs: 1,
-        nbFixedCrumbs: 1,
-        callback: {
-            preCrumbsListDisplay: function (e) {
-
-                var self = this;
-                self.listsWidth = {};
-                $(e.element).find("li.expander").each(function (i) {
-                    $(this).remove();
-                });
-            },
-
-            postCrumbsListDisplay: function (e) {
-
-                var expanderWidth = 75;
-                var expanderExpandedWidth = 0;
-                var self = this;
-                self.isExpanding = false;
-
-
-                var hasHidden = $(e.element).find("li").length - 1 > e.nbCrumbDisplayed ? true : false;
-
-                if (hasHidden && e.nbCrumbDisplayed >= 1) {
-
-                    var hiddenFrom = e.options.nbFixedCrumbs;
-                    var hiddenTo = $(e.element).find("li").length - e.nbCrumbDisplayed - 1;
-
-                    $(e.element).find("li").each(function (i) {
-                        if (e.options.nbFixedCrumbs === i) {
-
-                            var expanderExpanded = $("<ul/>");
-                            expanderExpanded.addClass('breadcrumb');
-
-                            $(e.element).find("li").each(function (a) {
-
-                                if (a >= hiddenFrom && a <= hiddenTo) {
-                                    var a = $(this).clone().html();
-                                    var li = $("<li/>");
-                                    li.css('width', self.listsWidth[a]);
-                                    $(a).appendTo(li);
-                                    li.appendTo(expanderExpanded);
-                                }
-                            });
-
-                            var expander = $("<li/>");
-                            expander.css('min-width', expanderWidth + "px");
-                            expander.addClass('expander');
-                            expander.addClass('expander out');
-                            expanderExpanded.appendTo(expander);
-
-                            $(this).before(expander);
-
-                            expander.show();
-                            expander.width(expanderWidth);
-                            expanderExpanded.hide();
-
-
-
-
-                            expander.expand = function () {
-
-                                if (expanderExpandedWidth == 0) expanderExpandedWidth = expanderExpanded.width();
-                                expander.addClass('in').removeClass('out');
-                                expander.width(expanderWidth);
-                                expanderExpanded.show();
-                                expander.css('width','auto');
-                                expanderExpanded.css('width',expanderWidth);
-                                expanderExpanded.animate({width: expanderExpandedWidth}, 'slow', function () {
-                                    self.isExpanding = false;
-                                    expanderExpanded.css('width','auto');
-                                });
-
-
-                                var c = 0;
-                                self.expanderHideInterval = setInterval(function () {
-                                    c++;
-                                    var top = $(expander).offset().top;
-                                    var mouseY = mouseLastEvent.pageY;
-                                    if (c>100 || mouseY < top - 30 || mouseY > top + 30) {
-                                        clearInterval(self.expanderHideInterval);
-                                        expander.animate({width: expanderWidth}, 'slow', function () {
-                                            expander.addClass('out').removeClass('in');
-                                            self.isExpanding = false;
-                                        });
-                                    }
-
-                                }, 4000);
-                            }
-
-
-                            expander.mouseenter(function () {
-                                if (expander.hasClass('in') === false) expander.expand();
-                            });
-
-
-                        }
-                    });
-
-
-                }
-
-            }
-        }
-    });
-
-
     /* set clickable containers */
     $('.clickable').on('click', function (e) {
         if ($(this).find('a').attr('href') !== undefined) window.location.href = $(this).find('a').attr('href');
@@ -267,3 +151,115 @@ $(document).ready(function () {
      }*/
 
 });
+
+
+/* init rcrumbs */
+$(document).mousemove(function (event) {
+    window.mouseLastEvent = event;
+});
+
+$('.rcrumbs-container').rcrumbs({
+    ellipsis: false,
+    nbUncollapsableCrumbs: 1,
+    nbFixedCrumbs: 1,
+    callback: {
+        preCrumbsListDisplay: function (e) {
+
+            var self = this;
+            self.listsWidth = {};
+            $(e.element).find("li.expander").each(function (i) {
+                $(this).remove();
+            });
+        },
+
+        postCrumbsListDisplay: function (e) {
+
+            var expanderWidth = 75;
+            var expanderExpandedWidth = 0;
+            var self = this;
+            self.isExpanding = false;
+
+
+            var hasHidden = $(e.element).find("li").length - 1 > e.nbCrumbDisplayed ? true : false;
+
+            if (hasHidden && e.nbCrumbDisplayed >= 1) {
+
+                var hiddenFrom = e.options.nbFixedCrumbs;
+                var hiddenTo = $(e.element).find("li").length - e.nbCrumbDisplayed - 1;
+
+                $(e.element).find("li").each(function (i) {
+                    if (e.options.nbFixedCrumbs === i) {
+
+                        var expanderExpanded = $("<ul/>");
+                        expanderExpanded.addClass('breadcrumb');
+
+                        $(e.element).find("li").each(function (a) {
+
+                            if (a >= hiddenFrom && a <= hiddenTo) {
+                                var a = $(this).clone().html();
+                                var li = $("<li/>");
+                                li.css('width', self.listsWidth[a]);
+                                $(a).appendTo(li);
+                                li.appendTo(expanderExpanded);
+                            }
+                        });
+
+                        var expander = $("<li/>");
+                        expander.css('min-width', expanderWidth + "px");
+                        expander.addClass('expander');
+                        expander.addClass('expander out');
+                        expanderExpanded.appendTo(expander);
+
+                        $(this).before(expander);
+
+                        expander.show();
+                        expander.width(expanderWidth);
+                        expanderExpanded.hide();
+
+
+                        expander.expand = function () {
+
+                            if (expanderExpandedWidth == 0) expanderExpandedWidth = expanderExpanded.width();
+                            expander.addClass('in').removeClass('out');
+                            expander.width(expanderWidth);
+                            expanderExpanded.show();
+                            expander.css('width', 'auto');
+                            expanderExpanded.css('width', expanderWidth);
+                            expanderExpanded.animate({width: expanderExpandedWidth}, 'slow', function () {
+                                self.isExpanding = false;
+                                expanderExpanded.css('width', 'auto');
+                            });
+
+
+                            var c = 0;
+                            self.expanderHideInterval = setInterval(function () {
+                                c++;
+                                var top = $(expander).offset().top;
+                                var mouseY = mouseLastEvent.pageY;
+                                if (c > 100 || mouseY < top - 30 || mouseY > top + 30) {
+                                    clearInterval(self.expanderHideInterval);
+                                    expander.animate({width: expanderWidth}, 'slow', function () {
+                                        expander.addClass('out').removeClass('in');
+                                        self.isExpanding = false;
+                                    });
+                                }
+
+                            }, 4000);
+                        }
+
+
+                        expander.mouseenter(function () {
+                            if (expander.hasClass('in') === false) expander.expand();
+                        });
+
+
+                    }
+                });
+
+
+            }
+
+        }
+    }
+});
+
