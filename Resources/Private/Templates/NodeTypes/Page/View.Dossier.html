@@ -3,19 +3,21 @@
 <div class="row">
 
     <div class="col-xs-12 col-lg-12">
-
-
-        <div class="row " id="anchornavigation">
+        <div class="row ">
             <div class="col-xs-12 col-lg-12">
                 {breadcrumb -> f:format.raw()}
+            </div>
+        </div>
 
+        <div class="row " id="anchornavigation">
+
+            <div class="col-xs-12 col-lg-12">
                 <ts:render path="defaultRenderer" context="{node: header}"/>
-
                 {onePageMenu -> f:format.raw()}
-
             </div>
         </div>
     </div>
+
 
 </div>
 

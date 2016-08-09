@@ -1789,6 +1789,7 @@ body {
       background-color: $beigelight;
       overflow-x: hidden;
       flex-grow:1;
+
       .onepage {
         img {
           margin-bottom: $spacer-y;
@@ -2024,8 +2025,7 @@ body {
                 width:auto;
                 height:35px;
                 background-image: url(../Images/breadcrumb_expander.png);
-                background-position-x: 0px;
-                background-position-y: 60px;
+                background-position: -4px 61px;
                 background-size: cover;
                 cursor: pointer;
                 z-index:9;
@@ -2448,9 +2448,7 @@ body {
       }
       > .row.aktuelles {
         background-image: url("../Images/ambienteexample.jpg");
-        background-position: 0 0;
-        background-size: cover;
-        background-repeat: no-repeat;
+        background-position: -120px 0;
         margin-bottom: 56px;
 
         @include media-breakpoint-up("xl") {
@@ -2480,9 +2478,9 @@ body {
       //
       // Prevent main col from getting too wide to the right side on xxxl screens
       //
-      //@include media-breakpoint-up("xxxl") {
-      //  max-width: 1384px;
-      //}
+      @include media-breakpoint-up("xxxl") {
+        max-width: 1384px;
+      }
     }
     .phlu-teaser {
       margin-top: 78px;
