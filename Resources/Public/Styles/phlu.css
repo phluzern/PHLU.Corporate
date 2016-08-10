@@ -7855,6 +7855,7 @@ body {
         body .all .main > .row .rcrumbs-wrapper .breadcrumb {
           width: 10000px; }
           body .all .main > .row .rcrumbs-wrapper .breadcrumb .expander {
+            white-space: normal;
             width: auto;
             height: 35px;
             background-image: url(../Images/breadcrumb_expander.png);
