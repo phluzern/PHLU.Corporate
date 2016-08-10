@@ -102,7 +102,6 @@
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
-    contact: ~
     targetgroup: ~
     carouselnews: ~
     tagsmenu:
