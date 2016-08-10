@@ -7719,6 +7719,8 @@ body {
           border-left: 0; }
           body .all .main > .row .table thead tr th:first-child h3 {
             margin: 0; }
+        body .all .main > .row .table thead tr th.is-currency {
+          text-align: right; }
       body .all .main > .row .table tbody tr:first-child th {
         border-top: 4px solid black; }
       body .all .main > .row .table tbody tr:first-child td {
@@ -7732,7 +7734,11 @@ body {
         background-repeat: repeat-x;
         background-position: bottom left;
         min-width: 30px; }
-        body .all .main > .row .table tbody tr th.nowrap, body .all .main > .row .table tbody tr td.nowrap {
+        @media (min-width: 768px) {
+          body .all .main > .row .table tbody tr th.nowrap, body .all .main > .row .table tbody tr td.nowrap {
+            white-space: nowrap; } }
+        body .all .main > .row .table tbody tr th.is-currency, body .all .main > .row .table tbody tr td.is-currency {
+          text-align: right;
           white-space: nowrap; }
         body .all .main > .row .table tbody tr th.col-percent-auto, body .all .main > .row .table tbody tr td.col-percent-auto {
           width: auto;

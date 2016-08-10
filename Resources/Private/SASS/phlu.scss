@@ -1901,6 +1901,9 @@ body {
                     margin: 0;
                   }
                 }
+                &.is-currency {
+                  text-align: right;
+                }
               }
             }
           }
@@ -1926,9 +1929,15 @@ body {
                 min-width:30px;
 
                 &.nowrap {
-                  white-space: nowrap;
+                  @include media-breakpoint-up("md") {
+                    white-space: nowrap;
+                  }
                 }
 
+                &.is-currency {
+                  text-align: right;
+                  white-space: nowrap;
+                }
 
                 &.col-percent-auto {
                   width:auto;
