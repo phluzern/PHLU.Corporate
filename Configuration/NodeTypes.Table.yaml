@@ -48,7 +48,7 @@
                 label: '10'
     firstcolwidth:
       type: string
-      defaultValue: 'Automatisch'
+      defaultValue: 'auto'
       ui:
         reloadIfChanged: TRUE
         label: 'Breite'

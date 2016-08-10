@@ -25,6 +25,16 @@ prototype(PHLU.Corporate:Table) < prototype(PHLU.Corporate:Content) {
     firstColWithClass = ${q(node).property('firstcolwidth') ? 'col-percent-'+q(node).property('firstcolwidth') : ''}
     firstColHidden = ${q(node).property('firstcolhidden') ? true : false}
 
+    cell0isCurrencyClass = ${String.pregMatch(q(q(node).find('[instanceof PHLU.Corporate:Table.Row]').first().get()).property('cell0'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell1isCurrencyClass = ${String.pregMatch(q(q(node).find('[instanceof PHLU.Corporate:Table.Row]').first().get()).property('cell1'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell2isCurrencyClass = ${String.pregMatch(q(q(node).find('[instanceof PHLU.Corporate:Table.Row]').first().get()).property('cell2'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell3isCurrencyClass = ${String.pregMatch(q(q(node).find('[instanceof PHLU.Corporate:Table.Row]').first().get()).property('cell3'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell4isCurrencyClass = ${String.pregMatch(q(q(node).find('[instanceof PHLU.Corporate:Table.Row]').first().get()).property('cell4'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell5isCurrencyClass = ${String.pregMatch(q(q(node).find('[instanceof PHLU.Corporate:Table.Row]').first().get()).property('cell5'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell6isCurrencyClass = ${String.pregMatch(q(q(node).find('[instanceof PHLU.Corporate:Table.Row]').first().get()).property('cell6'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell7isCurrencyClass = ${String.pregMatch(q(q(node).find('[instanceof PHLU.Corporate:Table.Row]').first().get()).property('cell7'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell8isCurrencyClass = ${String.pregMatch(q(q(node).find('[instanceof PHLU.Corporate:Table.Row]').first().get()).property('cell8'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell9isCurrencyClass = ${String.pregMatch(q(q(node).find('[instanceof PHLU.Corporate:Table.Row]').first().get()).property('cell9'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
 
     cell0 = ${q(node).property('cell0')}
     cell1 = ${q(node).property('cell1')}
@@ -60,6 +70,18 @@ prototype(PHLU.Corporate:Table.Row) < prototype(PHLU.Corporate:Content) {
 
     firstColWithClass = ${q(node).parent().parent().property('firstcolwidth') ? 'col-percent-'+q(node).parent().parent().property('firstcolwidth') : ''}
     firstColHidden = ${q(node).parent().parent().property('firstcolhidden') ? true : false}
+
+
+    cell0isCurrencyClass = ${String.pregMatch(q(node).property('cell0'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell1isCurrencyClass = ${String.pregMatch(q(node).property('cell1'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell2isCurrencyClass = ${String.pregMatch(q(node).property('cell2'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell3isCurrencyClass = ${String.pregMatch(q(node).property('cell3'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell4isCurrencyClass = ${String.pregMatch(q(node).property('cell4'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell5isCurrencyClass = ${String.pregMatch(q(node).property('cell5'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell6isCurrencyClass = ${String.pregMatch(q(node).property('cell6'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell7isCurrencyClass = ${String.pregMatch(q(node).property('cell7'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell8isCurrencyClass = ${String.pregMatch(q(node).property('cell8'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell9isCurrencyClass = ${String.pregMatch(q(node).property('cell9'),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
 
 
     cell0 = ${q(node).property('cell0')}
