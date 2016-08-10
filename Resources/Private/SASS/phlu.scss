@@ -1923,6 +1923,54 @@ body {
                 border-top: 0;
                 background-repeat: repeat-x;
                 background-position: bottom left;
+                min-width:30px;
+
+                &.nowrap {
+                  white-space: nowrap;
+                }
+
+
+                &.col-percent-auto {
+                  width:auto;
+                  flex: 0 0 0;
+                }
+                &.col-percent-20 {
+                  width:20%;
+                  flex: 0 0 20%;
+                }
+                &.col-percent-25 {
+                  width:25%;
+                  flex: 0 0 25%;
+                }
+                &.col-percent-33 {
+                  width:33.33%;
+                  flex: 0 0 33.33%;
+                }
+                &.col-percent-40 {
+                  width:40%;
+                  flex: 0 0 40%;
+                }
+                &.col-percent-50 {
+                  width:50%;
+                  flex: 0 0 50%;
+                }
+                &.col-percent-66 {
+                  width:66.66%;
+                  flex: 0 0 66.66%;
+                }
+                &.col-percent-60 {
+                  width:60%;
+                  flex: 0 0 60%;
+                }
+                &.col-percent-75 {
+                  width:75%;
+                  flex: 0 0 75%;
+                }
+                &.col-percent-80 {
+                  width:80%;
+                  flex: 0 0 80%;
+                }
+
               }
               th {
                 width: 40%;
@@ -1932,6 +1980,14 @@ body {
               td {
                 background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
                 border-left: 23px solid $beigelight;
+              }
+            }
+          }
+
+          &.first-col-hidden-1 {
+            tbody {
+              tr > td:first-child {
+                border-left:0;
               }
             }
           }

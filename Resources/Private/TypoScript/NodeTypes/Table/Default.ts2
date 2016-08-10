@@ -10,6 +10,22 @@ prototype(PHLU.Corporate:Table) < prototype(PHLU.Corporate:Content) {
     }
 
     attributes.class = 'table-responsive'
+
+    class0 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'1') == 0 ? 'nowrap' : '' : ''}
+    class1 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'2') == 0 ? 'nowrap' : '' : ''}
+    class2 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'3') == 0 ? 'nowrap' : '' : ''}
+    class3 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'4') == 0 ? 'nowrap' : '' : ''}
+    class4 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'5') == 0 ? 'nowrap' : '' : ''}
+    class5 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'6') == 0 ? 'nowrap' : '' : ''}
+    class6 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'7') == 0 ? 'nowrap' : '' : ''}
+    class7 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'8') == 0 ? 'nowrap' : '' : ''}
+    class8 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'9') == 0 ? 'nowrap' : '' : ''}
+    class9 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'10') == 0 ? 'nowrap' : '' : ''}
+
+    firstColWithClass = ${q(node).property('firstcolwidth') ? 'col-percent-'+q(node).property('firstcolwidth') : ''}
+    firstColHidden = ${q(node).property('firstcolhidden') ? true : false}
+
+
     cell0 = ${q(node).property('cell0')}
     cell1 = ${q(node).property('cell1')}
     cell2 = ${q(node).property('cell2')}
@@ -30,6 +46,22 @@ prototype(PHLU.Corporate:Table) < prototype(PHLU.Corporate:Content) {
 prototype(PHLU.Corporate:Table.Row) < prototype(PHLU.Corporate:Content) {
 
     templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Table/Row.html'
+
+    class0 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'1') == 0 ? 'nowrap' : '' : ''}
+    class1 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'2') == 0 ? 'nowrap' : '' : ''}
+    class2 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'3') == 0 ? 'nowrap' : '' : ''}
+    class3 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'4') == 0 ? 'nowrap' : '' : ''}
+    class4 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'5') == 0 ? 'nowrap' : '' : ''}
+    class5 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'6') == 0 ? 'nowrap' : '' : ''}
+    class6 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'7') == 0 ? 'nowrap' : '' : ''}
+    class7 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'8') == 0 ? 'nowrap' : '' : ''}
+    class8 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'9') == 0 ? 'nowrap' : '' : ''}
+    class9 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'10') == 0 ? 'nowrap' : '' : ''}
+
+    firstColWithClass = ${q(node).parent().parent().property('firstcolwidth') ? 'col-percent-'+q(node).parent().parent().property('firstcolwidth') : ''}
+    firstColHidden = ${q(node).parent().parent().property('firstcolhidden') ? true : false}
+
+
     cell0 = ${q(node).property('cell0')}
     cell1 = ${q(node).property('cell1')}
     cell2 = ${q(node).property('cell2')}
