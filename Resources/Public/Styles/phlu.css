@@ -6652,6 +6652,12 @@ html {
   position: relative;
   min-height: 100%; }
 
+.ico-family-iconic::before {
+  font-family: Icons; }
+
+.ico-family-fa::before {
+  font-family: FontAwesome; }
+
 body.neos-backend > .all {
   min-width: 1920px; }
 body.neos-backend.neos-navigate-panel-open .sidebar.level0, body.neos-backend.neos-navigate-panel-open .sidebar.level1 {
@@ -7301,18 +7307,16 @@ body {
           padding-left: 23px; }
       body .all .row.subjectsfilternav .nav-pills li.active a.nav-link {
         background-color: #55696d; }
-    body .all .row.subjectsfilternav .ico-family-iconic::before {
-      font-family: Icons; }
-    body .all .row.subjectsfilternav .ico-family-fa::before {
-      font-family: FontAwesome; }
     body .all .row.subjectsfilternav .faecherIco::before, body .all .row.subjectsfilternav .oi-media-stop::before {
+      font-style: normal !important;
       font-family: Icons;
       content: " \e099 \2001";
       position: absolute;
       margin-left: -32px;
-      margin-top: -15px;
+      margin-top: 0px;
       font-size: 21px; }
     body .all .row.subjectsfilternav .strategieIco::before {
+      font-style: normal !important;
       font-family: Arial;
       content: " \25B2 \2001";
       position: absolute;
@@ -7320,19 +7324,33 @@ body {
       margin-top: -4px;
       font-size: 24px; }
     body .all .row.subjectsfilternav .forschungIco::before, body .all .row.subjectsfilternav .icon-circle::before {
+      font-style: normal !important;
       font-family: FontAwesome;
       content: " \f111 \2001";
       position: absolute;
       margin-left: -33px;
-      margin-top: -17px;
+      margin-top: -2px;
       font-size: 22px; }
-    body .all .row.subjectsfilternav .themaIco::before, body .all .row.subjectsfilternav .icon-star::before {
+    body .all .row.subjectsfilternav .themaIco::before {
+      font-style: normal;
       font-family: FontAwesome;
       content: " \f005 \2001";
       position: absolute;
       margin-left: -32px;
-      margin-top: -16px;
+      margin-top: -2px;
       font-size: 21px; }
+    body .all .row.subjectsfilternav .ico-family-iconic::before {
+      font-style: normal !important;
+      position: absolute;
+      margin-left: -32px;
+      margin-top: 1px;
+      font-size: 17px; }
+    body .all .row.subjectsfilternav .ico-family-fa::before {
+      font-style: normal;
+      position: absolute;
+      margin-left: -32px;
+      margin-top: 1px;
+      font-size: 17px; }
     body .all .row.subjectsfilternav .subjectfilternavResults i::before {
       position: relative; }
     body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage {

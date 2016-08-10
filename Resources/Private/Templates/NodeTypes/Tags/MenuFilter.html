@@ -84,12 +84,25 @@
                                             data-ng-class="{active: filter['{tag.Identifier}'] === true}"
                                             data-ng-init="filterAll['{tag.Identifier}'] = true;">
                                             <neos:contentElement.wrap node="{tag}">
-                                                <a class="nav-item nav-link preventDefault" href="#"
-                                                   {f:if(condition: '{neos:rendering.inBackend()}',
-                                                then:'rel="typo3:content-collection"', else: '')}
-                                                data-ng-click="toggleFilter('{tag.Identifier}');">
-                                                <ts:render path="tagRenderer" context="{node: tag}"/>
-                                                </a>
+                                                <f:if condition="{tag.properties.icon}">
+                                                    <f:then>
+                                                        <a class="nav-item nav-link preventDefault" href="#"
+                                                           {f:if(condition: '{neos:rendering.inBackend()}',
+                                                        then:'rel="typo3:content-collection"', else: '')}
+                                                        data-ng-click="toggleFilter('{tag.Identifier}');">
+                                                        <ts:render path="tagRenderer" context="{node: tag}"/>
+                                                        </a>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <a class="nav-item no-icon nav-link preventDefault" href="#"
+                                                           {f:if(condition: '{neos:rendering.inBackend()}',
+                                                        then:'rel="typo3:content-collection"', else: '')}
+                                                        data-ng-click="toggleFilter('{tag.Identifier}');">
+                                                        <ts:render path="tagRenderer" context="{node: tag}"/>
+                                                        </a>
+                                                    </f:else>
+                                                </f:if>
+
                                             </neos:contentElement.wrap>
                                         </li>
                                     </f:for>
@@ -113,14 +126,14 @@
                                         <f:if condition="{item.subItems}">
                                             <f:then>
                                                 <f:render section="item"
-                                                          arguments="{item: item, parentItem: item, title: true}"/>
+                                                          arguments="{item: item, parentItem: item, title: true, tags: tags}"/>
                                                 <f:for each="{item.subItems}" as="subitem" iteration="subiterator">
                                                     <f:render section="item"
-                                                              arguments="{item: subitem, parentItem: item}"/>
+                                                              arguments="{item: subitem, parentItem: item, tags: tags}"/>
                                                 </f:for>
                                             </f:then>
                                             <f:else>
-                                                <f:render section="item" arguments="{item: item}"/>
+                                                <f:render section="item" arguments="{item: item, tags: tags}"/>
                                             </f:else>
 
                                         </f:if>
@@ -175,7 +188,7 @@
                              data-ng-init="addFilterItem('{item.node.Identifier}',0);">
 
                             <f:for each="{item.node.properties.tags}" as="tag">
-                                <i class="{phlu:variable.get(name: 'tags.{tag}.icon')}"
+                                <i class="{phlu:variable.get(name: 'tags.{tag}.properties.icon')}"
                                    data-ng-init="addFilterItem('{item.node.Identifier}','{tag}');"></i>
                             </f:for>
 
