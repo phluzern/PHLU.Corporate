@@ -213,6 +213,22 @@ html {
   min-height: 100%;
 }
 
+
+//
+// icon families
+//
+.ico-family-iconic {
+  &::before {
+    font-family: Icons;
+  }
+}
+.ico-family-fa {
+  &::before {
+    font-family: FontAwesome;
+  }
+}
+
+
 // backend only
 body.neos-backend {
   > .all {
@@ -1139,23 +1155,13 @@ body {
 
         }
       }
-      .ico-family-iconic {
-        &::before {
-          font-family: Icons;
-        }
-      }
-      .ico-family-fa {
-        &::before {
-          font-family: FontAwesome;
-        }
-      }
       .faecherIco, .oi-media-stop {
         &::before {
           font-family: Icons;
           content: " \e099 \2001";
           position: absolute;
           margin-left: -32px;
-          margin-top: -15px;
+          margin-top: 0px;
           font-size: 21px;
         }
       }
@@ -1175,18 +1181,34 @@ body {
           content: " \f111 \2001";
           position: absolute;
           margin-left: -33px;
-          margin-top: -17px;
+          margin-top: -2px;
           font-size: 22px;
         }
       }
-      .themaIco, .icon-star {
+      .themaIco {
         &::before {
           font-family: FontAwesome;
           content: " \f005 \2001";
           position: absolute;
           margin-left: -32px;
-          margin-top: -16px;
+          margin-top: -2px;
           font-size: 21px;
+        }
+      }
+      .ico-family-iconic {
+        &::before {
+          position: absolute;
+          margin-left: -32px;
+          margin-top: 1px;
+          font-size: 17px;
+        }
+      }
+      .ico-family-fa {
+        &::before {
+          position: absolute;
+          margin-left: -32px;
+          margin-top: 1px;
+          font-size: 17px;
         }
       }
       .subjectfilternavResults {
