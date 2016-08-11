@@ -17,5 +17,25 @@ $(document).ready(function () {
     }, false);
 
 
+    // override aloha repository for inline editing link editor
+    var customAlohaAssetRepositoryOverride = false;
+    if (typeof document.addEventListener === 'function') {
+
+        document.addEventListener('Neos.NodeSelected', function (event) {
+
+            if (customAlohaAssetRepositoryOverride === false && Aloha != undefined && Aloha.RepositoryManager != undefined && Aloha.RepositoryManager.getRepository('asset-repository')) {
+              console.log(customAlohaAssetRepositoryOverride);
+                Aloha.RepositoryManager.getRepository('asset-repository').getQueryRequestData = function(searchTerm) {
+                    return {
+                        searchTerm: '!'
+                    };
+                };
+                customAlohaAssetRepositoryOverride = true;
+            }
+
+        }, false);
+    }
+
+
 
 });
