@@ -1,11 +1,10 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 <div{attributes -> f:format.raw()}>
-
-<f:if condition="{node.properties.assets}">
+<f:if condition="{assets}">
     <p>
-        <f:for each="{node.properties.assets}" as="asset">
-            <f:if condition="{asset.resource}">
-                <a href="{f:uri.resource(resource: asset.resource)}" target="_blank">{asset.title}</a><br>
+        <f:for each="{assets}" as="asset">
+            <f:if condition="{asset}">
+                <a class="content-link-default-file content-link-{asset.MediaTypeShortname}-file" href="{f:uri.resource(resource: asset.resource)}">{asset.title}</a> ({asset.FileDescription})<br>
             </f:if>
         </f:for>
     </p>

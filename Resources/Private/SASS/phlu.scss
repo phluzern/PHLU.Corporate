@@ -153,11 +153,29 @@ $input-padding-x: 0.3125rem; // 5px
       font-family: FontAwesome;
       content: "\f1c1 \2000";
     }
+  } @else if $type == defaultFile {
+    background-image: inherit;
+    &::before {
+      font-family: FontAwesome;
+      content: "\f016 \2000";
+    }
+  } @else if $type == jpegFile {
+    background-image: inherit;
+    &::before {
+      font-family: FontAwesome;
+      content: "\f1c5 \2000";
+    }
   } @else if $type == wordFile {
     background-image: inherit;
     &::before {
       font-family: FontAwesome;
       content: "\f1c2 \2000";
+    }
+  } @else if $type == excelFile {
+    background-image: inherit;
+    &::before {
+      font-family: FontAwesome;
+      content: "\f1c3 \2000";
     }
   } @else if $type == history-back {
     background-image: url("../Images/linkbottomline.png");
@@ -213,7 +231,6 @@ html {
   min-height: 100%;
 }
 
-
 //
 // icon families
 //
@@ -222,12 +239,12 @@ html {
     font-family: Icons;
   }
 }
+
 .ico-family-fa {
   &::before {
     font-family: FontAwesome;
   }
 }
-
 
 // backend only
 body.neos-backend {
@@ -314,6 +331,21 @@ body.neos-backend {
   .neos-tooltip {
     display: none;
   }
+
+  .phlu-corporate-text {
+    a[href^='http://'] {
+      @include content-link("external");
+    }
+  }
+
+  .phlu-qmpilot-nodetypes-files {
+    &.assetsCount-0 {
+      min-height: 30px;
+      border: 1px dotted lightgrey;
+    }
+
+  }
+
 }
 
 body {
@@ -1726,7 +1758,7 @@ body {
             }
           }
           @include media-breakpoint-down("xs") {
-            float:none;
+            float: none;
           }
         }
 
@@ -1775,13 +1807,13 @@ body {
           }
           @include media-breakpoint-down("xs") {
             max-width: 100%;
-            padding-left:0;
-            padding-top:30px;
+            padding-left: 0;
+            padding-top: 30px;
             padding-bottom: 30px;
           }
 
           div {
-            padding-top:15px;
+            padding-top: 15px;
           }
         }
       }
@@ -1795,7 +1827,7 @@ body {
       }
       &.detailView {
         .full-date {
-          margin:0;
+          margin: 0;
         }
         h2 {
           margin: 32px 0;
@@ -1816,7 +1848,7 @@ body {
     .main {
       background-color: $beigelight;
       overflow-x: hidden;
-      flex-grow:1;
+      flex-grow: 1;
 
       .onepage {
         img {
@@ -1957,7 +1989,7 @@ body {
                 border-top: 0;
                 background-repeat: repeat-x;
                 background-position: bottom left;
-                min-width:30px;
+                min-width: 30px;
 
                 &.nowrap {
                   @include media-breakpoint-up("md") {
@@ -1971,43 +2003,43 @@ body {
                 }
 
                 &.col-percent-auto {
-                  width:auto;
+                  width: auto;
                   flex: 0 0 0;
                 }
                 &.col-percent-20 {
-                  width:20%;
+                  width: 20%;
                   flex: 0 0 20%;
                 }
                 &.col-percent-25 {
-                  width:25%;
+                  width: 25%;
                   flex: 0 0 25%;
                 }
                 &.col-percent-33 {
-                  width:33.33%;
+                  width: 33.33%;
                   flex: 0 0 33.33%;
                 }
                 &.col-percent-40 {
-                  width:40%;
+                  width: 40%;
                   flex: 0 0 40%;
                 }
                 &.col-percent-50 {
-                  width:50%;
+                  width: 50%;
                   flex: 0 0 50%;
                 }
                 &.col-percent-66 {
-                  width:66.66%;
+                  width: 66.66%;
                   flex: 0 0 66.66%;
                 }
                 &.col-percent-60 {
-                  width:60%;
+                  width: 60%;
                   flex: 0 0 60%;
                 }
                 &.col-percent-75 {
-                  width:75%;
+                  width: 75%;
                   flex: 0 0 75%;
                 }
                 &.col-percent-80 {
-                  width:80%;
+                  width: 80%;
                   flex: 0 0 80%;
                 }
 
@@ -2027,7 +2059,7 @@ body {
           &.first-col-hidden-1 {
             tbody {
               tr > td:first-child {
-                border-left:0;
+                border-left: 0;
               }
             }
           }
@@ -2093,8 +2125,17 @@ body {
         .content-link-portrait {
           @include content-link("portrait");
         }
+        .content-link-default-file {
+          @include content-link("defaultFile");
+        }
+        .content-link-jpeg-file {
+          @include content-link("jpegFile");
+        }
         .content-link-pdf-file {
           @include content-link("pdfFile");
+        }
+        .content-link-excel-file {
+          @include content-link("excelFile");
         }
         .content-link-word-file {
           @include content-link("wordFile");
@@ -2118,14 +2159,14 @@ body {
             width: 10000px;
 
             .expander {
-                white-space: normal;
-                width:auto;
-                height:35px;
-                background-image: url(../Images/breadcrumb_expander.png);
-                background-position: -4px 61px;
-                background-size: cover;
-                cursor: pointer;
-                z-index:9;
+              white-space: normal;
+              width: auto;
+              height: 35px;
+              background-image: url(../Images/breadcrumb_expander.png);
+              background-position: -4px 61px;
+              background-size: cover;
+              cursor: pointer;
+              z-index: 9;
               &.in {
                 background-image: none;
               }
@@ -2148,7 +2189,7 @@ body {
           white-space: nowrap;
         }
         .breadcrumb {
-          z-index:8;
+          z-index: 8;
           list-style-type: none;
           display: none;
           @include media-breakpoint-up("xl") {
@@ -2500,6 +2541,7 @@ body {
     //  }
     //}
   }
+
 }
 
 // totop link
