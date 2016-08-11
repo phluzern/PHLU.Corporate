@@ -7841,6 +7841,33 @@ body {
         width: 100%; }
       body .all .main > .row .phlu-corporate-textwithimage ul {
         display: inline-block; }
+      body .all .main > .row .content-link-wrapper {
+        display: block;
+        width: 100%; }
+        body .all .main > .row .content-link-wrapper a {
+          display: inline-flex;
+          text-overflow: ellipsis;
+          width: 100%; }
+          body .all .main > .row .content-link-wrapper a span:first-child {
+            margin-left: 10px;
+            width: auto;
+            align-self: flex-start; }
+            @media (max-width: 991px) {
+              body .all .main > .row .content-link-wrapper a span:first-child {
+                width: 75% !important; } }
+          body .all .main > .row .content-link-wrapper a span:last-child {
+            margin-left: 10px;
+            width: auto;
+            align-self: flex-start;
+            text-overflow: ellipsis;
+            color: #685f56; }
+            @media (max-width: 991px) {
+              body .all .main > .row .content-link-wrapper a span:last-child {
+                width: 15% !important;
+                min-width: 150px !important; } }
+            @media (min-width: 1280px) {
+              body .all .main > .row .content-link-wrapper a span:last-child {
+                overflow: visible; } }
       body .all .main > .row .content-link-email {
         font-size: 1.125rem;
         color: #9f632a;
