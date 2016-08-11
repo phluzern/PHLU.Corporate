@@ -2110,6 +2110,40 @@ body {
           }
         }
 
+        .content-link-wrapper {
+          display: block;
+          width:100%;
+          a {
+
+            display: inline-flex;
+            text-overflow: ellipsis;
+
+            span:first-child {
+              margin-left:10px;
+              width: auto;
+              align-self: flex-start;
+              @include media-breakpoint-down("md") {
+                width: 75% !important;
+              }
+            }
+            span:last-child {
+              margin-left:10px;
+              width: auto;
+              @include media-breakpoint-down("md") {
+                width: 15% !important;
+                min-width: 150px !important;
+              }
+
+              align-self: flex-start;
+              text-overflow: ellipsis;
+              @include media-breakpoint-up("xl") {
+                overflow: visible;
+              }
+              color:$font-color-level1;
+            }
+          }
+        }
+
         .content-link-email {
           @include content-link("email");
         }
