@@ -7847,6 +7847,9 @@ body {
         body .all .main > .row .content-link-wrapper a {
           display: inline-flex;
           text-overflow: ellipsis; }
+          @media (max-width: 767px) {
+            body .all .main > .row .content-link-wrapper a {
+              width: 100% !important; } }
           body .all .main > .row .content-link-wrapper a span:first-child {
             margin-left: 10px;
             width: auto;

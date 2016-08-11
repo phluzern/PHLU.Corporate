@@ -2117,7 +2117,9 @@ body {
 
             display: inline-flex;
             text-overflow: ellipsis;
-
+            @include media-breakpoint-down("sm") {
+              width: 100% !important;
+            }
             span:first-child {
               margin-left:10px;
               width: auto;
