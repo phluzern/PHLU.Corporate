@@ -76,6 +76,7 @@
       'PHLU.Corporate:AccordeonElement': TRUE
       'PHLU.Corporate:Contacts': TRUE
       'PHLU.Corporate:Table': TRUE
+      'PHLU.Qmpilot.NodeTypes:Files': TRUE
   ui:
     label: 'Allgemein'
     icon: icon-gear

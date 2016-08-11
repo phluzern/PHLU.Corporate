@@ -235,6 +235,7 @@ $('.rcrumbs-container').rcrumbs({
                             if (a >= hiddenFrom && a <= hiddenTo) {
                                 var a = $(this).clone().html();
                                 var li = $("<li/>");
+                                li.addClass('breadcrumb-item');
                                 li.css('width', self.listsWidth[a]);
                                 $(a).appendTo(li);
                                 li.appendTo(expanderExpanded);
@@ -243,6 +244,7 @@ $('.rcrumbs-container').rcrumbs({
 
                         var expander = $("<li/>");
                         expander.css('min-width', expanderWidth + "px");
+                        expander.addClass('breadcrumb-item');
                         expander.addClass('expander');
                         expander.addClass('expander out');
                         expanderExpanded.appendTo(expander);

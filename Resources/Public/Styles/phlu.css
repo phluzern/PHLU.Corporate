@@ -7367,8 +7367,7 @@ body {
       background-color: #55a7b3; }
     body .all .main {
       background-color: #fbfaf4;
-      flex-grow: 1;
-      max-width: inherit; }
+      flex-grow: 1; }
       body .all .main .onepage img {
         margin-bottom: 40px; }
       body .all .main .onepage-teaser-content p {
