@@ -15,7 +15,6 @@ TYPO3:
           # 0 means unlimited
           loadingDepth: 0
 
-
   TypoScript:
     defaultContext:
       'PHLU.Corporate': 'PHLU\Corporate\Eel\Helper\NodeHelper'
