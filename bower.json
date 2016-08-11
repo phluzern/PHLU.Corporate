@@ -1,7 +1,7 @@
 {
   "name": "phlucorporate",
   "dependencies": {
-    "bootstrap": "v4.0.0-alpha.2",
+    "bootstrap": "v4.0.0-alpha.3",
     "grunt-modernizr": "*",
     "angularjs": "1.5.*",
     "angular-cookies": "1.5.*",
