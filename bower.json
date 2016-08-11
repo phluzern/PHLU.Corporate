@@ -9,6 +9,7 @@
     "font-awesome": "4.6.*",
     "animate.css": "*",
     "filament-tablesaw": "*",
-    "jquery-rcrumbs": "*"
+    "jquery-rcrumbs": "*",
+    "bootstrap-datepicker": "*"
   }
 }
