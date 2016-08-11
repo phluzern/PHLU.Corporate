@@ -153,11 +153,31 @@ $input-padding-x: 0.3125rem; // 5px
       font-family: FontAwesome;
       content: "\f1c1 \2000";
     }
+  }
+  @else if $type == defaultFile {
+    background-image: inherit;
+    &::before {
+      font-family: FontAwesome;
+      content: "\f016 \2000";
+    }
+  }
+  @else if $type == jpegFile {
+    background-image: inherit;
+    &::before {
+      font-family: FontAwesome;
+      content: "\f1c5 \2000";
+    }
   } @else if $type == wordFile {
     background-image: inherit;
     &::before {
       font-family: FontAwesome;
       content: "\f1c2 \2000";
+    }
+  } @else if $type == excelFile {
+    background-image: inherit;
+    &::before {
+      font-family: FontAwesome;
+      content: "\f1c3 \2000";
     }
   } @else if $type == history-back {
     background-image: url("../Images/linkbottomline.png");
@@ -314,6 +334,15 @@ body.neos-backend {
   .neos-tooltip {
     display: none;
   }
+
+  .phlu-qmpilot-nodetypes-files {
+    &.assetsCount-0 {
+      min-height:30px;
+      border:1px dotted lightgrey;
+    }
+
+  }
+
 }
 
 body {
@@ -2093,8 +2122,17 @@ body {
         .content-link-portrait {
           @include content-link("portrait");
         }
+        .content-link-default-file {
+          @include content-link("defaultFile");
+        }
+        .content-link-jpeg-file {
+          @include content-link("jpegFile");
+        }
         .content-link-pdf-file {
           @include content-link("pdfFile");
+        }
+        .content-link-excel-file {
+          @include content-link("excelFile");
         }
         .content-link-word-file {
           @include content-link("wordFile");
