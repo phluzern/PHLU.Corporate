@@ -6471,6 +6471,7 @@ body {
           margin-top: -25px; }
       body .all .sidebar .form-control {
         margin-top: 30px;
+        display: inline-block;
         border: 1px solid #c4b8ae; }
       body .all .sidebar .sidebar-nav {
         width: 100%;
@@ -7066,6 +7067,89 @@ body {
       margin-bottom: 0; }
     body .all .ppdb-detail .phlu-accordion {
       margin-top: 10px; }
+    body .all .further-education-list .course-search-field input {
+      border: 1px solid #5c5c5c; }
+    body .all .further-education-list .subjectsfilternav .nav-pills {
+      padding-bottom: 3px; }
+      body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link {
+        padding-left: 18px; }
+        body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-bottom, body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-top {
+          font-size: 12px; }
+        body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link.active {
+          background-color: #55696d; }
+    body .all .further-education-list .subjectsfilternav .result-panel {
+      max-height: 400px;
+      overflow-y: auto;
+      background-color: #55696d;
+      color: white;
+      padding: 5px 0; }
+      body .all .further-education-list .subjectsfilternav .result-panel::after {
+        font-family: FontAwesome;
+        content: " \00D7";
+        font-size: 30px;
+        position: absolute;
+        right: 15px;
+        bottom: -53px;
+        background-color: #55696d;
+        padding: 0 15px 5px; }
+      body .all .further-education-list .subjectsfilternav .result-panel .close-btn {
+        position: absolute;
+        right: 45px;
+        top: 5px;
+        color: white;
+        font-size: 12px; }
+    body .all .further-education-list .subjectsfilternav .table {
+      margin-bottom: 0; }
+      body .all .further-education-list .subjectsfilternav .table tbody tr td {
+        background-image: none;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 1px #e5e5e5 solid;
+        font-size: 1.125rem; }
+        body .all .further-education-list .subjectsfilternav .table tbody tr td a {
+          color: white; }
+        body .all .further-education-list .subjectsfilternav .table tbody tr td.theme-code {
+          width: 38px; }
+        body .all .further-education-list .subjectsfilternav .table tbody tr td:first-child {
+          padding-left: 20px;
+          width: 60px; }
+        body .all .further-education-list .subjectsfilternav .table tbody tr td:last-child {
+          padding-right: 20px;
+          padding-left: 20px; }
+      body .all .further-education-list .subjectsfilternav .table tbody tr.checked {
+        color: #91a103; }
+        body .all .further-education-list .subjectsfilternav .table tbody tr.checked a {
+          color: #91a103; }
+      body .all .further-education-list .subjectsfilternav .table tbody tr:last-child td {
+        border-bottom: 0; }
+    body .all .further-education-list .results-table {
+      margin-top: 50px;
+      margin-bottom: 105px; }
+      body .all .further-education-list .results-table a {
+        color: #5c5c5c; }
+      body .all .further-education-list .results-table .table-responsive {
+        overflow-x: inherit; }
+        body .all .further-education-list .results-table .table-responsive .table .oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table .oi-caret-right {
+          font-size: 12px; }
+        body .all .further-education-list .results-table .table-responsive .table tbody tr td {
+          background-image: url("../Images/table-cell-dottedline-raspberry-red.png"); }
+          body .all .further-education-list .results-table .table-responsive .table tbody tr td .result-preview {
+            margin-left: 30px;
+            margin-bottom: 31px; }
+            body .all .further-education-list .results-table .table-responsive .table tbody tr td .result-preview p {
+              font-size: 1rem; }
+            body .all .further-education-list .results-table .table-responsive .table tbody tr td .result-preview .btn {
+              color: white;
+              background-color: #55696d; }
+          body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child {
+            border-left: 0; }
+            body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span {
+              width: 30px; }
+          body .all .further-education-list .results-table .table-responsive .table tbody tr td:last-child {
+            border-right: 0; }
+        body .all .further-education-list .results-table .table-responsive .table tbody tr.open td {
+          background-image: none; }
     body .all .further-education-detail .phlu-team-members {
       margin-bottom: 0; }
     body .all .further-education-detail .phlu-accordion {
@@ -7140,24 +7224,67 @@ body {
         border-left: 0; }
         body .all .table thead tr th:first-child h3 {
           margin: 0; }
+      body .all .table thead tr th.is-currency {
+        text-align: right; }
+    body .all .table tbody .neos-empty-contentcollection-overlay {
+      display: table-cell; }
     body .all .table tbody tr:first-child th {
       border-top: 4px solid black; }
     body .all .table tbody tr:first-child td {
       border-top: 4px solid #ba1541; }
     body .all .table tbody tr th, body .all .table tbody tr td {
       padding: 0.75rem 0;
-      border-right: 2px solid #fbfaf4;
+      border-right: 2px solid white;
       line-height: 1.5;
       vertical-align: top;
       border-top: 0;
       background-repeat: repeat-x;
-      background-position: bottom left; }
+      background-position: bottom left;
+      min-width: 30px; }
+      @media (min-width: 768px) {
+        body .all .table tbody tr th.nowrap, body .all .table tbody tr td.nowrap {
+          white-space: nowrap; } }
+      body .all .table tbody tr th.is-currency, body .all .table tbody tr td.is-currency {
+        text-align: right;
+        white-space: nowrap; }
+      body .all .table tbody tr th.col-percent-auto, body .all .table tbody tr td.col-percent-auto {
+        width: auto;
+        flex: 0 0 0; }
+      body .all .table tbody tr th.col-percent-20, body .all .table tbody tr td.col-percent-20 {
+        width: 20%;
+        flex: 0 0 20%; }
+      body .all .table tbody tr th.col-percent-25, body .all .table tbody tr td.col-percent-25 {
+        width: 25%;
+        flex: 0 0 25%; }
+      body .all .table tbody tr th.col-percent-33, body .all .table tbody tr td.col-percent-33 {
+        width: 33.33%;
+        flex: 0 0 33.33%; }
+      body .all .table tbody tr th.col-percent-40, body .all .table tbody tr td.col-percent-40 {
+        width: 40%;
+        flex: 0 0 40%; }
+      body .all .table tbody tr th.col-percent-50, body .all .table tbody tr td.col-percent-50 {
+        width: 50%;
+        flex: 0 0 50%; }
+      body .all .table tbody tr th.col-percent-66, body .all .table tbody tr td.col-percent-66 {
+        width: 66.66%;
+        flex: 0 0 66.66%; }
+      body .all .table tbody tr th.col-percent-60, body .all .table tbody tr td.col-percent-60 {
+        width: 60%;
+        flex: 0 0 60%; }
+      body .all .table tbody tr th.col-percent-75, body .all .table tbody tr td.col-percent-75 {
+        width: 75%;
+        flex: 0 0 75%; }
+      body .all .table tbody tr th.col-percent-80, body .all .table tbody tr td.col-percent-80 {
+        width: 80%;
+        flex: 0 0 80%; }
     body .all .table tbody tr th {
       width: 40%;
       background-image: url("../Images/table-cell-dottedline.png"); }
     body .all .table tbody tr td {
       background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
       border-left: 23px solid #fbfaf4; }
+    body .all .table.first-col-hidden-1 tbody tr > td:first-child {
+      border-left: 0; }
     body .all .flowtext-phlu-event a, body .all .flowtext-phlu-event a:hover, body .all .flowtext-phlu-news a, body .all .flowtext-phlu-news a:hover {
       color: #5c5c5c; }
     body .all .flowtext-phlu-event > .row, body .all .flowtext-phlu-news > .row {
@@ -7324,77 +7451,6 @@ body {
           margin-top: 10px; }
           body .all .main > .row .table-phlu-saw .tablesaw-nav-btn.disabled {
             display: none; }
-      body .all .main > .row .table thead tr th {
-        padding: 0.75rem 0;
-        line-height: 1.5;
-        vertical-align: top;
-        border-top: 0;
-        border-left: 23px solid #fbfaf4; }
-        body .all .main > .row .table thead tr th:first-child {
-          border-left: 0; }
-          body .all .main > .row .table thead tr th:first-child h3 {
-            margin: 0; }
-        body .all .main > .row .table thead tr th.is-currency {
-          text-align: right; }
-      body .all .main > .row .table tbody .neos-empty-contentcollection-overlay {
-        display: table-cell; }
-      body .all .main > .row .table tbody tr:first-child th {
-        border-top: 4px solid black; }
-      body .all .main > .row .table tbody tr:first-child td {
-        border-top: 4px solid #ba1541; }
-      body .all .main > .row .table tbody tr th, body .all .main > .row .table tbody tr td {
-        padding: 0.75rem 0;
-        border-right: 2px solid white;
-        line-height: 1.5;
-        vertical-align: top;
-        border-top: 0;
-        background-repeat: repeat-x;
-        background-position: bottom left;
-        min-width: 30px; }
-        @media (min-width: 768px) {
-          body .all .main > .row .table tbody tr th.nowrap, body .all .main > .row .table tbody tr td.nowrap {
-            white-space: nowrap; } }
-        body .all .main > .row .table tbody tr th.is-currency, body .all .main > .row .table tbody tr td.is-currency {
-          text-align: right;
-          white-space: nowrap; }
-        body .all .main > .row .table tbody tr th.col-percent-auto, body .all .main > .row .table tbody tr td.col-percent-auto {
-          width: auto;
-          flex: 0 0 0; }
-        body .all .main > .row .table tbody tr th.col-percent-20, body .all .main > .row .table tbody tr td.col-percent-20 {
-          width: 20%;
-          flex: 0 0 20%; }
-        body .all .main > .row .table tbody tr th.col-percent-25, body .all .main > .row .table tbody tr td.col-percent-25 {
-          width: 25%;
-          flex: 0 0 25%; }
-        body .all .main > .row .table tbody tr th.col-percent-33, body .all .main > .row .table tbody tr td.col-percent-33 {
-          width: 33.33%;
-          flex: 0 0 33.33%; }
-        body .all .main > .row .table tbody tr th.col-percent-40, body .all .main > .row .table tbody tr td.col-percent-40 {
-          width: 40%;
-          flex: 0 0 40%; }
-        body .all .main > .row .table tbody tr th.col-percent-50, body .all .main > .row .table tbody tr td.col-percent-50 {
-          width: 50%;
-          flex: 0 0 50%; }
-        body .all .main > .row .table tbody tr th.col-percent-66, body .all .main > .row .table tbody tr td.col-percent-66 {
-          width: 66.66%;
-          flex: 0 0 66.66%; }
-        body .all .main > .row .table tbody tr th.col-percent-60, body .all .main > .row .table tbody tr td.col-percent-60 {
-          width: 60%;
-          flex: 0 0 60%; }
-        body .all .main > .row .table tbody tr th.col-percent-75, body .all .main > .row .table tbody tr td.col-percent-75 {
-          width: 75%;
-          flex: 0 0 75%; }
-        body .all .main > .row .table tbody tr th.col-percent-80, body .all .main > .row .table tbody tr td.col-percent-80 {
-          width: 80%;
-          flex: 0 0 80%; }
-      body .all .main > .row .table tbody tr th {
-        width: 40%;
-        background-image: url("../Images/table-cell-dottedline.png"); }
-      body .all .main > .row .table tbody tr td {
-        background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
-        border-left: 23px solid #fbfaf4; }
-      body .all .main > .row .table.first-col-hidden-1 tbody tr > td:first-child {
-        border-left: 0; }
       body .all .main > .row .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
         width: 100%;
         font-size: 1.188rem; }

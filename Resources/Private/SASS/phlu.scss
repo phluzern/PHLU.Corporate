@@ -669,6 +669,7 @@ body {
       }
       .form-control {
         margin-top: 30px;
+        display: inline-block;
         border: $input-btn-sidebar-border-width solid $input-sidebar-border-color;
       }
       .sidebar-nav {
@@ -1598,6 +1599,147 @@ body {
         margin-top: 10px;
       }
     }
+
+
+    //
+    // further education list page
+    //
+    .further-education-list {
+      .course-search-field {
+        input {
+          border: 1px solid $grey;
+        }
+      }
+      .subjectsfilternav {
+        .nav-pills {
+          padding-bottom: 3px;
+          li {
+            a.nav-link {
+              padding-left: 18px;
+              .oi-chevron-bottom, .oi-chevron-top {
+                font-size: 12px;
+              }
+              &.active {
+                background-color: $grey6;
+              }
+            }
+          }
+        }
+        .result-panel {
+          max-height: 400px;
+          overflow-y: auto;
+          background-color: $grey6;
+          color: white;
+          padding: 5px 0;
+          &::after {
+            font-family: FontAwesome;
+            content: " \00D7";
+            font-size: 30px;
+            position: absolute;
+            right: 15px;
+            bottom: -53px;
+            background-color: $grey6;
+            padding: 0 15px 5px;
+
+          }
+          .close-btn {
+            position: absolute;
+            right: 45px;
+            top: 5px;
+            color: white;
+            font-size: 12px;
+          }
+        }
+        .table {
+          margin-bottom: 0;
+          tbody {
+            tr {
+              td {
+                background-image: none;
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+                border-bottom: 1px $hr-border-color solid;
+                font-size: $font-size-search-filters;
+                a {
+                  color: white;
+                }
+                &.theme-code {
+                  width: 38px;
+                }
+                &:first-child {
+                  padding-left: 20px;
+                  width: 60px;
+                }
+                &:last-child {
+                  padding-right: 20px;
+                  padding-left: 20px;
+                }
+              }
+              &.checked {
+                color: $olivegreen;
+                a {
+                  color: $olivegreen;
+                }
+              }
+              &:last-child {
+                td {
+                  border-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+      .results-table {
+        margin-top: 50px;
+        margin-bottom: 105px;
+        a {
+          color: $grey;
+        }
+        .table-responsive {
+          overflow-x: inherit;
+          .table {
+            .oi-caret-bottom, .oi-caret-right {
+              font-size: 12px;
+            }
+            tbody {
+              tr {
+                td {
+                  background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
+                  .result-preview {
+                    margin-left: 30px;
+                    margin-bottom: 31px;
+                    p {
+                      font-size: 1rem;
+                    }
+                    .btn {
+                      color: white;
+                      background-color: $grey6;
+                    }
+                  }
+                  &:first-child {
+                    span {
+                      width: 30px;
+                    }
+                    border-left: 0;
+                  }
+                  &:last-child {
+                    border-right: 0;
+                  }
+                }
+              }
+              tr.open {
+                td {
+                  background-image: none;
+                }
+              }
+            }
+          }
+        }
+
+      }
+    }
     //
     // further education detail page (weiterbildung)
     //
@@ -1775,6 +1917,7 @@ body {
         }
       }
     }
+
     //
     // phlu-table
     //
@@ -1794,11 +1937,17 @@ body {
                 margin: 0;
               }
             }
+            &.is-currency {
+              text-align: right;
+            }
           }
         }
       }
 
       tbody {
+        .neos-empty-contentcollection-overlay {
+          display: table-cell;
+        }
         tr:first-child {
           th {
             border-top: 4px solid black;
@@ -1810,12 +1959,66 @@ body {
         tr {
           th, td {
             padding: 0.75rem 0;
-            border-right: 2px solid $beigelight;
+            border-right: 2px solid white;
             line-height: 1.5;
             vertical-align: top;
             border-top: 0;
             background-repeat: repeat-x;
             background-position: bottom left;
+            min-width: 30px;
+
+            &.nowrap {
+              @include media-breakpoint-up("md") {
+                white-space: nowrap;
+              }
+            }
+
+            &.is-currency {
+              text-align: right;
+              white-space: nowrap;
+            }
+
+            &.col-percent-auto {
+              width: auto;
+              flex: 0 0 0;
+            }
+            &.col-percent-20 {
+              width: 20%;
+              flex: 0 0 20%;
+            }
+            &.col-percent-25 {
+              width: 25%;
+              flex: 0 0 25%;
+            }
+            &.col-percent-33 {
+              width: 33.33%;
+              flex: 0 0 33.33%;
+            }
+            &.col-percent-40 {
+              width: 40%;
+              flex: 0 0 40%;
+            }
+            &.col-percent-50 {
+              width: 50%;
+              flex: 0 0 50%;
+            }
+            &.col-percent-66 {
+              width: 66.66%;
+              flex: 0 0 66.66%;
+            }
+            &.col-percent-60 {
+              width: 60%;
+              flex: 0 0 60%;
+            }
+            &.col-percent-75 {
+              width: 75%;
+              flex: 0 0 75%;
+            }
+            &.col-percent-80 {
+              width: 80%;
+              flex: 0 0 80%;
+            }
+
           }
           th {
             width: 40%;
@@ -1829,7 +2032,16 @@ body {
         }
       }
 
+      &.first-col-hidden-1 {
+        tbody {
+          tr > td:first-child {
+            border-left: 0;
+          }
+        }
+      }
+
     }
+
     //
     // news and events flow text version
     .flowtext-phlu-event, .flowtext-phlu-news {
@@ -2058,126 +2270,8 @@ body {
           }
         }
 
-        .table {
 
-          thead {
-            tr {
-              th {
-                padding: 0.75rem 0;
-                line-height: 1.5;
-                vertical-align: top;
-                border-top: 0;
-                border-left: 23px solid $beigelight;
-                &:first-child {
-                  border-left: 0;
-                  h3 {
-                    margin: 0;
-                  }
-                }
-                &.is-currency {
-                  text-align: right;
-                }
-              }
-            }
-          }
 
-          tbody {
-            .neos-empty-contentcollection-overlay {
-              display: table-cell;
-            }
-            tr:first-child {
-              th {
-                border-top: 4px solid black;
-              }
-              td {
-                border-top: 4px solid $raspberryRed;
-              }
-            }
-            tr {
-              th, td {
-                padding: 0.75rem 0;
-                border-right: 2px solid white;
-                line-height: 1.5;
-                vertical-align: top;
-                border-top: 0;
-                background-repeat: repeat-x;
-                background-position: bottom left;
-                min-width: 30px;
-
-                &.nowrap {
-                  @include media-breakpoint-up("md") {
-                    white-space: nowrap;
-                  }
-                }
-
-                &.is-currency {
-                  text-align: right;
-                  white-space: nowrap;
-                }
-
-                &.col-percent-auto {
-                  width: auto;
-                  flex: 0 0 0;
-                }
-                &.col-percent-20 {
-                  width: 20%;
-                  flex: 0 0 20%;
-                }
-                &.col-percent-25 {
-                  width: 25%;
-                  flex: 0 0 25%;
-                }
-                &.col-percent-33 {
-                  width: 33.33%;
-                  flex: 0 0 33.33%;
-                }
-                &.col-percent-40 {
-                  width: 40%;
-                  flex: 0 0 40%;
-                }
-                &.col-percent-50 {
-                  width: 50%;
-                  flex: 0 0 50%;
-                }
-                &.col-percent-66 {
-                  width: 66.66%;
-                  flex: 0 0 66.66%;
-                }
-                &.col-percent-60 {
-                  width: 60%;
-                  flex: 0 0 60%;
-                }
-                &.col-percent-75 {
-                  width: 75%;
-                  flex: 0 0 75%;
-                }
-                &.col-percent-80 {
-                  width: 80%;
-                  flex: 0 0 80%;
-                }
-
-              }
-              th {
-                width: 40%;
-                background-image: url("../Images/table-cell-dottedline.png");
-
-              }
-              td {
-                background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
-                border-left: 23px solid $beigelight;
-              }
-            }
-          }
-
-          &.first-col-hidden-1 {
-            tbody {
-              tr > td:first-child {
-                border-left: 0;
-              }
-            }
-          }
-
-        }
         .phlu-corporate-content-page-headerdefault {
           .phlu-corporate-textplain {
             p {
