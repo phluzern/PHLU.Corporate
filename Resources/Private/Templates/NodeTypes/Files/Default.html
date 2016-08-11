@@ -4,7 +4,7 @@
     <p>
         <f:for each="{assets}" as="asset">
             <f:if condition="{asset}">
-                <a class="content-link-default-file content-link-{asset.MediaTypeShortname}-file" href="{f:uri.resource(resource: asset.resource)}">{asset.title}</a> ({asset.FileDescription})<br>
+                <a class="content-link-default-file content-link-{asset.MediaTypeShortname}-file" href="{f:uri.resource(resource: asset.resource)}" target="{asset.target}">{asset.title}</a> ({asset.FileDescription})<br>
             </f:if>
         </f:for>
     </p>
