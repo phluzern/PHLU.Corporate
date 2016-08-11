@@ -1,67 +1,75 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
+<f:if condition="{isHidden}">
+    <f:else>
+        <div data-ng-controller="ContactsCtrl" {attributes -> f:format.raw()}>
 
-<div data-ng-controller="ContactsCtrl" {attributes -> f:format.raw()}>
+            <div class="row" data-ng-if="!detail" data-ng-mouseover="hoverIn($event)" data-ng-click="hoverIn($event)"
+                 data-ng-mouseleave="hoverOut()">
 
-    <div class="row" data-ng-if="!detail"  data-ng-mouseover="hoverIn($event)" data-ng-click="hoverIn($event)"  data-ng-mouseleave="hoverOut()">
-
-        <a href="#" title="Studierende"></a>
-        <div class="phlu-teaser-body col-xs-10">
-            {neos:contentElement.editable(property: 'function', tag: 'h3')}
-            <div class="personName">
-                {neos:contentElement.editable(property: 'firstname', tag: 'span')}
-                {neos:contentElement.editable(property: 'lastname', tag: 'span')}
-            </div>
-            <p>
-                {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
-                <a href="mailto:{node.properties.email}">{neos:contentElement.editable(property: 'email', tag:
-                    'span')}</a><br>
-            </p>
-        </div>
-        <div class="phlu-teaser-caret-right col-xs-2">
-            <a href="mailto:{node.properties.email}" class="emailLink">&nbsp;</a>
-            <a href="#" class="portraitLink">&nbsp;</a>
-        </div>
-    </div>
-
-
-
-    <div class="row detailView invisible" data-ng-if="detail" data-ng-mouseleave="hoverOut()"  data-ng-click="hoverOut()" ng-init="init('#detail-{node.Identifier}')" id="detail-{node.Identifier}" >
-
-        <a href="#" title="Studierende"></a>
-        <div class="phlu-teaser-body details col-xs-10">
-            <div class="row">
-                <div class="col-md-5">
-                    <f:if condition="{node.properties.image}">
-                        <f:then>
-                            <media:image asset="{node.properties.image}" class="img-fluid" alt="{node.properties.firstname} {node.properties.lastname}" width="400" maximumWidth="400" height="300" maximumHeight="300" allowUpScaling="false" />
-                        </f:then>
-                    </f:if>
-
-                </div>
-                <div class="col-xs-7">
+                <a href="#" title="Studierende"></a>
+                <div class="phlu-teaser-body col-xs-10">
+                    {neos:contentElement.editable(property: 'function', tag: 'h3')}
                     <div class="personName">
                         {neos:contentElement.editable(property: 'firstname', tag: 'span')}
                         {neos:contentElement.editable(property: 'lastname', tag: 'span')}
                     </div>
                     <p>
-                        {neos:contentElement.editable(property: 'street', tag: 'span')}<br>
-                        {neos:contentElement.editable(property: 'street2', tag: 'span')}<br>
-                        {neos:contentElement.editable(property: 'zip', tag: 'span')} {neos:contentElement.editable(property: 'city', tag: 'span')}<br>
                         {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
-                        <a href="mailto:{node.properties.email}" ><span></span> </a>
+                        <a href="mailto:{node.properties.email}">{neos:contentElement.editable(property: 'email', tag:
+                            'span')}</a><br>
                     </p>
                 </div>
+                <div class="phlu-teaser-caret-right col-xs-2">
+                    <a href="mailto:{node.properties.email}" class="emailLink">&nbsp;</a>
+                    <a href="#" class="portraitLink">&nbsp;</a>
+                </div>
             </div>
+
+
+            <div class="row detailView invisible" data-ng-if="detail" data-ng-mouseleave="hoverOut()"
+                 data-ng-click="hoverOut()" ng-init="init('#detail-{node.Identifier}')" id="detail-{node.Identifier}">
+
+                <a href="#" title="Studierende"></a>
+                <div class="phlu-teaser-body details col-xs-10">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <f:if condition="{node.properties.image}">
+                                <f:then>
+                                    <media:image asset="{node.properties.image}" class="img-fluid"
+                                                 alt="{node.properties.firstname} {node.properties.lastname}"
+                                                 width="400" maximumWidth="400" height="300" maximumHeight="300"
+                                                 allowUpScaling="false"/>
+                                </f:then>
+                            </f:if>
+
+                        </div>
+                        <div class="col-xs-7">
+                            <div class="personName">
+                                {neos:contentElement.editable(property: 'firstname', tag: 'span')}
+                                {neos:contentElement.editable(property: 'lastname', tag: 'span')}
+                            </div>
+                            <p>
+                                {neos:contentElement.editable(property: 'street', tag: 'span')}<br>
+                                {neos:contentElement.editable(property: 'street2', tag: 'span')}<br>
+                                {neos:contentElement.editable(property: 'zip', tag: 'span')}
+                                {neos:contentElement.editable(property: 'city', tag: 'span')}<br>
+                                {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
+                                <a href="mailto:{node.properties.email}"><span></span> </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="phlu-teaser-caret-right col-xs-2">
+                    <a href="mailto:{node.properties.email}" class="emailLink">&nbsp;</a>
+                    <a href="#" class="portraitLink">&nbsp;</a>
+                </div>
+
+
+            </div>
+
+
         </div>
-        <div class="phlu-teaser-caret-right col-xs-2">
-            <a href="mailto:{node.properties.email}" class="emailLink">&nbsp;</a>
-            <a href="#" class="portraitLink">&nbsp;</a>
-        </div>
-
-
-    </div>
-
-
-</div>
+    </f:else>
+</f:if>

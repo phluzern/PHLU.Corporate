@@ -6187,6 +6187,12 @@ html {
   position: relative;
   min-height: 100%; }
 
+.ico-family-iconic::before {
+  font-family: Icons; }
+
+.ico-family-fa::before {
+  font-family: FontAwesome; }
+
 body.neos-backend > .all {
   min-width: 1920px; }
 body.neos-backend.neos-navigate-panel-open .sidebar.level0, body.neos-backend.neos-navigate-panel-open .sidebar.level1 {
@@ -6235,6 +6241,22 @@ body.neos-backend .main.contents {
   min-height: 500px; }
 body.neos-backend .neos-tooltip {
   display: none; }
+body.neos-backend .phlu-corporate-text a[href^='http://'] {
+  background-image: url("../Images/linkbottomline.png");
+  font-size: 1.125rem;
+  color: #9f632a;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  padding-bottom: 4px; }
+  body.neos-backend .phlu-corporate-text a[href^='http://']::after {
+    background-image: url("../Images/externalLinkArrow.png");
+    background-repeat: no-repeat;
+    background-position: 0 3px;
+    padding-right: 25px;
+    content: ""; }
+body.neos-backend .phlu-qmpilot-nodetypes-files.assetsCount-0 {
+  min-height: 30px;
+  border: 1px dotted lightgrey; }
 
 body {
   margin-bottom: 420px;
@@ -6449,7 +6471,6 @@ body {
           margin-top: -25px; }
       body .all .sidebar .form-control {
         margin-top: 30px;
-        display: inline-block;
         border: 1px solid #c4b8ae; }
       body .all .sidebar .sidebar-nav {
         width: 100%;
@@ -6855,18 +6876,16 @@ body {
           padding-left: 23px; }
       body .all .row.subjectsfilternav .nav-pills li.active a.nav-link {
         background-color: #55696d; }
-    body .all .row.subjectsfilternav .ico-family-iconic::before {
-      font-family: Icons; }
-    body .all .row.subjectsfilternav .ico-family-fa::before {
-      font-family: FontAwesome; }
     body .all .row.subjectsfilternav .faecherIco::before, body .all .row.subjectsfilternav .oi-media-stop::before {
+      font-style: normal !important;
       font-family: Icons;
       content: " \e099 \2001";
       position: absolute;
       margin-left: -32px;
-      margin-top: -15px;
+      margin-top: 0px;
       font-size: 21px; }
     body .all .row.subjectsfilternav .strategieIco::before {
+      font-style: normal !important;
       font-family: Arial;
       content: " \25B2 \2001";
       position: absolute;
@@ -6874,19 +6893,33 @@ body {
       margin-top: -4px;
       font-size: 24px; }
     body .all .row.subjectsfilternav .forschungIco::before, body .all .row.subjectsfilternav .icon-circle::before {
+      font-style: normal !important;
       font-family: FontAwesome;
       content: " \f111 \2001";
       position: absolute;
       margin-left: -33px;
-      margin-top: -17px;
+      margin-top: -2px;
       font-size: 22px; }
-    body .all .row.subjectsfilternav .themaIco::before, body .all .row.subjectsfilternav .icon-star::before {
+    body .all .row.subjectsfilternav .themaIco::before {
+      font-style: normal;
       font-family: FontAwesome;
       content: " \f005 \2001";
       position: absolute;
       margin-left: -32px;
-      margin-top: -16px;
+      margin-top: -2px;
       font-size: 21px; }
+    body .all .row.subjectsfilternav .ico-family-iconic::before {
+      font-style: normal !important;
+      position: absolute;
+      margin-left: -32px;
+      margin-top: 1px;
+      font-size: 17px; }
+    body .all .row.subjectsfilternav .ico-family-fa::before {
+      font-style: normal !important;
+      position: absolute;
+      margin-left: -32px;
+      margin-top: 1px;
+      font-size: 17px; }
     body .all .row.subjectsfilternav .subjectfilternavResults i::before {
       position: relative; }
     body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage {
@@ -7033,89 +7066,6 @@ body {
       margin-bottom: 0; }
     body .all .ppdb-detail .phlu-accordion {
       margin-top: 10px; }
-    body .all .further-education-list .course-search-field input {
-      border: 1px solid #5c5c5c; }
-    body .all .further-education-list .subjectsfilternav .nav-pills {
-      padding-bottom: 3px; }
-      body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link {
-        padding-left: 18px; }
-        body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-bottom, body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-top {
-          font-size: 12px; }
-        body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link.active {
-          background-color: #55696d; }
-    body .all .further-education-list .subjectsfilternav .result-panel {
-      max-height: 400px;
-      overflow-y: auto;
-      background-color: #55696d;
-      color: white;
-      padding: 5px 0; }
-      body .all .further-education-list .subjectsfilternav .result-panel::after {
-        font-family: FontAwesome;
-        content: " \00D7";
-        font-size: 30px;
-        position: absolute;
-        right: 15px;
-        bottom: -53px;
-        background-color: #55696d;
-        padding: 0 15px 5px; }
-      body .all .further-education-list .subjectsfilternav .result-panel .close-btn {
-        position: absolute;
-        right: 45px;
-        top: 5px;
-        color: white;
-        font-size: 12px; }
-    body .all .further-education-list .subjectsfilternav .table {
-      margin-bottom: 0; }
-      body .all .further-education-list .subjectsfilternav .table tbody tr td {
-        background-image: none;
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-        border-bottom: 1px #e5e5e5 solid;
-        font-size: 1.125rem; }
-        body .all .further-education-list .subjectsfilternav .table tbody tr td a {
-          color: white; }
-        body .all .further-education-list .subjectsfilternav .table tbody tr td.theme-code {
-          width: 38px; }
-        body .all .further-education-list .subjectsfilternav .table tbody tr td:first-child {
-          padding-left: 20px;
-          width: 60px; }
-        body .all .further-education-list .subjectsfilternav .table tbody tr td:last-child {
-          padding-right: 20px;
-          padding-left: 20px; }
-      body .all .further-education-list .subjectsfilternav .table tbody tr.checked {
-        color: #91a103; }
-        body .all .further-education-list .subjectsfilternav .table tbody tr.checked a {
-          color: #91a103; }
-      body .all .further-education-list .subjectsfilternav .table tbody tr:last-child td {
-        border-bottom: 0; }
-    body .all .further-education-list .results-table {
-      margin-top: 50px;
-      margin-bottom: 105px; }
-      body .all .further-education-list .results-table a {
-        color: #5c5c5c; }
-      body .all .further-education-list .results-table .table-responsive {
-        overflow-x: inherit; }
-        body .all .further-education-list .results-table .table-responsive .table .oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table .oi-caret-right {
-          font-size: 12px; }
-        body .all .further-education-list .results-table .table-responsive .table tbody tr td {
-          background-image: url("../Images/table-cell-dottedline-raspberry-red.png"); }
-          body .all .further-education-list .results-table .table-responsive .table tbody tr td .result-preview {
-            margin-left: 30px;
-            margin-bottom: 31px; }
-            body .all .further-education-list .results-table .table-responsive .table tbody tr td .result-preview p {
-              font-size: 1rem; }
-            body .all .further-education-list .results-table .table-responsive .table tbody tr td .result-preview .btn {
-              color: white;
-              background-color: #55696d; }
-          body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child {
-            border-left: 0; }
-            body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span {
-              width: 30px; }
-          body .all .further-education-list .results-table .table-responsive .table tbody tr td:last-child {
-            border-right: 0; }
-        body .all .further-education-list .results-table .table-responsive .table tbody tr.open td {
-          background-image: none; }
     body .all .further-education-detail .phlu-team-members {
       margin-bottom: 0; }
     body .all .further-education-detail .phlu-accordion {
@@ -7374,6 +7324,77 @@ body {
           margin-top: 10px; }
           body .all .main > .row .table-phlu-saw .tablesaw-nav-btn.disabled {
             display: none; }
+      body .all .main > .row .table thead tr th {
+        padding: 0.75rem 0;
+        line-height: 1.5;
+        vertical-align: top;
+        border-top: 0;
+        border-left: 23px solid #fbfaf4; }
+        body .all .main > .row .table thead tr th:first-child {
+          border-left: 0; }
+          body .all .main > .row .table thead tr th:first-child h3 {
+            margin: 0; }
+        body .all .main > .row .table thead tr th.is-currency {
+          text-align: right; }
+      body .all .main > .row .table tbody .neos-empty-contentcollection-overlay {
+        display: table-cell; }
+      body .all .main > .row .table tbody tr:first-child th {
+        border-top: 4px solid black; }
+      body .all .main > .row .table tbody tr:first-child td {
+        border-top: 4px solid #ba1541; }
+      body .all .main > .row .table tbody tr th, body .all .main > .row .table tbody tr td {
+        padding: 0.75rem 0;
+        border-right: 2px solid white;
+        line-height: 1.5;
+        vertical-align: top;
+        border-top: 0;
+        background-repeat: repeat-x;
+        background-position: bottom left;
+        min-width: 30px; }
+        @media (min-width: 768px) {
+          body .all .main > .row .table tbody tr th.nowrap, body .all .main > .row .table tbody tr td.nowrap {
+            white-space: nowrap; } }
+        body .all .main > .row .table tbody tr th.is-currency, body .all .main > .row .table tbody tr td.is-currency {
+          text-align: right;
+          white-space: nowrap; }
+        body .all .main > .row .table tbody tr th.col-percent-auto, body .all .main > .row .table tbody tr td.col-percent-auto {
+          width: auto;
+          flex: 0 0 0; }
+        body .all .main > .row .table tbody tr th.col-percent-20, body .all .main > .row .table tbody tr td.col-percent-20 {
+          width: 20%;
+          flex: 0 0 20%; }
+        body .all .main > .row .table tbody tr th.col-percent-25, body .all .main > .row .table tbody tr td.col-percent-25 {
+          width: 25%;
+          flex: 0 0 25%; }
+        body .all .main > .row .table tbody tr th.col-percent-33, body .all .main > .row .table tbody tr td.col-percent-33 {
+          width: 33.33%;
+          flex: 0 0 33.33%; }
+        body .all .main > .row .table tbody tr th.col-percent-40, body .all .main > .row .table tbody tr td.col-percent-40 {
+          width: 40%;
+          flex: 0 0 40%; }
+        body .all .main > .row .table tbody tr th.col-percent-50, body .all .main > .row .table tbody tr td.col-percent-50 {
+          width: 50%;
+          flex: 0 0 50%; }
+        body .all .main > .row .table tbody tr th.col-percent-66, body .all .main > .row .table tbody tr td.col-percent-66 {
+          width: 66.66%;
+          flex: 0 0 66.66%; }
+        body .all .main > .row .table tbody tr th.col-percent-60, body .all .main > .row .table tbody tr td.col-percent-60 {
+          width: 60%;
+          flex: 0 0 60%; }
+        body .all .main > .row .table tbody tr th.col-percent-75, body .all .main > .row .table tbody tr td.col-percent-75 {
+          width: 75%;
+          flex: 0 0 75%; }
+        body .all .main > .row .table tbody tr th.col-percent-80, body .all .main > .row .table tbody tr td.col-percent-80 {
+          width: 80%;
+          flex: 0 0 80%; }
+      body .all .main > .row .table tbody tr th {
+        width: 40%;
+        background-image: url("../Images/table-cell-dottedline.png"); }
+      body .all .main > .row .table tbody tr td {
+        background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
+        border-left: 23px solid #fbfaf4; }
+      body .all .main > .row .table.first-col-hidden-1 tbody tr > td:first-child {
+        border-left: 0; }
       body .all .main > .row .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
         width: 100%;
         font-size: 1.188rem; }
@@ -7401,6 +7422,35 @@ body {
         width: 100%; }
       body .all .main > .row .phlu-corporate-textwithimage ul {
         display: inline-block; }
+      body .all .main > .row .content-link-wrapper {
+        display: block;
+        width: 100%; }
+        body .all .main > .row .content-link-wrapper a {
+          display: inline-flex;
+          text-overflow: ellipsis; }
+          @media (max-width: 767px) {
+            body .all .main > .row .content-link-wrapper a {
+              width: 100% !important; } }
+          body .all .main > .row .content-link-wrapper a span:first-child {
+            margin-left: 10px;
+            width: auto;
+            align-self: flex-start; }
+            @media (max-width: 991px) {
+              body .all .main > .row .content-link-wrapper a span:first-child {
+                width: 75% !important; } }
+          body .all .main > .row .content-link-wrapper a span:last-child {
+            margin-left: 10px;
+            width: auto;
+            align-self: flex-start;
+            text-overflow: ellipsis;
+            color: #685f56; }
+            @media (max-width: 991px) {
+              body .all .main > .row .content-link-wrapper a span:last-child {
+                width: 15% !important;
+                min-width: 150px !important; } }
+            @media (min-width: 1280px) {
+              body .all .main > .row .content-link-wrapper a span:last-child {
+                overflow: visible; } }
       body .all .main > .row .content-link-email {
         font-size: 1.125rem;
         color: #9f632a;
@@ -7447,6 +7497,26 @@ body {
         body .all .main > .row .content-link-portrait::before {
           font-family: FontAwesome;
           content: "\f007 \2000"; }
+      body .all .main > .row .content-link-default-file {
+        background-image: inherit;
+        font-size: 1.125rem;
+        color: #9f632a;
+        background-repeat: repeat-x;
+        background-position: bottom;
+        padding-bottom: 4px; }
+        body .all .main > .row .content-link-default-file::before {
+          font-family: FontAwesome;
+          content: "\f016 \2000"; }
+      body .all .main > .row .content-link-jpeg-file {
+        background-image: inherit;
+        font-size: 1.125rem;
+        color: #9f632a;
+        background-repeat: repeat-x;
+        background-position: bottom;
+        padding-bottom: 4px; }
+        body .all .main > .row .content-link-jpeg-file::before {
+          font-family: FontAwesome;
+          content: "\f1c5 \2000"; }
       body .all .main > .row .content-link-pdf-file {
         background-image: inherit;
         font-size: 1.125rem;
@@ -7457,6 +7527,16 @@ body {
         body .all .main > .row .content-link-pdf-file::before {
           font-family: FontAwesome;
           content: "\f1c1 \2000"; }
+      body .all .main > .row .content-link-excel-file {
+        background-image: inherit;
+        font-size: 1.125rem;
+        color: #9f632a;
+        background-repeat: repeat-x;
+        background-position: bottom;
+        padding-bottom: 4px; }
+        body .all .main > .row .content-link-excel-file::before {
+          font-family: FontAwesome;
+          content: "\f1c3 \2000"; }
       body .all .main > .row .content-link-word-file {
         background-image: inherit;
         font-size: 1.125rem;
@@ -7492,6 +7572,7 @@ body {
         body .all .main > .row .rcrumbs-wrapper .breadcrumb {
           width: 10000px; }
           body .all .main > .row .rcrumbs-wrapper .breadcrumb .expander {
+            white-space: normal;
             width: auto;
             height: 35px;
             background-image: url(../Images/breadcrumb_expander.png);
@@ -7505,6 +7586,8 @@ body {
             width: auto;
             padding: 0;
             margin: 0; }
+          body .all .main > .row .rcrumbs-wrapper .breadcrumb::after {
+            display: none; }
       body .all .main > .row .breadcrumb-title {
         width: 13%;
         display: block;

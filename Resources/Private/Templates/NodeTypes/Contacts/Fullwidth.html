@@ -3,44 +3,54 @@
 {namespace media=TYPO3\Media\ViewHelpers}
 {namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
 
-<div class="row sephiabg contactperson" id="kontakt">
-    <div class="col-xs-12">
-        <h2>Kontakt</h2>
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-8">
-                <div class="contactperson-role">
-                    {neos:contentElement.editable(property: 'function', tag: 'span')}
-                </div>
-                <address>
-                    {neos:contentElement.editable(property: 'firstname', tag: 'span')} {neos:contentElement.editable(property: 'lastname', tag: 'span')}<br>
-                    {neos:contentElement.editable(property: 'street', tag: 'span')}<br>
-                    <f:if condition="{node.properties.street2} != ''">{neos:contentElement.editable(property: 'street2', tag: 'span')}<br></f:if>
-                    {neos:contentElement.editable(property: 'zip', tag: 'span')} {neos:contentElement.editable(property: 'city', tag: 'span')}
-                </address>
-                <address>
+
+<f:if condition="{isHidden}">
+    <f:then>
+        <span></span>
+    </f:then>
+    <f:else>
+
+        <div class="row sephiabg contactperson" id="kontakt">
+            <div class="col-xs-12">
+                <h2>Kontakt</h2>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-8">
+                        <div class="contactperson-role">
+                            {node.properties.function}
+                        </div>
+                        <address>
+                            {node.properties.firstname} {node.properties.lastname}<br>
+                            {node.properties.street}<br>
+                            <f:if condition="{node.properties.street2} != ''">{node.properties.street2}<br></f:if>
+                            {node.properties.zip} {node.properties.city}
+                        </address>
+                        <address>
                     <span>
                         <i class="fa fa-phone" aria-hidden="true"></i>
                     </span>
-                    {neos:contentElement.editable(property: 'phone', tag: 'span')}<br>
-                    <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{neos:contentElement.editable(property: 'email', tag: 'span')}</a><br>
-                    <portrait:link node="{node}">Portrait</portrait:link>
-                </address>
-            </div>
-            <div class="col-xs-12 col-sm-6 flexfirst col-md-4">
+                            {node.properties.phone}<br>
+                            <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{node.properties.email}</a><br>
+                            <portrait:link node="{node}">Portrait</portrait:link>
+                        </address>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 flexfirst col-md-4">
 
-                <f:if condition="{node.properties.image}">
-                    <f:then>
                         <f:if condition="{node.properties.image}">
-                                <media:image class="img-fluid" asset="{node.properties.image}" alt="{node.properties.firstname} {node.properties.lastname}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
+                            <f:then>
+                                <f:if condition="{node.properties.image}">
+                                    <media:image class="img-fluid" asset="{node.properties.image}" alt="{node.properties.firstname} {node.properties.lastname}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
+                                </f:if>
+                            </f:then>
+                            <f:else>
+                                <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image" alt="Dummy image" class="img-fluid" style="height:330px" />
+                            </f:else>
                         </f:if>
-                    </f:then>
-                    <f:else>
-                      <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image" alt="Dummy image" class="img-fluid" style="height:330px" />
-                    </f:else>
-                </f:if>
 
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </f:else>
+</f:if>

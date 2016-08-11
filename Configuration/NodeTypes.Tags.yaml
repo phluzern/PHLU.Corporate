@@ -3,8 +3,16 @@
   superTypes:
     'PHLU.Neos.NodeTypes:Tag': TRUE
 
-
-
+  properties:
+    icon:
+      ui:
+        inspector:
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Icon auswählen'
+            dataSourceIdentifier: 'phlu-corporate-tags-icon'
+            allowEmpty: TRUE
+            multiple: FALSE
 
 'PHLU.Corporate:Tags.Menu':
   superTypes:

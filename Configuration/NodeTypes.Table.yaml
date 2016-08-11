@@ -12,18 +12,95 @@
         table:
           label: 'Tabelle'
           position: 20
+        firstcol:
+          label: 'Erste Spalte'
+          position: 30
   properties:
     cols:
       type: integer
       defaultValue: 2
       ui:
         reloadIfChanged: TRUE
-        label: 'Spalten'
+        label: 'Anzahl Spalten'
         inspector:
+          position: 9
           group: 'table'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
+              2:
+                label: '2'
+              3:
+                label: '3'
+              4:
+                label: '4'
+              5:
+                label: '5'
+              6:
+                label: '6'
+              7:
+                label: '7'
+              8:
+                label: '8'
+              9:
+                label: '9'
+              10:
+                label: '10'
+    firstcolwidth:
+      type: string
+      defaultValue: 'auto'
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Breite'
+        inspector:
+          position: 9
+          group: 'firstcol'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              auto:
+                label: 'Automatisch'
+              20:
+                label: '20%'
+              25:
+                label: '25%'
+              33:
+                label: '33%'
+              40:
+                label: '40%'
+              50:
+                label: '50%'
+              60:
+                label: '60%'
+              66:
+                label: '66%'
+              75:
+                label: '75%'
+              80:
+                label: '80%'
+    firstcolhidden:
+      type: boolean
+      defaultValue: false
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Ausblenden'
+        inspector:
+          position: 9
+          group: 'firstcol'
+    whitespaces:
+      type: array
+      defaultValue: []
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Spalten nicht umbrechen'
+        inspector:
+          group: 'table'
+          position: 100
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              1:
+                label: '1'
               2:
                 label: '2'
               3:
