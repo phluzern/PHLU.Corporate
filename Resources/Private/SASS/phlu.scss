@@ -2172,7 +2172,6 @@ body {
     .main {
       background-color: $beigelight;
       flex-grow: 1;
-      //max-width: inherit;
 
       .onepage {
         img {
@@ -2575,6 +2574,9 @@ body {
             padding-bottom: 40px;
           }
         }
+      }
+      &.col-xl-8, &.col-xl-10 {
+        max-width: inherit;
       }
     }
     //
