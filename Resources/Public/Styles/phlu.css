@@ -7690,7 +7690,8 @@ body {
             margin-bottom: 35px; } }
       body .all .main > .row.sephiabg {
         background-color: #e9e0d8;
-        margin-top: 38px; }
+        margin-top: 38px;
+        margin-bottom: 1px; }
         @media (min-width: 992px) {
           body .all .main > .row.sephiabg h2 {
             margin: 45px 0 32px; } }
@@ -7700,6 +7701,8 @@ body {
         @media (min-width: 992px) {
           body .all .main > .row.sephiabg {
             margin-top: 90px; } }
+        body .all .main > .row.sephiabg address a {
+          background-image: inherit; }
       body .all .main > .row.contactperson {
         color: #5c5c5c; }
         @media (min-width: 544px) {

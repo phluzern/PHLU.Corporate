@@ -2503,6 +2503,7 @@ body {
         &.sephiabg {
           background-color: $sephia;
           margin-top: 38px;
+          margin-bottom: 1px;
           h2 {
             @include media-breakpoint-up("lg") {
               margin: 45px 0 32px;
@@ -2513,6 +2514,11 @@ body {
           }
           @include media-breakpoint-up("lg") {
             margin-top: 90px;
+          }
+          address {
+            a {
+              background-image: inherit;
+            }
           }
         }
         &.contactperson {
