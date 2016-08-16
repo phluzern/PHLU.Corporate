@@ -6263,7 +6263,7 @@ body {
   color: #5c5c5c; }
   @media (max-width: 991px) {
     body {
-      margin-bottom: 681px; } }
+      margin-bottom: 641px; } }
   @media (min-width: 1600px) {
     body {
       background-color: #efefef; } }
@@ -7782,7 +7782,7 @@ body {
       */ }
       @media (max-width: 991px) {
         body .all .footer {
-          height: 681px; } }
+          height: 641px; } }
       @media (min-width: 1280px) {
         body .all .footer {
           padding-left: 28px; } }
@@ -7872,12 +7872,12 @@ body {
         right: 0;
         width: 100%;
         text-align: right; }
-        @media (min-width: 1280px) {
-          body .all .footer .footerAddressLogoDesktop {
-            right: 50px; } }
         @media (max-width: 991px) {
           body .all .footer .footerAddressLogoDesktop {
             display: none; } }
+        body .all .footer .footerAddressLogoDesktop > div > div {
+          flex-grow: 1;
+          max-width: inherit; }
         body .all .footer .footerAddressLogoDesktop > div > div > div {
           display: inline-table;
           vertical-align: top;
