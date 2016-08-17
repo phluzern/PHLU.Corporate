@@ -352,7 +352,7 @@ body.neos-backend {
 body {
   margin-bottom: 420px;
   @include media-breakpoint-down("md") {
-    margin-bottom: 681px;
+    margin-bottom: 641px;
   }
   @include media-breakpoint-up("xxxl") {
     background-color: #efefef;
@@ -995,7 +995,7 @@ body {
             @include gradient-x($start-color: rgba(0, 0, 0, .0), $end-color: rgba(0, 0, 0, .0));
           }
 
-          
+
           // Hover/focus state
           @include hover-focus {
             color: $carousel-control-color;
@@ -1555,12 +1555,13 @@ body {
             margin-right: 10px;
           }
         }
+
         &.function, &.working-priorities, &.consultation-priorities, &.achievements, &.talks, &.links {
           ul {
             margin-bottom: inherit;
           }
         }
-        &.education, &.cv, &.professional-activities {
+        &.education, &.cv, &.professional-activities, &.consultation-priorities {
           ul {
             list-style-type: none;
             padding-left: 0;
@@ -1570,8 +1571,9 @@ body {
                 display: table-cell;
               }
               .dates {
-                width: 105px;
+                width: 115px;
               }
+              margin-bottom:10px;
             }
           }
         }
@@ -1706,7 +1708,7 @@ body {
             tbody {
               tr {
                 td {
-                  background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
+                  //background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
                   .result-preview {
                     margin-left: 30px;
                     margin-bottom: 31px;
@@ -1949,17 +1951,14 @@ body {
           display: table-cell;
         }
         tr:first-child {
-          th {
+          th, td {
             border-top: 4px solid black;
-          }
-          td {
-            border-top: 4px solid $raspberryRed;
           }
         }
         tr {
           th, td {
             padding: 0.75rem 0;
-            border-right: 2px solid white;
+            //border-right: 2px solid white;
             line-height: 1.5;
             vertical-align: top;
             border-top: 0;
@@ -2022,11 +2021,13 @@ body {
           }
           th {
             width: 40%;
-            background-image: url("../Images/table-cell-dottedline.png");
+            //background-image: url("../Images/table-cell-dottedline.png");
+            border-bottom: 2px solid $hr-border-color;
 
           }
           td {
-            background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
+            //background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
+            border-bottom: 2px solid $hr-border-color;
             border-left: 23px solid $beigelight;
           }
         }
@@ -2173,7 +2174,6 @@ body {
     .main {
       background-color: $beigelight;
       flex-grow: 1;
-      //max-width: inherit;
 
       .onepage {
         img {
@@ -2505,6 +2505,7 @@ body {
         &.sephiabg {
           background-color: $sephia;
           margin-top: 38px;
+          margin-bottom: 1px;
           h2 {
             @include media-breakpoint-up("lg") {
               margin: 45px 0 32px;
@@ -2515,6 +2516,11 @@ body {
           }
           @include media-breakpoint-up("lg") {
             margin-top: 90px;
+          }
+          address {
+            a {
+              background-image: inherit;
+            }
           }
         }
         &.contactperson {
@@ -2577,6 +2583,9 @@ body {
           }
         }
       }
+      &.col-xl-8, &.col-xl-10 {
+        max-width: inherit;
+      }
     }
     //
     // breadcrumb bottom
@@ -2621,7 +2630,7 @@ body {
       width: 100%;
       height: 420px;
       @include media-breakpoint-down("md") {
-        height: 681px;
+        height: 641px;
       }
       background-color: $darkgrey;
       padding-top: 20px;
@@ -2744,13 +2753,14 @@ body {
         position: absolute;
         bottom: 14px;
         right: 0;
-        @include media-breakpoint-up("xl") {
-          right: 50px;
-        }
         width: 100%;
         text-align: right;
         @include media-breakpoint-down("md") {
           display: none;
+        }
+        > div > div {
+          flex-grow:1;
+          max-width: inherit;
         }
         > div > div > div {
           display: inline-table;
