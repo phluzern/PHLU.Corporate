@@ -6263,7 +6263,7 @@ body {
   color: #5c5c5c; }
   @media (max-width: 991px) {
     body {
-      margin-bottom: 681px; } }
+      margin-bottom: 641px; } }
   @media (min-width: 1600px) {
     body {
       background-color: #efefef; } }
@@ -7132,22 +7132,20 @@ body {
         overflow-x: inherit; }
         body .all .further-education-list .results-table .table-responsive .table .oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table .oi-caret-right {
           font-size: 12px; }
-        body .all .further-education-list .results-table .table-responsive .table tbody tr td {
-          background-image: url("../Images/table-cell-dottedline-raspberry-red.png"); }
-          body .all .further-education-list .results-table .table-responsive .table tbody tr td .result-preview {
-            margin-left: 30px;
-            margin-bottom: 31px; }
-            body .all .further-education-list .results-table .table-responsive .table tbody tr td .result-preview p {
-              font-size: 1rem; }
-            body .all .further-education-list .results-table .table-responsive .table tbody tr td .result-preview .btn {
-              color: white;
-              background-color: #55696d; }
-          body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child {
-            border-left: 0; }
-            body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span {
-              width: 30px; }
-          body .all .further-education-list .results-table .table-responsive .table tbody tr td:last-child {
-            border-right: 0; }
+        body .all .further-education-list .results-table .table-responsive .table tbody tr td .result-preview {
+          margin-left: 30px;
+          margin-bottom: 31px; }
+          body .all .further-education-list .results-table .table-responsive .table tbody tr td .result-preview p {
+            font-size: 1rem; }
+          body .all .further-education-list .results-table .table-responsive .table tbody tr td .result-preview .btn {
+            color: white;
+            background-color: #55696d; }
+        body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child {
+          border-left: 0; }
+          body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span {
+            width: 30px; }
+        body .all .further-education-list .results-table .table-responsive .table tbody tr td:last-child {
+          border-right: 0; }
         body .all .further-education-list .results-table .table-responsive .table tbody tr.open td {
           background-image: none; }
     body .all .further-education-detail .phlu-team-members {
@@ -7228,13 +7226,10 @@ body {
         text-align: right; }
     body .all .table tbody .neos-empty-contentcollection-overlay {
       display: table-cell; }
-    body .all .table tbody tr:first-child th {
+    body .all .table tbody tr:first-child th, body .all .table tbody tr:first-child td {
       border-top: 4px solid black; }
-    body .all .table tbody tr:first-child td {
-      border-top: 4px solid #ba1541; }
     body .all .table tbody tr th, body .all .table tbody tr td {
       padding: 0.75rem 0;
-      border-right: 2px solid white;
       line-height: 1.5;
       vertical-align: top;
       border-top: 0;
@@ -7279,9 +7274,9 @@ body {
         flex: 0 0 80%; }
     body .all .table tbody tr th {
       width: 40%;
-      background-image: url("../Images/table-cell-dottedline.png"); }
+      border-bottom: 2px solid #e5e5e5; }
     body .all .table tbody tr td {
-      background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
+      border-bottom: 2px solid #e5e5e5;
       border-left: 23px solid #fbfaf4; }
     body .all .table.first-col-hidden-1 tbody tr > td:first-child {
       border-left: 0; }
@@ -7695,7 +7690,8 @@ body {
             margin-bottom: 35px; } }
       body .all .main > .row.sephiabg {
         background-color: #e9e0d8;
-        margin-top: 38px; }
+        margin-top: 38px;
+        margin-bottom: 1px; }
         @media (min-width: 992px) {
           body .all .main > .row.sephiabg h2 {
             margin: 45px 0 32px; } }
@@ -7705,6 +7701,8 @@ body {
         @media (min-width: 992px) {
           body .all .main > .row.sephiabg {
             margin-top: 90px; } }
+        body .all .main > .row.sephiabg address a {
+          background-image: inherit; }
       body .all .main > .row.contactperson {
         color: #5c5c5c; }
         @media (min-width: 544px) {
@@ -7744,6 +7742,8 @@ body {
       body .all .main > .row .phlu-corporate-section:last-child hr {
         border-top: 0;
         padding-bottom: 40px; }
+      body .all .main.col-xl-8, body .all .main.col-xl-10 {
+        max-width: inherit; }
     body .all .breadcrumb-bottom {
       position: relative;
       z-index: 99; }
@@ -7782,7 +7782,7 @@ body {
       */ }
       @media (max-width: 991px) {
         body .all .footer {
-          height: 681px; } }
+          height: 641px; } }
       @media (min-width: 1280px) {
         body .all .footer {
           padding-left: 28px; } }
@@ -7872,12 +7872,12 @@ body {
         right: 0;
         width: 100%;
         text-align: right; }
-        @media (min-width: 1280px) {
-          body .all .footer .footerAddressLogoDesktop {
-            right: 50px; } }
         @media (max-width: 991px) {
           body .all .footer .footerAddressLogoDesktop {
             display: none; } }
+        body .all .footer .footerAddressLogoDesktop > div > div {
+          flex-grow: 1;
+          max-width: inherit; }
         body .all .footer .footerAddressLogoDesktop > div > div > div {
           display: inline-table;
           vertical-align: top;
