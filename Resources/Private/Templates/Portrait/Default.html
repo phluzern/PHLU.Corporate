@@ -15,7 +15,8 @@
             <div class="col-xs-12 col-sm-6 col-md-3">
 
                 <f:if condition="{contact.image}">
-                    <media:image class="img-fluid" asset="{contact.image}" alt="{contact.name.fullname}"  width="400" maximumWidth="300" height="400" maximumHeight="300" />
+                    <media:image class="img-fluid" asset="{contact.image}" alt="{contact.name.fullname}" width="400"
+                                 maximumWidth="300" height="400" maximumHeight="300"/>
                 </f:if>
 
             </div>
@@ -29,7 +30,7 @@
                     <span>
                         <i class="fa fa-phone" aria-hidden="true"></i>
                     </span>
-                    {contact.phone}  <br>
+                    {contact.phone} <br>
                     <a class="content-link-email-contact-person"
                        href="mailto:{contact.email}">{contact.email}</a><br>
                 </address>
@@ -38,145 +39,80 @@
         </div>
 
         <hr>
-        <div class="row function">
-            <div class="col-xs-12">
+        <f:if condition="{contact.functions} != ''">
+            <div class="row function">
+                <div class="col-xs-12">
 
-                <h2>Funktion/en</h2>
+                    <h2>Funktion/en</h2>
 
-                <ul>
-                    <li>Leiterin Berufspraxis Ausbildung Primar</li>
-                    <li>Fachkoordinatorin Mentorat Ausbildung Primar</li>
-                    <li>Fachkoordinatorin Bewegung und Sport Ausbildung Primar</li>
-                    <li>Dozentin Fachdidaktik Bewegung und Sport Ausbildung Primar</li>
-                    <li>Dozentin Mentorat Ausbildung Primar</li>
-                </ul>
-                <hr>
+                    {contact.functions -> f:format.raw()}
+
+                    <hr>
+                </div>
+
             </div>
+        </f:if>
+        <f:if condition="{contact.honorific} != ''">
+            <div class="row cv">
+                <div class="col-xs-12">
 
-        </div>
-        <div class="row cv">
-            <div class="col-xs-12">
+                    <h2>Lebenslauf</h2>
 
-                <h2>Lebenslauf</h2>
+                    {contact.honorific -> f:format.raw()}
+                    <hr>
+                </div>
+            </div>
+        </f:if>
 
-                <ul>
-                    <li>
-                        <div class="dates">
-                            1976 - 1981
-                        </div>
-                        <div>
-                            Primarleherausbildung Kant. Lehrerseminar Luzern
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dates">1981 - 1985</div>
-                        <div> Turn- und Sportlehrerausbildung II ETH Zürich</div>
-                    </li>
-                    <li>
-                        <div class="dates">1983 - 1987</div>
-                        <div> Fachlehrerausbildung Geografie Universität Zürich</div>
-                    </li>
-                    <li>
-                        <div class="dates">2000 - 2002</div>
-                        <div>
-                            Nachdiplomstudium Fachdidaktik Bewegung und Sport Universität Bern
-                        </div>
-                    </li>
-                </ul>
-                <hr>
-            </div>
-        </div>
-        <div class="row education">
-            <div class="col-xs-12">
-                <h2>Ausbildung</h2>
-                <ul>
-                    <li>
-                        <div class="dates">
-                            1976 - 1981
-                        </div>
-                        <div>
-                            Primarleherausbildung Kant. Lehrerseminar Luzern
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dates">1981 - 1985</div>
-                        <div> Turn- und Sportlehrerausbildung II ETH Zürich</div>
-                    </li>
-                    <li>
-                        <div class="dates">1983 - 1987</div>
-                        <div> Fachlehrerausbildung Geografie Universität Zürich</div>
-                    </li>
-                    <li>
-                        <div class="dates">2000 - 2002</div>
-                        <div>
-                            Nachdiplomstudium Fachdidaktik Bewegung und Sport Universität Bern
-                        </div>
-                    </li>
-                </ul>
-                <hr>
-            </div>
-        </div>
-        <div class="row working-priorities">
-            <div class="col-xs-12">
-                <h2>Arbeitsschwerpunkte</h2>
-                <ul>
-                    <li>Fachdidaktik Bewegung und Sport</li>
-                    <li>Mentorat und Praxisbegleitung</li>
-                </ul>
-                <hr>
-            </div>
-        </div>
-        <div class="row consultation-priorities">
-            <div class="col-xs-12">
+        <f:if condition="{contact.education} != ''">
+            <div class="row education">
+                <div class="col-xs-12">
 
-                <h2>Beratungsschwerpunkte</h2>
+                    <h2>Ausbildung</h2>
 
-                <ul>
-                    <li>Fachdidaktik Bewegung und Sport</li>
-                    <li>Mentorat und Praxisbegleitung</li>
-                </ul>
-                <hr>
+                    {contact.education -> f:format.raw()}
+                    <hr>
+                </div>
             </div>
-        </div>
-        <div class="row professional-activities">
-            <div class="col-xs-12">
-                <h2>Berufliche Tätigkeiten</h2>
-                <ul>
-                    <li>
-                        <div class="dates">
-                            1984 - 2002
-                        </div>
-                        <div>Sportlehrerin am Kant. Lehrerseminar Luzern
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dates">
-                            2000 - 2004
-                        </div>
-                        <div>
-                            Beauftragte Sport Amt für Volksschulbildung Luzern
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dates">
-                            2003 - 2007
-                        </div>
-                        <div>
-                            Fachbeauftragte Bewegung und Sport PHZ Luzern
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dates">
-                            seit 2003
-                        </div>
-                        <div>
-                            Dozentin Bewegung und Sport PHZ Luzern
-                        </div>
-                    </li>
-                </ul>
-                <hr>
+        </f:if>
+
+
+        <f:if condition="{contact.activities} != ''">
+            <div class="row working-priorities">
+                <div class="col-xs-12">
+
+                    <h2>Arbeitsschwerpunkte</h2>
+
+                    {contact.activities -> f:format.raw()}
+                    <hr>
+                </div>
             </div>
-        </div>
+        </f:if>
+
+        <f:if condition="{contact.consulting} != ''">
+            <div class="row consultation-priorities">
+                <div class="col-xs-12">
+
+                    <h2>Beratungsschwerpunkte</h2>
+
+                    {contact.consulting -> f:format.raw()}
+                    <hr>
+                </div>
+            </div>
+        </f:if>
+
+        <f:if condition="{contact.expertise} != ''">
+            <div class="row consultation-priorities">
+                <div class="col-xs-12">
+
+                    <h2>Berufliche Tätigkeiten</h2>
+
+                    {contact.expertise -> f:format.raw()}
+                    <hr>
+                </div>
+            </div>
+        </f:if>
+
 
         <div class="row publications-list">
             <div class="col-xs-12">
@@ -288,45 +224,19 @@
                 <hr>
             </div>
         </div>
-        <div class="row achievements">
-            <div class="col-xs-12">
 
-                <h2>Bedeutende Leistungen</h2>
 
-                <ul>
-                    <li>DOBS (Dozierende Bewegung und Sport an Pädagogischen Hochschulen)</li>
-                    <li>SVSS (Schweizerischer Verband für Sport in der Schule)</li>
-                    <li>LVSS (Luzerner Verband für Sport in der Schule)</li>
-                </ul>
-                <hr>
+        <f:if condition="{contact.links} != ''">
+            <div class="row links">
+                <div class="col-xs-12">
+
+                    <h2>Links / pers. Homepage</h2>
+
+                    {contact.links -> f:format.raw()}
+                    <hr>
+                </div>
             </div>
-        </div>
-        <div class="row talks">
-            <div class="col-xs-12">
-
-                <h2>Vortragstätigkeit</h2>
-
-                <ul>
-                    <li>DOBS (Dozierende Bewegung und Sport an Pädagogischen Hochschulen)</li>
-                    <li>SVSS (Schweizerischer Verband für Sport in der Schule)</li>
-                    <li>LVSS (Luzerner Verband für Sport in der Schule)</li>
-                </ul>
-                <hr>
-            </div>
-        </div>
-        <div class="row links">
-            <div class="col-xs-12">
-
-                <h2>Links / pers. Homepage</h2>
-
-                <ul>
-                    <li><a class="content-link-external" href="#">
-                        pers. Homepage
-                    </a></li>
-                </ul>
-                <hr>
-            </div>
-        </div>
+        </f:if>
 
 
     </div>
