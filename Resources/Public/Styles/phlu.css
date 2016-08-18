@@ -7104,7 +7104,7 @@ body {
         body .all .phlu-dozpage .row.education ul li div, body .all .phlu-dozpage .row.cv ul li div, body .all .phlu-dozpage .row.professional-activities ul li div, body .all .phlu-dozpage .row.consultation-priorities ul li div {
           display: table-cell; }
         body .all .phlu-dozpage .row.education ul li .dates, body .all .phlu-dozpage .row.cv ul li .dates, body .all .phlu-dozpage .row.professional-activities ul li .dates, body .all .phlu-dozpage .row.consultation-priorities ul li .dates {
-          width: 115px; }
+          width: 120px; }
     body .all .phlu-dozpage .row.publications-list .phlu-accordion, body .all .phlu-dozpage .row.science-projects .phlu-accordion {
       margin: 0; }
     body .all .phlu-dozpage .row:last-child {

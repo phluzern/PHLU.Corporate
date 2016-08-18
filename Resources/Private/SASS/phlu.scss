@@ -1626,7 +1626,7 @@ body {
             margin-bottom: inherit;
           }
         }
-        &.education, &.cv, &.professional-activities {
+        &.education, &.cv, &.professional-activities, &.consultation-priorities {
           ul {
             list-style-type: none;
             padding-left: 0;
@@ -1636,8 +1636,9 @@ body {
                 display: table-cell;
               }
               .dates {
-                width: 105px;
+                width: 120px;
               }
+              margin-bottom:10px;
             }
           }
         }
