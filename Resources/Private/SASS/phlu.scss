@@ -2341,17 +2341,8 @@ body {
           border: 0;
           border-top: $hr-border-width solid $hr-border-color;
         }
-
         .table-phlu-saw {
-
           margin-bottom: $form-group-margin-bottom;
-
-          .tablesaw-nav-btn {
-            margin-top: 10px;
-            &.disabled {
-              display: none;
-            }
-          }
         }
 
         .phlu-corporate-content-page-headerdefault {
@@ -2881,6 +2872,88 @@ body {
   }
 
 }
+
+//
+// phlu tablesaw buttons
+//
+.tablesaw-enhanced {
+  .tablesaw-bar {
+    .btn {
+      border: 0;
+      background: none;
+      background-color: $grey6;
+      box-shadow: 0;
+      clear: both;
+      color:white;
+      cursor: pointer;
+      display: block;
+      margin: 0;
+      text-decoration: none;
+      text-shadow: none;
+      width: 100%;
+      background-image: none;
+      -webkit-appearance: none !important;
+      -moz-appearance: none !important;
+      box-sizing: border-box;
+      -webkit-font-smoothing:inherit;
+      border-radius: 0;
+      &.btn-micro {
+        position: absolute;
+        top:0;
+        &.left {
+          right:63px;
+        }
+        &.right {
+          right:10px;
+        }
+      }
+      &.right {
+        &:before {
+          top:15px!important;
+          left:18px!important;
+          border-left: 16px solid white!important;
+          border-top: 10px solid transparent!important;
+          border-bottom: 10px solid transparent!important;
+        }
+      }
+      &.left {
+        &:before {
+          top:15px!important;
+          left:18px!important;
+          border-right: 16px solid white!important;
+          border-top: 10px solid transparent!important;
+          border-bottom: 10px solid transparent!important;
+        }
+      }
+      &:hover {
+        background-color: $grey6;
+      }
+      &:active {
+        background-color: inherit;
+        background-image: none;
+      }
+      &:focus {
+        box-shadow: none!important;
+        background-color: $grey6;
+      }
+    }
+    .tablesaw-advance {
+      a.tablesaw-nav-btn {
+        width: 50px;
+        height: 50px;
+        &.disabled {
+          opacity: 1;
+          filter: alpha(opacity=100);
+          cursor: default;
+          pointer-events: none;
+          background-color: $grey5!important;
+        }
+      }
+    }
+  }
+}
+
+
 
 //
 // phlu tooltips
