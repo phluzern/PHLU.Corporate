@@ -2240,10 +2240,13 @@
                                     <span>Tag/Zeit</span>
                                 </a>
                             </li>
-                            <li class="nav-item clickable  ">
+                            <li class="nav-item clickable">
                                 <a class=" nav-link" data-toggle="pill" href="#themenbereich" role="pill">
                                     <i class="fa fa-map-signs" aria-hidden="true"></i>
-                                    <span>Themenbereich</span>
+                                    <span data-toggle="filterCountTag"
+                                          data-template='<div class="tooltip filterCountTag" role="tooltip"><span class="tooltip-inner"></span><span class="oi oi-media-record"></span></div>'
+                                          data-placement="right" title="" data-offset="26px 0" data-original-title="3"
+                                          data-trigger="manual">Themenbereich</span>
                                 </a>
                             </li>
                         </ul>
@@ -2307,15 +2310,191 @@
                                 </div>
                             </div>
                             <div class="result-panel tab-pane " id="kursstart" role="tabpanel">
+                                <div id="datepicker"></div>
+                            </div>
+                            <div class="result-panel tab-pane " id="tag-zeit" role="tabpanel">
 
+                                <div class="datepicker datepicker-inline tag-zeit">
+                                    <div class="datepicker-days" style="">
+                                        <table class="table-condensed">
+                                            <thead>
+                                            <tr>
+                                                <th class="dow">
+                                                    <span class='hidden-sm-down'>
+                                                        Montag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        Mon
+                                                    </span>
+                                                </th>
+                                                <th class="dow">
+                                                    <span class='hidden-sm-down'>
+                                                        Dienstag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        Die
+                                                    </span>
+                                                </th>
+                                                <th class="dow">
+                                                    <span class='hidden-sm-down'>
+                                                        Mittwoch
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        Mit
+                                                    </span>
+                                                </th>
+                                                <th class="dow">
+                                                    <span class='hidden-sm-down'>
+                                                        Donnerstag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        Don
+                                                    </span>
+                                                </th>
+                                                <th class="dow">
+                                                    <span class='hidden-sm-down'>
+                                                        Freitag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        Fre
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Vormittag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        VM
+                                                    </span>
+                                                </td>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Vormittag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        VM
+                                                    </span>
+                                                </td>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Vormittag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        VM
+                                                    </span>
+                                                </td>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Vormittag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        VM
+                                                    </span>
+                                                </td>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Vormittag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        VM
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Nachmittag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        NM
+                                                    </span>
+                                                </td>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Nachmittag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        NM
+                                                    </span>
+                                                </td>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Nachmittag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        NM
+                                                    </span>
+                                                </td>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Nachmittag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        NM
+                                                    </span>
+                                                </td>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Nachmittag
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        NM
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Abend
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        A
+                                                    </span>
+                                                </td>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Abend
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        A
+                                                    </span>
+                                                </td>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Abend
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        A
+                                                    </span>
+                                                </td>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Abend
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        A
+                                                    </span>
+                                                </td>
+                                                <td class="day">
+                                                    <span class='hidden-sm-down'>
+                                                        Abend
+                                                    </span>
+                                                    <span class='hidden-md-up'>
+                                                        A
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            </tbody>
 
-
-                                <div id="datepicker" data-date="12/03/2012"></div>
-
-
+                                        </table>
+                                    </div>
+                                </div>
 
                             </div>
-                            <div class="result-panel tab-pane " id="tag-zeit" role="tabpanel">sx</div>
                             <div class="result-panel tab-pane " id="themenbereich" role="tabpanel">
                                 <!--<a href="#" class="close-btn">schliessen</a>-->
                                 <div class="table-responsive">
@@ -2503,11 +2682,11 @@
                 <div class="row results-table">
                     <div class="col-xs-12">
                         <h2>Treffer (340)</h2>
-                        <div class="table-responsive">
-                            <table class="table">
+                        <div class="table-responsive table-phlu-saw ">
+                            <table class="table" >
                                 <thead>
                                 <tr>
-                                    <th class="clickable">
+                                    <th class="clickable" >
                                         <a href="#">Angebot</a>
                                     </th>
                                     <th class="clickable">
@@ -2517,7 +2696,7 @@
                                         <a href="#">Status</a>
                                     </th>
                                     <th class="clickable">
-                                        <a href="#">Freie Plätze</a>
+                                        <a href="#">Freie  Plätze</a>
                                     </th>
                                 </tr>
 
@@ -2525,8 +2704,10 @@
                                 <tbody>
                                 <tr class="clickable">
                                     <td>
-                                        <span class="oi oi-caret-right"></span> Zwischen Herkunftsland und Diaspora -
-                                        Sri Lanka/Schweiz
+                                        <span class="oi oi-caret-right"></span>
+                                        <span>
+                                            Zwischen Herkunftsland und Diaspora - Sri Lanka/Schweiz
+                                        </span>
                                     </td>
                                     <td>
                                         Do 15.09.2016
@@ -2535,12 +2716,15 @@
                                         abgesagt
                                     </td>
                                     <td>
-
+                                        xy
                                     </td>
                                 </tr>
                                 <tr class="clickable open">
-                                    <td>
-                                        <span class="oi oi-caret-bottom"></span> Rechtsfragen im Schulalltag
+                                    <td >
+                                        <span class="oi oi-caret-bottom"></span>
+                                        <span>
+                                            Rechtsfragen im Schulalltag
+                                        </span>
                                     </td>
                                     <td>
                                         Do 12.01.2017
@@ -2552,9 +2736,9 @@
                                         5
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="result-preview">
                                     <td colspan="4">
-                                        <div class="result-preview">
+                                        <div class="">
                                             <p>
                                                 Lehrpersonen bewegen sich täglich im Rahmen des Bildungsrechts. Ob
                                                 bewusst
@@ -2573,8 +2757,11 @@
                                 </tr>
                                 <tr class="clickable">
                                     <td>
-                                        <span class="oi oi-caret-right"></span> Methoden und Instrumente des
+                                        <span class="oi oi-caret-right"></span>
+                                        <span>
+                                            Methoden und Instrumente des
                                         Qualitätsmanagements
+                                            </span>
                                     </td>
                                     <td>
                                         Di 01.09.2017
@@ -2584,6 +2771,60 @@
                                     </td>
                                     <td>
                                         18
+                                    </td>
+                                </tr>
+                                <tr class="clickable">
+                                    <td>
+                                        <span class="oi oi-caret-right"></span>
+                                        <span>
+                                            Aufbaukurs: «Gewaltfreie Kommunikation
+                                        nach Marshall B. Rosenberg»
+                                            </span>
+                                    </td>
+                                    <td>
+                                        Di 03.11.2016
+                                    </td>
+                                    <td>
+                                        Durchführung offen
+                                    </td>
+                                    <td>
+                                        1
+                                    </td>
+                                </tr>
+                                <tr class="clickable">
+                                    <td>
+                                        <span class="oi oi-caret-right"></span>
+                                        <span>
+                                            Lösungsorientierte Gesprächsführung -
+                                        Transferkurs
+                                            </span>
+                                    </td>
+                                    <td>
+                                        Di 14.11.2015
+                                    </td>
+                                    <td>
+                                        Durchgeführt<br>
+                                        (Holkurs möglich)
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr class="clickable">
+                                    <td>
+                                        <span class="oi oi-caret-right"></span>
+                                        <span>
+                                            Kleine Schritte statt Heldentaten:
+                                        Zivilcourage kann man lernen
+                                            </span>
+                                    </td>
+                                    <td>
+                                        Di 05.04.2017
+                                    </td>
+                                    <td>
+                                        Wird durchgeführt
+                                    </td>
+                                    <td>
+                                        10
                                     </td>
                                 </tr>
                                 </tbody>
