@@ -590,11 +590,9 @@ body {
         }
       }
       &.datepicker-inline {
-        @include media-breakpoint-down("md") {
           margin: 0 auto;
           width: inherit;
           display: table;
-        }
       }
     }
     //

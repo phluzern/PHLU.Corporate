@@ -6407,11 +6407,10 @@ body {
           line-height: inherit; }
           body .all .datepicker.tag-zeit table tbody tr td span:hover {
             background: inherit; }
-      @media (max-width: 991px) {
-        body .all .datepicker.datepicker-inline {
-          margin: 0 auto;
-          width: inherit;
-          display: table; } }
+      body .all .datepicker.datepicker-inline {
+        margin: 0 auto;
+        width: inherit;
+        display: table; }
     body .all .navbar {
       background-color: white;
       display: none; }

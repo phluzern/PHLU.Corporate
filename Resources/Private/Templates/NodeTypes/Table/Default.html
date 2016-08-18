@@ -4,12 +4,12 @@
 
 <div {attributes -> f:format.raw()}>
 
-    <table class="table first-col-hidden-{firstColHidden}" data-tablesaw-mode="swipe">
+    <table class="table first-col-hidden-{firstColHidden}">
         <thead>
         <tr>
             <f:if condition="{firstColHidden}">
                 <f:else>
-                    <th scope="col" class="{class0} {firstColWithClass} {cell0isCurrencyClass}" data-tablesaw-priority="persist">
+                    <th scope="col" class="{class0} {firstColWithClass} {cell0isCurrencyClass}">
                         {neos:contentElement.editable(property: 'cell0', tag: 'h3')}
                     </th>
                 </f:else>
