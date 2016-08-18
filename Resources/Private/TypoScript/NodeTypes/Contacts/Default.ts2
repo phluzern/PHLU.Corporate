@@ -2,7 +2,11 @@
 prototype(PHLU.Corporate:Contact) < prototype(PHLU.Corporate:Content) {
 
     templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/Fullwidth.html'
-    isHidden = ${q(node).get(0).context.workspaceName == 'live' ? ((String.length(q(node).property('lastname')) > 0 || q(node).property('contact')) && q(node).property('ishidden') == false ? false : true): q(node).property('ishidden')}
+//    isHidden = ${q(node).get(0).context.workspaceName == 'live' ? ((String.length(q(node).property('lastname')) > 0 || q(node).property('contact')) > 0 && q(node).property('ishidden') != true ? false : true): q(node).property('ishidden')}
+
+isHidden = ${q(node).get(0).context.workspaceName == 'live' ? ((String.length(q(node).property('lastname')) > 0 || q(node).property('contact')) > 0 && q(node).property('ishidden') != TRUE ? false : true): q(node).property('ishidden')}
+
+
 
 }
 
@@ -24,6 +28,13 @@ prototype(PHLU.Corporate:Contacts) < prototype(PHLU.Corporate:Content) {
 
         prototype(PHLU.Corporate:Contact)  {
             wrapperNode = ${q(node).closest('[instanceof PHLU.Corporate:Contacts]').get(0)}
+            @cache {
+                mode = 'uncached'
+                context {
+                    1 = 'node'
+                    2 = 'documentNode'
+                }
+            }
         }
 
         prototype(PHLU.Corporate:ContactsGroup)  {

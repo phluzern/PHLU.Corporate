@@ -23,7 +23,7 @@
   properties:
     ishidden:
       type: boolean
-      defaultValue: false
+      defaultValue: 0
       ui:
         reloadIfChanged: TRUE
         label: 'Ausblenden'
