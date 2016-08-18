@@ -16,11 +16,6 @@ $grid-breakpoints: (
         xxxl: 1600px,
 );
 
-// phlu nav elements
-$nav-pills-border-radius: 0;
-$nav-link-padding: 6px 23px;
-$component-active-bg: black;
-
 // phlu colors
 $sephia: #e9e0d8;
 $sephialight: #f0e7de;
@@ -73,13 +68,18 @@ $font-size-breadcrumb: 0.875rem;
 $font-size-langnav: 1.125rem;
 $font-size-search-filters: 1.125rem;
 
+// phlu nav elements
+$nav-pills-border-radius: 0;
+$nav-link-padding: 6px 23px;
+$component-active-bg: $grey;
+
 // phlu flowtext formatting
 $line-height-lg: 2;
 $line-height-sm: 1.8;
 $line-height-xs: 1.2;
 
 // phlu carousel elements
-$carousel-control-color: black;
+$carousel-control-color: $grey;
 $carousel-text-shadow: 0;
 $carousel-control-width: 10%;
 
@@ -120,6 +120,7 @@ $input-btn-border-width: 0;
 $input-bg-footer: #ededed;
 $input-padding-y: 0.1875rem; // 3px
 $input-padding-x: 0.3125rem; // 5px
+$input-search-field-big: 50px;
 
 // mixins:
 // phlu content links
@@ -435,7 +436,7 @@ body {
       position: absolute;
       right: 0;
       margin: -23px 25px 0 0;
-      color: black;
+      color: $grey;
       display: block;
     }
     //
@@ -478,18 +479,44 @@ body {
     // phlu datepicker
     //
     .datepicker {
-      font-size: 20px;
+      font-size: $font-size-search-filters;
       table {
+        thead, tbody {
+          tr {
+            th, td {
+              border-radius: 0;
+            }
+          }
+        }
         thead {
           tr {
             th {
               font-weight: normal;
+              &.datepicker-switch {
+                cursor: default;
+                &:hover {
+                  background-color: inherit;
+                }
+              }
             }
           }
         }
         tbody {
           tr {
             td {
+              padding: 8px 51px;
+              @include media-breakpoint-down("xxl") {
+                padding: 8px 46px;
+              }
+              @include media-breakpoint-down("md") {
+                padding: 8px 37px;
+              }
+              @include media-breakpoint-down("sm") {
+                padding: 8px 23px;
+              }
+              @include media-breakpoint-down("xs") {
+                padding: 8px 13px;
+              }
               &.day, &.focused {
                 &:hover {
                   color: $grey6;
@@ -527,9 +554,49 @@ body {
           background-color: $olivegreen;
         }
       }
+      &.tag-zeit {
+        table {
+          tbody {
+            tr {
+              td {
+                @include media-breakpoint-down("xxxl") {
+                  padding: 8px 36px;
+                }
+                @include media-breakpoint-down("xxl") {
+                  padding: 8px 28px;
+                }
+                @include media-breakpoint-down("md") {
+                  padding: 8px 18px;
+                }
+                @include media-breakpoint-down("sm") {
+                  padding: 8px 23px;
+                }
+                @include media-breakpoint-down("xs") {
+                  padding: 8px 13px;
+                }
+                span {
+                  float: inherit;
+                  width: inherit;
+                  display: initial;
+                  margin: inherit;
+                  line-height: inherit;
+                  &:hover {
+                    background: inherit;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &.datepicker-inline {
+        @include media-breakpoint-down("md") {
+          margin: 0 auto;
+          width: inherit;
+          display: table;
+        }
+      }
     }
-
-
     //
     // Navbar top
     //
@@ -994,7 +1061,6 @@ body {
             left: auto;
             @include gradient-x($start-color: rgba(0, 0, 0, .0), $end-color: rgba(0, 0, 0, .0));
           }
-
 
           // Hover/focus state
           @include hover-focus {
@@ -1555,13 +1621,12 @@ body {
             margin-right: 10px;
           }
         }
-
         &.function, &.working-priorities, &.consultation-priorities, &.achievements, &.talks, &.links {
           ul {
             margin-bottom: inherit;
           }
         }
-        &.education, &.cv, &.professional-activities, &.consultation-priorities {
+        &.education, &.cv, &.professional-activities {
           ul {
             list-style-type: none;
             padding-left: 0;
@@ -1571,9 +1636,8 @@ body {
                 display: table-cell;
               }
               .dates {
-                width: 115px;
+                width: 105px;
               }
-              margin-bottom:10px;
             }
           }
         }
@@ -1601,8 +1665,6 @@ body {
         margin-top: 10px;
       }
     }
-
-
     //
     // further education list page
     //
@@ -1610,12 +1672,18 @@ body {
       .course-search-field {
         input {
           border: 1px solid $grey;
+          height: $input-search-field-big;
+        }
+        .fa-search {
+          margin: -33px 25px 0 0;
         }
       }
       .subjectsfilternav {
         .nav-pills {
-          padding-bottom: 3px;
+          padding-bottom: 4px;
           li {
+            margin-top: 4px;
+            margin-right: 4px;
             a.nav-link {
               padding-left: 18px;
               .oi-chevron-bottom, .oi-chevron-top {
@@ -1624,6 +1692,9 @@ body {
               &.active {
                 background-color: $grey6;
               }
+            }
+            &.nav-item {
+              margin-left: 0;
             }
           }
         }
@@ -1709,20 +1780,19 @@ body {
               tr {
                 td {
                   //background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
-                  .result-preview {
-                    margin-left: 30px;
-                    margin-bottom: 31px;
-                    p {
-                      font-size: 1rem;
-                    }
-                    .btn {
-                      color: white;
-                      background-color: $grey6;
-                    }
-                  }
+                  padding-right: 20px;
                   &:first-child {
+                    padding-right: 0;
                     span {
-                      width: 30px;
+                      display: table-cell;
+                      overflow-x: hidden;
+                      &.oi-caret-right, &.oi-caret-bottom {
+                        width: 30px;
+                        @include media-breakpoint-down("xs") {
+                          width: 20px;
+
+                        }
+                      }
                     }
                     border-left: 0;
                   }
@@ -1730,10 +1800,28 @@ body {
                     border-right: 0;
                   }
                 }
-              }
-              tr.open {
-                td {
-                  background-image: none;
+                &.result-preview {
+                  td {
+                    border-bottom: 3px solid $raspberryRed;
+                    div {
+                      margin-left: 30px;
+                      margin-bottom: 31px;
+                      p {
+                        font-size: 1rem;
+                      }
+                      .btn {
+                        color: white;
+                        background-color: $grey6;
+                      }
+                    }
+                  }
+
+                }
+                &.open {
+                  td {
+                    border-top: 3px solid $raspberryRed;
+                    border-bottom: 0;
+                  }
                 }
               }
             }
@@ -1919,12 +2007,10 @@ body {
         }
       }
     }
-
     //
     // phlu-table
     //
     .table {
-
       thead {
         tr {
           th {
@@ -1932,9 +2018,9 @@ body {
             line-height: 1.5;
             vertical-align: top;
             border-top: 0;
-            border-left: 23px solid $beigelight;
+            //border-left: 23px solid $beigelight;
             &:first-child {
-              border-left: 0;
+              //border-left: 0;
               h3 {
                 margin: 0;
               }
@@ -1952,7 +2038,7 @@ body {
         }
         tr:first-child {
           th, td {
-            border-top: 4px solid black;
+            border-top: 4px solid $grey;
           }
         }
         tr {
@@ -2028,7 +2114,7 @@ body {
           td {
             //background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
             border-bottom: 2px solid $hr-border-color;
-            border-left: 23px solid $beigelight;
+            //border-left: 23px solid $beigelight;
           }
         }
       }
@@ -2042,7 +2128,6 @@ body {
       }
 
     }
-
     //
     // news and events flow text version
     .flowtext-phlu-event, .flowtext-phlu-news {
@@ -2270,8 +2355,6 @@ body {
           }
         }
 
-
-
         .phlu-corporate-content-page-headerdefault {
           .phlu-corporate-textplain {
             p {
@@ -2319,7 +2402,7 @@ body {
 
         .content-link-wrapper {
           display: block;
-          width:100%;
+          width: 100%;
           a {
 
             display: inline-flex;
@@ -2328,7 +2411,7 @@ body {
               width: 100% !important;
             }
             span:first-child {
-              margin-left:10px;
+              margin-left: 10px;
               width: auto;
               align-self: flex-start;
               @include media-breakpoint-down("md") {
@@ -2336,7 +2419,7 @@ body {
               }
             }
             span:last-child {
-              margin-left:10px;
+              margin-left: 10px;
               width: auto;
               @include media-breakpoint-down("md") {
                 width: 15% !important;
@@ -2348,7 +2431,7 @@ body {
               @include media-breakpoint-up("xl") {
                 overflow: visible;
               }
-              color:$font-color-level1;
+              color: $font-color-level1;
             }
           }
         }
@@ -2396,6 +2479,9 @@ body {
         .rcrumbs-wrapper {
           width: 100%;
           display: block;
+          @include media-breakpoint-down("lg") {
+            display: none;
+          }
           float: left;
           padding: $breadcrumb-padding-top $breadcrumb-padding-horizontal $breadcrumb-padding-bottom;
           .breadcrumb {
@@ -2492,7 +2578,7 @@ body {
 
         &.bluebg {
           background-color: $lightblue;
-          margin-top: 70px;
+          margin-top: 50px;
           h2 {
             @include media-breakpoint-up("lg") {
               margin: 35px 0 32px;
@@ -2759,7 +2845,7 @@ body {
           display: none;
         }
         > div > div {
-          flex-grow:1;
+          flex-grow: 1;
           max-width: inherit;
         }
         > div > div > div {

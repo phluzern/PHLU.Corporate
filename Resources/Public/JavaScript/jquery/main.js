@@ -166,7 +166,7 @@ $(document).ready(function () {
     $.fn.datepicker.dates['de'] = {
         days:["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"],
         daysShort:["Son","Mon","Die","Mit","Don","Fre","Sam"],
-        daysMin:["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"],
+        daysMin:["<span class='hidden-sm-down'>Sonntag</span><span class='hidden-md-up'>Son</span>","<span class='hidden-sm-down'>Montag</span><span class='hidden-md-up'>Mon</span>","<span class='hidden-sm-down'>Dienstag</span><span class='hidden-md-up'>Die</span>","<span class='hidden-sm-down'>Mittwoch</span><span class='hidden-md-up'>Mit</span>","<span class='hidden-sm-down'>Donnerstag</span><span class='hidden-md-up'>Don</span>","<span class='hidden-sm-down'>Freitag</span><span class='hidden-md-up'>Fre</span>","<span class='hidden-sm-down'>Samstag</span><span class='hidden-md-up'>Sam</span>"],
         months:["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],
         monthsShort:["Jan","Feb","Mär","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"],
         today:"Heute",
@@ -181,10 +181,18 @@ $(document).ready(function () {
 
 
     $('#datepicker').datepicker({
-        format: 'DD.MM.yyyy',
         startDate: '0d',
         language: 'de',
-        maxViewMode: 0,
+        maxViewMode: 0
+    });
+
+    $('#tag-zeit td').click(function() {
+        if($(this).hasClass('active')) {
+            $(this).removeClass('active');
+        }
+        else {
+            $(this).addClass('active');
+        }
     });
 
 });
