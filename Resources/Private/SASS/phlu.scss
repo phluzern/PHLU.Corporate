@@ -2478,10 +2478,6 @@ body {
         //
         // breadcrumb navigation
         //
-        .rcrumbs {
-          height: 20px;
-          overflow: hidden;
-        }
         .rcrumbs-wrapper {
           width: 100%;
           display: block;
@@ -2490,33 +2486,31 @@ body {
           }
           float: left;
           padding: $breadcrumb-padding-top $breadcrumb-padding-horizontal $breadcrumb-padding-bottom;
-          .breadcrumb {
-            width: 10000px;
-
-            .expander {
-              white-space: normal;
-              width: auto;
-              height: 35px;
-              background-image: url(../Images/breadcrumb_expander.png);
-              background-position: -4px 61px;
-              background-size: cover;
-              cursor: pointer;
-              z-index: 9;
-              &.in {
-                background-image: none;
-              }
-
-            }
-            ul {
+          .rcrumbs {
+            height: 20px;
+            overflow: hidden;
+            .breadcrumb {
               width: auto;
               padding: 0;
               margin: 0;
-            }
-            &::after {
-              display: none;
+              .expander {
+                white-space: normal;
+                width: auto;
+                height: 35px;
+                background-image: url(../Images/breadcrumb_expander.png);
+                background-position: -4px 61px;
+                background-size: cover;
+                cursor: pointer;
+                z-index: 9;
+                &.in {
+                  background-image: none;
+                }
+              }
             }
           }
         }
+
+
         .breadcrumb-title {
           width: 13%;
           display: block;

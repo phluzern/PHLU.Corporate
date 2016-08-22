@@ -7678,9 +7678,6 @@ body {
           margin-left: -20px;
           font-family: FontAwesome;
           content: "\f100 \2000"; }
-      body .all .main > .row .rcrumbs {
-        height: 20px;
-        overflow: hidden; }
       body .all .main > .row .rcrumbs-wrapper {
         width: 100%;
         display: block;
@@ -7689,25 +7686,24 @@ body {
         @media (max-width: 1279px) {
           body .all .main > .row .rcrumbs-wrapper {
             display: none; } }
-        body .all .main > .row .rcrumbs-wrapper .breadcrumb {
-          width: 10000px; }
-          body .all .main > .row .rcrumbs-wrapper .breadcrumb .expander {
-            white-space: normal;
-            width: auto;
-            height: 35px;
-            background-image: url(../Images/breadcrumb_expander.png);
-            background-position: -4px 61px;
-            background-size: cover;
-            cursor: pointer;
-            z-index: 9; }
-            body .all .main > .row .rcrumbs-wrapper .breadcrumb .expander.in {
-              background-image: none; }
-          body .all .main > .row .rcrumbs-wrapper .breadcrumb ul {
+        body .all .main > .row .rcrumbs-wrapper .rcrumbs {
+          height: 20px;
+          overflow: hidden; }
+          body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb {
             width: auto;
             padding: 0;
             margin: 0; }
-          body .all .main > .row .rcrumbs-wrapper .breadcrumb::after {
-            display: none; }
+            body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb .expander {
+              white-space: normal;
+              width: auto;
+              height: 35px;
+              background-image: url(../Images/breadcrumb_expander.png);
+              background-position: -4px 61px;
+              background-size: cover;
+              cursor: pointer;
+              z-index: 9; }
+              body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb .expander.in {
+                background-image: none; }
       body .all .main > .row .breadcrumb-title {
         width: 13%;
         display: block;
