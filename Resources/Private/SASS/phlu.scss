@@ -405,6 +405,9 @@ body {
     strong {
       font-weight: 700;
     }
+    i {
+      font-style: normal;
+    }
     a:hover, a:focus {
       text-decoration: none;
     }
@@ -1312,7 +1315,6 @@ body {
       }
       .faecherIco, .oi-media-stop {
         &::before {
-          font-style: normal !important;
           font-family: Icons;
           content: " \e099 \2001";
           position: absolute;
@@ -1393,6 +1395,8 @@ body {
             .phlu-teaser-body {
               i {
                 float: left;
+                height: 1px;
+                width: 43px;
                 &::before {
                   color: $turquoise;
                   font-size: 25px;
@@ -1402,21 +1406,33 @@ body {
                   transform: translateY(-50%);
                 }
                 &.strategieIco {
-                  height: 25px;
-                  width: 43px;
                   &::before {
                     top: -12px;
-                    left: -4px;
-                    margin-left: 0px;
-                    margin-top: 0px;
+                    left: -8px;
                     font-size: 30px;
-
+                  }
+                }
+                &.faecherIco, &.forschungIco, &.themaIco {
+                  &::before {
+                    top: -6px;
+                    left: -4px;
+                  }
+                }
+                &.themaIco {
+                  &::before {
+                    top: -6px;
+                    left: -4px;
                   }
                 }
               }
               h3 {
-                padding-left: 50px;
                 margin: 0;
+                display: table-cell;
+
+                @include media-breakpoint-down("xs") {
+                  display: block;
+                  margin-top: 50px;
+                }
               }
             }
             .phlu-teaser-caret-right {
@@ -2462,9 +2478,11 @@ body {
         //
         // breadcrumb navigation
         //
-        .rcrumbs {
-          height: 20px;
-          overflow: hidden;
+        .breadcrumb-title {
+          width: 13%;
+          display: block;
+          float: left;
+          white-space: nowrap;
         }
         .rcrumbs-wrapper {
           width: 100%;
@@ -2474,67 +2492,52 @@ body {
           }
           float: left;
           padding: $breadcrumb-padding-top $breadcrumb-padding-horizontal $breadcrumb-padding-bottom;
-          .breadcrumb {
-            width: 10000px;
-
-            .expander {
-              white-space: normal;
-              width: auto;
-              height: 35px;
-              background-image: url(../Images/breadcrumb_expander.png);
-              background-position: -4px 61px;
-              background-size: cover;
-              cursor: pointer;
-              z-index: 9;
-              &.in {
-                background-image: none;
+          .rcrumbs {
+            height: 20px;
+            overflow: hidden;
+            .breadcrumb {
+              z-index: 8;
+              list-style-type: none;
+              display: none;
+              @include media-breakpoint-up("xl") {
+                display: block;
               }
-
-            }
-            ul {
               width: auto;
               padding: 0;
-              margin: 0;
-            }
-            &::after {
-              display: none;
-            }
-          }
-        }
-        .breadcrumb-title {
-          width: 13%;
-          display: block;
-          float: left;
-          white-space: nowrap;
-        }
-        .breadcrumb {
-          z-index: 8;
-          list-style-type: none;
-          display: none;
-          @include media-breakpoint-up("xl") {
-            display: block;
-          }
-          font-family: $breadcrumb-font-family;
-          font-weight: $breadcrumb-font-weight;
-          font-size: $font-size-breadcrumb;
-          padding: 0;
-          margin-bottom: $breadcrumb-margin-bottom;
-          li {
-            a {
-              color: $grey3;
-            }
-
-            + li {
-              &::before {
-                font-family: Icons;
-                font-size: 9px;
-                content: " \e02f";
-                margin: 0 14px;
+              font-family: $breadcrumb-font-family;
+              font-weight: $breadcrumb-font-weight;
+              font-size: $font-size-breadcrumb;
+              margin-bottom: $breadcrumb-margin-bottom;
+              li {
+                a {
+                  color: $grey3;
+                }
+                + li {
+                  &::before {
+                    font-family: Icons;
+                    font-size: 9px;
+                    content: " \e02f";
+                    margin: 0 14px;
+                  }
+                }
+                ul {
+                  display: block;
+                  float: right;
+                }
               }
-            }
-            ul {
-              display: block;
-              float: right;
+              .expander {
+                white-space: normal;
+                width: auto;
+                height: 35px;
+                background-image: url(../Images/breadcrumb_expander.png);
+                background-position: -4px 61px;
+                background-size: cover;
+                cursor: pointer;
+                z-index: 9;
+                &.in {
+                  background-image: none;
+                }
+              }
             }
           }
         }
