@@ -2478,6 +2478,12 @@ body {
         //
         // breadcrumb navigation
         //
+        .breadcrumb-title {
+          width: 13%;
+          display: block;
+          float: left;
+          white-space: nowrap;
+        }
         .rcrumbs-wrapper {
           width: 100%;
           display: block;
@@ -2490,9 +2496,35 @@ body {
             height: 20px;
             overflow: hidden;
             .breadcrumb {
+              z-index: 8;
+              list-style-type: none;
+              display: none;
+              @include media-breakpoint-up("xl") {
+                display: block;
+              }
               width: auto;
               padding: 0;
-              margin: 0;
+              font-family: $breadcrumb-font-family;
+              font-weight: $breadcrumb-font-weight;
+              font-size: $font-size-breadcrumb;
+              margin-bottom: $breadcrumb-margin-bottom;
+              li {
+                a {
+                  color: $grey3;
+                }
+                + li {
+                  &::before {
+                    font-family: Icons;
+                    font-size: 9px;
+                    content: " \e02f";
+                    margin: 0 14px;
+                  }
+                }
+                ul {
+                  display: block;
+                  float: right;
+                }
+              }
               .expander {
                 white-space: normal;
                 width: auto;
@@ -2506,45 +2538,6 @@ body {
                   background-image: none;
                 }
               }
-            }
-          }
-        }
-
-
-        .breadcrumb-title {
-          width: 13%;
-          display: block;
-          float: left;
-          white-space: nowrap;
-        }
-        .breadcrumb {
-          z-index: 8;
-          list-style-type: none;
-          display: none;
-          @include media-breakpoint-up("xl") {
-            display: block;
-          }
-          font-family: $breadcrumb-font-family;
-          font-weight: $breadcrumb-font-weight;
-          font-size: $font-size-breadcrumb;
-          padding: 0;
-          margin-bottom: $breadcrumb-margin-bottom;
-          li {
-            a {
-              color: $grey3;
-            }
-
-            + li {
-              &::before {
-                font-family: Icons;
-                font-size: 9px;
-                content: " \e02f";
-                margin: 0 14px;
-              }
-            }
-            ul {
-              display: block;
-              float: right;
             }
           }
         }

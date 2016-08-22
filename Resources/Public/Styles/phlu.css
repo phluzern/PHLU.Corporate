@@ -7678,6 +7678,11 @@ body {
           margin-left: -20px;
           font-family: FontAwesome;
           content: "\f100 \2000"; }
+      body .all .main > .row .breadcrumb-title {
+        width: 13%;
+        display: block;
+        float: left;
+        white-space: nowrap; }
       body .all .main > .row .rcrumbs-wrapper {
         width: 100%;
         display: block;
@@ -7690,9 +7695,28 @@ body {
           height: 20px;
           overflow: hidden; }
           body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb {
+            z-index: 8;
+            list-style-type: none;
+            display: none;
             width: auto;
             padding: 0;
-            margin: 0; }
+            font-family: "Arial", sans-serif;
+            font-weight: bold;
+            font-size: 0.875rem;
+            margin-bottom: 0; }
+            @media (min-width: 1280px) {
+              body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb {
+                display: block; } }
+            body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb li a {
+              color: #767676; }
+            body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb li + li::before {
+              font-family: Icons;
+              font-size: 9px;
+              content: " \e02f";
+              margin: 0 14px; }
+            body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb li ul {
+              display: block;
+              float: right; }
             body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb .expander {
               white-space: normal;
               width: auto;
@@ -7704,33 +7728,6 @@ body {
               z-index: 9; }
               body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb .expander.in {
                 background-image: none; }
-      body .all .main > .row .breadcrumb-title {
-        width: 13%;
-        display: block;
-        float: left;
-        white-space: nowrap; }
-      body .all .main > .row .breadcrumb {
-        z-index: 8;
-        list-style-type: none;
-        display: none;
-        font-family: "Arial", sans-serif;
-        font-weight: bold;
-        font-size: 0.875rem;
-        padding: 0;
-        margin-bottom: 0; }
-        @media (min-width: 1280px) {
-          body .all .main > .row .breadcrumb {
-            display: block; } }
-        body .all .main > .row .breadcrumb li a {
-          color: #767676; }
-        body .all .main > .row .breadcrumb li + li::before {
-          font-family: Icons;
-          font-size: 9px;
-          content: " \e02f";
-          margin: 0 14px; }
-        body .all .main > .row .breadcrumb li ul {
-          display: block;
-          float: right; }
       body .all .main > .row > div > .row > div > *:last-child {
         margin-bottom: 0; }
       @media (min-width: 992px) {
