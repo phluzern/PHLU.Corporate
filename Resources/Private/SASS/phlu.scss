@@ -405,6 +405,9 @@ body {
     strong {
       font-weight: 700;
     }
+    i {
+      font-style: normal;
+    }
     a:hover, a:focus {
       text-decoration: none;
     }
@@ -1312,7 +1315,6 @@ body {
       }
       .faecherIco, .oi-media-stop {
         &::before {
-          font-style: normal !important;
           font-family: Icons;
           content: " \e099 \2001";
           position: absolute;
@@ -1393,6 +1395,8 @@ body {
             .phlu-teaser-body {
               i {
                 float: left;
+                height: 1px;
+                width: 43px;
                 &::before {
                   color: $turquoise;
                   font-size: 25px;
@@ -1402,21 +1406,33 @@ body {
                   transform: translateY(-50%);
                 }
                 &.strategieIco {
-                  height: 25px;
-                  width: 43px;
                   &::before {
                     top: -12px;
-                    left: -4px;
-                    margin-left: 0px;
-                    margin-top: 0px;
+                    left: -8px;
                     font-size: 30px;
-
+                  }
+                }
+                &.faecherIco, &.forschungIco, &.themaIco {
+                  &::before {
+                    top: -6px;
+                    left: -4px;
+                  }
+                }
+                &.themaIco {
+                  &::before {
+                    top: -6px;
+                    left: -4px;
                   }
                 }
               }
               h3 {
-                padding-left: 50px;
                 margin: 0;
+                display: table-cell;
+
+                @include media-breakpoint-down("xs") {
+                  display: block;
+                  margin-top: 50px;
+                }
               }
             }
             .phlu-teaser-caret-right {
