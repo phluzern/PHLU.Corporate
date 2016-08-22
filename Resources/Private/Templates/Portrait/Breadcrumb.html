@@ -5,12 +5,12 @@
             <ul class="breadcrumb">
                 <f:for each="{items}" as="item" reverse="TRUE">
                     <f:if condition="{item.hiddenInIndex} == 0">
-                        <li>
+                        <li class="breadcrumb-item">
                             <neos:link.node node="{item}"/>
                         </li>
                     </f:if>
                 </f:for>
-                <li>Portrait</li>
+                <li class="breadcrumb-item">Portrait</li>
             </ul>
         </f:if>
     </div>
