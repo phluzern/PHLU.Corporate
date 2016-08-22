@@ -17,6 +17,36 @@
     'contact':
       handler: 'PHLU\Corporate\Routing\ContactNodeRoutePartHandler'
 
+-
+  name: 'Dozpage Route Resolver'
+  uriPattern: '{contact}'
+  defaults:
+    '@package': 'PHLU.Corporate'
+    '@controller': 'Portrait'
+    '@format': 'html'
+    '@action': 'viewPortrait'
+  routeParts:
+    'contact':
+      handler: 'PHLU\Corporate\Routing\ContactNodeRoutePartHandler'
+      options:
+        onlyMatchSiteNodes: false
+
+-
+  name: 'Dozpage Route Resolver'
+  uriPattern: '{contact}<defaultUriSuffix>'
+  defaults:
+    '@package': 'PHLU.Corporate'
+    '@controller': 'Portrait'
+    '@format': 'html'
+    '@action': 'viewPortrait'
+  routeParts:
+    'contact':
+      handler: 'PHLU\Corporate\Routing\ContactNodeRoutePartHandler'
+      options:
+        onlyMatchSiteNodes: false
+
+
+
 #
 # PHLU corporate routes
 #
