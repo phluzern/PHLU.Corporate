@@ -6407,11 +6407,10 @@ body {
           line-height: inherit; }
           body .all .datepicker.tag-zeit table tbody tr td span:hover {
             background: inherit; }
-      @media (max-width: 991px) {
-        body .all .datepicker.datepicker-inline {
-          margin: 0 auto;
-          width: inherit;
-          display: table; } }
+      body .all .datepicker.datepicker-inline {
+        margin: 0 auto;
+        width: inherit;
+        display: table; }
     body .all .navbar {
       background-color: white;
       display: none; }
@@ -7505,10 +7504,6 @@ body {
             margin-top: 53px; } }
       body .all .main > .row .table-phlu-saw {
         margin-bottom: 40px; }
-        body .all .main > .row .table-phlu-saw .tablesaw-nav-btn {
-          margin-top: 10px; }
-          body .all .main > .row .table-phlu-saw .tablesaw-nav-btn.disabled {
-            display: none; }
       body .all .main > .row .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
         width: 100%;
         font-size: 1.188rem; }
@@ -7960,6 +7955,62 @@ body {
       @media (min-width: 992px) {
         body .all .footer > div > .copyright {
           display: none; } }
+
+.tablesaw-enhanced .tablesaw-bar .btn {
+  border: 0;
+  background: none;
+  background-color: #55696d;
+  box-shadow: 0;
+  clear: both;
+  color: white;
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  text-decoration: none;
+  text-shadow: none;
+  width: 100%;
+  background-image: none;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  box-sizing: border-box;
+  -webkit-font-smoothing: inherit;
+  border-radius: 0; }
+  .tablesaw-enhanced .tablesaw-bar .btn.btn-micro {
+    position: absolute;
+    top: 0; }
+    .tablesaw-enhanced .tablesaw-bar .btn.btn-micro.left {
+      right: 63px; }
+    .tablesaw-enhanced .tablesaw-bar .btn.btn-micro.right {
+      right: 10px; }
+  .tablesaw-enhanced .tablesaw-bar .btn.right:before {
+    top: 15px !important;
+    left: 18px !important;
+    border-left: 16px solid white !important;
+    border-top: 10px solid transparent !important;
+    border-bottom: 10px solid transparent !important; }
+  .tablesaw-enhanced .tablesaw-bar .btn.left:before {
+    top: 15px !important;
+    left: 18px !important;
+    border-right: 16px solid white !important;
+    border-top: 10px solid transparent !important;
+    border-bottom: 10px solid transparent !important; }
+  .tablesaw-enhanced .tablesaw-bar .btn:hover {
+    background-color: #55696d; }
+  .tablesaw-enhanced .tablesaw-bar .btn:active {
+    background-color: inherit;
+    background-image: none; }
+  .tablesaw-enhanced .tablesaw-bar .btn:focus {
+    box-shadow: none !important;
+    background-color: #55696d; }
+.tablesaw-enhanced .tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn {
+  width: 50px;
+  height: 50px; }
+  .tablesaw-enhanced .tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.disabled {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    cursor: default;
+    pointer-events: none;
+    background-color: #9b9b9b !important; }
 
 .filterCountTag {
   opacity: 1 !important; }
