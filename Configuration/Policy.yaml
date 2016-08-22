@@ -1,7 +1,7 @@
 privilegeTargets:
   TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
     'PHLU.Corporate:PortraitControllerActions':
-      matcher: 'method(PHLU\Corporate\Controller\PortraitController->viewAction())'
+      matcher: 'method(PHLU\Corporate\Controller\PortraitController->(view|viewPortrait)Action())'
 
 roles:
   'TYPO3.Flow:Everybody':
