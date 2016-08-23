@@ -6617,7 +6617,7 @@ body {
           body .all .phlu-teaser .phlu-teaser-body h3 a {
             color: #464340; }
         body .all .phlu-teaser .phlu-teaser-body p {
-          font-size: 0.813rem; }
+          font-size: 0.875rem; }
       body .all .phlu-teaser .event.noimg .phlu-teaser-body, body .all .phlu-teaser .publication.noimg .phlu-teaser-body {
         z-index: 99;
         position: relative;
@@ -6642,7 +6642,7 @@ body {
         background-color: #55a7b3;
         margin: 0 20px 0 0; }
       body .all .phlu-teaser .event .event-date-month-year-location {
-        font-size: 0.813rem;
+        font-size: 0.875rem;
         line-height: 1.2;
         background-color: white;
         padding-top: 8px;
@@ -6871,7 +6871,7 @@ body {
             font-size: 1.125rem;
             margin: 2px 0 13px; }
           body .all .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-body p {
-            font-size: 0.813rem; }
+            font-size: 0.875rem; }
           body .all .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-body h3, body .all .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-body p {
             color: #9f632a; }
           body .all .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-body.col-xs-10 {
@@ -7034,34 +7034,25 @@ body {
           margin: 0; }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-caret-right.col-xs-2 {
       background-color: #e1e1e1; }
-    body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body {
+    body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
       background-color: #e9e0d8; }
-      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body .personName {
-        font-size: 0.813rem;
-        padding-bottom: 5px;
-        font-weight: 700; }
-      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body p {
-        line-height: 1.6; }
-    body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right.col-xs-2 {
-      background-color: #e9e0d8;
-      font-size: 20px;
-      font-family: Icons; }
-      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right.col-xs-2::after {
-        content: " "; }
-      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right.col-xs-2 .emailLink::after {
-        position: absolute;
-        color: #55696d;
-        top: 40%;
-        transform: translateY(-50%);
-        right: 25px;
-        content: " \e05c"; }
-      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right.col-xs-2 .portraitLink::after {
-        position: absolute;
-        color: #55696d;
-        top: 60%;
-        transform: translateY(-50%);
-        right: 25px;
-        content: " \e0a5"; }
+    body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address {
+      font-size: 1rem; }
+      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address .telephone {
+        margin-top: 5px;
+        color: #9f632a; }
+        body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address .telephone .fa-phone {
+          padding-right: 6px; }
+      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address .content-link-email-contact-person, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address .content-link-portrait {
+        background-image: none;
+        font-size: 1rem; }
+      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address .content-link-portrait:before {
+        padding-right: 4px; }
+    body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
+      position: relative;
+      top: 17px;
+      left: 10px;
+      width: 100px; }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .phlu-corporate-contactsgroup h3 {
       margin-top: 36px; }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .phlu-corporate-contactsgroup .phlu-accordion {
@@ -7287,70 +7278,6 @@ body {
         body .all .row.subjectsfilternav.phlu-filelinks.nofilter .phlu-teaser {
           margin-top: 12px;
           margin-bottom: 0; }
-    body .all .table thead tr th {
-      padding: 0.75rem 0;
-      line-height: 1.5;
-      vertical-align: top;
-      border-top: 0; }
-      body .all .table thead tr th:first-child h3 {
-        margin: 0; }
-      body .all .table thead tr th.is-currency {
-        text-align: right; }
-    body .all .table tbody .neos-empty-contentcollection-overlay {
-      display: table-cell; }
-    body .all .table tbody tr:first-child th, body .all .table tbody tr:first-child td {
-      border-top: 4px solid #5c5c5c; }
-    body .all .table tbody tr th, body .all .table tbody tr td {
-      padding: 0.75rem 0;
-      line-height: 1.5;
-      vertical-align: top;
-      border-top: 0;
-      background-repeat: repeat-x;
-      background-position: bottom left;
-      min-width: 30px; }
-      @media (min-width: 768px) {
-        body .all .table tbody tr th.nowrap, body .all .table tbody tr td.nowrap {
-          white-space: nowrap; } }
-      body .all .table tbody tr th.is-currency, body .all .table tbody tr td.is-currency {
-        text-align: right;
-        white-space: nowrap; }
-      body .all .table tbody tr th.col-percent-auto, body .all .table tbody tr td.col-percent-auto {
-        width: auto;
-        flex: 0 0 0; }
-      body .all .table tbody tr th.col-percent-20, body .all .table tbody tr td.col-percent-20 {
-        width: 20%;
-        flex: 0 0 20%; }
-      body .all .table tbody tr th.col-percent-25, body .all .table tbody tr td.col-percent-25 {
-        width: 25%;
-        flex: 0 0 25%; }
-      body .all .table tbody tr th.col-percent-33, body .all .table tbody tr td.col-percent-33 {
-        width: 33.33%;
-        flex: 0 0 33.33%; }
-      body .all .table tbody tr th.col-percent-40, body .all .table tbody tr td.col-percent-40 {
-        width: 40%;
-        flex: 0 0 40%; }
-      body .all .table tbody tr th.col-percent-50, body .all .table tbody tr td.col-percent-50 {
-        width: 50%;
-        flex: 0 0 50%; }
-      body .all .table tbody tr th.col-percent-66, body .all .table tbody tr td.col-percent-66 {
-        width: 66.66%;
-        flex: 0 0 66.66%; }
-      body .all .table tbody tr th.col-percent-60, body .all .table tbody tr td.col-percent-60 {
-        width: 60%;
-        flex: 0 0 60%; }
-      body .all .table tbody tr th.col-percent-75, body .all .table tbody tr td.col-percent-75 {
-        width: 75%;
-        flex: 0 0 75%; }
-      body .all .table tbody tr th.col-percent-80, body .all .table tbody tr td.col-percent-80 {
-        width: 80%;
-        flex: 0 0 80%; }
-    body .all .table tbody tr th {
-      width: 40%;
-      border-bottom: 2px solid #e5e5e5; }
-    body .all .table tbody tr td {
-      border-bottom: 2px solid #e5e5e5; }
-    body .all .table.first-col-hidden-1 tbody tr > td:first-child {
-      border-left: 0; }
     body .all .flowtext-phlu-event a, body .all .flowtext-phlu-event a:hover, body .all .flowtext-phlu-news a, body .all .flowtext-phlu-news a:hover {
       color: #5c5c5c; }
     body .all .flowtext-phlu-event > .row, body .all .flowtext-phlu-news > .row {
@@ -7510,6 +7437,72 @@ body {
         @media (min-width: 992px) {
           body .all .main > .row hr {
             margin-top: 53px; } }
+      body .all .main > .row .table thead tr th {
+        padding: 0.75rem 0;
+        line-height: 1.5;
+        vertical-align: top;
+        border-top: 0; }
+        body .all .main > .row .table thead tr th:first-child h3 {
+          margin: 0; }
+        body .all .main > .row .table thead tr th.is-currency {
+          text-align: right; }
+      body .all .main > .row .table tbody .neos-empty-contentcollection-overlay {
+        display: table-cell; }
+      body .all .main > .row .table tbody tr:first-child th, body .all .main > .row .table tbody tr:first-child td {
+        border-top: 4px solid #5c5c5c; }
+      body .all .main > .row .table tbody tr th, body .all .main > .row .table tbody tr td {
+        padding: 0.75rem 0;
+        line-height: 1.5;
+        vertical-align: top;
+        border-top: 0;
+        background-repeat: repeat-x;
+        background-position: bottom left;
+        min-width: 30px; }
+        @media (min-width: 768px) {
+          body .all .main > .row .table tbody tr th.nowrap, body .all .main > .row .table tbody tr td.nowrap {
+            white-space: nowrap; } }
+        body .all .main > .row .table tbody tr th.is-currency, body .all .main > .row .table tbody tr td.is-currency {
+          text-align: right;
+          white-space: nowrap; }
+        body .all .main > .row .table tbody tr th.col-percent-auto, body .all .main > .row .table tbody tr td.col-percent-auto {
+          width: auto;
+          flex: 0 0 0; }
+        body .all .main > .row .table tbody tr th.col-percent-20, body .all .main > .row .table tbody tr td.col-percent-20 {
+          width: 20%;
+          flex: 0 0 20%; }
+        body .all .main > .row .table tbody tr th.col-percent-25, body .all .main > .row .table tbody tr td.col-percent-25 {
+          width: 25%;
+          flex: 0 0 25%; }
+        body .all .main > .row .table tbody tr th.col-percent-33, body .all .main > .row .table tbody tr td.col-percent-33 {
+          width: 33.33%;
+          flex: 0 0 33.33%; }
+        body .all .main > .row .table tbody tr th.col-percent-40, body .all .main > .row .table tbody tr td.col-percent-40 {
+          width: 40%;
+          flex: 0 0 40%; }
+        body .all .main > .row .table tbody tr th.col-percent-50, body .all .main > .row .table tbody tr td.col-percent-50 {
+          width: 50%;
+          flex: 0 0 50%; }
+        body .all .main > .row .table tbody tr th.col-percent-66, body .all .main > .row .table tbody tr td.col-percent-66 {
+          width: 66.66%;
+          flex: 0 0 66.66%; }
+        body .all .main > .row .table tbody tr th.col-percent-60, body .all .main > .row .table tbody tr td.col-percent-60 {
+          width: 60%;
+          flex: 0 0 60%; }
+        body .all .main > .row .table tbody tr th.col-percent-75, body .all .main > .row .table tbody tr td.col-percent-75 {
+          width: 75%;
+          flex: 0 0 75%; }
+        body .all .main > .row .table tbody tr th.col-percent-80, body .all .main > .row .table tbody tr td.col-percent-80 {
+          width: 80%;
+          flex: 0 0 80%; }
+      body .all .main > .row .table tbody tr th {
+        width: 40%;
+        border-bottom: 2px solid #e5e5e5; }
+      body .all .main > .row .table tbody tr td {
+        border-bottom: 2px solid #e5e5e5; }
+      body .all .main > .row .table.first-col-hidden-1 tbody tr > td:first-child {
+        border-left: 0; }
+      body .all .main > .row .table a[target='_blank'] {
+        font-size: 1rem; }
       body .all .main > .row .table-phlu-saw {
         margin-bottom: 40px; }
       body .all .main > .row .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
