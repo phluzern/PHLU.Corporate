@@ -129,7 +129,7 @@
                                     <div class="panel panel-default">
                                         <div class="panel-heading" role="tab">
                                             <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#phlu-accordion1"
+                                                <a data-toggle="collapse" data-parent="#phlu-accordion-publications"
                                                    href="#phlu-accordion-publications-{iterator.index}"
                                                    aria-expanded="false" aria-controls="phlu-accordion-publications-{iterator.index}">
                                                     {publicationtype}
@@ -144,6 +144,49 @@
                                             </div>
                                         </div>
                                     </div>
+                                </f:for>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+        </f:if>
+
+          <f:if condition="{contact.projects}">
+
+            <div class="row science-projects">
+                <div class="col-xs-12">
+
+                    <h2>Projekte</h2>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="phlu-accordion-projects" class="phlu-accordion" >
+
+                                <f:for each="{contact.projects}" as="projects" key="projecttype" iteration="iterator">
+
+                                    <f:for each="{projects}" as="project">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#phlu-accordion-projects"
+                                                   href="#phlu-accordion-project-{project.ID}"
+                                                   aria-expanded="false" aria-controls="phlu-accordion-projects-{project.ID}">
+                                                    {project.TitleGerman}
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="phlu-accordion-project-{project.ID}" class="panel-collapse collapse" role="tabpanel">
+                                            <div>
+                                                <p>{project.TeaserTextGerman}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    </f:for>
                                 </f:for>
 
 
