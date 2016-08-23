@@ -73,15 +73,15 @@ class PortraitController extends \TYPO3\Neos\Controller\Frontend\NodeController
             $this->redirect('index', 'Login', null, array('unauthorized' => true));
         }
 
-        $flowQuery = new FlowQuery(array($node));
+
 
         // show only pages with containing contact nodes inside
-        $flowQuery = new FlowQuery(array($node));
-        if ($flowQuery->find("[instanceof PHLU.Corporate:Contact][contact=" . $contact->getEventoid() . "]")->count() == 0) {
-            throw new PageNotFoundException('The requested node does not exist or isn\'t accessible to the current user', 1430218623);
-        }
+        //        $flowQuery = new FlowQuery(array($node));
+        //        if ($flowQuery->find("[instanceof PHLU.Corporate:Contact][contact=" . $contact->getEventoid() . "]")->count() == 0) {
+        //            throw new PageNotFoundException('The requested node does not exist or isn\'t accessible to the current user', 1430218623);
+        //        }
 
-        //  \TYPO3\Flow\var_dump($this->controllerContext->getRequest()->getMainRequest());
+
 
         $this->view->assignMultiple(array('value' => $node, 'contact' => $contact));
 
