@@ -6314,6 +6314,8 @@ body {
       @media (min-width: 1280px) {
         body .all ul {
           font-size: 1.125rem; } }
+      body .all ul.flowtext-smallwidth {
+        width: 75%; }
     body .all .clickable, body .all .clickable * {
       cursor: pointer; }
     body .all .btn {
@@ -7295,9 +7297,19 @@ body {
         body .all .flowtext-phlu-event > .row .initial.exhibition, body .all .flowtext-phlu-news > .row .initial.exhibition {
           font-size: 40px;
           padding: 4px 0 0 22px; }
+          body .all .flowtext-phlu-event > .row .initial.exhibition .description, body .all .flowtext-phlu-news > .row .initial.exhibition .description {
+            position: absolute;
+            font-size: 10px;
+            top: 50px;
+            left: 24px; }
         body .all .flowtext-phlu-event > .row .initial.meeting, body .all .flowtext-phlu-news > .row .initial.meeting {
-          font-size: 41px;
-          padding: 6px 0 0 24px; }
+          font-size: 38px;
+          padding: 3px 0 0 26px; }
+          body .all .flowtext-phlu-event > .row .initial.meeting .description, body .all .flowtext-phlu-news > .row .initial.meeting .description {
+            position: absolute;
+            font-size: 10px;
+            top: 50px;
+            left: 34px; }
       body .all .flowtext-phlu-event > .row .preview-image img, body .all .flowtext-phlu-news > .row .preview-image img {
         width: 150px;
         height: 150px; }

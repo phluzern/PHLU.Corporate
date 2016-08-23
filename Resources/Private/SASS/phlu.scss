@@ -420,6 +420,9 @@ body {
       @include media-breakpoint-up("xl") {
         font-size: $font-size-paragraph-desktop;
       }
+      &.flowtext-smallwidth {
+        width: 75%;
+      }
     }
     .clickable, .clickable * {
       cursor: pointer;
@@ -2040,10 +2043,22 @@ body {
           &.exhibition {
             font-size: 40px;
             padding: 4px 0 0 22px;
+            .description {
+              position: absolute;
+              font-size: 10px;
+              top: 50px;
+              left: 24px;
+            }
           }
           &.meeting {
-            font-size: 41px;
-            padding: 6px 0 0 24px;
+            font-size: 38px;
+            padding: 3px 0 0 26px;
+            .description {
+              position: absolute;
+              font-size: 10px;
+              top: 50px;
+              left: 34px;
+            }
           }
         }
 
