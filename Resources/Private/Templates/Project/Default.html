@@ -1,0 +1,245 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+{namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
+{namespace resource=PHLU\Corporate\ViewHelpers\Resource}
+
+
+<div class="row ppdb-detail">
+    <div class="col-xs-12">
+        <div class="row ">
+            <div class="col-xs-12">
+                {breadcrumb -> f:format.raw()}
+            </div>
+            <div class="col-xs-12">
+
+                <h1 class="page-header">
+                    {project.titleGerman}
+                </h1>
+                <div class="phlu-corporate-textplain">
+                    <p>
+                        {project.teaserTextGerman}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>Kurzinformation</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th>Forschungsschwerpunkt / Themenfeld</th>
+                            <td>
+                                <f:for each="{project.researchMainFocus}" as="focus" iteration="iterator">
+                                    <f:if condition="{iterator.isFirst}">
+                                        <f:else>
+                                            <br/>
+                                        </f:else>
+                                    </f:if>
+                                    {focus}
+                                </f:for>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>{project.pPDBStatusLifetime}</td>
+                        </tr>
+                        <tr>
+                            <th>Zeitraum</th>
+                            <td>
+
+                                <f:if condition="{project.startDate}">{project.startDate ->
+                                    f:format.date(format:'d.m.Y')}
+                                </f:if>
+                                <f:if condition="{project.endDate}"> - {project.endDate ->
+                                    f:format.date(format:'d.m.Y')}
+                                </f:if>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h2>Übersicht</h2>
+                {project.abstractTextGerman -> f:format.raw()}
+                <hr>
+                <h2>Fakten</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <th>Projektart</th>
+                            <td>Forschung</td>
+                        </tr>
+                        <tr>
+                            <th>Beteiligte interne Organisationen</th>
+                            <td>
+                                <f:for each="{project.organisationUnits}" as="unit" iteration="iterator">
+                                    <f:if condition="{iterator.isFirst}">
+                                        <f:else>
+                                            <br/>
+                                        </f:else>
+                                    </f:if>
+                                    {unit}
+                                </f:for>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Finanzierungstyp</th>
+                            <td>
+                                <f:for each="{project.financingTypes}" as="financing" iteration="iterator">
+                                    <f:if condition="{iterator.isFirst}">
+                                        <f:else>
+                                            <br/>
+                                        </f:else>
+                                    </f:if>
+                                    {financing}
+                                </f:for>
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Leistungsart</th>
+                            <td>
+                                {project.ProjectType}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-xs-12 phlu-team-members">
+                <h2>Beteiligte Personen</h2>
+                <div class="row phlu-teaser navigation subpage">
+
+
+                    <f:for each="{project.participants}" key="participantsType" as="participantsGroup">
+
+                        <f:for each="{participantsGroup}" as="participant">
+
+                            <div class="col-xs-12 col-md-6 nav-teaser-item">
+                                <div class="row">
+
+                                    <div class="phlu-teaser-body col-xs-8">
+                                        <address>
+                                            <b>{participantsType}</b><br>
+                                            {participant.name}
+                                            <div class="telephone">
+                                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                                {participant.phone}<br>
+                                            </div>
+                                            <a class="content-link-email-contact-person"
+                                               href="mailto:{participant.email}">{participant.email}</a><br>
+
+                                            <portrait:link node="{node}" eventoId="{participant.EventoID}">Portrait</portrait:link>
+
+                                        </address>
+                                    </div>
+                                    <div class="phlu-teaser-caret-right col-xs-4">
+
+                                        <f:if condition="{resource:GetFromString(resource:participant.ImageResource, asset: true)}">
+                                            <media:image
+                                                    asset="{resource:GetFromString(resource:participant.ImageResource, asset: true)}"
+                                                    class="img-fluid"
+                                                    alt="{participant.name}" width="400"
+                                                    maximumWidth="400" height="300" maximumHeight="300"
+                                                    allowUpScaling="false"/>
+                                        </f:if>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </f:for>
+
+
+                    </f:for>
+
+
+                </div>
+                <hr>
+            </div>
+        </div>
+
+
+        <div class="row subjectsfilternav phlu-filelinks nofilter">
+            <div class="col-xs-12">
+                <h2>Dokumente</h2>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row phlu-teaser navigation subpage">
+
+                            <f:for each="{project.documents}" as="document">
+
+                                <div class="col-xs-12 nav-teaser-item clickable pdfFile">
+                                    <div class="row">
+                                        <div class="phlu-teaser-body col-xs-10">
+                                            <h3>
+                                                <a href="{document.URL}">
+                                                    {document.Name}
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div class="phlu-teaser-caret-right col-xs-2">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </f:for>
+
+                        </div>
+
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+
+        <div class="row subjectsfilternav phlu-filelinks nofilter">
+            <div class="col-xs-12">
+                <h2>Links</h2>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row phlu-teaser navigation subpage">
+
+                            <f:for each="{project.links}" as="link">
+                                <div class="col-xs-12 nav-teaser-item clickable webLink">
+                                    <div class="row">
+                                        <div class="phlu-teaser-body col-xs-10">
+                                            <h3>
+                                                <a href="{link.URL}">
+                                                    {link.Title}
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div class="phlu-teaser-caret-right col-xs-2">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                            </f:for>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+    </div>
+
+</div>

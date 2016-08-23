@@ -1,0 +1,26 @@
+
+
+project < page
+
+project {
+
+    body {
+
+        content.main = PHLU.Corporate:Page {
+
+            templatePath = 'resource://PHLU.Corporate/Private/Templates/Project/Default.html'
+            node = ${q(node).get(0)}
+
+            project = ${PHLU.Corporate.getProject(node)}
+
+            breadcrumb = Breadcrumb {
+                templatePath = 'resource://PHLU.Corporate/Private/Templates/Project/Breadcrumb.html'
+
+            }
+
+        }
+
+
+
+    }
+}
