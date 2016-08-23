@@ -2,10 +2,7 @@
 prototype(PHLU.Corporate:Contact) < prototype(PHLU.Corporate:Content) {
 
     templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/Fullwidth.html'
-//    isHidden = ${q(node).get(0).context.workspaceName == 'live' ? ((String.length(q(node).property('lastname')) > 0 || q(node).property('contact')) > 0 && q(node).property('ishidden') != true ? false : true): q(node).property('ishidden')}
-
-isHidden = ${q(node).get(0).context.workspaceName == 'live' ? ((String.length(q(node).property('lastname')) > 0 || q(node).property('contact')) > 0 && q(node).property('ishidden') != TRUE ? false : true): q(node).property('ishidden')}
-
+    isHidden = ${q(node).get(0).context.workspaceName == 'live' ? ((String.length(q(node).property('lastname')) > 0 || q(node).property('contact')) > 0 && q(node).property('ishidden') != TRUE ? false : true): q(node).property('ishidden')}
 
 
 }
