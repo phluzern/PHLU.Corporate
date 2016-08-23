@@ -2,6 +2,7 @@
 
 namespace PHLU\Corporate\Eel\Helper;
 
+use PHLU\Neos\Models\Domain\Repository\ProjectRepository;
 use TYPO3\Eel\ProtectedContextAwareInterface;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Http\Request;
@@ -42,6 +43,12 @@ class NodeHelper implements ProtectedContextAwareInterface
      */
     protected $contactRepository;
 
+    /**
+     * @Flow\Inject
+     * @var ProjectRepository
+     */
+    protected $projectRepository;
+
 
     /**
      * @Flow\Inject
@@ -72,6 +79,20 @@ class NodeHelper implements ProtectedContextAwareInterface
 
         $route = $this->router->route($this->httpRequest);
         return isset($route['contact']['__identity']) ? $this->contactRepository->findByIdentifier($route['contact']['__identity']) : null;
+
+    }
+
+    /**
+     * Get project based on http request
+     *
+     * @param Node $node
+     * @return boolean
+     */
+    public function getProject(Node $node)
+    {
+
+        $route = $this->router->route($this->httpRequest);
+        return isset($route['project']['__identity']) ? $this->projectRepository->findByIdentifier($route['project']['__identity']) : null;
 
     }
 

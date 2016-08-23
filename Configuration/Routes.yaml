@@ -47,6 +47,22 @@
 
 
 
+-
+  name: 'Project Detail Route Resolver'
+  uriPattern: 'forschung/projekte/{project}/{title}<defaultUriSuffix>'
+  defaults:
+    '@package': 'PHLU.Corporate'
+    '@controller': 'Project'
+    '@format': 'html'
+    '@action': 'view'
+  routeParts:
+    'project':
+      handler: 'PHLU\Corporate\Routing\ProjectNodeRoutePartHandler'
+      options:
+        onlyMatchSiteNodes: false
+
+
+
 #
 # PHLU corporate routes
 #
