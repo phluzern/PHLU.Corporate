@@ -2,10 +2,15 @@ privilegeTargets:
   TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
     'PHLU.Corporate:PortraitControllerActions':
       matcher: 'method(PHLU\Corporate\Controller\PortraitController->(view|viewPortrait)Action())'
+    'PHLU.Corporate:ProjectControllerActions':
+      matcher: 'method(PHLU\Corporate\Controller\ProjectController->viewAction())'
 
 roles:
   'TYPO3.Flow:Everybody':
     privileges:
       -
         privilegeTarget: 'PHLU.Corporate:PortraitControllerActions'
+        permission: GRANT
+      -
+        privilegeTarget: 'PHLU.Corporate:ProjectControllerActions'
         permission: GRANT

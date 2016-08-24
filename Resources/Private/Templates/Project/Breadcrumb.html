@@ -1,0 +1,17 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div class="rcrumbs-wrapper">
+    <div class="rcrumbs-container">
+        <f:if condition="{items}">
+            <ul class="breadcrumb">
+                <f:for each="{items}" as="item" reverse="TRUE">
+                    <f:if condition="{item.hiddenInIndex} == 0">
+                        <li class="breadcrumb-item">
+                            <neos:link.node node="{item}"/>
+                        </li>
+                    </f:if>
+                </f:for>
+                <li class="breadcrumb-item">Detail</li>
+            </ul>
+        </f:if>
+    </div>
+</div>
