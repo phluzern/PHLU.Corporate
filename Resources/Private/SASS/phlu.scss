@@ -424,6 +424,7 @@ body {
         width: 75%;
       }
     }
+
     .clickable, .clickable * {
       cursor: pointer;
     }
@@ -1505,27 +1506,6 @@ body {
             .phlu-teaser-body, .phlu-teaser-caret-right {
               background-color: $sephia;
             }
-            .phlu-teaser-body {
-              address {
-                font-size: $font-size-phlu-team-members;
-                .telephone {
-                  margin-top: 5px;
-                  color: $hazelbrowndark;
-                  .fa-phone {
-                    padding-right: 6px;
-                  }
-                }
-                .content-link-email-contact-person, .content-link-portrait {
-                  background-image: none;
-                  font-size: $font-size-phlu-team-members;
-                }
-                .content-link-portrait {
-                  &:before {
-                    padding-right: 4px;
-                  }
-                }
-              }
-            }
             .phlu-teaser-caret-right {
               img {
                 position: relative;
@@ -1569,13 +1549,12 @@ body {
         }
 
         .panel-email {
-          font-family: Icons;
+          font-family: FontAwesome;
+
           &::after {
-            font-size: 19px;
+            font-size: 21px;
             position: absolute;
-            content: " \e05c";
-            right: 40px;
-            margin-top: 3px;
+            content: " \f003";
           }
         }
         .panel-switch {
@@ -1728,6 +1707,7 @@ body {
             padding: 0 15px 5px;
 
           }
+
           .close-btn {
             position: absolute;
             right: 45px;
@@ -1735,42 +1715,47 @@ body {
             color: white;
             font-size: 12px;
           }
-        }
-        .table {
-          margin-bottom: 0;
-          tbody {
-            tr {
-              td {
-                background-image: none;
-                border-top: 0;
-                border-left: 0;
-                border-right: 0;
-                border-bottom: 1px $hr-border-color solid;
-                font-size: $font-size-search-filters;
-                a {
-                  color: white;
+          .table {
+            margin-bottom: 0;
+            tbody {
+              tr {
+                td {
+                  background-image: none;
+                  border-top: 0;
+                  border-left: 0;
+                  border-right: 0;
+                  border-bottom: 1px $hr-border-color solid;
+                  font-size: $font-size-search-filters;
+                  a {
+                    color: white;
+                  }
+                  &.theme-code {
+                    width: 38px;
+                  }
+                  &:first-child {
+                    padding-left: 20px;
+                    width: 60px;
+                  }
+                  &:last-child {
+                    padding-right: 20px;
+                    padding-left: 20px;
+                  }
                 }
-                &.theme-code {
-                  width: 38px;
-                }
-                &:first-child {
-                  padding-left: 20px;
-                  width: 60px;
+                &.checked {
+                  color: $olivegreen;
+                  a {
+                    color: $olivegreen;
+                  }
                 }
                 &:last-child {
-                  padding-right: 20px;
-                  padding-left: 20px;
+                  td {
+                    border-bottom: 0;
+                  }
                 }
-              }
-              &.checked {
-                color: $olivegreen;
-                a {
-                  color: $olivegreen;
-                }
-              }
-              &:last-child {
-                td {
-                  border-bottom: 0;
+                &:first-child {
+                  td {
+                    border-top:0;
+                  }
                 }
               }
             }
@@ -1902,6 +1887,7 @@ body {
                   color: $hazelbrowndark;
                   font-weight: bold;
                 }
+                margin-top:inherit;
               }
             }
             .phlu-teaser-caret-right {
@@ -2039,10 +2025,10 @@ body {
           height: 70px;
           color: white;
           font-size: 28px;
-          padding: 14px 15px;
+          padding: 15px 15px;
           &.exhibition {
             font-size: 40px;
-            padding: 4px 0 0 22px;
+            padding: 4px 0 0 23px;
             .description {
               position: absolute;
               font-size: 10px;
@@ -2052,12 +2038,12 @@ body {
           }
           &.meeting {
             font-size: 38px;
-            padding: 3px 0 0 26px;
+            padding: 4px 0 0 25px;
             .description {
               position: absolute;
               font-size: 10px;
               top: 50px;
-              left: 34px;
+              left: 33px;
             }
           }
         }
@@ -2249,6 +2235,25 @@ body {
           &.last {
             border:0;
             padding-bottom:40px;
+          }
+        }
+        address {
+          font-size: $font-size-phlu-team-members;
+          .telephone {
+            margin-top: 5px;
+            color: $hazelbrowndark;
+            .fa-phone {
+              padding-right: 6px;
+            }
+          }
+          .content-link-email-contact-person, .content-link-portrait {
+            background-image: none;
+            font-size: $font-size-phlu-team-members;
+          }
+          .content-link-portrait {
+            &:before {
+              padding-right: 4px;
+            }
           }
         }
         //
@@ -2456,7 +2461,6 @@ body {
             }
           }
         }
-
         .content-link-email {
           @include content-link("email");
         }
