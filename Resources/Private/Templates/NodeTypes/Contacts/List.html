@@ -15,10 +15,11 @@
                         {node.properties.firstname} {node.properties.lastname}
                     </div>
                     <div class="col-sm-4 col-xs-10">
-                        {node.properties.phone}
+                        {node.properties.phone} |
+                        <a href="mailto:{node.properties.email}" class="panel-email">&nbsp;</a>
                     </div>
                     <div class="col-sm-2 col-xs-2">
-                        <a href="mailto:{node.properties.email}" class="panel-email">&nbsp;</a>
+
                         <a class="panel-switch" href="#">&nbsp;</a>
                     </div>
                 </div>

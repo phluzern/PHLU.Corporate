@@ -12,8 +12,10 @@
     <f:if condition="{node.properties.street2} != ''">{node.properties.street2}<br></f:if>
     <br>
     {node.properties.zip} {node.properties.city}<br>
-   <i class="fa fa-phone" aria-hidden="true"></i>
-    {node.properties.phone}<br>
+    <div class="telephone">
+        <i class="fa fa-phone" aria-hidden="true"></i>
+        {node.properties.phone}<br>
+    </div>
     <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{node.properties.email}</a><br>
     <portrait:link node="{node}">Portrait</portrait:link>
 </address>
