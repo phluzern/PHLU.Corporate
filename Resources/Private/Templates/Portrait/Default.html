@@ -181,7 +181,8 @@
                                         </div>
                                         <div id="phlu-accordion-project-{project.ID}" class="panel-collapse collapse" role="tabpanel">
                                             <div>
-                                                <f:link.action action="load" controller="project" package="PHLU.Corporate" arguments="{project: project.ID,title: project.uriSegment}">{project.TeaserTextGerman}</f:link.action>
+                                                <p>{project.TeaserTextGerman}</p>
+                                                <f:link.action action="load" controller="project" package="PHLU.Corporate" arguments="{project: project.ID,title: project.uriSegment}" class="btn btn-primary">Details</f:link.action>
                                             </div>
                                         </div>
                                     </div>

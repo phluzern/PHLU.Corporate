@@ -7449,6 +7449,9 @@ body {
         @media (min-width: 992px) {
           body .all .main > .row hr {
             margin-top: 53px; } }
+        body .all .main > .row hr.last {
+          border: 0;
+          padding-bottom: 40px; }
       body .all .main > .row .table thead tr th {
         padding: 0.75rem 0;
         line-height: 1.5;
@@ -7696,10 +7699,10 @@ body {
         @media (max-width: 1279px) {
           body .all .main > .row .rcrumbs-wrapper {
             display: none; } }
-        body .all .main > .row .rcrumbs-wrapper .rcrumbs {
+        body .all .main > .row .rcrumbs-wrapper .rcrumbs-container {
           height: 20px;
           overflow: hidden; }
-          body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb {
+          body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb {
             z-index: 8;
             list-style-type: none;
             display: none;
@@ -7710,19 +7713,19 @@ body {
             font-size: 0.875rem;
             margin-bottom: 0; }
             @media (min-width: 1280px) {
-              body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb {
+              body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb {
                 display: block; } }
-            body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb li a {
+            body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb li a {
               color: #767676; }
-            body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb li + li::before {
+            body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb li + li::before {
               font-family: Icons;
               font-size: 9px;
               content: " \e02f";
               margin: 0 14px; }
-            body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb li ul {
+            body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb li ul {
               display: block;
               float: right; }
-            body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb .expander {
+            body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb .expander {
               white-space: normal;
               width: auto;
               height: 35px;
@@ -7731,7 +7734,7 @@ body {
               background-size: cover;
               cursor: pointer;
               z-index: 9; }
-              body .all .main > .row .rcrumbs-wrapper .rcrumbs .breadcrumb .expander.in {
+              body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb .expander.in {
                 background-image: none; }
       body .all .main > .row > div > .row > div > *:last-child {
         margin-bottom: 0; }

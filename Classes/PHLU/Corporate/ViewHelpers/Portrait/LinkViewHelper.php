@@ -43,19 +43,12 @@ class LinkViewHelper extends AbstractViewHelper
     protected $contactRepository;
 
 
-     /**
+    /**
      * @param Node $node
      * @return array
      */
-    public function render($node,$eventoId=null)
+    public function render($node, $eventoId = null, $target = "self")
     {
-
-
-
-       $flowQuery = new FlowQuery(array($node));
-       $pageNode = $flowQuery->closest("[instanceof PHLU.Corporate:Page]")->get(0);
-
-
 
 
         if ($eventoId) {
@@ -65,16 +58,30 @@ class LinkViewHelper extends AbstractViewHelper
         }
 
 
+        if ($contact) {
+            if ($contact->isShowPortrait() === false) {
+                return '';
+            }
+        }
+
+
         if ($contact && $contact->getEmailPart() != '') {
 
-            $contactShortId = substr_count($contact->getEmail(),"@phlu.ch") ? $contact->getEmailPart() : str_replace("@","-at-",$contact->getEmail());
+            $contactShortId = substr_count($contact->getEmail(), "@phlu.ch") ? $contact->getEmailPart() : str_replace("@", "-at-", $contact->getEmail());
 
-            return '<a class="content-link-portrait" href="'.$this->controllerContext->getUriBuilder()->reset()->setFormat('html')->uriFor('view',array('node'=>$pageNode,'contact'=>$contactShortId),'Portrait','PHLU.Corporate').'">'.$this->renderChildren().'</a>';
+            if ($target === 'self') {
+                $flowQuery = new FlowQuery(array($node));
+                $pageNode = $flowQuery->closest("[instanceof PHLU.Corporate:Page]")->get(0);
+                return '<a class="content-link-portrait" href="' . $this->controllerContext->getUriBuilder()->reset()->setCreateAbsoluteUri(true)->setFormat('html')->uriFor('view', array('node' => $pageNode, 'contact' => $contactShortId), 'Portrait', 'PHLU.Corporate') . '">' . $this->renderChildren() . '</a>';
+            } else {
+                return '<a class="content-link-portrait" href="' . $this->controllerContext->getUriBuilder()->reset()->setCreateAbsoluteUri(true)->setFormat('html')->uriFor('viewPortrait', array('contact' => $contactShortId), 'Portrait', 'PHLU.Corporate') . '">' . $this->renderChildren() . '</a>';
+            }
+
 
         }
 
 
-       return '';
+        return '';
 
 
     }

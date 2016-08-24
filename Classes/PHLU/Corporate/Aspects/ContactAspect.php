@@ -104,7 +104,7 @@ class ContactAspect
         } else {
             $node->setProperty('function', $node->getProperty('functionCustom'));
         }
-        if ($contact->getImage()) $node->setProperty('image', $contact->getImage());
+        $node->setProperty('image', $contact->getImage());
 
 
 

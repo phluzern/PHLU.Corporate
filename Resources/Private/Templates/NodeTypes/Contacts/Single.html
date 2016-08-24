@@ -7,10 +7,11 @@
     <f:else>
         <div class="col-xs-12">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 flexfirst col-md-4">
 
-                    <f:if condition="{node.properties.image}">
-                        <f:then>
+
+                <f:if condition="{node.properties.image}">
+                    <f:then>
+                        <div class="col-xs-12 col-sm-6 flexfirst col-md-4">
                             <f:if condition="{node.properties.image}">
                                 <media:image class="img-fluid" asset="{node.properties.image}"
                                              alt="{node.properties.firstname} {node.properties.lastname}"
@@ -18,20 +19,15 @@
                                              height="{height}" maximumHeight="{maximumHeight}"
                                              allowUpScaling="{allowUpScaling}"/>
                             </f:if>
-                        </f:then>
-                        <f:else>
-                            <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}"
-                                 title="Dummy image" alt="Dummy image" class="img-fluid" style="height:330px"/>
-                        </f:else>
-                    </f:if>
+                        </div>
+                    </f:then>
+                </f:if>
 
-                </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-8">
                     <div class="contactperson-role">
                         {node.properties.function}
                     </div>
-
 
                     <f:render partial="Adressblock" arguments="{_all}"/>
 
