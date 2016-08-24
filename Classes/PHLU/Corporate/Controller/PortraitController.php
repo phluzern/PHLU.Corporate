@@ -5,17 +5,15 @@ namespace PHLU\Corporate\Controller;
  * This file is part of the PHLU.Corporate package.
  */
 
+use PHLU\Corporate\Factory\ContextFactory;
 use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Http\Request;
 use TYPO3\Neos\Domain\Repository\SiteRepository;
-use TYPO3\Neos\Domain\Service\ContentContextFactory;
 use TYPO3\TYPO3CR\Domain\Model\Node;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 use PHLU\Neos\Models\Domain\Model\Contact;
 use TYPO3\Eel\FlowQuery\FlowQuery;
 use TYPO3\TYPO3CR\Domain\Repository\NodeDataRepository;
 use TYPO3\TYPO3CR\Exception\PageNotFoundException;
-use TYPO3\Neos\Domain\Model\Site;
 
 
 class PortraitController extends \TYPO3\Neos\Controller\Frontend\NodeController
@@ -28,7 +26,6 @@ class PortraitController extends \TYPO3\Neos\Controller\Frontend\NodeController
     protected $workspaceRepository;
 
 
-
     /**
      * @Flow\Inject
      * @var SiteRepository
@@ -39,7 +36,7 @@ class PortraitController extends \TYPO3\Neos\Controller\Frontend\NodeController
 
     /**
      * @Flow\Inject
-     * @var ContentContextFactory
+     * @var ContextFactory
      */
     protected $contextFactory;
 
@@ -65,6 +62,10 @@ class PortraitController extends \TYPO3\Neos\Controller\Frontend\NodeController
     public function viewAction($node, $contact)
     {
 
+
+        if ($contact->isShowPortrait() === false) {
+            throw new PageNotFoundException('The requested node does not exist or isn\'t accessible to the current user', 1430218623);
+        }
 
         if ($node === null) {
             throw new NodeNotFoundException('The requested node does not exist or isn\'t accessible to the current user', 1430218623);
@@ -101,24 +102,19 @@ class PortraitController extends \TYPO3\Neos\Controller\Frontend\NodeController
     public function viewPortraitAction($contact)
     {
 
+        if ($contact->isShowPortrait() === false) {
+            throw new PageNotFoundException('The requested node does not exist or isn\'t accessible to the current user', 1430218623);
+        }
 
         // redirect non .html uri
         if (substr($this->controllerContext->getRequest()->getParentRequest()->getUri()->getPath(),-5,5) !== '.html') {
            $this->controllerContext->getResponse()->setHeader('Location', $this->controllerContext->getRequest()->getParentRequest()->getUri()->getPath().".html");
         }
 
-        $currentSite = $this->siteRepository->findOneByNodeName('corporate');
 
-        if ($currentSite === null) {
-            $this->outputLine('Error: No site for exporting found');
-            $this->quit(1);
-        }
-
-        /** @var ContentContext $contentContext */
-        $contentContext = $this->createContext($currentSite, 'live', array());
         $node = new Node(
             $this->nodeDataRepository->findOneByIdentifier('c8192de7-7700-4c43-aff3-6fb5214efa54', $this->workspaceRepository->findByName('live')->getFirst()),
-            $contentContext);
+            $this->contextFactory->getContentContext());
 
         $this->view->assignMultiple(array('value' => $node, 'contact' => $contact));
         $this->view->setTypoScriptPath('portrait');
@@ -126,26 +122,5 @@ class PortraitController extends \TYPO3\Neos\Controller\Frontend\NodeController
 
     }
 
-
-    /**
-     * @param Site $currentSite
-     * @param string $workspace
-     * @param array dimensions
-     * @return ContextInterface
-     */
-    protected function createContext(Site $currentSite, $workspace = 'live', $dimensions)
-    {
-
-
-        return $this->contextFactory->create(array(
-                'workspaceName' => $workspace,
-                'currentSite' => $currentSite,
-                'invisibleContentShown' => true,
-                'inaccessibleContentShown' => true,
-                'dimensions' => $dimensions
-            )
-
-        );
-    }
 
 }
