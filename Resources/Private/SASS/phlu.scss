@@ -2245,6 +2245,11 @@ body {
           margin-bottom: 0;
           border: 0;
           border-top: $hr-border-width solid $hr-border-color;
+
+          &.last {
+            border:0;
+            padding-bottom:40px;
+          }
         }
         //
         // phlu-table
@@ -2502,7 +2507,7 @@ body {
           }
           float: left;
           padding: $breadcrumb-padding-top $breadcrumb-padding-horizontal $breadcrumb-padding-bottom;
-          .rcrumbs {
+          .rcrumbs-container {
             height: 20px;
             overflow: hidden;
             .breadcrumb {
