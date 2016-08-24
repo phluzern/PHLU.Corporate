@@ -7038,18 +7038,6 @@ body {
       background-color: #e1e1e1; }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
       background-color: #e9e0d8; }
-    body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address {
-      font-size: 1rem; }
-      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address .telephone {
-        margin-top: 5px;
-        color: #9f632a; }
-        body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address .telephone .fa-phone {
-          padding-right: 6px; }
-      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address .content-link-email-contact-person, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address .content-link-portrait {
-        background-image: none;
-        font-size: 1rem; }
-      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address .content-link-portrait:before {
-        padding-right: 4px; }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
       position: relative;
       top: 17px;
@@ -7068,13 +7056,11 @@ body {
       body .all .phlu-team-members .panel-heading[aria-expanded=false] .panel-switch::after {
         content: "\002b"; }
       body .all .phlu-team-members .panel-heading .panel-email {
-        font-family: Icons; }
+        font-family: FontAwesome; }
         body .all .phlu-team-members .panel-heading .panel-email::after {
-          font-size: 19px;
+          font-size: 21px;
           position: absolute;
-          content: " \e05c";
-          right: 40px;
-          margin-top: 3px; }
+          content: " \f003"; }
       body .all .phlu-team-members .panel-heading .panel-switch::after {
         font-size: 35px;
         position: absolute;
@@ -7239,7 +7225,8 @@ body {
         body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body {
           background-color: #e9e0d8; }
           body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
-            padding-left: 50px; }
+            padding-left: 50px;
+            margin-top: inherit; }
             body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3::before {
               position: absolute;
               top: 50%;
@@ -7295,10 +7282,10 @@ body {
         height: 70px;
         color: white;
         font-size: 28px;
-        padding: 14px 15px; }
+        padding: 15px 15px; }
         body .all .flowtext-phlu-event > .row .initial.exhibition, body .all .flowtext-phlu-news > .row .initial.exhibition {
           font-size: 40px;
-          padding: 4px 0 0 22px; }
+          padding: 4px 0 0 23px; }
           body .all .flowtext-phlu-event > .row .initial.exhibition .description, body .all .flowtext-phlu-news > .row .initial.exhibition .description {
             position: absolute;
             font-size: 10px;
@@ -7306,12 +7293,12 @@ body {
             left: 24px; }
         body .all .flowtext-phlu-event > .row .initial.meeting, body .all .flowtext-phlu-news > .row .initial.meeting {
           font-size: 38px;
-          padding: 3px 0 0 26px; }
+          padding: 4px 0 0 25px; }
           body .all .flowtext-phlu-event > .row .initial.meeting .description, body .all .flowtext-phlu-news > .row .initial.meeting .description {
             position: absolute;
             font-size: 10px;
             top: 50px;
-            left: 34px; }
+            left: 33px; }
       body .all .flowtext-phlu-event > .row .preview-image img, body .all .flowtext-phlu-news > .row .preview-image img {
         width: 150px;
         height: 150px; }
@@ -7451,6 +7438,18 @@ body {
         @media (min-width: 992px) {
           body .all .main > .row hr {
             margin-top: 53px; } }
+      body .all .main > .row address {
+        font-size: 1rem; }
+        body .all .main > .row address .telephone {
+          margin-top: 5px;
+          color: #9f632a; }
+          body .all .main > .row address .telephone .fa-phone {
+            padding-right: 6px; }
+        body .all .main > .row address .content-link-email-contact-person, body .all .main > .row address .content-link-portrait {
+          background-image: none;
+          font-size: 1rem; }
+        body .all .main > .row address .content-link-portrait:before {
+          padding-right: 4px; }
       body .all .main > .row .table thead tr th {
         padding: 0.75rem 0;
         line-height: 1.5;
