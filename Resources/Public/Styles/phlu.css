@@ -7362,10 +7362,17 @@ body {
     body .all .main {
       background-color: #fbfaf4;
       flex-grow: 1; }
+      body .all .main .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
+        width: 100%;
+        font-size: 1.188rem; }
+        @media (min-width: 1280px) {
+          body .all .main .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
+            font-size: 1.313rem; } }
+      body .all .main .onepage-teaser-content .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
+        width: 100%;
+        font-size: 1.125rem; }
       body .all .main .onepage img {
         margin-bottom: 40px; }
-      body .all .main .onepage-teaser-content p {
-        width: 100%; }
       body .all .main .backend-img-fullwidth {
         width: 100%;
         height: auto;
@@ -7521,12 +7528,6 @@ body {
         font-size: 1rem; }
       body .all .main > .row .table-phlu-saw {
         margin-bottom: 40px; }
-      body .all .main > .row .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
-        width: 100%;
-        font-size: 1.188rem; }
-        @media (min-width: 1280px) {
-          body .all .main > .row .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
-            font-size: 1.313rem; } }
       @media (max-width: 991px) {
         body .all .main > .row .img-fluid, body .all .main > .row .carousel-inner > .carousel-item > img,
         body .all .main > .row .carousel-inner > .carousel-item > a > img, body .all .main > .row .phlu-teaser img, body .all .phlu-teaser .main > .row img {

@@ -57,6 +57,7 @@ $font-size-caption: 0.8rem;
 $font-size-nav-teasers: 0.875rem;
 $font-size-nav-teaser-header: 1.125rem;
 $font-size-paragraph-desktop: 1.125rem;
+$font-size-onepage-teasers: 1.125rem;
 $font-size-phlu-team-members: 1rem;
 $headings-color: $font-color;
 $headings-font-weight: normal;
@@ -2149,15 +2150,32 @@ body {
     .main {
       background-color: $beigelight;
       flex-grow: 1;
-
-      .onepage {
-        img {
-          margin-bottom: $spacer-y;
+      .phlu-corporate-content-page-headerdefault {
+        .phlu-corporate-textplain {
+          p {
+            width: 100%;
+            @include media-breakpoint-up("xl") {
+              font-size: $lead-font-size;
+            }
+            @include media-breakpoint-up("xs") {
+              font-size: $lead-font-size-mobile;
+            }
+          }
         }
       }
       .onepage-teaser-content {
-        p {
-          width: 100%;
+        .phlu-corporate-content-page-headerdefault {
+          .phlu-corporate-textplain {
+            p {
+              width: 100%;
+              font-size:$font-size-onepage-teasers;
+            }
+          }
+        }
+      }
+      .onepage {
+        img {
+          margin-bottom: $spacer-y;
         }
       }
       .backend-img-fullwidth {
@@ -2380,20 +2398,6 @@ body {
         .table-phlu-saw {
           margin-bottom: $form-group-margin-bottom;
         }
-
-        .phlu-corporate-content-page-headerdefault {
-          .phlu-corporate-textplain {
-            p {
-              width: 100%;
-              @include media-breakpoint-up("xl") {
-                font-size: $lead-font-size;
-              }
-              @include media-breakpoint-up("xs") {
-                font-size: $lead-font-size-mobile;
-              }
-            }
-          }
-        }
         .img-fluid {
           @include media-breakpoint-down("md") {
             margin: 0 auto;
@@ -2425,6 +2429,7 @@ body {
             display: inline-block;
           }
         }
+
 
         .content-link-wrapper {
           display: block;
