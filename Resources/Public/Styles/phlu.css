@@ -7154,31 +7154,33 @@ body {
         top: 5px;
         color: white;
         font-size: 12px; }
-    body .all .further-education-list .subjectsfilternav .table {
-      margin-bottom: 0; }
-      body .all .further-education-list .subjectsfilternav .table tbody tr td {
-        background-image: none;
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-        border-bottom: 1px #e5e5e5 solid;
-        font-size: 1.125rem; }
-        body .all .further-education-list .subjectsfilternav .table tbody tr td a {
-          color: white; }
-        body .all .further-education-list .subjectsfilternav .table tbody tr td.theme-code {
-          width: 38px; }
-        body .all .further-education-list .subjectsfilternav .table tbody tr td:first-child {
-          padding-left: 20px;
-          width: 60px; }
-        body .all .further-education-list .subjectsfilternav .table tbody tr td:last-child {
-          padding-right: 20px;
-          padding-left: 20px; }
-      body .all .further-education-list .subjectsfilternav .table tbody tr.checked {
-        color: #91a103; }
-        body .all .further-education-list .subjectsfilternav .table tbody tr.checked a {
+      body .all .further-education-list .subjectsfilternav .result-panel .table {
+        margin-bottom: 0; }
+        body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td {
+          background-image: none;
+          border-top: 0;
+          border-left: 0;
+          border-right: 0;
+          border-bottom: 1px #e5e5e5 solid;
+          font-size: 1.125rem; }
+          body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a {
+            color: white; }
+          body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td.theme-code {
+            width: 38px; }
+          body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td:first-child {
+            padding-left: 20px;
+            width: 60px; }
+          body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td:last-child {
+            padding-right: 20px;
+            padding-left: 20px; }
+        body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr.checked {
           color: #91a103; }
-      body .all .further-education-list .subjectsfilternav .table tbody tr:last-child td {
-        border-bottom: 0; }
+          body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr.checked a {
+            color: #91a103; }
+        body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr:last-child td {
+          border-bottom: 0; }
+        body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr:first-child td {
+          border-top: 0; }
     body .all .further-education-list .results-table {
       margin-top: 50px;
       margin-bottom: 105px; }
