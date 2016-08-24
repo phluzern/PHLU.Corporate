@@ -885,6 +885,10 @@ body {
         }
         p {
           font-size: $font-size-nav-teasers;
+          width: 100%;
+        }
+        a {
+          color:$grey;
         }
       }
       .event.noimg, .publication.noimg {
@@ -933,6 +937,9 @@ body {
             margin-top: 5px;
             line-height: 1rem;
             margin-left: 81px;
+          }
+          > div {
+            margin-top:10px;
           }
         }
         .phlu-teaser-body {

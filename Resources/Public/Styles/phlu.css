@@ -6619,7 +6619,10 @@ body {
           body .all .phlu-teaser .phlu-teaser-body h3 a {
             color: #464340; }
         body .all .phlu-teaser .phlu-teaser-body p {
-          font-size: 0.875rem; }
+          font-size: 0.875rem;
+          width: 100%; }
+        body .all .phlu-teaser .phlu-teaser-body a {
+          color: #5c5c5c; }
       body .all .phlu-teaser .event.noimg .phlu-teaser-body, body .all .phlu-teaser .publication.noimg .phlu-teaser-body {
         z-index: 99;
         position: relative;
@@ -6654,6 +6657,8 @@ body {
           margin-top: 5px;
           line-height: 1rem;
           margin-left: 81px; }
+        body .all .phlu-teaser .event .event-date-month-year-location > div {
+          margin-top: 10px; }
       body .all .phlu-teaser .event .phlu-teaser-body {
         height: 183px;
         padding: 30px 20px 20px; }
