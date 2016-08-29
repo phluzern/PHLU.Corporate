@@ -4,7 +4,6 @@
 {namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
 
 
-
 <f:if condition="{isHidden}">
     <f:then>
         <span></span>
@@ -35,21 +34,25 @@
                             <portrait:link node="{node}">Portrait</portrait:link>
                         </address>
                     </div>
-                    <div class="col-xs-12 col-sm-6 flexfirst col-md-4">
 
-                        <f:if condition="{node.properties.image}">
-                            <f:then>
-                                <f:if condition="{node.properties.image}">
-                                    <media:image class="img-fluid" asset="{node.properties.image}" alt="{node.properties.firstname} {node.properties.lastname}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
-                                </f:if>
-                            </f:then>
-                            <f:else>
-                                <img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image" alt="Dummy image" class="img-fluid" style="height:330px" />
-                            </f:else>
-                        </f:if>
 
-                    </div>
+                    <f:if condition="{node.properties.image}">
+                        <f:then>
+                            <f:if condition="{node.properties.image}">
+                                <div class="col-xs-12 col-sm-6 flexfirst col-md-4">
+                                    <media:image class="img-fluid" asset="{node.properties.image}"
+                                                 alt="{node.properties.firstname} {node.properties.lastname}"
+                                                 title="{title}" width="{width}" maximumWidth="{maximumWidth}"
+                                                 height="{height}" maximumHeight="{maximumHeight}"
+                                                 allowUpScaling="{allowUpScaling}"/>
+                                </div>
+                            </f:if>
+                        </f:then>
+                    </f:if>
+
+
                 </div>
+
             </div>
         </div>
     </f:else>

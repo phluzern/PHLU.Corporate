@@ -29,16 +29,16 @@
                  aria-labelledby="tab-{node.Identifier}">
 
                 <div class="row panel-body">
-                    <div class="col-xs-12 col-sm-2">
-                        <f:if condition="{node.properties.image}">
-                            <f:then>
+                    <f:if condition="{node.properties.image}">
+                        <f:then>
+                            <div class="col-xs-12 col-sm-2">
                                 <media:image asset="{node.properties.image}" class="img-fluid"
                                              alt="{node.properties.firstname} {node.properties.lastname}" width="400"
                                              maximumWidth="400" height="300" maximumHeight="300"
                                              allowUpScaling="false"/>
-                            </f:then>
-                        </f:if>
-                    </div>
+                            </div>
+                        </f:then>
+                    </f:if>
                     <div class="col-xs-12 col-sm-10">
                         <f:render partial="Adressblock" arguments="{_all}"/>
                     </div>

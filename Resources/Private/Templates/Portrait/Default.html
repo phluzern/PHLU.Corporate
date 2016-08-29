@@ -12,14 +12,16 @@
         <h1 class="page-header">{contact.name.fullname}</h1>
 
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-3">
 
-                <f:if condition="{contact.image}">
+
+            <f:if condition="{contact.image}">
+                <div class="col-xs-12 col-sm-6 col-md-3">
                     <media:image class="img-fluid" asset="{contact.image}" alt="{contact.name.fullname}" width="400"
                                  maximumWidth="300" height="400" maximumHeight="300"/>
-                </f:if>
+                </div>
+            </f:if>
 
-            </div>
+
             <div class="col-xs-12 col-sm-6 col-md-9">
                 <address>
                     <b>{contact.name.firstName} {contact.name.lastName}</b><br>
@@ -121,9 +123,10 @@
                     <h2>Publikationen</h2>
                     <div class="row">
                         <div class="col-xs-12">
-                            <div id="phlu-accordion-publications" class="phlu-accordion" >
+                            <div id="phlu-accordion-publications" class="phlu-accordion">
 
-                                <f:for each="{contact.publications}" as="publications" key="publicationtype" iteration="iterator">
+                                <f:for each="{contact.publications}" as="publications" key="publicationtype"
+                                       iteration="iterator">
 
 
                                     <div class="panel panel-default">
@@ -131,15 +134,17 @@
                                             <h4 class="panel-title">
                                                 <a data-toggle="collapse" data-parent="#phlu-accordion-publications"
                                                    href="#phlu-accordion-publications-{iterator.index}"
-                                                   aria-expanded="false" aria-controls="phlu-accordion-publications-{iterator.index}">
+                                                   aria-expanded="false"
+                                                   aria-controls="phlu-accordion-publications-{iterator.index}">
                                                     {publicationtype}
                                                 </a>
                                             </h4>
                                         </div>
-                                        <div id="phlu-accordion-publications-{iterator.index}" class="panel-collapse collapse" role="tabpanel">
+                                        <div id="phlu-accordion-publications-{iterator.index}"
+                                             class="panel-collapse collapse" role="tabpanel">
                                             <div>
                                                 <f:for each="{publications}" as="publication">
-                                                <p>{publication.Citationstyle}{publication.Title}</p>
+                                                    <p>{publication.Citationstyle}{publication.Title}</p>
                                                 </f:for>
                                             </div>
                                         </div>
@@ -156,7 +161,7 @@
 
         </f:if>
 
-          <f:if condition="{contact.projects}">
+        <f:if condition="{contact.projects}">
 
             <div class="row science-projects">
                 <div class="col-xs-12">
@@ -164,27 +169,34 @@
                     <h2>Projekte</h2>
                     <div class="row">
                         <div class="col-xs-12">
-                            <div id="phlu-accordion-projects" class="phlu-accordion" >
+                            <div id="phlu-accordion-projects" class="phlu-accordion">
 
                                 <f:for each="{contact.projects}" as="projects" key="projecttype" iteration="iterator">
 
                                     <f:for each="{projects}" as="project">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading" role="tab">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#phlu-accordion-projects"
-                                                   href="#phlu-accordion-project-{project.ID}"
-                                                   aria-expanded="false" aria-controls="phlu-accordion-projects-{project.ID}">
-                                                    {project.TitleGerman}
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="phlu-accordion-project-{project.ID}" class="panel-collapse collapse" role="tabpanel">
-                                            <div>
-                                                <f:link.action action="load" controller="project" package="PHLU.Corporate" arguments="{project: project.ID,title: project.uriSegment}">{project.TeaserTextGerman}</f:link.action>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#phlu-accordion-projects"
+                                                       href="#phlu-accordion-project-{project.ID}"
+                                                       aria-expanded="false"
+                                                       aria-controls="phlu-accordion-projects-{project.ID}">
+                                                        {project.TitleGerman}
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="phlu-accordion-project-{project.ID}"
+                                                 class="panel-collapse collapse" role="tabpanel">
+                                                <div>
+                                                    <p>{project.TeaserTextGerman}</p>
+                                                    <f:link.action action="load" controller="project"
+                                                                   package="PHLU.Corporate"
+                                                                   arguments="{project: project.ID,title: project.uriSegment}"
+                                                                   class="btn btn-primary">Details
+                                                    </f:link.action>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
                                     </f:for>
                                 </f:for>

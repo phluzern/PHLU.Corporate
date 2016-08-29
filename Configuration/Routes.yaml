@@ -86,6 +86,19 @@
 # PHLU corporate routes
 #
 -
+  name: 'Portrait Self Target Route Builder'
+  uriPattern: '{contact}<defaultUriSuffix>'
+  defaults:
+    '@package': 'PHLU.Corporate'
+    '@controller': 'Portrait'
+    '@format': 'html'
+    '@action': 'viewPortrait'
+
+
+#
+# PHLU corporate routes
+#
+-
   name: 'Projects Route Builder'
   uriPattern: 'forschung/projekte/{project}/{title}<defaultUriSuffix>'
   defaults:
