@@ -6619,7 +6619,10 @@ body {
           body .all .phlu-teaser .phlu-teaser-body h3 a {
             color: #464340; }
         body .all .phlu-teaser .phlu-teaser-body p {
-          font-size: 0.875rem; }
+          font-size: 0.875rem;
+          width: 100%; }
+        body .all .phlu-teaser .phlu-teaser-body a {
+          color: #5c5c5c; }
       body .all .phlu-teaser .event.noimg .phlu-teaser-body, body .all .phlu-teaser .publication.noimg .phlu-teaser-body {
         z-index: 99;
         position: relative;
@@ -6654,6 +6657,8 @@ body {
           margin-top: 5px;
           line-height: 1rem;
           margin-left: 81px; }
+        body .all .phlu-teaser .event .event-date-month-year-location > div {
+          margin-top: 10px; }
       body .all .phlu-teaser .event .phlu-teaser-body {
         height: 183px;
         padding: 30px 20px 20px; }
@@ -7362,10 +7367,17 @@ body {
     body .all .main {
       background-color: #fbfaf4;
       flex-grow: 1; }
+      body .all .main .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
+        width: 100%;
+        font-size: 1.188rem; }
+        @media (min-width: 1280px) {
+          body .all .main .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
+            font-size: 1.313rem; } }
+      body .all .main .onepage-teaser-content .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
+        width: 100%;
+        font-size: 1.125rem; }
       body .all .main .onepage img {
         margin-bottom: 40px; }
-      body .all .main .onepage-teaser-content p {
-        width: 100%; }
       body .all .main .backend-img-fullwidth {
         width: 100%;
         height: auto;
@@ -7521,12 +7533,6 @@ body {
         font-size: 1rem; }
       body .all .main > .row .table-phlu-saw {
         margin-bottom: 40px; }
-      body .all .main > .row .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
-        width: 100%;
-        font-size: 1.188rem; }
-        @media (min-width: 1280px) {
-          body .all .main > .row .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
-            font-size: 1.313rem; } }
       @media (max-width: 991px) {
         body .all .main > .row .img-fluid, body .all .main > .row .carousel-inner > .carousel-item > img,
         body .all .main > .row .carousel-inner > .carousel-item > a > img, body .all .main > .row .phlu-teaser img, body .all .phlu-teaser .main > .row img {

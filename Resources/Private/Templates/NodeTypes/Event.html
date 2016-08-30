@@ -3,7 +3,7 @@
 {namespace media=TYPO3\Media\ViewHelpers}
 
 
-<div class="{breakpointClass} event singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)}">
+<div class="{breakpointClass} event singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)} clickable">
     <div class="event-date-day">
         <f:format.date format="d">{node.properties.date}</f:format.date>
     </div>
@@ -11,28 +11,34 @@
         <b>
             <f:format.date format="M. Y">{node.properties.date}</f:format.date>
         </b>
-        <f:if condition="{node.properties.time}"> / <f:format.date format="H:i">{node.properties.time}</f:format.date></f:if>
+        <f:if condition="{node.properties.time}"> /
+            <f:format.date format="H:i">{node.properties.time}</f:format.date>
+        </f:if>
 
         <br>
-        {neos:contentElement.editable(property: 'location', tag: 'span')}
+        {neos:contentElement.editable(property: 'location', tag: 'div')}
     </div>
     <div class="phlu-teaser-body">
 
-            <div class="scrollbody">
+        <div class="scrollbody">
             {neos:contentElement.editable(property: 'teaserHeadline', tag: 'h3')}
-
-            {neos:contentElement.editable(property: 'teaserText', tag: 'p')}
-
-            </div>
-
+            <p>
+                <a href="#">
+                    {neos:contentElement.editable(property: 'teaserText', tag: 'span')}
+                </a>
+            </p>
+        </div>
     </div>
 
     <f:if condition="{node.properties.teaserImage}">
         <f:then>
-           <media:image asset="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
+            <media:image asset="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}" width="{width}"
+                         maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
+                         allowUpScaling="{allowUpScaling}"/>
         </f:then>
         <f:else>
-            <img class="img-fluid" src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/spacer-white-teaser.png')}" alt="spacer">
+            <img class="img-fluid"
+                 src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/spacer-white-teaser.png')}" alt="spacer">
         </f:else>
     </f:if>
     <div class="phlu-teaser-type">

@@ -26,10 +26,10 @@
                             {node.properties.zip} {node.properties.city}
                         </address>
                         <address>
-                    <span>
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                    </span>
-                            {node.properties.phone}<br>
+                            <div class="telephone">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                {node.properties.phone}<br>
+                            </div>
                             <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{node.properties.email}</a><br>
                             <portrait:link node="{node}">Portrait</portrait:link>
                         </address>
