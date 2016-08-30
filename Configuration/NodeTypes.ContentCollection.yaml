@@ -39,7 +39,7 @@
       'PHLU.Corporate:Image': TRUE
       'PHLU.Corporate:Event': TRUE
       'PHLU.Corporate:Contacts': TRUE
-      'PHLU.Qmpilot.NodeTypes:Files': TRUE
+      'PHLU.Qmpilot.NodeTypes:File': TRUE
       'PHLU.Corporate:Table': TRUE
 
 

@@ -342,7 +342,7 @@ body.neos-backend {
     }
   }
 
-  .phlu-qmpilot-nodetypes-files {
+  .phlu-qmpilot-nodetypes-files, .phlu-qmpilot-nodetypes-file {
     &.assetsCount-0 {
       min-height: 30px;
       border: 1px dotted lightgrey;
@@ -2429,7 +2429,7 @@ body {
         .content-link-wrapper {
           display: block;
           width: 100%;
-          a {
+          .content-link-default-file {
 
             display: inline-flex;
             text-overflow: ellipsis;
