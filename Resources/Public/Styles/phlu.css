@@ -7599,14 +7599,14 @@ body {
         body .all .main > .row .content-link-email-contact-person::before {
           font-family: FontAwesome;
           content: "\f003 \2000"; }
-      body .all .main > .row .content-link-external, body .all .main > .row a[target='_blank'] {
+      body .all .main > .row .content-link-external, body .all .main > .row a[target='_blank'], body .all .main > .row .content-link-shortcut-file {
         background-image: url("../Images/linkbottomline.png");
         font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
         padding-bottom: 4px; }
-        body .all .main > .row .content-link-external::after, body .all .main > .row a[target='_blank']::after {
+        body .all .main > .row .content-link-external::after, body .all .main > .row a[target='_blank']::after, body .all .main > .row .content-link-shortcut-file::after {
           background-image: url("../Images/externalLinkArrow.png");
           background-repeat: no-repeat;
           background-position: 0 3px;
@@ -7639,6 +7639,26 @@ body {
         body .all .main > .row .content-link-default-file::before {
           font-family: FontAwesome;
           content: "\f016 \2000"; }
+      body .all .main > .row .content-link-internal-file {
+        background-image: inherit;
+        font-size: 1.125rem;
+        color: #9f632a;
+        background-repeat: repeat-x;
+        background-position: bottom;
+        padding-bottom: 4px; }
+        body .all .main > .row .content-link-internal-file::before {
+          font-family: FontAwesome;
+          content: "\f0c1 \2000"; }
+      body .all .main > .row .content-link-shortcut-file {
+        background-image: inherit;
+        font-size: 1.125rem;
+        color: #9f632a;
+        background-repeat: repeat-x;
+        background-position: bottom;
+        padding-bottom: 4px; }
+        body .all .main > .row .content-link-shortcut-file::before {
+          font-family: FontAwesome;
+          content: "\f0c1 \2000"; }
       body .all .main > .row .content-link-jpeg-file {
         background-image: inherit;
         font-size: 1.125rem;

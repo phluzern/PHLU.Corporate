@@ -164,6 +164,12 @@ $input-search-field-big: 50px;
       font-family: FontAwesome;
       content: "\f016 \2000";
     }
+  }  @else if $type == internalFile {
+    background-image: inherit;
+    &::before {
+      font-family: FontAwesome;
+      content: "\f0c1 \2000";
+    }
   } @else if $type == jpegFile {
     background-image: inherit;
     &::before {
@@ -2479,7 +2485,7 @@ body {
         .content-link-email-contact-person {
           @include content-link("email-contact-person");
         }
-        .content-link-external, a[target='_blank'] {
+        .content-link-external, a[target='_blank'], .content-link-shortcut-file {
           @include content-link("external");
         }
         .content-link-internal, a[data-gentics-aloha-repository='node-repository'] {
@@ -2490,6 +2496,12 @@ body {
         }
         .content-link-default-file {
           @include content-link("defaultFile");
+        }
+        .content-link-internal-file {
+          @include content-link("internalFile");
+        }
+        .content-link-shortcut-file {
+          @include content-link("internalFile");
         }
         .content-link-jpeg-file {
           @include content-link("jpegFile");
