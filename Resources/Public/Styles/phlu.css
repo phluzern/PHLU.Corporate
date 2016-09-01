@@ -8105,7 +8105,7 @@ body .startpage .main {
     z-index: 1; }
   body .startpage .main > .row.aktuelles {
     background-image: url("../Images/ambienteexample.jpg");
-    background-position: -120px 0;
+    background-size: cover;
     margin-bottom: 56px; }
     @media (min-width: 1280px) {
       body .startpage .main > .row.aktuelles {
