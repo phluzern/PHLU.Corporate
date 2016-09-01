@@ -3059,7 +3059,7 @@ body {
       }
       > .row.aktuelles {
         background-image: url("../Images/ambienteexample.jpg");
-        background-position: -120px 0;
+        background-size: cover;
         margin-bottom: 56px;
 
         @include media-breakpoint-up("xl") {
