@@ -7,3 +7,21 @@ prototype(PHLU.Qmpilot.NodeTypes:Files) {
 
 }
 
+# File
+prototype(PHLU.Qmpilot.NodeTypes:File) {
+
+
+    templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/File/Default.html'
+    asset = ${q(node).property('asset')}
+    customTitle = ${q(node).property('customTitle')}
+    title = ${q(node).property('title')}
+    attributes.class = ${q(node).property('asset') ? 'assetsCount-1' : 'assetsCount-0'}
+    link = ${q(node).property('asset').resource.link}
+    link.@process.convertUris = TYPO3.Neos:ConvertUris {
+        forceConversion = true
+    }
+
+    attributes.class = ${q(node).next().get(0).nodeType.name != 'PHLU.Qmpilot.NodeTypes:File' ? 'last' : ''}
+
+}
+

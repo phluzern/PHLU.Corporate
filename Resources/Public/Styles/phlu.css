@@ -6254,7 +6254,7 @@ body.neos-backend .phlu-corporate-text a[href^='http://'] {
     background-position: 0 3px;
     padding-right: 25px;
     content: ""; }
-body.neos-backend .phlu-qmpilot-nodetypes-files.assetsCount-0 {
+body.neos-backend .phlu-qmpilot-nodetypes-files.assetsCount-0, body.neos-backend .phlu-qmpilot-nodetypes-file.assetsCount-0 {
   min-height: 30px;
   border: 1px dotted lightgrey; }
 
@@ -7557,31 +7557,31 @@ body {
       body .all .main > .row .content-link-wrapper {
         display: block;
         width: 100%; }
-        body .all .main > .row .content-link-wrapper a {
+        body .all .main > .row .content-link-wrapper .content-link-default-file {
           display: inline-flex;
           text-overflow: ellipsis; }
           @media (max-width: 767px) {
-            body .all .main > .row .content-link-wrapper a {
+            body .all .main > .row .content-link-wrapper .content-link-default-file {
               width: 100% !important; } }
-          body .all .main > .row .content-link-wrapper a span:first-child {
+          body .all .main > .row .content-link-wrapper .content-link-default-file span:first-child {
             margin-left: 10px;
             width: auto;
             align-self: flex-start; }
             @media (max-width: 991px) {
-              body .all .main > .row .content-link-wrapper a span:first-child {
+              body .all .main > .row .content-link-wrapper .content-link-default-file span:first-child {
                 width: 75% !important; } }
-          body .all .main > .row .content-link-wrapper a span:last-child {
+          body .all .main > .row .content-link-wrapper .content-link-default-file span:last-child {
             margin-left: 10px;
             width: auto;
             align-self: flex-start;
             text-overflow: ellipsis;
             color: #685f56; }
             @media (max-width: 991px) {
-              body .all .main > .row .content-link-wrapper a span:last-child {
+              body .all .main > .row .content-link-wrapper .content-link-default-file span:last-child {
                 width: 15% !important;
                 min-width: 150px !important; } }
             @media (min-width: 1280px) {
-              body .all .main > .row .content-link-wrapper a span:last-child {
+              body .all .main > .row .content-link-wrapper .content-link-default-file span:last-child {
                 overflow: visible; } }
       body .all .main > .row .content-link-email {
         font-size: 1.125rem;
@@ -7599,14 +7599,14 @@ body {
         body .all .main > .row .content-link-email-contact-person::before {
           font-family: FontAwesome;
           content: "\f003 \2000"; }
-      body .all .main > .row .content-link-external, body .all .main > .row a[target='_blank'] {
+      body .all .main > .row .content-link-external, body .all .main > .row a[target='_blank'], body .all .main > .row .content-link-shortcut-file {
         background-image: url("../Images/linkbottomline.png");
         font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
         padding-bottom: 4px; }
-        body .all .main > .row .content-link-external::after, body .all .main > .row a[target='_blank']::after {
+        body .all .main > .row .content-link-external::after, body .all .main > .row a[target='_blank']::after, body .all .main > .row .content-link-shortcut-file::after {
           background-image: url("../Images/externalLinkArrow.png");
           background-repeat: no-repeat;
           background-position: 0 3px;
@@ -7639,6 +7639,26 @@ body {
         body .all .main > .row .content-link-default-file::before {
           font-family: FontAwesome;
           content: "\f016 \2000"; }
+      body .all .main > .row .content-link-internal-file {
+        background-image: inherit;
+        font-size: 1.125rem;
+        color: #9f632a;
+        background-repeat: repeat-x;
+        background-position: bottom;
+        padding-bottom: 4px; }
+        body .all .main > .row .content-link-internal-file::before {
+          font-family: FontAwesome;
+          content: "\f0c1 \2000"; }
+      body .all .main > .row .content-link-shortcut-file {
+        background-image: inherit;
+        font-size: 1.125rem;
+        color: #9f632a;
+        background-repeat: repeat-x;
+        background-position: bottom;
+        padding-bottom: 4px; }
+        body .all .main > .row .content-link-shortcut-file::before {
+          font-family: FontAwesome;
+          content: "\f0c1 \2000"; }
       body .all .main > .row .content-link-jpeg-file {
         background-image: inherit;
         font-size: 1.125rem;
