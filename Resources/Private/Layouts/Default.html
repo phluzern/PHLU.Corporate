@@ -90,7 +90,8 @@
                                             <input type="text" class="c-input form-control" id="siteSearch" data-ng-model="siteSearch">
                                             <i class="fa fa-search" aria-hidden="true"></i>
                                             <div class="searchResult">
-                                                <ul data-ng-if="searchResult" style="display: block;position: absolute;width:50%; background-color:lightgrey; width:400px;">
+
+                                                <ul data-ng-class="{hasSearchResults: searchResult.length > 0}" style="display:none">
                                                     <li ng-repeat="node in searchResult | orderBy:'-score'">
                                                         <strong style="font-size:9px">{{node.score}}</strong><br>
                                                         <b style="font-size:12px;">{{node.nodeType}}</b>
