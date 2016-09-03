@@ -7,6 +7,7 @@ prototype(PHLU.Qmpilot.NodeTypes:Files) {
 
 }
 
+
 # File
 prototype(PHLU.Qmpilot.NodeTypes:File) {
 
@@ -24,7 +25,6 @@ prototype(PHLU.Qmpilot.NodeTypes:File) {
     assetcount = ${q(node).property('asset') ? '1' : '0'}
 
     attributes.class = ${(q(node).next().get(0).nodeType.name != 'PHLU.Qmpilot.NodeTypes:File' ? 'last ' : '')}
-
 
 
 }

@@ -10,9 +10,10 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$timeout', '$cookies', fun
         authDomain: "phlu-f98dd.firebaseapp.com",
         databaseURL: "https://phlu-f98dd.firebaseio.com",
         storageBucket: "phlu-f98dd.appspot.com",
-        path: "/search/",
+        path: "/search/live",
+        precision: 2,
         boost: {
-            contact: 100,
+            contact: 10,
             firstname: 100,
             lastname: 100,
             uriPathSegment: 150,
@@ -48,17 +49,16 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$timeout', '$cookies', fun
         if (term !== '') {
 
             var termstart = term;
-            if (term.length > 3) {
+            if (term.length > 2*config.precision) {
                 // magic function. searches for "lehrerin" finds also "lehrer". searches for "lehrer" finds also "lehrpersonen"!
-                termstart = term.substr(0, term.length-2);
+                termstart = term.substr(0, term.length-config.precision);
             }
 
 
             database.ref(config.path)
                 .orderByKey()
                 .startAt(termstart)
-                .limitToFirst(30)
-
+                .limitToFirst(config.precision*10)
                 .on('value', function (snapshot) {
 
                     var b = [];
@@ -77,22 +77,37 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$timeout', '$cookies', fun
 
                         database.ref(config.path)
                             .orderByKey()
-                            .startAt(term)
+                            .startAt(termstart)
                             .endAt(endKey.key)
 
                             .on('value', function (snapshot) {
+
+
+
                                 setTimeout(function () {
 
-                                    if ($scope.terms[term] !== undefined) {
+                                    if ($scope.terms[term] === undefined) {
+                                        $scope.terms[term] = {};
+                                        $scope.terms[term].results = {};
+                                    }
 
                                         angular.forEach(snapshot.val(), function (v, k) {
-                                            $scope.terms[term].results = v;
-                                            $scope.terms[term].terms = b;
+
+                                            angular.forEach(v, function (vv, kk) {
+                                                if ($scope.terms[term].results === undefined) {
+
+                                                }
+                                                $scope.terms[term].results[kk] = vv;
+                                            });
+
+
                                         });
+
+                                    $scope.terms[term].terms = b;
 
                                         $scope.$apply(); //this triggers a $digest
 
-                                    }
+
                                 }, 10);
 
 
@@ -178,7 +193,9 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$timeout', '$cookies', fun
 
     applyData = function () {
 
+
         angular.forEach($scope.terms, function (val, key) {
+
 
 
             if (val.results) {
@@ -186,6 +203,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$timeout', '$cookies', fun
                 angular.forEach(val.results, function (node) {
 
                     var doc = node.properties;
+
 
                     if (doc != undefined) {
                         angular.forEach(doc, function (val, key) {
@@ -219,7 +237,9 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$timeout', '$cookies', fun
             fields[v] = {boost:config.boost[v] === undefined ? 1: config.boost[v]}
         });
 
-        var results = lunrSearch.search(term.toLowerCase().replace(filterReg, " "), {
+
+
+        var results = lunrSearch.search(term, {
             fields:fields,
             bool: "OR"
         });

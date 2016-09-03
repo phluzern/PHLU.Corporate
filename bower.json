@@ -10,6 +10,8 @@
     "animate.css": "*",
     "filament-tablesaw": "*",
     "jquery-rcrumbs": "*",
-    "bootstrap-datepicker": "*"
+    "bootstrap-datepicker": "*",
+    "angularfire": "*",
+    "elasticlunr.js": "*"
   }
 }

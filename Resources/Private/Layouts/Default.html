@@ -35,11 +35,14 @@
 
     <f:section name="headScripts">
         <!-- Put your scripts inclusions for the head here, they will be included in your website by TypoScript -->
+        <script src="{f:uri.resource(path: 'Vendor/firebase/firebase.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/angularjs/angular.min.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/angular-cookies/angular-cookies.min.js', package: 'PHLU.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/ContactsCtrl.js', package: 'PHLU.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SearchCtrl.js', package: 'PHLU.Corporate')}"></script>
 
     </f:section>
 
@@ -72,10 +75,35 @@
                                          alt="PH Luzern Logo"
                                          onerror="this.onerror=null; this.src='Images/phluLogo.png'"/>
                                 </a>
-                                <div class="site-search-field">
-                                    <input type="text" class="c-input form-control" id="siteSearch">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </div>
+                                <f:if condition="{neos:rendering.inBackend()}">
+                                    <f:then>
+                                        <div class="site-search-field">
+                                            <input type="text" class="c-input form-control" id="siteSearch">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                            <div class="searchResult">
+
+                                            </div>
+                                        </div>
+                                    </f:then>
+                                    <f:else>
+                                        <div class="site-search-field" data-ng-controller="SearchCtrl">
+                                            <input type="text" class="c-input form-control" id="siteSearch" data-ng-model="siteSearch">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                            <div class="searchResult">
+                                                <ul data-ng-if="searchResult" style="display: block;position: absolute;width:50%; background-color:lightgrey; width:400px;">
+                                                    <li ng-repeat="node in searchResult | orderBy:'-score'">
+                                                        <strong style="font-size:9px">{{node.score}}</strong><br>
+                                                        <b style="font-size:12px;">{{node.nodeType}}</b>
+
+                                                        <p ng-if="node.properties['phlu-corporate-contact-lastname']">{{node.properties['phlu-corporate-contact-lastname']}} {{node.properties['phlu-corporate-contact-firstname']}}<br>{{node.properties['phlu-corporate-contact-phone']}}</p>
+
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </f:else>
+                                </f:if>
+
                             </div>
                             <div class="row">
                                 {parts.sideBarLevel0Menu -> f:format.raw()}
