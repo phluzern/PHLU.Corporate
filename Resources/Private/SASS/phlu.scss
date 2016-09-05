@@ -164,7 +164,7 @@ $input-search-field-big: 50px;
       font-family: FontAwesome;
       content: "\f016 \2000";
     }
-  }  @else if $type == internalFile {
+  } @else if $type == internalFile {
     background-image: inherit;
     &::before {
       font-family: FontAwesome;
@@ -748,12 +748,12 @@ body {
           margin-top: -25px;
         }
         .hasSearchResults {
-          display:block !important;
-          position: absolute  !important;
-          background-color:rgba(212, 212, 212, 0.86);
-          left:0px;
-          margin-top:15px;
-          width:100%;
+          display: block !important;
+          position: absolute !important;
+          background-color: rgba(212, 212, 212, 0.86);
+          left: 0px;
+          margin-top: 15px;
+          width: 100%;
         }
       }
       .form-control {
@@ -902,7 +902,7 @@ body {
           width: 100%;
         }
         a {
-          color:$grey;
+          color: $grey;
         }
       }
       .event.noimg, .publication.noimg {
@@ -953,7 +953,7 @@ body {
             margin-left: 81px;
           }
           > div {
-            margin-top:10px;
+            margin-top: 10px;
           }
         }
         .phlu-teaser-body {
@@ -1528,12 +1528,23 @@ body {
             .phlu-teaser-body, .phlu-teaser-caret-right {
               background-color: $sephia;
             }
+            .phlu-teaser-body {
+              address {
+                white-space: nowrap;
+              }
+            }
             .phlu-teaser-caret-right {
               img {
                 position: relative;
                 top: 17px;
-                left: 10px;
+                left: 15px;
+                @include media-breakpoint-down("xxl") {
+                  left: 0;
+                }
                 width: 100px;
+                @include media-breakpoint-down("sm") {
+                  margin: 0 0 0 auto;
+                }
               }
             }
           }
@@ -1776,7 +1787,7 @@ body {
                 }
                 &:first-child {
                   td {
-                    border-top:0;
+                    border-top: 0;
                   }
                 }
               }
@@ -1872,7 +1883,11 @@ body {
               }
             }
           }
-
+        }
+        &.topics {
+          p {
+            width: 100%;
+          }
         }
       }
     }
@@ -1909,7 +1924,7 @@ body {
                   color: $hazelbrowndark;
                   font-weight: bold;
                 }
-                margin-top:inherit;
+                margin-top: inherit;
               }
             }
             .phlu-teaser-caret-right {
@@ -2189,7 +2204,7 @@ body {
           .phlu-corporate-textplain {
             p {
               width: 100%;
-              font-size:$font-size-onepage-teasers;
+              font-size: $font-size-onepage-teasers;
             }
           }
         }
@@ -2272,8 +2287,8 @@ body {
           border-top: $hr-border-width solid $hr-border-color;
 
           &.last {
-            border:0;
-            padding-bottom:40px;
+            border: 0;
+            padding-bottom: 40px;
           }
         }
         address {
@@ -2413,7 +2428,7 @@ body {
             }
           }
           a[target='_blank'] {
-            font-size:$font-size-table-href;
+            font-size: $font-size-table-href;
           }
         }
         .table-phlu-saw {
@@ -2450,7 +2465,6 @@ body {
             display: inline-block;
           }
         }
-
 
         .content-link-wrapper {
           display: block;

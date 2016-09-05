@@ -6521,7 +6521,7 @@ body {
           margin-top: -25px; }
         body .all .sidebar .site-search-field .hasSearchResults {
           display: block !important;
-          position: absolute  !important;
+          position: absolute !important;
           background-color: rgba(212, 212, 212, 0.86);
           left: 0px;
           margin-top: 15px;
@@ -7050,11 +7050,19 @@ body {
       background-color: #e1e1e1; }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
       background-color: #e9e0d8; }
+    body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address {
+      white-space: nowrap; }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
       position: relative;
       top: 17px;
-      left: 10px;
+      left: 15px;
       width: 100px; }
+      @media (max-width: 1599px) {
+        body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
+          left: 0; } }
+      @media (max-width: 767px) {
+        body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
+          margin: 0 0 0 auto; } }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .phlu-corporate-contactsgroup h3 {
       margin-top: 36px; }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .phlu-corporate-contactsgroup .phlu-accordion {
@@ -7224,6 +7232,8 @@ body {
       width: 75%; }
     body .all .further-education-detail .row.fees table tr td {
       text-align: right; }
+    body .all .further-education-detail .row.topics p {
+      width: 100%; }
     body .all .row.subjectsfilternav.phlu-filelinks {
       margin-bottom: 35px; }
       body .all .row.subjectsfilternav.phlu-filelinks .nav-pills li .nav-link {
