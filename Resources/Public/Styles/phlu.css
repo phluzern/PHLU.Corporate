@@ -6633,19 +6633,16 @@ body {
       body .all .phlu-teaser .event.noimg .phlu-teaser-body, body .all .phlu-teaser .publication.noimg .phlu-teaser-body {
         z-index: 99;
         position: relative;
-        height: 161px; }
-        @media (min-width: 544px) {
-          body .all .phlu-teaser .event.noimg .phlu-teaser-body, body .all .phlu-teaser .publication.noimg .phlu-teaser-body {
-            height: 183px; } }
+        height: 163px; }
       body .all .phlu-teaser .news.noimg .phlu-teaser-body {
         z-index: 99;
         position: relative;
         height: 161px; }
         @media (min-width: 544px) {
           body .all .phlu-teaser .news.noimg .phlu-teaser-body {
-            height: 232px; } }
+            height: 212px; } }
       body .all .phlu-teaser .event .phlu-teaser-body, body .all .phlu-teaser .publication .phlu-teaser-body, body .all .phlu-teaser .news .phlu-teaser-body {
-        height: 232px; }
+        height: 212px; }
       body .all .phlu-teaser .event .event-date-day {
         float: left;
         padding: 11px;
@@ -6671,18 +6668,20 @@ body {
         padding: 30px 20px 20px; }
       body .all .phlu-teaser .event .phlu-teaser-type {
         background-color: #55a7b3;
-        position: relative;
-        top: -30px; }
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 15px; }
+        @media (max-width: 1279px) {
+          body .all .phlu-teaser .event .phlu-teaser-type {
+            right: 15px; } }
       body .all .phlu-teaser .event.singleitem .phlu-teaser-body {
         padding: 0; }
         body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody {
           padding: 10px 20px 20px;
           overflow-y: auto;
-          height: 172%; }
+          height: 162%; }
           @media (min-width: 1400px) {
-            body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody {
-              height: 172%; } }
-          @media (min-width: 1600px) {
             body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody {
               height: 175%; } }
           body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody p {
@@ -6739,9 +6738,9 @@ body {
         width: 100%; }
       body .all .phlu-teaser.carousel .carousel-indicators {
         bottom: 1px; }
-        @media (min-width: 992px) {
+        @media (max-width: 1279px) {
           body .all .phlu-teaser.carousel .carousel-indicators {
-            bottom: 18px; } }
+            bottom: -12px; } }
         body .all .phlu-teaser.carousel .carousel-indicators li {
           width: 14px;
           height: 14px;
@@ -6776,7 +6775,7 @@ body {
         body .all .phlu-teaser.carousel .carousel-control .icon-prev,
         body .all .phlu-teaser.carousel .carousel-control .icon-next {
           position: absolute;
-          top: 48%;
+          top: 53%;
           z-index: 5;
           display: inline-block;
           margin-top: -40px;
@@ -8102,96 +8101,99 @@ body {
     position: absolute;
     margin: -78px 0 0 14px; }
 
-body .startpage .main {
+body .all .startpage .main {
   background-color: #9f632a;
   padding-bottom: 44px; }
   @media (min-width: 1280px) {
-    body .startpage .main {
+    body .all .startpage .main {
       background-color: inherit;
       padding-bottom: 0; } }
-  body .startpage .main::after {
-    content: "";
-    background-image: url("../Images/dreiecke-startseite.svg");
-    background-size: 50%;
-    background-repeat: no-repeat;
-    background-position: -1px -1px;
-    opacity: 1;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1; }
-  body .startpage .main > .row.aktuelles {
+  @media (min-width: 1280px) {
+    body .all .startpage .main::after {
+      content: "";
+      background-image: url("../Images/dreiecke-startseite.svg");
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: -1px -1px;
+      opacity: 1;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1; } }
+  body .all .startpage .main > .row.aktuelles {
     background-image: url("../Images/ambienteexample.jpg");
     background-size: cover;
     margin-bottom: 56px; }
     @media (min-width: 1280px) {
-      body .startpage .main > .row.aktuelles {
+      body .all .startpage .main > .row.aktuelles {
         margin-bottom: 0;
         min-height: 800px; } }
     @media (min-width: 1280px) {
-      body .startpage .main > .row.aktuelles > .col-xs-12 {
+      body .all .startpage .main > .row.aktuelles > .col-xs-12 {
         max-width: inherit; } }
     @media (min-width: 1600px) {
-      body .startpage .main > .row.aktuelles > .col-xs-12 {
+      body .all .startpage .main > .row.aktuelles > .col-xs-12 {
         max-width: 1216px;
         padding: 0;
         margin: 0 85px; } }
-    body .startpage .main > .row.aktuelles > .col-xs-12 .phlu-teaser.carousel {
+    body .all .startpage .main > .row.aktuelles > .col-xs-12 .phlu-teaser.carousel {
       position: relative;
       z-index: 2; }
     @media (min-width: 1280px) {
-      body .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+      body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
         margin-top: 529px; } }
-  @media (min-width: 1600px) {
-    body .startpage .main {
-      max-width: 1384px; } }
-body .startpage .phlu-teaser {
+body .all .startpage .phlu-teaser {
   margin-top: 78px; }
-  body .startpage .phlu-teaser .carousel-control {
+  body .all .startpage .phlu-teaser .carousel-control {
     opacity: 1; }
-    body .startpage .phlu-teaser .carousel-control .fa-caret-left, body .startpage .phlu-teaser .carousel-control .fa-caret-right {
+    body .all .startpage .phlu-teaser .carousel-control .fa-caret-left, body .all .startpage .phlu-teaser .carousel-control .fa-caret-right {
       color: white; }
-    body .startpage .phlu-teaser .carousel-control.left .icon-prev, body .startpage .phlu-teaser .carousel-control.right .icon-next {
+    body .all .startpage .phlu-teaser .carousel-control.left .icon-prev, body .all .startpage .phlu-teaser .carousel-control.right .icon-next {
       color: white; }
-    @media (min-width: 768px) {
-      body .startpage .phlu-teaser .carousel-control.left .icon-prev {
-        margin-left: -40%; } }
+    body .all .startpage .phlu-teaser .carousel-control.left .icon-prev {
+      margin-left: -55%; }
+      @media (min-width: 544px) {
+        body .all .startpage .phlu-teaser .carousel-control.left .icon-prev {
+          margin-left: -62%; } }
+      @media (min-width: 768px) {
+        body .all .startpage .phlu-teaser .carousel-control.left .icon-prev {
+          margin-left: -50%; } }
+      @media (min-width: 992px) {
+        body .all .startpage .phlu-teaser .carousel-control.left .icon-prev {
+          margin-left: -30%; } }
     @media (min-width: 992px) {
-      body .startpage .phlu-teaser .carousel-control.left .icon-prev {
-        margin-left: -17%; } }
-    @media (min-width: 992px) {
-      body .startpage .phlu-teaser .carousel-control.left {
+      body .all .startpage .phlu-teaser .carousel-control.left {
         left: -40px; } }
     @media (min-width: 768px) {
-      body .startpage .phlu-teaser .carousel-control.right .icon-next {
+      body .all .startpage .phlu-teaser .carousel-control.right .icon-next {
         margin-right: -50%; } }
     @media (min-width: 992px) {
-      body .startpage .phlu-teaser .carousel-control.right .icon-next {
+      body .all .startpage .phlu-teaser .carousel-control.right .icon-next {
         margin-right: -30%; } }
     @media (min-width: 992px) {
-      body .startpage .phlu-teaser .carousel-control.right {
+      body .all .startpage .phlu-teaser .carousel-control.right {
         right: -40px; } }
-  body .startpage .phlu-teaser .carousel-indicators {
+  body .all .startpage .phlu-teaser .carousel-indicators {
     bottom: -11px; }
-    body .startpage .phlu-teaser .carousel-indicators li {
+    body .all .startpage .phlu-teaser .carousel-indicators li {
       width: 14px;
       height: 14px;
       border: solid 1px white;
       background-color: transparent;
       margin-right: 16px; }
-    body .startpage .phlu-teaser .carousel-indicators li.active {
+    body .all .startpage .phlu-teaser .carousel-indicators li.active {
       border: solid 1px white;
       background-color: white; }
-body .startpage .phlu-teaser.carousel {
-  padding: 0 25px 10px 25px; }
-body .startpage .phlu-teaser.navigation {
+body .all .startpage .phlu-teaser.carousel {
+  padding: 0 25px 37px; }
+body .all .startpage .phlu-teaser.navigation {
   margin-top: 0;
   position: relative;
   z-index: 2; }
   @media (min-width: 1280px) {
-    body .startpage .phlu-teaser.navigation {
+    body .all .startpage .phlu-teaser.navigation {
       display: none; } }
 
 body:after {

@@ -908,10 +908,7 @@ body {
         .phlu-teaser-body {
           z-index: 99;
           position: relative;
-          height: 161px;
-          @include media-breakpoint-up("sm") {
-            height: 183px;
-          }
+          height: 163px;
         }
       }
       .news.noimg {
@@ -920,13 +917,13 @@ body {
           position: relative;
           height: 161px;
           @include media-breakpoint-up("sm") {
-            height: 232px;
+            height: 212px;
           }
         }
       }
       .event, .publication, .news {
         .phlu-teaser-body {
-          height: 232px;
+          height: 212px;
         }
       }
 
@@ -961,8 +958,13 @@ body {
         }
         .phlu-teaser-type {
           background-color: $turquoise;
-          position: relative;
-          top: -30px;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          @include media-breakpoint-down("lg") {
+            right: 15px;
+          }
+          left: 15px;
         }
         &.singleitem {
           .phlu-teaser-body {
@@ -970,12 +972,8 @@ body {
             .scrollbody {
               padding: 10px 20px 20px;
               overflow-y: auto;
-              height: 172%;
-
+              height: 162%;
               @include media-breakpoint-up("xxl") {
-                height: 172%;
-              }
-              @include media-breakpoint-up("xxxl") {
                 height: 175%;
               }
               p {
@@ -1056,8 +1054,8 @@ body {
       &.carousel {
         .carousel-indicators {
           bottom: 1px;
-          @include media-breakpoint-up("lg") {
-            bottom: 18px;
+          @include media-breakpoint-down("lg") {
+            bottom: -12px;
           }
           li {
             width: 14px;
@@ -1101,7 +1099,7 @@ body {
           .icon-prev,
           .icon-next {
             position: absolute;
-            top: 48%;
+            top: 53%;
             z-index: 5;
             display: inline-block;
             margin-top: -40px;
@@ -3076,129 +3074,135 @@ body {
 // startpage
 //
 body {
-  .startpage {
-    .main {
-      background-color: $hazelbrownmedium;
-      padding-bottom: 44px;
-      @include media-breakpoint-up("xl") {
-        background-color: inherit;
-        padding-bottom: 0;
-      }
-      &::after {
-        content: "";
-        background-image: url("../Images/dreiecke-startseite.svg");
-        background-size: 50%;
-        background-repeat: no-repeat;
-        background-position: -1px -1px;
-        opacity: 1;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: 1;
-      }
-      > .row.aktuelles {
-        background-image: url("../Images/ambienteexample.jpg");
-        background-size: cover;
-        margin-bottom: 56px;
-
+  .all {
+    .startpage {
+      .main {
+        background-color: $hazelbrownmedium;
+        padding-bottom: 44px;
         @include media-breakpoint-up("xl") {
-          margin-bottom: 0;
-          min-height: 800px;
+          background-color: inherit;
+          padding-bottom: 0;
         }
-        > .col-xs-12 {
+        &::after {
           @include media-breakpoint-up("xl") {
-            max-width: inherit;
+            content: "";
+            background-image: url("../Images/dreiecke-startseite.svg");
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: -1px -1px;
+            opacity: 1;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
           }
-          @include media-breakpoint-up("xxxl") {
-            max-width: 1216px;
-            padding: 0;
-            margin: 0 85px;
-          }
-          .phlu-teaser.carousel {
-            position: relative;
-            z-index: 2;
-          }
-          #carousel-phlu-teaser-xl {
-            @include media-breakpoint-up("xl") {
-              margin-top: 529px;
-            }
-          }
-        }
-      }
-      //
-      // Prevent main col from getting too wide to the right side on xxxl screens
-      //
-      @include media-breakpoint-up("xxxl") {
-        max-width: 1384px;
-      }
-    }
-    .phlu-teaser {
-      margin-top: 78px;
-      .carousel-control {
-        opacity: 1;
-        .fa-caret-left, .fa-caret-right {
-          color: white;
-        }
-        &.left .icon-prev, &.right .icon-next {
-          color: white;
-        }
-        &.left {
-          .icon-prev {
-            @include media-breakpoint-up("md") {
-              margin-left: -40%;
-            }
-            @include media-breakpoint-up("lg") {
-              margin-left: -17%;
-            }
-          }
-          @include media-breakpoint-up("lg") {
-            left: -40px;
-          }
-        }
-        &.right {
-          .icon-next {
-            @include media-breakpoint-up("md") {
-              margin-right: -50%;
-            }
-            @include media-breakpoint-up("lg") {
-              margin-right: -30%;
-            }
-          }
-          @include media-breakpoint-up("lg") {
-            right: -40px;
-          }
-        }
-      }
-      .carousel-indicators {
-        bottom: -11px;
-        li {
-          width: 14px;
-          height: 14px;
-          border: solid 1px white;
-          background-color: transparent;
-          margin-right: 16px;
-        }
-        li.active {
-          border: solid 1px white;
-          background-color: white;
-        }
 
+        }
+        > .row.aktuelles {
+          background-image: url("../Images/ambienteexample.jpg");
+          background-size: cover;
+          margin-bottom: 56px;
+
+          @include media-breakpoint-up("xl") {
+            margin-bottom: 0;
+            min-height: 800px;
+          }
+          > .col-xs-12 {
+            @include media-breakpoint-up("xl") {
+              max-width: inherit;
+            }
+            @include media-breakpoint-up("xxxl") {
+              max-width: 1216px;
+              padding: 0;
+              margin: 0 85px;
+            }
+            .phlu-teaser.carousel {
+              position: relative;
+              z-index: 2;
+            }
+            #carousel-phlu-teaser-xl {
+              @include media-breakpoint-up("xl") {
+                margin-top: 529px;
+              }
+            }
+          }
+        }
       }
-    }
-    .phlu-teaser.carousel {
-      padding: 0 25px 10px 25px;
-    }
-    .phlu-teaser.navigation {
-      margin-top: 0;
-      position: relative;
-      z-index: 2;
-      @include media-breakpoint-up("xl") {
-        display: none;
+      .phlu-teaser {
+        margin-top: 78px;
+        .carousel-control {
+          opacity: 1;
+          .fa-caret-left, .fa-caret-right {
+            color: white;
+          }
+          &.left .icon-prev, &.right .icon-next {
+            color: white;
+          }
+          &.left {
+            .icon-prev {
+              @include media-breakpoint-up("xs") {
+                margin-left: -55%;
+              }
+              @include media-breakpoint-up("sm") {
+                margin-left: -62%;
+              }
+              @include media-breakpoint-up("md") {
+                margin-left: -50%;
+              }
+              @include media-breakpoint-up("lg") {
+                margin-left: -30%;
+              }
+            }
+            @include media-breakpoint-up("lg") {
+              left: -40px;
+            }
+          }
+          &.right {
+            .icon-next {
+              @include media-breakpoint-up("md") {
+                margin-right: -50%;
+              }
+              @include media-breakpoint-up("lg") {
+                margin-right: -30%;
+              }
+            }
+            @include media-breakpoint-up("lg") {
+              right: -40px;
+            }
+          }
+        }
+        .carousel-indicators {
+          bottom: -11px;
+          li {
+            width: 14px;
+            height: 14px;
+            border: solid 1px white;
+            background-color: transparent;
+            margin-right: 16px;
+          }
+          li.active {
+            border: solid 1px white;
+            background-color: white;
+          }
+
+        }
+      }
+      .phlu-teaser.carousel {
+          padding: 0 25px 37px;
+      }
+      .phlu-teaser.navigation {
+        margin-top: 0;
+        position: relative;
+        z-index: 2;
+        @include media-breakpoint-up("xl") {
+          display: none;
+        }
       }
     }
   }
+
 }
 
 // Debug only
