@@ -962,10 +962,7 @@ body {
           background-color: $turquoise;
           position: absolute;
           bottom: 0;
-          right: 0;
-          @include media-breakpoint-down("lg") {
-            right: 15px;
-          }
+          right: 15px;
           left: 15px;
         }
         &.singleitem {
@@ -1895,7 +1892,7 @@ body {
     //
     .phlu-qmpilot-nodetypes-files, .phlu-qmpilot-nodetypes-file {
       &.last {
-        margin-bottom:31px;
+        margin-bottom: 31px;
       }
     }
     //

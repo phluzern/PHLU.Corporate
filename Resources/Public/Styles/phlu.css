@@ -6672,11 +6672,8 @@ body {
         background-color: #55a7b3;
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: 15px;
         left: 15px; }
-        @media (max-width: 1279px) {
-          body .all .phlu-teaser .event .phlu-teaser-type {
-            right: 15px; } }
       body .all .phlu-teaser .event.singleitem .phlu-teaser-body {
         padding: 0; }
         body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody {
