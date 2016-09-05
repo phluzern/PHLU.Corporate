@@ -353,7 +353,9 @@ body.neos-backend {
       min-height: 30px;
       border: 1px dotted lightgrey;
     }
-
+    &.last {
+      margin-bottom: 31px;
+    }
   }
 
 }
@@ -1891,6 +1893,14 @@ body {
     //
     // phlu-filelinks
     //
+    .phlu-qmpilot-nodetypes-files, .phlu-qmpilot-nodetypes-file {
+      &.last {
+        margin-bottom:31px;
+      }
+    }
+    //
+    // Download center
+    //
     .row.subjectsfilternav.phlu-filelinks {
       margin-bottom: 35px;
       .nav-pills {
@@ -2499,7 +2509,7 @@ body {
                 color: $font-color-level1;
               }
               &.nofiledesc {
-                margin-left:0;
+                margin-left: 0;
               }
             }
           }
@@ -3049,6 +3059,7 @@ body {
   }
 
 }
+
 //
 // totop link
 //
@@ -3070,6 +3081,7 @@ body {
     margin: -78px 0 0 14px;
   }
 }
+
 //
 // startpage
 //
@@ -3190,7 +3202,7 @@ body {
         }
       }
       .phlu-teaser.carousel {
-          padding: 0 25px 37px;
+        padding: 0 25px 37px;
       }
       .phlu-teaser.navigation {
         margin-top: 0;

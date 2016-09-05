@@ -6257,6 +6257,8 @@ body.neos-backend .phlu-corporate-text a[href^='http://'] {
 body.neos-backend .phlu-qmpilot-nodetypes-files.assetsCount-0, body.neos-backend .phlu-qmpilot-nodetypes-file.assetsCount-0 {
   min-height: 30px;
   border: 1px dotted lightgrey; }
+body.neos-backend .phlu-qmpilot-nodetypes-files.last, body.neos-backend .phlu-qmpilot-nodetypes-file.last {
+  margin-bottom: 31px; }
 
 body {
   margin-bottom: 420px;
@@ -7233,6 +7235,8 @@ body {
       text-align: right; }
     body .all .further-education-detail .row.topics p {
       width: 100%; }
+    body .all .phlu-qmpilot-nodetypes-files.last, body .all .phlu-qmpilot-nodetypes-file.last {
+      margin-bottom: 31px; }
     body .all .row.subjectsfilternav.phlu-filelinks {
       margin-bottom: 35px; }
       body .all .row.subjectsfilternav.phlu-filelinks .nav-pills li .nav-link {
