@@ -131,10 +131,9 @@ $input-search-field-big: 50px;
   @if $type == external {
     background-image: url("../Images/linkbottomline.png");
     &::after {
-      //background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkViZW5lXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE2IDE2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0EyNjkzMjt9LnN0MXtmaWxsOiM5RjYzMkI7fS5zdDJ7ZmlsbDojOUU2MzJBO308L3N0eWxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNiwxMWMtMC41LDAtMSwwLTEuOSwwYzAtMS45LDAtMy44LTAuMi01LjdjMC0wLjQtMC42LTAuOS0xLTEuM2MtMC4zLTAuMy0wLjctMC43LTEtMWMtMC4zLTAuMy0wLjUtMC45LTAuOC0xQzkuMywyLDcuMywyLDUsMmMwLTAuOCwwLTEuNCwwLTJjMy43LDAsNy4zLDAsMTEsMEMxNiwzLjcsMTYsNy4zLDE2LDExeiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik05LDhjLTAuNywwLjctMS4zLDEuMy0yLDJDNi43LDkuNyw2LjMsOS4zLDYsOWMwLjctMC43LDEuMy0xLjMsMi0yQzguMyw3LjMsOC43LDcuNyw5LDh6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTIsMTVjLTAuMy0wLjMtMC43LTAuNy0xLTFjMC4zLTAuMywwLjctMC43LDEtMWMwLjMsMC4zLDAuNywwLjcsMSwxQzIuNywxNC4zLDIuMywxNC43LDIsMTV6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTMsMTRjLTAuMy0wLjMtMC43LTAuNy0xLTFjMC4zLTAuMywwLjctMC43LDEtMWMwLjMsMC4zLDAuNywwLjcsMSwxQzMuNywxMy4zLDMuMywxMy43LDMsMTR6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTQsMTNjLTAuMy0wLjMtMC43LTAuNy0xLTFjMC4zLTAuMywwLjctMC43LDEtMWMwLjMsMC4zLDAuNywwLjcsMSwxQzQuNywxMi4zLDQuMywxMi43LDQsMTN6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTUsMTJjLTAuMy0wLjMtMC43LTAuNy0xLTFjMC4zLTAuMywwLjctMC43LDEtMWMwLjMsMC4zLDAuNywwLjcsMSwxQzUuNywxMS4zLDUuMywxMS43LDUsMTJ6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTYsMTFjLTAuMy0wLjMtMC43LTAuNy0xLTFjMC4zLTAuMywwLjctMC43LDEtMWMwLjMsMC4zLDAuNywwLjcsMSwxQzYuNywxMC4zLDYuMywxMC43LDYsMTF6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTksOEM4LjcsNy43LDguMyw3LjMsOCw3YzAuMy0wLjMsMC43LTAuNywxLTFjMC4zLDAuMywwLjcsMC43LDEsMUM5LjcsNy4zLDkuMyw3LjcsOSw4eiIvPjxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMCw3QzkuNyw2LjcsOS4zLDYuMyw5LDZjMC4zLTAuMywwLjctMC43LDEtMWMwLjMsMC4zLDAuNywwLjcsMSwxQzEwLjcsNi4zLDEwLjMsNi43LDEwLDd6Ii8+PHBhdGggY2xhc3M9InN0MiIgZD0iTTEyLDVjLTAuMywwLjMtMC43LDAuNy0xLDFjLTAuMy0wLjMtMC43LTAuNy0xLTFjMC4zLTAuMywwLjctMC43LDEtMUMxMS4zLDQuMywxMS43LDQuNywxMiw1eiIvPjxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMiw1Yy0wLjMtMC4zLTAuNy0wLjctMS0xYzAuMy0wLjMsMC43LTAuNywxLTFjMC4zLDAuMywwLjcsMC43LDEsMUMxMi43LDQuMywxMi4zLDQuNywxMiw1eiIvPjwvc3ZnPg==);
       background-image: url("../Images/externalLinkArrow.png");
       background-repeat: no-repeat;
-      background-position: 0 3px;
+      background-position: 0 6px;
       padding-right: 25px;
       content: ""; // \2197
     }
@@ -613,8 +612,8 @@ body {
     }
     //
     // Navbar top
-    //
     // Show for mobile, hide later
+    //
     .navbar {
       background-color: white;
       display: none;
@@ -2045,6 +2044,7 @@ body {
     }
     //
     // news and events flow text version
+    //
     .flowtext-phlu-event, .flowtext-phlu-news {
       a, a:hover {
         color: $grey;
@@ -2476,28 +2476,33 @@ body {
             @include media-breakpoint-down("sm") {
               width: 100% !important;
             }
-            span:first-child {
-              margin-left: 10px;
-              width: auto;
-              align-self: flex-start;
-              @include media-breakpoint-down("md") {
-                width: 75% !important;
+            span {
+              &:first-child {
+                margin-left: 10px;
+                width: auto;
+                align-self: flex-start;
+                @include media-breakpoint-down("md") {
+                  width: 75% !important;
+                }
               }
-            }
-            span:last-child {
-              margin-left: 10px;
-              width: auto;
-              @include media-breakpoint-down("md") {
-                width: 15% !important;
-                min-width: 150px !important;
-              }
+              &:last-child {
+                margin-left: 10px;
+                width: auto;
+                @include media-breakpoint-down("md") {
+                  width: 15% !important;
+                  min-width: 150px !important;
+                }
 
-              align-self: flex-start;
-              text-overflow: ellipsis;
-              @include media-breakpoint-up("xl") {
-                overflow: visible;
+                align-self: flex-start;
+                text-overflow: ellipsis;
+                @include media-breakpoint-up("xl") {
+                  overflow: visible;
+                }
+                color: $font-color-level1;
               }
-              color: $font-color-level1;
+              &.nofiledesc {
+                margin-left:0;
+              }
             }
           }
         }
@@ -3046,8 +3051,9 @@ body {
   }
 
 }
-
+//
 // totop link
+//
 #top-link-block {
   position: fixed;
   width: 60px;
@@ -3066,8 +3072,9 @@ body {
     margin: -78px 0 0 14px;
   }
 }
-
+//
 // startpage
+//
 body {
   .startpage {
     .main {

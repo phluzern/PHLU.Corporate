@@ -6251,7 +6251,7 @@ body.neos-backend .phlu-corporate-text a[href^='http://'] {
   body.neos-backend .phlu-corporate-text a[href^='http://']::after {
     background-image: url("../Images/externalLinkArrow.png");
     background-repeat: no-repeat;
-    background-position: 0 3px;
+    background-position: 0 6px;
     padding-right: 25px;
     content: ""; }
 body.neos-backend .phlu-qmpilot-nodetypes-files.assetsCount-0, body.neos-backend .phlu-qmpilot-nodetypes-file.assetsCount-0 {
@@ -7600,6 +7600,8 @@ body {
             @media (min-width: 1280px) {
               body .all .main > .row .content-link-wrapper .content-link-default-file span:last-child {
                 overflow: visible; } }
+          body .all .main > .row .content-link-wrapper .content-link-default-file span.nofiledesc {
+            margin-left: 0; }
       body .all .main > .row .content-link-email {
         font-size: 1.125rem;
         color: #9f632a;
@@ -7626,7 +7628,7 @@ body {
         body .all .main > .row .content-link-external::after, body .all .main > .row a[target='_blank']::after, body .all .main > .row .content-link-shortcut-file::after {
           background-image: url("../Images/externalLinkArrow.png");
           background-repeat: no-repeat;
-          background-position: 0 3px;
+          background-position: 0 6px;
           padding-right: 25px;
           content: ""; }
       body .all .main > .row .content-link-internal, body .all .main > .row a[data-gentics-aloha-repository='node-repository'] {
