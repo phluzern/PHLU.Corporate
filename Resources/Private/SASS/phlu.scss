@@ -2719,6 +2719,14 @@ body {
 
           }
         }
+        &.ambient-img-body {
+          background-image: url("../Images/ambienteexample.jpg");
+          background-repeat: no-repeat;
+          padding-bottom: 330px;
+          background-position: bottom center;
+          background-size: cover;
+          margin-bottom: 32px;
+        }
         &.ambient-img-footer {
           background-image: url("../Images/ambienteexample.jpg");
           background-repeat: no-repeat;

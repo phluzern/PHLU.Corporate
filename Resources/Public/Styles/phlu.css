@@ -7849,6 +7849,13 @@ body {
           line-height: 1.8; }
           body .all .main > .row.contactperson address span .fa {
             margin-right: 6px; }
+      body .all .main > .row.ambient-img-body {
+        background-image: url("../Images/ambienteexample.jpg");
+        background-repeat: no-repeat;
+        padding-bottom: 330px;
+        background-position: bottom center;
+        background-size: cover;
+        margin-bottom: 32px; }
       body .all .main > .row.ambient-img-footer {
         background-image: url("../Images/ambienteexample.jpg");
         background-repeat: no-repeat;
