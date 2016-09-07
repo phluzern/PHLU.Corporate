@@ -22,7 +22,8 @@ $sephialight: #f0e7de;
 $beigelight: #fbfaf4;
 $raspberryRed: #ba1541;
 $iceblue: #2a818d;
-$lightblue: #d7e6e9;
+$iceblueDark: #0A626C;
+$lightblue: #c7dee2;
 $lightgrey: #e1e1e1;
 $darkgrey: #464340;
 $grey: #5c5c5c;
@@ -74,7 +75,7 @@ $font-size-search-filters: 1.125rem;
 // phlu nav elements
 $nav-pills-border-radius: 0;
 $nav-link-padding: 6px 23px;
-$component-active-bg: $grey;
+$component-active-bg: #895119;
 
 // phlu flowtext formatting
 $line-height-lg: 2;
@@ -98,7 +99,7 @@ $font-size-lg: 1.2rem;
 $btn-border-radius-lg: 0;
 
 // phlu breadcrumb
-$breadcrumb-font-family: 'Arial', sans-serif;
+$breadcrumb-font-family: $font-family-sans-serif;
 $breadcrumb-font-weight: bold;
 $breadcrumb-bg: none;
 $breadcrumb-padding-vertical: 1.563rem;
@@ -134,6 +135,20 @@ $input-search-field-big: 50px;
       background-image: url("../Images/externalLinkArrow.png");
       background-repeat: no-repeat;
       background-position: 0 6px;
+      padding-right: 25px;
+      content: ""; // \2197
+    }
+  } @else if $type == externalflowtext {
+    background-image: url("../Images/linkbottomline.png");
+    &:hover {
+      background-image: none;
+      background-color: $lightgrey;
+      padding: 5px;
+    }
+    &::after {
+      background-image: url("../Images/externalLinkArrow.png");
+      background-repeat: no-repeat;
+      background-position: 0 3px;
       padding-right: 25px;
       content: ""; // \2197
     }
@@ -344,7 +359,7 @@ body.neos-backend {
 
   .phlu-corporate-text {
     a[href^='http://'] {
-      @include content-link("external");
+      @include content-link("externalflowtext");
     }
   }
 
@@ -446,8 +461,9 @@ body {
         text-align: left;
       }
       &.btn-primary {
-        a {
-          color: white;
+        &:hover {
+          background-color: $iceblueDark;
+          border-color: $iceblueDark;
         }
       }
     }
@@ -468,14 +484,11 @@ body {
       li {
         a.nav-link {
           color: white;
-          background-color: #a5682e;
+          background-color: $hazelbrowndark;
           border-radius: $nav-pills-border-radius;
           font-size: $nav-link-font-size;
-          @include media-breakpoint-up("xl") {
-            font-size: $nav-link-font-size-desktop;
-          }
 
-          padding: 10px 23px;
+          padding: 8px 23px;
         }
         a.nav-item {
           margin: 0 5px 5px 0;
@@ -1326,6 +1339,11 @@ body {
           a.nav-link {
             background-color: $grey5;
             padding-left: 54px;
+            padding-top: 9px;
+            padding-bottom: 10px;
+            &:hover {
+              background-color: $grey;
+            }
             &.all, &.no-icon {
               padding-left: 23px;
             }
@@ -1345,7 +1363,7 @@ body {
           content: " \e099 \2001";
           position: absolute;
           margin-left: -32px;
-          margin-top: 0px;
+          margin-top: -1px;
           font-size: 21px;
         }
       }
@@ -1356,7 +1374,7 @@ body {
           content: " \25B2 \2001";
           position: absolute;
           margin-left: -35px;
-          margin-top: -4px;
+          margin-top: -5px;
           font-size: 24px;
         }
       }
@@ -1367,7 +1385,7 @@ body {
           content: " \f111 \2001";
           position: absolute;
           margin-left: -33px;
-          margin-top: -2px;
+          margin-top: -3px;
           font-size: 22px;
         }
       }
@@ -1378,7 +1396,7 @@ body {
           content: " \f005 \2001";
           position: absolute;
           margin-left: -32px;
-          margin-top: -2px;
+          margin-top: -3px;
           font-size: 21px;
         }
       }
@@ -2522,8 +2540,11 @@ body {
         .content-link-email-contact-person {
           @include content-link("email-contact-person");
         }
-        .content-link-external, a[target='_blank'], .content-link-shortcut-file {
+        .content-link-external, .content-link-shortcut-file {
           @include content-link("external");
+        }
+        a[target='_blank'] {
+          @include content-link("externalflowtext");
         }
         .content-link-internal, a[data-gentics-aloha-repository='node-repository'] {
           @include content-link("internal");
