@@ -7119,6 +7119,8 @@ body {
       margin-bottom: 0; }
     body .all .ppdb-detail .phlu-accordion {
       margin-top: 10px; }
+    body .all .ppdb-detail .fastFacts {
+      margin-bottom: 20px; }
     body .all .further-education-list .course-search-field input {
       border: 1px solid #5c5c5c;
       height: 50px; }
