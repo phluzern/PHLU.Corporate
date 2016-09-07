@@ -429,7 +429,9 @@ body {
         font-size: $font-size-paragraph-desktop;
       }
       &.flowtext-smallwidth {
-        width: 75%;
+        @include media-breakpoint-up("xl") {
+          width: 75%;
+        }
       }
     }
 

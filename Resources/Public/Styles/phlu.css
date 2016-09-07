@@ -6316,8 +6316,9 @@ body {
       @media (min-width: 1280px) {
         body .all ul {
           font-size: 1.125rem; } }
-      body .all ul.flowtext-smallwidth {
-        width: 75%; }
+      @media (min-width: 1280px) {
+        body .all ul.flowtext-smallwidth {
+          width: 75%; } }
     body .all .clickable, body .all .clickable * {
       cursor: pointer; }
     body .all .btn {
