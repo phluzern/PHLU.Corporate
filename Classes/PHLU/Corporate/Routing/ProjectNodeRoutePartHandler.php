@@ -51,7 +51,6 @@ class ProjectNodeRoutePartHandler extends IdentityRoutePart
     {
 
 
-
             $Project = $this->ProjectRepository->getOneByPpDbId($pathSegment);
 
             if ($Project) {

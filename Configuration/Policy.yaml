@@ -3,7 +3,7 @@ privilegeTargets:
     'PHLU.Corporate:PortraitControllerActions':
       matcher: 'method(PHLU\Corporate\Controller\PortraitController->(view|viewPortrait)Action())'
     'PHLU.Corporate:ProjectControllerActions':
-      matcher: 'method(PHLU\Corporate\Controller\ProjectController->viewAction())'
+      matcher: 'method(PHLU\Corporate\Controller\ProjectController->(view|load)Action())'
 
 roles:
   'TYPO3.Flow:Everybody':

@@ -82,8 +82,9 @@
         onlyMatchSiteNodes: false
 
 
+
 #
-# PHLU corporate routes
+# PHLU corporate routes  (use for link uri builder)
 #
 -
   name: 'Portrait Self Target Route Builder'
@@ -94,4 +95,16 @@
     '@format': 'html'
     '@action': 'viewPortrait'
 
+
+#
+# PHLU corporate routes (use for link uri builder)
+#
+-
+  name: 'Projects Route Builder'
+  uriPattern: 'forschung/projekte/{project}/{title}<defaultUriSuffix>'
+  defaults:
+    '@package': 'PHLU.Corporate'
+    '@controller': 'Project'
+    '@format': 'html'
+    '@action': 'load'
 
