@@ -22,110 +22,122 @@
                         {project.teaserTextGerman}
                     </p>
                 </div>
+                <ul class="nav nav-pills">
+                    <li>
+                        <a class="nav-item nav-link anchor-nav" href="#uebersicht">Übersicht</a>
+                    </li>
+                    <li>
+                        <a class="nav-item nav-link anchor-nav" href="#fakten">Fakten</a>
+                    </li>
+                    <li>
+                        <a class="nav-item nav-link anchor-nav" href="#beteiligtepersonen">Beteiligte Personen</a>
+                    </li>
+                    <li>
+                        <a class="nav-item nav-link anchor-nav" href="#dokumente">Dokumente</a>
+                    </li>
+                    <li>
+                        <a class="nav-item nav-link anchor-nav" href="#links">Links</a>
+                    </li>
+                    <li>
+                        <a class="nav-item nav-link anchor-nav" href="#publikationen">Publikationen</a>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <h3>Kurzinformation</h3>
-                <div class="table-responsive">
-                    <table class="table">
-                        <tr>
-                            <th>Forschungsschwerpunkt / Themenfeld</th>
-                            <td>
-                                <f:for each="{project.researchMainFocus}" as="focus" iteration="iterator">
-                                    <f:if condition="{iterator.isFirst}">
-                                        <f:else>
-                                            <br/>
-                                        </f:else>
+                <div class="phlu-corporate-section" id="uebersicht">
+                    <h2>Übersicht</h2>
+                    <div class="table-responsive fastFacts">
+                        <table class="table">
+                            <tr>
+                                <th>Forschungsschwerpunkt / Themenfeld</th>
+                                <td>
+                                    <f:for each="{project.researchMainFocus}" as="focus" iteration="iterator">
+                                        <f:if condition="{iterator.isFirst}">
+                                            <f:else>
+                                                <br/>
+                                            </f:else>
+                                        </f:if>
+                                        {focus}
+                                    </f:for>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td>{project.pPDBStatusLifetime}</td>
+                            </tr>
+                            <tr>
+                                <th>Zeitraum</th>
+                                <td>
+                                    <f:if condition="{project.startDate}">{project.startDate ->
+                                        f:format.date(format:'d.m.Y')}
                                     </f:if>
-                                    {focus}
-                                </f:for>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Status</th>
-                            <td>{project.pPDBStatusLifetime}</td>
-                        </tr>
-                        <tr>
-                            <th>Zeitraum</th>
-                            <td>
-
-                                <f:if condition="{project.startDate}">{project.startDate ->
-                                    f:format.date(format:'d.m.Y')}
-                                </f:if>
-                                <f:if condition="{project.endDate}"> - {project.endDate ->
-                                    f:format.date(format:'d.m.Y')}
-                                </f:if>
-                            </td>
-                        </tr>
-                    </table>
+                                    <f:if condition="{project.endDate}"> - {project.endDate ->
+                                        f:format.date(format:'d.m.Y')}
+                                    </f:if>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    {project.abstractTextGerman -> f:format.raw()}
                 </div>
-
-                <h2>Übersicht</h2>
-                {project.abstractTextGerman -> f:format.raw()}
                 <hr>
-                <h2>Fakten</h2>
-                <div class="table-responsive">
-                    <table class="table">
-                        <tr>
-                            <th>Projektart</th>
-                            <td>Forschung</td>
-                        </tr>
-                        <tr>
-                            <th>Beteiligte interne Organisationen</th>
-                            <td>
-                                <f:for each="{project.organisationUnits}" as="unit" iteration="iterator">
-                                    <f:if condition="{iterator.isFirst}">
-                                        <f:else>
-                                            <br/>
-                                        </f:else>
-                                    </f:if>
-                                    {unit}
-                                </f:for>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Finanzierungstyp</th>
-                            <td>
-                                <f:for each="{project.financingTypes}" as="financing" iteration="iterator">
-                                    <f:if condition="{iterator.isFirst}">
-                                        <f:else>
-                                            <br/>
-                                        </f:else>
-                                    </f:if>
-                                    {financing}
-                                </f:for>
-                            </td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Leistungsart</th>
-                            <td>
-                                {project.ProjectType}
-                            </td>
-                        </tr>
-                    </table>
+                <div class="phlu-corporate-section" id="fakten">
+                    <h2>Fakten</h2>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <th>Projektart</th>
+                                <td>Forschung</td>
+                            </tr>
+                            <tr>
+                                <th>Beteiligte interne Organisationen</th>
+                                <td>
+                                    <f:for each="{project.organisationUnits}" as="unit" iteration="iterator">
+                                        <f:if condition="{iterator.isFirst}">
+                                            <f:else>
+                                                <br/>
+                                            </f:else>
+                                        </f:if>
+                                        {unit}
+                                    </f:for>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Finanzierungstyp</th>
+                                <td>
+                                    <f:for each="{project.financingTypes}" as="financing" iteration="iterator">
+                                        <f:if condition="{iterator.isFirst}">
+                                            <f:else>
+                                                <br/>
+                                            </f:else>
+                                        </f:if>
+                                        {financing}
+                                    </f:for>
+                                </td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Leistungsart</th>
+                                <td>
+                                    {project.ProjectType}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
                 <hr>
             </div>
-
         </div>
-
         <div class="row">
-
-            <div class="col-xs-12 phlu-team-members">
+            <div class="col-xs-12 phlu-team-members" id="beteiligtepersonen">
                 <h2>Beteiligte Personen</h2>
                 <div class="row phlu-teaser navigation subpage">
-
-
                     <f:for each="{project.participants}" key="participantsType" as="participantsGroup">
-
                         <f:for each="{participantsGroup}" as="participant">
-
                             <div class="col-xs-12 col-md-6 nav-teaser-item">
                                 <div class="row">
-
                                     <div class="phlu-teaser-body col-xs-8">
                                         <address>
                                             <b>{participantsType}</b><br>
@@ -136,13 +148,12 @@
                                             </div>
                                             <a class="content-link-email-contact-person"
                                                href="mailto:{participant.email}">{participant.email}</a><br>
-
-                                            <portrait:link node="{node}" eventoId="{participant.EventoID}" target="top">Portrait</portrait:link>
-
+                                            <portrait:link node="{node}" eventoId="{participant.EventoID}" target="top">
+                                                Portrait
+                                            </portrait:link>
                                         </address>
                                     </div>
                                     <div class="phlu-teaser-caret-right col-xs-4">
-
                                         <f:if condition="{resource:GetFromString(resource:participant.ImageResource, asset: true)}">
                                             <media:image
                                                     asset="{resource:GetFromString(resource:participant.ImageResource, asset: true)}"
@@ -151,28 +162,18 @@
                                                     maximumWidth="400" height="300" maximumHeight="300"
                                                     allowUpScaling="false"/>
                                         </f:if>
-
                                     </div>
                                 </div>
                             </div>
-
-
                         </f:for>
-
-
                     </f:for>
-
-
                 </div>
                 <hr>
             </div>
         </div>
-
-
-        <div class="row subjectsfilternav phlu-filelinks nofilter">
+        <div class="row subjectsfilternav phlu-filelinks nofilter" id="dokumente">
             <div class="col-xs-12">
                 <h2>Dokumente</h2>
-
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="row phlu-teaser navigation subpage">
@@ -193,27 +194,19 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                             </f:for>
-
                         </div>
-
                     </div>
                 </div>
                 <hr>
             </div>
-
         </div>
-
-        <div class="row subjectsfilternav phlu-filelinks nofilter">
+        <div class="row subjectsfilternav phlu-filelinks nofilter" id="links">
             <div class="col-xs-12">
                 <h2>Links</h2>
-
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="row phlu-teaser navigation subpage">
-
                             <f:for each="{project.links}" as="link">
                                 <div class="col-xs-12 nav-teaser-item clickable webLink">
                                     <div class="row">
@@ -230,16 +223,67 @@
                                     </div>
                                 </div>
                             </f:for>
-
                         </div>
-
-
                     </div>
                 </div>
-                <hr class="last">
+                <hr>
             </div>
         </div>
-
+        <div class="row publications-list" id="publikationen">
+            <div class="col-xs-12">
+                <h2>Publikationen (wird noch implementiert!)</h2>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="phlu-accordion1" class="phlu-accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne1">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#phlu-accordion1" href="#collapseOne1" aria-expanded="false" aria-controls="collapseOne1">
+                                            Artikel, Rezension (1)
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne1">
+                                    <div>
+                                        <p>
+                                            Kellerhals, Ursina; Abplanalp, Richard; Demarmels, Sascha;
+                                            MacKevett,
+                                            Douglas; Simon, Monika &amp; Wehrli, Roger (2016). Measuring
+                                            Meaning:
+                                            Culture-Specific Differences in the Linguistic Evocation of
+                                            Emotionality and
+                                            Rationality. Journal of Research Design and Statistics in
+                                            Linguistics and
+                                            Communication Science, 2015(2.1), 53-74.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo1">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#phlu-accordion1" href="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+                                            Buchkapitel / Gesetzeskommentar / Lexikonartikel (2)
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo1">
+                                    <div>
+                                        <p>
+                                            <a class="content-link-external" href="#">
+                                                Aplanalp, Richard (2014). Historisches Lexikon der Schweiz. In
+                                                Stiftung
+                                                Historisches Lexikon der Schweiz (Hrsg.), -- (---). Basel:
+                                                Schwabe. &gt;
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
 </div>
