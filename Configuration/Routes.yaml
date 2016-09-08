@@ -95,15 +95,3 @@
     '@action': 'viewPortrait'
 
 
-#
-# PHLU corporate routes
-#
--
-  name: 'Projects Route Builder'
-  uriPattern: 'forschung/projekte/{project}/{title}<defaultUriSuffix>'
-  defaults:
-    '@package': 'PHLU.Corporate'
-    '@controller': 'Project'
-    '@format': 'html'
-    '@action': 'load'
-

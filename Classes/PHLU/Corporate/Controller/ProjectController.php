@@ -51,20 +51,6 @@ class ProjectController extends \TYPO3\Neos\Controller\Frontend\NodeController
     protected $nodeDataRepository;
 
 
-    /**
-     * Shows the specified node and view project details
-     *
-     * @param integer $project project
-     * @return string View output for the specified node
-     * @Flow\SkipCsrfProtection We need to skip CSRF protection here because this action could be called with unsafe requests from widgets or plugins that are rendered on the node - For those the CSRF token is validated on the sub-request, so it is safe to be skipped here
-     * @Flow\IgnoreValidation("node")
-     * @throws NodeNotFoundException
-     */
-    public function loadAction($project)
-    {
-
-
-    }
 
     /**
      * Shows the specified node and view project details
