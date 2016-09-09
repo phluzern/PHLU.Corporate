@@ -1,4 +1,47 @@
 // PHLU.Corporate:Page.View.Default filter tag navigation
+
+
+PHLUCorporateApp.directive('search', function () {
+
+
+    var template = '/_Resources/Static/Packages/PHLU.Corporate/JavaScript/angularjs/PHLU/Corporate/Templates/Search/';
+
+    return {
+        template: '<ng-include src="getTemplateUrl()"/>',
+        //templateUrl: unfortunately has no access to $scope.user.type
+        scope: {
+            node: '=data'
+        },
+        restrict: 'E',
+        controller: function($scope) {
+
+            $scope.getTemplateUrl = function() {
+                switch ($scope.node.nodeType) {
+
+                    case 'PHLU.Qmpilot.NodeTypes:File':
+                        return template+'phlu-qmpilot-nodetypes-file.html';
+
+                    case 'PHLU.Corporate:Text':
+                        return template+'phlu-qmpilot-nodetypes-text.html';
+
+                    case 'PHLU.Corporate:Contact':
+                        return template+'phlu-corporate-contact.html';
+
+                    default:
+                        return template+'default.html';
+
+                }
+
+
+            };
+
+        }
+    };
+
+
+});
+
+
 PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$timeout', '$cookies', function ($scope) {
 
     var config, getData, getSearchTerms, resetData, getSpecialTerm, applyData, searchData, database, lunrSearch;
@@ -10,10 +53,11 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$timeout', '$cookies', fun
         authDomain: "phlu-f98dd.firebaseapp.com",
         databaseURL: "https://phlu-f98dd.firebaseio.com",
         storageBucket: "phlu-f98dd.appspot.com",
-        path: "/search/live",
+        path: "/search/localhost/index/live",
         precision: 2,
         boost: {
-            contact: 10,
+            'phlu-corporate-contact-firstname': 100,
+            'phlu-corporate-contact-lastname': 300,
             firstname: 100,
             lastname: 100,
             uriPathSegment: 150,
@@ -205,6 +249,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$timeout', '$cookies', fun
                     var doc = node.properties;
 
 
+
                     if (doc != undefined) {
                         angular.forEach(doc, function (val, key) {
                             if (lunrSearch.getFields().indexOf(key) < 0) {
@@ -228,7 +273,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$timeout', '$cookies', fun
 
     searchData = function (term) {
 
-        console.log(term);
+
 
         var resultsFinal = {};
 
@@ -249,15 +294,19 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$timeout', '$cookies', fun
             var t = input.ref.substr(0, input.ref.indexOf("://"));
             var id = input.ref.substr(input.ref.indexOf("://") + 3);
 
+
             if ($scope.terms[t] !== undefined && $scope.terms[t].results && $scope.terms[t].results[id]) {
+
                 resultsFinal[id] = {
                     score: resultsFinal[id] !== undefined ? resultsFinal[id].score + input.score : input.score,
                     properties: $scope.terms[t].results[id].properties,
+                    grandParentNode: $scope.terms[t].results[id].grandParentNode,
                     nodeType: $scope.terms[t].results[id].nodeType
                 }
 
             }
         });
+
 
 
         $scope.searchResult = [];
