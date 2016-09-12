@@ -97,11 +97,7 @@
 
                                                 <ul data-ng-class="{hasSearchResults: searchResult.length > 0}" style="display:none">
                                                     <li ng-repeat="node in searchResult | orderBy:'-score'">
-                                                        <strong style="font-size:9px">{{node.score}}</strong><br>
-                                                        <b style="font-size:12px;">{{node.nodeType}}</b>
-
-                                                        <p ng-if="node.properties['phlu-corporate-contact-lastname']">{{node.properties['phlu-corporate-contact-lastname']}} {{node.properties['phlu-corporate-contact-firstname']}}<br>{{node.properties['phlu-corporate-contact-phone']}}</p>
-
+                                                        <search data="node"/>
                                                     </li>
                                                 </ul>
                                             </div>
