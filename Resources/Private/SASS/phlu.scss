@@ -1696,6 +1696,12 @@ body {
       }
     }
     //
+    // ppdb-list page
+    //
+    .ppdb-list {
+
+    }
+    //
     // ppdb-detail page
     //
     .ppdb-detail {
@@ -1709,11 +1715,42 @@ body {
         margin-bottom: 20px;
       }
     }
+
     //
-    // further education list page
+    // further education detail page (weiterbildung)
     //
-    .further-education-list {
-      .course-search-field {
+    .further-education-detail {
+      .phlu-team-members {
+        margin-bottom: 0;
+      }
+      .phlu-accordion {
+        margin-top: 10px;
+      }
+      .row {
+        &.fees {
+          table {
+            tr {
+              th {
+                width: 75%;
+              }
+              td {
+                text-align: right;
+              }
+            }
+          }
+        }
+        &.topics {
+          p {
+            width: 100%;
+          }
+        }
+      }
+    }
+    //
+    // phlu results-table for ppdb and further education lists
+    //
+    .ppdb-list, .further-education-list {
+      .list-search-field, .dropdown-search-field {
         input {
           border: 1px solid $grey;
           height: $input-search-field-big;
@@ -1721,6 +1758,28 @@ body {
         .fa-search {
           margin: -33px 25px 0 0;
         }
+      }
+      .dropdown-search-field {
+        margin: 13px 20px;
+        input {
+          border: 0;
+        }
+        .fa-search {
+          position: relative;
+          margin: -33px 50px 0 96%;
+        }
+      }
+      .search-result-tags {
+        padding-top:20px;
+        margin:20px;
+        .search-result-tag {
+          border-radius:$input-border-radius;
+          background-color: $grey3;
+          display: inline-block;
+          padding:5px;
+        }
+
+
       }
       .subjectsfilternav {
         .nav-pills {
@@ -1735,6 +1794,9 @@ body {
               }
               &.active {
                 background-color: $grey6;
+              }
+              i {
+                padding-right: 5px;
               }
             }
             &.nav-item {
@@ -1878,36 +1940,6 @@ body {
           }
         }
 
-      }
-    }
-    //
-    // further education detail page (weiterbildung)
-    //
-    .further-education-detail {
-      .phlu-team-members {
-        margin-bottom: 0;
-      }
-      .phlu-accordion {
-        margin-top: 10px;
-      }
-      .row {
-        &.fees {
-          table {
-            tr {
-              th {
-                width: 75%;
-              }
-              td {
-                text-align: right;
-              }
-            }
-          }
-        }
-        &.topics {
-          p {
-            width: 100%;
-          }
-        }
       }
     }
     //
