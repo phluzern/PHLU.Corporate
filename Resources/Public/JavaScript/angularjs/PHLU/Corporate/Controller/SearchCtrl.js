@@ -53,7 +53,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$timeout', '$cookies', fun
         authDomain: "phlu-f98dd.firebaseapp.com",
         databaseURL: "https://phlu-f98dd.firebaseio.com",
         storageBucket: "phlu-f98dd.appspot.com",
-        path: "/search/localhost/index/live",
+        path: "/search/localhost/index/live/fb11fdde869d0a8fcfe00a2fd35c031d/",
         precision: 2,
         boost: {
             'phlu-corporate-contact-firstname': 100,
