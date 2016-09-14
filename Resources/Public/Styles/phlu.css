@@ -7142,7 +7142,7 @@ body {
       border: 1px solid #5c5c5c;
       height: 50px; }
     body .all .ppdb-list .list-search-field .fa-search, body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .list-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search {
-      margin: -33px 25px 0 0; }
+      margin: -33px 33px 0 0; }
     body .all .ppdb-list .dropdown-search-field, body .all .further-education-list .dropdown-search-field {
       margin: 13px 20px; }
       body .all .ppdb-list .dropdown-search-field input, body .all .further-education-list .dropdown-search-field input {
@@ -7150,14 +7150,22 @@ body {
       body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search {
         position: relative;
         margin: -33px 50px 0 96%; }
+        @media (max-width: 543px) {
+          body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search {
+            margin: -33px 50px 0 92%; } }
+@media (min-width: 544px) and (max-width: 767px) {
+  body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search {
+    margin: -33px 50px 0 95%; } }
+
     body .all .ppdb-list .search-result-tags, body .all .further-education-list .search-result-tags {
-      padding-top: 20px;
+      padding-top: 16px;
       margin: 20px; }
       body .all .ppdb-list .search-result-tags .search-result-tag, body .all .further-education-list .search-result-tags .search-result-tag {
         border-radius: 2px;
         background-color: #767676;
         display: inline-block;
-        padding: 5px; }
+        padding: 5px;
+        margin-top: 4px; }
     body .all .ppdb-list .subjectsfilternav .nav-pills, body .all .further-education-list .subjectsfilternav .nav-pills {
       padding-bottom: 4px; }
       body .all .ppdb-list .subjectsfilternav .nav-pills li, body .all .further-education-list .subjectsfilternav .nav-pills li {

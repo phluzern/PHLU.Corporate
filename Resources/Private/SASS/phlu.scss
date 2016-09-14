@@ -1757,7 +1757,7 @@ body {
           height: $input-search-field-big;
         }
         .fa-search {
-          margin: -33px 25px 0 0;
+          margin: -33px 33px 0 0;
         }
       }
       .dropdown-search-field {
@@ -1768,16 +1768,23 @@ body {
         .fa-search {
           position: relative;
           margin: -33px 50px 0 96%;
+          @include media-breakpoint-only("xs") {
+            margin: -33px 50px 0 92%;
+          }
+          @include media-breakpoint-only("sm") {
+            margin: -33px 50px 0 95%;
+          }
         }
       }
       .search-result-tags {
-        padding-top: 20px;
+        padding-top: 16px;
         margin: 20px;
         .search-result-tag {
           border-radius: $input-border-radius;
           background-color: $grey3;
           display: inline-block;
           padding: 5px;
+          margin-top:4px;
         }
 
       }
