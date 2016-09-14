@@ -71,6 +71,7 @@ $nav-link-font-size-desktop: 1.125rem;
 $font-size-breadcrumb: 0.875rem;
 $font-size-langnav: 1.125rem;
 $font-size-search-filters: 1.125rem;
+$font-size-table-mobile-cols: 0.75rem;
 
 // phlu nav elements
 $nav-pills-border-radius: 0;
@@ -1770,15 +1771,14 @@ body {
         }
       }
       .search-result-tags {
-        padding-top:20px;
-        margin:20px;
+        padding-top: 20px;
+        margin: 20px;
         .search-result-tag {
-          border-radius:$input-border-radius;
+          border-radius: $input-border-radius;
           background-color: $grey3;
           display: inline-block;
-          padding:5px;
+          padding: 5px;
         }
-
 
       }
       .subjectsfilternav {
@@ -1888,10 +1888,18 @@ body {
             .oi-caret-bottom, .oi-caret-right {
               font-size: 12px;
             }
+            thead {
+              tr {
+                @include media-breakpoint-down("sm") {
+                  th {
+                    display: none;
+                  }
+                }
+              }
+            }
             tbody {
               tr {
                 td {
-                  //background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
                   padding-right: 20px;
                   &:first-child {
                     padding-right: 0;
@@ -1911,12 +1919,37 @@ body {
                   &:last-child {
                     border-right: 0;
                   }
+                  .mobile-view-columns {
+                    display: none;
+                  }
+                  @include media-breakpoint-down("sm") {
+                    display: none;
+                    &:first-child {
+                      display: table-cell;
+                    }
+                    .mobile-view-columns {
+                      display: block;
+                      margin-top: 10px;
+                      font-size: $font-size-table-mobile-cols;
+                      .header {
+                        width: 120px;
+                        padding: 0 30px;
+                        @include media-breakpoint-down("xs") {
+                          padding: 0 20px;
+                        }
+                        font-weight: bold;
+                      }
+                    }
+                  }
                 }
                 &.result-preview {
                   td {
                     border-bottom: 3px solid $raspberryRed;
                     div {
                       margin-left: 30px;
+                      @include media-breakpoint-down("xs") {
+                        margin-left: 20px;
+                      }
                       margin-bottom: 31px;
                       p {
                         font-size: 1rem;
@@ -1924,6 +1957,11 @@ body {
                       .btn {
                         color: white;
                         background-color: $grey6;
+                      }
+                    }
+                    .mobile-view-columns {
+                      .header {
+                        padding-left:0;
                       }
                     }
                   }
@@ -1939,7 +1977,6 @@ body {
             }
           }
         }
-
       }
     }
     //

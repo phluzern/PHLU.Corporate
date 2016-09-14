@@ -7230,6 +7230,9 @@ body {
         overflow-x: inherit; }
         body .all .ppdb-list .results-table .table-responsive .table .oi-caret-bottom, body .all .ppdb-list .results-table .table-responsive .table .oi-caret-right, body .all .further-education-list .results-table .table-responsive .table .oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table .oi-caret-right {
           font-size: 12px; }
+        @media (max-width: 767px) {
+          body .all .ppdb-list .results-table .table-responsive .table thead tr th, body .all .further-education-list .results-table .table-responsive .table thead tr th {
+            display: none; } }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr td, body .all .further-education-list .results-table .table-responsive .table tbody tr td {
           padding-right: 20px; }
           body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child {
@@ -7245,16 +7248,40 @@ body {
                     width: 20px; } }
           body .all .ppdb-list .results-table .table-responsive .table tbody tr td:last-child, body .all .further-education-list .results-table .table-responsive .table tbody tr td:last-child {
             border-right: 0; }
+          body .all .ppdb-list .results-table .table-responsive .table tbody tr td .mobile-view-columns, body .all .further-education-list .results-table .table-responsive .table tbody tr td .mobile-view-columns {
+            display: none; }
+          @media (max-width: 767px) {
+            body .all .ppdb-list .results-table .table-responsive .table tbody tr td, body .all .further-education-list .results-table .table-responsive .table tbody tr td {
+              display: none; }
+              body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child {
+                display: table-cell; }
+              body .all .ppdb-list .results-table .table-responsive .table tbody tr td .mobile-view-columns, body .all .further-education-list .results-table .table-responsive .table tbody tr td .mobile-view-columns {
+                display: block;
+                margin-top: 10px;
+                font-size: 0.75rem; }
+                body .all .ppdb-list .results-table .table-responsive .table tbody tr td .mobile-view-columns .header, body .all .further-education-list .results-table .table-responsive .table tbody tr td .mobile-view-columns .header {
+                  width: 120px;
+                  padding: 0 30px;
+                  font-weight: bold; } }
+      @media (max-width: 767px) and (max-width: 543px) {
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr td .mobile-view-columns .header, body .all .further-education-list .results-table .table-responsive .table tbody tr td .mobile-view-columns .header {
+          padding: 0 20px; } }
+
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td {
           border-bottom: 3px solid #ba1541; }
           body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div {
             margin-left: 30px;
             margin-bottom: 31px; }
+            @media (max-width: 543px) {
+              body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div {
+                margin-left: 20px; } }
             body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div p {
               font-size: 1rem; }
             body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn {
               color: white;
               background-color: #55696d; }
+          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header {
+            padding-left: 0; }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.open td, body .all .further-education-list .results-table .table-responsive .table tbody tr.open td {
           border-top: 3px solid #ba1541;
           border-bottom: 0; }
