@@ -47,7 +47,7 @@ prototype(PHLU.Corporate:Table) < prototype(PHLU.Corporate:Content) {
     cell9 = ${q(node).property('cell9')}
     cols = ${q(node).property('cols')}
 
-    attributes.class = 'table-phlu-saw'
+    #attributes.class = 'table-phlu-saw'
 
 }
 
@@ -95,6 +95,17 @@ prototype(PHLU.Corporate:Table.Row) < prototype(PHLU.Corporate:Content) {
     cell9 = ${q(node).property('cell9')}
 
     cols = ${q(node).parent().parent().property('cols')}
+
+th0 = ${q(node).parent().parent().property('cell0')}
+th1 = ${q(node).parent().parent().property('cell1')}
+th2 = ${q(node).parent().parent().property('cell2')}
+th3 = ${q(node).parent().parent().property('cell3')}
+th4 = ${q(node).parent().parent().property('cell4')}
+th5 = ${q(node).parent().parent().property('cell5')}
+th6 = ${q(node).parent().parent().property('cell6')}
+th7 = ${q(node).parent().parent().property('cell7')}
+th8 = ${q(node).parent().parent().property('cell8')}
+th9 = ${q(node).parent().parent().property('cell9')}
 
 }
 

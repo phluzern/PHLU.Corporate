@@ -6,11 +6,35 @@
 
     <f:if condition="{firstColHidden}">
         <f:else>
-            <th class="{class0} {firstColWithClass} {cell0isCurrencyClass}">{neos:contentElement.editable(property: 'cell0', tag: 'span')}</th>
+            <th class="{class0} {firstColWithClass} {cell0isCurrencyClass}">{neos:contentElement.editable(property:
+                'cell0', tag: 'span')}
+                <f:if condition="{cell1}">
+                    <div class="mobile-view-columns">
+                        <f:if condition="{th1}">
+                    <span class="header">
+                        {neos:contentElement.editable(property: 'th1', tag: 'span')}
+                    </span>
+                            </f:if>
+                        {neos:contentElement.editable(property: 'cell1', tag: 'span')}
+                    </div>
+                </f:if>
+                <f:render partial="TableCols" arguments="{_all}"/>
+            </th>
         </f:else>
     </f:if>
     <f:if condition="{cols} > 1">
-        <td class="{class1} {cell1isCurrencyClass}">{neos:contentElement.editable(property: 'cell1', tag: 'span')}</td>
+        <td class="{class1} {cell1isCurrencyClass}">
+            <f:if condition="{firstColHidden}">
+                <div class="mobile-view-columns">
+                <span class="header">
+                     {neos:contentElement.editable(property: 'th1', tag: 'span')}
+                 </span>
+                    {neos:contentElement.editable(property: 'cell1', tag: 'span')}
+                </div>
+            </f:if>
+            {neos:contentElement.editable(property: 'cell1', tag: 'span')}
+            <f:render partial="TableCols" arguments="{_all}"/>
+        </td>
     </f:if>
     <f:if condition="{cols} > 2">
         <td class="{class2} {cell2isCurrencyClass}">{neos:contentElement.editable(property: 'cell2', tag: 'span')}</td>
