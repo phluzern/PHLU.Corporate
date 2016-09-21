@@ -2104,6 +2104,20 @@ body {
               }
             }
           }
+          &.internalLink {
+            .row {
+              .phlu-teaser-body {
+                h3 {
+                  &::before {
+                    font-family: Icons;
+                    font-size: 18px;
+                    content: " \e02f";
+                    left: 31px;
+                  }
+                }
+              }
+            }
+          }
         }
       }
       &.nofilter {
@@ -2389,7 +2403,7 @@ body {
           thead {
             tr {
               th {
-                padding: 0.75rem 0;
+                padding: 12px 20px 12px 0;
                 line-height: 1.5;
                 vertical-align: top;
                 border-top: 0;
@@ -2423,7 +2437,7 @@ body {
             }
             tr {
               th, td {
-                padding: 0.75rem 0;
+                padding: 12px 20px 12px 0;
                 //border-right: 2px solid white;
                 line-height: 1.5;
                 vertical-align: top;
@@ -2488,6 +2502,7 @@ body {
                 }
                 @include media-breakpoint-down("sm") {
                   display: none;
+                  padding-right:0;
                   &:first-child {
                     display: table-cell;
                   }

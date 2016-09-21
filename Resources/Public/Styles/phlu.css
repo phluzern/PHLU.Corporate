@@ -7325,6 +7325,11 @@ body {
         body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.webLink .row .phlu-teaser-body h3::before {
           font-family: FontAwesome;
           content: " \f0c1"; }
+        body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.internalLink .row .phlu-teaser-body h3::before {
+          font-family: Icons;
+          font-size: 18px;
+          content: " \e02f";
+          left: 31px; }
       body .all .row.subjectsfilternav.phlu-filelinks.nofilter {
         margin-bottom: 0; }
         body .all .row.subjectsfilternav.phlu-filelinks.nofilter .phlu-teaser {
@@ -7522,7 +7527,7 @@ body {
         body .all .main > .row address .content-link-portrait:before {
           padding-right: 4px; }
       body .all .main > .row .table thead tr th {
-        padding: 0.75rem 0;
+        padding: 12px 20px 12px 0;
         line-height: 1.5;
         vertical-align: top;
         border-top: 0; }
@@ -7540,7 +7545,7 @@ body {
       body .all .main > .row .table tbody tr:first-child th, body .all .main > .row .table tbody tr:first-child td {
         border-top: 4px solid #5c5c5c; }
       body .all .main > .row .table tbody tr th, body .all .main > .row .table tbody tr td {
-        padding: 0.75rem 0;
+        padding: 12px 20px 12px 0;
         line-height: 1.5;
         vertical-align: top;
         border-top: 0;
@@ -7587,7 +7592,8 @@ body {
           display: none; }
         @media (max-width: 767px) {
           body .all .main > .row .table tbody tr th, body .all .main > .row .table tbody tr td {
-            display: none; }
+            display: none;
+            padding-right: 0; }
             body .all .main > .row .table tbody tr th:first-child, body .all .main > .row .table tbody tr td:first-child {
               display: table-cell; }
             body .all .main > .row .table tbody tr th .mobile-view-columns, body .all .main > .row .table tbody tr td .mobile-view-columns {
