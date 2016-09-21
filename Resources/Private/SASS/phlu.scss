@@ -904,7 +904,7 @@ body {
       }
       .phlu-teaser-body {
         background-color: white;
-        padding: 20px;
+        padding: 18px;
 
         h3 {
           margin: 5px 0 28px;
@@ -1483,7 +1483,7 @@ body {
             .phlu-teaser-caret-right {
               &::after {
                 bottom: inherit;
-                top: 50%;
+                top: 52%;
                 transform: translateY(-50%);
               }
             }
@@ -1598,23 +1598,28 @@ body {
 
         }
 
-        .panel-email {
-          font-family: FontAwesome;
-
-          &::after {
-            font-size: 21px;
-            position: absolute;
-            content: " \f003";
-          }
-        }
         .panel-switch {
           &::after {
             font-size: 35px;
             position: absolute;
-            right: 14px;
-            margin-top: -10px;
+            margin-top:-14px;
           }
+        }
+        .panel-infos {
+          text-align: right;
+          @include media-breakpoint-down("xs") {
+            text-align: inherit;
+            right: inherit;
+            .panel-switch {
+              position: absolute;
+              right: 35px;
+            }
+          }
+          right: 20px;
 
+          .panel-email {
+            padding:0 5px 0 10px;
+          }
         }
       }
       .panel-heading, a {
@@ -1695,12 +1700,6 @@ body {
           display: none;
         }
       }
-    }
-    //
-    // ppdb-list page
-    //
-    .ppdb-list {
-
     }
     //
     // ppdb-detail page
@@ -2115,6 +2114,26 @@ body {
       }
     }
     //
+    // phlu site link tiles
+    //
+    .row.subjectsfilternav.phlu-sitelink-tiles {
+      .phlu-teaser.navigation.subpage {
+        margin:0;
+        .nav-teaser-item {
+          .row {
+            .phlu-teaser-body {
+              h3 {
+                margin-top: 0;
+              }
+            }
+            .phlu-teaser-body, .phlu-teaser-caret-right.col-xs-2 {
+              background-color: $sephia;
+            }
+          }
+        }
+      }
+    }
+    //
     // news and events flow text version
     //
     .flowtext-phlu-event, .flowtext-phlu-news {
@@ -2389,7 +2408,7 @@ body {
           thead {
             tr {
               th {
-                padding: 0.75rem 0;
+                padding: 12px 20px 12px 0;
                 line-height: 1.5;
                 vertical-align: top;
                 border-top: 0;
@@ -2423,7 +2442,7 @@ body {
             }
             tr {
               th, td {
-                padding: 0.75rem 0;
+                padding: 12px 20px 12px 0;
                 //border-right: 2px solid white;
                 line-height: 1.5;
                 vertical-align: top;
@@ -2488,6 +2507,7 @@ body {
                 }
                 @include media-breakpoint-down("sm") {
                   display: none;
+                  padding-right:0;
                   &:first-child {
                     display: table-cell;
                   }
