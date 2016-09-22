@@ -24,13 +24,6 @@ PHLUCorporateApp.directive('search', function ($sce) {
                 } else {
 
                     switch ($scope.node.nodeType) {
-
-                        case 'phlu-qmpilot-nodetypes-file':
-                            return template + 'phlu-qmpilot-nodetypes-file.html';
-
-                        case 'phlu-corporate-text':
-                            return template + 'phlu-qmpilot-nodetypes-text.html';
-
                         case 'phlu-corporate-contact':
                             return template + 'phlu-corporate-contact.html';
 
@@ -58,7 +51,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
     );
 
     $scope.results = [];
-    $scope.liste = [];
+    $scope.siteSearch = '';
 
     var search = new $hybridsearchObject(hybridsearch);
 
@@ -68,6 +61,26 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
 
 
     });
+
+    $scope.searchStart = function() {
+
+        // if ($scope.results.length > 0 && $scope.siteSearch.length > 0) {
+        // $('.ui.sidebar').sidebar('setting', 'dimPage', false).sidebar('setting', 'closable', false).sidebar('show');
+        //
+        // }
+    };
+
+    $scope.$watch('siteSearch', function (i) {
+       if (i !== undefined && i.length === 1) {
+         $('.ui.sidebar').sidebar('setting', 'dimPage', false).sidebar('setting', 'closable', false).sidebar('show');
+       }
+       if (i === undefined || i.length === 0) {
+          $('.ui.sidebar').sidebar('hide');
+       }
+
+    });
+
+
 
 
 }]);
