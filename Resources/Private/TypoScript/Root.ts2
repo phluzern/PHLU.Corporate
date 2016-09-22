@@ -156,3 +156,9 @@ page = Page {
 }
 
 
+
+neosliveHybridsearch = TYPO3.TypoScript:Collection {
+	collection = ${q(node)}
+	itemName = 'node'
+	itemRenderer = TYPO3.Neos:ContentCase
+}

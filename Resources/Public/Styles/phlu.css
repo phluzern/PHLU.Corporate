@@ -6187,6 +6187,21 @@ html {
   position: relative;
   min-height: 100%; }
 
+.hasSearchResults {
+  display: block !important;
+  background-color: rgba(255, 255, 255, 0.91);
+  overflow: hidden;
+  z-index: 999999999;
+  position: fixed;
+  width: 100%;
+  max-width: 600px; }
+  .hasSearchResults .result {
+    display: block;
+    float: none;
+    clear: both;
+    padding: 15px;
+    border-bottom: 1px solid #e9e0d8; }
+
 .ico-family-iconic::before {
   font-family: Icons; }
 
@@ -6524,13 +6539,6 @@ body {
         body .all .sidebar .site-search-field i {
           padding-right: 10px;
           margin-top: -25px; }
-        body .all .sidebar .site-search-field .hasSearchResults {
-          display: block !important;
-          position: absolute !important;
-          background-color: rgba(212, 212, 212, 0.86);
-          left: 0px;
-          margin-top: 15px;
-          width: 100%; }
       body .all .sidebar .form-control {
         margin-top: 30px;
         display: inline-block;

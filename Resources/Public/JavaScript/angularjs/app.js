@@ -1,6 +1,6 @@
 'use strict';
 
-var PHLUCorporateApp = angular.module('PHLUCorporateApp', ['ngCookies']);
+var PHLUCorporateApp = angular.module('PHLUCorporateApp', ['ngCookies','hybridsearch','ngSanitize']);
 
 
 

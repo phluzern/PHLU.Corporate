@@ -15,23 +15,23 @@
         <link rel="stylesheet"
               href="{f:uri.external(uri: 'https://fonts.googleapis.com/css?family=Droid+Sans:400,700')}" media="all"/>
         <link rel="stylesheet"
-              href="{f:uri.resource(path: 'Vendor/filament-tablesaw/dist/bare/tablesaw.bare.css', package: 'PHLU.Corporate')}"
-              media="all"/>
-        <link rel="stylesheet"
               href="{f:uri.resource(path: 'Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.css', package: 'PHLU.Corporate')}"
               media="all"/>
         <link rel="stylesheet"
               href="{f:uri.resource(path: 'Vendor/font-awesome/css/font-awesome.min.css', package: 'PHLU.Corporate')}"
               media="all"/>
         <link rel="stylesheet"
-              href="{f:uri.external(uri: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/transition.min.css')}" media="all"/>
+              href="{f:uri.external(uri: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/transition.min.css')}"
+              media="all"/>
         <link rel="stylesheet"
-              href="{f:uri.external(uri: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/dropdown.min.css')}" media="all"/>
+              href="{f:uri.external(uri: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/dropdown.min.css')}"
+              media="all"/>
         <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/phlu.css', package: 'PHLU.Corporate')}" media="all"/>
         <link rel="stylesheet"
               href="{f:uri.resource(path: 'Vendor/animate.css/animate.min.css', package: 'PHLU.Corporate')}"
               media="all"/>
-        <link rel="stylesheet" href="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css', package: 'PHLU.Corporate')}"
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css', package: 'PHLU.Corporate')}"
               media="all"/>
 
 
@@ -39,14 +39,20 @@
 
     <f:section name="headScripts">
         <!-- Put your scripts inclusions for the head here, they will be included in your website by TypoScript -->
-        <script src="{f:uri.resource(path: 'Vendor/firebase/firebase.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/angularjs/angular.min.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/angular-cookies/angular-cookies.min.js', package: 'PHLU.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'PHLU.Corporate')}"></script>
+
+        <script src="{f:uri.resource(path: 'Vendor/firebase/firebase.js', package: 'Neoslive.Hybridsearch')}"></script>
+        <script src="{f:uri.resource(path: 'Vendor/angularfire/dist/angularfire.min.js', package: 'Neoslive.Hybridsearch')}"></script>
+        <script src="{f:uri.resource(path: 'Vendor/angular-sanitize/angular-sanitize.min.js', package: 'Neoslive.Hybridsearch')}"></script>
+        <script src="{f:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'Neoslive.Hybridsearch')}"></script>
+        <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
+
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/ContactsCtrl.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SearchCtrl.js', package: 'PHLU.Corporate')}"></script>
+
 
     </f:section>
 
@@ -68,7 +74,7 @@
             {parts.navBarMenu -> f:format.raw()}
         </nav>
 
-        <div class="container-fluid {pageLevelTypeClass} ">
+        <div class="container-fluid {pageLevelTypeClass}" data-ng-controller="SearchCtrl">
             <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}">
                 <div class="col-xl-2 sidebar level0 ">
                     <div class="row">
@@ -90,17 +96,9 @@
                                         </div>
                                     </f:then>
                                     <f:else>
-                                        <div class="site-search-field" data-ng-controller="SearchCtrl">
-                                            <input type="text" class="c-input form-control" id="siteSearch" data-ng-model="siteSearch">
+                                        <div class="site-search-field">
+                                            <input type="text" class="c-input form-control" data-ng-model="siteSearch">
                                             <i class="fa fa-search" aria-hidden="true"></i>
-                                            <div class="searchResult">
-
-                                                <ul data-ng-class="{hasSearchResults: searchResult.length > 0}" style="display:none">
-                                                    <li ng-repeat="node in searchResult | orderBy:'-score'">
-                                                        <search data="node"/>
-                                                    </li>
-                                                </ul>
-                                            </div>
                                         </div>
                                     </f:else>
                                 </f:if>
@@ -109,6 +107,17 @@
                             <div class="row">
                                 {parts.sideBarLevel0Menu -> f:format.raw()}
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="searchResult">
+                    <div data-ng-class="{hasSearchResults: results.length > 0}" style="display:none">
+                        <div ng-repeat="result in results | orderBy:'-score'">
+
+                            <div class="result">
+                                <search data="result.node"></search>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -186,7 +195,7 @@
             </div>
         </div>
 
-                <span id="top-link-block" class="img-circle">
+        <span id="top-link-block" class="img-circle">
                     <a href="#top" class="anchor-nav">
                         <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/spacer.png')}" width="80"
                              height="80"
@@ -206,7 +215,6 @@
     <script src="{f:uri.resource(path: 'Vendor/bootstrap/dist/js/bootstrap.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/locales/bootstrap-datepicker.de.min.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'Vendor/filament-tablesaw/dist/tablesaw.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.external(uri: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/transition.min.js')}"></script>
     <script src="{f:uri.external(uri: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/dropdown.min.js')}"></script>
