@@ -788,6 +788,14 @@ body {
           padding-right: 10px;
           margin-top: -25px;
         }
+        .hasSearchResults {
+          display: block !important;
+          position: absolute !important;
+          background-color: rgba(212, 212, 212, 0.86);
+          left: 0px;
+          margin-top: 15px;
+          width: 100%;
+        }
       }
       .form-control {
         margin-top: 30px;
@@ -1618,7 +1626,7 @@ body {
           &::after {
             font-size: 35px;
             position: absolute;
-            margin-top: -14px;
+            margin-top:-14px;
           }
         }
         .panel-infos {
@@ -1634,7 +1642,7 @@ body {
           right: 20px;
 
           .panel-email {
-            padding: 0 5px 0 10px;
+            padding:0 5px 0 10px;
           }
         }
       }
@@ -1799,7 +1807,7 @@ body {
           background-color: $grey3;
           display: inline-block;
           padding: 5px;
-          margin-top: 4px;
+          margin-top:4px;
         }
 
       }
@@ -1951,7 +1959,7 @@ body {
                     }
                     .mobile-view-columns {
                       .header {
-                        padding-left: 0;
+                        padding-left:0;
                       }
                     }
                   }
@@ -2148,7 +2156,7 @@ body {
     //
     .row.subjectsfilternav.phlu-sitelink-tiles {
       .phlu-teaser.navigation.subpage {
-        margin: 0;
+        margin:0;
         .nav-teaser-item {
           .row {
             .phlu-teaser-body {
@@ -2537,7 +2545,7 @@ body {
                 }
                 @include media-breakpoint-down("sm") {
                   display: none;
-                  padding-right: 0;
+                  padding-right:0;
                   &:first-child {
                     display: table-cell;
                   }
