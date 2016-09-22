@@ -2103,6 +2103,20 @@ body {
               }
             }
           }
+          &.internalLink {
+            .row {
+              .phlu-teaser-body {
+                h3 {
+                  &::before {
+                    font-family: Icons;
+                    font-size: 18px;
+                    content: " \e02f";
+                    left: 31px;
+                  }
+                }
+              }
+            }
+          }
         }
       }
       &.nofilter {

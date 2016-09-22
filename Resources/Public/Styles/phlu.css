@@ -7330,6 +7330,11 @@ body {
         body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.webLink .row .phlu-teaser-body h3::before {
           font-family: FontAwesome;
           content: " \f0c1"; }
+        body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.internalLink .row .phlu-teaser-body h3::before {
+          font-family: Icons;
+          font-size: 18px;
+          content: " \e02f";
+          left: 31px; }
       body .all .row.subjectsfilternav.phlu-filelinks.nofilter {
         margin-bottom: 0; }
         body .all .row.subjectsfilternav.phlu-filelinks.nofilter .phlu-teaser {
