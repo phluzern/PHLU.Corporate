@@ -261,22 +261,34 @@ html {
 // search
 //
 .hasSearchResults {
+
+  -webkit-box-shadow: 4px 3px 29px 0px rgba(99,99,99,0.6);
+  -moz-box-shadow: 4px 3px 29px 0px rgba(99,99,99,0.6);
+  box-shadow: 4px 3px 29px 0px rgba(99,99,99,0.6);
+
   display: block !important;
-  background-color: rgba(255, 255, 255, 0.91);
+  background-color: rgb(251, 250, 244);
   overflow: hidden;
   z-index: 999999999;
-  position: fixed;
+  position: absolute;
   width: 100%;
-  max-width:600px;
-
-
+  max-width: 1400px;
+  min-height: 100%;
   .result {
-
     display: block;
-    float:none;
-    clear:both;
+    float: none;
+    clear: both;
     padding: 15px;
     border-bottom: 1px solid #e9e0d8;
+    -webkit-box-shadow: 34px 0px 3px 0px rgb(226, 225, 220);
+    -moz-box-shadow: 34px 0px 3px 0px rgb(226, 225, 220);
+    box-shadow: 34px 0px 3px 0px rgb(226, 225, 220);
+    .turbonode table {
+      -ms-zoom: 70%;
+      zoom: 70%;
+    }
+
+
   }
 
 }
@@ -1626,7 +1638,7 @@ body {
           &::after {
             font-size: 35px;
             position: absolute;
-            margin-top:-14px;
+            margin-top: -14px;
           }
         }
         .panel-infos {
@@ -1642,7 +1654,7 @@ body {
           right: 20px;
 
           .panel-email {
-            padding:0 5px 0 10px;
+            padding: 0 5px 0 10px;
           }
         }
       }
@@ -1807,7 +1819,7 @@ body {
           background-color: $grey3;
           display: inline-block;
           padding: 5px;
-          margin-top:4px;
+          margin-top: 4px;
         }
 
       }
@@ -1959,7 +1971,7 @@ body {
                     }
                     .mobile-view-columns {
                       .header {
-                        padding-left:0;
+                        padding-left: 0;
                       }
                     }
                   }
@@ -2156,7 +2168,7 @@ body {
     //
     .row.subjectsfilternav.phlu-sitelink-tiles {
       .phlu-teaser.navigation.subpage {
-        margin:0;
+        margin: 0;
         .nav-teaser-item {
           .row {
             .phlu-teaser-body {
@@ -2545,7 +2557,7 @@ body {
                 }
                 @include media-breakpoint-down("sm") {
                   display: none;
-                  padding-right:0;
+                  padding-right: 0;
                   &:first-child {
                     display: table-cell;
                   }

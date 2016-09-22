@@ -24,13 +24,6 @@ PHLUCorporateApp.directive('search', function ($sce) {
                 } else {
 
                     switch ($scope.node.nodeType) {
-
-                        case 'phlu-qmpilot-nodetypes-file':
-                            return template + 'phlu-qmpilot-nodetypes-file.html';
-
-                        case 'phlu-corporate-text':
-                            return template + 'phlu-qmpilot-nodetypes-text.html';
-
                         case 'phlu-corporate-contact':
                             return template + 'phlu-corporate-contact.html';
 

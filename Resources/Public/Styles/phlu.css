@@ -6188,19 +6188,29 @@ html {
   min-height: 100%; }
 
 .hasSearchResults {
+  -webkit-box-shadow: 4px 3px 29px 0px rgba(99, 99, 99, 0.6);
+  -moz-box-shadow: 4px 3px 29px 0px rgba(99, 99, 99, 0.6);
+  box-shadow: 4px 3px 29px 0px rgba(99, 99, 99, 0.6);
   display: block !important;
-  background-color: rgba(255, 255, 255, 0.91);
+  background-color: #fbfaf4;
   overflow: hidden;
   z-index: 999999999;
-  position: fixed;
+  position: absolute;
   width: 100%;
-  max-width: 600px; }
+  max-width: 1400px;
+  min-height: 100%; }
   .hasSearchResults .result {
     display: block;
     float: none;
     clear: both;
     padding: 15px;
-    border-bottom: 1px solid #e9e0d8; }
+    border-bottom: 1px solid #e9e0d8;
+    -webkit-box-shadow: 34px 0px 3px 0px #e2e1dc;
+    -moz-box-shadow: 34px 0px 3px 0px #e2e1dc;
+    box-shadow: 34px 0px 3px 0px #e2e1dc; }
+    .hasSearchResults .result .turbonode table {
+      -ms-zoom: 70%;
+      zoom: 70%; }
 
 .ico-family-iconic::before {
   font-family: Icons; }
@@ -6539,6 +6549,13 @@ body {
         body .all .sidebar .site-search-field i {
           padding-right: 10px;
           margin-top: -25px; }
+        body .all .sidebar .site-search-field .hasSearchResults {
+          display: block !important;
+          position: absolute !important;
+          background-color: rgba(212, 212, 212, 0.86);
+          left: 0px;
+          margin-top: 15px;
+          width: 100%; }
       body .all .sidebar .form-control {
         margin-top: 30px;
         display: inline-block;
@@ -7091,7 +7108,7 @@ body {
       body .all .phlu-team-members .panel-heading .panel-switch::after {
         font-size: 35px;
         position: absolute;
-        margin-top: -10px; }
+        margin-top: -14px; }
       body .all .phlu-team-members .panel-heading .panel-infos {
         text-align: right;
         right: 20px; }
