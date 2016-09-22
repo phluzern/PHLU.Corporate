@@ -63,7 +63,8 @@
 <f:section name="body">
 
 
-    <div class="all" data-ng-app="PHLUCorporateApp">
+    <div class="all" data-ng-class="{hasSearchResults: results.length > 0}" data-ng-app="PHLUCorporateApp"
+         data-ng-controller="SearchCtrl">
 
         <nav class="navbar">
             <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
@@ -74,7 +75,7 @@
             {parts.navBarMenu -> f:format.raw()}
         </nav>
 
-        <div class="container-fluid {pageLevelTypeClass}" data-ng-controller="SearchCtrl">
+        <div class="container-fluid {pageLevelTypeClass}">
             <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}">
                 <div class="col-xl-2 sidebar level0 ">
                     <div class="row">
@@ -112,14 +113,15 @@
                 </div>
                 <div id="searchResult">
                     <div data-ng-class="{hasSearchResults: results.length > 0}" style="display:none">
-                        <div ng-repeat="result in results | orderBy:'-score'">
+                        <div class="resultsWrapper">
+                            <div ng-repeat="result in results | orderBy:'-score'">
 
-                            <div class="result">
+                                <div class="result">
 
-                                <search data="result.node"></search>
+                                    <search data="result.node"></search>
 
+                                </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

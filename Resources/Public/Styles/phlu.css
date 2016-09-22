@@ -6187,30 +6187,50 @@ html {
   position: relative;
   min-height: 100%; }
 
-.hasSearchResults {
-  -webkit-box-shadow: 4px 3px 29px 0px rgba(99, 99, 99, 0.6);
-  -moz-box-shadow: 4px 3px 29px 0px rgba(99, 99, 99, 0.6);
-  box-shadow: 4px 3px 29px 0px rgba(99, 99, 99, 0.6);
+#searchResult .hasSearchResults {
+  background-color: white;
   display: block !important;
-  background-color: rgba(233, 224, 216, 0.99);
   overflow: hidden;
   z-index: 999999999;
   position: absolute;
   width: 100%;
-  max-width: 696px;
+  max-width: 860px;
   min-height: 100%;
   color: #685f56;
-  margin-left: 2px; }
-  .hasSearchResults .result {
+  margin-left: 2px;
+  border-right: 2px solid #e9e0d8; }
+  #searchResult .hasSearchResults .resultsWrapper {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    display: block;
+    position: fixed;
+    max-width: 860px;
+    overflow-x: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 60px; }
+  #searchResult .hasSearchResults .result {
+    zoom: 0.8;
     display: block;
     float: none;
     clear: both;
     padding: 10px;
     border-bottom: 1px solid #ffffff; }
-    .hasSearchResults .result .turbonode * {
-      border: 0; }
-    .hasSearchResults .result .turbonode hr {
-      display: none !important; }
+    #searchResult .hasSearchResults .result b, #searchResult .hasSearchResults .result strong, #searchResult .hasSearchResults .result a, #searchResult .hasSearchResults .result h1, #searchResult .hasSearchResults .result h2, #searchResult .hasSearchResults .result h3 {
+      color: #9f632a !important; }
+    #searchResult .hasSearchResults .result .turbonode {
+      background-color: #f1f1f1;
+      padding: 15px; }
+      #searchResult .hasSearchResults .result .turbonode * {
+        border: 0; }
+      #searchResult .hasSearchResults .result .turbonode hr {
+        display: none !important; }
+
+.all.hasSearchResults {
+  overflow: hidden;
+  height: 100%; }
 
 .ico-family-iconic::before {
   font-family: Icons; }
