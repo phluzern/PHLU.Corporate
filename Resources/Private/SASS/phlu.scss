@@ -273,8 +273,12 @@ html {
     color: #685f56;
     margin-left:2px;
     border-right: 2px solid #e9e0d8;
+
     .resultsWrapper {
 
+      > h3 {
+        padding-left: 8px;
+      }
 
       height: 100%;
       width: 100%;
@@ -300,6 +304,11 @@ html {
 
       b, strong, a, h1, h2, h3 {
         color:#9f632a !important;
+      }
+      h2 {
+        margin: 0 !important;
+        margin-bottom: 10px !important;
+        font-size: 170%;
       }
       .turbonode {
 

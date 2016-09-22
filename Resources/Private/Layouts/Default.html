@@ -113,7 +113,11 @@
                 </div>
                 <div id="searchResult">
                     <div data-ng-class="{hasSearchResults: results.length > 0}" style="display:none">
+
                         <div class="resultsWrapper">
+
+                            <h3>Suchergebnisse ({{results.length}})</h3>
+
                             <div ng-repeat="result in results | orderBy:'-score'">
 
                                 <div class="result">

@@ -6211,6 +6211,8 @@ html {
     padding-bottom: 30px;
     padding-left: 30px;
     padding-right: 60px; }
+    #searchResult .hasSearchResults .resultsWrapper > h3 {
+      padding-left: 8px; }
   #searchResult .hasSearchResults .result {
     zoom: 0.8;
     display: block;
@@ -6220,6 +6222,10 @@ html {
     border-bottom: 1px solid #ffffff; }
     #searchResult .hasSearchResults .result b, #searchResult .hasSearchResults .result strong, #searchResult .hasSearchResults .result a, #searchResult .hasSearchResults .result h1, #searchResult .hasSearchResults .result h2, #searchResult .hasSearchResults .result h3 {
       color: #9f632a !important; }
+    #searchResult .hasSearchResults .result h2 {
+      margin: 0 !important;
+      margin-bottom: 10px !important;
+      font-size: 170%; }
     #searchResult .hasSearchResults .result .turbonode {
       background-color: #f1f1f1;
       padding: 15px; }
