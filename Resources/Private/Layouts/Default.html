@@ -112,11 +112,11 @@
                     </div>
                 </div>
                 <div id="searchResult">
-                    <div data-ng-class="{hasSearchResults: results.all.length > 0}" style="display:none">
+                    <div data-ng-class="{hasSearchResults: results.all.length > 0 || results.turbonodes.length > 0}" style="display:none">
 
                         <div class="resultsWrapper">
 
-                            <h3>Suchergebnisse ({{results.all.length}})</h3>
+                            <h3>Suchergebnisse ({{results.all.length + results.turbonodes.length}})</h3>
 
                             <div ng-repeat="result in results.turbonodes | orderBy:'-score'">
                                 <div class="result turbonode">
@@ -138,15 +138,13 @@
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <div class="tab-pane active" id="alle" role="tabpanel">
-                                    <div class="result" ng-repeat="result in results.all | orderBy:'-score'"
-                                         data-ng-show="!result.node.turbonode">
+                                    <div class="result" ng-repeat="result in results.all | orderBy:'-score'">
                                         <search data="result.node"></search>
                                     </div>
                                 </div>
                                 <div class="tab-pane " id="{{nodetype}}" role="{{nodetype}}"
                                      ng-repeat="(nodetype,nodetyperesults) in results.nodetypes">
-                                    <div class="result" ng-repeat="nodetyperesult in nodetyperesults | orderBy:'-score'"
-                                         data-ng-show="!nodetyperesult.node.turbonode ">
+                                    <div class="result" ng-repeat="nodetyperesult in nodetyperesults | orderBy:'-score'">
                                         <search data="nodetyperesult.node"></search>
                                     </div>
                                 </div>
