@@ -52,14 +52,35 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
 
     $scope.results = [];
     $scope.siteSearch = '';
+    $scope.siteSearchLastQuery = '';
+    var wasClosed = false;
 
     var search = new $hybridsearchObject(hybridsearch);
 
-    search.setQuery('siteSearch', $scope).$watch(function (i) {
+    search.setQuery('siteSearch', $scope).addAdditionalKeywords($(".page-header").text() + " " + window.location.href).$watch(function (i) {
         $scope.results = i;
     });
 
+    $scope.stopSearch = function () {
+        $scope.siteSearchLastQuery = $scope.siteSearch;
+        $scope.siteSearch = '';
+        $scope.results = [];
+        wasClosed = true;
+    };
 
+    $scope.startSearch = function () {
+        if (wasClosed) {
+            wasClosed = false;
+            $scope.siteSearch = $scope.siteSearchLastQuery;
+        }
+
+    };
+
+    $scope.$watch('siteSearch', function (i) {
+        if (i === '' && wasClosed == false) {
+            $scope.siteSearchLastQuery = '';
+        }
+    });
 
 
 }]);

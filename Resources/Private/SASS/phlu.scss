@@ -262,7 +262,7 @@ html {
 //
 #searchResult {
   .hasSearchResults {
-    background-color:white;
+    background-color: white;
     display: block !important;
     overflow: hidden;
     z-index: 999999999;
@@ -271,8 +271,9 @@ html {
     max-width: 860px;
     min-height: 100%;
     color: #685f56;
-    margin-left:2px;
+    margin-left: 0px;
     border-right: 2px solid #e9e0d8;
+    border-left: 2px solid #e9e0d8;
 
     .resultsWrapper {
 
@@ -287,33 +288,86 @@ html {
       position: fixed;
       max-width: 860px;
       overflow-x: hidden;
-      padding-top:30px;
-      padding-bottom:30px;
-      padding-left:30px;
-      padding-right:60px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 30px;
+      padding-right: 60px;
+
+      .btn.close:after {
+        font-family: FontAwesome;
+        content: " \00D7";
+        font-size: 30px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        padding: 0 15px 5px;
+      }
 
     }
     .result {
-      zoom:0.8;
+
+      .resultBreadcrumb {
+        width: 100%;
+        display: block;
+        float: left;
+        clear: both;
+        margin: 0;
+        padding: 0;
+
+
+        ul {
+          list-style-type: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+
+          li {
+            display: block;
+            float: left;
+            padding-right: 0;
+            font-size: 70%;
+            width: auto;
+            overflow: visible;
+            white-space: nowrap;
+            &:first-child {
+              display: none !important;
+            }
+            &:after {
+              content: '>';
+              padding-right:10px;
+            }
+            &:last-child {
+              &:after {
+                content: '';
+              }
+            }
+            a {
+              color: #6b5c5c !important;
+              margin-right: 5px;
+
+            }
+          }
+        }
+      }
+
+      zoom: 0.9;
 
       display: block;
       float: none;
       clear: both;
       padding: 10px;
-      border-bottom: 1px solid #ffffff;
+      border-bottom: 1px solid #e9e0d8;
 
       b, strong, a, h1, h2, h3 {
-        color:#9f632a !important;
+        color: #9f632a !important;
       }
       h2 {
         margin: 0 !important;
         margin-bottom: 10px !important;
         font-size: 170%;
       }
+
       .turbonode {
 
-        background-color: #f1f1f1;
-        padding: 15px;
 
         * {
           border: 0;
@@ -330,7 +384,7 @@ html {
 
 .all.hasSearchResults {
   overflow: hidden;
-  height:100%;
+  height: 100%;
 }
 
 //

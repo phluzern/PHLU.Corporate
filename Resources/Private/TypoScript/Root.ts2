@@ -162,3 +162,9 @@ neosliveHybridsearch = TYPO3.TypoScript:Collection {
 	itemName = 'node'
 	itemRenderer = TYPO3.Neos:ContentCase
 }
+
+neosliveHybridsearchBreadcrumb = TYPO3.TypoScript:Collection {
+	collection = ${q(node)}
+	itemName = 'node'
+	itemRenderer = Breadcrumb
+}
