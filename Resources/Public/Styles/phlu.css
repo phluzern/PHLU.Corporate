@@ -6188,7 +6188,7 @@ html {
   min-height: 100%; }
 
 #searchResult .hasSearchResults {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.98);
   display: block !important;
   overflow: hidden;
   z-index: 999999999;
@@ -6199,7 +6199,10 @@ html {
   color: #685f56;
   margin-left: 0px;
   border-right: 2px solid #e9e0d8;
-  border-left: 2px solid #e9e0d8; }
+  border-left: 2px solid #e9e0d8;
+  -webkit-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3); }
   #searchResult .hasSearchResults .resultsWrapper {
     height: 100%;
     width: 100%;
@@ -6210,8 +6213,8 @@ html {
     overflow-x: hidden;
     padding-top: 30px;
     padding-bottom: 30px;
-    padding-left: 30px;
-    padding-right: 60px; }
+    padding-left: 10px;
+    padding-right: 10px; }
     #searchResult .hasSearchResults .resultsWrapper > h3 {
       padding-left: 8px; }
     #searchResult .hasSearchResults .resultsWrapper .btn.close:after {
@@ -6222,6 +6225,15 @@ html {
       right: 15px;
       top: 15px;
       padding: 0 15px 5px; }
+  #searchResult .hasSearchResults ul.nav {
+    list-style-type: none !important;
+    margin: 0 !important;
+    padding: 0 !important; }
+    #searchResult .hasSearchResults ul.nav li {
+      margin-left: 15px; }
+      #searchResult .hasSearchResults ul.nav li a {
+        color: #6b5c5c !important;
+        font-size: 80%; }
   #searchResult .hasSearchResults .result {
     zoom: 0.9;
     display: block;
@@ -6268,6 +6280,8 @@ html {
       border: 0; }
     #searchResult .hasSearchResults .result .turbonode hr {
       display: none !important; }
+    #searchResult .hasSearchResults .result.turbonode {
+      border: 0; }
 
 .all.hasSearchResults {
   overflow: hidden;

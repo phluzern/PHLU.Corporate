@@ -112,20 +112,46 @@
                     </div>
                 </div>
                 <div id="searchResult">
-                    <div data-ng-class="{hasSearchResults: results.length > 0}" style="display:none">
+                    <div data-ng-class="{hasSearchResults: results.all.length > 0}" style="display:none">
 
                         <div class="resultsWrapper">
 
-                            <h3>Suchergebnisse ({{results.length}})</h3>
+                            <h3>Suchergebnisse ({{results.all.length}})</h3>
 
-                            <div ng-repeat="result in results | orderBy:'-score'">
-
-                                <div class="result">
+                            <div ng-repeat="result in results.turbonodes | orderBy:'-score'">
+                                <div class="result turbonode">
                                     <search data="result.node"></search>
-
                                 </div>
-
                             </div>
+
+                            <!-- Nav tabs -->
+                            <ul  id="searchResultsTabs" class="nav nav-tabs" role="tablist"  data-ng-show="results.all.length > 1">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#alle" role="tab">Alle</a>
+                                </li>
+                                <li class="nav-item" ng-repeat="(nodetype,results) in results.nodetypes">
+                                    <a class="nav-link" data-toggle="tab" href="#{{nodetype}}"
+                                       role="tab"><span node-type name="{{nodetype}}"></span> <span>({{results.length}})</span></a>
+                                </li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="alle" role="tabpanel">
+                                    <div class="result" ng-repeat="result in results.all | orderBy:'-score'"
+                                         data-ng-show="!result.node.turbonode">
+                                        <search data="result.node"></search>
+                                    </div>
+                                </div>
+                                <div class="tab-pane " id="{{nodetype}}" role="{{nodetype}}"
+                                     ng-repeat="(nodetype,nodetyperesults) in results.nodetypes">
+                                    <div class="result" ng-repeat="nodetyperesult in nodetyperesults | orderBy:'-score'"
+                                         data-ng-show="!nodetyperesult.node.turbonode ">
+                                        <search data="nodetyperesult.node"></search>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="btn close" data-ng-click="stopSearch();"></div>
                         </div>
                     </div>

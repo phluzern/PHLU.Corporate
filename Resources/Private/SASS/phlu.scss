@@ -262,7 +262,7 @@ html {
 //
 #searchResult {
   .hasSearchResults {
-    background-color: white;
+    background-color:rgba(255, 255, 255, 0.98);
     display: block !important;
     overflow: hidden;
     z-index: 999999999;
@@ -274,7 +274,7 @@ html {
     margin-left: 0px;
     border-right: 2px solid #e9e0d8;
     border-left: 2px solid #e9e0d8;
-
+    @include sidebar-shadow();
     .resultsWrapper {
 
       > h3 {
@@ -290,8 +290,8 @@ html {
       overflow-x: hidden;
       padding-top: 30px;
       padding-bottom: 30px;
-      padding-left: 30px;
-      padding-right: 60px;
+      padding-left: 10px;
+      padding-right: 10px;
 
       .btn.close:after {
         font-family: FontAwesome;
@@ -303,7 +303,24 @@ html {
         padding: 0 15px 5px;
       }
 
+
     }
+
+    ul.nav {
+      list-style-type: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      li {
+
+        margin-left:15px;
+
+        a {
+          color: #6b5c5c !important;
+          font-size:80%;
+        }
+      }
+    }
+
     .result {
 
       .resultBreadcrumb {
@@ -313,7 +330,6 @@ html {
         clear: both;
         margin: 0;
         padding: 0;
-
 
         ul {
           list-style-type: none !important;
@@ -333,7 +349,7 @@ html {
             }
             &:after {
               content: '>';
-              padding-right:10px;
+              padding-right: 10px;
             }
             &:last-child {
               &:after {
@@ -357,6 +373,8 @@ html {
       padding: 10px;
       border-bottom: 1px solid #e9e0d8;
 
+
+
       b, strong, a, h1, h2, h3 {
         color: #9f632a !important;
       }
@@ -368,13 +386,16 @@ html {
 
       .turbonode {
 
-
         * {
           border: 0;
         }
         hr {
           display: none !important;
         }
+      }
+
+      &.turbonode {
+        border: 0;
       }
 
     }

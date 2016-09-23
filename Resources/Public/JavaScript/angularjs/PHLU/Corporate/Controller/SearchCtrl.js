@@ -42,6 +42,22 @@ PHLUCorporateApp.directive('search', function ($sce) {
 
 });
 
+PHLUCorporateApp.directive('nodeType', function ($sce) {
+
+    var labels = {};
+
+
+    return {
+        restrict: "A",
+        link: function (scope, element, attrs) {
+            element.text(labels[attrs.name] !== undefined ? labels[attrs.name] : attrs.name);
+
+        }
+    };
+
+
+});
+
 PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$hybridsearchObject', function ($scope, $sce, $hybridsearch, $hybridsearchObject) {
 
     var hybridsearch = new $hybridsearch(
@@ -55,10 +71,28 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
     $scope.siteSearchLastQuery = '';
     var wasClosed = false;
 
-    var search = new $hybridsearchObject(hybridsearch);
 
-    search.setQuery('siteSearch', $scope).addAdditionalKeywords($(".page-header").text() + " " + window.location.href).$watch(function (i) {
+    var search = new $hybridsearchObject(hybridsearch);
+    var labels = {
+
+        'phlu-corporate-contact': 'Kontakte',
+        'phlu-corporate-headline': 'Seiten',
+        'phlu-corporate-page-overview-onepage': 'Seiten',
+        'phlu-neos-nodetypes-contentcollection-table-body': 'Seiten',
+        'phlu-corporate-table': 'Seiten',
+        'phlu-corporate-content-page-headerdefault': 'Seiten',
+        'phlu-qmpilot-nodetypes-file': 'Dateien'
+
+    };
+
+
+    var tabs = $("#searchResultsTabs");
+    search.setNodeTypeLabels(labels).setQuery('siteSearch', $scope).addAdditionalKeywords($(".page-header").text() + " " + window.location.href).$watch(function (i) {
         $scope.results = i;
+        if (tabs.find("a.active").length === 0) {
+            tabs.find("a:first-child").trigger("click");
+        }
+
     });
 
     $scope.stopSearch = function () {
