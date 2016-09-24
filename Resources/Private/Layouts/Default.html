@@ -112,11 +112,13 @@
                     </div>
                 </div>
                 <div id="searchResult">
-                    <div data-ng-class="{hasSearchResults: results.all.length > 0 || results.turbonodes.length > 0}" style="display:none">
+                    <div data-ng-class="{hasSearchResults: isSearch && siteSearch != ''}" style="display:none">
 
                         <div class="resultsWrapper">
 
-                            <h3>Suchergebnisse ({{results.all.length + results.turbonodes.length}})</h3>
+                            <h3>Suchergebnisse {{siteSearchPathName}} <span data-ng-show="results.all.length + results.turbonodes.length > 0">({{results.all.length + results.turbonodes.length}})</span></h3>
+
+                            <p data-ng-hide="results.all.length + results.turbonodes.length">Keine Resultate</p>
 
                             <div ng-repeat="result in results.turbonodes | orderBy:'-score'">
                                 <div class="result turbonode">

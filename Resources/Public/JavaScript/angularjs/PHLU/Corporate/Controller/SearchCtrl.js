@@ -69,7 +69,15 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
     $scope.results = [];
     $scope.siteSearch = '';
     $scope.siteSearchLastQuery = '';
+    $scope.siteSearchPath = '';
+    $scope.siteSearchPathName = '';
+    $scope.isSearch = false;
+
     var wasClosed = false;
+    var sideBarNav = $(".nav.sidebar-nav:first-child");
+    var sideBarNavCurrent = sideBarNav.find("li.current,li.active");
+    var sideBarNavCurrentClasses = sideBarNavCurrent.attr('class');
+
 
 
     var search = new $hybridsearchObject(hybridsearch);
@@ -87,11 +95,15 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
 
 
     var tabs = $("#searchResultsTabs");
-    search.setNodeTypeLabels(labels).setQuery('siteSearch', $scope).addAdditionalKeywords($(".page-header").text() + " " + window.location.href).$watch(function (i) {
+    search.setNodePath("siteSearchPath", $scope).setNodeTypeLabels(labels).setQuery('siteSearch', $scope).addAdditionalKeywords($(".page-header").text() + " " + window.location.href).$watch(function (i) {
         $scope.results = i;
+
         if (tabs.find("a.active").length === 0) {
             tabs.find("a:first-child").trigger("click");
         }
+
+
+
 
     });
 
@@ -100,6 +112,8 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
         $scope.siteSearch = '';
         $scope.results = [];
         wasClosed = true;
+        $scope.isSearch = false;
+        sideBarNavCurrent.addClass(sideBarNavCurrentClasses);
     };
 
     $scope.startSearch = function () {
@@ -107,13 +121,60 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
             wasClosed = false;
             $scope.siteSearch = $scope.siteSearchLastQuery;
         }
-
+        $scope.isSearch = true;
     };
 
     $scope.$watch('siteSearch', function (i) {
         if (i === '' && wasClosed == false) {
             $scope.siteSearchLastQuery = '';
         }
+    });
+
+    $scope.$watch('siteSearch', function (i) {
+
+            if (i != '') {
+                sideBarNavCurrent.removeClass(sideBarNavCurrentClasses);
+            } else {
+                sideBarNav.find("li").removeClass(sideBarNavCurrentClasses);
+                sideBarNavCurrent.addClass(sideBarNavCurrentClasses);
+            }
+
+    });
+
+
+    sideBarNav.find("li").click(function (event) {
+
+        if ($scope.isSearch) {
+
+            event.preventDefault();
+
+
+            if ($(this).hasClass(sideBarNavCurrentClasses)) {
+                var wascurrent = true;
+            } else {
+                var wascurrent = false;
+            }
+
+
+            sideBarNav.find("li").removeClass(sideBarNavCurrentClasses);
+            if (wascurrent === false) $(this).addClass(sideBarNavCurrentClasses);
+
+
+            setTimeout(function () {
+                $scope.$apply(function () {
+                    if (wascurrent) {
+                        $scope.siteSearchPath = '';
+                        $scope.siteSearchPathName = '';
+                    } else {
+                        $scope.siteSearchPathName = "'"+$(event.target).text()+"'";
+                        $scope.siteSearchPath = $(event.target).attr('href').substring(0, $(event.target).attr('href').length - 5);
+                    }
+                });
+            }, 10);
+
+
+        }
+
     });
 
 

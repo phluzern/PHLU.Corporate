@@ -6203,6 +6203,9 @@ html {
   -webkit-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
   box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3); }
+  #searchResult .hasSearchResults p {
+    font-size: 14px !important;
+    padding-left: 8px  !important; }
   #searchResult .hasSearchResults .resultsWrapper {
     height: 100%;
     width: 100%;

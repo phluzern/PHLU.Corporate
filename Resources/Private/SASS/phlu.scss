@@ -261,8 +261,10 @@ html {
 // search
 //
 #searchResult {
+
   .hasSearchResults {
     background-color:rgba(255, 255, 255, 0.98);
+
     display: block !important;
     overflow: hidden;
     z-index: 999999999;
@@ -274,12 +276,21 @@ html {
     margin-left: 0px;
     border-right: 2px solid #e9e0d8;
     border-left: 2px solid #e9e0d8;
+
+    p {
+      font-size:14px !important;
+      padding-left: 8px  !important;
+    }
+
     @include sidebar-shadow();
     .resultsWrapper {
 
       > h3 {
         padding-left: 8px;
       }
+
+
+
 
       height: 100%;
       width: 100%;
