@@ -8,10 +8,7 @@
     "tether": "*",
     "font-awesome": "4.6.*",
     "animate.css": "*",
-    "filament-tablesaw": "*",
     "jquery-rcrumbs": "*",
-    "bootstrap-datepicker": "*",
-    "angularfire": "*",
-    "elasticlunr.js": "*"
+    "bootstrap-datepicker": "*"
   }
 }
