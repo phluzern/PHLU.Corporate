@@ -1,4 +1,6 @@
-<div class="resultBreadcrumb" ng-bind-html="node.grandParentNode.breadcrumb"></div>
+<div class="resultBreadcrumb" ng-bind-html="node.breadcrumb"></div>
+<div class="clickable">
 <a href="{{node.url}}">{{node.grandParentNode.properties['phlu-corporate-page-view-default-title']}}{{node.grandParentNode.properties['phlu-corporate-page-view-default-default-title']}}</a>
 <br>
 {{node.properties.rawcontent}}
+</div>

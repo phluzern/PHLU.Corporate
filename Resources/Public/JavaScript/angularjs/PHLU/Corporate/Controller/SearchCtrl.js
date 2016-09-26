@@ -93,16 +93,30 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
 
     };
 
+      var boost = {
+
+        'phlu-corporate-content-page-headerdefault-grandparent': 50,
+        'phlu-corporate-contact-grandparent': 10,
+        'phlu-corporate-contact-firstname': 10,
+        'phlu-corporate-contact-lastname': 10,
+        'phlu-corporate-contact-phone': 10,
+        'phlu-corporate-contact-email': 10,
+        'phlu-corporate-headline-title': 10,
+        'phlu-corporate-content-page-headerdefault-parent': 5,
+        'parent': 15,
+        'grandparent': 10,
+        'rawcontent': 1
+
+    };
+
 
     var tabs = $("#searchResultsTabs");
-    search.setNodePath("siteSearchPath", $scope).setNodeTypeLabels(labels).setQuery('siteSearch', $scope).addAdditionalKeywords($(".page-header").text() + " " + window.location.href).$watch(function (i) {
+    search.setPropertiesBoost(boost).setNodePath("siteSearchPath", $scope).setNodeTypeLabels(labels).setQuery('siteSearch', $scope).$watch(function (i) {
         $scope.results = i;
 
         if (tabs.find("a.active").length === 0) {
             tabs.find("a:first-child").trigger("click");
         }
-
-
 
 
     });
