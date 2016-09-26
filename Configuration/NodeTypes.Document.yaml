@@ -150,6 +150,7 @@
       'PHLU.Corporate:Page.View.Default': TRUE
       'PHLU.Corporate:Page.View.Default.Default': FALSE
       'TYPO3.Neos:Shortcut': FALSE
+      'PHLU.Corporate:Page.View.Default.Prototype': TRUE
 
 
 'PHLU.Corporate:Page.View.Dossier':
