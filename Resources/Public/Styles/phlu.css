@@ -6205,7 +6205,9 @@ html {
   box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3); }
   #searchResult .hasSearchResults p {
     font-size: 14px !important;
-    padding-left: 8px !important; }
+    padding-left: 8px !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important; }
   #searchResult .hasSearchResults .resultsWrapper {
     height: 100%;
     width: 100%;
