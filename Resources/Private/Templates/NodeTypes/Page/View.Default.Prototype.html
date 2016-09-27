@@ -3514,11 +3514,8 @@
                         <hr>
                     </div>
                     <div class="row subjectsfilternav phlu-sitelink-tiles nofilter" id="faecherschwerpunkte">
-
                         <div class="col-xs-12">
                             <h2>Fächer und Schwerpunkte</h2>
-
-
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="row phlu-teaser navigation subpage">
@@ -3558,7 +3555,6 @@
                                         </div>
 
                                     </div>
-
                                 </div>
                             </div>
                             <hr>
@@ -4242,25 +4238,20 @@
                         </div>
                         <hr>
                     </div>
-
-
-
                     <div class="row phlu-corporate-section" id="standort">
                         <div class="col-xs-12">
                             <h2>Standort</h2>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.291360208241!2d8.294320916034303!3d47.05413463397003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ffb738ee40293%3A0x79a4345d6d6eb97e!2sSentimattstrasse+1%2C+6003+Luzern!5e0!3m2!1sde!2sch!4v1474551776995" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.291360208241!2d8.294320916034303!3d47.05413463397003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ffb738ee40293%3A0x79a4345d6d6eb97e!2sSentimattstrasse+1%2C+6003+Luzern!5e0!3m2!1sde!2sch!4v1474551776995"
+                                            width="100%" height="450" frameborder="0" style="border:0"
+                                            allowfullscreen></iframe>
                                 </div>
                             </div>
-
                             <div class="row subjectsfilternav phlu-sitelink-tiles nofilter">
                                 <div class="col-xs-12">
                                     <div class="row  phlu-teaser navigation subpage">
-
-
                                         <div class="col-xs-12 nav-teaser-item clickable">
-
                                             <div class="row">
                                                 <div class="phlu-teaser-body col-xs-10">
                                                     <h3>
@@ -4274,21 +4265,254 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
-
                                 </div>
                             </div>
-<hr>
+                            <hr>
                         </div>
                     </div>
-
-
                 </div>
-
             </div>
-
         </div>
     </f:then>
 </f:if>
+<!-- Standorte Liste -->
+<f:if condition="{node.identifier} == '0459757d-0de7-4cb7-8f84-d407d4929715'">
 
+    <f:then>
+
+        <div class="row">
+            <div class="col-xs-12 phlu-locations">
+                {breadcrumb -> f:format.raw()}
+                <h1 class="page-header">Standorte</h1>
+                <div class=" phlu-corporate-tags-menu">
+                    <div class="row subjectsfilternav ng-scope">
+                        <div class="col-xs-12">
+                            <h4>
+                                <span>Filter</span>
+                            </h4>
+                            <div class="row" id="anchornavigation">
+                                <div class="col-xs-12">
+                                    <ul class="nav nav-pills" role="menubar">
+                                        <li role="menuitem" class="ng-tag clickable  active">
+                                            <a class="nav-item nav-link all preventDefault" href=""
+                                               data-ng-click="toggleFilter(0);">Alle</a>
+                                        </li>
+                                        <li role="menuitem" class="ng-tag clickable  ">
+                                            <a class="nav-item nav-link preventDefault" href="#">
+                                                <span>Pfistergasse (PF)</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="ng-tag clickable  ">
+                                            <a class="nav-item nav-link preventDefault" href="#">
+                                                <span>Uni/PH-Gebäude (UP)</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="ng-tag clickable  ">
+                                            <a class="nav-item nav-link preventDefault" href="#">
+                                                <span>Sentimatt (SE)</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="ng-tag clickable  ">
+                                            <a class="nav-item nav-link preventDefault" href="#">
+                                                <span>Töpferstrasse (TS)</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="ng-tag clickable  ">
+                                            <a class="nav-item nav-link preventDefault" href="#">
+                                                <span>Löwengraben (LG)</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="ng-tag clickable  ">
+                                            <a class="nav-item nav-link preventDefault" href="#">
+                                                <span>Musegg (MU)</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="ng-tag clickable  ">
+                                            <a class="nav-item nav-link preventDefault" href="#">
+                                                <span>Altes Zeughaus (ZH)</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="ng-tag clickable  ">
+                                            <a class="nav-item nav-link preventDefault" href="#">
+                                                <span>Bellerive (BE)</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="ng-tag clickable  ">
+                                            <a class="nav-item nav-link preventDefault" href="#">
+                                                <span>Sporthallen Allmend (AL)</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="ng-tag clickable  ">
+                                            <a class="nav-item nav-link preventDefault" href="#">
+                                                <span>Sagenmatt (SA)</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row google-maps-iframe">
+                    <div class="col-xs-12">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m76!1m12!1m3!1d10875.228672201758!2d8.301454800135009!3d47.04401456642117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m61!3e1!4m5!1s0x478ffb9fe5d25b93%3A0x8fc47203a19f5334!2sPfistergasse+20%2C+Luzern!3m2!1d47.0510453!2d8.3023319!4m5!1s0x478ffb738ee40293%3A0x79a4345d6d6eb97e!2sSentimattstrasse+1%2C+6003+Luzern!3m2!1d47.054131!2d8.2965096!4m5!1s0x478ffb9be99f37e9%3A0x58adbb8dcfd5b4b8!2sT%C3%B6pferstrasse+10%2C+Luzern!3m2!1d47.055314499999994!2d8.310333!4m5!1s0x478ffb9e50294223%3A0x82787ed3052db617!2sL%C3%B6wengraben+14%2C+Luzern!3m2!1d47.0529203!2d8.3045686!4m5!1s0x478ffb9c27a2cafd%3A0xab947da1ba5edc06!2sMuseggstrasse+22%2C+Luzern!3m2!1d47.0548109!2d8.3067446!4m5!1s0x478ffb9e29cc50df%3A0xa6c9b77f50bc36d0!2sMuseggstrasse+37%2C+Luzern!3m2!1d47.0530446!2d8.3023989!4m5!1s0x478ffbed73ecd1af%3A0x5eba09cc5898e5fa!2sBellerivestrasse+19%2C+Luzern!3m2!1d47.0569354!2d8.3300378!4m5!1s0x478ffbace081b7db%3A0xe39ffe145532e368!2sZihlmattweg+46%2C+6005+Luzern!3m2!1d47.0316104!2d8.3048594!4m5!1s0x478ffb6d9c64fd81%3A0xda3a576548686fa!2sSagenmattstrasse+7%2C+Luzern!3m2!1d47.053787899999996!2d8.289591!4m5!1s0x478ffb9809a8b0ff%3A0x2d40d1c45423b7b9!2sFrohburgstrasse+3%2C+Luzern!3m2!1d47.0495601!2d8.312332099999999!5e0!3m2!1sde!2sch!4v1474895809935"
+                                width="100%" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="table-responsive phlu-corporate-table">
+                    <table class="table first-col-hidden-">
+                        <tbody class="neos-contentcollection">
+                        <tr class=" phlu-corporate-table-row">
+                            <th class=" col-percent-Automatisch ">
+                                <span>Pfistergasse (PF)</span>
+                                <div class="mobile-view-columns">
+                                    <span>
+                                        <address>
+                                        Pädagogische Hochschule Luzern<br>
+                                        <span>Pfistergasse 20</span>
+
+                                        <br>
+                                        6000 Luzern<br>
+                                        <div class="telephone">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            041 228 71 11<br>
+                                        </div>
+                                        <a class="content-link-email-contact-person" href="mailto:pfistergasse@phlu.ch">pf@phlu.ch</a><br>
+                                        </address>
+                                    </span>
+                                    <span class="details-link-cell">
+                                        <a class="btn btn-primary" href="#">
+                                            Details
+                                        </a>
+                                    </span>
+                                </div>
+                            </th>
+                            <td>
+                                <span>
+                                    <address>
+                                        Pädagogische Hochschule Luzern<br>
+                                        <span>Pfistergasse 20</span>
+
+                                        <br>
+                                        6000 Luzern<br>
+                                        <div class="telephone">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            041 228 71 11<br>
+                                        </div>
+                                        <a class="content-link-email-contact-person" href="mailto:pfistergasse@phlu.ch">pf@phlu.ch</a><br>
+                                    </address>
+                                </span>
+                            </td>
+                            <td class="details-link-cell">
+                                <a class="btn btn-primary" href="#">
+                                    Details
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr class=" phlu-corporate-table-row">
+                            <th class=" col-percent-Automatisch ">
+                                <span>Uni/PH-Gebäude (UP)</span>
+                                <div class="mobile-view-columns">
+                                    <span>
+                                        <address>
+                                        Pädagogische Hochschule Luzern<br>
+                                        <span>Frohburgstrasse 3</span>
+                                        <br>
+                                        <span>Postfach 3668</span>
+                                        6002 Luzern<br>
+                                        <div class="telephone">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            041 228 54 93<br>
+                                        </div>
+                                        <a class="content-link-email-contact-person" href="mailto:up@phlu.ch">up@phlu.ch</a><br>
+                                    </address>
+                                    </span>
+                                    <span class="details-link-cell">
+                                        <a class="btn btn-primary" href="#">
+                                            Details
+                                        </a>
+                                    </span>
+                                </div>
+                            </th>
+                            <td>
+                                <span>
+                                    <address>
+                                        Pädagogische Hochschule Luzern<br>
+                                        <span>Frohburgstrasse 3</span>
+                                        <br>
+                                        <span>Postfach 3668</span><br>
+                                        6002 Luzern<br>
+                                        <div class="telephone">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            041 228 54 93<br>
+                                        </div>
+                                        <a class="content-link-email-contact-person" href="mailto:up@phlu.ch">up@phlu.ch</a><br>
+                                    </address>
+                                </span>
+                            </td>
+                            <td class="details-link-cell">
+                                <a class="btn btn-primary" href="#">
+                                    Details
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        <tr class=" phlu-corporate-table-row">
+                            <th class=" col-percent-Automatisch ">
+                                <span>Sentimatt (SE)</span>
+                                <div class="mobile-view-columns">
+                                    <span>
+                                        <address>
+                                        Pädagogische Hochschule Luzern<br>
+                                        <span>Sentimatt 1</span><br>
+                                        6003 Luzern<br>
+                                        <div class="telephone">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            041 228 54 93<br>
+                                        </div>
+                                        <a class="content-link-email-contact-person" href="mailto:up@phlu.ch">se@phlu.ch</a><br>
+                                    </address>
+                                    </span>
+                                    <span class="details-link-cell">
+                                        <a class="btn btn-primary" href="#">
+                                            Details
+                                        </a>
+                                    </span>
+                                </div>
+                            </th>
+                            <td>
+                                <span>
+                                    <address>
+                                        Pädagogische Hochschule Luzern<br>
+                                        <span>Sentimatt 1</span><br>
+                                        6003 Luzern<br>
+                                        <div class="telephone">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            041 228 54 93<br>
+                                        </div>
+                                        <a class="content-link-email-contact-person" href="mailto:up@phlu.ch">se@phlu.ch</a><br>
+                                    </address>
+                                </span>
+                            </td>
+                            <td class="details-link-cell">
+                                <a class="btn btn-primary" href="#">
+                                    Details
+                                </a>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </f:then>
+
+</f:if>
