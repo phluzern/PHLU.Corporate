@@ -112,43 +112,49 @@
                     </div>
                 </div>
                 <div id="searchResult">
-                    <div data-ng-class="{hasSearchResults: isSearch && siteSearch != ''}" style="display:none">
+                    <div data-ng-class="{hasSearchResults: siteSearch != ''}" style="display:none">
 
                         <div class="resultsWrapper">
 
-                            <h3>Suchergebnisse {{siteSearchPathName}} <span data-ng-show="results.all.length + results.turbonodes.length > 0">({{results.all.length + results.turbonodes.length}})</span></h3>
+                            <h3 data-ng-show="count > 0">Suchergebnisse {{siteSearchPathName}} <span
+                                    data-ng-show="count > 0">({{count}})</span></h3>
+                            <h3 data-ng-hide="count > 0">Suche nach {{siteSearch}} ..</h3>
 
-                            <p data-ng-hide="results.all.length + results.turbonodes.length">Keine Resultate</p>
-
-                            <div ng-repeat="result in results.turbonodes | orderBy:'-score'">
-                                <div class="result turbonode">
+                            <div ng-repeat="result in turbonodes | orderBy:'-score'">
+                                 <div class="result turbonode">
                                     <search data="result.node"></search>
                                 </div>
                             </div>
 
                             <!-- Nav tabs -->
-                            <ul  id="searchResultsTabs" class="nav nav-tabs" role="tablist"  data-ng-show="results.all.length > 1">
+                            <ul id="searchResultsTabs" class="nav nav-tabs" role="tablist"
+                                data-ng-show="groupes.length > 0">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab" href="#alle" role="tab">Alle</a>
                                 </li>
-                                <li class="nav-item" ng-repeat="(nodetype,results) in results.nodetypes">
-                                    <a class="nav-link" data-toggle="tab" href="#{{nodetype}}"
-                                       role="tab"><span node-type name="{{nodetype}}"></span> <span>({{results.length}})</span></a>
+                                <li class="nav-item" ng-repeat="group in groupes">
+                                    <a class="nav-link" data-toggle="tab" href="#{{group.label}}"
+                                       role="tab"><span node-type name="{{group.label}}"></span>
+                                        <span>({{group.count}})</span></a>
                                 </li>
                             </ul>
 
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <div class="tab-pane active" id="alle" role="tabpanel">
-                                    <div class="result" ng-repeat="result in results.all | orderBy:'-score'">
-                                        <search data="result.node"></search>
+                                    <div class="result" ng-repeat="node in nodes  track by $index ">
+                                        <search data="node"></search>
                                     </div>
                                 </div>
-                                <div class="tab-pane " id="{{nodetype}}" role="{{nodetype}}"
-                                     ng-repeat="(nodetype,nodetyperesults) in results.nodetypes">
-                                    <div class="result" ng-repeat="nodetyperesult in nodetyperesults | orderBy:'-score'">
-                                        <search data="nodetyperesult.node"></search>
+                                <div class="tab-pane " id="{{group.label}}" role="{{group.label}}" ng-repeat="group in grouped">
+
+                                    <div class="group" data-ng-repeat="subgroup in group.value | orderBy:'-score'">
+                                        <search data="subgroup.group" data-ng-if="subgroup.group.properties"></search>
+                                        <div class="result" ng-repeat="subnode in subgroup.nodes">
+                                            <search data="subnode"></search>
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
 

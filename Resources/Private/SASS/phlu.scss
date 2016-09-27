@@ -280,6 +280,11 @@ html {
     p {
       font-size:14px !important;
       padding-left: 8px  !important;
+      font-size: 14px !important;
+      padding-left: 8px !important;
+      padding-bottom: 0 !important;
+      margin: 0 !important;
+      margin-top: 10px !important;
     }
 
     @include sidebar-shadow();
@@ -385,11 +390,16 @@ html {
       border-bottom: 1px solid #e9e0d8;
 
 
-
       b, strong, a, h1, h2, h3 {
         color: #9f632a !important;
       }
       h2 {
+        margin: 0 !important;
+        margin-bottom: 10px !important;
+        font-size: 170%;
+      }
+
+      h3 {
         margin: 0 !important;
         margin-bottom: 10px !important;
         font-size: 170%;

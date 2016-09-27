@@ -27,6 +27,12 @@ PHLUCorporateApp.directive('search', function ($sce) {
                         case 'phlu-corporate-contact':
                             return template + 'phlu-corporate-contact.html';
 
+                        case 'PHLU.Corporate:ContactsGroup':
+                            return template + 'phlu-corporate-contact-group.html';
+
+                        case 'PHLU.Corporate:Page.View.Default':
+                            return template + 'phlu-corporate-page-view-default.html';
+
                         default:
                             return template + 'default.html';
 
@@ -41,6 +47,21 @@ PHLUCorporateApp.directive('search', function ($sce) {
 
 
 });
+
+PHLUCorporateApp.filter('orderObjectBy', function() {
+    return function(items, field, reverse) {
+        var filtered = [];
+        angular.forEach(items, function(item) {
+            filtered.push(item);
+        });
+        filtered.sort(function (a, b) {
+            return (a[field] > b[field] ? 1 : -1);
+        });
+        if(reverse) filtered.reverse();
+        return filtered;
+    };
+});
+
 
 PHLUCorporateApp.directive('nodeType', function ($sce) {
 
@@ -66,7 +87,11 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
         'fb11fdde869d0a8fcfe00a2fd35c031d'
     );
 
-    $scope.results = [];
+    $scope.grouped = [];
+    $scope.turbonodes = [];
+    $scope.nodes = [];
+    $scope.count = 0;
+    $scope.groupes = [];
     $scope.siteSearch = '';
     $scope.siteSearchLastQuery = '';
     $scope.siteSearchPath = '';
@@ -77,7 +102,6 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
     var sideBarNav = $(".nav.sidebar-nav:first-child");
     var sideBarNavCurrent = sideBarNav.find("li.current,li.active");
     var sideBarNavCurrentClasses = sideBarNavCurrent.attr('class');
-
 
 
     var search = new $hybridsearchObject(hybridsearch);
@@ -93,7 +117,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
 
     };
 
-      var boost = {
+    var boost = {
 
         'phlu-corporate-content-page-headerdefault-grandparent': 50,
         'phlu-corporate-contact-grandparent': 10,
@@ -111,15 +135,26 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
 
 
     var tabs = $("#searchResultsTabs");
-    search.setPropertiesBoost(boost).setNodePath("siteSearchPath", $scope).setNodeTypeLabels(labels).setQuery('siteSearch', $scope).$watch(function (i) {
-        $scope.results = i;
+    search.setPropertiesBoost(boost).setNodePath("siteSearchPath", $scope).setNodeTypeLabels(labels).setQuery('siteSearch', $scope).$watch(function (results) {
+
+        setTimeout(function () {
+            $scope.$apply(function () {
+                $scope.grouped = results.getGroupedNodes();
+                $scope.nodes = results.getNodes();
+                $scope.turbonodes = results.getTurboNodes();
+                $scope.groupes = results.getNodeGroupes();
+                $scope.count = results.count();
+            });
+        }, 10);
+
 
         if (tabs.find("a.active").length === 0) {
             tabs.find("a:first-child").trigger("click");
         }
 
 
-    });
+    }).run();
+
 
     $scope.stopSearch = function () {
         $scope.siteSearchLastQuery = $scope.siteSearch;
@@ -146,12 +181,12 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
 
     $scope.$watch('siteSearch', function (i) {
 
-            if (i != '') {
-                sideBarNavCurrent.removeClass(sideBarNavCurrentClasses);
-            } else {
-                sideBarNav.find("li").removeClass(sideBarNavCurrentClasses);
-                sideBarNavCurrent.addClass(sideBarNavCurrentClasses);
-            }
+        if (i != '') {
+            sideBarNavCurrent.removeClass(sideBarNavCurrentClasses);
+        } else {
+            sideBarNav.find("li").removeClass(sideBarNavCurrentClasses);
+            sideBarNavCurrent.addClass(sideBarNavCurrentClasses);
+        }
 
     });
 
@@ -180,7 +215,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
                         $scope.siteSearchPath = '';
                         $scope.siteSearchPathName = '';
                     } else {
-                        $scope.siteSearchPathName = "'"+$(event.target).text()+"'";
+                        $scope.siteSearchPathName = "'" + $(event.target).text() + "'";
                         $scope.siteSearchPath = $(event.target).attr('href').substring(0, $(event.target).attr('href').length - 5);
                     }
                 });

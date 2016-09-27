@@ -6205,7 +6205,12 @@ html {
   box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3); }
   #searchResult .hasSearchResults p {
     font-size: 14px !important;
-    padding-left: 8px  !important; }
+    padding-left: 8px  !important;
+    font-size: 14px !important;
+    padding-left: 8px !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    margin-top: 10px !important; }
   #searchResult .hasSearchResults .resultsWrapper {
     height: 100%;
     width: 100%;
@@ -6276,6 +6281,10 @@ html {
     #searchResult .hasSearchResults .result b, #searchResult .hasSearchResults .result strong, #searchResult .hasSearchResults .result a, #searchResult .hasSearchResults .result h1, #searchResult .hasSearchResults .result h2, #searchResult .hasSearchResults .result h3 {
       color: #9f632a !important; }
     #searchResult .hasSearchResults .result h2 {
+      margin: 0 !important;
+      margin-bottom: 10px !important;
+      font-size: 170%; }
+    #searchResult .hasSearchResults .result h3 {
       margin: 0 !important;
       margin-bottom: 10px !important;
       font-size: 170%; }
