@@ -17,6 +17,7 @@ PHLUCorporateApp.directive('search', function ($sce) {
 
             $scope.getTemplateUrl = function () {
 
+
                 if ($scope.node.isTurboNode()) {
                     return template + 'turbonode.html';
                 } else {
@@ -126,9 +127,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
 
         $scope.$apply(function () {
             $scope.result = data;
-            $scope.grouped = data.getGrouped();
         });
-
 
 
         if (tabs.find("a.active").length === 0) {
