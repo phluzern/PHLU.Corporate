@@ -48,16 +48,16 @@ PHLUCorporateApp.directive('search', function ($sce) {
 
 });
 
-PHLUCorporateApp.filter('orderObjectBy', function() {
-    return function(items, field, reverse) {
+PHLUCorporateApp.filter('orderObjectBy', function () {
+    return function (items, field, reverse) {
         var filtered = [];
-        angular.forEach(items, function(item) {
+        angular.forEach(items, function (item) {
             filtered.push(item);
         });
         filtered.sort(function (a, b) {
             return (a[field] > b[field] ? 1 : -1);
         });
-        if(reverse) filtered.reverse();
+        if (reverse) filtered.reverse();
         return filtered;
     };
 });
@@ -139,13 +139,12 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
 
         setTimeout(function () {
             $scope.$apply(function () {
-                $scope.grouped = results.getGroupedNodes();
                 $scope.nodes = results.getNodes();
                 $scope.turbonodes = results.getTurboNodes();
-                $scope.groupes = results.getNodeGroupes();
+                $scope.groupes = results.getNodeTypes();
                 $scope.count = results.count();
             });
-        }, 10);
+        }, 5);
 
 
         if (tabs.find("a.active").length === 0) {

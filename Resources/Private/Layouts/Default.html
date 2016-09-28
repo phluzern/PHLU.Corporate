@@ -142,19 +142,14 @@
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <div class="tab-pane active" id="alle" role="tabpanel">
-                                    <div class="result" ng-repeat="node in nodes  track by $index ">
+                                    <div class="result" ng-repeat="node in nodes | orderBy:'-score'">
                                         <search data="node"></search>
                                     </div>
                                 </div>
-                                <div class="tab-pane " id="{{group.label}}" role="{{group.label}}" ng-repeat="group in grouped">
-
-                                    <div class="group" data-ng-repeat="subgroup in group.value | orderBy:'-score'">
-                                        <search data="subgroup.group" data-ng-if="subgroup.group.properties"></search>
-                                        <div class="result" ng-repeat="subnode in subgroup.nodes">
-                                            <search data="subnode"></search>
+                                <div class="tab-pane " id="{{group.label}}" role="{{group.label}}" ng-repeat="group in groupes">
+                                        <div class="result" ng-repeat="node in group.nodes | orderBy:'-score'">
+                                            <search data="node"></search>
                                         </div>
-                                    </div>
-
                                 </div>
                             </div>
 
