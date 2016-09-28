@@ -138,7 +138,7 @@
     'PHLU.Corporate:Page': TRUE
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.View.Detail'
+      type: ~
     contact: ~
     targetgroup: ~
     carouselnews: ~
