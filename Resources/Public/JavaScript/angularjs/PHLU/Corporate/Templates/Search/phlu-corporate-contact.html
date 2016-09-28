@@ -1,3 +1,4 @@
-<a href="{{node.url}}">{{node.properties['phlu-corporate-contact-lastname']}} {{node.properties['phlu-corporate-contact-firstname']}}</a>
+<a href="{{node.getUrl()}}">{{node.getProperty('lastname')}} {{node.getProperty('firstname')}}</a>
 <br>
-{{node.properties['phlu-corporate-contact-phone']}}
+{{node.getProperty('phone')}}
+<b>{{node.getScore()}}</b><br>

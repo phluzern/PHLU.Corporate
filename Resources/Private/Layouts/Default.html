@@ -41,17 +41,10 @@
         <!-- Put your scripts inclusions for the head here, they will be included in your website by TypoScript -->
         <script src="{f:uri.resource(path: 'Vendor/angularjs/angular.min.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/angular-cookies/angular-cookies.min.js', package: 'PHLU.Corporate')}"></script>
-
         <script src="{f:uri.resource(path: 'Vendor/firebase/firebase.js', package: 'Neoslive.Hybridsearch')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/angularfire/dist/angularfire.min.js', package: 'Neoslive.Hybridsearch')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/angular-sanitize/angular-sanitize.min.js', package: 'Neoslive.Hybridsearch')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'Neoslive.Hybridsearch')}"></script>
-        <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
-
-        <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'PHLU.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'PHLU.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/ContactsCtrl.js', package: 'PHLU.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SearchCtrl.js', package: 'PHLU.Corporate')}"></script>
 
 
     </f:section>
@@ -116,42 +109,44 @@
 
                         <div class="resultsWrapper">
 
-                            <h3 data-ng-show="count > 0">Suchergebnisse {{siteSearchPathName}} <span
-                                    data-ng-show="count > 0">({{count}})</span></h3>
-                            <h3 data-ng-hide="count > 0">Suche nach {{siteSearch}} ..</h3>
 
-                            <div ng-repeat="result in turbonodes | orderBy:'-score'">
-                                 <div class="result turbonode">
-                                    <search data="result.node"></search>
-                                </div>
-                            </div>
+                            <h3 data-ng-show="result.count() > 0">Suchergebnisse {{siteSearch}} <span
+                                    data-ng-show="siteSearchPath">in '{{siteSearchPath}}'</span>
+                                ({{result.count()}})</h3>
+                            <h3 data-ng-hide="result.count() > 0">Suche nach {{siteSearch}} <span
+                                    data-ng-show="siteSearchPath">in '{{siteSearchPath}}'</span></h3>
+
 
                             <!-- Nav tabs -->
                             <ul id="searchResultsTabs" class="nav nav-tabs" role="tablist"
-                                data-ng-show="groupes.length > 0">
+                                data-ng-if="grouped.count() > 1">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab" href="#alle" role="tab">Alle</a>
                                 </li>
-                                <li class="nav-item" ng-repeat="group in groupes">
-                                    <a class="nav-link" data-toggle="tab" href="#{{group.label}}"
-                                       role="tab"><span node-type name="{{group.label}}"></span>
-                                        <span>({{group.count}})</span></a>
+                                <li class="nav-item" ng-repeat="group in grouped.get()">
+                                    <a class="nav-link" data-toggle="tab" href="#{{group.getLabel()}}"
+                                       role="tab"><span node-type name="{{group.getLabel()}}"></span>
+                                        <span>({{group.count()}})</span></a>
                                 </li>
                             </ul>
 
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <div class="tab-pane active" id="alle" role="tabpanel">
-                                    <div class="result" ng-repeat="node in nodes | orderBy:'-score'">
+                                    <div class="result" ng-repeat="node in result.getNodes()">
                                         <search data="node"></search>
                                     </div>
                                 </div>
-                                <div class="tab-pane " id="{{group.label}}" role="{{group.label}}" ng-repeat="group in groupes">
-                                        <div class="result" ng-repeat="node in group.nodes | orderBy:'-score'">
-                                            <search data="node"></search>
-                                        </div>
+                                <div class="tab-pane " id="{{group.getLabel()}}" role="{{group.getLabel()}}"
+                                     data-ng-repeat="group in grouped.get()">
+
+                                    <div class="result" ng-repeat="node in group.getNodes()">
+                                        <search data="node"></search>
+                                    </div>
+
                                 </div>
                             </div>
+
 
                             <div class="btn close" data-ng-click="stopSearch();"></div>
                         </div>
@@ -245,6 +240,7 @@
 </f:section>
 <f:section name="bodyScripts">
     <!-- Put your scripts inclusions for the end of the body here, they will be included in your website by TypoScript -->
+    <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/grunt-modernizr/lib/build-files/modernizr-latest.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/tether/dist/js/tether.min.js', package: 'PHLU.Corporate')}"></script>
@@ -255,6 +251,12 @@
     <script src="{f:uri.external(uri: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/transition.min.js')}"></script>
     <script src="{f:uri.external(uri: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/dropdown.min.js')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/jquery/main.js', package: 'PHLU.Corporate')}"></script>
+
+    <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/ContactsCtrl.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SearchCtrl.js', package: 'PHLU.Corporate')}"></script>
+
     <f:if condition="{neos:rendering.inBackend()}">
         <script src="{f:uri.resource(path: 'JavaScript/jquery/backend.js', package: 'PHLU.Corporate')}"></script>
     </f:if>

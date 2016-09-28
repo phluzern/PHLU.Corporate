@@ -17,22 +17,13 @@ PHLUCorporateApp.directive('search', function ($sce) {
 
             $scope.getTemplateUrl = function () {
 
-
-                if ($scope.node.turbonode === true) {
-                    //$scope.node.html = $sce.trustAsHtml($scope.node.html);
+                if ($scope.node.isTurboNode()) {
                     return template + 'turbonode.html';
                 } else {
 
-                    switch ($scope.node.nodeType) {
+                    switch ($scope.node.getNodeType()) {
                         case 'phlu-corporate-contact':
                             return template + 'phlu-corporate-contact.html';
-
-                        case 'PHLU.Corporate:ContactsGroup':
-                            return template + 'phlu-corporate-contact-group.html';
-
-                        case 'PHLU.Corporate:Page.View.Default':
-                            return template + 'phlu-corporate-page-view-default.html';
-
                         default:
                             return template + 'default.html';
 
@@ -79,7 +70,7 @@ PHLUCorporateApp.directive('nodeType', function ($sce) {
 
 });
 
-PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$hybridsearchObject', function ($scope, $sce, $hybridsearch, $hybridsearchObject) {
+PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, $sce, $hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
     var hybridsearch = new $hybridsearch(
         'https://phlu-neos.firebaseio.com',
@@ -87,11 +78,8 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
         'fb11fdde869d0a8fcfe00a2fd35c031d'
     );
 
-    $scope.grouped = [];
-    $scope.turbonodes = [];
-    $scope.nodes = [];
-    $scope.count = 0;
-    $scope.groupes = [];
+    $scope.result = new $hybridsearchResultsObject();
+
     $scope.siteSearch = '';
     $scope.siteSearchLastQuery = '';
     $scope.siteSearchPath = '';
@@ -101,8 +89,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
     var wasClosed = false;
     var sideBarNav = $(".nav.sidebar-nav:first-child");
     var sideBarNavCurrent = sideBarNav.find("li.current,li.active");
-    var sideBarNavCurrentClasses = sideBarNavCurrent.attr('class');
-
+    var sideBarNavCurrentClasses = sideBarNavCurrent.attr('class') !== undefined ? sideBarNavCurrent.attr('class') : 'current';
 
     var search = new $hybridsearchObject(hybridsearch);
     var labels = {
@@ -135,16 +122,13 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
 
 
     var tabs = $("#searchResultsTabs");
-    search.setPropertiesBoost(boost).setNodePath("siteSearchPath", $scope).setNodeTypeLabels(labels).setQuery('siteSearch', $scope).$watch(function (results) {
+    search.setPropertiesBoost(boost).setNodePath("siteSearchPath", $scope).setNodeTypeLabels(labels).setQuery('siteSearch', $scope).$watch(function (data) {
 
-        setTimeout(function () {
-            $scope.$apply(function () {
-                $scope.nodes = results.getNodes();
-                $scope.turbonodes = results.getTurboNodes();
-                $scope.groupes = results.getNodeTypes();
-                $scope.count = results.count();
-            });
-        }, 5);
+        $scope.$apply(function () {
+            $scope.result = data;
+            $scope.grouped = data.getGrouped();
+        });
+
 
 
         if (tabs.find("a.active").length === 0) {
@@ -152,7 +136,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
         }
 
 
-    }).run();
+    });
 
 
     $scope.stopSearch = function () {
@@ -175,6 +159,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
     $scope.$watch('siteSearch', function (i) {
         if (i === '' && wasClosed == false) {
             $scope.siteSearchLastQuery = '';
+            $scope.isSearch = false;
         }
     });
 

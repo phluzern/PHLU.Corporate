@@ -1,6 +1,7 @@
-<div class="resultBreadcrumb" ng-bind-html="node.breadcrumb"></div>
+<div class="resultBreadcrumb" ng-bind-html="node.getBreadcrumb()"></div>
 <div class="clickable">
-<a href="{{node.url}}">{{node.grandParentNode.properties['phlu-corporate-page-view-default-title']}}{{node.grandParentNode.properties['phlu-corporate-page-view-default-default-title']}}</a>
+    <b>{{node.getScore()}}</b><br>
+<a href="{{node.getUrl()}}">{{node.getDocumentNode().getProperty('title')}}</a>
 <br>
-{{node.properties.rawcontent}}
+{{node.getPreview()}}
 </div>
