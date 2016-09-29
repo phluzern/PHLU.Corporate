@@ -107,6 +107,11 @@
                                 data-ng-show="siteSearchPath">in '{{siteSearchPath}}'</span></h3>
 
 
+                        <div class="result turbonode" ng-repeat="node in result.getTurboNodes() | orderBy:'-score'">
+                            <search data="node"></search>
+                        </div>
+
+
                         <!-- Nav tabs -->
                         <ul id="searchResultsTabs" class="nav nav-tabs" role="tablist"
                             data-ng-if="result.getGrouped().count() > 1">
@@ -124,14 +129,14 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="alle" role="tabpanel">
                                 <div class="result" ng-repeat="node in result.getNodes() | orderBy:'-score'">
-                                    <search data="node"></search>
+                                    <search data="node" data-ng-if="!node.isTurboNode()"></search>
                                 </div>
                             </div>
                             <div class="tab-pane " id="{{group.getLabel()}}" role="{{group.getLabel()}}"
                                  data-ng-repeat="group in result.getGrouped().getItems()">
 
                                 <div class="result" ng-repeat="node in group.getNodes() | orderBy:'-score'">
-                                    <search data="node"></search>
+                                    <search data="node" data-ng-if="!node.isTurboNode()"></search>
                                 </div>
 
                             </div>
