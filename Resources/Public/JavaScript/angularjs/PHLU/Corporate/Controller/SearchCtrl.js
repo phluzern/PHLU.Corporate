@@ -122,14 +122,23 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
     };
 
 
+    // var search2 = new $hybridsearchObject(hybridsearch);
+    //
+    // search2.addPropertyFilter('phlu-corporate-contact-firstname', 'siteSearch', $scope).setNodeType('phlu-corporate-contact').$watch(function (data) {
+    //     console.log(data.getNodes());
+    // });
+
+
 
     search.setPropertiesBoost(boost).setNodePath("siteSearchPath", $scope).setNodeTypeLabels(labels).setQuery('siteSearch', $scope).$watch(function (data) {
 
 
-            $scope.result = data;
-            $scope.$digest();
+        $scope.result = data;
 
-        console.log(data);
+        setTimeout(function () {
+            $scope.$digest();
+        }, 10);
+
 
 
         if ($("#searchResultsTabs").find("a.active").length === 0) {
