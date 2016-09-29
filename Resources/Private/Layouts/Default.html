@@ -11,6 +11,7 @@
     </f:section>
 
     <f:section name="csslinks">
+
         <!-- Put your stylesheet inclusions here, they will be included in your website by TypoScript -->
         <link rel="stylesheet"
               href="{f:uri.external(uri: 'https://fonts.googleapis.com/css?family=Droid+Sans:400,700')}" media="all"/>
@@ -229,9 +230,16 @@
 </f:section>
 <f:section name="bodyScripts">
     <!-- Put your scripts inclusions for the end of the body here, they will be included in your website by TypoScript -->
-    <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
-    <script src="{f:uri.resource(path: 'Vendor/grunt-modernizr/lib/build-files/modernizr-latest.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
+
+    <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/ContactsCtrl.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SearchCtrl.js', package: 'PHLU.Corporate')}"></script>
+
+    <script src="{f:uri.resource(path: 'Vendor/grunt-modernizr/lib/build-files/modernizr-latest.js', package: 'PHLU.Corporate')}"></script>
+
     <script src="{f:uri.resource(path: 'Vendor/tether/dist/js/tether.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/bootstrap/dist/js/bootstrap.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js', package: 'PHLU.Corporate')}"></script>
@@ -239,10 +247,7 @@
     <script src="{f:uri.resource(path: 'Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/jquery/main.js', package: 'PHLU.Corporate')}"></script>
 
-    <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/ContactsCtrl.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SearchCtrl.js', package: 'PHLU.Corporate')}"></script>
+
 
     <f:if condition="{neos:rendering.inBackend()}">
         <script src="{f:uri.resource(path: 'JavaScript/jquery/backend.js', package: 'PHLU.Corporate')}"></script>

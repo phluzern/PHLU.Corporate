@@ -125,10 +125,11 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
     var tabs = $("#searchResultsTabs");
     search.setPropertiesBoost(boost).setNodePath("siteSearchPath", $scope).setNodeTypeLabels(labels).setQuery('siteSearch', $scope).$watch(function (data) {
 
-        $scope.$apply(function () {
-            $scope.result = data;
-        });
 
+            $scope.result = data;
+            $scope.$digest();
+
+        console.log(data);
 
         if (tabs.find("a.active").length === 0) {
             tabs.find("a:first-child").trigger("click");
