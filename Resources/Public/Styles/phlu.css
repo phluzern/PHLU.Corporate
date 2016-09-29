@@ -9229,7 +9229,8 @@ body {
             body .all .row.targetgroup-switcher .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body p {
               margin: 0; }
     body .all .row.subjectsfilternav .nav-pills {
-      padding-top: 30px; }
+      padding-top: 30px;
+      margin-bottom: 0; }
       body .all .row.subjectsfilternav .nav-pills li a.nav-link {
         background-color: #9b9b9b;
         padding-left: 54px;
@@ -9573,8 +9574,10 @@ body {
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.open td, body .all .further-education-list .results-table .table-responsive .table tbody tr.open td {
           border-top: 3px solid #ba1541;
           border-bottom: 0; }
-    body .all .phlu-locations .row.subjectsfilternav .nav-pills li a.nav-link {
-      padding-left: 23px; }
+    body .all .phlu-locations .row.subjectsfilternav .nav-pills {
+      margin-bottom: 31px; }
+      body .all .phlu-locations .row.subjectsfilternav .nav-pills li a.nav-link {
+        padding-left: 23px; }
     body .all .phlu-locations .phlu-corporate-table {
       margin-bottom: 100px; }
       body .all .phlu-locations .phlu-corporate-table table tbody tr th span:first-child {

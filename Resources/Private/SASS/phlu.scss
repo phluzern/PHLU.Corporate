@@ -1507,6 +1507,7 @@ body {
     .row.subjectsfilternav {
       .nav-pills {
         padding-top: 30px;
+        margin-bottom:0;
         li {
           a.nav-link {
             background-color: $grey5;
@@ -2127,16 +2128,14 @@ body {
     // phlu locations (Standorte)
     //
     .phlu-locations {
-
       .row.subjectsfilternav {
         .nav-pills {
+          margin-bottom: 31px;
           li {
             a.nav-link {
-
               padding-left: 23px;
             }
           }
-
         }
       }
       .phlu-corporate-table {
