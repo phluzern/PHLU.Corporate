@@ -10,6 +10,8 @@ TYPO3:
         autoInclude:
           'PHLU.Corporate': ['NodeTypes/*']
       navigateComponent:
+        nodeTree:
+          loadingDepth: 1
         structureTree:
           # number of levels inside the structure tree which shall be loaded eagerly, at start.
           # 0 means unlimited
