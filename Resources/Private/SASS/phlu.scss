@@ -251,6 +251,7 @@ $input-search-field-big: 50px;
 // @import "rem-mixin";
 
 @import "open-iconic-bootstrap";
+@import "../../Public/Vendor/font-awesome/scss/font-awesome";
 
 html {
   position: relative;
@@ -433,7 +434,7 @@ html {
 // backend only
 body.neos-backend {
   > .all {
-    min-width: 1920px;
+
   }
 
   &.neos-navigate-panel-open {
@@ -544,6 +545,10 @@ body {
   }
   color: $grey;
   .all {
+
+    display: block !important;
+
+
     // neos specific
     .neos-contentcollection {
       .neos.neos-empty-contentcollection-overlay {

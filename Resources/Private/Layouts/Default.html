@@ -17,19 +17,7 @@
         <link rel="stylesheet"
               href="{f:uri.resource(path: 'Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.css', package: 'PHLU.Corporate')}"
               media="all"/>
-        <link rel="stylesheet"
-              href="{f:uri.resource(path: 'Vendor/font-awesome/css/font-awesome.min.css', package: 'PHLU.Corporate')}"
-              media="all"/>
-        <link rel="stylesheet"
-              href="{f:uri.external(uri: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/transition.min.css')}"
-              media="all"/>
-        <link rel="stylesheet"
-              href="{f:uri.external(uri: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/dropdown.min.css')}"
-              media="all"/>
         <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/phlu.css', package: 'PHLU.Corporate')}" media="all"/>
-        <link rel="stylesheet"
-              href="{f:uri.resource(path: 'Vendor/animate.css/animate.min.css', package: 'PHLU.Corporate')}"
-              media="all"/>
         <link rel="stylesheet"
               href="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css', package: 'PHLU.Corporate')}"
               media="all"/>
@@ -56,177 +44,178 @@
 <f:section name="body">
 
 
-    <div class="all" data-ng-app="PHLUCorporateApp">
+    <div class="all" data-ng-app="PHLUCorporateApp" {f:if(condition:'{neos:rendering.inBackend()}',then:'style="display: none"', else: '')}>
 
-        <nav class="navbar">
-            <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
-                <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogo.svg')}"
-                     alt="PH Luzern Logo"
-                     onerror="this.onerror=null; this.src='Images/phluLogo.png'"/>
-            </a>
-            {parts.navBarMenu -> f:format.raw()}
-        </nav>
+    <nav class="navbar">
+        <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
+            <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogo.svg')}"
+                 alt="PH Luzern Logo"
+                 onerror="this.onerror=null; this.src='Images/phluLogo.png'" width="191" height="80"/>
+        </a>
+        {parts.navBarMenu -> f:format.raw()}
+    </nav>
 
-        <div class="container-fluid {pageLevelTypeClass}">
-            <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}" data-ng-controller="SearchCtrl">
-                <div class="col-xl-2 sidebar level0 ">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="nav-spacer-top">
-                                <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
-                                    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogo.svg')}"
-                                         alt="PH Luzern Logo"
-                                         onerror="this.onerror=null; this.src='Images/phluLogo.png'"/>
-                                </a>
-                                <f:if condition="{neos:rendering.inBackend()}">
-                                    <f:then>
-                                        <div class="site-search-field">
-                                            <input type="text" class="c-input form-control" id="siteSearch">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                            <div class="searchResult">
+    <div class="container-fluid {pageLevelTypeClass}">
+        <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}" data-ng-controller="SearchCtrl">
+            <div class="col-xl-2 sidebar level0 ">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="nav-spacer-top">
+                            <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
+                                <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogo.svg')}"
+                                     alt="PH Luzern Logo"
+                                     onerror="this.onerror=null; this.src='Images/phluLogo.png'" width="191"
+                                     height="80"/>
+                            </a>
+                            <f:if condition="{neos:rendering.inBackend()}">
+                                <f:then>
+                                    <div class="site-search-field">
+                                        <input type="text" class="c-input form-control" id="siteSearch">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                        <div class="searchResult">
 
-                                            </div>
                                         </div>
-                                    </f:then>
-                                    <f:else>
-                                        <div class="site-search-field">
-                                            <input type="text" class="c-input form-control" data-ng-model="siteSearch"
-                                                   data-ng-click="startSearch();">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                        </div>
-                                    </f:else>
-                                </f:if>
+                                    </div>
+                                </f:then>
+                                <f:else>
+                                    <div class="site-search-field">
+                                        <input type="text" class="c-input form-control" data-ng-model="siteSearch"
+                                               data-ng-click="startSearch();">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </div>
+                                </f:else>
+                            </f:if>
 
-                            </div>
-                            <div class="row">
-                                {parts.sideBarLevel0Menu -> f:format.raw()}
-                            </div>
+                        </div>
+                        <div class="row">
+                            {parts.sideBarLevel0Menu -> f:format.raw()}
                         </div>
                     </div>
                 </div>
-                <div id="searchResult">
-                    <div data-ng-class="{hasSearchResults: siteSearch != ''}" style="display:none">
+            </div>
+            <div id="searchResult">
+                <div data-ng-class="{hasSearchResults: siteSearch != ''}" style="display:none">
 
-                        <div class="resultsWrapper">
-
-
-                            <h3 data-ng-show="result.count() > 0">Suchergebnisse {{siteSearch}} <span
-                                    data-ng-show="siteSearchPath">in '{{siteSearchPath}}'</span>
-                                ({{result.count()}})</h3>
-                            <h3 data-ng-hide="result.count() > 0">Suche nach {{siteSearch}} <span
-                                    data-ng-show="siteSearchPath">in '{{siteSearchPath}}'</span></h3>
+                    <div class="resultsWrapper">
 
 
-                            <!-- Nav tabs -->
-                            <ul id="searchResultsTabs" class="nav nav-tabs" role="tablist"
-                                data-ng-if="result.getGrouped().count() > 1">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#alle" role="tab">Alle</a>
-                                </li>
-                                <li class="nav-item" ng-repeat="group in result.getGrouped().getItems()">
-                                    <a class="nav-link" data-toggle="tab" href="#{{group.getLabel()}}"
-                                       role="tab"><span node-type name="{{group.getLabel()}}"></span>
-                                        <span>({{group.count()}})</span></a>
-                                </li>
-                            </ul>
+                        <h3 data-ng-show="result.count() > 0">Suchergebnisse {{siteSearch}} <span
+                                data-ng-show="siteSearchPath">in '{{siteSearchPath}}'</span>
+                            ({{result.count()}})</h3>
+                        <h3 data-ng-hide="result.count() > 0">Suche nach {{siteSearch}} <span
+                                data-ng-show="siteSearchPath">in '{{siteSearchPath}}'</span></h3>
 
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="alle" role="tabpanel">
-                                    <div class="result" ng-repeat="node in result.getNodes() | orderBy:'-score'">
-                                        <search data="node"></search>
-                                    </div>
-                                </div>
-                                <div class="tab-pane " id="{{group.getLabel()}}" role="{{group.getLabel()}}"
-                                     data-ng-repeat="group in result.getGrouped().getItems()">
 
-                                    <div class="result" ng-repeat="node in group.getNodes() | orderBy:'-score'">
-                                        <search data="node"></search>
-                                    </div>
+                        <!-- Nav tabs -->
+                        <ul id="searchResultsTabs" class="nav nav-tabs" role="tablist"
+                            data-ng-if="result.getGrouped().count() > 1">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#alle" role="tab">Alle</a>
+                            </li>
+                            <li class="nav-item" ng-repeat="group in result.getGrouped().getItems()">
+                                <a class="nav-link" data-toggle="tab" href="#{{group.getLabel()}}"
+                                   role="tab"><span node-type name="{{group.getLabel()}}"></span>
+                                    <span>({{group.count()}})</span></a>
+                            </li>
+                        </ul>
 
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="alle" role="tabpanel">
+                                <div class="result" ng-repeat="node in result.getNodes() | orderBy:'-score'">
+                                    <search data="node"></search>
                                 </div>
                             </div>
+                            <div class="tab-pane " id="{{group.getLabel()}}" role="{{group.getLabel()}}"
+                                 data-ng-repeat="group in result.getGrouped().getItems()">
+
+                                <div class="result" ng-repeat="node in group.getNodes() | orderBy:'-score'">
+                                    <search data="node"></search>
+                                </div>
+
+                            </div>
+                        </div>
 
 
-                            <div class="btn close" data-ng-click="stopSearch();"></div>
+                        <div class="btn close" data-ng-click="stopSearch();"></div>
+                    </div>
+                </div>
+            </div>
+            {parts.sideBarLevel1Menu -> f:format.raw()}
+            <div class="col-xs-12 {parts.sideBarLevel1MenuGetClass -> f:format.raw()} main contents">
+                {content.main -> f:format.raw()}
+                {parts.teaserMenu -> f:format.raw()}
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid breadcrumb-bottom">
+        <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}">
+            {parts.breadcrumbFooter -> f:format.raw()}
+        </div>
+    </div>
+    <div class="container-fluid footer">
+        <div class="row">
+            <div class="col-xs-12 site-search-field">
+                <input type="text" class="c-input form-control" id="siteSearchMobile">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            {footer -> f:format.raw()}
+            <div class="col-xs-12 col-xl-2 flexfirst">
+                <nav class="nav langnav">
+                    <a class="active" href="#">DE</a>
+                    <a class="" href="#">FR</a>
+                    <a class="" href="#">IT</a>
+                    <a class="" href="#">EN</a>
+                </nav>
+                <hr>
+            </div>
+            <div class="col-xs-12 sociallinks">
+                <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/socialiconsexample.png')}"
+                     alt="sociallinks"/>
+            </div>
+            <div class="col-xs-6 footerLogoMobile">
+                <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogoFooter.svg')}"
+                     alt="Ph Luzern Logo"/>
+            </div>
+            <div class="col-xs-6 footerAddressMobile">
+                Pfistergasse 20<br>
+                Postfache 7660<br>
+                6000 Luzern 7<br>
+                T 041 228 71 11<br>
+                <a href="mailto:info@phlu.ch">info@phlu.ch</a>
+            </div>
+            <div class="col-lg-12 footerAddressLogoDesktop">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-4">
+                        <div>
+                            Pfistergasse 20<br>
+                            Postfache 7660<br>
+                            6000 Luzern 7<br>
+                        </div>
+                        <div>
+                            T 041 228 71 11<br>
+                            <a href="mailto:info@phlu.ch">info@phlu.ch</a>
+                        </div>
+                        <div>
+                            <img class="footerLogo"
+                                 src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogoFooter.svg')}"
+                                 alt="Ph Luzern Logo"/>
                         </div>
                     </div>
                 </div>
-                {parts.sideBarLevel1Menu -> f:format.raw()}
-                <div class="col-xs-12 {parts.sideBarLevel1MenuGetClass -> f:format.raw()} main contents">
-                    {content.main -> f:format.raw()}
-                    {parts.teaserMenu -> f:format.raw()}
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid breadcrumb-bottom">
-            <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}">
-                {parts.breadcrumbFooter -> f:format.raw()}
-            </div>
-        </div>
-        <div class="container-fluid footer">
-            <div class="row">
-                <div class="col-xs-12 site-search-field">
-                    <input type="text" class="c-input form-control" id="siteSearchMobile">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </div>
-                {footer -> f:format.raw()}
-                <div class="col-xs-12 col-xl-2 flexfirst">
-                    <nav class="nav langnav">
-                        <a class="active" href="#">DE</a>
-                        <a class="" href="#">FR</a>
-                        <a class="" href="#">IT</a>
-                        <a class="" href="#">EN</a>
-                    </nav>
-                    <hr>
-                </div>
-                <div class="col-xs-12 sociallinks">
-                    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/socialiconsexample.png')}"
-                         alt="sociallinks"/>
-                </div>
-                <div class="col-xs-6 footerLogoMobile">
-                    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogoFooter.svg')}"
-                         alt="Ph Luzern Logo"/>
-                </div>
-                <div class="col-xs-6 footerAddressMobile">
-                    Pfistergasse 20<br>
-                    Postfache 7660<br>
-                    6000 Luzern 7<br>
-                    T 041 228 71 11<br>
-                    <a href="mailto:info@phlu.ch">info@phlu.ch</a>
-                </div>
-                <div class="col-lg-12 footerAddressLogoDesktop">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-4">
-                            <div>
-                                Pfistergasse 20<br>
-                                Postfache 7660<br>
-                                6000 Luzern 7<br>
-                            </div>
-                            <div>
-                                T 041 228 71 11<br>
-                                <a href="mailto:info@phlu.ch">info@phlu.ch</a>
-                            </div>
-                            <div>
-                                <img class="footerLogo"
-                                     src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogoFooter.svg')}"
-                                     alt="Ph Luzern Logo"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-lg-offset-8 copyright">
-                            &copy; 2016 Pädagogische Hochschule Luzern
-                        </div>
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-8 copyright">
+                        &copy; 2016 Pädagogische Hochschule Luzern
                     </div>
                 </div>
-                <div class="col-xs-12 copyright">
-                    &copy; 2016 Pädagogische Hochschule Luzern
-                </div>
+            </div>
+            <div class="col-xs-12 copyright">
+                &copy; 2016 Pädagogische Hochschule Luzern
             </div>
         </div>
+    </div>
 
-        <span id="top-link-block" class="img-circle">
+    <span id="top-link-block" class="img-circle">
                     <a href="#top" class="anchor-nav">
                         <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/spacer.png')}" width="80"
                              height="80"
@@ -248,8 +237,6 @@
     <script src="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/locales/bootstrap-datepicker.de.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.external(uri: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/transition.min.js')}"></script>
-    <script src="{f:uri.external(uri: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/components/dropdown.min.js')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/jquery/main.js', package: 'PHLU.Corporate')}"></script>
 
     <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'PHLU.Corporate')}"></script>
