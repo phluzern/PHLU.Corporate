@@ -2139,7 +2139,6 @@ body {
         }
       }
       .phlu-corporate-table {
-        margin-bottom: 100px;
         table {
           tbody {
             tr {
@@ -2171,7 +2170,18 @@ body {
           }
         }
       }
+      .location-building-image {
+        margin-bottom: 50px;
+      }
     }
+    .phlu-location-detailview {
+      .row.subjectsfilternav {
+        .nav-pills {
+          padding-top: 0;
+        }
+      }
+    }
+
     //
     // phlu-filelinks
     //

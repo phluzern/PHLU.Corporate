@@ -9578,20 +9578,22 @@ body {
       margin-bottom: 31px; }
       body .all .phlu-locations .row.subjectsfilternav .nav-pills li a.nav-link {
         padding-left: 23px; }
-    body .all .phlu-locations .phlu-corporate-table {
-      margin-bottom: 100px; }
-      body .all .phlu-locations .phlu-corporate-table table tbody tr th span:first-child {
-        padding-right: 20px; }
-      body .all .phlu-locations .phlu-corporate-table table tbody tr td address {
-        margin-bottom: 0; }
-      body .all .phlu-locations .phlu-corporate-table table tbody tr .details-link-cell {
-        text-align: right;
-        vertical-align: bottom;
-        padding-right: 0; }
-      body .all .phlu-locations .phlu-corporate-table table tbody tr .mobile-view-columns .details-link-cell {
-        display: block; }
-        body .all .phlu-locations .phlu-corporate-table table tbody tr .mobile-view-columns .details-link-cell a {
-          width: 100%; }
+    body .all .phlu-locations .phlu-corporate-table table tbody tr th span:first-child {
+      padding-right: 20px; }
+    body .all .phlu-locations .phlu-corporate-table table tbody tr td address {
+      margin-bottom: 0; }
+    body .all .phlu-locations .phlu-corporate-table table tbody tr .details-link-cell {
+      text-align: right;
+      vertical-align: bottom;
+      padding-right: 0; }
+    body .all .phlu-locations .phlu-corporate-table table tbody tr .mobile-view-columns .details-link-cell {
+      display: block; }
+      body .all .phlu-locations .phlu-corporate-table table tbody tr .mobile-view-columns .details-link-cell a {
+        width: 100%; }
+    body .all .phlu-locations .location-building-image {
+      margin-bottom: 50px; }
+    body .all .phlu-location-detailview .row.subjectsfilternav .nav-pills {
+      padding-top: 0; }
     body .all .phlu-qmpilot-nodetypes-files.last, body .all .phlu-qmpilot-nodetypes-file.last {
       margin-bottom: 31px; }
     body .all .row.subjectsfilternav.phlu-filelinks {
