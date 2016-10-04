@@ -122,16 +122,28 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
     };
 
 
-    var tabs = $("#searchResultsTabs");
+    // var search2 = new $hybridsearchObject(hybridsearch);
+    //
+    // search2.addPropertyFilter('phlu-corporate-contact-firstname', 'siteSearch', $scope).setNodeType('phlu-corporate-contact').$watch(function (data) {
+    //     console.log(data.getNodes());
+    // });
+
+
+
     search.setPropertiesBoost(boost).setNodePath("siteSearchPath", $scope).setNodeTypeLabels(labels).setQuery('siteSearch', $scope).$watch(function (data) {
 
-        $scope.$apply(function () {
-            $scope.result = data;
-        });
+
+        $scope.result = data;
+
+        setTimeout(function () {
+            $scope.$digest();
+        }, 10);
 
 
-        if (tabs.find("a.active").length === 0) {
-            tabs.find("a:first-child").trigger("click");
+
+        if ($("#searchResultsTabs").find("a.active").length === 0) {
+            $("#searchResultsTabs").find("a:first-child").trigger("click");
+
         }
 
 
