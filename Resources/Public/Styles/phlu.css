@@ -9412,6 +9412,11 @@ body {
     body .all .phlu-dozpage .row.education ul, body .all .phlu-dozpage .row.cv ul, body .all .phlu-dozpage .row.professional-activities ul, body .all .phlu-dozpage .row.consultation-priorities ul {
       list-style-type: none;
       padding-left: 0; }
+      body .all .phlu-dozpage .row.education ul.list, body .all .phlu-dozpage .row.cv ul.list, body .all .phlu-dozpage .row.professional-activities ul.list, body .all .phlu-dozpage .row.consultation-priorities ul.list {
+        list-style-type: square;
+        padding-left: 20px; }
+        body .all .phlu-dozpage .row.education ul.list li, body .all .phlu-dozpage .row.cv ul.list li, body .all .phlu-dozpage .row.professional-activities ul.list li, body .all .phlu-dozpage .row.consultation-priorities ul.list li {
+          margin-bottom: 0; }
       body .all .phlu-dozpage .row.education ul li, body .all .phlu-dozpage .row.cv ul li, body .all .phlu-dozpage .row.professional-activities ul li, body .all .phlu-dozpage .row.consultation-priorities ul li {
         clear: both;
         margin-bottom: 10px; }

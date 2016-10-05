@@ -540,7 +540,6 @@ body.neos-backend {
 
 }
 
-
 body {
   margin-bottom: 420px;
   @include media-breakpoint-down("md") {
@@ -553,7 +552,6 @@ body {
   .all {
 
     display: block !important;
-
 
     // neos specific
     .neos-contentcollection {
@@ -978,7 +976,7 @@ body {
             padding-left: 5%;
             padding-right: 9%;
             &:hover {
-              color:black;
+              color: black;
             }
             @include media-breakpoint-down("xl") {
               padding-right: 11%;
@@ -1004,7 +1002,7 @@ body {
                 color: $font-color-level1;
                 text-align: left;
                 &:hover {
-                  color:black;
+                  color: black;
                 }
               }
               &.current, &.active {
@@ -1512,7 +1510,7 @@ body {
     .row.subjectsfilternav {
       .nav-pills {
         padding-top: 30px;
-        margin-bottom:0;
+        margin-bottom: 0;
         li {
           a.nav-link {
             background-color: $grey5;
@@ -1853,6 +1851,14 @@ body {
           ul {
             list-style-type: none;
             padding-left: 0;
+            &.list {
+              list-style-type: square;
+              padding-left: 20px;
+              li {
+                margin-bottom: 0;
+              }
+
+            }
             li {
               clear: both;
               div {
@@ -2189,7 +2195,7 @@ body {
       }
       .row.departments {
         .phlu-teaser.navigation.subpage {
-          margin:0;
+          margin: 0;
         }
       }
     }
