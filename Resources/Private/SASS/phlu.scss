@@ -155,6 +155,11 @@ $input-search-field-big: 50px;
     }
   } @else if $type == internal {
     background-image: url("../Images/linkbottomline.png");
+    &:hover {
+      background-image: none;
+      background-color: $lightgrey;
+      padding: 5px;
+    }
   } @else if $type == email-contact-person {
     background-image: url("../Images/linkbottomline.png");
     &::before {
@@ -1774,7 +1779,7 @@ body {
           &::after {
             font-size: 35px;
             position: absolute;
-            margin-top: -14px;
+            margin-top: -10px;
           }
         }
         .panel-infos {
@@ -1918,6 +1923,15 @@ body {
       }
     }
     //
+    // phlu about pages
+    //
+    .phlu-about-detailview {
+      .row.subjectsfilternav {
+        .nav-pills {
+          padding-top: 0;
+        }
+      }
+    }
     // phlu results-table for ppdb and further education lists
     //
     .ppdb-list, .further-education-list {
@@ -2173,15 +2187,12 @@ body {
       .location-building-image {
         margin-bottom: 50px;
       }
-    }
-    .phlu-location-detailview {
-      .row.subjectsfilternav {
-        .nav-pills {
-          padding-top: 0;
+      .row.departments {
+        .phlu-teaser.navigation.subpage {
+          margin:0;
         }
       }
     }
-
     //
     // phlu-filelinks
     //
