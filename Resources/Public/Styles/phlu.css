@@ -9381,7 +9381,7 @@ body {
       body .all .phlu-team-members .panel-heading .panel-switch::after {
         font-size: 35px;
         position: absolute;
-        margin-top: -14px; }
+        margin-top: -10px; }
       body .all .phlu-team-members .panel-heading .panel-infos {
         text-align: right;
         right: 20px; }
@@ -9441,6 +9441,8 @@ body {
       text-align: right; }
     body .all .further-education-detail .row.topics p {
       width: 100%; }
+    body .all .phlu-about-detailview .row.subjectsfilternav .nav-pills {
+      padding-top: 0; }
     body .all .ppdb-list .list-search-field input, body .all .ppdb-list .dropdown-search-field input, body .all .further-education-list .list-search-field input, body .all .further-education-list .dropdown-search-field input {
       border: 1px solid #5c5c5c;
       height: 50px; }
@@ -9592,8 +9594,8 @@ body {
         width: 100%; }
     body .all .phlu-locations .location-building-image {
       margin-bottom: 50px; }
-    body .all .phlu-location-detailview .row.subjectsfilternav .nav-pills {
-      padding-top: 0; }
+    body .all .phlu-locations .row.departments .phlu-teaser.navigation.subpage {
+      margin: 0; }
     body .all .phlu-qmpilot-nodetypes-files.last, body .all .phlu-qmpilot-nodetypes-file.last {
       margin-bottom: 31px; }
     body .all .row.subjectsfilternav.phlu-filelinks {
@@ -10060,6 +10062,10 @@ body {
         background-repeat: repeat-x;
         background-position: bottom;
         padding-bottom: 4px; }
+        body .all .main > .row .content-link-internal:hover, body .all .main > .row a[data-gentics-aloha-repository='node-repository']:hover {
+          background-image: none;
+          background-color: #e1e1e1;
+          padding: 5px; }
       body .all .main > .row .content-link-portrait {
         background-image: url("../Images/linkbottomline.png");
         font-size: 1.125rem;
