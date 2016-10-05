@@ -9,7 +9,7 @@
 
         {breadcrumb -> f:format.raw()}
 
-        <h1 class="page-header">{contact.name.fullname}</h1>
+        <h1 class="page-header">{contact.name.firstName} {contact.name.lastName}</h1>
 
         <div class="row">
 
@@ -25,10 +25,11 @@
             <div class="col-xs-12 col-sm-6 col-md-9">
                 <address>
                     <b>{contact.name.firstName} {contact.name.lastName}</b><br>
-                    <f:if condition="{contact.titlename} != ''">{contact.titlename}<br></f:if>
+                    <f:if condition="{contact.name.title} != ''">{contact.name.title}<br></f:if>
                     {contact.street}<br>
                     <f:if condition="{contact.street2} != ''">{contact.street2}<br></f:if>
-                    {contact.plz} {contact.city}<br>
+
+                    {contact.zip} {contact.city}<br>
                     <div class="telephone">
                         <i class="fa fa-phone" aria-hidden="true"></i>
                         {contact.phone}<br>
