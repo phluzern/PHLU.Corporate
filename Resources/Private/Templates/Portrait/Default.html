@@ -30,10 +30,10 @@
                     <f:if condition="{contact.street2} != ''">{contact.street2}<br></f:if>
 
                     {contact.zip} {contact.city}<br>
-                    <div class="telephone">
+                    <f:if condition="{contact.phone} != ''"><div class="telephone">
                         <i class="fa fa-phone" aria-hidden="true"></i>
                         {contact.phone}<br>
-                    </div>
+                    </div></f:if>
                     <a class="content-link-email-contact-person"
                        href="mailto:{contact.email}">{contact.email}</a><br>
                 </address>
