@@ -9424,6 +9424,15 @@ body {
           display: table-cell; }
         body .all .phlu-dozpage .row.education ul li .dates, body .all .phlu-dozpage .row.cv ul li .dates, body .all .phlu-dozpage .row.professional-activities ul li .dates, body .all .phlu-dozpage .row.consultation-priorities ul li .dates {
           width: 120px; }
+        body .all .phlu-dozpage .row.education ul li .wrapper, body .all .phlu-dozpage .row.cv ul li .wrapper, body .all .phlu-dozpage .row.professional-activities ul li .wrapper, body .all .phlu-dozpage .row.consultation-priorities ul li .wrapper {
+          width: 100%;
+          display: block; }
+    body .all .phlu-dozpage .row.cv ul.list {
+      list-style-type: none;
+      padding-left: 0; }
+      body .all .phlu-dozpage .row.cv ul.list li {
+        padding-left: 0;
+        padding-bottom: 15px; }
     body .all .phlu-dozpage .row.publications-list .phlu-accordion, body .all .phlu-dozpage .row.science-projects .phlu-accordion {
       margin: 0; }
     body .all .phlu-dozpage .row:last-child {
