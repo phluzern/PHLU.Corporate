@@ -1847,7 +1847,7 @@ body {
             margin-bottom: inherit;
           }
         }
-        &.education, &.cv, &.professional-activities, &.consultation-priorities {
+        &.education, &.cv, &.professional-activities,&.expertises, &.consultation-priorities {
           ul {
             list-style-type: none;
             padding-left: 0;
@@ -1873,6 +1873,12 @@ body {
                 display: block;
               }
             }
+          }
+        }
+        &.consultation-priorities {
+          ul {
+            list-style-type: square;
+            padding-left: 20px;
           }
         }
         &.cv {
