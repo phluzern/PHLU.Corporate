@@ -1,5 +1,19 @@
 # Searchable content
-'PHLU.Corporate:Content':
+'PHLU.Corporate:Content.Page.HeaderDefault':
   superTypes:
     'Neoslive.Hybridsearch:Content': TRUE
 
+# Searchable content
+'PHLU.Corporate:Table':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+# Searchable content
+'PHLU.Qmpilot.NodeTypes:File':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+# Searchable content
+'PHLU.Corporate:Contact':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
