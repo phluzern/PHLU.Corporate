@@ -74,7 +74,7 @@ PHLUCorporateApp.directive('nodeType', function ($sce) {
 PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, $sce, $hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
     var hybridsearch = new $hybridsearch(
-        'https://phlu-neos.firebaseio.com',
+        'https://phlu-f98dd.firebaseio.com',
         'live',
         'fb11fdde869d0a8fcfe00a2fd35c031d'
     );
