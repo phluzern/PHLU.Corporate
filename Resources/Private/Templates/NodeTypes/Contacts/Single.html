@@ -26,13 +26,12 @@
 
 
                 <div class="col-xs-12 col-sm-6 col-md-8">
+                    <f:if condition="{node.properties.function} != ''">
                     <div class="contactperson-role">
-                        {node.properties.function}
+                        <strong>{node.properties.function}</strong>
                     </div>
-
+                    </f:if>
                     <f:render partial="Adressblock" arguments="{_all}"/>
-
-
                 </div>
 
             </div>
