@@ -117,7 +117,11 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
         'phlu-corporate-content-page-headerdefault-parent': 5,
         'parent': 15,
         'grandparent': 10,
-        'rawcontent': 1
+        'rawcontent': 1,
+        '__trendingRatingA': 20,
+        '__trendingRatingB': 2,
+        '__trendingRatingC': 1
+
 
     };
 
