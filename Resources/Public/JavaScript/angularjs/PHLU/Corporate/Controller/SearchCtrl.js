@@ -107,7 +107,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
 
     var boost = {
 
-        'phlu-corporate-content-page-headerdefault-grandparent': 50,
+        'phlu-corporate-content-page-headerdefault-grandparent': 5,
         'phlu-corporate-contact-grandparent': 10,
         'phlu-corporate-contact-firstname': 10,
         'phlu-corporate-contact-lastname': 10,
@@ -118,6 +118,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$sce', '$hybridsearch', '$
         'parent': 15,
         'grandparent': 10,
         'rawcontent': 1,
+        '__trendingHour': 5,
         '__trendingRatingA': 20,
         '__trendingRatingB': 2,
         '__trendingRatingC': 1
