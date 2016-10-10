@@ -16,11 +16,13 @@
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-8">
-                        <div class="contactperson-role">
-                            {node.properties.function}
-                        </div>
+
                         <address>
+                            <div class="contactperson-role">
+                                {node.properties.function}
+                            </div>
                             {node.properties.firstname} {node.properties.lastname}<br>
+                            <f:if condition="{node.properties.titlename} != ''">{node.properties.titlename}<br></f:if>
                             {node.properties.street}<br>
                             <f:if condition="{node.properties.street2} != ''">{node.properties.street2}<br></f:if>
                             {node.properties.zip} {node.properties.city}

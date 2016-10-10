@@ -9485,16 +9485,33 @@ body {
       margin-right: 10px; }
     body .all .phlu-dozpage .row.function ul, body .all .phlu-dozpage .row.working-priorities ul, body .all .phlu-dozpage .row.consultation-priorities ul, body .all .phlu-dozpage .row.achievements ul, body .all .phlu-dozpage .row.talks ul, body .all .phlu-dozpage .row.links ul {
       margin-bottom: inherit; }
-    body .all .phlu-dozpage .row.education ul, body .all .phlu-dozpage .row.cv ul, body .all .phlu-dozpage .row.professional-activities ul, body .all .phlu-dozpage .row.consultation-priorities ul {
+    body .all .phlu-dozpage .row.education ul, body .all .phlu-dozpage .row.cv ul, body .all .phlu-dozpage .row.professional-activities ul, body .all .phlu-dozpage .row.expertises ul, body .all .phlu-dozpage .row.consultation-priorities ul {
       list-style-type: none;
       padding-left: 0; }
-      body .all .phlu-dozpage .row.education ul li, body .all .phlu-dozpage .row.cv ul li, body .all .phlu-dozpage .row.professional-activities ul li, body .all .phlu-dozpage .row.consultation-priorities ul li {
+      body .all .phlu-dozpage .row.education ul.list, body .all .phlu-dozpage .row.cv ul.list, body .all .phlu-dozpage .row.professional-activities ul.list, body .all .phlu-dozpage .row.expertises ul.list, body .all .phlu-dozpage .row.consultation-priorities ul.list {
+        list-style-type: square;
+        padding-left: 20px; }
+        body .all .phlu-dozpage .row.education ul.list li, body .all .phlu-dozpage .row.cv ul.list li, body .all .phlu-dozpage .row.professional-activities ul.list li, body .all .phlu-dozpage .row.expertises ul.list li, body .all .phlu-dozpage .row.consultation-priorities ul.list li {
+          margin-bottom: 0; }
+      body .all .phlu-dozpage .row.education ul li, body .all .phlu-dozpage .row.cv ul li, body .all .phlu-dozpage .row.professional-activities ul li, body .all .phlu-dozpage .row.expertises ul li, body .all .phlu-dozpage .row.consultation-priorities ul li {
         clear: both;
         margin-bottom: 10px; }
-        body .all .phlu-dozpage .row.education ul li div, body .all .phlu-dozpage .row.cv ul li div, body .all .phlu-dozpage .row.professional-activities ul li div, body .all .phlu-dozpage .row.consultation-priorities ul li div {
+        body .all .phlu-dozpage .row.education ul li div, body .all .phlu-dozpage .row.cv ul li div, body .all .phlu-dozpage .row.professional-activities ul li div, body .all .phlu-dozpage .row.expertises ul li div, body .all .phlu-dozpage .row.consultation-priorities ul li div {
           display: table-cell; }
-        body .all .phlu-dozpage .row.education ul li .dates, body .all .phlu-dozpage .row.cv ul li .dates, body .all .phlu-dozpage .row.professional-activities ul li .dates, body .all .phlu-dozpage .row.consultation-priorities ul li .dates {
+        body .all .phlu-dozpage .row.education ul li .dates, body .all .phlu-dozpage .row.cv ul li .dates, body .all .phlu-dozpage .row.professional-activities ul li .dates, body .all .phlu-dozpage .row.expertises ul li .dates, body .all .phlu-dozpage .row.consultation-priorities ul li .dates {
           width: 120px; }
+        body .all .phlu-dozpage .row.education ul li .wrapper, body .all .phlu-dozpage .row.cv ul li .wrapper, body .all .phlu-dozpage .row.professional-activities ul li .wrapper, body .all .phlu-dozpage .row.expertises ul li .wrapper, body .all .phlu-dozpage .row.consultation-priorities ul li .wrapper {
+          width: 100%;
+          display: block; }
+    body .all .phlu-dozpage .row.consultation-priorities ul {
+      list-style-type: square;
+      padding-left: 20px; }
+    body .all .phlu-dozpage .row.cv ul.list {
+      list-style-type: none;
+      padding-left: 0; }
+      body .all .phlu-dozpage .row.cv ul.list li {
+        padding-left: 0;
+        padding-bottom: 15px; }
     body .all .phlu-dozpage .row.publications-list .phlu-accordion, body .all .phlu-dozpage .row.science-projects .phlu-accordion {
       margin: 0; }
     body .all .phlu-dozpage .row:last-child {
