@@ -8647,6 +8647,28 @@ body {
         background-color: #895119; }
     body .all .form-control {
       padding: 0.1875rem 0.3125rem; }
+    body .all .dropdown button {
+      background-color: #685f56;
+      color: white;
+      margin-left: 15px; }
+      body .all .dropdown button:after {
+        font-size: 20px; }
+    body .all .dropdown .dropdown-menu {
+      list-style-type: none;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      background-color: #685f56;
+      margin: 4px 0 0; }
+      body .all .dropdown .dropdown-menu li {
+        font-size: 1rem;
+        padding: 8px 23px; }
+        body .all .dropdown .dropdown-menu li:hover {
+          background-color: black; }
+    body .all .searchresults-filter .dropdown-menu {
+      right: 0; }
+      body .all .searchresults-filter .dropdown-menu li a {
+        color: white; }
     body .all .datepicker {
       font-size: 1.125rem; }
       body .all .datepicker table thead tr th, body .all .datepicker table thead tr td, body .all .datepicker table tbody tr th, body .all .datepicker table tbody tr td {
@@ -8892,6 +8914,58 @@ body {
           z-index: -1; }
         body .all .sidebar.level1.phlu-pattern-top-margin::after {
           background-position: 0 500px; }
+    body .all .breadcrumb-title {
+      width: 13%;
+      display: block;
+      float: left;
+      white-space: nowrap; }
+    body .all .rcrumbs-wrapper {
+      width: 100%;
+      display: block;
+      float: left;
+      padding: 25px 0 31px; }
+      @media (max-width: 1279px) {
+        body .all .rcrumbs-wrapper {
+          display: none; } }
+      body .all .rcrumbs-wrapper .rcrumbs-container {
+        height: 20px;
+        overflow: hidden; }
+        body .all .rcrumbs-wrapper .rcrumbs-container .breadcrumb {
+          z-index: 8;
+          list-style-type: none;
+          display: none;
+          width: auto;
+          padding: 0;
+          font-family: "Droid Sans", sans-serif;
+          font-weight: bold;
+          font-size: 0.875rem;
+          margin-bottom: 0; }
+          @media (min-width: 1280px) {
+            body .all .rcrumbs-wrapper .rcrumbs-container .breadcrumb {
+              display: block; } }
+          body .all .rcrumbs-wrapper .rcrumbs-container .breadcrumb li a {
+            color: #767676; }
+          body .all .rcrumbs-wrapper .rcrumbs-container .breadcrumb li + li::before {
+            font-family: Icons;
+            font-size: 9px;
+            content: " \e02f";
+            margin: 0 14px; }
+          body .all .rcrumbs-wrapper .rcrumbs-container .breadcrumb li ul {
+            display: block;
+            float: right; }
+          body .all .rcrumbs-wrapper .rcrumbs-container .breadcrumb .expander {
+            white-space: normal;
+            width: auto;
+            height: 35px;
+            background-image: url(../Images/breadcrumb_expander.png);
+            background-position: -4px 61px;
+            background-size: cover;
+            cursor: pointer;
+            z-index: 9; }
+            body .all .rcrumbs-wrapper .rcrumbs-container .breadcrumb .expander.in {
+              background-image: none; }
+          body .all .rcrumbs-wrapper .rcrumbs-container .breadcrumb .show:last-child {
+            position: absolute; }
     body .all .subpage .nosubnav .sidebar.level0 {
       -webkit-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
       -moz-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
@@ -9240,6 +9314,8 @@ body {
           background-color: #5c5c5c; }
         body .all .row.subjectsfilternav .nav-pills li a.nav-link.all, body .all .row.subjectsfilternav .nav-pills li a.nav-link.no-icon {
           padding-left: 23px; }
+        body .all .row.subjectsfilternav .nav-pills li a.nav-link.active {
+          background-color: #55696d; }
       body .all .row.subjectsfilternav .nav-pills li.active a.nav-link {
         background-color: #55696d; }
     body .all .row.subjectsfilternav .faecherIco::before, body .all .row.subjectsfilternav .oi-media-stop::before {
@@ -9596,6 +9672,32 @@ body {
       margin-bottom: 50px; }
     body .all .phlu-locations .row.departments .phlu-teaser.navigation.subpage {
       margin: 0; }
+    body .all .phlu-searchresults {
+      margin: 30px 0 100px; }
+      body .all .phlu-searchresults::after {
+        font-family: Icons;
+        content: '\e0db'; }
+      body .all .phlu-searchresults .searchresults-count {
+        font-size: 1.25rem; }
+      body .all .phlu-searchresults .searchresults-filter {
+        float: right;
+        margin: 31px 0; }
+      body .all .phlu-searchresults .turbo-link-result {
+        margin: 80px 0 60px; }
+      body .all .phlu-searchresults .row.subjectsfilternav .nav-pills li a.nav-link {
+        padding-left: 18px; }
+      body .all .phlu-searchresults .row.subjectsfilternav .nav-pills li i {
+        padding-right: 10px; }
+      body .all .phlu-searchresults .results-table .contactperson-portrait-image {
+        width: 11%;
+        float: left;
+        margin-right: 20px; }
+      body .all .phlu-searchresults .results-table .nofilter {
+        margin-top: 60px; }
+      body .all .phlu-searchresults .rcrumbs-wrapper {
+        padding: 10px 0; }
+        body .all .phlu-searchresults .rcrumbs-wrapper .breadcrumb {
+          font-weight: normal; }
     body .all .phlu-qmpilot-nodetypes-files.last, body .all .phlu-qmpilot-nodetypes-file.last {
       margin-bottom: 31px; }
     body .all .row.subjectsfilternav.phlu-filelinks {
@@ -9770,6 +9872,8 @@ body {
           display: none; }
           body .all .table thead tr th[class*="col-percent-"] {
             display: table-cell; } }
+      body .all .table thead tr th a {
+        color: #5c5c5c; }
     body .all .table tbody .neos-empty-contentcollection-overlay {
       display: table-cell; }
     body .all .table tbody tr:first-child th, body .all .table tbody tr:first-child td {
@@ -10160,58 +10264,6 @@ body {
           margin-left: -20px;
           font-family: FontAwesome;
           content: "\f100 \2000"; }
-      body .all .main > .row .breadcrumb-title {
-        width: 13%;
-        display: block;
-        float: left;
-        white-space: nowrap; }
-      body .all .main > .row .rcrumbs-wrapper {
-        width: 100%;
-        display: block;
-        float: left;
-        padding: 25px 0 31px; }
-        @media (max-width: 1279px) {
-          body .all .main > .row .rcrumbs-wrapper {
-            display: none; } }
-        body .all .main > .row .rcrumbs-wrapper .rcrumbs-container {
-          height: 20px;
-          overflow: hidden; }
-          body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb {
-            z-index: 8;
-            list-style-type: none;
-            display: none;
-            width: auto;
-            padding: 0;
-            font-family: "Droid Sans", sans-serif;
-            font-weight: bold;
-            font-size: 0.875rem;
-            margin-bottom: 0; }
-            @media (min-width: 1280px) {
-              body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb {
-                display: block; } }
-            body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb li a {
-              color: #767676; }
-            body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb li + li::before {
-              font-family: Icons;
-              font-size: 9px;
-              content: " \e02f";
-              margin: 0 14px; }
-            body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb li ul {
-              display: block;
-              float: right; }
-            body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb .expander {
-              white-space: normal;
-              width: auto;
-              height: 35px;
-              background-image: url(../Images/breadcrumb_expander.png);
-              background-position: -4px 61px;
-              background-size: cover;
-              cursor: pointer;
-              z-index: 9; }
-              body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb .expander.in {
-                background-image: none; }
-            body .all .main > .row .rcrumbs-wrapper .rcrumbs-container .breadcrumb .show:last-child {
-              position: absolute; }
       body .all .main > .row > div > .row > div > *:last-child {
         margin-bottom: 0; }
       @media (min-width: 992px) {

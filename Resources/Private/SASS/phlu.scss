@@ -56,6 +56,8 @@ $teaser-body-font-size: 0.875rem;
 $teaser-letter-spacing: 0.4px;
 $font-size-caption: 0.8rem;
 $font-size-nav-teasers: 0.875rem;
+$font-size-breadcrumb: 0.875rem;
+$font-size-searchresults-count: 0.875rem;
 $font-size-nav-teaser-header: 1.125rem;
 $font-size-paragraph-desktop: 1.125rem;
 $font-size-onepage-teasers: 1.125rem;
@@ -68,7 +70,6 @@ $font-size-href: 1.125rem;
 $font-size-table-href: 1rem;
 $nav-link-font-size: 1rem;
 $nav-link-font-size-desktop: 1.125rem;
-$font-size-breadcrumb: 0.875rem;
 $font-size-langnav: 1.125rem;
 $font-size-search-filters: 1.125rem;
 $font-size-table-mobile-cols: 0.75rem;
@@ -540,7 +541,6 @@ body.neos-backend {
 
 }
 
-
 body {
   margin-bottom: 420px;
   @include media-breakpoint-down("md") {
@@ -553,7 +553,6 @@ body {
   .all {
 
     display: block !important;
-
 
     // neos specific
     .neos-contentcollection {
@@ -677,6 +676,42 @@ body {
       //background-position: 98% 6px;
       //background-repeat: no-repeat;
     }
+    .dropdown {
+      button {
+        background-color: $grey4;
+        color: white;
+        margin-left:15px;
+        &:after {
+          font-size: 20px;
+        }
+      }
+      .dropdown-menu {
+        list-style-type: none;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        background-color: $grey4;
+        margin:4px 0 0;
+        li {
+          font-size: $nav-link-font-size;
+          padding: 8px 23px;
+          &:hover {
+            background-color: black;
+          }
+        }
+      }
+    }
+    .searchresults-filter {
+      .dropdown-menu {
+        right: 0;
+        li {
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+
     //
     // phlu datepicker
     //
@@ -978,7 +1013,7 @@ body {
             padding-left: 5%;
             padding-right: 9%;
             &:hover {
-              color:black;
+              color: black;
             }
             @include media-breakpoint-down("xl") {
               padding-right: 11%;
@@ -1004,7 +1039,7 @@ body {
                 color: $font-color-level1;
                 text-align: left;
                 &:hover {
-                  color:black;
+                  color: black;
                 }
               }
               &.current, &.active {
@@ -1051,6 +1086,75 @@ body {
     //    }
     //  }
     //}
+    //
+    // breadcrumb navigation
+    //
+    .breadcrumb-title {
+      width: 13%;
+      display: block;
+      float: left;
+      white-space: nowrap;
+    }
+    .rcrumbs-wrapper {
+      width: 100%;
+      display: block;
+      @include media-breakpoint-down("lg") {
+        display: none;
+      }
+      float: left;
+      padding: $breadcrumb-padding-top $breadcrumb-padding-horizontal $breadcrumb-padding-bottom;
+      .rcrumbs-container {
+        height: 20px;
+        overflow: hidden;
+        .breadcrumb {
+          z-index: 8;
+          list-style-type: none;
+          display: none;
+          @include media-breakpoint-up("xl") {
+            display: block;
+          }
+          width: auto;
+          padding: 0;
+          font-family: $breadcrumb-font-family;
+          font-weight: $breadcrumb-font-weight;
+          font-size: $font-size-breadcrumb;
+          margin-bottom: $breadcrumb-margin-bottom;
+          li {
+            a {
+              color: $grey3;
+            }
+            + li {
+              &::before {
+                font-family: Icons;
+                font-size: 9px;
+                content: " \e02f";
+                margin: 0 14px;
+              }
+            }
+            ul {
+              display: block;
+              float: right;
+            }
+          }
+          .expander {
+            white-space: normal;
+            width: auto;
+            height: 35px;
+            background-image: url(../Images/breadcrumb_expander.png);
+            background-position: -4px 61px;
+            background-size: cover;
+            cursor: pointer;
+            z-index: 9;
+            &.in {
+              background-image: none;
+            }
+          }
+          .show:last-child {
+            position: absolute;
+          }
+        }
+      }
+    }
     .subpage {
       .nosubnav {
         .sidebar.level0 {
@@ -1512,7 +1616,7 @@ body {
     .row.subjectsfilternav {
       .nav-pills {
         padding-top: 30px;
-        margin-bottom:0;
+        margin-bottom: 0;
         li {
           a.nav-link {
             background-color: $grey5;
@@ -1524,6 +1628,9 @@ body {
             }
             &.all, &.no-icon {
               padding-left: 23px;
+            }
+            &.active {
+              background-color: $grey6;
             }
 
           }
@@ -2189,7 +2296,55 @@ body {
       }
       .row.departments {
         .phlu-teaser.navigation.subpage {
-          margin:0;
+          margin: 0;
+        }
+      }
+    }
+    //
+    // phlu search results
+    //
+    .phlu-searchresults {
+      margin: 30px 0 100px;
+      &::after {
+        font-family: Icons;
+        content: '\e0db';
+      }
+      .searchresults-count {
+        font-size: $font-size-h3;
+      }
+      .searchresults-filter {
+        float: right;
+        margin: 31px 0;
+      }
+      .turbo-link-result {
+        margin: 80px 0 60px;
+      }
+      .row.subjectsfilternav {
+        .nav-pills {
+          li {
+            a.nav-link {
+              padding-left: 18px;
+            }
+            i {
+              padding-right: 10px;
+            }
+          }
+        }
+      }
+      .results-table {
+        .contactperson-portrait-image {
+width: 11%;
+          float:left;
+          margin-right:20px;
+        }
+        .nofilter {
+          margin-top:60px;
+        }
+      }
+      .rcrumbs-wrapper {
+        padding: 10px 0;
+        .breadcrumb {
+          font-weight: normal;
         }
       }
     }
@@ -2524,7 +2679,6 @@ body {
         }
       }
     }
-
     //
     // phlu-table
     //
@@ -2551,6 +2705,9 @@ body {
               &[class*="col-percent-"] {
                 display: table-cell;
               }
+            }
+            a {
+              color: $grey;
             }
           }
         }
@@ -2934,75 +3091,7 @@ body {
         .content-link-history-back {
           @include content-link("history-back");
         }
-        //
-        // breadcrumb navigation
-        //
-        .breadcrumb-title {
-          width: 13%;
-          display: block;
-          float: left;
-          white-space: nowrap;
-        }
-        .rcrumbs-wrapper {
-          width: 100%;
-          display: block;
-          @include media-breakpoint-down("lg") {
-            display: none;
-          }
-          float: left;
-          padding: $breadcrumb-padding-top $breadcrumb-padding-horizontal $breadcrumb-padding-bottom;
-          .rcrumbs-container {
-            height: 20px;
-            overflow: hidden;
-            .breadcrumb {
-              z-index: 8;
-              list-style-type: none;
-              display: none;
-              @include media-breakpoint-up("xl") {
-                display: block;
-              }
-              width: auto;
-              padding: 0;
-              font-family: $breadcrumb-font-family;
-              font-weight: $breadcrumb-font-weight;
-              font-size: $font-size-breadcrumb;
-              margin-bottom: $breadcrumb-margin-bottom;
-              li {
-                a {
-                  color: $grey3;
-                }
-                + li {
-                  &::before {
-                    font-family: Icons;
-                    font-size: 9px;
-                    content: " \e02f";
-                    margin: 0 14px;
-                  }
-                }
-                ul {
-                  display: block;
-                  float: right;
-                }
-              }
-              .expander {
-                white-space: normal;
-                width: auto;
-                height: 35px;
-                background-image: url(../Images/breadcrumb_expander.png);
-                background-position: -4px 61px;
-                background-size: cover;
-                cursor: pointer;
-                z-index: 9;
-                &.in {
-                  background-image: none;
-                }
-              }
-              .show:last-child {
-                position: absolute;
-              }
-            }
-          }
-        }
+
         //
         // remove margin-bottom of last element of main section
         //
