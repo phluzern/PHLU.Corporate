@@ -7,30 +7,32 @@
 <f:section name="default">
     <f:if condition="{items}">
 
-        <div class="row phlu-teaser navigation {pageClass}" id="teasernavigation">
+        <div class="row phlu-teaser navigation {pageClass}">
 
-                <f:for each="{items}" as="item">
+            <f:for each="{items}" as="item">
 
-                    <div class="col-xs-12 col-md-6 {itemClass} nav-teaser-item clickable">
+                <div class="col-xs-12 col-md-6 {itemClass} nav-teaser-item clickable">
 
-                        <div class="row">
-                            <div class="phlu-teaser-body col-xs-10">
-                                <a href="{neos:uri.node(node:item.node)}" alt="{item.node.properties.title}">
-                                    <ts:render path="defaultRenderer" context="{node: item.node}" />
-                                </a>
-                            </div>
-                            <div class="phlu-teaser-caret-right col-xs-2">
-                            </div>
+                    <div class="row">
+                        <div class="phlu-teaser-body col-xs-10">
+
+                            <ts:render path="defaultRenderer" context="{node: item.node}"/>
+
+                        </div>
+                        <div class="phlu-teaser-caret-right col-xs-2">
                         </div>
                     </div>
+                </div>
 
-                </f:for>
+            </f:for>
         </div>
 
     </f:if>
 </f:section>
 
 <f:section name="content">
-    <h3><neos:link.node node="{teaser.parent}">{teaser.properties.headerTitle}</neos:link.node></h3>
-    <p>{teaser.properties.headerText}</p>
+    <h3>
+        <neos:link.node node="{teaserlink.parent}">{teaserheader.properties.text}</neos:link.node>
+    </h3>
+    <p>{teasertext.properties.text}</p>
 </f:section>
