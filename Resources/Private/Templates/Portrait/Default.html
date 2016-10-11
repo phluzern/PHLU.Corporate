@@ -24,11 +24,6 @@
 
             <div class="col-xs-12 col-sm-6 col-md-9">
                 <address>
-                    <f:if condition="{contact.function} != ''">
-                        <div class="contactperson-role">
-                            <strong>{contact.function}</strong>
-                        </div>
-                    </f:if>
                     {contact.name.firstName} {contact.name.lastName}<br>
                     <f:if condition="{contact.name.title} != ''">{contact.name.title}<br></f:if>
                     {contact.street}<br>
