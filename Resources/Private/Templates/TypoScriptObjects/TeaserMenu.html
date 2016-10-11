@@ -15,7 +15,9 @@
 
                         <div class="row">
                             <div class="phlu-teaser-body col-xs-10">
-                                <ts:render path="defaultRenderer" context="{node: item.node}" />
+                                <a href="{neos:uri.node(node:item.node)}" alt="{item.node.properties.title}">
+                                    <ts:render path="defaultRenderer" context="{node: item.node}" />
+                                </a>
                             </div>
                             <div class="phlu-teaser-caret-right col-xs-2">
                             </div>

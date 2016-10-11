@@ -10177,7 +10177,7 @@ body {
         body .all .main > .row .content-link-external::after, body .all .main > .row .content-link-shortcut-file::after {
           background-image: url("../Images/externalLinkArrow.png");
           background-repeat: no-repeat;
-          background-position: 0 6px;
+          background-position: 0 3px;
           padding-right: 25px;
           content: ""; }
       body .all .main > .row a[target='_blank'] {

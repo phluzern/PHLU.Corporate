@@ -128,7 +128,7 @@ $(document).ready(function () {
     /*
      * tablesaw set colspan
      */
-    var tableSawSetColspan = function () {
+/*    var tableSawSetColspan = function () {
         var hiddenCellCount = 0,
             colCount = 0,
             colspanVal = 0,
@@ -173,7 +173,7 @@ $(document).ready(function () {
     if ($('.table-phlu-saw').length) {
         $(window).resize(tableSawSetColspan);
         tableSawSetColspan();
-    }
+    }*/
 
     /*
      * mobile navigation button icon bootstrap collapse
