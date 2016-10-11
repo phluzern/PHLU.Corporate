@@ -51,7 +51,7 @@
         <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
             <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogo.svg')}"
                  alt="PH Luzern Logo"
-                 onerror="this.onerror=null; this.src='Images/phluLogo.png'" width="191" height="80"/>
+                 onerror="this.onerror=null; this.src='Images/phluLogo.png'" />
         </a>
         {parts.navBarMenu -> f:format.raw()}
     </nav>
@@ -65,8 +65,7 @@
                             <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
                                 <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/phluLogo.svg')}"
                                      alt="PH Luzern Logo"
-                                     onerror="this.onerror=null; this.src='Images/phluLogo.png'" width="191"
-                                     height="80"/>
+                                     onerror="this.onerror=null; this.src='Images/phluLogo.png'" />
                             </a>
                             <f:if condition="{neos:rendering.inBackend()}">
                                 <f:then>

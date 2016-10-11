@@ -51,6 +51,7 @@ page = Page {
                     condition = ${q(node).is('[!instanceof PHLU.Corporate:Page.Home]')}
                     renderer = TYPO3.TypoScript:Template {
                         menuItems = BreadcrumbMenu
+	                    itemCollection = ${q(node).add(q(node).parents('[instanceof TYPO3.Neos:Document]')).get()}
                         templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/NavBarMenu.html'
                     }
                 }

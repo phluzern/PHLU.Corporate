@@ -1,34 +1,27 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
-<!--<f:render section="itemList" arguments="{items: items}" />
 
-<f:section name="itemList">
-    <f:if condition="{items}">
-        <nav class="navbar second-level-navigation" role="navigation">
-            <ul class="nav nav-pills">
-                <f:for each="{items}" as="item">
-                    <li class="{item.state}">
-                        <neos:link.node node="{item.node}">{item.label}</neos:link.node>
-                    </li>
-                </f:for>
-            </ul>
-        </nav>
+<f:for each="{itemCollection}" as="item" key="iteratorInt" reverse="1">
+    <f:if condition="{iteratorInt} == '1'">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                aria-controls="navbar">
+            {item.properties.title}
+        </button>
     </f:if>
-</f:section>-->
+</f:for>
 
-
-
-<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-        aria-controls="navbar">
-    Beratungsangebote für Lehrpersonen
-</button>
 <div id="navbar" aria-expanded="false" class="collapse" role="navigation">
     <nav class="nav navbar-nav">
+        <f:for each="{itemCollection}" as="item" iteration="menuIterator" key="iteratorInt" reverse="1">
+            <f:if condition="{menuIterator.isLast}">
+                <f:then>
+                    <a class="level{iteratorInt} isLast" href="{neos:uri.node(node:item)}">{item.properties.title}</a>
+                </f:then>
+                <f:else>
+                    <a class="level{iteratorInt} " href="{neos:uri.node(node:item)}">{item.properties.title}</a>
+                </f:else>
+            </f:if>
 
-
-        <a class="level0" href="#">Startseite</a>
-        <a class="level1" href="#">Beratung & Angebote</a>
-        <a class="level2" href="#">Lehrpersonen</a>
-
+        </f:for>
     </nav>
 </div>
 
