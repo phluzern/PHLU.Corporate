@@ -173,6 +173,12 @@ $input-search-field-big: 50px;
       font-family: FontAwesome;
       content: "\f007 \2000";
     }
+  } @else if $type == location {
+    background-image: url("../Images/linkbottomline.png");
+    &::before {
+      font-family: FontAwesome;
+      content: "\f041 \2000";
+    }
   } @else if $type == pdfFile {
     background-image: inherit;
     &::before {
@@ -680,7 +686,7 @@ body {
       button {
         background-color: $grey4;
         color: white;
-        margin-left:15px;
+        margin-left: 15px;
         &:after {
           font-size: 20px;
         }
@@ -691,7 +697,7 @@ body {
         border-radius: 0;
         padding: 0;
         background-color: $grey4;
-        margin:4px 0 0;
+        margin: 4px 0 0;
         li {
           font-size: $nav-link-font-size;
           padding: 8px 23px;
@@ -1618,6 +1624,9 @@ body {
         padding-top: 30px;
         margin-bottom: 0;
         li {
+          margin-top: 4px;
+          margin-right: 4px;
+          margin-left: 0;
           a.nav-link {
             background-color: $grey5;
             padding-left: 54px;
@@ -1924,6 +1933,9 @@ body {
         }
 
       }
+      .content-link-location {
+        margin-left: 8px;
+      }
       &.phlu-corporate-contacts {
         > .row {
           > .col-xs-12 {
@@ -1950,13 +1962,22 @@ body {
           span {
             margin-right: 10px;
           }
+          .content-link-location {
+            margin-left: 22px;
+            &:before {
+              position: absolute;
+              margin-left: -22px;
+              font-size: 20px;
+              margin-top: -3px;
+            }
+          }
         }
         &.function, &.working-priorities, &.consultation-priorities, &.achievements, &.talks, &.links {
           ul {
             margin-bottom: inherit;
           }
         }
-        &.education, &.cv, &.professional-activities,&.expertises, &.consultation-priorities {
+        &.education, &.cv, &.professional-activities, &.expertises, &.consultation-priorities {
           ul {
             list-style-type: none;
             padding-left: 0;
@@ -2111,8 +2132,6 @@ body {
         .nav-pills {
           padding-bottom: 4px;
           li {
-            margin-top: 4px;
-            margin-right: 4px;
             a.nav-link {
               padding-left: 18px;
               .oi-chevron-bottom, .oi-chevron-top {
@@ -2209,7 +2228,7 @@ body {
           color: $grey;
         }
         .table-responsive {
-          overflow-x: inherit;
+
           .table {
             .oi-caret-bottom, .oi-caret-right {
               font-size: 12px;
@@ -2332,20 +2351,24 @@ body {
     // phlu search results
     //
     .phlu-searchresults {
-      margin: 30px 0 100px;
+      margin-top: 30px;
+      margin-bottom: 100px;
       &::after {
         font-family: Icons;
         content: '\e0db';
       }
       .searchresults-count {
-        font-size: $font-size-h3;
+        font-size: $font-size-h2;
       }
       .searchresults-filter {
         float: right;
         margin: 31px 0;
       }
       .turbo-link-result {
-        margin: 80px 0 60px;
+        margin: 80px 0 32px;
+        @include media-breakpoint-down("sm") {
+          margin: 60px 0 20px;
+        }
       }
       .row.subjectsfilternav {
         .nav-pills {
@@ -2360,13 +2383,31 @@ body {
         }
       }
       .results-table {
-        .contactperson-portrait-image {
-width: 11%;
-          float:left;
-          margin-right:20px;
+        .table-responsive {
+
+          .table {
+            td {
+              padding-right: 0;
+              .searchresult-body {
+                address {
+                  margin-bottom: 0;
+                  .content-link-location {
+                    margin-left: 23px;
+                    &:before {
+                      position: absolute;
+                      font-size: 20px;
+                      margin-left: -23px;
+                      margin-top: -3px;
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
+
         .nofilter {
-          margin-top:60px;
+          margin-top: 60px;
         }
       }
       .rcrumbs-wrapper {
@@ -2710,164 +2751,168 @@ width: 11%;
     //
     // phlu-table
     //
-    .table {
-      thead {
-        tr {
-          th {
-            padding: 12px 20px 12px 0;
-            line-height: 1.5;
-            vertical-align: top;
-            border-top: 0;
-            //border-left: 23px solid $beigelight;
-            &:first-child {
-              //border-left: 0;
-              h3 {
-                margin: 0;
-              }
-            }
-            &.is-currency {
-              text-align: right;
-            }
-            @include media-breakpoint-down("sm") {
-              display: none;
-              &[class*="col-percent-"] {
-                display: table-cell;
-              }
-            }
-            a {
-              color: $grey;
-            }
-          }
-        }
-      }
-      tbody {
-        .neos-empty-contentcollection-overlay {
-          display: table-cell;
-        }
-        tr:first-child {
-          th, td {
-            border-top: 4px solid $grey;
-          }
-        }
-        tr {
-          th, td {
-            padding: 12px 20px 12px 0;
-            //border-right: 2px solid white;
-            line-height: 1.5;
-            vertical-align: top;
-            border-top: 0;
-            background-repeat: repeat-x;
-            background-position: bottom left;
-            min-width: 30px;
-
-            &.nowrap {
-              @include media-breakpoint-up("md") {
-                white-space: nowrap;
-              }
-            }
-
-            &.is-currency {
-              text-align: right;
-              white-space: nowrap;
-            }
-
-            &.col-percent-auto {
-              width: auto;
-              flex: 0 0 0;
-            }
-            &.col-percent-20 {
-              width: 20%;
-              flex: 0 0 20%;
-            }
-            &.col-percent-25 {
-              width: 25%;
-              flex: 0 0 25%;
-            }
-            &.col-percent-33 {
-              width: 33.33%;
-              flex: 0 0 33.33%;
-            }
-            &.col-percent-40 {
-              width: 40%;
-              flex: 0 0 40%;
-            }
-            &.col-percent-50 {
-              width: 50%;
-              flex: 0 0 50%;
-            }
-            &.col-percent-66 {
-              width: 66.66%;
-              flex: 0 0 66.66%;
-            }
-            &.col-percent-60 {
-              width: 60%;
-              flex: 0 0 60%;
-            }
-            &.col-percent-75 {
-              width: 75%;
-              flex: 0 0 75%;
-            }
-            &.col-percent-80 {
-              width: 80%;
-              flex: 0 0 80%;
-            }
-            .mobile-view-columns {
-              display: none;
-            }
-            @include media-breakpoint-down("sm") {
-              display: none;
-              padding-right: 0;
+    .table-responsive {
+      overflow-x: inherit;
+      .table {
+        thead {
+          tr {
+            th {
+              padding: 12px 20px 12px 0;
+              line-height: 1.5;
+              vertical-align: top;
+              border-top: 0;
+              //border-left: 23px solid $beigelight;
               &:first-child {
-                display: table-cell;
+                //border-left: 0;
+                h3 {
+                  margin: 0;
+                }
               }
-              .mobile-view-columns {
-                > span {
+              &.is-currency {
+                text-align: right;
+              }
+              @include media-breakpoint-down("sm") {
+                display: none;
+                &[class*="col-percent-"] {
                   display: table-cell;
                 }
-                font-weight: normal;
-                display: block;
-                margin-top: 10px;
-                font-size: $font-size-table-mobile-cols;
-                .header {
-                  font-weight: bold;
-                  width: 120px;
-                  padding: 0 30px;
-                  @include media-breakpoint-down("xs") {
-                    padding: 0 20px;
+              }
+              a {
+                color: $grey;
+              }
+            }
+          }
+        }
+        tbody {
+          .neos-empty-contentcollection-overlay {
+            display: table-cell;
+          }
+          tr:first-child {
+            th, td {
+              border-top: 4px solid $grey;
+            }
+          }
+          tr {
+            th, td {
+              padding: 12px 20px 12px 0;
+              //border-right: 2px solid white;
+              line-height: 1.5;
+              vertical-align: top;
+              border-top: 0;
+              background-repeat: repeat-x;
+              background-position: bottom left;
+              min-width: 30px;
+
+              &.nowrap {
+                @include media-breakpoint-up("md") {
+                  white-space: nowrap;
+                }
+              }
+
+              &.is-currency {
+                text-align: right;
+                white-space: nowrap;
+              }
+
+              &.col-percent-auto {
+                width: auto;
+                flex: 0 0 0;
+              }
+              &.col-percent-20 {
+                width: 20%;
+                flex: 0 0 20%;
+              }
+              &.col-percent-25 {
+                width: 25%;
+                flex: 0 0 25%;
+              }
+              &.col-percent-33 {
+                width: 33.33%;
+                flex: 0 0 33.33%;
+              }
+              &.col-percent-40 {
+                width: 40%;
+                flex: 0 0 40%;
+              }
+              &.col-percent-50 {
+                width: 50%;
+                flex: 0 0 50%;
+              }
+              &.col-percent-66 {
+                width: 66.66%;
+                flex: 0 0 66.66%;
+              }
+              &.col-percent-60 {
+                width: 60%;
+                flex: 0 0 60%;
+              }
+              &.col-percent-75 {
+                width: 75%;
+                flex: 0 0 75%;
+              }
+              &.col-percent-80 {
+                width: 80%;
+                flex: 0 0 80%;
+              }
+              .mobile-view-columns {
+                display: none;
+              }
+              @include media-breakpoint-down("sm") {
+                display: none;
+                padding-right: 0;
+                &:first-child {
+                  display: table-cell;
+                }
+                .mobile-view-columns {
+                  > span {
+                    display: table-cell;
                   }
-                  font-weight: bold;
+                  font-weight: normal;
+                  display: block;
+                  margin-top: 10px;
+                  font-size: $font-size-table-mobile-cols;
+                  .header {
+                    font-weight: bold;
+                    width: 120px;
+                    padding: 0 30px;
+                    @include media-breakpoint-down("xs") {
+                      padding: 0 20px;
+                    }
+                    font-weight: bold;
+                  }
                 }
               }
             }
-          }
-          th {
-            width: 40%;
-            //background-image: url("../Images/table-cell-dottedline.png");
-            border-bottom: 2px solid $hr-border-color;
-          }
-          td {
-            @include media-breakpoint-down("sm") {
-              > span {
-                display: none;
-              }
+            th {
+              width: 40%;
+              //background-image: url("../Images/table-cell-dottedline.png");
+              border-bottom: 2px solid $hr-border-color;
             }
-            //background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
-            border-bottom: 2px solid $hr-border-color;
-            //border-left: 23px solid $beigelight;
+            td {
+              @include media-breakpoint-down("sm") {
+                > span {
+                  display: none;
+                }
+              }
+              //background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
+              border-bottom: 2px solid $hr-border-color;
+              //border-left: 23px solid $beigelight;
+            }
           }
         }
-      }
-      &.first-col-hidden-1 {
-        tbody {
-          tr > td:first-child {
-            border-left: 0;
+        &.first-col-hidden-1 {
+          tbody {
+            tr > td:first-child {
+              border-left: 0;
+            }
           }
         }
-      }
-      a[target='_blank'] {
-        font-size: $font-size-table-href;
+        a[target='_blank'] {
+          font-size: $font-size-table-href;
+        }
       }
     }
+
     //
     // google-maps-iframe
     //
@@ -2994,7 +3039,7 @@ width: 11%;
               padding-right: 6px;
             }
           }
-          .content-link-email-contact-person, .content-link-portrait {
+          .content-link-email-contact-person, .content-link-portrait, .content-link-location {
             background-image: none;
             font-size: $font-size-phlu-team-members;
           }
@@ -3094,6 +3139,9 @@ width: 11%;
         }
         .content-link-portrait {
           @include content-link("portrait");
+        }
+        .content-link-location {
+          @include content-link("location");
         }
         .content-link-default-file {
           @include content-link("defaultFile");
