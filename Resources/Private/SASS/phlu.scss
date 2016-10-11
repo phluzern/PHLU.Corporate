@@ -140,12 +140,15 @@ $input-search-field-big: 50px;
       padding-right: 25px;
       content: ""; // \2197
     }
+    &:hover {
+      background-position: 0 0;
+      background-repeat: repeat;
+    }
   } @else if $type == externalflowtext {
     background-image: url("../Images/linkbottomline.png");
     &:hover {
-      background-image: none;
-      background-color: $lightgrey;
-      padding: 5px;
+      background-position: 0 0;
+      background-repeat: repeat;
     }
     &::after {
       background-image: url("../Images/externalLinkArrow.png");
@@ -157,9 +160,8 @@ $input-search-field-big: 50px;
   } @else if $type == internal {
     background-image: url("../Images/linkbottomline.png");
     &:hover {
-      background-image: none;
-      background-color: $lightgrey;
-      padding: 5px;
+      background-position: 0 0;
+      background-repeat: repeat;
     }
   } @else if $type == email-contact-person {
     background-image: url("../Images/linkbottomline.png");
