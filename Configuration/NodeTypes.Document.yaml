@@ -99,6 +99,14 @@
         inspector:
           group: 'navigation'
         reloadIfChanged: TRUE
+    hasmoodimage:
+      type: boolean
+      ui:
+        label: 'Stimmungsbild anzeigen'
+        defaultValue: false
+        inspector:
+          group: 'navigation'
+        reloadIfChanged: TRUE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
