@@ -1,0 +1,11 @@
+<h3>
+    <a class="content-link-internal" href="{{node.getUrl()}}#tab-{{node.identifier}}">{{node.getProperty('lastname')}}
+        {{node.getProperty('firstname')}}</a>
+</h3>
+<div class="searchresult-body">
+
+    <span data-ng-show="node.getParent().getProperty('title') !== ''">{{node.getParent().getProperty('title')}}</span><span data-ng-show="node.getParent().getProperty('title') == ''">{{node.getProperty('function')}}</span>, {{node.getProperty('phone')}}, {{node.getProperty('email')}}
+
+
+</div>
+<div ng-bind-html="node.getBreadcrumb()"></div>
