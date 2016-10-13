@@ -3075,18 +3075,16 @@ body {
           @include media-breakpoint-up("lg") {
             float: left;
             margin: 9px 30px 0 0;
-            width: 237px;
           }
           .caption {
-            p {
-              color: $grey;
-              font-size: $font-size-caption;
-              padding-top: 12px;
-              padding-bottom: 16px;
-              text-align: left;
-              caption-side: bottom;
-              margin-bottom: 0px;
-            }
+            color: $grey;
+            font-size: $font-size-caption;
+            padding-top: 12px;
+            padding-bottom: 16px;
+            text-align: left;
+            caption-side: bottom;
+            margin-bottom: 0px;
+
           }
         }
         .phlu-corporate-textwithimage {
@@ -3095,6 +3093,37 @@ body {
           }
           ul {
             display: inline-block;
+          }
+          .img-and-caption {
+            @include media-breakpoint-up("lg") {
+              width: 237px;
+            }
+          }
+        }
+        .phlu-corporate-media-container {
+          .icon-next, .icon-prev {
+            top: 47%;
+            @include media-breakpoint-down("md") {
+              top: 50%;
+            }
+          }
+          .icon-prev {
+            margin-left: -79%;
+            @include media-breakpoint-down("md") {
+              margin-left: -65%;
+            }
+          }
+          [data-toggle="lightbox"] {
+            margin-bottom: 30px;
+            display: block;
+          }
+        }
+        .phlu-corporate-image {
+          .img-and-caption {
+            width: 100%;
+            img {
+              width: 100%;
+            }
           }
         }
 
