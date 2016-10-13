@@ -182,3 +182,5 @@ neosliveHybridsearchBreadcrumb = TYPO3.TypoScript:Collection {
     itemName = 'node'
     itemRenderer = Breadcrumb
 }
+
+

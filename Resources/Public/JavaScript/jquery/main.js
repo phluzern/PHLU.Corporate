@@ -57,7 +57,7 @@ $(document).ready(function () {
     /* top link nav */
     $(window).scroll(function () {
         spaceToTop = $(window).scrollTop();
-        $('[data-spy="scroll"]').scrollspy('refresh');
+       // $('[data-spy="scroll"]').scrollspy('refresh');
         if (spaceToTop > $(window).height()) {
             $('#top-link-block').fadeIn('slow');
         }

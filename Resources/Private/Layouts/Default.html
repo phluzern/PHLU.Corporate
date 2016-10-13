@@ -58,7 +58,7 @@
     </nav>
 
     <div class="container-fluid {pageLevelTypeClass}">
-        <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}" data-ng-controller="SearchCtrl">
+        <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}">
             <div class="col-xl-2 sidebar level0 ">
                 <div class="row">
                     <div class="col-xl-12">
@@ -94,75 +94,10 @@
                     </div>
                 </div>
             </div>
-            <div id="searchResult">
-                <div data-ng-class="{hasSearchResults: siteSearch != ''}" style="display:none">
 
-                    <div class="resultsWrapper">
-
-
-                        <h3 data-ng-show="result.count() > 0">Suche {{siteSearch}} <span
-                                data-ng-show="siteSearchPath">in '{{siteSearchPath}}'</span>
-                            ({{result.count()}})</h3>
-                        <h3 data-ng-hide="result.count() > 0">Suche nach {{siteSearch}} <span
-                                data-ng-show="siteSearchPath">in '{{siteSearchPath}}'</span></h3>
-
-                        <div ng-show="result.nothingFound()">
-                            <p>Es wurden keine mit deiner Suchanfrage - {{siteSearch}} -
-                            übereinstimmenden Dokumente gefunden.</p>
-
-                            <p>Vorschläge:</p>
-                            <br>
-                            <ul>
-                                <li>Achte darauf, dass alle Wörter richtig geschrieben sind.</li>
-                                <li>Probiere es mit anderen Suchbegriffen.</li>
-                                <li>Probiere es mit allgemeineren Suchbegriffen.</li>
-                            </ul>
-
-                        </div>
-
-
-                        <div class="result turbonode" ng-repeat="node in result.getTurboNodes() | orderBy:'-score'">
-                            <search data="node"></search>
-                        </div>
-
-
-                        <!-- Nav tabs -->
-                        <ul id="searchResultsTabs" class="nav nav-tabs" role="tablist"
-                            data-ng-if="result.getGrouped().count() > 1">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#alle" role="tab">Alle</a>
-                            </li>
-                            <li class="nav-item" ng-repeat="group in result.getGrouped().getItems()">
-                                <a class="nav-link" data-toggle="tab" href="#{{group.getLabel()}}"
-                                   role="tab"><span node-type name="{{group.getLabel()}}"></span>
-                                    <span>({{group.count()}})</span></a>
-                            </li>
-                        </ul>
-
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="alle" role="tabpanel">
-                                <div class="result" ng-repeat="node in result.getNodes() | orderBy:'-score'">
-                                    <search data="node" data-ng-if="!node.isTurboNode()"></search>
-                                </div>
-                            </div>
-                            <div class="tab-pane " id="{{group.getLabel()}}" role="{{group.getLabel()}}"
-                                 data-ng-repeat="group in result.getGrouped().getItems()">
-
-                                <div class="result" ng-repeat="node in group.getNodes() | orderBy:'-score'">
-                                    <search data="node" data-ng-if="!node.isTurboNode()"></search>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <div class="btn close" data-ng-click="stopSearch();"></div>
-                    </div>
-                </div>
-            </div>
             {parts.sideBarLevel1Menu -> f:format.raw()}
             <div class="col-xs-12 {parts.sideBarLevel1MenuGetClass -> f:format.raw()} main contents">
+                <f:render partial="Search" arguments="{_all}"/>
                 {content.main -> f:format.raw()}
                 {parts.teaserMenu -> f:format.raw()}
             </div>
