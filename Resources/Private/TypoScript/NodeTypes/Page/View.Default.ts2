@@ -11,6 +11,7 @@ prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
         sections = ${q(node).children('main').find('[instanceof PHLU.Corporate:Section]').get()}
         sectionsCount = ${q(node).children('main').find('[instanceof PHLU.Corporate:Section]').count()}
         hasanchornavigation = ${q(node).property('hasanchornavigation')}
+        hasmoodimage = ${q(node).property('hasmoodimage')}
 
 
 
