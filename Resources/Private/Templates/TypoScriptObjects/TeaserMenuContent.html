@@ -5,7 +5,9 @@
 
 
 <f:section name="default">
-    <h3>{node.properties.title}</h3>
+    <h3>
+        <neos:link.node node="{node}">{node.properties.title}</neos:link.node>
+    </h3>
     <ts:render path="defaultRenderer" context="{node: teaser}"/>
 </f:section>
 
