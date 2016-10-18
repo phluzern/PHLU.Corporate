@@ -257,13 +257,19 @@ $(document).ready(function () {
         );
     });
 
-    // add swipe touch for mobile devices
-    $(".carousel").swiperight(function() {
-        $(this).carousel('prev');
+
+    $("#futuramagallery").on('click', function(event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+            link = target.src ? target.parentNode : target,
+            options = {index: link, event: event},
+            links = this.getElementsByTagName('a');
+        blueimp.Gallery(links, options);
     });
-    $(".carousel").swipeleft(function() {
-        $(this).carousel('next');
-    });
+
+
+
+
 
 
 

@@ -8486,12 +8486,8 @@ body {
   body .ekko-lightbox {
     padding-right: 0 !important; }
     @media (max-width: 767px) {
-      body .ekko-lightbox .modal-dialog {
-        height: 100%;
-        width: 100%;
-        min-width: 100%;
-        min-height: 100%;
-        margin: 0; } }
+      body .ekko-lightbox {
+        background-color: white; } }
     body .ekko-lightbox .modal-dialog .modal-content {
       border-radius: 0;
       border: 0; }
@@ -8505,6 +8501,13 @@ body {
         border: 0; }
       body .ekko-lightbox .modal-dialog .modal-content .modal-body {
         padding: 0; }
+        @media (max-width: 767px) {
+          body .ekko-lightbox .modal-dialog .modal-content .modal-body .ekko-lightbox-item img {
+            position: fixed;
+            height: auto;
+            width: 100%;
+            min-width: 100%;
+            margin: 0; } }
         body .ekko-lightbox .modal-dialog .modal-content .modal-body .ekko-lightbox-nav-overlay a {
           color: white; }
   body .all {
