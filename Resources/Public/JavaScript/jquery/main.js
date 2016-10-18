@@ -250,9 +250,20 @@ $(document).ready(function () {
 
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();
-        $(this).ekkoLightbox();
+        $(this).ekkoLightbox(
+            {
+                alwaysShowClose: true
+            }
+        );
     });
 
+    // add swipe touch for mobile devices
+    $(".carousel").swiperight(function() {
+        $(this).carousel('prev');
+    });
+    $(".carousel").swipeleft(function() {
+        $(this).carousel('next');
+    });
 
 
 
