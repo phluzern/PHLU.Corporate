@@ -8483,6 +8483,30 @@ body {
   @media (min-width: 1600px) {
     body {
       background-color: #efefef; } }
+  body .ekko-lightbox {
+    padding-right: 0 !important; }
+    @media (max-width: 767px) {
+      body .ekko-lightbox .modal-dialog {
+        height: 100%;
+        width: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        margin: 0; } }
+    body .ekko-lightbox .modal-dialog .modal-content {
+      border-radius: 0;
+      border: 0; }
+      body .ekko-lightbox .modal-dialog .modal-content .modal-header .close {
+        position: absolute;
+        right: 20px;
+        top: 11px;
+        font-size: 40px; }
+      body .ekko-lightbox .modal-dialog .modal-content .modal-header, body .ekko-lightbox .modal-dialog .modal-content .modal-footer {
+        margin: 0 15px;
+        border: 0; }
+      body .ekko-lightbox .modal-dialog .modal-content .modal-body {
+        padding: 0; }
+        body .ekko-lightbox .modal-dialog .modal-content .modal-body .ekko-lightbox-nav-overlay a {
+          color: white; }
   body .all {
     display: block !important;
     font-size: 1rem; }
@@ -9175,6 +9199,8 @@ body {
           body .all .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-body h3 {
             font-size: 1.125rem;
             margin: 2px 0 13px; }
+            body .all .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-body h3 a {
+              color: inherit; }
           body .all .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-body p {
             font-size: 0.875rem; }
           body .all .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-body h3, body .all .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-body p {
@@ -10039,19 +10065,38 @@ body {
       @media (min-width: 992px) {
         body .all .main > .row .phlu-corporate-textwithimage .img-and-caption {
           width: 237px; } }
-      body .all .main > .row .phlu-corporate-media-container .icon-next, body .all .main > .row .phlu-corporate-media-container .icon-prev {
+      @media (max-width: 767px) {
+        body .all .main > .row .phlu-corporate-media-container .phlu-teaser {
+          padding: 0 0 25px; } }
+      @media (max-width: 767px) {
+        body .all .main > .row .phlu-corporate-media-container .carousel-control {
+          color: white; } }
+      body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev {
         top: 47%; }
-        @media (max-width: 991px) {
-          body .all .main > .row .phlu-corporate-media-container .icon-next, body .all .main > .row .phlu-corporate-media-container .icon-prev {
+        @media (max-width: 767px) {
+          body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev {
             top: 50%; } }
-      body .all .main > .row .phlu-corporate-media-container .icon-prev {
+        @media (max-width: 543px) {
+          body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev {
+            top: 45%; } }
+      @media (max-width: 991px) {
+        body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next {
+          margin-right: -50%; } }
+      @media (max-width: 767px) {
+        body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next {
+          margin-right: -20%; } }
+      body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev {
         margin-left: -79%; }
         @media (max-width: 991px) {
-          body .all .main > .row .phlu-corporate-media-container .icon-prev {
-            margin-left: -65%; } }
+          body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev {
+            margin-left: -50%; } }
+        @media (max-width: 767px) {
+          body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev {
+            margin-left: -20%; } }
       body .all .main > .row .phlu-corporate-media-container [data-toggle="lightbox"] {
-        margin-bottom: 30px;
         display: block; }
+      body .all .main > .row .phlu-corporate-media-container > .row > div {
+        margin-bottom: 30px; }
       body .all .main > .row .phlu-corporate-image .img-and-caption {
         width: 100%; }
         body .all .main > .row .phlu-corporate-image .img-and-caption img {
