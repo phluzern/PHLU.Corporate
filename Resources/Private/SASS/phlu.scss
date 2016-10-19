@@ -436,53 +436,6 @@ body {
     background-color: #efefef;
   }
   color: $grey;
-  //
-  // phlu modal box
-  //
-  .ekko-lightbox {
-    padding-right: 0 !important;
-    @include media-breakpoint-down("sm") {
-      background-color:white;
-    }
-    .modal-dialog {
-      .modal-content {
-        border-radius: 0;
-        border: 0;
-        .modal-header {
-          .close {
-            position: absolute;
-            right: 20px;
-            top: 11px;
-            font-size: 40px;
-          }
-        }
-        .modal-header, .modal-footer {
-          margin: 0 15px;
-          border: 0;
-        }
-        .modal-body {
-          padding: 0;
-          .ekko-lightbox-item {
-            img {
-              @include media-breakpoint-down("sm") {
-                position: fixed;
-                height: auto;
-                width: 100%;
-                min-width: 100%;
-                margin:0;
-              }
-            }
-          }
-          .ekko-lightbox-nav-overlay {
-            a {
-              color: white;
-            }
-
-          }
-        }
-      }
-    }
-  }
 
   .all {
 
@@ -3499,6 +3452,31 @@ body {
     //}
   }
 
+}
+body:last-child {
+  //
+  // phlu modal box blueimp
+  //
+  .blueimp-gallery {
+    > .close {
+      font-size:30px;
+      color:$grey5;
+    }
+    > .prev, > .next {
+      border:0;
+      font-size:60px;
+      color:$grey5;
+      background: none;
+    }
+    > .play-pause {
+      width: 40px;
+      height: 40px;
+      background-size: 80px 40px;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
 }
 
 //
