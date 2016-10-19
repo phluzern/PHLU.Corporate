@@ -17,6 +17,10 @@ PHLUCorporateApp.directive('search', function ($sce) {
 
             $scope.getTemplateUrl = function () {
 
+                if ($scope.node === undefined) {
+                    return '';
+                }
+
                 if ($scope.node.isTurboNode()) {
                     return template + 'turbonode.html';
                 } else {
@@ -37,6 +41,11 @@ PHLUCorporateApp.directive('search', function ($sce) {
                             } else {
                                 return template + '/Group/phlu-qmpilot-nodetypes-file.html';
                             }
+
+                        case 'phlu-neos-nodetypes-project':
+
+
+                            return template + '/All/phlu-neos-nodetypes-project.html';
 
 
                         default:
@@ -114,7 +123,8 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', '$hyb
         'phlu-neos-nodetypes-contentcollection-table-body': 'Seiten',
         'phlu-corporate-table': 'Seiten',
         'phlu-corporate-content-page-headerdefault': 'Seiten',
-        'phlu-qmpilot-nodetypes-file': 'Dateien'
+        'phlu-qmpilot-nodetypes-file': 'Dateien',
+        'phlu-neos-nodetypes-project': 'Projekte'
 
     };
 
@@ -157,9 +167,9 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', '$hyb
 
             $scope.$apply(function () {
 
-              if ($("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='#" + $scope.lastActiveTabName + "']").length === 0) {
-                  $scope.lastActiveTabName = 'alle';
-              }
+                if ($("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='#" + $scope.lastActiveTabName + "']").length === 0) {
+                    $scope.lastActiveTabName = 'alle';
+                }
 
 
                 // var activeTab = $("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='" + lastActiveTab.attr('href') + "']");

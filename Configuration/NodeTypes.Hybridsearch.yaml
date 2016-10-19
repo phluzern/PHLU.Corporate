@@ -17,3 +17,8 @@
 'PHLU.Corporate:Contact':
   superTypes:
     'Neoslive.Hybridsearch:Content': TRUE
+
+# Searchable content
+'PHLU.Neos.NodeTypes:Project':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE

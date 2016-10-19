@@ -66,30 +66,93 @@
                     <div class="result-panel tab-pane nofilter fade "
                          data-ng-class="{active: lastActiveTabName == group.getLabel(), in: lastActiveTabName == group.getLabel()}"
                          id="{{group.getLabel()}}" role="tabpanel" ng-repeat="group in result.getGrouped().getItems()">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tbody>
-                                <tr ng-repeat="node in group.getNodes() | orderBy:'-score'"
-                                    data-ng-if="!node.isTurboNode()">
-                                    <td class="clickable">
-                                        <search data="node" view="group"></search>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+
+
+                        <div data-ng-switch="group.getLabel()">
+
+
+                            <div class="ppdb-list" data-ng-switch-when="Projekte">
+
+
+                                <div class=" results-table">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th class="clickable">
+                                                    <a href="#">Projektname</a>
+                                                </th>
+                                                <th class="clickable">
+                                                    <a href="#">Schwerpunkte</a>
+                                                </th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody ng-repeat="node in group.getNodes() | orderBy:'-score'" data-ng-click="node.isopen = node.isopen ? false : true">
+                                            <tr data-ng-class="{open: node.isopen,noborder: $index > 0}" class="clickable">
+                                                <td>
+                                                    <span class="oi" data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
+                                                    <span>{{node.getProperty('title')}}</span>
+                                                    <div class="mobile-view-columns">
+                                                        <span class="header">
+                                                            Schwerpunkte
+                                                        </span>
+                                                        <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus}}<br></span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus}}<br></span>
+                                                </td>
+                                            </tr>
+                                            <tr class="result-preview" data-ng-show="node.isopen">
+                                                <td colspan="2">
+                                                    <div>
+                                                        <div ng-bind-html="node.getProperty('abstracttextgerman').substr(0,255) + '...'"></div>
+                                                        <a class="btn btn-primary" href="{{node.getUrl()}}">
+                                                            Details
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="table-responsive" data-ng-switch-default>
+                                <table class="table">
+                                    <tbody>
+                                    <tr ng-repeat="node in group.getNodes() | orderBy:'-score'"
+                                        data-ng-if="!node.isTurboNode()">
+                                        <td class="clickable">
+                                            <search data="node" view="group"></search>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
                         </div>
+
                     </div>
 
 
                 </div>
             </div>
-
 
 
             <div class="row results-table" data-ng-if="result.getGrouped().count() == 1">
                 <div class="col-xs-12 tab-content">
 
-                    <div class="result-panel tab-pane nofilter fade active in" id="{{group.getLabel()}}" role="tabpanel" ng-repeat="group in result.getGrouped().getItems()">
+                    <div class="result-panel tab-pane nofilter fade active in" id="{{group.getLabel()}}" role="tabpanel"
+                         ng-repeat="group in result.getGrouped().getItems()">
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
@@ -107,8 +170,6 @@
 
                 </div>
             </div>
-
-
 
 
         </div>

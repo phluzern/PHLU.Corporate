@@ -2674,6 +2674,13 @@ body {
             th, td {
               border-top: 4px solid $grey;
             }
+
+            &.noborder {
+              th, td {
+                border-top: 0;
+              }
+            }
+
           }
           tr {
             th, td {
