@@ -9,7 +9,6 @@
     "font-awesome": "4.6.*",
     "animate.css": "*",
     "jquery-rcrumbs": "*",
-    "bootstrap-datepicker": "*",
-    "ekko-lightbox": "^5.0.0"
+    "bootstrap-datepicker": "*"
   }
 }

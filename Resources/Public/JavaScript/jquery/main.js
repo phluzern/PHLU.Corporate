@@ -246,12 +246,26 @@ $(document).ready(function () {
     $('.ui.dropdown').dropdown();
 
 
-
-
-    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-        event.preventDefault();
-        $(this).ekkoLightbox();
+    $(".carousel").swiperight(function() {
+        $(this).carousel('prev');
     });
+    $(".carousel").swipeleft(function() {
+        $(this).carousel('next');
+    });
+
+
+
+    $(".blueimpgallery").on('click', function(event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+            link = target.src ? target.parentNode : target,
+            options = {index: link, event: event},
+            links = this.getElementsByTagName('a');
+        blueimp.Gallery(links, options);
+    });
+
+
+
 
 
 
