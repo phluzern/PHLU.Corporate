@@ -326,10 +326,6 @@ html {
 
 // backend only
 body.neos-backend {
-  > .all {
-
-  }
-
   &.neos-navigate-panel-open {
     .sidebar.level0, .sidebar.level1 {
       display: none;
@@ -429,11 +425,9 @@ body.neos-backend {
 }
 
 body {
-
   &.siteSearchActive {
     overflow: hidden;
   }
-
   margin-bottom: 420px;
   @include media-breakpoint-down("md") {
     margin-bottom: 641px;
@@ -442,6 +436,54 @@ body {
     background-color: #efefef;
   }
   color: $grey;
+  //
+  // phlu modal box
+  //
+  .ekko-lightbox {
+    padding-right: 0 !important;
+    @include media-breakpoint-down("sm") {
+      background-color:white;
+    }
+    .modal-dialog {
+      .modal-content {
+        border-radius: 0;
+        border: 0;
+        .modal-header {
+          .close {
+            position: absolute;
+            right: 20px;
+            top: 11px;
+            font-size: 40px;
+          }
+        }
+        .modal-header, .modal-footer {
+          margin: 0 15px;
+          border: 0;
+        }
+        .modal-body {
+          padding: 0;
+          .ekko-lightbox-item {
+            img {
+              @include media-breakpoint-down("sm") {
+                position: fixed;
+                height: auto;
+                width: 100%;
+                min-width: 100%;
+                margin:0;
+              }
+            }
+          }
+          .ekko-lightbox-nav-overlay {
+            a {
+              color: white;
+            }
+
+          }
+        }
+      }
+    }
+  }
+
   .all {
 
     display: block !important;
@@ -603,7 +645,6 @@ body {
         }
       }
     }
-
     //
     // phlu datepicker
     //
@@ -1425,6 +1466,9 @@ body {
             h3 {
               font-size: $font-size-nav-teaser-header;
               margin: 2px 0 13px;
+              a {
+                color: inherit;
+              }
             }
             p {
               font-size: $font-size-nav-teasers;
@@ -2978,21 +3022,52 @@ body {
           }
         }
         .phlu-corporate-media-container {
-          .icon-next, .icon-prev {
-            top: 47%;
-            @include media-breakpoint-down("md") {
-              top: 50%;
+          .phlu-teaser {
+            @include media-breakpoint-down("sm") {
+              padding: 0 0 25px;
             }
           }
-          .icon-prev {
-            margin-left: -79%;
-            @include media-breakpoint-down("md") {
-              margin-left: -65%;
+
+          .carousel-control {
+            @include media-breakpoint-down("sm") {
+              color: white;
+            }
+
+            .icon-next, .icon-prev {
+              top: 47%;
+              @include media-breakpoint-down("sm") {
+                top: 50%;
+              }
+              @include media-breakpoint-down("xs") {
+                top: 45%;
+              }
+            }
+            .icon-next {
+              @include media-breakpoint-down("md") {
+                margin-right: -50%;
+              }
+              @include media-breakpoint-down("sm") {
+                margin-right: -20%;
+              }
+            }
+            .icon-prev {
+              margin-left: -79%;
+              @include media-breakpoint-down("md") {
+                margin-left: -50%;
+              }
+              @include media-breakpoint-down("sm") {
+                margin-left: -20%;
+              }
             }
           }
+
           [data-toggle="lightbox"] {
-            margin-bottom: 30px;
             display: block;
+          }
+          > .row {
+            > div {
+              margin-bottom: 30px;
+            }
           }
         }
         .phlu-corporate-image {

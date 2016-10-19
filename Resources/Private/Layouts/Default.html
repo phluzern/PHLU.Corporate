@@ -18,9 +18,7 @@
         <link rel="stylesheet"
               href="{f:uri.resource(path: 'Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.css', package: 'PHLU.Corporate')}"
               media="all"/>
-        <link rel="stylesheet"
-              href="{f:uri.resource(path: 'Vendor/ekko-lightbox/dist/ekko-lightbox.min.css', package: 'PHLU.Corporate')}"
-              media="all"/>
+        <link rel="stylesheet" href="{f:uri.resource(path: 'blueimp/css/blueimp-gallery.css', package: 'PHLU.Corporate')}" media="all"/>
         <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/phlu.css', package: 'PHLU.Corporate')}" media="all"/>
         <link rel="stylesheet"
               href="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css', package: 'PHLU.Corporate')}"
@@ -183,21 +181,29 @@
                 </span>
     </div>
 
+    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
 
 </f:section>
 <f:section name="bodyScripts">
     <!-- Put your scripts inclusions for the end of the body here, they will be included in your website by TypoScript -->
     <script src="{f:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
-
+    <script src="{f:uri.resource(path: 'blueimp/js/blueimp-gallery.min.js', package: 'PHLU.Corporate')}"></script>
+    <script src="{f:uri.resource(path: 'JavaScript/jquery/jquery.mobile.custom.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/ContactsCtrl.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SearchCtrl.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'Vendor/ekko-lightbox/dist/ekko-lightbox.min.js', package: 'PHLU.Corporate')}"></script>
-
     <script src="{f:uri.resource(path: 'Vendor/grunt-modernizr/lib/build-files/modernizr-latest.js', package: 'PHLU.Corporate')}"></script>
-
     <script src="{f:uri.resource(path: 'Vendor/tether/dist/js/tether.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/bootstrap/dist/js/bootstrap.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js', package: 'PHLU.Corporate')}"></script>
