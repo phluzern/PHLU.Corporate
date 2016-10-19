@@ -2980,27 +2980,20 @@ body {
               padding: 0 0 25px;
             }
           }
-
           .carousel-control {
             @include media-breakpoint-down("sm") {
               color: white;
             }
-
             .icon-next, .icon-prev {
               top: 47%;
-              @include media-breakpoint-down("sm") {
-                top: 50%;
-              }
-              @include media-breakpoint-down("xs") {
-                top: 45%;
-              }
+
             }
             .icon-next {
               @include media-breakpoint-down("md") {
                 margin-right: -50%;
               }
               @include media-breakpoint-down("sm") {
-                margin-right: -20%;
+                margin-right: -10%;
               }
             }
             .icon-prev {
@@ -3009,19 +3002,22 @@ body {
                 margin-left: -50%;
               }
               @include media-breakpoint-down("sm") {
-                margin-left: -20%;
+                margin-left: -10%;
               }
             }
-          }
-
-          [data-toggle="lightbox"] {
-            display: block;
           }
           > .row {
             > div {
               margin-bottom: 30px;
             }
           }
+          .caption {
+            height: 47px;
+            span {
+              position: absolute;
+            }
+          }
+
         }
         .phlu-corporate-image {
           .img-and-caption {
@@ -3460,19 +3456,20 @@ body {
   }
 
 }
+
 body:last-child {
   //
   // phlu modal box blueimp
   //
   .blueimp-gallery {
     > .close {
-      font-size:30px;
-      color:$grey5;
+      font-size: 30px;
+      color: $grey5;
     }
     > .prev, > .next {
-      border:0;
-      font-size:60px;
-      color:$grey5;
+      border: 0;
+      font-size: 60px;
+      color: $grey5;
       background: none;
     }
     > .play-pause {

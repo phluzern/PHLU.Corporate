@@ -9835,6 +9835,8 @@ body {
         display: table-cell; }
       body .all .table-responsive .table tbody tr:first-child th, body .all .table-responsive .table tbody tr:first-child td {
         border-top: 4px solid #5c5c5c; }
+      body .all .table-responsive .table tbody tr:first-child.noborder th, body .all .table-responsive .table tbody tr:first-child.noborder td {
+        border-top: 0; }
       body .all .table-responsive .table tbody tr th, body .all .table-responsive .table tbody tr td {
         padding: 12px 20px 12px 0;
         line-height: 1.5;
@@ -10049,18 +10051,12 @@ body {
           color: white; } }
       body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev {
         top: 47%; }
-        @media (max-width: 767px) {
-          body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev {
-            top: 50%; } }
-        @media (max-width: 543px) {
-          body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev {
-            top: 45%; } }
       @media (max-width: 991px) {
         body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next {
           margin-right: -50%; } }
       @media (max-width: 767px) {
         body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next {
-          margin-right: -20%; } }
+          margin-right: -10%; } }
       body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev {
         margin-left: -79%; }
         @media (max-width: 991px) {
@@ -10068,11 +10064,13 @@ body {
             margin-left: -50%; } }
         @media (max-width: 767px) {
           body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev {
-            margin-left: -20%; } }
-      body .all .main > .row .phlu-corporate-media-container [data-toggle="lightbox"] {
-        display: block; }
+            margin-left: -10%; } }
       body .all .main > .row .phlu-corporate-media-container > .row > div {
         margin-bottom: 30px; }
+      body .all .main > .row .phlu-corporate-media-container .caption {
+        height: 47px; }
+        body .all .main > .row .phlu-corporate-media-container .caption span {
+          position: absolute; }
       body .all .main > .row .phlu-corporate-image .img-and-caption {
         width: 100%; }
         body .all .main > .row .phlu-corporate-image .img-and-caption img {
