@@ -442,7 +442,7 @@ body {
   .ekko-lightbox {
     padding-right: 0 !important;
     @include media-breakpoint-down("sm") {
-      background-color:white;
+      background-color: white;
     }
     .modal-dialog {
       .modal-content {
@@ -469,7 +469,7 @@ body {
                 height: auto;
                 width: 100%;
                 min-width: 100%;
-                margin:0;
+                margin: 0;
               }
             }
           }
@@ -1906,6 +1906,21 @@ body {
         &.function, &.working-priorities, &.consultation-priorities, &.achievements, &.talks, &.links {
           ul {
             margin-bottom: inherit;
+            &.list {
+              list-style-type: square;
+              padding-left: 20px;
+              li {
+                margin-bottom: 0;
+                ul {
+                  list-style-type: none;
+                  li:before {
+                    content: "- ";
+                    margin-left: -15px;
+                  }
+                }
+              }
+
+            }
           }
         }
         &.education, &.cv, &.professional-activities, &.expertises, &.consultation-priorities {
@@ -1917,6 +1932,9 @@ body {
               padding-left: 20px;
               li {
                 margin-bottom: 0;
+                ul {
+                  list-style-type: circle;
+                }
               }
 
             }
@@ -1932,6 +1950,15 @@ body {
               .wrapper {
                 width: 100%;
                 display: block;
+              }
+              ul {
+                margin-left: 20px;
+                list-style-type: square;
+                margin-bottom: 0;
+                li {
+                  margin-bottom: 0;
+                }
+
               }
             }
           }
@@ -2721,13 +2748,6 @@ body {
             th, td {
               border-top: 4px solid $grey;
             }
-
-            &.noborder {
-              th, td {
-                border-top: 0;
-              }
-            }
-
           }
           tr {
             th, td {
@@ -3022,52 +3042,21 @@ body {
           }
         }
         .phlu-corporate-media-container {
-          .phlu-teaser {
-            @include media-breakpoint-down("sm") {
-              padding: 0 0 25px;
+          .icon-next, .icon-prev {
+            top: 47%;
+            @include media-breakpoint-down("md") {
+              top: 50%;
             }
           }
-
-          .carousel-control {
-            @include media-breakpoint-down("sm") {
-              color: white;
-            }
-
-            .icon-next, .icon-prev {
-              top: 47%;
-              @include media-breakpoint-down("sm") {
-                top: 50%;
-              }
-              @include media-breakpoint-down("xs") {
-                top: 45%;
-              }
-            }
-            .icon-next {
-              @include media-breakpoint-down("md") {
-                margin-right: -50%;
-              }
-              @include media-breakpoint-down("sm") {
-                margin-right: -20%;
-              }
-            }
-            .icon-prev {
-              margin-left: -79%;
-              @include media-breakpoint-down("md") {
-                margin-left: -50%;
-              }
-              @include media-breakpoint-down("sm") {
-                margin-left: -20%;
-              }
+          .icon-prev {
+            margin-left: -79%;
+            @include media-breakpoint-down("md") {
+              margin-left: -65%;
             }
           }
-
           [data-toggle="lightbox"] {
+            margin-bottom: 30px;
             display: block;
-          }
-          > .row {
-            > div {
-              margin-bottom: 30px;
-            }
           }
         }
         .phlu-corporate-image {
