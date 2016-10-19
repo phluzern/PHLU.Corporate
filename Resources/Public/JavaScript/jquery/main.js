@@ -246,19 +246,16 @@ $(document).ready(function () {
     $('.ui.dropdown').dropdown();
 
 
-
-
-    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-        event.preventDefault();
-        $(this).ekkoLightbox(
-            {
-                alwaysShowClose: true
-            }
-        );
+    $(".carousel").swiperight(function() {
+        $(this).carousel('prev');
+    });
+    $(".carousel").swipeleft(function() {
+        $(this).carousel('next');
     });
 
 
-    $("#futuramagallery").on('click', function(event) {
+
+    $(".blueimpgallery").on('click', function(event) {
         event = event || window.event;
         var target = event.target || event.srcElement,
             link = target.src ? target.parentNode : target,
