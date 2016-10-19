@@ -227,7 +227,9 @@ $(document).ready(function () {
 
     };
 
-
+    /*
+    * Datepicker
+    */
     $('#datepicker').datepicker({
         startDate: '0d',
         language: 'de',
@@ -245,7 +247,9 @@ $(document).ready(function () {
 
     $('.ui.dropdown').dropdown();
 
-
+    /*
+     * media carousel swipe for mobile
+     */
     $(".carousel").swiperight(function() {
         $(this).carousel('prev');
     });
@@ -253,8 +257,9 @@ $(document).ready(function () {
         $(this).carousel('next');
     });
 
-
-
+    /*
+     * image gallery lightbox
+     */
     $(".blueimpgallery").on('click', function(event) {
         event = event || window.event;
         var target = event.target || event.srcElement,
@@ -263,13 +268,6 @@ $(document).ready(function () {
             links = this.getElementsByTagName('a');
         blueimp.Gallery(links, options);
     });
-
-
-
-
-
-
-
 });
 
 
