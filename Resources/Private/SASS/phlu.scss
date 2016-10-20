@@ -1909,18 +1909,18 @@ body {
             li {
               .wrapper {
                 width: 100%;
-                display: block;
+                display: inherit;
               }
               div {
-                display: table-cell;
+                display: inline-block;
               }
               .dates {
-                width: 120px;
+                margin-right:5px;
               }
             }
             &.list {
-              list-style-type: none;
-              padding-left: 0px;
+              list-style-type: square;
+
               li {
                 margin-bottom: 0;
                 ul {
