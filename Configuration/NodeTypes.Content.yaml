@@ -231,12 +231,32 @@
     'PHLU.Neos.NodeTypes:TextPlain': TRUE
 
 
+# Content image mixin (disable image alignment mixin)
+'PHLU.Corporate.NodeTypes:ContentImageMixin':
+  abstract: TRUE
+  superTypes:
+    'TYPO3.Neos.NodeTypes:ImageMixin': TRUE
+    'TYPO3.Neos.NodeTypes:LinkMixin': FALSE
+    'PHLU.Corporate.NodeTypes:ImageCaptionMixin': TRUE
+    'TYPO3.Neos.NodeTypes:ImageAlignmentMixin': FALSE
+
+
+# Image caption mixin (disable autoparagraph)
+'PHLU.Corporate.NodeTypes:ImageCaptionMixin':
+  abstract: TRUE
+  superTypes:
+      'TYPO3.Neos.NodeTypes:ImageCaptionMixin': TRUE
+  properties:
+    caption:
+      ui:
+        aloha:
+          autoparagraph: FALSE
 
 # Text with image
 'PHLU.Corporate:TextWithImage':
   superTypes:
     'PHLU.Corporate:Text': TRUE
-    'TYPO3.Neos.NodeTypes:ContentImageMixin': TRUE
+    'PHLU.Corporate.NodeTypes:ContentImageMixin': TRUE
   ui:
     label: 'Text mit Bild'
     icon: 'icon-picture'
@@ -279,6 +299,17 @@
             'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
             'strippedElements': ['*'] # If not set the default setting is used.
             'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+    image:
+      ui:
+        inspector:
+          editorOptions:
+            features:
+              crop: TRUE
+            crop:
+              aspectRatio:
+                locked:
+                  width: 237
+                  height: 336
 
 # Image
 'PHLU.Corporate:Image':
