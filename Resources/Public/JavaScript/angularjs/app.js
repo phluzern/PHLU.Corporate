@@ -17,3 +17,16 @@ if (typeof document.addEventListener === 'function') {
 
     }, false);
 }
+
+
+
+PHLUCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsearch) {
+
+    return new $hybridsearch(
+        'https://phlu-neos.firebaseio.com',
+        'live',
+        'fb11fdde869d0a8fcfe00a2fd35c031d'
+    );
+
+
+}]);

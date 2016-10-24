@@ -93,13 +93,8 @@ PHLUCorporateApp.directive('nodeType', function ($sce) {
 
 });
 
-PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', '$hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, $rootScope, $sce, $hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
-    var hybridsearch = new $hybridsearch(
-        'https://phlu-neos.firebaseio.com',
-        'live',
-        'fb11fdde869d0a8fcfe00a2fd35c031d'
-    );
+PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, $rootScope, $sce, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
 
     $scope.result = new $hybridsearchResultsObject();
@@ -114,7 +109,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', '$hyb
 
     var wasClosed = false;
 
-    var search = new $hybridsearchObject(hybridsearch);
+
     var labels = {
 
         'phlu-corporate-contact': 'Kontakte',
@@ -149,14 +144,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', '$hyb
 
     };
 
-
-    // var search2 = new $hybridsearchObject(hybridsearch);
-    //
-    // search2.addPropertyFilter('phlu-corporate-contact-firstname', 'siteSearch', $scope).setNodeType('phlu-corporate-contact').$watch(function (data) {
-    //     console.log(data.getNodes());
-    // });
-
-
+    var search = new $hybridsearchObject(hybridsearch);
     search.setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$watch(function (data) {
 
         $scope.lastActiveTabName = $("#search .phlu-corporate-tags-menu ul.nav-pills > li a.active").length ? $("#search .phlu-corporate-tags-menu ul.nav-pills > li a.active").attr('href').substr(1) : 'alle';
