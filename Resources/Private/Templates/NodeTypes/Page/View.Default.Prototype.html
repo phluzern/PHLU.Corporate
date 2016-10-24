@@ -963,13 +963,13 @@
                 </div>
             </div>
         </div>
-        <div class="row ppdb-list">
+        <div class="row ppdb-list" data-ng-controller="PpdbCtrl">
             <div class="col-xs-12">
                 <div class="row ">
                     <div class="col-xs-12">
                         <h2>Projektsuche</h2>
                         <div class="list-search-field">
-                            <input type="text" class="c-input form-control">
+                            <input type="text" class="c-input form-control" data-ng-model="search">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </div>
                     </div>
@@ -1313,19 +1313,15 @@
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
-                                        <tr class="clickable ">
-                                            <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                        <tr data-ng-class="{checked: filter.lifetime[lifetime]}"
+                                            data-ng-repeat="(lifetime,count) in result.getDistinct('lifetime')">
+                                            <td><i class="fa"
+                                                   data-ng-class="{'fa-check-square-o': filter.lifetime[lifetime],'fa-square-o': !filter.lifetime[lifetime]}"
+                                                   aria-hidden="true"></i></td>
                                             <td>
-                                                <a href="#">
-                                                    Laufend (Aktiv)
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="clickable checked">
-                                            <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                            <td>
-                                                <a href="#">
-                                                    Abgeschlossen
+                                                <a href="javascript:void(0);"
+                                                   data-ng-click="filter.lifetime[lifetime] = !filter.lifetime[lifetime] ? true : false;">
+                                                    {{lifetime}} ({{count}})
                                                 </a>
                                             </td>
                                         </tr>
@@ -1342,101 +1338,7 @@
                 </div>
                 <div class="row results-table">
                     <div class="col-xs-12">
-                        <h2>Treffer (340)</h2>
-                        <!--
-                        <div class="table-responsive table-phlu-saw ">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="clickable">
-                                        <a href="#">Projektname</a>
-                                    </th>
-                                    <th class="clickable">
-                                        <a href="#">Schwerpunkte</a>
-                                    </th>
-                                </tr>
-
-                                </thead>
-                                <tbody>
-                                <tr class="clickable">
-                                    <td data-label="Projektname">
-                                        <span class="oi oi-caret-right"></span>
-                                        <span>
-                                            Entwicklung eines Lehrmittels Wirtschaft – Arbeit - Haushalt
-                                        </span>
-                                    </td>
-                                    <td data-label="Schwerpunkte">
-                                        <span>
-                                            - Schulentwicklung und -qualität <br>
-                                        - Sozio-emotionales Lernen
-                                        </span>
-
-                                    </td>
-                                </tr>
-                                <tr class="clickable">
-                                    <td data-label="Projektname">
-                                        <span class="oi oi-caret-right"></span>
-                                        <span>
-                                            Lawinen-Sonderausstellung „White Glory – White Risk“
-                                            </span>
-                                    </td>
-                                    <td data-label="Schwerpunkte">
-                                        - Sport<br>
-                                        - Sprachen
-                                    </td>
-                                </tr>
-                                <tr class="clickable open">
-                                    <td data-label="Projektname">
-                                        <span class="oi oi-caret-bottom"></span>
-                                        <span>
-                                            Geschichtsvorstellungen Jugendlicher und junger Erwachsener
-                                        </span>
-                                    </td>
-                                    <td data-label="Schwerpunkte">
-                                        - Sport<br>
-                                        - Sprachen
-                                    </td>
-                                </tr>
-                                <tr class="result-preview">
-                                    <td  data-label="Projektname" colspan="2">
-                                        <div>
-                                            <p>
-                                                Gefragt wird nach der Formation und Ausprägung von Geschichtsbildern innerhalb verschiedener gesellschaftlicher Gruppen mit einem intergenerationell wie auch geschlechterspezifischen und herkunftsmässig vergleichenden ...
-                                            </p>
-                                            <a class="btn btn-primary" href="#">
-                                                Details
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="clickable">
-                                    <td data-label="Projektname">
-                                        <span class="oi oi-caret-right"></span>
-                                        <span>
-                                            Postcolonial Teaching in Geography
-                                            </span>
-                                    </td>
-                                    <td data-label="Schwerpunkte">
-                                        - Kulturelle Vielfalt und Mehrsprachigkeit<br>
-                                        - Schulentwicklung und -qualität
-                                    </td>
-                                </tr>
-                                <tr class="clickable">
-                                    <td data-label="Projektname">
-                                        <span class="oi oi-caret-right"></span>
-                                        <span>
-                                            Lawinen-Sonderausstellung „White Glory – White Risk“
-                                            </span>
-                                    </td>
-                                    <td data-label="Schwerpunkte">
-                                        - Sport<br>
-                                        - Sprachen
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        -->
+                        <h2>Treffer ({{result.count()}})</h2>
                         <div class="table-responsive  ">
                             <table class="table">
                                 <thead>
@@ -1449,125 +1351,33 @@
                                     </th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr class="clickable">
+                                <tbody ng-repeat="node in result.getNodes() | orderBy:'-score'"
+                                       data-ng-click="node.isopen = node.isopen ? false : true">
+                                <tr data-ng-class="{open: node.isopen,noborder: $index > 0}" class="clickable">
                                     <td>
-                                        <span class="oi oi-caret-right"></span>
-                                        <span>
-                                            Entwicklung eines Lehrmittels Wirtschaft – Arbeit - Haushalt
-                                        </span>
+                                        <span class="oi"
+                                              data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
+                                        <span>{{node.getProperty('title')}}</span>
                                         <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Schwerpunkte
-                                            </span>
-                                            <span>
-                                                - Schulentwicklung und -qualität<br>
-                                                - Sozio-emotionales Lernen
-                                            </span>
+                                                        <span class="header">
+                                                            Schwerpunkte
+                                                        </span>
+                                            <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus}}<br></span>
                                         </div>
                                     </td>
                                     <td>
-                                        - Schulentwicklung und -qualität <br>
-                                        - Sozio-emotionales Lernen
+                                        <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus}}<br></span>
                                     </td>
                                 </tr>
-                                <tr class="clickable">
-                                    <td>
-                                        <span class="oi oi-caret-right"></span>
-                                        <span>
-                                            Lawinen-Sonderausstellung „White Glory – White Risk“
-                                        </span>
-                                        <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Schwerpunkte
-                                            </span>
-                                            <span>
-                                                - Sport<br>
-                                                - Sprachen
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        - Sport<br>
-                                        - Sprachen
-                                    </td>
-                                </tr>
-                                <tr class="clickable open">
-                                    <td>
-                                        <span class="oi oi-caret-bottom"></span>
-                                        <span>
-                                            Geschichtsvorstellungen Jugendlicher und junger Erwachsener
-                                        </span>
-                                        <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Schwerpunkte
-                                            </span>
-                                            <span>
-                                                - Schulentwicklung und -qualität<br>
-                                                - Sozio-emotionales Lernen
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        - Sport<br>
-                                        - Sprachen
-                                    </td>
-                                </tr>
-                                <tr class="result-preview">
+                                <tr class="result-preview" data-ng-show="node.isopen">
                                     <td colspan="2">
                                         <div>
-                                            <p>
-                                                Gefragt wird nach der Formation und Ausprägung von Geschichtsbildern
-                                                innerhalb verschiedener gesellschaftlicher Gruppen mit einem
-                                                intergenerationell wie auch geschlechterspezifischen und herkunftsmässig
-                                                vergleichenden ...
-                                            </p>
-                                            <a class="btn btn-primary" href="#">
+                                            {{node.identifier}}
+                                            <div ng-bind-html="node.getProperty('abstracttextgerman').substr(0,255) + '...'"></div>
+                                            <a class="btn btn-primary" href="{{node.getUrl()}}">
                                                 Details
                                             </a>
                                         </div>
-                                    </td>
-                                </tr>
-                                <tr class="clickable">
-                                    <td>
-                                        <span class="oi oi-caret-right"></span>
-                                        <span>
-                                            Postcolonial Teaching in Geography
-                                            </span>
-                                        <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Schwerpunkte
-                                            </span>
-                                            <span>
-                                                - Kulturelle Vielfalt und Mehrsprachigkeit<br>
-                                                - Schulentwicklung und -qualität
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        - Kulturelle Vielfalt und Mehrsprachigkeit<br>
-                                        - Schulentwicklung und -qualität
-                                    </td>
-                                </tr>
-                                <tr class="clickable">
-                                    <td>
-                                        <span class="oi oi-caret-right"></span>
-                                        <span>
-                                            Lawinen-Sonderausstellung „White Glory – White Risk“
-                                            </span>
-                                        <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Schwerpunkte
-                                            </span>
-                                            <span>
-                                                - Sport<br>
-                                                - Sprachen
-                                            </span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        - Sport<br>
-                                        - Sprachen
                                     </td>
                                 </tr>
                                 </tbody>
@@ -1581,6 +1391,8 @@
         </div>
     </f:then>
 </f:if>
+
+
 <!-- PPDB Projekt Detailseite -->
 <f:if condition="{node.identifier} == '4493ae7c-c1c0-4280-9ce8-b1034792af30'">
 
