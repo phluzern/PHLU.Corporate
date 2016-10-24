@@ -1933,10 +1933,26 @@ body {
                   }
                 }
               }
-
             }
           }
-
+        }
+        &.working-priorities {
+          ul {
+            &.list {
+              li:last-child {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+        &.function {
+          ul {
+            &.list {
+              li {
+                margin-bottom: 10px;
+              }
+            }
+          }
         }
         &.education, &.cv, &.professional-activities, &.expertises, &.consultation-priorities {
           ul {

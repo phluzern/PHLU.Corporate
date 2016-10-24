@@ -9465,6 +9465,10 @@ body {
             body .all .phlu-dozpage .row.function ul.list li ul li:before, body .all .phlu-dozpage .row.working-priorities ul.list li ul li:before, body .all .phlu-dozpage .row.consultation-priorities ul.list li ul li:before, body .all .phlu-dozpage .row.achievements ul.list li ul li:before, body .all .phlu-dozpage .row.talks ul.list li ul li:before, body .all .phlu-dozpage .row.links ul.list li ul li:before {
               content: "- ";
               margin-left: -11px; }
+    body .all .phlu-dozpage .row.working-priorities ul.list li:last-child {
+      margin-bottom: 10px; }
+    body .all .phlu-dozpage .row.function ul.list li {
+      margin-bottom: 10px; }
     body .all .phlu-dozpage .row.education ul, body .all .phlu-dozpage .row.cv ul, body .all .phlu-dozpage .row.professional-activities ul, body .all .phlu-dozpage .row.expertises ul, body .all .phlu-dozpage .row.consultation-priorities ul {
       list-style-type: none;
       padding-left: 0; }
