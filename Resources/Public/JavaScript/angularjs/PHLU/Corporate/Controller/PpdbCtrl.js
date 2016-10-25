@@ -2,12 +2,11 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
     var search = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();
-    $scope.filter = {
-        'lifetime': {}
-    };
+    $scope.lifetime = {};
 
+    // .addNodesByIdentifier(['fsdfsdf-fsdffsdf'.'fsdfsdfdf-fsdfsdfsdf'])
 
-    search.setQuery("search", $scope).addPropertyFilter('title', '', null, true).addPropertyFilter('lifetime', 'filter.lifetime', $scope).setNodeType('phlu-neos-nodetypes-project').$watch(function (data) {
+    search.setQuery("search", $scope).addPropertyFilter('title', '', null, true).addPropertyFilter('lifetime', 'lifetime', $scope).setNodeType('phlu-neos-nodetypes-project').$watch(function (data) {
 
         $scope.result = data;
 

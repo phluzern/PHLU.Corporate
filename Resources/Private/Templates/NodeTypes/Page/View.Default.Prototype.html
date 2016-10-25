@@ -1310,18 +1310,19 @@
                             </div>
                             <div class="result-panel tab-pane " id="projectstate" role="tabpanel">
                                 <!--<a href="#" class="close-btn">schliessen</a>-->
+
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
-                                        <tr data-ng-class="{checked: filter.lifetime[lifetime]}"
-                                            data-ng-repeat="(lifetime,count) in result.getDistinct('lifetime')">
+                                        <tr data-ng-class="{checked: lifetime[lt]}"
+                                            data-ng-repeat="(lt,count) in result.getDistinct('lifetime')">
                                             <td><i class="fa"
-                                                   data-ng-class="{'fa-check-square-o': filter.lifetime[lifetime],'fa-square-o': !filter.lifetime[lifetime]}"
+                                                   data-ng-class="{'fa-check-square-o': lifetime[lt],'fa-square-o': !lifetime[lt]}"
                                                    aria-hidden="true"></i></td>
                                             <td>
                                                 <a href="javascript:void(0);"
-                                                   data-ng-click="filter.lifetime[lifetime] = !filter.lifetime[lifetime] ? true : false;">
-                                                    {{lifetime}} ({{count}})
+                                                   data-ng-click="lifetime[lt] = !lifetime[lt] ? true : false;">
+                                                    {{lt}} ({{count}})
                                                 </a>
                                             </td>
                                         </tr>
