@@ -1907,6 +1907,7 @@ body {
           ul {
             margin-bottom: inherit;
             li {
+              margin-bottom: 10px;
               .wrapper {
                 width: 100%;
                 display: inherit;
@@ -1924,18 +1925,34 @@ body {
               li {
                 margin-bottom: 0;
                 ul {
+                  padding-left:13px;
                   list-style-type: none;
                   li:before {
                     content: "- ";
-                    margin-left: -15px;
-
+                    margin-left: -11px;
                   }
                 }
               }
-
             }
           }
-
+        }
+        &.working-priorities {
+          ul {
+            &.list {
+              li:last-child {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+        &.function {
+          ul {
+            &.list {
+              li {
+                margin-bottom: 10px;
+              }
+            }
+          }
         }
         &.education, &.cv, &.professional-activities, &.expertises, &.consultation-priorities {
           ul {
@@ -1947,10 +1964,18 @@ body {
               li {
                 margin-bottom: 0;
                 ul {
-                  list-style-type: circle;
+                  margin-left:0;
+                  margin-bottom: 15px;
+                  list-style-type: none;
+                  li {
+                    margin-left:15px;
+                  }
+                  > li:before {
+                    content: "- ";
+                    margin-left: -11px;
+                  }
                 }
               }
-
             }
             li {
               clear: both;
@@ -1989,7 +2014,9 @@ body {
             padding-left: 0;
             li {
               padding-left: 0;
-              padding-bottom: 15px;
+              ul {
+                list-style-type: square;
+              }
             }
           }
         }
@@ -3051,7 +3078,7 @@ body {
           }
           .img-and-caption {
             @include media-breakpoint-up("lg") {
-              width: 337px;
+              width: 237px;
             }
           }
         }
@@ -3105,6 +3132,7 @@ body {
             width: 100%;
             img {
               width: 100%;
+              height: auto;
             }
           }
         }

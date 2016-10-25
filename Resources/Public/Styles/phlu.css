@@ -9446,22 +9446,29 @@ body {
         margin-top: -3px; }
     body .all .phlu-dozpage .row.function ul, body .all .phlu-dozpage .row.working-priorities ul, body .all .phlu-dozpage .row.consultation-priorities ul, body .all .phlu-dozpage .row.achievements ul, body .all .phlu-dozpage .row.talks ul, body .all .phlu-dozpage .row.links ul {
       margin-bottom: inherit; }
-      body .all .phlu-dozpage .row.function ul li .wrapper, body .all .phlu-dozpage .row.working-priorities ul li .wrapper, body .all .phlu-dozpage .row.consultation-priorities ul li .wrapper, body .all .phlu-dozpage .row.achievements ul li .wrapper, body .all .phlu-dozpage .row.talks ul li .wrapper, body .all .phlu-dozpage .row.links ul li .wrapper {
-        width: 100%;
-        display: inherit; }
-      body .all .phlu-dozpage .row.function ul li div, body .all .phlu-dozpage .row.working-priorities ul li div, body .all .phlu-dozpage .row.consultation-priorities ul li div, body .all .phlu-dozpage .row.achievements ul li div, body .all .phlu-dozpage .row.talks ul li div, body .all .phlu-dozpage .row.links ul li div {
-        display: inline-block; }
-      body .all .phlu-dozpage .row.function ul li .dates, body .all .phlu-dozpage .row.working-priorities ul li .dates, body .all .phlu-dozpage .row.consultation-priorities ul li .dates, body .all .phlu-dozpage .row.achievements ul li .dates, body .all .phlu-dozpage .row.talks ul li .dates, body .all .phlu-dozpage .row.links ul li .dates {
-        margin-right: 5px; }
+      body .all .phlu-dozpage .row.function ul li, body .all .phlu-dozpage .row.working-priorities ul li, body .all .phlu-dozpage .row.consultation-priorities ul li, body .all .phlu-dozpage .row.achievements ul li, body .all .phlu-dozpage .row.talks ul li, body .all .phlu-dozpage .row.links ul li {
+        margin-bottom: 10px; }
+        body .all .phlu-dozpage .row.function ul li .wrapper, body .all .phlu-dozpage .row.working-priorities ul li .wrapper, body .all .phlu-dozpage .row.consultation-priorities ul li .wrapper, body .all .phlu-dozpage .row.achievements ul li .wrapper, body .all .phlu-dozpage .row.talks ul li .wrapper, body .all .phlu-dozpage .row.links ul li .wrapper {
+          width: 100%;
+          display: inherit; }
+        body .all .phlu-dozpage .row.function ul li div, body .all .phlu-dozpage .row.working-priorities ul li div, body .all .phlu-dozpage .row.consultation-priorities ul li div, body .all .phlu-dozpage .row.achievements ul li div, body .all .phlu-dozpage .row.talks ul li div, body .all .phlu-dozpage .row.links ul li div {
+          display: inline-block; }
+        body .all .phlu-dozpage .row.function ul li .dates, body .all .phlu-dozpage .row.working-priorities ul li .dates, body .all .phlu-dozpage .row.consultation-priorities ul li .dates, body .all .phlu-dozpage .row.achievements ul li .dates, body .all .phlu-dozpage .row.talks ul li .dates, body .all .phlu-dozpage .row.links ul li .dates {
+          margin-right: 5px; }
       body .all .phlu-dozpage .row.function ul.list, body .all .phlu-dozpage .row.working-priorities ul.list, body .all .phlu-dozpage .row.consultation-priorities ul.list, body .all .phlu-dozpage .row.achievements ul.list, body .all .phlu-dozpage .row.talks ul.list, body .all .phlu-dozpage .row.links ul.list {
         list-style-type: square; }
         body .all .phlu-dozpage .row.function ul.list li, body .all .phlu-dozpage .row.working-priorities ul.list li, body .all .phlu-dozpage .row.consultation-priorities ul.list li, body .all .phlu-dozpage .row.achievements ul.list li, body .all .phlu-dozpage .row.talks ul.list li, body .all .phlu-dozpage .row.links ul.list li {
           margin-bottom: 0; }
           body .all .phlu-dozpage .row.function ul.list li ul, body .all .phlu-dozpage .row.working-priorities ul.list li ul, body .all .phlu-dozpage .row.consultation-priorities ul.list li ul, body .all .phlu-dozpage .row.achievements ul.list li ul, body .all .phlu-dozpage .row.talks ul.list li ul, body .all .phlu-dozpage .row.links ul.list li ul {
+            padding-left: 13px;
             list-style-type: none; }
             body .all .phlu-dozpage .row.function ul.list li ul li:before, body .all .phlu-dozpage .row.working-priorities ul.list li ul li:before, body .all .phlu-dozpage .row.consultation-priorities ul.list li ul li:before, body .all .phlu-dozpage .row.achievements ul.list li ul li:before, body .all .phlu-dozpage .row.talks ul.list li ul li:before, body .all .phlu-dozpage .row.links ul.list li ul li:before {
               content: "- ";
-              margin-left: -15px; }
+              margin-left: -11px; }
+    body .all .phlu-dozpage .row.working-priorities ul.list li:last-child {
+      margin-bottom: 10px; }
+    body .all .phlu-dozpage .row.function ul.list li {
+      margin-bottom: 10px; }
     body .all .phlu-dozpage .row.education ul, body .all .phlu-dozpage .row.cv ul, body .all .phlu-dozpage .row.professional-activities ul, body .all .phlu-dozpage .row.expertises ul, body .all .phlu-dozpage .row.consultation-priorities ul {
       list-style-type: none;
       padding-left: 0; }
@@ -9471,7 +9478,14 @@ body {
         body .all .phlu-dozpage .row.education ul.list li, body .all .phlu-dozpage .row.cv ul.list li, body .all .phlu-dozpage .row.professional-activities ul.list li, body .all .phlu-dozpage .row.expertises ul.list li, body .all .phlu-dozpage .row.consultation-priorities ul.list li {
           margin-bottom: 0; }
           body .all .phlu-dozpage .row.education ul.list li ul, body .all .phlu-dozpage .row.cv ul.list li ul, body .all .phlu-dozpage .row.professional-activities ul.list li ul, body .all .phlu-dozpage .row.expertises ul.list li ul, body .all .phlu-dozpage .row.consultation-priorities ul.list li ul {
-            list-style-type: circle; }
+            margin-left: 0;
+            margin-bottom: 15px;
+            list-style-type: none; }
+            body .all .phlu-dozpage .row.education ul.list li ul li, body .all .phlu-dozpage .row.cv ul.list li ul li, body .all .phlu-dozpage .row.professional-activities ul.list li ul li, body .all .phlu-dozpage .row.expertises ul.list li ul li, body .all .phlu-dozpage .row.consultation-priorities ul.list li ul li {
+              margin-left: 15px; }
+            body .all .phlu-dozpage .row.education ul.list li ul > li:before, body .all .phlu-dozpage .row.cv ul.list li ul > li:before, body .all .phlu-dozpage .row.professional-activities ul.list li ul > li:before, body .all .phlu-dozpage .row.expertises ul.list li ul > li:before, body .all .phlu-dozpage .row.consultation-priorities ul.list li ul > li:before {
+              content: "- ";
+              margin-left: -11px; }
       body .all .phlu-dozpage .row.education ul li, body .all .phlu-dozpage .row.cv ul li, body .all .phlu-dozpage .row.professional-activities ul li, body .all .phlu-dozpage .row.expertises ul li, body .all .phlu-dozpage .row.consultation-priorities ul li {
         clear: both;
         margin-bottom: 10px; }
@@ -9495,8 +9509,9 @@ body {
       list-style-type: none;
       padding-left: 0; }
       body .all .phlu-dozpage .row.cv ul.list li {
-        padding-left: 0;
-        padding-bottom: 15px; }
+        padding-left: 0; }
+        body .all .phlu-dozpage .row.cv ul.list li ul {
+          list-style-type: square; }
     body .all .phlu-dozpage .row.publications-list .phlu-accordion, body .all .phlu-dozpage .row.science-projects .phlu-accordion {
       margin: 0; }
     body .all .phlu-dozpage .row:last-child {
@@ -10091,7 +10106,7 @@ body {
         display: inline-block; }
       @media (min-width: 992px) {
         body .all .main > .row .phlu-corporate-textwithimage .img-and-caption {
-          width: 337px; } }
+          width: 237px; } }
       @media (max-width: 767px) {
         body .all .main > .row .phlu-corporate-media-container .phlu-teaser {
           padding: 0 0 25px; } }
@@ -10123,7 +10138,8 @@ body {
       body .all .main > .row .phlu-corporate-image .img-and-caption {
         width: 100%; }
         body .all .main > .row .phlu-corporate-image .img-and-caption img {
-          width: 100%; }
+          width: 100%;
+          height: auto; }
       body .all .main > .row .content-link-wrapper {
         display: block;
         width: 100%; }
