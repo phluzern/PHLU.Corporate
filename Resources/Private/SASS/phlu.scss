@@ -436,56 +436,8 @@ body {
     background-color: #efefef;
   }
   color: $grey;
-  //
-  // phlu modal box
-  //
-  .ekko-lightbox {
-    padding-right: 0 !important;
-    @include media-breakpoint-down("sm") {
-      background-color: white;
-    }
-    .modal-dialog {
-      .modal-content {
-        border-radius: 0;
-        border: 0;
-        .modal-header {
-          .close {
-            position: absolute;
-            right: 20px;
-            top: 11px;
-            font-size: 40px;
-          }
-        }
-        .modal-header, .modal-footer {
-          margin: 0 15px;
-          border: 0;
-        }
-        .modal-body {
-          padding: 0;
-          .ekko-lightbox-item {
-            img {
-              @include media-breakpoint-down("sm") {
-                position: fixed;
-                height: auto;
-                width: 100%;
-                min-width: 100%;
-                margin: 0;
-              }
-            }
-          }
-          .ekko-lightbox-nav-overlay {
-            a {
-              color: white;
-            }
-
-          }
-        }
-      }
-    }
-  }
 
   .all {
-
     display: block !important;
 
     // neos specific
@@ -1888,6 +1840,13 @@ body {
           img {
             padding-bottom: 20px;
           }
+          ul {
+            li {
+              a {
+                @include content-link("internal");
+              }
+            }
+          }
         }
         address {
           span {
@@ -1916,7 +1875,7 @@ body {
                 display: inline-block;
               }
               .dates {
-                margin-right:5px;
+                margin-right: 5px;
               }
             }
             &.list {
@@ -1925,7 +1884,7 @@ body {
               li {
                 margin-bottom: 0;
                 ul {
-                  padding-left:13px;
+                  padding-left: 13px;
                   list-style-type: none;
                   li:before {
                     content: "- ";
@@ -1947,11 +1906,7 @@ body {
         }
         &.function {
           ul {
-            &.list {
-              li {
-                margin-bottom: 10px;
-              }
-            }
+            margin-bottom: 10px;
           }
         }
         &.education, &.cv, &.professional-activities, &.expertises, &.consultation-priorities {
@@ -1964,11 +1919,11 @@ body {
               li {
                 margin-bottom: 0;
                 ul {
-                  margin-left:0;
+                  margin-left: 0;
                   margin-bottom: 15px;
                   list-style-type: none;
                   li {
-                    margin-left:15px;
+                    margin-left: 15px;
                   }
                   > li:before {
                     content: "- ";
@@ -3591,7 +3546,6 @@ body:last-child {
     }
   }
 }
-
 
 //
 // phlu tooltips
