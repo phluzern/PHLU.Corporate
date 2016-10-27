@@ -8483,33 +8483,6 @@ body {
   @media (min-width: 1600px) {
     body {
       background-color: #efefef; } }
-  body .ekko-lightbox {
-    padding-right: 0 !important; }
-    @media (max-width: 767px) {
-      body .ekko-lightbox {
-        background-color: white; } }
-    body .ekko-lightbox .modal-dialog .modal-content {
-      border-radius: 0;
-      border: 0; }
-      body .ekko-lightbox .modal-dialog .modal-content .modal-header .close {
-        position: absolute;
-        right: 20px;
-        top: 11px;
-        font-size: 40px; }
-      body .ekko-lightbox .modal-dialog .modal-content .modal-header, body .ekko-lightbox .modal-dialog .modal-content .modal-footer {
-        margin: 0 15px;
-        border: 0; }
-      body .ekko-lightbox .modal-dialog .modal-content .modal-body {
-        padding: 0; }
-        @media (max-width: 767px) {
-          body .ekko-lightbox .modal-dialog .modal-content .modal-body .ekko-lightbox-item img {
-            position: fixed;
-            height: auto;
-            width: 100%;
-            min-width: 100%;
-            margin: 0; } }
-        body .ekko-lightbox .modal-dialog .modal-content .modal-body .ekko-lightbox-nav-overlay a {
-          color: white; }
   body .all {
     display: block !important;
     font-size: 1rem; }
@@ -9435,6 +9408,16 @@ body {
       margin-bottom: 32px; }
     body .all .phlu-dozpage .row .col-xs-12 img {
       padding-bottom: 20px; }
+    body .all .phlu-dozpage .row .col-xs-12 ul li a {
+      background-image: url("../Images/linkbottomline.png");
+      font-size: 1.125rem;
+      color: #9f632a;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      padding-bottom: 4px; }
+      body .all .phlu-dozpage .row .col-xs-12 ul li a:hover {
+        background-position: 0 0;
+        background-repeat: repeat; }
     body .all .phlu-dozpage .row address span {
       margin-right: 10px; }
     body .all .phlu-dozpage .row address .content-link-location {
@@ -9467,7 +9450,7 @@ body {
               margin-left: -11px; }
     body .all .phlu-dozpage .row.working-priorities ul.list li:last-child {
       margin-bottom: 10px; }
-    body .all .phlu-dozpage .row.function ul.list li {
+    body .all .phlu-dozpage .row.function ul {
       margin-bottom: 10px; }
     body .all .phlu-dozpage .row.education ul, body .all .phlu-dozpage .row.cv ul, body .all .phlu-dozpage .row.professional-activities ul, body .all .phlu-dozpage .row.expertises ul, body .all .phlu-dozpage .row.consultation-priorities ul {
       list-style-type: none;
