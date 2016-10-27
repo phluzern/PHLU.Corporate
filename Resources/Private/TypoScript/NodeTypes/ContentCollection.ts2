@@ -1,6 +1,5 @@
 # content collections
 prototype(PHLU.Corporate:ContentCollection) < prototype(TYPO3.Neos:ContentCollection) {
-
     @cache {
         mode = 'uncached'
         context {
@@ -8,69 +7,31 @@ prototype(PHLU.Corporate:ContentCollection) < prototype(TYPO3.Neos:ContentCollec
             2 = 'documentNode'
         }
     }
-
-
     prototype(PHLU.Corporate:Headline) {
         tag = 'h2'
     }
-
-
-
 }
-
-
-
-
 prototype(PHLU.Corporate:ContentCollection.Page.View.Default) < prototype(PHLU.Corporate:ContentCollection)  {
-
-
-
-
 }
-
-
-
 prototype(PHLU.Corporate:ContentCollection.Page.View.Default.Default) < prototype(PHLU.Corporate:ContentCollection.Page.View.Default)  {
-
-
-
 }
-
 prototype(PHLU.Corporate:ContentCollection.Page.Home) < prototype(PHLU.Corporate:ContentCollection)  {
-
 }
-
 prototype(PHLU.Corporate:ContentCollection.Page.Overview.Tiles) < prototype(PHLU.Corporate:ContentCollection)  {
-
 }
-
 prototype(PHLU.Corporate:ContentCollection.Page.Overview.OnePage) < prototype(PHLU.Corporate:ContentCollection)  {
-
 }
-
 prototype(PHLU.Corporate:ContentCollection.Carousel) < prototype(PHLU.Corporate:ContentCollection)  {
-
 }
-
 prototype(PHLU.Corporate:ContentCollection.CarouselNews) < prototype(PHLU.Corporate:ContentCollection)  {
-
 }
-
 prototype(PHLU.Corporate:ContentCollection.Page.View.Dossier) < prototype(PHLU.Corporate:ContentCollection)  {
-
 }
-
-
 prototype(PHLU.Corporate:ContentCollection.Page.Accordeon) < prototype(PHLU.Corporate:ContentCollection)  {
-
 }
-
 prototype(PHLU.Corporate:ContentCollection.Page.TargetGroup) < prototype(PHLU.Corporate:ContentCollection)  {
-
 }
-
 prototype(PHLU.Corporate:ContentCollection.Page.Service) < prototype(PHLU.Corporate:ContentCollection)  {
-
 }
-
-
+prototype(PHLU.Corporate:ContentCollection.MediaGallery) < prototype(PHLU.Corporate:ContentCollection)  {
+}

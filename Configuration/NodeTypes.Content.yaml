@@ -321,4 +321,67 @@
     icon: 'icon-picture'
     position: 400
 
+# Medien Galerie
+'PHLU.Corporate:MediaGallery':
+  superTypes:
+    'PHLU.Corporate:Content': TRUE
+  constraints:
+    nodeTypes:
+      'PHLU.Corporate:CarouselImage': TRUE
+  ui:
+    label: 'Mediensammlung'
+    icon: 'icon-picture'
+    inspector:
+      groups:
+        general:
+          label: 'Mediensammlung'
+    inlineEditable: TRUE
+    position: 400
+  properties:
+    title:
+      type: string
+      defaultValue: 'Medien Galerie'
+    mediaGalleryType:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Darstellungsform'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            allowEmpty: FALSE
+            placeholder: 'Auswahl Galerietyp'
+            values:
+              carousel:
+                label: 'Karussell'
+              lightbox:
+                label: 'Vorschaubilder'
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.MediaGallery'
 
+# Image
+'PHLU.Corporate:CarouselImage':
+  superTypes:
+    'PHLU.Corporate:Image': TRUE
+  ui:
+    label: 'Bild'
+    icon: 'icon-picture'
+    position: 400
+  properties:
+    image:
+      ui:
+        inspector:
+          editorOptions:
+            features:
+              crop: TRUE
+            crop:
+              aspectRatio:
+                locked:
+                  width: 900
+                  height: 530

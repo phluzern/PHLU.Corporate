@@ -37,10 +37,12 @@
       'PHLU.Corporate:Headline': TRUE
       'PHLU.Corporate:TextWithImage': TRUE
       'PHLU.Corporate:Image': TRUE
+      'PHLU.Corporate:CarouselImage': FALSE
       'PHLU.Corporate:Event': TRUE
       'PHLU.Corporate:Contacts': TRUE
       'PHLU.Qmpilot.NodeTypes:File': TRUE
       'PHLU.Corporate:Table': TRUE
+      'PHLU.Corporate:MediaGallery': TRUE
 
 
 
@@ -179,6 +181,15 @@
       'PHLU.Corporate:TextPlain': TRUE
       'PHLU.Corporate:Text': FALSE
       'PHLU.Corporate:TextWithImage': FALSE
+
+
+'PHLU.Corporate:ContentCollection.MediaGallery':
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'PHLU.Corporate:CarouselImage': TRUE
 
 
 

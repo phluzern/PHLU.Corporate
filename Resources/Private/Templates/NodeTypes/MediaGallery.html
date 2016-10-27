@@ -3,91 +3,93 @@
 {namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 
 
-<div class="row bluebg" id="aktuelles">
-
+<div class="row ">
     <div class="col-xs-12">
-
         {neos:contentElement.editable(property: 'title', tag: 'h2')}
-
-
-        <f:if condition="{neos:rendering.inBackend()}">
-            <f:then>
-            <div id="carousel-phlu-teaser" class="phlu-teaser">
-                <ts:render path="collectionRenderer" context="{node: main}"/>
-            </div>
-            </f:then>
-        </f:if>
-
-        <f:if condition="{neos:rendering.inBackend()}">
+        <f:if condition="{mediaGalleryType} == ''">
             <f:else>
+                <f:if condition="{mediaGalleryType} == 'carousel'">
+                    <f:then>
+                        <f:if condition="{neos:rendering.inBackend()}">
+                            <f:then>
+                                <div class="phlu-corporate-media-container">
+                                    <div id="carousel-phlu-image-gallery-{node.identifier}" class="phlu-teaser">
+                                        <ts:render path="collectionRenderer" context="{node: main}"/>
+                                    </div>
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <div class="phlu-corporate-media-container">
+                                    <div id="carousel-phlu-image-gallery-{node.identifier}"
+                                         class="phlu-teaser carousel slide">
+                                        <f:render section="carousel"
+                                                  arguments="{carouselItems: carouselItems, spliceNum: 1, itemClass: 'col-xl-12', targetId: 'carousel-phlu-image-gallery-{node.identifier}'}"></f:render>
+                                    </div>
+                                </div>
+                            </f:else>
+                        </f:if>
+                    </f:then>
+                    <f:else>
+                        <div class="phlu-corporate-media-container">
+                            <f:if condition="{neos:rendering.inBackend()}">
+                                <f:then>
+                                    <ts:render path="collectionRenderer" context="{node: main}"/>
+                                </f:then>
+                                <f:else>
+                                    <f:render section="imageGallery"
+                                              arguments="{imageGalleryItems: imageGalleryItems}"></f:render>
+                                </f:else>
+                            </f:if>
 
-            <div id="carousel-phlu-teaser-xl" class="phlu-teaser carousel slide">
-                <f:render section="carousel"
-                          arguments="{carouselItems: carouselItems, spliceNum: 3, itemClass: 'col-xl-4', targetId: 'carousel-phlu-teaser-xl'}"></f:render>
-            </div>
+                        </div>
+                    </f:else>
+                </f:if>
 
-            <div id="carousel-phlu-teaser-lg" class="phlu-teaser carousel slide">
-                <f:render section="carousel"
-                          arguments="{carouselItems: carouselItems, spliceNum: 3, itemClass: 'col-lg-4', targetId: 'carousel-phlu-teaser-lg'}"></f:render>
-            </div>
-
-            <div id="carousel-phlu-teaser-md" class="phlu-teaser carousel slide">
-                <f:render section="carousel"
-                          arguments="{carouselItems: carouselItems, spliceNum: 3, itemClass: 'col-md-4', targetId: 'carousel-phlu-teaser-md'}"></f:render>
-            </div>
-
-            <div id="carousel-phlu-teaser-sm" class="phlu-teaser carousel slide">
-                <f:render section="carousel"
-                          arguments="{carouselItems: carouselItems, spliceNum: 2, itemClass: 'col-sm-6', targetId: 'carousel-phlu-teaser-sm'}"></f:render>
-            </div>
-
-            <div id="carousel-phlu-teaser-xs" class="phlu-teaser carousel slide">
-                <f:render section="carousel"
-                          arguments="{carouselItems: carouselItems, spliceNum: 1 , itemClass: 'col-xs-12', targetId: 'carousel-phlu-teaser-xs'}"></f:render>
-            </div>
             </f:else>
-
         </f:if>
-
-
     </div>
-
 </div>
 
-
 <f:section name="carousel">
-
-    <f:render section="indicators" arguments="{carouselItems: carouselItems, spliceNum: spliceNum, itemClass: 'col-xs-12', targetId: targetId}"></f:render>
-
-    <div class="carousel-inner" role="listbox">
+    <f:render section="indicators"
+              arguments="{carouselItems: carouselItems, spliceNum: spliceNum, itemClass: 'col-xs-12', targetId: targetId}"></f:render>
+    <div id="blueimpgallery" class="carousel-inner" role="listbox">
         <f:for each="{phlu:SpliceArray(items: carouselItems, spliceNum:spliceNum)}" as="item" iteration="iterator">
             <div class="carousel-item {f:if(condition: iterator.isFirst, then: 'active', else: '')}">
-                <div class="row">
-                    <f:for each="{item}" as="col" iteration="coliterator">
-                        <div class="{itemClass}">
-                            <ts:render path="carouselItemsRenderer" context="{node: col}"/>
-                        </div>
-                    </f:for>
+                <div class=" phlu-corporate-image">
+                    <div class="row">
+                        <f:for each="{item}" as="col" iteration="coliterator">
+                            <div class="{itemClass}">
+                                <div class="img-and-caption">
+                                    <a href="{typo3.media:uri.image(image: col.properties.image)}"
+                                       title="{col.properties.title}">
+                                        <img src="{typo3.media:uri.image(image: col.properties.image)}"
+                                             class="img-fluid">
+                                    </a>
+                                    <div class="caption">
+                                       <span>
+                                          {col.properties.title}
+                                       </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </f:for>
+                    </div>
                 </div>
             </div>
         </f:for>
     </div>
-
-    <a class="left carousel-control" href="#{targetId}" role="button" data-slide="prev">
-                            <span class="icon-prev" aria-hidden="true"></span>
-
-        <span class="sr-only">Previous</span>
-    </a>
-
-    <a class="right carousel-control" href="#{targetId}" role="button" data-slide="next">
-                            <span class="icon-next" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-
+    <f:if condition="{carouselItems}">
+        <a class="left carousel-control" href="#{targetId}" role="button" data-slide="prev">
+            <span class="icon-prev" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#{targetId}" role="button" data-slide="next">
+            <span class="icon-next" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </f:if>
 </f:section>
-
-
-
 <f:section name="indicators">
     <ol class="carousel-indicators">
         <f:for each="{phlu:SpliceArray(items: carouselItems, spliceNum:spliceNum)}" as="item" iteration="iterator">
@@ -96,4 +98,23 @@
         </f:for>
     </ol>
 </f:section>
+<f:section name="imageGallery">
 
+    <div id="blueimpgallery" class="row">
+        <f:for each="{imageGalleryItems}" as="item" iteration="iterator">
+            <div class="col-xs-12 col-sm-6 ">
+                <a href="{typo3.media:uri.image(image: item.properties.image)}"
+                   title="{item.properties.title}">
+                    <img src="{typo3.media:uri.image(image: item.properties.image)}"
+                         class="img-fluid">
+                </a>
+                <div class="caption">
+                                       <span>
+                                          {item.properties.title}
+                                       </span>
+                </div>
+            </div>
+        </f:for>
+    </div>
+
+</f:section>

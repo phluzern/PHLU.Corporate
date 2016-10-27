@@ -17,10 +17,16 @@ prototype(PHLU.Corporate:Content) < prototype(TYPO3.Neos:Content) {
 prototype(PHLU.Corporate:TextWithImage) {
     width = 237
     height = 336
+	attributes.class = 'img-fluid'
 }
 
 # Default Text with Image
 prototype(PHLU.Corporate:Image) {
-    width = 800
-    height = 1600
+
 }
+
+# Default Text with Image
+prototype(PHLU.Corporate:CarouselImage) < prototype(PHLU.Corporate:Image) {
+	templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Image.html'
+}
+
