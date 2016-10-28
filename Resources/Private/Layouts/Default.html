@@ -18,7 +18,8 @@
         <link rel="stylesheet"
               href="{f:uri.resource(path: 'Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.css', package: 'PHLU.Corporate')}"
               media="all"/>
-        <link rel="stylesheet" href="{f:uri.resource(path: 'blueimp/css/blueimp-gallery.css', package: 'PHLU.Corporate')}" media="all"/>
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'blueimp/css/blueimp-gallery.css', package: 'PHLU.Corporate')}" media="all"/>
         <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/phlu.css', package: 'PHLU.Corporate')}" media="all"/>
         <link rel="stylesheet"
               href="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css', package: 'PHLU.Corporate')}"
@@ -35,7 +36,8 @@
         <script src="{f:uri.resource(path: 'Vendor/angularfire/dist/angularfire.min.js', package: 'Neoslive.Hybridsearch')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/angular-sanitize/angular-sanitize.min.js', package: 'Neoslive.Hybridsearch')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'Neoslive.Hybridsearch')}"></script>
-
+        <script src="{f:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'PHLU.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
 
     </f:section>
 
@@ -195,8 +197,6 @@
 </f:section>
 <f:section name="bodyScripts">
     <!-- Put your scripts inclusions for the end of the body here, they will be included in your website by TypoScript -->
-    <script src="{f:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
     <script src="{f:uri.resource(path: 'blueimp/js/blueimp-gallery.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/jquery/jquery.mobile.custom.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'PHLU.Corporate')}"></script>
@@ -211,7 +211,6 @@
     <script src="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/locales/bootstrap-datepicker.de.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/jquery/main.js', package: 'PHLU.Corporate')}"></script>
-
 
     <f:if condition="{neos:rendering.inBackend()}">
         <f:then>
