@@ -14,7 +14,7 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         .setQuery("search", $scope)
         .addPropertyFilter('title', '', null, true)
         .addPropertyFilter('lifetime', 'lifetime', $scope)
-        .addNodesByNodeTypes(['phlu-neos-nodetypes-project'])
+        .setNodeType('phlu-neos-nodetypes-project')
         .$bind('result', $scope);
 
 
