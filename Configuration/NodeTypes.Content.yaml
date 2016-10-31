@@ -396,6 +396,16 @@
       groups:
         general:
           label: 'Auswahl Einzelne Projekte'
+        researchfocus:
+          label: 'Forschungsschwerpunkte'
+        financing:
+          label: 'Finanzierungstyp'
+        projectparticipants:
+          label: 'Projektbeteiligte Personen'
+        projectstate:
+          label: 'Projektstatus'
+        projectenddate:
+          label: 'Projektende'
   constraints:
     nodeTypes:
       '*': FALSE
@@ -403,6 +413,83 @@
     title:
       type: string
       defaultValue: 'Titel'
+    researchfocustype:
+      type: array
+      ui:
+        label: 'Forschungsschwerpunkte'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'researchfocus'
+          position: 50
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              filter1:
+                label: 'Schule und Heterogenität'
+              filter2:
+                label: 'Inklusion und integrative Schulung'
+              filter3:
+                label: '...'
+    financingtype:
+      type: array
+      ui:
+        label: 'Finanzierungstyp'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'financing'
+          position: 50
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              filter1:
+                label: 'KTI'
+              filter2:
+                label: 'SNF'
+              filter3:
+                label: '...'
+    projectparticipantnames:
+      type: array
+      ui:
+        label: 'Projektbeteiligte Personen'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'projectparticipants'
+          position: 50
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              filter1:
+                label: 'Adrian Felder'
+              filter2:
+                label: 'SNF'
+              filter3:
+                label: '...'
+    projectstatetype:
+      type: array
+      ui:
+        label: 'Projektstatus'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'projectstate'
+          position: 50
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              filter1:
+                label: 'abgeschlossen'
+              filter2:
+                label: 'laufend'
+    projectenddate:
+      type: DateTime
+      defaultValue: 'today midnight'
+      ui:
+        label: 'Projektende'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'projectenddate'
+          position: 50
+          editorOptions:
+            format: 'd.m.Y'
     reference:
       type: references
       ui:
@@ -413,80 +500,15 @@
           position: 50
           editorOptions:
             nodeTypes: ['PHLU.Neos.NodeTypes:Project']
+    showSearchInput:
+      type: boolean
+      ui:
+        label: 'Suchfeld und Filter anzeigen'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+          position: 90
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.ProjectsList'
-
-# Projects Filter
-'PHLU.Corporate:ProjectsFilter':
-  superTypes:
-    'PHLU.Corporate:Content': TRUE
-  ui:
-    label: 'Projekte Filter'
-    inlineEditable: true
-    icon: icon-filter
-    inspector:
-      groups:
-        general:
-          label: 'Auswahlkriterium'
-  constraints:
-    nodeTypes:
-      '*': FALSE
-  properties:
-    filterType:
-      type: array
-      ui:
-        label: 'Filtertyp'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'general'
-          position: 50
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            values:
-              filter1:
-                label: 'Forschungsschwerpunkte'
-              filter2:
-                label: 'Finanzierungstyp'
-              filter3:
-                label: 'Projektbeteiligte Personen'
-              filter4:
-                label: 'Projektstatus'
-              filter5:
-                label: 'Projektende'
-  childNodes: ~
-
-
-
-# Projects Selector
-'PHLU.Corporate:ProjectsSelector':
-  superTypes:
-    'PHLU.Corporate:Content': TRUE
-  ui:
-    label: 'Projekte Auswahl'
-    inlineEditable: true
-    icon: icon-check-square-o
-    inspector:
-      groups:
-        general:
-          label: 'Auswahlkriterium'
-  constraints:
-    nodeTypes:
-      '*': FALSE
-  properties:
-    title:
-      type: string
-      defaultValue: 'Titel'
-    reference:
-      type: references
-      ui:
-        label: 'Projekte aus Abteilung'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'general'
-          position: 50
-          editorOptions:
-            nodeTypes: ['PHLU.Neos.NodeTypes:Project']
-  childNodes: ~
-
 

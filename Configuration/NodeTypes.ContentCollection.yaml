@@ -198,8 +198,6 @@
   constraints:
     nodeTypes:
       '*': FALSE
-      'PHLU.Corporate:ProjectsFilter': TRUE
-      'PHLU.Corporate:ProjectsSelector': TRUE
 
 
 
