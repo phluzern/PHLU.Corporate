@@ -43,6 +43,7 @@
       'PHLU.Qmpilot.NodeTypes:File': TRUE
       'PHLU.Corporate:Table': TRUE
       'PHLU.Corporate:MediaGallery': TRUE
+      'PHLU.Corporate:ProjectsList': TRUE
 
 
 
@@ -190,6 +191,15 @@
     nodeTypes:
       '*': FALSE
       'PHLU.Corporate:CarouselImage': TRUE
+
+'PHLU.Corporate:ContentCollection.ProjectsList':
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
+      'PHLU.Corporate:ProjectsFilter': TRUE
+      'PHLU.Corporate:ProjectsSelector': TRUE
 
 
 

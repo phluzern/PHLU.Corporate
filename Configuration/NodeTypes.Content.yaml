@@ -117,11 +117,7 @@
       type: 'PHLU.Corporate:Content.Page.HeaderDefault'
 
 
-
-
-
-
-# Accorden default
+# Accordeon default
 'PHLU.Corporate:Section':
   superTypes:
     'PHLU.Neos.NodeTypes:Content': TRUE
@@ -152,8 +148,7 @@
       type: 'PHLU.Corporate:ContentCollection.Section'
 
 
-
-# Accorden default
+# Accordeon default
 'PHLU.Corporate:AccordeonElement':
   superTypes:
     'PHLU.Neos.NodeTypes:Content': TRUE
@@ -171,7 +166,6 @@
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Accordeon'
-
 
 
 # headline
@@ -252,6 +246,7 @@
         aloha:
           autoparagraph: FALSE
 
+
 # Text with image
 'PHLU.Corporate:TextWithImage':
   superTypes:
@@ -311,6 +306,7 @@
                   width: 237
                   height: 336
 
+
 # Image
 'PHLU.Corporate:Image':
   superTypes:
@@ -320,6 +316,7 @@
     label: 'Bild'
     icon: 'icon-picture'
     position: 400
+
 
 # Medien Galerie
 'PHLU.Corporate:MediaGallery':
@@ -365,7 +362,7 @@
     main:
       type: 'PHLU.Corporate:ContentCollection.MediaGallery'
 
-# Image
+# CarouselImage (locked aspect ratio)
 'PHLU.Corporate:CarouselImage':
   superTypes:
     'PHLU.Corporate:Image': TRUE
@@ -385,3 +382,111 @@
                 locked:
                   width: 900
                   height: 530
+
+
+# Projects list
+'PHLU.Corporate:ProjectsList':
+  superTypes:
+    'PHLU.Corporate:Content': TRUE
+  ui:
+    label: 'Projekte anzeigen'
+    inlineEditable: true
+    icon: icon-product-hunt
+    inspector:
+      groups:
+        general:
+          label: 'Auswahl Einzelne Projekte'
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  properties:
+    title:
+      type: string
+      defaultValue: 'Titel'
+    reference:
+      type: references
+      ui:
+        label: 'Projektname'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+          position: 50
+          editorOptions:
+            nodeTypes: ['PHLU.Neos.NodeTypes:Project']
+  childNodes:
+    main:
+      type: 'PHLU.Corporate:ContentCollection.ProjectsList'
+
+# Projects Filter
+'PHLU.Corporate:ProjectsFilter':
+  superTypes:
+    'PHLU.Corporate:Content': TRUE
+  ui:
+    label: 'Projekte Filter'
+    inlineEditable: true
+    icon: icon-filter
+    inspector:
+      groups:
+        general:
+          label: 'Auswahlkriterium'
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  properties:
+    filterType:
+      type: array
+      ui:
+        label: 'Filtertyp'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+          position: 50
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              filter1:
+                label: 'Forschungsschwerpunkte'
+              filter2:
+                label: 'Finanzierungstyp'
+              filter3:
+                label: 'Projektbeteiligte Personen'
+              filter4:
+                label: 'Projektstatus'
+              filter5:
+                label: 'Projektende'
+  childNodes: ~
+
+
+
+# Projects Selector
+'PHLU.Corporate:ProjectsSelector':
+  superTypes:
+    'PHLU.Corporate:Content': TRUE
+  ui:
+    label: 'Projekte Auswahl'
+    inlineEditable: true
+    icon: icon-check-square-o
+    inspector:
+      groups:
+        general:
+          label: 'Auswahlkriterium'
+  constraints:
+    nodeTypes:
+      '*': FALSE
+  properties:
+    title:
+      type: string
+      defaultValue: 'Titel'
+    reference:
+      type: references
+      ui:
+        label: 'Projekte aus Abteilung'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+          position: 50
+          editorOptions:
+            nodeTypes: ['PHLU.Neos.NodeTypes:Project']
+  childNodes: ~
+
+

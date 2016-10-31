@@ -1,0 +1,44 @@
+# Content
+prototype(PHLU.Corporate:ProjectsList) < prototype(PHLU.Corporate:Content) {
+
+	templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/ProjectsList.html'
+
+	collectionRenderer = PHLU.Corporate:ContentCollection.ProjectsList
+	main = ${q(node).children('main').get(0)}
+
+	carouselItems = ${q(node).children('main').children().get()}
+
+}
+
+
+# Media Gallery content collection
+prototype(PHLU.Corporate:ContentCollection.ProjectsList) < prototype(TYPO3.Neos:ContentCollection) {
+
+	attributes.class = 'row'
+
+
+	@cache {
+		mode = 'uncached'
+		context {
+			1 = 'node'
+			2 = 'documentNode'
+		}
+	}
+
+}
+
+prototype(PHLU.Corporate:ProjectsSelector) < prototype(PHLU.Corporate:Content) {
+
+	templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/ProjectsSelector.html'
+
+	main = ${q(node).children('main').get(0)}
+
+}
+
+prototype(PHLU.Corporate:ProjectsFilter) < prototype(PHLU.Corporate:Content) {
+
+	templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/ProjectsFilter.html'
+
+	main = ${q(node).children('main').get(0)}
+
+}

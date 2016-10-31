@@ -35,3 +35,5 @@ prototype(PHLU.Corporate:ContentCollection.Page.Service) < prototype(PHLU.Corpor
 }
 prototype(PHLU.Corporate:ContentCollection.MediaGallery) < prototype(PHLU.Corporate:ContentCollection)  {
 }
+prototype(PHLU.Corporate:ContentCollection.ProjectsList) < prototype(PHLU.Corporate:ContentCollection)  {
+}
