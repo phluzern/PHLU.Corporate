@@ -80,6 +80,7 @@
       'PHLU.Corporate:Contacts': TRUE
       'PHLU.Corporate:Table': TRUE
       'PHLU.Qmpilot.NodeTypes:File': TRUE
+      'PHLU.Corporate:ProjectsList': TRUE
   ui:
     label: 'Allgemein'
     icon: icon-gear
