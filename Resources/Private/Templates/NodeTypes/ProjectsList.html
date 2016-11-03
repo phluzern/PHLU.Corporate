@@ -10,36 +10,57 @@
         <span data-ng-init="list.addNodesByIdentifier(['{project.Identifier}']);"></span>
     </f:for>
 
-    <f:if condition="{researchmainfocus} != 'null'"><span
-            data-ng-init="list.addPropertyFilter('researchmainfocus',{researchfocustype});"></span></f:if>
-    <f:if condition="{financingtype} != 'null'"><span
-            data-ng-init="list.addPropertyFilter('financingtypes',{financingtype});"></span></f:if>
-    <f:if condition="{ppdbstatuslifetime} != 'null'"><span
-            data-ng-init="setFilterLifetime({ppdbstatuslifetime});"></span></f:if>
-    <f:if condition="{projectparticipants} != 'null'"><span
-            data-ng-init="list.addPropertyFilter('participants.*.EventoID',{projectparticipants});"></span></f:if>
+    <f:if condition="{showSearchInput}">
+        <f:then>
 
+            <f:if condition="!{researchmainfocus}">
+
+                <span
+                    data-ng-init="addPropertyFilter('researchmainfocus','researchmainfocus');"></span></f:if>
+            <f:if condition="!{financingtype}"><span
+                    data-ng-init="addPropertyFilter('financingtype','financingtype');"></span></f:if>
+            <f:if condition="!{ppdbstatuslifetime}"><span
+                    data-ng-init="addPropertyFilter('ppdbstatuslifetime','ppdbstatuslifetime');"></span></f:if>
+            <f:if condition="!{projectparticipants}"><span
+                    data-ng-init="addPropertyFilter('projectparticipants','projectparticipants');"></span></f:if>
+
+        </f:then>
+        <f:else>
+            <f:if condition="{researchmainfocus} != 'null'"><span
+                    data-ng-init="list.addPropertyFilter('researchmainfocus',{researchfocustype});"></span></f:if>
+            <f:if condition="{financingtype} != 'null'"><span
+                    data-ng-init="list.addPropertyFilter('financingtypes',{financingtype});"></span></f:if>
+            <f:if condition="{ppdbstatuslifetime} != 'null'"><span
+                    data-ng-init="setFilterLifetime({ppdbstatuslifetime});"></span></f:if>
+            <f:if condition="{projectparticipants} != 'null'"><span
+                    data-ng-init="list.addPropertyFilter('participants.*.EventoID',{projectparticipants});"></span>
+            </f:if>
+        </f:else>
+    </f:if>
 
     <div class="col-xs-12">
         <f:if condition="{showSearchInput}">
             <div class="row subjectsfilternav">
                 <div class="col-xs-12">
                     <ul class="nav nav-pills" role="tablist">
-                        <li class="nav-item clickable ">
-                            <a class=" nav-link" data-toggle="pill" href="#researchfocus" role="pill">
+                        <li class="nav-item" data-ng-show="result.getDistinctCount('researchmainfocus') > 0">
+                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                               data-target="#researchfocus-{node.Identifier}" role="tab">
                                 <i class="fa fa-flask" aria-hidden="true"></i>
                                 <span>Forschungsschwerpunkte</span>
 
                             </a>
                         </li>
-                        <li class="nav-item clickable">
-                            <a class=" nav-link" data-toggle="pill" href="#financing" role="pill">
+                        <li class="nav-item" data-ng-show="result.getDistinctCount('financingtype') > 0">
+                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                               data-target="#financing-{node.Identifier}" role="tab">
                                 <i class="fa fa-usd" aria-hidden="true"></i>
                                 <span>Finanzierungstyp</span>
                             </a>
                         </li>
-                        <li class="nav-item clickable ">
-                            <a class=" nav-link" data-toggle="pill" href="#projectparticipants" role="pill">
+                        <li class="nav-item" data-ng-show="result.getDistinctCount('projectparticipants') > 0">
+                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                               data-target="#projectparticipants-{node.Identifier}" role="tab">
                                 <i class="fa fa-users" aria-hidden="true"></i>
                                 <span data-toggle="filterCountTag"
                                       data-template='<div class="tooltip filterCountTag" role="tooltip"><span class="tooltip-inner"></span><span class="oi oi-media-record"></span></div>'
@@ -48,14 +69,16 @@
                                       data-trigger="manual">Projektbeteiligte Personen</span>
                             </a>
                         </li>
-                        <li class="nav-item clickable ">
-                            <a class=" nav-link" data-toggle="pill" href="#projectstate" role="pill">
+                        <li class="nav-item" data-ng-show="result.getDistinctCount('ppdbstatuslifetime') > 0">
+                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                               data-target="#projectstate-{node.Identifier}" role="tab">
                                 <i class="fa fa-hourglass-start" aria-hidden="true"></i>
                                 <span>Projektstatus</span>
                             </a>
                         </li>
-                        <li class="nav-item clickable ">
-                            <a class=" nav-link" data-toggle="pill" href="#projectenddate" role="pill">
+                        <li class="nav-item" data-ng-show="result.getDistinctCount('projectend') > 0">
+                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                               data-target="#projectenddate-{node.Identifier}" role="tab">
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
                                 <span>Projektende</span>
                             </a>
@@ -64,113 +87,56 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="tab-content">
-                        <div class="result-panel tab-pane " id="researchfocus" role="tabpanel">
-                            <!--<a href="#" class="close-btn">schliessen</a>-->
+                        <div class="result-panel tab-pane " id="researchfocus-{node.Identifier}" role="tabpanel"
+                             data-ng-show="result.getDistinctCount('researchmainfocus') > 0">
+                            <!--<a href="#" class="close-btn">&nbsp;</a>-->
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                    <tr data-ng-class="{checked: researchmainfocus[lt]}"
+                                        data-ng-repeat="(lt,count) in result.getDistinct('researchmainfocus')">
+                                        <td><i class="fa"
+                                               data-ng-class="{'fa-check-square-o': researchmainfocus[lt],'fa-square-o': !researchmainfocus[lt]}"
+                                               aria-hidden="true"></i></td>
                                         <td>
-                                            <a href="#">
-                                                Schule und Heterogenität
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Inklusion und integrative Schulung
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Kulturelle Vielfalt und Mehrsprachigkeit
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Schulentwicklung und -qualität
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Diagnostik, Beurteilung und adaptives Lernen
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Sozio-emotionales Lernen
+                                            <a href="javascript:void(0);"
+                                               data-ng-click="researchmainfocus[lt] = !researchmainfocus[lt] ? true : false;">
+                                                {{lt}} ({{count}})
                                             </a>
                                         </td>
                                     </tr>
                                     </tbody>
                                 </table>
                             </div>
+                            <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                         </div>
-                        <div class="result-panel tab-pane " id="financing" role="tabpanel">
-                            <!--<a href="#" class="close-btn">schliessen</a>-->
+
+                        <div class="result-panel tab-pane " id="financing-{node.Identifier}" role="tabpanel"
+                             data-ng-show="result.getDistinctCount('financingtype') > 0">
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+
+                                    <tr data-ng-class="{checked: financingtype[lt]}"
+                                        data-ng-repeat="(lt,count) in result.getDistinct('financingtype')">
+                                        <td><i class="fa"
+                                               data-ng-class="{'fa-check-square-o': financingtype[lt],'fa-square-o': !financingtype[lt]}"
+                                               aria-hidden="true"></i></td>
                                         <td>
-                                            <a href="#">
-                                                KTI
+                                            <a href="javascript:void(0);"
+                                               data-ng-click="financingtype[lt] = !financingtype[lt] ? true : false;">
+                                                {{lt}} ({{count}})
                                             </a>
                                         </td>
                                     </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                SNF
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Ressortforschung des Bundes
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Europäische Forschungsprogramme
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Forschungsförderung PH Luzern
-                                            </a>
-                                        </td>
-                                    </tr>
+
+
                                     </tbody>
                                 </table>
                             </div>
+                            <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                         </div>
-                        <div class="result-panel tab-pane " id="projectparticipants" role="tabpanel">
+                        <div class="result-panel tab-pane " id="projectparticipants-{node.Identifier}" role="tabpanel">
                             <div class="dropdown-search-field">
                                 <input type="text" class="c-input form-control">
                                 <i class="fa fa-search" aria-hidden="true"></i>
@@ -355,8 +321,10 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                         </div>
-                        <div class="result-panel tab-pane " id="projectstate" role="tabpanel">
+                        <div class="result-panel tab-pane " id="projectstate-{node.Identifier}" role="tabpanel"
+                             data-ng-show="result.getDistinctCount('ppdbstatuslifetime') > 0">
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
@@ -374,10 +342,13 @@
                                     </tr>
                                     </tbody>
                                 </table>
+                                <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                             </div>
                         </div>
-                        <div class="result-panel tab-pane " id="projectenddate" role="tabpanel">
+                        <div class="result-panel tab-pane " id="projectenddate-{node.Identifier}" role="tabpanel"
+                             data-ng-show="result.getDistinctCount('projectend') > 0">
                             <div id="datepicker"></div>
+                            <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                         </div>
                     </div>
 
@@ -420,7 +391,6 @@
                         <tr class="result-preview" data-ng-show="node.isopen">
                             <td colspan="2">
                                 <div>
-                                    ({{node.getProperty('participants.Co-Projektleitung.EventoID')}})
                                     <div ng-bind-html="node.getProperty('abstracttextgerman').substr(0,255) + '...'"></div>
                                     <a class="btn btn-primary" href="{{node.getUrl()}}">
                                         Details

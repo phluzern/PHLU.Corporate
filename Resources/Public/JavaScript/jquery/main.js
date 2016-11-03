@@ -11,6 +11,14 @@ $(document).ready(function () {
         return false;
     });
 
+    /* close tabs in pane */
+    $('.tab-pane .close-btn').click(function (event) {
+        $("a[data-target='#" + $(this).closest('.tab-pane').attr('id') + "']").removeClass('active');
+        $(this).closest('.tab-pane').removeClass('active');
+        event.preventDefault();
+        return false;
+    });
+
     /* set default paused carousel */
     $('.carousel').carousel('pause');
 
@@ -57,7 +65,7 @@ $(document).ready(function () {
     /* top link nav */
     $(window).scroll(function () {
         spaceToTop = $(window).scrollTop();
-       // $('[data-spy="scroll"]').scrollspy('refresh');
+        // $('[data-spy="scroll"]').scrollspy('refresh');
         if (spaceToTop > $(window).height()) {
             $('#top-link-block').fadeIn('slow');
         }
@@ -128,52 +136,52 @@ $(document).ready(function () {
     /*
      * tablesaw set colspan
      */
-/*    var tableSawSetColspan = function () {
-        var hiddenCellCount = 0,
-            colCount = 0,
-            colspanVal = 0,
-            tablesawInit = false;
-        if ($(window).outerWidth() < 768) {
+    /*    var tableSawSetColspan = function () {
+     var hiddenCellCount = 0,
+     colCount = 0,
+     colspanVal = 0,
+     tablesawInit = false;
+     if ($(window).outerWidth() < 768) {
 
-            $('.table-phlu-saw').find("table").each(function () {
+     $('.table-phlu-saw').find("table").each(function () {
 
-                $(this).attr('data-tablesaw-mode', 'swipe');
-                $(this).find('thead tr th:first').attr('data-tablesaw-priority', 'persist');
-                if (!tablesawInit) {
-                    $(document).trigger("enhance.tablesaw");
-                }
-                hiddenCellCount = $(this).find('thead .tablesaw-cell-hidden').length;
-                colCount = $(this).find('thead tr th').length;
-                colspanVal = colCount - hiddenCellCount;
-                $(this).find('tbody td[colspan]').each(function (i, obj) {
-                    if (!$(obj).attr('data-colspan')) {
-                        $(obj).attr('data-colspan',$(obj).attr('colspan'));
-                    }
-                    $(obj).attr('colspan', colspanVal);
-                });
-            });
-
-
-        }
-        else {
+     $(this).attr('data-tablesaw-mode', 'swipe');
+     $(this).find('thead tr th:first').attr('data-tablesaw-priority', 'persist');
+     if (!tablesawInit) {
+     $(document).trigger("enhance.tablesaw");
+     }
+     hiddenCellCount = $(this).find('thead .tablesaw-cell-hidden').length;
+     colCount = $(this).find('thead tr th').length;
+     colspanVal = colCount - hiddenCellCount;
+     $(this).find('tbody td[colspan]').each(function (i, obj) {
+     if (!$(obj).attr('data-colspan')) {
+     $(obj).attr('data-colspan',$(obj).attr('colspan'));
+     }
+     $(obj).attr('colspan', colspanVal);
+     });
+     });
 
 
+     }
+     else {
 
-            $('.table-phlu-saw').find("table.tablesaw-swipe").each(function () {
-                $(this).data('table').destroy();
-                colCount = $(this).find('thead tr th').length;
-                $(this).find('tbody td[colspan]').each(function (i, obj) {
-                    $(obj).attr('colspan', $(obj).attr('data-colspan'));
-                });
 
-            });
-        }
-    };
 
-    if ($('.table-phlu-saw').length) {
-        $(window).resize(tableSawSetColspan);
-        tableSawSetColspan();
-    }*/
+     $('.table-phlu-saw').find("table.tablesaw-swipe").each(function () {
+     $(this).data('table').destroy();
+     colCount = $(this).find('thead tr th').length;
+     $(this).find('tbody td[colspan]').each(function (i, obj) {
+     $(obj).attr('colspan', $(obj).attr('data-colspan'));
+     });
+
+     });
+     }
+     };
+
+     if ($('.table-phlu-saw').length) {
+     $(window).resize(tableSawSetColspan);
+     tableSawSetColspan();
+     }*/
 
     /*
      * mobile navigation button icon bootstrap collapse
@@ -228,8 +236,8 @@ $(document).ready(function () {
     };
 
     /*
-    * Datepicker
-    */
+     * Datepicker
+     */
     $('#datepicker').datepicker({
         startDate: '0d',
         language: 'de',
@@ -250,17 +258,17 @@ $(document).ready(function () {
     /*
      * media carousel swipe for mobile
      */
-    $(".carousel").swiperight(function() {
+    $(".carousel").swiperight(function () {
         $(this).carousel('prev');
     });
-    $(".carousel").swipeleft(function() {
+    $(".carousel").swipeleft(function () {
         $(this).carousel('next');
     });
 
     /*
      * image gallery lightbox
      */
-    $("#blueimpgallery").on('click', function(event) {
+    $("#blueimpgallery").on('click', function (event) {
         event = event || window.event;
         var target = event.target || event.srcElement,
             link = target.src ? target.parentNode : target,

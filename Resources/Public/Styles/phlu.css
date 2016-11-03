@@ -9565,21 +9565,20 @@ body {
       background-color: #55696d;
       color: white;
       padding: 5px 0; }
-      body .all .ppdb-list .subjectsfilternav .result-panel::after, body .all .further-education-list .subjectsfilternav .result-panel::after {
+      body .all .ppdb-list .subjectsfilternav .result-panel .close-btn, body .all .further-education-list .subjectsfilternav .result-panel .close-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
         font-family: FontAwesome;
-        content: " \00D7";
         font-size: 30px;
+        height: 50px;
+        width: 50px;
         position: absolute;
         right: 15px;
         bottom: -53px;
         background-color: #55696d;
-        padding: 0 15px 5px; }
-      body .all .ppdb-list .subjectsfilternav .result-panel .close-btn, body .all .further-education-list .subjectsfilternav .result-panel .close-btn {
-        position: absolute;
-        right: 45px;
-        top: 5px;
-        color: white;
-        font-size: 12px; }
+        padding: 2px 14px 0px;
+        color: white; }
       body .all .ppdb-list .subjectsfilternav .result-panel .table, body .all .further-education-list .subjectsfilternav .result-panel .table {
         margin-bottom: 0; }
         body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td {
@@ -9607,46 +9606,43 @@ body {
           border-bottom: 0; }
         body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr:first-child td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr:first-child td {
           border-top: 0; }
-    body .all .ppdb-list .results-table, body .all .further-education-list .results-table {
-      margin-top: 50px;
-      margin-bottom: 105px; }
-      body .all .ppdb-list .results-table a, body .all .further-education-list .results-table a {
-        color: #5c5c5c; }
-      body .all .ppdb-list .results-table .table-responsive .table .oi-caret-bottom, body .all .ppdb-list .results-table .table-responsive .table .oi-caret-right, body .all .further-education-list .results-table .table-responsive .table .oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table .oi-caret-right {
-        font-size: 12px; }
-      body .all .ppdb-list .results-table .table-responsive .table tbody tr td, body .all .further-education-list .results-table .table-responsive .table tbody tr td {
-        padding-right: 20px; }
-        body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child {
-          padding-right: 0;
-          border-left: 0; }
-          body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span {
-            display: table-cell;
-            overflow-x: hidden; }
-            body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom {
-              width: 30px; }
-              @media (max-width: 543px) {
-                body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom {
-                  width: 20px; } }
-        body .all .ppdb-list .results-table .table-responsive .table tbody tr td:last-child, body .all .further-education-list .results-table .table-responsive .table tbody tr td:last-child {
-          border-right: 0; }
-      body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td {
-        border-bottom: 3px solid #ba1541; }
-        body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div {
-          margin-left: 30px;
-          margin-bottom: 31px; }
-          @media (max-width: 543px) {
-            body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div {
-              margin-left: 20px; } }
-          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div p {
-            font-size: 1rem; }
-          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn {
-            color: white;
-            background-color: #55696d; }
-        body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header {
-          padding-left: 0; }
-      body .all .ppdb-list .results-table .table-responsive .table tbody tr.open td, body .all .further-education-list .results-table .table-responsive .table tbody tr.open td {
-        border-top: 3px solid #ba1541;
-        border-bottom: 0; }
+    body .all .ppdb-list .results-table a, body .all .further-education-list .results-table a {
+      color: #5c5c5c; }
+    body .all .ppdb-list .results-table .table-responsive .table .oi-caret-bottom, body .all .ppdb-list .results-table .table-responsive .table .oi-caret-right, body .all .further-education-list .results-table .table-responsive .table .oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table .oi-caret-right {
+      font-size: 12px; }
+    body .all .ppdb-list .results-table .table-responsive .table tbody tr td, body .all .further-education-list .results-table .table-responsive .table tbody tr td {
+      padding-right: 20px; }
+      body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child {
+        padding-right: 0;
+        border-left: 0; }
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span {
+          display: table-cell;
+          overflow-x: hidden; }
+          body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom {
+            width: 30px; }
+            @media (max-width: 543px) {
+              body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom {
+                width: 20px; } }
+      body .all .ppdb-list .results-table .table-responsive .table tbody tr td:last-child, body .all .further-education-list .results-table .table-responsive .table tbody tr td:last-child {
+        border-right: 0; }
+    body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td {
+      border-bottom: 3px solid #ba1541; }
+      body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div {
+        margin-left: 30px;
+        margin-bottom: 31px; }
+        @media (max-width: 543px) {
+          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div {
+            margin-left: 20px; } }
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div p {
+          font-size: 1rem; }
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn {
+          color: white;
+          background-color: #55696d; }
+      body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header {
+        padding-left: 0; }
+    body .all .ppdb-list .results-table .table-responsive .table tbody tr.open td, body .all .further-education-list .results-table .table-responsive .table tbody tr.open td {
+      border-top: 3px solid #ba1541;
+      border-bottom: 0; }
     body .all .phlu-locations .row.subjectsfilternav .nav-pills {
       margin-bottom: 31px; }
       body .all .phlu-locations .row.subjectsfilternav .nav-pills li a.nav-link {
