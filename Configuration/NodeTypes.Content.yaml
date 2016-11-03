@@ -423,13 +423,9 @@
           position: 50
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
-            values:
-              filter1:
-                label: 'Schule und Heterogenität'
-              filter2:
-                label: 'Inklusion und integrative Schulung'
-              filter3:
-                label: '...'
+            dataSourceIdentifier: 'phlu-corporate-projects'
+            dataSourceAdditionalData:
+              property: 'researchfocustype'
     financingtype:
       type: array
       ui:
@@ -440,13 +436,9 @@
           position: 50
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
-            values:
-              filter1:
-                label: 'KTI'
-              filter2:
-                label: 'SNF'
-              filter3:
-                label: '...'
+            dataSourceIdentifier: 'phlu-corporate-projects'
+            dataSourceAdditionalData:
+              property: 'financingtype'
     projectparticipantnames:
       type: array
       ui:
@@ -457,14 +449,10 @@
           position: 50
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
-            values:
-              filter1:
-                label: 'Adrian Felder'
-              filter2:
-                label: 'SNF'
-              filter3:
-                label: '...'
-    projectstatetype:
+            dataSourceIdentifier: 'phlu-corporate-projects'
+            dataSourceAdditionalData:
+              property: 'projectparticipantnames'
+    ppdbstatuslifetime:
       type: array
       ui:
         label: 'Projektstatus'
@@ -474,11 +462,9 @@
           position: 50
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
-            values:
-              filter1:
-                label: 'abgeschlossen'
-              filter2:
-                label: 'laufend'
+            dataSourceIdentifier: 'phlu-corporate-projects'
+            dataSourceAdditionalData:
+              property: 'ppdbstatuslifetime'
     projectenddate:
       type: DateTime
       defaultValue: 'today midnight'
@@ -508,7 +494,3 @@
         inspector:
           group: 'general'
           position: 90
-  childNodes:
-    main:
-      type: 'PHLU.Corporate:ContentCollection.ProjectsList'
-
