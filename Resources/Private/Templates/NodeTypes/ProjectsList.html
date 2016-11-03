@@ -10,25 +10,17 @@
         <span data-ng-init="list.addNodesByIdentifier(['{project.Identifier}']);"></span>
     </f:for>
 
-    <f:if condition="{researchmainfocus} != 'null'"><span data-ng-init="list.addPropertyFilter('researchmainfocus',{researchfocustype});"></span></f:if>
-    <f:if condition="{financingtype} != 'null'"><span data-ng-init="list.addPropertyFilter('financingtypes',{financingtype});"></span></f:if>
-    <f:if condition="{ppdbstatuslifetime} != 'null'"><span data-ng-init="filterLifetime = {ppdbstatuslifetime};"></span></f:if>
-    <f:if condition="{projectparticipants} != 'null'"><span data-ng-init="list.addPropertyFilter('participants.*.EventoID',{projectparticipants});"></span></f:if>
-
+    <f:if condition="{researchmainfocus} != 'null'"><span
+            data-ng-init="list.addPropertyFilter('researchmainfocus',{researchfocustype});"></span></f:if>
+    <f:if condition="{financingtype} != 'null'"><span
+            data-ng-init="list.addPropertyFilter('financingtypes',{financingtype});"></span></f:if>
+    <f:if condition="{ppdbstatuslifetime} != 'null'"><span
+            data-ng-init="setFilterLifetime({ppdbstatuslifetime});"></span></f:if>
+    <f:if condition="{projectparticipants} != 'null'"><span
+            data-ng-init="list.addPropertyFilter('participants.*.EventoID',{projectparticipants});"></span></f:if>
 
 
     <div class="col-xs-12">
-        <div class="row ">
-            <div class="col-xs-12">
-                {neos:contentElement.editable(property: 'title', tag: 'h2')}
-                <f:if condition="{showSearchInput}">
-                    <div class="list-search-field">
-                        <input type="text" class="c-input form-control" data-ng-model="search">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </div>
-                </f:if>
-            </div>
-        </div>
         <f:if condition="{showSearchInput}">
             <div class="row subjectsfilternav">
                 <div class="col-xs-12">
@@ -365,7 +357,6 @@
                             </div>
                         </div>
                         <div class="result-panel tab-pane " id="projectstate" role="tabpanel">
-                            <!--<a href="#" class="close-btn">schliessen</a>-->
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
