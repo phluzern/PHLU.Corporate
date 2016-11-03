@@ -12,28 +12,5 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         .$bind('result',$scope)
 
 
-    $scope.$watch('filterLifetime',function(i) {
-        console.log($scope.list.$$app.getFilter());
-
-    });
-
-
-    //var search2 = new $hybridsearchObject(hybridsearch);
-    //$scope.result = new $hybridsearchResultsObject();
-    //$scope.lifetime = {};
-
-    // .addNodesByIdentifier(['fsdfsdf-fsdffsdf'.'fsdfsdfdf-fsdfsdfsdf'])
-    //search.setQuery("search", $scope).addPropertyFilter('title', '', null, true).addPropertyFilter('lifetime', 'lifetime', $scope).setNodeType('phlu-neos-nodetypes-project').$bind('result',$scope);
-
-
-    // search.setQuery("search", $scope)
-    //     .setQuery("search", $scope)
-    //     .addPropertyFilter('title', '', null, true)
-    //     .addPropertyFilter('lifetime', 'lifetime', $scope)
-    //     .setNodeType('phlu-neos-nodetypes-project')
-    //     .$bind('result', $scope);
-
-
-
 }]);
 
