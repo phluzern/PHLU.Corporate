@@ -13,14 +13,16 @@
     <f:if condition="{showSearchInput}">
         <f:then>
 
+
             <f:if condition="!{researchmainfocus}">
 
                 <span
-                    data-ng-init="addPropertyFilter('researchmainfocus','researchmainfocus');"></span></f:if>
+                        data-ng-init="addPropertyFilter('researchmainfocus','researchmainfocus');"></span></f:if>
             <f:if condition="!{financingtype}"><span
                     data-ng-init="addPropertyFilter('financingtype','financingtype');"></span></f:if>
-            <f:if condition="!{ppdbstatuslifetime}"><span
-                    data-ng-init="addPropertyFilter('ppdbstatuslifetime','ppdbstatuslifetime');"></span></f:if>
+            <f:if condition="!{ppdbstatuslifetime}">
+                <span
+                        data-ng-init="addPropertyFilter('lifetime','ppdbstatuslifetime');"></span></f:if>
             <f:if condition="!{projectparticipants}"><span
                     data-ng-init="addPropertyFilter('projectparticipants','projectparticipants');"></span></f:if>
 
@@ -38,8 +40,25 @@
         </f:else>
     </f:if>
 
-    <div class="col-xs-12">
-        <f:if condition="{showSearchInput}">
+    <f:if condition="{showSearchInput}">
+        <div class="col-xs-12">
+            <div class="row ">
+                <div class="col-xs-12">
+
+                    <div class="list-search-field">
+                        <input type="text" class="c-input form-control" data-ng-model="search">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <span
+                                data-ng-init="setQuery('search');"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </f:if>
+
+    <f:if condition="{showSearchInput}">
+        <div class="col-xs-12">
             <div class="row subjectsfilternav">
                 <div class="col-xs-12">
                     <ul class="nav nav-pills" role="tablist">
@@ -69,7 +88,7 @@
                                       data-trigger="manual">Projektbeteiligte Personen</span>
                             </a>
                         </li>
-                        <li class="nav-item" data-ng-show="result.getDistinctCount('ppdbstatuslifetime') > 0">
+                        <li class="nav-item" data-ng-show="result.getDistinctCount('lifetime') > 0">
                             <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                data-target="#projectstate-{node.Identifier}" role="tab">
                                 <i class="fa fa-hourglass-start" aria-hidden="true"></i>
@@ -324,7 +343,7 @@
                             <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                         </div>
                         <div class="result-panel tab-pane " id="projectstate-{node.Identifier}" role="tabpanel"
-                             data-ng-show="result.getDistinctCount('ppdbstatuslifetime') > 0">
+                             data-ng-show="result.getDistinctCount('lifetime') > 0">
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
@@ -354,7 +373,10 @@
 
                 </div>
             </div>
-        </f:if>
+        </div>
+    </f:if>
+
+    <div class="col-xs-12">
         <div class="row results-table">
             <div class="col-xs-12">
                 <f:if condition="{showSearchInput}"><h2>Treffer ({{result.count()}})</h2></f:if>

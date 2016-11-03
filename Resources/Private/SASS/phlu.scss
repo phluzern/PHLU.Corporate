@@ -2111,7 +2111,7 @@ body {
           padding: 5px 0;
 
           .close-btn {
-
+            z-index:9;
             display: inline-block;
             position: absolute;
             right: 0px;
@@ -2175,6 +2175,7 @@ body {
         }
       }
       .results-table {
+        z-index:8;
 
         a {
           color: $grey;

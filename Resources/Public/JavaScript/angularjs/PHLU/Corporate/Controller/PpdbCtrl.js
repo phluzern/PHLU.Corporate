@@ -14,6 +14,10 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         $scope.list.addPropertyFilter(property,value,$scope);
     }
 
+    $scope.setQuery = function(value) {
+        $scope.list.setQuery(value,$scope);
+    }
+
     $scope.setFilterLifetime = function(filterLifetime) {
         angular.forEach(filterLifetime, function (filter) {
             $scope.filterLifetime[filter] = true;
