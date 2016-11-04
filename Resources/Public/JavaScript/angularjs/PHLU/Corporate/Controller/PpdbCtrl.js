@@ -33,6 +33,32 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
 
 
-}])
-;
+}]);
 
+
+PHLUCorporateApp.filter('projectparticipantsFilter', function() {
+    return function(input, term) {
+
+        if (term === undefined || term == '') {
+            return input;
+        }
+
+        var collection = {};
+
+        angular.forEach(input, function (val, key) {
+
+
+
+            if (JSON.stringify(val.value).indexOf(term) >= 0) {
+                collection[key] = val;
+            }
+
+        });
+
+
+
+
+        return collection;
+
+    };
+})

@@ -9546,7 +9546,8 @@ body {
         background-color: #767676;
         display: inline-block;
         padding: 5px;
-        margin-top: 4px; }
+        margin-top: 4px;
+        margin-right: 10px; }
     body .all .ppdb-list .subjectsfilternav .nav-pills, body .all .further-education-list .subjectsfilternav .nav-pills {
       padding-bottom: 4px; }
       body .all .ppdb-list .subjectsfilternav .nav-pills li a.nav-link, body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link {
