@@ -2153,6 +2153,9 @@ body {
                     padding-left: 20px;
                   }
                 }
+                i.fa {
+                  margin-right:20px;
+                }
                 &.checked {
                   color: $olivegreen;
                   a {
@@ -2742,6 +2745,12 @@ body {
           tr:first-child {
             th, td {
               border-top: 4px solid $grey;
+            }
+            &.noborder {
+              th, td {
+                border-top:0;
+              }
+
             }
           }
           tr {

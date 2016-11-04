@@ -10,15 +10,15 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.projectparticipants = {};
     $scope.researchmainfocus = {};
 
-    $scope.addPropertyFilter = function(property,value) {
-        $scope.list.addPropertyFilter(property,value,$scope);
+    $scope.addPropertyFilter = function (property, value) {
+        $scope.list.addPropertyFilter(property, value, $scope);
     }
 
-    $scope.setQuery = function(value) {
-        $scope.list.setQuery(value,$scope);
+    $scope.setQuery = function (value) {
+        $scope.list.setQuery(value, $scope);
     }
 
-    $scope.setFilterLifetime = function(filterLifetime) {
+    $scope.setFilterLifetime = function (filterLifetime) {
         angular.forEach(filterLifetime, function (filter) {
             $scope.filterLifetime[filter] = true;
         });
@@ -29,8 +29,10 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         .addPropertyFilter('lifetime', 'filterLifetime', $scope)
         .setNodeType('phlu-neos-nodetypes-project')
         .addPropertyFilter('title', '', null, true)
-        .$bind('result',$scope)
+        .$bind('result', $scope);
 
 
-}]);
+
+}])
+;
 

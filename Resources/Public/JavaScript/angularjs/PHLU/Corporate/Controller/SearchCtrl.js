@@ -201,11 +201,12 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         if (i === '' && wasClosed == false) {
             $scope.siteSearchLastQuery = '';
             $scope.isSearch = false;
-            $(".sidebar.level1").show();
+            $(".sidebar").removeClass('siteSearchActive');
             $("body").removeClass('siteSearchActive');
         } else {
-            $(".sidebar.level1").hide();
+            $(".sidebar").addClass('siteSearchActive');
             $("body").addClass('siteSearchActive');
+            search.run();
         }
     });
 

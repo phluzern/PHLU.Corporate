@@ -112,15 +112,13 @@
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
-                                    <tr data-ng-class="{checked: researchmainfocus[lt]}"
-                                        data-ng-repeat="(lt,count) in result.getDistinct('researchmainfocus')">
-                                        <td><i class="fa"
-                                               data-ng-class="{'fa-check-square-o': researchmainfocus[lt],'fa-square-o': !researchmainfocus[lt]}"
-                                               aria-hidden="true"></i></td>
+                                    <tr data-ng-class="{checked: researchmainfocus[lt.value]}"
+                                        data-ng-repeat="(key,lt) in result.getDistinct('researchmainfocus')">
                                         <td>
                                             <a href="javascript:void(0);"
-                                               data-ng-click="researchmainfocus[lt] = !researchmainfocus[lt] ? true : false;">
-                                                {{lt}} ({{count}})
+                                               data-ng-click="researchmainfocus[lt.value] = !researchmainfocus[lt.value] ? true : false;">
+                                                <i class="fa" data-ng-class="{'fa-check-square-o': researchmainfocus[lt.value],'fa-square-o': !researchmainfocus[lt.value]}" aria-hidden="true"></i>
+                                                {{lt.value}} ({{lt.count}})
                                             </a>
                                         </td>
                                     </tr>
@@ -136,15 +134,15 @@
                                 <table class="table">
                                     <tbody>
 
-                                    <tr data-ng-class="{checked: financingtype[lt]}"
-                                        data-ng-repeat="(lt,count) in result.getDistinct('financingtype')">
-                                        <td><i class="fa"
-                                               data-ng-class="{'fa-check-square-o': financingtype[lt],'fa-square-o': !financingtype[lt]}"
-                                               aria-hidden="true"></i></td>
+                                    <tr data-ng-class="{checked: financingtype[lt.value]}"
+                                        data-ng-repeat="(key,lt) in result.getDistinct('financingtype')">
                                         <td>
                                             <a href="javascript:void(0);"
-                                               data-ng-click="financingtype[lt] = !financingtype[lt] ? true : false;">
-                                                {{lt}} ({{count}})
+                                               data-ng-click="financingtype[lt.value] = !financingtype[lt.value] ? true : false;">
+                                                <i class="fa"
+                                                   data-ng-class="{'fa-check-square-o': financingtype[lt.value],'fa-square-o': !financingtype[lt.value]}"
+                                                   aria-hidden="true"></i>
+                                                {{lt.value}} ({{lt.count}})
                                             </a>
                                         </td>
                                     </tr>
@@ -347,15 +345,15 @@
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
-                                    <tr data-ng-class="{checked: filterLifetime[lt]}"
-                                        data-ng-repeat="(lt,count) in result.getDistinct('lifetime')">
-                                        <td><i class="fa"
-                                               data-ng-class="{'fa-check-square-o': filterLifetime[lt],'fa-square-o': !filterLifetime[lt]}"
-                                               aria-hidden="true"></i></td>
+                                    <tr data-ng-class="{checked: filterLifetime[lt.value]}"
+                                        data-ng-repeat="(key,lt) in result.getDistinct('lifetime')">
                                         <td>
                                             <a href="javascript:void(0);"
-                                               data-ng-click="filterLifetime[lt] = !filterLifetime[lt] ? true : false;">
-                                                {{lt}} ({{count}})
+                                               data-ng-click="filterLifetime[lt.value] = !filterLifetime[lt.value] ? true : false;">
+                                                <i class="fa"
+                                                   data-ng-class="{'fa-check-square-o': filterLifetime[lt.value],'fa-square-o': !filterLifetime[lt.value]}"
+                                                   aria-hidden="true"></i>
+                                                {{lt.value}} ({{lt.count}})
                                             </a>
                                         </td>
                                     </tr>
@@ -428,4 +426,5 @@
             </div>
         </div>
     </div>
+    <span data-ng-init="list.run()"></span>
 </div>
