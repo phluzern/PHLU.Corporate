@@ -24,7 +24,7 @@
                 <span
                         data-ng-init="addPropertyFilter('lifetime','ppdbstatuslifetime');"></span></f:if>
             <f:if condition="!{projectparticipants}"><span
-                    data-ng-init="addPropertyFilter('projectparticipants','projectparticipants');"></span></f:if>
+                    data-ng-init="addPropertyFilter('participants.*.EventoID','projectparticipants');"></span></f:if>
 
         </f:then>
         <f:else>
@@ -35,7 +35,8 @@
             <f:if condition="{ppdbstatuslifetime} != 'null'"><span
                     data-ng-init="setFilterLifetime({ppdbstatuslifetime});"></span></f:if>
             <f:if condition="{projectparticipants} != 'null'"><span
-                    data-ng-init="list.addPropertyFilter('participants.*.EventoID',{projectparticipants});"></span>
+                    data-ng-init="list.addPropertyFilter('participants.*.EventoID',{projectparticipants});">
+            </span>
             </f:if>
         </f:else>
     </f:if>
@@ -77,14 +78,13 @@
                                 <span>Finanzierungstyp</span>
                             </a>
                         </li>
-                        <li class="nav-item" data-ng-show="result.getDistinctCount('projectparticipants') > 0">
+                        <li class="nav-item" data-ng-show="result.getDistinctCount('participants') > 0">
                             <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                data-target="#projectparticipants-{node.Identifier}" role="tab">
                                 <i class="fa fa-users" aria-hidden="true"></i>
                                 <span data-toggle="filterCountTag"
                                       data-template='<div class="tooltip filterCountTag" role="tooltip"><span class="tooltip-inner"></span><span class="oi oi-media-record"></span></div>'
                                       data-placement="right" title="" data-offset="26px -6px"
-                                      data-original-title="5"
                                       data-trigger="manual">Projektbeteiligte Personen</span>
                             </a>
                         </li>
@@ -117,7 +117,9 @@
                                         <td>
                                             <a href="javascript:void(0);"
                                                data-ng-click="researchmainfocus[lt.value] = !researchmainfocus[lt.value] ? true : false;">
-                                                <i class="fa" data-ng-class="{'fa-check-square-o': researchmainfocus[lt.value],'fa-square-o': !researchmainfocus[lt.value]}" aria-hidden="true"></i>
+                                                <i class="fa"
+                                                   data-ng-class="{'fa-check-square-o': researchmainfocus[lt.value],'fa-square-o': !researchmainfocus[lt.value]}"
+                                                   aria-hidden="true"></i>
                                                 {{lt.value}} ({{lt.count}})
                                             </a>
                                         </td>
@@ -153,192 +155,42 @@
                             </div>
                             <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                         </div>
-                        <div class="result-panel tab-pane " id="projectparticipants-{node.Identifier}" role="tabpanel">
+                        <div class="result-panel tab-pane " id="projectparticipants-{node.Identifier}" role="tabpanel"
+                             data-ng-show="result.getDistinctCount('participants') > 0"><a href="#" class="close-btn"><i
+                                class="fa fa-times" aria-hidden="true"></i></a>
                             <div class="dropdown-search-field">
-                                <input type="text" class="c-input form-control">
+                                <input type="text" class="c-input form-control"
+                                       data-ng-model="projectparticipantsSearch">
                                 <i class="fa fa-search" aria-hidden="true"></i>
+
                             </div>
                             <div class="search-result-tags">
-                                    <span class="search-result-tag">Adrian Felder <i class="fa fa-times"
-                                                                                     aria-hidden="true"></i></span>
-                                <span class="search-result-tag">Werner Wicki <i class="fa fa-times"
-                                                                                aria-hidden="true"></i></span>
-                                <span class="search-result-tag">Michael Egli <i class="fa fa-times"
-                                                                                aria-hidden="true"></i></span>
-                                <span class="search-result-tag">Hansruedi Scherer <i class="fa fa-times"
-                                                                                     aria-hidden="true"></i></span>
-                                <span class="search-result-tag">Stefan Jenni <i class="fa fa-times"
-                                                                                aria-hidden="true"></i></span>
+                                    <span class="search-result-tag"
+                                          data-ng-repeat="(eventoID,val) in projectparticipants" data-ng-if="val">{{val}} <i
+                                            class="fa fa-times clickable"
+                                            aria-hidden="true"
+                                            data-ng-click="projectparticipants[eventoID] = false;"></i></span>
+
                             </div>
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
-                                    <tr class="label ">
+                                    <tr class="clickable"
+                                        data-ng-repeat="(key,person) in result.getDistinct('participants.*') | projectparticipantsFilter:projectparticipantsSearch"
+                                        data-ng-if="person.value.EventoID > 0"
+                                        data-ng-show="projectparticipants[person.value.EventoID] == undefined || projectparticipants[person.value.EventoID] == false">
                                         <td>
-                                            A
+                                            <a href="javascript:void(0);"
+                                               data-ng-click="projectparticipants[person.value.EventoID] = person.value.Nachname+ ' ' + person.value.Vorname;">
+                                                {{person.value.Vorname}} {{person.value.Nachname}}
+                                            </a>
                                         </td>
                                     </tr>
-                                    <tr class="clickable ">
-                                        <td>
-                                            <a href="#">
-                                                Claudia
-                                                Achermann
 
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td>
-                                            <a href="#">
-                                                Doris Achermann
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                MSc Ursina Achermann Meier
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                lic. phil. Ueli Ackermann
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                Marina Adzic
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                MA Miriam Aegerter
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                Prof. Dr. phil. Jürg Aeppli
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                Regula Aeschbacher
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                Maisa Ahmad
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                MA Anna-Carolina Alder
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                Dr. theol. Andreas Allemann
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                Dr. rer. nat. Henrike Allmendinger
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                Irene Althaus
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="label ">
-                                        <td>
-                                            B
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                MSc Felix Bächinger
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                ic. phil. Hans Bächler
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                Simone Bächtiger
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                Patricia Bader
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                Katharina Bader
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-
-                                        <td>
-                                            <a href="#">
-                                                Ruth Bänninger
-                                            </a>
-                                        </td>
-                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+
                         </div>
                         <div class="result-panel tab-pane " id="projectstate-{node.Identifier}" role="tabpanel"
                              data-ng-show="result.getDistinctCount('lifetime') > 0">
@@ -392,7 +244,8 @@
                         </thead>
                         <tbody ng-repeat="node in result.getNodes() | orderBy:'-score'"
                                data-ng-click="node.isopen = node.isopen ? false : true">
-                        <tr data-ng-class="{open: node.isopen,noborder: $index > 0}" class="clickable" data-node-id="{{node.identifier}}">
+                        <tr data-ng-class="{open: node.isopen,noborder: $index > 0}" class="clickable"
+                            data-node-id="{{node.identifier}}">
                             <td>
                                         <span class="oi"
                                               data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
