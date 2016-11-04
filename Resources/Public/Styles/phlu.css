@@ -9599,6 +9599,8 @@ body {
           body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td:last-child, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td:last-child {
             padding-right: 20px;
             padding-left: 20px; }
+        body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr i.fa, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr i.fa {
+          margin-right: 20px; }
         body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr.checked, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr.checked {
           color: #91a103; }
           body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr.checked a, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr.checked a {
@@ -9883,6 +9885,8 @@ body {
         display: table-cell; }
       body .all .table-responsive .table tbody tr:first-child th, body .all .table-responsive .table tbody tr:first-child td {
         border-top: 4px solid #5c5c5c; }
+      body .all .table-responsive .table tbody tr:first-child.noborder th, body .all .table-responsive .table tbody tr:first-child.noborder td {
+        border-top: 0; }
       body .all .table-responsive .table tbody tr th, body .all .table-responsive .table tbody tr td {
         padding: 12px 20px 12px 0;
         line-height: 1.5;
