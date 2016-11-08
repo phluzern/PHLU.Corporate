@@ -28,6 +28,6 @@ PHLUCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsear
         'fb11fdde869d0a8fcfe00a2fd35c031d',
         'corporate'
     );
-    
+
 
 }]);
