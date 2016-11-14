@@ -159,6 +159,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                     $scope.lastActiveTabName = 'alle';
                 }
 
+                console.log(data);
 
                 // var activeTab = $("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='" + lastActiveTab.attr('href') + "']");
                 // if (activeTab.length) {
