@@ -121,7 +121,7 @@
       'PHLU.Corporate:Page.View.Dossier': FALSE
       'PHLU.Corporate:Page.View.Default': FALSE
       'PHLU.Corporate:Page.View.Default.Default': TRUE
-      'TYPO3.Neos:Shortcut': FALSE
+      'TYPO3.Neos:Shortcut': TRUE
 
 
 'PHLU.Corporate:Page.View.Default.Default':
