@@ -88,10 +88,13 @@
                                             </tr>
                                             </thead>
 
-                                            <tbody ng-repeat="node in group.getNodes() | orderBy:'-score'" data-ng-click="node.isopen = node.isopen ? false : true">
-                                            <tr data-ng-class="{open: node.isopen,noborder: $index > 0}" class="clickable">
+                                            <tbody ng-repeat="node in group.getNodes() | orderBy:'-score'"
+                                                   data-ng-click="node.isopen = node.isopen ? false : true">
+                                            <tr data-ng-class="{open: node.isopen,noborder: $index > 0}"
+                                                class="clickable">
                                                 <td>
-                                                    <span class="oi" data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
+                                                    <span class="oi"
+                                                          data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
                                                     <span>{{node.getProperty('title')}}</span>
                                                     <div class="mobile-view-columns">
                                                         <span class="header">
@@ -122,6 +125,25 @@
                                 </div>
 
 
+                            </div>
+
+
+                            <div class="neos-contentcollection" data-ng-switch-when="Bilder">
+                                <div class="phlu-corporate-media-container">
+                                    <div id="blueimpgallery" class="row">
+
+                                        <div class="col-xs-12 col-sm-6"
+                                             ng-repeat="node in group.getNodes() | orderBy:'-score'">
+
+                                            <a href="{{node.getProperty('image').url}}">
+                                                <img src="{{node.getProperty('image').thumbnailUri}}"
+                                                     title="{{node.getProperty('alternativtext')}}"
+                                                     alt="{{node.getProperty('alternativtext')}}" class="img-fluid"/>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
 
 

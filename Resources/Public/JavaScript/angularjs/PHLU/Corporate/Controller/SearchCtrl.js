@@ -119,6 +119,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-table': 'Seiten',
         'phlu-corporate-content-page-headerdefault': 'Seiten',
         'phlu-qmpilot-nodetypes-file': 'Dateien',
+        'phlu-corporate-image': 'Bilder',
         'phlu-neos-nodetypes-project': 'Projekte'
 
     };
@@ -158,8 +159,6 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                 if ($("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='#" + $scope.lastActiveTabName + "']").length === 0) {
                     $scope.lastActiveTabName = 'alle';
                 }
-
-                console.log(data);
 
                 // var activeTab = $("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='" + lastActiveTab.attr('href') + "']");
                 // if (activeTab.length) {
