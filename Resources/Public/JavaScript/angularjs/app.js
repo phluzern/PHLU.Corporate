@@ -21,6 +21,7 @@ if (typeof document.addEventListener === 'function') {
 
 
 PHLUCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsearch) {
+
     //
     // return new $hybridsearch(
     //     'https://test1-24f0a.firebaseio.com',
@@ -28,7 +29,6 @@ PHLUCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsear
     //     'fb11fdde869d0a8fcfe00a2fd35c031d',
     //     'corporate'
     // );
-
 
     return new $hybridsearch(
         'https://phlu-neos.firebaseio.com',

@@ -19,9 +19,6 @@ $(document).ready(function () {
         return false;
     });
 
-    /* set default paused carousel */
-    $('.carousel').carousel('pause');
-
 
     /* init rcrumbs */
 
@@ -254,6 +251,15 @@ $(document).ready(function () {
     });
 
     $('.ui.dropdown').dropdown();
+    initCarousel();
+});
+
+
+function initCarousel() {
+
+
+    /* set default paused carousel */
+    $('.carousel').carousel('pause');
 
     /*
      * media carousel swipe for mobile
@@ -268,7 +274,7 @@ $(document).ready(function () {
     /*
      * image gallery lightbox
      */
-    $("#blueimpgallery").on('click', function (event) {
+    $("#blueimpgallery, .carousel").on('click', function (event) {
         event = event || window.event;
         var target = event.target || event.srcElement,
             link = target.src ? target.parentNode : target,
@@ -276,8 +282,7 @@ $(document).ready(function () {
             links = this.getElementsByTagName('a');
         blueimp.Gallery(links, options);
     });
-});
-
+}
 
 /* init rcrumbs */
 $(document).mousemove(function (event) {
