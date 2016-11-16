@@ -1895,18 +1895,14 @@ body {
             }
           }
         }
-        &.working-priorities {
-          ul {
-            &.list {
-              li:last-child {
-                margin-bottom: 10px;
-              }
-            }
-          }
-        }
         &.function {
           ul {
             margin-bottom: 10px;
+            &.list {
+              li {
+                margin-bottom: 10px;
+              }
+            }
           }
         }
         &.education, &.cv, &.professional-activities, &.expertises, &.consultation-priorities {
@@ -1953,6 +1949,15 @@ body {
                   margin-bottom: 0;
                 }
 
+              }
+            }
+          }
+        }
+        &.education, &.working-priorities, &.expertises  {
+          ul {
+            &.list {
+              li {
+                margin-bottom: 10px;
               }
             }
           }
