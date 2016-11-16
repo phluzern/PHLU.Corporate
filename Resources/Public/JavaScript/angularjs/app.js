@@ -34,7 +34,7 @@ PHLUCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsear
         'https://phlu-neos.firebaseio.com',
         'live',
         'fb11fdde869d0a8fcfe00a2fd35c031d',
-        'corporate'
+        'corporate',
         'https://d1dv3xwuvqmubu.cloudfront.net'
     );
 
