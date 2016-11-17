@@ -47,6 +47,11 @@ PHLUCorporateApp.directive('search', function ($sce) {
 
                             return template + '/All/phlu-neos-nodetypes-project.html';
 
+                        case 'phlu-neos-nodetypes-publication':
+
+
+                            return template + '/All/phlu-neos-nodetypes-publication.html';
+
 
                         default:
                             return template + '/All/default.html';
@@ -120,7 +125,8 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-content-page-headerdefault': 'Seiten',
         'phlu-qmpilot-nodetypes-file': 'Dateien',
         'phlu-corporate-image': 'Bilder',
-        'phlu-neos-nodetypes-project': 'Projekte'
+        'phlu-neos-nodetypes-project': 'Projekte',
+        'phlu-neos-nodetypes-publication': 'Publikationen'
 
     };
 
