@@ -26,6 +26,7 @@
   constraints:
     nodeTypes:
       'PHLU.Corporate:Section': TRUE
+      'PHLU.Corporate:SectionCenterLinks': TRUE
 
 
 'PHLU.Corporate:ContentCollection.Section':
@@ -45,7 +46,12 @@
       'PHLU.Corporate:MediaGallery': TRUE
       'PHLU.Corporate:ProjectsList': TRUE
 
-
+'PHLU.Corporate:ContentCollection.SectionCenterLinks':
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
 
 'PHLU.Corporate:ContentCollection.Page.View.Default.Default':
   superTypes:

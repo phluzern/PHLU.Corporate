@@ -117,35 +117,6 @@
       type: 'PHLU.Corporate:Content.Page.HeaderDefault'
 
 
-# Accordeon default
-'PHLU.Corporate:Section':
-  superTypes:
-    'PHLU.Neos.NodeTypes:Content': TRUE
-    'PHLU.Neos.NodeTypes:PlainTitleMixin': TRUE
-  ui:
-    label: 'Abschnitt'
-    icon: icon-chevron-down
-    selectHelper: TRUE
-    inlineEditable: true
-    inspector:
-      groups:
-        general:
-          label: 'Allgemein'
-  constraints:
-    nodeTypes:
-      '*': FALSE
-  properties:
-    title:
-      type: string
-      defaultValue: ' Titel'
-      ui:
-        label: 'Abschnitts-Titel'
-        inspector:
-          group: 'general'
-          position: 50
-  childNodes:
-    main:
-      type: 'PHLU.Corporate:ContentCollection.Section'
 
 
 # Accordeon default
