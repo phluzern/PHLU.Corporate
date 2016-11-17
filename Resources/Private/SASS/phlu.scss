@@ -1503,35 +1503,40 @@ body {
       }
     }
     .row.subjectsfilternav {
-      .nav-pills {
-        padding-top: 30px;
-        margin-bottom: 0;
-        li {
-          margin-top: 4px;
-          margin-right: 4px;
-          margin-left: 0;
-          a.nav-link {
-            background-color: $grey5;
-            padding-left: 54px;
-            padding-top: 9px;
-            padding-bottom: 10px;
-            &:hover {
-              background-color: $grey;
-            }
-            &.all, &.no-icon {
-              padding-left: 23px;
-            }
-            &.active {
-              background-color: $grey6;
-            }
+      .row.filter-bar {
+        .col-xs-12 {
+          margin: 0 0 50px;
+          .nav-pills {
+            padding-top: 30px;
+            margin-bottom: 0;
+            li {
+              margin-top: 4px;
+              margin-right: 4px;
+              margin-left: 0;
+              a.nav-link {
+                background-color: $grey5;
+                padding-left: 54px;
+                padding-top: 9px;
+                padding-bottom: 10px;
+                &:hover {
+                  background-color: $grey;
+                }
+                &.all, &.no-icon {
+                  padding-left: 23px;
+                }
+                &.active {
+                  background-color: $grey6;
+                }
 
-          }
-          &.active {
-            a.nav-link {
-              background-color: $grey6;
+              }
+              &.active {
+                a.nav-link {
+                  background-color: $grey6;
+                }
+              }
+
             }
           }
-
         }
       }
       .faecherIco, .oi-media-stop {
@@ -1604,7 +1609,7 @@ body {
         }
       }
       .phlu-teaser.navigation.subpage {
-        margin: 50px 0;
+        margin: 0 0 50px;
         .nav-teaser-item {
           margin-top: 5px;
           margin-bottom: 5px;

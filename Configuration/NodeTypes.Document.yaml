@@ -3,6 +3,7 @@
   superTypes:
     'PHLU.Neos.NodeTypes:Page': TRUE
     'PHLU.Neos.NodeTypes:TagMixin': TRUE
+    'PHLU.Neos.NodeTypes:OuMembershipMixin': TRUE
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
@@ -90,7 +91,6 @@
           label: 'Navigation'
   superTypes:
     'PHLU.Corporate:Page': TRUE
-    'PHLU.Neos.NodeTypes:OuMembershipMixin': TRUE
   properties:
     hasanchornavigation:
       type: boolean
