@@ -26,6 +26,7 @@
   constraints:
     nodeTypes:
       'PHLU.Corporate:Section': TRUE
+      'PHLU.Corporate:SectionCenterLinks': TRUE
 
 
 'PHLU.Corporate:ContentCollection.Section':
@@ -43,9 +44,13 @@
       'PHLU.Qmpilot.NodeTypes:File': TRUE
       'PHLU.Corporate:Table': TRUE
       'PHLU.Corporate:MediaGallery': TRUE
-      'PHLU.Corporate:ProjectsList': TRUE
 
-
+'PHLU.Corporate:ContentCollection.SectionCenterLinks':
+  superTypes:
+    'PHLU.Corporate:ContentCollection': TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE
 
 'PHLU.Corporate:ContentCollection.Page.View.Default.Default':
   superTypes:
@@ -80,7 +85,6 @@
       'PHLU.Corporate:Contacts': TRUE
       'PHLU.Corporate:Table': TRUE
       'PHLU.Qmpilot.NodeTypes:File': TRUE
-      'PHLU.Corporate:ProjectsList': TRUE
   ui:
     label: 'Allgemein'
     icon: icon-gear
@@ -192,13 +196,6 @@
     nodeTypes:
       '*': FALSE
       'PHLU.Corporate:CarouselImage': TRUE
-
-'PHLU.Corporate:ContentCollection.ProjectsList':
-  superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
-  constraints:
-    nodeTypes:
-      '*': FALSE
 
 
 

@@ -1,0 +1,40 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
+
+<div {attributes -> f:format.raw()}>
+    <f:if condition="{sectionCount}>1">
+        <f:then>
+            {neos:contentElement.editable(property: 'title', tag: 'h2')}
+        </f:then>
+    </f:if>
+
+    <div class="row subjectsfilternav">
+        <div class="col-xs-12">
+            <div class="row phlu-teaser navigation subpage">
+                <f:for each="{nodes}" as="item">
+                    <f:for each="{item.properties.ou}" as="ouId">
+                        <f:if condition="{ouId} == {pageIdentifier}">
+                            <f:then>
+                                <div class="col-xs-12 nav-teaser-item {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}  ">
+                                    <div class="row">
+                                        <div class="phlu-teaser-body col-xs-10">
+                                            <h3>
+                                                <neos:link.node node="{item}">
+                                                    {item.properties.title}
+                                                </neos:link.node>
+                                            </h3>
+                                        </div>
+                                        <div class="phlu-teaser-caret-right col-xs-2">&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                            </f:then>
+                        </f:if>
+                    </f:for>
+                </f:for>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
