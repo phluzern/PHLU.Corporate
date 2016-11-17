@@ -53,17 +53,11 @@
     inspector:
       groups:
         general:
+          label: 'Allgemein'
+        selectsingleproject:
           label: 'Auswahl Einzelne Projekte'
-        researchfocus:
-          label: 'Forschungsschwerpunkte'
-        financing:
-          label: 'Finanzierungstyp'
-        projectparticipants:
-          label: 'Projektbeteiligte Personen'
-        projectstate:
-          label: 'Projektstatus'
-        projectenddate:
-          label: 'Projektende'
+        filters:
+          label: 'Projekt Filter'
   constraints:
     nodeTypes:
       '*': FALSE
@@ -77,8 +71,8 @@
         label: 'Forschungsschwerpunkte'
         reloadIfChanged: TRUE
         inspector:
-          group: 'researchfocus'
-          position: 50
+          group: 'filters'
+          position: 10
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             dataSourceIdentifier: 'phlu-corporate-projects'
@@ -90,8 +84,8 @@
         label: 'Finanzierungstyp'
         reloadIfChanged: TRUE
         inspector:
-          group: 'financing'
-          position: 50
+          group: 'filters'
+          position: 20
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             dataSourceIdentifier: 'phlu-corporate-projects'
@@ -103,8 +97,8 @@
         label: 'Projektbeteiligte Personen'
         reloadIfChanged: TRUE
         inspector:
-          group: 'projectparticipants'
-          position: 50
+          group: 'filters'
+          position: 30
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             dataSourceIdentifier: 'phlu-corporate-projects'
@@ -116,8 +110,8 @@
         label: 'Projektstatus'
         reloadIfChanged: TRUE
         inspector:
-          group: 'projectstate'
-          position: 50
+          group: 'filters'
+          position: 40
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             dataSourceIdentifier: 'phlu-corporate-projects'
@@ -125,12 +119,12 @@
               property: 'ppdbstatuslifetime'
     projectenddate:
       type: DateTime
-      defaultValue: 'today midnight'
+      defaultValue: NULL
       ui:
         label: 'Projektende'
         reloadIfChanged: TRUE
         inspector:
-          group: 'projectenddate'
+          group: 'filters'
           position: 50
           editorOptions:
             format: 'd.m.Y'
@@ -140,7 +134,7 @@
         label: 'Projektname'
         reloadIfChanged: TRUE
         inspector:
-          group: 'general'
+          group: 'selectsingleproject'
           position: 50
           editorOptions:
             nodeTypes: ['PHLU.Neos.NodeTypes:Project']
