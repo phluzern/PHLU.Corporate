@@ -1,0 +1,63 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
+
+
+<div {attributes -> f:format.raw()}>
+    <f:if condition="{sectionCount}>1">
+        <f:then>
+            {neos:contentElement.editable(property: 'title', tag: 'h2')}
+        </f:then>
+    </f:if>
+    <div class="row ppdb-list" data-ng-controller="PpdbPublicationCtrl">
+
+
+        <f:for each="{publicationsByIdentifier}" as="publication">
+            <span data-ng-init="list.addNodesByIdentifier(['{publication.Identifier}']);"></span>
+        </f:for>
+
+          <div class="col-xs-12">
+            <div class="row results-table">
+                <div class="col-xs-12">
+                    <f:if condition="{showSearchInput}"><h2>Treffer ({{result.count()}})</h2></f:if>
+                    <div class="table-responsive  ">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th class="clickable">
+                                    <a href="#">Publikationen</a>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody ng-repeat="node in result.getNodes() | orderBy:'-score'"
+                                   data-ng-click="node.isopen = node.isopen ? false : true">
+                            <tr data-ng-class="{open: node.isopen,noborder: $index > 0}" class="clickable"
+                                data-node-id="{{node.identifier}}">
+                                <td>
+                                        <span class="oi"
+                                              data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
+                                    <span>{{node.getProperty('title')}}</span>
+
+                                </td>
+                                <td>
+                                    <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus}}<br></span>
+                                </td>
+                            </tr>
+                            <tr class="result-preview" data-ng-show="node.isopen">
+                                <td colspan="2">
+                                    <div>
+                                        {{node.getProperty('citationstyle')}}
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <span data-ng-init="list.run()"></span>
+    </div>
+</div>
