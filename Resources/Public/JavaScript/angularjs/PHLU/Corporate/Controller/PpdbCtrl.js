@@ -9,6 +9,7 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.ppdbstatuslifetime = {};
     $scope.projectparticipants = {};
     $scope.researchmainfocus = {};
+    $scope.researchunit = {};
 
     $scope.addPropertyFilter = function (property, value) {
         $scope.list.addPropertyFilter(property, value, $scope);

@@ -23,7 +23,13 @@
                 <f:if condition="!{researchmainfocus}">
 
                 <span
-                        data-ng-init="addPropertyFilter('researchmainfocus','researchmainfocus');"></span></f:if>
+                        data-ng-init="addPropertyFilter('researchmainfocus.ID','researchmainfocus');"></span></f:if>
+
+                <f:if condition="!{researchunit}">
+
+                <span
+                        data-ng-init="addPropertyFilter('researchunit.ID','researchunit');"></span></f:if>
+
                 <f:if condition="!{financingtype}"><span
                         data-ng-init="addPropertyFilter('financingtype','financingtype');"></span></f:if>
                 <f:if condition="!{ppdbstatuslifetime}">
@@ -36,7 +42,9 @@
             </f:then>
             <f:else>
                 <f:if condition="{researchmainfocus} != 'null'"><span
-                        data-ng-init="list.addPropertyFilter('researchmainfocus',{researchfocustype});"></span></f:if>
+                        data-ng-init="list.addPropertyFilter('researchmainfocus.ID',{researchfocustype});"></span></f:if>
+                <f:if condition="{researchunit} != 'null'"><span
+                        data-ng-init="list.addPropertyFilter('researchunit.ID',{researchunit});"></span></f:if>
                 <f:if condition="{financingtype} != 'null'"><span
                         data-ng-init="list.addPropertyFilter('financingtypes',{financingtype});"></span></f:if>
                 <f:if condition="{ppdbstatuslifetime} != 'null'"><span
@@ -78,6 +86,14 @@
 
                                 </a>
                             </li>
+                            <li class="nav-item" data-ng-show="result.getDistinctCount('researchunit') > 0">
+                                <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                                   data-target="#researchunit-{node.Identifier}" role="tab">
+                                    <i class="fa fa-flask" aria-hidden="true"></i>
+                                    <span>Forschungseinheit</span>
+
+                                </a>
+                            </li>
                             <li class="nav-item" data-ng-show="result.getDistinctCount('financingtype') > 0">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#financing-{node.Identifier}" role="tab">
@@ -113,21 +129,46 @@
                     </div>
                     <div class="col-xs-12">
                         <div class="tab-content">
+                            
                             <div class="result-panel tab-pane " id="researchfocus-{node.Identifier}" role="tabpanel"
                                  data-ng-show="result.getDistinctCount('researchmainfocus') > 0">
                                 <!--<a href="#" class="close-btn">&nbsp;</a>-->
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
-                                        <tr data-ng-class="{checked: researchmainfocus[lt.value]}"
+                                        <tr data-ng-class="{checked: researchmainfocus[lt.value.ID]}"
                                             data-ng-repeat="(key,lt) in result.getDistinct('researchmainfocus')">
                                             <td>
                                                 <a href="javascript:void(0);"
-                                                   data-ng-click="researchmainfocus[lt.value] = !researchmainfocus[lt.value] ? true : false;">
+                                                   data-ng-click="researchmainfocus[lt.value.ID] = !researchmainfocus[lt.value.ID] ? true : false;">
                                                     <i class="fa"
-                                                       data-ng-class="{'fa-check-square-o': researchmainfocus[lt.value],'fa-square-o': !researchmainfocus[lt.value]}"
+                                                       data-ng-class="{'fa-check-square-o': researchmainfocus[lt.value.ID],'fa-square-o': !researchmainfocus[lt.value.ID]}"
                                                        aria-hidden="true"></i>
-                                                    {{lt.value}} ({{lt.count}})
+                                                    {{lt.value.name}} ({{lt.count}})
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                            </div>  
+                            
+                            <div class="result-panel tab-pane " id="researchunit-{node.Identifier}" role="tabpanel"
+                                 data-ng-show="result.getDistinctCount('researchunit') > 0">
+                                <!--<a href="#" class="close-btn">&nbsp;</a>-->
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr data-ng-class="{checked: researchunit[lt.value.ID]}"
+                                            data-ng-repeat="(key,lt) in result.getDistinct('researchunit')">
+                                            <td>
+                                                <a href="javascript:void(0);"
+                                                   data-ng-click="researchunit[lt.value.ID] = !researchunit[lt.value.ID] ? true : false;">
+                                                    <i class="fa"
+                                                       data-ng-class="{'fa-check-square-o': researchunit[lt.value.ID],'fa-square-o': !researchunit[lt.value.ID]}"
+                                                       aria-hidden="true"></i>
+                                                    {{lt.value.name}} ({{lt.count}})
                                                 </a>
                                             </td>
                                         </tr>
@@ -263,11 +304,12 @@
                                                         <span class="header">
                                                             Schwerpunkte
                                                         </span>
-                                        <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus}}<br></span>
+
+                                        <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus.name}}<br></span>
                                     </div>
                                 </td>
                                 <td>
-                                    <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus}}<br></span>
+                                    <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus.name}}<br></span>
                                 </td>
                             </tr>
                             <tr class="result-preview" data-ng-show="node.isopen">

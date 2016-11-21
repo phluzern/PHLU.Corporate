@@ -157,6 +157,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         $scope.lastActiveTabName = $("#search .phlu-corporate-tags-menu ul.nav-pills > li a.active").length ? $("#search .phlu-corporate-tags-menu ul.nav-pills > li a.active").attr('href').substr(1) : 'alle';
         $scope.result = data;
 
+
         setTimeout(function () {
 
 
@@ -165,6 +166,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                 if ($("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='#" + $scope.lastActiveTabName + "']").length === 0) {
                     $scope.lastActiveTabName = 'alle';
                 }
+
 
                 // var activeTab = $("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='" + lastActiveTab.attr('href') + "']");
                 // if (activeTab.length) {

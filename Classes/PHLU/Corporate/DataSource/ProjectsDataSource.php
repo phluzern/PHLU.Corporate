@@ -80,7 +80,6 @@ class ProjectsDataSource extends AbstractDataSource
 
                     }
 
-
                     break;
 
 
@@ -88,8 +87,24 @@ class ProjectsDataSource extends AbstractDataSource
 
                     /** @var Project $project */
                     foreach ($project->getResearchMainFocus() as $researchMainFocus) {
-                        if (isset($projects[$researchMainFocus]) === false) {
-                            $projects[$researchMainFocus] = array('value' => $researchMainFocus, 'label' => $researchMainFocus);
+
+                        if (isset($projects[$researchMainFocus['ID']]) === false) {
+                            $projects[$researchMainFocus['ID']] = array('value' => $researchMainFocus['ID'], 'label' => $researchMainFocus['name'], 'group' => $researchMainFocus['ResearchUnitName']);
+                        }
+
+                    }
+
+
+                    break;
+
+
+                case 'researchunittype':
+
+                    /** @var Project $project */
+                    foreach ($project->getResearchUnit() as $researchUnit) {
+
+                        if (isset($projects[$researchUnit['ID']]) === false) {
+                            $projects[$researchUnit['ID']] = array('value' => $researchUnit['ID'], 'label' => $researchUnit['name']);
                         }
 
                     }

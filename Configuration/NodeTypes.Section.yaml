@@ -78,6 +78,19 @@
             dataSourceIdentifier: 'phlu-corporate-projects'
             dataSourceAdditionalData:
               property: 'researchfocustype'
+    researchunittype:
+      type: array
+      ui:
+        label: 'Forschungseinheit'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'filters'
+          position: 10
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            dataSourceIdentifier: 'phlu-corporate-projects'
+            dataSourceAdditionalData:
+              property: 'researchunittype'
     financingtype:
       type: array
       ui:
