@@ -1502,13 +1502,12 @@ body {
         }
       }
     }
-    .row.subjectsfilternav {
-      .row.filter-bar {
-        .col-xs-12 {
-          margin: 0 0 50px;
-        }
+    .row.filter-bar {
+      .col-xs-12 {
+        margin: 0 0 50px;
       }
-      .row {
+    }
+    .row.subjectsfilternav {
         .col-xs-12 {
           .nav-pills {
             padding-top: 30px;
@@ -1519,7 +1518,7 @@ body {
               margin-left: 0;
               a.nav-link {
                 background-color: $grey5;
-                padding-left: 54px;
+
                 padding-top: 9px;
                 padding-bottom: 10px;
                 &:hover {
@@ -1531,18 +1530,19 @@ body {
                 &.active {
                   background-color: $grey6;
                 }
-
+                .phlu-corporate-tag {
+                  padding-left:26px;
+                }
               }
               &.active {
                 a.nav-link {
                   background-color: $grey6;
                 }
               }
-
             }
           }
         }
-      }
+
       .faecherIco, .oi-media-stop {
         &::before {
           font-family: Icons;
