@@ -4,12 +4,11 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.result = new $hybridsearchResultsObject();
     $scope.search = '';
     $scope.filterLifetime = {};
-
     $scope.financingtype = {};
-    $scope.ppdbstatuslifetime = {};
     $scope.projectparticipants = {};
     $scope.researchmainfocus = {};
     $scope.researchunit = {};
+    $scope.initialFilters = {};
 
     $scope.addPropertyFilter = function (property, value) {
         $scope.list.addPropertyFilter(property, value, $scope);
@@ -23,11 +22,46 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         angular.forEach(filterLifetime, function (filter) {
             $scope.filterLifetime[filter] = true;
         });
+        $scope.initialFilters['lifetime'] = true;
+    };
 
-    }
+    $scope.setFilterResearchunit = function (f) {
+        angular.forEach(f, function (filter) {
+            $scope.researchunit[filter] = true;
+        });
+        $scope.initialFilters['researchunit'] = true;
+    };
+
+    $scope.setFilterFinancingtypes = function (f) {
+        angular.forEach(f, function (filter) {
+            $scope.financingtype[filter] = true;
+        });
+        $scope.initialFilters['financingtype'] = true;
+    };
+
+    $scope.setFilterProjectparticipants = function (f) {
+        angular.forEach(f, function (filter) {
+            $scope.projectparticipants[filter] = true;
+        });
+        $scope.initialFilters['participants'] = true;
+    };
+
+    $scope.setFilterResearchmainfocus = function (f) {
+        angular.forEach(f, function (filter) {
+            $scope.researchmainfocus[filter] = true;
+        });
+        $scope.initialFilters['researchmainfocus'] = true;
+        console.log(1);
+    };
+
+
 
     $scope.list
         .addPropertyFilter('lifetime', 'filterLifetime', $scope)
+        .addPropertyFilter('researchmainfocus.ID', 'researchmainfocus', $scope)
+        .addPropertyFilter('researchunit.ID', 'researchunit', $scope)
+        .addPropertyFilter('financingtypes', 'financingtype', $scope)
+        .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
         .setNodeType('phlu-neos-nodetypes-project')
         .addPropertyFilter('title', '', null, true)
         .$bind('result', $scope);

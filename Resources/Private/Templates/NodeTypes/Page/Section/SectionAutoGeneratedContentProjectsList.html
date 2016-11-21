@@ -16,45 +16,14 @@
             <span data-ng-init="list.addNodesByIdentifier(['{project.Identifier}']);"></span>
         </f:for>
 
-        <f:if condition="{showSearchInput}">
-            <f:then>
+
+        <f:if condition="{researchfocustype} != 'null'"><span data-ng-init="setFilterResearchmainfocus({researchfocustype});"></span></f:if>
+        <f:if condition="{researchunittype} != 'null'"><span data-ng-init="setFilterResearchunit({researchunittype});"></span></f:if>
+        <f:if condition="{financingtype} != 'null'"><span data-ng-init="setFilterFinancingtypes({financingtype});"></span></f:if>
+        <f:if condition="{ppdbstatuslifetime} != 'null'"><span data-ng-init="setFilterLifetime({ppdbstatuslifetime});"></span></f:if>
+        <f:if condition="{projectparticipants} != 'null'"><span data-ng-init="setFilterProjectparticipants({projectparticipants});"></span></f:if>
 
 
-                <f:if condition="!{researchmainfocus}">
-
-                <span
-                        data-ng-init="addPropertyFilter('researchmainfocus.ID','researchmainfocus');"></span></f:if>
-
-                <f:if condition="!{researchunit}">
-
-                <span
-                        data-ng-init="addPropertyFilter('researchunit.ID','researchunit');"></span></f:if>
-
-                <f:if condition="!{financingtype}"><span
-                        data-ng-init="addPropertyFilter('financingtype','financingtype');"></span></f:if>
-                <f:if condition="!{ppdbstatuslifetime}">
-                <span
-                        data-ng-init="addPropertyFilter('lifetime','ppdbstatuslifetime');"></span></f:if>
-                <f:if condition="!{projectparticipants}"><span
-                        data-ng-init="addPropertyFilter('participants.*.EventoID','projectparticipants');"></span>
-                </f:if>
-
-            </f:then>
-            <f:else>
-                <f:if condition="{researchmainfocus} != 'null'"><span
-                        data-ng-init="list.addPropertyFilter('researchmainfocus.ID',{researchfocustype});"></span></f:if>
-                <f:if condition="{researchunit} != 'null'"><span
-                        data-ng-init="list.addPropertyFilter('researchunit.ID',{researchunit});"></span></f:if>
-                <f:if condition="{financingtype} != 'null'"><span
-                        data-ng-init="list.addPropertyFilter('financingtypes',{financingtype});"></span></f:if>
-                <f:if condition="{ppdbstatuslifetime} != 'null'"><span
-                        data-ng-init="setFilterLifetime({ppdbstatuslifetime});"></span></f:if>
-                <f:if condition="{projectparticipants} != 'null'"><span
-                        data-ng-init="list.addPropertyFilter('participants.*.EventoID',{projectparticipants});">
-            </span>
-                </f:if>
-            </f:else>
-        </f:if>
 
         <f:if condition="{showSearchInput}">
             <div class="col-xs-12">
@@ -78,7 +47,7 @@
                 <div class="row subjectsfilternav">
                     <div class="col-xs-12">
                         <ul class="nav nav-pills" role="tablist">
-                            <li class="nav-item" data-ng-show="result.getDistinctCount('researchmainfocus') > 0">
+                            <li class="nav-item" data-ng-show="initialFilters.researchmainfocus === undefined && result.getDistinctCount('researchmainfocus') > 0">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#researchfocus-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
@@ -86,7 +55,7 @@
 
                                 </a>
                             </li>
-                            <li class="nav-item" data-ng-show="result.getDistinctCount('researchunit') > 0">
+                            <li class="nav-item" data-ng-show="initialFilters.researchunit === undefined && result.getDistinctCount('researchunit') > 0">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#researchunit-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
@@ -94,14 +63,14 @@
 
                                 </a>
                             </li>
-                            <li class="nav-item" data-ng-show="result.getDistinctCount('financingtype') > 0">
+                            <li class="nav-item" data-ng-show="initialFilters.financingtype === undefined && result.getDistinctCount('financingtype') > 0">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#financing-{node.Identifier}" role="tab">
                                     <i class="fa fa-usd" aria-hidden="true"></i>
                                     <span>Finanzierungstyp</span>
                                 </a>
                             </li>
-                            <li class="nav-item" data-ng-show="result.getDistinctCount('participants') > 0">
+                            <li class="nav-item" data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('participants') > 0">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#projectparticipants-{node.Identifier}" role="tab">
                                     <i class="fa fa-users" aria-hidden="true"></i>
@@ -111,7 +80,7 @@
                                           data-trigger="manual">Projektbeteiligte Personen</span>
                                 </a>
                             </li>
-                            <li class="nav-item" data-ng-show="result.getDistinctCount('lifetime') > 0">
+                            <li class="nav-item" data-ng-show="initialFilters.lifetime === undefined && result.getDistinctCount('lifetime') > 0">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#projectstate-{node.Identifier}" role="tab">
                                     <i class="fa fa-hourglass-start" aria-hidden="true"></i>
@@ -129,7 +98,7 @@
                     </div>
                     <div class="col-xs-12">
                         <div class="tab-content">
-                            
+
                             <div class="result-panel tab-pane " id="researchfocus-{node.Identifier}" role="tabpanel"
                                  data-ng-show="result.getDistinctCount('researchmainfocus') > 0">
                                 <!--<a href="#" class="close-btn">&nbsp;</a>-->
@@ -152,8 +121,8 @@
                                     </table>
                                 </div>
                                 <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
-                            </div>  
-                            
+                            </div>
+
                             <div class="result-panel tab-pane " id="researchunit-{node.Identifier}" role="tabpanel"
                                  data-ng-show="result.getDistinctCount('researchunit') > 0">
                                 <!--<a href="#" class="close-btn">&nbsp;</a>-->
