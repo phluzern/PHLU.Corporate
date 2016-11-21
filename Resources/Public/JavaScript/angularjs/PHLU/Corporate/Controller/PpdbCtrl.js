@@ -51,7 +51,6 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
             $scope.researchmainfocus[filter] = true;
         });
         $scope.initialFilters['researchmainfocus'] = true;
-        console.log(1);
     };
 
 
