@@ -16,7 +16,10 @@
             <span data-ng-init="list.addNodesByIdentifier(['{publication.Identifier}']);"></span>
         </f:for>
 
-          <div class="col-xs-12">
+        <f:if condition="{participants} != 'null'"><span data-ng-init="setFilterParticipants({participants});"></span></f:if>
+
+
+        <div class="col-xs-12">
             <div class="row results-table">
                 <div class="col-xs-12">
                     <f:if condition="{showSearchInput}"><h2>Treffer ({{result.count()}})</h2></f:if>

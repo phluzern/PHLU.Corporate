@@ -231,3 +231,16 @@
           position: 50
           editorOptions:
             nodeTypes: ['PHLU.Neos.NodeTypes:Publication']
+    participants:
+      type: array
+      ui:
+        label: 'Beteiligte Personen'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'filters'
+          position: 30
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            dataSourceIdentifier: 'phlu-corporate-publications'
+            dataSourceAdditionalData:
+              property: 'participantnames'
