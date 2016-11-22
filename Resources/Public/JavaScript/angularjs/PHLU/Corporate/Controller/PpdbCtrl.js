@@ -62,6 +62,7 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     $scope.list = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();
     $scope.participants = {};
+    $scope.organisations = {};
     $scope.initialFilters = {};
 
 
@@ -70,10 +71,16 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         $scope.initialFilters['participants'] = true;
     };
 
+    $scope.setFilterOrganisations = function (f) {
+        $scope.organisations = f;
+        $scope.initialFilters['organisations'] = true;
+    };
+
     $scope.list
         .setNodeType('phlu-neos-nodetypes-publication')
         .addPropertyFilter('title', '', null, true)
         .addPropertyFilter('persons.EventoID', 'participants', $scope)
+        .addPropertyFilter('organisations.OrganisationId', 'organisations', $scope)
         .$bind('result', $scope);
 
 }]);

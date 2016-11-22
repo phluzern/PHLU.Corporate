@@ -244,3 +244,16 @@
             dataSourceIdentifier: 'phlu-corporate-publications'
             dataSourceAdditionalData:
               property: 'participantnames'
+    organisations:
+      type: array
+      ui:
+        label: 'Organisationen'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'filters'
+          position: 30
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            dataSourceIdentifier: 'phlu-corporate-publications'
+            dataSourceAdditionalData:
+              property: 'organisations'
