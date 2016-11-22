@@ -152,7 +152,8 @@
             contact:
               property: 'contact'
               handler: 'PHLU.Corporate/Handlers/ContactHandler'
-
+    organisations:
+      type: array
 
 # Contacts (contact wrapper)
 'PHLU.Corporate:Contacts':
