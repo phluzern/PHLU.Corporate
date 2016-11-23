@@ -84,6 +84,19 @@ class ProjectsDataSource extends AbstractDataSource
                     break;
 
 
+                case 'organisations':
+
+                    /** @var Project $project */
+                    foreach ($project->getOrganisationUnits() as $organisation) {
+                        if (isset($projects[$organisation['id']]) === false) {
+                            $projects[$organisation['id']] = array('value' => (string)$organisation['id'], 'label' => $organisation['name']);
+                        }
+
+                    }
+
+                    break;
+
+
                 case 'researchfocustype':
 
                     /** @var Project $project */

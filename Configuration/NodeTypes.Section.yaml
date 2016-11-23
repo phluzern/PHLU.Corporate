@@ -91,6 +91,19 @@
             dataSourceIdentifier: 'phlu-corporate-projects'
             dataSourceAdditionalData:
               property: 'researchunittype'
+    organisations:
+      type: array
+      ui:
+        label: 'Organisationen'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'filters'
+          position: 15
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            dataSourceIdentifier: 'phlu-corporate-projects'
+            dataSourceAdditionalData:
+              property: 'organisations'
     financingtype:
       type: array
       ui:

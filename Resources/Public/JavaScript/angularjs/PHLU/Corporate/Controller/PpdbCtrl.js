@@ -7,6 +7,7 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.financingtype = {};
     $scope.projectparticipants = {};
     $scope.researchmainfocus = {};
+    $scope.organisations = {};
     $scope.researchunit = {};
     $scope.initialFilters = {};
 
@@ -43,8 +44,14 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         $scope.researchmainfocus = f;
     };
 
+    $scope.setFilterOrganisations = function (f) {
+        $scope.initialFilters['organisations'] = true;
+        $scope.organisations = f;
+    };
+
 
     $scope.list
+        .addPropertyFilter('organisationunits.id', 'organisations', $scope)
         .addPropertyFilter('lifetime', 'filterLifetime', $scope)
         .addPropertyFilter('researchmainfocus.ID', 'researchmainfocus', $scope)
         .addPropertyFilter('researchunit.ID', 'researchunit', $scope)

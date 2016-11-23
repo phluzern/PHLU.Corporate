@@ -6,6 +6,7 @@ namespace PHLU\Corporate\Controller;
  */
 
 use PHLU\Neos\Models\Domain\Model\Project;
+use PHLU\Neos\Models\Domain\Repository\PublicationRepository;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Neos\Domain\Repository\SiteRepository;
 use TYPO3\Neos\Domain\Service\ContentContextFactory;
@@ -28,13 +29,11 @@ class ProjectController extends \TYPO3\Neos\Controller\Frontend\NodeController
     protected $workspaceRepository;
 
 
-
     /**
      * @Flow\Inject
      * @var SiteRepository
      */
     protected $siteRepository;
-
 
 
     /**
@@ -92,9 +91,6 @@ class ProjectController extends \TYPO3\Neos\Controller\Frontend\NodeController
         $node = new Node(
             $this->nodeDataRepository->findOneByIdentifier('fc3e89af-ca93-4f2d-ab77-a2bd698f291f', $this->workspaceRepository->findByName('live')->getFirst()),
             $contentContext);
-
-
-
 
         $this->view->assignMultiple(array('value' => $node, 'project' => $project));
         $this->view->setTypoScriptPath('project');

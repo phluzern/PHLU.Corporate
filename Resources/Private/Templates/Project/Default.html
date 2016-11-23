@@ -68,7 +68,7 @@
                                                     <br/>
                                                 </f:else>
                                             </f:if>
-                                            {focus}
+                                            {focus.name}
                                         </f:for>
                                     </td>
                                 </tr>
@@ -101,6 +101,7 @@
                     <h2>Fakten</h2>
                     <div class="table-responsive">
                         <table class="table">
+
                             <f:if condition="{project.organisationUnits}">
                                 <tr>
                                     <th>Beteiligte interne Organisationen</th>
@@ -111,7 +112,7 @@
                                                     <br/>
                                                 </f:else>
                                             </f:if>
-                                            {unit}
+                                            {unit.name}
                                         </f:for>
                                     </td>
                                 </tr>
@@ -251,68 +252,51 @@
                 </div>
             </div>
         </f:if>
-        <f:if condition="{project}">
-            <div class="row publications-list" id="publikationen">
+
+        <f:if condition="{project.publications}">
+
+            <div class="row publications-list">
                 <div class="col-xs-12">
-                    <h2>Publikationen (wird noch implementiert!)</h2>
+
+                    <h2>Publikationen</h2>
                     <div class="row">
                         <div class="col-xs-12">
-                            <div id="phlu-accordion1" class="phlu-accordion" role="tablist" aria-multiselectable="true">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="headingOne1">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#phlu-accordion1"
-                                               href="#collapseOne1"
-                                               aria-expanded="false" aria-controls="collapseOne1">
-                                                Artikel, Rezension (1)
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseOne1" class="panel-collapse collapse" role="tabpanel"
-                                         aria-labelledby="headingOne1">
-                                        <div>
-                                            <p>
-                                                Kellerhals, Ursina; Abplanalp, Richard; Demarmels, Sascha;
-                                                MacKevett,
-                                                Douglas; Simon, Monika &amp; Wehrli, Roger (2016). Measuring
-                                                Meaning:
-                                                Culture-Specific Differences in the Linguistic Evocation of
-                                                Emotionality and
-                                                Rationality. Journal of Research Design and Statistics in
-                                                Linguistics and
-                                                Communication Science, 2015(2.1), 53-74.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="headingTwo1">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed" data-toggle="collapse" data-parent="#phlu-accordion1"
-                                               href="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
-                                                Buchkapitel / Gesetzeskommentar / Lexikonartikel (2)
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseTwo1" class="panel-collapse collapse" role="tabpanel"
-                                         aria-labelledby="headingTwo1">
-                                        <div>
-                                            <p>
-                                                <a class="content-link-external" href="#">
-                                                    Aplanalp, Richard (2014). Historisches Lexikon der Schweiz. In
-                                                    Stiftung
-                                                    Historisches Lexikon der Schweiz (Hrsg.), -- (---). Basel:
-                                                    Schwabe. &gt;
+                            <div id="phlu-accordion-publications" class="phlu-accordion">
+
+                                <f:for each="{project.publications}" as="publicationtype"
+                                       iteration="iterator">
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#phlu-accordion-publications"
+                                                   href="#phlu-accordion-publications-{iterator.index}"
+                                                   aria-expanded="false"
+                                                   aria-controls="phlu-accordion-publications-{iterator.index}">
+                                                    {publicationtype.type.name} ({publicationtype.type.count})
                                                 </a>
-                                            </p>
+                                            </h4>
+                                        </div>
+                                        <div id="phlu-accordion-publications-{iterator.index}"
+                                             class="panel-collapse collapse" role="tabpanel">
+                                            <div>
+                                                <f:for each="{publicationtype.items}" as="publication">
+                                                    <p>{publication.Citationstyle -> f:format.raw()}</p>
+                                                </f:for>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </f:for>
+
+
                             </div>
                         </div>
                     </div>
+                    <hr>
                 </div>
             </div>
+
         </f:if>
+
     </div>
 </div>

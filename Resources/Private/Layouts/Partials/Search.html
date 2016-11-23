@@ -100,11 +100,11 @@
                                                         <span class="header">
                                                             Schwerpunkte
                                                         </span>
-                                                        <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus}}<br></span>
+                                                        <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus.name}}<br></span>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus}}<br></span>
+                                                    <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus.name}}<br></span>
                                                 </td>
                                             </tr>
                                             <tr class="result-preview" data-ng-show="node.isopen">
@@ -125,25 +125,6 @@
                                 </div>
 
 
-                            </div>
-
-
-                            <div class="neos-contentcollection" data-ng-switch-when="Bilder">
-                                <div class="phlu-corporate-media-container">
-                                    <div id="blueimpgallery" class="row">
-
-                                        <div class="col-xs-12 col-sm-6"
-                                             ng-repeat="node in group.getNodes() | orderBy:'-score'">
-
-                                            <a href="{{node.getProperty('image').url}}">
-                                                <img src="{{node.getProperty('image').thumbnailUri}}"
-                                                     title="{{node.getProperty('alternativtext')}}"
-                                                     alt="{{node.getProperty('alternativtext')}}" class="img-fluid"/>
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                </div>
                             </div>
 
 
