@@ -1,0 +1,95 @@
+<div data-ng-controller="LocationCtrl" class="col-xs-12 phlu-locations">
+
+    <div class=" phlu-corporate-tags-menu" data-ng-show="result.count()">
+        <div class="row subjectsfilternav ng-scope">
+            <div class="col-xs-12">
+                <h2>Standortsuche</h2>
+                <h4>
+                    <span>Filter</span>
+                </h4>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="nav nav-pills" role="menubar">
+                            <li role="menuitem" class="ng-tag clickable " data-ng-class="{active: isShowingAll}" data-ng-show="result.count() > 1">
+                                <a class="nav-item nav-link all preventDefault" href=""
+                                   data-ng-click="toggleShowAllLocations();">Alle</a>
+                            </li>
+                            <li role="menuitem" class="ng-tag clickable" data-ng-class="{active: locations[node.identifier]}" data-ng-repeat="node in result.getNodes() | orderBy:'getDocumentNode().getSortingIndex()'">
+                                <a class="nav-item nav-link" href="javascript:void(0);" data-ng-click="toggleLocation(node.identifier);">
+                                    <span>{{node.getProperty('name')}}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row google-maps-iframe">
+
+        <div class="col-xs-12 locationsMap" id="LocationsMap">
+
+        </div>
+
+    </div>
+
+    <div class="table-responsive phlu-corporate-table">
+        <table class="table first-col-hidden-">
+            <tbody class="neos-contentcollection">
+            <tr class=" phlu-corporate-table-row" data-ng-repeat="node in result.getNodes() | orderBy:'getDocumentNode().getSortingIndex()'" data-ng-if="locations[node.identifier]">
+                <th class=" col-percent-Automatisch ">
+                    <span> {{node.getProperty('name')}}</span>
+                    <div class="mobile-view-columns">
+
+                        <address>
+                            {{node.getProperty('organisation')}}<br>
+                            <span>{{node.getProperty('street')}}</span><br>
+                            <span data-ng-if="node.getProperty('street2') != ''">{{node.getProperty('street2')}}<br></span>
+                            <span data-ng-if="node.getProperty('zip') != ''">{{node.getProperty('zip')}} {{node.getProperty('city')}}<br></span>
+
+                            <div class="telephone" data-ng-if="node.getProperty('phone') != ''">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                {{node.getProperty('phone')}}<br>
+                            </div>
+                            <a class="content-link-email-contact-person" data-ng-if="node.getProperty('email') != ''"
+                               href="mailto:{{node.getProperty('email')}}">{{node.getProperty('email')}}</a><br>
+                        </address>
+
+                        <span class="details-link-cell">
+                                        <a class="btn btn-primary" href="#">
+                                            Details
+                                        </a>
+                                    </span>
+                    </div>
+                </th>
+                <td>
+
+                    <address>
+                        {{node.getProperty('organisation')}}<br>
+                        <span>{{node.getProperty('street')}}</span><br>
+                        <span data-ng-if="node.getProperty('street2') != ''">{{node.getProperty('street2')}}<br></span>
+                        <span data-ng-if="node.getProperty('zip') != ''">{{node.getProperty('zip')}} {{node.getProperty('city')}}<br></span>
+
+                        <div class="telephone" data-ng-if="node.getProperty('phone') != ''">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            {{node.getProperty('phone')}}<br>
+                        </div>
+                        <a class="content-link-email-contact-person" data-ng-if="node.getProperty('email') != ''"
+                           href="mailto:{{node.getProperty('email')}}">{{node.getProperty('email')}}</a><br>
+                    </address>
+
+                </td>
+                <td class="details-link-cell">
+                    <a class="btn btn-primary" href="#">
+                        Details
+                    </a>
+                </td>
+            </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

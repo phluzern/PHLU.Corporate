@@ -2901,6 +2901,9 @@ body {
     //
     .google-maps-iframe {
       margin-bottom: 32px;
+      .locationsMap {
+        height:400px;
+      }
     }
     //
     // main contents

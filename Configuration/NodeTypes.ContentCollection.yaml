@@ -44,14 +44,7 @@
       'PHLU.Qmpilot.NodeTypes:File': TRUE
       'PHLU.Corporate:Table': TRUE
       'PHLU.Corporate:MediaGallery': TRUE
-      'PHLU.Corporate:SectionContentPhluLocation': FALSE
 
-'PHLU.Corporate:ContentCollection.SectionContentPhluLocation':
-  superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
-  constraints:
-    nodeTypes:
-      '*': FALSE
 
 'PHLU.Corporate:ContentCollection.SectionCenterLinks':
   superTypes:

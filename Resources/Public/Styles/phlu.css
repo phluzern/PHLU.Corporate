@@ -9977,6 +9977,8 @@ body {
         font-size: 1rem; }
     body .all .google-maps-iframe {
       margin-bottom: 32px; }
+      body .all .google-maps-iframe .locationsMap {
+        height: 400px; }
     body .all .main {
       background-color: #fbfaf4;
       flex-grow: 1; }

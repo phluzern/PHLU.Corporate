@@ -3,16 +3,14 @@ prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
 
 
 
-     templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
+        templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
 
-     tagsMenu = ${q(node).children('tagsmenu').get(0)}
-
+        tagsMenu = ${q(node).get(0).identifier != '58c164e4-6f08-4f22-a07e-d0cd38bd0c6f' ? q(node).children('tagsmenu').get(0) : false}
 
         sections = ${q(node).children('main').find('[instanceof PHLU.Corporate:Section]').get()}
         sectionsCount = ${q(node).children('main').find('[instanceof PHLU.Corporate:Section]').count()}
         hasanchornavigation = ${q(node).property('hasanchornavigation')}
         hasmoodimage = ${q(node).property('hasmoodimage')}
-
 
 
 
