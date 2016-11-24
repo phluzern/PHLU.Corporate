@@ -100,7 +100,7 @@
 
             {parts.sideBarLevel1Menu -> f:format.raw()}
             <div class="col-xs-12 {parts.sideBarLevel1MenuGetClass -> f:format.raw()} main contents">
-                <f:render partial="Search" arguments="{_all}"/>
+                <f:render partial="Search" arguments="{firebaseEndpoint: parts.neosliveHybridsearchFirebaseEndpoint, site: parts.site}"/>
                 {content.main -> f:format.raw()}
                 {parts.teaserMenu -> f:format.raw()}
             </div>
