@@ -116,6 +116,7 @@
             </div>
         </f:if>
 
+
         <f:if condition="{contact.publications}">
 
             <div class="row publications-list">
@@ -124,28 +125,26 @@
                     <h2>Publikationen</h2>
                     <div class="row">
                         <div class="col-xs-12">
-                            <div id="phlu-accordion-publications" class="phlu-accordion">
+                            <div id="phlu-accordion-publications" class="phlu-accordion" role="tablist">
 
-                                <f:for each="{contact.publications}" as="publications" key="publicationtype"
+                                <f:for each="{contact.publications}" as="publicationtype"
                                        iteration="iterator">
-
 
                                     <div class="panel panel-default">
                                         <div class="panel-heading" role="tab">
                                             <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#phlu-accordion-publications"
-                                                   href="#phlu-accordion-publications-{iterator.index}"
-                                                   aria-expanded="false"
-                                                   aria-controls="phlu-accordion-publications-{iterator.index}">
-                                                    {publicationtype}
-                                                </a>
+
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#phlu-accordion-publications" href="#phlu-accordion-publications-{iterator.index}" aria-expanded="false" aria-controls="#phlu-accordion-publications-{iterator.index}">
+                                                    {publicationtype.type.name} ({publicationtype.type.count})
+                                                 </a>
+
                                             </h4>
                                         </div>
                                         <div id="phlu-accordion-publications-{iterator.index}"
                                              class="panel-collapse collapse" role="tabpanel">
                                             <div>
-                                                <f:for each="{publications}" as="publication">
-                                                    <p>{publication.Citationstyle}{publication.Title}</p>
+                                                <f:for each="{publicationtype.items}" as="publication">
+                                                    <p>{publication.Citationstyle -> f:format.raw()}</p>
                                                 </f:for>
                                             </div>
                                         </div>

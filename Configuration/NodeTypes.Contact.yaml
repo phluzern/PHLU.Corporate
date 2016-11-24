@@ -25,6 +25,8 @@
     nodeTypes:
       '*': FALSE
   properties:
+    organisations:
+      type: array
     ishidden:
       type: boolean
       defaultValue: 0

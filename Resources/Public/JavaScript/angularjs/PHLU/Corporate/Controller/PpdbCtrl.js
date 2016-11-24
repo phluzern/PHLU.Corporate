@@ -7,6 +7,7 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.financingtype = {};
     $scope.projectparticipants = {};
     $scope.researchmainfocus = {};
+    $scope.organisations = {};
     $scope.researchunit = {};
     $scope.initialFilters = {};
 
@@ -19,43 +20,38 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     }
 
     $scope.setFilterLifetime = function (filterLifetime) {
-        angular.forEach(filterLifetime, function (filter) {
-            $scope.filterLifetime[filter] = true;
-        });
+        $scope.filterLifetime = f;
         $scope.initialFilters['lifetime'] = true;
     };
 
     $scope.setFilterResearchunit = function (f) {
-        angular.forEach(f, function (filter) {
-            $scope.researchunit[filter] = true;
-        });
+        $scope.researchunit = f;
         $scope.initialFilters['researchunit'] = true;
     };
 
     $scope.setFilterFinancingtypes = function (f) {
-        angular.forEach(f, function (filter) {
-            $scope.financingtype[filter] = true;
-        });
+        $scope.financingtype = f;
         $scope.initialFilters['financingtype'] = true;
     };
 
     $scope.setFilterProjectparticipants = function (f) {
-        angular.forEach(f, function (filter) {
-            $scope.projectparticipants[filter] = true;
-        });
+        $scope.projectparticipants = f;
         $scope.initialFilters['participants'] = true;
     };
 
     $scope.setFilterResearchmainfocus = function (f) {
-        angular.forEach(f, function (filter) {
-            $scope.researchmainfocus[filter] = true;
-        });
         $scope.initialFilters['researchmainfocus'] = true;
+        $scope.researchmainfocus = f;
+    };
+
+    $scope.setFilterOrganisations = function (f) {
+        $scope.initialFilters['organisations'] = true;
+        $scope.organisations = f;
     };
 
 
-
     $scope.list
+        .addPropertyFilter('organisationunits.id', 'organisations', $scope)
         .addPropertyFilter('lifetime', 'filterLifetime', $scope)
         .addPropertyFilter('researchmainfocus.ID', 'researchmainfocus', $scope)
         .addPropertyFilter('researchunit.ID', 'researchunit', $scope)
@@ -66,35 +62,39 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         .$bind('result', $scope);
 
 
-
 }]);
 
 PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
     $scope.list = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();
-    $scope.search = '';
+    $scope.participants = {};
+    $scope.organisations = {};
+    $scope.initialFilters = {};
 
 
-    $scope.addPropertyFilter = function (property, value) {
-        $scope.list.addPropertyFilter(property, value, $scope);
-    }
+    $scope.setFilterParticipants = function (f) {
+        $scope.participants = f;
+        $scope.initialFilters['participants'] = true;
+    };
 
-    $scope.setQuery = function (value) {
-        $scope.list.setQuery(value, $scope);
-    }
-
+    $scope.setFilterOrganisations = function (f) {
+        $scope.organisations = f;
+        $scope.initialFilters['organisations'] = true;
+    };
 
     $scope.list
         .setNodeType('phlu-neos-nodetypes-publication')
         .addPropertyFilter('title', '', null, true)
+        .addPropertyFilter('persons.EventoID', 'participants', $scope)
+        .addPropertyFilter('organisations.OrganisationId', 'organisations', $scope)
         .$bind('result', $scope);
 
 }]);
 
 
-PHLUCorporateApp.filter('projectparticipantsFilter', function() {
-    return function(input, term) {
+PHLUCorporateApp.filter('projectparticipantsFilter', function () {
+    return function (input, term) {
 
         if (term === undefined || term == '') {
             return input;
@@ -105,14 +105,11 @@ PHLUCorporateApp.filter('projectparticipantsFilter', function() {
         angular.forEach(input, function (val, key) {
 
 
-
             if (JSON.stringify(val.value).indexOf(term) >= 0) {
                 collection[key] = val;
             }
 
         });
-
-
 
 
         return collection;

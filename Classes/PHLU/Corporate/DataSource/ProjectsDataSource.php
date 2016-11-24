@@ -59,8 +59,9 @@ class ProjectsDataSource extends AbstractDataSource
                     foreach ($project->getParticipants() as $participantGroupKey => $participantGroup) {
 
                         foreach ($participantGroup as $participant) {
+                            $participant['EventoID'] = (string)$participant['EventoID'];
                             if ($participant['EventoID'] && isset($projects[$participant['EventoID']]) === false) {
-                                $projects[$participant['EventoID']] = array('value' => $participant['EventoID'], 'group' => $participantGroupKey, 'icon' => 'icon-male', 'label' => $participant['Vorname'] . " " . $participant['Nachname'] . " (" . $participant['EventoID'] . ")");
+                                $projects[$participant['EventoID']] = array('value' => $participant['EventoID'], 'icon' => 'icon-male', 'label' => $participant['Vorname'] . " " . $participant['Nachname'] . " (" . $participant['EventoID'] . ")");
                             }
                         }
 
@@ -83,13 +84,26 @@ class ProjectsDataSource extends AbstractDataSource
                     break;
 
 
+                case 'organisations':
+
+                    /** @var Project $project */
+                    foreach ($project->getOrganisationUnits() as $organisation) {
+                        if (isset($projects[$organisation['id']]) === false) {
+                            $projects[$organisation['id']] = array('value' => (string)$organisation['id'], 'label' => $organisation['name']);
+                        }
+
+                    }
+
+                    break;
+
+
                 case 'researchfocustype':
 
                     /** @var Project $project */
                     foreach ($project->getResearchMainFocus() as $researchMainFocus) {
-
+                        $researchMainFocus['ID'] = (string)$researchMainFocus['ID'];
                         if (isset($projects[$researchMainFocus['ID']]) === false) {
-                            $projects[$researchMainFocus['ID']] = array('value' => $researchMainFocus['ID'], 'label' => $researchMainFocus['name'], 'group' => $researchMainFocus['ResearchUnitName']);
+                            $projects[$researchMainFocus['ID']] = array('value' => $researchMainFocus['ID'], 'label' => $researchMainFocus['name'], 'group' => (string)$researchMainFocus['ResearchUnitName']);
                         }
 
                     }
@@ -118,10 +132,16 @@ class ProjectsDataSource extends AbstractDataSource
 
         }
 
+
+
         return $projects;
 
 
+
+
+
     }
+
 
 
 }
