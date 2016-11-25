@@ -1,4 +1,4 @@
-<div data-ng-controller="LocationCtrl" class="col-xs-12 phlu-locations">
+<div data-ng-controller="LocationCtrl" class="phlu-locations">
 
     <div class=" phlu-corporate-tags-menu" data-ng-show="result.count()">
         <div class="row subjectsfilternav ng-scope">
@@ -10,12 +10,16 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <ul class="nav nav-pills" role="menubar">
-                            <li role="menuitem" class="ng-tag clickable " data-ng-class="{active: isShowingAll}" data-ng-show="result.count() > 1">
+                            <li role="menuitem" class="ng-tag clickable " data-ng-class="{active: isShowingAll}"
+                                data-ng-show="result.count() > 1">
                                 <a class="nav-item nav-link all preventDefault" href=""
                                    data-ng-click="toggleShowAllLocations();">Alle</a>
                             </li>
-                            <li role="menuitem" class="ng-tag clickable" data-ng-class="{active: locations[node.identifier]}" data-ng-repeat="node in result.getNodes() | orderBy:'getDocumentNode().getSortingIndex()'">
-                                <a class="nav-item nav-link" href="javascript:void(0);" data-ng-click="toggleLocation(node.identifier);">
+                            <li role="menuitem" class="ng-tag clickable"
+                                data-ng-class="{active: locations[node.identifier]}"
+                                data-ng-repeat="node in result.getNodes() | orderBy:'getDocumentNode().getSortingIndex()'">
+                                <a class="nav-item nav-link" href="javascript:void(0);"
+                                   data-ng-click="toggleLocation(node.identifier);">
                                     <span>{{node.getProperty('name')}}</span>
                                 </a>
                             </li>
@@ -27,7 +31,7 @@
     </div>
     <div class="row google-maps-iframe">
 
-        <div class="col-xs-12 locationsMap" id="LocationsMap">
+        <div class="col-xs-12 locationsMap">
 
         </div>
 
@@ -36,7 +40,9 @@
     <div class="table-responsive phlu-corporate-table">
         <table class="table first-col-hidden-">
             <tbody class="neos-contentcollection">
-            <tr class=" phlu-corporate-table-row" data-ng-repeat="node in result.getNodes() | orderBy:'getDocumentNode().getSortingIndex()'" data-ng-if="locations[node.identifier]">
+            <tr class=" phlu-corporate-table-row"
+                data-ng-repeat="node in result.getNodes() | orderBy:'getDocumentNode().getSortingIndex()'"
+                data-ng-if="locations[node.identifier]">
                 <th class=" col-percent-Automatisch ">
                     <span> {{node.getProperty('name')}}</span>
                     <div class="mobile-view-columns">

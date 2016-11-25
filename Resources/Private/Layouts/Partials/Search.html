@@ -24,12 +24,13 @@
                             <div class="col-xs-12">
                                 <ul class="nav nav-pills nav-justified" role="tablist">
                                     <li class="nav-item clickable ">
-                                        <a class="nav-link all" data-ng-class="{active: lastActiveTabName == 'alle'}"
+                                        <a class="nav-link all" data-ng-click="setLastActiveTabname('alle')"
+                                           data-ng-class="{active: lastActiveTabName == 'alle'}"
                                            data-toggle="tab" href="#alle" role="tab">Alle</a>
                                     </li>
                                     <li class="nav-item clickable" ng-repeat="group in result.getGrouped().getItems()">
 
-                                        <a class="nav-link"
+                                        <a class="nav-link" data-ng-click="setLastActiveTabname(group.getLabel())"
                                            data-ng-class="{active: lastActiveTabName == group.getLabel()}"
                                            data-toggle="tab" href="#{{group.getLabel()}}"
                                            role="tab"><span node-type name="{{group.getLabel()}}"></span>
@@ -67,10 +68,88 @@
                     <div class="result-panel tab-pane nofilter fade "
                          data-ng-class="{active: lastActiveTabName == group.getLabel(), in: lastActiveTabName == group.getLabel()}"
                          id="{{group.getLabel()}}" role="tabpanel" ng-repeat="group in result.getGrouped().getItems()">
+                        <div data-ng-switch="group.getLabel()" data-ng-if="lastActiveTabName == group.getLabel()">
+
+                            <div class="ppdb-list" data-ng-switch-when="Standorte">
+                                <div data-ng-controller="LocationCtrl" class="phlu-locations">
+                                    <span data-ng-init="addNodes(group.getNodes());"></span>
+                                    <div class="row google-maps-iframe " style="padding-right:15px;">
+
+                                        <div class="col-xs-12 locationsMap phlu-locations-search">
+
+                                        </div>
 
 
-                        <div data-ng-switch="group.getLabel()">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class=" table-responsive phlu-corporate-table">
+                                                <table class="table first-col-hidden-">
+                                                    <tbody class="neos-contentcollection">
+                                                    <tr class=" phlu-corporate-table-row"
+                                                        data-ng-repeat="node in result.getNodes() | orderBy:'getDocumentNode().getSortingIndex()'"
+                                                        data-ng-if="locations[node.identifier]">
+                                                        <th class=" col-percent-Automatisch ">
+                                                            <span> {{node.getProperty('name')}}</span>
+                                                            <div class="mobile-view-columns">
 
+                                                                <address>
+                                                                    {{node.getProperty('organisation')}}<br>
+                                                                    <span>{{node.getProperty('street')}}</span><br>
+                                                                    <span data-ng-if="node.getProperty('street2') != ''">{{node.getProperty('street2')}}<br></span>
+                                                                    <span data-ng-if="node.getProperty('zip') != ''">{{node.getProperty('zip')}} {{node.getProperty('city')}}<br></span>
+
+                                                                    <div class="telephone"
+                                                                         data-ng-if="node.getProperty('phone') != ''">
+                                                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                                                        {{node.getProperty('phone')}}<br>
+                                                                    </div>
+                                                                    <a class="content-link-email-contact-person"
+                                                                       data-ng-if="node.getProperty('email') != ''"
+                                                                       href="mailto:{{node.getProperty('email')}}">{{node.getProperty('email')}}</a><br>
+                                                                </address>
+
+                                                                <span class="details-link-cell">
+                                        <a class="btn btn-primary" href="#">
+                                            Details
+                                        </a>
+                                    </span>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+
+                                                            <address>
+                                                                {{node.getProperty('organisation')}}<br>
+                                                                <span>{{node.getProperty('street')}}</span><br>
+                                                                <span data-ng-if="node.getProperty('street2') != ''">{{node.getProperty('street2')}}<br></span>
+                                                                <span data-ng-if="node.getProperty('zip') != ''">{{node.getProperty('zip')}} {{node.getProperty('city')}}<br></span>
+
+                                                                <div class="telephone"
+                                                                     data-ng-if="node.getProperty('phone') != ''">
+                                                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                                                    {{node.getProperty('phone')}}<br>
+                                                                </div>
+                                                                <a class="content-link-email-contact-person"
+                                                                   data-ng-if="node.getProperty('email') != ''"
+                                                                   href="mailto:{{node.getProperty('email')}}">{{node.getProperty('email')}}</a><br>
+                                                            </address>
+
+                                                        </td>
+                                                        <td class="details-link-cell">
+                                                            <a class="btn btn-primary" href="#">
+                                                                Details
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="ppdb-list" data-ng-switch-when="Projekte">
 
@@ -155,7 +234,8 @@
             <div class="row results-table" data-ng-if="result.getGrouped().count() == 1">
                 <div class="col-xs-12 tab-content">
 
-                    <div class="result-panel tab-pane nofilter fade active in" id="{{group.getLabel()}}" role="tabpanel"
+                    <div class="result-panel tab-pane nofilter fade active in" id="{{group.getLabel()}}"
+                         role="tabpanel"
                          ng-repeat="group in result.getGrouped().getItems()">
                         <div class="table-responsive">
                             <table class="table">

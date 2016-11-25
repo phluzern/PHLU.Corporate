@@ -99,18 +99,22 @@ PHLUCorporateApp.directive('nodeType', function ($sce) {
 });
 
 
-PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, $rootScope, $sce, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
+PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject','$compile', function ($scope, $rootScope, $sce, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject,$compile) {
 
 
     $scope.result = new $hybridsearchResultsObject();
 
     $rootScope.siteSearch = '';
+    if ($rootScope.siteSearchTabs === undefined) {
+        $rootScope.siteSearchTabs = {};
+    }
     $scope.siteSearch = '';
     $scope.siteSearchLastQuery = '';
     $scope.siteSearchPath = '';
     $scope.siteSearchPathName = '';
     $scope.isSearch = false;
     $scope.lastActiveTabName = 'alle';
+    $scope.lastActiveTabVisited = {'alle': true};
 
     var wasClosed = false;
 
@@ -126,7 +130,8 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-qmpilot-nodetypes-file': 'Dateien',
         'phlu-corporate-image': 'Bilder',
         'phlu-neos-nodetypes-project': 'Projekte',
-        'phlu-neos-nodetypes-publication': 'Publikationen'
+        'phlu-neos-nodetypes-publication': 'Publikationen',
+        'phlu-corporate-location': 'Standorte'
 
     };
 
@@ -154,30 +159,37 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var search = new $hybridsearchObject(hybridsearch);
     search.setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$watch(function (data) {
 
-        $scope.lastActiveTabName = $("#search .phlu-corporate-tags-menu ul.nav-pills > li a.active").length ? $("#search .phlu-corporate-tags-menu ul.nav-pills > li a.active").attr('href').substr(1) : 'alle';
         $scope.result = data;
-
 
         setTimeout(function () {
 
 
             $scope.$apply(function () {
 
-                if ($("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='#" + $scope.lastActiveTabName + "']").length === 0) {
-                    $scope.lastActiveTabName = 'alle';
+                angular.forEach($rootScope.siteSearchTabs, function (group, id) {
+                    $rootScope.siteSearchTabs[id] = false;
+                });
+                angular.forEach(data.getGrouped().getItems(), function (group) {
+                    $rootScope.siteSearchTabs[group.label] = true;
+                });
+
+                var i = 'alle';
+                angular.forEach($rootScope.siteSearchTabs, function (value, group) {
+                    if (value && group !== 'alle') {
+                        i = group;
+                    }
+                });
+
+                if ($rootScope.siteSearchTabs[$rootScope.lastActiveTabName] === false) {
+                    $("#search .phlu-corporate-tags-menu ul.nav-pills > li a").removeClass('active');
+                    $("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='#" + i + "']").addClass('active');
+                    if ($rootScope.lastActiveTabVisited === undefined) {
+                        $rootScope.lastActiveTabVisited = {};
+                    }
+                    $scope.setLastActiveTabname(i);
+
                 }
 
-
-                // var activeTab = $("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='" + lastActiveTab.attr('href') + "']");
-                // if (activeTab.length) {
-                //     console.log(activeTab);
-                //
-                //     setTimeout(function () {
-                //         activeTab.tab('show');
-                //     }, 100);
-                // } else {
-                //     $("#search .phlu-corporate-tags-menu ul.nav-pills > li:first-child a").tab('show')
-                // }
 
             });
 
@@ -187,6 +199,18 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     });
 
+
+    $scope.setLastActiveTabname = function (name) {
+
+        if (name === undefined) {
+            if ($("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='#" + $rootScope.lastActiveTabName + "']").length === 0) {
+                $rootScope.lastActiveTabName = $("#search .phlu-corporate-tags-menu ul.nav-pills > li a.active").length ? $("#search .phlu-corporate-tags-menu ul.nav-pills > li a.active").attr('href').substr(1) : 'alle';
+            }
+        } else {
+            $rootScope.lastActiveTabName = name;
+        }
+
+    }
 
     $scope.stopSearch = function () {
         $scope.siteSearchLastQuery = $scope.siteSearch;
@@ -203,6 +227,24 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         }
         $scope.isSearch = true;
     };
+
+
+    $rootScope.$watch('lastActiveTabName', function (i) {
+
+        if ($scope.lastActiveTabName !== undefined && i !== undefined) {
+            $scope.lastActiveTabName = $rootScope.lastActiveTabName;
+            $scope.lastActiveTabVisited = $rootScope.lastActiveTabVisited;
+        }
+
+
+        //$compile(element.html(o.html()))(scope);
+
+       // $("#"+i).html(element);
+
+      //  $compile(o.html())($scope);
+
+
+    });
 
     $rootScope.$watch('siteSearch', function (i) {
         $scope.siteSearch = i;
