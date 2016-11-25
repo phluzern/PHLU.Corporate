@@ -180,11 +180,14 @@ PHLUCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybrids
                         });
                     }
 
-
+                    var nodeSet = {};
                     angular.forEach(markers, function (marker, nodeId) {
 
                         if ($rootScope.infowindows[nodeId]) {
-                            $rootScope.infowindows[nodeId].setContent($rootScope.infowindows[nodeId].getContent() + "<div class='duration'><b>Zu Fuss " + directions.Segments[0].Duration + " (" + directions.Segments[0].Travel + ")</b></div>");
+                            if (nodeSet[nodeId] === undefined && $rootScope.infowindows[nodeId].getContent().indexOf("class='duration'") === -1) {
+                                $rootScope.infowindows[nodeId].setContent($rootScope.infowindows[nodeId].getContent() + "<div class='duration'><b>Zu Fuss " + directions.Segments[0].Duration + " (" + directions.Segments[0].Travel + ")</b></div>");
+                                nodeSet[nodeId] = true;
+                            }
                         }
                         
                     });
