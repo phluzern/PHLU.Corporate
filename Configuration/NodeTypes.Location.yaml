@@ -46,18 +46,21 @@
     lat:
       type: string
       ui:
+        reloadIfChanged: TRUE
         label: 'Latitude'
         inspector:
           group: 'coords'
     lng:
       type: string
       ui:
+        reloadIfChanged: TRUE
         label: 'Longitude'
         inspector:
           group: 'coords'
     name:
       type: string
       ui:
+        reloadIfChanged: TRUE
         label: 'Name des Standorts'
         inspector:
           group: 'general'
@@ -108,6 +111,7 @@
       type: reference
       ui:
         label: 'Standort wählen'
+        reloadIfChanged: TRUE
         inspector:
           group: 'chooseLocation'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'

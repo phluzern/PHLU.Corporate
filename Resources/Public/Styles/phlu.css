@@ -8433,7 +8433,9 @@ body.neos-backend .neos-contentelement .backend-helper {
   height: 34px;
   width: 34px;
   outline-offset: 0px !important;
-  margin-top: -8px; }
+  margin-top: -8px;
+  position: absolute;
+  right: 0; }
   body.neos-backend .neos-contentelement .backend-helper i {
     padding-left: 10px;
     padding-top: 10px; }
@@ -9674,6 +9676,9 @@ body {
         width: 100%; }
     body .all .phlu-locations .location-building-image {
       margin-bottom: 50px; }
+      body .all .phlu-locations .location-building-image img {
+        width: 100%;
+        height: auto; }
     body .all .phlu-locations .row.departments .phlu-teaser.navigation.subpage {
       margin: 0; }
     body .all .phlu-searchresults {
@@ -9976,7 +9981,7 @@ body {
       body .all .table-responsive .table a[target='_blank'] {
         font-size: 1rem; }
     body .all .google-maps-iframe {
-      margin-bottom: 32px; }
+      margin-bottom: 10px; }
       body .all .google-maps-iframe .locationsMap {
         height: 400px; }
     body .all .main {

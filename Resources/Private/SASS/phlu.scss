@@ -376,6 +376,8 @@ body.neos-backend {
     width: 34px;
     outline-offset: 0px !important;
     margin-top: -8px;
+    position: absolute;
+    right:0;
 
     i {
       padding-left: 10px;
@@ -2318,6 +2320,10 @@ body {
       }
       .location-building-image {
         margin-bottom: 50px;
+        img {
+          width:100%;
+          height:auto;
+        }
       }
       .row.departments {
         .phlu-teaser.navigation.subpage {
@@ -2900,7 +2906,7 @@ body {
     // google-maps-iframe
     //
     .google-maps-iframe {
-      margin-bottom: 32px;
+      margin-bottom: 10px;
       .locationsMap {
         height:400px;
       }

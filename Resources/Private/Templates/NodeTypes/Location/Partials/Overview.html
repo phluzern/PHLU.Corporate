@@ -29,9 +29,9 @@
             </div>
         </div>
     </div>
-    <div class="row google-maps-iframe">
+    <div class="google-maps-iframe">
 
-        <div class="col-xs-12 locationsMap">
+        <div class="locationsMap">
 
         </div>
 
@@ -44,7 +44,7 @@
                 data-ng-repeat="node in result.getNodes() | orderBy:'getDocumentNode().getSortingIndex()'"
                 data-ng-if="locations[node.identifier]">
                 <th class=" col-percent-Automatisch ">
-                    <span> {{node.getProperty('name')}}</span>
+                    <span>{{node.getProperty('name')}}</span>
                     <div class="mobile-view-columns">
 
                         <address>
@@ -62,7 +62,8 @@
                         </address>
 
                         <span class="details-link-cell">
-                                        <a class="btn btn-primary" href="#">
+
+                                        <a class="btn btn-primary" href="{{node.getUrl()}}">
                                             Details
                                         </a>
                                     </span>
@@ -86,7 +87,7 @@
 
                 </td>
                 <td class="details-link-cell">
-                    <a class="btn btn-primary" href="#">
+                      <a class="btn btn-primary" href="{{node.getUrl()}}">
                         Details
                     </a>
                 </td>

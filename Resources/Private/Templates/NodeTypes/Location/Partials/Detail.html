@@ -1,0 +1,59 @@
+{namespace media=TYPO3\Media\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace location=PHLU\Corporate\ViewHelpers\Location}
+<div data-ng-controller="LocationCtrl" class="phlu-locations" data-ng-init="addNode('{location.identifier}')">
+
+
+    <f:if condition="{location:references(node:node, references:locations)}">
+        <f:else>
+            <h2>Standort</h2>
+        </f:else>
+    </f:if>
+
+
+    <f:if condition="{image}">
+        <div class="row location-building-image">
+            <div class="col-xs-12">
+                <media:image asset="{image}" alt="{alternativeText}" title="{title}" width="{width}"
+                             maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
+                             allowUpScaling="{allowUpScaling}"/>
+            </div>
+        </div>
+    </f:if>
+
+    <div class="google-maps-iframe">
+        <div class="locationsMap phlu-locations-search">
+        </div>
+    </div>
+    <f:if condition="{locationDetail}">
+        <div class="row subjectsfilternav phlu-sitelink-tiles nofilter">
+            <div class="col-xs-12">
+                <div class="row  phlu-teaser navigation subpage">
+                    <div class="col-xs-12 nav-teaser-item clickable">
+                        <div class="row">
+                            <div class="phlu-teaser-body col-xs-10">
+                                <h3>
+                                    <neos:link.node node="{locationDetail}">
+                                        Details zum Standort {locationDetail.nodeData.properties.title}
+                                    </neos:link.node>
+                                </h3>
+                            </div>
+                            <div class="phlu-teaser-caret-right col-xs-2">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </f:if>
+
+
+    <f:if condition="{location:references(node:node, references:locations)}">
+        <f:then>
+            <f:render partial="References"
+                      arguments="{node:node, references:locations}"/>
+        </f:then>
+    </f:if>
+
+</div>

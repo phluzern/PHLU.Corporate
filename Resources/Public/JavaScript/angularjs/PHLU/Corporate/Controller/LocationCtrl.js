@@ -220,8 +220,17 @@ PHLUCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybrids
         $scope.locationsMap();
     };
 
-    if ($(mapElement).hasClass('phlu-locations-search')) {
+    $scope.addNode = function (node) {
+        var nodesIds = [];
+        nodesIds.push(node);
+        list.addNodesByIdentifier(nodesIds);
+        $scope.locationsMap();
+    };
 
+
+
+
+    if ($(mapElement).hasClass('phlu-locations-search')) {
 
         list
             .$watch(function (data) {

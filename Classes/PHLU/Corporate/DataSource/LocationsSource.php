@@ -6,16 +6,14 @@ use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 use TYPO3\Eel\FlowQuery\FlowQuery;
 use TYPO3\TYPO3CR\Domain\Model\Node;
 
-class LocationsSource extends AbstractDataSource {
-
-
+class LocationsSource extends AbstractDataSource
+{
 
 
     /**
      * @var string
      */
     static protected $identifier = 'phlu-neos-nodetypes-locations';
-
 
 
     /**
@@ -38,10 +36,25 @@ class LocationsSource extends AbstractDataSource {
         $nodes = $flowQuery->find("[instanceof PHLU.Neos.NodeTypes:Page]")->get();
 
         foreach ($nodes as $tag) {
-            /** @var Node $tag*/
-            $group = '';
-            if ($tag->getParent() && $tag->getParent()->getProperty('title')) $group = $tag->getParent()->getProperty('title');
-            $ous[$group][$tag->getIdentifier()] = array('value' => $tag->getIdentifier(), 'label' => $tag->getProperty('title'), 'group' => $group, 'icon' => $tag->getNodeType()->getConfiguration('ui.icon'));
+            /** @var Node $tag */
+
+
+            $flowQueryLocation = new FlowQuery(array(
+                $tag
+            ));
+
+            $locationNodes = $flowQueryLocation->find("[instanceof PHLU.Corporate:Location]")->get();
+
+            if ($locationNodes) {
+
+                foreach ($locationNodes as $locationNode) {
+                    $group = '';
+                    if ($tag->getParent() && $tag->getParent()->getProperty('title')) {
+                        $group = $tag->getParent()->getProperty('title');
+                    }
+                    $ous[$group][$locationNode->getIdentifier()] = array('value' => $locationNode->getIdentifier(), 'label' => $tag->getProperty('title'), 'group' => $group, 'icon' => $tag->getNodeType()->getConfiguration('ui.icon'));
+                }
+            }
         }
 
 
@@ -54,11 +67,8 @@ class LocationsSource extends AbstractDataSource {
         }
 
 
-
         return $ousfinal;
     }
-
-
 
 
 }

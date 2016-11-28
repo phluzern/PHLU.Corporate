@@ -3,9 +3,15 @@
 {namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 
 <div {attributes -> f:format.raw()}>
-   <f:if condition="{pageIdentifier} == '58c164e4-6f08-4f22-a07e-d0cd38bd0c6f'">
-      <f:render partial="Overview" arguments="{_all}"/>
-   </f:if>
+
+    <f:if condition="{page.Identifier} == '58c164e4-6f08-4f22-a07e-d0cd38bd0c6f'">
+        <f:then>
+            <f:render partial="Overview" arguments="{_all}"/>
+        </f:then>
+        <f:else>
+            <f:render partial="Detail" arguments="{_all}"/>
+        </f:else>
+    </f:if>
 </div>
 
 
