@@ -49,8 +49,13 @@ PHLUCorporateApp.directive('search', function ($sce) {
 
                         case 'phlu-neos-nodetypes-publication':
 
+                            if ($scope.view === 'all') {
+                                return template + '/All/phlu-neos-nodetypes-publication.html';
+                            } else {
+                                return template + '/Group/phlu-neos-nodetypes-publication.html';
+                            }
 
-                            return template + '/All/phlu-neos-nodetypes-publication.html';
+
 
 
                         default:
