@@ -147,7 +147,7 @@
 
 
         <div class="col-xs-12">
-            <div class="row results-table">
+            <div class="row">
                 <div class="col-xs-12">
                     <f:if condition="{showSearchInput}"><h2>Treffer ({{result.count()}})</h2></f:if>
                     <div class="table-responsive  ">
@@ -163,14 +163,18 @@
                             <tr ng-repeat="node in result.getNodes(limit)"
                                 data-node-id="{{node.identifier}}">
                                 <td data-ng-if="node.getProperty('url') == ''">
+                                    <div>
                                     <span data-ng-if="node.getProperty('citationstyle') != ''">{{node.getProperty('citationstyle')}}</span>
                                     <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
+                                    </div>
                                 </td>
                                 <td data-ng-if="node.getProperty('url') != ''">
+                                    <div>
                                     <a href="{{node.getProperty('url')}}" target="_blank">
                                         <span data-ng-if="node.getProperty('citationstyle') != ''">{{node.getProperty('citationstyle')}}</span>
                                         <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
                                     </a>
+                                    </div>
                                 </td>
                             </tr>
                         </table>
