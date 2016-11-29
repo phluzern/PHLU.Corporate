@@ -30,10 +30,12 @@
                     <f:if condition="{contact.street2} != ''">{contact.street2}<br></f:if>
 
                     {contact.zip} {contact.city}<br>
-                    <f:if condition="{contact.phone} != ''"><div class="telephone">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
-                        {contact.phone}<br>
-                    </div></f:if>
+                    <f:if condition="{contact.phone} != ''">
+                        <div class="telephone">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            {contact.phone}<br>
+                        </div>
+                    </f:if>
                     <a class="content-link-email-contact-person"
                        href="mailto:{contact.email}">{contact.email}</a><br>
                 </address>
@@ -119,6 +121,7 @@
 
         <f:if condition="{contact.publications}">
 
+
             <div class="row publications-list">
                 <div class="col-xs-12">
 
@@ -134,9 +137,13 @@
                                         <div class="panel-heading" role="tab">
                                             <h4 class="panel-title">
 
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#phlu-accordion-publications" href="#phlu-accordion-publications-{iterator.index}" aria-expanded="false" aria-controls="#phlu-accordion-publications-{iterator.index}">
+                                                <a class="collapsed" data-toggle="collapse"
+                                                   data-parent="#phlu-accordion-publications"
+                                                   href="#phlu-accordion-publications-{iterator.index}"
+                                                   aria-expanded="false"
+                                                   aria-controls="#phlu-accordion-publications-{iterator.index}">
                                                     {publicationtype.type.name} ({publicationtype.type.count})
-                                                 </a>
+                                                </a>
 
                                             </h4>
                                         </div>
@@ -144,7 +151,31 @@
                                              class="panel-collapse collapse" role="tabpanel">
                                             <div>
                                                 <f:for each="{publicationtype.items}" as="publication">
-                                                    <p>{publication.Citationstyle -> f:format.raw()}</p>
+
+                                                    <f:if condition="{publication.URL}">
+                                                        <f:then>
+                                                            <p><a href="{publication.URL}" class="" target="_blank">
+                                                                <f:if condition="{publication.Citationstyle} == ''">
+                                                                    <f:then>
+                                                                        {publication.Title -> f:format.raw()}
+                                                                    </f:then>
+                                                                    <f:else>{publication.Citationstyle ->
+                                                                        f:format.raw()}
+                                                                    </f:else>
+                                                                </f:if>
+                                                            </a></p>
+                                                        </f:then>
+                                                        <f:else>
+                                                            <f:if condition="{publication.Citationstyle} == ''">
+                                                                <f:then><p>{publication.Title -> f:format.raw()}</p>
+                                                                </f:then>
+                                                                <f:else><p>{publication.Citationstyle -> f:format.raw()}</p>
+                                                                </f:else>
+                                                            </f:if>
+                                                        </f:else>
+                                                    </f:if>
+
+
                                                 </f:for>
                                             </div>
                                         </div>
