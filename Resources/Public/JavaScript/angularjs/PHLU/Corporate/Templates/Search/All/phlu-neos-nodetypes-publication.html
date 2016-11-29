@@ -1,8 +1,13 @@
-<h3>
-    <a class="content-link-internal" href="{{node.getUrl()}}">{{node.getProperty('title')}}</a>
-</h3>
-<div class="searchresult-body">
-    {{node.getProperty('citationstyle')}}
+
+<div data-ng-if="node.getProperty('URL') == ''">
+    <span data-ng-if="node.getProperty('citationstyle') != ''">{{node.getProperty('citationstyle')}}</span>
+    <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
+</div>
+<div data-ng-if="node.getProperty('URL') != ''">
+    <a href="{{node.getProperty('URL')}}" target="_blank">
+        <span data-ng-if="node.getProperty('citationstyle') != ''">{{node.getProperty('citationstyle')}}</span>
+        <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
+    </a>
 </div>
 
 <div ng-bind-html="node.getBreadcrumb()"></div>

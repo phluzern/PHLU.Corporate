@@ -159,27 +159,20 @@
                                 </th>
                             </tr>
                             </thead>
-                            <tbody ng-repeat="node in result.getNodes(limit)"
-                                   data-ng-click="node.isopen = node.isopen ? false : true">
-                            <tr data-ng-class="{open: node.isopen,noborder: $index > 0}" class="clickable"
+                            <tbody>
+                            <tr ng-repeat="node in result.getNodes(limit)"
                                 data-node-id="{{node.identifier}}">
-                                <td>
-                                        <span class="oi"
-                                              data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
-                                    <span>{{node.getProperty('title')}}</span>
+                                <td data-ng-if="node.getProperty('URL') == ''">
+                                    <span data-ng-if="node.getProperty('citationstyle') != ''">{{node.getProperty('citationstyle')}}</span>
+                                    <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
                                 </td>
-                                <td>
-                                    <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus}}<br></span>
-                                </td>
-                            </tr>
-                            <tr class="result-preview" data-ng-show="node.isopen">
-                                <td colspan="2">
-                                    <div>
-                                        {{node.getProperty('citationstyle')}}
-                                    </div>
+                                <td data-ng-if="node.getProperty('URL') != ''">
+                                    <a href="{{node.getProperty('URL')}}" target="_blank">
+                                        <span data-ng-if="node.getProperty('citationstyle') != ''">{{node.getProperty('citationstyle')}}</span>
+                                        <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
+                                    </a>
                                 </td>
                             </tr>
-                            </tbody>
                         </table>
                     </div>
                     <a data-ng-click="loadMore();" class="nav-item nav-link anchor-nav"
