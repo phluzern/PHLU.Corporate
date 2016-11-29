@@ -12,6 +12,8 @@ prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
         hasanchornavigation = ${q(node).property('hasanchornavigation')}
         hasmoodimage = ${q(node).property('hasmoodimage')}
 
+        contactIsHidden = ${q(q(node).children('contact').get(0)).context.workspaceName == 'live' ?((String.length(q(q(node).children('contact').get(0)).property('lastname')) > 0 || q(q(node).children('contact').get(0)).property('contact'))> 0 && q(q(node).children('contact').get(0)).property('ishidden')!= TRUE ? false : true): q(q(node).children('contact').get(0)).property('ishidden')}
+
 
 
         # Contacts wrapper (tile)
