@@ -10,6 +10,9 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.organisations = {};
     $scope.researchunit = {};
     $scope.initialFilters = {};
+    $scope.limit = 5;
+    $scope.limitChunkSize = 5;
+
 
     $scope.addPropertyFilter = function (property, value) {
         $scope.list.addPropertyFilter(property, value, $scope);
@@ -49,6 +52,10 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         $scope.organisations = f;
     };
 
+    $scope.loadMore = function () {
+        $scope.limit = $scope.limit + $scope.limitChunkSize;
+
+    };
 
     $scope.list
         .addPropertyFilter('organisationunits.id', 'organisations', $scope)
@@ -72,6 +79,8 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     $scope.organisations = {};
     $scope.initialFilters = {};
     $scope.participantsSearch = '';
+    $scope.limit = 5;
+    $scope.limitChunkSize = 5;
 
     $scope.setQuery = function (value) {
         $scope.list.setQuery(value, $scope);
@@ -85,6 +94,11 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     $scope.setFilterOrganisations = function (f) {
         $scope.organisations = f;
         $scope.initialFilters['organisations'] = true;
+    };
+
+    $scope.loadMore = function () {
+        $scope.limit = $scope.limit + $scope.limitChunkSize;
+
     };
 
     $scope.list

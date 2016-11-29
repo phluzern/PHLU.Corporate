@@ -159,7 +159,7 @@
                                 </th>
                             </tr>
                             </thead>
-                            <tbody ng-repeat="node in result.getNodes() | orderBy:'-score'"
+                            <tbody ng-repeat="node in result.getNodes(limit)"
                                    data-ng-click="node.isopen = node.isopen ? false : true">
                             <tr data-ng-class="{open: node.isopen,noborder: $index > 0}" class="clickable"
                                 data-node-id="{{node.identifier}}">
@@ -182,8 +182,8 @@
                             </tbody>
                         </table>
                     </div>
-
-
+                    <a data-ng-click="loadMore();" class="nav-item nav-link anchor-nav"
+                       data-ng-if="result.count() > limit">{{limitChunkSize}} mehr anzeigen</a>
                 </div>
             </div>
         </div>
