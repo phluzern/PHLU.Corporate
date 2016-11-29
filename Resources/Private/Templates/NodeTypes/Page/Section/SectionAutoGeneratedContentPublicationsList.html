@@ -16,9 +16,134 @@
             <span data-ng-init="list.addNodesByIdentifier(['{publication.Identifier}']);"></span>
         </f:for>
 
-        <f:if condition="{participants} != 'null'"><span data-ng-init="setFilterParticipants({participants});"></span></f:if>
-        <f:if condition="{organisations} != 'null'"><span data-ng-init="setFilterOrganisations({organisations});"></span></f:if>
+        <f:if condition="{persons} != 'null'"><span data-ng-init="setFilterPersons({persons});"></span>
+        </f:if>
+        <f:if condition="{organisations} != 'null'"><span
+                data-ng-init="setFilterOrganisations({organisations});"></span></f:if>
 
+        <f:if condition="{showSearchInput}">
+            <div class="col-xs-12">
+                <div class="row ">
+                    <div class="col-xs-12">
+
+                        <div class="list-search-field">
+                            <input type="text" class="c-input form-control" data-ng-model="search">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <span
+                                    data-ng-init="setQuery('search');"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </f:if>
+
+
+        <f:if condition="{showSearchInput}">
+            <div class="col-xs-12">
+                <div class="row subjectsfilternav">
+                    <div class="col-xs-12">
+                        <ul class="nav nav-pills" role="tablist">
+
+                            <li class="nav-item"
+                                data-ng-show="initialFilters.persons === undefined && result.getDistinctCount('persons') > 0">
+                                <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                                   data-target="#participants-{node.Identifier}" role="tab">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                    <span data-toggle="filterCountTag"
+                                          data-template='<div class="tooltip filterCountTag" role="tooltip"><span class="tooltip-inner"></span><span class="oi oi-media-record"></span></div>'
+                                          data-placement="right" title="" data-offset="26px -6px"
+                                          data-trigger="manual">Beteiligte Personen</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item"
+                                data-ng-show="initialFilters.organisations === undefined && result.getDistinctCount('organisations') > 0">
+                                <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                                   data-target="#organisations-{node.Identifier}" role="tab">
+                                    <i class="fa fa-flask" aria-hidden="true"></i>
+                                    <span>Abteilung</span>
+
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="tab-content">
+
+
+                            <div class="result-panel tab-pane " id="participants-{node.Identifier}"
+                                 role="tabpanel"
+                                 data-ng-show="result.getDistinctCount('persons') > 0"><a href="#"
+                                                                                          class="close-btn"><i
+                                    class="fa fa-times" aria-hidden="true"></i></a>
+                                <div class="dropdown-search-field">
+                                    <input type="text" class="c-input form-control"
+                                           data-ng-model="participantsSearch">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+
+                                </div>
+                                <div class="search-result-tags">
+                                    <span class="search-result-tag"
+                                          data-ng-repeat="(eventoID,val) in participants" data-ng-if="val">{{val}} <i
+                                            class="fa fa-times clickable"
+                                            aria-hidden="true"
+                                            data-ng-click="participants[eventoID] = false;"></i></span>
+
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr class="clickable"
+                                            data-ng-repeat="(key,person) in result.getDistinct('persons') | inArrayFilter:participantsSearch"
+                                            data-ng-if="person.value.EventoID > 0"
+                                            data-ng-show="participants[person.value.EventoID] == undefined || participants[person.value.EventoID] == false">
+                                            <td>
+                                                <a href="javascript:void(0);"
+                                                   data-ng-click="participants[person.value.EventoID] = person.value.Nachname+ ' ' + person.value.Vorname;">
+                                                    {{person.value.Vorname}} {{person.value.Nachname}}
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                            <div class="result-panel tab-pane " id="organisations-{node.Identifier}" role="tabpanel"
+                                 data-ng-show="result.getDistinctCount('organisations') > 0">
+                                <!--<a href="#" class="close-btn">&nbsp;</a>-->
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr data-ng-class="{checked: organisations[lt.value.OrganisationId]}"
+                                            data-ng-repeat="lt in result.getDistinct('organisations') | toArray:false | orderBy:'value.OrganisationName'">
+                                            <td>
+                                                <a href="javascript:void(0);"
+                                                   data-ng-click="organisations[lt.value.OrganisationId] = !organisations[lt.value.OrganisationId] ? true : false;">
+                                                    <i class="fa"
+                                                       data-ng-class="{'fa-check-square-o': organisations[lt.value.OrganisationId],'fa-square-o': !organisations[lt.value.OrganisationId]}"
+                                                       aria-hidden="true"></i>
+                                                    {{lt.value.OrganisationName}} ({{lt.count}})
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </f:if>
 
 
         <div class="col-xs-12">
@@ -42,7 +167,6 @@
                                         <span class="oi"
                                               data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
                                     <span>{{node.getProperty('title')}}</span>
-
                                 </td>
                                 <td>
                                     <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus}}<br></span>

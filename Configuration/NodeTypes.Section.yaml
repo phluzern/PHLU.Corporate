@@ -262,6 +262,14 @@
             dataSourceIdentifier: 'phlu-corporate-publications'
             dataSourceAdditionalData:
               property: 'participantnames'
+    showSearchInput:
+      type: boolean
+      ui:
+        label: 'Suchfeld und Filter anzeigen'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+          position: 90
     organisations:
       type: array
       ui:
