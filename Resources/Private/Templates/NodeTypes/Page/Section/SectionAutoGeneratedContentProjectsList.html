@@ -269,7 +269,9 @@
                                 <td>
                                         <span class="oi"
                                               data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
-                                    <span>{{node.getPreview()}}</span>
+                                    <span>
+                                        {{node.getProperty('title')}}
+                                    </span>
 
                                     <div class="mobile-view-columns">
                                                         <span class="header">
@@ -286,7 +288,7 @@
                             <tr class="result-preview" data-ng-show="node.isopen">
                                 <td colspan="2">
                                     <div>
-                                        <div ng-bind-html="node.getProperty('abstracttextgerman').substr(0,255) + '...'"></div>
+                                      <p ng-bind-html="node.getProperty('teasertextgerman').substr(0,255)"></p>
                                         <a class="btn btn-primary" href="{{node.getUrl()}}">
                                             Details
                                         </a>

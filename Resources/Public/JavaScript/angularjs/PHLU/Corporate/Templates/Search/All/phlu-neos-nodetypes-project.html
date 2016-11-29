@@ -2,7 +2,7 @@
     <a class="content-link-internal" href="{{node.getUrl()}}">{{node.getProperty('title')}}</a>
 </h3>
 <div class="searchresult-body">
-    {{node.getPreview()}}
+    {{node.getProperty('teasertextgerman').substr(0,255)}}
 </div>
 
 <div ng-bind-html="node.getBreadcrumb()"></div>
