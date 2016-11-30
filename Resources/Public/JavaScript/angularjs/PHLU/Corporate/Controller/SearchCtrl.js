@@ -168,6 +168,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         'Kontakte': ['email','phone'],
         'Standorte': 'street',
+        'Projekte': 'title',
 
 
     };
