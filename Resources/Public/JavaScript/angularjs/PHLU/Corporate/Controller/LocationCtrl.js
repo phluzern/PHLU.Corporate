@@ -90,7 +90,6 @@ PHLUCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybrids
         angular.forEach($scope.locations, function (status, nodeId) {
 
 
-
             if (status) {
                 node = list.$$app.getResultNodeByIdentifier(nodeId);
 
@@ -190,7 +189,7 @@ PHLUCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybrids
                                 nodeSet[nodeId] = true;
                             }
                         }
-                        
+
                     });
 
 
@@ -234,8 +233,8 @@ PHLUCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybrids
         list
             .addPropertyFilter('street', '', null, true)
             .$watch(function (data) {
-                $scope.locationsMap();
                 $scope.showAllLocations();
+                $scope.locationsMap();
             })
             .$bind('result', $scope)
             .run();

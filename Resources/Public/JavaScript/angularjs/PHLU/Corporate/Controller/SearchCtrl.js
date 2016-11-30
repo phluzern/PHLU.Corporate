@@ -56,8 +56,6 @@ PHLUCorporateApp.directive('search', function ($sce) {
                             }
 
 
-
-
                         default:
                             return template + '/All/default.html';
                     }
@@ -104,7 +102,7 @@ PHLUCorporateApp.directive('nodeType', function ($sce) {
 });
 
 
-PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject','$compile', function ($scope, $rootScope, $sce, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject,$compile) {
+PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$compile', function ($scope, $rootScope, $sce, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $compile) {
 
 
     $scope.result = new $hybridsearchResultsObject();
@@ -161,8 +159,16 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     };
 
+    var groupedBy = {
+
+        'Kontakte': 'email',
+        'Standorte': 'street',
+
+
+    };
+
     var search = new $hybridsearchObject(hybridsearch);
-    search.setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$watch(function (data) {
+    search.setGroupedBy(groupedBy).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$watch(function (data) {
 
         $scope.result = data;
 
@@ -244,9 +250,9 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         //$compile(element.html(o.html()))(scope);
 
-       // $("#"+i).html(element);
+        // $("#"+i).html(element);
 
-      //  $compile(o.html())($scope);
+        //  $compile(o.html())($scope);
 
 
     });
