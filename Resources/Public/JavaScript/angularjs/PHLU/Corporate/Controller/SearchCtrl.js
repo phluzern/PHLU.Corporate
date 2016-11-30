@@ -166,15 +166,21 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var groupedBy = {
 
-        'Kontakte': ['email','phone'],
+        'Kontakte': ['email', 'phone'],
         'Standorte': 'street',
         'Projekte': 'title',
 
 
     };
 
+    var orderBy = {
+        'Projekte': 'title',
+        'Publikationen': 'citationstyle'
+    };
+
+
     var search = new $hybridsearchObject(hybridsearch);
-    search.setGroupedBy(groupedBy).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$watch(function (data) {
+    search.setGroupedBy(groupedBy).setOrderBy(orderBy).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$watch(function (data) {
 
         $scope.result = data;
 

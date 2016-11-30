@@ -54,7 +54,7 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
-                                <tr ng-repeat="node in result.getNodes() | orderBy:'-score'"
+                                <tr ng-repeat="node in result.getNodes()"
                                     data-ng-if="!node.isTurboNode() && node.getNodeType() != 'phlu-corporate-location'">
                                     <td>
                                         <search data="node" view="all"></search>
@@ -169,7 +169,7 @@
                                             </tr>
                                             </thead>
 
-                                            <tbody ng-repeat="node in group.getNodes() | orderBy:'-score'"
+                                            <tbody ng-repeat="node in group.getNodes()"
                                                    data-ng-click="node.isopen = node.isopen ? false : true">
                                             <tr data-ng-class="{open: node.isopen,noborder: $index > 0}"
                                                 class="clickable">
@@ -212,7 +212,7 @@
                             <div class="table-responsive" data-ng-switch-default>
                                 <table class="table">
                                     <tbody>
-                                    <tr ng-repeat="node in group.getNodes() | orderBy:'-score'"
+                                    <tr ng-repeat="node in group.getNodes()"
                                         data-ng-if="!node.isTurboNode()">
                                         <td>
                                             <search data="node" view="group"></search>
@@ -241,7 +241,7 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
-                                <tr ng-repeat="node in group.getNodes() | orderBy:'-score'"
+                                <tr ng-repeat="node in group.getNodes()"
                                     data-ng-if="!node.isTurboNode()">
                                     <td class="clickable">
                                         <search data="node" view="group"></search>

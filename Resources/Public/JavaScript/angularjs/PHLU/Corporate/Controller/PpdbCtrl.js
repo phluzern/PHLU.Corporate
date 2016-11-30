@@ -54,10 +54,11 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
     $scope.loadMore = function () {
         $scope.limit = $scope.limit + $scope.limitChunkSize;
-
     };
 
+
     $scope.list
+        .setOrderBy({'phlu-neos-nodetypes-project': 'title'})
         .addPropertyFilter('organisationunits.id', 'organisations', $scope)
         .addPropertyFilter('lifetime', 'filterLifetime', $scope)
         .addPropertyFilter('researchmainfocus.ID', 'researchmainfocus', $scope)
@@ -102,6 +103,7 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     };
 
     $scope.list
+        .setOrderBy({'phlu-neos-nodetypes-publication': 'citationstyle'})
         .setNodeType('phlu-neos-nodetypes-publication')
         .addPropertyFilter('title', '', null, true)
         .addPropertyFilter('persons.EventoID', 'participants', $scope)
