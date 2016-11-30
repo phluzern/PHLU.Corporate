@@ -166,7 +166,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var groupedBy = {
 
-        'Kontakte': 'email',
+        'Kontakte': ['email','phone'],
         'Standorte': 'street',
 
 
