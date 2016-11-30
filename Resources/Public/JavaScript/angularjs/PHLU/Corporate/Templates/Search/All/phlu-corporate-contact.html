@@ -4,7 +4,7 @@
 </h3>
 <div class="searchresult-body">
 
-    <span data-ng-show="node.getParent().getProperty('title') !== ''">{{node.getParent().getProperty('title')}}</span><span data-ng-show="node.getParent().getProperty('title') == ''">{{node.getProperty('function')}}</span>, {{node.getProperty('phone')}}, {{node.getProperty('email')}}
+    <span data-ng-show="node.getParent().getProperty('title') !== ''">{{node.getParent().getProperty('title')}}</span><span data-ng-show="node.getParent().getProperty('title') == '' && node.getParent().getProperty('function') != ''">{{node.getProperty('function')}}, </span> {{node.getProperty('phone')}}, {{node.getProperty('email')}}
 
 
 </div>

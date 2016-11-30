@@ -34,6 +34,11 @@ PHLUCorporateApp.directive('search', function ($sce) {
                                 return template + '/Group/phlu-corporate-contact.html';
                             }
 
+                        case 'phlu-corporate-content-page-headerdefault':
+
+                            return template + '/All/phlu-corporate-content-page-headerdefault.html';
+
+
                         case 'phlu-qmpilot-nodetypes-file':
 
                             if ($scope.view === 'all') {
