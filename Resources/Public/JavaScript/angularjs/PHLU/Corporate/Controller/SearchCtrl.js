@@ -132,6 +132,11 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact': 'Kontakte',
         'phlu-corporate-headline': 'Seiten',
         'phlu-corporate-page-overview-onepage': 'Seiten',
+        'phlu-corporate-page-section': 'Seiten',
+        'phlu-corporate-text': 'Seiten',
+        'phlu-corporate-textplain': 'Seiten',
+        'phlu-corporate-section': 'Seiten',
+        'phlu-corporate-tags-menu': 'Seiten',
         'phlu-neos-nodetypes-contentcollection-table-body': 'Seiten',
         'phlu-corporate-table': 'Seiten',
         'phlu-corporate-content-page-headerdefault': 'Seiten',
@@ -139,7 +144,8 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-image': 'Bilder',
         'phlu-neos-nodetypes-project': 'Projekte',
         'phlu-neos-nodetypes-publication': 'Publikationen',
-        'phlu-corporate-location': 'Standorte'
+        'phlu-corporate-location': 'Standorte',
+        '*': 'Seiten'
 
     };
 
@@ -169,6 +175,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Kontakte': ['email', 'phone'],
         'Standorte': 'street',
         'Projekte': 'title',
+        'Seiten': 'breadcrumb'
 
 
     };
