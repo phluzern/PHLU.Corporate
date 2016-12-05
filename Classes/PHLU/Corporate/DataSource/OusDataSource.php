@@ -30,31 +30,34 @@ class OusDataSource extends AbstractDataSource {
 
 
         $ous = array();
+        $ousfinal = array();
 
         $flowQuery = new FlowQuery(array(
             $node->getContext()->getNodeByIdentifier('3903eff9-838f-45ad-8140-f2a88cb97be1'),
             $node->getContext()->getNodeByIdentifier('3a338745-b7c7-4f91-99f5-1191a94f9395')
         ));
 
-        $nodes = $flowQuery->find("[instanceof PHLU.Neos.NodeTypes:Page]")->get();
+        if ($flowQuery->get(0) && $flowQuery->get(1)) {
+            $nodes = $flowQuery->find("[instanceof PHLU.Neos.NodeTypes:Page]")->get();
 
-        foreach ($nodes as $tag) {
-            /** @var Node $tag*/
-            $group = '';
-            if ($tag->getParent() && $tag->getParent()->getProperty('title')) $group = $tag->getParent()->getProperty('title');
-            $ous[$group][$tag->getIdentifier()] = array('value' => $tag->getIdentifier(), 'label' => $tag->getProperty('title'), 'group' => $group, 'icon' => $tag->getNodeType()->getConfiguration('ui.icon'));
-        }
-
-
-        // TODO refactoring, see https://jira.neos.io/browse/NEOS-1476
-        $ousfinal = array();
-        foreach ($ous as $key => $val) {
-            foreach ($val as $id => $v) {
-                $ousfinal[(string)$id] = $v;
+            foreach ($nodes as $tag) {
+                /** @var Node $tag */
+                $group = '';
+                if ($tag->getParent() && $tag->getParent()->getProperty('title')) $group = $tag->getParent()->getProperty('title');
+                $ous[$group][$tag->getIdentifier()] = array('value' => $tag->getIdentifier(), 'label' => $tag->getProperty('title'), 'group' => $group, 'icon' => $tag->getNodeType()->getConfiguration('ui.icon'));
             }
+
+
+            // TODO refactoring, see https://jira.neos.io/browse/NEOS-1476
+
+            foreach ($ous as $key => $val) {
+                foreach ($val as $id => $v) {
+                    $ousfinal[(string)$id] = $v;
+                }
+            }
+
+
         }
-
-
 
         return $ousfinal;
     }
