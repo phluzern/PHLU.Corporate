@@ -34,6 +34,22 @@ PHLUCorporateApp.directive('search', function ($sce) {
                                 return template + '/Group/phlu-corporate-contact.html';
                             }
 
+                        case 'phlu-corporate-event':
+
+                            if ($scope.view === 'all') {
+                                return template + '/All/default.html';
+                            } else {
+                                return template + '/Group/phlu-corporate-event.html';
+                            }
+
+                     case 'phlu-corporate-newsitem':
+
+                            if ($scope.view === 'all') {
+                                return template + '/All/default.html';
+                            } else {
+                                return template + '/Group/phlu-corporate-news.html';
+                            }
+
                         case 'phlu-corporate-content-page-headerdefault':
 
                             return template + '/All/phlu-corporate-content-page-headerdefault.html';
@@ -145,6 +161,8 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-project': 'Projekte',
         'phlu-neos-nodetypes-publication': 'Publikationen',
         'phlu-corporate-location': 'Standorte',
+        'phlu-corporate-event': 'Veranstaltungen',
+        'phlu-corporate-newsitem': 'News',
         '*': 'Seiten'
 
     };
@@ -153,8 +171,8 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         'phlu-corporate-content-page-headerdefault-grandparent': 5,
         'phlu-corporate-contact-grandparent': 10,
-        'phlu-corporate-contact-firstname': 10,
-        'phlu-corporate-contact-lastname': 10,
+        'phlu-corporate-contact-firstname': 50,
+        'phlu-corporate-contact-lastname': 50,
         'phlu-corporate-contact-phone': 10,
         'phlu-corporate-contact-email': 10,
         'phlu-corporate-headline-title': 10,

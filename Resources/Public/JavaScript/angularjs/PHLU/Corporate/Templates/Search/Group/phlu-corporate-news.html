@@ -1,0 +1,21 @@
+<div class="col-xs-12 flowtext-phlu-news">
+
+    <div class="row clickable">
+        <div class=" col-xs-12">
+            <div class="preview-image" data-ng-if="node.getProperty('image').thumbnailUri">
+                <img src="{{node.getProperty('image').thumbnailUri}}" class="img-fluid">
+            </div>
+            <div class="date-title-preview-text">
+                <b>{{node.getProperty('date').FORMAT.d}}. {{node.getProperty('date').FORMAT.B}} {{node.getProperty('date').FORMAT.Y}}</b>
+                <br>
+                <a href="{{node.getUrl()}}">{{node.getProperty('headline')}}</a>
+                <br>
+                <div>
+                    {{node.getProperty('text')}} ... <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
