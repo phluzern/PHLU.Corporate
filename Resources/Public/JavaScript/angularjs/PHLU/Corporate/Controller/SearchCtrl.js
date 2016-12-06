@@ -205,6 +205,9 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     var search = new $hybridsearchObject(hybridsearch);
+
+    search.addPropertyFilter('lastname','',null,true,false,'phlu-corporate-contact');
+
     search.setGroupedBy(groupedBy).setOrderBy(orderBy).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$watch(function (data) {
 
         $scope.result = data;
