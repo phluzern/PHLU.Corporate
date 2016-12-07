@@ -1752,7 +1752,7 @@ body {
                 @include media-breakpoint-down("xxl") {
                   left: 0;
                 }
-                width: 100px;
+                width: auto;
                 @include media-breakpoint-down("sm") {
                   margin: 0 0 0 auto;
                 }

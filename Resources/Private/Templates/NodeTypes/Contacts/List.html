@@ -10,19 +10,26 @@
             <div class=" panel-heading" role="tab" id="tab-{node.Identifier}" data-toggle="collapse"
                  data-parent="#accordion-{wrapperNode.Identifier}"
                  data-target="#collapse-{node.Identifier}" aria-expanded="false">
+
+
                 <div class="row">
-                    <div class="col-sm-6 col-xs-12">
+                    <div class="col-sm-7 col-md-8 col-xs-12">
                         {node.properties.firstname} {node.properties.lastname}
                     </div>
-                    <div class="col-sm-4 col-xs-10">
-                        {node.properties.phone} |
-                        <a href="mailto:{node.properties.email}" class="panel-email">&nbsp;</a>
-                    </div>
-                    <div class="col-sm-2 col-xs-2">
+                    <div class="col-sm-5 col-md-4 col-xs-12 panel-infos">
+                                                            <span class="panel-telephone">
+                                                                 {node.properties.phone}
+                                                            </span>
+                        <a href="mailto:{node.properties.email}" class="panel-email" alt="Email">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        </a>
+                        <a class="panel-switch" href="#" alt="panel-switch">
+                            &nbsp;</a>
 
-                        <a class="panel-switch" href="#">&nbsp;</a>
                     </div>
                 </div>
+
+
             </div>
 
             <div id="collapse-{node.Identifier}" class="panel-collapse collapse" role="tabpanel"

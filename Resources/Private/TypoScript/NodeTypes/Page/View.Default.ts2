@@ -20,7 +20,7 @@ prototype(PHLU.Corporate:Page.View.Default) < prototype(PHLU.Corporate:Page) {
         prototype(PHLU.Corporate:Contacts) {
 
             collectionRenderer.attributes.class = 'row phlu-teaser navigation subpage'
-            prototype(PHLU.Corporate:Contact).templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/Single.html'
+            prototype(PHLU.Corporate:Contact).templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/Tile.html'
             prototype(PHLU.Corporate:Contact).attributes.class = 'col-xs-12 col-md-6 nav-teaser-item'
             prototype(PHLU.Corporate:ContactsGroup).attributes.class = 'col-xs-12'
             prototype(PHLU.Corporate:ContactsGroup).collectionRenderer.attributes.class = 'row'

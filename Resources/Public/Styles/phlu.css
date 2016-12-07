@@ -9367,7 +9367,7 @@ body {
       position: relative;
       top: 17px;
       left: 15px;
-      width: 100px; }
+      width: auto; }
       @media (max-width: 1599px) {
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
           left: 0; } }
