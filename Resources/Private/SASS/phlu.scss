@@ -377,7 +377,7 @@ body.neos-backend {
     outline-offset: 0px !important;
     margin-top: -8px;
     position: absolute;
-    right:0;
+    right: 0;
 
     i {
       padding-left: 10px;
@@ -424,7 +424,58 @@ body.neos-backend {
     }
   }
 
+  #neos-shortcut h1 {
+
+    position: relative;
+    margin: 0 auto;
+    height: 60px;
+    top: 50%;
+    margin-top: -30px;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  #neos-shortcut > div {
+    position: relative;
+    margin: 0 auto;
+    width: 650px;
+    height: auto;
+    top: 50%;
+    margin-top: -30px;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  #neos-shortcut ul {
+
+    position: relative;
+    margin: 0 auto;
+    height: auto;
+    top: 50%;
+    margin-top: -30px;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.4;
+    text-align: left;
+    margin-top: 15px;
+    li {
+      text-align: left;
+      padding-bottom: 15px;
+    }
+  }
+  .link {
+    color: #0275d8;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
 }
+
+;
 
 body {
   &.siteSearchActive {
@@ -1510,40 +1561,40 @@ body {
       }
     }
     .row.subjectsfilternav {
-        .col-xs-12 {
-          .nav-pills {
-            padding-top: 30px;
-            margin-bottom: 0;
-            li {
-              margin-top: 4px;
-              margin-right: 4px;
-              margin-left: 0;
-              a.nav-link {
-                background-color: $grey5;
+      .col-xs-12 {
+        .nav-pills {
+          padding-top: 30px;
+          margin-bottom: 0;
+          li {
+            margin-top: 4px;
+            margin-right: 4px;
+            margin-left: 0;
+            a.nav-link {
+              background-color: $grey5;
 
-                padding-top: 9px;
-                padding-bottom: 10px;
-                &:hover {
-                  background-color: $grey;
-                }
-                &.all, &.no-icon {
-                  padding-left: 23px;
-                }
-                &.active {
-                  background-color: $grey6;
-                }
-                .phlu-corporate-tag {
-                  padding-left:26px;
-                }
+              padding-top: 9px;
+              padding-bottom: 10px;
+              &:hover {
+                background-color: $grey;
+              }
+              &.all, &.no-icon {
+                padding-left: 23px;
               }
               &.active {
-                a.nav-link {
-                  background-color: $grey6;
-                }
+                background-color: $grey6;
+              }
+              .phlu-corporate-tag {
+                padding-left: 26px;
+              }
+            }
+            &.active {
+              a.nav-link {
+                background-color: $grey6;
               }
             }
           }
         }
+      }
 
       .faecherIco, .oi-media-stop {
         &::before {
@@ -1971,7 +2022,7 @@ body {
             }
           }
         }
-        &.education, &.working-priorities, &.expertises  {
+        &.education, &.working-priorities, &.expertises {
           ul {
             &.list {
               li {
@@ -2102,7 +2153,7 @@ body {
           display: inline-block;
           padding: 5px;
           margin-top: 4px;
-          margin-right:10px;
+          margin-right: 10px;
         }
 
       }
@@ -2135,14 +2186,14 @@ body {
           padding: 5px 0;
 
           .close-btn {
-            z-index:9;
+            z-index: 9;
             display: inline-block;
             position: absolute;
             right: 0px;
             font-family: FontAwesome;
             font-size: 30px;
-            height:50px;
-            width:50px;
+            height: 50px;
+            width: 50px;
             position: absolute;
             right: 15px;
             bottom: -53px;
@@ -2178,7 +2229,7 @@ body {
                   }
                 }
                 i.fa {
-                  margin-right:20px;
+                  margin-right: 20px;
                 }
                 &.checked {
                   color: $olivegreen;
@@ -2202,7 +2253,7 @@ body {
         }
       }
       .results-table {
-        z-index:8;
+        z-index: 8;
 
         a {
           color: $grey;
@@ -2321,8 +2372,8 @@ body {
       .location-building-image {
         margin-bottom: 50px;
         img {
-          width:100%;
-          height:auto;
+          width: 100%;
+          height: auto;
         }
       }
       .row.departments {
@@ -2776,7 +2827,7 @@ body {
             }
             &.noborder {
               th, td {
-                border-top:0;
+                border-top: 0;
               }
 
             }
@@ -2908,7 +2959,7 @@ body {
     .google-maps-iframe {
       margin-bottom: 10px;
       .locationsMap {
-        height:400px;
+        height: 400px;
       }
     }
     //

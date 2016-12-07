@@ -8473,6 +8473,45 @@ body.neos-backend .phlu-qmpilot-nodetypes-files.assetsCount-0, body.neos-backend
   border: 1px dotted lightgrey; }
 body.neos-backend .phlu-qmpilot-nodetypes-files.last, body.neos-backend .phlu-qmpilot-nodetypes-file.last {
   margin-bottom: 31px; }
+body.neos-backend #neos-shortcut h1 {
+  position: relative;
+  margin: 0 auto;
+  height: 60px;
+  top: 50%;
+  margin-top: -30px;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.4;
+  text-align: center; }
+body.neos-backend #neos-shortcut > div {
+  position: relative;
+  margin: 0 auto;
+  width: 650px;
+  height: auto;
+  top: 50%;
+  margin-top: -30px;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.4;
+  text-align: left; }
+body.neos-backend #neos-shortcut ul {
+  position: relative;
+  margin: 0 auto;
+  height: auto;
+  top: 50%;
+  margin-top: -30px;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.4;
+  text-align: left;
+  margin-top: 15px; }
+  body.neos-backend #neos-shortcut ul li {
+    text-align: left;
+    padding-bottom: 15px; }
+body.neos-backend .link {
+  color: #0275d8;
+  text-decoration: none;
+  cursor: pointer; }
 
 body {
   margin-bottom: 420px;

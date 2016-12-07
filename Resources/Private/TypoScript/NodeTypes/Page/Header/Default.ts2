@@ -4,6 +4,7 @@ prototype(PHLU.Corporate:Content.Page.HeaderDefault) < prototype(PHLU.Corporate:
     defaultRenderer = TYPO3.Neos:ContentCase
 
     title = ${q(node).children('title').get(0)}
+
     text = ${q(node).children('text').get(0)}
 
         prototype(PHLU.Corporate:Headline) {

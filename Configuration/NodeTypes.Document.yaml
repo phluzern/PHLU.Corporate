@@ -19,12 +19,10 @@
       type: 'PHLU.Corporate:Content.Page.TargetGroup'
     carouselnews:
       type: 'PHLU.Corporate:Content.CarouselNews'
-
   constraints:
     nodeTypes:
       '*': FALSE
       'TYPO3.Neos:Shortcut': FALSE
-
 
 'PHLU.Corporate:Page.NotInMenu':
   superTypes:
@@ -92,6 +90,9 @@
   superTypes:
     'PHLU.Corporate:Page': TRUE
   properties:
+    title:
+      ui:
+        inlineEditable: TRUE
     hasanchornavigation:
       type: boolean
       ui:

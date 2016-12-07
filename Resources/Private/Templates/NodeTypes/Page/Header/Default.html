@@ -1,6 +1,10 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
 
 <div {attributes -> f:format.raw()}>
+
+
 
     <ts:render path="defaultRenderer" context="{node: title}"/>
     <ts:render path="defaultRenderer" context="{node: text}"/>
