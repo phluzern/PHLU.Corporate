@@ -56,14 +56,7 @@
 
                                 </a>
                             </li>
-                            <li class="nav-item" data-ng-show="initialFilters.researchunit === undefined && result.getDistinctCount('researchunit') > 0">
-                                <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
-                                   data-target="#researchunit-{node.Identifier}" role="tab">
-                                    <i class="fa fa-flask" aria-hidden="true"></i>
-                                    <span>Forschungseinheit</span>
 
-                                </a>
-                            </li>
                             <li class="nav-item" data-ng-show="initialFilters.financingtype === undefined && result.getDistinctCount('financingtype') > 0">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#financing-{node.Identifier}" role="tab">
@@ -124,29 +117,6 @@
                                 <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                             </div>
 
-                            <div class="result-panel tab-pane " id="researchunit-{node.Identifier}" role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('researchunit') > 0">
-                                <!--<a href="#" class="close-btn">&nbsp;</a>-->
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <tbody>
-                                        <tr data-ng-class="{checked: researchunit[lt.value.ID]}"
-                                            data-ng-repeat="(key,lt) in result.getDistinct('researchunit')">
-                                            <td>
-                                                <a href="javascript:void(0);"
-                                                   data-ng-click="researchunit[lt.value.ID] = !researchunit[lt.value.ID] ? true : false;">
-                                                    <i class="fa"
-                                                       data-ng-class="{'fa-check-square-o': researchunit[lt.value.ID],'fa-square-o': !researchunit[lt.value.ID]}"
-                                                       aria-hidden="true"></i>
-                                                    {{lt.value.name}} ({{lt.count}})
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
-                            </div>
 
                             <div class="result-panel tab-pane " id="financing-{node.Identifier}" role="tabpanel"
                                  data-ng-show="result.getDistinctCount('financingtype') > 0">

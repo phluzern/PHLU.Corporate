@@ -2,6 +2,7 @@
     <a class="content-link-internal" href="{{node.getUrl()}}#tab-{{node.identifier}}">{{node.getProperty('lastname')}}
         {{node.getProperty('firstname')}}</a>
 </h3>
+
 <div class="searchresult-body">
 
     <span data-ng-show="node.getParent().getProperty('title').length > 3">{{node.getParent().getProperty('title')}}, </span><span data-ng-show="node.getParent().getProperty('title') == '' && node.getParent().getProperty('function') != ''">{{node.getProperty('function')}}, </span> <span data-ng-show="node.getProperty('phone') != ''">{{node.getProperty('phone')}},</span> {{node.getProperty('email')}}
