@@ -57,7 +57,10 @@
                                 <tr ng-repeat="node in result.getNodes()"
                                     data-ng-if="!node.isTurboNode() && node.getNodeType() != 'phlu-corporate-location'">
                                     <td>
-                                        <search data="node" view="all"></search>
+                                            <search data="node" view="all"></search>
+                                        <span data-ng-repeat="gnode in node.getGroupedNodes() | orderBy:'getBreadcrumb()'" data-ng-if="$index > 0">
+                                           <span ng-bind-html="gnode.getBreadcrumb()"></span>
+                                        </span>
                                     </td>
                                 </tr>
                                 </tbody>
