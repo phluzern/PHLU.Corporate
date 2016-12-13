@@ -187,8 +187,9 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var boostParentNodeType = {
-        'phlu-corporate-contactsgroup': 1.2,
-        'phlu-corporate-contacts': 1.5
+        'PHLU.Neos.NodeTypes:ContentCollection.ContactsGroup': 1.2,
+        'PHLU.Neos.NodeTypes:ContentCollection.Contacts': 1.8,
+        'PHLU.Corporate:ContentCollection.Page.View.Default': 1.5
     };
 
     var groupedBy = {
