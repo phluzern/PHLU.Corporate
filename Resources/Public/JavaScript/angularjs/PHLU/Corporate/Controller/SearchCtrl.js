@@ -42,7 +42,7 @@ PHLUCorporateApp.directive('search', function ($sce) {
                                 return template + '/Group/phlu-corporate-event.html';
                             }
 
-                     case 'phlu-corporate-newsitem':
+                        case 'phlu-corporate-newsitem':
 
                             if ($scope.view === 'all') {
                                 return template + '/All/default.html';
@@ -173,19 +173,22 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-grandparent': 10,
         'phlu-corporate-contact-firstname': 50,
         'phlu-corporate-contact-lastname': 50,
+        'phlu-corporate-contactsgroup.phlu-corporate-contact-firstname': 60,
+        'phlu-corporate-contactsgroup.phlu-corporate-contact-lastname': 60,
         'phlu-corporate-contact-phone': 10,
         'phlu-corporate-contact-email': 10,
         'phlu-corporate-headline-title': 10,
         'phlu-corporate-content-page-headerdefault-parent': 5,
         'parent': 15,
         'grandparent': 10,
-        'rawcontent': 1,
-        '__trendingHour': 5,
-        '__trendingRatingA': 20,
-        '__trendingRatingB': 2,
-        '__trendingRatingC': 1
+        'rawcontent': 1
 
 
+    };
+
+    var boostParentNodeType = {
+        'phlu-corporate-contactsgroup': 1.2,
+        'phlu-corporate-contacts': 1.5
     };
 
     var groupedBy = {
@@ -206,9 +209,9 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var search = new $hybridsearchObject(hybridsearch);
 
-    search.addPropertyFilter('lastname','',null,true,false,'phlu-corporate-contact');
+    search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
 
-    search.setGroupedBy(groupedBy).setOrderBy(orderBy).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$watch(function (data) {
+    search.setGroupedBy(groupedBy).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$watch(function (data) {
 
         $scope.result = data;
 

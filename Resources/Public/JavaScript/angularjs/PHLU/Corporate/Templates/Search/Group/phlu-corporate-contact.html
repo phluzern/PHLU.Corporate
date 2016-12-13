@@ -5,13 +5,11 @@
                 {{node.getProperty('lastname')}} {{node.getProperty('firstname')}}
             </b>
 
-
             <span data-ng-show="node.getProperty('titlename') !== ''"><br>{{node.getProperty('titlename')}}</span>
             <span data-ng-if="node.getProperty('titlename') == ''">
             <span data-ng-show="node.getParent().getProperty('title') !== ''"><br>{{node.getParent().getProperty('title')}}</span>
             <span data-ng-show="node.getParent().getProperty('title') == ''"><br>{{node.getProperty('function')}}</span>
             </span>
-
 
             <div class="telephone">
                 <i class="fa fa-phone" aria-hidden="true"></i>
