@@ -105,7 +105,9 @@ PHLUCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybrids
                         content: '<div class="info">' + node.getProperty('name') + '</div>'
                     });
 
+
                     $rootScope.infowindows[nodeId].open($scope.map, marker);
+
 
 
                 } else {
@@ -202,6 +204,11 @@ PHLUCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybrids
             var center = new google.maps.LatLng(parseFloat(node.getProperty('lat')), parseFloat(node.getProperty('lng')));
             $scope.map.panTo(center);
         }
+
+        // add class to infobox wrapper
+        $(mapElement).find(".info").each(function(element) {
+           $(this).parentsUntil('.gm-style-iw').parent().parent().addClass('infobox');
+        });
 
 
     }
