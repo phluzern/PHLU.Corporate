@@ -268,9 +268,11 @@
                             </tbody>
                         </table>
                     </div>
-                    <a data-ng-click="loadMore();" class="nav-item nav-link anchor-nav"
-                       data-ng-if="result.count() > limit">{{limitChunkSize}} mehr anzeigen</a>
-
+                        <a data-ng-click="loadMore();" class="btn loadMore"
+                           data-ng-if="result.count() > limit">
+                            <!--{{limitChunkSize}} -->
+                            mehr anzeigen
+                        </a>
                 </div>
             </div>
         </div>

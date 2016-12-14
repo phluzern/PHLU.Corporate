@@ -574,6 +574,22 @@ body {
           border-color: $iceblueDark;
         }
       }
+      &.loadMore {
+        background-color: $grey5;
+        margin:30px 40% 0;
+        padding:6px 23px 6px 46px;
+        color:white;
+        &:hover {
+          background-color: $grey;
+        }
+        &:before {
+          font-family: FontAwesome;
+          content: " \f107";
+          font-size: 25px;
+          position: absolute;
+          margin: -8px 0 0 -26px;
+        }
+      }
     }
     .fa.fa-search {
       position: absolute;
@@ -2254,10 +2270,6 @@ body {
       }
       .results-table {
         z-index: 8;
-
-        a {
-          color: $grey;
-        }
         .table-responsive {
 
           .table {
@@ -2268,6 +2280,9 @@ body {
               tr {
                 td {
                   padding-right: 20px;
+                  a {
+                    color: $grey;
+                  }
                   &:first-child {
                     padding-right: 0;
                     span {
