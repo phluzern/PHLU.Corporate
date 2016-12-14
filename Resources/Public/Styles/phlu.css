@@ -8586,6 +8586,19 @@ body {
       body .all .btn.btn-primary:hover {
         background-color: #0A626C;
         border-color: #0A626C; }
+      body .all .btn.loadMore {
+        background-color: #9b9b9b;
+        margin: 30px 40% 0;
+        padding: 6px 23px 6px 46px;
+        color: white; }
+        body .all .btn.loadMore:hover {
+          background-color: #5c5c5c; }
+        body .all .btn.loadMore:before {
+          font-family: FontAwesome;
+          content: " \f107";
+          font-size: 25px;
+          position: absolute;
+          margin: -8px 0 0 -26px; }
     body .all .fa.fa-search {
       position: absolute;
       right: 0;
