@@ -2,6 +2,7 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
+{namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
 
 <div class="row">
 
@@ -304,6 +305,13 @@
                     <hr>
                 </div>
             </div>
+        </f:if>
+
+
+        <f:if condition="{portrait:references(contact: contact)}">
+            <f:then>
+                <f:render partial="References" arguments="{all}"/>
+            </f:then>
         </f:if>
 
 
