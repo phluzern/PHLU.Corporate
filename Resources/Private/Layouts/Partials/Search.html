@@ -8,14 +8,12 @@
             <div class="close" data-ng-click="stopSearch();"></div>
             <div class="searchresults-count">Suchergebnisse {{siteSearch}} ({{result.count()}})</div>
 
-
             <div class="turbo-link-result" data-ng-if="result.countTurboNodes()">
                 <div class="result turbonode" ng-repeat="(index,node) in result.getTurboNodes() | orderBy:'-score'"
                      ng-if="index === 0">
                     <search data="node"></search>
                 </div>
             </div>
-
 
             <div class="phlu-corporate-tags-menu" data-ng-if="result.getGrouped().count() > 1">
                 <div class="row subjectsfilternav ">
@@ -175,7 +173,7 @@
                                                     <span class="oi"
                                                           data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
                                                     <span>{{node.getProperty('title')}}</span>
-                                                    <div class="mobile-view-columns">
+                                                        <div class="mobile-view-columns">
                                                         <span class="header">
                                                             Schwerpunkte
                                                         </span>

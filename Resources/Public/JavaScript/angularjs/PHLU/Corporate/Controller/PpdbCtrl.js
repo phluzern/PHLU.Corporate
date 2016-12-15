@@ -57,6 +57,10 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     };
 
 
+    $scope.$watch('researchmainfocus',function(d) {
+        //console.log(d);
+    },true);
+
     $scope.list
         .setOrderBy({'phlu-neos-nodetypes-project': 'title'})
         .addPropertyFilter('organisationunits.id', 'organisations', $scope)
