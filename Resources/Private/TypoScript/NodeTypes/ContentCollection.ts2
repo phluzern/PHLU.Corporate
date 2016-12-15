@@ -1,15 +1,6 @@
 # content collections
 prototype(PHLU.Corporate:ContentCollection) < prototype(TYPO3.Neos:ContentCollection) {
-    @cache {
-        mode = 'uncached'
-        context {
-            1 = 'node'
-            2 = 'documentNode'
-        }
-    }
-    prototype(PHLU.Corporate:Headline) {
-        tag = 'h2'
-    }
+
 }
 prototype(PHLU.Corporate:ContentCollection.Page.View.Default) < prototype(PHLU.Corporate:ContentCollection)  {
 }

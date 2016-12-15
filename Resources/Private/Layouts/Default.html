@@ -100,7 +100,8 @@
 
             {parts.sideBarLevel1Menu -> f:format.raw()}
             <div class="col-xs-12 {parts.sideBarLevel1MenuGetClass -> f:format.raw()} main contents">
-                <f:render partial="Search" arguments="{firebaseEndpoint: parts.neosliveHybridsearchFirebaseEndpoint, site: parts.site}"/>
+                <f:render partial="Search"
+                          arguments="{firebaseEndpoint: parts.neosliveHybridsearchFirebaseEndpoint, site: parts.site}"/>
                 {content.main -> f:format.raw()}
                 {parts.teaserMenu -> f:format.raw()}
             </div>
@@ -193,6 +194,11 @@
         <a class="play-pause"></a>
         <ol class="indicator"></ol>
     </div>
+    <f:if condition="{neos:rendering.inBackend()}">
+        <f:else>
+            {database -> f:format.raw()}
+        </f:else>
+    </f:if>
 
 </f:section>
 <f:section name="bodyScripts">

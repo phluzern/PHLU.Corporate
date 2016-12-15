@@ -2,14 +2,6 @@
 prototype(PHLU.Corporate:Content) < prototype(TYPO3.Neos:Content) {
 
 
-    @cache {
-        mode = 'uncached'
-        context {
-            1 = 'node'
-            2 = 'documentNode'
-        }
-    }
-
 }
 
 

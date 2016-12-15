@@ -39,13 +39,6 @@ prototype(PHLU.Corporate:ContentCollection.CarouselNews) < prototype(TYPO3.Neos:
             }
 
 
-        @cache {
-        mode = 'uncached'
-                context {
-                1 = 'node'
-                2 = 'documentNode'
-                }
-            }
 
 }
 
