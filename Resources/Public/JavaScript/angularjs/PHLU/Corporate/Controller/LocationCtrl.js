@@ -102,7 +102,7 @@ PHLUCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybrids
                     markers[nodeId] = marker;
 
                     $rootScope.infowindows[nodeId] = new google.maps.InfoWindow({
-                        content: '<div class="info">' + node.getProperty('name') + '</div>'
+                        content: '<div class="info"><a href="'+node.getUrl()+'">' + node.getProperty('name') + '</a></div>'
                     });
 
 
@@ -118,7 +118,11 @@ PHLUCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybrids
                     });
 
                     if ($rootScope.infowindows[nodeId]) {
-                        $rootScope.infowindows[nodeId].setContent('<div class="info">' + node.getProperty('name') + '</div>');
+                        if ($(mapElement).hasClass('phlu-locations-detail')) {
+                            $rootScope.infowindows[nodeId].setContent('<div class="info">' + node.getProperty('name') + '</div>');
+                        } else {
+                            $rootScope.infowindows[nodeId].setContent('<div class="info"><a class="content-link-internal" href="' + node.getUrl() + '">' + node.getProperty('name') + '</a></div>');
+                        }
                     }
 
                 }
@@ -207,11 +211,12 @@ PHLUCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybrids
 
         // add class to infobox wrapper
         $(mapElement).find(".info").each(function(element) {
-           $(this).parentsUntil('.gm-style-iw').parent().parent().addClass('infobox');
+           //$(this).parentsUntil('.gm-style-iw').parent().parent().addClass('infobox');
+           $(this).parent().parent().parent().parent().addClass('infobox');
         });
 
 
-    }
+    };
 
     $scope.$watch('locations', function () {
         $scope.locationsMap();

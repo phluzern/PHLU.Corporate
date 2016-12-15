@@ -57,6 +57,7 @@ $teaser-letter-spacing: 0.4px;
 $font-size-caption: 0.8rem;
 $font-size-nav-teasers: 0.875rem;
 $font-size-breadcrumb: 0.875rem;
+$font-size-google-maps-bubble-title: 0.875rem;
 $font-size-searchresults-count: 0.875rem;
 $font-size-nav-teaser-header: 1.125rem;
 $font-size-paragraph-desktop: 1.125rem;
@@ -576,9 +577,9 @@ body {
       }
       &.loadMore {
         background-color: $grey5;
-        margin:30px 40% 0;
-        padding:6px 23px 6px 46px;
-        color:white;
+        margin: 30px 40% 0;
+        padding: 6px 23px 6px 46px;
+        color: white;
         &:hover {
           background-color: $grey;
         }
@@ -2975,6 +2976,39 @@ body {
       margin-bottom: 10px;
       .locationsMap {
         height: 400px;
+        .infobox {
+          .info {
+
+            .content-link-internal {
+              font-size: $font-size-google-maps-bubble-title;
+            }
+          }
+          .gm-style-iw {
+            > div {
+              > div {
+                overflow: hidden!important;
+              }
+            }
+          }
+          div:first-child {
+            div:nth-child(1) {
+
+            }
+            > div:nth-child(2) {
+              background-color: white !important;
+              border: 0 !important;
+              border-radius: 0 !important;
+              box-shadow: none !important;
+            }
+            > div:nth-child(3) {
+              div {
+                box-shadow: none !important;
+                transform-origin: 0px 3px 0px!important;
+              }
+
+            }
+          }
+        }
       }
     }
     //

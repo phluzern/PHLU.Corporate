@@ -10036,6 +10036,18 @@ body {
       margin-bottom: 10px; }
       body .all .google-maps-iframe .locationsMap {
         height: 400px; }
+        body .all .google-maps-iframe .locationsMap .infobox .info .content-link-internal {
+          font-size: 0.875rem; }
+        body .all .google-maps-iframe .locationsMap .infobox .gm-style-iw > div > div {
+          overflow: hidden !important; }
+        body .all .google-maps-iframe .locationsMap .infobox div:first-child > div:nth-child(2) {
+          background-color: white !important;
+          border: 0 !important;
+          border-radius: 0 !important;
+          box-shadow: none !important; }
+        body .all .google-maps-iframe .locationsMap .infobox div:first-child > div:nth-child(3) div {
+          box-shadow: none !important;
+          transform-origin: 0px 3px 0px !important; }
     body .all .main {
       background-color: #fbfaf4;
       flex-grow: 1; }
