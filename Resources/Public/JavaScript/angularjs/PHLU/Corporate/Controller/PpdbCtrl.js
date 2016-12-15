@@ -13,6 +13,9 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.limit = 5;
     $scope.limitChunkSize = 5;
 
+    $scope.sizeOf = function(obj) {
+        return Object.keys(obj).length;
+    };
 
     $scope.addPropertyFilter = function (property, value) {
         $scope.list.addPropertyFilter(property, value, $scope);
@@ -82,10 +85,11 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     $scope.result = new $hybridsearchResultsObject();
     $scope.participants = {};
     $scope.organisations = {};
+    $scope.publicationtype = {};
     $scope.initialFilters = {};
     $scope.participantsSearch = '';
-    $scope.limit = 5;
-    $scope.limitChunkSize = 5;
+    $scope.limit = {};
+    $scope.limitChunkSize = 10;
 
     $scope.setQuery = function (value) {
         $scope.list.setQuery(value, $scope);
@@ -101,18 +105,40 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         $scope.initialFilters['organisations'] = true;
     };
 
-    $scope.loadMore = function () {
-        $scope.limit = $scope.limit + $scope.limitChunkSize;
+    $scope.setFilterPublicationType = function (f) {
+        $scope.publicationtype = f;
+        $scope.initialFilters['publicationtype'] = true;
+    };
+
+    $scope.loadMore = function (group) {
+        if ($scope.limit[group] === undefined) {
+            $scope.limit[group] = $scope.limitChunkSize;
+        }
+        $scope.limit[group] = $scope.limit[group] + $scope.limitChunkSize;
 
     };
 
+    $scope.sizeOf = function(obj) {
+        return Object.keys(obj).length;
+    };
+
+    $scope.getLimit = function (group) {
+        return $scope.limit[group] == undefined ? $scope.limitChunkSize : $scope.limit[group];
+
+    };
+
+
+
     $scope.list
+        .setFacetedBy('publicationtype.name')
         .setOrderBy({'phlu-neos-nodetypes-publication': 'citationstyle'})
         .setNodeType('phlu-neos-nodetypes-publication')
         .addPropertyFilter('title', '', null, true)
         .addPropertyFilter('persons.EventoID', 'participants', $scope)
+        .addPropertyFilter('publicationtype.id', 'publicationtype', $scope)
         .addPropertyFilter('organisations.OrganisationId', 'organisations', $scope)
         .$bind('result', $scope);
+
 
 }]);
 

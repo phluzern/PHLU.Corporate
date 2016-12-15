@@ -612,12 +612,27 @@ body {
           background-color: $hazelbrowndark;
           border-radius: $nav-pills-border-radius;
           font-size: $nav-link-font-size;
-
+          cursor: pointer !important;
           padding: 8px 23px;
+
+            .count {
+              float: right;
+              display: block;
+              position: relative;
+              margin-right: -30px;
+              margin-top: -46px;
+              background-color: $olivegreen;
+              width: 25px;
+              height: 25px;
+              text-align: center;
+              padding: 3px;
+              border-radius: 13px;
+            }
+
         }
         a.nav-item {
           margin: 0 5px 5px 0;
-        }
+            }
         a:hover, a:active {
           background-color: $component-active-bg;
         }

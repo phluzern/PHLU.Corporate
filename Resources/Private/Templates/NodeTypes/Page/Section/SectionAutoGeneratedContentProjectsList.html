@@ -53,7 +53,7 @@
                                    data-target="#researchfocus-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
                                     <span>Forschungsschwerpunkte</span>
-
+                                    <span class="count" data-ng-show="sizeOf(researchmainfocus) > 0">{{sizeOf(researchmainfocus)}}</span>
                                 </a>
                             </li>
 
@@ -62,16 +62,15 @@
                                    data-target="#financing-{node.Identifier}" role="tab">
                                     <i class="fa fa-usd" aria-hidden="true"></i>
                                     <span>Finanzierungstyp</span>
+                                    <span class="count" data-ng-show="sizeOf(financingtype) > 0">{{sizeOf(financingtype)}}</span>
                                 </a>
                             </li>
                             <li class="nav-item" data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('participants') > 0">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#projectparticipants-{node.Identifier}" role="tab">
                                     <i class="fa fa-users" aria-hidden="true"></i>
-                                    <span data-toggle="filterCountTag"
-                                          data-template='<div class="tooltip filterCountTag" role="tooltip"><span class="tooltip-inner"></span><span class="oi oi-media-record"></span></div>'
-                                          data-placement="right" title="" data-offset="26px -6px"
-                                          data-trigger="manual">Projektbeteiligte Personen</span>
+                                    <span>Projektbeteiligte Personen</span>
+                                    <span class="count" data-ng-show="sizeOf(projectparticipants) > 0">{{sizeOf(projectparticipants)}}</span>
                                 </a>
                             </li>
                             <li class="nav-item" data-ng-show="initialFilters.lifetime === undefined && result.getDistinctCount('lifetime') > 0">
@@ -79,6 +78,7 @@
                                    data-target="#projectstate-{node.Identifier}" role="tab">
                                     <i class="fa fa-hourglass-start" aria-hidden="true"></i>
                                     <span>Projektstatus</span>
+                                    <span class="count" data-ng-show="sizeOf(filterLifetime) > 0">{{sizeOf(filterLifetime)}}</span>
                                 </a>
                             </li>
                             <li class="nav-item" data-ng-show="result.getDistinctCount('projectend') > 0">
@@ -86,6 +86,7 @@
                                    data-target="#projectenddate-{node.Identifier}" role="tab">
                                     <i class="fa fa-calendar" aria-hidden="true"></i>
                                     <span>Projektende</span>
+                                    <span class="count" data-ng-show="sizeOf(projectend) > 0">{{sizeOf(projectend)}}</span>
                                 </a>
                             </li>
                         </ul>
