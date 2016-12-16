@@ -14,6 +14,9 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.limitChunkSize = 5;
 
     $scope.sizeOf = function(obj) {
+        if (obj === undefined) {
+            return 0;
+        }
         return Object.keys(obj).length;
     };
 
@@ -119,6 +122,9 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     };
 
     $scope.sizeOf = function(obj) {
+        if (obj === undefined) {
+            return 0;
+        }
         return Object.keys(obj).length;
     };
 

@@ -168,7 +168,7 @@ page = Page {
         database = TYPO3.TypoScript:Collection {
             collection = ${q(node).find('database').children()}
             itemName = 'node'
-            itemRenderer = TYPO3.Neos:ContentCase
+            itemRenderer = PHLU.Corporate:Database
         }
 
         javascripts.site = TYPO3.TypoScript:Template {

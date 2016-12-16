@@ -9,7 +9,7 @@
             {neos:contentElement.editable(property: 'title', tag: 'h2')}
         </f:then>
     </f:if>
-    <div class="row ppdb-list" data-ng-controller="PpdbCtrl">
+    <div class="row ppdb-list hidden-xs-up" data-ng-controller="PpdbCtrl" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
 
 
         <f:for each="{projectsByIdentifier}" as="project">
@@ -219,7 +219,7 @@
 
         <div class="col-xs-12">
             <div class="row results-table">
-                <div class="col-xs-12">
+                <div class="col-xs-12" data-ng-show="result.isStarted()">
                     <f:if condition="{showSearchInput}"><h2>Treffer ({{result.count()}})</h2></f:if>
                     <div class="table-responsive  ">
                         <table class="table">

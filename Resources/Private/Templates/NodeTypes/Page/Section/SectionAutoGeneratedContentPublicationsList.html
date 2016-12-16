@@ -9,8 +9,7 @@
             {neos:contentElement.editable(property: 'title', tag: 'h2')}
         </f:then>
     </f:if>
-    <div class="row ppdb-list" data-ng-controller="PpdbPublicationCtrl">
-
+    <div class="row ppdb-list hidden-xs-up" data-ng-controller="PpdbPublicationCtrl" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
 
         <f:for each="{publicationsByIdentifier}" as="publication">
             <span data-ng-init="list.addNodesByIdentifier(['{publication.Identifier}']);"></span>
