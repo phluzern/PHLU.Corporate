@@ -48,7 +48,7 @@
                 <div class="row subjectsfilternav">
                     <div class="col-xs-12">
                         <ul class="nav nav-pills" role="tablist">
-                            <li class="nav-item" data-ng-show="initialFilters.researchmainfocus === undefined && result.getDistinctCount('researchmainfocus') > 0">
+                            <li class="nav-item" data-ng-show="initialFilters.researchmainfocus === undefined && result.getDistinctCount('researchmainfocus') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#researchfocus-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
@@ -57,7 +57,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item" data-ng-show="initialFilters.financingtype === undefined && result.getDistinctCount('financingtype') > 0">
+                            <li class="nav-item" data-ng-show="initialFilters.financingtype === undefined && result.getDistinctCount('financingtype') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#financing-{node.Identifier}" role="tab">
                                     <i class="fa fa-usd" aria-hidden="true"></i>
@@ -65,7 +65,7 @@
                                     <span class="count" data-ng-show="sizeOf(financingtype) > 0">{{sizeOf(financingtype)}}</span>
                                 </a>
                             </li>
-                            <li class="nav-item" data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('participants') > 0">
+                            <li class="nav-item" data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('participants') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#projectparticipants-{node.Identifier}" role="tab">
                                     <i class="fa fa-users" aria-hidden="true"></i>
@@ -73,7 +73,7 @@
                                     <span class="count" data-ng-show="sizeOf(projectparticipants) > 0">{{sizeOf(projectparticipants)}}</span>
                                 </a>
                             </li>
-                            <li class="nav-item" data-ng-show="initialFilters.lifetime === undefined && result.getDistinctCount('lifetime') > 0">
+                            <li class="nav-item" data-ng-show="initialFilters.lifetime === undefined && result.getDistinctCount('lifetime') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#projectstate-{node.Identifier}" role="tab">
                                     <i class="fa fa-hourglass-start" aria-hidden="true"></i>
@@ -81,7 +81,7 @@
                                     <span class="count" data-ng-show="sizeOf(filterLifetime) > 0">{{sizeOf(filterLifetime)}}</span>
                                 </a>
                             </li>
-                            <li class="nav-item" data-ng-show="result.getDistinctCount('projectend') > 0">
+                            <li class="nav-item" data-ng-show="result.getDistinctCount('projectend') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#projectenddate-{node.Identifier}" role="tab">
                                     <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -95,7 +95,7 @@
                         <div class="tab-content">
 
                             <div class="result-panel tab-pane " id="researchfocus-{node.Identifier}" role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('researchmainfocus') > 0">
+                                 data-ng-show="result.getDistinctCount('researchmainfocus') > 1">
                                 <!--<a href="#" class="close-btn">&nbsp;</a>-->
                                 <div class="table-responsive">
                                     <table class="table">
@@ -120,7 +120,7 @@
 
 
                             <div class="result-panel tab-pane " id="financing-{node.Identifier}" role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('financingtype') > 0">
+                                 data-ng-show="result.getDistinctCount('financingtype') > 1">
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
@@ -146,7 +146,7 @@
                             </div>
                             <div class="result-panel tab-pane " id="projectparticipants-{node.Identifier}"
                                  role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('participants') > 0"><a href="#"
+                                 data-ng-show="result.getDistinctCount('participants') > 1"><a href="#"
                                                                                                class="close-btn"><i
                                     class="fa fa-times" aria-hidden="true"></i></a>
                                 <div class="dropdown-search-field">
@@ -184,7 +184,7 @@
 
                             </div>
                             <div class="result-panel tab-pane " id="projectstate-{node.Identifier}" role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('lifetime') > 0">
+                                 data-ng-show="result.getDistinctCount('lifetime') > 1">
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
@@ -206,7 +206,7 @@
                                 </div>
                             </div>
                             <div class="result-panel tab-pane " id="projectenddate-{node.Identifier}" role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('projectend') > 0">
+                                 data-ng-show="result.getDistinctCount('projectend') > 1">
                                 <div id="datepicker"></div>
                                 <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                             </div>

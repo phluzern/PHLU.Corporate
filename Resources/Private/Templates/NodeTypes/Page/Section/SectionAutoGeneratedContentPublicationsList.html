@@ -50,7 +50,7 @@
                         <ul class="nav nav-pills" role="tablist">
 
                             <li class="nav-item"
-                                data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('persons') > 0">
+                                data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('persons') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#participants-{node.Identifier}" role="tab">
                                     <i class="fa fa-users" aria-hidden="true"></i>
@@ -64,7 +64,7 @@
                             </li>
 
                             <li class="nav-item"
-                                data-ng-show="initialFilters.organisations === undefined && result.getDistinctCount('organisations') > 0">
+                                data-ng-show="initialFilters.organisations === undefined && result.getDistinctCount('organisations') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#organisations-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
@@ -74,7 +74,7 @@
                             </li>
 
                             <li class="nav-item"
-                                data-ng-show="initialFilters.publicationtype === undefined && result.getDistinctCount('publicationtype') > 0">
+                                data-ng-show="initialFilters.publicationtype === undefined && result.getDistinctCount('publicationtype') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#publicationtype-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
@@ -91,7 +91,7 @@
 
                             <div class="result-panel tab-pane " id="participants-{node.Identifier}"
                                  role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('persons') > 0"><a href="#"
+                                 data-ng-show="result.getDistinctCount('persons') > 1"><a href="#"
                                                                                           class="close-btn"><i
                                     class="fa fa-times" aria-hidden="true"></i></a>
                                 <div class="dropdown-search-field">
@@ -131,7 +131,7 @@
                             </div>
 
                             <div class="result-panel tab-pane " id="organisations-{node.Identifier}" role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('organisations') > 0">
+                                 data-ng-show="result.getDistinctCount('organisations') > 1">
                                 <!--<a href="#" class="close-btn">&nbsp;</a>-->
                                 <div class="table-responsive">
                                     <table class="table">
@@ -155,7 +155,7 @@
                             </div>
 
                             <div class="result-panel tab-pane " id="publicationtype-{node.Identifier}" role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('publicationtype') > 0">
+                                 data-ng-show="result.getDistinctCount('publicationtype') > 1">
                                    <!--<a href="#" class="close-btn">&nbsp;</a>-->
                                 <div class="table-responsive">
                                     <table class="table">
