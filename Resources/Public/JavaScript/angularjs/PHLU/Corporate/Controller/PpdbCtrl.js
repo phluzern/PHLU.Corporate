@@ -28,7 +28,7 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         $scope.list.setQuery(value, $scope);
     }
 
-    $scope.setFilterLifetime = function (filterLifetime) {
+    $scope.setFilterLifetime = function (f) {
         $scope.filterLifetime = f;
         $scope.initialFilters['lifetime'] = true;
     };
