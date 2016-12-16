@@ -3,13 +3,17 @@
 {namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 
 
-<div {attributes -> f:format.raw()}>
+<div {attributes -> f:format.raw()} data-ng-controller="PpdbPublicationCtrl" >
     <f:if condition="{sectionCount}>1">
         <f:then>
             {neos:contentElement.editable(property: 'title', tag: 'h2')}
         </f:then>
     </f:if>
-    <div class="row ppdb-list hidden-xs-up" data-ng-controller="PpdbPublicationCtrl" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
+
+    <div class="loading bar" data-ng-if="result.isLoading()">
+
+    </div>
+    <div class="row ppdb-list hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
 
         <f:for each="{publicationsByIdentifier}" as="publication">
             <span data-ng-init="list.addNodesByIdentifier(['{publication.Identifier}']);"></span>

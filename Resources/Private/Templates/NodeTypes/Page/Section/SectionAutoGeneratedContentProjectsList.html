@@ -3,13 +3,17 @@
 {namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 
 
-<div {attributes -> f:format.raw()}>
+<div {attributes -> f:format.raw()} data-ng-controller="PpdbCtrl">
     <f:if condition="{sectionCount}>1">
         <f:then>
             {neos:contentElement.editable(property: 'title', tag: 'h2')}
         </f:then>
     </f:if>
-    <div class="row ppdb-list hidden-xs-up" data-ng-controller="PpdbCtrl" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
+
+    <div class="loading bar" data-ng-if="result.isLoading()">
+
+    </div>
+    <div class="row ppdb-list hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
 
 
         <f:for each="{projectsByIdentifier}" as="project">
@@ -17,13 +21,18 @@
         </f:for>
 
 
-        <f:if condition="{researchfocustype} != 'null'"><span data-ng-init="setFilterResearchmainfocus({researchfocustype});"></span></f:if>
-        <f:if condition="{researchunittype} != 'null'"><span data-ng-init="setFilterResearchunit({researchunittype});"></span></f:if>
-        <f:if condition="{financingtype} != 'null'"><span data-ng-init="setFilterFinancingtypes({financingtype});"></span></f:if>
-        <f:if condition="{ppdbstatuslifetime} != 'null'"><span data-ng-init="setFilterLifetime({ppdbstatuslifetime});"></span></f:if>
-        <f:if condition="{projectparticipants} != 'null'"><span data-ng-init="setFilterProjectparticipants({projectparticipants});"></span></f:if>
-        <f:if condition="{organisations} != 'null'"><span data-ng-init="setFilterOrganisations({organisations});"></span></f:if>
-
+        <f:if condition="{researchfocustype} != 'null'"><span
+                data-ng-init="setFilterResearchmainfocus({researchfocustype});"></span></f:if>
+        <f:if condition="{researchunittype} != 'null'"><span
+                data-ng-init="setFilterResearchunit({researchunittype});"></span></f:if>
+        <f:if condition="{financingtype} != 'null'"><span
+                data-ng-init="setFilterFinancingtypes({financingtype});"></span></f:if>
+        <f:if condition="{ppdbstatuslifetime} != 'null'"><span
+                data-ng-init="setFilterLifetime({ppdbstatuslifetime});"></span></f:if>
+        <f:if condition="{projectparticipants} != 'null'"><span
+                data-ng-init="setFilterProjectparticipants({projectparticipants});"></span></f:if>
+        <f:if condition="{organisations} != 'null'"><span
+                data-ng-init="setFilterOrganisations({organisations});"></span></f:if>
 
 
         <f:if condition="{showSearchInput}">
@@ -48,7 +57,8 @@
                 <div class="row subjectsfilternav">
                     <div class="col-xs-12">
                         <ul class="nav nav-pills" role="tablist">
-                            <li class="nav-item" data-ng-show="initialFilters.researchmainfocus === undefined && result.getDistinctCount('researchmainfocus') > 1">
+                            <li class="nav-item"
+                                data-ng-show="initialFilters.researchmainfocus === undefined && result.getDistinctCount('researchmainfocus') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#researchfocus-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
@@ -57,7 +67,8 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item" data-ng-show="initialFilters.financingtype === undefined && result.getDistinctCount('financingtype') > 1">
+                            <li class="nav-item"
+                                data-ng-show="initialFilters.financingtype === undefined && result.getDistinctCount('financingtype') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#financing-{node.Identifier}" role="tab">
                                     <i class="fa fa-usd" aria-hidden="true"></i>
@@ -65,7 +76,8 @@
                                     <span class="count" data-ng-show="sizeOf(financingtype) > 0">{{sizeOf(financingtype)}}</span>
                                 </a>
                             </li>
-                            <li class="nav-item" data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('participants') > 1">
+                            <li class="nav-item"
+                                data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('participants') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#projectparticipants-{node.Identifier}" role="tab">
                                     <i class="fa fa-users" aria-hidden="true"></i>
@@ -73,7 +85,8 @@
                                     <span class="count" data-ng-show="sizeOf(projectparticipants) > 0">{{sizeOf(projectparticipants)}}</span>
                                 </a>
                             </li>
-                            <li class="nav-item" data-ng-show="initialFilters.lifetime === undefined && result.getDistinctCount('lifetime') > 1">
+                            <li class="nav-item"
+                                data-ng-show="initialFilters.lifetime === undefined && result.getDistinctCount('lifetime') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#projectstate-{node.Identifier}" role="tab">
                                     <i class="fa fa-hourglass-start" aria-hidden="true"></i>
@@ -86,7 +99,8 @@
                                    data-target="#projectenddate-{node.Identifier}" role="tab">
                                     <i class="fa fa-calendar" aria-hidden="true"></i>
                                     <span>Projektende</span>
-                                    <span class="count" data-ng-show="sizeOf(projectend) > 0">{{sizeOf(projectend)}}</span>
+                                    <span class="count"
+                                          data-ng-show="sizeOf(projectend) > 0">{{sizeOf(projectend)}}</span>
                                 </a>
                             </li>
                         </ul>
@@ -259,7 +273,7 @@
                             <tr class="result-preview" data-ng-show="node.isopen">
                                 <td colspan="2">
                                     <div>
-                                      <p ng-bind-html="node.getProperty('teasertextgerman').substr(0,255)"></p>
+                                        <p ng-bind-html="node.getProperty('teasertextgerman').substr(0,255)"></p>
                                         <a class="btn btn-primary" href="{{node.getUrl()}}">
                                             Details
                                         </a>
@@ -269,11 +283,11 @@
                             </tbody>
                         </table>
                     </div>
-                        <a data-ng-click="loadMore();" class="btn loadMore"
-                           data-ng-if="result.count() > limit">
-                            <!--{{limitChunkSize}} -->
-                            mehr anzeigen
-                        </a>
+                    <a data-ng-click="loadMore();" class="btn loadMore"
+                       data-ng-if="result.count() > limit">
+                        <!--{{limitChunkSize}} -->
+                        mehr anzeigen
+                    </a>
                 </div>
             </div>
         </div>

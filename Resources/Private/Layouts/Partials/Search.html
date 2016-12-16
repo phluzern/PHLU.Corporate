@@ -2,11 +2,15 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
 <div class="row" data-ng-controller="SearchCtrl" id="search">
+
     <div data-ng-class="{hasSearchResults: siteSearch != ''}" style="display:none">
+
         <div class="row phlu-searchresults">
 
             <div class="close" data-ng-click="stopSearch();"></div>
-            <div class="searchresults-count">Suchergebnisse {{siteSearch}} ({{result.count()}})</div>
+
+            <div class="searchresults-count" data-ng-show="result.isLoading() === false">Suchergebnisse {{siteSearch}} ({{result.count()}})</div>
+            <div class="searchresults-count" data-ng-show="result.isLoading()">Suchergebnisse {{siteSearch}}</div>
 
             <div class="turbo-link-result" data-ng-if="result.countTurboNodes()">
                 <div class="result turbonode" ng-repeat="(index,node) in result.getTurboNodes() | orderBy:'-score'"
@@ -173,7 +177,7 @@
                                                     <span class="oi"
                                                           data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
                                                     <span>{{node.getProperty('title')}}</span>
-                                                        <div class="mobile-view-columns">
+                                                    <div class="mobile-view-columns">
                                                         <span class="header">
                                                             Schwerpunkte
                                                         </span>
@@ -251,7 +255,9 @@
 
                 </div>
             </div>
+            <div class="loading bar" data-ng-if="result.isLoading()">
 
+            </div>
 
         </div>
 

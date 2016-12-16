@@ -8374,6 +8374,18 @@ html {
   position: relative;
   min-height: 100%; }
 
+.loading {
+  width: 100%;
+  background-image: url("../Images/loading.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0 100%; }
+  .loading.bar {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: auto; }
+
 #search .hasSearchResults {
   background-color: rgba(255, 255, 255, 0.98);
   display: block !important;
