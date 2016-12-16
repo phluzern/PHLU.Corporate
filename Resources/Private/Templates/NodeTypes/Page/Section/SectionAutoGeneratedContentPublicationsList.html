@@ -15,7 +15,12 @@
             <span data-ng-init="list.addNodesByIdentifier(['{publication.Identifier}']);"></span>
         </f:for>
 
-        <f:if condition="{persons} != 'null'"><span data-ng-init="setFilterPersons({persons});"></span>
+
+
+        <f:if condition="{publicationtype} != 'null'"><span data-ng-init="setFilterPublicationType({publicationtype});"></span>
+        </f:if>
+
+        <f:if condition="{participants} != 'null'"><span data-ng-init="setFilterParticipants({participants});"></span>
         </f:if>
         <f:if condition="{organisations} != 'null'"><span
                 data-ng-init="setFilterOrganisations({organisations});"></span></f:if>
@@ -45,7 +50,7 @@
                         <ul class="nav nav-pills" role="tablist">
 
                             <li class="nav-item"
-                                data-ng-show="initialFilters.persons === undefined && result.getDistinctCount('persons') > 0">
+                                data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('persons') > 0">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#participants-{node.Identifier}" role="tab">
                                     <i class="fa fa-users" aria-hidden="true"></i>

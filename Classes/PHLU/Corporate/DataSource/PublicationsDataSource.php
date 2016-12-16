@@ -84,6 +84,18 @@ class PublicationsDataSource extends AbstractDataSource
 
                     break;
 
+                case 'publicationtype':
+
+
+                        $id = (string)($publication->getPublicationType()['id']);
+                        if ($id && isset($publications[$id]) === false) {
+                            $publications[$id] = array('value' => $id, 'label' => $publication->getPublicationType()['name']);
+                        }
+
+
+
+                    break;
+
 
             }
 

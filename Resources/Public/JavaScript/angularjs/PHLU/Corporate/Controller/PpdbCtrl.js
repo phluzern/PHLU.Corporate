@@ -13,7 +13,7 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.limit = 5;
     $scope.limitChunkSize = 5;
 
-    $scope.sizeOf = function(obj) {
+    $scope.sizeOf = function (obj) {
         if (obj === undefined) {
             return 0;
         }
@@ -63,9 +63,9 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     };
 
 
-    $scope.$watch('researchmainfocus',function(d) {
+    $scope.$watch('researchmainfocus', function (d) {
         //console.log(d);
-    },true);
+    }, true);
 
     $scope.list
         .setOrderBy({'phlu-neos-nodetypes-project': 'title'})
@@ -121,7 +121,7 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
 
     };
 
-    $scope.sizeOf = function(obj) {
+    $scope.sizeOf = function (obj) {
         if (obj === undefined) {
             return 0;
         }
@@ -132,7 +132,6 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         return $scope.limit[group] == undefined ? $scope.limitChunkSize : $scope.limit[group];
 
     };
-
 
 
     $scope.list
@@ -152,16 +151,16 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
 PHLUCorporateApp.filter('toArray', function () {
     return function (obj, addKey) {
         if (!angular.isObject(obj)) return obj;
-        if ( addKey === false ) {
-            return Object.keys(obj).map(function(key) {
+        if (addKey === false) {
+            return Object.keys(obj).map(function (key) {
                 return obj[key];
             });
         } else {
             return Object.keys(obj).map(function (key) {
                 var value = obj[key];
                 return angular.isObject(value) ?
-                    Object.defineProperty(value, '$key', { enumerable: false, value: key}) :
-                { $key: key, $value: value };
+                    Object.defineProperty(value, '$key', {enumerable: false, value: key}) :
+                {$key: key, $value: value};
             });
         }
     };
