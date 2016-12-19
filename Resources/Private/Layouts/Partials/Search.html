@@ -2,12 +2,15 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
 <div class="row" data-ng-controller="SearchCtrl" id="search">
+
     <div data-ng-class="{hasSearchResults: siteSearch != ''}" style="display:none">
+
         <div class="row phlu-searchresults">
 
             <div class="close" data-ng-click="stopSearch();"></div>
-            <div class="searchresults-count">Suchergebnisse {{siteSearch}} ({{result.count()}})</div>
 
+            <div class="searchresults-count" data-ng-show="result.isLoading() === false">Suchergebnisse {{siteSearch}} ({{result.count()}})</div>
+            <div class="searchresults-count" data-ng-show="result.isLoading()">Suchergebnisse {{siteSearch}}</div>
 
             <div class="turbo-link-result" data-ng-if="result.countTurboNodes()">
                 <div class="result turbonode" ng-repeat="(index,node) in result.getTurboNodes() | orderBy:'-score'"
@@ -15,7 +18,6 @@
                     <search data="node"></search>
                 </div>
             </div>
-
 
             <div class="phlu-corporate-tags-menu" data-ng-if="result.getGrouped().count() > 1">
                 <div class="row subjectsfilternav ">
@@ -109,7 +111,7 @@
                                                                 </address>
 
                                                                 <span class="details-link-cell">
-                                        <a class="btn btn-primary" href="#">
+                                        <a class="btn btn-primary" href="{{node.getUrl()}}">
                                             Details
                                         </a>
                                     </span>
@@ -135,7 +137,7 @@
 
                                                         </td>
                                                         <td class="details-link-cell">
-                                                            <a class="btn btn-primary" href="#">
+                                                            <a class="btn btn-primary" href="{{node.getUrl()}}">
                                                                 Details
                                                             </a>
                                                         </td>
@@ -253,7 +255,9 @@
 
                 </div>
             </div>
+            <div class="loading bar" data-ng-if="result.isLoading()">
 
+            </div>
 
         </div>
 

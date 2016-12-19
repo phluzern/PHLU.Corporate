@@ -1,6 +1,10 @@
 <div data-ng-controller="LocationCtrl" class="phlu-locations">
 
-    <div class=" phlu-corporate-tags-menu" data-ng-show="result.count()">
+    <div class="loading bar" data-ng-if="result.isLoading()">
+
+    </div>
+
+    <div class=" phlu-corporate-tags-menu hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
         <div class="row subjectsfilternav ng-scope">
             <div class="col-xs-12">
                 <h2>Standortsuche</h2>
@@ -37,7 +41,7 @@
 
     </div>
 
-    <div class="table-responsive phlu-corporate-table">
+    <div class="table-responsive phlu-corporate-table hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
         <table class="table first-col-hidden-">
             <tbody class="neos-contentcollection">
             <tr class=" phlu-corporate-table-row"

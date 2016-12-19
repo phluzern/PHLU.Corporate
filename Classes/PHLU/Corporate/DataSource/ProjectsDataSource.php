@@ -101,9 +101,10 @@ class ProjectsDataSource extends AbstractDataSource
 
                     /** @var Project $project */
                     foreach ($project->getResearchMainFocus() as $researchMainFocus) {
+
                         $researchMainFocus['ID'] = (string)$researchMainFocus['ID'];
                         if (isset($projects[$researchMainFocus['ID']]) === false) {
-                            $projects[$researchMainFocus['ID']] = array('value' => $researchMainFocus['ID'], 'label' => $researchMainFocus['name'], 'group' => (string)$researchMainFocus['ResearchUnitName']);
+                            $projects[$researchMainFocus['ID']] = array('value' => $researchMainFocus['ID'], 'label' => $researchMainFocus['name'], 'group' => (string)$researchMainFocus['ResearchUnitName'] == '' ? (string)$researchMainFocus['name'] : (string)$researchMainFocus['ResearchUnitName']);
                         }
 
                     }

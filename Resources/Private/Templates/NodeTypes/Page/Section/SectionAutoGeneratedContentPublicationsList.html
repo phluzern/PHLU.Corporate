@@ -3,20 +3,28 @@
 {namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 
 
-<div {attributes -> f:format.raw()}>
+<div {attributes -> f:format.raw()} data-ng-controller="PpdbPublicationCtrl" >
     <f:if condition="{sectionCount}>1">
         <f:then>
             {neos:contentElement.editable(property: 'title', tag: 'h2')}
         </f:then>
     </f:if>
-    <div class="row ppdb-list" data-ng-controller="PpdbPublicationCtrl">
 
+    <div class="loading bar" data-ng-if="result.isLoading()">
+
+    </div>
+    <div class="row ppdb-list hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
 
         <f:for each="{publicationsByIdentifier}" as="publication">
             <span data-ng-init="list.addNodesByIdentifier(['{publication.Identifier}']);"></span>
         </f:for>
 
-        <f:if condition="{persons} != 'null'"><span data-ng-init="setFilterPersons({persons});"></span>
+
+
+        <f:if condition="{publicationtype} != 'null'"><span data-ng-init="setFilterPublicationType({publicationtype});"></span>
+        </f:if>
+
+        <f:if condition="{participants} != 'null'"><span data-ng-init="setFilterParticipants({participants});"></span>
         </f:if>
         <f:if condition="{organisations} != 'null'"><span
                 data-ng-init="setFilterOrganisations({organisations});"></span></f:if>
@@ -46,7 +54,7 @@
                         <ul class="nav nav-pills" role="tablist">
 
                             <li class="nav-item"
-                                data-ng-show="initialFilters.persons === undefined && result.getDistinctCount('persons') > 0">
+                                data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('persons') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#participants-{node.Identifier}" role="tab">
                                     <i class="fa fa-users" aria-hidden="true"></i>
@@ -54,16 +62,28 @@
                                           data-template='<div class="tooltip filterCountTag" role="tooltip"><span class="tooltip-inner"></span><span class="oi oi-media-record"></span></div>'
                                           data-placement="right" title="" data-offset="26px -6px"
                                           data-trigger="manual">Beteiligte Personen</span>
+                                    <span class="count" data-ng-show="sizeOf(participants) > 0">{{sizeOf(participants)}}</span>
                                 </a>
+
                             </li>
 
                             <li class="nav-item"
-                                data-ng-show="initialFilters.organisations === undefined && result.getDistinctCount('organisations') > 0">
+                                data-ng-show="initialFilters.organisations === undefined && result.getDistinctCount('organisations') > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#organisations-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
                                     <span>Abteilung</span>
+                                    <span class="count" data-ng-show="sizeOf(organisations) > 0">{{sizeOf(organisations)}}</span>
+                                </a>
+                            </li>
 
+                            <li class="nav-item"
+                                data-ng-show="initialFilters.publicationtype === undefined && result.getDistinctCount('publicationtype') > 1">
+                                <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                                   data-target="#publicationtype-{node.Identifier}" role="tab">
+                                    <i class="fa fa-flask" aria-hidden="true"></i>
+                                    <span>Publikationstype</span>
+                                    <span class="count" data-ng-show="sizeOf(publicationtype) > 0">{{sizeOf(publicationtype)}}</span>
                                 </a>
                             </li>
 
@@ -75,7 +95,7 @@
 
                             <div class="result-panel tab-pane " id="participants-{node.Identifier}"
                                  role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('persons') > 0"><a href="#"
+                                 data-ng-show="result.getDistinctCount('persons') > 1"><a href="#"
                                                                                           class="close-btn"><i
                                     class="fa fa-times" aria-hidden="true"></i></a>
                                 <div class="dropdown-search-field">
@@ -115,7 +135,7 @@
                             </div>
 
                             <div class="result-panel tab-pane " id="organisations-{node.Identifier}" role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('organisations') > 0">
+                                 data-ng-show="result.getDistinctCount('organisations') > 1">
                                 <!--<a href="#" class="close-btn">&nbsp;</a>-->
                                 <div class="table-responsive">
                                     <table class="table">
@@ -138,6 +158,30 @@
                                 <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                             </div>
 
+                            <div class="result-panel tab-pane " id="publicationtype-{node.Identifier}" role="tabpanel"
+                                 data-ng-show="result.getDistinctCount('publicationtype') > 1">
+                                   <!--<a href="#" class="close-btn">&nbsp;</a>-->
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr data-ng-class="{checked: publicationtype[lt.value.id]}"
+                                            data-ng-repeat="lt in result.getDistinct('publicationtype') | toArray:false | orderBy:'value.name'">
+                                            <td>
+                                                <a href="javascript:void(0);"
+                                                   data-ng-click="publicationtype[lt.value.id] = !publicationtype[lt.value.id] ? true : false;">
+                                                    <i class="fa"
+                                                       data-ng-class="{'fa-check-square-o': publicationtype[lt.value.id],'fa-square-o': !publicationtype[lt.value.id]}"
+                                                       aria-hidden="true"></i>
+                                                    {{lt.value.name}} ({{lt.count}})
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                            </div>
+
                         </div>
 
                     </div>
@@ -150,17 +194,19 @@
             <div class="row">
                 <div class="col-xs-12">
                     <f:if condition="{showSearchInput}"><h2>Treffer ({{result.count()}})</h2></f:if>
-                    <div class="table-responsive  ">
+                    <div class="table-responsive"  data-ng-repeat="group in result.getGrouped().getItems()">
+
+
                         <table class="table">
                             <thead>
                             <tr>
                                 <th class="clickable">
-                                    <a href="#">Publikationen</a>
+                                    <a href="#">{{group.getLabel()}}</a>
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="node in result.getNodes(limit)"
+                            <tr ng-repeat="node in group.getNodes(getLimit(group.getLabel()))"
                                 data-node-id="{{node.identifier}}">
                                 <td data-ng-if="node.getProperty('url') == ''">
                                     <div>
@@ -178,12 +224,15 @@
                                 </td>
                             </tr>
                         </table>
+
+                        <a data-ng-click="loadMore(group.getLabel());" class="btn loadMore"
+                           data-ng-if="group.count() > getLimit(group.getLabel())">
+                            <!--{{limitChunkSize}} -->
+                            mehr anzeigen
+                        </a>
+
                     </div>
-                    <a data-ng-click="loadMore();" class="btn loadMore"
-                       data-ng-if="result.count() > limit">
-                        <!--{{limitChunkSize}} -->
-                        mehr anzeigen
-                    </a>
+
                 </div>
             </div>
         </div>

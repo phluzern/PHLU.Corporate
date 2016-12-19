@@ -18,6 +18,17 @@ $(document).ready(function () {
         event.preventDefault();
         return false;
     });
+    $('ul.nav.nav-pills li.nav-item a.nav-link').click(function (event) {
+
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $($(this).attr('data-target')).removeClass('active');
+            event.preventDefault();
+            return false;
+        }
+
+
+    });
 
 
     /* init rcrumbs */

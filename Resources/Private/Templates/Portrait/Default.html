@@ -2,6 +2,7 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
+{namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
 
 <div class="row">
 
@@ -48,7 +49,7 @@
             <div class="row function">
                 <div class="col-xs-12">
 
-                    <h2>Funktionen</h2>
+                    <h2>Funktionen an der PH Luzern</h2>
 
                     {contact.functions -> f:format.raw()}
 
@@ -57,36 +58,12 @@
 
             </div>
         </f:if>
-        <f:if condition="{contact.honorific} != ''">
-            <div class="row cv">
-                <div class="col-xs-12">
-
-                    <h2>Lebenslauf</h2>
-
-                    {contact.honorific -> f:format.raw()}
-                    <hr>
-                </div>
-            </div>
-        </f:if>
-
-        <f:if condition="{contact.education} != ''">
-            <div class="row education">
-                <div class="col-xs-12">
-
-                    <h2>Ausbildung</h2>
-
-                    {contact.education -> f:format.raw()}
-                    <hr>
-                </div>
-            </div>
-        </f:if>
-
 
         <f:if condition="{contact.activities} != ''">
             <div class="row working-priorities">
                 <div class="col-xs-12">
 
-                    <h2>Arbeitsschwerpunkte</h2>
+                    <h2>Weitere Funktionen und Tätigkeiten</h2>
 
                     {contact.activities -> f:format.raw()}
                     <hr>
@@ -94,17 +71,32 @@
             </div>
         </f:if>
 
+
         <f:if condition="{contact.consulting} != ''">
             <div class="row consultation-priorities">
                 <div class="col-xs-12">
 
-                    <h2>Beratungsschwerpunkte</h2>
+                    <h2>Arbeits- und Beratungsschwerpunkte / Expertise</h2>
 
                     {contact.consulting -> f:format.raw()}
                     <hr>
                 </div>
             </div>
         </f:if>
+
+
+        <f:if condition="{contact.education} != ''">
+            <div class="row education">
+                <div class="col-xs-12">
+
+                    <h2>Aus- und Weiterbildung</h2>
+
+                    {contact.education -> f:format.raw()}
+                    <hr>
+                </div>
+            </div>
+        </f:if>
+
 
         <f:if condition="{contact.expertise} != ''">
             <div class="row expertises">
@@ -169,7 +161,8 @@
                                                             <f:if condition="{publication.Citationstyle} == ''">
                                                                 <f:then><p>{publication.Title -> f:format.raw()}</p>
                                                                 </f:then>
-                                                                <f:else><p>{publication.Citationstyle -> f:format.raw()}</p>
+                                                                <f:else><p>{publication.Citationstyle ->
+                                                                    f:format.raw()}</p>
                                                                 </f:else>
                                                             </f:if>
                                                         </f:else>
@@ -244,6 +237,64 @@
         </f:if>
 
 
+        <f:if condition="{contact.achievements}">
+
+
+            <div class="row publications-list">
+                <div class="col-xs-12">
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="phlu-accordion-achievements" class="phlu-accordion" role="tablist">
+
+                                <f:for each="{contact.achievements}" as="publicationtype"
+                                       iteration="iterator">
+
+
+                                    <h2>{publicationtype.type.name}</h2>
+
+                                    <ul>
+                                        <f:for each="{publicationtype.items}" as="publication">
+                                            <li>
+                                                <f:if condition="{publication.URL}">
+                                                    <f:then>
+                                                        <p><a href="{publication.URL}" class="" target="_blank">
+                                                            <f:if condition="{publication.Citationstyle} == ''">
+                                                                <f:then>
+                                                                    {publication.Title -> f:format.raw()}
+                                                                </f:then>
+                                                                <f:else>{publication.Citationstyle ->
+                                                                    f:format.raw()}
+                                                                </f:else>
+                                                            </f:if>
+                                                        </a></p>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:if condition="{publication.Citationstyle} == ''">
+                                                            <f:then><p>{publication.Title -> f:format.raw()}</p>
+                                                            </f:then>
+                                                            <f:else><p>{publication.Citationstyle -> f:format.raw()}</p>
+                                                            </f:else>
+                                                        </f:if>
+                                                    </f:else>
+                                                </f:if>
+
+                                            </li>
+                                        </f:for>
+                                    </ul>
+                                </f:for>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+        </f:if>
+
+
         <f:if condition="{contact.links} != ''">
             <div class="row links">
                 <div class="col-xs-12">
@@ -254,6 +305,13 @@
                     <hr>
                 </div>
             </div>
+        </f:if>
+
+
+        <f:if condition="{portrait:references(contact: contact)}">
+            <f:then>
+                <f:render partial="References" arguments="{all}"/>
+            </f:then>
         </f:if>
 
 

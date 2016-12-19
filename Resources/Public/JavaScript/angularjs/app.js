@@ -16,11 +16,15 @@ if (typeof document.addEventListener === 'function') {
         });
 
     }, false);
+
+
+
+
 }
 
 
 
-PHLUCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsearch) {
+PHLUCorporateApp.factory('hybridsearch', ['$hybridsearch','$hybridsearchObject', function ($hybridsearch,$hybridsearchObject) {
 
     //
     // return new $hybridsearch(
@@ -30,12 +34,20 @@ PHLUCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsear
     //     'corporate'
     // );
 
-    return new $hybridsearch(
+    var hybridseachinstance = new $hybridsearch(
         'https://phlu-neos.firebaseio.com',
         'live',
         'fb11fdde869d0a8fcfe00a2fd35c031d',
         'corporate'
     );
+
+    // instant initalizing
+    var initsearch = new $hybridsearchObject(hybridseachinstance);
+    initsearch =  null;
+
+
+    return hybridseachinstance;
+
 
 
 }]);

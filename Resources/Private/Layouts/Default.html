@@ -38,7 +38,12 @@
         <script src="{f:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'Neoslive.Hybridsearch')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'PHLU.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
-
+        <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'PHLU.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'PHLU.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/ContactsCtrl.js', package: 'PHLU.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SearchCtrl.js', package: 'PHLU.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/PpdbCtrl.js', package: 'PHLU.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/LocationCtrl.js', package: 'PHLU.Corporate')}"></script>
     </f:section>
 
 </head>
@@ -100,7 +105,8 @@
 
             {parts.sideBarLevel1Menu -> f:format.raw()}
             <div class="col-xs-12 {parts.sideBarLevel1MenuGetClass -> f:format.raw()} main contents">
-                <f:render partial="Search" arguments="{firebaseEndpoint: parts.neosliveHybridsearchFirebaseEndpoint, site: parts.site}"/>
+                <f:render partial="Search"
+                          arguments="{firebaseEndpoint: parts.neosliveHybridsearchFirebaseEndpoint, site: parts.site}"/>
                 {content.main -> f:format.raw()}
                 {parts.teaserMenu -> f:format.raw()}
             </div>
@@ -194,17 +200,16 @@
         <ol class="indicator"></ol>
     </div>
 
+
+    {database -> f:format.raw()}
+
+
 </f:section>
 <f:section name="bodyScripts">
     <!-- Put your scripts inclusions for the end of the body here, they will be included in your website by TypoScript -->
     <script src="{f:uri.resource(path: 'blueimp/js/blueimp-gallery.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/jquery/jquery.mobile.custom.min.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/ContactsCtrl.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/SearchCtrl.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/PpdbCtrl.js', package: 'PHLU.Corporate')}"></script>
-    <script src="{f:uri.resource(path: 'JavaScript/angularjs/PHLU/Corporate/Controller/LocationCtrl.js', package: 'PHLU.Corporate')}"></script>
+
     <script src="{f:uri.resource(path: 'Vendor/grunt-modernizr/lib/build-files/modernizr-latest.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/tether/dist/js/tether.min.js', package: 'PHLU.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/bootstrap/dist/js/bootstrap.min.js', package: 'PHLU.Corporate')}"></script>

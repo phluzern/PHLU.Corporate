@@ -262,6 +262,19 @@
             dataSourceIdentifier: 'phlu-corporate-publications'
             dataSourceAdditionalData:
               property: 'participantnames'
+    publicationtype:
+      type: array
+      ui:
+        label: 'Publikationstype'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'filters'
+          position: 30
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            dataSourceIdentifier: 'phlu-corporate-publications'
+            dataSourceAdditionalData:
+              property: 'publicationtype'
     showSearchInput:
       type: boolean
       ui:
