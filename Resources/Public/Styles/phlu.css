@@ -8600,9 +8600,12 @@ body {
         border-color: #0A626C; }
       body .all .btn.loadMore {
         background-color: #9b9b9b;
-        margin: 30px 40% 0;
+        margin: 30px 0 0;
         padding: 6px 23px 6px 46px;
         color: white; }
+        @media (max-width: 543px) {
+          body .all .btn.loadMore {
+            width: 100%; } }
         body .all .btn.loadMore:hover {
           background-color: #5c5c5c; }
         body .all .btn.loadMore:before {
@@ -10448,7 +10451,7 @@ body {
             margin-bottom: 35px; } }
       body .all .main > .row.sephiabg {
         background-color: #e9e0d8;
-        margin-top: 38px;
+        margin-top: 60px;
         margin-bottom: 1px; }
         @media (min-width: 992px) {
           body .all .main > .row.sephiabg h2 {
