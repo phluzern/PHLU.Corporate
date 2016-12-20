@@ -10,9 +10,9 @@
         </f:then>
     </f:if>
 
-    <div class="loading bar" data-ng-if="result.isLoading()">
+    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
+         data-ng-if="result.isLoading()"/>
 
-    </div>
     <div class="row ppdb-list hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
 
         <f:for each="{publicationsByIdentifier}" as="publication">
@@ -64,6 +64,11 @@
                                           data-trigger="manual">Beteiligte Personen</span>
                                     <span class="count" data-ng-show="sizeOf(participants) > 0">{{sizeOf(participants)}}</span>
                                 </a>
+                                <span data-ng-show="sizeOf(participants) > 0" class="resetFilter">
+                                    <a href="#" ng-click="clearFilter('participants')" >
+                                        <span class="oi oi-x"></span>
+                                    </a>
+                                </span>
 
                             </li>
 
@@ -75,6 +80,11 @@
                                     <span>Abteilung</span>
                                     <span class="count" data-ng-show="sizeOf(organisations) > 0">{{sizeOf(organisations)}}</span>
                                 </a>
+                                <span data-ng-show="sizeOf(organisations) > 0" class="resetFilter">
+                                    <a href="#" ng-click="clearFilter('organisations')" >
+                                        <span class="oi oi-x"></span>
+                                    </a>
+                                </span>
                             </li>
 
                             <li class="nav-item"
@@ -82,9 +92,14 @@
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#publicationtype-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
-                                    <span>Publikationstype</span>
+                                    <span>Publikationstyp</span>
                                     <span class="count" data-ng-show="sizeOf(publicationtype) > 0">{{sizeOf(publicationtype)}}</span>
                                 </a>
+                                <span data-ng-show="sizeOf(publicationtype) > 0" class="resetFilter">
+                                    <a href="#" ng-click="clearFilter('publicationtype')" >
+                                        <span class="oi oi-x"></span>
+                                    </a>
+                                </span>
                             </li>
 
                         </ul>
@@ -117,12 +132,12 @@
                                     <table class="table">
                                         <tbody>
                                         <tr class="clickable"
+                                            data-ng-click="participants[person.value.EventoID] = person.value.Nachname+ ' ' + person.value.Vorname;"
                                             data-ng-repeat="(key,person) in result.getDistinct('persons') | inArrayFilter:participantsSearch"
                                             data-ng-if="person.value.EventoID > 0"
                                             data-ng-show="participants[person.value.EventoID] == undefined || participants[person.value.EventoID] == false">
                                             <td>
-                                                <a href="javascript:void(0);"
-                                                   data-ng-click="participants[person.value.EventoID] = person.value.Nachname+ ' ' + person.value.Vorname;">
+                                                <a href="javascript:void(0);">
                                                     {{person.value.Vorname}} {{person.value.Nachname}}
                                                 </a>
                                             </td>
@@ -140,11 +155,11 @@
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
-                                        <tr data-ng-class="{checked: organisations[lt.value.OrganisationId]}"
+                                        <tr data-ng-click="organisations[lt.value.OrganisationId] = !organisations[lt.value.OrganisationId] ? true : false;"
+                                            data-ng-class="{checked: organisations[lt.value.OrganisationId]}"
                                             data-ng-repeat="lt in result.getDistinct('organisations') | toArray:false | orderBy:'value.OrganisationName'">
                                             <td>
-                                                <a href="javascript:void(0);"
-                                                   data-ng-click="organisations[lt.value.OrganisationId] = !organisations[lt.value.OrganisationId] ? true : false;">
+                                                <a href="javascript:void(0);">
                                                     <i class="fa"
                                                        data-ng-class="{'fa-check-square-o': organisations[lt.value.OrganisationId],'fa-square-o': !organisations[lt.value.OrganisationId]}"
                                                        aria-hidden="true"></i>
@@ -164,11 +179,11 @@
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
-                                        <tr data-ng-class="{checked: publicationtype[lt.value.id]}"
+                                        <tr data-ng-click="publicationtype[lt.value.id] = !publicationtype[lt.value.id] ? true : false;"
+                                            data-ng-class="{checked: publicationtype[lt.value.id]}"
                                             data-ng-repeat="lt in result.getDistinct('publicationtype') | toArray:false | orderBy:'value.name'">
                                             <td>
-                                                <a href="javascript:void(0);"
-                                                   data-ng-click="publicationtype[lt.value.id] = !publicationtype[lt.value.id] ? true : false;">
+                                                <a href="javascript:void(0);">
                                                     <i class="fa"
                                                        data-ng-class="{'fa-check-square-o': publicationtype[lt.value.id],'fa-square-o': !publicationtype[lt.value.id]}"
                                                        aria-hidden="true"></i>
@@ -224,11 +239,15 @@
                             </tr>
                         </table>
 
-                        <a data-ng-click="loadMore(group.getLabel());" class="btn loadMore"
-                           data-ng-if="group.count() > getLimit(group.getLabel())">
-                            <!--{{limitChunkSize}} -->
-                            mehr anzeigen
-                        </a>
+                        <div class="row">
+                            <div class="col-center">
+                                <a data-ng-click="loadMore(group.getLabel());" class="btn loadMore"
+                                   data-ng-if="group.count() > getLimit(group.getLabel())">
+                                    <!--{{limitChunkSize}} -->
+                                    mehr anzeigen
+                                </a>
+                            </div>
+                        </div>
 
                     </div>
 

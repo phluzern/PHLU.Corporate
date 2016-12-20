@@ -8386,6 +8386,15 @@ html {
     height: 50px;
     margin: auto; }
 
+.loadingIcon {
+  position: absolute;
+  left: 0;
+  top: 99%;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  /* presto! */ }
+
 #search .hasSearchResults {
   background-color: rgba(255, 255, 255, 0.98);
   display: block !important;
@@ -8603,9 +8612,6 @@ body {
         margin: 30px 0 0;
         padding: 6px 23px 6px 46px;
         color: white; }
-        @media (max-width: 543px) {
-          body .all .btn.loadMore {
-            width: 100%; } }
         body .all .btn.loadMore:hover {
           background-color: #5c5c5c; }
         body .all .btn.loadMore:before {
@@ -8620,6 +8626,10 @@ body {
       margin: -23px 25px 0 0;
       color: #5c5c5c;
       display: block; }
+    body .all .col-center {
+      float: none;
+      margin-right: auto;
+      margin-left: auto; }
     body .all .nav-pills {
       padding-top: 21px;
       list-style-type: none;
@@ -8642,11 +8652,24 @@ body {
           height: 25px;
           text-align: center;
           padding: 3px;
-          border-radius: 13px; }
+          border-radius: 13px;
+          font-size: 14px; }
       body .all .nav-pills li a.nav-item {
         margin: 0 5px 5px 0; }
       body .all .nav-pills li a:hover, body .all .nav-pills li a:active {
         background-color: #895119; }
+      body .all .nav-pills li .resetFilter {
+        float: right;
+        display: block;
+        position: relative;
+        margin-top: -65px;
+        margin-right: -16px;
+        font-size: 10px; }
+        body .all .nav-pills li .resetFilter a:hover {
+          background-color: inherit; }
+        body .all .nav-pills li .resetFilter a {
+          color: black;
+          font-weight: 100; }
     body .all .form-control {
       padding: 0.1875rem 0.3125rem; }
     body .all .dropdown button {
@@ -9658,8 +9681,6 @@ body {
       body .all .ppdb-list .subjectsfilternav .result-panel .close-btn, body .all .further-education-list .subjectsfilternav .result-panel .close-btn {
         z-index: 9;
         display: inline-block;
-        position: absolute;
-        right: 0px;
         font-family: FontAwesome;
         font-size: 30px;
         height: 50px;
@@ -9672,33 +9693,35 @@ body {
         color: white; }
       body .all .ppdb-list .subjectsfilternav .result-panel .table, body .all .further-education-list .subjectsfilternav .result-panel .table {
         margin-bottom: 0; }
-        body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td {
-          background-image: none;
-          border-top: 0;
-          border-left: 0;
-          border-right: 0;
-          border-bottom: 1px #e5e5e5 solid;
-          font-size: 1.125rem; }
-          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a {
-            color: white; }
-          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td.theme-code, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td.theme-code {
-            width: 38px; }
-          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td:first-child, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td:first-child {
-            padding-left: 20px;
-            width: 60px; }
-          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td:last-child, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td:last-child {
-            padding-right: 20px;
-            padding-left: 20px; }
-        body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr i.fa, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr i.fa {
-          margin-right: 20px; }
-        body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr.checked, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr.checked {
-          color: #91a103; }
-          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr.checked a, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr.checked a {
+        body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr {
+          cursor: pointer; }
+          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr i.fa, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr i.fa {
+            margin-right: 20px; }
+          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr.checked, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr.checked {
             color: #91a103; }
-        body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr:last-child td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr:last-child td {
-          border-bottom: 0; }
-        body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr:first-child td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr:first-child td {
-          border-top: 0; }
+            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr.checked a, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr.checked a {
+              color: #91a103; }
+          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr:last-child td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr:last-child td {
+            border-bottom: 0; }
+          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr:first-child td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr:first-child td {
+            border-top: 0; }
+          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td {
+            background-image: none;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            border-bottom: 1px #e5e5e5 solid;
+            font-size: 1.125rem; }
+            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a {
+              color: white; }
+            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td.theme-code, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td.theme-code {
+              width: 38px; }
+            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td:first-child, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td:first-child {
+              padding-left: 20px;
+              width: 60px; }
+            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td:last-child, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td:last-child {
+              padding-right: 20px;
+              padding-left: 20px; }
     body .all .ppdb-list .results-table, body .all .further-education-list .results-table {
       z-index: 8; }
       body .all .ppdb-list .results-table .table-responsive .table .oi-caret-bottom, body .all .ppdb-list .results-table .table-responsive .table .oi-caret-right, body .all .further-education-list .results-table .table-responsive .table .oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table .oi-caret-right {

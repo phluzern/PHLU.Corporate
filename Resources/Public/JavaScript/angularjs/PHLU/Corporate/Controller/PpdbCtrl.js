@@ -13,6 +13,10 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.limit = 5;
     $scope.limitChunkSize = 5;
 
+    $scope.clearFilter = function(filtertype) {
+        $scope[filtertype] = {};
+    };
+
     $scope.sizeOf = function (obj) {
         if (obj === undefined) {
             return 0;
@@ -93,6 +97,10 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     $scope.participantsSearch = '';
     $scope.limit = {};
     $scope.limitChunkSize = 10;
+
+    $scope.clearFilter = function(filtertype) {
+        $scope[filtertype] = {};
+    };
 
     $scope.setQuery = function (value) {
         $scope.list.setQuery(value, $scope);
