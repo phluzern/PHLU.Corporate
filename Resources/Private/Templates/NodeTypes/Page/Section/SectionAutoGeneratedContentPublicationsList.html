@@ -194,8 +194,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <f:if condition="{showSearchInput}"><h2>Treffer ({{result.count()}})</h2></f:if>
-                    <div class="table-responsive"  data-ng-repeat="group in result.getGrouped().getItems()">
-
+                    <div class="table-responsive"  data-ng-repeat="group in result.getGrouped().getItems() | orderBy:'getProperty(\'type.sorting\')'">
 
                         <table class="table">
                             <thead>
