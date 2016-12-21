@@ -162,8 +162,11 @@
                                                 <a href="javascript:void(0);">
                                                     <i class="fa"
                                                        data-ng-class="{'fa-check-square-o': organisations[lt.value.OrganisationId],'fa-square-o': !organisations[lt.value.OrganisationId]}"
-                                                       aria-hidden="true"></i>
-                                                    {{lt.value.OrganisationName}} ({{lt.count}})
+                                                       aria-hidden="true">
+                                                    </i>
+                                                    <span>
+                                                        {{lt.value.OrganisationName}} ({{lt.count}})
+                                                    </span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -187,7 +190,9 @@
                                                     <i class="fa"
                                                        data-ng-class="{'fa-check-square-o': publicationtype[lt.value.id],'fa-square-o': !publicationtype[lt.value.id]}"
                                                        aria-hidden="true"></i>
-                                                    {{lt.value.name}} ({{lt.count}})
+                                                    <span>
+                                                        {{lt.value.name}} ({{lt.count}})
+                                                    </span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -214,7 +219,7 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th class="clickable">
+                                <th class="clickable publicationsHeader">
                                     <a href="#">{{group.getLabel()}}</a>
                                 </th>
                             </tr>

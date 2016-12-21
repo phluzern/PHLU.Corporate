@@ -2315,6 +2315,16 @@ a {
                   font-size: $font-size-search-filters;
                   a {
                     color: white;
+                    display: table;
+                    i, span {
+                      display: table-cell;
+                    }
+                    span {
+                      padding-left:20px;
+                    }
+                    i {
+                      width: 17px;
+                    }
                   }
                   &.theme-code {
                     width: 38px;
@@ -2894,6 +2904,11 @@ a {
               a {
                 color: $grey;
               }
+              &.publicationsHeader {
+                @include media-breakpoint-down("sm") {
+                  display: inherit;
+                }
+              }
             }
           }
         }
@@ -3009,10 +3024,8 @@ a {
               border-bottom: 2px solid $hr-border-color;
             }
             td {
-              @include media-breakpoint-down("sm") {
-                > span {
-                  display: none;
-                }
+              .cellList {
+                margin-left:20px;
               }
               //background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
               border-bottom: 2px solid $hr-border-color;

@@ -147,8 +147,11 @@
                                                 <a href="javascript:void(0);">
                                                     <i class="fa"
                                                        data-ng-class="{'fa-check-square-o': researchmainfocus[lt.value.ID],'fa-square-o': !researchmainfocus[lt.value.ID]}"
-                                                       aria-hidden="true"></i>
-                                                    {{lt.value.name}} ({{lt.count}})
+                                                       aria-hidden="true">
+                                                    </i>
+                                                    <span>
+                                                        {{lt.value.name}} ({{lt.count}})
+                                                    </span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -172,8 +175,11 @@
                                                 <a href="javascript:void(0);">
                                                     <i class="fa"
                                                        data-ng-class="{'fa-check-square-o': financingtype[lt.value],'fa-square-o': !financingtype[lt.value]}"
-                                                       aria-hidden="true"></i>
-                                                    {{lt.value}} ({{lt.count}})
+                                                       aria-hidden="true">
+                                                    </i>
+                                                    <span>
+                                                        {{lt.value}} ({{lt.count}})
+                                                    </span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -235,8 +241,11 @@
                                                 <a href="javascript:void(0);">
                                                     <i class="fa"
                                                        data-ng-class="{'fa-check-square-o': filterLifetime[lt.value],'fa-square-o': !filterLifetime[lt.value]}"
-                                                       aria-hidden="true"></i>
-                                                    {{lt.value}} ({{lt.count}})
+                                                       aria-hidden="true">
+                                                    </i>
+                                                    <span>
+                                                        {{lt.value}} ({{lt.count}})
+                                                    </span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -289,11 +298,21 @@
                                                             Schwerpunkte
                                                         </span>
 
-                                        <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus.name}}<br></span>
+                                        <span >
+                                            <ul>
+                                                <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">
+                                                    {{focus.name}}
+                                                </li>
+                                            </ul>
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus.name}}<br></span>
+                                        <ul class="cellList">
+                                            <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">
+                                                {{focus.name}}
+                                            </li>
+                                        </ul>
                                 </td>
                             </tr>
                             <tr class="result-preview" data-ng-show="node.isopen">

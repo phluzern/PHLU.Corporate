@@ -9713,7 +9713,14 @@ body {
             border-bottom: 1px #e5e5e5 solid;
             font-size: 1.125rem; }
             body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a {
-              color: white; }
+              color: white;
+              display: table; }
+              body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a span {
+                display: table-cell; }
+              body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a span {
+                padding-left: 20px; }
+              body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a i {
+                width: 17px; }
             body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td.theme-code, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td.theme-code {
               width: 38px; }
             body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td:first-child, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td:first-child {
@@ -9997,6 +10004,9 @@ body {
               display: table-cell; } }
         body .all .table-responsive .table thead tr th a {
           color: #5c5c5c; }
+        @media (max-width: 767px) {
+          body .all .table-responsive .table thead tr th.publicationsHeader {
+            display: inherit; } }
       body .all .table-responsive .table tbody .neos-empty-contentcollection-overlay {
         display: table-cell; }
       body .all .table-responsive .table tbody tr:first-child th, body .all .table-responsive .table tbody tr:first-child td {
@@ -10076,9 +10086,8 @@ body {
         border-bottom: 2px solid #e5e5e5; }
       body .all .table-responsive .table tbody tr td {
         border-bottom: 2px solid #e5e5e5; }
-        @media (max-width: 767px) {
-          body .all .table-responsive .table tbody tr td > span {
-            display: none; } }
+        body .all .table-responsive .table tbody tr td .cellList {
+          margin-left: 20px; }
       body .all .table-responsive .table.first-col-hidden-1 tbody tr > td:first-child {
         border-left: 0; }
       body .all .table-responsive .table a[target='_blank'] {
