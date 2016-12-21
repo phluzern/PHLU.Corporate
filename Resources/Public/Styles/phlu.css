@@ -9406,7 +9406,7 @@ body {
           height: inherit; }
         body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i {
           float: left;
-          height: 1px;
+          height: 22px;
           width: 43px; }
           body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i::before {
             color: #55a7b3;
@@ -9425,13 +9425,18 @@ body {
           body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.themaIco::before {
             top: -6px;
             left: -4px; }
+          @media (max-width: 543px) {
+            body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i {
+              margin-bottom: 20px; }
+              body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.last {
+                float: inherit; } }
         body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
           margin: 0;
           display: table-cell; }
           @media (max-width: 543px) {
             body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
               display: block;
-              margin-top: 50px; } }
+              float: inherit; } }
         body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right::after {
           bottom: inherit;
           top: 52%;

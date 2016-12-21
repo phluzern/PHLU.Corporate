@@ -1758,45 +1758,53 @@ a {
               height: inherit;
             }
             .phlu-teaser-body {
-              i {
-                float: left;
-                height: 1px;
-                width: 43px;
-                &::before {
-                  color: $turquoise;
-                  font-size: 25px;
-                  position: relative;
-                  top: 50%;
-                  margin: 0;
-                  transform: translateY(-50%);
-                }
-                &.strategieIco {
+
+                i {
+                  float: left;
+                  height: 22px;
+                  width: 43px;
                   &::before {
-                    top: -12px;
-                    left: -8px;
-                    font-size: 30px;
+                    color: $turquoise;
+                    font-size: 25px;
+                    position: relative;
+                    top: 50%;
+                    margin: 0;
+                    transform: translateY(-50%);
+                  }
+                  &.strategieIco {
+                    &::before {
+                      top: -12px;
+                      left: -8px;
+                      font-size: 30px;
+                    }
+                  }
+                  &.faecherIco, &.forschungIco, &.themaIco {
+                    &::before {
+                      top: -6px;
+                      left: -4px;
+                    }
+                  }
+                  &.themaIco {
+                    &::before {
+                      top: -6px;
+                      left: -4px;
+                    }
+                  }
+                    @include media-breakpoint-down("xs") {
+                      margin-bottom:20px;
+                      &.last {
+                      float:inherit;
+                    }
                   }
                 }
-                &.faecherIco, &.forschungIco, &.themaIco {
-                  &::before {
-                    top: -6px;
-                    left: -4px;
-                  }
-                }
-                &.themaIco {
-                  &::before {
-                    top: -6px;
-                    left: -4px;
-                  }
-                }
-              }
+
               h3 {
                 margin: 0;
                 display: table-cell;
 
                 @include media-breakpoint-down("xs") {
                   display: block;
-                  margin-top: 50px;
+                  float:inherit;
                 }
               }
             }
