@@ -8389,7 +8389,7 @@ html {
 .loadingIcon {
   position: absolute;
   left: 0;
-  top: 99%;
+  top: 200px;
   right: 0;
   bottom: 0;
   margin: auto;
@@ -8404,25 +8404,23 @@ html {
   max-width: 860px;
   min-height: 100%;
   color: #685f56;
-  margin-left: -10px;
-  border-right: 2px solid #e9e0d8;
-  border-left: 2px solid #e9e0d8;
-  height: 100%;
-  -webkit-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
-  box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3); }
-  #search .hasSearchResults .close {
-    margin-right: 50px; }
-    #search .hasSearchResults .close::after {
-      font-family: Icons;
-      content: '\e0db';
-      float: right; }
+  height: 100%; }
+  #search .hasSearchResults .close::after {
+    font-family: Icons;
+    content: '\e0db';
+    float: right; }
+  @media (min-width: 1280px) {
+    #search .hasSearchResults {
+      -webkit-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
+      box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3); } }
   @media (max-width: 1279px) {
     #search .hasSearchResults {
       max-width: inherit;
       min-height: inherit;
       margin-left: 0;
-      border: 0; } }
+      border: 0;
+      position: relative; } }
   #search .hasSearchResults .phlu-searchresults {
     display: block;
     margin-top: 30px; }
@@ -8442,17 +8440,21 @@ html {
       padding-left: 18px; }
     #search .hasSearchResults .phlu-searchresults .row.subjectsfilternav .nav-pills li i {
       padding-right: 10px; }
-    #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {
-      padding-right: 0; }
-      #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address {
-        margin-bottom: 0; }
-        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location {
-          margin-left: 23px; }
-          #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location:before {
-            position: absolute;
-            font-size: 20px;
-            margin-left: -23px;
-            margin-top: -3px; }
+    #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table {
+      margin-bottom: 60px; }
+      #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {
+        padding-right: 0; }
+        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address {
+          margin-bottom: 0; }
+          #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location {
+            margin-left: 23px; }
+            #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location:before {
+              position: absolute;
+              font-size: 20px;
+              margin-left: -23px;
+              margin-top: -3px; }
+    #search .hasSearchResults .phlu-searchresults .results-table .google-maps-iframe {
+      padding: 0 15px; }
     #search .hasSearchResults .phlu-searchresults .results-table .nofilter {
       margin-top: 60px; }
     #search .hasSearchResults .phlu-searchresults .breadcrumbs {
@@ -8461,6 +8463,13 @@ html {
 #search .noSearchResults {
   display: none; }
 
+@media (max-width: 1279px) {
+  .siteSearchActive .main.contents > .row {
+    display: none; }
+  .siteSearchActive .main.contents > .row:first-child {
+    display: block; }
+  .siteSearchActive .main.contents .breadcrumbs {
+    display: block; } }
 .ico-family-iconic::before {
   font-family: Icons; }
 
