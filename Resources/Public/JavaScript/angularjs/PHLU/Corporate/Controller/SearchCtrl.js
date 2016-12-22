@@ -308,9 +308,11 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             $scope.isSearch = false;
             $(".sidebar").removeClass('siteSearchActive');
             $("body").removeClass('siteSearchActive');
+            $("#search div").addClass('noSearchResults');
         } else {
             $(".sidebar").addClass('siteSearchActive');
             $("body").addClass('siteSearchActive');
+            $("#search div").removeClass('noSearchResults');
             search.run();
         }
     });

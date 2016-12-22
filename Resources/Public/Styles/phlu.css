@@ -8397,7 +8397,6 @@ html {
 
 #search .hasSearchResults {
   background-color: rgba(255, 255, 255, 0.98);
-  display: block !important;
   overflow: auto;
   z-index: 99;
   position: absolute;
@@ -8406,7 +8405,7 @@ html {
   min-height: 100%;
   color: #685f56;
   margin-left: -10px;
-  border-right: 2px solid #e9e0d;
+  border-right: 2px solid #e9e0d8;
   border-left: 2px solid #e9e0d8;
   height: 100%;
   -webkit-box-shadow: 6px 0px 10px -1px rgba(0, 0, 0, 0.3);
@@ -8418,6 +8417,49 @@ html {
       font-family: Icons;
       content: '\e0db';
       float: right; }
+  @media (max-width: 1279px) {
+    #search .hasSearchResults {
+      max-width: inherit;
+      min-height: inherit;
+      margin-left: 0;
+      border: 0; } }
+  #search .hasSearchResults .phlu-searchresults {
+    display: block;
+    margin-top: 30px; }
+    #search .hasSearchResults .phlu-searchresults .breadcrumbs li {
+      display: inline-block; }
+    #search .hasSearchResults .phlu-searchresults .searchresults-count {
+      font-size: 1.55rem; }
+    #search .hasSearchResults .phlu-searchresults .searchresults-filter {
+      float: right;
+      margin: 31px 0; }
+    #search .hasSearchResults .phlu-searchresults .turbo-link-result {
+      margin: 80px 0 32px; }
+      @media (max-width: 767px) {
+        #search .hasSearchResults .phlu-searchresults .turbo-link-result {
+          margin: 60px 0 20px; } }
+    #search .hasSearchResults .phlu-searchresults .row.subjectsfilternav .nav-pills li a.nav-link {
+      padding-left: 18px; }
+    #search .hasSearchResults .phlu-searchresults .row.subjectsfilternav .nav-pills li i {
+      padding-right: 10px; }
+    #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {
+      padding-right: 0; }
+      #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address {
+        margin-bottom: 0; }
+        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location {
+          margin-left: 23px; }
+          #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location:before {
+            position: absolute;
+            font-size: 20px;
+            margin-left: -23px;
+            margin-top: -3px; }
+    #search .hasSearchResults .phlu-searchresults .results-table .nofilter {
+      margin-top: 60px; }
+    #search .hasSearchResults .phlu-searchresults .breadcrumbs {
+      padding: 10px 0;
+      font-weight: normal; }
+#search .noSearchResults {
+  display: none; }
 
 .ico-family-iconic::before {
   font-family: Icons; }
@@ -9796,41 +9838,6 @@ body {
         height: auto; }
     body .all .phlu-locations .row.departments .phlu-teaser.navigation.subpage {
       margin: 0; }
-    body .all .phlu-searchresults {
-      display: block;
-      margin-top: 30px; }
-      body .all .phlu-searchresults .breadcrumbs li {
-        display: inline-block; }
-      body .all .phlu-searchresults .searchresults-count {
-        font-size: 1.55rem; }
-      body .all .phlu-searchresults .searchresults-filter {
-        float: right;
-        margin: 31px 0; }
-      body .all .phlu-searchresults .turbo-link-result {
-        margin: 80px 0 32px; }
-        @media (max-width: 767px) {
-          body .all .phlu-searchresults .turbo-link-result {
-            margin: 60px 0 20px; } }
-      body .all .phlu-searchresults .row.subjectsfilternav .nav-pills li a.nav-link {
-        padding-left: 18px; }
-      body .all .phlu-searchresults .row.subjectsfilternav .nav-pills li i {
-        padding-right: 10px; }
-      body .all .phlu-searchresults .results-table .table-responsive .table td {
-        padding-right: 0; }
-        body .all .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address {
-          margin-bottom: 0; }
-          body .all .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location {
-            margin-left: 23px; }
-            body .all .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location:before {
-              position: absolute;
-              font-size: 20px;
-              margin-left: -23px;
-              margin-top: -3px; }
-      body .all .phlu-searchresults .results-table .nofilter {
-        margin-top: 60px; }
-      body .all .phlu-searchresults .breadcrumbs {
-        padding: 10px 0;
-        font-weight: normal; }
     body .all .phlu-qmpilot-nodetypes-files.last, body .all .phlu-qmpilot-nodetypes-file.last {
       margin-bottom: 31px; }
     body .all .row.subjectsfilternav.phlu-filelinks {

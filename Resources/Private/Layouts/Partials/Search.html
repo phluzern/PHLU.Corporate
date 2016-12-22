@@ -3,9 +3,11 @@
 
 <div class="row" data-ng-controller="SearchCtrl" id="search">
 
-    <div data-ng-class="{hasSearchResults: siteSearch != ''}" style="display:none">
+    <div data-ng-class="{'hasSearchResults': siteSearch != '', 'noSearchResults': siteSearch == ''}" class="noSearchResults " >
 
-        <div class="row phlu-searchresults">
+        <div class="col-xs-12 phlu-searchresults">
+            <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
+                 data-ng-if="result.isLoading()"/>
 
             <div class="close" data-ng-click="stopSearch();"></div>
 
@@ -255,9 +257,7 @@
 
                 </div>
             </div>
-            <div class="loading bar" data-ng-if="result.isLoading()">
 
-            </div>
 
         </div>
 

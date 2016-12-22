@@ -302,10 +302,8 @@ html {
 // search
 //
 #search {
-
   .hasSearchResults {
     background-color: rgba(255, 255, 255, 0.98);
-    display: block !important;
     overflow: auto;
     z-index: 99;
     position: absolute;
@@ -314,25 +312,95 @@ html {
     min-height: 100%;
     color: #685f56;
     margin-left: -10px;
-    border-right: 2px solid #e9e0d;
+    border-right: 2px solid #e9e0d8;
     border-left: 2px solid #e9e0d8;
     height: 100%;
     @include sidebar-shadow();
-
     .close {
-
       margin-right: 50px;
-
       &::after {
         font-family: Icons;
         content: '\e0db';
         float: right;
       }
-
     }
-
+    @include media-breakpoint-down("lg") {
+      max-width: inherit;
+      min-height: inherit;
+      margin-left: 0;
+      border:0;
+    }
+    //
+    // phlu search results
+    //
+    .phlu-searchresults {
+      display: block;
+      margin-top: 30px;
+      .breadcrumbs {
+        li {
+          display: inline-block;
+        }
+      }
+      .searchresults-count {
+        font-size: $font-size-h2;
+      }
+      .searchresults-filter {
+        float: right;
+        margin: 31px 0;
+      }
+      .turbo-link-result {
+        margin: 80px 0 32px;
+        @include media-breakpoint-down("sm") {
+          margin: 60px 0 20px;
+        }
+      }
+      .row.subjectsfilternav {
+        .nav-pills {
+          li {
+            a.nav-link {
+              padding-left: 18px;
+            }
+            i {
+              padding-right: 10px;
+            }
+          }
+        }
+      }
+      .results-table {
+        .table-responsive {
+          .table {
+            td {
+              padding-right: 0;
+              .searchresult-body {
+                address {
+                  margin-bottom: 0;
+                  .content-link-location {
+                    margin-left: 23px;
+                    &:before {
+                      position: absolute;
+                      font-size: 20px;
+                      margin-left: -23px;
+                      margin-top: -3px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .nofilter {
+          margin-top: 60px;
+        }
+      }
+      .breadcrumbs {
+        padding: 10px 0;
+        font-weight: normal;
+      }
+    }
   }
-
+  .noSearchResults {
+    display: none;
+  }
 }
 
 //
@@ -2478,75 +2546,6 @@ a {
         .phlu-teaser.navigation.subpage {
           margin: 0;
         }
-      }
-    }
-    //
-    // phlu search results
-    //
-    .phlu-searchresults {
-      display: block;
-      margin-top: 30px;
-      .breadcrumbs {
-        li {
-          display: inline-block;
-        }
-      }
-      .searchresults-count {
-        font-size: $font-size-h2;
-      }
-      .searchresults-filter {
-        float: right;
-        margin: 31px 0;
-      }
-      .turbo-link-result {
-        margin: 80px 0 32px;
-        @include media-breakpoint-down("sm") {
-          margin: 60px 0 20px;
-        }
-      }
-      .row.subjectsfilternav {
-        .nav-pills {
-          li {
-            a.nav-link {
-              padding-left: 18px;
-            }
-            i {
-              padding-right: 10px;
-            }
-          }
-        }
-      }
-      .results-table {
-        .table-responsive {
-
-          .table {
-            td {
-              padding-right: 0;
-              .searchresult-body {
-                address {
-                  margin-bottom: 0;
-                  .content-link-location {
-                    margin-left: 23px;
-                    &:before {
-                      position: absolute;
-                      font-size: 20px;
-                      margin-left: -23px;
-                      margin-top: -3px;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        .nofilter {
-          margin-top: 60px;
-        }
-      }
-      .breadcrumbs {
-        padding: 10px 0;
-        font-weight: normal;
       }
     }
     //
