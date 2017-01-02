@@ -162,7 +162,7 @@
                             <div class="ppdb-list" data-ng-switch-when="Publikationen">
 
                                 <div class="table-responsive"
-                                     data-ng-repeat="g in group.getFacetedNodes('publicationtype.name') | orderBy:'getProperty(\'type.sorting\')'">
+                                     data-ng-repeat="g in group.getCategorizedNodes('publicationtype.name') | orderBy:'getProperty(\'type.sorting\')'">
 
                                     <table class="table">
                                         <thead>

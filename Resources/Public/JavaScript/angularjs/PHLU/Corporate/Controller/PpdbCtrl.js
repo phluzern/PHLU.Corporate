@@ -143,7 +143,7 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
 
 
     $scope.list
-        .setFacetedBy('publicationtype.name')
+        .setCategorizedBy('publicationtype.name')
         .setOrderBy({'phlu-neos-nodetypes-publication': 'citationstyle'})
         .setNodeType('phlu-neos-nodetypes-publication')
         .addPropertyFilter('title', '', null, true)
