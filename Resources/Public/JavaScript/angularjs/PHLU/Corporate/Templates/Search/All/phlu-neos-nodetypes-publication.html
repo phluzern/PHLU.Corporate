@@ -1,5 +1,7 @@
-
 <div data-ng-if="node.getProperty('url') == ''">
+    <h3>
+        <a class="content-link-internal" href="{{node.getBreadcrumb().HybridsearchResultsValue().findLastUriInBreadcrumb()}}">{{node.getProperty('type.name')}}</a>
+    </h3>
     <span data-ng-if="node.getProperty('citationstyle') != ''">{{node.getProperty('citationstyle')}}</span>
     <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
 </div>
