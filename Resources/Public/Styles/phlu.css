@@ -8440,6 +8440,12 @@ html {
       padding-left: 18px; }
     #search .hasSearchResults .phlu-searchresults .row.subjectsfilternav .nav-pills li i {
       padding-right: 10px; }
+    #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info {
+      padding: 30px;
+      background-color: #e1e1e1;
+      font-size: 1rem;
+      letter-spacing: 0.4px;
+      text-transform: uppercase; }
     #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table {
       margin-bottom: 60px; }
       #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {

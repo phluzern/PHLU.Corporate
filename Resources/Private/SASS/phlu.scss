@@ -278,17 +278,18 @@ html {
 //
 .loading {
   &.bar {
-    display:block;
-    width:50px;
-    height:50px;
-    margin:auto;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: auto;
   }
-  width:100%;
+  width: 100%;
   background-image: url("../Images/loading.svg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: 0 100%;
 }
+
 .loadingIcon {
   position: absolute;
   left: 0;
@@ -326,7 +327,7 @@ html {
       max-width: inherit;
       min-height: inherit;
       margin-left: 0;
-      border:0;
+      border: 0;
       position: relative;
     }
     //
@@ -365,6 +366,22 @@ html {
           }
         }
       }
+      .results-quick-result {
+
+
+
+        .tab-content {
+
+          .info {
+            padding:30px;
+            background-color:$lightgrey;
+            font-size: $nav-link-font-size;
+            letter-spacing: $teaser-letter-spacing;
+            text-transform: uppercase;
+
+          }
+        }
+      }
       .results-table {
         .table-responsive {
           .table {
@@ -389,7 +406,7 @@ html {
           }
         }
         .google-maps-iframe {
-          padding:0 15px;
+          padding: 0 15px;
         }
         .nofilter {
           margin-top: 60px;
@@ -405,6 +422,7 @@ html {
     display: none;
   }
 }
+
 @include media-breakpoint-down("lg") {
   .siteSearchActive {
     .main.contents {
@@ -711,7 +729,7 @@ body {
       display: block;
     }
     .col-center {
-      float:none;
+      float: none;
       margin-right: auto;
       margin-left: auto;
     }
@@ -731,25 +749,25 @@ body {
           cursor: pointer !important;
           padding: 8px 23px;
 
-            .count {
-              float: right;
-              display: block;
-              position: relative;
-              margin-right: -30px;
-              margin-top: -46px;
-              background-color: $olivegreen;
-              width: 25px;
-              height: 25px;
-              text-align: center;
-              padding: 3px;
-              border-radius: 13px;
-              font-size: 14px;
-            }
+          .count {
+            float: right;
+            display: block;
+            position: relative;
+            margin-right: -30px;
+            margin-top: -46px;
+            background-color: $olivegreen;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            padding: 3px;
+            border-radius: 13px;
+            font-size: 14px;
+          }
 
         }
         a.nav-item {
           margin: 0 5px 5px 0;
-            }
+        }
         a:hover, a:active {
           background-color: $component-active-bg;
         }
@@ -766,11 +784,10 @@ body {
             }
           }
 
-
-a {
-  color:black;
-  font-weight: 100;
-}
+          a {
+            color: black;
+            font-weight: 100;
+          }
         }
       }
     }
@@ -1845,44 +1862,44 @@ a {
             }
             .phlu-teaser-body {
 
-                i {
-                  float: left;
-                  height: 22px;
-                  width: 43px;
+              i {
+                float: left;
+                height: 22px;
+                width: 43px;
+                &::before {
+                  color: $turquoise;
+                  font-size: 25px;
+                  position: relative;
+                  top: 50%;
+                  margin: 0;
+                  transform: translateY(-50%);
+                }
+                &.strategieIco {
                   &::before {
-                    color: $turquoise;
-                    font-size: 25px;
-                    position: relative;
-                    top: 50%;
-                    margin: 0;
-                    transform: translateY(-50%);
-                  }
-                  &.strategieIco {
-                    &::before {
-                      top: -12px;
-                      left: -8px;
-                      font-size: 30px;
-                    }
-                  }
-                  &.faecherIco, &.forschungIco, &.themaIco {
-                    &::before {
-                      top: -6px;
-                      left: -4px;
-                    }
-                  }
-                  &.themaIco {
-                    &::before {
-                      top: -6px;
-                      left: -4px;
-                    }
-                  }
-                    @include media-breakpoint-down("xs") {
-                      margin-bottom:20px;
-                      &.last {
-                      float:inherit;
-                    }
+                    top: -12px;
+                    left: -8px;
+                    font-size: 30px;
                   }
                 }
+                &.faecherIco, &.forschungIco, &.themaIco {
+                  &::before {
+                    top: -6px;
+                    left: -4px;
+                  }
+                }
+                &.themaIco {
+                  &::before {
+                    top: -6px;
+                    left: -4px;
+                  }
+                }
+                @include media-breakpoint-down("xs") {
+                  margin-bottom: 20px;
+                  &.last {
+                    float: inherit;
+                  }
+                }
+              }
 
               h3 {
                 margin: 0;
@@ -1890,7 +1907,7 @@ a {
 
                 @include media-breakpoint-down("xs") {
                   display: block;
-                  float:inherit;
+                  float: inherit;
                 }
               }
             }
@@ -2380,7 +2397,7 @@ a {
             margin-bottom: 0;
             tbody {
               tr {
-                cursor:pointer;
+                cursor: pointer;
                 i.fa {
                   margin-right: 20px;
                 }
@@ -2414,7 +2431,7 @@ a {
                       display: table-cell;
                     }
                     span {
-                      padding-left:20px;
+                      padding-left: 20px;
                     }
                     i {
                       width: 17px;
@@ -3050,7 +3067,7 @@ a {
             }
             td {
               .cellList {
-                margin-left:20px;
+                margin-left: 20px;
               }
               //background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
               border-bottom: 2px solid $hr-border-color;
@@ -3088,7 +3105,7 @@ a {
           .gm-style-iw {
             > div {
               > div {
-                overflow: hidden!important;
+                overflow: hidden !important;
               }
             }
           }
@@ -3102,7 +3119,7 @@ a {
             > div:nth-child(3) {
               div {
                 box-shadow: none !important;
-                transform-origin: 0px 3px 0px!important;
+                transform-origin: 0px 3px 0px !important;
               }
             }
           }

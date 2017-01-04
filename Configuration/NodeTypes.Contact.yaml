@@ -102,6 +102,11 @@
         inspector:
           group: 'contact'
           position: 80
+    eventoid:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        label: 'EventoID'
     email:
       type: string
       ui:
