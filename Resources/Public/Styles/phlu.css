@@ -8440,6 +8440,20 @@ html {
       padding-left: 18px; }
     #search .hasSearchResults .phlu-searchresults .row.subjectsfilternav .nav-pills li i {
       padding-right: 10px; }
+    #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info {
+      background-color: #efefef;
+      padding: 15px;
+      margin-bottom: 5px; }
+      #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .title {
+        color: #9f632a;
+        text-transform: capitalize; }
+      #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info ul {
+        margin-bottom: 0; }
+        #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info ul li {
+          font-size: 1rem;
+          text-transform: capitalize; }
+          #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info ul li span {
+            text-transform: none; }
     #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table {
       margin-bottom: 60px; }
       #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {
