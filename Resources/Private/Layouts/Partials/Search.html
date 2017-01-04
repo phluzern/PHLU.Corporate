@@ -60,10 +60,10 @@
                          data-ng-class="{active: lastActiveTabName == 'alle', in: lastActiveTabName == 'alle'}"
                          id="alle" role="tabpanel">
 
-                        <div class="row results-table results-quick-result" data-ng-if="result.getQuickInfo()">
+                        <div class="row results-table results-quick-result" data-ng-if="result.getQuickInfo().items.length">
                             <div class="col-xs-12 tab-content">
                                 <div class="info">
-                                    <span class="title">{{result.getQuickInfo().query}}</span>
+                                    <strong>{{result.getQuickInfo().query}}</strong>
                                     <ul>
                                         <li data-ng-repeat="t in result.getQuickInfo().items">
                                             {{t.term}}: <span data-ng-bind-html="t.value"></span>
