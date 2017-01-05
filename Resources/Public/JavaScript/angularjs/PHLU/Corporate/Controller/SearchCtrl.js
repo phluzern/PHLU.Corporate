@@ -207,15 +207,6 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
 
-    var nodeTypeProperties = {
-        'phlu-corporate-contact': {
-            'email': {'label':'E-Mail', 'description': 'mail'},
-            'phone': {'label':'Telefon', 'description': 'mail'}
-        }
-
-    };
-
-
     var search = new $hybridsearchObject(hybridsearch);
 
 
