@@ -107,6 +107,31 @@
       ui:
         reloadIfChanged: TRUE
         label: 'EventoID'
+    education:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Ausbildung'
+    activities:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Tätigkeiten'
+    functions:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Funktionen an der PH Luzern'
+    consulting:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Arbeits- und Beratungsschwerpunkte / Expertise'
+    expertise:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Beruf'
     email:
       type: string
       ui:

@@ -78,22 +78,23 @@
                                             </div>
                                             <div data-ng-if="result.getQuickInfo().items[0].term != ''"
                                                  class="col-xs-8 table-responsive"
-                                                 data-ng-class="{'col-xs-12': !result.getQuickInfo().node.getProperty('image')}">
+                                                 data-ng-class="{'col-xs-12': !result.getQuickInfo().node.getProperty('image') || result.getQuickInfo().items.length > 2}">
                                                 <div class="title">
                                                     <search data="result.getQuickInfo().node" view="all"></search>
                                                 </div>
                                                 <table class="table">
                                                     <tr data-ng-repeat="t in result.getQuickInfo().items">
-                                                        <td>{{t.term}}</td>
+                                                        <td data-ng-if="result.getQuickInfo().items.length > 1">{{t.term}}</td>
                                                         <td>
-                                                            <span data-ng-bind-html="t.value"></span>
+                                                            <span data-ng-if="result.getQuickInfo().items.length == 1" class="single-term">{{t.term}}<br></span>
+                                                            <span data-ng-bind-html="t.value" data-ng-class="{single: result.getQuickInfo().items.length == 1}"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
 
                                             </div>
                                             <div class="col-xs-4"
-                                                 data-ng-if="result.getQuickInfo().node.getProperty('image')">
+                                                 data-ng-if="result.getQuickInfo().node.getProperty('image') && result.getQuickInfo().items.length < 3">
                                                 <div>
                                                     <img ng-src="{{result.getQuickInfo().node.getProperty('image').url}}"
                                                          title="{{result.getQuickInfo().node.getProperty('image').title}}"

@@ -441,6 +441,14 @@ html {
                   text-transform: capitalize;
                   span {
                     text-transform: none;
+                    &.single {
+                      font-size:135%;
+                    }
+                    &.single-term {
+                      text-transform: uppercase;
+                      margin-top: 15px;
+                      display: block;
+                    }
                   }
                 }
               }
