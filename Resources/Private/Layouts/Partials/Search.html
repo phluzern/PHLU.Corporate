@@ -84,10 +84,14 @@
                                                 </div>
                                                 <table class="table">
                                                     <tr data-ng-repeat="t in result.getQuickInfo().items">
-                                                        <td data-ng-if="result.getQuickInfo().items.length > 1">{{t.term}}</td>
+                                                        <td data-ng-if="result.getQuickInfo().items.length > 1">
+                                                            {{t.term}}
+                                                        </td>
                                                         <td>
-                                                            <span data-ng-if="result.getQuickInfo().items.length == 1" class="single-term">{{t.term}}<br></span>
-                                                            <span data-ng-bind-html="t.value" data-ng-class="{single: result.getQuickInfo().items.length == 1}"></span>
+                                                            <span data-ng-if="result.getQuickInfo().items.length == 1"
+                                                                  class="single-term">{{t.term}}<br></span>
+                                                            <span data-ng-bind-html="t.value"
+                                                                  data-ng-class="{single: result.getQuickInfo().items.length == 1}"></span>
                                                         </td>
                                                     </tr>
                                                 </table>

@@ -443,6 +443,15 @@ html {
                     text-transform: none;
                     &.single {
                       font-size:135%;
+                      ul {
+                        zoom: 0.7;
+                      }
+                      .dates {
+                        padding-top:10px;
+                        font-weight:bold;
+
+                      }
+
                     }
                     &.single-term {
                       text-transform: uppercase;

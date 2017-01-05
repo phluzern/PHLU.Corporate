@@ -8493,6 +8493,11 @@ html {
             text-transform: none; }
             #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span.single {
               font-size: 135%; }
+              #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span.single ul {
+                zoom: 0.7; }
+              #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span.single .dates {
+                padding-top: 10px;
+                font-weight: bold; }
             #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span.single-term {
               text-transform: uppercase;
               margin-top: 15px;
