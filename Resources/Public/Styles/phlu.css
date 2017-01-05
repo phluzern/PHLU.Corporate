@@ -8479,7 +8479,8 @@ html {
       #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table {
         margin-bottom: 0; }
         #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr:last-child td {
-          border-bottom: 0; }
+          border-bottom: 0;
+          padding-bottom: 15px; }
         #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td {
           padding-left: 15px;
           padding-top: 2px;
