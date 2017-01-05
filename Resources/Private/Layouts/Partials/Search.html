@@ -3,350 +3,365 @@
 {namespace nl=Neoslive\Hybridsearch\ViewHelpers}
 
 <div class="row" data-ng-controller="SearchCtrl" id="search" data-ng-init='setNodeTypeProperties({nl:properties()});'>
+    <f:if condition="{neos:rendering.inBackend()}">
+        <f:else>
+            <div data-ng-class="{'hasSearchResults': siteSearch != '', 'noSearchResults': siteSearch == ''}"
+                 class="noSearchResults ">
 
-    <div data-ng-class="{'hasSearchResults': siteSearch != '', 'noSearchResults': siteSearch == ''}"
-         class="noSearchResults ">
 
+                <div class="col-xs-12 phlu-searchresults">
+                    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading"
+                         class="loadingIcon"
+                         data-ng-if="result.isLoading()"/>
 
-        <div class="col-xs-12 phlu-searchresults">
-            <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading"
-                 class="loadingIcon"
-                 data-ng-if="result.isLoading()"/>
+                    <div class="close" data-ng-click="stopSearch();"></div>
 
-            <div class="close" data-ng-click="stopSearch();"></div>
+                    <div class="searchresults-count" data-ng-show="result.isLoading() === false">Suchergebnisse
+                        {{siteSearch}}
+                        ({{result.count()}})
+                    </div>
+                    <div class="searchresults-count" data-ng-show="result.isLoading()">Suchergebnisse {{siteSearch}}
+                    </div>
 
-            <div class="searchresults-count" data-ng-show="result.isLoading() === false">Suchergebnisse {{siteSearch}}
-                ({{result.count()}})
-            </div>
-            <div class="searchresults-count" data-ng-show="result.isLoading()">Suchergebnisse {{siteSearch}}</div>
-
-            <div class="turbo-link-result" data-ng-if="result.countTurboNodes()">
-                <div class="result turbonode" ng-repeat="(index,node) in result.getTurboNodes() | orderBy:'-score'"
-                     ng-if="index === 0">
-                    <search data="node"></search>
-                </div>
-            </div>
-
-            <div class="phlu-corporate-tags-menu" data-ng-if="result.getGrouped().count() > 1">
-                <div class="row subjectsfilternav ">
-                    <div class="col-xs-12">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <ul class="nav nav-pills nav-justified" role="tablist">
-                                    <li class="nav-item clickable " role="menuitem">
-                                        <a class="nav-link all" data-ng-click="setLastActiveTabname('alle')"
-                                           data-ng-class="{active: lastActiveTabName == 'alle'}"
-                                           data-toggle="tab" href="#alle" role="tab">Alle</a>
-                                    </li>
-                                    <li class="nav-item clickable" ng-repeat="group in result.getGrouped().getItems()">
-
-                                        <a class="nav-link" data-ng-click="setLastActiveTabname(group.getLabel())"
-                                           data-ng-class="{active: lastActiveTabName == group.getLabel()}"
-                                           data-toggle="tab" href="#{{group.getLabel()}}"
-                                           role="tab"><span node-type name="{{group.getLabel()}}"></span>
-                                            <span>({{group.count()}})</span></a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <div class="turbo-link-result" data-ng-if="result.countTurboNodes()">
+                        <div class="result turbonode"
+                             ng-repeat="(index,node) in result.getTurboNodes() | orderBy:'-score'"
+                             ng-if="index === 0">
+                            <search data="node"></search>
                         </div>
                     </div>
-                </div>
-            </div>
 
+                    <div class="phlu-corporate-tags-menu" data-ng-if="result.getGrouped().count() > 1">
+                        <div class="row subjectsfilternav ">
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <ul class="nav nav-pills nav-justified" role="tablist">
+                                            <li class="nav-item clickable " role="menuitem">
+                                                <a class="nav-link all" data-ng-click="setLastActiveTabname('alle')"
+                                                   data-ng-class="{active: lastActiveTabName == 'alle'}"
+                                                   data-toggle="tab" href="#alle" role="tab">Alle</a>
+                                            </li>
+                                            <li class="nav-item clickable"
+                                                ng-repeat="group in result.getGrouped().getItems()">
 
-            <div class="row results-table" data-ng-if="result.getGrouped().count() > 1">
-                <div class="col-xs-12 tab-content">
-
-                    <div class="result-panel tab-pane nofilter fade"
-                         data-ng-class="{active: lastActiveTabName == 'alle', in: lastActiveTabName == 'alle'}"
-                         id="alle" role="tabpanel">
-
-                        <div class="row results-table results-quick-result"
-                             data-ng-if="result.getQuickInfo().items.length">
-                            <div class="col-xs-12 tab-content">
-                                <div class="info row">
-
-                                    <div data-ng-if="result.getQuickInfo().items[0].term == ''" class="col-xs-8 table-responsive topnode" >
-                                        <search data="result.getQuickInfo().node" view="group"></search>
+                                                <a class="nav-link"
+                                                   data-ng-click="setLastActiveTabname(group.getLabel())"
+                                                   data-ng-class="{active: lastActiveTabName == group.getLabel()}"
+                                                   data-toggle="tab" href="#{{group.getLabel()}}"
+                                                   role="tab"><span node-type name="{{group.getLabel()}}"></span>
+                                                    <span>({{group.count()}})</span></a>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div data-ng-if="result.getQuickInfo().items[0].term != ''" class="col-xs-8 table-responsive" data-ng-class="{'col-xs-12': !result.getQuickInfo().node.getProperty('image')}">
-                                        <div class="title">
-                                            <search data="result.getQuickInfo().node" view="all"></search>
-                                        </div>
-                                        <table class="table">
-                                            <tr data-ng-repeat="t in result.getQuickInfo().items">
-                                                <td>{{t.term}}</td>
-                                                <td>
-                                                    <span data-ng-bind-html="t.value"></span>
-                                                </td>
-                                            </tr>
-                                        </table>
-
-                                    </div>
-                                    <div class="col-xs-4" data-ng-if="result.getQuickInfo().node.getProperty('image')">
-                                        <div>
-                                            <img ng-src="{{result.getQuickInfo().node.getProperty('image').url}}"
-                                                 title="{{result.getQuickInfo().node.getProperty('image').title}}"
-                                                 class="img-fluid"/>
-                                        </div>
-                                    </div>
-
-
-
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tbody>
-                                <tr ng-repeat="node in result.getNodes()"
-                                    data-ng-if="!node.isTurboNode() && node.getNodeType() != 'phlu-corporate-location'">
-                                    <td>
-                                        <search data="node" view="all"></search>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
 
-                    <div class="result-panel tab-pane nofilter fade "
-                         data-ng-class="{active: lastActiveTabName == group.getLabel(), in: lastActiveTabName == group.getLabel()}"
-                         id="{{group.getLabel()}}" role="tabpanel" ng-repeat="group in result.getGrouped().getItems()">
-                        <div data-ng-switch="group.getLabel()" data-ng-if="lastActiveTabName == group.getLabel()">
 
-                            <div class="ppdb-list" data-ng-switch-when="Standorte">
-                                <div data-ng-controller="LocationCtrl" class="phlu-locations">
-                                    <span data-ng-init="addNodes(group.getNodes());"></span>
+                    <div class="row results-table" data-ng-if="result.getGrouped().count() > 1">
+                        <div class="col-xs-12 tab-content">
 
-                                    <div class="row google-maps-iframe ">
+                            <div class="result-panel tab-pane nofilter fade"
+                                 data-ng-class="{active: lastActiveTabName == 'alle', in: lastActiveTabName == 'alle'}"
+                                 id="alle" role="tabpanel">
 
-                                        <div class="col-xs-12 locationsMap phlu-locations-search">
+                                <div class="row results-table results-quick-result"
+                                     data-ng-if="result.getQuickInfo().items.length">
+                                    <div class="col-xs-12 tab-content">
+                                        <div class="info row">
+
+                                            <div data-ng-if="result.getQuickInfo().items[0].term == ''"
+                                                 class="col-xs-8 table-responsive topnode">
+                                                <search data="result.getQuickInfo().node" view="group"></search>
+                                            </div>
+                                            <div data-ng-if="result.getQuickInfo().items[0].term != ''"
+                                                 class="col-xs-8 table-responsive"
+                                                 data-ng-class="{'col-xs-12': !result.getQuickInfo().node.getProperty('image')}">
+                                                <div class="title">
+                                                    <search data="result.getQuickInfo().node" view="all"></search>
+                                                </div>
+                                                <table class="table">
+                                                    <tr data-ng-repeat="t in result.getQuickInfo().items">
+                                                        <td>{{t.term}}</td>
+                                                        <td>
+                                                            <span data-ng-bind-html="t.value"></span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                            <div class="col-xs-4"
+                                                 data-ng-if="result.getQuickInfo().node.getProperty('image')">
+                                                <div>
+                                                    <img ng-src="{{result.getQuickInfo().node.getProperty('image').url}}"
+                                                         title="{{result.getQuickInfo().node.getProperty('image').title}}"
+                                                         class="img-fluid"/>
+                                                </div>
+                                            </div>
+
 
                                         </div>
-
-
                                     </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class=" table-responsive phlu-corporate-table">
-                                                <table class="table first-col-hidden-">
-                                                    <tbody class="neos-contentcollection">
-                                                    <tr class=" phlu-corporate-table-row"
-                                                        data-ng-repeat="node in result.getNodes() | orderBy:'getDocumentNode().getSortingIndex()'"
-                                                        data-ng-if="locations[node.identifier]">
-                                                        <th class=" col-percent-Automatisch ">
-                                                            <span> {{node.getProperty('name')}}</span>
-                                                            <div class="mobile-view-columns">
+                                </div>
 
-                                                                <address>
-                                                                    {{node.getProperty('organisation')}}<br>
-                                                                    <span>{{node.getProperty('street')}}</span><br>
-                                                                    <span data-ng-if="node.getProperty('street2') != ''">{{node.getProperty('street2')}}<br></span>
-                                                                    <span data-ng-if="node.getProperty('zip') != ''">{{node.getProperty('zip')}} {{node.getProperty('city')}}<br></span>
 
-                                                                    <div class="telephone"
-                                                                         data-ng-if="node.getProperty('phone') != ''">
-                                                                        <i class="fa fa-phone" aria-hidden="true"></i>
-                                                                        {{node.getProperty('phone')}}<br>
-                                                                    </div>
-                                                                    <a class="content-link-email-contact-person"
-                                                                       data-ng-if="node.getProperty('email') != ''"
-                                                                       href="mailto:{{node.getProperty('email')}}">{{node.getProperty('email')}}</a><br>
-                                                                </address>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr ng-repeat="node in result.getNodes()"
+                                            data-ng-if="!node.isTurboNode() && node.getNodeType() != 'phlu-corporate-location'">
+                                            <td>
+                                                <search data="node" view="all"></search>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
-                                                                <span class="details-link-cell">
+                            <div class="result-panel tab-pane nofilter fade "
+                                 data-ng-class="{active: lastActiveTabName == group.getLabel(), in: lastActiveTabName == group.getLabel()}"
+                                 id="{{group.getLabel()}}" role="tabpanel"
+                                 ng-repeat="group in result.getGrouped().getItems()">
+                                <div data-ng-switch="group.getLabel()"
+                                     data-ng-if="lastActiveTabName == group.getLabel()">
+
+                                    <div class="ppdb-list" data-ng-switch-when="Standorte">
+                                        <div data-ng-controller="LocationCtrl" class="phlu-locations">
+                                            <span data-ng-init="addNodes(group.getNodes());"></span>
+
+                                            <div class="row google-maps-iframe ">
+
+                                                <div class="col-xs-12 locationsMap phlu-locations-search">
+
+                                                </div>
+
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class=" table-responsive phlu-corporate-table">
+                                                        <table class="table first-col-hidden-">
+                                                            <tbody class="neos-contentcollection">
+                                                            <tr class=" phlu-corporate-table-row"
+                                                                data-ng-repeat="node in result.getNodes() | orderBy:'getDocumentNode().getSortingIndex()'"
+                                                                data-ng-if="locations[node.identifier]">
+                                                                <th class=" col-percent-Automatisch ">
+                                                                    <span> {{node.getProperty('name')}}</span>
+                                                                    <div class="mobile-view-columns">
+
+                                                                        <address>
+                                                                            {{node.getProperty('organisation')}}<br>
+                                                                            <span>{{node.getProperty('street')}}</span><br>
+                                                                            <span data-ng-if="node.getProperty('street2') != ''">{{node.getProperty('street2')}}<br></span>
+                                                                            <span data-ng-if="node.getProperty('zip') != ''">{{node.getProperty('zip')}} {{node.getProperty('city')}}<br></span>
+
+                                                                            <div class="telephone"
+                                                                                 data-ng-if="node.getProperty('phone') != ''">
+                                                                                <i class="fa fa-phone"
+                                                                                   aria-hidden="true"></i>
+                                                                                {{node.getProperty('phone')}}<br>
+                                                                            </div>
+                                                                            <a class="content-link-email-contact-person"
+                                                                               data-ng-if="node.getProperty('email') != ''"
+                                                                               href="mailto:{{node.getProperty('email')}}">{{node.getProperty('email')}}</a><br>
+                                                                        </address>
+
+                                                                        <span class="details-link-cell">
                                         <a class="btn btn-primary" href="{{node.getUrl()}}">
                                             Details
                                         </a>
                                     </span>
-                                                            </div>
-                                                        </th>
-                                                        <td>
+                                                                    </div>
+                                                                </th>
+                                                                <td>
 
-                                                            <address>
-                                                                {{node.getProperty('organisation')}}<br>
-                                                                <span>{{node.getProperty('street')}}</span><br>
-                                                                <span data-ng-if="node.getProperty('street2') != ''">{{node.getProperty('street2')}}<br></span>
-                                                                <span data-ng-if="node.getProperty('zip') != ''">{{node.getProperty('zip')}} {{node.getProperty('city')}}<br></span>
+                                                                    <address>
+                                                                        {{node.getProperty('organisation')}}<br>
+                                                                        <span>{{node.getProperty('street')}}</span><br>
+                                                                        <span data-ng-if="node.getProperty('street2') != ''">{{node.getProperty('street2')}}<br></span>
+                                                                        <span data-ng-if="node.getProperty('zip') != ''">{{node.getProperty('zip')}} {{node.getProperty('city')}}<br></span>
 
-                                                                <div class="telephone"
-                                                                     data-ng-if="node.getProperty('phone') != ''">
-                                                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                                                    {{node.getProperty('phone')}}<br>
-                                                                </div>
-                                                                <a class="content-link-email-contact-person"
-                                                                   data-ng-if="node.getProperty('email') != ''"
-                                                                   href="mailto:{{node.getProperty('email')}}">{{node.getProperty('email')}}</a><br>
-                                                            </address>
+                                                                        <div class="telephone"
+                                                                             data-ng-if="node.getProperty('phone') != ''">
+                                                                            <i class="fa fa-phone"
+                                                                               aria-hidden="true"></i>
+                                                                            {{node.getProperty('phone')}}<br>
+                                                                        </div>
+                                                                        <a class="content-link-email-contact-person"
+                                                                           data-ng-if="node.getProperty('email') != ''"
+                                                                           href="mailto:{{node.getProperty('email')}}">{{node.getProperty('email')}}</a><br>
+                                                                    </address>
 
-                                                        </td>
-                                                        <td class="details-link-cell">
-                                                            <a class="btn btn-primary" href="{{node.getUrl()}}">
-                                                                Details
-                                                            </a>
-                                                        </td>
-                                                    </tr>
+                                                                </td>
+                                                                <td class="details-link-cell">
+                                                                    <a class="btn btn-primary" href="{{node.getUrl()}}">
+                                                                        Details
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
 
 
-                                                    </tbody>
-                                                </table>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
 
 
-                            <div class="ppdb-list" data-ng-switch-when="Publikationen">
+                                    <div class="ppdb-list" data-ng-switch-when="Publikationen">
 
-                                <div class="table-responsive"
-                                     data-ng-repeat="g in group.getCategorizedNodes('publicationtype.name') | orderBy:'getProperty(\'type.sorting\')'">
+                                        <div class="table-responsive"
+                                             data-ng-repeat="g in group.getCategorizedNodes('publicationtype.name') | orderBy:'getProperty(\'type.sorting\')'">
 
-                                    <table class="table">
-                                        <thead>
-                                        <tr>
-                                            <th class="clickable publicationsHeader">
-                                                <a href="#">{{g.getLabel()}}</a>
-                                            </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th class="clickable publicationsHeader">
+                                                        <a href="#">{{g.getLabel()}}</a>
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
 
-                                        <tr ng-repeat="node in g.getNodes()"
-                                            data-node-id="{{node.identifier}}">
-                                            <td data-ng-if="node.getProperty('url') == ''">
+                                                <tr ng-repeat="node in g.getNodes()"
+                                                    data-node-id="{{node.identifier}}">
+                                                    <td data-ng-if="node.getProperty('url') == ''">
 
-                                                <div>
-                                                    <span data-ng-if="node.getProperty('citationstyle') != ''">{{node.getProperty('citationstyle')}}</span>
-                                                    <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
-                                                </div>
-                                            </td>
-                                            <td data-ng-if="node.getProperty('url') != ''">
-                                                <div>
+                                                        <div>
+                                                            <span data-ng-if="node.getProperty('citationstyle') != ''">{{node.getProperty('citationstyle')}}</span>
+                                                            <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
+                                                        </div>
+                                                    </td>
+                                                    <td data-ng-if="node.getProperty('url') != ''">
+                                                        <div>
 
-                                                    <a href="{{node.getProperty('url')}}" target="_blank">
-                                                        <span data-ng-if="node.getProperty('citationstyle') != ''">{{node.getProperty('citationstyle')}}</span>
-                                                        <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
+                                                            <a href="{{node.getProperty('url')}}" target="_blank">
+                                                                <span data-ng-if="node.getProperty('citationstyle') != ''">{{node.getProperty('citationstyle')}}</span>
+                                                                <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
 
-                                </div>
-
-
-                            </div>
-
-                            <div class="ppdb-list" data-ng-switch-when="Projekte">
+                                        </div>
 
 
-                                <div class=" results-table">
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead>
-                                            <tr>
-                                                <th class="clickable">
-                                                    <a href="#">Projektname</a>
-                                                </th>
-                                                <th class="clickable">
-                                                    <a href="#">Schwerpunkte</a>
-                                                </th>
-                                            </tr>
-                                            </thead>
+                                    </div>
 
-                                            <tbody ng-repeat="node in group.getNodes()"
-                                                   data-ng-click="node.isopen = node.isopen ? false : true">
-                                            <tr data-ng-class="{open: node.isopen,noborder: $index > 0}"
-                                                class="clickable">
-                                                <td>
+                                    <div class="ppdb-list" data-ng-switch-when="Projekte">
+
+
+                                        <div class=" results-table">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="clickable">
+                                                            <a href="#">Projektname</a>
+                                                        </th>
+                                                        <th class="clickable">
+                                                            <a href="#">Schwerpunkte</a>
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+
+                                                    <tbody ng-repeat="node in group.getNodes()"
+                                                           data-ng-click="node.isopen = node.isopen ? false : true">
+                                                    <tr data-ng-class="{open: node.isopen,noborder: $index > 0}"
+                                                        class="clickable">
+                                                        <td>
                                                     <span class="oi"
                                                           data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
-                                                    <span>{{node.getProperty('title')}}</span>
-                                                    <div class="mobile-view-columns">
+                                                            <span>{{node.getProperty('title')}}</span>
+                                                            <div class="mobile-view-columns">
                                                         <span class="header">
                                                             Schwerpunkte
                                                         </span>
-                                                        <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus.name}}<br></span>
-                                                    </div>
-                                                </td>
+                                                                <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus.name}}<br></span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus.name}}<br></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="result-preview" data-ng-show="node.isopen">
+                                                        <td colspan="2">
+                                                            <div>
+                                                                <div ng-bind-html="node.getProperty('abstracttextgerman').substr(0,255) + '...'"></div>
+                                                                <a class="btn btn-primary" href="{{node.getUrl()}}">
+                                                                    Details
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class="table-responsive" data-ng-switch-default>
+                                        <table class="table">
+                                            <tbody>
+                                            <tr ng-repeat="node in group.getNodes()"
+                                                data-ng-if="!node.isTurboNode()">
                                                 <td>
-                                                    <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus.name}}<br></span>
-                                                </td>
-                                            </tr>
-                                            <tr class="result-preview" data-ng-show="node.isopen">
-                                                <td colspan="2">
-                                                    <div>
-                                                        <div ng-bind-html="node.getProperty('abstracttextgerman').substr(0,255) + '...'"></div>
-                                                        <a class="btn btn-primary" href="{{node.getUrl()}}">
-                                                            Details
-                                                        </a>
-                                                    </div>
+                                                    <search data="node" view="group"></search>
                                                 </td>
                                             </tr>
                                             </tbody>
-
                                         </table>
                                     </div>
 
+
                                 </div>
 
-
-                            </div>
-
-
-                            <div class="table-responsive" data-ng-switch-default>
-                                <table class="table">
-                                    <tbody>
-                                    <tr ng-repeat="node in group.getNodes()"
-                                        data-ng-if="!node.isTurboNode()">
-                                        <td>
-                                            <search data="node" view="group"></search>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
                             </div>
 
 
                         </div>
-
                     </div>
 
 
-                </div>
-            </div>
+                    <div class="row results-table" data-ng-if="result.getGrouped().count() == 1">
+                        <div class="col-xs-12 tab-content">
+
+                            <div class="result-panel tab-pane nofilter fade active in" id="{{group.getLabel()}}"
+                                 role="tabpanel"
+                                 ng-repeat="group in result.getGrouped().getItems()">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr ng-repeat="node in group.getNodes()"
+                                            data-ng-if="!node.isTurboNode()">
+                                            <td class="clickable">
+                                                <search data="node" view="group"></search>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
 
-            <div class="row results-table" data-ng-if="result.getGrouped().count() == 1">
-                <div class="col-xs-12 tab-content">
-
-                    <div class="result-panel tab-pane nofilter fade active in" id="{{group.getLabel()}}"
-                         role="tabpanel"
-                         ng-repeat="group in result.getGrouped().getItems()">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tbody>
-                                <tr ng-repeat="node in group.getNodes()"
-                                    data-ng-if="!node.isTurboNode()">
-                                    <td class="clickable">
-                                        <search data="node" view="group"></search>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
                         </div>
                     </div>
 
 
                 </div>
+
             </div>
-
-
-        </div>
-
-    </div>
+        </f:else>
+    </f:if>
 </div>
