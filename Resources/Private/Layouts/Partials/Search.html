@@ -60,17 +60,38 @@
                          data-ng-class="{active: lastActiveTabName == 'alle', in: lastActiveTabName == 'alle'}"
                          id="alle" role="tabpanel">
 
-                        <div class="row results-table results-quick-result" data-ng-if="result.getQuickInfo().items.length">
+                        <div class="row results-table results-quick-result"
+                             data-ng-if="result.getQuickInfo().items.length">
                             <div class="col-xs-12 tab-content">
-                                <div class="info">
+                                <div class="info row">
+
+                                    <div data-ng-if="result.getQuickInfo().items[0].term == ''" class="col-xs-8 table-responsive topnode" >
+                                        <search data="result.getQuickInfo().node" view="group"></search>
+                                    </div>
+                                    <div data-ng-if="result.getQuickInfo().items[0].term != ''" class="col-xs-8 table-responsive" data-ng-class="{'col-xs-12': !result.getQuickInfo().node.getProperty('image')}">
                                         <div class="title">
-                                    <search data="result.getQuickInfo().node" view="all"></search>
+                                            <search data="result.getQuickInfo().node" view="all"></search>
                                         </div>
-                                    <ul>
-                                        <li data-ng-repeat="t in result.getQuickInfo().items">
-                                            {{t.term}}: <span data-ng-bind-html="t.value"></span>
-                                        </li>
-                                    </ul>
+                                        <table class="table">
+                                            <tr data-ng-repeat="t in result.getQuickInfo().items">
+                                                <td>{{t.term}}</td>
+                                                <td>
+                                                    <span data-ng-bind-html="t.value"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                    <div class="col-xs-4" data-ng-if="result.getQuickInfo().node.getProperty('image')">
+                                        <div>
+                                            <img ng-src="{{result.getQuickInfo().node.getProperty('image').url}}"
+                                                 title="{{result.getQuickInfo().node.getProperty('image').title}}"
+                                                 class="img-fluid"/>
+                                        </div>
+                                    </div>
+
+
+
                                 </div>
                             </div>
                         </div>

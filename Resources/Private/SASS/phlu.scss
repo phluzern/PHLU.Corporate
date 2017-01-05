@@ -368,27 +368,82 @@ html {
       }
       .results-quick-result {
 
+        .topnode {
+          .breadcrumbs {
+            display: none;
+          }
+          .searchresult-body {
+            font-size:0;
+          }
+          .searchresult-body, h3 {
+
+            padding: 15px;
+            padding-top: 35px;
+            margin-left: 15px;
+
+            > div {
+              display: none;
+            }
+            > div:first-child {
+              display: block;
+              font-size: $font-size-base;
+
+            }
+          }
+        }
+
         .tab-content {
 
           .info {
-            background-color: rgb(239, 239, 239);
-            padding: 15px;
+            background-color: rgb(251, 250, 244);
+            padding: 0;
             margin-bottom: 60px;
+            border: 1px solid gainsboro;
+            -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+            margin-left: 0;
+            margin-right: 0;
+
+            .img-fluid {
+              max-height: 200px;
+              float: right;
+            }
+
+            > div {
+              padding-right: 0;
+              padding-left: 0;
+            }
             .title {
+              padding-left: 15px;
+              margin-top: 15px;
               max-height: 30px;
               overflow: hidden;
               text-transform: capitalize;
+              margin-bottom: 9px;
             }
-          ul {
-            margin-bottom: 0;
-            li {
-              font-size: $font-size-base;
-              text-transform: capitalize;
-               span {
-                 text-transform: none;
-               }
+            table {
+
+              margin-bottom: 0;
+              tr:last-child {
+                td {
+                  border-bottom: 0;
+                }
+              }
+              tr {
+                td {
+                  padding-left: 15px;
+                  padding-top: 2px;
+                  padding-bottom: 2px;
+                  border-top: 0;
+                  list-style-type: none;
+                  font-size: $font-size-base;
+                  text-transform: capitalize;
+                  span {
+                    text-transform: none;
+                  }
+                }
+              }
             }
-          }
           }
         }
       }
