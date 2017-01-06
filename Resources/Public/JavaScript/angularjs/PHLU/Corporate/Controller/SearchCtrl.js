@@ -169,26 +169,18 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var boost = {
 
-        'phlu-corporate-content-page-headerdefault-grandparent': 5,
-        'phlu-corporate-contact-grandparent': 10,
         'phlu-corporate-contact-firstname': 50,
         'phlu-corporate-contact-lastname': 50,
         'phlu-corporate-contact-education': -1, // dont'search here
         'phlu-corporate-contact-activities': -1, // dont'search here
-        'phlu-corporate-contact-functions': 10,
+        'phlu-corporate-contact-function': 10,
+        'phlu-corporate-contact-functions': -1,
         'phlu-corporate-contact-consulting': -1, // dont'search here
         'phlu-corporate-contact-expertise': -1, // dont'search here
-        'phlu-corporate-contact-function': -1, // dont'search here
-        'phlu-corporate-contact-functionCustom': -1, // dont'search here
+        'phlu-corporate-contact-functioncustom': -1, // dont'search here
         'phlu-corporate-contactsgroup.phlu-corporate-contact-firstname': 60,
         'phlu-corporate-contactsgroup.phlu-corporate-contact-lastname': 60,
-        'phlu-corporate-contact-phone': 10,
-        'phlu-corporate-contact-email': 10,
-        'phlu-corporate-headline-title': 10,
-        'phlu-corporate-content-page-headerdefault-parent': 5,
-        'parent': 15,
-        'grandparent': 10,
-        'rawcontent': 1
+        'phlu-corporate-contact-phone': 10
 
 
     };
