@@ -8453,6 +8453,13 @@ html {
       #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body > div:first-child, #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode h3 > div:first-child {
         display: block;
         font-size: 1rem; }
+    #search .hasSearchResults .phlu-searchresults .results-quick-result ul, #search .hasSearchResults .phlu-searchresults .results-quick-result td p {
+      zoom: 0.7;
+      margin-bottom: 5px;
+      width: 95%; }
+    #search .hasSearchResults .phlu-searchresults .results-quick-result .dates {
+      padding-top: 10px;
+      font-weight: bold; }
     #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info {
       background-color: #fbfaf4;
       padding: 0;
@@ -8483,21 +8490,16 @@ html {
           padding-bottom: 15px; }
         #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td {
           padding-left: 15px;
-          padding-top: 2px;
-          padding-bottom: 2px;
+          padding-top: 5px;
+          padding-bottom: 5px;
           border-top: 0;
           list-style-type: none;
           font-size: 1rem;
-          text-transform: capitalize; }
+          text-transform: uppercase; }
           #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span {
             text-transform: none; }
             #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span.single {
               font-size: 135%; }
-              #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span.single ul {
-                zoom: 0.7; }
-              #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span.single .dates {
-                padding-top: 10px;
-                font-weight: bold; }
             #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span.single-term {
               text-transform: uppercase;
               margin-top: 15px;

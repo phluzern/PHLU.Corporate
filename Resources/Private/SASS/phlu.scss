@@ -387,9 +387,21 @@ html {
             > div:first-child {
               display: block;
               font-size: $font-size-base;
-
             }
           }
+        }
+
+
+        ul, td p {
+          zoom: 0.7;
+          margin-bottom:5px;
+          width:95%;
+        }
+
+        .dates {
+          padding-top:10px;
+          font-weight:bold;
+
         }
 
         .tab-content {
@@ -433,24 +445,17 @@ html {
               tr {
                 td {
                   padding-left: 15px;
-                  padding-top: 2px;
-                  padding-bottom: 2px;
+                  padding-top: 5px;
+                  padding-bottom: 5px;
                   border-top: 0;
                   list-style-type: none;
                   font-size: $font-size-base;
-                  text-transform: capitalize;
+                  text-transform: uppercase;
                   span {
                     text-transform: none;
                     &.single {
                       font-size:135%;
-                      ul {
-                        zoom: 0.7;
-                      }
-                      .dates {
-                        padding-top:10px;
-                        font-weight:bold;
 
-                      }
 
                     }
                     &.single-term {
