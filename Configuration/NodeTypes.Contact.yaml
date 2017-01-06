@@ -111,12 +111,12 @@
       type: string
       ui:
         reloadIfChanged: TRUE
-        label: 'Ausbildung'
+        label: 'Ausbildung / Weiterbildung'
     activities:
       type: string
       ui:
         reloadIfChanged: TRUE
-        label: 'Tätigkeiten'
+        label: 'Weitere Funktionen, Tätigkeiten'
     functions:
       type: string
       ui:
@@ -126,12 +126,12 @@
       type: string
       ui:
         reloadIfChanged: TRUE
-        label: 'Arbeits- und Beratungsschwerpunkte / Expertise'
+        label: 'Arbeits- / Beratungsschwerpunkte, Expertise'
     expertise:
       type: string
       ui:
         reloadIfChanged: TRUE
-        label: 'Beruf'
+        label: 'Berufliche Tätigkeiten'
     email:
       type: string
       ui:
