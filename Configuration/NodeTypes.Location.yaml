@@ -14,13 +14,13 @@
           label: 'Allgemein'
           position: 10
         image:
-          label: 'Standort Bild'
+          label: 'Bild'
           position: 20
         coords:
-          label: 'Google Maps Koordinaten'
+          label: 'Koordinaten (wo, map, karte, lage)'
           position: 30
         address:
-          label: 'Standort Adresse'
+          label: 'Adresse'
           position: 40
         chooseLocation:
           label: 'Bestehender Standort wählen'
