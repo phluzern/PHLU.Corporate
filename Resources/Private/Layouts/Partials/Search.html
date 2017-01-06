@@ -238,7 +238,7 @@
                                                     <td data-ng-if="node.getProperty('url') == ''">
 
                                                         <div>
-                                                            <span data-ng-if="node.getProperty('citationstyle') != ''">{{node.getProperty('citationstyle')}}</span>
+                                                            <span data-ng-if="node.getProperty('citationstyle') != ''" data-ng-bind-html="node.getProperty('citationstyle')"></span>
                                                             <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
                                                         </div>
                                                     </td>
@@ -246,7 +246,7 @@
                                                         <div>
 
                                                             <a href="{{node.getProperty('url')}}" target="_blank">
-                                                                <span data-ng-if="node.getProperty('citationstyle') != ''">{{node.getProperty('citationstyle')}}</span>
+                                                                <span data-ng-if="node.getProperty('citationstyle') != ''" data-ng-bind-html="node.getProperty('citationstyle')"></span>
                                                                 <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
                                                             </a>
                                                         </div>
