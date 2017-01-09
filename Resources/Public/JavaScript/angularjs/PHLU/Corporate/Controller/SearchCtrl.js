@@ -132,6 +132,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     if ($rootScope.siteSearchTabs === undefined) {
         $rootScope.siteSearchTabs = {};
     }
+    $scope.limit = {};
     $scope.siteSearch = '';
     $scope.siteSearchLastQuery = '';
     $scope.siteSearchPath = '';

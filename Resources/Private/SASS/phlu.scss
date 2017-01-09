@@ -706,6 +706,7 @@ body {
   }
   color: $grey;
 
+
   .all {
     display: block !important;
 
@@ -791,10 +792,15 @@ body {
         }
       }
       &.loadMore {
+
         background-color: $grey5;
-        margin: 30px 0 0;
+        margin: auto;
         padding: 6px 23px 6px 46px;
         color: white;
+        display: block;
+        width: auto;
+        max-width: 200px;
+
         &:hover {
           background-color: $grey;
         }

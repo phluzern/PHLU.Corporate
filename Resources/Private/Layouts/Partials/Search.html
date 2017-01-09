@@ -115,12 +115,23 @@
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
-                                        <tr ng-repeat="node in result.getNodes()"
+                                        <tr ng-repeat="node in result.getNodes(limit['all'] === undefined ? 10 : limit['all'])"
                                             data-ng-if="!node.isTurboNode() && node.getNodeType() != 'phlu-corporate-location'">
                                             <td>
                                                 <search data="node" view="all"></search>
                                             </td>
                                         </tr>
+                                        <tfoot class="">
+                                        <tr>
+                                            <td class="col-center">
+                                                <a data-ng-click="limit['all'] === undefined ? limit['all'] = 20 : limit['all'] = limit['all'] + 10"
+                                                   class="btn loadMore"
+                                                   data-ng-if="result.count() > limit['all'] || (result.count() > 9 && limit['all'] === undefined)">
+                                                    mehr anzeigen
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tfoot>
                                         </tbody>
                                     </table>
                                 </div>
@@ -223,7 +234,7 @@
                                         <div class="table-responsive"
                                              data-ng-repeat="g in group.getCategorizedNodes('publicationtype.name') | orderBy:'getProperty(\'type.sorting\')'">
 
-                                            <table class="table">
+                                            <table class="table no-margin no-padding">
                                                 <thead>
                                                 <tr>
                                                     <th class="clickable publicationsHeader">
@@ -233,12 +244,13 @@
                                                 </thead>
                                                 <tbody>
 
-                                                <tr ng-repeat="node in g.getNodes()"
+                                                <tr ng-repeat="node in g.getNodes(limit[g.getLabel()] === undefined ? 10 : limit[g.getLabel()])"
                                                     data-node-id="{{node.identifier}}">
                                                     <td data-ng-if="node.getProperty('url') == ''">
 
                                                         <div>
-                                                            <span data-ng-if="node.getProperty('citationstyle') != ''" data-ng-bind-html="node.getProperty('citationstyle')"></span>
+                                                            <span data-ng-if="node.getProperty('citationstyle') != ''"
+                                                                  data-ng-bind-html="node.getProperty('citationstyle')"></span>
                                                             <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
                                                         </div>
                                                     </td>
@@ -246,13 +258,26 @@
                                                         <div>
 
                                                             <a href="{{node.getProperty('url')}}" target="_blank">
-                                                                <span data-ng-if="node.getProperty('citationstyle') != ''" data-ng-bind-html="node.getProperty('citationstyle')"></span>
+                                                                <span data-ng-if="node.getProperty('citationstyle') != ''"
+                                                                      data-ng-bind-html="node.getProperty('citationstyle')"></span>
                                                                 <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>
                                                             </a>
                                                         </div>
                                                     </td>
                                                 </tr>
+                                                <tfoot>
+                                                <tr>
+                                                    <td class="col-center">
+                                                        <a data-ng-click="limit[g.getLabel()] === undefined ? limit[g.getLabel()] = 20 : limit[g.getLabel()] = limit[g.getLabel()] + 10"
+                                                           class="btn loadMore"
+                                                           data-ng-if="g.count() > limit[g.getLabel()] || (g.count() > 9 && limit[g.getLabel()] === undefined)">
+                                                            mehr anzeigen
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                </tfoot>
                                             </table>
+
 
                                         </div>
 
