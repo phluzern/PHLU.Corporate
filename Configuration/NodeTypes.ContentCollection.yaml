@@ -44,6 +44,7 @@
       'PHLU.Qmpilot.NodeTypes:File': TRUE
       'PHLU.Corporate:Table': TRUE
       'PHLU.Corporate:MediaGallery': TRUE
+      'Neoslive.Nodeform:Form': TRUE
 
 
 'PHLU.Corporate:ContentCollection.SectionCenterLinks':
