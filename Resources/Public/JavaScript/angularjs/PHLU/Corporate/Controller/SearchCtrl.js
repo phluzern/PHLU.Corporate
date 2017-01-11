@@ -63,6 +63,15 @@ PHLUCorporateApp.directive('search', function ($sce) {
                                 return template + '/Group/phlu-qmpilot-nodetypes-file.html';
                             }
 
+                        case 'phlu-neos-nodetypes-course-study-furthereducation':
+                        case 'phlu-neos-nodetypes-course-module-furthereducation':
+
+                            if ($scope.view === 'all') {
+                                return template + '/All/phlu-neos-nodetypes-course-study-furthereducation.html';
+                            } else {
+                                return template + '/Group/phlu-neos-nodetypes-course-study-furthereducation.html';
+                            }
+
                         case 'phlu-neos-nodetypes-project':
 
 
@@ -164,6 +173,8 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-location': 'Standorte',
         'phlu-corporate-event': 'Veranstaltungen',
         'phlu-corporate-newsitem': 'News',
+        'phlu-neos-nodetypes-course-study-furthereducation': 'Weiterbildung',
+        'phlu-neos-nodetypes-course-module-furthereducation': 'Weiterbildung',
         '*': 'Seiten'
 
     };
