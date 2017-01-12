@@ -3,487 +3,157 @@
 {namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 
 
-<div {attributes -> f:format.raw()}>
+<div {attributes -> f:format.raw()} data-ng-controller="EventoCtrl">
     <f:if condition="{sectionCount}>1">
         <f:then>
             {neos:contentElement.editable(property: 'title', tag: 'h2')}
         </f:then>
     </f:if>
 
-    <div class="row further-education-list">
+
+    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
+         data-ng-if="result.isLoading()"/>
+
+    <div class="row further-education-list hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
         <div class="col-xs-12">
             <div class="row ">
                 <div class="col-xs-12">
 
                     <div class="list-search-field">
-                        <input type="text" class="c-input form-control" id="courseSearch">
+                        <input type="text" class="c-input form-control" data-ng-model="search">
                         <i class="fa fa-search" aria-hidden="true"></i>
+                        <span
+                                data-ng-init="setQuery('search');"></span>
                     </div>
+
                 </div>
             </div>
+        </div>
+
+
+        <div class="col-xs-12">
+
+
             <div class="row subjectsfilternav">
                 <div class="col-xs-12">
                     <ul class="nav nav-pills" role="tablist">
-                        <li class="nav-item clickable ">
-                            <a class=" nav-link" data-toggle="pill" href="#programmart" role="pill">
-                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                <span>Programmart</span>
+                        <li class="nav-item"
+                            data-ng-show="initialFilters.graduation === undefined && result.getDistinctCount('graduation') > 1">
+                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                               data-target="#researchfocus-{node.Identifier}" role="tab">
+                                <i class="fa fa-university" aria-hidden="true"></i>
+                                <span>Abschluss</span>
+                                <span class="count" data-ng-show="sizeOf(graduation) > 0">{{sizeOf(graduation)}}</span>
                             </a>
+                            <span data-ng-show="sizeOf(graduation) > 0" class="resetFilter">
+                                    <a href="#" ng-click="clearFilter('graduation')">
+                                        <span class="oi oi-x"></span>
+                                    </a>
+                                </span>
                         </li>
-                        <li class="nav-item clickable ">
-                            <a class=" nav-link" data-toggle="pill" href="#kursstart" role="pill">
+
+                        <li class="nav-item"
+                            data-ng-show="initialFilters.financingtype === undefined && result.getDistinctCount('financingtype') > 1">
+                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                               data-target="#financing-{node.Identifier}" role="tab">
+                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                <span>Finanzierungstyp</span>
+                                <span class="count"
+                                      data-ng-show="sizeOf(financingtype) > 0">{{sizeOf(financingtype)}}</span>
+                            </a>
+                            <span data-ng-show="sizeOf(financingtype) > 0" class="resetFilter">
+                                    <a href="#" ng-click="clearFilter('financingtype')">
+                                        <span class="oi oi-x"></span>
+                                    </a>
+                                </span>
+                        </li>
+                        <li class="nav-item"
+                            data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('participants') > 1">
+                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                               data-target="#projectparticipants-{node.Identifier}" role="tab">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span>Projektbeteiligte Personen</span>
+                                <span class="count" data-ng-show="sizeOf(projectparticipants) > 0">{{sizeOf(projectparticipants)}}</span>
+                            </a>
+                            <span data-ng-show="sizeOf(projectparticipants) > 0" class="resetFilter">
+                                    <a href="#" ng-click="clearFilter('projectparticipants')">
+                                        <span class="oi oi-x"></span>
+                                    </a>
+                                </span>
+                        </li>
+                        <li class="nav-item"
+                            data-ng-show="initialFilters.lifetime === undefined && result.getDistinctCount('lifetime') > 1">
+                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                               data-target="#projectstate-{node.Identifier}" role="tab">
+                                <i class="fa fa-hourglass-start" aria-hidden="true"></i>
+                                <span>Projektstatus</span>
+                                <span class="count"
+                                      data-ng-show="sizeOf(filterLifetime) > 0">{{sizeOf(filterLifetime)}}</span>
+                            </a>
+                            <span data-ng-show="sizeOf(filterLifetime) > 0" class="resetFilter">
+                                    <a href="#" ng-click="clearFilter('filterLifetime')">
+                                        <span class="oi oi-x"></span>
+                                    </a>
+                                </span>
+                        </li>
+                        <li class="nav-item" data-ng-show="result.getDistinctCount('projectend') > 1">
+                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                               data-target="#projectenddate-{node.Identifier}" role="tab">
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <span>Kursstart</span>
+                                <span>Projektende</span>
+                                <span class="count"
+                                      data-ng-show="sizeOf(projectend) > 0">{{sizeOf(projectend)}}</span>
                             </a>
-                        </li>
-                        <li class="nav-item clickable ">
-                            <a class=" nav-link" data-toggle="pill" href="#tag-zeit" role="pill">
-                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                <span>Tag/Zeit</span>
-                            </a>
-                        </li>
-                        <li class="nav-item clickable">
-                            <a class=" nav-link" data-toggle="pill" href="#themenbereich" role="pill">
-                                <i class="fa fa-map-signs" aria-hidden="true"></i>
-                                <span data-toggle="filterCountTag"
-                                      data-template='<div class="tooltip filterCountTag" role="tooltip"><span class="tooltip-inner"></span><span class="oi oi-media-record"></span></div>'
-                                      data-placement="right" title="" data-offset="26px 0" data-original-title="3"
-                                      data-trigger="manual">Themenbereich</span>
-                            </a>
+                            <span data-ng-show="sizeOf(projectend) > 0" class="resetFilter">
+                                    <a href="#" ng-click="clearFilter('projectend')">
+                                        <span class="oi oi-x"></span>
+                                    </a>
+                                </span>
                         </li>
                     </ul>
-
                 </div>
+
+
                 <div class="col-xs-12">
-
                     <div class="tab-content">
-                        <div class="result-panel tab-pane " id="programmart" role="tabpanel">
-                            <!--<a href="#" class="close-btn">schliessen</a>-->
+
+                        <div class="result-panel tab-pane " id="researchfocus-{node.Identifier}" role="tabpanel"
+                             data-ng-show="result.getDistinctCount('graduation') > 1">
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">MAS</td>
+                                    <tr data-ng-click="graduation[lt.value] = !graduation[lt.value] ? true : false;"
+                                        data-ng-class="{checked: graduation[lt.value]}"
+                                        data-ng-repeat="(key,lt) in result.getDistinct('graduation')">
                                         <td>
-                                            <a href="#">
-                                                Master Of Advanced Studies
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>CAS</td>
-                                        <td>
-                                            <a href="#">
-                                                Certificat Of Advanced Studies
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">DAS</td>
-                                        <td>
-                                            <a href="#">
-                                                Diploma of Advanced Studies
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">WEBK</td>
-                                        <td>
-                                            <a href="#">
-                                                Weiterbildungskurs
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">SEM</td>
-                                        <td>
-                                            <a href="#">
-                                                Seminar
+                                            <a href="javascript:void(0);">
+                                                <i class="fa"
+                                                   data-ng-class="{'fa-check-square-o': graduation[lt.value],'fa-square-o': !graduation[lt.value]}"
+                                                   aria-hidden="true">
+                                                </i>
+                                                <span>
+                                                        {{lt.value}} ({{lt.count}})
+                                                    </span>
                                             </a>
                                         </td>
                                     </tr>
                                     </tbody>
                                 </table>
                             </div>
+                            <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                         </div>
-                        <div class="result-panel tab-pane " id="kursstart" role="tabpanel">
-                            <div id="datepicker"></div>
-                        </div>
-                        <div class="result-panel tab-pane " id="tag-zeit" role="tabpanel">
 
-                            <div class="datepicker datepicker-inline tag-zeit">
-                                <div class="datepicker-days" style="">
-                                    <table class="table-condensed">
-                                        <thead>
-                                        <tr>
-                                            <th class="dow">
-                                                    <span class='hidden-sm-down'>
-                                                        Montag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        Mon
-                                                    </span>
-                                            </th>
-                                            <th class="dow">
-                                                    <span class='hidden-sm-down'>
-                                                        Dienstag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        Die
-                                                    </span>
-                                            </th>
-                                            <th class="dow">
-                                                    <span class='hidden-sm-down'>
-                                                        Mittwoch
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        Mit
-                                                    </span>
-                                            </th>
-                                            <th class="dow">
-                                                    <span class='hidden-sm-down'>
-                                                        Donnerstag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        Don
-                                                    </span>
-                                            </th>
-                                            <th class="dow">
-                                                    <span class='hidden-sm-down'>
-                                                        Freitag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        Fre
-                                                    </span>
-                                            </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Vormittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        VM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Vormittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        VM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Vormittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        VM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Vormittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        VM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Vormittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        VM
-                                                    </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Nachmittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        NM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Nachmittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        NM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Nachmittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        NM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Nachmittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        NM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Nachmittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        NM
-                                                    </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Abend
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        A
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Abend
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        A
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Abend
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        A
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Abend
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        A
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Abend
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        A
-                                                    </span>
-                                            </td>
-                                        </tr>
-                                        </tbody>
 
-                                    </table>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="result-panel tab-pane " id="themenbereich" role="tabpanel">
-                            <!--<a href="#" class="close-btn">schliessen</a>-->
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <tbody>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>011</td>
-                                        <td>
-                                            <a href="#">
-                                                Schule und Gesellschaft
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">014</td>
-                                        <td>
-                                            <a href="#">
-                                                Weiterbildung von Schulleitungen
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">021</td>
-                                        <td>
-                                            <a href="#">
-                                                Kommunikation und Auftreten
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">022</td>
-                                        <td>
-                                            <a href="#">
-                                                Zusammenarbeit mit Eltern
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">031</td>
-                                        <td>
-                                            <a href="#">
-                                                Berufseinstieg
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">032</td>
-                                        <td>
-                                            <a href="#">
-                                                Wiedereinstieg
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">033</td>
-                                        <td>
-                                            <a href="#">
-                                                Standortbestimmung und Perspektiven
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">034</td>
-                                        <td>
-                                            <a href="#">
-                                                Langzeitweiterbildung
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">035</td>
-                                        <td>
-                                            <a href="#">
-                                                Gesundheit erhalten
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">036</td>
-                                        <td>
-                                            <a href="#">
-                                                Arbeitsorganisation
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">041</td>
-                                        <td>
-                                            <a href="#">
-                                                Schüler/-innen verstehen und begleiten
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">042</td>
-                                        <td>
-                                            <a href="#">
-                                                Klassenführung
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">051</td>
-                                        <td>
-                                            <a href="#">
-                                                Lernen verstehen
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">052</td>
-                                        <td>
-                                            <a href="#">
-                                                Unterricht gestalten
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">061</td>
-                                        <td>
-                                            <a href="#">
-                                                SHP / IF (Schulische Heilpädagogik / Integrative Förderung)
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">062</td>
-                                        <td>
-                                            <a href="#">
-                                                DAZ (Deutsch als Zweitsprache)
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">063</td>
-                                        <td>
-                                            <a href="#">
-                                                Psychomotorik
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">064</td>
-                                        <td>
-                                            <a href="#">
-                                                Logopädie
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">065</td>
-                                        <td>
-                                            <a href="#">
-                                                Tagesstrukturen und Klassenassistenz
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
+
             </div>
+
+
             <div class="row results-table">
                 <div class="col-xs-12">
-                    <h2>Treffer (340)</h2>
+                    <h2>Treffer ({{result.count()}})</h2>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -492,291 +162,54 @@
                                     <a href="#">Angebot</a>
                                 </th>
                                 <th class="clickable">
-                                    <a href="#">Datum</a> <span class="oi oi-caret-bottom"></span>
-                                </th>
-                                <th class="clickable">
-                                    <a href="#">Status</a>
-                                </th>
-                                <th class="clickable">
-                                    <a href="#">Freie Plätze</a>
+                                    <a href="#">Nr</a> <span class="oi oi-caret-bottom"></span>
                                 </th>
                             </tr>
 
                             </thead>
-                            <tbody>
-                            <tr class="clickable">
+                            <tbody ng-repeat="node in result.getNodes(limit)"
+                                   data-ng-click="node.isopen = node.isopen ? false : true">
+                            <tr data-ng-class="{open: node.isopen,noborder: $index > 0}" class="clickable"
+                                data-node-id="{{node.identifier}}">
                                 <td>
-                                    <span class="oi oi-caret-right"></span>
+                                        <span class="oi"
+                                              data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
                                     <span>
-                                            Zwischen Herkunftsland und Diaspora - Sri Lanka/Schweiz
-                                        </span>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Datum
-                                            </span>
-                                        <span>
-                                                Do 15.09.2016
-                                            </span>
-                                    </div>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Status
-                                            </span>
-                                        <span>
-                                                abgesagt
-                                            </span>
-                                    </div>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Freie Plätze
-                                            </span>
-                                        <span>
-                                                xy
-                                            </span>
-                                    </div>
+                                        {{node.getProperty('title')}}
+                                    </span>
                                 </td>
                                 <td>
-                                    Do 15.09.2016
-                                </td>
-                                <td>
-                                    abgesagt
-                                </td>
-                                <td>
-                                    xy
+                                    {{node.getProperty('nr')}}
                                 </td>
                             </tr>
-                            <tr class="clickable open">
-                                <td>
-                                    <span class="oi oi-caret-bottom"></span>
-                                    <span>
-                                            Rechtsfragen im Schulalltag
-                                        </span>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Datum
-                                            </span>
-                                        <span>
-                                                Do 12.01.2017
-                                            </span>
-                                    </div>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Status
-                                            </span>
-                                        <span>
-                                                Wird durchgeführt
-                                            </span>
-                                    </div>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Freie Plätze
-                                            </span>
-                                        <span>
-                                                5
-                                            </span>
-                                    </div>
-                                </td>
-                                <td>
-                                    Do 12.01.2017
-                                </td>
-                                <td>
-                                    Wird durchgeführt
-                                </td>
-                                <td>
-                                    5
-                                </td>
-                            </tr>
-                            <tr class="result-preview">
-                                <td colspan="4">
+                            <tr class="result-preview" data-ng-show="node.isopen">
+                                <td colspan="2">
                                     <div>
-                                        <p>
-                                            Lehrpersonen bewegen sich täglich im Rahmen des Bildungsrechts. Ob
-                                            bewusst
-                                            oder unbewusst wenden sie Recht an, wenn sie Zeugnisnoten erteilen, ein
-                                            Kind
-                                            für zwei Tage vom Unterricht dispensieren oder eine Strafaufgabe
-                                            erteilen.
-                                            Weiter sind...
-                                        </p>
-                                        <a class="btn btn-primary" href="#">
+                                        <p ng-bind-html="node.getProperty('description').substr(0,255)"></p>
+                                        <a class="btn btn-primary" href="{{node.getUrl()}}">
                                             Details
                                         </a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="clickable">
-                                <td>
-                                    <span class="oi oi-caret-right"></span>
-                                    <span>
-                                            Methoden und Instrumente des Qualitätsmanagements
-                                        </span>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Datum
-                                            </span>
-                                        <span>
-                                                Di 01.09.2017
-                                            </span>
-                                    </div>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Status
-                                            </span>
-                                        <span>
-                                                Wird durchgeführt
-                                            </span>
-                                    </div>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Freie Plätze
-                                            </span>
-                                        <span>
-                                                18
-                                            </span>
-                                    </div>
-                                </td>
-                                <td>
-                                    Di 01.09.2017
-                                </td>
-                                <td>
-                                    Wird durchgeführt
-                                </td>
-                                <td>
-                                    18
-                                </td>
-                            </tr>
-                            <tr class="clickable">
-                                <td>
-                                    <span class="oi oi-caret-right"></span>
-                                    <span>
-                                            Aufbaukurs: «Gewaltfreie Kommunikation
-                                        nach Marshall B. Rosenberg»
-                                            </span>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Datum
-                                            </span>
-                                        <span>
-                                                Di 03.11.2016
-                                            </span>
-                                    </div>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Status
-                                            </span>
-                                        <span>
-                                                Durchführung offen
-                                            </span>
-                                    </div>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Freie Plätze
-                                            </span>
-                                        <span>
-                                                1
-                                            </span>
-                                    </div>
-                                </td>
-                                <td>
-                                    Di 03.11.2016
-                                </td>
-                                <td>
-                                    Durchführung offen
-                                </td>
-                                <td>
-                                    1
-                                </td>
-                            </tr>
-                            <tr class="clickable">
-                                <td>
-                                    <span class="oi oi-caret-right"></span>
-                                    <span>
-                                            Lösungsorientierte Gesprächsführung -
-                                        Transferkurs
-                                            </span>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Datum
-                                            </span>
-                                        <span>
-                                                Di 14.11.2015
-                                            </span>
-                                    </div>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Status
-                                            </span>
-                                        <span>
-                                                Durchgeführt (Holkurs möglich)
-                                            </span>
-                                    </div>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Freie Plätze
-                                            </span>
-                                        <span>
-
-                                            </span>
-                                    </div>
-                                </td>
-                                <td>
-                                    Di 14.11.2015
-                                </td>
-                                <td>
-                                    Durchgeführt<br>
-                                    (Holkurs möglich)
-                                </td>
-                                <td>
-                                </td>
-                            </tr>
-                            <tr class="clickable">
-                                <td>
-                                    <span class="oi oi-caret-right"></span>
-                                    <span>
-                                            Kleine Schritte statt Heldentaten:
-                                        Zivilcourage kann man lernen
-                                            </span>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Datum
-                                            </span>
-                                        <span>
-                                                Di 05.04.2017
-                                            </span>
-                                    </div>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Status
-                                            </span>
-                                        <span>
-                                                Wird durchgeführt
-                                            </span>
-                                    </div>
-                                    <div class="mobile-view-columns">
-                                            <span class="header">
-                                                Freie Plätze
-                                            </span>
-                                        <span>
-                                                10
-                                            </span>
-                                    </div>
-                                </td>
-                                <td>
-                                    Di 05.04.2017
-                                </td>
-                                <td>
-                                    Wird durchgeführt
-                                </td>
-                                <td>
-                                    10
-                                </td>
-                            </tr>
                             </tbody>
                         </table>
                     </div>
+
+                    <div class="row">
+                        <div class="col-center">
+                            <a data-ng-click="loadMore();" class="btn loadMore"
+                               data-ng-if="result.count() > limit">
+                                <!--{{limitChunkSize}} -->
+                                mehr anzeigen
+                            </a>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
     </div>
-
+    <span data-ng-init="list.run()"></span>
 </div>
