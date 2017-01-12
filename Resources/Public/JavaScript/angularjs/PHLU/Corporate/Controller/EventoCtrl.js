@@ -32,7 +32,7 @@ PHLUCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
     };
 
     $scope.list
-        //.setOrderBy({'phlu-neos-nodetypes-project': 'title'})
+        .setOrderBy({'phlu-neos-nodetypes-course-study-furthereducation': 'nr'})
         .addPropertyFilter('graduation', 'graduation', $scope)
         .setNodeType('phlu-neos-nodetypes-course-study-furthereducation')
         //.addPropertyFilter('title', '', null, true)
