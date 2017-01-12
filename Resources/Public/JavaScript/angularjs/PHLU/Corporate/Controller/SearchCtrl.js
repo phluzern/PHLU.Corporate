@@ -173,7 +173,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-location': 'Standorte',
         'phlu-corporate-event': 'Veranstaltungen',
         'phlu-corporate-newsitem': 'News',
-        'phlu-neos-nodetypes-course-study-furthereducation': 'Weiterbildungsstudiengänge (MAS, CAS, DAS)',
+        'phlu-neos-nodetypes-course-study-furthereducation': 'Weiterbildungsstudiengänge',
         'phlu-neos-nodetypes-course-module-furthereducation': 'Weiterbildungskurse',
         '*': 'Seiten'
 

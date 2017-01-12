@@ -284,6 +284,56 @@
 
                                     </div>
 
+                                    <div class="ppdb-list" data-ng-switch-when="Weiterbildungsstudiengänge">
+
+
+                                        <div class=" results-table">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="clickable">
+                                                            <a href="#">Angeobt</a>
+                                                        </th>
+                                                        <th class="clickable">
+                                                            <a href="#">Nr</a>
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+
+                                                    <tbody ng-repeat="node in group.getNodes()"
+                                                           data-ng-click="node.isopen = node.isopen ? false : true">
+                                                    <tr data-ng-class="{open: node.isopen,noborder: $index > 0}"
+                                                        class="clickable">
+                                                        <td>
+                                                    <span class="oi"
+                                                          data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
+                                                            <span>{{node.getProperty('title')}}</span>
+                                                                     </td>
+                                                        <td>
+                                                            <span>{{node.getProperty('nr')}}</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="result-preview" data-ng-show="node.isopen">
+                                                        <td colspan="2">
+                                                            <div>
+                                                                <div ng-bind-html="node.getProperty('description').substr(0,255) + '...'"></div>
+                                                                <a class="btn btn-primary" href="{{node.getUrl()}}">
+                                                                    Details
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
                                     <div class="ppdb-list" data-ng-switch-when="Projekte">
 
 
