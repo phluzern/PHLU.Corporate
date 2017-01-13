@@ -67,7 +67,7 @@
                                     <span class="count" data-ng-show="sizeOf(researchmainfocus) > 0">{{sizeOf(researchmainfocus)}}</span>
                                 </a>
                                 <span data-ng-show="sizeOf(researchmainfocus) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('researchmainfocus')" >
+                                    <a href="#" ng-click="clearFilter('researchmainfocus')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -82,7 +82,7 @@
                                     <span class="count" data-ng-show="sizeOf(financingtype) > 0">{{sizeOf(financingtype)}}</span>
                                 </a>
                                 <span data-ng-show="sizeOf(financingtype) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('financingtype')" >
+                                    <a href="#" ng-click="clearFilter('financingtype')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -96,7 +96,7 @@
                                     <span class="count" data-ng-show="sizeOf(projectparticipants) > 0">{{sizeOf(projectparticipants)}}</span>
                                 </a>
                                 <span data-ng-show="sizeOf(projectparticipants) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('projectparticipants')" >
+                                    <a href="#" ng-click="clearFilter('projectparticipants')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -110,7 +110,7 @@
                                     <span class="count" data-ng-show="sizeOf(filterLifetime) > 0">{{sizeOf(filterLifetime)}}</span>
                                 </a>
                                 <span data-ng-show="sizeOf(filterLifetime) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('filterLifetime')" >
+                                    <a href="#" ng-click="clearFilter('filterLifetime')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -124,7 +124,7 @@
                                           data-ng-show="sizeOf(projectend) > 0">{{sizeOf(projectend)}}</span>
                                 </a>
                                 <span data-ng-show="sizeOf(projectend) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('projectend')" >
+                                    <a href="#" ng-click="clearFilter('projectend')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -293,12 +293,13 @@
                                         {{node.getProperty('title')}}
                                     </span>
 
+
                                     <div class="mobile-view-columns">
                                                         <span class="header">
                                                             Schwerpunkte
                                                         </span>
 
-                                        <span >
+                                        <span>
                                             <ul>
                                                 <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">
                                                     {{focus.name}}
@@ -308,11 +309,11 @@
                                     </div>
                                 </td>
                                 <td>
-                                        <ul class="cellList">
-                                            <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">
-                                                {{focus.name}}
-                                            </li>
-                                        </ul>
+                                    <ul class="cellList">
+                                        <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">
+                                            {{focus.name}}
+                                        </li>
+                                    </ul>
                                 </td>
                             </tr>
                             <tr class="result-preview" data-ng-show="node.isopen">

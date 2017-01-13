@@ -16,6 +16,9 @@ prototype(PHLU.Corporate:Page) < prototype(PHLU.Neos.NodeTypes:Page) {
     onepage = ${q(node).children('onepage').get(0)}
     contact = ${q(node).children('contact').get(0)}
 
+    widgetRendererElement = PHLU.Corporate:Widget
+    widgetRenderer = ${q(node).property('widget') ? this.widgetRendererElement : ''}
+
 
     targetgroup = ${q(node).children('targetgroup').get(0)}
     carouselnews = ${q(node).children('carouselnews').get(0)}

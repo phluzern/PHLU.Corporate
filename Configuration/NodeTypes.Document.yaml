@@ -23,6 +23,20 @@
     nodeTypes:
       '*': FALSE
       'TYPO3.Neos:Shortcut': FALSE
+  ui:
+    inspector:
+      groups:
+        special:
+          label: 'Erweiterte Einstellungen'
+  properties:
+    widget:
+      type: string
+      ui:
+        label: 'Widget'
+        defaultValue: false
+        inspector:
+          group: 'special'
+        reloadIfChanged: TRUE
 
 'PHLU.Corporate:Page.NotInMenu':
   superTypes:
