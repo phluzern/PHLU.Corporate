@@ -3,7 +3,7 @@
 {namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 
 
-<div {attributes -> f:format.raw()} data-ng-controller="EventoCtrl">
+<div {attributes -> f:format.raw()} data-ng-controller="EventoCtrl"  data-ng-init='setNodeTypes({nodetypes -> f:format.raw()});'>
     <f:if condition="{sectionCount}>1">
         <f:then>
             {neos:contentElement.editable(property: 'title', tag: 'h2')}

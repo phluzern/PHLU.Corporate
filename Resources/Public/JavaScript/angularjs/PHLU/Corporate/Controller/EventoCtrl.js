@@ -6,6 +6,7 @@ PHLUCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
     $scope.limitChunkSize = 15;
     $scope.initialFilters = {};
     $scope.graduation = {};
+    $scope.nodetypes = [];
 
     $scope.setQuery = function (value) {
         $scope.list.setQuery(value, $scope);
@@ -31,10 +32,19 @@ PHLUCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
         $scope[filtertype] = {};
     };
 
+    $scope.setNodeTypes = function(nodetypes) {
+        $scope.nodetypes = nodetypes;
+    };
+
+
+    $scope.$watch('nodetypes',function(i) {
+        console.log(i);
+    },true);
+
     $scope.list
         .setOrderBy({'phlu-neos-nodetypes-course-study-furthereducation': 'nr'})
         .addPropertyFilter('graduation', 'graduation', $scope)
-        .setNodeType('phlu-neos-nodetypes-course-study-furthereducation')
+        .setNodeType('nodetypes',$scope)
         //.addPropertyFilter('title', '', null, true)
         .$bind('result', $scope);
 
