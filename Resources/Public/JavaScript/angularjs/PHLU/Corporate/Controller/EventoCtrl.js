@@ -53,9 +53,10 @@ PHLUCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
         {state:false, id: 'all', label: 'Alle'},
         {state:false, id: 'phlu-neos-nodetypes-course-study-furthereducation', label: 'Studiengang'},
-        {state:false, id: 'phlu-neos-nodetypes-course-module-furthereducation', label: 'Modul'},
+        {state:false, id: 'phlu-neos-nodetypes-course-module-furthereducation', label: 'Kurse'}
 
     ];
+
     $scope.nodetypesFilterCurrentLabel = 'Alle';
 
     $scope.setNodetypesFilter = function(filter) {
