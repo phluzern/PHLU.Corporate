@@ -46,7 +46,8 @@ PHLUCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
         .addPropertyFilter('graduation', 'graduation', $scope)
         .setNodeType('nodetypes',$scope)
         //.addPropertyFilter('title', '', null, true)
-        .$bind('result', $scope);
+        .$bind('result', $scope)
+        .run();
 
 
 }]);
