@@ -309,7 +309,7 @@
                                                     <span class="oi"
                                                           data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
                                                             <span>{{node.getProperty('title')}}</span>
-                                                                     </td>
+                                                        </td>
                                                         <td>
                                                             <span>{{node.getProperty('nr')}}</span>
                                                         </td>
@@ -359,7 +359,7 @@
                                                     <span class="oi"
                                                           data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
                                                             <span>{{node.getProperty('title')}}</span>
-                                                                     </td>
+                                                        </td>
                                                         <td>
                                                             <span>{{node.getProperty('nr')}}</span>
                                                         </td>
@@ -410,14 +410,20 @@
                                                           data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
                                                             <span>{{node.getProperty('title')}}</span>
                                                             <div class="mobile-view-columns">
-                                                        <span class="header">
-                                                            Schwerpunkte
-                                                        </span>
-                                                                <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus.name}}<br></span>
+                                                                <span class="header">
+                                                                    Schwerpunkte
+                                                                </span>
+                                                                <span>
+                                                                    <ul>
+                                                                        <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">{{focus.name}}</li>
+                                                                    </ul>
+                                                                </span>
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">- {{focus.name}}<br></span>
+                                                            <ul>
+                                                                <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">{{focus.name}}</li>
+                                                            </ul>
                                                         </td>
                                                     </tr>
                                                     <tr class="result-preview" data-ng-show="node.isopen">
