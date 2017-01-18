@@ -8,11 +8,12 @@
             <div data-ng-class="{'hasSearchResults': siteSearch != '', 'noSearchResults': siteSearch == ''}"
                  class="noSearchResults ">
 
-
                 <div class="col-xs-12 phlu-searchresults">
-                    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading"
-                         class="loadingIcon"
-                         data-ng-if="result.isLoading()"/>
+
+                    <div class="globalSearchLoadingScreen" data-ng-if="result.isLoading()">
+                        <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}"
+                             alt="loading"/>
+                    </div>
 
                     <div class="close" data-ng-click="stopSearch();"></div>
 
@@ -186,10 +187,10 @@
                                                                         </address>
 
                                                                         <span class="details-link-cell">
-                                        <a class="btn btn-primary" href="{{node.getUrl()}}">
-                                            Details
-                                        </a>
-                                    </span>
+                                                                            <a class="btn btn-primary" href="{{node.getUrl()}}">
+                                                                                Details
+                                                                            </a>
+                                                                        </span>
                                                                     </div>
                                                                 </th>
                                                                 <td>
@@ -422,7 +423,9 @@
                                                         </td>
                                                         <td>
                                                             <ul>
-                                                                <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">{{focus.name}}</li>
+                                                                <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">
+                                                                    {{focus.name}}
+                                                                </li>
                                                             </ul>
                                                         </td>
                                                     </tr>

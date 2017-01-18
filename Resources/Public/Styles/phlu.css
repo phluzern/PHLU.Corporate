@@ -8386,14 +8386,34 @@ html {
     height: 50px;
     margin: auto; }
 
-.loadingIcon {
-  position: absolute;
-  left: 0;
-  top: 200px;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  /* presto! */ }
+.globalSearchLoadingScreen {
+  text-align: center; }
+  .globalSearchLoadingScreen .loadingIcon {
+    position: absolute;
+    margin-top: 100px;
+    z-index: 999;
+    background-color: white;
+    padding: 20px;
+    margin-left: -60px; }
+
+.locationSearchLoadingScreen {
+  text-align: center; }
+  .locationSearchLoadingScreen .loadingIcon {
+    position: absolute;
+    margin-top: 150px;
+    z-index: 999;
+    background-color: white;
+    padding: 20px;
+    margin-left: -60px; }
+
+.projectsAndPublicationsListLoadingScreen, .resultsCount {
+  float: left; }
+
+.projectsAndPublicationsListLoadingScreen .loadingIcon {
+  position: relative;
+  height: 40px;
+  margin-left: 10px;
+  margin-top: 47px; }
 
 #search .hasSearchResults {
   background-color: rgba(255, 255, 255, 0.98);
@@ -8424,6 +8444,9 @@ html {
   #search .hasSearchResults .phlu-searchresults {
     display: block;
     margin-top: 30px; }
+    @media (max-width: 767px) {
+      #search .hasSearchResults .phlu-searchresults {
+        min-height: 200px; } }
     #search .hasSearchResults .phlu-searchresults .breadcrumbs li {
       display: inline-block; }
     #search .hasSearchResults .phlu-searchresults .searchresults-count {

@@ -290,13 +290,41 @@ html {
   background-position: 0 100%;
 }
 
-.loadingIcon {
-  position: absolute;
-  left: 0;
-  top: 200px;
-  right: 0;
-  bottom: 0;
-  margin: auto; /* presto! */
+
+
+
+.globalSearchLoadingScreen {
+  text-align: center;
+  .loadingIcon {
+    position: absolute;
+    margin-top: 100px;
+    z-index: 999;
+    background-color: white;
+    padding:20px;
+    margin-left:-60px;
+  }
+}
+.locationSearchLoadingScreen {
+  text-align: center;
+  .loadingIcon {
+    position: absolute;
+    margin-top: 150px;
+    z-index: 999;
+    background-color: white;
+    padding:20px;
+    margin-left:-60px;
+  }
+}
+.projectsAndPublicationsListLoadingScreen, .resultsCount {
+  float:left;
+}
+.projectsAndPublicationsListLoadingScreen {
+  .loadingIcon {
+    position: relative;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 47px;
+  }
 }
 
 //
@@ -336,6 +364,9 @@ html {
     .phlu-searchresults {
       display: block;
       margin-top: 30px;
+      @include media-breakpoint-down("sm") {
+        min-height: 200px;
+      }
       .breadcrumbs {
         li {
           display: inline-block;
@@ -373,7 +404,7 @@ html {
             display: none;
           }
           .searchresult-body {
-            font-size:0;
+            font-size: 0;
           }
           .searchresult-body, h3 {
 
@@ -391,16 +422,15 @@ html {
           }
         }
 
-
         ul, td p {
           zoom: 0.7;
-          margin-bottom:5px;
-          width:95%;
+          margin-bottom: 5px;
+          width: 95%;
         }
 
         .dates {
-          padding-top:10px;
-          font-weight:bold;
+          padding-top: 10px;
+          font-weight: bold;
 
         }
 
@@ -437,7 +467,7 @@ html {
               tr:last-child {
                 td {
                   border-bottom: 0;
-                  padding-bottom:15px;
+                  padding-bottom: 15px;
                 }
               }
               tr {
@@ -452,8 +482,7 @@ html {
                   span {
                     text-transform: none;
                     &.single {
-                      font-size:135%;
-
+                      font-size: 135%;
 
                     }
                     &.single-term {
@@ -705,7 +734,6 @@ body {
     background-color: #efefef;
   }
   color: $grey;
-
 
   .all {
     display: block !important;
