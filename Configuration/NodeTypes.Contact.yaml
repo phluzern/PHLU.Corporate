@@ -4,6 +4,7 @@
     'PHLU.Corporate:Content': TRUE
     'PHLU.Neos.NodeTypes:Database': TRUE
   hybridsearch:
+    render: false
     properties:
       portrait: 'neosliveHybridsearchContactsPortraitUrl'
   ui:
