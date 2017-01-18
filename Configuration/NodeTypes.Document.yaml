@@ -37,6 +37,8 @@
         inspector:
           group: 'special'
         reloadIfChanged: TRUE
+    internalid:
+      type: integer
 
 'PHLU.Corporate:Page.NotInMenu':
   superTypes:
