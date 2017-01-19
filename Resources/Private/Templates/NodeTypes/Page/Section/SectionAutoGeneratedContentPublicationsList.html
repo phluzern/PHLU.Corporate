@@ -9,6 +9,10 @@
             {neos:contentElement.editable(property: 'title', tag: 'h2')}
         </f:then>
     </f:if>
+    <div class="searchResultsListStartupLoadingScreen" data-ng-if="result.isStarted() === false">
+        <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
+        />
+    </div>
 
     <div class="row ppdb-list hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
 
@@ -211,7 +215,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <f:if condition="{showSearchInput}"><div class="resultsCount"><h2>Treffer ({{result.count()}})</h2></div></f:if>
-                    <div class="projectsAndPublicationsListLoadingScreen" data-ng-if="result.isLoading()">
+                    <div class="searchResultsListLoadingScreen" data-ng-if="result.isLoading()">
                         <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
                         />
                     </div>

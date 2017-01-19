@@ -315,10 +315,10 @@ html {
     margin-left:-60px;
   }
 }
-.projectsAndPublicationsListLoadingScreen, .resultsCount {
+.searchResultsListLoadingScreen, .resultsCount {
   float:left;
 }
-.projectsAndPublicationsListLoadingScreen {
+.searchResultsListLoadingScreen {
   .loadingIcon {
     position: relative;
     height: 40px;
@@ -719,8 +719,6 @@ body.neos-backend {
   }
 
 }
-
-;
 
 body {
   &.siteSearchActive {

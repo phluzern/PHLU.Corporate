@@ -8406,10 +8406,10 @@ html {
     padding: 20px;
     margin-left: -60px; }
 
-.projectsAndPublicationsListLoadingScreen, .resultsCount {
+.searchResultsListLoadingScreen, .resultsCount {
   float: left; }
 
-.projectsAndPublicationsListLoadingScreen .loadingIcon {
+.searchResultsListLoadingScreen .loadingIcon {
   position: relative;
   height: 40px;
   margin-left: 10px;
