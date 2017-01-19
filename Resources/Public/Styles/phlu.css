@@ -9859,6 +9859,8 @@ body {
             body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a {
               color: white;
               display: table; }
+              body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a.subitem, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a.subitem {
+                margin-left: 40px; }
               body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a span {
                 display: table-cell; }
               body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a span {

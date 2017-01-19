@@ -2545,6 +2545,11 @@ body {
                   a {
                     color: white;
                     display: table;
+
+                    &.subitem {
+                      margin-left:40px;
+                    }
+
                     i, span {
                       display: table-cell;
                     }

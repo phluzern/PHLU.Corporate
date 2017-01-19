@@ -159,16 +159,26 @@
                                             <address>
                                                 <b>{participantsType}</b><br>
                                                 {participant.name}
-                                                <div class="telephone">
-                                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                                    {participant.phone}<br>
-                                                </div>
-                                                <a class="content-link-email-contact-person"
-                                                   href="mailto:{participant.email}">{participant.email}</a><br>
-                                                <portrait:link node="{node}" eventoId="{participant.EventoID}"
-                                                               target="top">
-                                                    Portrait
-                                                </portrait:link>
+                                                <f:if condition="participant.phone == ''">
+                                                    <f:then><br/></f:then>
+                                                    <f:else>
+                                                        <div class="telephone">
+                                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                                            {participant.phone}<br>
+                                                        </div>
+                                                    </f:else>
+                                                </f:if>
+                                                <f:if condition="participant.phone == ''">
+                                                    <f:then><br/></f:then>
+                                                    <f:else>
+                                                        <a class="content-link-email-contact-person"
+                                                           href="mailto:{participant.email}">{participant.email}</a><br>
+                                                        <portrait:link node="{node}" eventoId="{participant.EventoID}"
+                                                                       target="top">
+                                                            Portrait
+                                                        </portrait:link>
+                                                    </f:else>
+                                                </f:if>
                                             </address>
                                         </div>
                                         <div class="phlu-teaser-caret-right col-xs-4">
@@ -204,7 +214,7 @@
                                         <div class="row">
                                             <div class="phlu-teaser-body col-xs-10">
                                                 <h3>
-                                                    <a href="{document.URL}">
+                                                    <a href="{f:uri.external(uri: document.URL, defaultScheme: 'http')}">
                                                         {document.Name}
                                                     </a>
                                                 </h3>
@@ -234,7 +244,7 @@
                                         <div class="row">
                                             <div class="phlu-teaser-body col-xs-10">
                                                 <h3>
-                                                    <a href="{link.URL}">
+                                                    <a href="{f:uri.external(uri: link.URL, defaultScheme: 'http')}">
                                                         {link.Title}
                                                     </a>
                                                 </h3>

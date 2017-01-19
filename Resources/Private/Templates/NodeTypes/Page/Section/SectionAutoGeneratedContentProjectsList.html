@@ -139,12 +139,31 @@
                                 <!--<a href="#" class="close-btn">&nbsp;</a>-->
                                 <div class="table-responsive">
                                     <table class="table">
-                                        <tbody>
+
+                                        <tbody data-ng-repeat="(keyg,ltg) in result.getDistinct('researchmainfocus')" data-ng-if="ltg.value.ResearchUnitName.length === 0">
+
+                                        <tr data-ng-click="researchmainfocus[ltg.value.ID] = !researchmainfocus[ltg.value.ID] ? true : false;"
+                                            data-ng-class="{checked: researchmainfocus[ltg.value.ID]}">
+                                            <td>
+                                                <a href="javascript:void(0);" data-ng-class="{'subitem': ltg.value.ResearchUnitName !== ''}">
+                                                    <i class="fa"
+                                                       data-ng-class="{'fa-check-square-o': researchmainfocus[ltg.value.ID],'fa-square-o': !researchmainfocus[ltg.value.ID]}"
+                                                       aria-hidden="true">
+                                                    </i>
+                                                    <span>
+                                                        {{ltg.value.name}} ({{ltg.count}})
+                                                    </span>
+                                                </a>
+                                            </td>
+                                        </tr>
+
                                         <tr data-ng-click="researchmainfocus[lt.value.ID] = !researchmainfocus[lt.value.ID] ? true : false;"
                                             data-ng-class="{checked: researchmainfocus[lt.value.ID]}"
-                                            data-ng-repeat="(key,lt) in result.getDistinct('researchmainfocus')">
+                                            data-ng-repeat="(key,lt) in result.getDistinct('researchmainfocus') | toArray:false | orderBy:'value.ResearchUnitName'"
+                                            data-ng-if="lt.value.ResearchUnitName == ltg.value.name"
+                                        >
                                             <td>
-                                                <a href="javascript:void(0);">
+                                                <a href="javascript:void(0);" data-ng-class="{'subitem': lt.value.ResearchUnitName !== ''}">
                                                     <i class="fa"
                                                        data-ng-class="{'fa-check-square-o': researchmainfocus[lt.value.ID],'fa-square-o': !researchmainfocus[lt.value.ID]}"
                                                        aria-hidden="true">
@@ -155,7 +174,9 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                        </tbody>
+                                     </tbody>
+
+
                                     </table>
                                 </div>
                                 <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
