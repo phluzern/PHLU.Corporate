@@ -36,11 +36,6 @@ PHLUCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
         $scope.nodetypes = nodetypes;
     };
 
-
-    $scope.$watch('nodetypes',function(i) {
-        console.log(i);
-    },true);
-
     $scope.list
         .setOrderBy({'phlu-neos-nodetypes-course-study-furthereducation': 'nr'})
         .addPropertyFilter('graduation', 'graduation', $scope)

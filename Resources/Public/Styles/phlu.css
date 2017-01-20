@@ -9474,8 +9474,6 @@ body {
       body .all .row.subjectsfilternav .list-search-field input, body .all .row.subjectsfilternav .dropdown-search-field input {
         border: 1px solid #5c5c5c;
         height: 50px; }
-      body .all .row.subjectsfilternav .list-search-field .fa-search, body .all .row.subjectsfilternav .dropdown-search-field .fa-search {
-        margin: -33px 33px 0 0; }
     body .all .row.subjectsfilternav .col-xs-12 .nav-pills {
       padding-top: 30px;
       margin-bottom: 0; }

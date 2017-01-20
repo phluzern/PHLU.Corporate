@@ -12,8 +12,8 @@
                        filterItems="{f:if(condition: '{neos:rendering.inBackend()}', then: '', else: '{items}')}"
                        as="tags">
 
-                <div class="row subjectsfilternav" data-ng-controller="SubjectsFilterNavCtrl" id="{node.Identifier}"
-                     data-ng-init="appId = '{node.Identifier}';">
+                <div class="hidden-xs-up row subjectsfilternav" data-ng-controller="SubjectsFilterNavCtrl" id="{node.Identifier}"
+                     data-ng-init="appId = '{node.Identifier}';" data-ng-class="{'hidden-xs-up': ishidden === true}">
 
                     <div class="col-xs-12">
 
@@ -27,6 +27,7 @@
 
                             </f:then>
                         </f:if>
+
 
                         <div class="row filter-bar">
 

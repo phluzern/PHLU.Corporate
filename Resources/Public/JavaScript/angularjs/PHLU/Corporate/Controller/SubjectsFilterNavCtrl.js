@@ -14,6 +14,7 @@ PHLUCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
     $scope.filteredOut = {};
     $scope.filterItems = {};
     $scope.filterItemsWithPath = {};
+    $scope.ishidden = true;
 
     $scope.animated = true;
 
@@ -105,6 +106,7 @@ PHLUCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
     $scope.addFilterItem = function(nodeId,filterId) {
         if ($scope.filterItems[nodeId] === undefined) $scope.filterItems[nodeId] = {};
         $scope.filterItems[nodeId][filterId] = true;
+        $scope.ishidden = false;
     };
 
 
