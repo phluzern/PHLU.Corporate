@@ -130,7 +130,9 @@
                         <div class="row subjectsfilternav">
 
                             <div class="col-xs-12">
-
+                                <div class="searchResultsListStartupLoadingScreen" data-ng-show="result.isLoading() === true && search !== ''">
+                                    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"/>
+                                </div>
                                 <div class="row phlu-teaser navigation subpage">
 
                                     <f:for each="{items}" as="item" iteration="iterator">
@@ -167,10 +169,7 @@
 
                 </div>
 
-                <div class="searchResultsListStartupLoadingScreen" data-ng-if="result.isLoading() === true">
-                    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
-                    />
-                </div>
+
 
             </phlu:tags>
 
