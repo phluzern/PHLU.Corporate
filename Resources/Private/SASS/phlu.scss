@@ -1864,6 +1864,22 @@ body {
       }
     }
     .row.subjectsfilternav {
+
+
+      .list-search-field, .dropdown-search-field {
+
+        margin-top:5px;
+
+        input {
+          border: 1px solid $grey;
+          height: $input-search-field-big;
+        }
+        .fa-search {
+          margin: -33px 33px 0 0;
+        }
+
+      }
+
       .col-xs-12 {
         .nav-pills {
           padding-top: 30px;

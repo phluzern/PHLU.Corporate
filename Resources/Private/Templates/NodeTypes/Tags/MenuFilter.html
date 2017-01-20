@@ -116,6 +116,11 @@
 
                                         </ul>
 
+                                        <div class="list-search-field">
+                                            <input type="text" class="c-input form-control" data-ng-model="search">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </div>
+
                                     </div>
 
                                 </div>
@@ -160,6 +165,8 @@
 
                     </div>
 
+
+
                 </div>
 
 
@@ -177,7 +184,10 @@
 
     <div class="col-xs-12 nav-teaser-item {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}  "
          data-ng-hide="filteredOut['{item.node.Identifier}'] === true"
-         data-ng-class="{animated: animated === true, fadeIn: filteredIn['{item.node.Identifier}'] === true, fadeOut: filteredIn['{item.node.Identifier}'] === false}">
+         data-ng-class="{animated: animated === true, fadeIn: filteredIn['{item.node.Identifier}'] === true, fadeOut: filteredIn['{item.node.Identifier}'] === false}"
+
+    >
+
 
 
         <f:if condition="{parentItem}">
@@ -196,7 +206,7 @@
                 <div class="row">
 
                     <div class="phlu-teaser-body col-xs-10"
-                         data-ng-init="addFilterItem('{item.node.Identifier}',0);">
+                         data-ng-init="addFilterItem('{item.node.Identifier}',0,'{neos:uri.node(node:item.node)}');">
                         <f:for each="{item.node.properties.tags}" as="tag" iteration="itemIteration">
                             <i class="{f:if(condition: itemIteration.isLast, then: 'last')} {phlu:variable.get(name: 'tags.{tag}.properties.icon')}"
                                data-ng-init="addFilterItem('{item.node.Identifier}','{tag}');"></i>
