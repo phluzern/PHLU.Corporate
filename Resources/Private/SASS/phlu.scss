@@ -1874,7 +1874,9 @@ body {
           border: 1px solid $grey;
           height: $input-search-field-big;
         }
-
+        .fa-search {
+          margin: -33px 33px 0 0;
+        }
 
       }
 
@@ -2509,6 +2511,11 @@ body {
           background-color: $grey6;
           color: white;
           padding: 5px 0;
+
+          .fa-search {
+            margin: -33px 13px 0 0;
+            float:right;
+          }
 
           .close-btn {
             z-index: 9;
