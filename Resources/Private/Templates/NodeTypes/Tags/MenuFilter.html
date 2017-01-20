@@ -27,105 +27,104 @@
 
                             </f:then>
                         </f:if>
-                        <f:if condition="{tags}">
-                            <f:then>
-                                <div class="row filter-bar">
 
-                                    <div class="col-xs-12">
-                                        <ul class="nav nav-pills" role="menubar">
-                                            <f:if condition="{startingPoint.nodeType.name} != 'PHLU.Corporate:Page.View.Default.Default'">
+                        <div class="row filter-bar">
+
+                            <div class="col-xs-12">
+                                <ul class="nav nav-pills" role="menubar">
+                                    <f:if condition="{startingPoint.nodeType.name} != 'PHLU.Corporate:Page.View.Default.Default'">
+                                        <f:then>
+                                            <f:if condition="{items}">
                                                 <f:then>
-
                                                     <li role="menuitem" data-ng-class="{active: filter['0'] === true}">
                                                         <a class="nav-item nav-link all preventDefault" href=""
                                                            data-ng-click="toggleFilter(0);">Alle</a>
                                                     </li>
-
                                                 </f:then>
-                                                <f:else>
+                                            </f:if>
+                                        </f:then>
+                                        <f:else>
 
-                                                    <f:if condition="{tags}">
-                                                        <li role="menuitem"
-                                                            data-ng-class="{active: filter['0'] === true}">
-                                                            <a class="nav-item nav-link all preventDefault" href=""
-                                                               data-ng-click="toggleFilter(0);">Alle</a>
-                                                        </li>
-                                                    </f:if>
-
-
-                                                </f:else>
+                                            <f:if condition="{tags}">
+                                                <li role="menuitem"
+                                                    data-ng-class="{active: filter['0'] === true}">
+                                                    <a class="nav-item nav-link all preventDefault" href=""
+                                                       data-ng-click="toggleFilter(0);">Alle</a>
+                                                </li>
                                             </f:if>
 
 
-                                            <f:for each="{items}" as="item" iteration="iterator">
+                                        </f:else>
+                                    </f:if>
 
-                                                <f:if condition="{item.node.properties.internalid} <= 0">
+
+                                    <f:for each="{items}" as="item" iteration="iterator">
+
+                                        <f:if condition="{item.node.properties.internalid} <= 0">
+                                            <f:then>
+                                                <f:if condition="{item.subItems}">
                                                     <f:then>
-                                                        <f:if condition="{item.subItems}">
-                                                            <f:then>
 
-                                                                <li role="menuitem"
-                                                                    class="ng-tag {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')} "
-                                                                    data-ng-class="{active: filter['{item.node.Identifier}'] === true}"
-                                                                    data-ng-init="filterAll['{item.node.Identifier}'] = true;">
+                                                        <li role="menuitem"
+                                                            class="ng-tag {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')} "
+                                                            data-ng-class="{active: filter['{item.node.Identifier}'] === true}"
+                                                            data-ng-init="filterAll['{item.node.Identifier}'] = true;">
 
-                                                                    <a class="nav-item nav-link no-icon preventDefault"
-                                                                       href="#"
-                                                                       data-ng-click="toggleFilter('{item.node.Identifier}');">
-                                                                        {item.node.properties.title}
-                                                                    </a>
+                                                            <a class="nav-item nav-link no-icon preventDefault"
+                                                               href="#"
+                                                               data-ng-click="toggleFilter('{item.node.Identifier}');">
+                                                                {item.node.properties.title}
+                                                            </a>
 
-                                                                </li>
-                                                            </f:then>
-                                                        </f:if>
+                                                        </li>
                                                     </f:then>
                                                 </f:if>
+                                            </f:then>
+                                        </f:if>
 
-                                            </f:for>
+                                    </f:for>
 
 
-                                            <f:for each="{tags}" as="tag" iteration="iterator">
-                                                <li role="menuitem"
-                                                    class="ng-tag {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')} "
-                                                    data-ng-class="{active: filter['{tag.Identifier}'] === true}"
-                                                    data-ng-init="filterAll['{tag.Identifier}'] = true;">
-                                                    <neos:contentElement.wrap node="{tag}">
-                                                        <f:if condition="{tag.properties.icon}">
-                                                            <f:then>
-                                                                <a class="nav-item nav-link preventDefault" href="#"
-                                                                   {f:if(condition: '{neos:rendering.inBackend()}',
-                                                                then:'rel="typo3:content-collection"', else: '')}
-                                                                data-ng-click="toggleFilter('{tag.Identifier}');">
-                                                                <ts:render path="tagRenderer" context="{node: tag}"/>
-                                                                </a>
-                                                            </f:then>
-                                                            <f:else>
-                                                                <a class="nav-item no-icon nav-link preventDefault"
-                                                                   href="#"
-                                                                   {f:if(condition: '{neos:rendering.inBackend()}',
-                                                                then:'rel="typo3:content-collection"', else: '')}
-                                                                data-ng-click="toggleFilter('{tag.Identifier}');">
-                                                                <ts:render path="tagRenderer" context="{node: tag}"/>
-                                                                </a>
-                                                            </f:else>
-                                                        </f:if>
+                                    <f:for each="{tags}" as="tag" iteration="iterator">
+                                        <li role="menuitem"
+                                            class="ng-tag {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')} "
+                                            data-ng-class="{active: filter['{tag.Identifier}'] === true}"
+                                            data-ng-init="filterAll['{tag.Identifier}'] = true;">
+                                            <neos:contentElement.wrap node="{tag}">
+                                                <f:if condition="{tag.properties.icon}">
+                                                    <f:then>
+                                                        <a class="nav-item nav-link preventDefault" href="#"
+                                                           {f:if(condition: '{neos:rendering.inBackend()}',
+                                                        then:'rel="typo3:content-collection"', else: '')}
+                                                        data-ng-click="toggleFilter('{tag.Identifier}');">
+                                                        <ts:render path="tagRenderer" context="{node: tag}"/>
+                                                        </a>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <a class="nav-item no-icon nav-link preventDefault"
+                                                           href="#"
+                                                           {f:if(condition: '{neos:rendering.inBackend()}',
+                                                        then:'rel="typo3:content-collection"', else: '')}
+                                                        data-ng-click="toggleFilter('{tag.Identifier}');">
+                                                        <ts:render path="tagRenderer" context="{node: tag}"/>
+                                                        </a>
+                                                    </f:else>
+                                                </f:if>
 
-                                                    </neos:contentElement.wrap>
-                                                </li>
-                                            </f:for>
+                                            </neos:contentElement.wrap>
+                                        </li>
+                                    </f:for>
 
-                                        </ul>
+                                </ul>
 
-                                        <div class="list-search-field">
-                                            <input type="text" class="c-input form-control" data-ng-model="search">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                        </div>
-
-                                    </div>
-
+                                <div class="list-search-field">
+                                    <input type="text" class="c-input form-control" data-ng-model="search">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
                                 </div>
-                            </f:then>
-                        </f:if>
+
+                            </div>
+
+                        </div>
 
                         <div class="row subjectsfilternav">
 
@@ -165,8 +164,6 @@
 
                     </div>
 
-
-
                 </div>
 
 
@@ -185,47 +182,46 @@
     <div class="col-xs-12 nav-teaser-item {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}  "
          data-ng-hide="filteredOut['{item.node.Identifier}'] === true"
          data-ng-class="{animated: animated === true, fadeIn: filteredIn['{item.node.Identifier}'] === true, fadeOut: filteredIn['{item.node.Identifier}'] === false}"
-
+         data-ng-if="search == '' || result.isInDistinct('uri.path','<neos:uri.node node="{item.node}"/>')"
     >
 
 
+    <f:if condition="{parentItem}">
+        <span data-ng-init="addFilterItem('{item.node.Identifier}','{parentItem.node.Identifier}');"></span>
+    </f:if>
 
-        <f:if condition="{parentItem}">
-            <span data-ng-init="addFilterItem('{item.node.Identifier}','{parentItem.node.Identifier}');"></span>
-        </f:if>
+    <f:if condition="{title}">
+        <f:then>
+            <h3>
+                <neos:link.node node="{item.node}">
+                    {item.node.properties.title}
+                </neos:link.node>
+            </h3>
+        </f:then>
+        <f:else>
+            <div class="row">
 
-        <f:if condition="{title}">
-            <f:then>
-                <h3>
-                    <neos:link.node node="{item.node}">
-                        {item.node.properties.title}
-                    </neos:link.node>
-                </h3>
-            </f:then>
-            <f:else>
-                <div class="row">
+                <div class="phlu-teaser-body col-xs-10"
+                     data-ng-init="addFilterItem('{item.node.Identifier}',0);">
+                    <f:for each="{item.node.properties.tags}" as="tag" iteration="itemIteration">
+                        <i class="{f:if(condition: itemIteration.isLast, then: 'last')} {phlu:variable.get(name: 'tags.{tag}.properties.icon')}"
+                           data-ng-init="addFilterItem('{item.node.Identifier}','{tag}');"></i>
+                    </f:for>
+                    <h3>
+                        <neos:link.node node="{item.node}">
+                            {item.node.properties.title}
+                        </neos:link.node>
+                    </h3>
 
-                    <div class="phlu-teaser-body col-xs-10"
-                         data-ng-init="addFilterItem('{item.node.Identifier}',0,'{neos:uri.node(node:item.node)}');">
-                        <f:for each="{item.node.properties.tags}" as="tag" iteration="itemIteration">
-                            <i class="{f:if(condition: itemIteration.isLast, then: 'last')} {phlu:variable.get(name: 'tags.{tag}.properties.icon')}"
-                               data-ng-init="addFilterItem('{item.node.Identifier}','{tag}');"></i>
-                        </f:for>
-                        <h3>
-                            <neos:link.node node="{item.node}">
-                                {item.node.properties.title}
-                            </neos:link.node>
-                        </h3>
-
-                    </div>
-
-                    <div class="phlu-teaser-caret-right col-xs-2">
-                        &nbsp;
-                    </div>
                 </div>
 
-            </f:else>
-        </f:if>
+                <div class="phlu-teaser-caret-right col-xs-2">
+                    &nbsp;
+                </div>
+            </div>
+
+        </f:else>
+    </f:if>
 
 
     </div>

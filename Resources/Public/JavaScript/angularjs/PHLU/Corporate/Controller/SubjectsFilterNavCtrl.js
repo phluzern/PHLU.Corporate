@@ -18,52 +18,14 @@ PHLUCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
     $scope.animated = true;
 
 
+
     $scope.list
         .$bind('result', $scope)
-        .setNodeType(['phlu-corporate-text', 'phlu-corporate-headline','phlu-corporate-contact'])
-        .setNodePath('/faecher-und-schwerpunkte')
-        .setNodeTypeLabels({'*': 'Seiten'})
-        .setGroupedBy({'Seiten': 'url'})
-        .setQuery('search', $scope)
-        .$watch(function (data) {
-
-            var distinctUri = [];
-            angular.forEach(data.getNodes(), function (node) {
-                if (node.getScore() > 0.9) {
-                    distinctUri.push(node.uri.path);
-                }
-            });
+        .setNodePath(window.location.pathname.substr(0,window.location.pathname.length - 5))
+        .setQuery('search', $scope);
 
 
-            angular.forEach($scope.filterItemsWithPath, function (path,item) {
-
-                if ($scope.search !== '' && distinctUri.indexOf(path) == -1) {
-                    $scope.filteredIn[item] = false;
-                    $scope.filteredOut[item] = true;
-                } else {
-                    $scope.filteredOut[item] = false;
-                    $scope.filteredIn[item] = true;
-                }
-
-            });
-
-
-
-            setTimeout(function () {
-                $scope.$apply(function () {
-
-
-
-                    $scope.distinctUri = distinctUri;
-                  //  console.log(distinctUri);
-                });
-            }, 10);
-
-        });
-
-
-
-    $scope.toggleFilter = function (id) {
+    $scope.toggleFilter = function(id) {
 
 
         // unset filter all if other filters are set
@@ -80,7 +42,7 @@ PHLUCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
         if (id === 0) {
             $scope.filter[id] = $scope.filter[id] ? false : true;
 
-            angular.forEach($scope.filterAll, function (val, nodeId) {
+            angular.forEach($scope.filterAll, function (val,nodeId) {
                 if (nodeId !== 0) {
                     if (nodeId === id) {
                         $scope.filter[nodeId] = true;
@@ -109,7 +71,7 @@ PHLUCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
 
     };
 
-    $scope.applyFilters = function (animated) {
+    $scope.applyFilters = function(animated) {
 
         $scope.animated = animated === true ? true : false;
 
@@ -140,33 +102,21 @@ PHLUCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
     }
 
 
-    $scope.addFilterItem = function (nodeId, filterId,path) {
-
+    $scope.addFilterItem = function(nodeId,filterId) {
         if ($scope.filterItems[nodeId] === undefined) $scope.filterItems[nodeId] = {};
         $scope.filterItems[nodeId][filterId] = true;
-
-        if ($scope.filterItemsWithPath[nodeId] === undefined) {
-            $scope.filterItemsWithPath[nodeId] = {};
-        }
-        if (path !== undefined) {
-            $scope.filterItemsWithPath[nodeId] = path;
-        }
-
-
     };
 
 
     // apply last states from cookies
-    $scope.$watch("appId", function (appId) {
-        if ($("#" + appId).find(".ng-tag").length === 0) $cookies.remove(appId);
+    $scope.$watch("appId", function(appId) {
+        if ($("#"+appId).find(".ng-tag").length === 0) $cookies.remove(appId);
         $scope.filter = $cookies.get(appId) ? JSON.parse($cookies.get(appId)).filter : {};
         if ($cookies.get(appId)) $scope.applyFilters(false);
     })
 
 
+
 }]);
-
-
-
 
 
