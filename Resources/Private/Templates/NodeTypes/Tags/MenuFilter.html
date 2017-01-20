@@ -167,6 +167,10 @@
 
                 </div>
 
+                <div class="searchResultsListStartupLoadingScreen" data-ng-if="result.isLoading() === true">
+                    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
+                    />
+                </div>
 
             </phlu:tags>
 

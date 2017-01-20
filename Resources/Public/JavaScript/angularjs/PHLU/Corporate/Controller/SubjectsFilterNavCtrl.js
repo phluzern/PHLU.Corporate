@@ -19,9 +19,28 @@ PHLUCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
     $scope.animated = true;
 
 
+    var boost = {
+
+        'phlu-corporate-contact-firstname': 50,
+        'phlu-corporate-contact-lastname': 50,
+        'phlu-corporate-contact-education': -1, // dont'search here
+        'phlu-corporate-contact-activities': -1, // dont'search here
+        'phlu-corporate-contact-function': 10,
+        'phlu-corporate-contact-functions': -1,
+        'phlu-corporate-contact-consulting': -1, // dont'search here
+        'phlu-corporate-contact-expertise': -1, // dont'search here
+        'phlu-corporate-contact-functioncustom': -1, // dont'search here
+        'phlu-corporate-contactsgroup.phlu-corporate-contact-firstname': 60,
+        'phlu-corporate-contactsgroup.phlu-corporate-contact-lastname': 60,
+        'phlu-corporate-contact-phone': 10
+
+
+    };
+
 
     $scope.list
         .$bind('result', $scope)
+        .setPropertiesBoost(boost)
         .setNodePath(window.location.pathname.substr(0,window.location.pathname.length - 5))
         .setQuery('search', $scope);
 
