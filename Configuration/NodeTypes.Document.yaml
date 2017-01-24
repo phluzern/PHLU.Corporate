@@ -154,7 +154,8 @@
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default.Default'
-
+  hybridsearch:
+    render: TRUE
 
 
 'PHLU.Corporate:Page.View.Default.Prototype':
