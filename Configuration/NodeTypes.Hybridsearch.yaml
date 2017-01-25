@@ -42,3 +42,5 @@
 'PHLU.Corporate:Page.View.Default':
   superTypes:
     'Neoslive.Hybridsearch:Content': TRUE
+  hybridsearch:
+    render: TRUE

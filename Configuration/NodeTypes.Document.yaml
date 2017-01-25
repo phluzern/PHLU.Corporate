@@ -97,8 +97,6 @@
 
 
 'PHLU.Corporate:Page.View.Default':
-  hybridsearch:
-    render: TRUE
   ui:
     label: 'Standard-Seite'
     inspector:
