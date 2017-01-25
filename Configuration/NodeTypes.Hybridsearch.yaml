@@ -32,3 +32,13 @@
 'PHLU.Corporate:Location':
   superTypes:
     'Neoslive.Hybridsearch:Content': TRUE
+
+# Searchable content
+'PHLU.Neos.NodeTypes:Database':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+# Searchable content
+'PHLU.Corporate:Page.View.Default':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
