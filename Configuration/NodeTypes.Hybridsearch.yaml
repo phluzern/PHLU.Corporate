@@ -4,6 +4,11 @@
     'Neoslive.Hybridsearch:Content': TRUE
 
 # Searchable content
+'PHLU.Corporate:Text':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': TRUE
+
+# Searchable content
 'PHLU.Corporate:Table':
   superTypes:
     'Neoslive.Hybridsearch:Content': TRUE
