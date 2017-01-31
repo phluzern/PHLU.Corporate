@@ -24,9 +24,9 @@ $raspberryRed: #ba1541;
 $iceblue: #2a818d;
 $iceblueDark: #0A626C;
 $lightblue: #c7dee2;
-$lightgrey: #e1e1e1;
+$lightgrey: #e5e5e5;
 $darkgrey: #464340;
-$grey: #5c5c5c;
+$grey: #545454;
 $grey2: #55696d;
 $grey3: #767676;
 $grey4: #685f56;
@@ -35,7 +35,7 @@ $grey6: #55696d;
 $hazelbrownmedium: #9f632a;
 $hazelbrowndark: #9f632a;
 $hazelbrownlight: #c4b8ae;
-$turquoise: #55a7b3;
+$turquoise: #2f8d99;
 $olivegreen: #91a103;
 $font-color: #4c4c4c;
 $font-color-level1: #685f56;
@@ -66,10 +66,11 @@ $font-size-phlu-team-members: 1rem;
 $headings-color: $font-color;
 $headings-font-weight: normal;
 $font-weight-bold: 700;
-$font-size-btn: 1rem;
+$font-size-btn: 1.125rem;
 $font-size-href: 1.125rem;
 $font-size-table-href: 1rem;
 $nav-link-font-size: 1rem;
+$dropdown-menu-font-size: 1rem;
 $nav-link-font-size-desktop: 1.125rem;
 $font-size-langnav: 1.125rem;
 $font-size-search-filters: 1.125rem;
@@ -290,9 +291,6 @@ html {
   background-position: 0 100%;
 }
 
-
-
-
 .globalSearchLoadingScreen {
   text-align: center;
   .loadingIcon {
@@ -300,10 +298,11 @@ html {
     margin-top: 100px;
     z-index: 999;
     background-color: white;
-    padding:20px;
-    margin-left:-60px;
+    padding: 20px;
+    margin-left: -60px;
   }
 }
+
 .locationSearchLoadingScreen {
   text-align: center;
   .loadingIcon {
@@ -311,13 +310,15 @@ html {
     margin-top: 150px;
     z-index: 999;
     background-color: white;
-    padding:20px;
-    margin-left:-60px;
+    padding: 20px;
+    margin-left: -60px;
   }
 }
+
 .searchResultsListLoadingScreen, .resultsCount {
-  float:left;
+  float: left;
 }
+
 .searchResultsListLoadingScreen {
   .loadingIcon {
     position: relative;
@@ -914,9 +915,8 @@ body {
     //
     .form-control {
       padding: $input-padding-y $input-padding-x;
-      //background-image: url("../img/iconLoupe.png");
-      //background-position: 98% 6px;
-      //background-repeat: no-repeat;
+      border-radius: 0;
+      border: 1px solid $grey5;
     }
     .dropdown {
       button {
@@ -943,6 +943,118 @@ body {
         }
       }
     }
+
+    .input-group {
+      width: initial;
+      .input-group-btn {
+        button {
+          color: white;
+          background-color: $turquoise;
+        }
+      }
+      .form-control {
+        border: solid 2px $turquoise;
+      }
+      .fa.fa-search {
+        font-size: 20px;
+        color: $turquoise;
+        margin: 12px 23px 0 0;
+        position: absolute;
+        right: 0;
+        z-index: 99;
+      }
+      .dropdown-menu {
+        list-style-type: none;
+        background-color: $turquoise;
+        border-radius: inherit;
+        background-clip: inherit;
+        border: 0;
+        margin-top: -2px;
+        padding: 0;
+        font-size: $dropdown-menu-font-size;
+        li {
+          a {
+            color: white;
+            padding-top: 6px;
+            padding-left: 10px;
+            display: block;
+            height: 40px;
+          }
+          &:hover {
+            background-color: $iceblue;
+          }
+        }
+      }
+    }
+
+    .extendedSearchBg {
+      background-color: $grey;
+      &.on {
+        background-color: $grey;
+      }
+
+      label {
+        display: block;
+      }
+      input, select {
+        width: 100%;
+      }
+      .extendedSearchFilter {
+        color: white;
+        //display: none;
+        h3 {
+          color: white;
+        }
+        .input-item-col {
+          &.open {
+            &::after {
+              font-family: FontAwesome;
+              content: " \f0d8";
+            }
+          }
+          &::after {
+            font-family: FontAwesome;
+            content: " \f0d7";
+            border: inherit;
+            position: absolute;
+            right: 30px;
+            margin-top: -32px;
+            color: $font-color;
+          }
+          .dropdown-toggle {
+            background-color: white;
+            color: $font-color;
+            display: block;
+            padding: 8px;
+            &::after {
+              border:0;
+            }
+          }
+          .dropdown-menu {
+            position: inherit;
+            top: inherit;
+            width: 100%;
+            background-color: white;
+            li {
+              a {
+                color: $font-color;
+              }
+              &:hover {
+                background-color: $lightgrey;
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    .extendedSearch {
+      text-align: right;
+      margin-top: 15px;
+
+    }
+
     .searchresults-filter {
       .dropdown-menu {
         right: 0;
@@ -2069,6 +2181,9 @@ body {
     //
     .phlu-accordion {
       margin: 70px 0 65px;
+    }
+    .phlu-accordion, .phlu-corporate-section  {
+
       .panel {
         padding-bottom: 17px;
         .panel-heading {

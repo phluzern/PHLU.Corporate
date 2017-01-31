@@ -1,18 +1,17 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
-<div class="phlu-accordion">
-    <div class="panel panel-default">
-        <div class="panel-heading" role="tab">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#phlu-accordion" href="#accordion-{node.Identifier}"
-                   aria-expanded="false" aria-controls="accordeon-{node.Identifier}">
-                    {neos:contentElement.editable(property: 'title', tag: 'span')}
-                </a>
-            </h4>
-        </div>
-        <div id="accordion-{node.Identifier}" class="panel-collapse collapse" role="tabpanel"
-             aria-labelledby="accordion-{node.Identifier}">
-            <ts:render path="collectionRenderer" context="{node: main}"/>
-        </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#phlu-accordion" href="#accordion-{node.Identifier}"
+               aria-expanded="false" aria-controls="accordeon-{node.Identifier}">
+                {neos:contentElement.editable(property: 'title', tag: 'span')}
+            </a>
+        </h4>
+    </div>
+    <div id="accordion-{node.Identifier}" class="panel-collapse collapse" role="tabpanel"
+         aria-labelledby="accordion-{node.Identifier}">
+        <ts:render path="collectionRenderer" context="{node: main}"/>
     </div>
 </div>
