@@ -9469,6 +9469,13 @@ body {
               margin: 0; }
     body .all .row.filter-bar .col-xs-12 {
       margin: 0 0 50px; }
+    body .all .row.subjectsfilternav .list-search-field, body .all .row.subjectsfilternav .dropdown-search-field {
+      margin-top: 5px; }
+      body .all .row.subjectsfilternav .list-search-field input, body .all .row.subjectsfilternav .dropdown-search-field input {
+        border: 1px solid #5c5c5c;
+        height: 50px; }
+      body .all .row.subjectsfilternav .list-search-field .fa-search, body .all .row.subjectsfilternav .dropdown-search-field .fa-search {
+        margin: -33px 33px 0 0; }
     body .all .row.subjectsfilternav .col-xs-12 .nav-pills {
       padding-top: 30px;
       margin-bottom: 0; }
@@ -9822,6 +9829,9 @@ body {
       background-color: #55696d;
       color: white;
       padding: 5px 0; }
+      body .all .ppdb-list .subjectsfilternav .result-panel .fa-search, body .all .further-education-list .subjectsfilternav .result-panel .fa-search {
+        margin: -33px 13px 0 0;
+        float: right; }
       body .all .ppdb-list .subjectsfilternav .result-panel .close-btn, body .all .further-education-list .subjectsfilternav .result-panel .close-btn {
         z-index: 9;
         display: inline-block;
@@ -9859,6 +9869,8 @@ body {
             body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a {
               color: white;
               display: table; }
+              body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a.subitem, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a.subitem {
+                margin-left: 40px; }
               body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a span {
                 display: table-cell; }
               body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a span {

@@ -185,8 +185,7 @@ PHLUCorporateApp.filter('inArrayFilter', function () {
 
         angular.forEach(input, function (val, key) {
 
-
-            if (JSON.stringify(val.value).indexOf(term) >= 0) {
+            if (JSON.stringify(val.value).toLowerCase().indexOf(term.toLowerCase()) >= 0) {
                 collection[key] = val;
             }
 

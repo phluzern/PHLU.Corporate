@@ -1,10 +1,11 @@
-
-
 // PHLU.Corporate:Page.View.Default filter tag navigation
-PHLUCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope','$timeout','$cookies',function($scope,$timeout,$cookies) {
+PHLUCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$timeout', '$cookies', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $timeout, $cookies) {
 
 
-
+    $scope.list = new $hybridsearchObject(hybridsearch);
+    $scope.result = new $hybridsearchResultsObject();
+    $scope.search = '';
+    $scope.distinctUri = [];
     $scope.appId = null;
     $scope.filter = {};
     $scope.filter[0] = true;
@@ -12,7 +13,36 @@ PHLUCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope','$timeout','$cook
     $scope.filteredIn = {};
     $scope.filteredOut = {};
     $scope.filterItems = {};
+    $scope.filterItemsWithPath = {};
+    $scope.ishidden = true;
+
     $scope.animated = true;
+
+
+    var boost = {
+
+        'phlu-corporate-contact-firstname': 50,
+        'phlu-corporate-contact-lastname': 50,
+        'phlu-corporate-contact-education': -1, // dont'search here
+        'phlu-corporate-contact-activities': -1, // dont'search here
+        'phlu-corporate-contact-function': 10,
+        'phlu-corporate-contact-functions': -1,
+        'phlu-corporate-contact-consulting': -1, // dont'search here
+        'phlu-corporate-contact-expertise': -1, // dont'search here
+        'phlu-corporate-contact-functioncustom': -1, // dont'search here
+        'phlu-corporate-contactsgroup.phlu-corporate-contact-firstname': 60,
+        'phlu-corporate-contactsgroup.phlu-corporate-contact-lastname': 60,
+        'phlu-corporate-contact-phone': 10
+
+
+    };
+
+
+    $scope.list
+        .$bind('result', $scope)
+        .setPropertiesBoost(boost)
+        .setNodePath(window.location.pathname.substr(0,window.location.pathname.length - 5))
+        .setQuery('search', $scope);
 
 
     $scope.toggleFilter = function(id) {
@@ -95,6 +125,7 @@ PHLUCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope','$timeout','$cook
     $scope.addFilterItem = function(nodeId,filterId) {
         if ($scope.filterItems[nodeId] === undefined) $scope.filterItems[nodeId] = {};
         $scope.filterItems[nodeId][filterId] = true;
+        $scope.ishidden = false;
     };
 
 

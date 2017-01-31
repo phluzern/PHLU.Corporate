@@ -143,6 +143,8 @@
 
 
 'PHLU.Corporate:Page.View.Default.Default':
+  hybridsearch:
+    render: TRUE
   superTypes:
     'PHLU.Corporate:Page.View.Default': TRUE
     'PHLU.Neos.NodeTypes:TagMixin': TRUE
@@ -154,7 +156,6 @@
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default.Default'
-
 
 
 'PHLU.Corporate:Page.View.Default.Prototype':

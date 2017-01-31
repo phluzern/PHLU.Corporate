@@ -27,6 +27,7 @@
     nodeTypes:
       'PHLU.Corporate:Section': TRUE
       'PHLU.Corporate:SectionCenterLinks': TRUE
+      'Neoslive.Nodeform:AppMixin': TRUE
 
 
 'PHLU.Corporate:ContentCollection.Section':

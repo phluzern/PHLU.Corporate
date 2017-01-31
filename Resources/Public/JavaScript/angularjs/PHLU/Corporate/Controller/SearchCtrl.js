@@ -181,8 +181,7 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var boost = {
 
-        'phlu-corporate-contact-firstname': 50,
-        'phlu-corporate-contact-lastname': 50,
+        'phlu-corporate-contact-text': 150,
         'phlu-corporate-contact-education': -1, // dont'search here
         'phlu-corporate-contact-activities': -1, // dont'search here
         'phlu-corporate-contact-function': 10,

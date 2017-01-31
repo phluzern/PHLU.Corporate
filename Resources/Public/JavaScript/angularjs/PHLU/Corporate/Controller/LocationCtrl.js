@@ -237,7 +237,9 @@ PHLUCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybrids
         var nodesIds = [];
         nodesIds.push(node);
         list.addNodesByIdentifier(nodesIds);
+
     };
+
 
 
     if ($(mapElement).hasClass('phlu-locations-search')) {
