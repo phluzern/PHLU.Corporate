@@ -74,6 +74,7 @@ $dropdown-menu-font-size: 1rem;
 $nav-link-font-size-desktop: 1.125rem;
 $font-size-langnav: 1.125rem;
 $font-size-search-filters: 1.125rem;
+$font-size-accordion-table: 1rem;
 $font-size-table-mobile-cols: 0.75rem;
 
 // phlu nav elements
@@ -1027,7 +1028,7 @@ body {
             display: block;
             padding: 8px;
             &::after {
-              border:0;
+              border: 0;
             }
           }
           .dropdown-menu {
@@ -1977,10 +1978,9 @@ body {
     }
     .row.subjectsfilternav {
 
-
       .list-search-field, .dropdown-search-field {
 
-        margin-top:5px;
+        margin-top: 5px;
 
         input {
           border: 1px solid $grey;
@@ -2181,8 +2181,12 @@ body {
     //
     .phlu-accordion {
       margin: 70px 0 65px;
+      &.list-multiple {
+        margin: 0;
+      }
     }
-    .phlu-accordion, .phlu-corporate-section  {
+
+    .phlu-accordion, .phlu-corporate-section {
 
       .panel {
         padding-bottom: 17px;
@@ -2197,13 +2201,18 @@ body {
               &::after {
                 font-size: 35px;
                 position: absolute;
-                content: " \00D7";
+                content: " \002b";
                 right: 20px;
                 margin-top: -13px;
               }
-              &.collapsed {
+              &[aria-expanded=false] {
                 &::after {
                   content: " \002b";
+                }
+              }
+              &[aria-expanded=true] {
+                &::after {
+                  content: " \00D7";
                 }
               }
             }
@@ -2214,6 +2223,44 @@ body {
             padding: 20px 0;
             margin: 0;
           }
+
+          .table-responsive {
+            .table {
+              tbody {
+                tr {
+                  td {
+                    border-top: 0;
+                    .content-link-portrait, .content-link-email-contact-person {
+                      background-image: inherit;
+                    }
+                    .jobtitle {
+                      font-weight:$font-weight-bold;
+                    }
+                    .telephone {
+                      color:$hazelbrownmedium;
+                     i {
+                       margin-right:5px;
+                     }
+                    }
+                    .content-link-portrait, .content-link-email-contact-person, telephone {
+                      font-size:$font-size-accordion-table;
+                    }
+                    .mobile-view-columns {
+                      .content-link-portrait, .content-link-email-contact-person {
+                        font-size:$font-size-accordion-table;
+
+                      }
+                    }
+                  }
+                  td:last-child {
+                    padding-right:0;
+                    text-align: right;
+                  }
+                }
+              }
+            }
+          }
+
         }
       }
     }
@@ -2629,7 +2676,7 @@ body {
 
           .fa-search {
             margin: -33px 13px 0 0;
-            float:right;
+            float: right;
           }
 
           .close-btn {
@@ -2683,7 +2730,7 @@ body {
                     display: table;
 
                     &.subitem {
-                      margin-left:40px;
+                      margin-left: 40px;
                     }
 
                     i, span {

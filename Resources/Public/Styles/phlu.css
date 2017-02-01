@@ -9666,6 +9666,8 @@ body {
       margin: 0; }
     body .all .phlu-accordion {
       margin: 70px 0 65px; }
+      body .all .phlu-accordion.list-multiple {
+        margin: 0; }
     body .all .phlu-accordion .panel, body .all .phlu-corporate-section .panel {
       padding-bottom: 17px; }
       body .all .phlu-accordion .panel .panel-heading .panel-title, body .all .phlu-corporate-section .panel .panel-heading .panel-title {
@@ -9678,14 +9680,33 @@ body {
           body .all .phlu-accordion .panel .panel-heading .panel-title a::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a::after {
             font-size: 35px;
             position: absolute;
-            content: " \00D7";
+            content: " \002b";
             right: 20px;
             margin-top: -13px; }
-          body .all .phlu-accordion .panel .panel-heading .panel-title a.collapsed::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a.collapsed::after {
+          body .all .phlu-accordion .panel .panel-heading .panel-title a[aria-expanded=false]::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a[aria-expanded=false]::after {
             content: " \002b"; }
+          body .all .phlu-accordion .panel .panel-heading .panel-title a[aria-expanded=true]::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a[aria-expanded=true]::after {
+            content: " \00D7"; }
       body .all .phlu-accordion .panel .panel-collapse p, body .all .phlu-corporate-section .panel .panel-collapse p {
         padding: 20px 0;
         margin: 0; }
+      body .all .phlu-accordion .panel .panel-collapse .table-responsive .table tbody tr td, body .all .phlu-corporate-section .panel .panel-collapse .table-responsive .table tbody tr td {
+        border-top: 0; }
+        body .all .phlu-accordion .panel .panel-collapse .table-responsive .table tbody tr td .content-link-portrait, body .all .phlu-accordion .panel .panel-collapse .table-responsive .table tbody tr td .content-link-email-contact-person, body .all .phlu-corporate-section .panel .panel-collapse .table-responsive .table tbody tr td .content-link-portrait, body .all .phlu-corporate-section .panel .panel-collapse .table-responsive .table tbody tr td .content-link-email-contact-person {
+          background-image: inherit; }
+        body .all .phlu-accordion .panel .panel-collapse .table-responsive .table tbody tr td .jobtitle, body .all .phlu-corporate-section .panel .panel-collapse .table-responsive .table tbody tr td .jobtitle {
+          font-weight: 700; }
+        body .all .phlu-accordion .panel .panel-collapse .table-responsive .table tbody tr td .telephone, body .all .phlu-corporate-section .panel .panel-collapse .table-responsive .table tbody tr td .telephone {
+          color: #9f632a; }
+          body .all .phlu-accordion .panel .panel-collapse .table-responsive .table tbody tr td .telephone i, body .all .phlu-corporate-section .panel .panel-collapse .table-responsive .table tbody tr td .telephone i {
+            margin-right: 5px; }
+        body .all .phlu-accordion .panel .panel-collapse .table-responsive .table tbody tr td .content-link-portrait, body .all .phlu-accordion .panel .panel-collapse .table-responsive .table tbody tr td .content-link-email-contact-person, body .all .phlu-accordion .panel .panel-collapse .table-responsive .table tbody tr td telephone, body .all .phlu-corporate-section .panel .panel-collapse .table-responsive .table tbody tr td .content-link-portrait, body .all .phlu-corporate-section .panel .panel-collapse .table-responsive .table tbody tr td .content-link-email-contact-person, body .all .phlu-corporate-section .panel .panel-collapse .table-responsive .table tbody tr td telephone {
+          font-size: 1rem; }
+        body .all .phlu-accordion .panel .panel-collapse .table-responsive .table tbody tr td .mobile-view-columns .content-link-portrait, body .all .phlu-accordion .panel .panel-collapse .table-responsive .table tbody tr td .mobile-view-columns .content-link-email-contact-person, body .all .phlu-corporate-section .panel .panel-collapse .table-responsive .table tbody tr td .mobile-view-columns .content-link-portrait, body .all .phlu-corporate-section .panel .panel-collapse .table-responsive .table tbody tr td .mobile-view-columns .content-link-email-contact-person {
+          font-size: 1rem; }
+      body .all .phlu-accordion .panel .panel-collapse .table-responsive .table tbody tr td:last-child, body .all .phlu-corporate-section .panel .panel-collapse .table-responsive .table tbody tr td:last-child {
+        padding-right: 0;
+        text-align: right; }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-caret-right.col-xs-2 {
       background-color: #e5e5e5; }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
