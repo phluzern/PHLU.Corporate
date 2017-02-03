@@ -67,7 +67,7 @@
                                     <span class="count" data-ng-show="sizeOf(researchmainfocus) > 0">{{sizeOf(researchmainfocus)}}</span>
                                 </a>
                                 <span data-ng-show="sizeOf(researchmainfocus) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('researchmainfocus')">
+                                    <a ng-click="clearFilter('researchmainfocus')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -82,7 +82,7 @@
                                     <span class="count" data-ng-show="sizeOf(financingtype) > 0">{{sizeOf(financingtype)}}</span>
                                 </a>
                                 <span data-ng-show="sizeOf(financingtype) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('financingtype')">
+                                    <a ng-click="clearFilter('financingtype')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -96,7 +96,7 @@
                                     <span class="count" data-ng-show="sizeOf(projectparticipants) > 0">{{sizeOf(projectparticipants)}}</span>
                                 </a>
                                 <span data-ng-show="sizeOf(projectparticipants) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('projectparticipants')">
+                                    <a ng-click="clearFilter('projectparticipants')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -110,7 +110,7 @@
                                     <span class="count" data-ng-show="sizeOf(filterLifetime) > 0">{{sizeOf(filterLifetime)}}</span>
                                 </a>
                                 <span data-ng-show="sizeOf(filterLifetime) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('filterLifetime')">
+                                    <a ng-click="clearFilter('filterLifetime')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -124,7 +124,7 @@
                                           data-ng-show="sizeOf(projectend) > 0">{{sizeOf(projectend)}}</span>
                                 </a>
                                 <span data-ng-show="sizeOf(projectend) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('projectend')">
+                                    <a ng-click="clearFilter('projectend')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -136,7 +136,7 @@
 
                             <div class="result-panel tab-pane " id="researchfocus-{node.Identifier}" role="tabpanel"
                                  data-ng-show="result.getDistinctCount('researchmainfocus') > 1">
-                                <!--<a href="#" class="close-btn">&nbsp;</a>-->
+                                <!--<a class="close-btn">&nbsp;</a>-->
                                 <div class="table-responsive">
                                     <table class="table">
 
@@ -179,7 +179,7 @@
 
                                     </table>
                                 </div>
-                                <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                <a class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                             </div>
 
 
@@ -209,7 +209,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                <a class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                             </div>
                             <div class="result-panel tab-pane " id="projectparticipants-{node.Identifier}"
                                  role="tabpanel"
@@ -272,13 +272,13 @@
                                         </tr>
                                         </tbody>
                                     </table>
-                                    <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                    <a class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                             <div class="result-panel tab-pane " id="projectenddate-{node.Identifier}" role="tabpanel"
                                  data-ng-show="result.getDistinctCount('projectend') > 1">
                                 <div id="datepicker"></div>
-                                <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                <a class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                             </div>
                         </div>
 

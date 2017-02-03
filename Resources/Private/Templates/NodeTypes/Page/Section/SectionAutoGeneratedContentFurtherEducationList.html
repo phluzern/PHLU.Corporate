@@ -46,7 +46,7 @@
                                 <span class="count" data-ng-show="sizeOf(graduation) > 0">{{sizeOf(graduation)}}</span>
                             </a>
                             <span data-ng-show="sizeOf(graduation) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('graduation')">
+                                    <a ng-click="clearFilter('graduation')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -54,7 +54,7 @@
 
                         <li class="nav-item"
                             data-ng-show="initialFilters.financingtype === undefined && result.getDistinctCount('financingtype') > 1">
-                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                            <a class=" nav-link preventDefaultTab" data-toggle="tab"
                                data-target="#financing-{node.Identifier}" role="tab">
                                 <i class="fa fa-usd" aria-hidden="true"></i>
                                 <span>Finanzierungstyp</span>
@@ -62,28 +62,28 @@
                                       data-ng-show="sizeOf(financingtype) > 0">{{sizeOf(financingtype)}}</span>
                             </a>
                             <span data-ng-show="sizeOf(financingtype) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('financingtype')">
+                                    <a ng-click="clearFilter('financingtype')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
                         </li>
                         <li class="nav-item"
                             data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('participants') > 1">
-                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                            <a class=" nav-link preventDefaultTab" data-toggle="tab"
                                data-target="#projectparticipants-{node.Identifier}" role="tab">
                                 <i class="fa fa-users" aria-hidden="true"></i>
                                 <span>Projektbeteiligte Personen</span>
                                 <span class="count" data-ng-show="sizeOf(projectparticipants) > 0">{{sizeOf(projectparticipants)}}</span>
                             </a>
                             <span data-ng-show="sizeOf(projectparticipants) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('projectparticipants')">
+                                    <a ng-click="clearFilter('projectparticipants')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
                         </li>
                         <li class="nav-item"
                             data-ng-show="initialFilters.lifetime === undefined && result.getDistinctCount('lifetime') > 1">
-                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                            <a class=" nav-link preventDefaultTab" data-toggle="tab"
                                data-target="#projectstate-{node.Identifier}" role="tab">
                                 <i class="fa fa-hourglass-start" aria-hidden="true"></i>
                                 <span>Projektstatus</span>
@@ -91,13 +91,13 @@
                                       data-ng-show="sizeOf(filterLifetime) > 0">{{sizeOf(filterLifetime)}}</span>
                             </a>
                             <span data-ng-show="sizeOf(filterLifetime) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('filterLifetime')">
+                                    <a ng-click="clearFilter('filterLifetime')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
                         </li>
                         <li class="nav-item" data-ng-show="result.getDistinctCount('projectend') > 1">
-                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                            <a class=" nav-link preventDefaultTab" data-toggle="tab"
                                data-target="#projectenddate-{node.Identifier}" role="tab">
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
                                 <span>Projektende</span>
@@ -105,7 +105,7 @@
                                       data-ng-show="sizeOf(projectend) > 0">{{sizeOf(projectend)}}</span>
                             </a>
                             <span data-ng-show="sizeOf(projectend) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('projectend')">
+                                    <a ng-click="clearFilter('projectend')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -140,7 +140,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                            <a class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                         </div>
 
 

@@ -71,6 +71,7 @@
                                 <div class="row results-table results-quick-result"
                                      data-ng-if="result.getQuickInfo().items.length">
                                     <div class="col-xs-12 tab-content">
+
                                         <div class="info row">
 
                                             <div data-ng-if="result.getQuickInfo().items[0].term == ''"
@@ -81,7 +82,7 @@
                                                  class="col-xs-8 table-responsive"
                                                  data-ng-class="{'col-xs-12': !result.getQuickInfo().node.getProperty('image') || result.getQuickInfo().items.length > 2}">
                                                 <div class="title">
-                                                    <search data="result.getQuickInfo().node" view="all"></search>
+                                                             <search data="result.getQuickInfo().node" view="all"></search>
                                                 </div>
                                                 <table class="table">
                                                     <tr data-ng-repeat="t in result.getQuickInfo().items">
@@ -106,9 +107,8 @@
                                                          class="img-fluid"/>
                                                 </div>
                                             </div>
-
-
                                         </div>
+
                                     </div>
                                 </div>
 
