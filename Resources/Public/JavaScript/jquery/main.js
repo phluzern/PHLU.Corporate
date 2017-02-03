@@ -263,6 +263,24 @@ $(document).ready(function () {
 
     $('.ui.dropdown').dropdown();
     initCarousel();
+
+    /*
+    * show extended Search Filters
+     */
+    $('.extendedSearch button').on('click', function () {
+        $('.extendedSearchBg').toggleClass('on');
+        $('.extendedSearchFilter').toggle();
+    });
+    /*
+    *  Open accordion panel from url hash
+     */
+    if(location.hash != null && location.hash != ""){
+        $('.collapse').removeClass('in');
+        location.hash = location.hash.replace('\#/','');
+        //console.log(location.hash);
+        $(location.hash + '.collapse').collapse('show');
+    }
+
 });
 
 

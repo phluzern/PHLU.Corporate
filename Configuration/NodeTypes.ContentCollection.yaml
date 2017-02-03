@@ -140,7 +140,9 @@
       'PHLU.Corporate:Text': TRUE
       'PHLU.Corporate:Headline': TRUE
       'PHLU.Corporate:TextWithImage': TRUE
+      'PHLU.Qmpilot.NodeTypes:File': TRUE
       'PHLU.Corporate:AccordeonElement': FALSE
+      'PHLU.Corporate:Accordeon': TRUE
 
 
 'PHLU.Corporate:ContentCollection.Page.TargetGroup':
