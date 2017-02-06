@@ -1,8 +1,4 @@
 
-TYPO3:
-  TypoScript:
-    defaultContext:
-      PHLU.Corporate: PHLU\Corporate\Eel\Helper\NodeHelper
 Neos:
   Neos:
     typoScript:
@@ -27,3 +23,6 @@ Neos:
           label: 'Automatisch erstellte Inhalte'
           collapsed: false
           icon: icon-fort-awesome
+  Fusion:
+    defaultContext:
+      PHLU.Corporate: PHLU\Corporate\Eel\Helper\NodeHelper
