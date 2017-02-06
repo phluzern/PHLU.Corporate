@@ -10,12 +10,12 @@ use PHLU\Neos\Models\Domain\Repository\PublicationRepository;
 use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Domain\Repository\SiteRepository;
 use Neos\Neos\Domain\Service\ContentContextFactory;
-use TYPO3\TYPO3CR\Domain\Model\Node;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+use Neos\ContentRepository\Domain\Model\Node;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 use PHLU\Neos\Models\Domain\Model\Contact;
 use Neos\Eel\FlowQuery\FlowQuery;
-use TYPO3\TYPO3CR\Domain\Repository\NodeDataRepository;
-use TYPO3\TYPO3CR\Exception\PageNotFoundException;
+use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
+use Neos\ContentRepository\Exception\PageNotFoundException;
 use Neos\Neos\Domain\Model\Site;
 
 
@@ -24,7 +24,7 @@ class ProjectController extends \Neos\Neos\Controller\Frontend\NodeController
 
     /**
      * @Flow\Inject
-     * @var \TYPO3\TYPO3CR\Domain\Repository\WorkspaceRepository
+     * @var \Neos\ContentRepository\Domain\Repository\WorkspaceRepository
      */
     protected $workspaceRepository;
 

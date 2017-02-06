@@ -14,7 +14,7 @@ namespace PHLU\Corporate\ViewHelpers\Portrait;
 use PHLU\Neos\Models\Domain\Model\Contact;
 use Neos\Flow\Annotations as Flow;
 use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\TYPO3CR\Domain\Model\Node;
+use Neos\ContentRepository\Domain\Model\Node;
 use Neos\Eel\FlowQuery\FlowQuery;
 use PHLU\Corporate\Factory\ContextFactory;
 

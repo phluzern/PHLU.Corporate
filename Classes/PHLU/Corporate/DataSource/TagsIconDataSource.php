@@ -3,7 +3,7 @@ namespace PHLU\Corporate\DataSource;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Service\DataSource\AbstractDataSource;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 use PHLU\Neos\Models\Domain\Repository\ContactRepository;
 
 

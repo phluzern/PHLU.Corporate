@@ -8,8 +8,8 @@ namespace PHLU\Corporate\Factory;
 use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Domain\Repository\SiteRepository;
 use Neos\Neos\Domain\Service\ContentContextFactory;
-use TYPO3\TYPO3CR\Domain\Model\Node;
-use TYPO3\TYPO3CR\Domain\Repository\NodeDataRepository;
+use Neos\ContentRepository\Domain\Model\Node;
+use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
 use Neos\Neos\Domain\Model\Site;
 
 
@@ -18,7 +18,7 @@ class ContextFactory
 
     /**
      * @Flow\Inject
-     * @var \TYPO3\TYPO3CR\Domain\Repository\WorkspaceRepository
+     * @var \Neos\ContentRepository\Domain\Repository\WorkspaceRepository
      */
     protected $workspaceRepository;
 

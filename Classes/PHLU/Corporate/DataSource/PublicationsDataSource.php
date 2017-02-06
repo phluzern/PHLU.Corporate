@@ -5,7 +5,7 @@ use PHLU\Neos\Models\Domain\Model\Publication;
 use PHLU\Neos\Models\Domain\Repository\PublicationRepository;
 use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Service\DataSource\AbstractDataSource;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 
 
 class PublicationsDataSource extends AbstractDataSource
