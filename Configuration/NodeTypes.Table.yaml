@@ -2,7 +2,7 @@
 
 'PHLU.Corporate:Table':
   superTypes:
-    'PHLU.Corporate:Content': '1'
+    'PHLU.Corporate:Content': true
   ui:
     label: Tabelle
     icon: icon-table
@@ -557,7 +557,7 @@
       type: 'PHLU.Neos.NodeTypes:ContentCollection.Table.Body'
 'PHLU.Neos.NodeTypes:ContentCollection.Table.Body':
   superTypes:
-    'PHLU.Neos.NodeTypes:ContentCollection': '1'
+    'PHLU.Neos.NodeTypes:ContentCollection': true
   constraints:
     nodeTypes:
       '*': false
@@ -569,7 +569,7 @@
     inlineEditable: true
 'PHLU.Corporate:Table.Row':
   superTypes:
-    'PHLU.Corporate:Content': '1'
+    'PHLU.Corporate:Content': true
   ui:
     label: Zeile
     icon: icon-th-list

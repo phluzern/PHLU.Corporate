@@ -5,20 +5,20 @@
       'PHLU.Corporate:Content': true
 'PHLU.Corporate:ContentCollection':
   superTypes:
-    'PHLU.Neos.NodeTypes:ContentCollection': '1'
+    'PHLU.Neos.NodeTypes:ContentCollection': true
   constraints:
     nodeTypes:
       '*': false
       'PHLU.Corporate:Content': false
 'PHLU.Corporate:ContentCollection.Page.View.Onepage':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Section': true
 'PHLU.Corporate:ContentCollection.Page.View.Default':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Section': true
@@ -26,7 +26,7 @@
       'Neoslive.Nodeform:AppMixin': true
 'PHLU.Corporate:ContentCollection.Section':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Text': true
@@ -43,28 +43,28 @@
       'PHLU.Corporate:AccordeonElement': true
 'PHLU.Corporate:ContentCollection.SectionCenterLinks':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       '*': false
 'PHLU.Corporate:ContentCollection.Page.View.Default.Default':
   superTypes:
-    'PHLU.Corporate:ContentCollection.Page.View.Default': '1'
+    'PHLU.Corporate:ContentCollection.Page.View.Default': true
 'PHLU.Corporate:ContentCollection.Page.Home':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       '*': false
 'PHLU.Corporate:ContentCollection.Page.Overview.Tiles':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       '*': false
 'PHLU.Corporate:ContentCollection.Page.Overview.OnePage':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Headline': true
@@ -93,24 +93,24 @@
           position: 40
 'PHLU.Corporate:ContentCollection.Carousel':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Event': true
       'PHLU.Corporate:NewsItem': true
 'PHLU.Corporate:ContentCollection.CarouselNews':
   superTypes:
-    'PHLU.Corporate:ContentCollection.Carousel': '1'
+    'PHLU.Corporate:ContentCollection.Carousel': true
 'PHLU.Corporate:ContentCollection.Page.View.Dossier':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Text': true
       'PHLU.Corporate:TextWithImage': true
 'PHLU.Corporate:ContentCollection.Accordeon':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       '*': false
@@ -122,19 +122,19 @@
       'PHLU.Corporate:Accordeon': true
 'PHLU.Corporate:ContentCollection.Page.TargetGroup':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Content.Page.TargetGroupElement': true
 'PHLU.Corporate:ContentCollection.Tags.Menu':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   childNodes:
     main:
       type: 'PHLU.Corporate:Tags.Menu'
 'PHLU.Corporate:ContentCollection.Page.Service':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Text': true
@@ -142,14 +142,14 @@
       'PHLU.Corporate:TextWithImage': true
 'PHLU.Neos.NodeTypes:ContentCollection.Contacts':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:ContactsGroup': true
       'PHLU.Corporate:Contact': true
 'PHLU.Neos.NodeTypes:ContentCollection.ContactsGroup':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Contact': true
@@ -158,7 +158,7 @@
       'PHLU.Corporate:TextWithImage': false
 'PHLU.Corporate:ContentCollection.MediaGallery':
   superTypes:
-    'PHLU.Corporate:ContentCollection': '1'
+    'PHLU.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       '*': false

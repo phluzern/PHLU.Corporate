@@ -2,7 +2,7 @@
 
 'PHLU.Corporate:Content':
   superTypes:
-    'PHLU.Neos.NodeTypes:Content': '1'
+    'PHLU.Neos.NodeTypes:Content': true
   abstract: true
 'PHLU.Corporate:Content.Page.HeaderDefault':
   ui:
@@ -45,7 +45,7 @@
       type: 'PHLU.Corporate:ContentCollection.Carousel'
 'PHLU.Corporate:Content.CarouselNews':
   superTypes:
-    'PHLU.Corporate:Content.Carousel': '1'
+    'PHLU.Corporate:Content.Carousel': true
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.CarouselNews'
@@ -66,7 +66,7 @@
       type: 'PHLU.Corporate:ContentCollection.Page.TargetGroup'
 'PHLU.Corporate:Content.Page.TargetGroupElement':
   superTypes:
-    'PHLU.Neos.NodeTypes:Content': '1'
+    'PHLU.Neos.NodeTypes:Content': true
   ui:
     label: Zielpublikum
     inlineEditable: true
@@ -101,8 +101,8 @@
       type: 'PHLU.Corporate:Content.Page.HeaderDefault'
 'PHLU.Corporate:AccordeonElement':
   superTypes:
-    'PHLU.Neos.NodeTypes:Content': '1'
-    'PHLU.Neos.NodeTypes:PlainTitleMixin': '1'
+    'PHLU.Neos.NodeTypes:Content': true
+    'PHLU.Neos.NodeTypes:PlainTitleMixin': true
   ui:
     label: 'Accordeon Element'
     icon: icon-header
@@ -118,10 +118,10 @@
       type: 'PHLU.Corporate:ContentCollection.Accordeon'
 'PHLU.Corporate:Headline':
   superTypes:
-    'PHLU.Neos.NodeTypes:Headline': '1'
+    'PHLU.Neos.NodeTypes:Headline': true
 'PHLU.Corporate:Text':
   superTypes:
-    'PHLU.Neos.NodeTypes:TextPlain': '1'
+    'PHLU.Neos.NodeTypes:TextPlain': true
   properties:
     text:
       ui:
@@ -164,18 +164,17 @@
             autoparagraph: false
 'PHLU.Corporate:TextPlain':
   superTypes:
-    'PHLU.Neos.NodeTypes:TextPlain': '1'
+    'PHLU.Neos.NodeTypes:TextPlain': true
 'PHLU.Corporate.NodeTypes:ContentImageMixin':
   abstract: true
   superTypes:
-    'TYPO3.Neos.NodeTypes:ImageMixin': '1'
-    'TYPO3.Neos.NodeTypes:LinkMixin': ''
-    'PHLU.Corporate.NodeTypes:ImageCaptionMixin': '1'
-    'TYPO3.Neos.NodeTypes:ImageAlignmentMixin': ''
+    'TYPO3.Neos.NodeTypes:ImageMixin': true
+    '': true
+    'PHLU.Corporate.NodeTypes:ImageCaptionMixin': true
 'PHLU.Corporate.NodeTypes:ImageCaptionMixin':
   abstract: true
   superTypes:
-    'TYPO3.Neos.NodeTypes:ImageCaptionMixin': '1'
+    'TYPO3.Neos.NodeTypes:ImageCaptionMixin': true
   properties:
     caption:
       ui:
@@ -183,8 +182,8 @@
           autoparagraph: false
 'PHLU.Corporate:TextWithImage':
   superTypes:
-    'PHLU.Corporate:Text': '1'
-    'PHLU.Corporate.NodeTypes:ContentImageMixin': '1'
+    'PHLU.Corporate:Text': true
+    'PHLU.Corporate.NodeTypes:ContentImageMixin': true
   ui:
     label: 'Text mit Bild'
     icon: icon-picture
@@ -241,15 +240,15 @@
                   height: 336
 'PHLU.Corporate:Image':
   superTypes:
-    'PHLU.Corporate:Content': '1'
-    'TYPO3.Neos.NodeTypes:ImageMixin': '1'
+    'PHLU.Corporate:Content': true
+    'TYPO3.Neos.NodeTypes:ImageMixin': true
   ui:
     label: Bild
     icon: icon-picture
     position: 400
 'PHLU.Corporate:MediaGallery':
   superTypes:
-    'PHLU.Corporate:Content': '1'
+    'PHLU.Corporate:Content': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:CarouselImage': true
@@ -288,7 +287,7 @@
       type: 'PHLU.Corporate:ContentCollection.MediaGallery'
 'PHLU.Corporate:CarouselImage':
   superTypes:
-    'PHLU.Corporate:Image': '1'
+    'PHLU.Corporate:Image': true
   ui:
     label: Bild
     icon: icon-picture

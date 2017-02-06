@@ -1,7 +1,7 @@
 
 'PHLU.Corporate:Tag':
   superTypes:
-    'PHLU.Neos.NodeTypes:Tag': '1'
+    'PHLU.Neos.NodeTypes:Tag': true
   properties:
     icon:
       ui:
@@ -14,7 +14,7 @@
             multiple: false
 'PHLU.Corporate:Tags.Menu':
   superTypes:
-    'PHLU.Corporate:Content': '1'
+    'PHLU.Corporate:Content': true
   ui:
     icon: icon-tag
     label: Menu

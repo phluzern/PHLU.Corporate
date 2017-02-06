@@ -2,9 +2,9 @@
 'PHLU.Corporate:Page':
   abstract: true
   superTypes:
-    'PHLU.Neos.NodeTypes:Page': '1'
-    'PHLU.Neos.NodeTypes:TagMixin': '1'
-    'PHLU.Neos.NodeTypes:OuMembershipMixin': '1'
+    'PHLU.Neos.NodeTypes:Page': true
+    'PHLU.Neos.NodeTypes:TagMixin': true
+    'PHLU.Neos.NodeTypes:OuMembershipMixin': true
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
@@ -42,12 +42,12 @@
       type: integer
 'PHLU.Corporate:Page.NotInMenu':
   superTypes:
-    'PHLU.Corporate:Page': '1'
+    'PHLU.Corporate:Page': true
 'PHLU.Corporate:Page.Home':
   ui:
     label: 'Home Page Phlu'
   superTypes:
-    'PHLU.Corporate:Page': '1'
+    'PHLU.Corporate:Page': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Page.Overview.Tiles': true
@@ -63,7 +63,7 @@
   ui:
     label: 'Übersichtsseite (Kacheln)'
   superTypes:
-    'PHLU.Corporate:Page': '1'
+    'PHLU.Corporate:Page': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Page.Overview.OnePage': true
@@ -76,7 +76,7 @@
   ui:
     label: 'Übersichtsseite (OnePage)'
   superTypes:
-    'PHLU.Corporate:Page': '1'
+    'PHLU.Corporate:Page': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Page.View.Default': true
@@ -94,7 +94,7 @@
         navigation:
           label: Navigation
   superTypes:
-    'PHLU.Corporate:Page': '1'
+    'PHLU.Corporate:Page': true
   properties:
     title:
       ui:
@@ -134,9 +134,9 @@
   hybridsearch:
     render: true
   superTypes:
-    'PHLU.Corporate:Page.View.Default': '1'
-    'PHLU.Neos.NodeTypes:TagMixin': '1'
-    'PHLU.Corporate:Page.NotInMenu': '1'
+    'PHLU.Corporate:Page.View.Default': true
+    'PHLU.Neos.NodeTypes:TagMixin': true
+    'PHLU.Corporate:Page.NotInMenu': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Page.View.Default': true
@@ -148,7 +148,7 @@
   ui:
     label: Prototype-Seite
   superTypes:
-    'PHLU.Corporate:Page': '1'
+    'PHLU.Corporate:Page': true
   childNodes:
     main:
       type: ''
@@ -172,7 +172,7 @@
         carouselnews:
           label: Karussell
   superTypes:
-    'PHLU.Corporate:Page': '1'
+    'PHLU.Corporate:Page': true
   constraints:
     nodeTypes:
       'PHLU.Corporate:Page.View.Default': true
@@ -194,7 +194,7 @@
     label: 'Service Seite'
     icon: icon-wrench
   superTypes:
-    'PHLU.Corporate:Page.NotInMenu': '1'
+    'PHLU.Corporate:Page.NotInMenu': true
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.Service'

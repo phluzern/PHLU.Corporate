@@ -2,9 +2,9 @@
 
 'PHLU.Corporate:Event':
   superTypes:
-    'PHLU.Neos.NodeTypes:Event': '1'
-    'PHLU.Corporate:Content': '1'
+    'PHLU.Neos.NodeTypes:Event': true
+    'PHLU.Corporate:Content': true
 'PHLU.Corporate:Events':
   superTypes:
-    'PHLU.Neos.NodeTypes:Events': '1'
-    'PHLU.Corporate:Content': '1'
+    'PHLU.Neos.NodeTypes:Events': true
+    'PHLU.Corporate:Content': true

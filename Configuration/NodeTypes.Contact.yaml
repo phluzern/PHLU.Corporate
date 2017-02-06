@@ -2,8 +2,8 @@
 
 'PHLU.Corporate:Contact':
   superTypes:
-    'PHLU.Corporate:Content': '1'
-    'PHLU.Neos.NodeTypes:Database': '1'
+    'PHLU.Corporate:Content': true
+    'PHLU.Neos.NodeTypes:Database': true
   hybridsearch:
     properties:
       portrait: neosliveHybridsearchContactsPortraitUrl
@@ -196,7 +196,7 @@
               handler: PHLU.Corporate/Handlers/ContactHandler
 'PHLU.Corporate:Contacts':
   superTypes:
-    'PHLU.Corporate:Content': '1'
+    'PHLU.Corporate:Content': true
   ui:
     label: Kontakte
     icon: icon-phone
@@ -206,8 +206,8 @@
       type: 'PHLU.Neos.NodeTypes:ContentCollection.Contacts'
 'PHLU.Corporate:ContactsGroup':
   superTypes:
-    'PHLU.Corporate:Content': '1'
-    'PHLU.Neos.NodeTypes:PlainTitleMixin': '1'
+    'PHLU.Corporate:Content': true
+    'PHLU.Neos.NodeTypes:PlainTitleMixin': true
   ui:
     label: Team
     selectHelper: true

@@ -2,5 +2,5 @@
 
 'PHLU.Corporate:NewsItem':
   superTypes:
-    'PHLU.Neos.NodeTypes:NewsItem': '1'
-    'PHLU.Corporate:Content': '1'
+    'PHLU.Neos.NodeTypes:NewsItem': true
+    'PHLU.Corporate:Content': true
