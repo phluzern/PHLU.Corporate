@@ -167,7 +167,7 @@
           group: evento
           position: 1
     image:
-      type: TYPO3\Media\Domain\Model\ImageInterface
+      type: Neos\Media\Domain\Model\ImageInterface
       ui:
         label: Bild
         reloadIfChanged: true

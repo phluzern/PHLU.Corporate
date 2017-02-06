@@ -18,7 +18,7 @@ use Neos\Flow\ResourceManagement\PersistentResource;
 use Neos\Flow\ResourceManagement\ResourceRepository;
 use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
 use PHLU\Neos\Models\Domain\Repository\ContactRepository;
-use TYPO3\Media\Domain\Repository\AssetRepository;
+use Neos\Media\Domain\Repository\AssetRepository;
 
 /**
  * Portrait view helper
