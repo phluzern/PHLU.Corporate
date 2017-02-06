@@ -1,9 +1,10 @@
+
 'PHLU.Corporate:Page':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'PHLU.Neos.NodeTypes:Page': TRUE
-    'PHLU.Neos.NodeTypes:TagMixin': TRUE
-    'PHLU.Neos.NodeTypes:OuMembershipMixin': TRUE
+    'PHLU.Neos.NodeTypes:Page': '1'
+    'PHLU.Neos.NodeTypes:TagMixin': '1'
+    'PHLU.Neos.NodeTypes:OuMembershipMixin': '1'
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
@@ -21,8 +22,8 @@
       type: 'PHLU.Corporate:Content.CarouselNews'
   constraints:
     nodeTypes:
-      '*': FALSE
-      'TYPO3.Neos:Shortcut': FALSE
+      '*': false
+      'TYPO3.Neos:Shortcut': false
   ui:
     inspector:
       groups:
@@ -32,167 +33,150 @@
     widget:
       type: string
       ui:
-        label: 'Widget'
+        label: Widget
         defaultValue: false
         inspector:
-          group: 'special'
-        reloadIfChanged: TRUE
+          group: special
+        reloadIfChanged: true
     internalid:
       type: integer
-
 'PHLU.Corporate:Page.NotInMenu':
   superTypes:
-    'PHLU.Corporate:Page': TRUE
-
-
+    'PHLU.Corporate:Page': '1'
 'PHLU.Corporate:Page.Home':
   ui:
     label: 'Home Page Phlu'
   superTypes:
-    'PHLU.Corporate:Page': TRUE
+    'PHLU.Corporate:Page': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Page.Overview.Tiles': TRUE
-      'PHLU.Corporate:Page.Service': TRUE
-      'PHLU.Corporate:Page.Overview.OnePage': FALSE
-      'PHLU.Corporate:Page.View.Default': TRUE
-      'PHLU.Corporate:Page.View.Default.Prototype': TRUE
-      'PHLU.Corporate:Page.View.Default.Default': FALSE
+      'PHLU.Corporate:Page.Overview.Tiles': true
+      'PHLU.Corporate:Page.Service': true
+      'PHLU.Corporate:Page.Overview.OnePage': false
+      'PHLU.Corporate:Page.View.Default': true
+      'PHLU.Corporate:Page.View.Default.Prototype': true
+      'PHLU.Corporate:Page.View.Default.Default': false
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.Home'
-
-
-
 'PHLU.Corporate:Page.Overview.Tiles':
   ui:
     label: 'Übersichtsseite (Kacheln)'
   superTypes:
-    'PHLU.Corporate:Page': TRUE
+    'PHLU.Corporate:Page': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Page.Overview.OnePage': TRUE
-      'PHLU.Corporate:Page.View.Default': TRUE
-      'PHLU.Corporate:Page.View.Default.Default': FALSE
+      'PHLU.Corporate:Page.Overview.OnePage': true
+      'PHLU.Corporate:Page.View.Default': true
+      'PHLU.Corporate:Page.View.Default.Default': false
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.Overview.Tiles'
-
-
 'PHLU.Corporate:Page.Overview.OnePage':
   ui:
     label: 'Übersichtsseite (OnePage)'
   superTypes:
-    'PHLU.Corporate:Page': TRUE
+    'PHLU.Corporate:Page': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Page.View.Default': TRUE
-      'PHLU.Corporate:Page.View.Default.Default': FALSE
-      'PHLU.Corporate:Page.View.Dossier': TRUE
-      'PHLU.Corporate:Page.Overview.OnePage': FALSE
+      'PHLU.Corporate:Page.View.Default': true
+      'PHLU.Corporate:Page.View.Default.Default': false
+      'PHLU.Corporate:Page.View.Dossier': true
+      'PHLU.Corporate:Page.Overview.OnePage': false
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.Overview.OnePage'
-
-
-
 'PHLU.Corporate:Page.View.Default':
   ui:
-    label: 'Standard-Seite'
+    label: Standard-Seite
     inspector:
       groups:
         navigation:
-          label: 'Navigation'
+          label: Navigation
   superTypes:
-    'PHLU.Corporate:Page': TRUE
+    'PHLU.Corporate:Page': '1'
   properties:
     title:
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
     hasanchornavigation:
       type: boolean
       ui:
-        label: 'Ankernavigation'
+        label: Ankernavigation
         defaultValue: false
         inspector:
-          group: 'navigation'
-        reloadIfChanged: TRUE
+          group: navigation
+        reloadIfChanged: true
     hasmoodimage:
       type: boolean
       ui:
         label: 'Stimmungsbild anzeigen'
         defaultValue: false
         inspector:
-          group: 'navigation'
-        reloadIfChanged: TRUE
+          group: navigation
+        reloadIfChanged: true
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default'
-    targetgroup: ~
-    carouselnews: ~
+    targetgroup: ''
+    carouselnews: ''
     tagsmenu:
       type: 'PHLU.Corporate:ContentCollection.Tags.Menu'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Page.Overview.OnePage': FALSE
-      'PHLU.Corporate:Page.Overview.Tiles': FALSE
-      'PHLU.Corporate:Page.View.Dossier': FALSE
-      'PHLU.Corporate:Page.View.Default': FALSE
-      'PHLU.Corporate:Page.View.Default.Default': TRUE
-      'TYPO3.Neos:Shortcut': TRUE
-
-
+      'PHLU.Corporate:Page.Overview.OnePage': false
+      'PHLU.Corporate:Page.Overview.Tiles': false
+      'PHLU.Corporate:Page.View.Dossier': false
+      'PHLU.Corporate:Page.View.Default': false
+      'PHLU.Corporate:Page.View.Default.Default': true
+      'TYPO3.Neos:Shortcut': true
 'PHLU.Corporate:Page.View.Default.Default':
   hybridsearch:
-    render: TRUE
+    render: true
   superTypes:
-    'PHLU.Corporate:Page.View.Default': TRUE
-    'PHLU.Neos.NodeTypes:TagMixin': TRUE
-    'PHLU.Corporate:Page.NotInMenu': TRUE
+    'PHLU.Corporate:Page.View.Default': '1'
+    'PHLU.Neos.NodeTypes:TagMixin': '1'
+    'PHLU.Corporate:Page.NotInMenu': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Page.View.Default': TRUE
-      'PHLU.Corporate:Page.View.Default.Default': FALSE
+      'PHLU.Corporate:Page.View.Default': true
+      'PHLU.Corporate:Page.View.Default.Default': false
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Default.Default'
-
-
 'PHLU.Corporate:Page.View.Default.Prototype':
   ui:
-    label: 'Prototype-Seite'
+    label: Prototype-Seite
   superTypes:
-    'PHLU.Corporate:Page': TRUE
+    'PHLU.Corporate:Page': '1'
   childNodes:
     main:
-      type: ~
-    contact: ~
-    targetgroup: ~
-    carouselnews: ~
+      type: ''
+    contact: ''
+    targetgroup: ''
+    carouselnews: ''
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Page.Overview.OnePage': FALSE
-      'PHLU.Corporate:Page.Overview.Tiles': FALSE
-      'PHLU.Corporate:Page.View.Dossier': TRUE
-      'PHLU.Corporate:Page.View.Default': TRUE
-      'PHLU.Corporate:Page.View.Default.Default': FALSE
-      'TYPO3.Neos:Shortcut': FALSE
-      'PHLU.Corporate:Page.View.Default.Prototype': TRUE
-
-
+      'PHLU.Corporate:Page.Overview.OnePage': false
+      'PHLU.Corporate:Page.Overview.Tiles': false
+      'PHLU.Corporate:Page.View.Dossier': true
+      'PHLU.Corporate:Page.View.Default': true
+      'PHLU.Corporate:Page.View.Default.Default': false
+      'TYPO3.Neos:Shortcut': false
+      'PHLU.Corporate:Page.View.Default.Prototype': true
 'PHLU.Corporate:Page.View.Dossier':
   ui:
-    label: 'Dossier'
+    label: Dossier
     inspector:
       groups:
         carouselnews:
-          label: 'Karussell'
+          label: Karussell
   superTypes:
-    'PHLU.Corporate:Page': TRUE
+    'PHLU.Corporate:Page': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Page.View.Default': TRUE
-      'PHLU.Corporate:Page.View.Default.Default': FALSE
+      'PHLU.Corporate:Page.View.Default': true
+      'PHLU.Corporate:Page.View.Default.Default': false
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.View.Dossier'
@@ -200,20 +184,17 @@
     ishidden:
       type: boolean
       ui:
-        label: 'Verbergen'
+        label: Verbergen
         defaultValue: false
         inspector:
-          group: 'carouselnews'
-        reloadIfChanged: TRUE
-
-
+          group: carouselnews
+        reloadIfChanged: true
 'PHLU.Corporate:Page.Service':
   ui:
     label: 'Service Seite'
     icon: icon-wrench
   superTypes:
-    'PHLU.Corporate:Page.NotInMenu': TRUE
+    'PHLU.Corporate:Page.NotInMenu': '1'
   childNodes:
     main:
       type: 'PHLU.Corporate:ContentCollection.Page.Service'
-

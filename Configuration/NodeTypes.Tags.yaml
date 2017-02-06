@@ -1,31 +1,29 @@
 
 'PHLU.Corporate:Tag':
   superTypes:
-    'PHLU.Neos.NodeTypes:Tag': TRUE
-
+    'PHLU.Neos.NodeTypes:Tag': '1'
   properties:
     icon:
       ui:
         inspector:
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Icon auswählen'
-            dataSourceIdentifier: 'phlu-corporate-tags-icon'
-            allowEmpty: TRUE
-            multiple: FALSE
-
+            dataSourceIdentifier: phlu-corporate-tags-icon
+            allowEmpty: true
+            multiple: false
 'PHLU.Corporate:Tags.Menu':
   superTypes:
-    'PHLU.Corporate:Content': TRUE
+    'PHLU.Corporate:Content': '1'
   ui:
     icon: icon-tag
-    label: 'Menu'
+    label: Menu
   properties:
     title:
       type: string
-      defaultValue: 'Filter'
+      defaultValue: Filter
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Tag': TRUE
+      'PHLU.Corporate:Tag': true

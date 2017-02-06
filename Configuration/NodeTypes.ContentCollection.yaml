@@ -1,208 +1,165 @@
+
 'TYPO3.Neos:ContentCollection':
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Content': TRUE
-
-
+      'PHLU.Corporate:Content': true
 'PHLU.Corporate:ContentCollection':
   superTypes:
-    'PHLU.Neos.NodeTypes:ContentCollection': TRUE
+    'PHLU.Neos.NodeTypes:ContentCollection': '1'
   constraints:
     nodeTypes:
-      '*': FALSE
-      'PHLU.Corporate:Content': FALSE
-
-
+      '*': false
+      'PHLU.Corporate:Content': false
 'PHLU.Corporate:ContentCollection.Page.View.Onepage':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Section': TRUE
-
+      'PHLU.Corporate:Section': true
 'PHLU.Corporate:ContentCollection.Page.View.Default':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Section': TRUE
-      'PHLU.Corporate:SectionCenterLinks': TRUE
-      'Neoslive.Nodeform:AppMixin': TRUE
-
-
+      'PHLU.Corporate:Section': true
+      'PHLU.Corporate:SectionCenterLinks': true
+      'Neoslive.Nodeform:AppMixin': true
 'PHLU.Corporate:ContentCollection.Section':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Text': TRUE
-      'PHLU.Corporate:Headline': TRUE
-      'PHLU.Corporate:TextWithImage': TRUE
-      'PHLU.Corporate:Image': TRUE
-      'PHLU.Corporate:CarouselImage': FALSE
-      'PHLU.Corporate:Event': TRUE
-      'PHLU.Corporate:Contacts': TRUE
-      'PHLU.Qmpilot.NodeTypes:File': TRUE
-      'PHLU.Corporate:Table': TRUE
-      'PHLU.Corporate:MediaGallery': TRUE
-      'Neoslive.Nodeform:Form': TRUE
-      'PHLU.Corporate:AccordeonElement': TRUE
-
-
+      'PHLU.Corporate:Text': true
+      'PHLU.Corporate:Headline': true
+      'PHLU.Corporate:TextWithImage': true
+      'PHLU.Corporate:Image': true
+      'PHLU.Corporate:CarouselImage': false
+      'PHLU.Corporate:Event': true
+      'PHLU.Corporate:Contacts': true
+      'PHLU.Qmpilot.NodeTypes:File': true
+      'PHLU.Corporate:Table': true
+      'PHLU.Corporate:MediaGallery': true
+      'Neoslive.Nodeform:Form': true
+      'PHLU.Corporate:AccordeonElement': true
 'PHLU.Corporate:ContentCollection.SectionCenterLinks':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      '*': FALSE
-
+      '*': false
 'PHLU.Corporate:ContentCollection.Page.View.Default.Default':
   superTypes:
-    'PHLU.Corporate:ContentCollection.Page.View.Default': TRUE
-
-
+    'PHLU.Corporate:ContentCollection.Page.View.Default': '1'
 'PHLU.Corporate:ContentCollection.Page.Home':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      '*': FALSE
-
-
+      '*': false
 'PHLU.Corporate:ContentCollection.Page.Overview.Tiles':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      '*': FALSE
-
-
+      '*': false
 'PHLU.Corporate:ContentCollection.Page.Overview.OnePage':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Headline': TRUE
-      'PHLU.Corporate:Text': TRUE
-      'PHLU.Corporate:TextWithImage': TRUE
-      'PHLU.Corporate:AccordeonElement': TRUE
-      'PHLU.Corporate:Contacts': TRUE
-      'PHLU.Corporate:Table': TRUE
-      'PHLU.Qmpilot.NodeTypes:File': TRUE
+      'PHLU.Corporate:Headline': true
+      'PHLU.Corporate:Text': true
+      'PHLU.Corporate:TextWithImage': true
+      'PHLU.Corporate:AccordeonElement': true
+      'PHLU.Corporate:Contacts': true
+      'PHLU.Corporate:Table': true
+      'PHLU.Qmpilot.NodeTypes:File': true
   ui:
-    label: 'Allgemein'
+    label: Allgemein
     icon: icon-gear
     inspector:
       groups:
         general:
-          label: 'Allgemein'
+          label: Allgemein
   properties:
     hideondetailpage:
       type: boolean
       defaultValue: false
       ui:
         label: 'Auf Seite verbergen'
-        reloadIfChanged: FALSE
+        reloadIfChanged: false
         inspector:
-          group: 'general'
+          group: general
           position: 40
-
-
 'PHLU.Corporate:ContentCollection.Carousel':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Event': TRUE
-      'PHLU.Corporate:NewsItem': TRUE
-
-
-
+      'PHLU.Corporate:Event': true
+      'PHLU.Corporate:NewsItem': true
 'PHLU.Corporate:ContentCollection.CarouselNews':
   superTypes:
-    'PHLU.Corporate:ContentCollection.Carousel': TRUE
-
+    'PHLU.Corporate:ContentCollection.Carousel': '1'
 'PHLU.Corporate:ContentCollection.Page.View.Dossier':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Text': TRUE
-      'PHLU.Corporate:TextWithImage': TRUE
-
-
+      'PHLU.Corporate:Text': true
+      'PHLU.Corporate:TextWithImage': true
 'PHLU.Corporate:ContentCollection.Accordeon':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      '*': FALSE
-      'PHLU.Corporate:Text': TRUE
-      'PHLU.Corporate:Headline': TRUE
-      'PHLU.Corporate:TextWithImage': TRUE
-      'PHLU.Qmpilot.NodeTypes:File': TRUE
-      'PHLU.Corporate:AccordeonElement': FALSE
-      'PHLU.Corporate:Accordeon': TRUE
-
-
+      '*': false
+      'PHLU.Corporate:Text': true
+      'PHLU.Corporate:Headline': true
+      'PHLU.Corporate:TextWithImage': true
+      'PHLU.Qmpilot.NodeTypes:File': true
+      'PHLU.Corporate:AccordeonElement': false
+      'PHLU.Corporate:Accordeon': true
 'PHLU.Corporate:ContentCollection.Page.TargetGroup':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Content.Page.TargetGroupElement': TRUE
-
-
+      'PHLU.Corporate:Content.Page.TargetGroupElement': true
 'PHLU.Corporate:ContentCollection.Tags.Menu':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   childNodes:
     main:
       type: 'PHLU.Corporate:Tags.Menu'
-
-
-
 'PHLU.Corporate:ContentCollection.Page.Service':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Text': TRUE
-      'PHLU.Corporate:Headline': TRUE
-      'PHLU.Corporate:TextWithImage': TRUE
-
-
-
-
+      'PHLU.Corporate:Text': true
+      'PHLU.Corporate:Headline': true
+      'PHLU.Corporate:TextWithImage': true
 'PHLU.Neos.NodeTypes:ContentCollection.Contacts':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:ContactsGroup': TRUE
-      'PHLU.Corporate:Contact': TRUE
-
-
-
+      'PHLU.Corporate:ContactsGroup': true
+      'PHLU.Corporate:Contact': true
 'PHLU.Neos.NodeTypes:ContentCollection.ContactsGroup':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Contact': TRUE
-      'PHLU.Corporate:TextPlain': TRUE
-      'PHLU.Corporate:Text': FALSE
-      'PHLU.Corporate:TextWithImage': FALSE
-
-
+      'PHLU.Corporate:Contact': true
+      'PHLU.Corporate:TextPlain': true
+      'PHLU.Corporate:Text': false
+      'PHLU.Corporate:TextWithImage': false
 'PHLU.Corporate:ContentCollection.MediaGallery':
   superTypes:
-    'PHLU.Corporate:ContentCollection': TRUE
+    'PHLU.Corporate:ContentCollection': '1'
   constraints:
     nodeTypes:
-      '*': FALSE
-      'PHLU.Corporate:CarouselImage': TRUE
-
-
-
-
+      '*': false
+      'PHLU.Corporate:CarouselImage': true

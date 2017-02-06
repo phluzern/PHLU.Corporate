@@ -1,51 +1,34 @@
 # Searchable content
+
 'PHLU.Corporate:Content.Page.HeaderDefault':
   superTypes:
-    'Neoslive.Hybridsearch:Content': TRUE
-
-# Searchable content
+    'Neoslive.Hybridsearch:Content': '1'
 'PHLU.Corporate:Text':
   superTypes:
-    'Neoslive.Hybridsearch:Content': TRUE
-
-# Searchable content
+    'Neoslive.Hybridsearch:Content': '1'
 'PHLU.Corporate:Table':
   superTypes:
-    'Neoslive.Hybridsearch:Content': TRUE
-
-# Searchable content
+    'Neoslive.Hybridsearch:Content': '1'
 'PHLU.Qmpilot.NodeTypes:File':
   superTypes:
-    'Neoslive.Hybridsearch:Content': TRUE
-
-# Searchable content
+    'Neoslive.Hybridsearch:Content': '1'
 'PHLU.Corporate:Contact':
   superTypes:
-    'Neoslive.Hybridsearch:Content': TRUE
-
-# Searchable content
+    'Neoslive.Hybridsearch:Content': '1'
 'PHLU.Neos.NodeTypes:Project':
   superTypes:
-    'Neoslive.Hybridsearch:Content': TRUE
-
-# Searchable content
+    'Neoslive.Hybridsearch:Content': '1'
 'PHLU.Neos.NodeTypes:Publication':
   superTypes:
-    'Neoslive.Hybridsearch:Content': TRUE
-
-# Searchable content
+    'Neoslive.Hybridsearch:Content': '1'
 'PHLU.Corporate:Location':
   superTypes:
-    'Neoslive.Hybridsearch:Content': TRUE
-
-# Searchable content
+    'Neoslive.Hybridsearch:Content': '1'
 'PHLU.Neos.NodeTypes:Database':
   superTypes:
-    'Neoslive.Hybridsearch:Content': TRUE
-
-# Searchable content
+    'Neoslive.Hybridsearch:Content': '1'
 'PHLU.Corporate:Page.View.Default':
   superTypes:
-    'Neoslive.Hybridsearch:Content': TRUE
+    'Neoslive.Hybridsearch:Content': '1'
   hybridsearch:
-    render: TRUE
+    render: true
