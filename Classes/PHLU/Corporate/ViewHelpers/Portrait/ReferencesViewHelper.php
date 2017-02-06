@@ -13,7 +13,7 @@ namespace PHLU\Corporate\ViewHelpers\Portrait;
 
 use PHLU\Neos\Models\Domain\Model\Contact;
 use Neos\Flow\Annotations as Flow;
-use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
+use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
 use Neos\ContentRepository\Domain\Model\Node;
 use Neos\Eel\FlowQuery\FlowQuery;
 use PHLU\Corporate\Factory\ContextFactory;
