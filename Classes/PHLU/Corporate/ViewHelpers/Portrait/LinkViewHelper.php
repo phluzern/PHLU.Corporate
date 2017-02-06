@@ -11,9 +11,9 @@ namespace PHLU\Corporate\ViewHelpers\Portrait;
  * source code.
  */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use TYPO3\Eel\FlowQuery\FlowQuery;
-use TYPO3\Flow\Mvc\Routing\UriBuilder;
+use Neos\Flow\Mvc\Routing\UriBuilder;
 use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
 use PHLU\Neos\Models\Domain\Repository\ContactRepository;
 

@@ -7,7 +7,7 @@ namespace PHLU\Corporate\Controller;
 
 use PHLU\Neos\Models\Domain\Model\Project;
 use PHLU\Neos\Models\Domain\Repository\PublicationRepository;
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use TYPO3\Neos\Domain\Repository\SiteRepository;
 use TYPO3\Neos\Domain\Service\ContentContextFactory;
 use TYPO3\TYPO3CR\Domain\Model\Node;

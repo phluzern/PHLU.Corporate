@@ -5,7 +5,7 @@ namespace PHLU\Corporate\Factory;
  * This file is part of the PHLU.Corporate package.
  */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use TYPO3\Neos\Domain\Repository\SiteRepository;
 use TYPO3\Neos\Domain\Service\ContentContextFactory;
 use TYPO3\TYPO3CR\Domain\Model\Node;

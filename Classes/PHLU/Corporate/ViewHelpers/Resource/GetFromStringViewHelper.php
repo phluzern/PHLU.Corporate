@@ -11,11 +11,11 @@ namespace PHLU\Corporate\ViewHelpers\Resource;
  * source code.
  */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use TYPO3\Eel\FlowQuery\FlowQuery;
-use TYPO3\Flow\Mvc\Routing\UriBuilder;
-use TYPO3\Flow\ResourceManagement\PersistentResource;
-use TYPO3\Flow\ResourceManagement\ResourceRepository;
+use Neos\Flow\Mvc\Routing\UriBuilder;
+use Neos\Flow\ResourceManagement\PersistentResource;
+use Neos\Flow\ResourceManagement\ResourceRepository;
 use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
 use PHLU\Neos\Models\Domain\Repository\ContactRepository;
 use TYPO3\Media\Domain\Repository\AssetRepository;

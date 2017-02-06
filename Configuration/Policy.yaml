@@ -1,12 +1,12 @@
 privilegeTargets:
-  TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
+  Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
     'PHLU.Corporate:PortraitControllerActions':
       matcher: 'method(PHLU\Corporate\Controller\PortraitController->(view|viewPortrait)Action())'
     'PHLU.Corporate:ProjectControllerActions':
       matcher: 'method(PHLU\Corporate\Controller\ProjectController->(view|load)Action())'
 
 roles:
-  'TYPO3.Flow:Everybody':
+  'Neos.Flow:Everybody':
     privileges:
       -
         privilegeTarget: 'PHLU.Corporate:PortraitControllerActions'

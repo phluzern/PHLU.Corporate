@@ -12,7 +12,7 @@ namespace PHLU\Corporate\ViewHelpers\Portrait;
  */
 
 use PHLU\Neos\Models\Domain\Model\Contact;
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\TYPO3CR\Domain\Model\Node;
 use TYPO3\Eel\FlowQuery\FlowQuery;

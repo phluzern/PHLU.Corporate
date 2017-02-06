@@ -4,8 +4,8 @@ namespace PHLU\Corporate\Eel\Helper;
 
 use PHLU\Neos\Models\Domain\Repository\ProjectRepository;
 use TYPO3\Eel\ProtectedContextAwareInterface;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Http\Request;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Http\Request;
 use TYPO3\TYPO3CR\Domain\Factory\NodeFactory;
 use TYPO3\TYPO3CR\Domain\Model\Node;
 use TYPO3\TYPO3CR\Domain\Repository\NodeDataRepository;
@@ -52,7 +52,7 @@ class NodeHelper implements ProtectedContextAwareInterface
 
     /**
      * @Flow\Inject
-     * @var \TYPO3\Flow\Mvc\Routing\RouterInterface
+     * @var \Neos\Flow\Mvc\Routing\RouterInterface
      */
     protected $router;
 

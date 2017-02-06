@@ -11,7 +11,7 @@ namespace PHLU\Corporate\ViewHelpers\Location;
  * source code.
  */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\TYPO3CR\Domain\Model\Node;
 use TYPO3\Eel\FlowQuery\FlowQuery;

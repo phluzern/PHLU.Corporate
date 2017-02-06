@@ -12,8 +12,8 @@ namespace PHLU\Corporate\Routing;
  */
 
 use PHLU\Neos\Models\Domain\Repository\ProjectRepository;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Mvc\Routing\IdentityRoutePart;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Mvc\Routing\IdentityRoutePart;
 
 /**
  * A route part handler for finding nodes specifically in the website's frontend.

@@ -6,7 +6,7 @@ namespace PHLU\Corporate\Controller;
  */
 
 use PHLU\Corporate\Factory\ContextFactory;
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use TYPO3\Neos\Domain\Repository\SiteRepository;
 use TYPO3\TYPO3CR\Domain\Model\Node;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
