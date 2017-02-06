@@ -1,5 +1,5 @@
 # Content
-prototype(PHLU.Corporate:Database) < prototype(TYPO3.Neos:Content) {
+prototype(PHLU.Corporate:Database) < prototype(Neos.Neos:Content) {
 
     templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Database.html'
 }

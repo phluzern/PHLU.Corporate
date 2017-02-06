@@ -8,7 +8,7 @@ prototype(PHLU.Corporate:Content.CarouselNews) < prototype(PHLU.Corporate:Conten
 
 
     carouselItems = ${q(node).children('main').children().get()}
-    carouselItemsRenderer = TYPO3.Neos:ContentCase
+    carouselItemsRenderer = Neos.Neos:ContentCase
 
 
 
@@ -21,7 +21,7 @@ prototype(PHLU.Corporate:Content.CarouselNews) < prototype(PHLU.Corporate:Conten
 
 
 # Carousel content collection
-prototype(PHLU.Corporate:ContentCollection.CarouselNews) < prototype(TYPO3.Neos:ContentCollection) {
+prototype(PHLU.Corporate:ContentCollection.CarouselNews) < prototype(Neos.Neos:ContentCollection) {
 
         attributes.class = 'row'
 

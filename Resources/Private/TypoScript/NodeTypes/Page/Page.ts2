@@ -7,7 +7,7 @@ prototype(PHLU.Corporate:Page) < prototype(PHLU.Neos.NodeTypes:Page) {
         templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/Breadcrumb.html'
     }
 
-    defaultRenderer = TYPO3.Neos:ContentCase
+    defaultRenderer = Neos.Neos:ContentCase
     collectionRenderer = PHLU.Corporate:ContentCollection
 
 

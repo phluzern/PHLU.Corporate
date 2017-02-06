@@ -18,7 +18,7 @@ prototype(PHLU.Qmpilot.NodeTypes:File) {
     title = ${q(node).property('title')}
 
     link = ${q(node).property('asset').resource.link}
-    link.@process.convertUris = TYPO3.Neos:ConvertUris {
+    link.@process.convertUris = Neos.Neos:ConvertUris {
         forceConversion = true
     }
 

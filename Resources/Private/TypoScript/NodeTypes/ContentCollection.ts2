@@ -1,5 +1,5 @@
 # content collections
-prototype(PHLU.Corporate:ContentCollection) < prototype(TYPO3.Neos:ContentCollection) {
+prototype(PHLU.Corporate:ContentCollection) < prototype(Neos.Neos:ContentCollection) {
 
 }
 prototype(PHLU.Corporate:ContentCollection.Page.View.Default) < prototype(PHLU.Corporate:ContentCollection)  {

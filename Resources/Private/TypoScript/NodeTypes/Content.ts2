@@ -1,5 +1,5 @@
 # Content
-prototype(PHLU.Corporate:Content) < prototype(TYPO3.Neos:Content) {
+prototype(PHLU.Corporate:Content) < prototype(Neos.Neos:Content) {
 
 
 }

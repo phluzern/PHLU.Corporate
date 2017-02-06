@@ -17,7 +17,7 @@ prototype(PHLU.Corporate:Page.Overview.OnePage) < prototype(PHLU.Corporate:Page)
                     sectionName = 'contentonepage'
                     onepage = ${q(node).children('onepage').get(0)}
                     header = ${q(node).children('header').get(0)}
-                    renderer = TYPO3.Neos:ContentCase
+                    renderer = Neos.Neos:ContentCase
                     node = ${q(node).get(0)}
                     mainCount = ${q(node).is('[instanceof PHLU.Corporate:Page.View.Dossier]') ? 1 : q(node).children('main').children().count() ? 1 : q(node).children('[instanceof PHLU.Corporate:Page]').count()}
                     params = ${params}
