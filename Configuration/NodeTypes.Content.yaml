@@ -168,13 +168,13 @@
 'PHLU.Corporate.NodeTypes:ContentImageMixin':
   abstract: true
   superTypes:
-    'TYPO3.Neos.NodeTypes:ImageMixin': true
+    'Neos.NodeTypes:ImageMixin': true
     '': true
     'PHLU.Corporate.NodeTypes:ImageCaptionMixin': true
 'PHLU.Corporate.NodeTypes:ImageCaptionMixin':
   abstract: true
   superTypes:
-    'TYPO3.Neos.NodeTypes:ImageCaptionMixin': true
+    'Neos.NodeTypes:ImageCaptionMixin': true
   properties:
     caption:
       ui:
@@ -241,7 +241,7 @@
 'PHLU.Corporate:Image':
   superTypes:
     'PHLU.Corporate:Content': true
-    'TYPO3.Neos.NodeTypes:ImageMixin': true
+    'Neos.NodeTypes:ImageMixin': true
   ui:
     label: Bild
     icon: icon-picture
