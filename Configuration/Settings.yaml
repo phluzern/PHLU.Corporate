@@ -1,9 +1,6 @@
 
 Neos:
   Neos:
-    typoScript:
-      autoInclude:
-        PHLU.Corporate: true
     userInterface:
       requireJsPathMapping:
         PHLU.Corporate/Handlers: 'resource://PHLU.Corporate/Public/JavaScript/Backend/Inspector/Handlers'
@@ -23,6 +20,9 @@ Neos:
           label: 'Automatisch erstellte Inhalte'
           collapsed: false
           icon: icon-fort-awesome
+    fusion:
+      autoInclude:
+        PHLU.Corporate: true
   Fusion:
     defaultContext:
       PHLU.Corporate: PHLU\Corporate\Eel\Helper\NodeHelper
