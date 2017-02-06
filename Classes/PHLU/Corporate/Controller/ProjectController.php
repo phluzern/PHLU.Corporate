@@ -93,7 +93,7 @@ class ProjectController extends \Neos\Neos\Controller\Frontend\NodeController
             $contentContext);
 
         $this->view->assignMultiple(array('value' => $node, 'project' => $project));
-        $this->view->setTypoScriptPath('project');
+        $this->view->setFusionPath('project');
 
 
     }

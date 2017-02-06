@@ -84,7 +84,7 @@ class PortraitController extends \Neos\Neos\Controller\Frontend\NodeController
 
         $this->view->assignMultiple(array('value' => $node, 'contact' => $contact));
 
-        $this->view->setTypoScriptPath('portrait');
+        $this->view->setFusionPath('portrait');
 
 
     }
@@ -117,7 +117,7 @@ class PortraitController extends \Neos\Neos\Controller\Frontend\NodeController
             $this->contextFactory->getContentContext());
 
         $this->view->assignMultiple(array('value' => $node, 'contact' => $contact));
-        $this->view->setTypoScriptPath('portrait');
+        $this->view->setFusionPath('portrait');
 
 
     }
