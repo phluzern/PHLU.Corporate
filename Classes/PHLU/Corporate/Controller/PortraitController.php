@@ -7,7 +7,7 @@ namespace PHLU\Corporate\Controller;
 
 use PHLU\Corporate\Factory\ContextFactory;
 use Neos\Flow\Annotations as Flow;
-use TYPO3\Neos\Domain\Repository\SiteRepository;
+use Neos\Neos\Domain\Repository\SiteRepository;
 use TYPO3\TYPO3CR\Domain\Model\Node;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 use PHLU\Neos\Models\Domain\Model\Contact;
@@ -16,7 +16,7 @@ use TYPO3\TYPO3CR\Domain\Repository\NodeDataRepository;
 use TYPO3\TYPO3CR\Exception\PageNotFoundException;
 
 
-class PortraitController extends \TYPO3\Neos\Controller\Frontend\NodeController
+class PortraitController extends \Neos\Neos\Controller\Frontend\NodeController
 {
 
     /**
@@ -70,7 +70,7 @@ class PortraitController extends \TYPO3\Neos\Controller\Frontend\NodeController
         if ($node === null) {
             throw new NodeNotFoundException('The requested node does not exist or isn\'t accessible to the current user', 1430218623);
         }
-        if (!$node->getContext()->isLive() && !$this->privilegeManager->isPrivilegeTargetGranted('TYPO3.Neos:Backend.GeneralAccess')) {
+        if (!$node->getContext()->isLive() && !$this->privilegeManager->isPrivilegeTargetGranted('Neos.Neos:Backend.GeneralAccess')) {
             $this->redirect('index', 'Login', null, array('unauthorized' => true));
         }
 

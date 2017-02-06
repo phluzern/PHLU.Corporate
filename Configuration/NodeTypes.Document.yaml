@@ -23,7 +23,7 @@
   constraints:
     nodeTypes:
       '*': false
-      'TYPO3.Neos:Shortcut': false
+      'Neos.Neos:Shortcut': false
   ui:
     inspector:
       groups:
@@ -129,7 +129,7 @@
       'PHLU.Corporate:Page.View.Dossier': false
       'PHLU.Corporate:Page.View.Default': false
       'PHLU.Corporate:Page.View.Default.Default': true
-      'TYPO3.Neos:Shortcut': true
+      'Neos.Neos:Shortcut': true
 'PHLU.Corporate:Page.View.Default.Default':
   hybridsearch:
     render: true
@@ -162,7 +162,7 @@
       'PHLU.Corporate:Page.View.Dossier': true
       'PHLU.Corporate:Page.View.Default': true
       'PHLU.Corporate:Page.View.Default.Default': false
-      'TYPO3.Neos:Shortcut': false
+      'Neos.Neos:Shortcut': false
       'PHLU.Corporate:Page.View.Default.Prototype': true
 'PHLU.Corporate:Page.View.Dossier':
   ui:

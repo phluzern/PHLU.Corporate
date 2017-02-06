@@ -1,5 +1,5 @@
 
-'TYPO3.Neos:ContentCollection':
+'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
       'PHLU.Corporate:Content': true

@@ -114,7 +114,7 @@
         reloadIfChanged: true
         inspector:
           group: chooseLocation
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: ''
             dataSourceIdentifier: phlu-neos-nodetypes-locations

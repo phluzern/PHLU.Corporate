@@ -4,7 +4,7 @@ namespace PHLU\Corporate\DataSource;
 use PHLU\Neos\Models\Domain\Model\Project;
 use PHLU\Neos\Models\Domain\Repository\ProjectRepository;
 use Neos\Flow\Annotations as Flow;
-use TYPO3\Neos\Service\DataSource\AbstractDataSource;
+use Neos\Neos\Service\DataSource\AbstractDataSource;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 
 

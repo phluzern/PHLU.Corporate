@@ -1,7 +1,7 @@
 <?php
 namespace PHLU\Corporate\DataSource;
 
-use TYPO3\Neos\Service\DataSource\AbstractDataSource;
+use Neos\Neos\Service\DataSource\AbstractDataSource;
 use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 use Neos\Eel\FlowQuery\FlowQuery;
 use TYPO3\TYPO3CR\Domain\Model\Node;

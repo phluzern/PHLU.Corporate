@@ -1,20 +1,24 @@
+
 TYPO3:
+  TypoScript:
+    defaultContext:
+      PHLU.Corporate: PHLU\Corporate\Eel\Helper\NodeHelper
+Neos:
   Neos:
     typoScript:
       autoInclude:
-        'PHLU.Corporate': TRUE
+        PHLU.Corporate: true
     userInterface:
       requireJsPathMapping:
-        'PHLU.Corporate/Handlers': 'resource://PHLU.Corporate/Public/JavaScript/Backend/Inspector/Handlers'
+        PHLU.Corporate/Handlers: 'resource://PHLU.Corporate/Public/JavaScript/Backend/Inspector/Handlers'
       translation:
         autoInclude:
-          'PHLU.Corporate': ['NodeTypes/*']
+          PHLU.Corporate:
+            - 'NodeTypes/*'
       navigateComponent:
         nodeTree:
           loadingDepth: 1
         structureTree:
-          # number of levels inside the structure tree which shall be loaded eagerly, at start.
-          # 0 means unlimited
           loadingDepth: 0
     nodeTypes:
       groups:
@@ -22,8 +26,4 @@ TYPO3:
           position: 50
           label: 'Automatisch erstellte Inhalte'
           collapsed: false
-          icon: 'icon-fort-awesome'
-
-  TypoScript:
-    defaultContext:
-      'PHLU.Corporate': 'PHLU\Corporate\Eel\Helper\NodeHelper'
+          icon: icon-fort-awesome

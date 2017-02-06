@@ -6,11 +6,11 @@ namespace PHLU\Corporate\Factory;
  */
 
 use Neos\Flow\Annotations as Flow;
-use TYPO3\Neos\Domain\Repository\SiteRepository;
-use TYPO3\Neos\Domain\Service\ContentContextFactory;
+use Neos\Neos\Domain\Repository\SiteRepository;
+use Neos\Neos\Domain\Service\ContentContextFactory;
 use TYPO3\TYPO3CR\Domain\Model\Node;
 use TYPO3\TYPO3CR\Domain\Repository\NodeDataRepository;
-use TYPO3\Neos\Domain\Model\Site;
+use Neos\Neos\Domain\Model\Site;
 
 
 class ContextFactory

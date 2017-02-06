@@ -11,7 +11,7 @@
     '@action': 'view'
   routeParts:
     'node':
-      handler: 'TYPO3\Neos\Routing\FrontendNodeRoutePartHandler'
+      handler: 'Neos\Neos\Routing\FrontendNodeRoutePartHandler'
       options:
         onlyMatchSiteNodes: false
     'contact':
@@ -77,7 +77,7 @@
     '@action': 'view'
   routeParts:
     'node':
-      handler: 'TYPO3\Neos\Routing\FrontendNodeRoutePartHandler'
+      handler: 'Neos\Neos\Routing\FrontendNodeRoutePartHandler'
       options:
         onlyMatchSiteNodes: false
 

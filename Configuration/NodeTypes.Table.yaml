@@ -25,7 +25,7 @@
         inspector:
           position: 9
           group: table
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               2:
@@ -55,7 +55,7 @@
         inspector:
           position: 9
           group: firstcol
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               auto:
@@ -96,7 +96,7 @@
         inspector:
           group: table
           position: 100
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               1:

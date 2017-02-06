@@ -70,7 +70,7 @@
         inspector:
           group: filters
           position: 10
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             dataSourceIdentifier: phlu-corporate-projects
             dataSourceAdditionalData:
@@ -83,7 +83,7 @@
         inspector:
           group: filters
           position: 10
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             dataSourceIdentifier: phlu-corporate-projects
             dataSourceAdditionalData:
@@ -96,7 +96,7 @@
         inspector:
           group: filters
           position: 15
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             allowEmpty: true
             dataSourceIdentifier: phlu-corporate-projects
@@ -110,7 +110,7 @@
         inspector:
           group: filters
           position: 20
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             dataSourceIdentifier: phlu-corporate-projects
             dataSourceAdditionalData:
@@ -123,7 +123,7 @@
         inspector:
           group: filters
           position: 30
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             dataSourceIdentifier: phlu-corporate-projects
             dataSourceAdditionalData:
@@ -136,7 +136,7 @@
         inspector:
           group: filters
           position: 40
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             dataSourceIdentifier: phlu-corporate-projects
             dataSourceAdditionalData:
@@ -237,7 +237,7 @@
         inspector:
           group: filters
           position: 10
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             multiple: true
             values:
@@ -284,7 +284,7 @@
         inspector:
           group: filters
           position: 30
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             dataSourceIdentifier: phlu-corporate-publications
             dataSourceAdditionalData:
@@ -297,7 +297,7 @@
         inspector:
           group: filters
           position: 30
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             dataSourceIdentifier: phlu-corporate-publications
             dataSourceAdditionalData:
@@ -318,7 +318,7 @@
         inspector:
           group: filters
           position: 30
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             allowEmpty: true
             dataSourceIdentifier: phlu-corporate-publications
@@ -348,7 +348,7 @@
         inspector:
           group: filters
           position: 30
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             allowEmpty: true
             dataSourceIdentifier: phlu-corporate-contacts
