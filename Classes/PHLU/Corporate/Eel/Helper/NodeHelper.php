@@ -3,7 +3,7 @@
 namespace PHLU\Corporate\Eel\Helper;
 
 use PHLU\Neos\Models\Domain\Repository\ProjectRepository;
-use TYPO3\Eel\ProtectedContextAwareInterface;
+use Neos\Eel\ProtectedContextAwareInterface;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Http\Request;
 use TYPO3\TYPO3CR\Domain\Factory\NodeFactory;

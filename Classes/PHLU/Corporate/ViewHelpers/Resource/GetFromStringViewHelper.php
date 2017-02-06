@@ -12,7 +12,7 @@ namespace PHLU\Corporate\ViewHelpers\Resource;
  */
 
 use Neos\Flow\Annotations as Flow;
-use TYPO3\Eel\FlowQuery\FlowQuery;
+use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Flow\Mvc\Routing\UriBuilder;
 use Neos\Flow\ResourceManagement\PersistentResource;
 use Neos\Flow\ResourceManagement\ResourceRepository;

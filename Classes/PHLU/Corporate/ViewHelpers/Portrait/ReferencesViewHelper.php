@@ -15,7 +15,7 @@ use PHLU\Neos\Models\Domain\Model\Contact;
 use Neos\Flow\Annotations as Flow;
 use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\TYPO3CR\Domain\Model\Node;
-use TYPO3\Eel\FlowQuery\FlowQuery;
+use Neos\Eel\FlowQuery\FlowQuery;
 use PHLU\Corporate\Factory\ContextFactory;
 
 /**
