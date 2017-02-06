@@ -19,21 +19,21 @@ page = Page {
 
 
     head {
-        metadata = TYPO3.TypoScript:Template {
+        metadata = Neos.Fusion:Template {
             templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
             sectionName = 'metadata'
         }
-        csslinks = TYPO3.TypoScript:Template {
+        csslinks = Neos.Fusion:Template {
             templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
             sectionName = 'csslinks'
         }
 
-        javascripts.site = TYPO3.TypoScript:Template {
+        javascripts.site = Neos.Fusion:Template {
             templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
             sectionName = 'headScripts'
         }
 
-        metaRobotsTag = TYPO3.TypoScript:Tag {
+        metaRobotsTag = Neos.Fusion:Tag {
             tagName = 'meta'
             attributes {
                 name = 'robots'
@@ -53,11 +53,11 @@ page = Page {
 
 
 
-            navBarMenu = TYPO3.TypoScript:Case {
+            navBarMenu = Neos.Fusion:Case {
 
                 isStartpage {
                     condition = ${q(node).is('[!instanceof PHLU.Corporate:Page.Home]')}
-                    renderer = TYPO3.TypoScript:Template {
+                    renderer = Neos.Fusion:Template {
                         menuItems = BreadcrumbMenu
 	                    itemCollection = ${q(node).add(q(node).parents('[instanceof TYPO3.Neos:Document]')).get()}
                         templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/NavBarMenu.html'
@@ -106,7 +106,7 @@ page = Page {
                 maximumLevels = 1
             }
 
-            teaserMenu = TYPO3.TypoScript:Case {
+            teaserMenu = Neos.Fusion:Case {
                 isStartpage {
                     condition = ${q(node).is('[instanceof PHLU.Corporate:Page.Home]')}
                     renderer = Menu {
@@ -133,7 +133,7 @@ page = Page {
             }
         }
 
-        pageLevelTypeClass = TYPO3.TypoScript:Case {
+        pageLevelTypeClass = Neos.Fusion:Case {
             isStartpage {
                 condition = ${q(node).is('[instanceof PHLU.Corporate:Page.Home]')}
                 renderer = 'startpage'
@@ -166,13 +166,13 @@ page = Page {
 
         }
 
-        database = TYPO3.TypoScript:Collection {
+        database = Neos.Fusion:Collection {
             collection = ${q(node).find('database').children()}
             itemName = 'node'
             itemRenderer = PHLU.Corporate:Database
         }
 
-        javascripts.site = TYPO3.TypoScript:Template {
+        javascripts.site = Neos.Fusion:Template {
             templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
             sectionName = 'bodyScripts'
         }
@@ -185,13 +185,13 @@ page = Page {
 
 
 
-neosliveHybridsearch = TYPO3.TypoScript:Collection {
+neosliveHybridsearch = Neos.Fusion:Collection {
     collection = ${q(node)}
     itemName = 'node'
     itemRenderer = TYPO3.Neos:ContentCase
 }
 
-neosliveHybridsearchBreadcrumb = TYPO3.TypoScript:Collection {
+neosliveHybridsearchBreadcrumb = Neos.Fusion:Collection {
     collection = ${q(node)}
     itemName = 'node'
     itemRenderer = Breadcrumb

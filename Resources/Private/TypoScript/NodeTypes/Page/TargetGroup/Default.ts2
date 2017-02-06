@@ -22,7 +22,7 @@ prototype(PHLU.Corporate:Content.Page.TargetGroupElement) < prototype(PHLU.Corpo
         linkNode = ${q(node).parent().property('reference')}
     }
 
-    headerReferenceRenderer = TYPO3.TypoScript:Template {
+    headerReferenceRenderer = Neos.Fusion:Template {
 
         header = ${q(node).children('header').get(0)}
 
