@@ -66,7 +66,7 @@
                                     <span class="count" data-ng-show="sizeOf(participants) > 0">{{sizeOf(participants)}}</span>
                                 </a>
                                 <span data-ng-show="sizeOf(participants) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('participants')" >
+                                    <a  ng-click="clearFilter('participants')" >
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -82,7 +82,7 @@
                                     <span class="count" data-ng-show="sizeOf(organisations) > 0">{{sizeOf(organisations)}}</span>
                                 </a>
                                 <span data-ng-show="sizeOf(organisations) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('organisations')" >
+                                    <a  ng-click="clearFilter('organisations')" >
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -97,7 +97,7 @@
                                     <span class="count" data-ng-show="sizeOf(publicationtype) > 0">{{sizeOf(publicationtype)}}</span>
                                 </a>
                                 <span data-ng-show="sizeOf(publicationtype) > 0" class="resetFilter">
-                                    <a href="#" ng-click="clearFilter('publicationtype')" >
+                                    <a  ng-click="clearFilter('publicationtype')" >
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -111,7 +111,7 @@
 
                             <div class="result-panel tab-pane " id="participants-{node.Identifier}"
                                  role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('persons') > 1"><a href="#"
+                                 data-ng-show="result.getDistinctCount('persons') > 1"><a 
                                                                                           class="close-btn"><i
                                     class="fa fa-times" aria-hidden="true"></i></a>
                                 <div class="dropdown-search-field">
@@ -173,12 +173,12 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                <a  class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                             </div>
 
                             <div class="result-panel tab-pane " id="publicationtype-{node.Identifier}" role="tabpanel"
                                  data-ng-show="result.getDistinctCount('publicationtype') > 1">
-                                   <!--<a href="#" class="close-btn">&nbsp;</a>-->
+                                   <!--<a  class="close-btn">&nbsp;</a>-->
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
@@ -199,7 +199,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                <a  class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                             </div>
 
                         </div>
@@ -226,7 +226,7 @@
                             <thead>
                             <tr>
                                 <th class="clickable publicationsHeader">
-                                    <a href="#">{{group.getLabel()}}</a>
+                                    <a >{{group.getLabel()}}</a>
                                 </th>
                             </tr>
                             </thead>

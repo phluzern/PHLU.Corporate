@@ -7,7 +7,8 @@ use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 use PHLU\Neos\Models\Domain\Repository\ContactRepository;
 
 
-class ContactsDataSource extends AbstractDataSource {
+class ContactsDataSource extends AbstractDataSource
+{
 
 
     /**
@@ -22,7 +23,6 @@ class ContactsDataSource extends AbstractDataSource {
      */
     protected $contactRepository;
 
-    
 
     /**
      * Get data
@@ -34,20 +34,65 @@ class ContactsDataSource extends AbstractDataSource {
     public function getData(NodeInterface $node = NULL, array $arguments)
     {
 
-
-
-        $contacts = array();
-
-        foreach ($this->contactRepository->findAllOrderedByName() as $contact) {
-            $contacts[$contact->getEventoid()] = array('value' => $contact->getEventoid(), 'label' => $contact->getName()->getLastName(). " ".$contact->getName()->getFirstName());
+        if (isset($arguments['property']) === false) {
+            $arguments['property'] = 'default';
         }
 
-        return $contacts;
+        switch ($arguments['property']) {
+
+
+            case 'organisations':
+
+                $contacts = array();
+
+                foreach ($this->contactRepository->findAll() as $contact) {
+                    /* @var \PHLU\Neos\Models\Domain\Model\Contact $contact */
+                    if (is_array($contact->getOrganisations())) {
+                        foreach ($contact->getOrganisations() as $organisation) {
+
+                            if ($organisation['OrganisationId'] && isset($contacts[$organisation['OrganisationId']]) === false) {
+
+                                $group = current(array_splice($organisation['OrganisationPath'], -1, 1))['name'];
+
+                                $organisationPath = '';
+                                foreach ($organisation['OrganisationPath'] as $path) {
+                                    if ($organisationPath != '') {
+                                        $organisationPath .= " / ";
+                                    }
+                                    $organisationPath .= $path['name'];
+                                }
+                                if ($organisationPath !== '') {
+                                    $organisationPath = " ($organisationPath)";
+                                }
+
+                                $contacts[$organisation['OrganisationId']] = array('value' => $organisation['OrganisationId'], 'group' => $group, 'label' => $organisation['OrganisationName'] . $organisationPath);
+                            }
+                        }
+                    }
+
+
+                }
+
+                return $contacts;
+
+                break;
+
+            default:
+
+                $contacts = array();
+
+                foreach ($this->contactRepository->findAllOrderedByName() as $contact) {
+                    $contacts[$contact->getEventoid()] = array('value' => $contact->getEventoid(), 'label' => $contact->getName()->getLastName() . " " . $contact->getName()->getFirstName());
+                }
+
+                return $contacts;
+                break;
+
+
+        }
 
 
     }
-
-
 
 
 }

@@ -46,24 +46,31 @@ class ContextFactory
     protected $nodeDataRepository;
 
 
-
-    public function getContentContext()
+    /**
+     * @param string $workspace
+     * @return ContextInterface
+     */
+    public function getContentContext($workspace = 'live')
     {
 
         $currentSite = $this->siteRepository->findOneByNodeName('corporate');
         /** @var ContentContext $contentContext */
-        return $this->createContext($currentSite, 'live', array());
+        return $this->createContext($currentSite, $workspace, array());
 
 
     }
 
 
-    public function getRootNode()
+    /**
+     * @param string $workspace
+     * @return Node
+     */
+    public function getRootNode($workspace = 'live')
     {
 
         $node = new Node(
-            $this->nodeDataRepository->findOneByPath('/sites/corporate', $this->workspaceRepository->findByName('live')->getFirst()),
-            $this->getContentContext());
+            $this->nodeDataRepository->findOneByPath('/sites/corporate', $this->workspaceRepository->findByName($workspace)->getFirst()),
+            $this->getContentContext($workspace));
 
 
         return $node;

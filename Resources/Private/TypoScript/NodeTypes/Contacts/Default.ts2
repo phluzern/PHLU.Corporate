@@ -15,7 +15,7 @@ zip = ${q(node).property('zip')}
 city = ${q(node).property('city')}
 eventoId = ${q(node).property('contact')}
 image = ${q(node).property('image')}
-fullname = ${q(node).property('titlename') == '' ? this.titlename + " " + this.firstname + " " + this.lastname : this.firstname + " " + this.lastname}
+fullname = ${q(node).property('titlename')== '' ? this.titlename + " " + this.firstname + " " + this.lastname : this.firstname + " " + this.lastname}
 
 
 }
