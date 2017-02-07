@@ -6,14 +6,14 @@
 
         {breadcrumb -> f:format.raw()}
 
-        <ts:render path="defaultRenderer" context="{node: header}" />
-
-        {widgetRenderer -> f:format.raw()}
-
-        {teaserMenu -> f:format.raw()}
-
+        <ts:render path="defaultRenderer" context="{node: header}"/>
     </div>
-
+</div>
+{widgetRenderer -> f:format.raw()}
+<div class="row">
+    <div class="col-xs-12 col-lg-12">
+        {teaserMenu -> f:format.raw()}
+    </div>
 </div>
 
 <div class="row ambient-img-footer"></div>

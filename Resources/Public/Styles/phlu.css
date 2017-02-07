@@ -2308,24 +2308,24 @@ fieldset[disabled] a.btn {
     border-color: #ccc; }
 
 .btn-info {
-  color: #545454;
+  color: #707070;
   background-color: #c7dee2;
   border-color: #c7dee2; }
   .btn-info:hover {
-    color: #545454;
+    color: #707070;
     background-color: #a5cad1;
     border-color: #9fc6cd; }
   .btn-info:focus, .btn-info.focus {
-    color: #545454;
+    color: #707070;
     background-color: #a5cad1;
     border-color: #9fc6cd; }
   .btn-info:active, .btn-info.active, .open > .btn-info.dropdown-toggle {
-    color: #545454;
+    color: #707070;
     background-color: #a5cad1;
     border-color: #9fc6cd;
     background-image: none; }
     .btn-info:active:hover, .btn-info:active:focus, .btn-info:active.focus, .btn-info.active:hover, .btn-info.active:focus, .btn-info.active.focus, .open > .btn-info.dropdown-toggle:hover, .open > .btn-info.dropdown-toggle:focus, .open > .btn-info.dropdown-toggle.focus {
-      color: #545454;
+      color: #707070;
       background-color: #8ebcc4;
       border-color: #73adb7; }
   .btn-info.disabled:focus, .btn-info.disabled.focus, .btn-info:disabled:focus, .btn-info:disabled.focus {
@@ -3617,14 +3617,14 @@ input[type="button"].btn-block {
     display: inline-block;
     padding-right: 0.5rem;
     padding-left: 0.5rem;
-    color: #464340;
+    color: #545454;
     content: "/"; }
   .breadcrumb-item + .breadcrumb-item:hover::before {
     text-decoration: underline; }
   .breadcrumb-item + .breadcrumb-item:hover::before {
     text-decoration: none; }
   .breadcrumb-item.active {
-    color: #464340; }
+    color: #545454; }
 
 .pagination {
   display: inline-block;
@@ -4531,7 +4531,7 @@ button.close {
   left: 0;
   width: 10%;
   font-size: 20px;
-  color: #545454;
+  color: #707070;
   text-align: center;
   text-shadow: 0;
   opacity: 0.5; }
@@ -4546,7 +4546,7 @@ button.close {
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1); }
   .carousel-control:focus, .carousel-control:hover {
-    color: #545454;
+    color: #707070;
     text-decoration: none;
     outline: 0;
     opacity: .9; }
@@ -8672,7 +8672,7 @@ body.neos-backend .link {
 
 body {
   margin-bottom: 420px;
-  color: #545454; }
+  color: #707070; }
   body.siteSearchActive {
     overflow: hidden; }
   @media (max-width: 991px) {
@@ -8752,7 +8752,7 @@ body {
         width: auto;
         max-width: 200px; }
         body .all .btn.loadMore:hover {
-          background-color: #545454; }
+          background-color: #707070; }
         body .all .btn.loadMore:before {
           font-family: FontAwesome;
           content: " \f107";
@@ -8763,7 +8763,7 @@ body {
       position: absolute;
       right: 0;
       margin: -23px 25px 0 0;
-      color: #545454;
+      color: #707070;
       display: block; }
     body .all .col-center {
       float: none;
@@ -8813,6 +8813,23 @@ body {
       padding: 0.1875rem 0.3125rem;
       border-radius: 0;
       border: 1px solid #9b9b9b; }
+    body .all .checkbox input[type="checkbox"] {
+      display: none; }
+    body .all .checkbox input[type="checkbox"] + label span {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      padding: 4px 0 0 7px;
+      margin-right: 10px;
+      vertical-align: middle;
+      background-color: white;
+      cursor: pointer; }
+    body .all .checkbox input[type="checkbox"]:checked + label span {
+      background-color: #e5e5e5; }
+    body .all .checkbox input[type="checkbox"]:checked + label span::before {
+      font-family: Icons;
+      content: "\e033";
+      color: black; }
     body .all .dropdown button {
       background-color: #685f56;
       color: white;
@@ -8833,21 +8850,23 @@ body {
           background-color: black; }
     body .all .input-group {
       width: initial; }
+      body .all .input-group label {
+        margin-top: 20px; }
       body .all .input-group .input-group-btn button {
         color: white;
-        background-color: #2f8d99; }
+        background-color: #28818f; }
       body .all .input-group .form-control {
-        border: solid 2px #2f8d99; }
+        border: solid 2px #28818f; }
       body .all .input-group .fa.fa-search {
         font-size: 20px;
-        color: #2f8d99;
+        color: #28818f;
         margin: 12px 23px 0 0;
         position: absolute;
         right: 0;
         z-index: 99; }
       body .all .input-group .dropdown-menu {
         list-style-type: none;
-        background-color: #2f8d99;
+        background-color: #28818f;
         border-radius: inherit;
         background-clip: inherit;
         border: 0;
@@ -8856,35 +8875,50 @@ body {
         font-size: 1rem; }
         body .all .input-group .dropdown-menu li a {
           color: white;
-          padding-top: 6px;
+          padding-top: 9px;
           padding-left: 10px;
           display: block;
           height: 40px; }
         body .all .input-group .dropdown-menu li:hover {
           background-color: #2a818d; }
     body .all .extendedSearchBg {
-      background-color: #545454; }
+      padding: 20px 0; }
       body .all .extendedSearchBg.on {
-        background-color: #545454; }
+        background-color: #545454;
+        padding: 20px 0; }
+        body .all .extendedSearchBg.on .form-control {
+          border-top: 0;
+          border-right: 0;
+          border-bottom: 0; }
+        body .all .extendedSearchBg.on .extendedSearch button {
+          color: white;
+          background-color: #707070; }
+          body .all .extendedSearchBg.on .extendedSearch button .oi {
+            display: inline-block;
+            margin-left: 15px; }
+        body .all .extendedSearchBg.on .dropdown-menu {
+          margin-top: inherit; }
+        body .all .extendedSearchBg.on input[type='checkbox'] {
+          width: inherit;
+          margin-right: 5px; }
+      body .all .extendedSearchBg .extendedSearch {
+        text-align: right;
+        margin-top: 15px; }
+        body .all .extendedSearchBg .extendedSearch button {
+          background-color: #e5e5e5; }
+          body .all .extendedSearchBg .extendedSearch button .oi {
+            display: none; }
       body .all .extendedSearchBg label {
         display: block; }
       body .all .extendedSearchBg input, body .all .extendedSearchBg select {
         width: 100%; }
       body .all .extendedSearchBg .extendedSearchFilter {
-        color: white; }
+        color: white;
+        display: none; }
         body .all .extendedSearchBg .extendedSearchFilter h3 {
-          color: white; }
-        body .all .extendedSearchBg .extendedSearchFilter .input-item-col.open::after {
-          font-family: FontAwesome;
-          content: " \f0d8"; }
-        body .all .extendedSearchBg .extendedSearchFilter .input-item-col::after {
-          font-family: FontAwesome;
-          content: " \f0d7";
-          border: inherit;
-          position: absolute;
-          right: 30px;
-          margin-top: -32px;
-          color: #4c4c4c; }
+          color: white;
+          margin-top: 30px;
+          margin-bottom: 0; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-toggle {
           background-color: white;
           color: #4c4c4c;
@@ -8892,86 +8926,86 @@ body {
           padding: 8px; }
           body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-toggle::after {
             border: 0; }
+          body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-toggle.search-result-tags {
+            margin: 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            overflow: hidden; }
+            body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-toggle.search-result-tags .search-result-tag {
+              color: white;
+              float: left;
+              position: relative;
+              white-space: nowrap; }
+          body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-toggle::after {
+            font-family: FontAwesome;
+            content: " \f0d7";
+            border: inherit;
+            position: absolute;
+            right: 25px;
+            margin-top: 8px;
+            color: white;
+            background-color: #545454;
+            height: 23px;
+            width: 15px;
+            padding-right: 15px;
+            padding-left: 7px; }
+        body .all .extendedSearchBg .extendedSearchFilter .input-item-col .tagFadeOutBg {
+          position: absolute;
+          display: block;
+          z-index: 999;
+          width: 10px;
+          height: 54px;
+          bottom: 0;
+          right: 15px;
+          /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
+          background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
+          /* FF3.6-15 */
+          background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
+          /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 100%);
+          /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
+          /* IE6-9 */ }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu {
-          position: inherit;
           top: inherit;
           width: 100%;
-          background-color: white; }
-          body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a {
-            color: #4c4c4c; }
-          body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li:hover {
-            background-color: #e5e5e5; }
-    body .all .extendedSearch {
-      text-align: right;
-      margin-top: 15px; }
+          background-color: inherit; }
+          body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li {
+            margin: 0 13px;
+            background-color: white;
+            border-left: 2px solid #545454;
+            border-right: 2px solid #545454; }
+            body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a {
+              color: #4c4c4c; }
+            body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li:hover {
+              background-color: #e5e5e5; }
+            body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li:last-child {
+              -webkit-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
+              -moz-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
+              box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3); }
+        body .all .extendedSearchBg .extendedSearchFilter .input-item-col #datepicker-further-education .datepicker-inline {
+          background-color: #9b9b9b; }
+        body .all .extendedSearchBg .extendedSearchFilter .input-item-col #datepicker-further-education input {
+          height: 40px; }
+        body .all .extendedSearchBg .extendedSearchFilter .subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.active {
+          background-color: #28818f; }
+        body .all .extendedSearchBg .extendedSearchFilter .subjectsfilternav .col-xs-12 .nav-pills li a.nav-link .count {
+          background-color: black; }
+        body .all .extendedSearchBg .extendedSearchFilter .subjectsfilternav .col-xs-12 .nav-pills li .resetFilter a {
+          color: white; }
+        body .all .extendedSearchBg .extendedSearchFilter .subjectsfilternav .col-xs-12 .result-panel {
+          padding: 0;
+          background-color: #28818f; }
+          body .all .extendedSearchBg .extendedSearchFilter .subjectsfilternav .col-xs-12 .result-panel .table-responsive .table tbody tr:first-child td {
+            border-top: 0; }
+          body .all .extendedSearchBg .extendedSearchFilter .subjectsfilternav .col-xs-12 .result-panel .table-responsive .table tbody tr.checked {
+            color: black; }
+            body .all .extendedSearchBg .extendedSearchFilter .subjectsfilternav .col-xs-12 .result-panel .table-responsive .table tbody tr.checked td a {
+              color: black; }
     body .all .searchresults-filter .dropdown-menu {
       right: 0; }
       body .all .searchresults-filter .dropdown-menu li a {
         color: white; }
-    body .all .datepicker {
-      font-size: 1.125rem; }
-      body .all .datepicker table thead tr th, body .all .datepicker table thead tr td, body .all .datepicker table tbody tr th, body .all .datepicker table tbody tr td {
-        border-radius: 0; }
-      body .all .datepicker table thead tr th {
-        font-weight: normal; }
-        body .all .datepicker table thead tr th.datepicker-switch {
-          cursor: default; }
-          body .all .datepicker table thead tr th.datepicker-switch:hover {
-            background-color: inherit; }
-      body .all .datepicker table tbody tr td {
-        padding: 8px 51px; }
-        @media (max-width: 1599px) {
-          body .all .datepicker table tbody tr td {
-            padding: 8px 46px; } }
-        @media (max-width: 991px) {
-          body .all .datepicker table tbody tr td {
-            padding: 8px 37px; } }
-        @media (max-width: 767px) {
-          body .all .datepicker table tbody tr td {
-            padding: 8px 23px; } }
-        @media (max-width: 543px) {
-          body .all .datepicker table tbody tr td {
-            padding: 8px 13px; } }
-        body .all .datepicker table tbody tr td.day:hover, body .all .datepicker table tbody tr td.focused:hover {
-          color: #55696d; }
-        body .all .datepicker table tbody tr td.day.disabled:hover, body .all .datepicker table tbody tr td.focused.disabled:hover {
-          color: white; }
-        body .all .datepicker table tbody tr td.active {
-          background-color: #91a103;
-          background-image: none; }
-          body .all .datepicker table tbody tr td.active:hover {
-            background-color: #91a103;
-            color: white; }
-      body .all .datepicker table tfoot tr th:hover {
-        background-color: #91a103; }
-      body .all .datepicker .datepicker-switch:hover, body .all .datepicker .next:hover, body .all .datepicker .prev:hover {
-        background-color: #91a103; }
-      body .all .datepicker.tag-zeit table tbody tr td {
-        padding: 8px 36px; }
-        @media (max-width: 1599px) {
-          body .all .datepicker.tag-zeit table tbody tr td {
-            padding: 8px 28px; } }
-        @media (max-width: 991px) {
-          body .all .datepicker.tag-zeit table tbody tr td {
-            padding: 8px 18px; } }
-        @media (max-width: 767px) {
-          body .all .datepicker.tag-zeit table tbody tr td {
-            padding: 8px 23px; } }
-        @media (max-width: 543px) {
-          body .all .datepicker.tag-zeit table tbody tr td {
-            padding: 8px 13px; } }
-        body .all .datepicker.tag-zeit table tbody tr td span {
-          float: inherit;
-          width: inherit;
-          display: initial;
-          margin: inherit;
-          line-height: inherit; }
-          body .all .datepicker.tag-zeit table tbody tr td span:hover {
-            background: inherit; }
-      body .all .datepicker.datepicker-inline {
-        margin: 0 auto;
-        width: inherit;
-        display: table; }
     body .all .navbar {
       background-color: white;
       display: none; }
@@ -9238,12 +9272,12 @@ body {
           -webkit-hyphens: auto;
           hyphens: auto; }
           body .all .phlu-teaser .phlu-teaser-body h3 a {
-            color: #464340; }
+            color: #545454; }
         body .all .phlu-teaser .phlu-teaser-body p {
           font-size: 0.875rem;
           width: 100%; }
         body .all .phlu-teaser .phlu-teaser-body a {
-          color: #545454; }
+          color: #707070; }
       body .all .phlu-teaser .event.noimg .phlu-teaser-body, body .all .phlu-teaser .publication.noimg .phlu-teaser-body {
         z-index: 99;
         position: relative;
@@ -9262,7 +9296,7 @@ body {
         padding: 11px;
         color: white;
         font-size: 28px;
-        background-color: #2f8d99;
+        background-color: #28818f;
         margin: 0 20px 0 0; }
       body .all .phlu-teaser .event .event-date-month-year-location {
         font-size: 0.875rem;
@@ -9281,7 +9315,7 @@ body {
         height: 183px;
         padding: 30px 20px 20px; }
       body .all .phlu-teaser .event .phlu-teaser-type {
-        background-color: #2f8d99;
+        background-color: #28818f;
         position: absolute;
         bottom: 0;
         right: 15px;
@@ -9298,7 +9332,7 @@ body {
           body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody p {
             margin-bottom: inherit; }
       body .all .phlu-teaser .event.listing .phlu-teaser-type {
-        background-color: #2f8d99;
+        background-color: #28818f;
         position: relative;
         top: 0; }
       body .all .phlu-teaser .event.listing .phlu-teaser-body {
@@ -9364,7 +9398,7 @@ body {
       body .all .phlu-teaser.carousel .carousel-control {
         width: 10%;
         font-size: 20px;
-        color: #545454;
+        color: #707070;
         text-shadow: 0;
         opacity: 0.5; }
         body .all .phlu-teaser.carousel .carousel-control.left {
@@ -9379,7 +9413,7 @@ body {
           background-repeat: repeat-x;
           filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#00000000', GradientType=1); }
         body .all .phlu-teaser.carousel .carousel-control:focus, body .all .phlu-teaser.carousel .carousel-control:hover {
-          color: #545454;
+          color: #707070;
           text-decoration: none;
           outline: 0;
           opacity: .9; }
@@ -9516,13 +9550,13 @@ body {
       body .all .phlu-teaser.navigation.subpage .nav-teaser-item > h3 {
         margin-top: 30px; }
         body .all .phlu-teaser.navigation.subpage .nav-teaser-item > h3 a {
-          color: #464340; }
+          color: #545454; }
       body .all .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body {
         background-color: #c7dee2; }
         body .all .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3, body .all .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body p {
-          color: #464340; }
+          color: #545454; }
       body .all .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right.col-xs-2 {
-        color: #464340;
+        color: #545454;
         background-color: #c7dee2; }
       body .all .phlu-teaser.navigation.subpage .nav-teaser-item:first-child h3 {
         margin-top: 0; }
@@ -9547,7 +9581,7 @@ body {
     body .all .row.subjectsfilternav .list-search-field, body .all .row.subjectsfilternav .dropdown-search-field {
       margin-top: 5px; }
       body .all .row.subjectsfilternav .list-search-field input, body .all .row.subjectsfilternav .dropdown-search-field input {
-        border: 1px solid #545454;
+        border: 1px solid #707070;
         height: 50px; }
       body .all .row.subjectsfilternav .list-search-field .fa-search, body .all .row.subjectsfilternav .dropdown-search-field .fa-search {
         margin: -33px 33px 0 0; }
@@ -9563,7 +9597,7 @@ body {
           padding-top: 9px;
           padding-bottom: 10px; }
           body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link:hover {
-            background-color: #545454; }
+            background-color: #707070; }
           body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.all, body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.no-icon {
             padding-left: 23px; }
           body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.active {
@@ -9630,7 +9664,7 @@ body {
           height: 22px;
           width: 43px; }
           body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i::before {
-            color: #2f8d99;
+            color: #28818f;
             font-size: 25px;
             position: relative;
             top: 50%;
@@ -9878,57 +9912,57 @@ body {
       width: 100%; }
     body .all .phlu-about-detailview .row.subjectsfilternav .nav-pills {
       padding-top: 0; }
-    body .all .ppdb-list .list-search-field input, body .all .ppdb-list .dropdown-search-field input, body .all .further-education-list .list-search-field input, body .all .further-education-list .dropdown-search-field input {
-      border: 1px solid #545454;
+    body .all .ppdb-list .list-search-field input, body .all .ppdb-list .dropdown-search-field input, body .all .further-education-list .list-search-field input, body .all .further-education-list .dropdown-search-field input, body .all .furtherEducationSpecialSearch .list-search-field input, body .all .furtherEducationSpecialSearch .dropdown-search-field input {
+      border: 1px solid #707070;
       height: 50px; }
-    body .all .ppdb-list .list-search-field .fa-search, body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .list-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search {
+    body .all .ppdb-list .list-search-field .fa-search, body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .list-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search, body .all .furtherEducationSpecialSearch .list-search-field .fa-search, body .all .furtherEducationSpecialSearch .dropdown-search-field .fa-search {
       margin: -33px 33px 0 0; }
-    body .all .ppdb-list .dropdown-search-field, body .all .further-education-list .dropdown-search-field {
+    body .all .ppdb-list .dropdown-search-field, body .all .further-education-list .dropdown-search-field, body .all .furtherEducationSpecialSearch .dropdown-search-field {
       margin: 13px 20px; }
-      body .all .ppdb-list .dropdown-search-field input, body .all .further-education-list .dropdown-search-field input {
+      body .all .ppdb-list .dropdown-search-field input, body .all .further-education-list .dropdown-search-field input, body .all .furtherEducationSpecialSearch .dropdown-search-field input {
         border: 0; }
-      body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search {
+      body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search, body .all .furtherEducationSpecialSearch .dropdown-search-field .fa-search {
         position: relative;
         margin: -33px 50px 0 96%; }
         @media (max-width: 543px) {
-          body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search {
+          body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search, body .all .furtherEducationSpecialSearch .dropdown-search-field .fa-search {
             margin: -33px 50px 0 92%; } }
 @media (min-width: 544px) and (max-width: 767px) {
-  body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search {
+  body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search, body .all .furtherEducationSpecialSearch .dropdown-search-field .fa-search {
     margin: -33px 50px 0 95%; } }
 
-    body .all .ppdb-list .search-result-tags, body .all .further-education-list .search-result-tags {
+    body .all .ppdb-list .search-result-tags, body .all .further-education-list .search-result-tags, body .all .furtherEducationSpecialSearch .search-result-tags {
       padding-top: 16px;
       margin: 20px; }
-      body .all .ppdb-list .search-result-tags .search-result-tag, body .all .further-education-list .search-result-tags .search-result-tag {
+      body .all .ppdb-list .search-result-tags .search-result-tag, body .all .further-education-list .search-result-tags .search-result-tag, body .all .furtherEducationSpecialSearch .search-result-tags .search-result-tag {
         border-radius: 2px;
         background-color: #767676;
         display: inline-block;
         padding: 5px;
         margin-top: 4px;
         margin-right: 10px; }
-    body .all .ppdb-list .subjectsfilternav .nav-pills, body .all .further-education-list .subjectsfilternav .nav-pills {
+    body .all .ppdb-list .subjectsfilternav .nav-pills, body .all .further-education-list .subjectsfilternav .nav-pills, body .all .furtherEducationSpecialSearch .subjectsfilternav .nav-pills {
       padding-bottom: 4px; }
-      body .all .ppdb-list .subjectsfilternav .nav-pills li a.nav-link, body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link {
+      body .all .ppdb-list .subjectsfilternav .nav-pills li a.nav-link, body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link, body .all .furtherEducationSpecialSearch .subjectsfilternav .nav-pills li a.nav-link {
         padding-left: 18px; }
-        body .all .ppdb-list .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-bottom, body .all .ppdb-list .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-top, body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-bottom, body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-top {
+        body .all .ppdb-list .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-bottom, body .all .ppdb-list .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-top, body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-bottom, body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-top, body .all .furtherEducationSpecialSearch .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-bottom, body .all .furtherEducationSpecialSearch .subjectsfilternav .nav-pills li a.nav-link .oi-chevron-top {
           font-size: 12px; }
-        body .all .ppdb-list .subjectsfilternav .nav-pills li a.nav-link.active, body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link.active {
+        body .all .ppdb-list .subjectsfilternav .nav-pills li a.nav-link.active, body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link.active, body .all .furtherEducationSpecialSearch .subjectsfilternav .nav-pills li a.nav-link.active {
           background-color: #55696d; }
-        body .all .ppdb-list .subjectsfilternav .nav-pills li a.nav-link i, body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link i {
+        body .all .ppdb-list .subjectsfilternav .nav-pills li a.nav-link i, body .all .further-education-list .subjectsfilternav .nav-pills li a.nav-link i, body .all .furtherEducationSpecialSearch .subjectsfilternav .nav-pills li a.nav-link i {
           padding-right: 5px; }
-      body .all .ppdb-list .subjectsfilternav .nav-pills li.nav-item, body .all .further-education-list .subjectsfilternav .nav-pills li.nav-item {
+      body .all .ppdb-list .subjectsfilternav .nav-pills li.nav-item, body .all .further-education-list .subjectsfilternav .nav-pills li.nav-item, body .all .furtherEducationSpecialSearch .subjectsfilternav .nav-pills li.nav-item {
         margin-left: 0; }
-    body .all .ppdb-list .subjectsfilternav .result-panel, body .all .further-education-list .subjectsfilternav .result-panel {
+    body .all .ppdb-list .subjectsfilternav .result-panel, body .all .further-education-list .subjectsfilternav .result-panel, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel {
       max-height: 400px;
       overflow-y: auto;
       background-color: #55696d;
       color: white;
       padding: 5px 0; }
-      body .all .ppdb-list .subjectsfilternav .result-panel .fa-search, body .all .further-education-list .subjectsfilternav .result-panel .fa-search {
+      body .all .ppdb-list .subjectsfilternav .result-panel .fa-search, body .all .further-education-list .subjectsfilternav .result-panel .fa-search, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .fa-search {
         margin: -33px 13px 0 0;
         float: right; }
-      body .all .ppdb-list .subjectsfilternav .result-panel .close-btn, body .all .further-education-list .subjectsfilternav .result-panel .close-btn {
+      body .all .ppdb-list .subjectsfilternav .result-panel .close-btn, body .all .further-education-list .subjectsfilternav .result-panel .close-btn, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .close-btn {
         z-index: 9;
         display: inline-block;
         font-family: FontAwesome;
@@ -9941,83 +9975,83 @@ body {
         background-color: #55696d;
         padding: 2px 14px 0px;
         color: white; }
-      body .all .ppdb-list .subjectsfilternav .result-panel .table, body .all .further-education-list .subjectsfilternav .result-panel .table {
+      body .all .ppdb-list .subjectsfilternav .result-panel .table, body .all .further-education-list .subjectsfilternav .result-panel .table, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table {
         margin-bottom: 0; }
-        body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr {
+        body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr {
           cursor: pointer; }
-          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr i.fa, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr i.fa {
+          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr i.fa, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr i.fa, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr i.fa {
             margin-right: 20px; }
-          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr.checked, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr.checked {
+          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr.checked, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr.checked, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr.checked {
             color: #91a103; }
-            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr.checked a, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr.checked a {
+            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr.checked a, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr.checked a, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr.checked a {
               color: #91a103; }
-          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr:last-child td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr:last-child td {
+          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr:last-child td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr:last-child td, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr:last-child td {
             border-bottom: 0; }
-          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr:first-child td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr:first-child td {
+          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr:first-child td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr:first-child td, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr:first-child td {
             border-top: 0; }
-          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td {
+          body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr td {
             background-image: none;
             border-top: 0;
             border-left: 0;
             border-right: 0;
             border-bottom: 1px #e5e5e5 solid;
             font-size: 1.125rem; }
-            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a {
+            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr td a {
               color: white;
               display: table; }
-              body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a.subitem, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a.subitem {
+              body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a.subitem, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a.subitem, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr td a.subitem {
                 margin-left: 40px; }
-              body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a span {
+              body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a span, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr td a i, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr td a span {
                 display: table-cell; }
-              body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a span {
+              body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a span, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr td a span {
                 padding-left: 20px; }
-              body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a i {
+              body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td a i, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr td a i {
                 width: 17px; }
-            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td.theme-code, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td.theme-code {
+            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td.theme-code, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td.theme-code, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr td.theme-code {
               width: 38px; }
-            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td:first-child, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td:first-child {
+            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td:first-child, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td:first-child, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr td:first-child {
               padding-left: 20px;
               width: 60px; }
-            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td:last-child, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td:last-child {
+            body .all .ppdb-list .subjectsfilternav .result-panel .table tbody tr td:last-child, body .all .further-education-list .subjectsfilternav .result-panel .table tbody tr td:last-child, body .all .furtherEducationSpecialSearch .subjectsfilternav .result-panel .table tbody tr td:last-child {
               padding-right: 20px;
               padding-left: 20px; }
-    body .all .ppdb-list .results-table, body .all .further-education-list .results-table {
+    body .all .ppdb-list .results-table, body .all .further-education-list .results-table, body .all .furtherEducationSpecialSearch .results-table {
       z-index: 8; }
-      body .all .ppdb-list .results-table .table-responsive .table .oi-caret-bottom, body .all .ppdb-list .results-table .table-responsive .table .oi-caret-right, body .all .further-education-list .results-table .table-responsive .table .oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table .oi-caret-right {
+      body .all .ppdb-list .results-table .table-responsive .table .oi-caret-bottom, body .all .ppdb-list .results-table .table-responsive .table .oi-caret-right, body .all .further-education-list .results-table .table-responsive .table .oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table .oi-caret-right, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table .oi-caret-bottom, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table .oi-caret-right {
         font-size: 12px; }
-      body .all .ppdb-list .results-table .table-responsive .table tbody tr td, body .all .further-education-list .results-table .table-responsive .table tbody tr td {
+      body .all .ppdb-list .results-table .table-responsive .table tbody tr td, body .all .further-education-list .results-table .table-responsive .table tbody tr td, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr td {
         padding-right: 20px; }
-        body .all .ppdb-list .results-table .table-responsive .table tbody tr td a, body .all .further-education-list .results-table .table-responsive .table tbody tr td a {
-          color: #545454; }
-        body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child {
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr td a, body .all .further-education-list .results-table .table-responsive .table tbody tr td a, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr td a {
+          color: #707070; }
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr td:first-child {
           padding-right: 0;
           border-left: 0; }
-          body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span {
+          body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr td:first-child span {
             display: table-cell;
             overflow-x: hidden; }
-            body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom {
+            body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom {
               width: 30px; }
               @media (max-width: 543px) {
-                body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom {
+                body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom {
                   width: 20px; } }
-        body .all .ppdb-list .results-table .table-responsive .table tbody tr td:last-child, body .all .further-education-list .results-table .table-responsive .table tbody tr td:last-child {
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr td:last-child, body .all .further-education-list .results-table .table-responsive .table tbody tr td:last-child, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr td:last-child {
           border-right: 0; }
-      body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td {
+      body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr.result-preview td {
         border-bottom: 3px solid #ba1541; }
-        body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div {
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr.result-preview td div {
           margin-left: 30px;
           margin-bottom: 31px; }
           @media (max-width: 543px) {
-            body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div {
+            body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr.result-preview td div {
               margin-left: 20px; } }
-          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div p {
+          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr.result-preview td div p {
             font-size: 1rem; }
-          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn {
+          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr.result-preview td div .btn {
             color: white;
             background-color: #55696d; }
-        body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header {
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header {
           padding-left: 0; }
-      body .all .ppdb-list .results-table .table-responsive .table tbody tr.open td, body .all .further-education-list .results-table .table-responsive .table tbody tr.open td {
+      body .all .ppdb-list .results-table .table-responsive .table tbody tr.open td, body .all .further-education-list .results-table .table-responsive .table tbody tr.open td, body .all .furtherEducationSpecialSearch .results-table .table-responsive .table tbody tr.open td {
         border-top: 3px solid #ba1541;
         border-bottom: 0; }
     body .all .phlu-locations .row.subjectsfilternav .nav-pills {
@@ -10114,7 +10148,7 @@ body {
       body .all .row.subjectsfilternav.phlu-sitelink-tiles .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .row.subjectsfilternav.phlu-sitelink-tiles .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right.col-xs-2 {
         background-color: #e9e0d8; }
     body .all .flowtext-phlu-event a, body .all .flowtext-phlu-event a:hover, body .all .flowtext-phlu-news a, body .all .flowtext-phlu-news a:hover {
-      color: #545454; }
+      color: #707070; }
     body .all .flowtext-phlu-event > .row, body .all .flowtext-phlu-news > .row {
       padding-top: 30px; }
       body .all .flowtext-phlu-event > .row.first, body .all .flowtext-phlu-news > .row.first {
@@ -10202,7 +10236,7 @@ body {
     body .all .flowtext-phlu-news.detailView h2 {
       margin: 32px 0; }
     body .all .flowtext-phlu-event > .row .initial {
-      background-color: #2f8d99; }
+      background-color: #28818f; }
     body .all .table-responsive {
       overflow-x: inherit; }
       body .all .table-responsive .table thead tr th {
@@ -10220,14 +10254,14 @@ body {
             body .all .table-responsive .table thead tr th[class*="col-percent-"] {
               display: table-cell; } }
         body .all .table-responsive .table thead tr th a {
-          color: #545454; }
+          color: #707070; }
         @media (max-width: 767px) {
           body .all .table-responsive .table thead tr th.publicationsHeader {
             display: inherit; } }
       body .all .table-responsive .table tbody .neos-empty-contentcollection-overlay {
         display: table-cell; }
       body .all .table-responsive .table tbody tr:first-child th, body .all .table-responsive .table tbody tr:first-child td {
-        border-top: 4px solid #545454; }
+        border-top: 4px solid #707070; }
       body .all .table-responsive .table tbody tr:first-child.noborder th, body .all .table-responsive .table tbody tr:first-child.noborder td {
         border-top: 0; }
       body .all .table-responsive .table tbody tr th, body .all .table-responsive .table tbody tr td {
@@ -10435,7 +10469,7 @@ body {
           float: left;
           margin: 9px 30px 0 0; } }
       body .all .main > .row .img-and-caption .caption {
-        color: #545454;
+        color: #707070;
         font-size: 0.8rem;
         padding-top: 12px;
         padding-bottom: 16px;
@@ -10714,7 +10748,7 @@ body {
         body .all .main > .row.sephiabg address a {
           background-image: inherit; }
       body .all .main > .row.contactperson {
-        color: #545454; }
+        color: #707070; }
         @media (min-width: 544px) {
           body .all .main > .row.contactperson .col-sm-6 {
             padding-top: 10px; } }
@@ -10788,7 +10822,7 @@ body {
       bottom: 0;
       width: 100%;
       height: 420px;
-      background-color: #464340;
+      background-color: #545454;
       padding-top: 20px;
       color: white;
       /*
@@ -10910,6 +10944,70 @@ body {
       @media (min-width: 992px) {
         body .all .footer > div > .copyright {
           display: none; } }
+
+.datepicker {
+  font-size: 1.125rem;
+  border-radius: inherit !important;
+  border: 0 !important; }
+  .datepicker table thead tr th, .datepicker table thead tr td, .datepicker table tbody tr th, .datepicker table tbody tr td {
+    border-radius: 0; }
+  .datepicker table thead tr th {
+    height: 40px;
+    font-weight: normal; }
+    .datepicker table thead tr th.datepicker-switch {
+      cursor: default; }
+      .datepicker table thead tr th.datepicker-switch:hover {
+        background-color: inherit; }
+  .datepicker table tbody tr td {
+    padding: 8px 51px; }
+    @media (max-width: 1599px) {
+      .datepicker table tbody tr td {
+        padding: 8px 46px; } }
+    @media (max-width: 991px) {
+      .datepicker table tbody tr td {
+        padding: 8px 37px; } }
+    @media (max-width: 767px) {
+      .datepicker table tbody tr td {
+        padding: 8px 23px; } }
+    @media (max-width: 543px) {
+      .datepicker table tbody tr td {
+        padding: 8px 13px; } }
+    .datepicker table tbody tr td.day:hover, .datepicker table tbody tr td.focused:hover {
+      color: #55696d; }
+    .datepicker table tbody tr td.active.active, .datepicker table tbody tr td.active.disabled, .datepicker table tbody tr td.active.disabled.active, .datepicker table tbody tr td.active.disabled.disabled, .datepicker table tbody tr td.active.disabled:active, .datepicker table tbody tr td.active.disabled:hover, .datepicker table tbody tr td.active.disabled:hover.active, .datepicker table tbody tr td.active.disabled:hover.disabled, .datepicker table tbody tr td.active.disabled:hover:active, .datepicker table tbody tr td.active.disabled:hover:hover, .datepicker table tbody tr td.active:active, .datepicker table tbody tr td.active:hover, .datepicker table tbody tr td.active:hover.active, .datepicker table tbody tr td.active:hover.disabled, .datepicker table tbody tr td.active:hover:active, .datepicker table tbody tr td.active:hover:hover {
+      background-color: #91a103 !important;
+      background-image: none;
+      color: white; }
+  .datepicker table tfoot tr th:hover {
+    background-color: #91a103; }
+  .datepicker .datepicker-switch:hover, .datepicker .next:hover, .datepicker .prev:hover {
+    background-color: #91a103; }
+  .datepicker.tag-zeit table tbody tr td {
+    padding: 8px 36px; }
+    @media (max-width: 1599px) {
+      .datepicker.tag-zeit table tbody tr td {
+        padding: 8px 28px; } }
+    @media (max-width: 991px) {
+      .datepicker.tag-zeit table tbody tr td {
+        padding: 8px 18px; } }
+    @media (max-width: 767px) {
+      .datepicker.tag-zeit table tbody tr td {
+        padding: 8px 23px; } }
+    @media (max-width: 543px) {
+      .datepicker.tag-zeit table tbody tr td {
+        padding: 8px 13px; } }
+    .datepicker.tag-zeit table tbody tr td span {
+      float: inherit;
+      width: inherit;
+      display: initial;
+      margin: inherit;
+      line-height: inherit; }
+      .datepicker.tag-zeit table tbody tr td span:hover {
+        background: inherit; }
+  .datepicker.datepicker-inline {
+    margin: 0 auto;
+    width: inherit;
+    display: table; }
 
 body:last-child .blueimp-gallery > .close {
   font-size: 30px;

@@ -19,24 +19,33 @@ $grid-breakpoints: (
 // phlu colors
 $sephia: #e9e0d8;
 $sephialight: #f0e7de;
+
 $beigelight: #fbfaf4;
+
 $raspberryRed: #ba1541;
+
 $iceblue: #2a818d;
 $iceblueDark: #0A626C;
 $lightblue: #c7dee2;
+
 $lightgrey: #e5e5e5;
-$darkgrey: #464340;
-$grey: #545454;
+//$darkgrey: #464340;
+$darkgrey: #545454;
+$grey: #707070;
 $grey2: #55696d;
 $grey3: #767676;
 $grey4: #685f56;
 $grey5: #9b9b9b;
 $grey6: #55696d;
+
 $hazelbrownmedium: #9f632a;
 $hazelbrowndark: #9f632a;
 $hazelbrownlight: #c4b8ae;
-$turquoise: #2f8d99;
+
+$turquoise: #28818f;
+
 $olivegreen: #91a103;
+
 $font-color: #4c4c4c;
 $font-color-level1: #685f56;
 
@@ -919,6 +928,44 @@ body {
       border-radius: 0;
       border: 1px solid $grey5;
     }
+    .checkbox {
+
+      input[type="checkbox"] {
+        display:none;
+      }
+
+
+      input[type="checkbox"] + label span {
+        display:inline-block;
+        width:30px;
+        height:30px;
+        padding: 4px 0 0 7px;
+        margin-right:10px;
+        vertical-align:middle;
+        background-color:white;
+        cursor:pointer;
+      }
+
+      input[type="checkbox"]:checked + label span {
+        background-color:$lightgrey;
+      }
+
+      input[type="checkbox"]:checked + label span {
+        &::before {
+          font-family: Icons;
+          content:"\e033";
+          color:black;
+        }
+
+      }
+
+
+
+
+    }
+
+
+
     .dropdown {
       button {
         background-color: $grey4;
@@ -947,6 +994,9 @@ body {
 
     .input-group {
       width: initial;
+      label {
+        margin-top:20px;
+      }
       .input-group-btn {
         button {
           color: white;
@@ -976,7 +1026,7 @@ body {
         li {
           a {
             color: white;
-            padding-top: 6px;
+            padding-top: 9px;
             padding-left: 10px;
             display: block;
             height: 40px;
@@ -988,10 +1038,46 @@ body {
       }
     }
 
+    //
+    //  extended Search Filters
+    //
     .extendedSearchBg {
-      background-color: $grey;
+      padding: 20px 0;
       &.on {
-        background-color: $grey;
+        background-color: $darkgrey;
+        padding: 20px 0;
+        .form-control {
+          border-top: 0;
+          border-right: 0;
+          border-bottom: 0;
+        }
+        .extendedSearch {
+          button {
+            color: white;
+            background-color: $grey;
+            .oi {
+              display: inline-block;
+              margin-left: 15px;
+            }
+          }
+        }
+        .dropdown-menu {
+          margin-top:inherit;
+        }
+        input[type='checkbox'] {
+          width: inherit;
+          margin-right:5px;
+        }
+      }
+      .extendedSearch {
+        text-align: right;
+        margin-top: 15px;
+        button {
+          background-color: $lightgrey;
+          .oi {
+            display: none;
+          }
+        }
       }
 
       label {
@@ -1002,26 +1088,14 @@ body {
       }
       .extendedSearchFilter {
         color: white;
-        //display: none;
+        display: none;
         h3 {
           color: white;
+          margin-top: 30px;
+          margin-bottom: 0;
         }
         .input-item-col {
-          &.open {
-            &::after {
-              font-family: FontAwesome;
-              content: " \f0d8";
-            }
-          }
-          &::after {
-            font-family: FontAwesome;
-            content: " \f0d7";
-            border: inherit;
-            position: absolute;
-            right: 30px;
-            margin-top: -32px;
-            color: $font-color;
-          }
+
           .dropdown-toggle {
             background-color: white;
             color: $font-color;
@@ -1030,30 +1104,138 @@ body {
             &::after {
               border: 0;
             }
+            &.search-result-tags {
+              margin:0;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              overflow: hidden;
+              .search-result-tag {
+                color:white;
+                float: left;
+                position: relative;
+                white-space: nowrap;
+              }
+            }
+            &::after {
+              font-family: FontAwesome;
+              content: " \f0d7";
+              border: inherit;
+              position: absolute;
+              right: 25px;
+              margin-top: 8px;
+              color: white;
+              background-color: $darkgrey;
+              height: 23px;
+              width: 15px;
+              padding-right: 15px;
+              padding-left: 7px;
+            }
+          }
+          .tagFadeOutBg {
+            position: absolute;
+            display: block;
+            z-index: 999;
+            width: 10px;
+            height: 54px;
+            bottom: 0;
+            right: 15px;
+
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
+            background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+
+
+            //background-image: url("../Images/tagLimiterBg.png");
+
+
+
+
           }
           .dropdown-menu {
-            position: inherit;
             top: inherit;
             width: 100%;
-            background-color: white;
+            background-color: inherit;
+
             li {
+              margin: 0 13px;
+              background-color: white;
+              border-left: 2px solid $darkgrey;
+              border-right:2px solid $darkgrey;
               a {
                 color: $font-color;
               }
               &:hover {
                 background-color: $lightgrey;
               }
+              &:last-child {
+                -webkit-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
+                -moz-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
+                box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
+              }
+
+            }
+          }
+          #datepicker-further-education {
+            .datepicker-inline {
+              background-color: $grey5;
+            }
+            input {
+              height: 40px;
             }
           }
         }
 
+        .subjectsfilternav {
+          .col-xs-12 {
+            .nav-pills {
+              li {
+                a.nav-link {
+                  &.active {
+                    background-color: $turquoise;
+                  }
+                  .count {
+                    background-color: black;
+                  }
+                }
+                .resetFilter {
+                  a {
+                    color:white;
+                  }
+                }
+              }
+            }
+            .result-panel {
+              padding:0;
+              background-color: $turquoise;
+              .table-responsive {
+                .table {
+                  tbody {
+                    tr:first-child {
+                      td {
+                        border-top:0;
+                      }
+                    }
+                    tr {
+                      &.checked {
+                        color:black;
+                        td {
+                          a {
+                            color:black;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+
       }
-    }
-
-    .extendedSearch {
-      text-align: right;
-      margin-top: 15px;
-
     }
 
     .searchresults-filter {
@@ -1066,126 +1248,7 @@ body {
         }
       }
     }
-    //
-    // phlu datepicker
-    //
-    .datepicker {
-      font-size: $font-size-search-filters;
-      table {
-        thead, tbody {
-          tr {
-            th, td {
-              border-radius: 0;
-            }
-          }
-        }
-        thead {
-          tr {
-            th {
-              font-weight: normal;
-              &.datepicker-switch {
-                cursor: default;
-                &:hover {
-                  background-color: inherit;
-                }
-              }
-            }
-          }
-        }
-        tbody {
-          tr {
-            td {
-              padding: 8px 51px;
-              @include media-breakpoint-down("xxl") {
-                padding: 8px 46px;
-              }
-              @include media-breakpoint-down("md") {
-                padding: 8px 37px;
-              }
-              @include media-breakpoint-down("sm") {
-                padding: 8px 23px;
-              }
-              @include media-breakpoint-down("xs") {
-                padding: 8px 13px;
-              }
-              &.day, &.focused {
-                &:hover {
-                  color: $grey6;
-                }
-                &.disabled {
 
-                  &:hover {
-                    color: white;
-                  }
-                }
-              }
-              &.active {
-                background-color: $olivegreen;
-                background-image: none;
-                &:hover {
-                  background-color: $olivegreen;
-                  color: white;
-                }
-              }
-            }
-          }
-        }
-        tfoot {
-          tr {
-            th {
-              &:hover {
-                background-color: $olivegreen;
-              }
-            }
-          }
-        }
-      }
-      .datepicker-switch, .next, .prev {
-        &:hover {
-          background-color: $olivegreen;
-        }
-      }
-      &.tag-zeit {
-        table {
-          tbody {
-            tr {
-              td {
-                @include media-breakpoint-down("xxxl") {
-                  padding: 8px 36px;
-                }
-                @include media-breakpoint-down("xxl") {
-                  padding: 8px 28px;
-                }
-                @include media-breakpoint-down("md") {
-                  padding: 8px 18px;
-                }
-                @include media-breakpoint-down("sm") {
-                  padding: 8px 23px;
-                }
-                @include media-breakpoint-down("xs") {
-                  padding: 8px 13px;
-                }
-                span {
-                  float: inherit;
-                  width: inherit;
-                  display: initial;
-                  margin: inherit;
-                  line-height: inherit;
-                  &:hover {
-                    background: inherit;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      &.datepicker-inline {
-        margin: 0 auto;
-        width: inherit;
-        display: table;
-      }
-    }
     //
     // Navbar top
     // Show for mobile, hide later
@@ -2234,26 +2297,26 @@ body {
                       background-image: inherit;
                     }
                     .jobtitle {
-                      font-weight:$font-weight-bold;
+                      font-weight: $font-weight-bold;
                     }
                     .telephone {
-                      color:$hazelbrownmedium;
-                     i {
-                       margin-right:5px;
-                     }
+                      color: $hazelbrownmedium;
+                      i {
+                        margin-right: 5px;
+                      }
                     }
                     .content-link-portrait, .content-link-email-contact-person, telephone {
-                      font-size:$font-size-accordion-table;
+                      font-size: $font-size-accordion-table;
                     }
                     .mobile-view-columns {
                       .content-link-portrait, .content-link-email-contact-person {
-                        font-size:$font-size-accordion-table;
+                        font-size: $font-size-accordion-table;
 
                       }
                     }
                   }
                   td:last-child {
-                    padding-right:0;
+                    padding-right: 0;
                     text-align: right;
                   }
                 }
@@ -2605,9 +2668,12 @@ body {
         }
       }
     }
-    // phlu results-table for ppdb and further education lists
+    // phlu results-table for
+    //    ppdb lists
+    //    further education lists
     //
-    .ppdb-list, .further-education-list {
+    //
+    .ppdb-list, .further-education-list, .furtherEducationSpecialSearch {
       .list-search-field, .dropdown-search-field {
         input {
           border: 1px solid $grey;
@@ -4078,6 +4144,142 @@ body {
     //  }
     //}
   }
+
+}
+
+//
+// phlu datepicker
+//
+.datepicker {
+  font-size: $font-size-search-filters;
+  border-radius: inherit!important;
+  border:0!important;
+  table {
+    thead, tbody {
+      tr {
+        th, td {
+          border-radius: 0;
+        }
+      }
+    }
+    thead {
+      tr {
+        th {
+          height: 40px;
+          font-weight: normal;
+          &.datepicker-switch {
+            cursor: default;
+            &:hover {
+              background-color: inherit;
+            }
+          }
+        }
+      }
+    }
+tbody {
+  tr {
+    td {
+      padding: 8px 51px;
+      @include media-breakpoint-down("xxl") {
+        padding: 8px 46px;
+      }
+      @include media-breakpoint-down("md") {
+        padding: 8px 37px;
+      }
+      @include media-breakpoint-down("sm") {
+        padding: 8px 23px;
+      }
+      @include media-breakpoint-down("xs") {
+        padding: 8px 13px;
+      }
+      &.day, &.focused {
+        &:hover {
+          color: $grey6;
+        }
+      }
+      &.active.active,
+      &.active.disabled,
+      &.active.disabled.active,
+      &.active.disabled.disabled,
+      &.active.disabled:active,
+      &.active.disabled:hover,
+      &.active.disabled:hover.active,
+      &.active.disabled:hover.disabled,
+      &.active.disabled:hover:active,
+      &.active.disabled:hover:hover,
+      &.active:active,
+      &.active:hover,
+      &.active:hover.active,
+      &.active:hover.disabled,
+      &.active:hover:active,
+      &.active:hover:hover {
+        background-color: $olivegreen!important;
+        background-image: none;
+        color:white;
+      }
+
+    }
+  }
+}
+
+tfoot {
+  tr {
+    th {
+      &:hover {
+        background-color: $olivegreen;
+      }
+    }
+  }
+}
+
+}
+.datepicker-switch, .next, .prev {
+  &:hover {
+    background-color: $olivegreen;
+  }
+}
+
+&.tag-zeit {
+  table {
+    tbody {
+      tr {
+        td {
+          @include media-breakpoint-down("xxxl") {
+            padding: 8px 36px;
+          }
+          @include media-breakpoint-down("xxl") {
+            padding: 8px 28px;
+          }
+          @include media-breakpoint-down("md") {
+            padding: 8px 18px;
+          }
+          @include media-breakpoint-down("sm") {
+            padding: 8px 23px;
+          }
+          @include media-breakpoint-down("xs") {
+            padding: 8px 13px;
+          }
+          span {
+            float: inherit;
+            width: inherit;
+            display: initial;
+            margin: inherit;
+            line-height: inherit;
+            &:hover {
+              background: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+&.datepicker-inline {
+  margin: 0 auto;
+  width: inherit;
+  display: table;
+}
 
 }
 
