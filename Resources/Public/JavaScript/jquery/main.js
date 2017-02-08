@@ -251,6 +251,12 @@ $(document).ready(function () {
         language: 'de',
         maxViewMode: 0
     });
+    $('#datepicker-further-education').datepicker({
+        startDate: '0d',
+        language: 'de',
+        maxViewMode: 0
+    });
+
 
     $('#tag-zeit td').click(function () {
         if ($(this).hasClass('active')) {
