@@ -20,16 +20,16 @@ page = Page {
 
     head {
         metadata = Neos.Fusion:Template {
-            templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
+            templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
             sectionName = 'metadata'
         }
         csslinks = Neos.Fusion:Template {
-            templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
+            templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
             sectionName = 'csslinks'
         }
 
         javascripts.site = Neos.Fusion:Template {
-            templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
+            templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
             sectionName = 'headScripts'
         }
 
@@ -44,23 +44,21 @@ page = Page {
     }
 
     body {
-        templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
+        templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
         sectionName = 'body'
         parts {
 
             site = ${q(site).get(0)}
             neosliveHybridsearchFirebaseEndpoint = ${Configuration.setting('Neoslive.Hybridsearch.Firebase.endpoint')}
 
-
-
             navBarMenu = Neos.Fusion:Case {
 
                 isStartpage {
-                    condition = ${q(node).is('[!instanceof PHLU.Corporate:Page.Home]')}
+                    condition = ${q(node).is('[!instanceof Phlu.Corporate:Page.Home]')}
                     renderer = Neos.Fusion:Template {
                         menuItems = BreadcrumbMenu
 	                    itemCollection = ${q(node).add(q(node).parents('[instanceof Neos.Neos:Document]')).get()}
-                        templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/NavBarMenu.html'
+                        templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/NavBarMenu.html'
                     }
                 }
             }
@@ -68,57 +66,55 @@ page = Page {
 
             sideBarLevel0Menu = Menu {
                 entryLevel = 1
-                templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel0.html'
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel0.html'
                 maximumLevels = 1
-                filter = '!PHLU.Corporate:Page.NotInMenu, PHLU.Corporate:Page'
+                filter = '!Phlu.Corporate:Page.NotInMenu, Phlu.Corporate:Page'
 
             }
 
             sideBarLevel1Menu = Menu {
                 entryLevel = 2
-                templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1.html'
-                filter = 'PHLU.Corporate:Page, !PHLU.Corporate:Page.View.Default.Default, !PHLU.Corporate:Page.View.Onepage'
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1.html'
+                filter = 'Phlu.Corporate:Page, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage'
                 maximumLevels = 1
             }
 
             sideBarLevel1MenuGetClass = Menu {
                 entryLevel = 2
-                templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1GetClass.html'
-                filter = '!PHLU.Corporate:Page.NotInMenu, !PHLU.Corporate:Page.View.Default.Default, !PHLU.Corporate:Page.View.Onepage, PHLU.Corporate:Page'
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1GetClass.html'
+                filter = '!Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage, Phlu.Corporate:Page'
                 maximumLevels = 1
             }
 
-            breadcrumbFooter = Menu {
+            breadcrumbFooter = BreadcrumbMenu {
                 entryLevel = 2
-                templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/BreadcrumbFooter.html'
-                filter = '!PHLU.Corporate:Page.NotInMenu, !PHLU.Corporate:Page.View.Default.Default, !PHLU.Corporate:Page.View.Onepage, PHLU.Corporate:Page'
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/BreadcrumbFooter.html'
+                filter = '!Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage, Phlu.Corporate:Page'
                 maximumLevels = 1
                 attributes = sideBarLevel1MenuGetClassRow
-                breadcrumb = Breadcrumb {
-                    templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/Breadcrumb.html'
-                }
+
             }
 
             sideBarLevel1MenuGetClassRow = Menu {
                 entryLevel = 2
-                templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1GetClassRow.html'
-                filter = '!PHLU.Corporate:Page.NotInMenu, !PHLU.Corporate:Page.View.Default.Default, !PHLU.Corporate:Page.View.Onepage, PHLU.Corporate:Page'
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1GetClassRow.html'
+                filter = '!Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage, Phlu.Corporate:Page'
                 maximumLevels = 1
             }
 
             teaserMenu = Neos.Fusion:Case {
                 isStartpage {
-                    condition = ${q(node).is('[instanceof PHLU.Corporate:Page.Home]')}
+                    condition = ${q(node).is('[instanceof Phlu.Corporate:Page.Home]')}
                     renderer = Menu {
                         entryLevel = 1
-                        templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/TeaserMenu.html'
+                        templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/TeaserMenu.html'
                         maximumLevels = 1
-                        filter = '!PHLU.Corporate:Page.NotInMenu, PHLU.Corporate:Page'
+                        filter = '!Phlu.Corporate:Page.NotInMenu, Phlu.Corporate:Page'
                         startingPoint = ${q(site).get(0)}
                         pageClass = ''
                         itemClass = 'col-lg-4'
-                        defaultRenderer = PHLU.Neos.NodeTypes:Page {
-                            templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/TeaserMenuContent.html'
+                        defaultRenderer = Phlu.Neos.NodeTypes:Page {
+                            templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/TeaserMenuContent.html'
                             teaser = ${q(node).children('teaser').get(0)}
                             defaultRenderer = Neos.Neos:ContentCase
                         }
@@ -128,18 +124,18 @@ page = Page {
                 }
             }
 
-            breadcrumb = Breadcrumb {
-                templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/Breadcrumb.html'
+            breadcrumb = BreadcrumbMenu {
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/Partials/Breadcrumb.html'
             }
         }
 
         pageLevelTypeClass = Neos.Fusion:Case {
             isStartpage {
-                condition = ${q(node).is('[instanceof PHLU.Corporate:Page.Home]')}
+                condition = ${q(node).is('[instanceof Phlu.Corporate:Page.Home]')}
                 renderer = 'startpage'
             }
             isSubpage {
-                condition = ${q(node).is('[instanceof PHLU.Corporate:Page]')}
+                condition = ${q(node).is('[instanceof Phlu.Corporate:Page]')}
                 renderer = 'subpage'
             }
             fallback {
@@ -153,27 +149,28 @@ page = Page {
         // A shared footer which can be edited from all pages
         footer = Menu {
             entryLevel = 1
-            templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/FooterMenu.html'
+            templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/FooterMenu.html'
             maximumLevels = 1
-            filter = 'PHLU.Corporate:Page.Service'
+            filter = 'Phlu.Corporate:Page.Service'
             startingPoint = ${q(site).get(0)}
         }
 
         // These are your content areas, you can define as many as you want, just name them and the nodePath.
         content {
             // The default content section
-            main = Neos.Neos:ContentCase
+          main = Phlu.Corporate:PrimaryContent
+
 
         }
 
         database = Neos.Fusion:Collection {
             collection = ${q(node).find('database').children()}
             itemName = 'node'
-            itemRenderer = PHLU.Corporate:Database
+            itemRenderer = Phlu.Corporate:Database
         }
 
         javascripts.site = Neos.Fusion:Template {
-            templatePath = 'resource://PHLU.Corporate/Private/Layouts/Default.html'
+            templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
             sectionName = 'bodyScripts'
         }
     }
@@ -194,6 +191,6 @@ neosliveHybridsearch = Neos.Fusion:Collection {
 neosliveHybridsearchBreadcrumb = Neos.Fusion:Collection {
     collection = ${q(node)}
     itemName = 'node'
-    itemRenderer = Breadcrumb
+    itemRenderer = BreadcrumbMenu
 }
 

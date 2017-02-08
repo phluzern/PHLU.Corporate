@@ -1,7 +1,7 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
-{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
-
+{namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
 
 <div class="row ">
     <div class="col-xs-12">
@@ -61,9 +61,9 @@
                         <f:for each="{item}" as="col" iteration="coliterator">
                             <div class="{itemClass}">
                                 <div class="img-and-caption">
-                                    <a href="{typo3.media:uri.image(image: col.properties.image)}"
+                                    <a href="{media:uri.image(image: col.properties.image)}"
                                        title="{col.properties.title}">
-                                        <img src="{typo3.media:uri.image(image: col.properties.image)}"
+                                        <img src="{media:uri.image(image: col.properties.image)}"
                                              class="img-fluid">
                                     </a>
                                     <div class="caption">
@@ -103,9 +103,9 @@
     <div id="blueimpgallery" class="row">
         <f:for each="{imageGalleryItems}" as="item" iteration="iterator">
             <div class="col-xs-12 col-sm-6 ">
-                <a href="{typo3.media:uri.image(image: item.properties.image)}"
+                <a href="{media:uri.image(image: item.properties.image)}"
                    title="{item.properties.title}">
-                    <img src="{typo3.media:uri.image(image: item.properties.image)}"
+                    <img src="{media:uri.image(image: item.properties.image)}"
                          class="img-fluid">
                 </a>
                 <div class="caption">

@@ -1,4 +1,4 @@
-PHLUCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$element', '$rootScope', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $element, $rootScope) {
+PhluCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$element', '$rootScope', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $element, $rootScope) {
 
     $scope.map = false;
     var mapElement = $($element).find('.locationsMap')[0];

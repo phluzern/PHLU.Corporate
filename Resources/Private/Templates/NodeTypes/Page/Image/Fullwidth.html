@@ -6,7 +6,7 @@
 	<f:then>
 		<f:if condition="{image}">
 			<f:then>
-				<media:image asset="{image}" alt="{alternativeText}" class="backend-img-fullwidth" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
+				<media:image image="{image}" alt="{alternativeText}" class="backend-img-fullwidth" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
 			</f:then>
 			<f:else>
 				<f:if condition="{neos:rendering.inEditMode()}">
@@ -31,8 +31,8 @@
 		<f:if condition="{image}">
 			<f:then>
 
-				<div class="ambient-img-fullwidth" style="background-image:url('<typo3.media:uri.image asset="{image}" width="1400" maximumWidth="1400"  maximumHeight="1400" allowUpScaling="false" />')">
-				<img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/spacer.png')}" alt="" width="{image.width}" height="{image.height}">
+				<div class="ambient-img-fullwidth" style="background-image:url('<typo3.media:uri.image image="{image}" width="1400" maximumWidth="1400"  maximumHeight="1400" allowUpScaling="false" />')">
+				<img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/spacer.png')}" alt="" width="{image.width}" height="{image.height}">
 				</div>
 			</f:then>
 		</f:if>

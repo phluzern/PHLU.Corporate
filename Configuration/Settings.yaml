@@ -1,12 +1,11 @@
-
 Neos:
   Neos:
     userInterface:
       requireJsPathMapping:
-        PHLU.Corporate/Handlers: 'resource://PHLU.Corporate/Public/JavaScript/Backend/Inspector/Handlers'
+        Phlu.Corporate/Handlers: 'resource://Phlu.Corporate/Public/JavaScript/Backend/Inspector/Handlers'
       translation:
         autoInclude:
-          PHLU.Corporate:
+          Phlu.Corporate:
             - 'NodeTypes/*'
       navigateComponent:
         nodeTree:
@@ -22,7 +21,7 @@ Neos:
           icon: icon-fort-awesome
     fusion:
       autoInclude:
-        PHLU.Corporate: true
+        Phlu.Corporate: true
   Fusion:
     defaultContext:
-      PHLU.Corporate: PHLU\Corporate\Eel\Helper\NodeHelper
+      Phlu.Corporate: Phlu\Corporate\Eel\Helper\NodeHelper

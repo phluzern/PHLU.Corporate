@@ -1,18 +1,18 @@
 <?php
-namespace PHLU\Corporate\Controller;
+namespace Phlu\Corporate\Controller;
 
 /*
- * This file is part of the PHLU.Corporate package.
+ * This file is part of the Phlu.Corporate package.
  */
 
-use PHLU\Neos\Models\Domain\Model\Project;
-use PHLU\Neos\Models\Domain\Repository\PublicationRepository;
+use Phlu\Neos\Models\Domain\Model\Project;
+use Phlu\Neos\Models\Domain\Repository\PublicationRepository;
 use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Domain\Repository\SiteRepository;
 use Neos\Neos\Domain\Service\ContentContextFactory;
 use Neos\ContentRepository\Domain\Model\Node;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
-use PHLU\Neos\Models\Domain\Model\Contact;
+use Phlu\Neos\Models\Domain\Model\Contact;
 use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
 use Neos\ContentRepository\Exception\PageNotFoundException;

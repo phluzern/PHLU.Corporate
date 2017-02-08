@@ -1,5 +1,5 @@
 <?php
-namespace PHLU\Corporate\ViewHelpers\Location;
+namespace Phlu\Corporate\ViewHelpers\Location;
 
 /*
  * This file is part of the Neos.Neos package.
@@ -49,7 +49,7 @@ class ReferencesViewHelper extends AbstractViewHelper
                     $reference
                 ));
 
-                $referenceNode = $flowQuery->closest("[instanceof PHLU.Neos.NodeTypes:Page]")->get(0);
+                $referenceNode = $flowQuery->closest("[instanceof Phlu.Neos.NodeTypes:Page]")->get(0);
 
                 if ($referenceNode->getParent()) {
                     if (isset($nodes[$referenceNode->getParent()->getNodeData()->getProperty('title')]) === false) {

@@ -6,7 +6,7 @@
                 <f:for each="{items}" as="item" reverse="TRUE">
                     <f:if condition="{item.hiddenInIndex} == 0">
                         <li class="breadcrumb-item">
-                            <neos:link.node node="{item}"/>
+                            <neos:link.node node="{item.node}" />
                         </li>
                     </f:if>
                 </f:for>

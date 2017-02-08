@@ -1,10 +1,10 @@
 # Content
 
-'PHLU.Corporate:Content':
+'Phlu.Corporate:Content':
   superTypes:
-    'PHLU.Neos.NodeTypes:Content': true
+    'Phlu.Neos.NodeTypes:Content': true
   abstract: true
-'PHLU.Corporate:Content.Page.HeaderDefault':
+'Phlu.Corporate:Content.Page.HeaderDefault':
   ui:
     label: Header
     icon: icon-header
@@ -13,10 +13,10 @@
       '*': false
   childNodes:
     title:
-      type: 'PHLU.Corporate:Headline'
+      type: 'Phlu.Corporate:Headline'
     text:
-      type: 'PHLU.Corporate:TextPlain'
-'PHLU.Corporate:Content.Page.TeaserDefault':
+      type: 'Phlu.Corporate:TextPlain'
+'Phlu.Corporate:Content.Page.TeaserDefault':
   ui:
     label: Teaser
     icon: icon-header
@@ -27,7 +27,7 @@
     teaserText:
       type: string
       defaultValue: 'Bitte geben Sie einen Teaser-Text ein.'
-'PHLU.Corporate:Content.Carousel':
+'Phlu.Corporate:Content.Carousel':
   abstract: true
   ui:
     label: Karussell
@@ -42,14 +42,14 @@
       '*': false
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.Carousel'
-'PHLU.Corporate:Content.CarouselNews':
+      type: 'Phlu.Corporate:ContentCollection.Carousel'
+'Phlu.Corporate:Content.CarouselNews':
   superTypes:
-    'PHLU.Corporate:Content.Carousel': true
+    'Phlu.Corporate:Content.Carousel': true
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.CarouselNews'
-'PHLU.Corporate:Content.Page.TargetGroup':
+      type: 'Phlu.Corporate:ContentCollection.CarouselNews'
+'Phlu.Corporate:Content.Page.TargetGroup':
   ui:
     label: Zielpublikum
     icon: icon-header
@@ -63,10 +63,10 @@
       defaultValue: 'Weitere Angebote für'
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.Page.TargetGroup'
-'PHLU.Corporate:Content.Page.TargetGroupElement':
+      type: 'Phlu.Corporate:ContentCollection.Page.TargetGroup'
+'Phlu.Corporate:Content.Page.TargetGroupElement':
   superTypes:
-    'PHLU.Neos.NodeTypes:Content': true
+    'Phlu.Neos.NodeTypes:Content': true
   ui:
     label: Zielpublikum
     inlineEditable: true
@@ -98,11 +98,11 @@
       defaultValue: true
   childNodes:
     header:
-      type: 'PHLU.Corporate:Content.Page.HeaderDefault'
-'PHLU.Corporate:AccordeonElement':
+      type: 'Phlu.Corporate:Content.Page.HeaderDefault'
+'Phlu.Corporate:AccordeonElement':
   superTypes:
-    'PHLU.Neos.NodeTypes:Content': true
-    'PHLU.Neos.NodeTypes:PlainTitleMixin': true
+    'Phlu.Neos.NodeTypes:Content': true
+    'Phlu.Neos.NodeTypes:PlainTitleMixin': true
   ui:
     label: 'Accordeon Element'
     icon: icon-header
@@ -115,13 +115,13 @@
       defaultValue: 'Hier kommt ein Titel'
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.Accordeon'
-'PHLU.Corporate:Headline':
+      type: 'Phlu.Corporate:ContentCollection.Accordeon'
+'Phlu.Corporate:Headline':
   superTypes:
-    'PHLU.Neos.NodeTypes:Headline': true
-'PHLU.Corporate:Text':
+    'Phlu.Neos.NodeTypes:Headline': true
+'Phlu.Corporate:Text':
   superTypes:
-    'PHLU.Neos.NodeTypes:TextPlain': true
+    'Phlu.Neos.NodeTypes:TextPlain': true
   properties:
     text:
       ui:
@@ -162,16 +162,15 @@
             strippedElements:
               - '*'
             autoparagraph: false
-'PHLU.Corporate:TextPlain':
+'Phlu.Corporate:TextPlain':
   superTypes:
-    'PHLU.Neos.NodeTypes:TextPlain': true
-'PHLU.Corporate.NodeTypes:ContentImageMixin':
+    'Phlu.Neos.NodeTypes:TextPlain': true
+'Phlu.Corporate.NodeTypes:ContentImageMixin':
   abstract: true
   superTypes:
     'Neos.NodeTypes:ImageMixin': true
-    '': true
-    'PHLU.Corporate.NodeTypes:ImageCaptionMixin': true
-'PHLU.Corporate.NodeTypes:ImageCaptionMixin':
+    'Phlu.Corporate.NodeTypes:ImageCaptionMixin': true
+'Phlu.Corporate.NodeTypes:ImageCaptionMixin':
   abstract: true
   superTypes:
     'Neos.NodeTypes:ImageCaptionMixin': true
@@ -180,10 +179,10 @@
       ui:
         aloha:
           autoparagraph: false
-'PHLU.Corporate:TextWithImage':
+'Phlu.Corporate:TextWithImage':
   superTypes:
-    'PHLU.Corporate:Text': true
-    'PHLU.Corporate.NodeTypes:ContentImageMixin': true
+    'Phlu.Corporate:Text': true
+    'Phlu.Corporate.NodeTypes:ContentImageMixin': true
   ui:
     label: 'Text mit Bild'
     icon: icon-picture
@@ -238,20 +237,20 @@
                 locked:
                   width: 237
                   height: 336
-'PHLU.Corporate:Image':
+'Phlu.Corporate:Image':
   superTypes:
-    'PHLU.Corporate:Content': true
+    'Phlu.Corporate:Content': true
     'Neos.NodeTypes:ImageMixin': true
   ui:
     label: Bild
     icon: icon-picture
     position: 400
-'PHLU.Corporate:MediaGallery':
+'Phlu.Corporate:MediaGallery':
   superTypes:
-    'PHLU.Corporate:Content': true
+    'Phlu.Corporate:Content': true
   constraints:
     nodeTypes:
-      'PHLU.Corporate:CarouselImage': true
+      'Phlu.Corporate:CarouselImage': true
   ui:
     label: Mediensammlung
     icon: icon-picture
@@ -284,10 +283,10 @@
                 label: Vorschaubilder
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.MediaGallery'
-'PHLU.Corporate:CarouselImage':
+      type: 'Phlu.Corporate:ContentCollection.MediaGallery'
+'Phlu.Corporate:CarouselImage':
   superTypes:
-    'PHLU.Corporate:Image': true
+    'Phlu.Corporate:Image': true
   ui:
     label: Bild
     icon: icon-picture

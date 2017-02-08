@@ -4,17 +4,34 @@ portrait < page
 
 portrait {
 
+
+
     body {
 
-        content.main = PHLU.Corporate:Page {
+        content.main = Phlu.Corporate:Page {
 
-            templatePath = 'resource://PHLU.Corporate/Private/Templates/Portrait/Default.html'
+            templatePath = 'resource://Phlu.Corporate/Private/Templates/Portrait/Default.html'
             node = ${q(node).get(0)}
 
-            contact = ${PHLU.Corporate.getContact(node)}
+            contact = ${Phlu.Corporate.getContact(node)}
+            @cache {
+                mode = 'uncached'
+                context {
+                    1 = 'node'
+                    2 = 'documentNode'
+                }
+            }
 
-            breadcrumb = Breadcrumb {
-                templatePath = 'resource://PHLU.Corporate/Private/Templates/Portrait/Breadcrumb.html'
+            breadcrumb = BreadcrumbMenu {
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/Portrait/Breadcrumb.html'
+                contact = ${Phlu.Corporate.getContact(node)}
+                @cache {
+                    mode = 'uncached'
+                    context {
+                        1 = 'node'
+                        2 = 'documentNode'
+                    }
+                }
 
             }
 
@@ -23,4 +40,14 @@ portrait {
 
 
     }
+
+    @cache {
+        mode = 'uncached'
+        context {
+            1 = 'node'
+            2 = 'documentNode'
+        }
+    }
+
+
 }

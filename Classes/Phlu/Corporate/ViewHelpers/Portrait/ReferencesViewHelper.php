@@ -1,5 +1,5 @@
 <?php
-namespace PHLU\Corporate\ViewHelpers\Portrait;
+namespace Phlu\Corporate\ViewHelpers\Portrait;
 
 /*
  * This file is part of the Neos.Neos package.
@@ -11,12 +11,12 @@ namespace PHLU\Corporate\ViewHelpers\Portrait;
  * source code.
  */
 
-use PHLU\Neos\Models\Domain\Model\Contact;
+use Phlu\Neos\Models\Domain\Model\Contact;
 use Neos\Flow\Annotations as Flow;
 use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
 use Neos\ContentRepository\Domain\Model\Node;
 use Neos\Eel\FlowQuery\FlowQuery;
-use PHLU\Corporate\Factory\ContextFactory;
+use Phlu\Corporate\Factory\ContextFactory;
 
 /**
  * Portrait view helper
@@ -45,29 +45,39 @@ class ReferencesViewHelper extends AbstractViewHelper
     public function render($contact)
     {
 
+
+
+        if (!$contact) {
+            return null;
+        }
+
         $nodes = array();
+        $references = array();
+
         $flowQuery = new FlowQuery(array($this->contextFactory->getRootNode()));
 
-        foreach ($flowQuery->find("[instanceof PHLU.Corporate:Contact][contact=" . $contact->getEventoid() . "]") as $reference) {
+
+        foreach ($flowQuery->find("[instanceof Phlu.Corporate:Contact][contact=" . $contact->getEventoid() . "]") as $reference) {
 
             /** @var Node $reference */
-
 
             $flowQuery = new FlowQuery(array(
                 $reference
             ));
 
-            $referenceNode = $flowQuery->closest("[instanceof PHLU.Neos.NodeTypes:Page]")->get(0);
+            $referenceNode = $flowQuery->closest("[instanceof Phlu.Neos.NodeTypes:Page]")->get(0);
 
-            if ($referenceNode->getParent()) {
+            if (isset($references[$referenceNode->getIdentifier()]) === false && $referenceNode->getParent()) {
                 if (isset($nodes[$referenceNode->getParent()->getNodeData()->getProperty('title')]) === false) {
                     $nodes[$referenceNode->getParent()->getNodeData()->getProperty('title')] = array();
                 }
                 array_push($nodes[$referenceNode->getParent()->getNodeData()->getProperty('title')], $referenceNode);
+                $references[$referenceNode->getIdentifier()] = true;
             }
 
 
         }
+
 
 
         return $nodes;

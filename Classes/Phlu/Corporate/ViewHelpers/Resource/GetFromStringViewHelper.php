@@ -1,5 +1,5 @@
 <?php
-namespace PHLU\Corporate\ViewHelpers\Resource;
+namespace Phlu\Corporate\ViewHelpers\Resource;
 
 /*
  * This file is part of the Neos.Neos package.
@@ -17,7 +17,7 @@ use Neos\Flow\Mvc\Routing\UriBuilder;
 use Neos\Flow\ResourceManagement\PersistentResource;
 use Neos\Flow\ResourceManagement\ResourceRepository;
 use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
-use PHLU\Neos\Models\Domain\Repository\ContactRepository;
+use Phlu\Neos\Models\Domain\Repository\ContactRepository;
 use Neos\Media\Domain\Repository\AssetRepository;
 
 /**

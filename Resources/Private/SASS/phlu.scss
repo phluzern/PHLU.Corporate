@@ -598,15 +598,15 @@ body.neos-backend {
     }
   }
 
-  table > tbody span[data-neos-node-type="PHLU.Corporate:Table.Row"],
-  table > thead span[data-neos-node-type="PHLU.Corporate:Table"] {
+  table > tbody span[data-neos-node-type="Phlu.Corporate:Table.Row"],
+  table > thead span[data-neos-node-type="Phlu.Corporate:Table"] {
     display: block;
     width: 100%;
   }
 
-  a[typeof='typo3:PHLU.Corporate:Tag'] .neos-empty-contentcollection-overlay,
-  a[typeof='typo3:PHLU.Corporate:Section'] .neos-empty-contentcollection-overlay,
-  div[typeof='typo3:PHLU.Corporate:ContentCollection.Tags'] .neos-empty-contentcollection-overlay {
+  a[typeof='typo3:Phlu.Corporate:Tag'] .neos-empty-contentcollection-overlay,
+  a[typeof='typo3:Phlu.Corporate:Section'] .neos-empty-contentcollection-overlay,
+  div[typeof='typo3:Phlu.Corporate:ContentCollection.Tags'] .neos-empty-contentcollection-overlay {
     display: none;
   }
   #anchornavigation-collection .neos-empty-contentcollection-overlay {

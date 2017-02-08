@@ -6552,13 +6552,13 @@ body.neos-backend .neos-select2-result-label .strategieIco::before {
   font-size: 21px;
   margin-left: -4px;
   margin-right: -3px; }
-body.neos-backend table > tbody span[data-neos-node-type="PHLU.Corporate:Table.Row"],
-body.neos-backend table > thead span[data-neos-node-type="PHLU.Corporate:Table"] {
+body.neos-backend table > tbody span[data-neos-node-type="Phlu.Corporate:Table.Row"],
+body.neos-backend table > thead span[data-neos-node-type="Phlu.Corporate:Table"] {
   display: block;
   width: 100%; }
-body.neos-backend a[typeof='typo3:PHLU.Corporate:Tag'] .neos-empty-contentcollection-overlay,
-body.neos-backend a[typeof='typo3:PHLU.Corporate:Section'] .neos-empty-contentcollection-overlay,
-body.neos-backend div[typeof='typo3:PHLU.Corporate:ContentCollection.Tags'] .neos-empty-contentcollection-overlay {
+body.neos-backend a[typeof='typo3:Phlu.Corporate:Tag'] .neos-empty-contentcollection-overlay,
+body.neos-backend a[typeof='typo3:Phlu.Corporate:Section'] .neos-empty-contentcollection-overlay,
+body.neos-backend div[typeof='typo3:Phlu.Corporate:ContentCollection.Tags'] .neos-empty-contentcollection-overlay {
   display: none; }
 body.neos-backend #anchornavigation-collection .neos-empty-contentcollection-overlay {
   display: block; }

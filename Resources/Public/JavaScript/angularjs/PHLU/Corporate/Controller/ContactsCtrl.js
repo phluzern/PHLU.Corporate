@@ -1,7 +1,7 @@
 
 
-// PHLU.Corporate:Page.View.Default filter tag navigation
-PHLUCorporateApp.controller('ContactsCtrl', ['$scope','$timeout','$cookies',function($scope,$timeout,$cookies) {
+// Phlu.Corporate:Page.View.Default filter tag navigation
+PhluCorporateApp.controller('ContactsCtrl', ['$scope','$timeout','$cookies',function($scope,$timeout,$cookies) {
 
 
 

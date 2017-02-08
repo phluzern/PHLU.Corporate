@@ -1,7 +1,7 @@
 
-'PHLU.Corporate:Tag':
+'Phlu.Corporate:Tag':
   superTypes:
-    'PHLU.Neos.NodeTypes:Tag': true
+    'Phlu.Neos.NodeTypes:Tag': true
   properties:
     icon:
       ui:
@@ -12,9 +12,9 @@
             dataSourceIdentifier: phlu-corporate-tags-icon
             allowEmpty: true
             multiple: false
-'PHLU.Corporate:Tags.Menu':
+'Phlu.Corporate:Tags.Menu':
   superTypes:
-    'PHLU.Corporate:Content': true
+    'Phlu.Corporate:Content': true
   ui:
     icon: icon-tag
     label: Menu
@@ -26,4 +26,4 @@
         inlineEditable: true
   constraints:
     nodeTypes:
-      'PHLU.Corporate:Tag': true
+      'Phlu.Corporate:Tag': true

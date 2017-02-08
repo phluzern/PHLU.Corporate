@@ -1,9 +1,9 @@
 # Contact
 
-'PHLU.Corporate:Contact':
+'Phlu.Corporate:Contact':
   superTypes:
-    'PHLU.Corporate:Content': true
-    'PHLU.Neos.NodeTypes:Database': true
+    'Phlu.Corporate:Content': true
+    'Phlu.Neos.NodeTypes:Database': true
   hybridsearch:
     properties:
       portrait: neosliveHybridsearchContactsPortraitUrl
@@ -193,21 +193,21 @@
           editorListeners:
             contact:
               property: contact
-              handler: PHLU.Corporate/Handlers/ContactHandler
-'PHLU.Corporate:Contacts':
+              handler: Phlu.Corporate/Handlers/ContactHandler
+'Phlu.Corporate:Contacts':
   superTypes:
-    'PHLU.Corporate:Content': true
+    'Phlu.Corporate:Content': true
   ui:
     label: Kontakte
     icon: icon-phone
     inlineEditable: true
   childNodes:
     main:
-      type: 'PHLU.Neos.NodeTypes:ContentCollection.Contacts'
-'PHLU.Corporate:ContactsGroup':
+      type: 'Phlu.Neos.NodeTypes:ContentCollection.Contacts'
+'Phlu.Corporate:ContactsGroup':
   superTypes:
-    'PHLU.Corporate:Content': true
-    'PHLU.Neos.NodeTypes:PlainTitleMixin': true
+    'Phlu.Corporate:Content': true
+    'Phlu.Neos.NodeTypes:PlainTitleMixin': true
   ui:
     label: Team
     selectHelper: true
@@ -222,4 +222,4 @@
       defaultValue: 'Team Bezeichnung eingeben'
   childNodes:
     main:
-      type: 'PHLU.Neos.NodeTypes:ContentCollection.ContactsGroup'
+      type: 'Phlu.Neos.NodeTypes:ContentCollection.ContactsGroup'

@@ -1,21 +1,21 @@
-prototype(PHLU.Corporate:Tags.Menu) <  prototype(PHLU.Corporate:Content)  {
+prototype(Phlu.Corporate:Tags.Menu) <  prototype(Phlu.Corporate:Content)  {
 
-        templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Tags/Menu.html'
+        templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Tags/Menu.html'
 
 
         filterCollection =  ${q(node).children().get(0)}
 
         filterMenu = Menu {
                 entryLevel = 0
-                templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Tags/MenuFilter.html'
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Tags/MenuFilter.html'
                 sectionName = 'default'
-                maximumLevels = ${q(node).closest('[instanceof PHLU.Corporate:Page]').children('[instanceof PHLU.Corporate:Page.View.Default.Default]').children('[instanceof PHLU.Corporate:Page.View.Default]') ? 2 : 1}
-                filter = 'Neos.Neos:Shortcut, PHLU.Corporate:Page'
+                maximumLevels = ${q(node).closest('[instanceof Phlu.Corporate:Page]').children('[instanceof Phlu.Corporate:Page.View.Default.Default]').children('[instanceof Phlu.Corporate:Page.View.Default]') ? 2 : 1}
+                filter = 'Neos.Neos:Shortcut, Phlu.Corporate:Page'
                 startingPoint = ${q(node).parent().parent().get(0)}
-                alltags = ${q(node).find('[instanceof PHLU.Neos.NodeTypes:Tag]').get()}
+                alltags = ${q(node).find('[instanceof Phlu.Neos.NodeTypes:Tag]').get()}
                 label = ${q(node).property('lable')}
                 title = ${q(node).property('title')}
-                tagRenderer = PHLU.Corporate:Tag
+                tagRenderer = Phlu.Corporate:Tag
                 filterCollection =  ${q(node).children().get(0)}
 
 

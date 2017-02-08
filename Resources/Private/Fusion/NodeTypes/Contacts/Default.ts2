@@ -1,7 +1,7 @@
 # Content
-prototype(PHLU.Corporate:Contact) < prototype(PHLU.Corporate:Content) {
+prototype(Phlu.Corporate:Contact) < prototype(Phlu.Corporate:Content) {
 
-templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/Fullwidth.html'
+templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Fullwidth.html'
 isHidden = ${q(node).get(0).context.workspaceName == 'live' ?((String.length(q(node).property('lastname'))> 0 || q(node).property('contact'))> 0 && q(node).property('ishidden')!= TRUE ? false : true): q(node).property('ishidden')}
 lastname = ${q(node).property('lastname')}
 firstname = ${q(node).property('firstname')}
@@ -21,23 +21,23 @@ fullname = ${q(node).property('titlename')== '' ? this.titlename + " " + this.fi
 }
 
 # Contacts wrapper (default)
-prototype(PHLU.Corporate:Contacts)< prototype(PHLU.Corporate:Content) {
+prototype(Phlu.Corporate:Contacts)< prototype(Phlu.Corporate:Content) {
 
-templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/Wrapper.html'
+templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Wrapper.html'
 attributes.class = 'phlu-team-members'
 items = ${q(node).children('main')}
 defaultRenderer = Neos.Neos:ContentCase
 
 
 
-collectionRenderer = PHLU.Corporate:ContentCollection {
+collectionRenderer = Phlu.Corporate:ContentCollection {
 
     }
 
 
 
-prototype(PHLU.Corporate:Contact)  {
-wrapperNode = ${q(node).closest('[instanceof PHLU.Corporate:Contacts]').get(0)}
+prototype(Phlu.Corporate:Contact)  {
+wrapperNode = ${q(node).closest('[instanceof Phlu.Corporate:Contacts]').get(0)}
 @cache {
 mode = 'uncached'
 context {
@@ -47,11 +47,11 @@ context {
             }
         }
 
-prototype(PHLU.Corporate:ContactsGroup)  {
+prototype(Phlu.Corporate:ContactsGroup)  {
 
-contactGroupsCount = ${q(node).parent().find('[instanceof PHLU.Corporate:ContactsGroup]').count()}
-templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/Group.html'
-collectionRenderer = PHLU.Corporate:ContentCollection {
+contactGroupsCount = ${q(node).parent().find('[instanceof Phlu.Corporate:ContactsGroup]').count()}
+templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Group.html'
+collectionRenderer = Phlu.Corporate:ContentCollection {
 
                 }
 main = ${q(node).children('main').get(0)}
@@ -64,27 +64,27 @@ main = ${q(node).children('main').get(0)}
 
 
 # Contacts wrapper (tile)
-prototype(PHLU.Corporate:Contacts) {
+prototype(Phlu.Corporate:Contacts) {
 
 collectionRenderer.attributes.class = 'row phlu-teaser navigation subpage'
-prototype(PHLU.Corporate:Contact).templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/Tile.html'
-prototype(PHLU.Corporate:Contact).attributes.class = 'col-xs-12 col-md-6 nav-teaser-item'
-prototype(PHLU.Corporate:ContactsGroup).attributes.class = 'col-xs-12'
-prototype(PHLU.Corporate:ContactsGroup).collectionRenderer.attributes.class = 'row'
+prototype(Phlu.Corporate:Contact).templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Tile.html'
+prototype(Phlu.Corporate:Contact).attributes.class = 'col-xs-12 col-md-6 nav-teaser-item'
+prototype(Phlu.Corporate:ContactsGroup).attributes.class = 'col-xs-12'
+prototype(Phlu.Corporate:ContactsGroup).collectionRenderer.attributes.class = 'row'
 }
 
 
 # Contacts wrapper (list)
-prototype(PHLU.Corporate:Contacts) {
+prototype(Phlu.Corporate:Contacts) {
 
 collectionRenderer.attributes.id = ${'accordion-' + q(node).parent().get(0).Identifier}
 collectionRenderer.attributes.class = 'phlu-accordion'
 collectionRenderer.attributes.role = 'tablist'
 collectionRenderer.attributes.aria-multiselectable = 'true'
-prototype(PHLU.Corporate:ContactsGroup).attributes.class = ''
-prototype(PHLU.Corporate:ContactsGroup).collectionRenderer.attributes.class = ''
-prototype(PHLU.Corporate:Contact).templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/List.html'
-prototype(PHLU.Corporate:Contact).attributes.class = 'panel panel-default'
+prototype(Phlu.Corporate:ContactsGroup).attributes.class = ''
+prototype(Phlu.Corporate:ContactsGroup).collectionRenderer.attributes.class = ''
+prototype(Phlu.Corporate:Contact).templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/List.html'
+prototype(Phlu.Corporate:Contact).attributes.class = 'panel panel-default'
 
 }
 
@@ -93,7 +93,7 @@ prototype(PHLU.Corporate:Contact).attributes.class = 'panel panel-default'
 
 
 neosliveHybridsearchContactsPortraitUrl = Neos.Fusion:Template {
-templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Contacts/PortraitUrl.html'
+templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/PortraitUrl.html'
 node = ${node}
 }
 

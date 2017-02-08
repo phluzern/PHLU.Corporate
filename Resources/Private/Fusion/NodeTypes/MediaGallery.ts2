@@ -1,9 +1,9 @@
 # Content
-prototype(PHLU.Corporate:MediaGallery) < prototype(PHLU.Corporate:Content) {
+prototype(Phlu.Corporate:MediaGallery) < prototype(Phlu.Corporate:Content) {
 
-	templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/MediaGallery.html'
+	templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/MediaGallery.html'
 
-	collectionRenderer = PHLU.Corporate:ContentCollection.MediaGallery
+	collectionRenderer = Phlu.Corporate:ContentCollection.MediaGallery
 	main = ${q(node).children('main').get(0)}
 
 	carouselItems = ${q(node).children('main').children().get()}
@@ -11,7 +11,7 @@ prototype(PHLU.Corporate:MediaGallery) < prototype(PHLU.Corporate:Content) {
 	carouselItemsRenderer = Neos.Neos:ContentCase
 
 	# Default Text with Image
-	prototype(PHLU.Corporate:CarouselImage) {
+	prototype(Phlu.Corporate:CarouselImage) {
 		width = 900
 		height = 530
 		allowUpScaling = true
@@ -20,18 +20,18 @@ prototype(PHLU.Corporate:MediaGallery) < prototype(PHLU.Corporate:Content) {
 
 
 # Media Gallery content collection
-prototype(PHLU.Corporate:ContentCollection.CarouselNews) < prototype(Neos.Neos:ContentCollection) {
+prototype(Phlu.Corporate:ContentCollection.CarouselNews) < prototype(Neos.Neos:ContentCollection) {
 
 	attributes.class = 'row'
 
 
-	prototype(PHLU.Corporate:Event) {
+	prototype(Phlu.Corporate:Event) {
 
 		breakpointClass = 'col-xl-4'
 
 	}
 
-	prototype(PHLU.Corporate:NewsItem) {
+	prototype(Phlu.Corporate:NewsItem) {
 
 		breakpointClass = 'col-xl-4'
 

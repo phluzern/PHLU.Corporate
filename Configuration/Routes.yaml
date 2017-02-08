@@ -1,11 +1,11 @@
 #
-# PHLU corporate routes
+# Phlu corporate routes
 #
 -
   name: 'Portrait Route Resolver'
   uriPattern: '{node}/portrait/{contact}<defaultUriSuffix>'
   defaults:
-    '@package': 'PHLU.Corporate'
+    '@package': 'Phlu.Corporate'
     '@controller': 'Portrait'
     '@format': 'html'
     '@action': 'view'
@@ -15,19 +15,19 @@
       options:
         onlyMatchSiteNodes: false
     'contact':
-      handler: 'PHLU\Corporate\Routing\ContactNodeRoutePartHandler'
+      handler: 'Phlu\Corporate\Routing\ContactNodeRoutePartHandler'
 
 -
   name: 'Dozpage Route Resolver'
   uriPattern: '{contact}'
   defaults:
-    '@package': 'PHLU.Corporate'
+    '@package': 'Phlu.Corporate'
     '@controller': 'Portrait'
     '@format': 'html'
     '@action': 'viewPortrait'
   routeParts:
     'contact':
-      handler: 'PHLU\Corporate\Routing\ContactNodeRoutePartHandler'
+      handler: 'Phlu\Corporate\Routing\ContactNodeRoutePartHandler'
       options:
         onlyMatchSiteNodes: false
 
@@ -35,13 +35,13 @@
   name: 'Dozpage Route Resolver'
   uriPattern: '{contact}<defaultUriSuffix>'
   defaults:
-    '@package': 'PHLU.Corporate'
+    '@package': 'Phlu.Corporate'
     '@controller': 'Portrait'
     '@format': 'html'
     '@action': 'viewPortrait'
   routeParts:
     'contact':
-      handler: 'PHLU\Corporate\Routing\ContactNodeRoutePartHandler'
+      handler: 'Phlu\Corporate\Routing\ContactNodeRoutePartHandler'
       options:
         onlyMatchSiteNodes: false
 
@@ -51,13 +51,13 @@
   name: 'Project Detail Route Resolver'
   uriPattern: 'forschung/projekte/{project}/{title}<defaultUriSuffix>'
   defaults:
-    '@package': 'PHLU.Corporate'
+    '@package': 'Phlu.Corporate'
     '@controller': 'Project'
     '@format': 'html'
     '@action': 'view'
   routeParts:
     'project':
-      handler: 'PHLU\Corporate\Routing\ProjectNodeRoutePartHandler'
+      handler: 'Phlu\Corporate\Routing\ProjectNodeRoutePartHandler'
       options:
         onlyMatchSiteNodes: false
 
@@ -65,13 +65,13 @@
 
 
 #
-# PHLU corporate routes
+# Phlu corporate routes
 #
 -
   name: 'Portrait Route Builder'
   uriPattern: '{node}/portrait/{contact}<defaultUriSuffix>'
   defaults:
-    '@package': 'PHLU.Corporate'
+    '@package': 'Phlu.Corporate'
     '@controller': 'Portrait'
     '@format': 'html'
     '@action': 'view'
@@ -84,26 +84,26 @@
 
 
 #
-# PHLU corporate routes  (use for link uri builder)
+# Phlu corporate routes  (use for link uri builder)
 #
 -
   name: 'Portrait Self Target Route Builder'
   uriPattern: '{contact}<defaultUriSuffix>'
   defaults:
-    '@package': 'PHLU.Corporate'
+    '@package': 'Phlu.Corporate'
     '@controller': 'Portrait'
     '@format': 'html'
     '@action': 'viewPortrait'
 
 
 #
-# PHLU corporate routes (use for link uri builder)
+# Phlu corporate routes (use for link uri builder)
 #
 -
   name: 'Projects Route Builder'
   uriPattern: 'forschung/projekte/{project}/{title}<defaultUriSuffix>'
   defaults:
-    '@package': 'PHLU.Corporate'
+    '@package': 'Phlu.Corporate'
     '@controller': 'Project'
     '@format': 'html'
     '@action': 'load'

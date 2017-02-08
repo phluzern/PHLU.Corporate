@@ -1,9 +1,9 @@
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace neos=Neos\Neos\ViewHelpers}
-{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
+{namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
 {namespace media=Neos\Media\ViewHelpers}
-{namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
-{namespace resource=PHLU\Corporate\ViewHelpers\Resource}
+{namespace portrait=Phlu\Corporate\ViewHelpers\Portrait}
+{namespace resource=Phlu\Corporate\ViewHelpers\Resource}
 
 <f:if condition="{isHidden}">
     <f:else>
@@ -36,7 +36,7 @@
                 <div class="phlu-teaser-caret-right col-xs-4">
                     <f:if condition="{image}">
                         <media:image
-                                asset="{image}"
+                                image="{image}"
                                 class="img-fluid"
                                 alt="{participant.name}" height="133" width="100" allowCropping="true"
                                 allowUpScaling="true"/>

@@ -1,5 +1,5 @@
 <?php
-namespace PHLU\Corporate\DataSource;
+namespace Phlu\Corporate\DataSource;
 
 use Neos\Neos\Service\DataSource\AbstractDataSource;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
@@ -39,7 +39,7 @@ class OusDataSource extends AbstractDataSource {
         ));
 
         if ($flowQuery->get(0) && $flowQuery->get(1) && $flowQuery->get(2)) {
-            $nodes = $flowQuery->find("[instanceof PHLU.Neos.NodeTypes:Page]")->get();
+            $nodes = $flowQuery->find("[instanceof Phlu.Neos.NodeTypes:Page]")->get();
 
             foreach ($nodes as $tag) {
                 /** @var Node $tag */

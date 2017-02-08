@@ -1,5 +1,5 @@
 <?php
-namespace PHLU\Corporate\Routing;
+namespace Phlu\Corporate\Routing;
 
 /*
  * This file is part of the Neos.Neos package.
@@ -11,31 +11,31 @@ namespace PHLU\Corporate\Routing;
  * source code.
  */
 
-use PHLU\Neos\Models\Domain\Repository\ContactRepository;
+use Phlu\Neos\Models\Domain\Repository\ProjectRepository;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Mvc\Routing\IdentityRoutePart;
 
 /**
  * A route part handler for finding nodes specifically in the website's frontend.
  */
-class ContactNodeRoutePartHandler extends IdentityRoutePart
+class ProjectNodeRoutePartHandler extends IdentityRoutePart
 {
 
 
     /**
      * @Flow\Inject
-     * @var ContactRepository
+     * @var ProjectRepository
      */
-    protected $contactRepository;
+    protected $ProjectRepository;
 
 
     /**
-     * ContactNodeRoutePartHandler constructor.
+     * ProjectNodeRoutePartHandler constructor.
      */
     public function __construct()
     {
 
-        $this->objectType = 'PHLU\Neos\Models\Domain\Model\Contact';
+        $this->objectType = 'Phlu\Neos\Models\Domain\Model\Project';
     }
 
 
@@ -51,10 +51,10 @@ class ContactNodeRoutePartHandler extends IdentityRoutePart
     {
 
 
-            $contact = $this->contactRepository->getOneByEmailPart(str_replace("-at-","@",$pathSegment));
+            $Project = $this->ProjectRepository->getOneByPpDbId($pathSegment);
 
-            if ($contact) {
-                return $contact->getIdentifier();
+            if ($Project) {
+                return $Project->getIdentifier();
             }
 
             return null;

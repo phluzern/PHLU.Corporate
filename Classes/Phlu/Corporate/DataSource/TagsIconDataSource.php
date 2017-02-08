@@ -1,10 +1,10 @@
 <?php
-namespace PHLU\Corporate\DataSource;
+namespace Phlu\Corporate\DataSource;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Service\DataSource\AbstractDataSource;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
-use PHLU\Neos\Models\Domain\Repository\ContactRepository;
+use Phlu\Neos\Models\Domain\Repository\ContactRepository;
 
 
 class TagsIconDataSource extends AbstractDataSource {

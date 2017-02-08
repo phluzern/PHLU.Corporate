@@ -1,28 +1,28 @@
 # content collections
-prototype(PHLU.Corporate:ContentCollection) < prototype(Neos.Neos:ContentCollection) {
+prototype(Phlu.Corporate:ContentCollection) < prototype(Neos.Neos:ContentCollection) {
 
 }
-prototype(PHLU.Corporate:ContentCollection.Page.View.Default) < prototype(PHLU.Corporate:ContentCollection)  {
+prototype(Phlu.Corporate:ContentCollection.Page.View.Default) < prototype(Phlu.Corporate:ContentCollection)  {
 }
-prototype(PHLU.Corporate:ContentCollection.Page.View.Default.Default) < prototype(PHLU.Corporate:ContentCollection.Page.View.Default)  {
+prototype(Phlu.Corporate:ContentCollection.Page.View.Default.Default) < prototype(Phlu.Corporate:ContentCollection.Page.View.Default)  {
 }
-prototype(PHLU.Corporate:ContentCollection.Page.Home) < prototype(PHLU.Corporate:ContentCollection)  {
+prototype(Phlu.Corporate:ContentCollection.Page.Home) < prototype(Phlu.Corporate:ContentCollection)  {
 }
-prototype(PHLU.Corporate:ContentCollection.Page.Overview.Tiles) < prototype(PHLU.Corporate:ContentCollection)  {
+prototype(Phlu.Corporate:ContentCollection.Page.Overview.Tiles) < prototype(Phlu.Corporate:ContentCollection)  {
 }
-prototype(PHLU.Corporate:ContentCollection.Page.Overview.OnePage) < prototype(PHLU.Corporate:ContentCollection)  {
+prototype(Phlu.Corporate:ContentCollection.Page.Overview.OnePage) < prototype(Phlu.Corporate:ContentCollection)  {
 }
-prototype(PHLU.Corporate:ContentCollection.Carousel) < prototype(PHLU.Corporate:ContentCollection)  {
+prototype(Phlu.Corporate:ContentCollection.Carousel) < prototype(Phlu.Corporate:ContentCollection)  {
 }
-prototype(PHLU.Corporate:ContentCollection.CarouselNews) < prototype(PHLU.Corporate:ContentCollection)  {
+prototype(Phlu.Corporate:ContentCollection.CarouselNews) < prototype(Phlu.Corporate:ContentCollection)  {
 }
-prototype(PHLU.Corporate:ContentCollection.Page.View.Dossier) < prototype(PHLU.Corporate:ContentCollection)  {
+prototype(Phlu.Corporate:ContentCollection.Page.View.Dossier) < prototype(Phlu.Corporate:ContentCollection)  {
 }
-prototype(PHLU.Corporate:ContentCollection.Page.Accordeon) < prototype(PHLU.Corporate:ContentCollection)  {
+prototype(Phlu.Corporate:ContentCollection.Page.Accordeon) < prototype(Phlu.Corporate:ContentCollection)  {
 }
-prototype(PHLU.Corporate:ContentCollection.Page.TargetGroup) < prototype(PHLU.Corporate:ContentCollection)  {
+prototype(Phlu.Corporate:ContentCollection.Page.TargetGroup) < prototype(Phlu.Corporate:ContentCollection)  {
 }
-prototype(PHLU.Corporate:ContentCollection.Page.Service) < prototype(PHLU.Corporate:ContentCollection)  {
+prototype(Phlu.Corporate:ContentCollection.Page.Service) < prototype(Phlu.Corporate:ContentCollection)  {
 }
-prototype(PHLU.Corporate:ContentCollection.MediaGallery) < prototype(PHLU.Corporate:ContentCollection)  {
+prototype(Phlu.Corporate:ContentCollection.MediaGallery) < prototype(Phlu.Corporate:ContentCollection)  {
 }

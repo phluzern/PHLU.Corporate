@@ -15,10 +15,10 @@
     </div>
     <f:if condition="{node.properties.teaserImage}">
         <f:then>
-            <media:image asset="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
+            <media:image image="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
         </f:then>
         <f:else>
-            <img class="img-fluid" src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/spacer-white-teaser.png')}" alt="spacer">
+            <img class="img-fluid" src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/spacer-white-teaser.png')}" alt="spacer">
         </f:else>
     </f:if>
 </div>

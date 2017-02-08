@@ -1,15 +1,15 @@
 <?php
 
-namespace PHLU\Corporate\Eel\Helper;
+namespace Phlu\Corporate\Eel\Helper;
 
-use PHLU\Neos\Models\Domain\Repository\ProjectRepository;
+use Phlu\Neos\Models\Domain\Repository\ProjectRepository;
 use Neos\Eel\ProtectedContextAwareInterface;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Http\Request;
 use Neos\ContentRepository\Domain\Factory\NodeFactory;
 use Neos\ContentRepository\Domain\Model\Node;
 use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
-use PHLU\Neos\Models\Domain\Repository\ContactRepository;
+use Phlu\Neos\Models\Domain\Repository\ContactRepository;
 
 
 

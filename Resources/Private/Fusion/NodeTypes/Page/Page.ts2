@@ -1,14 +1,13 @@
-prototype(PHLU.Corporate:Page) < prototype(PHLU.Neos.NodeTypes:Page) {
+prototype(Phlu.Corporate:Page) < prototype(Phlu.Neos.NodeTypes:Page) {
 
 
 
-
-    breadcrumb = Breadcrumb {
-        templatePath = 'resource://PHLU.Corporate/Private/Templates/TypoScriptObjects/Breadcrumb.html'
+    breadcrumb = BreadcrumbMenu {
+        templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/Partials/Breadcrumb.html'
     }
 
     defaultRenderer = Neos.Neos:ContentCase
-    collectionRenderer = PHLU.Corporate:ContentCollection
+    collectionRenderer = Phlu.Corporate:ContentCollection
 
 
     header = ${q(node).children('header').get(0)}
@@ -16,7 +15,7 @@ prototype(PHLU.Corporate:Page) < prototype(PHLU.Neos.NodeTypes:Page) {
     onepage = ${q(node).children('onepage').get(0)}
     contact = ${q(node).children('contact').get(0)}
 
-    widgetRendererElement = PHLU.Corporate:Widget
+    widgetRendererElement = Phlu.Corporate:Widget
     widgetRenderer = ${q(node).property('widget') ? this.widgetRendererElement : ''}
 
 

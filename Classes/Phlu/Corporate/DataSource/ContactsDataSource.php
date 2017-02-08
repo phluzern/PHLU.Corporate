@@ -1,10 +1,10 @@
 <?php
-namespace PHLU\Corporate\DataSource;
+namespace Phlu\Corporate\DataSource;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Service\DataSource\AbstractDataSource;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
-use PHLU\Neos\Models\Domain\Repository\ContactRepository;
+use Phlu\Neos\Models\Domain\Repository\ContactRepository;
 
 
 class ContactsDataSource extends AbstractDataSource
@@ -46,7 +46,7 @@ class ContactsDataSource extends AbstractDataSource
                 $contacts = array();
 
                 foreach ($this->contactRepository->findAll() as $contact) {
-                    /* @var \PHLU\Neos\Models\Domain\Model\Contact $contact */
+                    /* @var \Phlu\Neos\Models\Domain\Model\Contact $contact */
                     if (is_array($contact->getOrganisations())) {
                         foreach ($contact->getOrganisations() as $organisation) {
 

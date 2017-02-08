@@ -1,12 +1,12 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
-{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
+{namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
 
 
 <div {attributes -> f:format.raw()} data-ng-controller="EventoFurtherEducationCtrl">
 
 
-    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading"
+    <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading"
          class="loadingIcon hidden-xs-up"
          data-ng-if="result.isLoading()" data-ng-show="search.length > 2"
          data-ng-class="{'hidden-xs-up': search.length < 2}"/>

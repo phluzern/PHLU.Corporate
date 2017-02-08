@@ -1,8 +1,8 @@
 <?php
-namespace PHLU\Corporate\DataSource;
+namespace Phlu\Corporate\DataSource;
 
-use PHLU\Neos\Models\Domain\Model\Publication;
-use PHLU\Neos\Models\Domain\Repository\PublicationRepository;
+use Phlu\Neos\Models\Domain\Model\Publication;
+use Phlu\Neos\Models\Domain\Repository\PublicationRepository;
 use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Service\DataSource\AbstractDataSource;
 use Neos\ContentRepository\Domain\Model\NodeInterface;

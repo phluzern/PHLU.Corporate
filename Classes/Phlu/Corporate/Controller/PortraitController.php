@@ -1,20 +1,20 @@
 <?php
-namespace PHLU\Corporate\Controller;
+namespace Phlu\Corporate\Controller;
 
 /*
- * This file is part of the PHLU.Corporate package.
+ * This file is part of the Phlu.Corporate package.
  */
 
-use PHLU\Corporate\Factory\ContextFactory;
+use Phlu\Corporate\Factory\ContextFactory;
 use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Domain\Repository\SiteRepository;
 use Neos\ContentRepository\Domain\Model\Node;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
-use PHLU\Neos\Models\Domain\Model\Contact;
+use Phlu\Neos\Models\Domain\Model\Contact;
 use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
 use Neos\ContentRepository\Exception\PageNotFoundException;
-
+use Phlu\Corporate\ViewHelpers\Portrait\ReferencesViewHelper;
 
 class PortraitController extends \Neos\Neos\Controller\Frontend\NodeController
 {
@@ -25,6 +25,12 @@ class PortraitController extends \Neos\Neos\Controller\Frontend\NodeController
      */
     protected $workspaceRepository;
 
+
+    /**
+     * @Flow\Inject
+     * @var ReferencesViewHelper
+     */
+    protected $referencesViewHelper;
 
     /**
      * @Flow\Inject
@@ -77,12 +83,12 @@ class PortraitController extends \Neos\Neos\Controller\Frontend\NodeController
 
         // show only pages with containing contact nodes inside
         $flowQuery = new FlowQuery(array($node));
-        if ($flowQuery->find("[instanceof PHLU.Corporate:Contact][contact=" . $contact->getEventoid() . "]")->count() == 0) {
+        if ($flowQuery->find("[instanceof Phlu.Corporate:Contact][contact=" . $contact->getEventoid() . "]")->count() == 0) {
             throw new PageNotFoundException('The requested node does not exist or isn\'t accessible to the current user', 1430218623);
         }
 
 
-        $this->view->assignMultiple(array('value' => $node, 'contact' => $contact));
+        $this->view->assignMultiple(array('value' => $node));
 
         $this->view->setFusionPath('portrait');
 
@@ -116,7 +122,7 @@ class PortraitController extends \Neos\Neos\Controller\Frontend\NodeController
             $this->nodeDataRepository->findOneByIdentifier('c8192de7-7700-4c43-aff3-6fb5214efa54', $this->workspaceRepository->findByName('live')->getFirst()),
             $this->contextFactory->getContentContext());
 
-        $this->view->assignMultiple(array('value' => $node, 'contact' => $contact));
+        $this->view->assignMultiple(array('value' => $node));
         $this->view->setFusionPath('portrait');
 
 

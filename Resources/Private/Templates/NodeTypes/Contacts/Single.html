@@ -1,7 +1,7 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace media=Neos\Media\ViewHelpers}
-{namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
+{namespace portrait=Phlu\Corporate\ViewHelpers\Portrait}
 
 
 <f:if condition="{isHidden}">
@@ -13,7 +13,7 @@
                     <f:then>
                         <div class="col-xs-12 col-sm-6 flexfirst col-md-4">
                             <f:if condition="{node.properties.image}">
-                                <media:image class="img-fluid" asset="{node.properties.image}"
+                                <media:image class="img-fluid" image="{node.properties.image}"
                                              alt="{node.properties.firstname} {node.properties.lastname}"
                                              title="{title}" width="{width}" maximumWidth="{maximumWidth}"
                                              height="{height}" maximumHeight="{maximumHeight}"

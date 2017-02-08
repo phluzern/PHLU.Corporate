@@ -1,8 +1,8 @@
 # Table
 
-'PHLU.Corporate:Table':
+'Phlu.Corporate:Table':
   superTypes:
-    'PHLU.Corporate:Content': true
+    'Phlu.Corporate:Content': true
   ui:
     label: Tabelle
     icon: icon-table
@@ -554,22 +554,22 @@
       '*': false
   childNodes:
     body:
-      type: 'PHLU.Neos.NodeTypes:ContentCollection.Table.Body'
-'PHLU.Neos.NodeTypes:ContentCollection.Table.Body':
+      type: 'Phlu.Neos.NodeTypes:ContentCollection.Table.Body'
+'Phlu.Neos.NodeTypes:ContentCollection.Table.Body':
   superTypes:
-    'PHLU.Neos.NodeTypes:ContentCollection': true
+    'Phlu.Neos.NodeTypes:ContentCollection': true
   constraints:
     nodeTypes:
       '*': false
-      'PHLU.Corporate:Content': false
-      'PHLU.Corporate:Table.Row': true
+      'Phlu.Corporate:Content': false
+      'Phlu.Corporate:Table.Row': true
   ui:
     label: Zeilen
     icon: icon-th
     inlineEditable: true
-'PHLU.Corporate:Table.Row':
+'Phlu.Corporate:Table.Row':
   superTypes:
-    'PHLU.Corporate:Content': true
+    'Phlu.Corporate:Content': true
   ui:
     label: Zeile
     icon: icon-th-list

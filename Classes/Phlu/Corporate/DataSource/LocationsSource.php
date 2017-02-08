@@ -1,5 +1,5 @@
 <?php
-namespace PHLU\Corporate\DataSource;
+namespace Phlu\Corporate\DataSource;
 
 use Neos\Neos\Service\DataSource\AbstractDataSource;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
@@ -33,7 +33,7 @@ class LocationsSource extends AbstractDataSource
             $node->getContext()->getNodeByIdentifier('58c164e4-6f08-4f22-a07e-d0cd38bd0c6f')
         ));
 
-        $nodes = $flowQuery->find("[instanceof PHLU.Neos.NodeTypes:Page]")->get();
+        $nodes = $flowQuery->find("[instanceof Phlu.Neos.NodeTypes:Page]")->get();
 
         foreach ($nodes as $tag) {
             /** @var Node $tag */
@@ -43,7 +43,7 @@ class LocationsSource extends AbstractDataSource
                 $tag
             ));
 
-            $locationNodes = $flowQueryLocation->find("[instanceof PHLU.Corporate:Location]")->get();
+            $locationNodes = $flowQueryLocation->find("[instanceof Phlu.Corporate:Location]")->get();
 
             if ($locationNodes) {
 

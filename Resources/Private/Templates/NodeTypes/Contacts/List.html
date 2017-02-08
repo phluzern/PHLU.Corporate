@@ -1,7 +1,7 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace media=Neos\Media\ViewHelpers}
-{namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
+{namespace portrait=Phlu\Corporate\ViewHelpers\Portrait}
 
 
 <div {attributes -> f:format.raw()}>
@@ -39,10 +39,10 @@
                     <f:if condition="{node.properties.image}">
                         <f:then>
                             <div class="col-xs-12 col-sm-2">
-                                <media:image asset="{node.properties.image}" class="img-fluid"
+                                <media:image image="{node.properties.image}" class="img-fluid"
                                              alt="{node.properties.firstname} {node.properties.lastname}" width="400"
                                              maximumWidth="400" height="300" maximumHeight="300"
-                                             allowUpScaling="false"/>
+                                             allowUpScaling="false"/>     <media:image image="{image}" width="280" allowCropping="true"  alt="" />
                             </div>
                         </f:then>
                     </f:if>

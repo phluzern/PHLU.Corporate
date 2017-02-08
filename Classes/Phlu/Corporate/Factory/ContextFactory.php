@@ -1,8 +1,8 @@
 <?php
-namespace PHLU\Corporate\Factory;
+namespace Phlu\Corporate\Factory;
 
 /*
- * This file is part of the PHLU.Corporate package.
+ * This file is part of the Phlu.Corporate package.
  */
 
 use Neos\Flow\Annotations as Flow;
