@@ -3,7 +3,7 @@
 {namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
 
 
-<div class="row extendedSearchBg furtherEducationSpecialSearch">
+<div class="row extendedSearchBg further-education-special-search">
 
 
     <div class="col-xs-12">
@@ -198,652 +198,374 @@
         </div>
     </div>
 </div>
-<div class="row">
+
+<div class="row blackBgFullWidthTabs">
     <div class="col-xs-12">
-        <div class="col-xs-12 hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
+
+            <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item clickable ">
+                    <a class=" nav-link" data-toggle="pill" href="#focustopics" role="pill">
+                        <span>Fokus- <br>themen</span>
+
+                    </a>
+                </li>
+                <li class="nav-item clickable">
+                    <a class=" nav-link" data-toggle="pill" href="#latestoffers" role="pill">
+                        <span>Neueste <br>Angebote</span>
+                    </a>
+                </li>
+
+                <li class="nav-item clickable ">
+                    <a class=" nav-link" data-toggle="pill" href="#recommendedoffers" role="pill">
+                        <span>Empfohlene <br>Angebote</span>
+                    </a>
+                </li>
+                <li class="nav-item clickable ">
+                    <a class=" nav-link" data-toggle="pill" href="#lastminute" role="pill">
+                        <span>Last <br>Minute</span>
+                    </a>
+                </li>
+                <li class="nav-item clickable ">
+                    <a class=" nav-link" data-toggle="pill" href="#customoffers" role="pill">
+                        <span>Massgeschneiderte <br>Angebote</span>
+                    </a>
+                </li>
+                <li class="nav-item clickable ">
+                    <a class=" nav-link" data-toggle="pill" href="#lastvisit" role="pill">
+                        <span>Zuletzt <br>besucht</span>
+                    </a>
+                </li>
+            </ul>
+    </div>
+
+</div>
 
 
-            <div class="row subjectsfilternav">
-                <div class="col-xs-12">
+
+
+<div class="row blackBgFullWidthContents">
+
+        <div class="col-xs-12">
+            <div class="tab-content">
+                <div class="result-panel tab-pane " id="focustopics" role="tabpanel">
+                    <!--<a href="#" class="close-btn">schliessen</a>-->
+                    <h3>Spezifische Weiterbildungsangebote zu:</h3>
                     <ul class="nav nav-pills" role="tablist">
-                        <li class="nav-item clickable ">
-                            <a class=" nav-link" data-toggle="pill" href="#focusTopic" role="pill">
-                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                <span>Fokusthemen</span>
+                        <li class="col-xs-6 nav-item clickable ">
+                            <a class="nav-link active" href="#">
+                                <span>Berufsbildung</span>
+
                             </a>
                         </li>
-                        <li class="nav-item clickable ">
-                            <a class=" nav-link" data-toggle="pill" href="#newestOffers" role="pill">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <span>Neueste Angebote</span>
+                        <li class="col-xs-6 nav-item clickable">
+                            <a class="nav-link" href="#">
+                                <span>Erwachsenenbildung</span>
                             </a>
                         </li>
-                        <li class="nav-item clickable ">
-                            <a class=" nav-link" data-toggle="pill" href="#recommendedOffers" role="pill">
-                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                <span>Empfohlene Angebote</span>
+                        <li class="col-xs-6 nav-item clickable">
+                            <a class="nav-link" href="#">
+                                <span>Schulmanagement</span>
                             </a>
                         </li>
-                        <li class="nav-item clickable">
-                            <a class=" nav-link" data-toggle="pill" href="#lastMinute" role="pill">
-                                <i class="fa fa-map-signs" aria-hidden="true"></i>
-                                <span>Last Minute</span>
+                        <li class="col-xs-6 nav-item clickable ">
+                            <a class=" nav-link" href="#">
+                                <span>Berufsbiografische Angebote</span>
                             </a>
                         </li>
                     </ul>
 
                 </div>
-                <div class="col-xs-12">
-
-                    <div class="tab-content">
-                        <div class="result-panel tab-pane " id="focusTopic" role="tabpanel">
-                            <!--<a href="#" class="close-btn">schliessen</a>-->
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <tbody>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Berufsbildung
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Erwachsenenbildung
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Schulmanagement
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Berufsbiografische Angebote
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Lehrplan 21
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="result-panel tab-pane " id="newestOffers" role="tabpanel">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <tbody>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Studiengänge
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Veranstaltungen
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>
-                                            <a href="#">
-                                                Kurse
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="row subjectsfilternav" data-ng-show="search.length > 2">
-                <div class="col-xs-12">
-                    <ul class="nav nav-pills" role="tablist">
-                        <li class="nav-item clickable ">
-                            <a class=" nav-link" data-toggle="pill" href="#programmart" role="pill">
-                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                <span>Programmart</span>
-                            </a>
-                        </li>
-                        <li class="nav-item clickable ">
-                            <a class=" nav-link" data-toggle="pill" href="#kursstart" role="pill">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <span>Kursstart</span>
-                            </a>
-                        </li>
-                        <li class="nav-item clickable ">
-                            <a class=" nav-link" data-toggle="pill" href="#tag-zeit" role="pill">
-                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                <span>Tag/Zeit</span>
-                            </a>
-                        </li>
-                        <li class="nav-item clickable">
-                            <a class=" nav-link" data-toggle="pill" href="#themenbereich" role="pill">
-                                <i class="fa fa-map-signs" aria-hidden="true"></i>
-                                <span data-toggle="filterCountTag"
-                                      data-template='<div class="tooltip filterCountTag" role="tooltip"><span class="tooltip-inner"></span><span class="oi oi-media-record"></span></div>'
-                                      data-placement="right" title="" data-offset="26px 0" data-original-title="3"
-                                      data-trigger="manual">Themenbereich</span>
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-                <div class="col-xs-12">
-
-                    <div class="tab-content">
-                        <div class="result-panel tab-pane " id="programmart" role="tabpanel">
-                            <!--<a href="#" class="close-btn">schliessen</a>-->
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <tbody>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">MAS</td>
-                                        <td>
-                                            <a href="#">
-                                                Master Of Advanced Studies
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>CAS</td>
-                                        <td>
-                                            <a href="#">
-                                                Certificat Of Advanced Studies
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">DAS</td>
-                                        <td>
-                                            <a href="#">
-                                                Diploma of Advanced Studies
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">WEBK</td>
-                                        <td>
-                                            <a href="#">
-                                                Weiterbildungskurs
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">SEM</td>
-                                        <td>
-                                            <a href="#">
-                                                Seminar
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="result-panel tab-pane " id="kursstart" role="tabpanel">
-                            <div id="datepicker"></div>
-                            <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="result-panel tab-pane " id="tag-zeit" role="tabpanel">
-
-                            <div class="datepicker datepicker-inline tag-zeit">
-                                <div class="datepicker-days" style="">
-                                    <table class="table-condensed">
-                                        <thead>
-                                        <tr>
-                                            <th class="dow">
-                                                    <span class='hidden-sm-down'>
-                                                        Montag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        Mon
-                                                    </span>
-                                            </th>
-                                            <th class="dow">
-                                                    <span class='hidden-sm-down'>
-                                                        Dienstag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        Die
-                                                    </span>
-                                            </th>
-                                            <th class="dow">
-                                                    <span class='hidden-sm-down'>
-                                                        Mittwoch
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        Mit
-                                                    </span>
-                                            </th>
-                                            <th class="dow">
-                                                    <span class='hidden-sm-down'>
-                                                        Donnerstag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        Don
-                                                    </span>
-                                            </th>
-                                            <th class="dow">
-                                                    <span class='hidden-sm-down'>
-                                                        Freitag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        Fre
-                                                    </span>
-                                            </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Vormittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        VM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Vormittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        VM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Vormittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        VM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Vormittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        VM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Vormittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        VM
-                                                    </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Nachmittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        NM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Nachmittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        NM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Nachmittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        NM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Nachmittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        NM
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Nachmittag
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        NM
-                                                    </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Abend
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        A
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Abend
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        A
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Abend
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        A
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Abend
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        A
-                                                    </span>
-                                            </td>
-                                            <td class="day">
-                                                    <span class='hidden-sm-down'>
-                                                        Abend
-                                                    </span>
-                                                <span class='hidden-md-up'>
-                                                        A
-                                                    </span>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-
-                                    </table>
-                                </div>
-                            </div>
-                            <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="result-panel tab-pane " id="themenbereich" role="tabpanel">
-                            <!--<a href="#" class="close-btn">schliessen</a>-->
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <tbody>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td>011</td>
-                                        <td>
-                                            <a href="#">
-                                                Schule und Gesellschaft
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">014</td>
-                                        <td>
-                                            <a href="#">
-                                                Weiterbildung von Schulleitungen
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">021</td>
-                                        <td>
-                                            <a href="#">
-                                                Kommunikation und Auftreten
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable checked">
-                                        <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">022</td>
-                                        <td>
-                                            <a href="#">
-                                                Zusammenarbeit mit Eltern
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">031</td>
-                                        <td>
-                                            <a href="#">
-                                                Berufseinstieg
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">032</td>
-                                        <td>
-                                            <a href="#">
-                                                Wiedereinstieg
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">033</td>
-                                        <td>
-                                            <a href="#">
-                                                Standortbestimmung und Perspektiven
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">034</td>
-                                        <td>
-                                            <a href="#">
-                                                Langzeitweiterbildung
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">035</td>
-                                        <td>
-                                            <a href="#">
-                                                Gesundheit erhalten
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">036</td>
-                                        <td>
-                                            <a href="#">
-                                                Arbeitsorganisation
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">041</td>
-                                        <td>
-                                            <a href="#">
-                                                Schüler/-innen verstehen und begleiten
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">042</td>
-                                        <td>
-                                            <a href="#">
-                                                Klassenführung
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">051</td>
-                                        <td>
-                                            <a href="#">
-                                                Lernen verstehen
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">052</td>
-                                        <td>
-                                            <a href="#">
-                                                Unterricht gestalten
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">061</td>
-                                        <td>
-                                            <a href="#">
-                                                SHP / IF (Schulische Heilpädagogik / Integrative Förderung)
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">062</td>
-                                        <td>
-                                            <a href="#">
-                                                DAZ (Deutsch als Zweitsprache)
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">063</td>
-                                        <td>
-                                            <a href="#">
-                                                Psychomotorik
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">064</td>
-                                        <td>
-                                            <a href="#">
-                                                Logopädie
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="clickable ">
-                                        <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                        <td class="theme-code">065</td>
-                                        <td>
-                                            <a href="#">
-                                                Tagesstrukturen und Klassenassistenz
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="row results-table" data-ng-show="search.length > 2">
-                <div class="col-xs-12">
-
+                <div class="result-panel tab-pane " id="latestoffers" role="tabpanel">
+                    <!--<a href="#" class="close-btn">schliessen</a>-->
                     <div class="table-responsive">
                         <table class="table">
-                            <thead>
-                            <tr>
-                                <th class="clickable">
-                                    <a href="#">Angebot</a>
-                                </th>
-                            </tr>
-
-                            </thead>
-                            <tbody ng-repeat="node in result.getNodes(limit)"
-                                   data-ng-click="node.isopen = node.isopen ? false : true">
-                            <tr data-ng-class="{open: node.isopen,noborder: $index > 0}" class="clickable"
-                                data-node-id="{{node.identifier}}">
+                            <tbody>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
                                 <td>
-                                        <span class="oi"
-                                              data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
-                                    <span>
-                                        {{node.getProperty('title')}}
-                                    </span>
+                                    <a href="#">
+                                        Schule und Heterogenität
+                                    </a>
                                 </td>
                             </tr>
-                            <tr class="result-preview" data-ng-show="node.isopen">
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
                                 <td>
-                                    <div>
-                                        <p ng-bind-html="node.getProperty('description').substr(0,255)"></p>
-                                        <a class="btn btn-primary" href="{{node.getUrl()}}">
-                                            Details
-                                        </a>
-                                    </div>
+                                    <a href="#">
+                                        Inklusion und integrative Schulung
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Kulturelle Vielfalt und Mehrsprachigkeit
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Schulentwicklung und -qualität
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Diagnostik, Beurteilung und adaptives Lernen
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Sozio-emotionales Lernen
+                                    </a>
                                 </td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
-
-                    <div class="row">
-                        <div class="col-center">
-                            <a data-ng-click="loadMore();" class="btn loadMore"
-                               data-ng-if="result.count() > limit">
-                                <!--{{limitChunkSize}} -->
-                                mehr anzeigen
-                            </a>
-                        </div>
-                    </div>
-
-
                 </div>
+                <div class="result-panel tab-pane " id="recommendedoffers" role="tabpanel">
+                    <!--<a href="#" class="close-btn">schliessen</a>-->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Schule und Heterogenität
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Inklusion und integrative Schulung
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Kulturelle Vielfalt und Mehrsprachigkeit
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Schulentwicklung und -qualität
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Diagnostik, Beurteilung und adaptives Lernen
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Sozio-emotionales Lernen
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="result-panel tab-pane " id="lastminute" role="tabpanel">
+                    <!--<a href="#" class="close-btn">schliessen</a>-->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Schule und Heterogenität
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Inklusion und integrative Schulung
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Kulturelle Vielfalt und Mehrsprachigkeit
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Schulentwicklung und -qualität
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Diagnostik, Beurteilung und adaptives Lernen
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Sozio-emotionales Lernen
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="result-panel tab-pane " id="customoffers" role="tabpanel">
+                    <!--<a href="#" class="close-btn">schliessen</a>-->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Schule und Heterogenität
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Inklusion und integrative Schulung
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Kulturelle Vielfalt und Mehrsprachigkeit
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Schulentwicklung und -qualität
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Diagnostik, Beurteilung und adaptives Lernen
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Sozio-emotionales Lernen
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="result-panel tab-pane " id="lastvisit" role="tabpanel">
+                    <!--<a href="#" class="close-btn">schliessen</a>-->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Schule und Heterogenität
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Inklusion und integrative Schulung
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Kulturelle Vielfalt und Mehrsprachigkeit
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable checked">
+                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Schulentwicklung und -qualität
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Diagnostik, Beurteilung und adaptives Lernen
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="clickable ">
+                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
+                                <td>
+                                    <a href="#">
+                                        Sozio-emotionales Lernen
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
+
         </div>
-    </div>
+
+
 </div>
 
 

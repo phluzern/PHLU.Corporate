@@ -46,7 +46,7 @@ $turquoise: #28818f;
 
 $olivegreen: #91a103;
 
-$font-color: #4c4c4c;
+$font-color: #5c5c5c;
 $font-color-level1: #685f56;
 
 // phlu fonts formatting
@@ -931,41 +931,34 @@ body {
     .checkbox {
 
       input[type="checkbox"] {
-        display:none;
+        display: none;
       }
 
-
       input[type="checkbox"] + label span {
-        display:inline-block;
-        width:30px;
-        height:30px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
         padding: 4px 0 0 7px;
-        margin-right:10px;
-        vertical-align:middle;
-        background-color:white;
-        cursor:pointer;
+        margin-right: 10px;
+        vertical-align: middle;
+        background-color: white;
+        cursor: pointer;
       }
 
       input[type="checkbox"]:checked + label span {
-        background-color:$lightgrey;
+        background-color: $lightgrey;
       }
 
       input[type="checkbox"]:checked + label span {
         &::before {
           font-family: Icons;
-          content:"\e033";
-          color:black;
+          content: "\e033";
+          color: black;
         }
 
       }
 
-
-
-
     }
-
-
-
     .dropdown {
       button {
         background-color: $grey4;
@@ -991,11 +984,10 @@ body {
         }
       }
     }
-
     .input-group {
       width: initial;
       label {
-        margin-top:20px;
+        margin-top: 20px;
       }
       .input-group-btn {
         button {
@@ -1062,11 +1054,11 @@ body {
           }
         }
         .dropdown-menu {
-          margin-top:inherit;
+          margin-top: inherit;
         }
         input[type='checkbox'] {
           width: inherit;
-          margin-right:5px;
+          margin-right: 5px;
         }
       }
       .extendedSearch {
@@ -1105,12 +1097,12 @@ body {
               border: 0;
             }
             &.search-result-tags {
-              margin:0;
+              margin: 0;
               display: -webkit-box;
               display: -ms-flexbox;
               overflow: hidden;
               .search-result-tag {
-                color:white;
+                color: white;
                 float: left;
                 position: relative;
                 white-space: nowrap;
@@ -1141,16 +1133,14 @@ body {
             right: 15px;
 
             /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
-            background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+            background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=1); /* IE6-9 */
 
-
-            //background-image: url("../Images/tagLimiterBg.png");
-
-
-
+            //background-image: url("../Images/tagLimiterBg.svg");
+            //background-repeat: no-repeat;
+            //background-size: contain;
 
           }
           .dropdown-menu {
@@ -1162,7 +1152,7 @@ body {
               margin: 0 13px;
               background-color: white;
               border-left: 2px solid $darkgrey;
-              border-right:2px solid $darkgrey;
+              border-right: 2px solid $darkgrey;
               a {
                 color: $font-color;
               }
@@ -1201,28 +1191,28 @@ body {
                 }
                 .resetFilter {
                   a {
-                    color:white;
+                    color: white;
                   }
                 }
               }
             }
             .result-panel {
-              padding:0;
+              padding: 0;
               background-color: $turquoise;
               .table-responsive {
                 .table {
                   tbody {
                     tr:first-child {
                       td {
-                        border-top:0;
+                        border-top: 0;
                       }
                     }
                     tr {
                       &.checked {
-                        color:black;
+                        color: black;
                         td {
                           a {
-                            color:black;
+                            color: black;
                           }
                         }
                       }
@@ -1233,7 +1223,6 @@ body {
             }
           }
         }
-
 
       }
     }
@@ -2672,8 +2661,7 @@ body {
     //    ppdb lists
     //    further education lists
     //
-    //
-    .ppdb-list, .further-education-list, .furtherEducationSpecialSearch {
+    .ppdb-list, .further-education-list, .further-education-special-search {
       .list-search-field, .dropdown-search-field {
         input {
           border: 1px solid $grey;
@@ -2896,6 +2884,65 @@ body {
         }
       }
     }
+    //
+    // further education hot links tabs
+    //
+    .blackBgFullWidthTabs {
+      .nav-pills {
+        margin-bottom: 0;
+        .nav-item {
+          a.nav-link {
+            color: $font-color;
+            font-weight: $font-weight-bold;
+            background-color: inherit;
+            padding: 5px 33px;
+            height: 71px;
+            &:hover, &.active {
+              color: white;
+              background-color: $darkgrey;
+            }
+          }
+        }
+
+      }
+
+    }
+    .blackBgFullWidthContents {
+      background-color: $darkgrey;
+      .tab-content {
+        .result-panel {
+          h3 {
+            font-size: $font-size-nav-teaser-header;
+            font-weight: $font-weight-bold;
+            margin:30px 0 25px;
+            color: white;
+          }
+        }
+      }
+    }
+    .blackBgFullWidthTabs, .blackBgFullWidthContents {
+      .nav-pills .nav-item + .nav-item {
+        margin-left: 0;
+      }
+      .nav-pills {
+        margin-bottom: 0;
+        .nav-item {
+          a.nav-link {
+            color: $font-color;
+            font-weight: $font-weight-bold;
+            background-color: inherit;
+            padding: 5px 33px;
+            height: 71px;
+            &:hover, &.active {
+              color: white;
+              background-color: $darkgrey;
+            }
+          }
+        }
+
+      }
+    }
+
     //
     // phlu locations (Standorte)
     //
@@ -4152,8 +4199,8 @@ body {
 //
 .datepicker {
   font-size: $font-size-search-filters;
-  border-radius: inherit!important;
-  border:0!important;
+  border-radius: inherit !important;
+  border: 0 !important;
   table {
     thead, tbody {
       tr {
@@ -4176,82 +4223,15 @@ body {
         }
       }
     }
-tbody {
-  tr {
-    td {
-      padding: 8px 51px;
-      @include media-breakpoint-down("xxl") {
-        padding: 8px 46px;
-      }
-      @include media-breakpoint-down("md") {
-        padding: 8px 37px;
-      }
-      @include media-breakpoint-down("sm") {
-        padding: 8px 23px;
-      }
-      @include media-breakpoint-down("xs") {
-        padding: 8px 13px;
-      }
-      &.day, &.focused {
-        &:hover {
-          color: $grey6;
-        }
-      }
-      &.active.active,
-      &.active.disabled,
-      &.active.disabled.active,
-      &.active.disabled.disabled,
-      &.active.disabled:active,
-      &.active.disabled:hover,
-      &.active.disabled:hover.active,
-      &.active.disabled:hover.disabled,
-      &.active.disabled:hover:active,
-      &.active.disabled:hover:hover,
-      &.active:active,
-      &.active:hover,
-      &.active:hover.active,
-      &.active:hover.disabled,
-      &.active:hover:active,
-      &.active:hover:hover {
-        background-color: $olivegreen!important;
-        background-image: none;
-        color:white;
-      }
-
-    }
-  }
-}
-
-tfoot {
-  tr {
-    th {
-      &:hover {
-        background-color: $olivegreen;
-      }
-    }
-  }
-}
-
-}
-.datepicker-switch, .next, .prev {
-  &:hover {
-    background-color: $olivegreen;
-  }
-}
-
-&.tag-zeit {
-  table {
     tbody {
       tr {
         td {
-          @include media-breakpoint-down("xxxl") {
-            padding: 8px 36px;
-          }
+          padding: 8px 51px;
           @include media-breakpoint-down("xxl") {
-            padding: 8px 28px;
+            padding: 8px 46px;
           }
           @include media-breakpoint-down("md") {
-            padding: 8px 18px;
+            padding: 8px 37px;
           }
           @include media-breakpoint-down("sm") {
             padding: 8px 23px;
@@ -4259,27 +4239,94 @@ tfoot {
           @include media-breakpoint-down("xs") {
             padding: 8px 13px;
           }
-          span {
-            float: inherit;
-            width: inherit;
-            display: initial;
-            margin: inherit;
-            line-height: inherit;
+          &.day, &.focused {
             &:hover {
-              background: inherit;
+              color: $grey6;
+            }
+          }
+          &.active.active,
+          &.active.disabled,
+          &.active.disabled.active,
+          &.active.disabled.disabled,
+          &.active.disabled:active,
+          &.active.disabled:hover,
+          &.active.disabled:hover.active,
+          &.active.disabled:hover.disabled,
+          &.active.disabled:hover:active,
+          &.active.disabled:hover:hover,
+          &.active:active,
+          &.active:hover,
+          &.active:hover.active,
+          &.active:hover.disabled,
+          &.active:hover:active,
+          &.active:hover:hover {
+            background-color: $olivegreen !important;
+            background-image: none;
+            color: white;
+          }
+
+        }
+      }
+    }
+
+    tfoot {
+      tr {
+        th {
+          &:hover {
+            background-color: $olivegreen;
+          }
+        }
+      }
+    }
+
+  }
+  .datepicker-switch, .next, .prev {
+    &:hover {
+      background-color: $olivegreen;
+    }
+  }
+
+  &.tag-zeit {
+    table {
+      tbody {
+        tr {
+          td {
+            @include media-breakpoint-down("xxxl") {
+              padding: 8px 36px;
+            }
+            @include media-breakpoint-down("xxl") {
+              padding: 8px 28px;
+            }
+            @include media-breakpoint-down("md") {
+              padding: 8px 18px;
+            }
+            @include media-breakpoint-down("sm") {
+              padding: 8px 23px;
+            }
+            @include media-breakpoint-down("xs") {
+              padding: 8px 13px;
+            }
+            span {
+              float: inherit;
+              width: inherit;
+              display: initial;
+              margin: inherit;
+              line-height: inherit;
+              &:hover {
+                background: inherit;
+              }
             }
           }
         }
       }
     }
   }
-}
 
-&.datepicker-inline {
-  margin: 0 auto;
-  width: inherit;
-  display: table;
-}
+  &.datepicker-inline {
+    margin: 0 auto;
+    width: inherit;
+    display: table;
+  }
 
 }
 
