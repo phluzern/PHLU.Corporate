@@ -1,0 +1,12 @@
+# Page Overview Tiles
+prototype(Phlu.Corporate:Page.View.Dossier) < prototype(Phlu.Corporate:Page.Overview.OnePage) {
+
+        templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/View.Dossier.html'
+        onePageContent.defaultRenderer.sectionName = 'contentdossier'
+        onePageContent.defaultRenderer.mainCount = ${q(node).children('main').children().count()}
+        onePageContent.defaultRenderer.title = ${q(node).property('title')}
+
+        ishidden = ${q(node).property('ishidden')}
+
+
+}

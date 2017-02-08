@@ -1,6 +1,0 @@
-prototype(PHLU.Corporate:Tag) < prototype(PHLU.Corporate:Content)  {
-
-    templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Tags/Tag.html'
-    attributes.class = ${q(node).property('icon')}
-}
-

@@ -1,8 +1,8 @@
-{namespace ts=TYPO3\TypoScript\ViewHelpers}
-{namespace neos=TYPO3\Neos\ViewHelpers}
-{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
-{namespace media=TYPO3\Media\ViewHelpers}
-{namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+{namespace portrait=Phlu\Corporate\ViewHelpers\Portrait}
 
 <div class="row">
 
@@ -17,7 +17,7 @@
 
             <f:if condition="{contact.image}">
                 <div class="col-xs-12 col-sm-6 col-md-3">
-                    <media:image class="img-fluid" asset="{contact.image}" alt="{contact.name.fullname}" width="400"
+                    <media:image class="img-fluid" image="{contact.image}" alt="{contact.name.fullname}" width="400"
                                  maximumWidth="300" height="400" maximumHeight="300"/>
                 </div>
             </f:if>
@@ -216,7 +216,7 @@
                                                     <p>{project.TeaserTextGerman}</p>
                                                     <f:link.action action="load"
                                                                    controller="project"
-                                                                   package="PHLU.Corporate"
+                                                                   package="Phlu.Corporate"
                                                                    arguments="{project: project.ID,title: project.uriSegment}"
                                                                    class="btn btn-primary">Details
                                                     </f:link.action>
@@ -311,7 +311,7 @@
 
         <f:if condition="{portrait:references(contact: contact)}">
             <f:then>
-                <f:render partial="References" arguments="{all}"/>
+                <f:render partial="References" arguments="{contact: contact}"/>
             </f:then>
         </f:if>
 

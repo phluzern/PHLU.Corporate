@@ -1,6 +1,6 @@
 {
-    "description": "PHLU Corporate Neos Site",
-    "type": "typo3-flow-site",
+    "description": "Phlu Corporate Neos Site",
+    "type": "neos-site",
     "require": {
         "typo3/neos": "*",
         "typo3/neos-nodetypes": "*",
@@ -13,12 +13,12 @@
     "name": "phlu/corporate",
     "autoload": {
         "psr-0": {
-            "PHLU\\Corporate": "Classes/"
+            "Phlu\\Corporate\\": "Classes/"
         }
     },
     "extra": {
         "neos": {
-            "package-key": "PHLU.Corporate"
+            "package-key": "Phlu.Corporate"
         }
     }
 }

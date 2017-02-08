@@ -1,8 +1,0 @@
-# Content
-prototype(PHLU.Corporate:NewsItem) < prototype(PHLU.Corporate:Content) {
-
-    templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/NewsItem.html'
-
-}
-
-

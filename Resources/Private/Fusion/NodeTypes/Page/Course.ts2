@@ -1,0 +1,8 @@
+
+neosliveHybridsearchCourseUrl = Neos.Fusion:Template {
+	templatePath = 'resource://Phlu.Corporate/Private/Templates/Course/Url.html'
+	node = ${node}
+	courseid = ${q(node).property('id')}
+	detail = ${q(site).find('[instanceof Phlu.Corporate:Page][internalid='+this.courseid+']').get(0)}
+}
+

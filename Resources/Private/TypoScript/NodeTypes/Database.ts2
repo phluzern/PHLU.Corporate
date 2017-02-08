@@ -1,5 +1,0 @@
-# Content
-prototype(PHLU.Corporate:Database) < prototype(TYPO3.Neos:Content) {
-
-    templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Database.html'
-}

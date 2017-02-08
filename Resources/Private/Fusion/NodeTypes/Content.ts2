@@ -1,0 +1,31 @@
+# vsd
+prototype(Phlu.Corporate:PrimaryContent) < prototype(Neos.Neos:ContentCase) {
+
+
+
+}
+
+# Content
+prototype(Phlu.Corporate:Content) < prototype(Neos.Neos:Content) {
+
+
+}
+
+
+# Default Text with Image
+prototype(Phlu.Corporate:TextWithImage) {
+    width = 237
+    height = 336
+	attributes.class = 'img-fluid'
+}
+
+# Default Text with Image
+prototype(Phlu.Corporate:Image) {
+
+}
+
+# Default Text with Image
+prototype(Phlu.Corporate:CarouselImage) < prototype(Phlu.Corporate:Image) {
+	templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Image.html'
+}
+

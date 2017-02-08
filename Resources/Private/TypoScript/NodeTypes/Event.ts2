@@ -1,8 +1,0 @@
-# Content
-prototype(PHLU.Corporate:Event) < prototype(PHLU.Corporate:Content) {
-
-    templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Event.html'
-
-}
-
-

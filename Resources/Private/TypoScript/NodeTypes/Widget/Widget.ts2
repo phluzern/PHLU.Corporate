@@ -1,3 +1,0 @@
-prototype(PHLU.Corporate:Widget) < prototype(TYPO3.Neos:Content) {
-    templatePath = ${'resource://PHLU.Corporate/Private/Templates/Widget/' +  q(node).property('widget') + '.html'}
-}

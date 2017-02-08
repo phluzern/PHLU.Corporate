@@ -1,0 +1,9 @@
+# Page Overview Tiles
+prototype(Phlu.Corporate:Page.View.Default.Prototype) < prototype(Phlu.Corporate:Page) {
+
+     templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/View.Default.Prototype.html'
+
+
+}
+
+

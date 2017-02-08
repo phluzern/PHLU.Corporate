@@ -1,6 +1,6 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
-{namespace ts=TYPO3\TypoScript\ViewHelpers}
-{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
 
 
 <div {attributes -> f:format.raw()} data-ng-controller="PpdbCtrl">
@@ -10,7 +10,7 @@
         </f:then>
     </f:if>
     <div class="searchResultsListStartupLoadingScreen" data-ng-if="result.isStarted() === false">
-        <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
+        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
         />
     </div>
 
@@ -292,7 +292,7 @@
                 <div class="col-xs-12" data-ng-show="result.isStarted()">
                     <f:if condition="{showSearchInput}"><div class="resultsCount"><h2>Treffer ({{result.count()}})</h2></div></f:if>
                     <div class="searchResultsListLoadingScreen" data-ng-if="result.isLoading()">
-                        <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
+                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
                         />
                     </div>
                     <div class="table-responsive  ">

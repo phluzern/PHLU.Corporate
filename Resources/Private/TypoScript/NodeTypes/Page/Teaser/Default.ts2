@@ -1,5 +1,0 @@
-prototype(PHLU.Corporate:Content.Page.TeaserDefault) < prototype(PHLU.Corporate:Content) {
-
-    templatePath = 'resource://PHLU.Corporate/Private/Templates/NodeTypes/Page/Teaser/Default.html'
-
-}

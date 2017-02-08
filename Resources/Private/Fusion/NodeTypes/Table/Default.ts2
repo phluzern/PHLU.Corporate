@@ -1,0 +1,117 @@
+# Table
+prototype(Phlu.Corporate:Table) < prototype(Phlu.Corporate:Content) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Table/Default.html'
+
+
+    body = Phlu.Neos.NodeTypes:ContentCollection.Table.Body {
+        nodePath = 'body'
+
+    }
+
+    attributes.class = 'table-responsive'
+
+    class0 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'1') == 0 ? 'nowrap' : '' : ''}
+    class1 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'2') == 0 ? 'nowrap' : '' : ''}
+    class2 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'3') == 0 ? 'nowrap' : '' : ''}
+    class3 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'4') == 0 ? 'nowrap' : '' : ''}
+    class4 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'5') == 0 ? 'nowrap' : '' : ''}
+    class5 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'6') == 0 ? 'nowrap' : '' : ''}
+    class6 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'7') == 0 ? 'nowrap' : '' : ''}
+    class7 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'8') == 0 ? 'nowrap' : '' : ''}
+    class8 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'9') == 0 ? 'nowrap' : '' : ''}
+    class9 = ${q(node).property('whitespaces') ? Array.indexOf(q(node).property('whitespaces'),'10') == 0 ? 'nowrap' : '' : ''}
+
+    firstColWithClass = ${q(node).property('firstcolwidth') ? 'col-percent-'+q(node).property('firstcolwidth') : ''}
+    firstColHidden = ${q(node).property('firstcolhidden') ? true : false}
+
+    cell0isCurrencyClass = ${String.pregMatch(String.trim(q(q(node).find('[instanceof Phlu.Corporate:Table.Row]').first().get()).property('cell0')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell1isCurrencyClass = ${String.pregMatch(String.trim(q(q(node).find('[instanceof Phlu.Corporate:Table.Row]').first().get()).property('cell1')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell2isCurrencyClass = ${String.pregMatch(String.trim(q(q(node).find('[instanceof Phlu.Corporate:Table.Row]').first().get()).property('cell2')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell3isCurrencyClass = ${String.pregMatch(String.trim(q(q(node).find('[instanceof Phlu.Corporate:Table.Row]').first().get()).property('cell3')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell4isCurrencyClass = ${String.pregMatch(String.trim(q(q(node).find('[instanceof Phlu.Corporate:Table.Row]').first().get()).property('cell4')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell5isCurrencyClass = ${String.pregMatch(String.trim(q(q(node).find('[instanceof Phlu.Corporate:Table.Row]').first().get()).property('cell5')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell6isCurrencyClass = ${String.pregMatch(String.trim(q(q(node).find('[instanceof Phlu.Corporate:Table.Row]').first().get()).property('cell6')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell7isCurrencyClass = ${String.pregMatch(String.trim(q(q(node).find('[instanceof Phlu.Corporate:Table.Row]').first().get()).property('cell7')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell8isCurrencyClass = ${String.pregMatch(String.trim(q(q(node).find('[instanceof Phlu.Corporate:Table.Row]').first().get()).property('cell8')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell9isCurrencyClass = ${String.pregMatch(String.trim(q(q(node).find('[instanceof Phlu.Corporate:Table.Row]').first().get()).property('cell9')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell0 = ${q(node).property('cell0')}
+    cell1 = ${q(node).property('cell1')}
+    cell2 = ${q(node).property('cell2')}
+    cell3 = ${q(node).property('cell3')}
+    cell4 = ${q(node).property('cell4')}
+    cell5 = ${q(node).property('cell5')}
+    cell6 = ${q(node).property('cell6')}
+    cell7 = ${q(node).property('cell7')}
+    cell8 = ${q(node).property('cell8')}
+    cell9 = ${q(node).property('cell9')}
+    cols = ${q(node).property('cols')}
+
+    #attributes.class = 'table-phlu-saw'
+
+}
+
+# Table
+prototype(Phlu.Corporate:Table.Row) < prototype(Phlu.Corporate:Content) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Table/Row.html'
+
+    class0 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'1') == 0 ? 'nowrap' : '' : ''}
+    class1 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'2') == 0 ? 'nowrap' : '' : ''}
+    class2 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'3') == 0 ? 'nowrap' : '' : ''}
+    class3 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'4') == 0 ? 'nowrap' : '' : ''}
+    class4 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'5') == 0 ? 'nowrap' : '' : ''}
+    class5 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'6') == 0 ? 'nowrap' : '' : ''}
+    class6 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'7') == 0 ? 'nowrap' : '' : ''}
+    class7 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'8') == 0 ? 'nowrap' : '' : ''}
+    class8 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'9') == 0 ? 'nowrap' : '' : ''}
+    class9 = ${q(node).parent().parent().property('whitespaces') ? Array.indexOf(q(node).parent().parent().property('whitespaces'),'10') == 0 ? 'nowrap' : '' : ''}
+
+    firstColWithClass = ${q(node).parent().parent().property('firstcolwidth') ? 'col-percent-'+q(node).parent().parent().property('firstcolwidth') : ''}
+    firstColHidden = ${q(node).parent().parent().property('firstcolhidden') ? true : false}
+
+
+    cell0isCurrencyClass = ${String.pregMatch(String.trim(q(node).property('cell0')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell1isCurrencyClass = ${String.pregMatch(String.trim(q(node).property('cell1')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell2isCurrencyClass = ${String.pregMatch(String.trim(q(node).property('cell2')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell3isCurrencyClass = ${String.pregMatch(String.trim(q(node).property('cell3')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell4isCurrencyClass = ${String.pregMatch(String.trim(q(node).property('cell4')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell5isCurrencyClass = ${String.pregMatch(String.trim(q(node).property('cell5')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell6isCurrencyClass = ${String.pregMatch(String.trim(q(node).property('cell6')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell7isCurrencyClass = ${String.pregMatch(String.trim(q(node).property('cell7')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell8isCurrencyClass = ${String.pregMatch(String.trim(q(node).property('cell8')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+    cell9isCurrencyClass = ${String.pregMatch(String.trim(q(node).property('cell9')),"/(^[A-Z]{3} [0-9]{1}.*\.[0-9-]{2})|(^[0-9]{1}.*\.[0-9-]{2})/") ? 'is-currency' : ''}
+
+
+    cell0 = ${q(node).property('cell0')}
+    cell1 = ${q(node).property('cell1')}
+    cell2 = ${q(node).property('cell2')}
+    cell3 = ${q(node).property('cell3')}
+    cell4 = ${q(node).property('cell4')}
+    cell5 = ${q(node).property('cell5')}
+    cell6 = ${q(node).property('cell6')}
+    cell7 = ${q(node).property('cell7')}
+    cell8 = ${q(node).property('cell8')}
+    cell9 = ${q(node).property('cell9')}
+
+    cols = ${q(node).parent().parent().property('cols')}
+
+th0 = ${q(node).parent().parent().property('cell0')}
+th1 = ${q(node).parent().parent().property('cell1')}
+th2 = ${q(node).parent().parent().property('cell2')}
+th3 = ${q(node).parent().parent().property('cell3')}
+th4 = ${q(node).parent().parent().property('cell4')}
+th5 = ${q(node).parent().parent().property('cell5')}
+th6 = ${q(node).parent().parent().property('cell6')}
+th7 = ${q(node).parent().parent().property('cell7')}
+th8 = ${q(node).parent().parent().property('cell8')}
+th9 = ${q(node).parent().parent().property('cell9')}
+
+}
+
+# Table
+prototype(Phlu.Neos.NodeTypes:ContentCollection.Table.Body) < prototype(Phlu.Corporate:ContentCollection) {
+
+    tagName = 'tbody'
+
+}

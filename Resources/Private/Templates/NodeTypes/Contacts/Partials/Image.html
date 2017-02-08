@@ -1,0 +1,15 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+
+<f:if condition="{image}">
+    <f:then>
+        <f:render section="imageRendering" arguments="{_all}"/>
+    </f:then>
+</f:if>
+
+
+<f:section name="imageRendering">
+    <media:image image="{image}" alt="{alternativeText}" title="{title}" width="{width}"
+                 maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
+                 allowUpScaling="{allowUpScaling}" allowCropping="{allowCropping}" />
+</f:section>

@@ -1,6 +1,6 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
-{namespace ts=TYPO3\TypoScript\ViewHelpers}
-{namespace media=TYPO3\Media\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
 
 
 <div class="{breakpointClass} event singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)} clickable">
@@ -32,13 +32,13 @@
 
     <f:if condition="{node.properties.teaserImage}">
         <f:then>
-            <media:image asset="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}" width="{width}"
+            <media:image image="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}" width="{width}"
                          maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
                          allowUpScaling="{allowUpScaling}"/>
         </f:then>
         <f:else>
             <img class="img-fluid"
-                 src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/spacer-white-teaser.png')}" alt="spacer">
+                 src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/spacer-white-teaser.png')}" alt="spacer">
         </f:else>
     </f:if>
     <div class="phlu-teaser-type">

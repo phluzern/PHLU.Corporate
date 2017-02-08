@@ -1,6 +1,6 @@
-{namespace media=TYPO3\Media\ViewHelpers}
-{namespace neos=TYPO3\Neos\ViewHelpers}
-{namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
+{namespace media=Neos\Media\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace portrait=Phlu\Corporate\ViewHelpers\Portrait}
 
 
 <div class="row departments">
@@ -9,6 +9,8 @@
         <div class="row subjectsfilternav">
             <div class="col-xs-12">
                 <div class="row phlu-teaser navigation subpage">
+
+
                     <f:for each="{portrait:references(contact: contact)}" as="refs" iteration="iterator"
                            key="key">
 

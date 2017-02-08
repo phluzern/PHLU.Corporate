@@ -1,6 +1,6 @@
 'use strict';
 
-var PHLUCorporateApp = angular.module('PHLUCorporateApp', ['ngCookies','hybridsearch','ngSanitize']);
+var PhluCorporateApp = angular.module('PhluCorporateApp', ['ngCookies','hybridsearch','ngSanitize']);
 
 
 
@@ -24,7 +24,7 @@ if (typeof document.addEventListener === 'function') {
 
 
 
-PHLUCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsearch) {
+PhluCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsearch) {
 
     var hybridseachinstance = new $hybridsearch(
         'https://phlu-neos.firebaseio.com',

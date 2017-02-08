@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <site name="phlu.ch" state="1" siteResourcesPackageKey="PHLU.Corporate" siteNodeName="corporate">
+    <site name="phlu.ch" state="1" siteResourcesPackageKey="Phlu.Corporate" siteNodeName="corporate">
         <nodes formatVersion="2.0">
             <node nodeName="corporate">
-            <variant workspace="live" nodeType="PHLU.Corporate:Page.Home" sortingIndex="100" version="1" removed=""
+            <variant workspace="live" nodeType="Phlu.Corporate:Page.Home" sortingIndex="100" version="1" removed=""
                      hidden="" hiddenInIndex="">
                 <dimensions>
                     <language>de</language>

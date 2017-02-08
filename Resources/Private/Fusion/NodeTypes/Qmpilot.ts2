@@ -1,0 +1,31 @@
+# Files
+prototype(Phlu.Qmpilot.NodeTypes:Files) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Files/Default.html'
+    assets = ${q(node).property('assets')}
+    attributes.class = ${q(node).property('assets') ? 'assetsCount-'+Array.length(q(node).property('assets')) : 'assetsCount-0'}
+
+}
+
+
+# File
+prototype(Phlu.Qmpilot.NodeTypes:File) {
+
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/File/Default.html'
+    asset = ${q(node).property('asset')}
+    customTitle = ${q(node).property('customTitle')}
+    title = ${q(node).property('title')}
+
+    link = ${q(node).property('asset').resource.link}
+    link.@process.convertUris = Neos.Neos:ConvertUris {
+        forceConversion = true
+    }
+
+    assetcount = ${q(node).property('asset') ? '1' : '0'}
+
+    attributes.class = ${(q(node).next().get(0).nodeType.name != 'Phlu.Qmpilot.NodeTypes:File' ? 'last ' : '')}
+
+
+}
+

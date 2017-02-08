@@ -1,9 +1,9 @@
-{namespace ts=TYPO3\TypoScript\ViewHelpers}
-{namespace neos=TYPO3\Neos\ViewHelpers}
-{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
-{namespace media=TYPO3\Media\ViewHelpers}
-{namespace portrait=PHLU\Corporate\ViewHelpers\Portrait}
-{namespace resource=PHLU\Corporate\ViewHelpers\Resource}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+{namespace portrait=Phlu\Corporate\ViewHelpers\Portrait}
+{namespace resource=Phlu\Corporate\ViewHelpers\Resource}
 
 
 <div class="row ppdb-detail">
@@ -184,7 +184,7 @@
                                         <div class="phlu-teaser-caret-right col-xs-4">
                                             <f:if condition="{resource:GetFromString(resource:participant.ImageResource, asset: true)}">
                                                 <media:image
-                                                        asset="{resource:GetFromString(resource:participant.ImageResource, asset: true)}"
+                                                        image="{resource:GetFromString(resource:participant.ImageResource, asset: true)}"
                                                         class="img-fluid"
                                                         alt="{participant.name}"
                                                         height="133" width="100" allowCropping="true"

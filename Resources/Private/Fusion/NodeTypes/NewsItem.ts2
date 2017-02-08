@@ -1,0 +1,8 @@
+# Content
+prototype(Phlu.Corporate:NewsItem) < prototype(Phlu.Corporate:Content) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/NewsItem.html'
+
+}
+
+

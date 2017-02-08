@@ -1,11 +1,10 @@
 # Event
-'PHLU.Corporate:Event':
-  superTypes:
-    'PHLU.Neos.NodeTypes:Event': TRUE
-    'PHLU.Corporate:Content': TRUE
 
-# Events
-'PHLU.Corporate:Events':
+'Phlu.Corporate:Event':
   superTypes:
-    'PHLU.Neos.NodeTypes:Events': TRUE
-    'PHLU.Corporate:Content': TRUE
+    'Phlu.Neos.NodeTypes:Event': true
+    'Phlu.Corporate:Content': true
+'Phlu.Corporate:Events':
+  superTypes:
+    'Phlu.Neos.NodeTypes:Events': true
+    'Phlu.Corporate:Content': true

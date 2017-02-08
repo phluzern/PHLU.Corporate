@@ -1,10 +1,10 @@
-// PHLU.Corporate:Page.View.Default filter tag navigation
+// Phlu.Corporate:Page.View.Default filter tag navigation
 
 
-PHLUCorporateApp.directive('search', function ($sce) {
+PhluCorporateApp.directive('search', function ($sce) {
 
 
-    var template = '/_Resources/Static/Packages/PHLU.Corporate/JavaScript/angularjs/PHLU/Corporate/Templates/Search/';
+    var template = '/_Resources/Static/Packages/Phlu.Corporate/JavaScript/angularjs/Phlu/Corporate/Templates/Search/';
 
     return {
         template: '<ng-include src="getTemplateUrl()"/>',
@@ -100,7 +100,7 @@ PHLUCorporateApp.directive('search', function ($sce) {
 
 });
 
-PHLUCorporateApp.filter('orderObjectBy', function () {
+PhluCorporateApp.filter('orderObjectBy', function () {
     return function (items, field, reverse) {
         var filtered = [];
         angular.forEach(items, function (item) {
@@ -115,7 +115,7 @@ PHLUCorporateApp.filter('orderObjectBy', function () {
 });
 
 
-PHLUCorporateApp.directive('nodeType', function ($sce) {
+PhluCorporateApp.directive('nodeType', function ($sce) {
 
     var labels = {};
 
@@ -132,7 +132,7 @@ PHLUCorporateApp.directive('nodeType', function ($sce) {
 });
 
 
-PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$compile', function ($scope, $rootScope, $sce, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $compile) {
+PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$compile', function ($scope, $rootScope, $sce, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $compile) {
 
 
     $scope.result = new $hybridsearchResultsObject();
@@ -197,9 +197,9 @@ PHLUCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var boostParentNodeType = {
-        'PHLU.Neos.NodeTypes:ContentCollection.ContactsGroup': 1.2,
-        'PHLU.Neos.NodeTypes:ContentCollection.Contacts': 1.8,
-        'PHLU.Corporate:ContentCollection.Page.View.Default': 1.5
+        'Phlu.Neos.NodeTypes:ContentCollection.ContactsGroup': 1.2,
+        'Phlu.Neos.NodeTypes:ContentCollection.Contacts': 1.8,
+        'Phlu.Corporate:ContentCollection.Page.View.Default': 1.5
     };
 
     var groupedBy = {

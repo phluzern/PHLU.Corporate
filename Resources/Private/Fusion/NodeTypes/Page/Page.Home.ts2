@@ -1,0 +1,12 @@
+# Page Overview Tiles
+prototype(Phlu.Corporate:Page.Home) < prototype(Phlu.Corporate:Page) {
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/Home.html'
+
+
+    prototype(Phlu.Corporate:Content.CarouselNews) {
+        templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/CarouselNewsHome.html'
+    }
+
+
+
+}

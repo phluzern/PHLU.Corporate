@@ -1,0 +1,5 @@
+prototype(Phlu.Corporate:Headline) < prototype(Phlu.Neos.NodeTypes:Headline) {
+
+
+
+}

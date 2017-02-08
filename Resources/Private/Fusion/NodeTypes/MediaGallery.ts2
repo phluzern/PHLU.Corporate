@@ -1,0 +1,50 @@
+# Content
+prototype(Phlu.Corporate:MediaGallery) < prototype(Phlu.Corporate:Content) {
+
+	templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/MediaGallery.html'
+
+	collectionRenderer = Phlu.Corporate:ContentCollection.MediaGallery
+	main = ${q(node).children('main').get(0)}
+
+	carouselItems = ${q(node).children('main').children().get()}
+	imageGalleryItems = ${q(node).children('main').children().get()}
+	carouselItemsRenderer = Neos.Neos:ContentCase
+
+	# Default Text with Image
+	prototype(Phlu.Corporate:CarouselImage) {
+		width = 900
+		height = 530
+		allowUpScaling = true
+	}
+}
+
+
+# Media Gallery content collection
+prototype(Phlu.Corporate:ContentCollection.CarouselNews) < prototype(Neos.Neos:ContentCollection) {
+
+	attributes.class = 'row'
+
+
+	prototype(Phlu.Corporate:Event) {
+
+		breakpointClass = 'col-xl-4'
+
+	}
+
+	prototype(Phlu.Corporate:NewsItem) {
+
+		breakpointClass = 'col-xl-4'
+
+	}
+
+
+	@cache {
+		mode = 'uncached'
+		context {
+			1 = 'node'
+			2 = 'documentNode'
+		}
+	}
+
+}
+

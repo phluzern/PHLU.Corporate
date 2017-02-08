@@ -1,6 +1,6 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
-{namespace ts=TYPO3\TypoScript\ViewHelpers}
-{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
 
 
 <div {attributes -> f:format.raw()} data-ng-controller="EventoCtrl"  data-ng-init='setNodeTypes({nodetypes -> f:format.raw()});'>
@@ -11,7 +11,7 @@
     </f:if>
 
 
-    <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
+    <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
          data-ng-if="result.isLoading()"/>
 
     <div class="row further-education-list hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">

@@ -1,0 +1,5 @@
+# Content
+prototype(Phlu.Corporate:Database) < prototype(Neos.Neos:Content) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Database.html'
+}

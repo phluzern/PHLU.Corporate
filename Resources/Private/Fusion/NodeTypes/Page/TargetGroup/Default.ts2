@@ -1,0 +1,49 @@
+prototype(Phlu.Corporate:Content.Page.TargetGroup) < prototype(Phlu.Corporate:Content) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/TargetGroup/Wrapper.html'
+
+    main = ${q(node).children('main').get(0)}
+
+    collectionRenderer = Phlu.Corporate:ContentCollection.Page.TargetGroup {
+        attributes.class = 'col-xs-12'
+    }
+
+    title = ${q(node).property('title')}
+}
+
+
+
+prototype(Phlu.Corporate:Content.Page.TargetGroupElement) < prototype(Phlu.Corporate:Content) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/TargetGroup/Element.html'
+
+    header = ${q(node).children('header').get(0)}
+    headerRenderer = Phlu.Corporate:Content.Page.HeaderDefault {
+        linkNode = ${q(node).parent().property('reference')}
+    }
+
+    headerReferenceRenderer = Neos.Fusion:Template {
+
+        header = ${q(node).children('header').get(0)}
+
+        templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/TargetGroup/Element.html'
+        sectionName = 'content'
+
+
+        defaultRenderer = Phlu.Corporate:Content.Page.HeaderDefault {
+            linkNode = ${q(node).parent().get(0)}
+        }
+
+
+    }
+
+
+    prototype(Phlu.Corporate:Content.Page.HeaderDefault) {
+        templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/Header/TargetGroup.html'
+        prototype(Phlu.Corporate:Headline) {
+            tag = 'h3'
+        }
+    }
+
+
+}

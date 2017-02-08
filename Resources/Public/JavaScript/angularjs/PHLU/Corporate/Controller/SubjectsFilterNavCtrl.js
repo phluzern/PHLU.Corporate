@@ -1,5 +1,5 @@
-// PHLU.Corporate:Page.View.Default filter tag navigation
-PHLUCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$timeout', '$cookies', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $timeout, $cookies) {
+// Phlu.Corporate:Page.View.Default filter tag navigation
+PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$timeout', '$cookies', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $timeout, $cookies) {
 
 
     $scope.list = new $hybridsearchObject(hybridsearch);

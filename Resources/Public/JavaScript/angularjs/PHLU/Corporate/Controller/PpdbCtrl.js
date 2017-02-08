@@ -1,4 +1,4 @@
-PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
+PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
     $scope.list = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();
@@ -86,7 +86,7 @@ PHLUCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
 }]);
 
-PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
+PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
     $scope.list = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();
@@ -156,7 +156,7 @@ PHLUCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
 }]);
 
 
-PHLUCorporateApp.filter('toArray', function () {
+PhluCorporateApp.filter('toArray', function () {
     return function (obj, addKey) {
         if (!angular.isObject(obj)) return obj;
         if (addKey === false) {
@@ -174,7 +174,7 @@ PHLUCorporateApp.filter('toArray', function () {
     };
 });
 
-PHLUCorporateApp.filter('inArrayFilter', function () {
+PhluCorporateApp.filter('inArrayFilter', function () {
     return function (input, term) {
 
         if (term === undefined || term == '') {

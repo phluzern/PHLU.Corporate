@@ -1,0 +1,59 @@
+# Page Overview Tiles
+prototype(Phlu.Corporate:Page.View.Default) < prototype(Phlu.Corporate:Page) {
+
+
+
+
+
+tagsMenu = ${q(node).get(0).identifier != '58c164e4-6f08-4f22-a07e-d0cd38bd0c6f' ? q(node).children('tagsmenu').get(0): false}
+
+sections = ${q(node).children('main').find('[instanceof Phlu.Corporate:Section]').get()}
+sectionsCount = ${q(node).children('main').find('[instanceof Phlu.Corporate:Section]').count()}
+hasanchornavigation = ${q(node).property('hasanchornavigation')}
+hasmoodimage = ${q(node).property('hasmoodimage')}
+contactIsHidden = ${q(q(node).children('contact').get(0)).context.workspaceName == 'live' ?((String.length(q(q(node).children('contact').get(0)).property('lastname'))> 0 || q(q(node).children('contact').get(0)).property('contact'))> 0 && q(q(node).children('contact').get(0)).property('ishidden')!= TRUE ? false : true): q(q(node).children('contact').get(0)).property('ishidden')}
+templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
+title = ${q(node).property('title')}
+
+# Contacts wrapper (tile)
+prototype(Phlu.Corporate:Contacts) {
+
+collectionRenderer.attributes.class = 'row phlu-teaser navigation subpage'
+prototype(Phlu.Corporate:Contact).templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Tile.html'
+prototype(Phlu.Corporate:Contact).attributes.class = 'col-xs-12 col-md-6 nav-teaser-item'
+prototype(Phlu.Corporate:ContactsGroup).attributes.class = 'col-xs-12'
+prototype(Phlu.Corporate:ContactsGroup).collectionRenderer.attributes.class = 'row'
+
+# Contact in group
+prototype(Phlu.Corporate:ContactsGroup) {
+collectionRenderer.attributes.id = ${'accordion-' + q(node).parent().get(0).Identifier}
+collectionRenderer.attributes.class = 'phlu-accordion'
+collectionRenderer.attributes.role = 'tablist'
+collectionRenderer.attributes.aria-multiselectable = 'true'
+prototype(Phlu.Corporate:ContactsGroup).attributes.class = ''
+prototype(Phlu.Corporate:ContactsGroup).collectionRenderer.attributes.class = ''
+prototype(Phlu.Corporate:Contact).templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/List.html'
+prototype(Phlu.Corporate:Contact).attributes.class = 'panel panel-default'
+
+}
+
+        }
+
+
+# Image
+prototype(Phlu.Corporate:Image) {
+width = 800
+height = 600
+}
+
+}
+
+
+prototype(Phlu.Corporate:Page.View.Default.Default) < prototype(Phlu.Corporate:Page.View.Default) {
+
+
+templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
+sectionsCount = ${q(node).children('main').find('[instanceof Phlu.Corporate:Section]').count()}
+
+
+}

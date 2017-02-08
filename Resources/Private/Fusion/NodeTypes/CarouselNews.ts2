@@ -1,0 +1,44 @@
+# Content
+prototype(Phlu.Corporate:Content.CarouselNews) < prototype(Phlu.Corporate:Content) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/CarouselNews.html'
+
+    collectionRenderer = Phlu.Corporate:ContentCollection.CarouselNews
+    main = ${q(node).children('main').get(0)}
+
+
+    carouselItems = ${q(node).children('main').children().get()}
+    carouselItemsRenderer = Neos.Neos:ContentCase
+
+
+
+
+
+}
+
+
+
+
+
+# Carousel content collection
+prototype(Phlu.Corporate:ContentCollection.CarouselNews) < prototype(Neos.Neos:ContentCollection) {
+
+        attributes.class = 'row'
+
+
+        prototype(Phlu.Corporate:Event) {
+
+                breakpointClass = 'col-xl-4'
+
+            }
+
+        prototype(Phlu.Corporate:NewsItem) {
+
+                breakpointClass = 'col-xl-4'
+
+            }
+
+
+
+}
+

@@ -1,0 +1,53 @@
+
+
+portrait < page
+
+portrait {
+
+
+
+    body {
+
+        content.main = Phlu.Corporate:Page {
+
+            templatePath = 'resource://Phlu.Corporate/Private/Templates/Portrait/Default.html'
+            node = ${q(node).get(0)}
+
+            contact = ${Phlu.Corporate.getContact(node)}
+            @cache {
+                mode = 'uncached'
+                context {
+                    1 = 'node'
+                    2 = 'documentNode'
+                }
+            }
+
+            breadcrumb = BreadcrumbMenu {
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/Portrait/Breadcrumb.html'
+                contact = ${Phlu.Corporate.getContact(node)}
+                @cache {
+                    mode = 'uncached'
+                    context {
+                        1 = 'node'
+                        2 = 'documentNode'
+                    }
+                }
+
+            }
+
+        }
+
+
+
+    }
+
+    @cache {
+        mode = 'uncached'
+        context {
+            1 = 'node'
+            2 = 'documentNode'
+        }
+    }
+
+
+}

@@ -1,0 +1,15 @@
+prototype(Phlu.Corporate:Content.Page.HeaderDefault) < prototype(Phlu.Corporate:Content) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/Header/Default.html'
+    defaultRenderer = Neos.Neos:ContentCase
+
+    title = ${q(node).children('title').get(0)}
+
+    text = ${q(node).children('text').get(0)}
+
+        prototype(Phlu.Corporate:Headline) {
+                attributes.class = 'page-header'
+        }
+
+
+}

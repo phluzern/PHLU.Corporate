@@ -1,5 +1,5 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
-<div class="col-xl-2 sidebar level0">
+{namespace neos=Neos\Neos\ViewHelpers}
+<div class="col-xl-2 sidebar level0" xmlns:f="http://www.w3.org/1999/html">
     <div class="row">
         <div class="col-xl-12">
             &nbsp;
@@ -23,7 +23,7 @@
             <div class="breadcrumb-title">
                 Sie sind hier:
             </div>
-                {breadcrumb -> f:format.raw()}
+            <f:render partial="Breadcrumb" arguments="{_all}"/>
         </div>
     </div>
 </div>

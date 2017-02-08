@@ -1,309 +1,264 @@
 # Content
-'PHLU.Corporate:Content':
+
+'Phlu.Corporate:Content':
   superTypes:
-    'PHLU.Neos.NodeTypes:Content': TRUE
-  abstract: TRUE
-
-
-# Header default
-'PHLU.Corporate:Content.Page.HeaderDefault':
+    'Phlu.Neos.NodeTypes:Content': true
+  abstract: true
+'Phlu.Corporate:Content.Page.HeaderDefault':
   ui:
-    label: 'Header'
+    label: Header
     icon: icon-header
   constraints:
     nodeTypes:
-      '*': FALSE
+      '*': false
   childNodes:
     title:
-      type: 'PHLU.Corporate:Headline'
+      type: 'Phlu.Corporate:Headline'
     text:
-      type: 'PHLU.Corporate:TextPlain'
-
-# Teaser default
-'PHLU.Corporate:Content.Page.TeaserDefault':
+      type: 'Phlu.Corporate:TextPlain'
+'Phlu.Corporate:Content.Page.TeaserDefault':
   ui:
-    label: 'Teaser'
+    label: Teaser
     icon: icon-header
   constraints:
     nodeTypes:
-      '*': FALSE
+      '*': false
   properties:
     teaserText:
       type: string
       defaultValue: 'Bitte geben Sie einen Teaser-Text ein.'
-
-
-# Carousel abstract
-'PHLU.Corporate:Content.Carousel':
+'Phlu.Corporate:Content.Carousel':
   abstract: true
   ui:
-    label: 'Karussell'
+    label: Karussell
     icon: icon-header
     inlineEditable: true
   properties:
     title:
       type: string
-      defaultValue: 'Aktuelles'
+      defaultValue: Aktuelles
   constraints:
     nodeTypes:
-      '*': FALSE
+      '*': false
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.Carousel'
-
-
-# Carousel news
-'PHLU.Corporate:Content.CarouselNews':
+      type: 'Phlu.Corporate:ContentCollection.Carousel'
+'Phlu.Corporate:Content.CarouselNews':
   superTypes:
-    'PHLU.Corporate:Content.Carousel': TRUE
+    'Phlu.Corporate:Content.Carousel': true
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.CarouselNews'
-
-
-# Target group default
-'PHLU.Corporate:Content.Page.TargetGroup':
+      type: 'Phlu.Corporate:ContentCollection.CarouselNews'
+'Phlu.Corporate:Content.Page.TargetGroup':
   ui:
-    label: 'Zielpublikum'
+    label: Zielpublikum
     icon: icon-header
     inlineEditable: true
   constraints:
     nodeTypes:
-      '*': FALSE
+      '*': false
   properties:
     title:
       type: string
       defaultValue: 'Weitere Angebote für'
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.Page.TargetGroup'
-
-
-# Target group default
-'PHLU.Corporate:Content.Page.TargetGroupElement':
+      type: 'Phlu.Corporate:ContentCollection.Page.TargetGroup'
+'Phlu.Corporate:Content.Page.TargetGroupElement':
   superTypes:
-    'PHLU.Neos.NodeTypes:Content': TRUE
+    'Phlu.Neos.NodeTypes:Content': true
   ui:
-    label: 'Zielpublikum'
+    label: Zielpublikum
     inlineEditable: true
     icon: icon-link
     inspector:
       groups:
         general:
-          label: 'Allgemein'
+          label: Allgemein
   constraints:
     nodeTypes:
-      '*': FALSE
+      '*': false
   properties:
     reference:
       type: reference
       ui:
-        label: 'Link'
-        reloadIfChanged: TRUE
+        label: Link
+        reloadIfChanged: true
         inspector:
-          group: 'general'
+          group: general
           position: 50
     usepageheader:
       type: boolean
       ui:
         label: 'Verwende Text vom Seiten-Header'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'general'
+          group: general
           position: 90
       defaultValue: true
   childNodes:
     header:
-      type: 'PHLU.Corporate:Content.Page.HeaderDefault'
-
-
-
-
-# Accordeon default
-'PHLU.Corporate:AccordeonElement':
+      type: 'Phlu.Corporate:Content.Page.HeaderDefault'
+'Phlu.Corporate:AccordeonElement':
   superTypes:
-    'PHLU.Neos.NodeTypes:Content': TRUE
-    'PHLU.Neos.NodeTypes:PlainTitleMixin': TRUE
+    'Phlu.Neos.NodeTypes:Content': true
+    'Phlu.Neos.NodeTypes:PlainTitleMixin': true
   ui:
     label: 'Accordeon Element'
     icon: icon-header
     inlineEditable: true
   constraints:
     nodeTypes:
-      '*': FALSE
+      '*': false
   properties:
     title:
       defaultValue: 'Hier kommt ein Titel'
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.Accordeon'
-
-
-# headline
-'PHLU.Corporate:Headline':
+      type: 'Phlu.Corporate:ContentCollection.Accordeon'
+'Phlu.Corporate:Headline':
   superTypes:
-    'PHLU.Neos.NodeTypes:Headline': TRUE
-
-
-# Text default
-'PHLU.Corporate:Text':
+    'Phlu.Neos.NodeTypes:Headline': true
+'Phlu.Corporate:Text':
   superTypes:
-    'PHLU.Neos.NodeTypes:TextPlain': TRUE
+    'Phlu.Neos.NodeTypes:TextPlain': true
   properties:
     text:
       ui:
         aloha:
-          autoparagraph: TRUE
-          'format': # Enable specific formatting options.
-            'strong': TRUE
-            'b': FALSE
-            'em': FALSE
-            'i': FALSE
-            'u': FALSE
-            'sub': FALSE
-            'sup': FALSE
-            'p': FALSE
-            'h1': FALSE
-            'h2': FALSE
-            'h3': FALSE
-            'h4': FALSE
-            'h5': FALSE
-            'h6': FALSE
-            'code': FALSE
-            'removeFormat': TRUE
-          'table':
-            'table': FALSE
-          'link':
-            'a': TRUE
-          'list':
-            'ul': TRUE
-            'ol': TRUE
-          'alignment':
-            'left': FALSE
-            'center': FALSE
-            'right': FALSE
-            'justify': FALSE
-          'formatlesspaste':
-            'button': FALSE # Show toggle button for formatless pasting.
-            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
-            'strippedElements': ['*'] # If not set the default setting is used.
-            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
-
-
-# Text plain
-'PHLU.Corporate:TextPlain':
+          autoparagraph: true
+          format:
+            strong: true
+            b: false
+            em: false
+            i: false
+            u: false
+            sub: false
+            sup: false
+            p: false
+            h1: false
+            h2: false
+            h3: false
+            h4: false
+            h5: false
+            h6: false
+            code: false
+            removeFormat: true
+          table:
+            table: false
+          link:
+            a: true
+          list:
+            ul: true
+            ol: true
+          alignment:
+            left: false
+            center: false
+            right: false
+            justify: false
+          formatlesspaste:
+            button: false
+            formatlessPasteOption: true
+            strippedElements:
+              - '*'
+            autoparagraph: false
+'Phlu.Corporate:TextPlain':
   superTypes:
-    'PHLU.Neos.NodeTypes:TextPlain': TRUE
-
-
-# Content image mixin (disable image alignment mixin)
-'PHLU.Corporate.NodeTypes:ContentImageMixin':
-  abstract: TRUE
+    'Phlu.Neos.NodeTypes:TextPlain': true
+'Phlu.Corporate.NodeTypes:ContentImageMixin':
+  abstract: true
   superTypes:
-    'TYPO3.Neos.NodeTypes:ImageMixin': TRUE
-    'TYPO3.Neos.NodeTypes:LinkMixin': FALSE
-    'PHLU.Corporate.NodeTypes:ImageCaptionMixin': TRUE
-    'TYPO3.Neos.NodeTypes:ImageAlignmentMixin': FALSE
-
-
-# Image caption mixin (disable autoparagraph)
-'PHLU.Corporate.NodeTypes:ImageCaptionMixin':
-  abstract: TRUE
+    'Neos.NodeTypes:ImageMixin': true
+    'Phlu.Corporate.NodeTypes:ImageCaptionMixin': true
+'Phlu.Corporate.NodeTypes:ImageCaptionMixin':
+  abstract: true
   superTypes:
-      'TYPO3.Neos.NodeTypes:ImageCaptionMixin': TRUE
+    'Neos.NodeTypes:ImageCaptionMixin': true
   properties:
     caption:
       ui:
         aloha:
-          autoparagraph: FALSE
-
-
-# Text with image
-'PHLU.Corporate:TextWithImage':
+          autoparagraph: false
+'Phlu.Corporate:TextWithImage':
   superTypes:
-    'PHLU.Corporate:Text': TRUE
-    'PHLU.Corporate.NodeTypes:ContentImageMixin': TRUE
+    'Phlu.Corporate:Text': true
+    'Phlu.Corporate.NodeTypes:ContentImageMixin': true
   ui:
     label: 'Text mit Bild'
-    icon: 'icon-picture'
+    icon: icon-picture
     position: 400
   properties:
     caption:
       ui:
         aloha:
-          'format': # Enable specific formatting options.
-            'strong': FALSE
-            'b': FALSE
-            'em': FALSE
-            'i': FALSE
-            'u': FALSE
-            'sub': FALSE
-            'sup': FALSE
-            'p': FALSE
-            'h1': FALSE
-            'h2': FALSE
-            'h3': FALSE
-            'h4': FALSE
-            'h5': FALSE
-            'h6': FALSE
-            'code': FALSE
-            'removeFormat': FALSE
-          'table':
-            'table': FALSE
-          'link':
-            'a': FALSE
-          'list':
-            'ul': FALSE
-            'ol': FALSE
-          'alignment':
-            'left': FALSE
-            'center': FALSE
-            'right': FALSE
-            'justify': FALSE
-          'formatlesspaste':
-            'button': FALSE # Show toggle button for formatless pasting.
-            'formatlessPasteOption': TRUE # Whether the format less pasting should be enable by default.
-            'strippedElements': ['*'] # If not set the default setting is used.
-            'autoparagraph': FALSE # Automatically wrap non-wrapped text blocks in paragraph blocks.
+          format:
+            strong: false
+            b: false
+            em: false
+            i: false
+            u: false
+            sub: false
+            sup: false
+            p: false
+            h1: false
+            h2: false
+            h3: false
+            h4: false
+            h5: false
+            h6: false
+            code: false
+            removeFormat: false
+          table:
+            table: false
+          link:
+            a: false
+          list:
+            ul: false
+            ol: false
+          alignment:
+            left: false
+            center: false
+            right: false
+            justify: false
+          formatlesspaste:
+            button: false
+            formatlessPasteOption: true
+            strippedElements:
+              - '*'
+            autoparagraph: false
     image:
       ui:
         inspector:
           editorOptions:
             features:
-              crop: TRUE
+              crop: true
             crop:
               aspectRatio:
                 locked:
                   width: 237
                   height: 336
-
-
-# Image
-'PHLU.Corporate:Image':
+'Phlu.Corporate:Image':
   superTypes:
-    'PHLU.Corporate:Content': TRUE
-    'TYPO3.Neos.NodeTypes:ImageMixin': TRUE
+    'Phlu.Corporate:Content': true
+    'Neos.NodeTypes:ImageMixin': true
   ui:
-    label: 'Bild'
-    icon: 'icon-picture'
+    label: Bild
+    icon: icon-picture
     position: 400
-
-
-# Medien Galerie
-'PHLU.Corporate:MediaGallery':
+'Phlu.Corporate:MediaGallery':
   superTypes:
-    'PHLU.Corporate:Content': TRUE
+    'Phlu.Corporate:Content': true
   constraints:
     nodeTypes:
-      'PHLU.Corporate:CarouselImage': TRUE
+      'Phlu.Corporate:CarouselImage': true
   ui:
-    label: 'Mediensammlung'
-    icon: 'icon-picture'
+    label: Mediensammlung
+    icon: icon-picture
     inspector:
       groups:
         general:
-          label: 'Mediensammlung'
-    inlineEditable: TRUE
+          label: Mediensammlung
+    inlineEditable: true
     position: 400
   properties:
     title:
@@ -313,33 +268,28 @@
       type: string
       defaultValue: ''
       ui:
-        label: 'Darstellungsform'
-        reloadIfChanged: TRUE
+        label: Darstellungsform
+        reloadIfChanged: true
         inspector:
-          group: 'general'
+          group: general
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            allowEmpty: FALSE
+            allowEmpty: false
             placeholder: 'Auswahl Galerietyp'
             values:
               carousel:
-                label: 'Karussell'
+                label: Karussell
               lightbox:
-                label: 'Vorschaubilder'
-  constraints:
-    nodeTypes:
-      '*': FALSE
+                label: Vorschaubilder
   childNodes:
     main:
-      type: 'PHLU.Corporate:ContentCollection.MediaGallery'
-
-# CarouselImage (locked aspect ratio)
-'PHLU.Corporate:CarouselImage':
+      type: 'Phlu.Corporate:ContentCollection.MediaGallery'
+'Phlu.Corporate:CarouselImage':
   superTypes:
-    'PHLU.Corporate:Image': TRUE
+    'Phlu.Corporate:Image': true
   ui:
-    label: 'Bild'
-    icon: 'icon-picture'
+    label: Bild
+    icon: icon-picture
     position: 400
   properties:
     image:
@@ -347,10 +297,9 @@
         inspector:
           editorOptions:
             features:
-              crop: TRUE
+              crop: true
             crop:
               aspectRatio:
                 locked:
                   width: 900
                   height: 530
-
