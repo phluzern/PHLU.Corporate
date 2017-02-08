@@ -13,7 +13,7 @@
     "name": "phlu/corporate",
     "autoload": {
         "psr-0": {
-            "Phlu\\Corporate\\": "Classes/"
+            "Phlu\\Corporate": "Classes/"
         }
     },
     "extra": {
