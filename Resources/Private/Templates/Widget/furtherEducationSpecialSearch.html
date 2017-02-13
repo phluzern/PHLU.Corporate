@@ -1,6 +1,6 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
-{namespace phlu=PHLU\Neos\NodeTypes\ViewHelpers}
+{namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
 
 
 <div class="row extendedSearchBg further-education-special-search">
@@ -10,7 +10,7 @@
         <div {attributes -> f:format.raw()} data-ng-controller="EventoFurtherEducationCtrl">
 
 
-            <img src="{f:uri.resource(package: 'PHLU.Corporate', path: 'Images/loading.svg')}" alt="loading"
+            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading"
                  class="loadingIcon hidden-xs-up"
                  data-ng-if="result.isLoading()" data-ng-show="search.length > 2"
                  data-ng-class="{'hidden-xs-up': search.length < 2}"/>
@@ -24,8 +24,11 @@
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">Alle <span class="caret"></span></button>
                             <ul class="dropdown-menu">
-                                <li href="#" data-ng-repeat="f in nodetypesFilter"
-                                    data-ng-click="setNodetypesFilter(f);"><a href="#">{{f.label}}</a>
+                                <li href="#" >
+                                    <a href="#">Kurse</a>
+                                </li>
+                                <li href="#" >
+                                    <a href="#">Weiterbildungsangebote</a>
                                 </li>
                             </ul>
                         </div><!-- /btn-group -->
@@ -51,11 +54,11 @@
                         <div class="input-item-col col-xs-12 col-sm-3">
                             <label>Schul-/Studienjahr</label>
                             <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">
-                               <a href="#" class="search-result-tag">
-                                   2016 / 2017
-                                   <i class="fa fa-times clickable" aria-hidden="true"></i>
-                               </a>
+                                 aria-haspopup="true" aria-expanded="false">
+                                <a href="#" class="search-result-tag">
+                                    2016 / 2017
+                                    <i class="fa fa-times clickable" aria-hidden="true"></i>
+                                </a>
                                 <a href="#" class="search-result-tag">
                                     2018 / 2019
                                     <i class="fa fa-times clickable" aria-hidden="true"></i>
@@ -102,13 +105,13 @@
                                 <li value="1495">
                                     <a href="#">
                                         <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                            &nbsp;&nbsp;KG
+                                        &nbsp;&nbsp;KG
                                     </a>
                                 </li>
                                 <li value="1685">
                                     <a href="#">
                                         <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                            &nbsp;&nbsp;BS
+                                        &nbsp;&nbsp;BS
                                     </a>
                                 </li>
                                 <li value="1683">
@@ -157,9 +160,6 @@
                     </div>
 
 
-
-
-
                 </div>
 
                 <div class="col-xs-12">
@@ -202,368 +202,417 @@
 <div class="row blackBgFullWidthTabs">
     <div class="col-xs-12">
 
-            <ul class="nav nav-pills" role="tablist">
-                <li class="nav-item clickable ">
-                    <a class=" nav-link" data-toggle="pill" href="#focustopics" role="pill">
-                        <span>Fokus- <br>themen</span>
+        <ul class="nav nav-pills" role="tablist">
+            <li class="nav-item  ">
+                <a class=" nav-link" data-toggle="pill" href="#focustopics" role="pill">
+                    <span>Fokus- <br>themen</span>
 
-                    </a>
-                </li>
-                <li class="nav-item clickable">
-                    <a class=" nav-link" data-toggle="pill" href="#latestoffers" role="pill">
-                        <span>Neueste <br>Angebote</span>
-                    </a>
-                </li>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class=" nav-link" data-toggle="pill" href="#latestoffers" role="pill">
+                    <span>Neueste <br>Angebote</span>
+                </a>
+            </li>
 
-                <li class="nav-item clickable ">
-                    <a class=" nav-link" data-toggle="pill" href="#recommendedoffers" role="pill">
-                        <span>Empfohlene <br>Angebote</span>
+            <li class="nav-item  ">
+                <a class=" nav-link" data-toggle="pill" href="#recommendedoffers" role="pill">
+                    <span>Empfohlene <br>Angebote</span>
+                </a>
+            </li>
+            <li class="nav-item  ">
+                <a class=" nav-link" data-toggle="pill" href="#lastminute" role="pill">
+                    <span>Last <br>Minute</span>
+                </a>
+            </li>
+            <li class="nav-item  ">
+                <a class=" nav-link" data-toggle="pill" href="#customoffers" role="pill">
+                    <span>Massgeschneiderte <br>Angebote</span>
+                </a>
+            </li>
+            <li class="nav-item  ">
+                <a class=" nav-link" data-toggle="pill" href="#lastvisit" role="pill">
+                    <span>Zuletzt <br>besucht</span>
+                </a>
+            </li>
+        </ul>
+
+
+        <div class="mobile-view-tabs">
+            <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
+                 aria-haspopup="true" aria-expanded="false">
+                -- Filter wählen --
+
+
+            </div>
+            <ul class="dropdown-menu" role="tablist">
+                <li class="clickable">
+                    <a data-toggle="pill" href="#focustopics" role="pill">
+                        &nbsp;&nbsp;Fokusthemen
                     </a>
                 </li>
-                <li class="nav-item clickable ">
-                    <a class=" nav-link" data-toggle="pill" href="#lastminute" role="pill">
-                        <span>Last <br>Minute</span>
+                <li class="clickable">
+                    <a data-toggle="pill" href="#latestoffers" role="pill">
+                        &nbsp;&nbsp;Neueste Angebote
                     </a>
                 </li>
-                <li class="nav-item clickable ">
-                    <a class=" nav-link" data-toggle="pill" href="#customoffers" role="pill">
-                        <span>Massgeschneiderte <br>Angebote</span>
+                <li class="clickable">
+                    <a data-toggle="pill" href="#recommendedoffers" role="pill">
+                        &nbsp;&nbsp;Empfohlene Angebote
                     </a>
                 </li>
-                <li class="nav-item clickable ">
-                    <a class=" nav-link" data-toggle="pill" href="#lastvisit" role="pill">
-                        <span>Zuletzt <br>besucht</span>
+                <li class="clickable">
+                    <a data-toggle="pill" href="#lastminute" role="pill">
+                        &nbsp;&nbsp;Last Minute
+                    </a>
+                </li>
+                <li class="clickable">
+                    <a data-toggle="pill" href="#customoffers" role="pill">
+                        &nbsp;&nbsp;Massgeschneiderte Angebote
+                    </a>
+                </li>
+                <li class="clickable">
+                    <a data-toggle="pill" href="#lastvisit" role="pill">
+                        &nbsp;&nbsp;Zuletzt besucht
                     </a>
                 </li>
             </ul>
+
+        </div>
+
+
     </div>
 
 </div>
 
-
-
-
 <div class="row blackBgFullWidthContents">
 
-        <div class="col-xs-12">
-            <div class="tab-content">
-                <div class="result-panel tab-pane " id="focustopics" role="tabpanel">
-                    <!--<a href="#" class="close-btn">schliessen</a>-->
-                    <h3>Spezifische Weiterbildungsangebote zu:</h3>
-                    <ul class="nav nav-pills" role="tablist">
-                        <li class="col-xs-6 nav-item clickable ">
-                            <a class="nav-link active" href="#">
-                                <span>Berufsbildung</span>
+    <div class="col-xs-12">
+        <div class="tab-content">
+            <div class="result-panel tab-pane " id="focustopics" role="tabpanel">
+                <!--<a href="#" class="close-btn">schliessen</a>-->
+                <h3>Spezifische Weiterbildungsangebote zu:</h3>
+                <ul class="nav nav-pills " role="tablist">
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class="nav-link" href="#">
+                            <span>Berufsbildung</span>
 
-                            </a>
-                        </li>
-                        <li class="col-xs-6 nav-item clickable">
-                            <a class="nav-link" href="#">
-                                <span>Erwachsenenbildung</span>
-                            </a>
-                        </li>
-                        <li class="col-xs-6 nav-item clickable">
-                            <a class="nav-link" href="#">
-                                <span>Schulmanagement</span>
-                            </a>
-                        </li>
-                        <li class="col-xs-6 nav-item clickable ">
-                            <a class=" nav-link" href="#">
-                                <span>Berufsbiografische Angebote</span>
-                            </a>
-                        </li>
-                    </ul>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable">
+                        <a class="nav-link" href="#">
+                            <span>Erwachsenenbildung</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable">
+                        <a class="nav-link" href="#">
+                            <span>Schulmanagement</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class=" nav-link" href="#">
+                            <span>Berufsbiografische Angebote</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class=" nav-link" href="#">
+                            <span>Lehrplan 21</span>
+                        </a>
+                    </li>
+                </ul>
 
-                </div>
-                <div class="result-panel tab-pane " id="latestoffers" role="tabpanel">
-                    <!--<a href="#" class="close-btn">schliessen</a>-->
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Schule und Heterogenität
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Inklusion und integrative Schulung
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Kulturelle Vielfalt und Mehrsprachigkeit
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Schulentwicklung und -qualität
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Diagnostik, Beurteilung und adaptives Lernen
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Sozio-emotionales Lernen
-                                    </a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="result-panel tab-pane " id="recommendedoffers" role="tabpanel">
-                    <!--<a href="#" class="close-btn">schliessen</a>-->
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Schule und Heterogenität
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Inklusion und integrative Schulung
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Kulturelle Vielfalt und Mehrsprachigkeit
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Schulentwicklung und -qualität
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Diagnostik, Beurteilung und adaptives Lernen
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Sozio-emotionales Lernen
-                                    </a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="result-panel tab-pane " id="lastminute" role="tabpanel">
-                    <!--<a href="#" class="close-btn">schliessen</a>-->
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Schule und Heterogenität
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Inklusion und integrative Schulung
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Kulturelle Vielfalt und Mehrsprachigkeit
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Schulentwicklung und -qualität
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Diagnostik, Beurteilung und adaptives Lernen
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Sozio-emotionales Lernen
-                                    </a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="result-panel tab-pane " id="customoffers" role="tabpanel">
-                    <!--<a href="#" class="close-btn">schliessen</a>-->
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Schule und Heterogenität
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Inklusion und integrative Schulung
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Kulturelle Vielfalt und Mehrsprachigkeit
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Schulentwicklung und -qualität
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Diagnostik, Beurteilung und adaptives Lernen
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Sozio-emotionales Lernen
-                                    </a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="result-panel tab-pane " id="lastvisit" role="tabpanel">
-                    <!--<a href="#" class="close-btn">schliessen</a>-->
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Schule und Heterogenität
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Inklusion und integrative Schulung
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Kulturelle Vielfalt und Mehrsprachigkeit
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable checked">
-                                <td><i class="fa fa-check-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Schulentwicklung und -qualität
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Diagnostik, Beurteilung und adaptives Lernen
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr class="clickable ">
-                                <td><i class="fa fa-square-o" aria-hidden="true"></i></td>
-                                <td>
-                                    <a href="#">
-                                        Sozio-emotionales Lernen
-                                    </a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            </div>
+            <div class="result-panel tab-pane active" id="latestoffers" role="tabpanel">
+                <!--<a href="#" class="close-btn">schliessen</a>-->
+                <h3>Die neuesten Studiengänge</h3>
+                <div class="table-responsive  ">
+                    <table class="table">
+                        <tbody>
+                        <tr class="icon hat clickable open">
+                            <td>
+                                <span class="oi oi-caret-bottom"></span>
+                                <span class="ng-binding">
+                                        CAS Menschenrechtsbildung
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="result-preview ">
+                            <td>
+                                <div>
+                                    <p>
+                                        Menschenrechte sind die Basis für ein friedliches Zusammenleben einer
+                                        Gesellschaft. Doch nur wenn Menschen von ihren Rechten wissen, können Menschen
+                                        ihre Rechte für sich in Anspruch nehmen und sich gleichzeitig auch solidarisch
+                                        für die Rechte von anderen einsetzen («empowerment»).
+                                    </p>
 
+
+                                    <table class="table">
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                Studienziel
+                                                <div class="mobile-view-columns">
+                                                    Certificate of Advanced Studies PH Luzern in Menschenrechtsbildung
+                                                </div>
+                                            </td>
+                                            <td>
+                                                Certificate of Advanced Studies PH Luzern in Menschenrechtsbildung
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                ETCS-Punkte
+                                                <div class="mobile-view-columns">
+                                                    30
+                                                </div>
+                                            </td>
+                                            <td>
+                                                30
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Startdatum
+                                                <div class="mobile-view-columns">
+                                                    13.01.2017
+                                                </div>
+                                            </td>
+                                            <td>
+                                                13.01.2017
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Ort
+                                                <div class="mobile-view-columns">
+                                                    Luzern
+                                                </div>
+                                            </td>
+                                            <td>
+                                                Luzern
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
+                                <div class="details">
+                                    <a class="btn btn-primary"
+                                       href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
+                                        Details
+                                    </a>
+                                </div>
+                                <div class="shareAndRegister">
+                                    <a class="btn btn-primary share"
+                                       href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
+                                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                        <br>
+                                        <span class="shareText">
+                                            Teilen
+                                        </span>
+                                    </a>
+                                    <a class="btn btn-primary "
+                                       href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
+                                        Anmelden
+                                    </a>
+                                </div>
+
+
+                            </td>
+                        </tr>
+                        <tr class="icon hat clickable ">
+                            <td>
+                                <span class="oi oi-caret-right"></span>
+                                <span class="ng-binding">
+                                        MAS Integrative Förderung
+                                </span>
+                            </td>
+                        </tr>
+                        </tbody><!-- end ngRepeat: node in result.getNodes(limit) -->
+
+                    </table>
+                </div>
+                <h3>Die neuesten Veranstaltungen</h3>
+                <div class="table-responsive  ">
+                    <table class="table">
+                        <tbody>
+                        <tr class="icon calendar clickable ">
+                            <td>
+                                <span class="oi oi-caret-right"></span>
+                                <span class="ng-binding">
+                                        Vollenweider Lectures
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="icon calendar clickable ">
+                            <td>
+                                <span class="oi oi-caret-right"></span>
+                                <span class="ng-binding">
+                                        Informationsveranstaltung MAS Schulmanagement
+                                </span>
+                            </td>
+                        </tr>
+                        </tbody><!-- end ngRepeat: node in result.getNodes(limit) -->
+                    </table>
+                </div>
+                <h3>Die neuesten Kurse</h3>
+                <div class="table-responsive  ">
+                    <table class="table">
+                        <tbody>
+                        <tr class="icon book clickable ">
+                            <td>
+                                <span class="oi oi-caret-right"></span>
+                                <span class="ng-binding">
+                                        Rechtsfragen im Schulalltag
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="icon book clickable ">
+                            <td>
+                                <span class="oi oi-caret-right"></span>
+                                <span class="ng-binding">
+                                        Schule - ein Biotop der Soziologie
+                                </span>
+                            </td>
+                        </tr>
+                        </tbody><!-- end ngRepeat: node in result.getNodes(limit) -->
+                    </table>
+                </div>
+            </div>
+            <div class="result-panel tab-pane " id="recommendedoffers" role="tabpanel">
+                <!--<a href="#" class="close-btn">schliessen</a>-->
+                <h3>Spezifische Weiterbildungsangebote zu:</h3>
+                <ul class="nav nav-pills " role="tablist">
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class="nav-link" href="#">
+                            <span>Berufsbildung</span>
+
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable">
+                        <a class="nav-link" href="#">
+                            <span>Erwachsenenbildung</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable">
+                        <a class="nav-link" href="#">
+                            <span>Schulmanagement</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class=" nav-link" href="#">
+                            <span>Berufsbiografische Angebote</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class=" nav-link" href="#">
+                            <span>Lehrplan 21</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="result-panel tab-pane " id="lastminute" role="tabpanel">
+                <!--<a href="#" class="close-btn">schliessen</a>-->
+                <h3>Spezifische Weiterbildungsangebote zu:</h3>
+                <ul class="nav nav-pills " role="tablist">
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class="nav-link" href="#">
+                            <span>Berufsbildung</span>
+
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable">
+                        <a class="nav-link" href="#">
+                            <span>Erwachsenenbildung</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable">
+                        <a class="nav-link" href="#">
+                            <span>Schulmanagement</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class=" nav-link" href="#">
+                            <span>Berufsbiografische Angebote</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class=" nav-link" href="#">
+                            <span>Lehrplan 21</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="result-panel tab-pane " id="customoffers" role="tabpanel">
+                <!--<a href="#" class="close-btn">schliessen</a>-->
+                <h3>Spezifische Weiterbildungsangebote zu:</h3>
+                <ul class="nav nav-pills " role="tablist">
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class="nav-link" href="#">
+                            <span>Berufsbildung</span>
+
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable">
+                        <a class="nav-link" href="#">
+                            <span>Erwachsenenbildung</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable">
+                        <a class="nav-link" href="#">
+                            <span>Schulmanagement</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class=" nav-link" href="#">
+                            <span>Berufsbiografische Angebote</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class=" nav-link" href="#">
+                            <span>Lehrplan 21</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="result-panel tab-pane " id="lastvisit" role="tabpanel">
+                <!--<a href="#" class="close-btn">schliessen</a>-->
+                <h3>Spezifische Weiterbildungsangebote zu:</h3>
+                <ul class="nav nav-pills " role="tablist">
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class="nav-link" href="#">
+                            <span>Berufsbildung</span>
+
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable">
+                        <a class="nav-link" href="#">
+                            <span>Erwachsenenbildung</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable">
+                        <a class="nav-link" href="#">
+                            <span>Schulmanagement</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class=" nav-link" href="#">
+                            <span>Berufsbiografische Angebote</span>
+                        </a>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                        <a class=" nav-link" href="#">
+                            <span>Lehrplan 21</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
 
         </div>
+
+    </div>
 
 
 </div>
