@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
 
+    var isBackend = jQuery("body").hasClass("neos-backend");
 
     /* set preventDefault on links */
     $('a.preventDefault').click(function (event) {
@@ -18,11 +19,23 @@ $(document).ready(function () {
         event.preventDefault();
         return false;
     });
+
     $('ul.nav.nav-pills li.nav-item a.nav-link').click(function (event) {
+
+
+        if (isBackend) {
+            event.preventDefault();
+        }
 
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
-            $($(this).attr('data-target')).removeClass('active');
+
+            if ($(this).attr('data-target')) {
+                $($(this).attr('data-target')).removeClass('active');
+            } else {
+                $($(this).attr('href')).removeClass('active');
+            }
+
             event.preventDefault();
             return false;
         }

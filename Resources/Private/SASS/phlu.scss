@@ -1148,6 +1148,9 @@ body {
       .extendedSearchFilter {
         color: white;
         display: none;
+        .disabled {
+          opacity: 0.5;
+        }
         h3 {
           color: white;
           margin-top: 30px;
@@ -1168,6 +1171,7 @@ body {
               display: -webkit-box;
               display: -ms-flexbox;
               overflow: hidden;
+              min-height: 55px;
               .search-result-tag {
                 color: white;
                 float: left;
@@ -3990,7 +3994,7 @@ body {
           }
         }
       }
-      > .row {
+      > .row, > .row-fullwidth-content > .row {
         p {
           margin-bottom: 31px;
         }
