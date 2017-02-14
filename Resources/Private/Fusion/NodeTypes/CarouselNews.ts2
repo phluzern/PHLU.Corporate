@@ -9,7 +9,7 @@ prototype(Phlu.Corporate:Content.CarouselNews) < prototype(Phlu.Corporate:Conten
 
     carouselItems = ${q(node).children('main').children().get()}
     carouselItemsRenderer = Neos.Neos:ContentCase
-
+    title = ${q(node).property('title')}
 
 
 

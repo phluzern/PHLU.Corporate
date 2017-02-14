@@ -1,5 +1,5 @@
 prototype(Phlu.Corporate:Content.Page.TeaserDefault) < prototype(Phlu.Corporate:Content) {
 
     templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/Teaser/Default.html'
-
+    teaserText = ${q(node).property('teaserText')}
 }
