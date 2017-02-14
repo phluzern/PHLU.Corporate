@@ -81,7 +81,8 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
         .setNodeType('phlu-neos-nodetypes-project')
         .addPropertyFilter('title', '', null, true)
-        .$bind('result', $scope);
+        .$bind('result', $scope)
+        .run();
 
 
 }]);
@@ -150,7 +151,8 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         .addPropertyFilter('persons.EventoID', 'participants', $scope)
         .addPropertyFilter('publicationtype.id', 'publicationtype', $scope)
         .addPropertyFilter('organisations.OrganisationId', 'organisations', $scope)
-        .$bind('result', $scope);
+        .$bind('result', $scope)
+        .run();
 
 
 }]);

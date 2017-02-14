@@ -64,7 +64,7 @@
                                    data-target="#researchfocus-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
                                     <span>Forschungsschwerpunkte</span>
-                                    <span class="count" data-ng-show="sizeOf(researchmainfocus) > 0">{{sizeOf(researchmainfocus)}}</span>
+                                    <span class="count" data-ng-show="sizeOf(researchmainfocus) > 0" data-ng-bind="sizeOf(researchmainfocus)"></span>
                                 </a>
                                 <span data-ng-show="sizeOf(researchmainfocus) > 0" class="resetFilter">
                                     <a ng-click="clearFilter('researchmainfocus')">
@@ -79,7 +79,7 @@
                                    data-target="#financing-{node.Identifier}" role="tab">
                                     <i class="fa fa-usd" aria-hidden="true"></i>
                                     <span>Finanzierungstyp</span>
-                                    <span class="count" data-ng-show="sizeOf(financingtype) > 0">{{sizeOf(financingtype)}}</span>
+                                    <span class="count" data-ng-show="sizeOf(financingtype) > 0" data-ng-bind="sizeOf(financingtype)"></span>
                                 </a>
                                 <span data-ng-show="sizeOf(financingtype) > 0" class="resetFilter">
                                     <a ng-click="clearFilter('financingtype')">
@@ -93,7 +93,7 @@
                                    data-target="#projectparticipants-{node.Identifier}" role="tab">
                                     <i class="fa fa-users" aria-hidden="true"></i>
                                     <span>Projektbeteiligte Personen</span>
-                                    <span class="count" data-ng-show="sizeOf(projectparticipants) > 0">{{sizeOf(projectparticipants)}}</span>
+                                    <span class="count" data-ng-show="sizeOf(projectparticipants) > 0" data-ng-bind="sizeOf(projectparticipants)"></span>
                                 </a>
                                 <span data-ng-show="sizeOf(projectparticipants) > 0" class="resetFilter">
                                     <a ng-click="clearFilter('projectparticipants')">
@@ -107,7 +107,7 @@
                                    data-target="#projectstate-{node.Identifier}" role="tab">
                                     <i class="fa fa-hourglass-start" aria-hidden="true"></i>
                                     <span>Projektstatus</span>
-                                    <span class="count" data-ng-show="sizeOf(filterLifetime) > 0">{{sizeOf(filterLifetime)}}</span>
+                                    <span class="count" data-ng-show="sizeOf(filterLifetime) > 0" data-ng-bind="sizeOf(filterLifetime)"></span>
                                 </a>
                                 <span data-ng-show="sizeOf(filterLifetime) > 0" class="resetFilter">
                                     <a ng-click="clearFilter('filterLifetime')">
@@ -121,7 +121,7 @@
                                     <i class="fa fa-calendar" aria-hidden="true"></i>
                                     <span>Projektende</span>
                                     <span class="count"
-                                          data-ng-show="sizeOf(projectend) > 0">{{sizeOf(projectend)}}</span>
+                                          data-ng-show="sizeOf(projectend) > 0" data-ng-bind="sizeOf(projectend)"></span>
                                 </a>
                                 <span data-ng-show="sizeOf(projectend) > 0" class="resetFilter">
                                     <a ng-click="clearFilter('projectend')">
@@ -150,8 +150,8 @@
                                                        data-ng-class="{'fa-check-square-o': researchmainfocus[ltg.value.ID],'fa-square-o': !researchmainfocus[ltg.value.ID]}"
                                                        aria-hidden="true">
                                                     </i>
-                                                    <span>
-                                                        {{ltg.value.name}} ({{ltg.count}})
+                                                    <span data-ng-bind="ltg.value.name + ' (' + ltg.count + ')'">
+
                                                     </span>
                                                 </a>
                                             </td>
@@ -168,8 +168,8 @@
                                                        data-ng-class="{'fa-check-square-o': researchmainfocus[lt.value.ID],'fa-square-o': !researchmainfocus[lt.value.ID]}"
                                                        aria-hidden="true">
                                                     </i>
-                                                    <span>
-                                                        {{lt.value.name}} ({{lt.count}})
+                                                    <span data-ng-bind="lt.value.name + ' (' + lt.count + ')'">
+
                                                     </span>
                                                 </a>
                                             </td>
@@ -198,8 +198,8 @@
                                                        data-ng-class="{'fa-check-square-o': financingtype[lt.value],'fa-square-o': !financingtype[lt.value]}"
                                                        aria-hidden="true">
                                                     </i>
-                                                    <span>
-                                                        {{lt.value}} ({{lt.count}})
+                                                    <span data-ng-bind="ltg.value.name + ' (' + ltg.count + ')'">
+
                                                     </span>
                                                 </a>
                                             </td>
@@ -224,7 +224,7 @@
                                 </div>
                                 <div class="search-result-tags">
                                     <span class="search-result-tag"
-                                          data-ng-repeat="(eventoID,val) in projectparticipants" data-ng-if="val">{{val}} <i
+                                          data-ng-repeat="(eventoID,val) in projectparticipants" data-ng-if="val"><span data-ng-bind="val"></span> <i
                                             class="fa fa-times clickable"
                                             aria-hidden="true"
                                             data-ng-click="projectparticipants[eventoID] = false;"></i></span>
@@ -239,9 +239,7 @@
                                             data-ng-if="person.value.EventoID > 0"
                                             data-ng-show="projectparticipants[person.value.EventoID] == undefined || projectparticipants[person.value.EventoID] == false">
                                             <td>
-                                                <a href="javascript:void(0);">
-                                                    {{person.value.Vorname}} {{person.value.Nachname}}
-                                                </a>
+                                                <a href="javascript:void(0);" data-ng-bind="person.value.Vorname + ' ' + person.value.Nachname"></a>
                                             </td>
                                         </tr>
 
@@ -264,9 +262,7 @@
                                                        data-ng-class="{'fa-check-square-o': filterLifetime[lt.value],'fa-square-o': !filterLifetime[lt.value]}"
                                                        aria-hidden="true">
                                                     </i>
-                                                    <span>
-                                                        {{lt.value}} ({{lt.count}})
-                                                    </span>
+                                                    <span data-ng-bind="lt.value + ' ('+ lt.count + ')'"></span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -290,7 +286,7 @@
         <div class="col-xs-12">
             <div class="row results-table">
                 <div class="col-xs-12" data-ng-show="result.isStarted()">
-                    <f:if condition="{showSearchInput}"><div class="resultsCount"><h2>Treffer ({{result.count()}})</h2></div></f:if>
+                    <f:if condition="{showSearchInput}"><div class="resultsCount"><h2 data-ng-bind="'Treffer '+ result.count()"></h2></div></f:if>
                     <div class="searchResultsListLoadingScreen" data-ng-if="result.isLoading()">
                         <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
                         />
@@ -314,8 +310,8 @@
                                 <td>
                                         <span class="oi"
                                               data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
-                                    <span>
-                                        {{node.getProperty('title')}}
+                                    <span data-ng-bind="node.getProperty('title')">
+
                                     </span>
 
 
@@ -326,8 +322,8 @@
 
                                         <span>
                                             <ul>
-                                                <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">
-                                                    {{focus.name}}
+                                                <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index" data-ng-bind="focus.name">
+
                                                 </li>
                                             </ul>
                                         </span>
@@ -335,8 +331,8 @@
                                 </td>
                                 <td>
                                     <ul class="cellList">
-                                        <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">
-                                            {{focus.name}}
+                                        <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index" data-ng-bind="focus.name">
+
                                         </li>
                                     </ul>
                                 </td>
@@ -367,6 +363,5 @@
                 </div>
             </div>
         </div>
-        <span data-ng-init="list.run()"></span>
     </div>
 </div>
