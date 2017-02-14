@@ -2309,31 +2309,31 @@ fieldset[disabled] a.btn {
 
 .btn-info {
   color: #707070;
-  background-color: #c7dee2;
-  border-color: #c7dee2; }
+  background-color: #DADCE8;
+  border-color: #DADCE8; }
   .btn-info:hover {
     color: #707070;
-    background-color: #a5cad1;
-    border-color: #9fc6cd; }
+    background-color: #bbbed4;
+    border-color: #b4b8d1; }
   .btn-info:focus, .btn-info.focus {
     color: #707070;
-    background-color: #a5cad1;
-    border-color: #9fc6cd; }
+    background-color: #bbbed4;
+    border-color: #b4b8d1; }
   .btn-info:active, .btn-info.active, .open > .btn-info.dropdown-toggle {
     color: #707070;
-    background-color: #a5cad1;
-    border-color: #9fc6cd;
+    background-color: #bbbed4;
+    border-color: #b4b8d1;
     background-image: none; }
     .btn-info:active:hover, .btn-info:active:focus, .btn-info:active.focus, .btn-info.active:hover, .btn-info.active:focus, .btn-info.active.focus, .open > .btn-info.dropdown-toggle:hover, .open > .btn-info.dropdown-toggle:focus, .open > .btn-info.dropdown-toggle.focus {
       color: #707070;
-      background-color: #8ebcc4;
-      border-color: #73adb7; }
+      background-color: #a5a9c7;
+      border-color: #8b92b7; }
   .btn-info.disabled:focus, .btn-info.disabled.focus, .btn-info:disabled:focus, .btn-info:disabled.focus {
-    background-color: #c7dee2;
-    border-color: #c7dee2; }
+    background-color: #DADCE8;
+    border-color: #DADCE8; }
   .btn-info.disabled:hover, .btn-info:disabled:hover {
-    background-color: #c7dee2;
-    border-color: #c7dee2; }
+    background-color: #DADCE8;
+    border-color: #DADCE8; }
 
 .btn-success {
   color: #fff;
@@ -2472,26 +2472,26 @@ fieldset[disabled] a.btn {
     border-color: white; }
 
 .btn-outline-info {
-  color: #c7dee2;
+  color: #DADCE8;
   background-image: none;
   background-color: transparent;
-  border-color: #c7dee2; }
+  border-color: #DADCE8; }
   .btn-outline-info:hover {
     color: #fff;
-    background-color: #c7dee2;
-    border-color: #c7dee2; }
+    background-color: #DADCE8;
+    border-color: #DADCE8; }
   .btn-outline-info:focus, .btn-outline-info.focus {
     color: #fff;
-    background-color: #c7dee2;
-    border-color: #c7dee2; }
+    background-color: #DADCE8;
+    border-color: #DADCE8; }
   .btn-outline-info:active, .btn-outline-info.active, .open > .btn-outline-info.dropdown-toggle {
     color: #fff;
-    background-color: #c7dee2;
-    border-color: #c7dee2; }
+    background-color: #DADCE8;
+    border-color: #DADCE8; }
     .btn-outline-info:active:hover, .btn-outline-info:active:focus, .btn-outline-info:active.focus, .btn-outline-info.active:hover, .btn-outline-info.active:focus, .btn-outline-info.active.focus, .open > .btn-outline-info.dropdown-toggle:hover, .open > .btn-outline-info.dropdown-toggle:focus, .open > .btn-outline-info.dropdown-toggle.focus {
       color: #fff;
-      background-color: #8ebcc4;
-      border-color: #73adb7; }
+      background-color: #a5a9c7;
+      border-color: #8b92b7; }
   .btn-outline-info.disabled:focus, .btn-outline-info.disabled.focus, .btn-outline-info:disabled:focus, .btn-outline-info:disabled.focus {
     border-color: white; }
   .btn-outline-info.disabled:hover, .btn-outline-info:disabled:hover {
@@ -3499,7 +3499,7 @@ input[type="button"].btn-block {
 
 .card-outline-info {
   background-color: transparent;
-  border-color: #c7dee2; }
+  border-color: #DADCE8; }
 
 .card-outline-success {
   background-color: transparent;
@@ -8854,6 +8854,7 @@ body {
         margin-top: 20px; }
       body .all .input-group .input-group-btn button {
         color: white;
+        font-weight: 700;
         font-size: 1.313rem;
         background-color: #28818f; }
         @media (max-width: 767px) {
@@ -8904,8 +8905,6 @@ body {
           body .all .extendedSearchBg.on .extendedSearch button .oi {
             display: inline-block;
             margin-left: 15px; }
-          body .all .extendedSearchBg.on .extendedSearch button:hover {
-            background-color: #5c5c5c; }
         body .all .extendedSearchBg.on .dropdown-menu {
           margin-top: inherit; }
         body .all .extendedSearchBg.on input[type='checkbox'] {
@@ -8916,11 +8915,39 @@ body {
         margin-top: 15px; }
         body .all .extendedSearchBg .extendedSearch button {
           background-color: #edeae8; }
+          @media (max-width: 767px) {
+            body .all .extendedSearchBg .extendedSearch button {
+              font-size: 1rem; } }
           body .all .extendedSearchBg .extendedSearch button .oi {
             display: none; }
           body .all .extendedSearchBg .extendedSearch button:hover {
             color: white;
             background-color: #5c5c5c; }
+          body .all .extendedSearchBg .extendedSearch button .count {
+            float: right;
+            display: block;
+            position: relative;
+            margin-right: -32px;
+            margin-top: -16px;
+            color: white;
+            background-color: #28818f;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            border-radius: 13px;
+            font-size: 13px; }
+        body .all .extendedSearchBg .extendedSearch .resetFilter {
+          float: right;
+          display: block;
+          position: relative;
+          margin-top: -22px;
+          margin-right: -14px;
+          font-size: 10px; }
+          body .all .extendedSearchBg .extendedSearch .resetFilter a {
+            color: black;
+            font-weight: 100; }
+            body .all .extendedSearchBg .extendedSearch .resetFilter a:hover {
+              background-color: inherit; }
       body .all .extendedSearchBg label {
         display: block; }
       body .all .extendedSearchBg input, body .all .extendedSearchBg select {
@@ -8962,6 +8989,8 @@ body {
             width: 15px;
             padding-right: 15px;
             padding-left: 7px; }
+          body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-toggle:hover::after {
+            background-color: #28818f; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col .tagFadeOutBg {
           position: absolute;
           display: block;
@@ -9257,7 +9286,7 @@ body {
         body .all .phlu-teaser {
           padding: 0 0 65px; } }
       body .all .phlu-teaser .phlu-teaser-type {
-        background-color: #ba1541;
+        background-color: #333333;
         font-size: 11px;
         letter-spacing: 0.4px;
         color: white;
@@ -9304,13 +9333,13 @@ body {
         padding: 11px;
         color: white;
         font-size: 28px;
-        background-color: #28818f;
+        background-color: #333333;
         margin: 0 20px 0 0; }
       body .all .phlu-teaser .event .event-date-month-year-location {
         font-size: 0.875rem;
         line-height: 1.2;
         background-color: white;
-        padding-top: 8px;
+        padding-top: 14px;
         padding-bottom: 4px;
         height: 79px; }
         body .all .phlu-teaser .event .event-date-month-year-location .event-location {
@@ -9320,10 +9349,10 @@ body {
         body .all .phlu-teaser .event .event-date-month-year-location > div {
           margin-top: 10px; }
       body .all .phlu-teaser .event .phlu-teaser-body {
-        height: 183px;
+        height: 164px;
         padding: 30px 20px 20px; }
       body .all .phlu-teaser .event .phlu-teaser-type {
-        background-color: #28818f;
+        background-color: #333333;
         position: absolute;
         bottom: 0;
         right: 15px;
@@ -9428,7 +9457,7 @@ body {
         body .all .phlu-teaser.carousel .carousel-control .icon-prev,
         body .all .phlu-teaser.carousel .carousel-control .icon-next {
           position: absolute;
-          top: 53%;
+          top: 46%;
           z-index: 5;
           display: inline-block;
           margin-top: -40px;
@@ -9508,6 +9537,12 @@ body {
         @media (min-width: 1280px) {
           body .all .phlu-teaser.carousel#carousel-phlu-teaser-xl {
             display: block; } }
+      body .all .phlu-teaser::after {
+        font-family: Icons;
+        content: '\e0db';
+        position: absolute;
+        right: 0;
+        top: -60px; }
     body .all .phlu-teaser.navigation {
       padding: 0; }
       @media (max-width: 767px) {
@@ -9560,12 +9595,12 @@ body {
         body .all .phlu-teaser.navigation.subpage .nav-teaser-item > h3 a {
           color: #545454; }
       body .all .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body {
-        background-color: #c7dee2; }
+        background-color: #DADCE8; }
         body .all .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3, body .all .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body p {
           color: #545454; }
       body .all .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right.col-xs-2 {
         color: #545454;
-        background-color: #c7dee2; }
+        background-color: #DADCE8; }
       body .all .phlu-teaser.navigation.subpage .nav-teaser-item:first-child h3 {
         margin-top: 0; }
     body .all .row.targetgroup-switcher {
@@ -10081,7 +10116,7 @@ body {
         color: #5c5c5c;
         font-weight: 700;
         background-color: inherit;
-        padding: 5px 32px 0;
+        padding: 5px 33px 0;
         height: 60px; }
         @media (max-width: 1599px) {
           body .all .blackBgFullWidthTabs .nav-pills .nav-item a.nav-link {
@@ -10103,7 +10138,12 @@ body {
       display: none; }
       @media (max-width: 767px) {
         body .all .blackBgFullWidthTabs .mobile-view-tabs {
-          display: block; } }
+          display: block; }
+          body .all .blackBgFullWidthTabs .mobile-view-tabs .nav-pills {
+            display: block; }
+            body .all .blackBgFullWidthTabs .mobile-view-tabs .nav-pills .nav-item {
+              float: none;
+              background: url(../Images/wbFilterMenuLine.png) no-repeat 0 45%; } }
       body .all .blackBgFullWidthTabs .mobile-view-tabs .dropdown-toggle {
         background-color: #545454;
         color: white;
@@ -10187,7 +10227,9 @@ body {
               body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr td span:last-child {
                 display: table-cell; }
               body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr td span.oi {
-                margin-right: 10px; }
+                margin-top: 7px;
+                margin-right: 10px;
+                font-size: 0.75rem; }
               body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr td .table tbody tr td {
                 background-color: #edeae8; }
             body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.open {
@@ -10260,6 +10302,24 @@ body {
               background-color: #edeae8; }
     body .all .blackBgFullWidthTabs .nav-pills .nav-item + .nav-item, body .all .blackBgFullWidthContents .nav-pills .nav-item + .nav-item {
       margin-left: 0; }
+    body .all .target-group-codes .code {
+      color: white;
+      background-color: #545454;
+      padding: 5px 10px;
+      margin-right: 2px;
+      cursor: pointer; }
+      body .all .target-group-codes .code:hover {
+        color: #5c5c5c;
+        background-color: #edeae8; }
+      body .all .target-group-codes .code .fullname {
+        position: absolute;
+        display: inline-block;
+        color: #5c5c5c;
+        background-color: #edeae8;
+        margin-top: -35px;
+        padding: 0px 9px; }
+        body .all .target-group-codes .code .fullname.show {
+          display: inline-block; }
     body .all .phlu-locations .row.subjectsfilternav .nav-pills {
       margin-bottom: 31px; }
       body .all .phlu-locations .row.subjectsfilternav .nav-pills li a.nav-link {
@@ -10930,7 +10990,7 @@ body {
           margin: 0 111px;
           padding: inherit; } }
       body .all .main > .row.bluebg {
-        background-color: #c7dee2;
+        background-color: #DADCE8;
         margin-top: 50px; }
         @media (min-width: 992px) {
           body .all .main > .row.bluebg h2 {
@@ -10954,6 +11014,7 @@ body {
         body .all .main > .row.sephiabg address a {
           background-image: inherit; }
       body .all .main > .row.contactperson {
+        background-color: #F7F4F2;
         color: #707070; }
         @media (min-width: 544px) {
           body .all .main > .row.contactperson .col-sm-6 {

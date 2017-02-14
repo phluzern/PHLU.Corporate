@@ -287,6 +287,20 @@ $(document).ready(function () {
         $(location.hash + '.collapse').collapse('show');
     }
 
+    /*
+    * target-group-codes
+    * show fullname
+     */
+    $( ".target-group-codes .code" ).hover(
+        function() {
+            $( this ).find('.fullname').addClass( "show" );
+        }, function() {
+            $( this ).find('.fullname').removeClass( "show" );
+        }
+    );
+
+
+
 });
 
 
