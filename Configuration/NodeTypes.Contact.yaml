@@ -18,7 +18,7 @@
           position: 5
         contact:
           label: Kontakt
-          keywords: 'büro wo adresse kontakt info'
+          keywords: 'büro adresse'
           position: 20
         evento:
           label: Evento
