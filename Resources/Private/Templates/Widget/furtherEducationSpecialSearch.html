@@ -397,43 +397,6 @@
 
                 <div class="mobile-view-tabs">
 
-
-                    <!--          <ul class="nav nav-pills" role="tablist">
-                                  <li class="nav-item  ">
-                                      <a class=" nav-link" data-toggle="pill" href="#focustopics" role="pill">
-                                          <span>Fokusthemen</span>
-
-                                      </a>
-                                  </li>
-                                  <li class="nav-item ">
-                                      <a class=" nav-link" data-toggle="pill" href="#latestoffers" role="pill">
-                                          <span>Neueste Angebote</span>
-                                      </a>
-                                  </li>
-
-                                  <li class="nav-item  ">
-                                      <a class=" nav-link" data-toggle="pill" href="#recommendedoffers" role="pill">
-                                          <span>Empfohlene Angebote</span>
-                                      </a>
-                                  </li>
-                                  <li class="nav-item  ">
-                                      <a class=" nav-link" data-toggle="pill" href="#lastminute" role="pill">
-                                          <span>Last Minute</span>
-                                      </a>
-                                  </li>
-                                  <li class="nav-item  ">
-                                      <a class=" nav-link" data-toggle="pill" href="#customoffers" role="pill">
-                                          <span>Massgeschneiderte Angebote</span>
-                                      </a>
-                                  </li>
-                                  <li class="nav-item  ">
-                                      <a class=" nav-link" data-toggle="pill" href="#lastvisit" role="pill">
-                                          <span>Zuletzt besucht</span>
-                                      </a>
-                                  </li>
-                              </ul>-->
-
-
                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
                          aria-haspopup="true" aria-expanded="false">
                         -- Filter wählen --
@@ -819,14 +782,19 @@
 
 
 
-        <div class="row bluebg" id="aktuelles">
+        <div class="row bluebg furtherEducationNews" id="aktuelles">
             <div class="col-xs-12">
-            <h2 data-ng-switch="showNews === false || (!showNews && result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentLabel) > 0 || searchquery != ''))">
-                Aktuelles
-                <span data-ng-switch-default data-ng-click="toggleNews();"><i class="oi oi-x"></i></span>
-                <span data-ng-switch-when="true" data-ng-click="toggleNews();"><i class="oi oi-plus"></i></span>
-            </h2>
-
+                <span class="newsSwitch" data-ng-switch="showNews === false || (!showNews && result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentLabel) > 0 || searchquery != ''))">
+                    <span data-ng-switch-default data-ng-click="toggleNews();">
+                        <i class="oi oi-x"></i>
+                    </span>
+                    <span data-ng-switch-when="true" data-ng-click="toggleNews();">
+                        <i class="oi oi-plus"></i>
+                    </span>
+                </span>
+                <h2>
+                    Aktuelles
+                </h2>
             </div>
             <div class="col-xs-12" data-ng-hide="showNews === false || (!showNews && result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentLabel) > 0 || searchquery != ''))">
 

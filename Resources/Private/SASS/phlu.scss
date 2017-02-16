@@ -42,6 +42,9 @@ $darkgrey: #545454;
 $grey7: #dcdcdc;
 $grey8: #333333;
 $grey9: #F7F4F2;
+$greyblue: #85889A;
+$lightgreyblue: #DADCE8;
+$black: #333333;
 
 $hazelbrownmedium: #9f632a;
 $hazelbrowndark: #9f632a;
@@ -54,6 +57,7 @@ $olivegreen: #91a103;
 
 $font-color: #5c5c5c;
 $font-color-level1: #685f56;
+$headings-color: $font-color;
 
 // phlu fonts formatting
 $font-size-h1: 1.75rem;
@@ -64,6 +68,7 @@ $font-size-h3: 1.25rem;
 $h3-letter-spacing: 0.2px;
 $font-size-h4: 1.1rem;
 $font-size-h4-desktop: 1.313rem;
+
 $font-size-form-dropdown-big: 1.313rem;
 $font-size-form-dropdown: 1rem;
 $lead-font-size: 1.313rem;
@@ -72,29 +77,36 @@ $teaser-type-font-size: 11px;
 $teaser-body-font-size: 0.875rem;
 $teaser-letter-spacing: 0.4px;
 $font-size-caption: 0.8rem;
+
 $font-size-nav-teasers: 0.875rem;
 $font-size-breadcrumb: 0.875rem;
 $font-size-google-maps-bubble-title: 0.875rem;
 $font-size-searchresults-count: 0.875rem;
+
 $font-size-nav-teaser-header: 1.125rem;
 $font-size-paragraph-desktop: 1.125rem;
-$font-size-paragraph-mobile: 1rem;
+$font-size-table-desktop: 1.125rem;
 $font-size-onepage-teasers: 1.125rem;
-$font-size-phlu-team-members: 1rem;
-$headings-color: $font-color;
-$headings-font-weight: normal;
-$font-weight-bold: 700;
-$font-size-btn: 1.125rem;
-$font-size-href: 1.125rem;
-$font-size-table-href: 1rem;
-$nav-link-font-size: 1rem;
 $dropdown-menu-font-size: 1.125rem;
 $nav-link-font-size-desktop: 1.125rem;
 $font-size-langnav: 1.125rem;
 $font-size-search-filters: 1.125rem;
+
+$font-size-paragraph-mobile: 1rem;
+$font-size-phlu-team-members: 1rem;
+$font-size-table-href: 1rem;
+$nav-link-font-size: 1rem;
 $font-size-accordion-table: 1rem;
+$font-size-infobox-small: 1rem;
+
+$font-size-btn: 1.125rem;
+$font-size-href: 1.125rem;
+
 $font-size-table-mobile-cols: 0.75rem;
 $font-size-small: 0.75rem;
+
+$headings-font-weight: normal;
+$font-weight-bold: 700;
 
 // phlu nav elements
 $nav-pills-border-radius: 0;
@@ -1104,7 +1116,7 @@ body {
             display: none;
           }
           &:hover {
-            color:white;
+            color: white;
             background-color: $font-color;
           }
           .count {
@@ -1113,7 +1125,7 @@ body {
             position: relative;
             margin-right: -32px;
             margin-top: -16px;
-            color:white;
+            color: white;
             background-color: $turquoise;
             width: 25px;
             height: 25px;
@@ -1980,13 +1992,6 @@ body {
           }
         }
       }
-      &::after {
-        font-family: Icons;
-        content: '\e0db';
-        position: absolute;
-        right: 0;
-        top: -60px;
-      }
     }
     //
     // teaser navigation
@@ -2730,6 +2735,62 @@ body {
         }
       }
     }
+    .greyBgFullwidth2colTable {
+      color: $black;
+      font-size: $font-size-table-desktop;
+      background-color: $grey9;
+      padding-bottom: 27px;
+      .table-responsive {
+        table {
+          margin: 40px 0;
+          tbody {
+            tr {
+              border-bottom: 2px solid $grey7;
+              td {
+                padding: 15px;
+                &:first-child {
+                  padding-left: 0;
+                  border-right: 2px solid $grey7;
+                  @include media-breakpoint-down("sm") {
+                    border-right: 0;
+                    .mobile-view-columns {
+                      margin: 0;
+                    }
+                  }
+                }
+              }
+              &:first-child {
+                td {
+                  padding-top: 0;
+                  border-top: 0;
+                }
+              }
+              &:last-child {
+                border-bottom: 0;
+                td {
+                  padding-bottom: 0;
+                  border-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+      .shareAndRegister {
+        float: right;
+        .btn.share {
+          color: $turquoise;
+          background-color: inherit;
+          line-height: 9px;
+          .shareText {
+            font-size: $font-size-small;
+          }
+          @include media-breakpoint-down("sm") {
+            padding: 0 19px;
+          }
+        }
+      }
+    }
     //
     // phlu about pages
     //
@@ -2744,6 +2805,7 @@ body {
     //    ppdb lists
     //    further education lists
     //
+
     .ppdb-list, .further-education-list, .further-education-special-search {
       .list-search-field, .dropdown-search-field {
         input {
@@ -3022,7 +3084,7 @@ body {
           .nav-pills {
             display: block;
             .nav-item {
-              float:none;
+              float: none;
               background: url(../Images/wbFilterMenuLine.png) no-repeat 0 45%;
             }
           }
@@ -3113,8 +3175,8 @@ body {
               tbody {
                 color: $font-color;
                 tr {
-                    border-bottom:2px solid $darkgrey;
-                    background-color: white;
+                  border-bottom: 2px solid $darkgrey;
+                  background-color: white;
                   td {
                     font-size: $font-size-paragraph-desktop;
                     @include media-breakpoint-down("sm") {
@@ -3123,13 +3185,13 @@ body {
                     border: 0;
                     span {
                       &:first-child {
-                        float:left;
+                        float: left;
                       }
                       &:last-child {
                         display: table-cell;
                       }
                       &.oi {
-                        margin-top:7px;
+                        margin-top: 7px;
                         margin-right: 10px;
                         font-size: $font-size-small;
 
@@ -3146,7 +3208,7 @@ body {
                     }
                   }
                   &.open {
-                    border-bottom:0;
+                    border-bottom: 0;
                   }
                   &.open, &.result-preview {
                     background-color: $lightgrey;
@@ -3154,7 +3216,7 @@ body {
                   &.result-preview {
                     td {
                       @include media-breakpoint-down("sm") {
-                        padding-right:20px;
+                        padding-right: 20px;
                       }
                     }
                     div {
@@ -3176,7 +3238,7 @@ body {
                                 @include media-breakpoint-down("sm") {
                                   border-right: 0;
                                   .mobile-view-columns {
-                                    margin:0;
+                                    margin: 0;
                                   }
                                 }
                               }
@@ -3209,7 +3271,7 @@ body {
                           font-size: $font-size-small;
                         }
                         @include media-breakpoint-down("sm") {
-                          padding:0 19px;
+                          padding: 0 19px;
                         }
                       }
                     }
@@ -3271,32 +3333,106 @@ body {
       }
     }
     //
-    // futher-education
+    // further education aktuelles
+    //
+    .furtherEducationNews {
+      .newsSwitch {
+        float: right;
+        position: absolute;
+        right: 0;
+        margin-top: 35px;
+        cursor:pointer;
+        @include media-breakpoint-down("xxl") {
+          margin-right: 40px;
+        }
+      }
+    }
+
+    //
+    // further-education
     // target-group-codes
     //
     .target-group-codes {
+      margin: 40px 0 50px;
       .code {
-        color:white;
+        color: white;
         background-color: $darkgrey;
-        padding:5px 10px;
-        margin-right:2px;
+        padding: 5px 10px;
+        margin-right: 2px;
         cursor: pointer;
         &:hover {
-          color:$font-color;
+          color: $font-color;
           background-color: $lightgrey;
         }
         .fullname {
           position: absolute;
-          display: inline-block;
+          display: none;
           color: #5c5c5c;
           background-color: #edeae8;
           margin-top: -35px;
+          margin-left: -10px;
           padding: 0px 9px;
           &.show {
             display: inline-block;
           }
         }
       }
+    }
+    // further-education detailview
+    // infoboxes
+    //
+    .infoboxes {
+      background-color: $greyblue;
+      margin-top: 13px;
+      > div > div > div {
+        margin: 60px 0 80px;
+        @include media-breakpoint-down("sm") {
+          margin: 60px 0 0;
+          &:last-child {
+            margin-bottom: 60px;
+          }
+        }
+        color: black;
+
+        .box1, .box2, .box3 {
+          height: 320px;
+          background-color: $lightgreyblue;
+          .centeredBox {
+            position: relative;
+            top: 6%;
+            margin: 0;
+            padding: 0;
+
+            p {
+              text-align: center;
+              padding-top:0;
+            }
+          }
+          p {
+            margin: 0;
+            padding: 10px 10px 0;
+            width: inherit;
+            line-height: 23px;
+            font-weight: $font-weight-bold;
+            &.smalltext {
+              font-size: $font-size-infobox-small;
+              font-weight: normal;
+            }
+          }
+          hr.infobox {
+            margin: 20px 90px;
+            border-color: $greyblue;
+          }
+          img {
+            @include media-breakpoint-down("sm") {
+              width: inherit;
+              text-align: center;
+            }
+            width: 100%;
+          }
+        }
+      }
+
     }
 
     //
