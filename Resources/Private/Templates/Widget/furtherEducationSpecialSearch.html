@@ -42,7 +42,7 @@
                                 <button type="button" class="btn btn-default">
                                     Erweiterte Suche
                                     <span class="oi oi-x"></span>
-                                    <span class="count" data-ng-bind="countCurrentFilters(nodetypesFilterCurrentLabel)"></span>
+                                    <span class="count" data-ng-bind="countCurrentFilters(nodetypesFilterCurrentLabel)" data-ng-show="countCurrentFilters(nodetypesFilterCurrentLabel) > 0"></span>
                                 </button>
                                 <!--                        <span class="resetFilter">
                                                                     <a ng-click="clearFilter('researchmainfocus')">
@@ -96,68 +96,21 @@
                                     <label>Schul-/Studienjahr</label>
                                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
                                          aria-haspopup="true" aria-expanded="false">
-                                        <a href="#" class="search-result-tag">
-                                            2016 / 2017
-                                            <!--<i class="fa fa-times clickable" aria-hidden="true"></i>-->
-                                        </a>
-                                        <a href="#" class="search-result-tag">
-                                            2018 / 2019
-                                        </a>
+                                        <span data-ng-bind="getFilterSelectedPreview(filters.year)"></span>
                                     </div>
                                     <div class="tagFadeOutBg"></div>
                                     <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                &nbsp;&nbsp;2016 / 2017
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                &nbsp;&nbsp;2018 / 2019
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-square-o" aria-hidden="true"></i>
-                                                &nbsp;&nbsp;2020 / 2021
+                                        <li value="" data-ng-repeat="year in resultAll.getDistinct('years.StartText')">
+                                            <a href="#" data-ng-click="toogleFilterSelection(year)">
+                                                <i class="fa " aria-hidden="true"
+                                                   data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
+                                                <span data-ng-bind="year.value"></span>
                                             </a>
                                         </li>
                                     </ul>
 
                                 </div>
-                                <div name="targetGroups" class="input-item-col col-xs-12 col-sm-3">
-                                    <label>Zielgruppen</label>
-                                    <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
-                                         aria-haspopup="true" aria-expanded="false">
-                                        <a href="#" class="search-result-tag">
-                                            KG
-                                            <!--<i class="fa fa-times clickable" aria-hidden="true"></i>-->
-                                        </a>
-                                        <a href="#" class="search-result-tag">
-                                            BS
-                                        </a>
-                                    </div>
-                                    <div class="tagFadeOutBg"></div>
-                                    <ul class="dropdown-menu">
-                                        <li value="1495">
-                                            <a href="#">
-                                                &nbsp;&nbsp;KG
-                                            </a>
-                                        </li>
-                                        <li value="1685">
-                                            <a href="#">
-                                                &nbsp;&nbsp;BS
-                                            </a>
-                                        </li>
-                                        <li value="1683">
-                                            <a href="#">
-                                                &nbsp;&nbsp;1 2
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+
                                 <div name="targetDegree" class="input-item-col col-xs-12 col-sm-6">
                                     <label>Typ/Abschluss</label>
                                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
