@@ -14,6 +14,9 @@ module.exports = function (grunt) {
 					'../Resources/Public/Styles/phlu.css': '../Resources/Private/SASS/phlu.scss'
 				}
 			},
+			options: {
+				sourceMap: true
+			},
  			sourceMap: {
 				options: {
 					sourceMap: '../Resources/Public/Styles/phlu.css.map'
