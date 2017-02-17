@@ -228,7 +228,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             filter.selected[category][0].value = value;
         }
 
-        console.log(filter);
+
 
 
     };
