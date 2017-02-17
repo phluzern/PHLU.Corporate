@@ -57,11 +57,8 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.limit = 15;
     $scope.limitChunkSize = 15;
     $scope.searchquery = '';
-    $scope.search = {
-        'courseNrAll' : '',
-        'courseNrStudy' : '',
-        'courseNrModule' : ''
-    }
+    $scope.search = {};
+
     $scope.graduation = {};
     $scope.nodetypes = [];
     $scope.nodetypesFilter = [
@@ -87,7 +84,13 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         },
         'nr': {
             'property': 'furthereducation-nr',
-            'categories': ['Kurs','Studiengang','Alle']
+            'categories': ['Kurs','Studiengang','Alle'],
+            'fulltext' : true
+        },
+        'leaders': {
+            'property': 'furthereducation-leaders.Fullname',
+            'categories': ['Kurs','Studiengang','Alle'],
+            'fulltext' : true
         }
     };
 
@@ -322,7 +325,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         var value = [];
 
         angular.forEach(filter.selected[$scope.nodetypesFilterCurrentCategory], function (selected) {
-            console.log(selected);
             if (selected.state) {
                 value.push(selected.value);
             }
@@ -459,7 +461,12 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         .$bind('result', $scope);
 
     angular.forEach($scope.filters, function (filter, name) {
-        search.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope);
+        if (filter.fulltext !== undefined && filter.fulltext) {
+            search.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope, false, false, false, true);
+        } else {
+            search.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope);
+        }
+
     });
 
     search.$watch(function (result) {

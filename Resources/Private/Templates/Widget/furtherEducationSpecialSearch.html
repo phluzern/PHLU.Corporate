@@ -231,11 +231,30 @@
 
 
                         <div class="row input-group">
+
                             <div class="input-item-col col-xs-12 col-sm-3">
+
                                 <label>Kursnummer</label>
-                                <input style="height:55px" type="text" class="form-control" data-ng-model="search.courseNrStudy" data-ng-change="setFilterSelectionValue(search.courseNrStudy,'Kurs','nr');">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <input style="height:55px" type="text" class="form-control"
+                                       data-ng-model="search.courseNrModule"
+                                       data-ng-change="setFilterSelectionValue(search.courseNrModule,'Kurs','nr');">
+
 
                             </div>
+
+                            <div class="input-item-col col-xs-12 col-sm-3">
+
+                                <label>Kursleitung</label>
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <input style="height:55px" type="text" class="form-control"
+                                       data-ng-model="search.courseLeaderModule"
+                                       data-ng-change="setFilterSelectionValue(search.courseLeaderModule,'Kurs','leaders');">
+
+
+                            </div>
+
+
                         </div>
 
                     </div>
