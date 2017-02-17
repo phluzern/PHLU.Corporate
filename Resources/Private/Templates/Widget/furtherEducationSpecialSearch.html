@@ -40,7 +40,8 @@
                         </div><!-- /input-group -->
                         <div class="extendedSearch">
 
-                            <button type="button" class="btn btn-default" data-ng-class="{disabled: resultAll.isLoading() === true || resultAll.count() == 0}">
+                            <button type="button" class="btn btn-default"
+                                    data-ng-class="{disabled: resultAll.isLoading() === true || resultAll.count() == 0}">
                                 Erweiterte Suche
                                 <span class="oi oi-x"></span>
                                 <span class="count" data-ng-bind="countCurrentFilters(nodetypesFilterCurrentCategory)"
@@ -56,7 +57,8 @@
 
                 </div>
 
-                <div class="row extendedSearchFilter" data-ng-if="resultAll.isLoading() === false && resultAll.count() > 0">
+                <div class="row extendedSearchFilter"
+                     data-ng-if="resultAll.isLoading() === false && resultAll.count() > 0">
 
                     <div data-ng-show="nodetypesFilterCurrentLabel == 'Alle'" class="col-xs-12">
                         <h3>Kurse und Studiengänge</h3>
@@ -70,7 +72,8 @@
                                 </div>
                                 <div class="tagFadeOutBg"></div>
                                 <ul class="dropdown-menu">
-                                    <li value="" data-ng-repeat="year in resultAll.getDistinct('furthereducation-years.Year')">
+                                    <li value=""
+                                        data-ng-repeat="year in resultAll.getDistinct('furthereducation-years.Year')">
                                         <a href="#" data-ng-click="toggleFilterSelection(year,'Alle','year')">
                                             <i class="fa " aria-hidden="true"
                                                data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
@@ -81,32 +84,7 @@
 
                             </div>
 
-                            <div class="input-item-col col-xs-3">
-                                <label>Kursbeginn</label>
 
-                                <div class="input-append date" id="datepicker-further-education" data-date=""
-                                     data-date-format="dd.mm.yyyy">
-                                    <input class="span2" size="16" type="text" value="" readonly="">
-                                    <span class="add-on"><i class="icon-th"></i></span>
-                                </div>
-
-
-                            </div>
-                            <div name="targetGroups" class="input-item-col col-xs-3">
-
-                            </div>
-                            <div class="input-item-col col-xs-3">
-                                <div class="checkbox">
-                                    <input type="checkbox" id="nur-holkurse" name="nur-holkurse"/>
-                                    <label for="nur-holkurse"><span></span>Nur Holkurse</label>
-                                </div>
-                            </div>
-                            <div class="input-item-col col-xs-3">
-                                <div class="checkbox">
-                                    <input type="checkbox" id="freie-plaetze" name="freie-plaetze"/>
-                                    <label for="freie-plaetze"><span></span>Freie Plätze</label>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -121,7 +99,8 @@
                                 </div>
                                 <div class="tagFadeOutBg"></div>
                                 <ul class="dropdown-menu">
-                                    <li value="" data-ng-repeat="year in resultAll.getDistinct('study-furthereducation-years.Year')">
+                                    <li value=""
+                                        data-ng-repeat="year in resultAll.getDistinct('study-furthereducation-years.Year')">
                                         <a href="#" data-ng-click="toggleFilterSelection(year,'Studiengang','year')">
                                             <i class="fa " aria-hidden="true"
                                                data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
@@ -145,7 +124,8 @@
                                 <div class="tagFadeOutBg"></div>
                                 <ul class="dropdown-menu">
                                     <li value="" data-ng-repeat="graduation in resultAll.getDistinct('graduation')">
-                                        <a href="#" data-ng-click="toggleFilterSelection(graduation,'Studiengang','graduation')">
+                                        <a href="#"
+                                           data-ng-click="toggleFilterSelection(graduation,'Studiengang','graduation')">
                                             <i class="fa " aria-hidden="true"
                                                data-ng-class="{'fa-check-square-o': graduation.state, 'fa-square-o': !graduation.state}"></i>
                                             <span data-ng-bind="graduation.value"></span>
@@ -170,7 +150,8 @@
                                 </div>
                                 <div class="tagFadeOutBg"></div>
                                 <ul class="dropdown-menu">
-                                    <li value="" data-ng-repeat="year in resultAll.getDistinct('module-furthereducation-years.Year')">
+                                    <li value=""
+                                        data-ng-repeat="year in resultAll.getDistinct('module-furthereducation-years.Year')">
                                         <a href="#" data-ng-click="toggleFilterSelection(year,'Kurs','year')">
                                             <i class="fa " aria-hidden="true"
                                                data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
@@ -181,33 +162,35 @@
 
                             </div>
 
-                            <div class="input-item-col col-xs-3">
-                                <label>Kursbeginn</label>
 
-                                <div class="input-append date" id="datepicker-further-education" data-date=""
-                                     data-date-format="dd.mm.yyyy">
-                                    <input class="span2" size="16" type="text" value="" readonly="">
-                                    <span class="add-on"><i class="icon-th"></i></span>
+                            <div class="input-item-col col-xs-12 col-sm-3">
+                                <label>Zielgruppen</label>
+                                <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
+                                     aria-haspopup="true" aria-expanded="false">
+                                    <span data-ng-bind="getFilterSelectedPreview(filters.year,'Kurs')"></span>
                                 </div>
+                                <div class="tagFadeOutBg"></div>
+                                <ul class="dropdown-menu">
+                                    <li value=""
+                                        data-ng-repeat="year in resultAll.getDistinct('module-furthereducation-years.Year')">
+                                        <a href="#" data-ng-click="toggleFilterSelection(year,'Kurs','year')">
+                                            <i class="fa " aria-hidden="true"
+                                               data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
+                                            <span data-ng-bind="year.value"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
 
 
-                            </div>
-                            <div name="targetGroups" class="input-item-col col-xs-3">
 
-                            </div>
-                            <div class="input-item-col col-xs-3">
-                                <div class="checkbox">
-                                    <input type="checkbox" id="nur-holkurse" name="nur-holkurse"/>
-                                    <label for="nur-holkurse"><span></span>Nur Holkurse</label>
-                                </div>
-                            </div>
-                            <div class="input-item-col col-xs-3">
-                                <div class="checkbox">
-                                    <input type="checkbox" id="freie-plaetze" name="freie-plaetze"/>
-                                    <label for="freie-plaetze"><span></span>Freie Plätze</label>
-                                </div>
-                            </div>
+
+
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
