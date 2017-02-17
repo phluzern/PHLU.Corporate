@@ -3,168 +3,169 @@
 {namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
 <div class="row-fullwidth-content" data-ng-controller="EventoFurtherEducationCtrl">
 
-        <div class="row extendedSearchBg further-education-special-search">
+    <div class="row extendedSearchBg further-education-special-search">
 
 
-            <div class="col-xs-12">
-                <div {attributes -> f:format.raw()}>
+        <div class="col-xs-12">
+            <div {attributes -> f:format.raw()}>
 
 
-                    <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading"
-                         class="loadingIcon hidden-xs-up"
-                         data-ng-if="result.isLoading()" data-ng-show="search.length > 2"
-                         data-ng-class="{'hidden-xs-up': search.length < 2}"/>
+                <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading"
+                     class="loadingIcon hidden-xs-up"
+                     data-ng-if="result.isLoading()" data-ng-show="search.length > 2"
+                     data-ng-class="{'hidden-xs-up': search.length < 2}"/>
 
-                    <div class="row">
+                <div class="row">
 
 
-                        <div class="col-xs-12">
-                            <div class="input-group">
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false"><span
-                                            data-ng-bind="nodetypesFilterCurrentLabel"></span> <span
-                                            class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li href="#" data-ng-repeat="f in nodetypesFilter"
-                                            data-ng-click="setNodetypesFilter(f);">
-                                            <a href="#" data-ng-bind="f.label"></a>
-                                        </li>
-                                    </ul>
-                                </div><!-- /btn-group -->
-                                <input type="text" class="form-control" aria-label="Suche" data-ng-model="searchquery" value="">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-
-                            </div><!-- /input-group -->
-                            <div class="extendedSearch">
-
-                                <button type="button" class="btn btn-default">
-                                    Erweiterte Suche
-                                    <span class="oi oi-x"></span>
-                                    <span class="count" data-ng-bind="countCurrentFilters(nodetypesFilterCurrentLabel)" data-ng-show="countCurrentFilters(nodetypesFilterCurrentLabel) > 0"></span>
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"><span
+                                        data-ng-bind="nodetypesFilterCurrentLabel"></span> <span
+                                        class="caret"></span>
                                 </button>
-                                <!--                        <span class="resetFilter">
-                                                                    <a ng-click="clearFilter('researchmainfocus')">
-                                                                        <span class="oi oi-x"></span>
-                                                                    </a>
-                                                                </span>-->
-                            </div>
-                        </div><!-- /.col-lg-6 -->
+                                <ul class="dropdown-menu">
+                                    <li href="#" data-ng-repeat="f in nodetypesFilter"
+                                        data-ng-click="setNodetypesFilter(f);">
+                                        <a href="#" data-ng-bind="f.label"></a>
+                                    </li>
+                                </ul>
+                            </div><!-- /btn-group -->
+                            <input type="text" class="form-control" aria-label="Suche" data-ng-model="searchquery"
+                                   value="">
+                            <i class="fa fa-search" aria-hidden="true"></i>
 
+                        </div><!-- /input-group -->
+                        <div class="extendedSearch">
+
+                            <button type="button" class="btn btn-default">
+                                Erweiterte Suche
+                                <span class="oi oi-x"></span>
+                                <span class="count" data-ng-bind="countCurrentFilters(nodetypesFilterCurrentLabel)"
+                                      data-ng-show="countCurrentFilters(nodetypesFilterCurrentLabel) > 0"></span>
+                            </button>
+                            <!--                        <span class="resetFilter">
+                                                                <a ng-click="clearFilter('researchmainfocus')">
+                                                                    <span class="oi oi-x"></span>
+                                                                </a>
+                                                            </span>-->
+                        </div>
+                    </div><!-- /.col-lg-6 -->
+
+                </div>
+
+                <div class="row extendedSearchFilter">
+
+                    <div data-ng-show="nodetypesFilterCurrentLabel == 'Alle'" class="col-xs-12">
+                        <h3>Kurse und Studiengänge</h3>
+
+                        <div class="row input-group">
+                            <div class="input-item-col col-xs-3">
+                                <label>Kursbeginn</label>
+
+                                <div class="input-append date" id="datepicker-further-education" data-date=""
+                                     data-date-format="dd.mm.yyyy">
+                                    <input class="span2" size="16" type="text" value="" readonly="">
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+
+
+                            </div>
+                            <div name="targetGroups" class="input-item-col col-xs-3">
+
+                            </div>
+                            <div class="input-item-col col-xs-3">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="nur-holkurse" name="nur-holkurse"/>
+                                    <label for="nur-holkurse"><span></span>Nur Holkurse</label>
+                                </div>
+                            </div>
+                            <div class="input-item-col col-xs-3">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="freie-plaetze" name="freie-plaetze"/>
+                                    <label for="freie-plaetze"><span></span>Freie Plätze</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="row extendedSearchFilter">
-
-                        <div data-ng-show="nodetypesFilterCurrentLabel == 'Alle'" class="col-xs-12">
-                            <h3>Kurse und Studiengänge</h3>
-
-                            <div class="row input-group">
-                                <div class="input-item-col col-xs-3">
-                                    <label>Kursbeginn</label>
-
-                                    <div class="input-append date" id="datepicker-further-education" data-date=""
-                                         data-date-format="dd.mm.yyyy">
-                                        <input class="span2" size="16" type="text" value="" readonly="">
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                    </div>
-
-
+                    <div data-ng-show="nodetypesFilterCurrentLabel == 'Studiengang'" class="col-xs-12">
+                        <h3>Weiterbildungsstudiengänge</h3>
+                        <div class="row input-group">
+                            <div class="input-item-col col-xs-12 col-sm-3">
+                                <label>Schul-/Studienjahr</label>
+                                <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
+                                     aria-haspopup="true" aria-expanded="false">
+                                    <span data-ng-bind="getFilterSelectedPreview(filters.year)"></span>
                                 </div>
-                                <div name="targetGroups" class="input-item-col col-xs-3">
+                                <div class="tagFadeOutBg"></div>
+                                <ul class="dropdown-menu">
+                                    <li value="" data-ng-repeat="year in resultAll.getDistinct('years.StartText')">
+                                        <a href="#" data-ng-click="toogleFilterSelection(year)">
+                                            <i class="fa " aria-hidden="true"
+                                               data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
+                                            <span data-ng-bind="year.value"></span>
+                                        </a>
+                                    </li>
+                                </ul>
 
+                            </div>
+
+                            <div name="targetDegree" class="input-item-col col-xs-12 col-sm-6">
+                                <label>Typ/Abschluss</label>
+                                <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
+                                     aria-haspopup="true" aria-expanded="false">
+                                    <span data-ng-bind="getFilterSelectedPreview(filters.graduation)"></span>
+                                    <!--<a href="#" class="search-result-tag" data-ng-repeat="item in filters.graduation.selected" data-ng-show="item.state">-->
+                                    <!--<span data-ng-bind="item.value"></span>-->
+                                    <!--&lt;!&ndash;<i class="fa fa-times clickable" aria-hidden="true"></i>&ndash;&gt;-->
+                                    <!--</a>-->
                                 </div>
-                                <div class="input-item-col col-xs-3">
-                                    <div class="checkbox">
-                                        <input type="checkbox" id="nur-holkurse" name="nur-holkurse"/>
-                                        <label for="nur-holkurse"><span></span>Nur Holkurse</label>
-                                    </div>
-                                </div>
-                                <div class="input-item-col col-xs-3">
-                                    <div class="checkbox">
-                                        <input type="checkbox" id="freie-plaetze" name="freie-plaetze"/>
-                                        <label for="freie-plaetze"><span></span>Freie Plätze</label>
-                                    </div>
-                                </div>
+                                <div class="tagFadeOutBg"></div>
+                                <ul class="dropdown-menu">
+                                    <li value="" data-ng-repeat="graduation in resultAll.getDistinct('graduation')">
+                                        <a href="#" data-ng-click="toogleFilterSelection(graduation)">
+                                            <i class="fa " aria-hidden="true"
+                                               data-ng-class="{'fa-check-square-o': graduation.state, 'fa-square-o': !graduation.state}"></i>
+                                            <span data-ng-bind="graduation.value"></span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
-                        <div data-ng-show="nodetypesFilterCurrentLabel == 'Studiengang'" class="col-xs-12">
-                            <h3>Weiterbildungsstudiengänge</h3>
-                            <div class="row input-group">
-                                <div class="input-item-col col-xs-12 col-sm-3">
-                                    <label>Schul-/Studienjahr</label>
-                                    <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
-                                         aria-haspopup="true" aria-expanded="false">
-                                        <span data-ng-bind="getFilterSelectedPreview(filters.year)"></span>
-                                    </div>
-                                    <div class="tagFadeOutBg"></div>
-                                    <ul class="dropdown-menu">
-                                        <li value="" data-ng-repeat="year in resultAll.getDistinct('years.StartText')">
-                                            <a href="#" data-ng-click="toogleFilterSelection(year)">
-                                                <i class="fa " aria-hidden="true"
-                                                   data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
-                                                <span data-ng-bind="year.value"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
 
+                    </div>
+                    <div data-ng-show="nodetypesFilterCurrentLabel == 'Kurse'" class="col-xs-12">
+                        <h3>Kurse</h3>
+
+                        <div class="row input-group">
+                            <div class="input-item-col col-xs-3">
+                                <label>Kursbeginn</label>
+
+                                <div class="input-append date" id="datepicker-further-education" data-date=""
+                                     data-date-format="dd.mm.yyyy">
+                                    <input class="span2" size="16" type="text" value="" readonly="">
+                                    <span class="add-on"><i class="icon-th"></i></span>
                                 </div>
 
-                                <div name="targetDegree" class="input-item-col col-xs-12 col-sm-6">
-                                    <label>Typ/Abschluss</label>
-                                    <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
-                                         aria-haspopup="true" aria-expanded="false">
-                                        <span data-ng-bind="getFilterSelectedPreview(filters.graduation)"></span>
-                                        <!--<a href="#" class="search-result-tag" data-ng-repeat="item in filters.graduation.selected" data-ng-show="item.state">-->
-                                        <!--<span data-ng-bind="item.value"></span>-->
-                                        <!--&lt;!&ndash;<i class="fa fa-times clickable" aria-hidden="true"></i>&ndash;&gt;-->
-                                        <!--</a>-->
-                                    </div>
-                                    <div class="tagFadeOutBg"></div>
-                                    <ul class="dropdown-menu">
-                                        <li value="" data-ng-repeat="graduation in resultAll.getDistinct('graduation')">
-                                            <a href="#" data-ng-click="toogleFilterSelection(graduation)">
-                                                <i class="fa " aria-hidden="true"
-                                                   data-ng-class="{'fa-check-square-o': graduation.state, 'fa-square-o': !graduation.state}"></i>
-                                                <span data-ng-bind="graduation.value"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
+
+                            </div>
+                            <div name="targetGroups" class="input-item-col col-xs-3">
+
+                            </div>
+                            <div class="input-item-col col-xs-3">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="nur-holkurse" name="nur-holkurse"/>
+                                    <label for="nur-holkurse"><span></span>Nur Holkurse</label>
                                 </div>
                             </div>
-
-
-                        </div>
-                        <div data-ng-show="nodetypesFilterCurrentLabel == 'Kurse'" class="col-xs-12">
-                            <h3>Kurse</h3>
-
-                            <div class="row input-group">
-                                <div class="input-item-col col-xs-3">
-                                    <label>Kursbeginn</label>
-
-                                    <div class="input-append date" id="datepicker-further-education" data-date=""
-                                         data-date-format="dd.mm.yyyy">
-                                        <input class="span2" size="16" type="text" value="" readonly="">
-                                        <span class="add-on"><i class="icon-th"></i></span>
-                                    </div>
-
-
-                                </div>
-                                <div name="targetGroups" class="input-item-col col-xs-3">
-
-                                </div>
-                                <div class="input-item-col col-xs-3">
-                                    <div class="checkbox">
-                                        <input type="checkbox" id="nur-holkurse" name="nur-holkurse"/>
-                                        <label for="nur-holkurse"><span></span>Nur Holkurse</label>
-                                    </div>
-                                </div>
-                                <div class="input-item-col col-xs-3">
-                                    <div class="checkbox">
-                                        <input type="checkbox" id="freie-plaetze" name="freie-plaetze"/>
-                                        <label for="freie-plaetze"><span></span>Freie Plätze</label>
-                                    </div>
+                            <div class="input-item-col col-xs-3">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="freie-plaetze" name="freie-plaetze"/>
+                                    <label for="freie-plaetze"><span></span>Freie Plätze</label>
                                 </div>
                             </div>
                         </div>
@@ -172,10 +173,12 @@
                 </div>
             </div>
         </div>
+    </div>
     <div class="row">
         <div class="col-xs-12">
             <div class="row results-table">
-                <div class="col-xs-12" data-ng-show="result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentLabel) > 0 || searchquery != '')">
+                <div class="col-xs-12"
+                     data-ng-show="result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentLabel) > 0 || searchquery != '')">
                     <div class="searchResultsListLoadingScreen" data-ng-if="result.isLoading()">
                         <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
                              alt="loading"
@@ -193,13 +196,258 @@
                             <tr class="icon hat clickable" data-ng-class="{open: node.isopen,noborder: $index > 0}"
                                 data-node-id="{{node.identifier}}">
                                 <td>
-                                    <span class="oi" data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
+                                    <span class="oi"
+                                          data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
                                     <span>
                                         <span data-ng-bind="node.getProperty('title')"></span>
                                 </span>
                                 </td>
                             </tr>
                             <tr class="result-preview" data-ng-show="node.isopen">
+                                <td>
+                                    <div>
+                                        <p data-ng-bind="node.getProperty('description')">
+
+                                        </p>
+
+
+                                        <table class="table">
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    Studienziel
+                                                    <div class="mobile-view-columns">
+                                                        Certificate of Advanced Studies PH Luzern in
+                                                        Menschenrechtsbildung
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    Certificate of Advanced Studies PH Luzern in
+                                                    Menschenrechtsbildung
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    ETCS-Punkte
+                                                    <div class="mobile-view-columns">
+                                                        30
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    30
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Startdatum
+                                                    <div class="mobile-view-columns">
+                                                        13.01.2017
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    13.01.2017
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Ort
+                                                    <div class="mobile-view-columns">
+                                                        Luzern
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    Luzern
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+
+                                    </div>
+                                    <div class="details col-xs-12 col-sm-6">
+                                        <a class="btn btn-primary"
+                                           href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
+                                            Details
+                                        </a>
+                                    </div>
+                                    <div class="shareAndRegister col-xs-12 col-sm-6 pull-right">
+                                        <a class="btn btn-primary share"
+                                           href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
+                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                            <br>
+                                            <span class="shareText">
+                                            Teilen
+                                        </span>
+                                        </a>
+                                        <a class="btn btn-primary "
+                                           href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
+                                            Anmelden
+                                        </a>
+                                    </div>
+
+
+                                </td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-center">
+                            <a data-ng-click="loadMore();" class="btn loadMore"
+                               data-ng-if="result.count() > limit">
+                                <!--{{limitChunkSize}} -->
+                                mehr anzeigen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row blackBgFullWidthTabs">
+        <div class="col-xs-12">
+
+            <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item  ">
+                    <a class=" nav-link" data-toggle="pill" href="#focustopics" role="pill">
+                        <span>Fokus- <br>themen</span>
+
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class=" nav-link" data-toggle="pill" href="#latestoffers" role="pill">
+                        <span>Neueste <br>Angebote</span>
+                    </a>
+                </li>
+
+                <li class="nav-item  ">
+                    <a class=" nav-link" data-toggle="pill" href="#recommendedoffers" role="pill">
+                        <span>Empfohlene <br>Angebote</span>
+                    </a>
+                </li>
+                <li class="nav-item  ">
+                    <a class=" nav-link" data-toggle="pill" href="#lastminute" role="pill">
+                        <span>Last <br>Minute</span>
+                    </a>
+                </li>
+                <li class="nav-item  ">
+                    <a class=" nav-link" data-toggle="pill" href="#customoffers" role="pill">
+                        <span>Massgeschneiderte <br>Angebote</span>
+                    </a>
+                </li>
+                <li class="nav-item  ">
+                    <a class=" nav-link" data-toggle="pill" href="#lastvisit" role="pill">
+                        <span>Zuletzt <br>besucht</span>
+                    </a>
+                </li>
+            </ul>
+
+
+            <div class="mobile-view-tabs">
+
+                <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
+                     aria-haspopup="true" aria-expanded="false">
+                    -- Filter wählen --
+
+
+                </div>
+                <ul class="dropdown-menu" role="tablist">
+                    <li class="clickable">
+                        <a data-toggle="pill" href="#focustopics" role="pill">
+                            Fokusthemen
+                        </a>
+                    </li>
+                    <li class="clickable">
+                        <a data-toggle="pill" href="#latestoffers" role="pill">
+                            &nbsp;&nbsp;Neueste Angebote
+                        </a>
+                    </li>
+                    <li class="clickable">
+                        <a data-toggle="pill" href="#recommendedoffers" role="pill">
+                            &nbsp;&nbsp;Empfohlene Angebote
+                        </a>
+                    </li>
+                    <li class="clickable">
+                        <a data-toggle="pill" href="#lastminute" role="pill">
+                            &nbsp;&nbsp;Last Minute
+                        </a>
+                    </li>
+                    <li class="clickable">
+                        <a data-toggle="pill" href="#customoffers" role="pill">
+                            &nbsp;&nbsp;Massgeschneiderte Angebote
+                        </a>
+                    </li>
+                    <li class="clickable">
+                        <a data-toggle="pill" href="#lastvisit" role="pill">
+                            &nbsp;&nbsp;Zuletzt besucht
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="row blackBgFullWidthContents">
+
+        <div class="col-xs-12">
+            <div class="tab-content">
+                <div class="result-panel tab-pane " id="focustopics" role="tabpanel">
+                    <!--<a href="#" class="close-btn">schliessen</a>-->
+                    <h3>Spezifische Weiterbildungsangebote zu:</h3>
+                    <ul class="nav nav-pills " role="tablist">
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class="nav-link" href="#">
+                                <span>Berufsbildung</span>
+
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable">
+                            <a class="nav-link" href="#">
+                                <span>Erwachsenenbildung</span>
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable">
+                            <a class="nav-link" href="#">
+                                <span>Schulmanagement</span>
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class=" nav-link" href="#">
+                                <span>Berufsbiografische Angebote</span>
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class=" nav-link" href="#">
+                                <span>Lehrplan 21</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="result-panel tab-pane " id="latestoffers" role="tabpanel">
+                    <!--<a href="#" class="close-btn">schliessen</a>-->
+                    <h3>Die neuesten Studiengänge</h3>
+                    <div class="table-responsive  ">
+                        <table class="table">
+                            <tbody>
+                            <tr class="icon hat clickable open">
+                                <td>
+                                    <span class="oi oi-caret-bottom"></span>
+                                    <span>
+                                        CAS Menschenrechtsbildung
+                                </span>
+                                </td>
+                            </tr>
+                            <tr class="result-preview ">
                                 <td>
                                     <div>
                                         <p>
@@ -289,455 +537,206 @@
 
                                 </td>
                             </tr>
-                            </tbody>
+                            <tr class="icon hat clickable ">
+                                <td>
+                                    <span class="oi oi-caret-right"></span>
+                                    <span>
+                                        MAS Integrative Förderung
+                                </span>
+                                </td>
+                            </tr>
+                            </tbody><!-- end ngRepeat: node in result.getNodes(limit) -->
 
                         </table>
                     </div>
-
-                    <div class="row">
-                        <div class="col-center">
-                            <a data-ng-click="loadMore();" class="btn loadMore"
-                               data-ng-if="result.count() > limit">
-                                <!--{{limitChunkSize}} -->
-                                mehr anzeigen
-                            </a>
-                        </div>
+                    <h3>Die neuesten Veranstaltungen</h3>
+                    <div class="table-responsive  ">
+                        <table class="table">
+                            <tbody>
+                            <tr class="icon calendar clickable ">
+                                <td>
+                                    <span class="oi oi-caret-right"></span>
+                                    <span>
+                                        Vollenweider Lectures
+                                </span>
+                                </td>
+                            </tr>
+                            <tr class="icon calendar clickable ">
+                                <td>
+                                    <span class="oi oi-caret-right"></span>
+                                    <span>
+                                        Informationsveranstaltung MAS Schulmanagement
+                                </span>
+                                </td>
+                            </tr>
+                            </tbody><!-- end ngRepeat: node in result.getNodes(limit) -->
+                        </table>
+                    </div>
+                    <h3>Die neuesten Kurse</h3>
+                    <div class="table-responsive  ">
+                        <table class="table">
+                            <tbody>
+                            <tr class="icon book clickable ">
+                                <td>
+                                    <span class="oi oi-caret-right"></span>
+                                    <span>
+                                        Rechtsfragen im Schulalltag
+                                </span>
+                                </td>
+                            </tr>
+                            <tr class="icon book clickable ">
+                                <td>
+                                    <span class="oi oi-caret-right"></span>
+                                    <span>
+                                        Schule - ein Biotop der Soziologie
+                                </span>
+                                </td>
+                            </tr>
+                            </tbody><!-- end ngRepeat: node in result.getNodes(limit) -->
+                        </table>
                     </div>
                 </div>
-            </div>
+                <div class="result-panel tab-pane " id="recommendedoffers" role="tabpanel">
+                    <!--<a href="#" class="close-btn">schliessen</a>-->
+                    <h3>Spezifische Weiterbildungsangebote zu:</h3>
+                    <ul class="nav nav-pills " role="tablist">
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class="nav-link" href="#">
+                                <span>Berufsbildung</span>
 
-        </div>
-    </div>
-
-        <div class="row blackBgFullWidthTabs">
-            <div class="col-xs-12">
-
-                <ul class="nav nav-pills" role="tablist">
-                    <li class="nav-item  ">
-                        <a class=" nav-link" data-toggle="pill" href="#focustopics" role="pill">
-                            <span>Fokus- <br>themen</span>
-
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class=" nav-link" data-toggle="pill" href="#latestoffers" role="pill">
-                            <span>Neueste <br>Angebote</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item  ">
-                        <a class=" nav-link" data-toggle="pill" href="#recommendedoffers" role="pill">
-                            <span>Empfohlene <br>Angebote</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a class=" nav-link" data-toggle="pill" href="#lastminute" role="pill">
-                            <span>Last <br>Minute</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a class=" nav-link" data-toggle="pill" href="#customoffers" role="pill">
-                            <span>Massgeschneiderte <br>Angebote</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a class=" nav-link" data-toggle="pill" href="#lastvisit" role="pill">
-                            <span>Zuletzt <br>besucht</span>
-                        </a>
-                    </li>
-                </ul>
-
-
-                <div class="mobile-view-tabs">
-
-                    <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
-                         aria-haspopup="true" aria-expanded="false">
-                        -- Filter wählen --
-
-
-                    </div>
-                    <ul class="dropdown-menu" role="tablist">
-                        <li class="clickable">
-                            <a data-toggle="pill" href="#focustopics" role="pill">
-                                Fokusthemen
                             </a>
                         </li>
-                        <li class="clickable">
-                            <a data-toggle="pill" href="#latestoffers" role="pill">
-                                &nbsp;&nbsp;Neueste Angebote
+                        <li class="col-xs-12 col-sm-6 nav-item clickable">
+                            <a class="nav-link" href="#">
+                                <span>Erwachsenenbildung</span>
                             </a>
                         </li>
-                        <li class="clickable">
-                            <a data-toggle="pill" href="#recommendedoffers" role="pill">
-                                &nbsp;&nbsp;Empfohlene Angebote
+                        <li class="col-xs-12 col-sm-6 nav-item clickable">
+                            <a class="nav-link" href="#">
+                                <span>Schulmanagement</span>
                             </a>
                         </li>
-                        <li class="clickable">
-                            <a data-toggle="pill" href="#lastminute" role="pill">
-                                &nbsp;&nbsp;Last Minute
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class=" nav-link" href="#">
+                                <span>Berufsbiografische Angebote</span>
                             </a>
                         </li>
-                        <li class="clickable">
-                            <a data-toggle="pill" href="#customoffers" role="pill">
-                                &nbsp;&nbsp;Massgeschneiderte Angebote
-                            </a>
-                        </li>
-                        <li class="clickable">
-                            <a data-toggle="pill" href="#lastvisit" role="pill">
-                                &nbsp;&nbsp;Zuletzt besucht
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class=" nav-link" href="#">
+                                <span>Lehrplan 21</span>
                             </a>
                         </li>
                     </ul>
-
                 </div>
+                <div class="result-panel tab-pane " id="lastminute" role="tabpanel">
+                    <!--<a href="#" class="close-btn">schliessen</a>-->
+                    <h3>Spezifische Weiterbildungsangebote zu:</h3>
+                    <ul class="nav nav-pills " role="tablist">
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class="nav-link" href="#">
+                                <span>Berufsbildung</span>
 
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable">
+                            <a class="nav-link" href="#">
+                                <span>Erwachsenenbildung</span>
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable">
+                            <a class="nav-link" href="#">
+                                <span>Schulmanagement</span>
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class=" nav-link" href="#">
+                                <span>Berufsbiografische Angebote</span>
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class=" nav-link" href="#">
+                                <span>Lehrplan 21</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="result-panel tab-pane " id="customoffers" role="tabpanel">
+                    <!--<a href="#" class="close-btn">schliessen</a>-->
+                    <h3>Spezifische Weiterbildungsangebote zu:</h3>
+                    <ul class="nav nav-pills " role="tablist">
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class="nav-link" href="#">
+                                <span>Berufsbildung</span>
+
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable">
+                            <a class="nav-link" href="#">
+                                <span>Erwachsenenbildung</span>
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable">
+                            <a class="nav-link" href="#">
+                                <span>Schulmanagement</span>
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class=" nav-link" href="#">
+                                <span>Berufsbiografische Angebote</span>
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class=" nav-link" href="#">
+                                <span>Lehrplan 21</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="result-panel tab-pane " id="lastvisit" role="tabpanel">
+                    <!--<a href="#" class="close-btn">schliessen</a>-->
+                    <h3>Spezifische Weiterbildungsangebote zu:</h3>
+                    <ul class="nav nav-pills " role="tablist">
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class="nav-link" href="#">
+                                <span>Berufsbildung</span>
+
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable">
+                            <a class="nav-link" href="#">
+                                <span>Erwachsenenbildung</span>
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable">
+                            <a class="nav-link" href="#">
+                                <span>Schulmanagement</span>
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class=" nav-link" href="#">
+                                <span>Berufsbiografische Angebote</span>
+                            </a>
+                        </li>
+                        <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                            <a class=" nav-link" href="#">
+                                <span>Lehrplan 21</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
             </div>
 
         </div>
 
 
-        <div class="row blackBgFullWidthContents">
-
-            <div class="col-xs-12">
-                <div class="tab-content">
-                    <div class="result-panel tab-pane " id="focustopics" role="tabpanel">
-                        <!--<a href="#" class="close-btn">schliessen</a>-->
-                        <h3>Spezifische Weiterbildungsangebote zu:</h3>
-                        <ul class="nav nav-pills " role="tablist">
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class="nav-link" href="#">
-                                    <span>Berufsbildung</span>
-
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable">
-                                <a class="nav-link" href="#">
-                                    <span>Erwachsenenbildung</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable">
-                                <a class="nav-link" href="#">
-                                    <span>Schulmanagement</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class=" nav-link" href="#">
-                                    <span>Berufsbiografische Angebote</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class=" nav-link" href="#">
-                                    <span>Lehrplan 21</span>
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div class="result-panel tab-pane " id="latestoffers" role="tabpanel">
-                        <!--<a href="#" class="close-btn">schliessen</a>-->
-                        <h3>Die neuesten Studiengänge</h3>
-                        <div class="table-responsive  ">
-                            <table class="table">
-                                <tbody>
-                                <tr class="icon hat clickable open">
-                                    <td>
-                                        <span class="oi oi-caret-bottom"></span>
-                                        <span>
-                                        CAS Menschenrechtsbildung
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr class="result-preview ">
-                                    <td>
-                                        <div>
-                                            <p>
-                                                Menschenrechte sind die Basis für ein friedliches Zusammenleben einer
-                                                Gesellschaft. Doch nur wenn Menschen von ihren Rechten wissen, können
-                                                Menschen
-                                                ihre Rechte für sich in Anspruch nehmen und sich gleichzeitig auch
-                                                solidarisch
-                                                für die Rechte von anderen einsetzen («empowerment»).
-                                            </p>
+    </div>
 
 
-                                            <table class="table">
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        Studienziel
-                                                        <div class="mobile-view-columns">
-                                                            Certificate of Advanced Studies PH Luzern in
-                                                            Menschenrechtsbildung
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        Certificate of Advanced Studies PH Luzern in
-                                                        Menschenrechtsbildung
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        ETCS-Punkte
-                                                        <div class="mobile-view-columns">
-                                                            30
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        30
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Startdatum
-                                                        <div class="mobile-view-columns">
-                                                            13.01.2017
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        13.01.2017
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        Ort
-                                                        <div class="mobile-view-columns">
-                                                            Luzern
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        Luzern
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-
-
-                                        </div>
-                                        <div class="details">
-                                            <a class="btn btn-primary"
-                                               href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
-                                                Details
-                                            </a>
-                                        </div>
-                                        <div class="shareAndRegister">
-                                            <a class="btn btn-primary share"
-                                               href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
-                                                <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                                <br>
-                                                <span class="shareText">
-                                            Teilen
-                                        </span>
-                                            </a>
-                                            <a class="btn btn-primary "
-                                               href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
-                                                Anmelden
-                                            </a>
-                                        </div>
-
-
-                                    </td>
-                                </tr>
-                                <tr class="icon hat clickable ">
-                                    <td>
-                                        <span class="oi oi-caret-right"></span>
-                                        <span>
-                                        MAS Integrative Förderung
-                                </span>
-                                    </td>
-                                </tr>
-                                </tbody><!-- end ngRepeat: node in result.getNodes(limit) -->
-
-                            </table>
-                        </div>
-                        <h3>Die neuesten Veranstaltungen</h3>
-                        <div class="table-responsive  ">
-                            <table class="table">
-                                <tbody>
-                                <tr class="icon calendar clickable ">
-                                    <td>
-                                        <span class="oi oi-caret-right"></span>
-                                        <span>
-                                        Vollenweider Lectures
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr class="icon calendar clickable ">
-                                    <td>
-                                        <span class="oi oi-caret-right"></span>
-                                        <span>
-                                        Informationsveranstaltung MAS Schulmanagement
-                                </span>
-                                    </td>
-                                </tr>
-                                </tbody><!-- end ngRepeat: node in result.getNodes(limit) -->
-                            </table>
-                        </div>
-                        <h3>Die neuesten Kurse</h3>
-                        <div class="table-responsive  ">
-                            <table class="table">
-                                <tbody>
-                                <tr class="icon book clickable ">
-                                    <td>
-                                        <span class="oi oi-caret-right"></span>
-                                        <span>
-                                        Rechtsfragen im Schulalltag
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr class="icon book clickable ">
-                                    <td>
-                                        <span class="oi oi-caret-right"></span>
-                                        <span>
-                                        Schule - ein Biotop der Soziologie
-                                </span>
-                                    </td>
-                                </tr>
-                                </tbody><!-- end ngRepeat: node in result.getNodes(limit) -->
-                            </table>
-                        </div>
-                    </div>
-                    <div class="result-panel tab-pane " id="recommendedoffers" role="tabpanel">
-                        <!--<a href="#" class="close-btn">schliessen</a>-->
-                        <h3>Spezifische Weiterbildungsangebote zu:</h3>
-                        <ul class="nav nav-pills " role="tablist">
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class="nav-link" href="#">
-                                    <span>Berufsbildung</span>
-
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable">
-                                <a class="nav-link" href="#">
-                                    <span>Erwachsenenbildung</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable">
-                                <a class="nav-link" href="#">
-                                    <span>Schulmanagement</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class=" nav-link" href="#">
-                                    <span>Berufsbiografische Angebote</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class=" nav-link" href="#">
-                                    <span>Lehrplan 21</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="result-panel tab-pane " id="lastminute" role="tabpanel">
-                        <!--<a href="#" class="close-btn">schliessen</a>-->
-                        <h3>Spezifische Weiterbildungsangebote zu:</h3>
-                        <ul class="nav nav-pills " role="tablist">
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class="nav-link" href="#">
-                                    <span>Berufsbildung</span>
-
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable">
-                                <a class="nav-link" href="#">
-                                    <span>Erwachsenenbildung</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable">
-                                <a class="nav-link" href="#">
-                                    <span>Schulmanagement</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class=" nav-link" href="#">
-                                    <span>Berufsbiografische Angebote</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class=" nav-link" href="#">
-                                    <span>Lehrplan 21</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="result-panel tab-pane " id="customoffers" role="tabpanel">
-                        <!--<a href="#" class="close-btn">schliessen</a>-->
-                        <h3>Spezifische Weiterbildungsangebote zu:</h3>
-                        <ul class="nav nav-pills " role="tablist">
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class="nav-link" href="#">
-                                    <span>Berufsbildung</span>
-
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable">
-                                <a class="nav-link" href="#">
-                                    <span>Erwachsenenbildung</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable">
-                                <a class="nav-link" href="#">
-                                    <span>Schulmanagement</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class=" nav-link" href="#">
-                                    <span>Berufsbiografische Angebote</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class=" nav-link" href="#">
-                                    <span>Lehrplan 21</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="result-panel tab-pane " id="lastvisit" role="tabpanel">
-                        <!--<a href="#" class="close-btn">schliessen</a>-->
-                        <h3>Spezifische Weiterbildungsangebote zu:</h3>
-                        <ul class="nav nav-pills " role="tablist">
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class="nav-link" href="#">
-                                    <span>Berufsbildung</span>
-
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable">
-                                <a class="nav-link" href="#">
-                                    <span>Erwachsenenbildung</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable">
-                                <a class="nav-link" href="#">
-                                    <span>Schulmanagement</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class=" nav-link" href="#">
-                                    <span>Berufsbiografische Angebote</span>
-                                </a>
-                            </li>
-                            <li class="col-xs-12 col-sm-6 nav-item clickable ">
-                                <a class=" nav-link" href="#">
-                                    <span>Lehrplan 21</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-
-        <div class="row bluebg furtherEducationNews" id="aktuelles">
-            <div class="col-xs-12">
-                <span class="newsSwitch" data-ng-switch="showNews === false || (!showNews && result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentLabel) > 0 || searchquery != ''))">
+    <div class="row bluebg furtherEducationNews" id="aktuelles">
+        <div class="col-xs-12">
+                <span class="newsSwitch"
+                      data-ng-switch="showNews === false || (!showNews && result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentLabel) > 0 || searchquery != ''))">
                     <span data-ng-switch-default data-ng-click="toggleNews();">
                         <i class="oi oi-x"></i>
                     </span>
@@ -745,637 +744,638 @@
                         <i class="oi oi-plus"></i>
                     </span>
                 </span>
-                <h2>
-                    Aktuelles
-                </h2>
+            <h2>
+                Aktuelles
+            </h2>
+        </div>
+        <div class="col-xs-12"
+             data-ng-hide="showNews === false || (!showNews && result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentLabel) > 0 || searchquery != ''))">
+
+            <div id="carousel-phlu-teaser-xs" class="phlu-teaser carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-phlu-teaser-xs" data-slide-to="0" class=""></li>
+                    <li data-target="#carousel-phlu-teaser-xs" data-slide-to="1" class=""></li>
+                    <li data-target="#carousel-phlu-teaser-xs" data-slide-to="2" class=""></li>
+                    <li data-target="#carousel-phlu-teaser-xs" data-slide-to="4" class="active"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item">
+                        <div class="row ">
+                            <div class="col-xs-12 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATIONxs1
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-xs-12 event">
+                                <div class="event-date-day">
+                                    16.
+                                </div>
+                                <div class="event-date-month-year-location">
+                                    <b>
+                                        November, 2016
+                                    </b>
+                                    <br>
+                                    Uni/PH-Gebäude
+                                </div>
+
+                                <div class="phlu-teaser-body">
+                                    <h3>Schweizer Erzählnacht</h3>
+                                    <p>
+                                        Rückblick 2015 / Vorschau 2016
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexamplekind.png')}"
+                                     alt="Erzählnacht"/>
+                                <div class="phlu-teaser-type">
+                                    Veranstaltung
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-xs-12 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATIONxs3
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-xs-12 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATIONxs4
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="left carousel-control" href="#carousel-phlu-teaser-xs" role="button" data-slide="prev">
+                            <span class="icon-prev" aria-hidden="true">
+                                &nbsp;
+                            </span>
+
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-phlu-teaser-xs" role="button" data-slide="next">
+                            <span class="icon-next" aria-hidden="true">
+                                &nbsp;
+                            </span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            <div class="col-xs-12" data-ng-hide="showNews === false || (!showNews && result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentLabel) > 0 || searchquery != ''))">
-
-                <div id="carousel-phlu-teaser-xs" class="phlu-teaser carousel slide">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-phlu-teaser-xs" data-slide-to="0" class=""></li>
-                        <li data-target="#carousel-phlu-teaser-xs" data-slide-to="1" class=""></li>
-                        <li data-target="#carousel-phlu-teaser-xs" data-slide-to="2" class=""></li>
-                        <li data-target="#carousel-phlu-teaser-xs" data-slide-to="4" class="active"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item">
-                            <div class="row ">
-                                <div class="col-xs-12 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATIONxs1
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
+            <div id="carousel-phlu-teaser-sm" class="phlu-teaser carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-phlu-teaser-sm" data-slide-to="0" class=""></li>
+                    <li data-target="#carousel-phlu-teaser-sm" data-slide-to="1" class="active"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-6 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATIONSM1
                                 </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
                             </div>
+                            <div class="col-sm-6 event">
+                                <div class="event-date-day">
+                                    16.
+                                </div>
+                                <div class="event-date-month-year-location">
+                                    <b>
+                                        November, 2016
+                                    </b>
+                                    <br>
+                                    Uni/PH-Gebäude
+                                </div>
 
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-xs-12 event">
-                                    <div class="event-date-day">
-                                        16.
-                                    </div>
-                                    <div class="event-date-month-year-location">
-                                        <b>
-                                            November, 2016
-                                        </b>
-                                        <br>
-                                        Uni/PH-Gebäude
-                                    </div>
-
-                                    <div class="phlu-teaser-body">
-                                        <h3>Schweizer Erzählnacht</h3>
-                                        <p>
-                                            Rückblick 2015 / Vorschau 2016
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexamplekind.png')}"
-                                         alt="Erzählnacht"/>
-                                    <div class="phlu-teaser-type">
-                                        Veranstaltung
-                                    </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Schweizer Erzählnacht</h3>
+                                    <p>
+                                        Rückblick 2015 / Vorschau 2016
+                                    </p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-xs-12 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATIONxs3
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-xs-12 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATIONxs4
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
-                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexamplekind.png')}"
+                                     alt="Erzählnacht"/>
                             </div>
                         </div>
                     </div>
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-sm-6 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATIONSM3
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                            <div class="col-sm-6 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATIONSM4
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    <a class="left carousel-control" href="#carousel-phlu-teaser-xs" role="button" data-slide="prev">
+                <a class="left carousel-control" href="#carousel-phlu-teaser-sm" role="button" data-slide="prev">
                             <span class="icon-prev" aria-hidden="true">
                                 &nbsp;
                             </span>
 
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-phlu-teaser-xs" role="button" data-slide="next">
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-phlu-teaser-sm" role="button" data-slide="next">
                             <span class="icon-next" aria-hidden="true">
                                 &nbsp;
                             </span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-                <div id="carousel-phlu-teaser-sm" class="phlu-teaser carousel slide">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-phlu-teaser-sm" data-slide-to="0" class=""></li>
-                        <li data-target="#carousel-phlu-teaser-sm" data-slide-to="1" class="active"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-sm-6 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATIONSM1
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div id="carousel-phlu-teaser-md" class="phlu-teaser carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-phlu-teaser-md" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-phlu-teaser-md" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATIONMD1
                                 </div>
-                                <div class="col-sm-6 event">
-                                    <div class="event-date-day">
-                                        16.
-                                    </div>
-                                    <div class="event-date-month-year-location">
-                                        <b>
-                                            November, 2016
-                                        </b>
-                                        <br>
-                                        Uni/PH-Gebäude
-                                    </div>
-
-                                    <div class="phlu-teaser-body">
-                                        <h3>Schweizer Erzählnacht</h3>
-                                        <p>
-                                            Rückblick 2015 / Vorschau 2016
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexamplekind.png')}"
-                                         alt="Erzählnacht"/>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
                                 </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
                             </div>
-                        </div>
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-sm-6 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATIONSM3
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
+                            <div class="col-md-4 event">
+                                <div class="event-date-day">
+                                    16.
                                 </div>
-                                <div class="col-sm-6 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATIONSM4
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
+                                <div class="event-date-month-year-location">
+                                    <b>
+                                        November, 2016
+                                    </b>
+                                    <br>
+                                    Uni/PH-Gebäude
                                 </div>
+
+                                <div class="phlu-teaser-body">
+                                    <h3>Schweizer Erzählnacht</h3>
+                                    <p>
+                                        Rückblick 2015 / Vorschau 2016
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexamplekind.png')}"
+                                     alt="Erzählnacht"/>
+                            </div>
+                            <div class="col-md-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATIONMD3
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
                             </div>
                         </div>
                     </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATIONMD4
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                            <div class="col-md-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATIONMD1
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                            <div class="col-md-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATIONMD2
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    <a class="left carousel-control" href="#carousel-phlu-teaser-sm" role="button" data-slide="prev">
+                <a class="left carousel-control" href="#carousel-phlu-teaser-md" role="button" data-slide="prev">
                             <span class="icon-prev" aria-hidden="true">
                                 &nbsp;
                             </span>
 
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-phlu-teaser-sm" role="button" data-slide="next">
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-phlu-teaser-md" role="button" data-slide="next">
                             <span class="icon-next" aria-hidden="true">
                                 &nbsp;
                             </span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-                <div id="carousel-phlu-teaser-md" class="phlu-teaser carousel slide">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-phlu-teaser-md" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-phlu-teaser-md" data-slide-to="1"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-md-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATIONMD1
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div id="carousel-phlu-teaser-lg" class="phlu-teaser carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-phlu-teaser-lg" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-phlu-teaser-lg" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATION lg 1
                                 </div>
-                                <div class="col-md-4 event">
-                                    <div class="event-date-day">
-                                        16.
-                                    </div>
-                                    <div class="event-date-month-year-location">
-                                        <b>
-                                            November, 2016
-                                        </b>
-                                        <br>
-                                        Uni/PH-Gebäude
-                                    </div>
-
-                                    <div class="phlu-teaser-body">
-                                        <h3>Schweizer Erzählnacht</h3>
-                                        <p>
-                                            Rückblick 2015 / Vorschau 2016
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexamplekind.png')}"
-                                         alt="Erzählnacht"/>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
                                 </div>
-                                <div class="col-md-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATIONMD3
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
-                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATIONMD4
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
+                            <div class="col-lg-4 event">
+                                <div class="event-date-day">
+                                    16.
                                 </div>
-                                <div class="col-md-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATIONMD1
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
+                                <div class="event-date-month-year-location">
+                                    <b>
+                                        November, 2016
+                                    </b>
+                                    <br>
+                                    Uni/PH-Gebäude
                                 </div>
-                                <div class="col-md-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATIONMD2
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
+
+                                <div class="phlu-teaser-body">
+                                    <h3>Schweizer Erzählnacht</h3>
+                                    <p>
+                                        Rückblick 2015 / Vorschau 2016
+                                    </p>
                                 </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexamplekind.png')}"
+                                     alt="Erzählnacht"/>
+
+                            </div>
+                            <div class="col-lg-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATION lg 3
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
                             </div>
                         </div>
                     </div>
-
-                    <a class="left carousel-control" href="#carousel-phlu-teaser-md" role="button" data-slide="prev">
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATION lg 4
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                            <div class="col-lg-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATION lg 1
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                            <div class="col-lg-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATION lg 2
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-phlu-teaser-lg" role="button" data-slide="prev">
                             <span class="icon-prev" aria-hidden="true">
                                 &nbsp;
                             </span>
 
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-phlu-teaser-md" role="button" data-slide="next">
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-phlu-teaser-lg" role="button" data-slide="next">
                             <span class="icon-next" aria-hidden="true">
                                 &nbsp;
                             </span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-                <div id="carousel-phlu-teaser-lg" class="phlu-teaser carousel slide">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-phlu-teaser-lg" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-phlu-teaser-lg" data-slide-to="1"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-lg-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATION lg 1
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div id="carousel-phlu-teaser-xl" class="phlu-teaser carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-phlu-teaser-xl" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-phlu-teaser-xl" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="row ">
+                            <div class="col-xl-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATION xl 1
                                 </div>
-                                <div class="col-lg-4 event">
-                                    <div class="event-date-day">
-                                        16.
-                                    </div>
-                                    <div class="event-date-month-year-location">
-                                        <b>
-                                            November, 2016
-                                        </b>
-                                        <br>
-                                        Uni/PH-Gebäude
-                                    </div>
-
-                                    <div class="phlu-teaser-body">
-                                        <h3>Schweizer Erzählnacht</h3>
-                                        <p>
-                                            Rückblick 2015 / Vorschau 2016
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexamplekind.png')}"
-                                         alt="Erzählnacht"/>
-
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
                                 </div>
-                                <div class="col-lg-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATION lg 3
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
-                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-lg-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATION lg 4
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
+                            <div class="col-xl-4 event">
+                                <div class="event-date-day">
+                                    16.
                                 </div>
-                                <div class="col-lg-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATION lg 1
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
+                                <div class="event-date-month-year-location">
+                                    <b>
+                                        November, 2016
+                                    </b>
+                                    <br>
+                                    Uni/PH-Gebäude
                                 </div>
-                                <div class="col-lg-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATION lg 2
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
+                                <div class="phlu-teaser-body">
+                                    <h3>Schweizer Erzählnacht</h3>
+                                    <p>
+                                        Rückblick 2015 / Vorschau 2016
+                                    </p>
                                 </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexamplekind.png')}"
+                                     alt="Erzählnacht"/>
+
+                            </div>
+                            <div class="col-xl-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATION xl 3
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
                             </div>
                         </div>
                     </div>
-                    <a class="left carousel-control" href="#carousel-phlu-teaser-lg" role="button" data-slide="prev">
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-xl-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATION xl 4
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                            <div class="col-xl-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATION xl 1
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                            <div class="col-xl-4 publication">
+                                <div class="phlu-teaser-type">
+                                    PUBLIKATION xl 2
+                                </div>
+                                <div class="phlu-teaser-body">
+                                    <h3>Buch &amp; Maus</h3>
+                                    <p>
+                                        Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
+                                        Medien".
+                                    </p>
+                                </div>
+                                <img class="img-fluid"
+                                     src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
+                                     alt="Buch &amp; Maus"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-phlu-teaser-xl" role="button" data-slide="prev">
                             <span class="icon-prev" aria-hidden="true">
                                 &nbsp;
                             </span>
 
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-phlu-teaser-lg" role="button" data-slide="next">
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-phlu-teaser-xl" role="button" data-slide="next">
                             <span class="icon-next" aria-hidden="true">
                                 &nbsp;
                             </span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-                <div id="carousel-phlu-teaser-xl" class="phlu-teaser carousel slide">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-phlu-teaser-xl" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-phlu-teaser-xl" data-slide-to="1"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <div class="row ">
-                                <div class="col-xl-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATION xl 1
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
-                                </div>
-                                <div class="col-xl-4 event">
-                                    <div class="event-date-day">
-                                        16.
-                                    </div>
-                                    <div class="event-date-month-year-location">
-                                        <b>
-                                            November, 2016
-                                        </b>
-                                        <br>
-                                        Uni/PH-Gebäude
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Schweizer Erzählnacht</h3>
-                                        <p>
-                                            Rückblick 2015 / Vorschau 2016
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexamplekind.png')}"
-                                         alt="Erzählnacht"/>
-
-                                </div>
-                                <div class="col-xl-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATION xl 3
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-xl-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATION xl 4
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
-                                </div>
-                                <div class="col-xl-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATION xl 1
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
-                                </div>
-                                <div class="col-xl-4 publication">
-                                    <div class="phlu-teaser-type">
-                                        PUBLIKATION xl 2
-                                    </div>
-                                    <div class="phlu-teaser-body">
-                                        <h3>Buch &amp; Maus</h3>
-                                        <p>
-                                            Aktuelle Ausgabe Buch &amp; Maus mit dem Schwerpunkt "Literatur in allen
-                                            Medien".
-                                        </p>
-                                    </div>
-                                    <img class="img-fluid"
-                                         src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/teaserimgexample.png')}"
-                                         alt="Buch &amp; Maus"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="left carousel-control" href="#carousel-phlu-teaser-xl" role="button" data-slide="prev">
-                            <span class="icon-prev" aria-hidden="true">
-                                &nbsp;
-                            </span>
-
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-phlu-teaser-xl" role="button" data-slide="next">
-                            <span class="icon-next" aria-hidden="true">
-                                &nbsp;
-                            </span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
+    </div>
 
 
-        <div class="row contactperson" id="kontakt">
-            <div class="col-xs-12">
-                <h2>Kontakt</h2>
+    <div class="row contactperson" id="kontakt">
+        <div class="col-xs-12">
+            <h2>Kontakt</h2>
 
-                <div class="row">
-                    <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-12">
 
-                        <address>
-                            <div class="contactperson-role">
-                                Leiter Bewegung und Sport
-                            </div>
-                            Pius Disler<br>
-                            Prof. Dr. disc. pol.<br>
-                            Bildungszentrum Bewegung und Sport
-                            Zihlmattweg 46<br>
+                    <address>
+                        <div class="contactperson-role">
+                            Leiter Bewegung und Sport
+                        </div>
+                        Pius Disler<br>
+                        Prof. Dr. disc. pol.<br>
+                        Bildungszentrum Bewegung und Sport
+                        Zihlmattweg 46<br>
 
-                            6005 Luzern
-                        </address>
-                        <address>
-                            <div class="telephone">
-                                <i class="fa fa-phone" aria-hidden="true"></i>
-                                041 228 70 99<br>
-                            </div>
-                            <a class="content-link-email-contact-person"
-                               href="mailto:pius.disler@phlu.ch">pius.disler@phlu.ch</a><br>
+                        6005 Luzern
+                    </address>
+                    <address>
+                        <div class="telephone">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            041 228 70 99<br>
+                        </div>
+                        <a class="content-link-email-contact-person"
+                           href="mailto:pius.disler@phlu.ch">pius.disler@phlu.ch</a><br>
 
-                        </address>
-                    </div>
-
+                    </address>
                 </div>
 
             </div>
+
         </div>
+    </div>
 
 </div>
