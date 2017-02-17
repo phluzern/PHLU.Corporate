@@ -40,11 +40,11 @@
                         </div><!-- /input-group -->
                         <div class="extendedSearch">
 
-                            <button type="button" class="btn btn-default">
+                            <button type="button" class="btn btn-default" data-ng-class="{disabled: resultAll.isLoading() === true || resultAll.count() == 0}">
                                 Erweiterte Suche
                                 <span class="oi oi-x"></span>
-                                <span class="count" data-ng-bind="countCurrentFilters(nodetypesFilterCurrentLabel)"
-                                      data-ng-show="countCurrentFilters(nodetypesFilterCurrentLabel) > 0"></span>
+                                <span class="count" data-ng-bind="countCurrentFilters(nodetypesFilterCurrentCategory)"
+                                      data-ng-show="countCurrentFilters(nodetypesFilterCurrentCategory) > 0"></span>
                             </button>
                             <!--                        <span class="resetFilter">
                                                                 <a ng-click="clearFilter('researchmainfocus')">
@@ -56,12 +56,31 @@
 
                 </div>
 
-                <div class="row extendedSearchFilter">
+                <div class="row extendedSearchFilter" data-ng-if="resultAll.isLoading() === false && resultAll.count() > 0">
 
                     <div data-ng-show="nodetypesFilterCurrentLabel == 'Alle'" class="col-xs-12">
                         <h3>Kurse und Studiengänge</h3>
 
                         <div class="row input-group">
+                            <div class="input-item-col col-xs-12 col-sm-3">
+                                <label>Schul-/Studienjahr</label>
+                                <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
+                                     aria-haspopup="true" aria-expanded="false">
+                                    <span data-ng-bind="getFilterSelectedPreview(filters.year,'Alle')"></span>
+                                </div>
+                                <div class="tagFadeOutBg"></div>
+                                <ul class="dropdown-menu">
+                                    <li value="" data-ng-repeat="year in resultAll.getDistinct('furthereducation-years.Year')">
+                                        <a href="#" data-ng-click="toggleFilterSelection(year,'Alle','year')">
+                                            <i class="fa " aria-hidden="true"
+                                               data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
+                                            <span data-ng-bind="year.value"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
                             <div class="input-item-col col-xs-3">
                                 <label>Kursbeginn</label>
 
@@ -91,19 +110,19 @@
                         </div>
                     </div>
 
-                    <div data-ng-show="nodetypesFilterCurrentLabel == 'Studiengang'" class="col-xs-12">
+                    <div data-ng-show="nodetypesFilterCurrentCategory == 'Studiengang'" class="col-xs-12">
                         <h3>Weiterbildungsstudiengänge</h3>
                         <div class="row input-group">
                             <div class="input-item-col col-xs-12 col-sm-3">
                                 <label>Schul-/Studienjahr</label>
                                 <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
                                      aria-haspopup="true" aria-expanded="false">
-                                    <span data-ng-bind="getFilterSelectedPreview(filters.year)"></span>
+                                    <span data-ng-bind="getFilterSelectedPreview(filters.year,'Studiengang')"></span>
                                 </div>
                                 <div class="tagFadeOutBg"></div>
                                 <ul class="dropdown-menu">
-                                    <li value="" data-ng-repeat="year in resultAll.getDistinct('years.StartText')">
-                                        <a href="#" data-ng-click="toogleFilterSelection(year)">
+                                    <li value="" data-ng-repeat="year in resultAll.getDistinct('study-furthereducation-years.Year')">
+                                        <a href="#" data-ng-click="toggleFilterSelection(year,'Studiengang','year')">
                                             <i class="fa " aria-hidden="true"
                                                data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
                                             <span data-ng-bind="year.value"></span>
@@ -117,7 +136,7 @@
                                 <label>Typ/Abschluss</label>
                                 <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
                                      aria-haspopup="true" aria-expanded="false">
-                                    <span data-ng-bind="getFilterSelectedPreview(filters.graduation)"></span>
+                                    <span data-ng-bind="getFilterSelectedPreview(filters.graduation,'Studiengang')"></span>
                                     <!--<a href="#" class="search-result-tag" data-ng-repeat="item in filters.graduation.selected" data-ng-show="item.state">-->
                                     <!--<span data-ng-bind="item.value"></span>-->
                                     <!--&lt;!&ndash;<i class="fa fa-times clickable" aria-hidden="true"></i>&ndash;&gt;-->
@@ -126,7 +145,7 @@
                                 <div class="tagFadeOutBg"></div>
                                 <ul class="dropdown-menu">
                                     <li value="" data-ng-repeat="graduation in resultAll.getDistinct('graduation')">
-                                        <a href="#" data-ng-click="toogleFilterSelection(graduation)">
+                                        <a href="#" data-ng-click="toggleFilterSelection(graduation,'Studiengang','graduation')">
                                             <i class="fa " aria-hidden="true"
                                                data-ng-class="{'fa-check-square-o': graduation.state, 'fa-square-o': !graduation.state}"></i>
                                             <span data-ng-bind="graduation.value"></span>
@@ -142,6 +161,26 @@
                         <h3>Kurse</h3>
 
                         <div class="row input-group">
+
+                            <div class="input-item-col col-xs-12 col-sm-3">
+                                <label>Schul-/Studienjahr</label>
+                                <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
+                                     aria-haspopup="true" aria-expanded="false">
+                                    <span data-ng-bind="getFilterSelectedPreview(filters.year,'Kurs')"></span>
+                                </div>
+                                <div class="tagFadeOutBg"></div>
+                                <ul class="dropdown-menu">
+                                    <li value="" data-ng-repeat="year in resultAll.getDistinct('module-furthereducation-years.Year')">
+                                        <a href="#" data-ng-click="toggleFilterSelection(year,'Kurs','year')">
+                                            <i class="fa " aria-hidden="true"
+                                               data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
+                                            <span data-ng-bind="year.value"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
                             <div class="input-item-col col-xs-3">
                                 <label>Kursbeginn</label>
 
@@ -178,7 +217,8 @@
         <div class="col-xs-12">
             <div class="row results-table">
                 <div class="col-xs-12"
-                     data-ng-show="result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentLabel) > 0 || searchquery != '' || nodetypesFilterCurrentLabel !== 'Alle')">
+                     data-ng-if="isShowingResult()">
+
                     <div class="searchResultsListLoadingScreen" data-ng-if="result.isLoading()">
                         <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
                              alt="loading"
@@ -189,7 +229,7 @@
 
                     <h3 data-ng-bind="'Treffer '+result.count()"></h3>
 
-                    <div class="table-responsive" data-ng-show="result.isLoading() === false && result.count() > 0">
+                    <div class="table-responsive">
                         <table class="table">
                             <tbody ng-repeat="node in result.getNodes(limit)"
                                    data-ng-click="node.isopen = node.isopen ? false : true">
@@ -210,6 +250,11 @@
 
                                         </p>
 
+                                        <ul>
+                                            <li data-ng-repeat="i in node.getProperty('years')">
+                                                <span data-ng-bind="i.Year"></span>
+                                            </li>
+                                        </ul>
 
                                         <table class="table">
                                             <tbody>
@@ -736,7 +781,7 @@
     <div class="row bluebg furtherEducationNews" id="aktuelles">
         <div class="col-xs-12">
                 <span class="newsSwitch"
-                      data-ng-switch="showNews === false || (!showNews && result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentLabel) > 0 || searchquery != ''))">
+                      data-ng-switch="showNews === false || (!showNews && result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentCategory) > 0 || searchquery != ''))">
                     <span data-ng-switch-default data-ng-click="toggleNews();">
                         <i class="oi oi-x"></i>
                     </span>
@@ -749,7 +794,7 @@
             </h2>
         </div>
         <div class="col-xs-12"
-             data-ng-hide="showNews === false || (!showNews && result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentLabel) > 0 || searchquery != ''))">
+             data-ng-hide="showNews === false || (!showNews && result.isStarted() && (countCurrentFilters(nodetypesFilterCurrentCategory) > 0 || searchquery != ''))">
 
             <div id="carousel-phlu-teaser-xs" class="phlu-teaser carousel slide">
                 <ol class="carousel-indicators">
