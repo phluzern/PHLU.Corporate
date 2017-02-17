@@ -255,6 +255,52 @@
                             </div>
 
 
+                            <div class="input-item-col col-xs-12 col-sm-6">
+                                <label>Inhaltsverzeichnis</label>
+                                <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
+                                     aria-haspopup="true" aria-expanded="false">
+                                    <span data-ng-bind="getFilterSelectedPreview(filters.genre,'Kurs')"></span>
+                                </div>
+                                <div class="tagFadeOutBg"></div>
+                                <ul class="dropdown-menu">
+                                    <li value=""
+                                        data-ng-repeat="genre in resultAll.getDistinct('genre')">
+                                        <a href="#"
+                                           data-ng-click="toggleFilterSelection(genre,'Kurs','genre')">
+                                            <i class="fa " aria-hidden="true"
+                                               data-ng-class="{'fa-check-square-o': genre.state, 'fa-square-o': !genre.state}"></i>
+                                            <span data-ng-bind="genre.value"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row input-group">
+
+                            <div class="input-item-col col-xs-12 col-sm-3">
+                                <label>Wochentag</label>
+                                <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
+                                     aria-haspopup="true" aria-expanded="false">
+                                    <span data-ng-bind="getFilterSelectedPreview(filters.dayofweek,'Kurs')"></span>
+                                </div>
+                                <div class="tagFadeOutBg"></div>
+                                <ul class="dropdown-menu">
+                                    <li value=""
+                                        data-ng-repeat="dayofweek in resultAll.getDistinct('module-furthereducation-start.FORMAT.A')">
+                                        <a href="#"
+                                           data-ng-click="toggleFilterSelection(dayofweek,'Kurs','dayofweek')">
+                                            <i class="fa " aria-hidden="true"
+                                               data-ng-class="{'fa-check-square-o': dayofweek.state, 'fa-square-o': !dayofweek.state}"></i>
+                                            <span data-ng-bind="dayofweek.value"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
                         </div>
 
                     </div>
@@ -298,7 +344,8 @@
                                     <div>
                                         <p data-ng-bind="node.getProperty('description')">
 
-                                        </p>
+
+
 
                                         <ul>
                                             <li data-ng-repeat="i in node.getProperty('years')">
