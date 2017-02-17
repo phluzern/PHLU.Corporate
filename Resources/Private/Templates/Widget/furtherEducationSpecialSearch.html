@@ -85,6 +85,27 @@
                             </div>
 
 
+                            <div class="input-item-col col-xs-12 col-sm-3">
+                                <label>Zielgruppen</label>
+                                <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
+                                     aria-haspopup="true" aria-expanded="false">
+                                    <span data-ng-bind="getFilterSelectedPreview(filters.targetgroups,'Alle')"></span>
+                                </div>
+                                <div class="tagFadeOutBg"></div>
+                                <ul class="dropdown-menu">
+                                    <li value=""
+                                        data-ng-repeat="targetgroup in resultAll.getDistinct('targetgroups.Bezeichnung')">
+                                        <a href="#"
+                                           data-ng-click="toggleFilterSelection(targetgroup,'Alle','targetgroups')">
+                                            <i class="fa " aria-hidden="true"
+                                               data-ng-class="{'fa-check-square-o': targetgroup.state, 'fa-square-o': !targetgroup.state}"></i>
+                                            <span data-ng-bind="targetgroup.value"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
                         </div>
                     </div>
 
@@ -111,7 +132,7 @@
 
                             </div>
 
-                            <div name="targetDegree" class="input-item-col col-xs-12 col-sm-6">
+                            <div name="targetDegree" class="input-item-col col-xs-12 col-sm-3">
                                 <label>Typ/Abschluss</label>
                                 <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
                                      aria-haspopup="true" aria-expanded="false">
@@ -133,6 +154,28 @@
                                     </li>
                                 </ul>
                             </div>
+
+                            <div class="input-item-col col-xs-12 col-sm-3">
+                                <label>Zielgruppen</label>
+                                <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
+                                     aria-haspopup="true" aria-expanded="false">
+                                    <span data-ng-bind="getFilterSelectedPreview(filters.targetgroups,'Studiengang')"></span>
+                                </div>
+                                <div class="tagFadeOutBg"></div>
+                                <ul class="dropdown-menu">
+                                    <li value=""
+                                        data-ng-repeat="targetgroup in resultAll.getDistinct('study-furthereducation-targetgroups.Bezeichnung')">
+                                        <a href="#"
+                                           data-ng-click="toggleFilterSelection(targetgroup,'Studiengang','targetgroups')">
+                                            <i class="fa " aria-hidden="true"
+                                               data-ng-class="{'fa-check-square-o': targetgroup.state, 'fa-square-o': !targetgroup.state}"></i>
+                                            <span data-ng-bind="targetgroup.value"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
                         </div>
 
 
@@ -167,29 +210,33 @@
                                 <label>Zielgruppen</label>
                                 <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
                                      aria-haspopup="true" aria-expanded="false">
-                                    <span data-ng-bind="getFilterSelectedPreview(filters.year,'Kurs')"></span>
+                                    <span data-ng-bind="getFilterSelectedPreview(filters.targetgroups,'Kurs')"></span>
                                 </div>
                                 <div class="tagFadeOutBg"></div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="year in resultAll.getDistinct('module-furthereducation-years.Year')">
-                                        <a href="#" data-ng-click="toggleFilterSelection(year,'Kurs','year')">
+                                        data-ng-repeat="targetgroup in resultAll.getDistinct('targetgroups.Bezeichnung')">
+                                        <a href="#"
+                                           data-ng-click="toggleFilterSelection(targetgroup,'Kurs','targetgroups')">
                                             <i class="fa " aria-hidden="true"
-                                               data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
-                                            <span data-ng-bind="year.value"></span>
+                                               data-ng-class="{'fa-check-square-o': targetgroup.state, 'fa-square-o': !targetgroup.state}"></i>
+                                            <span data-ng-bind="targetgroup.value"></span>
                                         </a>
                                     </li>
                                 </ul>
 
                             </div>
 
-
-
-
-
                         </div>
 
 
+                        <div class="row input-group">
+                            <div class="input-item-col col-xs-12 col-sm-3">
+                                <label>Kursnummer</label>
+                                <input style="height:55px" type="text" class="form-control" data-ng-model="search.courseNrStudy" data-ng-change="setFilterSelectionValue(search.courseNrStudy,'Kurs','nr');">
+
+                            </div>
+                        </div>
 
                     </div>
                 </div>

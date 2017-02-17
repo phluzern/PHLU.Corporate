@@ -57,6 +57,11 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.limit = 15;
     $scope.limitChunkSize = 15;
     $scope.searchquery = '';
+    $scope.search = {
+        'courseNrAll' : '',
+        'courseNrStudy' : '',
+        'courseNrModule' : ''
+    }
     $scope.graduation = {};
     $scope.nodetypes = [];
     $scope.nodetypesFilter = [
@@ -70,18 +75,27 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.filters = {
         'graduation': {
             'property': 'graduation',
-            'selected': {},
             'categories': ['Studiengang']
         },
         'year': {
             'property': 'years.Year',
-            'selected': {},
             'categories': ['Studiengang', 'Kurs', 'Alle']
+        },
+        'targetgroups': {
+            'property': 'targetgroups.Bezeichnung',
+            'categories': ['Kurs','Alle']
+        },
+        'nr': {
+            'property': 'furthereducation-nr',
+            'categories': ['Kurs','Studiengang','Alle']
         }
     };
 
     $scope.$watch('filters', function (filters) {
         angular.forEach(filters, function (filter) {
+            if (filter.selected == undefined) {
+                filter.selected = {};
+            }
             filter.selectedValues = $scope.getFilterSelectedValue(filter);
         });
     }, true);
@@ -178,6 +192,56 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @param string filter name
      * @returns filterObject
      */
+    $scope.setFilterSelectionValue = function (value, category, filtername) {
+
+        if (category == undefined) {
+            category = 'all';
+        }
+
+
+        var filter = getFilterByName(filtername);
+
+        if (filter === null) {
+            filter = getFilterFromFilterObject(filterObject);
+        }
+
+        if (filter === null) {
+            return null;
+        }
+
+
+        if (filter.selected[category] == undefined) {
+            filter.selected[category] = {};
+        }
+
+
+        if (filter.selected[category][0] == undefined) {
+            filter.selected[category][0] = {};
+        }
+
+
+
+        if (value == '') {
+            filter.selected[category][0].state = false;
+        } else {
+            filter.selected[category][0].state = true;
+            filter.selected[category][0].value = value;
+        }
+
+        console.log(filter);
+
+
+    };
+
+
+     /**
+     * @public
+     * Toggle state of given filter
+     * @param filterObject
+     * @param category
+     * @param string filter name
+     * @returns filterObject
+     */
     $scope.toggleFilterSelection = function (filterObject, category, filtername) {
 
         if (category == undefined) {
@@ -258,10 +322,12 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         var value = [];
 
         angular.forEach(filter.selected[$scope.nodetypesFilterCurrentCategory], function (selected) {
+            console.log(selected);
             if (selected.state) {
                 value.push(selected.value);
             }
         });
+
 
         return value;
 
