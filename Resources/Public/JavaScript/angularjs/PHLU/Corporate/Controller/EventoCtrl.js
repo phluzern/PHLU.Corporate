@@ -34,7 +34,10 @@ PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
     };
 
     $scope.setNodeTypes = function (nodetypes) {
-        $scope.nodetypes = nodetypes;
+      if (nodetypes == null) {
+          nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation','phlu-neos-nodetypes-course-module-furthereducation']
+      }
+       $scope.nodetypes = nodetypes;
     };
 
     $scope.list
@@ -119,7 +122,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
 
     /**
-     * @public
+     * @public§
      * Set node type filter
      * @param filter
      * @returns void
@@ -159,6 +162,9 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @returns void
      */
     $scope.setNodeTypes = function (nodetypes) {
+        if (nodetypes == null) {
+            nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation','phlu-neos-nodetypes-course-module-furthereducation']
+        }
         $scope.nodetypes = nodetypes;
     };
 
@@ -497,10 +503,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             search.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope);
         }
 
-    });
-
-    search.$watch(function (result) {
-        console.log($scope.filters);
     });
 
     search.run();
