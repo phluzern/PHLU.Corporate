@@ -118,11 +118,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     });
 
 
-    $scope.$watch('searchquery', function (f) {
-        //console.log(f);
-    }, true);
-
-
     /**
      * @public
      * Set node type filter
@@ -154,10 +149,39 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
         $scope.nodetypes = nodetype;
 
-    }
+    };
 
 
     /**
+     * @public
+     * Set node type filter
+     * @param array nodeTypes
+     * @returns void
+     */
+    $scope.setNodeTypes = function (nodetypes) {
+        $scope.nodetypes = nodetypes;
+    };
+
+    /**
+     * @public
+     * Set genres type filter
+     * @param array genres
+     * @returns void
+     */
+    $scope.setFilter = function (values,filtername) {
+
+        angular.forEach(values, function(value) {
+            $scope.toggleFilterSelection({
+                id: value,
+                value: value,
+                state: false
+            },'Alle',filtername);
+
+        });
+    };
+
+
+        /**
      * @private
      * Get filter from filter object
      * @param filterObject
@@ -271,6 +295,9 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         }
 
 
+        if (filter.selected === undefined) {
+            filter.selected = {};
+        }
         if (filter.selected[category] === undefined) {
             filter.selected[category] = {};
         }
@@ -278,6 +305,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         if (filter.selected[category][filterObject.id] === undefined) {
             filter.selected[category][filterObject.id] = filterObject;
         }
+
 
         filter.selected[category][filterObject.id].state = filter.selected[category][filterObject.id].state ? false : true;
 
@@ -430,12 +458,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     };
 
-    /**
-     * @private
-     * Set node type filters
-     * @returns integer
-     */
-    $scope.setNodetypesFilter($scope.nodetypesFilter[0]);
 
     /**
      * @private
@@ -478,7 +500,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     });
 
     search.$watch(function (result) {
-        //console.log(result);
+        console.log($scope.filters);
     });
 
     search.run();
