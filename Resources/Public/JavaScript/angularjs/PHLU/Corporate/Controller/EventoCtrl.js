@@ -87,7 +87,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             'categories': ['Kurs','Studiengang','Alle'],
         },
         'dayofweek': {
-            'property': 'module-furthereducation-start.FORMAT.A',
+            'property': 'module-furthereducation-start.format.A',
             'categories': ['Kurs'],
         },
         'nr': {
