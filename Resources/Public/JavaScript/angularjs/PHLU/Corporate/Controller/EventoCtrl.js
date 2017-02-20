@@ -34,10 +34,10 @@ PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
     };
 
     $scope.setNodeTypes = function (nodetypes) {
-      if (nodetypes == null) {
-          nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation','phlu-neos-nodetypes-course-module-furthereducation']
-      }
-       $scope.nodetypes = nodetypes;
+        if (nodetypes == null) {
+            nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation']
+        }
+        $scope.nodetypes = nodetypes;
     };
 
     $scope.list
@@ -83,11 +83,11 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         },
         'targetgroups': {
             'property': 'targetgroups.Bezeichnung',
-            'categories': ['Kurs','Alle']
+            'categories': ['Kurs', 'Alle']
         },
         'genre': {
             'property': 'genre',
-            'categories': ['Kurs','Studiengang','Alle'],
+            'categories': ['Kurs', 'Studiengang', 'Alle'],
         },
         'dayofweek': {
             'property': 'module-furthereducation-start.format.A',
@@ -95,13 +95,13 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         },
         'nr': {
             'property': 'furthereducation-nr',
-            'categories': ['Kurs','Studiengang','Alle'],
-            'fulltext' : true
+            'categories': ['Kurs', 'Studiengang', 'Alle'],
+            'fulltext': true
         },
         'leaders': {
             'property': 'furthereducation-leaders.Fullname',
-            'categories': ['Kurs','Studiengang','Alle'],
-            'fulltext' : true
+            'categories': ['Kurs', 'Studiengang', 'Alle'],
+            'fulltext': true
         }
     };
 
@@ -163,31 +163,50 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      */
     $scope.setNodeTypes = function (nodetypes) {
         if (nodetypes == null) {
-            nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation','phlu-neos-nodetypes-course-module-furthereducation']
+            nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation']
         }
         $scope.nodetypes = nodetypes;
     };
 
     /**
      * @public
-     * Set genres type filter
+     * Set filter
      * @param array genres
      * @returns void
      */
-    $scope.setFilter = function (values,filtername) {
+    $scope.setFilter = function (values, filtername) {
 
-        angular.forEach(values, function(value) {
+        angular.forEach(values, function (value) {
             $scope.toggleFilterSelection({
                 id: value,
                 value: value,
                 state: false
-            },'Alle',filtername);
+            }, 'Alle', filtername);
 
         });
     };
 
+    /**
+     * @public
+     * reset filter
+     * @param array genres
+     * @returns void
+     */
+    $scope.resetFilter = function (filtername, category) {
 
-        /**
+        if (category === undefined) {
+            category = "Alle";
+        }
+
+        angular.forEach($scope.filters[filtername]['selected'][category], function (filter) {
+            filter.state = false;
+        });
+
+
+    };
+
+
+    /**
      * @private
      * Get filter from filter object
      * @param filterObject
@@ -261,7 +280,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         }
 
 
-
         if (value == '') {
             filter.selected[category][0].state = false;
         } else {
@@ -270,12 +288,10 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         }
 
 
-
-
     };
 
 
-     /**
+    /**
      * @public
      * Toggle state of given filter
      * @param filterObject
@@ -504,6 +520,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         }
 
     });
+
 
     search.run();
 
