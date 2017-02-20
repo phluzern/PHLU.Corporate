@@ -3,157 +3,28 @@
 {namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
 
 
-<div {attributes -> f:format.raw()} data-ng-controller="EventoCtrl"  data-ng-init='setNodeTypes({nodetypes -> f:format.raw()});'>
+<div {attributes -> f:format.raw()} data-ng-controller="EventoFurtherEducationCtrl"  data-ng-init='setNodeTypes({nodetypes -> f:format.raw()});'>
     <f:if condition="{sectionCount}>1">
         <f:then>
             {neos:contentElement.editable(property: 'title', tag: 'h2')}
         </f:then>
     </f:if>
 
+    <span data-ng-init="setNodeTypes({nodetypes})"></span>
+    <span data-ng-init="setFilter({genres},'genre')"></span>
+    <span data-ng-init="setFilter({targetgroups},'targetgroups')"></span>
+    <span data-ng-init="setFilter({nrs},'nr')"></span>
 
     <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
          data-ng-if="result.isLoading()"/>
 
     <div class="row further-education-list hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
-        <div class="col-xs-12">
-            <div class="row ">
-                <div class="col-xs-12">
-
-                    <div class="list-search-field">
-                        <input type="text" class="c-input form-control" data-ng-model="search">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                        <span
-                                data-ng-init="setQuery('search');"></span>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
 
         <div class="col-xs-12">
-
-
-            <div class="row subjectsfilternav">
-                <div class="col-xs-12">
-                    <ul class="nav nav-pills" role="tablist">
-                        <li class="nav-item"
-                            data-ng-show="initialFilters.graduation === undefined && result.getDistinctCount('graduation') > 1">
-                            <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
-                               data-target="#researchfocus-{node.Identifier}" role="tab">
-                                <i class="fa fa-university" aria-hidden="true"></i>
-                                <span>Abschluss</span>
-                                <span class="count" data-ng-show="sizeOf(graduation) > 0">{{sizeOf(graduation)}}</span>
-                            </a>
-                            <span data-ng-show="sizeOf(graduation) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('graduation')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
-                                </span>
-                        </li>
-
-                        <li class="nav-item"
-                            data-ng-show="initialFilters.financingtype === undefined && result.getDistinctCount('financingtype') > 1">
-                            <a class=" nav-link preventDefaultTab" data-toggle="tab"
-                               data-target="#financing-{node.Identifier}" role="tab">
-                                <i class="fa fa-usd" aria-hidden="true"></i>
-                                <span>Finanzierungstyp</span>
-                                <span class="count"
-                                      data-ng-show="sizeOf(financingtype) > 0">{{sizeOf(financingtype)}}</span>
-                            </a>
-                            <span data-ng-show="sizeOf(financingtype) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('financingtype')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
-                                </span>
-                        </li>
-                        <li class="nav-item"
-                            data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('participants') > 1">
-                            <a class=" nav-link preventDefaultTab" data-toggle="tab"
-                               data-target="#projectparticipants-{node.Identifier}" role="tab">
-                                <i class="fa fa-users" aria-hidden="true"></i>
-                                <span>Projektbeteiligte Personen</span>
-                                <span class="count" data-ng-show="sizeOf(projectparticipants) > 0">{{sizeOf(projectparticipants)}}</span>
-                            </a>
-                            <span data-ng-show="sizeOf(projectparticipants) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('projectparticipants')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
-                                </span>
-                        </li>
-                        <li class="nav-item"
-                            data-ng-show="initialFilters.lifetime === undefined && result.getDistinctCount('lifetime') > 1">
-                            <a class=" nav-link preventDefaultTab" data-toggle="tab"
-                               data-target="#projectstate-{node.Identifier}" role="tab">
-                                <i class="fa fa-hourglass-start" aria-hidden="true"></i>
-                                <span>Projektstatus</span>
-                                <span class="count"
-                                      data-ng-show="sizeOf(filterLifetime) > 0">{{sizeOf(filterLifetime)}}</span>
-                            </a>
-                            <span data-ng-show="sizeOf(filterLifetime) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('filterLifetime')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
-                                </span>
-                        </li>
-                        <li class="nav-item" data-ng-show="result.getDistinctCount('projectend') > 1">
-                            <a class=" nav-link preventDefaultTab" data-toggle="tab"
-                               data-target="#projectenddate-{node.Identifier}" role="tab">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <span>Projektende</span>
-                                <span class="count"
-                                      data-ng-show="sizeOf(projectend) > 0">{{sizeOf(projectend)}}</span>
-                            </a>
-                            <span data-ng-show="sizeOf(projectend) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('projectend')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
-                                </span>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <div class="col-xs-12">
-                    <div class="tab-content">
-
-                        <div class="result-panel tab-pane " id="researchfocus-{node.Identifier}" role="tabpanel"
-                             data-ng-show="result.getDistinctCount('graduation') > 1">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <tbody>
-                                    <tr data-ng-click="graduation[lt.value] = !graduation[lt.value] ? true : false;"
-                                        data-ng-class="{checked: graduation[lt.value]}"
-                                        data-ng-repeat="(key,lt) in result.getDistinct('graduation')">
-                                        <td>
-                                            <a href="javascript:void(0);">
-                                                <i class="fa"
-                                                   data-ng-class="{'fa-check-square-o': graduation[lt.value],'fa-square-o': !graduation[lt.value]}"
-                                                   aria-hidden="true">
-                                                </i>
-                                                <span>
-                                                        {{lt.value}} ({{lt.count}})
-                                                    </span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <a class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-            </div>
-
 
             <div class="row results-table">
                 <div class="col-xs-12">
-                    <h2>Treffer ({{result.count()}})</h2>
+
                     <div class="table-responsive">
                         <table class="table">
                             <thead>

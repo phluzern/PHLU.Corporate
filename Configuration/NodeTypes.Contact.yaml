@@ -38,6 +38,8 @@
         inspector:
           group: general
           position: 10
+    organisations:
+      type: array
     text:
       type: string
     lastname:
@@ -194,6 +196,7 @@
             contact:
               property: contact
               handler: Phlu.Corporate/Handlers/ContactHandler
+
 'Phlu.Corporate:Contacts':
   superTypes:
     'Phlu.Corporate:Content': true
@@ -204,6 +207,7 @@
   childNodes:
     main:
       type: 'Phlu.Neos.NodeTypes:ContentCollection.Contacts'
+
 'Phlu.Corporate:ContactsGroup':
   superTypes:
     'Phlu.Corporate:Content': true
