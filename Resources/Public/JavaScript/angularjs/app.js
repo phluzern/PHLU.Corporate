@@ -1,7 +1,7 @@
 'use strict';
 
 var PhluCorporateApp = angular.module('PhluCorporateApp', ['ngCookies','hybridsearch','ngSanitize']);
-
+PhluCorporateApp.$$conf = {};
 
 
 if (typeof document.addEventListener === 'function') {
@@ -23,17 +23,46 @@ if (typeof document.addEventListener === 'function') {
 }
 
 
+PhluCorporateApp.controller('initCtrl', ['$scope','hybridsearch', function ($scope,hybridsearch) {
+
+
+    $scope.init = function (firebaseEndpoint, siteNodeName, workspaceName, dimensionHash) {
+
+        hybridsearch(
+            firebaseEndpoint,
+            workspaceName,
+            dimensionHash,
+            siteNodeName
+        );
+
+    };
+
+
+}]);
+
+
 
 PhluCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsearch) {
 
-    var hybridseachinstance = new $hybridsearch(
-        'https://phlu-neos.firebaseio.com',
-        'live',
-        'fb11fdde869d0a8fcfe00a2fd35c031d',
-        'corporate'
-    );
+        return new $hybridsearch(
+            PhluCorporateApp.$$conf.firebaseEndpoint,
+            PhluCorporateApp.$$conf.workspaceName,
+            PhluCorporateApp.$$conf.dimensionHash,
+            PhluCorporateApp.$$conf.siteNodeName
+            );
 
-    return hybridseachinstance;
+
+}]);
+
+PhluCorporateApp.controller('initController', ['$scope','$hybridsearch', function ($scope,$hybridsearch) {
+
+
+  $scope.init = function(firebaseEndpoint,siteNodeName,workspaceName,dimensionHash) {
+          PhluCorporateApp.$$conf.firebaseEndpoint = firebaseEndpoint;
+          PhluCorporateApp.$$conf.workspaceName = workspaceName;
+          PhluCorporateApp.$$conf.siteNodeName = siteNodeName;
+          PhluCorporateApp.$$conf.dimensionHash = dimensionHash;
+  };
 
 
 }]);

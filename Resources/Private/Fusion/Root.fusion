@@ -46,6 +46,9 @@ page = Page {
     body {
         templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
         sectionName = 'body'
+
+        firebaseEndpoint = ${Configuration.setting('Neoslive.Hybridsearch.Firebase.endpoint')}
+
         parts {
 
             site = ${q(site).get(0)}

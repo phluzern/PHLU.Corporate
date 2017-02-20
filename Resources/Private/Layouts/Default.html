@@ -56,6 +56,7 @@
 
     <div class="all" data-ng-app="PhluCorporateApp" {f:if(condition:
     '{neos:rendering.inBackend()}',then:'style="display: none"', else: '')}>
+    <span data-ng-controller="initController" data-ng-init="init('{firebaseEndpoint}','{site.context.currentSite.nodeName}','{site.workspace.name}','{site.nodeData.dimensionsHash}')"></span>
 
     <nav class="navbar">
         <a class="navbar-brand" href="{neos:uri.node(node: '~')}">

@@ -82,6 +82,9 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         .setNodeType('phlu-neos-nodetypes-project')
         .addPropertyFilter('title', '', null, true)
         .$bind('result', $scope)
+        .$watch(function(result) {
+            console.log(result.getDistinct('researchmainfocus'));
+        })
         .run();
 
 
