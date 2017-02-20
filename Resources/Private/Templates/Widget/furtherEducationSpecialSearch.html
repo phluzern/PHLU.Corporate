@@ -1,9 +1,9 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
-<div class="row-fullwidth-content" data-ng-controller="EventoFurtherEducationCtrl">
+<div class="row-fullwidth-content further-education-special-search" data-ng-controller="EventoFurtherEducationCtrl">
 
-    <div class="row extendedSearchBg further-education-special-search">
+    <div class="row extendedSearchBg ">
 
 
         <div class="col-xs-12">
@@ -47,11 +47,6 @@
                                 <span class="count" data-ng-bind="countCurrentFilters(nodetypesFilterCurrentCategory)"
                                       data-ng-show="countCurrentFilters(nodetypesFilterCurrentCategory) > 0"></span>
                             </button>
-                            <!--                        <span class="resetFilter">
-                                                                <a ng-click="clearFilter('researchmainfocus')">
-                                                                    <span class="oi oi-x"></span>
-                                                                </a>
-                                                            </span>-->
                         </div>
                     </div><!-- /.col-lg-6 -->
 
@@ -71,6 +66,11 @@
                                     <span data-ng-bind="getFilterSelectedPreview(filters.year,'Alle')"></span>
                                 </div>
                                 <div class="tagFadeOutBg"></div>
+                                <div class="deleteDropdownSelectionButton">
+                                    <a class="preventDefault" href="#">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </a>
+                                </div>
                                 <ul class="dropdown-menu">
                                     <li value=""
                                         data-ng-repeat="year in resultAll.getDistinct('furthereducation-years.Year')">
@@ -85,7 +85,7 @@
                             </div>
 
 
-                            <div class="input-item-col col-xs-12 col-sm-3">
+                            <div class="input-item-col col-xs-12 col-sm-6">
                                 <label>Zielgruppen</label>
                                 <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
                                      aria-haspopup="true" aria-expanded="false">
@@ -103,7 +103,6 @@
                                         </a>
                                     </li>
                                 </ul>
-
                             </div>
 
                         </div>
@@ -132,7 +131,7 @@
 
                             </div>
 
-                            <div name="targetDegree" class="input-item-col col-xs-12 col-sm-3">
+                            <div name="targetDegree" class="input-item-col col-xs-12 col-sm-6">
                                 <label>Typ/Abschluss</label>
                                 <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
                                      aria-haspopup="true" aria-expanded="false">
@@ -178,6 +177,14 @@
 
                         </div>
 
+                        <div class="row input-group">
+                            <div class="input-item-col col-xs-3">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="freie-plaetze" name="freie-plaetze"/>
+                                    <label for="freie-plaetze"><span></span>Freie Plätze</label>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                     <div data-ng-show="nodetypesFilterCurrentLabel == 'Kurse'" class="col-xs-12">
@@ -205,8 +212,54 @@
 
                             </div>
 
-
                             <div class="input-item-col col-xs-12 col-sm-3">
+
+                                <label>Kursnummer</label>
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <input style="height:55px" type="text" class="form-control"
+                                       data-ng-model="search.courseNrModule"
+                                       data-ng-change="setFilterSelectionValue(search.courseNrModule,'Kurs','nr');">
+
+
+                            </div>
+                            <div class="input-item-col col-xs-12 col-sm-3">
+                                <label>Wochentag</label>
+                                <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
+                                     aria-haspopup="true" aria-expanded="false">
+                                    <span data-ng-bind="getFilterSelectedPreview(filters.dayofweek,'Kurs')"></span>
+                                </div>
+                                <div class="tagFadeOutBg"></div>
+                                <ul class="dropdown-menu">
+                                    <li value=""
+                                        data-ng-repeat="dayofweek in resultAll.getDistinct('module-furthereducation-start.format.A')">
+                                        <a href="#"
+                                           data-ng-click="toggleFilterSelection(dayofweek,'Kurs','dayofweek')">
+                                            <i class="fa " aria-hidden="true"
+                                               data-ng-class="{'fa-check-square-o': dayofweek.state, 'fa-square-o': !dayofweek.state}"></i>
+                                            <span data-ng-bind="dayofweek.value"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <div class="input-item-col col-xs-12 col-sm-3">
+
+                                <label>Kursleitung</label>
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <input style="height:55px" type="text" class="form-control"
+                                       data-ng-model="search.courseLeaderModule"
+                                       data-ng-change="setFilterSelectionValue(search.courseLeaderModule,'Kurs','leaders');">
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="row input-group">
+
+
+
+                            <div class="input-item-col col-xs-12 col-sm-6">
                                 <label>Zielgruppen</label>
                                 <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
                                      aria-haspopup="true" aria-expanded="false">
@@ -227,32 +280,8 @@
 
                             </div>
 
-                        </div>
 
 
-                        <div class="row input-group">
-
-                            <div class="input-item-col col-xs-12 col-sm-3">
-
-                                <label>Kursnummer</label>
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                                <input style="height:55px" type="text" class="form-control"
-                                       data-ng-model="search.courseNrModule"
-                                       data-ng-change="setFilterSelectionValue(search.courseNrModule,'Kurs','nr');">
-
-
-                            </div>
-
-                            <div class="input-item-col col-xs-12 col-sm-3">
-
-                                <label>Kursleitung</label>
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                                <input style="height:55px" type="text" class="form-control"
-                                       data-ng-model="search.courseLeaderModule"
-                                       data-ng-change="setFilterSelectionValue(search.courseLeaderModule,'Kurs','leaders');">
-
-
-                            </div>
 
 
                             <div class="input-item-col col-xs-12 col-sm-6">
@@ -277,31 +306,21 @@
                             </div>
 
                         </div>
-
                         <div class="row input-group">
-
-                            <div class="input-item-col col-xs-12 col-sm-3">
-                                <label>Wochentag</label>
-                                <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
-                                     aria-haspopup="true" aria-expanded="false">
-                                    <span data-ng-bind="getFilterSelectedPreview(filters.dayofweek,'Kurs')"></span>
+                            <div class="input-item-col col-xs-3">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="nur-holkurse" name="nur-holkurse"/>
+                                    <label for="nur-holkurse"><span></span>Nur Holkurse</label>
                                 </div>
-                                <div class="tagFadeOutBg"></div>
-                                <ul class="dropdown-menu">
-                                    <li value=""
-                                        data-ng-repeat="dayofweek in resultAll.getDistinct('module-furthereducation-start.format.A')">
-                                        <a href="#"
-                                           data-ng-click="toggleFilterSelection(dayofweek,'Kurs','dayofweek')">
-                                            <i class="fa " aria-hidden="true"
-                                               data-ng-class="{'fa-check-square-o': dayofweek.state, 'fa-square-o': !dayofweek.state}"></i>
-                                            <span data-ng-bind="dayofweek.value"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-
                             </div>
-
+                            <div class="input-item-col col-xs-3">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="freie-plaetze-kurse" name="freie-plaetze-kurse"/>
+                                    <label for="freie-plaetze"><span></span>Freie Plätze</label>
+                                </div>
+                            </div>
                         </div>
+
 
                     </div>
                 </div>
@@ -313,48 +332,86 @@
             <div class="row results-table">
                 <div class="col-xs-12"
                      data-ng-if="isShowingResult()">
-
                     <div class="searchResultsListLoadingScreen" data-ng-if="result.isLoading()">
                         <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
                              alt="loading"
                              class="loadingIcon"
                         />
                     </div>
-
-
-                    <h3 data-ng-bind="'Treffer '+result.count()"></h3>
+                    <div class="resultsCount">
+                        <h2 data-ng-bind="'Treffer '+ result.count()"></h2>
+                    </div>
 
                     <div class="table-responsive">
                         <table class="table">
-                            <tbody ng-repeat="node in result.getNodes(limit)"
-                                   data-ng-click="node.isopen = node.isopen ? false : true">
+                            <thead>
+                            <tr>
+                                <th class="clickable">
+                                    <a href="#">Beschreibung</a>
+                                </th>
+                                <th class="clickable">
+                                    <a href="#">Nummer</a>
+                                </th>
+                                <th class="clickable">
+                                    <a href="#">Buchbar</a>
+                                </th>
+                                <th class="clickable">
+                                    <a href="#">Typ</a>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody ng-repeat="node in result.getNodes(limit)">
                             <tr class="icon hat clickable" data-ng-class="{open: node.isopen,noborder: $index > 0}"
-                                data-node-id="{{node.identifier}}">
+                                data-node-id="{{node.identifier}}" data-ng-click="node.isopen = node.isopen ? false : true">
                                 <td>
-                                    <span class="oi"
-                                          data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
-                                    <span>
-                                        <span data-ng-bind="node.getProperty('title')"></span>
-                                        (<span data-ng-bind="node.getProperty('nr')"></span>)
-                                </span>
+                                    <span class="oi" data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
+
+                                    <span data-ng-bind="node.getProperty('title')"></span>
+                                </td>
+                                <td class="course-number"><span data-ng-bind="node.getProperty('nr')"></span></td>
+                                <td class="booking-status">
+                                    <i class="fa fa-circle bookable" aria-hidden="true"></i><br>
+<!--                                    <i class="fa fa-circle booked-out" aria-hidden="true"></i><br>
+                                    <i class="fa fa-info-circle booking-info" aria-hidden="true"></i>-->
+                                </td>
+                                <td class="course-type">
+                                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                                 </td>
                             </tr>
                             <tr class="result-preview" data-ng-show="node.isopen">
-                                <td>
-                                    <div>
+                                <td colspan="4">
+                                    <div class="result-preview-contents">
                                         <p data-ng-bind="node.getProperty('description')">
-
-
-
-
-                                        <ul>
-                                            <li data-ng-repeat="i in node.getProperty('years')">
-                                                <span data-ng-bind="i.Year"></span>
-                                            </li>
-                                        </ul>
+                                        </p>
 
                                         <table class="table">
                                             <tbody>
+                                            <tr class="mobile-view-tablerow-only">
+                                                <td>
+                                                    Kursnummer
+                                                    <div class="mobile-view-columns">
+                                                        <span data-ng-bind="node.getProperty('nr')"></span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="mobile-view-tablerow-only">
+                                                <td>
+                                                    Buchbar
+                                                    <div class="mobile-view-columns">
+                                                        <i class="fa fa-circle bookable" aria-hidden="true"></i><br>
+<!--                                                        <i class="fa fa-circle booked-out" aria-hidden="true"></i><br>
+                                                        <i class="fa fa-info-circle booking-info" aria-hidden="true"></i>-->
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="mobile-view-tablerow-only">
+                                                <td>
+                                                    Typ
+                                                    <div class="mobile-view-columns">
+                                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                             <tr>
                                                 <td>
                                                     Studienziel
@@ -387,6 +444,22 @@
                                                     </div>
                                                 </td>
                                                 <td>
+
+                                                    <div class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="ng-binding"></span>
+                                                    </div>
+                                                    <ul class="dropdown-menu">
+                                                        <!-- ngRepeat: year in resultAll.getDistinct('module-furthereducation-years.Year') -->
+                                                        <li value="" >
+                                                            <a href="#" >
+                                                                <i class="fa  fa-square-o" aria-hidden="true"></i>
+                                                                <span >13.01.2017</span>
+                                                            </a>
+                                                        </li>
+
+                                                    </ul>
+
+
                                                     13.01.2017
                                                 </td>
                                             </tr>
@@ -406,13 +479,13 @@
 
 
                                     </div>
-                                    <div class="details col-xs-12 col-sm-6">
+                                    <div class="details">
                                         <a class="btn btn-primary"
                                            href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
                                             Details
                                         </a>
                                     </div>
-                                    <div class="shareAndRegister col-xs-12 col-sm-6 pull-right">
+                                    <div class="shareAndRegister">
                                         <a class="btn btn-primary share"
                                            href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
                                             <i class="fa fa-share-alt" aria-hidden="true"></i>
@@ -505,27 +578,27 @@
                     </li>
                     <li class="clickable">
                         <a data-toggle="pill" href="#latestoffers" role="pill">
-                            &nbsp;&nbsp;Neueste Angebote
+                           Neueste Angebote
                         </a>
                     </li>
                     <li class="clickable">
                         <a data-toggle="pill" href="#recommendedoffers" role="pill">
-                            &nbsp;&nbsp;Empfohlene Angebote
+                            Empfohlene Angebote
                         </a>
                     </li>
                     <li class="clickable">
                         <a data-toggle="pill" href="#lastminute" role="pill">
-                            &nbsp;&nbsp;Last Minute
+                           Last Minute
                         </a>
                     </li>
                     <li class="clickable">
                         <a data-toggle="pill" href="#customoffers" role="pill">
-                            &nbsp;&nbsp;Massgeschneiderte Angebote
+                           Massgeschneiderte Angebote
                         </a>
                     </li>
                     <li class="clickable">
                         <a data-toggle="pill" href="#lastvisit" role="pill">
-                            &nbsp;&nbsp;Zuletzt besucht
+                           Zuletzt besucht
                         </a>
                     </li>
                 </ul>
@@ -591,7 +664,7 @@
                             </tr>
                             <tr class="result-preview ">
                                 <td>
-                                    <div>
+                                    <div class="result-preview-contents">
                                         <p>
                                             Menschenrechte sind die Basis für ein friedliches Zusammenleben einer
                                             Gesellschaft. Doch nur wenn Menschen von ihren Rechten wissen, können
@@ -1486,7 +1559,7 @@
     </div>
 
 
-    <div class="row contactperson" id="kontakt">
+    <div class="row contactperson ">
         <div class="col-xs-12">
             <h2>Kontakt</h2>
 
@@ -1494,23 +1567,21 @@
                 <div class="col-xs-12">
 
                     <address>
+                        Pädagogische Hochschule Luzern<br>
                         <div class="contactperson-role">
-                            Leiter Bewegung und Sport
+                            Weiterbildung
                         </div>
-                        Pius Disler<br>
-                        Prof. Dr. disc. pol.<br>
-                        Bildungszentrum Bewegung und Sport
-                        Zihlmattweg 46<br>
-
+                        Frohburgstrasse 3<br>
+                        Postfach 3668<br>
                         6005 Luzern
                     </address>
                     <address>
                         <div class="telephone">
                             <i class="fa fa-phone" aria-hidden="true"></i>
-                            041 228 70 99<br>
+                            041 228 54 93<br>
                         </div>
                         <a class="content-link-email-contact-person"
-                           href="mailto:pius.disler@phlu.ch">pius.disler@phlu.ch</a><br>
+                           href="mailto:weiterbildung@phlu.ch">weiterbildung@phlu.ch</a><br>
 
                     </address>
                 </div>

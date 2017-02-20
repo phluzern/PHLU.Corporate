@@ -8776,15 +8776,18 @@ body {
           background-color: white;
           color: #5c5c5c;
           display: block;
-          padding: 8px; }
-          body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-toggle::after {
-            border: 0; }
+          padding: 14px 8px; }
           body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-toggle.search-result-tags {
             margin: 0;
             display: -webkit-box;
             display: -ms-flexbox;
             overflow: hidden;
             min-height: 55px; }
+            body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-toggle.search-result-tags span {
+              position: absolute;
+              font-size: 1.125rem;
+              height: 30px;
+              overflow: hidden; }
             body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-toggle.search-result-tags .search-result-tag {
               color: white;
               float: left;
@@ -8795,19 +8798,28 @@ body {
             content: " \f0d7";
             border: inherit;
             position: absolute;
-            right: 25px;
-            margin-top: 8px;
+            right: 15px;
             color: white;
-            background-color: #545454;
-            height: 23px;
-            width: 15px;
-            padding-right: 15px;
-            padding-left: 7px; }
+            background-color: #28818f;
+            height: 55px;
+            width: 32px;
+            margin-top: -14px;
+            padding-left: 12px;
+            padding-top: 27px; }
           body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-toggle:hover::after {
             background-color: #28818f; }
-        body .all .extendedSearchBg .extendedSearchFilter .input-item-col .tagFadeOutBg {
+        body .all .extendedSearchBg .extendedSearchFilter .input-item-col .deleteDropdownSelectionButton {
           position: absolute;
           display: block;
+          bottom: 27px;
+          right: 24px; }
+          body .all .extendedSearchBg .extendedSearchFilter .input-item-col .deleteDropdownSelectionButton a i.fa {
+            color: white; }
+          body .all .extendedSearchBg .extendedSearchFilter .input-item-col .deleteDropdownSelectionButton.on {
+            display: block; }
+        body .all .extendedSearchBg .extendedSearchFilter .input-item-col .tagFadeOutBg {
+          position: absolute;
+          display: none;
           z-index: 999;
           width: 10px;
           height: 54px;
@@ -8822,18 +8834,24 @@ body {
           width: 100%;
           background-color: inherit; }
           body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li {
-            margin: 0 13px;
+            margin: 0 15px;
             background-color: white;
-            border-left: 2px solid #545454;
-            border-right: 2px solid #545454; }
+            -webkit-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3); }
             body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a {
-              color: #5c5c5c; }
+              color: #5c5c5c;
+              display: table; }
+              body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a i {
+                padding-right: 15px; }
+              body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span, body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a i {
+                display: table-cell; }
             body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li:hover {
               background-color: #edeae8; }
-            body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li:last-child {
-              -webkit-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
-              -moz-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
-              box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3); }
+        body .all .extendedSearchBg .extendedSearchFilter .input-item-col .form-control {
+          border: 0; }
+        body .all .extendedSearchBg .extendedSearchFilter .input-item-col i.fa {
+          color: #5c5c5c; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col #datepicker-further-education .datepicker-inline {
           background-color: #9b9b9b; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col #datepicker-further-education input {
@@ -9233,10 +9251,10 @@ body {
       body .all .phlu-teaser img {
         width: 100%; }
       body .all .phlu-teaser.carousel .carousel-indicators {
-        bottom: 1px; }
-        @media (max-width: 1279px) {
+        bottom: 16px; }
+        @media (max-width: 991px) {
           body .all .phlu-teaser.carousel .carousel-indicators {
-            bottom: -12px; } }
+            bottom: 2px; } }
         body .all .phlu-teaser.carousel .carousel-indicators li {
           width: 14px;
           height: 14px;
@@ -9905,7 +9923,8 @@ body {
               padding-right: 20px;
               padding-left: 20px; }
     body .all .ppdb-list .results-table, body .all .further-education-list .results-table, body .all .further-education-special-search .results-table {
-      z-index: 8; }
+      z-index: 8;
+      margin-bottom: 60px; }
       body .all .ppdb-list .results-table .table-responsive .table .oi-caret-bottom, body .all .ppdb-list .results-table .table-responsive .table .oi-caret-right, body .all .further-education-list .results-table .table-responsive .table .oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table .oi-caret-right, body .all .further-education-special-search .results-table .table-responsive .table .oi-caret-bottom, body .all .further-education-special-search .results-table .table-responsive .table .oi-caret-right {
         font-size: 12px; }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr td, body .all .further-education-list .results-table .table-responsive .table tbody tr td, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td {
@@ -9927,19 +9946,36 @@ body {
           border-right: 0; }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td {
         background-color: #edeae8; }
-        body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div {
-          margin-left: 30px;
-          margin-bottom: 15px; }
-          @media (max-width: 543px) {
-            body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div {
-              margin-left: 20px; } }
-          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div p {
-            font-size: 1rem; }
-          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn {
-            color: white;
-            background-color: #55696d; }
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div p {
+          width: 100%;
+          font-size: 1rem; }
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn {
+          color: white;
+          background-color: #55696d; }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header {
           padding-left: 0; }
+      body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table {
+        margin: 40px 0; }
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table tbody tr {
+          border-bottom: 2px solid #dcdcdc; }
+          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr td, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr td, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table tbody tr td {
+            padding: 15px; }
+            body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr td:first-child, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr td:first-child, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table tbody tr td:first-child {
+              padding-left: 0;
+              border-right: 2px solid #dcdcdc; }
+              @media (max-width: 767px) {
+                body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr td:first-child, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr td:first-child, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table tbody tr td:first-child {
+                  border-right: 0; }
+                  body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr td:first-child .mobile-view-columns, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr td:first-child .mobile-view-columns, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table tbody tr td:first-child .mobile-view-columns {
+                    margin: 0; } }
+          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr:first-child td, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr:first-child td, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table tbody tr:first-child td {
+            padding-top: 0;
+            border-top: 0; }
+          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr:last-child, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr:last-child, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table tbody tr:last-child {
+            border-bottom: 0; }
+            body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr:last-child td, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr:last-child td, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table tbody tr:last-child td {
+              border-bottom: 0;
+              padding-bottom: 0; }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr.open td, body .all .further-education-list .results-table .table-responsive .table tbody tr.open td, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.open td {
         background-color: #edeae8;
         border-bottom: 0; }
@@ -10009,6 +10045,8 @@ body {
           width: 15px;
           padding-right: 15px;
           padding-left: 7px; }
+        body .all .blackBgFullWidthTabs .mobile-view-tabs .dropdown-toggle.search-result-tags {
+          margin: 30px 0 0; }
       body .all .blackBgFullWidthTabs .mobile-view-tabs .dropdown-menu {
         top: inherit;
         background-color: inherit;
@@ -10022,7 +10060,8 @@ body {
           background-color: #545454; }
           body .all .blackBgFullWidthTabs .mobile-view-tabs .dropdown-menu li a {
             color: white;
-            display: block; }
+            display: block;
+            padding: 0 10px; }
           body .all .blackBgFullWidthTabs .mobile-view-tabs .dropdown-menu li:hover {
             background-color: #edeae8; }
             body .all .blackBgFullWidthTabs .mobile-view-tabs .dropdown-menu li:hover a {
@@ -10057,106 +10096,143 @@ body {
               body .all .blackBgFullWidthContents .tab-content .result-panel .nav-pills .nav-item a.nav-link:hover, body .all .blackBgFullWidthContents .tab-content .result-panel .nav-pills .nav-item a.nav-link.active {
                 color: white;
                 background-color: #216A75; }
-        body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody {
+        body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody {
+          background-color: #edeae8;
           color: #5c5c5c; }
-          body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr {
+          body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr {
             border-bottom: 2px solid #545454;
             background-color: white; }
-            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr td {
-              font-size: 1.125rem;
-              border: 0; }
+            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr td {
+              border-bottom: 0;
+              font-size: 1.125rem; }
               @media (max-width: 767px) {
-                body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr td {
+                body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr td {
                   font-size: 1rem; } }
-              body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr td span:first-child {
+              body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr td span:first-child {
                 float: left; }
-              body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr td span:last-child {
+              body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr td span:last-child {
                 display: table-cell; }
-              body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr td span.oi {
+              body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr td span.oi {
                 margin-top: 7px;
                 margin-right: 10px;
                 font-size: 0.75rem; }
-              body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr td .table tbody tr td {
-                background-color: #edeae8; }
-            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.open {
+            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.open {
               border-bottom: 0; }
-            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.open, body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview {
+            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.open, body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.result-preview {
               background-color: #edeae8; }
             @media (max-width: 767px) {
-              body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview td {
+              body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.result-preview td {
                 padding-right: 20px; } }
-            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview div {
-              margin: 0 30px; }
-              body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview div p {
-                width: inherit;
-                margin: 0; }
-              body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview div table {
-                margin: 40px 0; }
-                body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview div table tbody tr {
-                  border-bottom: 2px solid #dcdcdc; }
-                  body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview div table tbody tr td {
-                    padding: 15px; }
-                    body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview div table tbody tr td:first-child {
-                      padding-left: 0;
-                      border-right: 2px solid #dcdcdc; }
-                      @media (max-width: 767px) {
-                        body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview div table tbody tr td:first-child {
-                          border-right: 0; }
-                          body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview div table tbody tr td:first-child .mobile-view-columns {
-                            margin: 0; } }
-                  body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview div table tbody tr:first-child td {
-                    padding-top: 0; }
-                  body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview div table tbody tr:last-child {
-                    border-bottom: 0; }
-                    body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview div table tbody tr:last-child td {
-                      padding-bottom: 0; }
-            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview .details {
-              float: left; }
-            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview .shareAndRegister {
-              float: right; }
-              body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
-                color: #28818f;
-                background-color: inherit;
-                line-height: 9px; }
-                body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share .shareText {
-                  font-size: 0.75rem; }
-                @media (max-width: 767px) {
-                  body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
-                    padding: 0 19px; } }
-            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview .details, body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.result-preview .shareAndRegister {
+            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.result-preview .result-preview-contents p {
+              width: 100%; }
+            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.result-preview .result-preview-contents .table {
+              margin: 60px 0; }
+              body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.result-preview .result-preview-contents .table tbody tr {
+                border-bottom: inherit; }
+                body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.result-preview .result-preview-contents .table tbody tr td {
+                  background-color: #edeae8;
+                  border-bottom: 2px solid #dcdcdc;
+                  padding: 15px 0; }
+                  body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.result-preview .result-preview-contents .table tbody tr td:first-child {
+                    border-right: 2px solid #dcdcdc; }
+                    @media (max-width: 767px) {
+                      body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.result-preview .result-preview-contents .table tbody tr td:first-child {
+                        border-right: 0; } }
+                  body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.result-preview .result-preview-contents .table tbody tr td:last-child {
+                    padding-left: 15px; }
+                body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.result-preview .result-preview-contents .table tbody tr:first-child td {
+                  padding-top: 0; }
+                body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.result-preview .result-preview-contents .table tbody tr:last-child td {
+                  border-bottom: inherit;
+                  padding-bottom: 0; }
+            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.result-preview .shareAndRegister {
               margin: 0; }
-            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.icon td:before {
-              right: 25px;
-              position: absolute; }
-
-@media (min-width: 992px) and (max-width: 1599px) {
-  body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.icon td:before {
-    right: 64px; } }
-              @media (max-width: 991px) {
-                body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.icon td:before {
-                  right: 40px; } }
-            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.hat td:before {
-              font-family: FontAwesome;
-              content: " \f19d"; }
-            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.calendar td:before {
-              font-family: FontAwesome;
-              content: " \f073"; }
-            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr.book td:before {
-              font-family: FontAwesome;
-              content: " \f02d"; }
-            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table tbody tr:hover {
+            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr:hover {
               background-color: #edeae8; }
+            body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr:first-child td {
+              border: 0; }
     body .all .blackBgFullWidthTabs .nav-pills .nav-item + .nav-item, body .all .blackBgFullWidthContents .nav-pills .nav-item + .nav-item {
       margin-left: 0; }
-    body .all .furtherEducationNews .newsSwitch {
-      float: right;
-      position: absolute;
-      right: 0;
-      margin-top: 35px;
-      cursor: pointer; }
-      @media (max-width: 1599px) {
-        body .all .furtherEducationNews .newsSwitch {
-          margin-right: 40px; } }
+    body .all .further-education-special-search .table-responsive .table thead tr th {
+      padding: 12px 20px; }
+    body .all .further-education-special-search .table-responsive .table tbody tr {
+      /*           &.icon {
+                           td {
+                             &:before {
+                               right: 25px;
+                               @include media-breakpoint-between("lg", "xxl") {
+                                 right: 64px;
+                               }
+                               @include media-breakpoint-down("md") {
+                                 right: 40px;
+                               }
+                               position: absolute;
+                             }
+                           }
+                         }
+                         &.hat {
+                           td {
+                             &:before {
+                               font-family: FontAwesome;
+                               content: " \f19d";
+                             }
+                           }
+                         }
+                         &.calendar {
+                           td {
+                             &:before {
+                               font-family: FontAwesome;
+                               content: " \f073";
+                             }
+                           }
+                         }
+                         &.book {
+                           td {
+                             &:before {
+                               font-family: FontAwesome;
+                               content: " \f02d";
+                             }
+                           }
+                         }
+           */ }
+      body .all .further-education-special-search .table-responsive .table tbody tr td .bookable {
+        color: green; }
+      body .all .further-education-special-search .table-responsive .table tbody tr td .booked-out {
+        color: red; }
+      body .all .further-education-special-search .table-responsive .table tbody tr td .booking-info {
+        color: blue; }
+      body .all .further-education-special-search .table-responsive .table tbody tr td.course-number {
+        white-space: nowrap; }
+      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status {
+        text-align: center; }
+      body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
+        margin: 0 30px;
+        margin-bottom: 15px; }
+        @media (max-width: 767px) {
+          body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
+            margin: 0 20px; } }
+      body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .details {
+        float: left;
+        margin-left: 0; }
+      body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister {
+        float: right;
+        margin-right: 20px; }
+        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
+          color: #28818f;
+          background-color: inherit;
+          line-height: 9px; }
+          body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share .shareText {
+            display: inherit;
+            overflow: inherit;
+            font-size: 0.75rem; }
+          @media (max-width: 767px) {
+            body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
+              padding: 0 19px; } }
+      body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
+        display: none; }
+        @media (max-width: 767px) {
+          body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
+            display: table-row; } }
     body .all .target-group-codes {
       margin: 40px 0 50px; }
       body .all .target-group-codes .code {
@@ -10612,7 +10688,7 @@ body {
           border: 0;
           padding-bottom: 40px; }
       body .all .main > .row address, body .all .main > .row-fullwidth-content > .row address {
-        font-size: 1rem; }
+        font-size: 1.125rem; }
         body .all .main > .row address .telephone, body .all .main > .row-fullwidth-content > .row address .telephone {
           margin-top: 5px;
           color: #9f632a; }
@@ -10620,7 +10696,7 @@ body {
             padding-right: 6px; }
         body .all .main > .row address .content-link-email-contact-person, body .all .main > .row address .content-link-portrait, body .all .main > .row address .content-link-location, body .all .main > .row-fullwidth-content > .row address .content-link-email-contact-person, body .all .main > .row-fullwidth-content > .row address .content-link-portrait, body .all .main > .row-fullwidth-content > .row address .content-link-location {
           background-image: none;
-          font-size: 1rem; }
+          font-size: 1.125rem; }
         body .all .main > .row address .content-link-portrait:before, body .all .main > .row-fullwidth-content > .row address .content-link-portrait:before {
           padding-right: 4px; }
       @media (max-width: 991px) {
@@ -10896,6 +10972,17 @@ body {
         @media (min-width: 992px) {
           body .all .main > .row.bluebg, body .all .main > .row-fullwidth-content > .row.bluebg {
             margin-bottom: 35px; } }
+        body .all .main > .row.bluebg.furtherEducationNews, body .all .main > .row-fullwidth-content > .row.bluebg.furtherEducationNews {
+          margin-bottom: 0; }
+          body .all .main > .row.bluebg.furtherEducationNews .newsSwitch, body .all .main > .row-fullwidth-content > .row.bluebg.furtherEducationNews .newsSwitch {
+            float: right;
+            position: absolute;
+            right: 0;
+            margin-top: 35px;
+            cursor: pointer; }
+            @media (max-width: 1599px) {
+              body .all .main > .row.bluebg.furtherEducationNews .newsSwitch, body .all .main > .row-fullwidth-content > .row.bluebg.furtherEducationNews .newsSwitch {
+                margin-right: 40px; } }
       body .all .main > .row.sephiabg, body .all .main > .row-fullwidth-content > .row.sephiabg {
         background-color: #e9e0d8;
         margin-top: 60px;
@@ -10913,7 +11000,8 @@ body {
           background-image: inherit; }
       body .all .main > .row.contactperson, body .all .main > .row-fullwidth-content > .row.contactperson {
         background-color: #F7F4F2;
-        color: #707070; }
+        color: #707070;
+        padding-bottom: 60px; }
         @media (min-width: 544px) {
           body .all .main > .row.contactperson .col-sm-6, body .all .main > .row-fullwidth-content > .row.contactperson .col-sm-6 {
             padding-top: 10px; } }
@@ -10928,13 +11016,13 @@ body {
         body .all .main > .row.contactperson .fa-phone, body .all .main > .row-fullwidth-content > .row.contactperson .fa-phone {
           padding-right: 3px; }
         body .all .main > .row.contactperson img, body .all .main > .row-fullwidth-content > .row.contactperson img {
-          padding: 22px 0 60px; }
+          padding: 22px 0 0; }
           @media (min-width: 544px) {
             body .all .main > .row.contactperson img, body .all .main > .row-fullwidth-content > .row.contactperson img {
-              padding: 0 0 60px; } }
+              padding: 0; } }
           @media (min-width: 992px) {
             body .all .main > .row.contactperson img, body .all .main > .row-fullwidth-content > .row.contactperson img {
-              padding: 0 0 60px; } }
+              padding: 0; } }
         body .all .main > .row.contactperson .contactperson-role, body .all .main > .row-fullwidth-content > .row.contactperson .contactperson-role {
           font-weight: 700; }
         body .all .main > .row.contactperson address, body .all .main > .row-fullwidth-content > .row.contactperson address {
