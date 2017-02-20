@@ -91,9 +91,9 @@ $dropdown-menu-font-size: 1.125rem;
 $nav-link-font-size-desktop: 1.125rem;
 $font-size-langnav: 1.125rem;
 $font-size-search-filters: 1.125rem;
+$font-size-phlu-team-members: 1.125rem;
 
 $font-size-paragraph-mobile: 1rem;
-$font-size-phlu-team-members: 1rem;
 $font-size-table-href: 1rem;
 $nav-link-font-size: 1rem;
 $font-size-accordion-table: 1rem;
@@ -1174,16 +1174,19 @@ body {
             background-color: white;
             color: $font-color;
             display: block;
-            padding: 8px;
-            &::after {
-              border: 0;
-            }
+            padding: 14px 8px;
             &.search-result-tags {
               margin: 0;
               display: -webkit-box;
               display: -ms-flexbox;
               overflow: hidden;
               min-height: 55px;
+              span {
+                position: absolute;
+                font-size: $dropdown-menu-font-size;
+                height: 30px;
+                overflow: hidden;
+              }
               .search-result-tag {
                 color: white;
                 float: left;
@@ -1196,14 +1199,14 @@ body {
               content: " \f0d7";
               border: inherit;
               position: absolute;
-              right: 25px;
-              margin-top: 8px;
+              right: 15px;
               color: white;
-              background-color: $darkgrey;
-              height: 23px;
-              width: 15px;
-              padding-right: 15px;
-              padding-left: 7px;
+              background-color: #28818f;
+              height: 55px;
+              width: 32px;
+              margin-top: -14px;
+              padding-left: 12px;
+              padding-top: 27px;
             }
             &:hover {
               &::after {
@@ -1211,9 +1214,24 @@ body {
               }
             }
           }
-          .tagFadeOutBg {
+          .deleteDropdownSelectionButton {
             position: absolute;
             display: block;
+            bottom: 27px;
+            right: 24px;
+            a {
+              i.fa {
+                color:white;
+              }
+            }
+
+            &.on {
+              display: block;
+            }
+          }
+          .tagFadeOutBg {
+            position: absolute;
+            display: none;
             z-index: 999;
             width: 10px;
             height: 54px;
@@ -1231,29 +1249,39 @@ body {
             background-size: contain;
 
           }
+
           .dropdown-menu {
             top: inherit;
             width: 100%;
             background-color: inherit;
 
             li {
-              margin: 0 13px;
+              margin: 0 15px;
               background-color: white;
-              border-left: 2px solid $darkgrey;
-              border-right: 2px solid $darkgrey;
+              -webkit-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
+              -moz-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
+              box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
               a {
                 color: $font-color;
+                display: table;
+                i {
+                  padding-right: 15px;
+                }
+                span, i {
+                  display: table-cell;
+                }
               }
               &:hover {
                 background-color: $lightgrey;
               }
-              &:last-child {
-                -webkit-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
-                -moz-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
-                box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
-              }
 
             }
+          }
+          .form-control {
+            border: 0;
+          }
+          i.fa {
+            color: $font-color;
           }
           #datepicker-further-education {
             .datepicker-inline {
@@ -1843,9 +1871,9 @@ body {
       }
       &.carousel {
         .carousel-indicators {
-          bottom: 1px;
-          @include media-breakpoint-down("lg") {
-            bottom: -12px;
+          bottom: 16px;
+          @include media-breakpoint-down("md") {
+            bottom: 2px;
           }
           li {
             width: 14px;
@@ -2961,6 +2989,7 @@ body {
       }
       .results-table {
         z-index: 8;
+        margin-bottom: 60px;
         .table-responsive {
 
           .table {
@@ -2996,12 +3025,9 @@ body {
                   td {
                     background-color: $lightgrey;
                     div {
-                      margin-left: 30px;
-                      @include media-breakpoint-down("xs") {
-                        margin-left: 20px;
-                      }
-                      margin-bottom: 15px;
+
                       p {
+                        width: 100%;
                         font-size: 1rem;
                       }
                       .btn {
@@ -3012,6 +3038,41 @@ body {
                     .mobile-view-columns {
                       .header {
                         padding-left: 0;
+                      }
+                    }
+                  }
+
+                  table {
+                    margin: 40px 0;
+                    tbody {
+                      tr {
+                        border-bottom: 2px solid $grey7;
+                        td {
+                          padding: 15px;
+                          &:first-child {
+                            padding-left: 0;
+                            border-right: 2px solid $grey7;
+                            @include media-breakpoint-down("sm") {
+                              border-right: 0;
+                              .mobile-view-columns {
+                                margin: 0;
+                              }
+                            }
+                          }
+                        }
+                        &:first-child {
+                          td {
+                            padding-top: 0;
+                            border-top: 0;
+                          }
+                        }
+                        &:last-child {
+                          border-bottom: 0;
+                          td {
+                            border-bottom: 0;
+                            padding-bottom: 0;
+                          }
+                        }
                       }
                     }
                   }
@@ -3110,6 +3171,9 @@ body {
             padding-right: 15px;
             padding-left: 7px;
           }
+          &.search-result-tags {
+            margin:30px 0 0;
+          }
         }
         .dropdown-menu {
           top: inherit;
@@ -3125,6 +3189,7 @@ body {
             a {
               color: white;
               display: block;
+              padding: 0 10px;
             }
             &:hover {
               background-color: $lightgrey;
@@ -3169,20 +3234,20 @@ body {
               }
             }
           }
-
           .table-responsive {
             .table {
-              tbody {
+              > tbody {
+                background-color: $lightgrey;
                 color: $font-color;
                 tr {
                   border-bottom: 2px solid $darkgrey;
                   background-color: white;
                   td {
+                    border-bottom:0;
                     font-size: $font-size-paragraph-desktop;
                     @include media-breakpoint-down("sm") {
                       font-size: $font-size-paragraph-mobile;
                     }
-                    border: 0;
                     span {
                       &:first-child {
                         float: left;
@@ -3197,15 +3262,8 @@ body {
 
                       }
                     }
-                    .table {
-                      tbody {
-                        tr {
-                          td {
-                            background-color: $lightgrey;
-                          }
-                        }
-                      }
-                    }
+
+
                   }
                   &.open {
                     border-bottom: 0;
@@ -3219,38 +3277,37 @@ body {
                         padding-right: 20px;
                       }
                     }
-                    div {
-                      margin: 0 30px;
+                    .result-preview-contents {
                       p {
-                        width: inherit;
-                        margin: 0;
+                        width: 100%;
                       }
-                      table {
-                        margin: 40px 0;
+                      .table {
+                        margin: 60px 0;
                         tbody {
                           tr {
-                            border-bottom: 2px solid $grey7;
+                            border-bottom:inherit;
                             td {
-                              padding: 15px;
+                              background-color: $lightgrey;
+                              border-bottom: 2px solid $grey7;
+                              padding:15px 0;
                               &:first-child {
-                                padding-left: 0;
-                                border-right: 2px solid $grey7;
+                                border-right:2px solid $grey7;
                                 @include media-breakpoint-down("sm") {
-                                  border-right: 0;
-                                  .mobile-view-columns {
-                                    margin: 0;
-                                  }
+                                  border-right:0;
                                 }
+                              }
+                              &:last-child {
+                                padding-left:15px;
                               }
                             }
                             &:first-child {
                               td {
-                                padding-top: 0;
+                                padding-top:0;
                               }
                             }
                             &:last-child {
-                              border-bottom: 0;
                               td {
+                                border-bottom:inherit;
                                 padding-bottom: 0;
                               }
                             }
@@ -3258,68 +3315,19 @@ body {
                         }
                       }
                     }
-                    .details {
-                      float: left;
-                    }
                     .shareAndRegister {
-                      float: right;
-                      .btn.share {
-                        color: $turquoise;
-                        background-color: inherit;
-                        line-height: 9px;
-                        .shareText {
-                          font-size: $font-size-small;
-                        }
-                        @include media-breakpoint-down("sm") {
-                          padding: 0 19px;
-                        }
-                      }
-                    }
-                    .details, .shareAndRegister {
-                      margin: 0;
-                    }
-                  }
-                  &.icon {
-                    td {
-                      &:before {
-                        right: 25px;
-                        @include media-breakpoint-between("lg", "xxl") {
-                          right: 64px;
-                        }
-                        @include media-breakpoint-down("md") {
-                          right: 40px;
-                        }
-                        position: absolute;
-                      }
-                    }
-                  }
-                  &.hat {
-                    td {
-                      &:before {
-                        font-family: FontAwesome;
-                        content: " \f19d";
-                      }
-                    }
-                  }
-                  &.calendar {
-                    td {
-                      &:before {
-                        font-family: FontAwesome;
-                        content: " \f073";
-                      }
-                    }
-                  }
-                  &.book {
-                    td {
-                      &:before {
-                        font-family: FontAwesome;
-                        content: " \f02d";
-                      }
+                      margin:0;
                     }
                   }
                   &:hover {
                     background-color: $lightgrey;
                   }
+                  &:first-child {
+                    td {
+                      border:0;
+                    }
+                  }
+
                 }
               }
             }
@@ -3333,20 +3341,120 @@ body {
       }
     }
     //
-    // further education aktuelles
+    // further education special search
+    // lists
     //
-    .furtherEducationNews {
-      .newsSwitch {
-        float: right;
-        position: absolute;
-        right: 0;
-        margin-top: 35px;
-        cursor:pointer;
-        @include media-breakpoint-down("xxl") {
-          margin-right: 40px;
+    .further-education-special-search {
+      .table-responsive {
+        .table {
+          thead {
+            tr {
+              th {
+                padding:12px 20px;
+              }
+            }
+          }
+          tbody {
+            tr {
+              td {
+                .bookable {
+                  color: green;
+                }
+                .booked-out {
+                  color: red;
+                }
+                .booking-info {
+                  color: blue;
+                }
+              }
+              td.course-number {
+                white-space: nowrap;
+              }
+              td.booking-status {
+                text-align: center;
+              }
+              &.result-preview {
+                .result-preview-contents {
+                  margin: 0 30px;
+                  @include media-breakpoint-down("sm") {
+                    margin: 0 20px;
+                  }
+                  margin-bottom: 15px;
+                }
+                .details {
+                  float: left;
+                  margin-left: 0;
+                }
+                .shareAndRegister {
+                  float: right;
+                  margin-right:20px;
+                  .btn.share {
+                    color: $turquoise;
+                    background-color: inherit;
+                    line-height: 9px;
+                    .shareText {
+                      display: inherit;
+                      overflow: inherit;
+                      font-size: $font-size-small;
+                    }
+                    @include media-breakpoint-down("sm") {
+                      padding: 0 19px;
+                    }
+                  }
+                }
+              }
+
+              /*           &.icon {
+                           td {
+                             &:before {
+                               right: 25px;
+                               @include media-breakpoint-between("lg", "xxl") {
+                                 right: 64px;
+                               }
+                               @include media-breakpoint-down("md") {
+                                 right: 40px;
+                               }
+                               position: absolute;
+                             }
+                           }
+                         }
+                         &.hat {
+                           td {
+                             &:before {
+                               font-family: FontAwesome;
+                               content: " \f19d";
+                             }
+                           }
+                         }
+                         &.calendar {
+                           td {
+                             &:before {
+                               font-family: FontAwesome;
+                               content: " \f073";
+                             }
+                           }
+                         }
+                         &.book {
+                           td {
+                             &:before {
+                               font-family: FontAwesome;
+                               content: " \f02d";
+                             }
+                           }
+                         }
+           */
+              &.mobile-view-tablerow-only {
+                display: none;
+                @include media-breakpoint-down("sm") {
+                  display: table-row;
+                }
+              }
+            }
+          }
         }
       }
     }
+
 
     //
     // further-education
@@ -3405,7 +3513,7 @@ body {
 
             p {
               text-align: center;
-              padding-top:0;
+              padding-top: 0;
             }
           }
           p {
@@ -4382,6 +4490,30 @@ body {
           @include media-breakpoint-up("lg") {
             margin-bottom: 35px;
           }
+          // further education aktuelles
+          //
+          &.furtherEducationNews {
+            margin-bottom: 0;
+
+
+
+
+              .newsSwitch {
+                float: right;
+                position: absolute;
+                right: 0;
+                margin-top: 35px;
+                cursor: pointer;
+                @include media-breakpoint-down("xxl") {
+                  margin-right: 40px;
+                }
+              }
+
+
+
+
+
+          }
         }
         &.sephiabg {
           background-color: $sephia;
@@ -4407,6 +4539,7 @@ body {
         &.contactperson {
           background-color: $grey9;
           color: $grey;
+          padding-bottom: 60px;
           .col-sm-6 {
             @include media-breakpoint-up("sm") {
               padding-top: 10px;
@@ -4425,12 +4558,12 @@ body {
             padding-right: 3px;
           }
           img {
-            padding: 22px 0 60px;
+            padding: 22px 0 0;
             @include media-breakpoint-up("sm") {
-              padding: 0 0 60px;
+              padding: 0;
             }
             @include media-breakpoint-up("lg") {
-              padding: 0 0 60px;
+              padding: 0;
             }
           }
           .contactperson-role {
