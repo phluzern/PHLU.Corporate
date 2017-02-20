@@ -147,6 +147,7 @@
     nodeTypes:
       'Phlu.Corporate:ContactsGroup': true
       'Phlu.Corporate:Contact': true
+
 'Phlu.Neos.NodeTypes:ContentCollection.ContactsGroup':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
