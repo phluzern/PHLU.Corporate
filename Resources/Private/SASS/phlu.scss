@@ -1206,12 +1206,17 @@ body {
               width: 32px;
               margin-top: -14px;
               padding-left: 12px;
-              padding-top: 27px;
+              padding-top: 17px;
             }
             &:hover {
               &::after {
                 background-color: $turquoise;
               }
+            }
+          }
+          .with-delete-btn {
+            &::after {
+              padding-top:27px;
             }
           }
           .deleteDropdownSelectionButton {
@@ -1280,8 +1285,13 @@ body {
           .form-control {
             border: 0;
           }
-          i.fa {
+          input.form-control {
+            height: 55px;
+          }
+
+          i.fa-search {
             color: $font-color;
+            right:11px;
           }
           #datepicker-further-education {
             .datepicker-inline {
@@ -3380,6 +3390,51 @@ body {
                     margin: 0 20px;
                   }
                   margin-bottom: 15px;
+                  .dropdown-toggle {
+                    width: 120px;
+                    height:46px;
+                    @include media-breakpoint-down("sm") {
+                      height: 38px;
+                    }
+                    padding:10px;
+                    color:white;
+                    background-color: $turquoise;
+                    &:after {
+                      display: inline-block;
+                      width: 0;
+                      height: 0;
+                      margin-left: 0.3em;
+                      vertical-align: middle;
+                      content: "";
+                      border-top: 0.3em solid;
+                      border-right: 0.3em solid transparent;
+                      border-left: 0.3em solid transparent;
+                      position: absolute;
+                      color: white;
+                      top: 19px;
+                      @include media-breakpoint-down("sm") {
+                        top: 15px;
+                      }
+                      left: 93px;
+                      font-size: $font-size-form-dropdown-big;
+                    }
+                  }
+                  .dropdown-menu {
+                    margin:0;
+                    background-color: $turquoise;
+                    li {
+                      padding: 8px 12px;
+                      @include media-breakpoint-down("sm") {
+                        font-size: $font-size-form-dropdown;
+                      }
+                      a {
+                        color:white;
+                      }
+                      &:hover {
+                        background-color: $darkgrey;
+                      }
+                    }
+                  }
                 }
                 .details {
                   float: left;
