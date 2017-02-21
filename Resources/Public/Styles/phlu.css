@@ -10208,6 +10208,12 @@ body {
         color: blue; }
       body .all .further-education-special-search .table-responsive .table tbody tr td.course-number {
         white-space: nowrap; }
+      body .all .further-education-special-search .table-responsive .table tbody tr td.course-type {
+        white-space: nowrap; }
+        body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i:hover::after {
+          display: block;
+          content: 'Kurs';
+          position: absolute; }
       body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status {
         text-align: center; }
       body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {

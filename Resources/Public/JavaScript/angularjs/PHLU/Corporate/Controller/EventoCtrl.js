@@ -61,9 +61,15 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.limitChunkSize = 15;
     $scope.searchquery = '';
     $scope.search = {};
+    $scope.bookable = {
+        'Alle' : null,
+        'Studiengang' : null,
+        'Kurs' : null
+    };
 
     $scope.graduation = {};
-    $scope.nodetypes = [];
+    $scope.nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation'];
+
     $scope.nodetypesFilter = [
         {id: 'all', label: 'Alle', category: 'Alle'},
         {id: 'phlu-neos-nodetypes-course-study-furthereducation', label: 'Studiengänge', category: 'Studiengang'},
@@ -102,6 +108,11 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             'property': 'furthereducation-leaders.Fullname',
             'categories': ['Kurs', 'Studiengang', 'Alle'],
             'fulltext': true
+        },
+        'bookable': {
+            'property': 'years.Bookable.indexOf(true)',
+            'categories': ['Kurs', 'Studiengang'],
+            'reverse': true
         }
     };
 
@@ -114,15 +125,30 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         });
     }, true);
 
+
     $scope.$watch('nodetypesFilterCurrentCategory', function () {
         angular.forEach($scope.filters, function (filter) {
             filter.selectedValues = $scope.getFilterSelectedValue(filter);
         });
     });
 
+    $scope.$watch('nodetypes', function (i) {
+        console.log(i);
+    });
 
-    /**
-     * @public§
+
+    // toogle bookable filter
+    $scope.$watch('bookable', function (i) {
+        angular.forEach(i,function (value,category) {
+            if (value !== null) {
+                $scope.setFilter([-1],'bookable',category);
+            }
+        });
+    },true);
+
+
+        /**
+     * @public
      * Set node type filter
      * @param filter
      * @returns void
@@ -171,20 +197,24 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     /**
      * @public
      * Set filter
-     * @param array genres
+     * @param values
+     * @param filtername
+     * @param string category
      * @returns void
      */
-    $scope.setFilter = function (values, filtername) {
+    $scope.setFilter = function (values, filtername,category) {
 
         angular.forEach(values, function (value) {
             $scope.toggleFilterSelection({
                 id: value,
                 value: value,
                 state: false
-            }, 'Alle', filtername);
+            }, category === undefined ? 'Alle' : category, filtername);
 
         });
     };
+
+
 
     /**
      * @public
@@ -192,7 +222,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @param array genres
      * @returns void
      */
-    $scope.resetFilter = function (filtername, category) {
+    $scope.resetFilter = function (category,filtername) {
 
         if (category === undefined) {
             category = "Alle";
@@ -217,6 +247,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         var filter = null;
         angular.forEach($scope.filters, function (val, key) {
             if (key == filterObject.property || val.property == filterObject.property) {
+                val.name = key;
                 filter = val;
             }
         });
@@ -457,20 +488,31 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @public
      * Count current filters
      * @param string category
+     * @param string filtername
      * @returns integer
      */
-    $scope.countCurrentFilters = function (category) {
+    $scope.countCurrentFilters = function (category, filtername) {
 
 
         var counter = 0;
-        angular.forEach($scope.filters, function (filter) {
-            angular.forEach(filter, function (selected) {
+        angular.forEach($scope.filters, function (f) {
+            angular.forEach(f, function (selected) {
                 if (typeof selected[category] == 'object') {
                     angular.forEach(selected[category], function (item) {
 
-                        if (category == undefined || item.state === true) {
-                            counter++;
+                        if (filtername !== undefined) {
+                            filter = getFilterFromFilterObject(f);
+                            if (filter.name == filtername) {
+                                if (category == undefined || item.state === true) {
+                                    counter++;
+                                }
+                            }
+                        } else {
+                            if (category == undefined || item.state === true) {
+                                counter++;
+                            }
                         }
+
                     });
                 }
             });
@@ -513,14 +555,17 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         .$bind('result', $scope);
 
     angular.forEach($scope.filters, function (filter, name) {
+
         if (filter.fulltext !== undefined && filter.fulltext) {
-            search.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope, false, false, false, true);
+            search.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope, filter.reverse == undefined ? false : filter.reverse, false, false, true);
         } else {
-            search.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope);
+            search.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope, filter.reverse == undefined ? false : filter.reverse);
         }
 
     });
 
+
+    //search.addPropertyFilter('years.Bookable.indexOf(true)', -1,null,true);
 
     search.run();
 

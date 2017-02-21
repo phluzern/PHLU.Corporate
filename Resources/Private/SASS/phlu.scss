@@ -3380,6 +3380,19 @@ body {
               td.course-number {
                 white-space: nowrap;
               }
+              td.course-type {
+                i {
+                  &:hover {
+                    &::after {
+                      display: block;
+                      content: 'Kurs';
+                      position: absolute;
+                    }
+                  }
+
+                }
+                white-space: nowrap;
+              }
               td.booking-status {
                 text-align: center;
               }
