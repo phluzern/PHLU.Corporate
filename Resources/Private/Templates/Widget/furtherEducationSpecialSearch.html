@@ -64,7 +64,9 @@
                                 <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
                                      aria-haspopup="true" aria-expanded="false">
                                     <span data-ng-bind="getFilterSelectedPreview(filters.year,'Alle')"></span>
+
                                 </div>
+
                                 <div class="tagFadeOutBg"></div>
                                 <div class="deleteDropdownSelectionButton">
                                     <a class="preventDefault" href="#">
@@ -73,7 +75,7 @@
                                 </div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="year in resultAll.getDistinct('furthereducation-years.Year')">
+                                        data-ng-repeat="year in resultAll.getDistinct('furthereducation-years.Year.*')">
                                         <a href="#" data-ng-click="toggleFilterSelection(year,'Alle','year')">
                                             <i class="fa " aria-hidden="true"
                                                data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
@@ -120,7 +122,7 @@
                                 <div class="tagFadeOutBg"></div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="year in resultAll.getDistinct('study-furthereducation-years.Year')">
+                                        data-ng-repeat="year in resultAll.getDistinct('study-furthereducation-years.Year.*')">
                                         <a href="#" data-ng-click="toggleFilterSelection(year,'Studiengang','year')">
                                             <i class="fa " aria-hidden="true"
                                                data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
@@ -152,6 +154,7 @@
                                         </a>
                                     </li>
                                 </ul>
+                                <a href="#" data-ng-click="resetFilter('graduation','Studiengang')">reset</a>
                             </div>
 
                             <div class="input-item-col col-xs-12 col-sm-3">
@@ -201,7 +204,7 @@
                                 <div class="tagFadeOutBg"></div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="year in resultAll.getDistinct('module-furthereducation-years.Year')">
+                                        data-ng-repeat="year in resultAll.getDistinct('module-furthereducation-years.Year.*')">
                                         <a href="#" data-ng-click="toggleFilterSelection(year,'Kurs','year')">
                                             <i class="fa " aria-hidden="true"
                                                data-ng-class="{'fa-check-square-o': year.state, 'fa-square-o': !year.state}"></i>
