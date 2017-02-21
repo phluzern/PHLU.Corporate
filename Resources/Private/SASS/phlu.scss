@@ -3532,11 +3532,26 @@ body {
           display: none;
           color: #5c5c5c;
           background-color: #edeae8;
-          margin-top: -35px;
+          margin-top: -40px;
           margin-left: -10px;
           padding: 0px 9px;
           &.show {
             display: inline-block;
+          }
+          &::after {
+            color: $lightgrey;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 0.3em;
+            vertical-align: bottom;
+            content: "";
+            border-top: 0.5em solid;
+            border-right: 0.4em solid transparent;
+            border-left: 0.4em solid transparent;
+            position: absolute;
+            left: 5px;
+            bottom: -8px;
           }
         }
       }
@@ -3558,6 +3573,7 @@ body {
         color: black;
 
         .box1, .box2, .box3 {
+          position: relative;
           height: 320px;
           background-color: $lightgreyblue;
           .centeredBox {
@@ -3591,6 +3607,11 @@ body {
               width: inherit;
               text-align: center;
             }
+            width: 100%;
+          }
+          .bottomContent {
+            position: absolute;
+            bottom: 0;
             width: 100%;
           }
         }

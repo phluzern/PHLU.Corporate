@@ -10293,11 +10293,25 @@ body {
           display: none;
           color: #5c5c5c;
           background-color: #edeae8;
-          margin-top: -35px;
+          margin-top: -40px;
           margin-left: -10px;
           padding: 0px 9px; }
           body .all .target-group-codes .code .fullname.show {
             display: inline-block; }
+          body .all .target-group-codes .code .fullname::after {
+            color: #edeae8;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 0.3em;
+            vertical-align: bottom;
+            content: "";
+            border-top: 0.5em solid;
+            border-right: 0.4em solid transparent;
+            border-left: 0.4em solid transparent;
+            position: absolute;
+            left: 5px;
+            bottom: -8px; }
     body .all .infoboxes {
       background-color: #85889A;
       margin-top: 13px; }
@@ -10310,6 +10324,7 @@ body {
             body .all .infoboxes > div > div > div:last-child {
               margin-bottom: 60px; } }
         body .all .infoboxes > div > div > div .box1, body .all .infoboxes > div > div > div .box2, body .all .infoboxes > div > div > div .box3 {
+          position: relative;
           height: 320px;
           background-color: #DADCE8; }
           body .all .infoboxes > div > div > div .box1 .centeredBox, body .all .infoboxes > div > div > div .box2 .centeredBox, body .all .infoboxes > div > div > div .box3 .centeredBox {
@@ -10338,6 +10353,10 @@ body {
               body .all .infoboxes > div > div > div .box1 img, body .all .infoboxes > div > div > div .box2 img, body .all .infoboxes > div > div > div .box3 img {
                 width: inherit;
                 text-align: center; } }
+          body .all .infoboxes > div > div > div .box1 .bottomContent, body .all .infoboxes > div > div > div .box2 .bottomContent, body .all .infoboxes > div > div > div .box3 .bottomContent {
+            position: absolute;
+            bottom: 0;
+            width: 100%; }
     body .all .phlu-locations .row.subjectsfilternav .nav-pills {
       margin-bottom: 31px; }
       body .all .phlu-locations .row.subjectsfilternav .nav-pills li a.nav-link {
