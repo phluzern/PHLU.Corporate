@@ -499,25 +499,24 @@
                                             <tr>
                                                 <td>
                                                     Studienziel
-                                                    <div class="mobile-view-columns">
-                                                        Certificate of Advanced Studies PH Luzern in
-                                                        Menschenrechtsbildung
+                                                    <div class="mobile-view-columns" data-ng-bind="node.getProperty('graduation')">
+
                                                     </div>
                                                 </td>
-                                                <td>
+                                                <td data-ng-bind="node.getProperty('graduation')">
                                                     Certificate of Advanced Studies PH Luzern in
-                                                    Menschenrechtsbildung
+
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     ETCS-Punkte
-                                                    <div class="mobile-view-columns">
-                                                        30
+                                                    <div class="mobile-view-columns" data-ng-bind="node.getProperty('ects')">
+
                                                     </div>
                                                 </td>
-                                                <td>
-                                                    30
+                                                <td data-ng-bind="node.getProperty('ects')">
+
                                                 </td>
                                             </tr>
                                             <tr>
@@ -529,22 +528,12 @@
                                                             <div class="dropdown-toggle " data-toggle="dropdown"
                                                                  role="button" aria-haspopup="true"
                                                                  aria-expanded="false">
-                                                                <span>13.01.2017</span>
+                                                                <span data-ng-bind="node.getProperty('years.0.StartText')"></span>
                                                             </div>
                                                             <ul class="dropdown-menu">
-                                                                <li value="">
+                                                                <li value="" data-ng-repeat="year in node.getProperty('years')">
                                                                     <a href="#">
-                                                                        <span>13.01.2017</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li value="">
-                                                                    <a href="#">
-                                                                        <span>14.01.2017</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li value="">
-                                                                    <a href="#">
-                                                                        <span>15.01.2017</span>
+                                                                        <span data-ng-bind="year.StartText"></span>
                                                                     </a>
                                                                 </li>
                                                             </ul>
@@ -555,22 +544,12 @@
                                                     <div class="dropdown">
                                                         <div class="dropdown-toggle " data-toggle="dropdown"
                                                              role="button" aria-haspopup="true" aria-expanded="false">
-                                                            <span>13.01.2017</span>
+                                                            <span data-ng-bind="node.getProperty('years.0.StartText')"></span>
                                                         </div>
                                                         <ul class="dropdown-menu">
-                                                            <li value="">
+                                                            <li value="" data-ng-repeat="year in node.getProperty('years')">
                                                                 <a href="#">
-                                                                    <span>13.01.2017</span>
-                                                                </a>
-                                                            </li>
-                                                            <li value="">
-                                                                <a href="#">
-                                                                    <span>14.01.2017</span>
-                                                                </a>
-                                                            </li>
-                                                            <li value="">
-                                                                <a href="#">
-                                                                    <span>15.01.2017</span>
+                                                                    <span data-ng-bind="year.StartText"></span>
                                                                 </a>
                                                             </li>
                                                         </ul>
