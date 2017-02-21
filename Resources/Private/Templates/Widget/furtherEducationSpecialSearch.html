@@ -36,7 +36,6 @@
                             <input type="text" class="form-control" aria-label="Suche" data-ng-model="searchquery"
                                    value="">
                             <i class="fa fa-search" aria-hidden="true"></i>
-
                         </div><!-- /input-group -->
                         <div class="extendedSearch">
 
@@ -181,10 +180,10 @@
                         </div>
 
                         <div class="row input-group">
-                            <div class="input-item-col col-xs-3">
+                            <div class="input-item-col col-xs-6 col-sm-3">
                                 <div class="checkbox">
                                     <input type="checkbox" id="freie-plaetze" name="freie-plaetze"/>
-                                    <label for="freie-plaetze"><span></span>Freie Plätze</label>
+                                    <label for="freie-plaetze"><span>&nbsp;</span>Freie Plätze</label>
                                 </div>
                             </div>
                         </div>
@@ -219,7 +218,7 @@
 
                                 <label>Kursnummer</label>
                                 <i class="fa fa-search" aria-hidden="true"></i>
-                                <input style="height:55px" type="text" class="form-control"
+                                <input type="text" class="form-control"
                                        data-ng-model="search.courseNrModule"
                                        data-ng-change="setFilterSelectionValue(search.courseNrModule,'Kurs','nr');">
 
@@ -249,7 +248,7 @@
 
                                 <label>Kursleitung</label>
                                 <i class="fa fa-search" aria-hidden="true"></i>
-                                <input style="height:55px" type="text" class="form-control"
+                                <input type="text" class="form-control"
                                        data-ng-model="search.courseLeaderModule"
                                        data-ng-change="setFilterSelectionValue(search.courseLeaderModule,'Kurs','leaders');">
 
@@ -259,7 +258,6 @@
 
 
                         <div class="row input-group">
-
 
 
                             <div class="input-item-col col-xs-12 col-sm-6">
@@ -282,9 +280,6 @@
                                 </ul>
 
                             </div>
-
-
-
 
 
                             <div class="input-item-col col-xs-12 col-sm-6">
@@ -310,19 +305,22 @@
 
                         </div>
                         <div class="row input-group">
-                            <div class="input-item-col col-xs-3">
+                            <div class="input-item-col col-xs-6 col-sm-3">
                                 <div class="checkbox">
                                     <input type="checkbox" id="nur-holkurse" name="nur-holkurse"/>
-                                    <label for="nur-holkurse"><span></span>Nur Holkurse</label>
+                                    <label for="nur-holkurse"><span>&nbsp;</span>Nur Holkurse</label>
                                 </div>
                             </div>
-                            <div class="input-item-col col-xs-3">
+                            <div class="input-item-col col-xs-6 col-sm-3">
                                 <div class="checkbox">
                                     <input type="checkbox" id="freie-plaetze-kurse" name="freie-plaetze-kurse"/>
-                                    <label for="freie-plaetze"><span></span>Freie Plätze</label>
+                                    <label for="freie-plaetze-kurse"><span>&nbsp;</span>Freie Plätze</label>
                                 </div>
                             </div>
                         </div>
+
+
+
 
 
                     </div>
@@ -365,17 +363,19 @@
                             </thead>
                             <tbody ng-repeat="node in result.getNodes(limit)">
                             <tr class="icon hat clickable" data-ng-class="{open: node.isopen,noborder: $index > 0}"
-                                data-node-id="{{node.identifier}}" data-ng-click="node.isopen = node.isopen ? false : true">
+                                data-node-id="{{node.identifier}}"
+                                data-ng-click="node.isopen = node.isopen ? false : true">
                                 <td>
-                                    <span class="oi" data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
+                                    <span class="oi"
+                                          data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
 
                                     <span data-ng-bind="node.getProperty('title')"></span>
                                 </td>
                                 <td class="course-number"><span data-ng-bind="node.getProperty('nr')"></span></td>
                                 <td class="booking-status">
                                     <i class="fa fa-circle bookable" aria-hidden="true"></i><br>
-<!--                                    <i class="fa fa-circle booked-out" aria-hidden="true"></i><br>
-                                    <i class="fa fa-info-circle booking-info" aria-hidden="true"></i>-->
+                                    <!--                                    <i class="fa fa-circle booked-out" aria-hidden="true"></i><br>
+                                                                        <i class="fa fa-info-circle booking-info" aria-hidden="true"></i>-->
                                 </td>
                                 <td class="course-type">
                                     <i class="fa fa-graduation-cap" aria-hidden="true"></i>
@@ -402,8 +402,8 @@
                                                     Buchbar
                                                     <div class="mobile-view-columns">
                                                         <i class="fa fa-circle bookable" aria-hidden="true"></i><br>
-<!--                                                        <i class="fa fa-circle booked-out" aria-hidden="true"></i><br>
-                                                        <i class="fa fa-info-circle booking-info" aria-hidden="true"></i>-->
+                                                        <!--                                                        <i class="fa fa-circle booked-out" aria-hidden="true"></i><br>
+                                                                                                                <i class="fa fa-info-circle booking-info" aria-hidden="true"></i>-->
                                                     </div>
                                                 </td>
                                             </tr>
@@ -443,27 +443,59 @@
                                                 <td>
                                                     Startdatum
                                                     <div class="mobile-view-columns">
-                                                        13.01.2017
+
+                                                        <div class="dropdown">
+                                                            <div class="dropdown-toggle " data-toggle="dropdown"
+                                                                 role="button" aria-haspopup="true"
+                                                                 aria-expanded="false">
+                                                                <span>13.01.2017</span>
+                                                            </div>
+                                                            <ul class="dropdown-menu">
+                                                                <li value="">
+                                                                    <a href="#">
+                                                                        <span>13.01.2017</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li value="">
+                                                                    <a href="#">
+                                                                        <span>14.01.2017</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li value="">
+                                                                    <a href="#">
+                                                                        <span>15.01.2017</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </td>
                                                 <td>
-
-                                                    <div class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                        <span class="ng-binding"></span>
+                                                    <div class="dropdown">
+                                                        <div class="dropdown-toggle " data-toggle="dropdown"
+                                                             role="button" aria-haspopup="true" aria-expanded="false">
+                                                            <span>13.01.2017</span>
+                                                        </div>
+                                                        <ul class="dropdown-menu">
+                                                            <li value="">
+                                                                <a href="#">
+                                                                    <span>13.01.2017</span>
+                                                                </a>
+                                                            </li>
+                                                            <li value="">
+                                                                <a href="#">
+                                                                    <span>14.01.2017</span>
+                                                                </a>
+                                                            </li>
+                                                            <li value="">
+                                                                <a href="#">
+                                                                    <span>15.01.2017</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
                                                     </div>
-                                                    <ul class="dropdown-menu">
-                                                        <!-- ngRepeat: year in resultAll.getDistinct('module-furthereducation-years.Year') -->
-                                                        <li value="" >
-                                                            <a href="#" >
-                                                                <i class="fa  fa-square-o" aria-hidden="true"></i>
-                                                                <span >13.01.2017</span>
-                                                            </a>
-                                                        </li>
-
-                                                    </ul>
 
 
-                                                    13.01.2017
                                                 </td>
                                             </tr>
                                             <tr>
@@ -581,7 +613,7 @@
                     </li>
                     <li class="clickable">
                         <a data-toggle="pill" href="#latestoffers" role="pill">
-                           Neueste Angebote
+                            Neueste Angebote
                         </a>
                     </li>
                     <li class="clickable">
@@ -591,17 +623,17 @@
                     </li>
                     <li class="clickable">
                         <a data-toggle="pill" href="#lastminute" role="pill">
-                           Last Minute
+                            Last Minute
                         </a>
                     </li>
                     <li class="clickable">
                         <a data-toggle="pill" href="#customoffers" role="pill">
-                           Massgeschneiderte Angebote
+                            Massgeschneiderte Angebote
                         </a>
                     </li>
                     <li class="clickable">
                         <a data-toggle="pill" href="#lastvisit" role="pill">
-                           Zuletzt besucht
+                            Zuletzt besucht
                         </a>
                     </li>
                 </ul>

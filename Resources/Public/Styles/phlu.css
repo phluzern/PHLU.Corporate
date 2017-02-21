@@ -8805,9 +8805,11 @@ body {
             width: 32px;
             margin-top: -14px;
             padding-left: 12px;
-            padding-top: 27px; }
+            padding-top: 17px; }
           body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-toggle:hover::after {
             background-color: #28818f; }
+        body .all .extendedSearchBg .extendedSearchFilter .input-item-col .with-delete-btn::after {
+          padding-top: 27px; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col .deleteDropdownSelectionButton {
           position: absolute;
           display: block;
@@ -8850,8 +8852,11 @@ body {
               background-color: #edeae8; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col .form-control {
           border: 0; }
-        body .all .extendedSearchBg .extendedSearchFilter .input-item-col i.fa {
-          color: #5c5c5c; }
+        body .all .extendedSearchBg .extendedSearchFilter .input-item-col input.form-control {
+          height: 55px; }
+        body .all .extendedSearchBg .extendedSearchFilter .input-item-col i.fa-search {
+          color: #5c5c5c;
+          right: 11px; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col #datepicker-further-education .datepicker-inline {
           background-color: #9b9b9b; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col #datepicker-further-education input {
@@ -10211,6 +10216,45 @@ body {
         @media (max-width: 767px) {
           body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
             margin: 0 20px; } }
+        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle {
+          width: 120px;
+          height: 46px;
+          padding: 10px;
+          color: white;
+          background-color: #28818f; }
+          @media (max-width: 767px) {
+            body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle {
+              height: 38px; } }
+          body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle:after {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 0.3em;
+            vertical-align: middle;
+            content: "";
+            border-top: 0.3em solid;
+            border-right: 0.3em solid transparent;
+            border-left: 0.3em solid transparent;
+            position: absolute;
+            color: white;
+            top: 19px;
+            left: 93px;
+            font-size: 1.313rem; }
+            @media (max-width: 767px) {
+              body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle:after {
+                top: 15px; } }
+        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu {
+          margin: 0;
+          background-color: #28818f; }
+          body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu li {
+            padding: 8px 12px; }
+            @media (max-width: 767px) {
+              body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu li {
+                font-size: 1rem; } }
+            body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu li a {
+              color: white; }
+            body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu li:hover {
+              background-color: #545454; }
       body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .details {
         float: left;
         margin-left: 0; }

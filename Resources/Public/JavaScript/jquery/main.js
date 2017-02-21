@@ -155,56 +155,6 @@ $(document).ready(function () {
     resize();
 
     /*
-     * tablesaw set colspan
-     */
-    /*    var tableSawSetColspan = function () {
-     var hiddenCellCount = 0,
-     colCount = 0,
-     colspanVal = 0,
-     tablesawInit = false;
-     if ($(window).outerWidth() < 768) {
-
-     $('.table-phlu-saw').find("table").each(function () {
-
-     $(this).attr('data-tablesaw-mode', 'swipe');
-     $(this).find('thead tr th:first').attr('data-tablesaw-priority', 'persist');
-     if (!tablesawInit) {
-     $(document).trigger("enhance.tablesaw");
-     }
-     hiddenCellCount = $(this).find('thead .tablesaw-cell-hidden').length;
-     colCount = $(this).find('thead tr th').length;
-     colspanVal = colCount - hiddenCellCount;
-     $(this).find('tbody td[colspan]').each(function (i, obj) {
-     if (!$(obj).attr('data-colspan')) {
-     $(obj).attr('data-colspan',$(obj).attr('colspan'));
-     }
-     $(obj).attr('colspan', colspanVal);
-     });
-     });
-
-
-     }
-     else {
-
-
-
-     $('.table-phlu-saw').find("table.tablesaw-swipe").each(function () {
-     $(this).data('table').destroy();
-     colCount = $(this).find('thead tr th').length;
-     $(this).find('tbody td[colspan]').each(function (i, obj) {
-     $(obj).attr('colspan', $(obj).attr('data-colspan'));
-     });
-
-     });
-     }
-     };
-
-     if ($('.table-phlu-saw').length) {
-     $(window).resize(tableSawSetColspan);
-     tableSawSetColspan();
-     }*/
-
-    /*
      * mobile navigation button icon bootstrap collapse
      */
     $('#navbar').on('show.bs.collapse', function () {
@@ -240,7 +190,9 @@ $(document).ready(function () {
 
     $('[data-toggle="filterCountTag"]').tooltip('show');
 
-
+    /*
+     * Datepicker
+     */
     $.fn.datepicker.dates['de'] = {
         days: ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
         daysShort: ["Son", "Mon", "Die", "Mit", "Don", "Fre", "Sam"],
@@ -256,9 +208,6 @@ $(document).ready(function () {
 
     };
 
-    /*
-     * Datepicker
-     */
     $('#datepicker').datepicker({
         startDate: '0d',
         language: 'de',
