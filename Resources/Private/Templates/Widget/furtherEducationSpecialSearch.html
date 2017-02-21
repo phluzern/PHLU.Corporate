@@ -38,9 +38,8 @@
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </div><!-- /input-group -->
                         <div class="extendedSearch">
-
                             <button type="button" class="btn btn-default"
-                                    data-ng-class="{disabled: resultAll.isLoading() === true || resultAll.count() == 0}">
+                                    data-ng-class="{disabled: resultAll.isLoading() === true}">
                                 Erweiterte Suche
                                 <span class="oi oi-x"></span>
                                 <span class="count" data-ng-bind="countCurrentFilters(nodetypesFilterCurrentCategory)"
@@ -52,7 +51,7 @@
                 </div>
 
                 <div class="row extendedSearchFilter"
-                     data-ng-if="resultAll.isLoading() === false && resultAll.count() > 0">
+                     data-ng-show="resultAll.isLoading() === false">
 
                     <div data-ng-show="nodetypesFilterCurrentLabel == 'Alle'" class="col-xs-12">
                         <h3>Kurse und Studiengänge</h3>
@@ -120,9 +119,9 @@
                         <div class="row input-group">
                             <div class="input-item-col col-xs-6 col-sm-3">
                                 <div class="checkbox">
-                                    <input type="checkbox" id="freie-plaetze-kurse" data-ng-model="bookable.Alle"
-                                           name="freie-plaetze-kurse"/>
-                                    <label for="freie-plaetze-kurse"><span>&nbsp;</span>Freie Plätze</label>
+                                    <input type="checkbox" id="freie-plaetze-kurse-all" data-ng-model="bookable.Alle" data-ng-change="changeBookable('Alle')" data-ng-true-value="1" data-ng-false-value="0"
+                                           name="freie-plaetze-kurse-all"/>
+                                    <label for="freie-plaetze-kurse-all"><span>&nbsp;</span>Freie Plätze</label>
                                 </div>
                             </div>
                         </div>
@@ -227,9 +226,9 @@
                         <div class="row input-group">
                             <div class="input-item-col col-xs-6 col-sm-3">
                                 <div class="checkbox">
-                                    <input type="checkbox" id="freie-plaetze" data-ng-model="bookable.Studiengang"
+                                    <input type="checkbox" id="freie-plaetze-studiengang" data-ng-model="bookable.Studiengang" data-ng-change="changeBookable('Studiengang')" data-ng-true-value="1" data-ng-false-value="0"
                                            name="freie-plaetze"/>
-                                    <label for="freie-plaetze"><span>&nbsp;</span>Freie Plätze</label>
+                                    <label for="freie-plaetze-studiengang"><span>&nbsp;</span>Freie Plätze</label>
                                 </div>
                             </div>
                         </div>
@@ -388,7 +387,7 @@
                             </div>
                             <div class="input-item-col col-xs-6 col-sm-3">
                                 <div class="checkbox">
-                                    <input type="checkbox" id="freie-plaetze-kurse" data-ng-model="bookable.Kurs"
+                                    <input type="checkbox" id="freie-plaetze-kurse" data-ng-model="bookable.Kurs" data-ng-change="changeBookable('Kurs')" data-ng-true-value="1" data-ng-false-value="0"
                                            name="freie-plaetze-kurse"/>
                                     <label for="freie-plaetze-kurse"><span>&nbsp;</span>Freie Plätze</label>
                                 </div>

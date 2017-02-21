@@ -222,13 +222,16 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var search = new $hybridsearchObject(hybridsearch);
 
 
+    var searchResultApplyTimer = null;
 
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
 
     search.setGroupedBy(groupedBy).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result',$scope).$watch(function (data) {
 
-
-        setTimeout(function () {
+        if (searchResultApplyTimer) {
+            window.clearTimeout(searchResultApplyTimer);
+        }
+        searchResultApplyTimer = setTimeout(function () {
 
 
             $scope.$apply(function () {
@@ -261,7 +264,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             });
 
 
-        }, 1);
+        }, 60);
 
 
     });

@@ -132,22 +132,17 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         });
     });
 
-    $scope.$watch('nodetypes', function (i) {
-        console.log(i);
-    });
 
+    /**
+     * @public
+     * Set node type filter
+     * @returns void
+     */
+    $scope.changeBookable = function (category) {
+        $scope.setFilter([-1], 'bookable', category);
+    };
 
-    // toogle bookable filter
-    $scope.$watch('bookable', function (i) {
-        angular.forEach(i,function (value,category) {
-            if (value !== null) {
-                $scope.setFilter([-1],'bookable',category);
-            }
-        });
-    },true);
-
-
-        /**
+    /**
      * @public
      * Set node type filter
      * @param filter
