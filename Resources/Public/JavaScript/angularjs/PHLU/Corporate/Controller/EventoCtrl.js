@@ -92,7 +92,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             'categories': ['Kurs', 'Alle']
         },
         'genre': {
-            'property': 'genre',
+            'property': 'genre.Name',
             'categories': ['Kurs', 'Studiengang', 'Alle'],
         },
         'dayofweek': {
