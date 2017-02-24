@@ -231,6 +231,8 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     };
 
 
+
+
     /**
      * @private
      * Get filter from filter object
@@ -399,6 +401,22 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     };
 
+
+    /**
+     * @public
+     * Get filters selected preview text
+     * @param filter filter
+     * @param string category
+     * @returns string
+     */
+    $scope.isFilterValueSelected = function (value,filter) {
+
+        return $scope.getFilterSelectedValue(filter).indexOf(value) > -1 ? true : false;
+
+    };
+
+
+
     /**
      * @public
      * Get filters selected preview text
@@ -558,10 +576,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         }
 
     });
-
-
-    //search.addPropertyFilter('years.Bookable.indexOf(true)', -1,null,true);
-
     search.run();
 
 
