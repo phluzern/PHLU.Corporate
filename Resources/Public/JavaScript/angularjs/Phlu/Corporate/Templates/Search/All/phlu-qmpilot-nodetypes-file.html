@@ -1,0 +1,11 @@
+<h3>
+    <a class="content-link-internal"
+       href="{{node.getProperty('asset').url}}" target="_blank"><span
+            data-ng-if="node.getProperty('asset').title == ''">{{node.getProperty('asset').filename}}</span><span
+            data-ng-if="node.getProperty('asset').title !== ''">{{node.getProperty('asset').title}}</span></a>
+</h3>
+<div class="searchresult-body">
+    <span data-ng-if="node.getProperty('asset').size > 100">{{node.getProperty('asset').extension}}, {{node.getProperty('asset').sizeH}}</span>
+    <span data-ng-if="node.getProperty('asset').extension == 'lnk'">Link, {{node.getProperty('asset').uri.host}}</span>
+</div>
+<div ng-bind-html="node.getBreadcrumb()"></div>

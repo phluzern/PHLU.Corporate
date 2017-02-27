@@ -1,0 +1,31 @@
+<div class="row searchresult-body">
+    <div class="col-xs-8 col-sm-9 col-md-10">
+        <address>
+            <b>
+                {{node.getProperty('lastname')}} {{node.getProperty('firstname')}}
+            </b>
+
+            <span data-ng-show="node.getProperty('titlename') !== ''"><br>{{node.getProperty('titlename')}}</span>
+            <span data-ng-if="node.getProperty('titlename') == ''">
+            <span data-ng-show="node.getParent().getProperty('title') !== ''"><br>{{node.getParent().getProperty('title')}}</span>
+            <span data-ng-show="node.getParent().getProperty('title') == ''"><br>{{node.getProperty('function')}}</span>
+            </span>
+
+            <div class="telephone">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                {{node.getProperty('phone')}}<br>
+            </div>
+            <div ng-bind-html="node.getProperty('portrait')"></div>
+
+        </address>
+
+
+    </div>
+
+    <div class="col-xs-4 col-sm-3 col-md-2 contactperson-portrait-image" data-ng-show="node.getProperty('image')">
+        <img src="{{node.getProperty('image').url}}"
+             title="{{node.getProperty('image').title}}" alt="{{node.getProperty('image').caption}}"
+             class="img-fluid"/>
+    </div>
+
+</div>
