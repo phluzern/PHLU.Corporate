@@ -77,6 +77,10 @@ PhluCorporateApp.directive('search', function ($sce) {
 
                             return template + '/All/phlu-neos-nodetypes-project.html';
 
+                        case 'zebis':
+
+                            return template + '/Group/zebis.html';
+
                         case 'phlu-neos-nodetypes-publication':
 
                             if ($scope.view === 'all') {
@@ -175,6 +179,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-newsitem': 'News',
         'phlu-neos-nodetypes-course-study-furthereducation': 'Weiterbildungsstudiengänge',
         'phlu-neos-nodetypes-course-module-furthereducation': 'Weiterbildungsskurse',
+        'zebis': 'Unterrichtsmaterial',
         '*': 'Seiten'
 
     };
@@ -218,15 +223,36 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
 
-
     var search = new $hybridsearchObject(hybridsearch);
+
+    var external =
+        [{
+            http: "http://neos.phlu.dev/proxy?url=https://www.zebis.ch/suche/$query/bundle/teachingmaterial",
+            parser: {
+                type: 'html',
+                config: {
+                    'nodeType': 'zebis',
+                    'results': {'selector': '.search-results.apachesolr_search-results > .node'},
+                    'fields': {
+                        'title': {'selector': '> div:first-child h2 > a'},
+                        'rawcontent': {'selector': '> div:nth-child(2)'},
+                        'url': {
+                            'selector': 'a',
+                            'attribute': 'href',
+                            'prepend': 'https://www.zebis.ch'
+                        }
+                    }
+                }
+            }
+        }];
 
 
     var searchResultApplyTimer = null;
 
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
+    search.setExternalSources(external);
 
-    search.setGroupedBy(groupedBy).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result',$scope).$watch(function (data) {
+    search.setGroupedBy(groupedBy).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
         if (searchResultApplyTimer) {
             window.clearTimeout(searchResultApplyTimer);
@@ -329,7 +355,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             $("body").removeClass('siteSearchActive');
             $("#search div").addClass('noSearchResults');
         } else {
-            if(wasClosed) {
+            if (wasClosed) {
                 $("body").removeClass('siteSearchActive');
                 wasClosed = false;
             }

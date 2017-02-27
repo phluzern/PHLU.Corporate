@@ -108,3 +108,16 @@
     '@format': 'html'
     '@action': 'load'
 
+
+#
+# Phlu corporate routes (use for link uri builder)
+#
+-
+  name: 'Proxy'
+  uriPattern: 'proxy'
+  defaults:
+    '@package': 'Phlu.Corporate'
+    '@controller': 'Proxy'
+    '@format': 'html'
+    '@action': 'get'
+
