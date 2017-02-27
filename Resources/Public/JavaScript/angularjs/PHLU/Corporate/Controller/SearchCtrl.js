@@ -227,7 +227,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var external =
         [{
-            http: "http://neos.phlu.dev/proxy?url=https://www.zebis.ch/suche/$query/bundle/teachingmaterial",
+            http: "http://phlu.ch.phlu-eduweb5.nine.ch/proxy?url=https://www.zebis.ch/suche/$query/bundle/teachingmaterial",
             parser: {
                 type: 'html',
                 config: {
