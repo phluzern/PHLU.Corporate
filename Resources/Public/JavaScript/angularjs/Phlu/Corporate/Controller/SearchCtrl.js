@@ -252,7 +252,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             //     }
             // },
             {
-                http: "http://blog.phlu.ch/weiterbildung/feed/",
+                http: "http://d4jj42ydaxxx2.cloudfront.net/weiterbildung/feed/",
                 parser: {
                     type: 'xml',
                     config: {
