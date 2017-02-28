@@ -266,6 +266,38 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         }
                     }
                 }
+            },
+            {
+                http: "http://d4jj42ydaxxx2.cloudfront.net/hd-blog/feed/",
+                parser: {
+                    type: 'xml',
+                    config: {
+                        'nodeType': 'blog',
+                        'results': {'selector': 'rss.channel.item'},
+                        'fields': {
+                            'title': 'title',
+                            'rawcontent': 'description',
+                            'url': 'link',
+                            'content': 'encoded'
+                        }
+                    }
+                }
+            },
+            {
+                http: "http://d4jj42ydaxxx2.cloudfront.net/weiter/feed/",
+                parser: {
+                    type: 'xml',
+                    config: {
+                        'nodeType': 'blog',
+                        'results': {'selector': 'rss.channel.item'},
+                        'fields': {
+                            'title': 'title',
+                            'rawcontent': 'description',
+                            'url': 'link',
+                            'content': 'encoded'
+                        }
+                    }
+                }
             }
         ];
 
