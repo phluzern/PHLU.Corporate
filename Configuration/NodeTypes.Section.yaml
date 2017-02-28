@@ -25,6 +25,8 @@
         inspector:
           group: general
           position: 50
+    internalid:
+      type: integer
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Section'

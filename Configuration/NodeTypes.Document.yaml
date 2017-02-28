@@ -1,4 +1,3 @@
-
 'Phlu.Corporate:Page':
   abstract: true
   superTypes:
@@ -40,6 +39,8 @@
         reloadIfChanged: true
     internalid:
       type: integer
+
+
 'Phlu.Corporate:Page.NotInMenu':
   superTypes:
     'Phlu.Corporate:Page': true
@@ -86,6 +87,8 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.Overview.OnePage'
+
+
 'Phlu.Corporate:Page.View.Default':
   ui:
     label: Standard-Seite
@@ -129,6 +132,7 @@
       'Phlu.Corporate:Page.View.Dossier': false
       'Phlu.Corporate:Page.View.Default': false
       'Phlu.Corporate:Page.View.Default.Default': true
+      'Phlu.Corporate:Page.FurtherEducation.Detail': true
       'Neos.Neos:Shortcut': true
 'Phlu.Corporate:Page.View.Default.Default':
   hybridsearch:
@@ -144,6 +148,7 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.View.Default.Default'
+
 'Phlu.Corporate:Page.View.Default.Prototype':
   ui:
     label: Prototype-Seite
@@ -164,6 +169,7 @@
       'Phlu.Corporate:Page.View.Default.Default': false
       'Neos.Neos:Shortcut': false
       'Phlu.Corporate:Page.View.Default.Prototype': true
+
 'Phlu.Corporate:Page.View.Dossier':
   ui:
     label: Dossier
@@ -189,6 +195,8 @@
         inspector:
           group: carouselnews
         reloadIfChanged: true
+
+
 'Phlu.Corporate:Page.Service':
   ui:
     label: 'Service Seite'
@@ -198,3 +206,33 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.Service'
+
+
+
+
+'Phlu.Corporate:Page.FurtherEducation.Detail':
+  abstract: TRUE
+  ui:
+    label: 'Studiengang/Kurs'
+    group: hidden
+  superTypes:
+    'Phlu.Neos.NodeTypes:Page': true
+  childNodes:
+    main:
+      type: 'Phlu.Corporate:ContentCollection.Page.FurtherEducation.Detail'
+    header:
+      type: 'Phlu.Corporate:Content.Page.HeaderDefault'
+
+'Phlu.Corporate:Page.FurtherEducation.Detail.Module':
+  ui:
+    label: 'Kurs'
+  superTypes:
+    'Phlu.Corporate:Page.FurtherEducation.Detail': true
+    'Phlu.Neos.NodeTypes:Course.Module': true
+
+'Phlu.Corporate:Page.FurtherEducation.Detail.Study':
+  ui:
+    label: 'Studiengang'
+  superTypes:
+    'Phlu.Corporate:Page.FurtherEducation.Detail': true
+    'Phlu.Neos.NodeTypes:Course.Study': true

@@ -1,0 +1,213 @@
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
+{namespace course=Phlu\Corporate\ViewHelpers\Course}
+
+
+<course:getYear node="{node}" variable="year">
+
+    <div class="row further-education-detail">
+        <div class="col-xs-12">
+            <div class="row ">
+                <div class="col-xs-12">
+                    {breadcrumb -> f:format.raw()}
+                </div>
+                <div class="col-xs-12">
+                    <ts:render path="defaultRenderer" context="{node: header}"/>
+                </div>
+                <div class="col-xs-12 target-group-codes">
+
+                    <f:for each="{targetgroups}" as="targetgroup">
+                    <span class="code">
+                        <span class="fullname">{targetgroup.Bezeichnung}</span>
+                        {targetgroup.Zg}
+                    </span>
+                    </f:for>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row infoboxes">
+
+        <div class="col-xs-12">
+            <div class="row ">
+                <div class="col-sm-12 col-md-4 ">
+                    <div class="box1">
+                        <p>
+                            &laquo;Die Vielfalt der Vorträge, Themen und Referenten sind ein guter Mix zwischen
+                            Theorie,
+                            Grundlagen und Praxis.&raquo;
+                        </p>
+                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/infoboxExampleImage.png')}"
+                             alt="Thorsten Sommer - Statement" class="img-fluid"/>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-md-4 ">
+                    <div class="box2">
+                        <p class="smalltext">
+                            Sie stärken Ihre
+                        </p>
+                        <div class="centeredBox">
+                            <p>
+                                Vermittlungskompetenzen
+                            </p>
+                            <hr class="infobox">
+                            <p>
+                                Projektmanagement- kompetenzen
+                            </p>
+                            <hr class="infobox">
+                            <p>
+                                Beratungskompetenzen
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 ">
+                    <div class="box3">
+                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/infoboxExampleVideoSc.png')}"
+                             alt="Videobox" class="img-fluid"/>
+                        <p>
+                            &laquo;Darum müssen wir uns für Menschenrechte einsetzen.&raquo;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <f:if condition="{year}">
+        <div class="row greyBgFullwidth2colTable">
+            <div class="col-xs-12 ">
+                <h2>Kontakt und Anmeldung</h2>
+                <p>
+                    {graduation}
+                </p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td>
+                                ETCS-Punkte
+                                <div class="mobile-view-columns">
+                                    {ects}
+                                </div>
+                            </td>
+                            <td>
+                                {ects}
+                            </td>
+                        </tr>
+                        <f:if condition="{year.BookableUntil}">
+                            <tr>
+                                <td>
+                                    Anmeldeschluss
+                                    <div class="mobile-view-columns">
+                                        {f:format.date(date: year.BookableUntil.date, format: 'd.m.Y')}
+                                    </div>
+                                </td>
+                                <td>
+                                    {f:format.date(date: year.BookableUntil.date, format: 'd.m.Y')}
+                                </td>
+                            </tr>
+                        </f:if>
+                        <tr>
+                            <td>
+                                Startdatum
+                                <div class="mobile-view-columns">
+                                    <div class="dropdown">
+                                        <div class="dropdown-toggle " data-toggle="dropdown"
+                                             role="button" aria-haspopup="true" aria-expanded="false">
+                                            <span>{year.StartText}</span>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <f:for each="{year.options}" as="option">
+                                                <li value="">
+                                                    <a href="{option.url}">
+                                                        <span>{option.value.StartText}</span>
+                                                    </a>
+                                                </li>
+                                            </f:for>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <div class="dropdown-toggle " data-toggle="dropdown"
+                                         role="button" aria-haspopup="true" aria-expanded="false">
+                                        <span>{year.StartText}</span>
+                                    </div>
+                                    <ul class="dropdown-menu">
+                                        <f:for each="{year.options}" as="option">
+                                            <li value="">
+                                                <a href="{option.url}">
+                                                    <span>{option.value.StartText}</span>
+                                                </a>
+                                            </li>
+                                        </f:for>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Dauer
+                                <div class="mobile-view-columns">
+                                    {f:format.date(date: year.End.date, format: 'd.m.Y')}
+                                </div>
+                            </td>
+                            <td>
+                                {f:format.date(date: year.End.date, format: 'd.m.Y')}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Kosten
+                                <div class="mobile-view-columns">
+                                    {fee}
+                                </div>
+                            </td>
+                            <td>
+                                {fee}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="shareAndRegister">
+                    <a class="btn btn-primary share"
+                       href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
+                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                        <br>
+                        <span class="shareText">
+                                            Teilen
+                                        </span>
+                    </a>
+                    <f:if condition="{year.Bookable}">
+                        <f:then>
+                            <a class="btn btn-primary "
+                               href="{year.RegistrationLink}">
+                                Anmelden
+                            </a>
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{StatusLabel}">
+                                <f:then>
+                                    <p>{StatusLabel}</p>
+                                </f:then>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+
+                </div>
+            </div>
+        </div>
+    </f:if>
+    <div class="row further-education-detail">
+        <div class="col-xs-12">
+
+            <ts:render path="collectionRenderer" context="{node: main}"/>
+
+
+        </div>
+    </div>
+</course:getYear>

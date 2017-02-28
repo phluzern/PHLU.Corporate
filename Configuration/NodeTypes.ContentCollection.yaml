@@ -24,6 +24,7 @@
       'Phlu.Corporate:Section': true
       'Phlu.Corporate:SectionCenterLinks': true
       'Neoslive.Nodeform:AppMixin': true
+
 'Phlu.Corporate:ContentCollection.Section':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
@@ -41,6 +42,7 @@
       'Phlu.Corporate:MediaGallery': true
       'Neoslive.Nodeform:Form': true
       'Phlu.Corporate:AccordeonElement': true
+
 'Phlu.Corporate:ContentCollection.SectionCenterLinks':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
@@ -148,6 +150,7 @@
       'Phlu.Corporate:ContactsGroup': true
       'Phlu.Corporate:Contact': true
 
+
 'Phlu.Neos.NodeTypes:ContentCollection.ContactsGroup':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
@@ -157,6 +160,7 @@
       'Phlu.Corporate:TextPlain': true
       'Phlu.Corporate:Text': false
       'Phlu.Corporate:TextWithImage': false
+
 'Phlu.Corporate:ContentCollection.MediaGallery':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
@@ -164,3 +168,11 @@
     nodeTypes:
       '*': false
       'Phlu.Corporate:CarouselImage': true
+
+'Phlu.Corporate:ContentCollection.Page.FurtherEducation.Detail':
+  superTypes:
+    'Phlu.Corporate:ContentCollection': true
+  constraints:
+    nodeTypes:
+      '*': false
+      'Phlu.Corporate:Section': true

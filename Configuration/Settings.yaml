@@ -19,6 +19,11 @@ Neos:
           label: 'Automatisch erstellte Inhalte'
           collapsed: false
           icon: icon-fort-awesome
+        hidden:
+          position: 50
+          label: 'Spezialseiten'
+          collapsed: true
+          icon: icon-fort-awesome
     fusion:
       autoInclude:
         Phlu.Corporate: true

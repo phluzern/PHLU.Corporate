@@ -62,7 +62,11 @@ class FurtherEducationDataSource extends AbstractDataSource {
                 /* @var Module $course */
                 if (is_array($course->getGenre())) {
                     foreach ($course->getGenre() as $genre) {
-                        $data[$genre] = array('value' => $genre, 'label' => $genre);
+                        if (is_string($genre)) {
+                            $data[$genre] = array('value' => $genre, 'label' => $genre);
+                        } else {
+                            $data[$genre->Id] = array('value' => $genre->Id, 'label' => $genre->Name);
+                        }
                     }
                 }
             }
@@ -71,7 +75,11 @@ class FurtherEducationDataSource extends AbstractDataSource {
                 /* @var Study $study */
                 if (is_array($study->getGenre())) {
                     foreach ($study->getGenre() as $genre) {
-                        $data[$genre] = array('value' => $genre, 'label' => $genre);
+                        if (is_string($genre)) {
+                            $data[$genre] = array('value' => $genre, 'label' => $genre);
+                        } else {
+                            $data[$genre->Id] = array('value' => $genre->Id, 'label' => $genre->Name);
+                        }
                     }
                 }
             }
