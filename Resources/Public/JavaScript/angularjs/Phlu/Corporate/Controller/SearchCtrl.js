@@ -261,7 +261,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'fields': {
                             'title': 'title',
                             'rawcontent': 'description',
-                            'url': 'link'
+                            'url': 'link',
+                            'content': 'encoded'
                         }
                     }
                 }
