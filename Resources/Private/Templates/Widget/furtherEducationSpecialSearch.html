@@ -75,7 +75,7 @@
                                 </div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="year in result.getDistinct('furthereducation-years.Year.*',false)">
+                                        data-ng-repeat="year in result.getDistinct('furthereducation-years.Year.*',false)  | orderObjectBy:'value'">
                                         <a href="#" data-ng-click="toggleFilterSelection(year,'Alle','year')">
                                             <i class="fa " aria-hidden="true"
                                                data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
@@ -104,7 +104,7 @@
                                 </div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="targetgroup in result.getDistinct('targetgroups.Bezeichnung')">
+                                        data-ng-repeat="targetgroup in result.getDistinct('targetgroups.Bezeichnung')  | orderObjectBy:'value'">
                                         <a href="#"
                                            data-ng-click="toggleFilterSelection(targetgroup,'Alle','targetgroups')">
                                             <i class="fa " aria-hidden="true"
@@ -152,7 +152,7 @@
                                 </div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="year in result.getDistinct('study-furthereducation-years.Year.*', false)">
+                                        data-ng-repeat="year in result.getDistinct('study-furthereducation-years.Year.*', false)  | orderObjectBy:'value'">
                                         <a href="#" data-ng-click="toggleFilterSelection(year,'Studiengang','year')">
                                             <i class="fa " aria-hidden="true"
                                                data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
@@ -182,7 +182,7 @@
                                     </a>
                                 </div>
                                 <ul class="dropdown-menu">
-                                    <li value="" data-ng-repeat="graduation in result.getDistinct('graduation')">
+                                    <li value="" data-ng-repeat="graduation in result.getDistinct('graduation')  | orderObjectBy:'value'">
                                         <a href="#"
                                            data-ng-click="toggleFilterSelection(graduation,'Studiengang','graduation')">
                                             <i class="fa " aria-hidden="true"
@@ -211,7 +211,7 @@
                                 </div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="targetgroup in result.getDistinct('study-furthereducation-targetgroups.Bezeichnung')">
+                                        data-ng-repeat="targetgroup in result.getDistinct('study-furthereducation-targetgroups.Bezeichnung')  | orderObjectBy:'value'">
                                         <a href="#"
                                            data-ng-click="toggleFilterSelection(targetgroup,'Studiengang','targetgroups')">
                                             <i class="fa " aria-hidden="true"
@@ -260,7 +260,7 @@
                                 </div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="year in result.getDistinct('module-furthereducation-years.Year.*', false)">
+                                        data-ng-repeat="year in result.getDistinct('module-furthereducation-years.Year.*', false)  | orderObjectBy:'value'">
                                         <a href="#" data-ng-click="toggleFilterSelection(year,'Kurs','year')">
                                             <i class="fa " aria-hidden="true"
                                                data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
@@ -297,7 +297,7 @@
                                 </div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="dayofweek in result.getDistinct('module-furthereducation-start.format.A')">
+                                        data-ng-repeat="dayofweek in result.getDistinct('module-furthereducation-start.format.A')  | orderObjectBy:'value'">
                                         <a href="#"
                                            data-ng-click="toggleFilterSelection(dayofweek,'Kurs','dayofweek')">
                                             <i class="fa " aria-hidden="true"
@@ -341,7 +341,7 @@
                                 </div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="targetgroup in result.getDistinct('targetgroups.Bezeichnung')">
+                                        data-ng-repeat="targetgroup in result.getDistinct('targetgroups.Bezeichnung')  | orderObjectBy:'value'">
                                         <a href="#"
                                            data-ng-click="toggleFilterSelection(targetgroup,'Kurs','targetgroups')">
                                             <i class="fa " aria-hidden="true"
@@ -370,12 +370,12 @@
                                 </div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="genre in result.getDistinct('genre.Name')">
+                                        data-ng-repeat="genre in result.getDistinct('genre.Name') | orderObjectBy:'value'">
                                         <a href="#"
                                            data-ng-click="toggleFilterSelection(genre,'Kurs','genre')">
                                             <i class="fa " aria-hidden="true"
                                                data-ng-class="{'fa-check-square-o': isFilterValueSelected(genre.value,filters.genre), 'fa-square-o': !isFilterValueSelected(genre.value,filters.genre)}"></i>
-                                            <span data-ng-bind="genre.value"></span>
+                                            <span data-ng-bind="genre.getValue()"></span>
                                         </a>
                                     </li>
                                 </ul>
