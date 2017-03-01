@@ -55,7 +55,7 @@
                         <ul class="nav nav-pills" role="tablist">
 
                             <li class="nav-item"
-                                data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('persons') > 1">
+                                data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('persons',false) > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#participants-{node.Identifier}" role="tab">
                                     <i class="fa fa-users" aria-hidden="true"></i>
@@ -74,7 +74,7 @@
                             </li>
 
                             <li class="nav-item"
-                                data-ng-show="initialFilters.organisations === undefined && result.getDistinctCount('organisations') > 1">
+                                data-ng-show="initialFilters.organisations === undefined && result.getDistinctCount('organisations',false) > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#organisations-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
@@ -89,7 +89,7 @@
                             </li>
 
                             <li class="nav-item"
-                                data-ng-show="initialFilters.publicationtype === undefined && result.getDistinctCount('publicationtype') > 1">
+                                data-ng-show="initialFilters.publicationtype === undefined && result.getDistinctCount('publicationtype',false) > 1">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#publicationtype-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
@@ -111,7 +111,7 @@
 
                             <div class="result-panel tab-pane " id="participants-{node.Identifier}"
                                  role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('persons') > 1"><a 
+                                 data-ng-show="result.getDistinctCount('persons',false) > 1"><a
                                                                                           class="close-btn"><i
                                     class="fa fa-times" aria-hidden="true"></i></a>
                                 <div class="dropdown-search-field">
@@ -134,7 +134,7 @@
                                         <tbody>
                                         <tr class="clickable"
                                             data-ng-click="participants[person.value.EventoID] = person.value.Nachname+ ' ' + person.value.Vorname;"
-                                            data-ng-repeat="(key,person) in result.getDistinct('persons') | inArrayFilter:participantsSearch"
+                                            data-ng-repeat="(key,person) in result.getDistinct('persons',false) | inArrayFilter:participantsSearch"
                                             data-ng-if="person.value.EventoID > 0"
                                             data-ng-show="participants[person.value.EventoID] == undefined || participants[person.value.EventoID] == false">
                                             <td>
@@ -151,13 +151,13 @@
                             </div>
 
                             <div class="result-panel tab-pane " id="organisations-{node.Identifier}" role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('organisations') > 1">
+                                 data-ng-show="result.getDistinctCount('organisations',false) > 1">
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
                                         <tr data-ng-click="organisations[lt.value.OrganisationId] = !organisations[lt.value.OrganisationId] ? true : false;"
                                             data-ng-class="{checked: organisations[lt.value.OrganisationId]}"
-                                            data-ng-repeat="lt in result.getDistinct('organisations') | toArray:false | orderBy:'value.OrganisationName'">
+                                            data-ng-repeat="lt in result.getDistinct('organisations',false) | toArray:false | orderBy:'value.OrganisationName'">
                                             <td>
                                                 <a href="javascript:void(0);">
                                                     <i class="fa"
@@ -177,14 +177,14 @@
                             </div>
 
                             <div class="result-panel tab-pane " id="publicationtype-{node.Identifier}" role="tabpanel"
-                                 data-ng-show="result.getDistinctCount('publicationtype') > 1">
+                                 data-ng-show="result.getDistinctCount('publicationtype',false) > 1">
                                    <!--<a  class="close-btn">&nbsp;</a>-->
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
                                         <tr data-ng-click="publicationtype[lt.value.id] = !publicationtype[lt.value.id] ? true : false;"
                                             data-ng-class="{checked: publicationtype[lt.value.id]}"
-                                            data-ng-repeat="lt in result.getDistinct('publicationtype') | toArray:false | orderBy:'value.name'">
+                                            data-ng-repeat="lt in result.getDistinct('publicationtype',false) | toArray:false | orderBy:'value.name'">
                                             <td>
                                                 <a href="javascript:void(0);">
                                                     <i class="fa"

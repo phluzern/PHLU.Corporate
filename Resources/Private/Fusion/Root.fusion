@@ -154,7 +154,7 @@ page = Page {
             }
             fallback {
                 condition = ${true}
-                renderer = 'startpage'
+                renderer = 'subpage'
             }
         }
 

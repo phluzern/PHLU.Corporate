@@ -108,3 +108,67 @@
     '@format': 'html'
     '@action': 'load'
 
+
+#
+# Phlu corporate routes (use for link uri builder)
+#
+-
+  name: 'weiterbildung studiengaenge Route Builder'
+  uriPattern: 'weiterbildung/studiengaenge/{node}/{uri}<defaultUriSuffix>'
+  defaults:
+    '@package':    'Neos.Neos'
+    '@controller': 'Frontend\Node'
+    '@action':     'show'
+    '@format':     'html'
+  routeParts:
+    'node':
+      handler:     'Phlu\Corporate\Routing\CourseNodeRoutePartHandler'
+
+#
+# Phlu corporate routes (use for link uri builder)
+#
+-
+  name: 'weiterbildung studiengaenge Route Builder'
+  uriPattern: 'weiterbildung/studiengaenge/{node}/{year}/{uri}<defaultUriSuffix>'
+  defaults:
+    '@package':    'Neos.Neos'
+    '@controller': 'Frontend\Node'
+    '@action':     'show'
+    '@format':     'html'
+  routeParts:
+    'node':
+      handler:     'Phlu\Corporate\Routing\CourseNodeRoutePartHandler'
+
+
+#
+# Phlu corporate routes (use for link uri builder)
+#
+-
+  name: 'weiterbildung kurse Route Builder'
+  uriPattern: 'weiterbildung/kurse/{node}/{uri}<defaultUriSuffix>'
+  defaults:
+    '@package':    'Neos.Neos'
+    '@controller': 'Frontend\Node'
+    '@action':     'show'
+    '@format':     'html'
+  routeParts:
+    'node':
+      handler:     'Phlu\Corporate\Routing\CourseNodeRoutePartHandler'
+
+#
+# Phlu corporate routes (use for link uri builder)
+#
+-
+  name: 'weiterbildung kurse Route Builder'
+  uriPattern: 'weiterbildung/kurse/{node}/{year}/{uri}<defaultUriSuffix>'
+  defaults:
+    '@package':    'Neos.Neos'
+    '@controller': 'Frontend\Node'
+    '@action':     'show'
+    '@format':     'html'
+  routeParts:
+    'node':
+      handler:     'Phlu\Corporate\Routing\CourseNodeRoutePartHandler'
+
+
+

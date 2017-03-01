@@ -1,0 +1,28 @@
+# Page Overview Tiles
+prototype(Phlu.Corporate:Page.FurtherEducation.Detail) < prototype(Phlu.Corporate:Page) {
+
+        targetgroups = ${q(node).property('targetgroups')}
+        leaders = ${q(node).property('leaders')}
+        ects = ${q(node).property('ects')}
+        years = ${q(node).property('years')}
+        isinstock = ${q(node).property('isinstock')}
+        graduation = ${q(node).property('graduation')}
+        genre = ${q(node).property('genre')}
+        fee = ${q(node).property('fee')}
+
+}
+
+
+
+
+prototype(Phlu.Corporate:Page.FurtherEducation.Detail.Module) < prototype(Phlu.Corporate:Page.FurtherEducation.Detail) {
+
+templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/FurtherEducation.Detail.html'
+
+}
+
+prototype(Phlu.Corporate:Page.FurtherEducation.Detail.Study) < prototype(Phlu.Corporate:Page.FurtherEducation.Detail) {
+
+templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/FurtherEducation.Detail.html'
+
+}

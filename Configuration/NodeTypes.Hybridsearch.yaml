@@ -1,5 +1,4 @@
 # Searchable content
-
 'Phlu.Corporate:Content.Page.HeaderDefault':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
@@ -20,10 +19,6 @@
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
-'Phlu.Corporate:Phlu.Corporate:ContactsGroup':
-  superTypes:
-    'Neoslive.Hybridsearch:Content': true
-
 'Phlu.Neos.NodeTypes:Project':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
@@ -41,6 +36,12 @@
     'Neoslive.Hybridsearch:Content': true
 
 'Phlu.Corporate:Page.View.Default':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': true
+  hybridsearch:
+    render: true
+
+'Phlu.Corporate:Page.View.Default.Default':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
   hybridsearch:

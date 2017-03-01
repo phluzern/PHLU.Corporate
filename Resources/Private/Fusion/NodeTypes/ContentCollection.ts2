@@ -26,3 +26,5 @@ prototype(Phlu.Corporate:ContentCollection.Page.Service) < prototype(Phlu.Corpor
 }
 prototype(Phlu.Corporate:ContentCollection.MediaGallery) < prototype(Phlu.Corporate:ContentCollection)  {
 }
+prototype(Phlu.Corporate:ContentCollection.Page.FurtherEducation.Detail) < prototype(Phlu.Corporate:ContentCollection)  {
+}
