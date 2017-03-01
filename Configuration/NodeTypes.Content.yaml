@@ -245,6 +245,7 @@
     label: Bild
     icon: icon-picture
     position: 400
+
 'Phlu.Corporate:MediaGallery':
   superTypes:
     'Phlu.Corporate:Content': true

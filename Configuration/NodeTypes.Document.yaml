@@ -222,6 +222,8 @@
       type: 'Phlu.Corporate:ContentCollection.Page.FurtherEducation.Detail'
     header:
       type: 'Phlu.Corporate:Content.Page.HeaderDefault'
+    hero:
+      type: 'Phlu.Corporate:HereUnit.ThreeCols'
 
 'Phlu.Corporate:Page.FurtherEducation.Detail.Module':
   ui:
