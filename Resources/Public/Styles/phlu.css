@@ -8353,6 +8353,13 @@ html {
 .ico-family-fa::before {
   font-family: FontAwesome; }
 
+body.neos-backend .neos-contentelement.neos-contentelement-active .disabled-for-editing {
+  opacity: 0.8; }
+  body.neos-backend .neos-contentelement.neos-contentelement-active .disabled-for-editing::before {
+    content: 'Nicht editierbar (Inhalt aus Schnittstellen)';
+    color: red;
+    display: block; }
+
 body.neos-backend.neos-navigate-panel-open .sidebar.level0, body.neos-backend.neos-navigate-panel-open .sidebar.level1, body.neos-backend.neos-navigate-panel-open .logoAndSearchBar {
   display: none; }
 

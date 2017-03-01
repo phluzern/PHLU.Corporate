@@ -627,6 +627,18 @@ html {
 
 // backend only
 body.neos-backend {
+
+  .neos-contentelement.neos-contentelement-active {
+    .disabled-for-editing {
+      opacity: 0.8;
+      &::before {
+        content: 'Nicht editierbar (Inhalt aus Schnittstellen)';
+        color: red;
+        display: block;
+      }
+    }
+  }
+
   &.neos-navigate-panel-open {
     .sidebar.level0, .sidebar.level1, .logoAndSearchBar {
       display: none;
