@@ -8822,9 +8822,14 @@ body {
           position: absolute;
           display: block;
           bottom: 27px;
-          right: 24px; }
-          body .all .extendedSearchBg .extendedSearchFilter .input-item-col .deleteDropdownSelectionButton a i.fa {
-            color: white; }
+          right: 14px; }
+          body .all .extendedSearchBg .extendedSearchFilter .input-item-col .deleteDropdownSelectionButton a {
+            display: block;
+            text-align: center; }
+            body .all .extendedSearchBg .extendedSearchFilter .input-item-col .deleteDropdownSelectionButton a i.fa {
+              width: 32px;
+              height: 23px;
+              color: white; }
           body .all .extendedSearchBg .extendedSearchFilter .input-item-col .deleteDropdownSelectionButton.on {
             display: block; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col .tagFadeOutBg {
@@ -8851,11 +8856,10 @@ body {
             box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3); }
             body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a {
               color: #5c5c5c;
-              display: table; }
+              display: table;
+              width: 100%; }
               body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a i {
                 padding-right: 15px; }
-              body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span, body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a i {
-                display: table-cell; }
             body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li:hover {
               background-color: #edeae8; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col .form-control {

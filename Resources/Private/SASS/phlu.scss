@@ -1242,9 +1242,13 @@ body {
             position: absolute;
             display: block;
             bottom: 27px;
-            right: 24px;
+            right: 14px;
             a {
+              display: block;
+              text-align: center;
               i.fa {
+                width: 32px;
+                height: 23px;
                 color: white;
               }
             }
@@ -1288,11 +1292,9 @@ body {
               a {
                 color: $font-color;
                 display: table;
+                width: 100%;
                 i {
                   padding-right: 15px;
-                }
-                span, i {
-                  display: table-cell;
                 }
               }
               &:hover {
@@ -3705,7 +3707,7 @@ body {
             position: absolute;
             bottom: 0;
             width: 100%;
-            @include gutter-width(2)
+            @include gutter-width(2);
             font-size: $font-size-caption;
           }
         }
