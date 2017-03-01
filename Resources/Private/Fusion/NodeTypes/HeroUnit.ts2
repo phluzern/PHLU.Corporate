@@ -1,0 +1,36 @@
+# Phlu.Corporate:HereUnit.ThreeCols
+prototype(Phlu.Corporate:HereUnit.ThreeCols) < prototype(Neos.Neos:ContentCollection) {
+    attributes.class = 'row'
+}
+
+# Phlu.Corporate:HereUnit.Video
+prototype(Phlu.Corporate:HereUnit.Video) < prototype(Phlu.Corporate:Content) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/HeroUnit/Video.html'
+    attributes.class = 'col-sm-12 col-md-4 '
+    title = ${q(node).property('title')}
+    text = ${q(node).property('text')}
+    youtube = ${q(node).property('youtube')}
+
+}
+
+# Phlu.Corporate:HereUnit.Features
+prototype(Phlu.Corporate:HereUnit.Features) < prototype(Phlu.Corporate:Content) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/HeroUnit/Features.html'
+    attributes.class = 'col-sm-12 col-md-4 '
+    title = ${q(node).property('title')}
+    text = ${q(node).property('text')}
+
+}
+
+# Phlu.Corporate:HereUnit.Quote
+prototype(Phlu.Corporate:HereUnit.Quote) < prototype(Phlu.Corporate:Content) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/HeroUnit/Quote.html'
+    attributes.class = 'col-sm-12 col-md-4 '
+    title = ${q(node).property('title')}
+    text = ${q(node).property('text')}
+    image = ${q(node).property('image')}
+}
+

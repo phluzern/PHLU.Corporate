@@ -1,0 +1,13 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+
+
+<div {attributes -> f:format.raw()}>
+    <div class="box3">
+        <img src="http://neos.phlu.dev/_Resources/Static/Packages/Phlu.Corporate/Images/infoboxExampleVideoSc.png" alt="Videobox" class="img-fluid">
+        <p>
+            «{neos:contentElement.editable(property: 'title', tag: 'span')}»
+        </p>
+    </div>
+</div>

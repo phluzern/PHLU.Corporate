@@ -1,0 +1,102 @@
+'Phlu.Corporate:HereUnit.ThreeCols':
+  superTypes:
+    'Phlu.Corporate:ContentCollection': true
+  constraints:
+    nodeTypes:
+      'Phlu.Corporate:HereUnit.Quote': true
+      'Phlu.Corporate:HereUnit.Video': true
+      'Phlu.Corporate:HereUnit.Features': true
+  ui:
+    label: 'Banner'
+    icon: icon-picture
+    inspector:
+      groups:
+        general:
+          label: Banner
+    inlineEditable: true
+    position: 400
+
+'Phlu.Corporate:HereUnit.Quote':
+  superTypes:
+    'Phlu.Corporate:Content': true
+  constraints:
+    nodeTypes:
+      'Phlu.Corporate:CarouselImage': true
+  ui:
+    label: 'Zitat'
+    icon: icon-picture
+    inspector:
+      groups:
+        general:
+          label: Banner
+    inlineEditable: true
+    position: 400
+  properties:
+    title:
+      type: string
+      defaultValue: 'Die Vielfalt der Vorträge, Themen und Referenten sind ein guter Mix zwischen Theorie, Grundlagen und Praxis.'
+    text:
+      type: string
+      defaultValue: 'Thorsten Sommer, Personalentwickler in einem transnationalen Unternehmen'
+    image:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Bild
+        reloadIfChanged: true
+        inspector:
+          group: general
+          position: 140
+
+'Phlu.Corporate:HereUnit.Features':
+  superTypes:
+    'Phlu.Corporate:Content': true
+  constraints:
+    nodeTypes:
+      'Phlu.Corporate:CarouselImage': true
+  ui:
+    label: 'Features'
+    icon: icon-picture
+    inspector:
+      groups:
+        general:
+          label: Banner
+    inlineEditable: true
+    position: 400
+  properties:
+    title:
+      type: string
+      defaultValue: 'Sie stärken Ihre'
+    text:
+      type: string
+      defaultValue: '<p>Vermittlungskompetenzen</p><p>Projektmanagement-kompetenzen</p><p>Beratungskompetenzen</p>'
+
+'Phlu.Corporate:HereUnit.Video':
+  superTypes:
+    'Phlu.Corporate:Content': true
+  constraints:
+    nodeTypes:
+      'Phlu.Corporate:CarouselImage': true
+  ui:
+    label: 'Video'
+    icon: icon-picture
+    inspector:
+      groups:
+        general:
+          label: Banner
+    inlineEditable: true
+    position: 400
+  properties:
+    title:
+      type: string
+      defaultValue: 'Darum müssen wir uns für Menschenrechte einsetzen.'
+    text:
+      type: string
+      defaultValue: ''
+    youtube:
+      type: string
+      defaultValue: ''
+      ui:
+        reloadIfChanged: true
+        label: 'Youtube Video-Url'
+        inspector:
+          group: general

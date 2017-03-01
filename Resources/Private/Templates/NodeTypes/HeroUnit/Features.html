@@ -1,0 +1,15 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+
+
+<div {attributes -> f:format.raw()}>
+    <div class="box2">
+        <p class="smalltext">
+            {neos:contentElement.editable(property: 'title', tag: 'span')}
+        </p>
+
+       {neos:contentElement.editable(property: 'text', tag: 'div', class: 'centeredBox')}
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+
+
+<div {attributes -> f:format.raw()}>
+    <div class="box1">
+        <p>
+            «{neos:contentElement.editable(property: 'title', tag: 'span')}»
+        </p>
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <f:if condition="{image}">
+                <f:then>
+                    <media:image image="{image}" alt="" title="{title}" width="120"
+                                 maximumWidth="120" height="280" maximumHeight="280"
+                                 allowUpScaling="false" allowCropping="true" />
+                </f:then>
+            </f:if>
+
+            </div>
+            <div class="col-xs-12 col-md-8">{neos:contentElement.editable(property: 'text', tag: 'span')}</div>
+        </div>
+
+    </div>
+</div>
