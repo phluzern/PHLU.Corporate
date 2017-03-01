@@ -4364,10 +4364,10 @@ button.close {
   left: 0;
   width: 10%;
   font-size: 20px;
-  color: #707070;
+  color: white;
   text-align: center;
   text-shadow: 0;
-  opacity: 0.5; }
+  opacity: 1; }
   .carousel-control.left {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
     background-repeat: repeat-x;
@@ -4379,7 +4379,7 @@ button.close {
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1); }
   .carousel-control:focus, .carousel-control:hover {
-    color: #707070;
+    color: white;
     text-decoration: none;
     outline: 0;
     opacity: .9; }
@@ -9118,7 +9118,7 @@ body {
       box-shadow: 16px 0px 53px -1px rgba(0, 0, 0, 0.02);
       z-index: 99; }
     body .all .phlu-teaser {
-      padding: 0 25px 35px 25px; }
+      padding: 0 25px 61px 25px; }
       @media (min-width: 992px) {
         body .all .phlu-teaser {
           padding: 0 0 65px; } }
@@ -9237,8 +9237,6 @@ body {
           margin: 2px 0 3px;
           clear: both;
           float: none; }
-      body .all .phlu-teaser .publication {
-        margin-bottom: 30px; }
       body .all .phlu-teaser .news .phlu-teaser-type {
         background-color: #333333; }
       body .all .phlu-teaser img {
@@ -9249,15 +9247,23 @@ body {
         bottom: 0; }
         body .all .phlu-teaser.carousel .carousel-indicators li {
           margin-left: 15px;
-          margin-right: 15px; }
+          margin-right: 15px;
+          width: 0px;
+          height: 0px;
+          -webkit-transform: rotate(360deg);
+          border-style: solid;
+          border-width: 0 15px 15px 0;
+          border-color: transparent white transparent transparent;
+          border-radius: inherit; }
         body .all .phlu-teaser.carousel .carousel-indicators li.active {
+          border-color: transparent #171815 transparent transparent;
           background-color: inherit; }
       body .all .phlu-teaser.carousel .carousel-control {
         width: 10%;
         font-size: 20px;
-        color: #707070;
+        color: white;
         text-shadow: 0;
-        opacity: 0.5; }
+        opacity: 1; }
         body .all .phlu-teaser.carousel .carousel-control.left {
           left: -8px;
           background-image: linear-gradient(to right, transparent 0%, transparent 100%);
@@ -9270,7 +9276,7 @@ body {
           background-repeat: repeat-x;
           filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#00000000', GradientType=1); }
         body .all .phlu-teaser.carousel .carousel-control:focus, body .all .phlu-teaser.carousel .carousel-control:hover {
-          color: #707070;
+          color: white;
           text-decoration: none;
           outline: 0;
           opacity: .9; }
@@ -10209,6 +10215,8 @@ body {
               background-color: #edeae8; }
             body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr:first-child td {
               border: 0; }
+      body .all .blackBgFullWidthContents.filter-bar > .col-xs-12 {
+        margin: 0; }
     body .all .blackBgFullWidthTabs .nav-pills .nav-item + .nav-item, body .all .blackBgFullWidthContents .nav-pills .nav-item + .nav-item {
       margin-left: 0; }
     body .all .further-education-special-search .table-responsive .table thead tr th {
