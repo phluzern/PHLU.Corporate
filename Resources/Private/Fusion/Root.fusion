@@ -98,12 +98,23 @@ page = Page {
 
             }
 
+	        ambientImage = Neos.Fusion:Template {
+		        templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/AmbientImage/Default.html'
+	        }
+
             sideBarLevel1MenuGetClassRow = Menu {
                 entryLevel = 2
                 templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1GetClassRow.html'
                 filter = '!Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage, Phlu.Corporate:Page'
                 maximumLevels = 1
             }
+
+	        logoAndSearchBarGetClass = Menu {
+		        entryLevel = 2
+		        templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/LogoAndSearchBarGetClass.html'
+		        filter = '!Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage, Phlu.Corporate:Page'
+		        maximumLevels = 1
+	        }
 
             teaserMenu = Neos.Fusion:Case {
                 isStartpage {

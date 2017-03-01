@@ -18,15 +18,12 @@
                             <f:then>
                                 <div class="col-xs-12 nav-teaser-item {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}  ">
                                     <div class="row">
-                                        <div class="phlu-teaser-body col-xs-10">
+                                        <div class="phlu-teaser-body col-xs-12">
                                             <h3>
                                                 <neos:link.node node="{item}">
                                                     {item.properties.title}
                                                 </neos:link.node>
                                             </h3>
-                                        </div>
-                                        <div class="phlu-teaser-caret-right col-xs-2">
-                                            &nbsp;
                                         </div>
                                     </div>
                                 </div>

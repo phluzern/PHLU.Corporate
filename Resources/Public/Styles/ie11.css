@@ -7,7 +7,7 @@ Error: Undefined mixin 'media-breakpoint-only'.
 66:           }
 67:         }
 68:       }
-69:       > div.bluebg, > div.sephiabg {
+69:       > div.bluebg, > div.lightgreybg {
 70:         @include media-breakpoint-only("lg") {
 71:           h2 {
 72:             padding-top: 35px;
@@ -99,4 +99,4 @@ ie11.scss:70
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'media-breakpoint-only'.\A         on line 70 of ie11.scss, in `media-breakpoint-only'\A         from line 70 of ie11.scss\A \A 65:             }\A 66:           }\A 67:         }\A 68:       }\A 69:       > div.bluebg, > div.sephiabg {\A 70:         @include media-breakpoint-only(\"lg\") {\A 71:           h2 {\A 72:             padding-top: 35px;\A 73:           }\A 74:         }\A 75:       }"; }
+  content: "Error: Undefined mixin 'media-breakpoint-only'.\A         on line 70 of ie11.scss, in `media-breakpoint-only'\A         from line 70 of ie11.scss\A \A 65:             }\A 66:           }\A 67:         }\A 68:       }\A 69:       > div.bluebg, > div.lightgreybg {\A 70:         @include media-breakpoint-only(\"lg\") {\A 71:           h2 {\A 72:             padding-top: 35px;\A 73:           }\A 74:         }\A 75:       }"; }

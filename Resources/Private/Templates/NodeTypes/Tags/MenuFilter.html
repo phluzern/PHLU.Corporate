@@ -205,7 +205,7 @@
         <f:else>
             <div class="row">
 
-                <div class="phlu-teaser-body col-xs-10"
+                <div class="phlu-teaser-body col-xs-12"
                      data-ng-init="addFilterItem('{item.node.Identifier}',0);">
                     <f:for each="{item.node.properties.tags}" as="tag" iteration="itemIteration">
                         <i class="{f:if(condition: itemIteration.isLast, then: 'last')} {phlu:variable.get(name: 'tags.{tag}.properties.icon')}"
@@ -217,10 +217,6 @@
                         </neos:link.node>
                     </h3>
 
-                </div>
-
-                <div class="phlu-teaser-caret-right col-xs-2">
-                    &nbsp;
                 </div>
             </div>
 

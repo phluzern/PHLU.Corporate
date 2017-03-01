@@ -2,36 +2,32 @@
 {namespace ts=Neos\Fusion\ViewHelpers}
 
 
+<div class="col-xs-12 col-sm-6 nav-teaser-item {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')} ">
 
-<div class="col-xs-12 nav-teaser-item {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')} ">
-    <div class="row">
-        <div class="phlu-teaser-body col-xs-10">
-            <f:if condition="{node.properties.reference}">
+    <f:if condition="{node.properties.reference}">
+        <f:then>
+            <f:if condition="{node.properties.usepageheader}">
                 <f:then>
-                    <f:if condition="{node.properties.usepageheader}">
-                        <f:then>
-                            <ts:render path="headerReferenceRenderer" context="{node: node.properties.reference}"/>
-                        </f:then>
-                        <f:else>
-                            <ts:render path="headerRenderer" context="{node: header}"/>
-                        </f:else>
-                    </f:if>
-
+                    <ts:render path="headerReferenceRenderer" context="{node: node.properties.reference}"/>
                 </f:then>
                 <f:else>
-                    <f:if condition="{neos:rendering.inBackend()}">
-                        <f:then>
-                            <h3>Bitte wählen Sie einen Link auf eine Seite aus</h3>
-                            <p>Sie finden Sie Auswahlmöglichkeit auf der rechten Seite im Inspektor unter Allgemein -> Link.</p>
-                        </f:then>
-                        </f:if>
-
+                    <ts:render path="headerRenderer" context="{node: header}"/>
                 </f:else>
             </f:if>
 
-        </div>
-        <div class="phlu-teaser-caret-right col-xs-2"></div>
-    </div>
+        </f:then>
+        <f:else>
+            <f:if condition="{neos:rendering.inBackend()}">
+                <f:then>
+                    <h3>Bitte wählen Sie einen Link auf eine Seite aus</h3>
+                    <p>Sie finden Sie Auswahlmöglichkeit auf der rechten Seite im Inspektor unter Allgemein -> Link.</p>
+                </f:then>
+            </f:if>
+
+        </f:else>
+    </f:if>
+
+
 </div>
 
 <f:section name="content">

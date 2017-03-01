@@ -1,29 +1,7 @@
 {namespace neos=Neos\Neos\ViewHelpers}
-<div class="col-xl-2 sidebar level0" xmlns:f="http://www.w3.org/1999/html">
-    <div class="row">
-        <div class="col-xl-12">
-            &nbsp;
-        </div>
-    </div>
-</div>
-<f:if condition="{items}">
-    <f:then>
-        <div class="col-xl-2 sidebar ">
-            <div class="row ">
-                <div class="col-xl-12 ">
-                    &nbsp;
-                </div>
-            </div>
-        </div>
-    </f:then>
-</f:if>
-<div class="col-xs-12 {f:if(condition: items, then: 'col-xl-8', else: 'col-xl-10')} main">
-    <div class="row ">
-        <div class="col-xs-12">
-            <div class="breadcrumb-title">
-                Sie sind hier:
-            </div>
-            <f:render partial="Breadcrumb" arguments="{_all}"/>
-        </div>
+
+<div class="row breadcrumb-bottom">
+    <div class="col-xs-12">
+        <f:render partial="Breadcrumb" arguments="{_all}"/>
     </div>
 </div>

@@ -7,16 +7,15 @@
         <div class="col-xl-2 sidebar level1">
             <div class="row ">
                 <div class="col-xl-12 ">
-                    <div class="nav-spacer-top"></div>
-                        <nav class="nav sidebar-nav">
-                            <ul>
-                                <f:for each="{items}" as="item">
-                                    <li class="{item.state}">
-                                        <neos:link.node node="{item.node}">{item.label}</neos:link.node>
-                                    </li>
-                                </f:for>
-                            </ul>
-                        </nav>
+                    <nav class="nav sidebar-nav">
+                        <ul>
+                            <f:for each="{items}" as="item">
+                                <li class="{item.state} activeStateMarker">
+                                    <neos:link.node node="{item.node}">{item.label}</neos:link.node>
+                                </li>
+                            </f:for>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>

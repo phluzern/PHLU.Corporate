@@ -60,7 +60,7 @@
   properties:
     title:
       type: string
-      defaultValue: 'Weitere Angebote für'
+      defaultValue: 'Beratungen und Angebote für'
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.TargetGroup'

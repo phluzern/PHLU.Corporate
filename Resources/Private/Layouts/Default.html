@@ -56,7 +56,8 @@
 
     <div class="all" data-ng-app="PhluCorporateApp" {f:if(condition:
     '{neos:rendering.inBackend()}',then:'style="display: none"', else: '')}>
-    <span data-ng-controller="initController" data-ng-init="init('{firebaseEndpoint}','{site.context.currentSite.nodeName}','{site.workspace.name}','{site.nodeData.dimensionsHash}')"></span>
+    <span data-ng-controller="initController"
+          data-ng-init="init('{firebaseEndpoint}','{site.context.currentSite.nodeName}','{site.workspace.name}','{site.nodeData.dimensionsHash}')"></span>
 
     <nav class="navbar">
         <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
@@ -68,11 +69,10 @@
     </nav>
 
     <div class="container-fluid {pageLevelTypeClass}">
-        <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}">
-            <div class="col-xl-2 sidebar level0 ">
+        <div class="row">
+            <div class="logoAndSearchBar {parts.logoAndSearchBarGetClass -> f:format.raw()}">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="nav-spacer-top">
                             <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
                                 <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/phluLogo.svg')}"
                                      alt="PH Luzern Logo"
@@ -97,7 +97,14 @@
                                 </f:else>
                             </f:if>
 
-                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}">
+            <div class="col-xl-2 sidebar level0 ">
+                <div class="row">
+                    <div class="col-xl-12">
                         <div class="row">
                             {parts.sideBarLevel0Menu -> f:format.raw()}
                         </div>
@@ -110,19 +117,19 @@
                 <f:render partial="Search"
                           arguments="{firebaseEndpoint: parts.neosliveHybridsearchFirebaseEndpoint, site: parts.site}"/>
                 {content.main -> f:format.raw()}
+                {parts.breadcrumbFooter -> f:format.raw()}
+                {parts.ambientImage -> f:format.raw()}
                 {parts.teaserMenu -> f:format.raw()}
             </div>
         </div>
     </div>
-    <div class="container-fluid breadcrumb-bottom">
-        <div class="row {parts.sideBarLevel1MenuGetClassRow -> f:format.raw()}">
-            {parts.breadcrumbFooter -> f:format.raw()}
-        </div>
-    </div>
+
+
     <div class="container-fluid footer">
         <div class="row">
             <div class="col-xs-12 site-search-field">
-                <input type="text" class="c-input form-control ng-pristine ng-valid ng-empty ng-touched" id="siteSearchMobile" data-ng-model="siteSearch" data-ng-click="startSearch();">
+                <input type="text" class="c-input form-control ng-pristine ng-valid ng-empty ng-touched"
+                       id="siteSearchMobile" data-ng-model="siteSearch" data-ng-click="startSearch();">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </div>
             {footer -> f:format.raw()}
@@ -181,12 +188,12 @@
         </div>
     </div>
 
-    <span id="top-link-block" class="img-circle">
+    <span id="top-link-block" class="img-rectangle">
                     <a href="#top" class="anchor-nav">
                         <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/spacer.png')}" width="80"
                              height="80"
                              alt="spacer"/>
-                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                        <span class="oi oi-caret-top"></span>
                     </a>
                 </span>
     </div>
@@ -229,10 +236,10 @@
                 (function (i, s, o, g, r, a, m) {
                     i['GoogleAnalyticsObject'] = r;
                     i[r] = i[r] || function () {
-                                (i[r].q = i[r].q || []).push(arguments)
-                            }, i[r].l = 1 * new Date();
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
                     a = s.createElement(o),
-                            m = s.getElementsByTagName(o)[0];
+                        m = s.getElementsByTagName(o)[0];
                     a.async = 1;
                     a.src = g;
                     m.parentNode.insertBefore(a, m)
