@@ -6,27 +6,16 @@
 
 <f:section name="default">
     <f:if condition="{items}">
-
         <div class="row phlu-teaser navigation {pageClass}">
-
             <f:for each="{items}" as="item">
-
                 <div class="col-xs-12 col-md-6 {itemClass} nav-teaser-item clickable">
-
-                    <div class="row">
-                        <div class="phlu-teaser-body col-xs-10">
-
-                            <ts:render path="defaultRenderer" context="{node: item.node}"/>
-
-                        </div>
-                        <div class="phlu-teaser-caret-right col-xs-2">
-                        </div>
+                    <div>
+                        <ts:render path="defaultRenderer" context="{node: item.node}"/>
                     </div>
-                </div>
 
+                </div>
             </f:for>
         </div>
-
     </f:if>
 </f:section>
 

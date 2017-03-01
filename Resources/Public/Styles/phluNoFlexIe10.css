@@ -7772,17 +7772,17 @@ body {
         @media (min-width: 992px) {
           body .all .main > .row.bluebg {
             margin-bottom: 35px; } }
-      body .all .main > .row.sephiabg {
+      body .all .main > .row.lightgreybg {
         background-color: #e9e0d8;
         margin-top: 38px; }
         @media (min-width: 992px) {
-          body .all .main > .row.sephiabg h2 {
+          body .all .main > .row.lightgreybg h2 {
             margin: 45px 0 32px; } }
         @media (min-width: 1280px) {
-          body .all .main > .row.sephiabg h2 {
+          body .all .main > .row.lightgreybg h2 {
             margin: 40px 0 32px; } }
         @media (min-width: 992px) {
-          body .all .main > .row.sephiabg {
+          body .all .main > .row.lightgreybg {
             margin-top: 90px; } }
       body .all .main > .row.contactperson {
         color: #5c5c5c; }
@@ -8115,7 +8115,7 @@ body .startpage .phlu-teaser.navigation {
       .startpage > .row .main .subjectsfilternav .nav-pills li a.nav-link, .subpage > .row .main .subjectsfilternav .nav-pills li a.nav-link {
         padding: 15px 23px; }
 @media (min-width: 992px) and (max-width: 1279px) {
-  .startpage > .row .main > div.bluebg h2, .startpage > .row .main > div.sephiabg h2, .subpage > .row .main > div.bluebg h2, .subpage > .row .main > div.sephiabg h2 {
+  .startpage > .row .main > div.bluebg h2, .startpage > .row .main > div.lightgreybg h2, .subpage > .row .main > div.bluebg h2, .subpage > .row .main > div.lightgreybg h2 {
     padding-top: 35px; } }
 
 @media (min-width: 992px) and (max-width: 1279px) {

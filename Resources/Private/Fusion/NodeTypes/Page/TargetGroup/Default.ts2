@@ -5,7 +5,7 @@ prototype(Phlu.Corporate:Content.Page.TargetGroup) < prototype(Phlu.Corporate:Co
     main = ${q(node).children('main').get(0)}
 
     collectionRenderer = Phlu.Corporate:ContentCollection.Page.TargetGroup {
-        attributes.class = 'col-xs-12'
+        attributes.class = 'row'
     }
 
     title = ${q(node).property('title')}

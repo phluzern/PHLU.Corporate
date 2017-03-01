@@ -56,7 +56,7 @@
           }
         }
       }
-      > div.bluebg, > div.sephiabg {
+      > div.bluebg, > div.lightgreybg {
         @include media-breakpoint-only("lg") {
           h2 {
             padding-top: 35px;
