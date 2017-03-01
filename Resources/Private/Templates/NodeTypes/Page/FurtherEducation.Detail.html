@@ -2,7 +2,7 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
 {namespace course=Phlu\Corporate\ViewHelpers\Course}
-
+{namespace portrait=Phlu\Corporate\ViewHelpers\Portrait}
 
 <course:getYear node="{node}" variable="year">
 
@@ -34,55 +34,6 @@
         </div>
     </div>
 
-
-    <div class="row infoboxes">
-
-        <div class="col-xs-12">
-            <div class="row ">
-                <div class="col-sm-12 col-md-4 ">
-                    <div class="box1">
-                        <p>
-                            &laquo;Die Vielfalt der Vorträge, Themen und Referenten sind ein guter Mix zwischen
-                            Theorie,
-                            Grundlagen und Praxis.&raquo;
-                        </p>
-                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/infoboxExampleImage.png')}"
-                             alt="Thorsten Sommer - Statement" class="img-fluid"/>
-                    </div>
-
-                </div>
-                <div class="col-sm-12 col-md-4 ">
-                    <div class="box2">
-                        <p class="smalltext">
-                            Sie stärken Ihre
-                        </p>
-                        <div class="centeredBox">
-                            <p>
-                                Vermittlungskompetenzen
-                            </p>
-                            <hr class="infobox">
-                            <p>
-                                Projektmanagement- kompetenzen
-                            </p>
-                            <hr class="infobox">
-                            <p>
-                                Beratungskompetenzen
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4 ">
-                    <div class="box3">
-                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/infoboxExampleVideoSc.png')}"
-                             alt="Videobox" class="img-fluid"/>
-                        <p>
-                            &laquo;Darum müssen wir uns für Menschenrechte einsetzen.&raquo;
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <f:if condition="{year}">
         <div class="row greyBgFullwidth2colTable">
             <div class="col-xs-12 ">
@@ -218,4 +169,49 @@
 
         </div>
     </div>
+
+
+    <div class="row">
+
+        <div class="col-xs-12 phlu-team-members">
+            <h2>Kontakt</h2>
+            <div class="row phlu-teaser navigation subpage">
+
+                <f:for each="{leaders}" as="leader">
+                    <div class="col-xs-12 col-md-6 nav-teaser-item">
+                        <div class="row">
+                            <a href="#" title="Studierende"></a>
+                            <div class="phlu-teaser-body col-xs-8">
+                                <address>
+                                    <b>{leader.Fullname}</b><br>
+                                    {leader.Title}
+                                    <f:if condition="{leader.Phone}">
+                                        <div class="telephone">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            {leader.Phone}<br>
+                                        </div>
+                                    </f:if>
+                                    <a class="content-link-email-contact-person"
+                                       href="mailto:{leader.Email}">{leader.Email}</a><br>
+                                    <f:if condition="{leader.eventoId}">
+                                        <portrait:link node="null" eventoId="{leader.eventoId}">Portrait</portrait:link>
+                                    </f:if>
+                                </address>
+                            </div>
+                            <div class="phlu-teaser-caret-right col-xs-4">
+                                <f:if condition="{leader.ImgeUrl}">
+                                    <img src="{leader.ImgeUrl}" class="img-fluid"/>
+                                </f:if>
+                            </div>
+                        </div>
+                    </div>
+
+                </f:for>
+
+
+            </div>
+            <hr>
+        </div>
+    </div>
+
 </course:getYear>

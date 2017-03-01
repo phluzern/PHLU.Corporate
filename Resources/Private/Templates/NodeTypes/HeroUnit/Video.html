@@ -1,11 +1,15 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace media=Neos\Media\ViewHelpers}
+{namespace youtube=Phlu\Corporate\ViewHelpers\Youtube}
+
 
 
 <div {attributes -> f:format.raw()}>
     <div class="box3">
-        <img src="http://neos.phlu.dev/_Resources/Static/Packages/Phlu.Corporate/Images/infoboxExampleVideoSc.png" alt="Videobox" class="img-fluid">
+        <f:if condition="youtube">
+            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/{youtube:getEmbededCode(url: youtube)}" frameborder="0" allowfullscreen></iframe>
+        </f:if>
         <p>
             «{neos:contentElement.editable(property: 'title', tag: 'span')}»
         </p>

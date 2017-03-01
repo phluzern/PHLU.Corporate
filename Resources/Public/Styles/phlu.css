@@ -10403,7 +10403,8 @@ body {
             margin: 20px 90px;
             border-color: #85889A; }
           body .all .infoboxes > div > div > div .box1 img, body .all .infoboxes > div > div > div .box2 img, body .all .infoboxes > div > div > div .box3 img {
-            width: 100%; }
+            width: 100%;
+            height: auto; }
             @media (max-width: 767px) {
               body .all .infoboxes > div > div > div .box1 img, body .all .infoboxes > div > div > div .box2 img, body .all .infoboxes > div > div > div .box3 img {
                 width: inherit;
@@ -10411,7 +10412,23 @@ body {
           body .all .infoboxes > div > div > div .box1 .bottomContent, body .all .infoboxes > div > div > div .box2 .bottomContent, body .all .infoboxes > div > div > div .box3 .bottomContent {
             position: absolute;
             bottom: 0;
-            width: 100%; }
+            width: 100%;
+            margin-right: -2px;
+            margin-left: -2px;
+            font-size: 0.8rem; }
+            body .all .infoboxes > div > div > div .box1 .bottomContent > [class^="col-"], body .all .infoboxes > div > div > div .box1 .bottomContent > [class^=" col-"], body .all .infoboxes > div > div > div .box2 .bottomContent > [class^="col-"], body .all .infoboxes > div > div > div .box2 .bottomContent > [class^=" col-"], body .all .infoboxes > div > div > div .box3 .bottomContent > [class^="col-"], body .all .infoboxes > div > div > div .box3 .bottomContent > [class^=" col-"] {
+              padding-right: 2px;
+              padding-left: 2px; }
+        body .all .infoboxes > div > div > div .box2 .centeredBox p::after {
+          display: block;
+          content: ' ';
+          border-bottom: 2px solid #85889A;
+          width: 60%;
+          margin: auto;
+          padding-top: 20px;
+          margin-bottom: 20px; }
+        body .all .infoboxes > div > div > div .box2 .centeredBox p:last-child::after {
+          display: none; }
     body .all .phlu-locations .row.subjectsfilternav .nav-pills {
       margin-bottom: 31px; }
       body .all .phlu-locations .row.subjectsfilternav .nav-pills li a.nav-link {

@@ -8,18 +8,18 @@
         <p>
             «{neos:contentElement.editable(property: 'title', tag: 'span')}»
         </p>
-        <div class="row">
-            <div class="col-xs-12 col-md-4">
+        <div class="row bottomContent">
+            <div class="col-xs-12 col-md-6">
                 <f:if condition="{image}">
                 <f:then>
-                    <media:image image="{image}" alt="" title="{title}" width="120"
-                                 maximumWidth="120" height="280" maximumHeight="280"
-                                 allowUpScaling="false" allowCropping="true" />
+                    <media:image image="{image}" alt="" title="{title}"
+                                 width="215"
+                                 allowUpScaling="true" allowCropping="true" />
                 </f:then>
             </f:if>
 
             </div>
-            <div class="col-xs-12 col-md-8">{neos:contentElement.editable(property: 'text', tag: 'span')}</div>
+            <div class="col-xs-12 col-md-6">{neos:contentElement.editable(property: 'text', tag: 'span')}</div>
         </div>
 
     </div>
