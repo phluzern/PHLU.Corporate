@@ -251,6 +251,30 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             //         }
             //     }
             // },
+            //
+            // {
+            //     http: "http://de.wikihow.com/Kategorie:Beruf-%26-Bildung",
+            //     parser: {
+            //         type: 'html',
+            //         config: {
+            //             'nodeType': 'wikihow',
+            //             'results': {'selector': '#bodycontents table tr td.image_map'},
+            //             'fields': {
+            //                 'title': {'selector': '.text p span'},
+            //                 'rawcontent': {'selector': '.thumbnail'},
+            //                 'url': {
+            //                     'selector': '.thumbnail > a',
+            //                     'attribute': 'href',
+            //                     'prepend': 'http://de.wikihow.com'
+            //                 },
+            //                 'image': {
+            //                     'selector': '.thumbnail img',
+            //                     'attribute': 'src'
+            //                 }
+            //             }
+            //         }
+            //     }
+            // },
             {
                 http: "http://d4jj42ydaxxx2.cloudfront.net/weiterbildung/feed/",
                 parser: {
