@@ -85,6 +85,10 @@ PhluCorporateApp.directive('search', function ($sce) {
 
                             return template + '/Group/blog.html';
 
+                        case 'wiki':
+
+                            return template + '/Group/wiki.html';
+
                         case 'phlu-neos-nodetypes-publication':
 
                             if ($scope.view === 'all') {
@@ -185,6 +189,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-course-module-furthereducation': 'Weiterbildungsskurse',
         'zebis': 'Unterrichtsmaterial',
         'blog': 'Blog',
+        'wiki': 'Wiki',
         '*': 'Seiten'
 
     };
@@ -232,27 +237,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var external =
         [
-            // {
-            //     http: "/proxy?url=https://www.zebis.ch/suche/$query/bundle/teachingmaterial",
-            //     parser: {
-            //         type: 'html',
-            //         config: {
-            //             'nodeType': 'zebis',
-            //             'results': {'selector': '.search-results.apachesolr_search-results > .node'},
-            //             'fields': {
-            //                 'title': {'selector': '> div:first-child h2 > a'},
-            //                 'rawcontent': {'selector': '> div:nth-child(2)'},
-            //                 'url': {
-            //                     'selector': 'a',
-            //                     'attribute': 'href',
-            //                     'prepend': 'https://www.zebis.ch'
-            //                 }
-            //             }
-            //         }
-            //     }
-            // },
             {
-                http: "http://d4jj42ydaxxx2.cloudfront.net/weiterbildung/feed/",
+                http: "https://d4jj42ydaxxx2.cloudfront.net/weiterbildung/feed/",
                 parser: {
                     type: 'xml',
                     config: {

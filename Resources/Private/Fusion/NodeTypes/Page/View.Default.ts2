@@ -14,6 +14,7 @@ hasmoodimage = ${q(node).property('hasmoodimage')}
 contactIsHidden = ${q(q(node).children('contact').get(0)).context.workspaceName == 'live' ?((String.length(q(q(node).children('contact').get(0)).property('lastname'))> 0 || q(q(node).children('contact').get(0)).property('contact'))> 0 && q(q(node).children('contact').get(0)).property('ishidden')!= TRUE ? false : true): q(q(node).children('contact').get(0)).property('ishidden')}
 templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
 title = ${q(node).property('title')}
+showCarousel = ${q(node).property('showCarousel')}
 
 # Contacts wrapper (tile)
 prototype(Phlu.Corporate:Contacts) {

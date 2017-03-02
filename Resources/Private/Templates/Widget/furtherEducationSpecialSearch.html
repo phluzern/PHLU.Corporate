@@ -445,6 +445,7 @@
                                 data-node-id="{{node.identifier}}"
                                 data-ng-click="node.isopen = node.isopen ? false : true">
                                 <td>
+                                    <span data-ng-if="!node.currentyear" data-ng-init="node.currentyear = node.getProperty('years.0')"></span>
                                     <span class="oi"
                                           data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
 
@@ -533,7 +534,7 @@
 
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr data-ng-if="node.currentyear.StartText">
                                                 <td>
                                                     Startdatum
                                                     <div class="mobile-view-columns">
@@ -555,30 +556,26 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div class="dropdown">
+
+                                                    <div class="dropdown" data-ng-if="node.getProperty('years').length > 1">
                                                         <div class="dropdown-toggle " data-toggle="dropdown"
                                                              role="button" aria-haspopup="true" aria-expanded="false">
-                                                            <span>13.01.2017</span>
+                                                            <span data-ng-bind="node.currentyear.StartText"></span>
                                                         </div>
                                                         <ul class="dropdown-menu">
-                                                            <li value="">
-                                                                <a href="#">
-                                                                    <span>13.01.2017</span>
-                                                                </a>
-                                                            </li>
-                                                            <li value="">
-                                                                <a href="#">
-                                                                    <span>14.01.2017</span>
-                                                                </a>
-                                                            </li>
-                                                            <li value="">
-                                                                <a href="#">
-                                                                    <span>15.01.2017</span>
+                                                            <li data-ng-repeat="year in node.getProperty('years')" data-ng-click="node.currentyear = year;">
+                                                                <a data-ng-click="node.currentyear = year;">
+                                                                    <span data-ng-bind="year.StartText"></span>
                                                                 </a>
                                                             </li>
                                                         </ul>
                                                     </div>
 
+                                                    <div data-ng-if="node.getProperty('years').length == 1">
+                                                        <div>
+                                                            <span data-ng-bind="node.currentyear.StartText"></span>
+                                                        </div>
+                                                    </div>
 
                                                 </td>
                                             </tr>
@@ -587,6 +584,7 @@
 
                                     </div>
                                     <div class="details">
+                                        <span data-ng-bind="node.getProperty('')"></span>
                                         <a class="btn btn-primary"
                                            data-ng-href="{{node.getUrl()}}">
                                             Details
@@ -601,8 +599,8 @@
                                             Teilen
                                         </span>
                                         </a>
-                                        <a class="btn btn-primary "
-                                           data-ng-href="{{node.getUrl()}}">
+                                        <a class="btn btn-primary" data-ng-if="node.currentyear.RegistrationLink"
+                                           data-ng-href="{{node.currentyear.RegistrationLink}}">
                                             Anmelden
                                         </a>
                                     </div>

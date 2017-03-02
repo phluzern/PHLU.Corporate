@@ -39,12 +39,17 @@
                             <a class="nav-item nav-link anchor-nav" href="#dokumente">Dokumente</a>
                         </li>
                     </f:if>
+                    <f:if condition="{project.photos}">
+                        <li>
+                            <a class="nav-item nav-link anchor-nav" href="#photos">Bilder</a>
+                        </li>
+                    </f:if>
                     <f:if condition="{project.links}">
                         <li>
                             <a class="nav-item nav-link anchor-nav" href="#links">Links</a>
                         </li>
                     </f:if>
-                    <f:if condition="{project}">
+                    <f:if condition="{project.publications}">
                         <li>
                             <a class="nav-item nav-link anchor-nav" href="#publikationen">Publikationen</a>
                         </li>
@@ -94,6 +99,7 @@
                             </f:if>
                         </table>
                     </div>
+
                     {project.abstractTextGerman -> f:format.raw()}
                 </div>
                 <hr>
@@ -146,12 +152,21 @@
                 <hr>
             </div>
         </div>
+
         <f:if condition="{project.participants}">
             <div class="row">
                 <div class="col-xs-12 phlu-team-members" id="beteiligtepersonen">
                     <h2>Beteiligte Personen</h2>
+                </div>
+            </div>
+        </f:if>
+
+        <f:if condition="{project.participantsIntern}">
+            <div class="row">
+                <div class="col-xs-12 phlu-team-members" id="beteiligtepersonenintern">
+                    <h3>intern</h3>
                     <div class="row phlu-teaser navigation subpage">
-                        <f:for each="{project.participants}" key="participantsType" as="participantsGroup">
+                        <f:for each="{project.participantsIntern}" key="participantsType" as="participantsGroup">
                             <f:for each="{participantsGroup}" as="participant">
                                 <div class="col-xs-12 col-md-6 nav-teaser-item">
                                     <div class="row">
@@ -196,10 +211,65 @@
                             </f:for>
                         </f:for>
                     </div>
-                    <hr>
                 </div>
             </div>
         </f:if>
+        <f:if condition="{project.participantsExtern}">
+            <div class="row">
+                <div class="col-xs-12 phlu-team-members" id="beteiligtepersonenextern">
+                    <h3>extern</h3>
+                    <div class="row phlu-teaser navigation subpage">
+                        <f:for each="{project.participantsExtern}" key="participantsType" as="participantsGroup">
+                            <f:for each="{participantsGroup}" as="participant">
+                                <div class="col-xs-12 col-md-6 nav-teaser-item">
+                                    <div class="row">
+                                        <div class="phlu-teaser-body col-xs-8">
+                                            <address>
+                                                <b>{participantsType}</b><br>
+                                                {participant.name}
+                                                <f:if condition="participant.phone == ''">
+                                                    <f:then><br/></f:then>
+                                                    <f:else>
+                                                        <div class="telephone">
+                                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                                            {participant.phone}<br>
+                                                        </div>
+                                                    </f:else>
+                                                </f:if>
+                                                <f:if condition="participant.phone == ''">
+                                                    <f:then><br/></f:then>
+                                                    <f:else>
+                                                        <a class="content-link-email-contact-person"
+                                                           href="mailto:{participant.email}">{participant.email}</a><br>
+                                                        <portrait:link node="{node}" eventoId="{participant.EventoID}"
+                                                                       target="top">
+                                                            Portrait
+                                                        </portrait:link>
+                                                    </f:else>
+                                                </f:if>
+                                            </address>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <f:if condition="{resource:GetFromString(resource:participant.ImageResource, asset: true)}">
+                                                <media:image
+                                                        image="{resource:GetFromString(resource:participant.ImageResource, asset: true)}"
+                                                        class="img-fluid"
+                                                        alt="{participant.name}"
+                                                        height="133" width="100" allowCropping="true"
+                                                        allowUpScaling="true"/>
+                                            </f:if>
+                                        </div>
+                                    </div>
+                                </div>
+                            </f:for>
+                        </f:for>
+                    </div>
+
+                </div>
+            </div>
+        </f:if>
+
+
         <f:if condition="{project.documents}">
             <div class="row subjectsfilternav phlu-filelinks nofilter" id="dokumente">
                 <div class="col-xs-12">
@@ -216,6 +286,35 @@
                                                 <h3>
                                                     <a href="{f:uri.external(uri: document.URL, defaultScheme: 'http')}">
                                                         {document.Name}
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </f:for>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </f:if>
+        <f:if condition="{project.photos}">
+            <div class="row subjectsfilternav phlu-filelinks nofilter" id="photos">
+                <div class="col-xs-12">
+                    <h2>Bilder</h2>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row phlu-teaser navigation subpage">
+
+                                <f:for each="{project.photos}" as="photos">
+
+                                    <div class="col-xs-12 nav-teaser-item clickable pdfFile">
+                                        <div class="row">
+                                            <div class="phlu-teaser-body col-xs-12">
+                                                <h3>
+                                                    <a href="{f:uri.external(uri: photos.URL, defaultScheme: 'http')}">
+                                                        {photos.Title}
                                                     </a>
                                                 </h3>
                                             </div>
@@ -256,7 +355,6 @@
                 </div>
             </div>
         </f:if>
-
         <f:if condition="{project.publications}">
 
             <div class="row publications-list">
@@ -273,7 +371,8 @@
                                     <div class="panel panel-default">
                                         <div class="panel-heading" role="tab">
                                             <h4 class="panel-title">
-                                                <a href="#" data-toggle="collapse" data-parent="#phlu-accordion-publications"
+                                                <a href="#" data-toggle="collapse"
+                                                   data-parent="#phlu-accordion-publications"
                                                    data-target="#phlu-accordion-publications-{iterator.index}"
                                                    aria-expanded="false"
                                                    aria-controls="phlu-accordion-publications-{iterator.index}">
