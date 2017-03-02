@@ -34,41 +34,41 @@ class GetYearViewHelper extends AbstractViewHelper
      * @param string $variable
      * @return array
      */
-    public function render($node,$variable)
+    public function render($node, $variable)
     {
         $y = null;
         $currentYear = $this->controllerContext->getRequest()->getMainRequest()->hasArgument('year') ? $this->controllerContext->getRequest()->getMainRequest()->getArgument('year') : null;
 
         if (is_array($node->getProperty('years'))) {
-            foreach ($node->getProperty('years') as $y) {
-                if ($y['Id'] == $currentYear || $y['Bookable']) {
+            foreach ($node->getProperty('years') as $year) {
+                if (isset($year['Id']) && ($year['Id'] == $currentYear || $year['Bookable'])) {
+                    $y = $year;
                     break;
                 }
             }
 
-        $y['options'] = array();
-        foreach ($node->getProperty('years') as $option) {
+            if ($y) {
 
-            $y['options'][$option['Id']] = array();
-            if ($option['Id'] == $currentYear) {
-                $y['options'][$option['Id']]['selected'] = true;
-            } else {
-                $y['options'][$option['Id']]['selected'] = false;
+
+                $y['options'] = array();
+                foreach ($node->getProperty('years') as $option) {
+
+                    $y['options'][$option['Id']] = array();
+                    if ($option['Id'] == $currentYear) {
+                        $y['options'][$option['Id']]['selected'] = true;
+                    } else {
+                        $y['options'][$option['Id']]['selected'] = false;
+                    }
+                    $y['options'][$option['Id']]['value'] = $option;
+                    $y['options'][$option['Id']]['url'] = str_replace("weiterbildung/studiengaenge/", "weiterbildung/studiengaenge/" . $node->getProperty('internalid') . "/" . $option['Id'] . "/", $this->controllerContext->getUriBuilder()->reset()->setCreateAbsoluteUri(true)->setFormat('html')->uriFor('show', array('node' => $node), 'Frontend\Node', 'Neos.Neos'));
+                }
+
+
             }
-            $y['options'][$option['Id']]['value'] = $option;
-            $y['options'][$option['Id']]['url'] = str_replace("weiterbildung/studiengaenge/","weiterbildung/studiengaenge/".$node->getProperty('internalid')."/".$option['Id']."/",$this->controllerContext->getUriBuilder()->reset()->setCreateAbsoluteUri(true)->setFormat('html')->uriFor('show', array('node'=> $node), 'Frontend\Node', 'Neos.Neos'));
-        }
-
 
         }
 
-
-        if (isset($y['Id'])) {
-            $this->templateVariableContainer->add($variable, $y);
-        } else {
-            $this->templateVariableContainer->add($variable, null);
-
-        }
+        $this->templateVariableContainer->add($variable, $y);
 
         return $this->renderChildren();
 
