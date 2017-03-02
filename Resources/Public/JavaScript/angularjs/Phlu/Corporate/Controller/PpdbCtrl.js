@@ -12,6 +12,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.initialFilters = {};
     $scope.limit = 5;
     $scope.limitChunkSize = 5;
+    $scope.showResultsListOnDemand = false;
 
     $scope.clearFilter = function(filtertype) {
         $scope[filtertype] = {};
@@ -66,10 +67,37 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         $scope.limit = $scope.limit + $scope.limitChunkSize;
     };
 
+    //
+    // $scope.$watch('initialFilters', function (d) {
+    //     console.log(d);
+    // }, true);
 
-    $scope.$watch('researchmainfocus', function (d) {
-        //console.log(d);
-    }, true);
+    $scope.isShowingResultList = function() {
+
+        if ($scope.showResultsListOnDemand == false) {
+            return true;
+        }
+
+        if ($scope.sizeOf($scope.projectparticipants)) {
+            return true;
+        }
+
+        if ($scope.sizeOf($scope.researchmainfocus)) {
+            return true;
+        }
+
+        if ($scope.sizeOf($scope.filterLifetime)) {
+            return true;
+        }
+
+        if ($scope.search.length > 0) {
+            return true;
+        }
+
+
+
+        return false;
+    }
 
     $scope.list
         .setOrderBy({'phlu-neos-nodetypes-project': 'title'})

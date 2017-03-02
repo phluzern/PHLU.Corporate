@@ -96,9 +96,19 @@
       groups:
         navigation:
           label: Navigation
+        carouselnews:
+          label: Karussell
   superTypes:
     'Phlu.Corporate:Page': true
   properties:
+    showCarousel:
+      type: boolean
+      ui:
+        label: 'Karussel anzeigen'
+        defaultValue: false
+        inspector:
+          group: navigation
+        reloadIfChanged: true
     title:
       ui:
         inlineEditable: true
@@ -122,7 +132,6 @@
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.View.Default'
     targetgroup: ''
-    carouselnews: ''
     tagsmenu:
       type: 'Phlu.Corporate:ContentCollection.Tags.Menu'
   constraints:
@@ -134,6 +143,7 @@
       'Phlu.Corporate:Page.View.Default.Default': true
       'Phlu.Corporate:Page.FurtherEducation.Detail': true
       'Neos.Neos:Shortcut': true
+
 'Phlu.Corporate:Page.View.Default.Default':
   hybridsearch:
     render: true
@@ -148,6 +158,8 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.View.Default.Default'
+
+
 
 'Phlu.Corporate:Page.View.Default.Prototype':
   ui:
