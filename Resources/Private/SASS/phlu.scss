@@ -374,6 +374,9 @@ html {
 .searchResultsListLoadingScreen, .resultsCount {
   float: left;
 }
+.resultsCount {
+margin-top:30px;
+}
 
 .searchResultsListLoadingScreen {
   .loadingIcon {
@@ -1078,7 +1081,7 @@ body {
         }
         position: absolute;
         right: 0;
-        z-index: 99;
+        z-index: 98;
       }
       .dropdown-menu {
         list-style-type: none;
@@ -1321,6 +1324,9 @@ body {
           }
           input.form-control {
             height: 55px;
+            -webkit-border-radius:0;
+            -moz-border-radius:0;
+            border-radius:0;
           }
 
           i.fa-search {
@@ -1426,7 +1432,9 @@ body {
       .navbar-toggler {
         font-size: $font-size-sm;
         border: 0;
-        border-radius: 0;
+        -webkit-border-radius:0;
+        -moz-border-radius:0;
+        border-radius:0;
         width: 100%;
         height: 43px;
         //@include x-rem(height, 43px);
@@ -2970,7 +2978,9 @@ body {
         padding-top: 16px;
         margin: 20px;
         .search-result-tag {
-          border-radius: $input-border-radius;
+          -webkit-border-radius: $input-border-radius;
+          -moz-border-radius: $input-border-radius;;
+          border-radius: $input-border-radius;;
           background-color: $grey3;
           display: inline-block;
           padding: 5px;
@@ -3107,26 +3117,25 @@ body {
             tbody {
               tr {
                 td {
-                  padding-right: 20px;
                   a {
                     color: $grey;
                   }
                   &:first-child {
-                    padding-right: 0;
                     span {
                       display: table-cell;
                       overflow-x: hidden;
+                      @include media-breakpoint-up("xl") {
+                        font-size: $font-size-paragraph-desktop;
+                      }
                       &.oi-caret-right, &.oi-caret-bottom {
                         width: 30px;
+                        font-size: $font-size-caption;
                         @include media-breakpoint-down("xs") {
                           width: 20px;
                         }
                       }
                     }
                     border-left: 0;
-                  }
-                  &:last-child {
-                    border-right: 0;
                   }
                 }
                 &.result-preview {
@@ -3507,7 +3516,7 @@ body {
                   }
                   margin-bottom: 15px;
                   .dropdown-toggle {
-                    width: 120px;
+                    width: 130px;
                     height: 46px;
                     @include media-breakpoint-down("sm") {
                       height: 38px;
@@ -3519,7 +3528,7 @@ body {
                       display: inline-block;
                       width: 0;
                       height: 0;
-                      margin-left: 0.3em;
+                      margin-left: 0.6em;
                       vertical-align: middle;
                       content: "";
                       border-top: 0.3em solid;
@@ -4304,7 +4313,7 @@ body {
             }
             td {
               .cellList {
-                margin-left: 20px;
+                margin:0;
               }
               //background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
               border-bottom: 2px solid $hr-border-color;
