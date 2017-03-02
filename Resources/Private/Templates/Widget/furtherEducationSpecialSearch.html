@@ -489,9 +489,10 @@
                                                 <td>
                                                     Buchbar
                                                     <div class="mobile-view-columns">
-                                                        <i class="fa fa-circle bookable" aria-hidden="true"></i><br>
-                                                        <!--                                                        <i class="fa fa-circle booked-out" aria-hidden="true"></i><br>
-                                                                                                                <i class="fa fa-info-circle booking-info" aria-hidden="true"></i>-->
+                                                        <i class="fa fa-circle bookable" aria-hidden="true"
+                                                        data-ng-if="node.getProperty('years.Bookable').indexOf(true) > -1"></i>
+                                                        <i class="fa fa-circle booked-out" aria-hidden="true"
+                                                           data-ng-if="node.getProperty('years.Bookable').indexOf(true) == -1"></i>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -499,24 +500,28 @@
                                                 <td>
                                                     Typ
                                                     <div class="mobile-view-columns">
-                                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                                        <i class="fa fa-graduation-cap" alt="Studiengang" aria-hidden="true"
+                                                           data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-study-furthereducation'"></i>
+                                                        <i class="fa fa-calendar" alt="Veranstaltung" aria-hidden="true"
+                                                           data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-event-furthereducation'"></i>
+                                                        <i class="fa fa-book" alt="Kurs" aria-hidden="true"
+                                                           data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-module-furthereducation'"></i>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr data-ng-if="node.getProperty('graduation')">
                                                 <td>
                                                     Studienziel
                                                     <div class="mobile-view-columns"
                                                          data-ng-bind="node.getProperty('graduation')">
-
                                                     </div>
                                                 </td>
                                                 <td data-ng-bind="node.getProperty('graduation')">
-                                                    Certificate of Advanced Studies PH Luzern in
+                                                    <span data-ng-bind="node.getProperty('graduation')"></span>
 
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr data-ng-if="node.getProperty('ects')">
                                                 <td>
                                                     ETCS-Punkte
                                                     <div class="mobile-view-columns"
@@ -537,22 +542,12 @@
                                                             <div class="dropdown-toggle " data-toggle="dropdown"
                                                                  role="button" aria-haspopup="true"
                                                                  aria-expanded="false">
-                                                                <span>13.01.2017</span>
+                                                                <span data-ng-bind="node.currentyear.StartText"></span>
                                                             </div>
                                                             <ul class="dropdown-menu">
-                                                                <li value="">
-                                                                    <a href="#">
-                                                                        <span>13.01.2017</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li value="">
-                                                                    <a href="#">
-                                                                        <span>14.01.2017</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li value="">
-                                                                    <a href="#">
-                                                                        <span>15.01.2017</span>
+                                                                <li data-ng-repeat="year in node.getProperty('years')" data-ng-click="node.currentyear = year;">
+                                                                    <a data-ng-click="node.currentyear = year;">
+                                                                        <span data-ng-bind="year.StartText"></span>
                                                                     </a>
                                                                 </li>
                                                             </ul>
@@ -587,20 +582,8 @@
 
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>
-                                                    Ort
-                                                    <div class="mobile-view-columns">
-                                                        Luzern
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    Luzern
-                                                </td>
-                                            </tr>
                                             </tbody>
                                         </table>
-
 
                                     </div>
                                     <div class="details">
