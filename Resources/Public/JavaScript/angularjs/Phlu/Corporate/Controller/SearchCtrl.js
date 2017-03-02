@@ -238,48 +238,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var external =
         [
             {
-                http: "https://wiki.phlu.ch/index.php?title=Spezial%3ASuche&search=wiki $query&go=Suchen",
-                parser: {
-                    type: 'html',
-                    config: {
-                        'nodeType': 'wiki',
-                        'results': {'selector': 'ul.mw-search-results li'},
-                        'fields': {
-                            'title': {'selector': '.mw-search-result-heading a', 'attribute': 'title',},
-                            'rawcontent': {'selector': 'div'},
-                            'url': {
-                                'selector': '.mw-search-result-heading a',
-                                'attribute': 'href'
-                            }
-                        }
-                    }
-                }
-            },
-
-            // {
-            //     http: "https://duksodbkavtv8.cloudfront.net/Kategorie:Beruf-%26-Bildung",
-            //     parser: {
-            //         type: 'html',
-            //         config: {
-            //             'nodeType': 'wiki',
-            //             'results': {'selector': '#bodycontents table tr td.image_map'},
-            //             'fields': {
-            //                 'title': {'selector': '.text p span'},
-            //                 'rawcontent': {'selector': '.thumbnail'},
-            //                 'url': {
-            //                     'selector': '.thumbnail > a',
-            //                     'attribute': 'href',
-            //                     'prepend': 'http://de.wikihow.com'
-            //                 },
-            //                 'image': {
-            //                     'selector': '.thumbnail img',
-            //                     'attribute': 'src'
-            //                 }
-            //             }
-            //         }
-            //     }
-            // },
-            {
                 http: "https://d4jj42ydaxxx2.cloudfront.net/weiterbildung/feed/",
                 parser: {
                     type: 'xml',
