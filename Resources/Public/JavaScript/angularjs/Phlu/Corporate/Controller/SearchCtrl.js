@@ -85,6 +85,10 @@ PhluCorporateApp.directive('search', function ($sce) {
 
                             return template + '/Group/blog.html';
 
+                        case 'wiki':
+
+                            return template + '/Group/wiki.html';
+
                         case 'phlu-neos-nodetypes-publication':
 
                             if ($scope.view === 'all') {
@@ -185,6 +189,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-course-module-furthereducation': 'Weiterbildungsskurse',
         'zebis': 'Unterrichtsmaterial',
         'blog': 'Blog',
+        'wiki': 'Wiki',
         '*': 'Seiten'
 
     };
@@ -232,32 +237,31 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var external =
         [
+            {
+                http: "https://wiki.phlu.ch/index.php?title=Spezial%3ASuche&search=wiki $query&go=Suchen",
+                parser: {
+                    type: 'html',
+                    config: {
+                        'nodeType': 'wiki',
+                        'results': {'selector': 'ul.mw-search-results li'},
+                        'fields': {
+                            'title': {'selector': '.mw-search-result-heading a', 'attribute': 'title',},
+                            'rawcontent': {'selector': 'div'},
+                            'url': {
+                                'selector': '.mw-search-result-heading a',
+                                'attribute': 'href'
+                            }
+                        }
+                    }
+                }
+            },
+
             // {
-            //     http: "/proxy?url=https://www.zebis.ch/suche/$query/bundle/teachingmaterial",
+            //     http: "https://duksodbkavtv8.cloudfront.net/Kategorie:Beruf-%26-Bildung",
             //     parser: {
             //         type: 'html',
             //         config: {
-            //             'nodeType': 'zebis',
-            //             'results': {'selector': '.search-results.apachesolr_search-results > .node'},
-            //             'fields': {
-            //                 'title': {'selector': '> div:first-child h2 > a'},
-            //                 'rawcontent': {'selector': '> div:nth-child(2)'},
-            //                 'url': {
-            //                     'selector': 'a',
-            //                     'attribute': 'href',
-            //                     'prepend': 'https://www.zebis.ch'
-            //                 }
-            //             }
-            //         }
-            //     }
-            // },
-            //
-            // {
-            //     http: "http://de.wikihow.com/Kategorie:Beruf-%26-Bildung",
-            //     parser: {
-            //         type: 'html',
-            //         config: {
-            //             'nodeType': 'wikihow',
+            //             'nodeType': 'wiki',
             //             'results': {'selector': '#bodycontents table tr td.image_map'},
             //             'fields': {
             //                 'title': {'selector': '.text p span'},
@@ -276,7 +280,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             //     }
             // },
             {
-                http: "http://d4jj42ydaxxx2.cloudfront.net/weiterbildung/feed/",
+                http: "https://d4jj42ydaxxx2.cloudfront.net/weiterbildung/feed/",
                 parser: {
                     type: 'xml',
                     config: {

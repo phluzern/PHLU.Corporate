@@ -235,7 +235,7 @@
                                         <tbody>
                                         <tr class="clickable"
                                             data-ng-click="projectparticipants[person.value.EventoID] = person.value.Nachname+ ' ' + person.value.Vorname;"
-                                            data-ng-repeat="(key,person) in result.getDistinct('participants.*',false) | inArrayFilter:projectparticipantsSearch"
+                                            data-ng-repeat="(key,person) in result.getDistinct('participants.*',false) | inArrayFilter:projectparticipantsSearch | orderObjectBy:'value.Nachname'"
                                             data-ng-if="person.value.EventoID > 0"
                                             data-ng-show="projectparticipants[person.value.EventoID] == undefined || projectparticipants[person.value.EventoID] == false">
                                             <td>

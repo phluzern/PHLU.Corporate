@@ -79,6 +79,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         .addPropertyFilter('researchunit.ID', 'researchunit', $scope)
         .addPropertyFilter('financingtypes', 'financingtype', $scope)
         .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
+        .addPropertyFilter('projectType', 'Forschung und Entwicklung')
         .setNodeType('phlu-neos-nodetypes-project')
         .addPropertyFilter('title', '', null, true)
         .$bind('result', $scope)
