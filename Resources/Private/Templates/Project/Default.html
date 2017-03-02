@@ -44,7 +44,7 @@
                             <a class="nav-item nav-link anchor-nav" href="#links">Links</a>
                         </li>
                     </f:if>
-                    <f:if condition="{project}">
+                    <f:if condition="{project.publications}">
                         <li>
                             <a class="nav-item nav-link anchor-nav" href="#publikationen">Publikationen</a>
                         </li>
@@ -148,10 +148,18 @@
             </div>
         </div>
 
+        <f:if condition="{project.participants}">
+            <div class="row">
+                <div class="col-xs-12 phlu-team-members" id="beteiligtepersonen">
+                    <h2>Beteiligte Personen</h2>
+                </div>
+            </div>
+        </f:if>
+
         <f:if condition="{project.participantsIntern}">
             <div class="row">
                 <div class="col-xs-12 phlu-team-members" id="beteiligtepersonenintern">
-                    <h2>Beteiligte Personen extern</h2>
+                    <h3>intern</h3>
                     <div class="row phlu-teaser navigation subpage">
                         <f:for each="{project.participantsIntern}" key="participantsType" as="participantsGroup">
                             <f:for each="{participantsGroup}" as="participant">
@@ -198,14 +206,13 @@
                             </f:for>
                         </f:for>
                     </div>
-                    <hr>
                 </div>
             </div>
         </f:if>
         <f:if condition="{project.participantsExtern}">
             <div class="row">
                 <div class="col-xs-12 phlu-team-members" id="beteiligtepersonenextern">
-                    <h2>Beteiligte Personen intern</h2>
+                    <h3>extern</h3>
                     <div class="row phlu-teaser navigation subpage">
                         <f:for each="{project.participantsExtern}" key="participantsType" as="participantsGroup">
                             <f:for each="{participantsGroup}" as="participant">
@@ -252,7 +259,7 @@
                             </f:for>
                         </f:for>
                     </div>
-                    <hr>
+
                 </div>
             </div>
         </f:if>
@@ -331,7 +338,8 @@
                                     <div class="panel panel-default">
                                         <div class="panel-heading" role="tab">
                                             <h4 class="panel-title">
-                                                <a href="#" data-toggle="collapse" data-parent="#phlu-accordion-publications"
+                                                <a href="#" data-toggle="collapse"
+                                                   data-parent="#phlu-accordion-publications"
                                                    data-target="#phlu-accordion-publications-{iterator.index}"
                                                    aria-expanded="false"
                                                    aria-controls="phlu-accordion-publications-{iterator.index}">
