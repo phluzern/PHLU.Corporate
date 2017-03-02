@@ -39,6 +39,11 @@
                             <a class="nav-item nav-link anchor-nav" href="#dokumente">Dokumente</a>
                         </li>
                     </f:if>
+                    <f:if condition="{project.photos}">
+                        <li>
+                            <a class="nav-item nav-link anchor-nav" href="#photos">Bilder</a>
+                        </li>
+                    </f:if>
                     <f:if condition="{project.links}">
                         <li>
                             <a class="nav-item nav-link anchor-nav" href="#links">Links</a>
@@ -294,6 +299,35 @@
                 </div>
             </div>
         </f:if>
+        <f:if condition="{project.photos}">
+            <div class="row subjectsfilternav phlu-filelinks nofilter" id="photos">
+                <div class="col-xs-12">
+                    <h2>Bilder</h2>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row phlu-teaser navigation subpage">
+
+                                <f:for each="{project.photos}" as="photos">
+
+                                    <div class="col-xs-12 nav-teaser-item clickable pdfFile">
+                                        <div class="row">
+                                            <div class="phlu-teaser-body col-xs-12">
+                                                <h3>
+                                                    <a href="{f:uri.external(uri: photos.URL, defaultScheme: 'http')}">
+                                                        {photos.Title}
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </f:for>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </f:if>
         <f:if condition="{project.links}">
             <div class="row subjectsfilternav phlu-filelinks nofilter" id="links">
                 <div class="col-xs-12">
@@ -321,7 +355,6 @@
                 </div>
             </div>
         </f:if>
-
         <f:if condition="{project.publications}">
 
             <div class="row publications-list">
@@ -367,6 +400,6 @@
             </div>
 
         </f:if>
-
+<f:debug>{project}</f:debug>
     </div>
 </div>
