@@ -94,6 +94,7 @@
                             </f:if>
                         </table>
                     </div>
+
                     {project.abstractTextGerman -> f:format.raw()}
                 </div>
                 <hr>
@@ -146,12 +147,13 @@
                 <hr>
             </div>
         </div>
-        <f:if condition="{project.participants}">
+
+        <f:if condition="{project.participantsIntern}">
             <div class="row">
-                <div class="col-xs-12 phlu-team-members" id="beteiligtepersonen">
-                    <h2>Beteiligte Personen</h2>
+                <div class="col-xs-12 phlu-team-members" id="beteiligtepersonenintern">
+                    <h2>Beteiligte Personen extern</h2>
                     <div class="row phlu-teaser navigation subpage">
-                        <f:for each="{project.participants}" key="participantsType" as="participantsGroup">
+                        <f:for each="{project.participantsIntern}" key="participantsType" as="participantsGroup">
                             <f:for each="{participantsGroup}" as="participant">
                                 <div class="col-xs-12 col-md-6 nav-teaser-item">
                                     <div class="row">
@@ -200,6 +202,62 @@
                 </div>
             </div>
         </f:if>
+        <f:if condition="{project.participantsExtern}">
+            <div class="row">
+                <div class="col-xs-12 phlu-team-members" id="beteiligtepersonenextern">
+                    <h2>Beteiligte Personen intern</h2>
+                    <div class="row phlu-teaser navigation subpage">
+                        <f:for each="{project.participantsExtern}" key="participantsType" as="participantsGroup">
+                            <f:for each="{participantsGroup}" as="participant">
+                                <div class="col-xs-12 col-md-6 nav-teaser-item">
+                                    <div class="row">
+                                        <div class="phlu-teaser-body col-xs-8">
+                                            <address>
+                                                <b>{participantsType}</b><br>
+                                                {participant.name}
+                                                <f:if condition="participant.phone == ''">
+                                                    <f:then><br/></f:then>
+                                                    <f:else>
+                                                        <div class="telephone">
+                                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                                            {participant.phone}<br>
+                                                        </div>
+                                                    </f:else>
+                                                </f:if>
+                                                <f:if condition="participant.phone == ''">
+                                                    <f:then><br/></f:then>
+                                                    <f:else>
+                                                        <a class="content-link-email-contact-person"
+                                                           href="mailto:{participant.email}">{participant.email}</a><br>
+                                                        <portrait:link node="{node}" eventoId="{participant.EventoID}"
+                                                                       target="top">
+                                                            Portrait
+                                                        </portrait:link>
+                                                    </f:else>
+                                                </f:if>
+                                            </address>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <f:if condition="{resource:GetFromString(resource:participant.ImageResource, asset: true)}">
+                                                <media:image
+                                                        image="{resource:GetFromString(resource:participant.ImageResource, asset: true)}"
+                                                        class="img-fluid"
+                                                        alt="{participant.name}"
+                                                        height="133" width="100" allowCropping="true"
+                                                        allowUpScaling="true"/>
+                                            </f:if>
+                                        </div>
+                                    </div>
+                                </div>
+                            </f:for>
+                        </f:for>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </f:if>
+
+
         <f:if condition="{project.documents}">
             <div class="row subjectsfilternav phlu-filelinks nofilter" id="dokumente">
                 <div class="col-xs-12">
