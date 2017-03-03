@@ -74,6 +74,9 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.Overview.Tiles'
+
+
+
 'Phlu.Corporate:Page.Overview.OnePage':
   ui:
     label: 'Übersichtsseite (OnePage)'
@@ -132,7 +135,7 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.View.Default'
-    targetgroup: ''
+    targetgroup: ~
     tagsmenu:
       type: 'Phlu.Corporate:ContentCollection.Tags.Menu'
   constraints:
@@ -225,6 +228,7 @@
 'Phlu.Corporate:Page.FurtherEducation.Detail.Module':
   superTypes:
     'Phlu.Neos.NodeTypes:Page': true
+    'Phlu.Neos.NodeTypes:Course.Module': true
   properties:
     internalid:
       type: integer
@@ -237,13 +241,13 @@
       type: 'Phlu.Corporate:HereUnit.ThreeCols'
   ui:
     label: 'Kurs'
-  superTypes:
-    'Phlu.Neos.NodeTypes:Course.Module': true
+
 
 
 'Phlu.Corporate:Page.FurtherEducation.Detail.Study':
   superTypes:
     'Phlu.Neos.NodeTypes:Page': true
+    'Phlu.Neos.NodeTypes:Course.Study': true
   properties:
     internalid:
       type: integer
@@ -256,5 +260,3 @@
       type: 'Phlu.Corporate:HereUnit.ThreeCols'
   ui:
     label: 'Studiengang'
-  superTypes:
-    'Phlu.Neos.NodeTypes:Course.Study': true
