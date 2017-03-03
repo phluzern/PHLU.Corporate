@@ -123,6 +123,8 @@
   superTypes:
     'Phlu.Neos.NodeTypes:TextPlain': true
   properties:
+    internalid:
+      type: integer
     text:
       ui:
         aloha:
