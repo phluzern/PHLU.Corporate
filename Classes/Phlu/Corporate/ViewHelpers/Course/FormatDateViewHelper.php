@@ -31,9 +31,10 @@ class FormatDateViewHelper extends AbstractViewHelper
 
     /**
      * @param string $datestring
+     * @param string $type
      * @return string
      */
-    public function render($datestring)
+    public function render($datestring, $type = null)
     {
 
 
@@ -41,7 +42,11 @@ class FormatDateViewHelper extends AbstractViewHelper
 
         $date = new \DateTime($datestring);
 
-        return "<span class='day'>".$tage[$date->format("w")]."</span> <span class='date'>".$date->format("d.m.Y")."</span> <span class='hour'>".$date->format("H:i")." Uhr</span>";
+        if ($type == 'hour') {
+            return "<span class='hour'>".$date->format("H:i")." Uhr</span>";
+        }
+
+        return "<span class='day'>".$tage[$date->format("w")]."</span> <span class='date'>".$date->format("d.m.Y")."</span> <span class='hour'>".$date->format("H:i")."</span>";
 
     }
 

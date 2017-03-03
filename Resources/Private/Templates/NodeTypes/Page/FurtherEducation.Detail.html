@@ -82,13 +82,13 @@
                                         Daten
                                         <div class="mobile-view-columns">
                                             <f:for each="{node.properties.lessons}" as="lesson">
-                                                {lesson.DatumVon}<br/>
+                                                {course:formatDate(datestring: lesson.DatumVon)} <span class="delim">-</span> {course:formatDate(datestring: lesson.DatumBis, type: 'hour')}<br/>
                                             </f:for>
                                         </div>
                                     </td>
                                     <td>
                                            <f:for each="{node.properties.lessons}" as="lesson">
-                                               {course:formatDate(datestring: lesson.DatumVon)}<br/>
+                                               {course:formatDate(datestring: lesson.DatumVon)} <span class="delim">-</span> {course:formatDate(datestring: lesson.DatumBis, type: 'hour')}<br/>
                                            </f:for>
                                     </td>
                                 </tr>

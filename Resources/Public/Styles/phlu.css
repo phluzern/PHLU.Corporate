@@ -9868,6 +9868,13 @@ body {
         min-width: 30px;
         display: block;
         float: left;
+        margin-right: 5px; }
+      body .all .greyBgFullwidth2colTable .delim {
+        display: block;
+        float: left; }
+      body .all .greyBgFullwidth2colTable .hour {
+        margin-left: 5px; }
+      body .all .greyBgFullwidth2colTable .date {
         margin-right: 15px; }
       body .all .greyBgFullwidth2colTable .table-responsive table {
         margin: 40px 0; }
