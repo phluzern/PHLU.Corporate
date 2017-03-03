@@ -229,6 +229,9 @@
     label: 'Studiengang/Kurs'
   superTypes:
     'Phlu.Neos.NodeTypes:Page': true
+  properties:
+    internalid:
+      type: integer
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.FurtherEducation.Detail'
