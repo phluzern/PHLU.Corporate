@@ -47,6 +47,10 @@ class GetYearViewHelper extends AbstractViewHelper
                 }
             }
 
+            if (!$y && is_array($node->getProperty('years'))) {
+                $y = current($node->getProperty('years'));
+            }
+
             if ($y) {
 
 
