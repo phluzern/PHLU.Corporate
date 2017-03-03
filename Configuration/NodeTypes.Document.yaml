@@ -145,7 +145,8 @@
       'Phlu.Corporate:Page.View.Dossier': false
       'Phlu.Corporate:Page.View.Default': false
       'Phlu.Corporate:Page.View.Default.Default': true
-      'Phlu.Corporate:Page.FurtherEducation.Detail': true
+      'Phlu.Corporate:Page.FurtherEducation.Detail.Module': true
+      'Phlu.Corporate:Page.FurtherEducation.Detail.Study': true
       'Neos.Neos:Shortcut': true
 
 'Phlu.Corporate:Page.View.Default.Default':
