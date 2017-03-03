@@ -65,6 +65,8 @@ class GetYearViewHelper extends AbstractViewHelper
                     }
                     $y['options'][$option['Id']]['value'] = $option;
                     $y['options'][$option['Id']]['url'] = str_replace("weiterbildung/studiengaenge/", "weiterbildung/studiengaenge/" . $node->getProperty('internalid') . "/" . $option['Id'] . "/", $this->controllerContext->getUriBuilder()->reset()->setCreateAbsoluteUri(true)->setFormat('html')->uriFor('show', array('node' => $node), 'Frontend\Node', 'Neos.Neos'));
+
+
                 }
 
 

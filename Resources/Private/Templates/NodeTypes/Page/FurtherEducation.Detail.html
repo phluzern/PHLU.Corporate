@@ -60,6 +60,7 @@
                 <div class="table-responsive">
                     <table class="table">
                         <tbody>
+                        <f:if condition="{ects}">
                         <tr>
                             <td>
                                 ETCS-Punkte
@@ -71,6 +72,7 @@
                                 {ects}
                             </td>
                         </tr>
+                        </f:if>
                         <f:if condition="{year.BookableUntil}">
                             <tr>
                                 <td>
@@ -84,9 +86,11 @@
                                 </td>
                             </tr>
                         </f:if>
+                        <f:if condition="{f:format.date(date: year.Start.date, format: 'Y')} > 1970">
                         <tr>
                             <td>
                                 Startdatum
+
                                 <div class="mobile-view-columns">
                                     <div class="dropdown">
                                         <div class="dropdown-toggle " data-toggle="dropdown"
@@ -97,7 +101,7 @@
                                             <f:for each="{year.options}" as="option">
                                                 <li value="">
                                                     <a href="{option.url}">
-                                                        <span>{option.value.StartText}</span>
+                                                        <span>{option.value.StartText}}</span>
                                                     </a>
                                                 </li>
                                             </f:for>
@@ -123,6 +127,8 @@
                                 </div>
                             </td>
                         </tr>
+                        </f:if>
+                        <f:if condition="{f:format.date(date: year.End.date, format: 'Y')} > 1970">
                         <tr>
                             <td>
                                 Dauer
@@ -134,6 +140,8 @@
                                 {f:format.date(date: year.End.date, format: 'd.m.Y')}
                             </td>
                         </tr>
+                        </f:if>
+                        <f:if condition="{fee}">
                         <tr>
                             <td>
                                 Kosten
@@ -145,6 +153,7 @@
                                 {fee}
                             </td>
                         </tr>
+                        </f:if>
                         </tbody>
                     </table>
                 </div>
