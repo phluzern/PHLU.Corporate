@@ -39,13 +39,17 @@ class GetYearViewHelper extends AbstractViewHelper
         $y = null;
         $currentYear = $this->controllerContext->getRequest()->getMainRequest()->hasArgument('year') ? $this->controllerContext->getRequest()->getMainRequest()->getArgument('year') : null;
 
+
+
         if (is_array($node->getProperty('years'))) {
             foreach ($node->getProperty('years') as $year) {
-                if (isset($year['Id']) && ($year['Id'] == $currentYear || $year['Bookable'])) {
+                if (isset($year['Id']) && ($year['Id'] == $currentYear || ($year['Bookable'] && !$currentYear))) {
                     $y = $year;
                     break;
                 }
             }
+
+
 
             if (!$y && is_array($node->getProperty('years'))) {
                 $y = current($node->getProperty('years'));
