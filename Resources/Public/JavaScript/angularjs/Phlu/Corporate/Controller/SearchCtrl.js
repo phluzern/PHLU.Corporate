@@ -186,6 +186,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-event': 'Veranstaltungen',
         'phlu-corporate-newsitem': 'News',
         'phlu-neos-nodetypes-course-study-furthereducation': 'Weiterbildungsstudiengänge',
+        'phlu-corporate-page-furthereducation-detail-study': 'Weiterbildungsstudiengänge',
+        'phlu-corporate-page-furthereducation-detail-module': 'Weiterbildungsskurse',
         'phlu-neos-nodetypes-course-module-furthereducation': 'Weiterbildungsskurse',
         'zebis': 'Unterrichtsmaterial',
         'blog': 'Blog',
@@ -222,7 +224,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Kontakte': ['email', 'phone'],
         'Standorte': ['lng', 'lat'],
         'Projekte': 'title',
-        'Seiten': 'breadcrumb'
+        'Seiten': 'breadcrumb',
+        'Weiterbildungsstudiengänge': 'url',
+        'Weiterbildungsskurse': 'url'
 
 
     };
