@@ -60,6 +60,7 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.Home'
+
 'Phlu.Corporate:Page.Overview.Tiles':
   ui:
     label: 'Übersichtsseite (Kacheln)'
@@ -226,7 +227,6 @@
   abstract: TRUE
   ui:
     label: 'Studiengang/Kurs'
-    group: hidden
   superTypes:
     'Phlu.Neos.NodeTypes:Page': true
   childNodes:

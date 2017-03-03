@@ -632,6 +632,12 @@ margin-top:30px;
 // backend only
 body.neos-backend {
 
+  // disable some nodes for inserting
+  button[data-original-title='Phlu.Corporate:Page.FurtherEducation.Detail.Module'],
+  button[data-original-title='Phlu.Corporate:Page.FurtherEducation.Detail.Study'] {
+    display:none;
+  }
+
   .neos-contentelement.neos-contentelement-active {
     .disabled-for-editing {
       opacity: 0.8;

@@ -8356,6 +8356,10 @@ html {
 .ico-family-fa::before {
   font-family: FontAwesome; }
 
+body.neos-backend button[data-original-title='Phlu.Corporate:Page.FurtherEducation.Detail.Module'],
+body.neos-backend button[data-original-title='Phlu.Corporate:Page.FurtherEducation.Detail.Study'] {
+  display: none; }
+
 body.neos-backend .neos-contentelement.neos-contentelement-active .disabled-for-editing {
   opacity: 0.8; }
   body.neos-backend .neos-contentelement.neos-contentelement-active .disabled-for-editing::before {
