@@ -36,8 +36,12 @@ class FormatDateViewHelper extends AbstractViewHelper
     public function render($datestring)
     {
 
+
+        $tage = array("So", "Mo", "Di", "Mi", "Do", "Fr", "Sa");
+
         $date = new \DateTime($datestring);
-        return $date->format("d.m.Y");
+
+        return "<span class='day'>".$tage[$date->format("w")]."</span> <span class='date'>".$date->format("d.m.Y")."</span> <span class='hour'>".$date->format("H:i")." Uhr</span>";
 
     }
 

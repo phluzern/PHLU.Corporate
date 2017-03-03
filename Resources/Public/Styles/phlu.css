@@ -9864,6 +9864,11 @@ body {
       font-size: 1.125rem;
       background-color: #F7F4F2;
       padding-bottom: 27px; }
+      body .all .greyBgFullwidth2colTable .day, body .all .greyBgFullwidth2colTable .date, body .all .greyBgFullwidth2colTable .hour {
+        min-width: 30px;
+        display: block;
+        float: left;
+        margin-right: 15px; }
       body .all .greyBgFullwidth2colTable .table-responsive table {
         margin: 40px 0; }
         body .all .greyBgFullwidth2colTable .table-responsive table tbody tr {

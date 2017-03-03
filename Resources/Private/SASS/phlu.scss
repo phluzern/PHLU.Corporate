@@ -2884,6 +2884,14 @@ body {
       }
     }
     .greyBgFullwidth2colTable {
+
+      .day, .date, .hour {
+        min-width:30px;
+        display: block;
+        float:left;
+        margin-right:15px;
+      }
+
       color: $black;
       font-size: $font-size-table-desktop;
       background-color: $grey9;
