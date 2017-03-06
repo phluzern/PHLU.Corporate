@@ -4,21 +4,22 @@
 {namespace course=Phlu\Corporate\ViewHelpers\Course}
 {namespace portrait=Phlu\Corporate\ViewHelpers\Portrait}
 
+
 <course:getYear node="{node}" variable="year">
+    <f:if condition="{year}">
+        <div class="row ">
+            <div class="col-xs-12">
+                <div class="row ">
+                    <div class="col-xs-12">
+                        {breadcrumb -> f:format.raw()}
+                    </div>
+                    <div class="col-xs-12">
+                        <ts:render path="defaultRenderer" context="{node: header}"/>
+                    </div>
+                    <f:if condition="{targetgroups}">
+                        <div class="col-xs-12 target-group-codes">
 
-    <div class="row ">
-        <div class="col-xs-12">
-            <div class="row ">
-                <div class="col-xs-12">
-                    {breadcrumb -> f:format.raw()}
-                </div>
-                <div class="col-xs-12">
-                    <ts:render path="defaultRenderer" context="{node: header}"/>
-                </div>
-                <f:if condition="{targetgroups}">
-                    <div class="col-xs-12 target-group-codes">
-
-                        <f:for each="{targetgroups}" as="targetgroup">
+                            <f:for each="{targetgroups}" as="targetgroup">
 
                     <span class="code">
                         <span class="fullname">
@@ -44,249 +45,251 @@
                                 {targetgroup.Bezeichnung}
                             </f:else></f:if>
                     </span>
-                        </f:for>
-                    </div>
-                </f:if>
+                            </f:for>
+                        </div>
+                    </f:if>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row infoboxes">
-        <div class="col-xs-12">
-            <ts:render path="heroRenderer" context="{node: hero}"/>
+        <div class="row infoboxes">
+            <div class="col-xs-12">
+                <ts:render path="heroRenderer" context="{node: hero}"/>
+            </div>
         </div>
-    </div>
 
-    <f:if condition="{year}">
-        <div class="row greyBgFullwidth2colTable">
-            <div class="col-xs-12 ">
-                <h2>Kontakt und Anmeldung</h2>
-                <p>
-                    {graduation}
-                </p>
-                <div class="table-responsive">
-                    <table class="table">
-                        <tbody>
-                        <f:if condition="{ects}">
-                            <tr>
-                                <td>
-                                    ETCS-Punkte
-                                    <div class="mobile-view-columns">
-                                        {ects}
-                                    </div>
-                                </td>
-                                <td>
-                                    {ects}
-                                </td>
-                            </tr>
-                        </f:if>
-
-                        <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Module'">
-
-                            <f:if condition="{node.properties.lessons}">
+        <f:if condition="{year}">
+            <div class="row greyBgFullwidth2colTable">
+                <div class="col-xs-12 ">
+                    <h2>Kontakt und Anmeldung</h2>
+                    <p>
+                        {graduation}
+                    </p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                            <f:if condition="{ects}">
                                 <tr>
                                     <td>
-                                        Daten
+                                        ETCS-Punkte
                                         <div class="mobile-view-columns">
+                                            {ects}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {ects}
+                                    </td>
+                                </tr>
+                            </f:if>
+
+                            <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Module'">
+
+                                <f:if condition="{node.properties.lessons}">
+                                    <tr>
+                                        <td>
+                                            Daten
+                                            <div class="mobile-view-columns">
+                                                <f:for each="{node.properties.lessons}" as="lesson">
+                                                    {course:formatDate(datestring: lesson.DatumVon)} <span
+                                                        class="delim">-</span> {course:formatDate(datestring:
+                                                    lesson.DatumBis, type: 'hour')}<br/>
+                                                </f:for>
+                                            </div>
+                                        </td>
+                                        <td>
                                             <f:for each="{node.properties.lessons}" as="lesson">
                                                 {course:formatDate(datestring: lesson.DatumVon)} <span
                                                     class="delim">-</span> {course:formatDate(datestring:
-                                                lesson.DatumBis, type: 'hour')}<br/>
+                                                lesson.DatumBis,
+                                                type: 'hour')}<br/>
                                             </f:for>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <f:for each="{node.properties.lessons}" as="lesson">
-                                            {course:formatDate(datestring: lesson.DatumVon)} <span
-                                                class="delim">-</span> {course:formatDate(datestring: lesson.DatumBis,
-                                            type: 'hour')}<br/>
-                                        </f:for>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                </f:if>
+
+
                             </f:if>
 
-
-                        </f:if>
-
-                        <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Study'">
-                            <f:if condition="{year.BookableUntil}">
-                                <tr>
-                                    <td>
-                                        Anmeldeschluss
-                                        <div class="mobile-view-columns">
+                            <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Study'">
+                                <f:if condition="{year.BookableUntil}">
+                                    <tr>
+                                        <td>
+                                            Anmeldeschluss
+                                            <div class="mobile-view-columns">
+                                                {f:format.date(date: year.BookableUntil.date, format: 'd.m.Y')}
+                                            </div>
+                                        </td>
+                                        <td>
                                             {f:format.date(date: year.BookableUntil.date, format: 'd.m.Y')}
-                                        </div>
-                                    </td>
-                                    <td>
-                                        {f:format.date(date: year.BookableUntil.date, format: 'd.m.Y')}
-                                    </td>
-                                </tr>
-                            </f:if>
-                            <f:if condition="{f:format.date(date: year.Start.date, format: 'Y')} > 1970">
-                                <tr>
-                                    <td>
-                                        Startdatum
+                                        </td>
+                                    </tr>
+                                </f:if>
+                                <f:if condition="{f:format.date(date: year.Start.date, format: 'Y')} > 1970">
+                                    <tr>
+                                        <td>
+                                            Startdatum
 
-                                        <div class="mobile-view-columns">
+                                            <div class="mobile-view-columns">
+                                                <div class="dropdown">
+                                                    <div class="dropdown-toggle " data-toggle="dropdown"
+                                                         role="button" aria-haspopup="true" aria-expanded="false">
+                                                        <f:if condition="{f:format.date(date: year.StartText, format: 'Y')} > 1970">
+                                                            <f:then><span>{f:format.date(date: year.StartText, format: 'd.m.Y')}</span>
+                                                            </f:then>
+                                                            <f:else><span>{year.StartText}</span></f:else>
+                                                        </f:if>
+                                                    </div>
+                                                    <ul class="dropdown-menu">
+                                                        <f:for each="{year.options}" as="option">
+                                                            <li value="">
+
+                                                                <a href="{option.url}">
+                                                                    <f:if condition="{f:format.date(date: option.value.StartText, format: 'Y')} > 1970">
+                                                                        <f:then><span>{f:format.date(date: option.value.StartText, format: 'd.m.Y')}</span>
+                                                                        </f:then>
+                                                                        <f:else><span>{option.value.StartText}</span>
+                                                                        </f:else>
+                                                                    </f:if>
+                                                                </a>
+                                                            </li>
+                                                        </f:for>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
                                             <div class="dropdown">
                                                 <div class="dropdown-toggle " data-toggle="dropdown"
                                                      role="button" aria-haspopup="true" aria-expanded="false">
-                                                    <f:if condition="{f:format.date(date: year.StartText, format: 'Y')} > 1970">
-                                                        <f:then><span>{f:format.date(date: year.StartText, format: 'd.m.Y')}</span>
-                                                        </f:then>
-                                                        <f:else><span>{year.StartText}</span></f:else>
-                                                    </f:if>
+                                                    <span>{year.StartText}</span>
                                                 </div>
                                                 <ul class="dropdown-menu">
                                                     <f:for each="{year.options}" as="option">
                                                         <li value="">
-
                                                             <a href="{option.url}">
-                                                                <f:if condition="{f:format.date(date: option.value.StartText, format: 'Y')} > 1970">
-                                                                    <f:then><span>{f:format.date(date: option.value.StartText, format: 'd.m.Y')}</span>
-                                                                    </f:then>
-                                                                    <f:else><span>{option.value.StartText}</span>
-                                                                    </f:else>
-                                                                </f:if>
+                                                                <span>{option.value.StartText}</span>
                                                             </a>
                                                         </li>
                                                     </f:for>
                                                 </ul>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <div class="dropdown-toggle " data-toggle="dropdown"
-                                                 role="button" aria-haspopup="true" aria-expanded="false">
-                                                <span>{year.StartText}</span>
+                                        </td>
+                                    </tr>
+                                </f:if>
+                                <f:if condition="{f:format.date(date: year.End.date, format: 'Y')} > 1970">
+                                    <tr>
+                                        <td>
+                                            Dauer
+                                            <div class="mobile-view-columns">
+                                                {f:format.date(date: year.End.date, format: 'd.m.Y')}
                                             </div>
-                                            <ul class="dropdown-menu">
-                                                <f:for each="{year.options}" as="option">
-                                                    <li value="">
-                                                        <a href="{option.url}">
-                                                            <span>{option.value.StartText}</span>
-                                                        </a>
-                                                    </li>
-                                                </f:for>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                        <td>
+                                            {f:format.date(date: year.End.date, format: 'd.m.Y')}
+                                        </td>
+                                    </tr>
+                                </f:if>
                             </f:if>
-                            <f:if condition="{f:format.date(date: year.End.date, format: 'Y')} > 1970">
+                            <f:if condition="{fee}">
                                 <tr>
                                     <td>
-                                        Dauer
+                                        Kosten
                                         <div class="mobile-view-columns">
-                                            {f:format.date(date: year.End.date, format: 'd.m.Y')}
+                                            {course:formatFee(fee: fee)}
                                         </div>
                                     </td>
                                     <td>
-                                        {f:format.date(date: year.End.date, format: 'd.m.Y')}
+                                        {course:formatFee(fee: fee)}
                                     </td>
                                 </tr>
                             </f:if>
-                        </f:if>
-                        <f:if condition="{fee}">
-                            <tr>
-                                <td>
-                                    Kosten
-                                    <div class="mobile-view-columns">
-                                        {course:formatFee(fee: fee)}
-                                    </div>
-                                </td>
-                                <td>
-                                    {course:formatFee(fee: fee)}
-                                </td>
-                            </tr>
-                        </f:if>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="shareAndRegister">
-                    <a class="btn btn-primary share"
-                       href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
-                        <i class="fa fa-share-alt" aria-hidden="true"></i>
-                        <br>
-                        <span class="shareText">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="shareAndRegister">
+                        <a class="btn btn-primary share"
+                           href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
+                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                            <br>
+                            <span class="shareText">
                                             Teilen
                                         </span>
-                    </a>
-                    <f:if condition="{year.Bookable}">
-                        <f:then>
-                            <a class="btn btn-primary "
-                               href="{year.RegistrationLink}">
-                                Anmelden
-                            </a>
-                        </f:then>
-                        <f:else>
-                            <f:if condition="{StatusLabel}">
-                                <f:then>
-                                    <a>{StatusLabel}</a>
-                                </f:then>
-                                <f:else>
-                                    <a>{year.StartText}</a>
-                                </f:else>
-                            </f:if>
-                        </f:else>
-                    </f:if>
+                        </a>
+                        <f:if condition="{year.Bookable}">
+                            <f:then>
+                                <a class="btn btn-primary "
+                                   href="{year.RegistrationLink}">
+                                    Anmelden
+                                </a>
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{StatusLabel}">
+                                    <f:then>
+                                        <a>{StatusLabel}</a>
+                                    </f:then>
+                                    <f:else>
+                                        <a>{year.StartText}</a>
+                                    </f:else>
+                                </f:if>
+                            </f:else>
+                        </f:if>
+
+                    </div>
+                </div>
+            </div>
+        </f:if>
+        <div class="row further-education-detail">
+            <div class="col-xs-12">
+
+                <ts:render path="collectionRenderer" context="{node: main}"/>
+
+
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-xs-12 phlu-team-members">
+                <h2>Kontakt</h2>
+                <div class="row phlu-teaser navigation subpage">
+
+                    <f:for each="{leaders}" as="leader">
+                        <div class="col-xs-12 col-md-6 nav-teaser-item">
+                            <div class="row">
+                                <a href="#" title="Studierende"></a>
+                                <div class="phlu-teaser-body col-xs-8">
+                                    <address>
+                                        <b>{leader.Fullname}</b><br>
+                                        {leader.Title}
+                                        <f:if condition="{leader.Phone}">
+                                            <div class="telephone">
+                                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                                {leader.Phone}<br>
+                                            </div>
+                                        </f:if>
+                                        <a class="content-link-email-contact-person"
+                                           href="mailto:{leader.Email}">{leader.Email}</a><br>
+                                        <f:if condition="{leader.eventoId}">
+                                            <portrait:link node="null" eventoId="{leader.eventoId}">Portrait
+                                            </portrait:link>
+                                        </f:if>
+                                    </address>
+                                </div>
+                                <div class="phlu-teaser-caret-right col-xs-4">
+                                    <f:if condition="{leader.ImgeUrl}">
+                                        <img src="{leader.ImgeUrl}" class="img-fluid"/>
+                                    </f:if>
+                                </div>
+                            </div>
+                        </div>
+
+                    </f:for>
+
 
                 </div>
+                <hr>
             </div>
         </div>
     </f:if>
-    <div class="row further-education-detail">
-        <div class="col-xs-12">
-
-            <ts:render path="collectionRenderer" context="{node: main}"/>
-
-
-        </div>
-    </div>
-
-
-    <div class="row">
-
-        <div class="col-xs-12 phlu-team-members">
-            <h2>Kontakt</h2>
-            <div class="row phlu-teaser navigation subpage">
-
-                <f:for each="{leaders}" as="leader">
-                    <div class="col-xs-12 col-md-6 nav-teaser-item">
-                        <div class="row">
-                            <a href="#" title="Studierende"></a>
-                            <div class="phlu-teaser-body col-xs-8">
-                                <address>
-                                    <b>{leader.Fullname}</b><br>
-                                    {leader.Title}
-                                    <f:if condition="{leader.Phone}">
-                                        <div class="telephone">
-                                            <i class="fa fa-phone" aria-hidden="true"></i>
-                                            {leader.Phone}<br>
-                                        </div>
-                                    </f:if>
-                                    <a class="content-link-email-contact-person"
-                                       href="mailto:{leader.Email}">{leader.Email}</a><br>
-                                    <f:if condition="{leader.eventoId}">
-                                        <portrait:link node="null" eventoId="{leader.eventoId}">Portrait</portrait:link>
-                                    </f:if>
-                                </address>
-                            </div>
-                            <div class="phlu-teaser-caret-right col-xs-4">
-                                <f:if condition="{leader.ImgeUrl}">
-                                    <img src="{leader.ImgeUrl}" class="img-fluid"/>
-                                </f:if>
-                            </div>
-                        </div>
-                    </div>
-
-                </f:for>
-
-
-            </div>
-            <hr>
-        </div>
-    </div>
-
 </course:getYear>

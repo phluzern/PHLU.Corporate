@@ -50,12 +50,12 @@ class GetYearViewHelper extends AbstractViewHelper
             }
 
 
-
             if (!$y && is_array($node->getProperty('years'))) {
                 $y = current($node->getProperty('years'));
             }
 
-            if ($y) {
+
+            if ($y && is_a($y)) {
 
 
                 $y['options'] = array();
@@ -78,7 +78,12 @@ class GetYearViewHelper extends AbstractViewHelper
 
         }
 
-        $this->templateVariableContainer->add($variable, $y);
+        if (is_array($y)) {
+            $this->templateVariableContainer->add($variable, $y);
+        } else {
+            $this->templateVariableContainer->add($variable, null);
+        }
+
 
         return $this->renderChildren();
 
