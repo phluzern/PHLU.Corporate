@@ -173,7 +173,7 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     $scope.initialFilters = {};
     $scope.participantsSearch = '';
     $scope.limit = {};
-    $scope.limitChunkSize = 10;
+    $scope.limitChunkSize = 5;
 
     $scope.clearFilter = function(filtertype) {
         $scope[filtertype] = {};
@@ -202,8 +202,8 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         if ($scope.limit[group] === undefined) {
             $scope.limit[group] = $scope.limitChunkSize;
         }
-        $scope.limit[group] = $scope.limit[group] + $scope.limitChunkSize;
 
+        $scope.limit[group] = $scope.limit[group] + $scope.limitChunkSize;
         window.setTimeout(function() {
             if (jQuery(objId).length) {
                 jQuery('html, body').stop().animate({
