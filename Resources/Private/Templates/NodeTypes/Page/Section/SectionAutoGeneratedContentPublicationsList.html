@@ -220,8 +220,8 @@
                     </div>
 
 
-                    <div class="table-responsive results-table"  data-ng-repeat="group in result.getGrouped().getItems() | orderBy:'getProperty(\'type.sorting\')'">
-
+                    <div class="table-responsive results-table"  data-ng-repeat="(groupkey,group) in result.getGrouped().getItems() | orderBy:'getProperty(\'type.sorting\')'">
+(({{groupkey}}/{{group.getKey()}}))
                            <table class="table">
                             <thead>
                             <tr>
@@ -233,7 +233,7 @@
                             <tbody>
 
                             <tr ng-repeat="node in group.getNodes(getLimit(group.getLabel()))"
-                                >
+                               id="{{group.getLabel()}}-$index" >
                                 <td data-ng-if="node.getProperty('url') == ''">
                                     <div>
                                     <span data-ng-if="node.getProperty('citationstyle') != ''" data-ng-bind="node.getProperty('citationstyle')"></span>
@@ -253,7 +253,7 @@
 
                         <div class="row">
                             <div class="col-center">
-                                <a data-ng-click="loadMore(group.getLabel());" class="btn loadMore"
+                                <a data-ng-click="loadMore(group.getLabel(),'#'+group.getLabel()+limit);" class="btn loadMore"
                                    data-ng-if="group.count() > getLimit(group.getLabel())">
                                     <!--{{limitChunkSize}} -->
                                     mehr anzeigen

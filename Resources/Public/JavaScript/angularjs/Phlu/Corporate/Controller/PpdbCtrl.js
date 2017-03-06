@@ -13,6 +13,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.limit = 5;
     $scope.limitChunkSize = 5;
     $scope.showResultsListOnDemand = false;
+    $scope.isopen = 0;
 
     $scope.clearFilter = function(filtertype) {
         $scope[filtertype] = {};
@@ -63,8 +64,54 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         $scope.organisations = f;
     };
 
-    $scope.loadMore = function () {
+    /**
+     * @public
+     * if detail is open
+     * @returns void
+     */
+    $scope.isOpen = function (node) {
+        return $scope.isopen === node.identifier;
+    };
+
+    /**
+     * @public
+     * set detail is open
+     * @returns void
+     */
+    $scope.setOpen = function (node,index) {
+        $scope.isopen = $scope.isopen === node.identifier ? 0 : node.identifier;
+
+        window.setTimeout(function() {
+            if (jQuery("#node-" + index).length) {
+                jQuery('html, body').stop().animate({
+                    'scrollTop': jQuery("#node-" + index).offset().top - (jQuery("#node-" + index).height() / 2)
+                }, 900, 'swing', function () {
+
+                });
+            }
+        },10);
+
+
+    };
+
+    /**
+     * @private
+     * Load more
+     * @returns integer
+     */
+    $scope.loadMore = function (objId) {
+
         $scope.limit = $scope.limit + $scope.limitChunkSize;
+        window.setTimeout(function() {
+            if (jQuery(objId).length) {
+                jQuery('html, body').stop().animate({
+                    'scrollTop': jQuery(objId).offset().top
+                }, 900, 'swing', function () {
+
+                });
+            }
+        },10);
+
     };
 
     //
@@ -151,12 +198,21 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         $scope.initialFilters['publicationtype'] = true;
     };
 
-    $scope.loadMore = function (group) {
+    $scope.loadMore = function (group,objId) {
         if ($scope.limit[group] === undefined) {
             $scope.limit[group] = $scope.limitChunkSize;
         }
         $scope.limit[group] = $scope.limit[group] + $scope.limitChunkSize;
 
+        window.setTimeout(function() {
+            if (jQuery(objId).length) {
+                jQuery('html, body').stop().animate({
+                    'scrollTop': jQuery(objId).offset().top
+                }, 900, 'swing', function () {
+
+                });
+            }
+        },10);
     };
 
     $scope.sizeOf = function (obj) {

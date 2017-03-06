@@ -92,12 +92,12 @@
                             </tr>
                             </thead>
                             <tbody ng-repeat="node in result.getNodes(limit)"
-                                   data-ng-click="node.isopen = node.isopen ? false : true">
-                            <tr data-ng-class="{open: node.isopen,noborder: $index > 0}" class="clickable"
+                                   data-ng-click="setOpen(node,$index);" id="node-{{$index}}">
+                            <tr data-ng-class="{open: isOpen(node),noborder: $index > 0}" class="clickable"
                                 data-node-id="{{node.identifier}}">
                                 <td>
                                         <span class="oi"
-                                              data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
+                                              data-ng-class="{'oi-caret-right': !isOpen(node), 'oi-caret-bottom': isOpen(node)}"></span>
                                     <span data-ng-bind="node.getProperty('title')">
 
                                     </span>
@@ -125,7 +125,7 @@
                                     </ul>
                                 </td>
                             </tr>
-                            <tr class="result-preview" data-ng-show="node.isopen">
+                            <tr class="result-preview" data-ng-show="isOpen(node)">
                                 <td colspan="2">
                                     <div>
                                         <p ng-bind-html="node.getProperty('teasertextgerman').substr(0,255)"></p>
@@ -141,7 +141,7 @@
 
                     <div class="row">
                         <div class="col-center">
-                            <a data-ng-click="loadMore();" class="btn loadMore"
+                            <a data-ng-click="loadMore('#node-'+limit);" class="btn loadMore"
                                data-ng-if="result.count() > limit">
                                 <!--{{limitChunkSize}} -->
                                 mehr anzeigen
