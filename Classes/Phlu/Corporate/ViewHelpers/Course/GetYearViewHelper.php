@@ -55,7 +55,7 @@ class GetYearViewHelper extends AbstractViewHelper
             }
 
 
-            if ($y && is_a($y)) {
+            if ($y && is_array($y)) {
 
 
                 $y['options'] = array();
