@@ -10315,36 +10315,15 @@ body {
         @media (max-width: 767px) {
           body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
             margin: 0 20px; } }
-        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle {
-          width: 130px;
-          height: 46px;
-          padding: 10px;
-          color: white;
-          background-color: #28818f; }
-          @media (max-width: 767px) {
-            body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle {
-              height: 38px; } }
-          body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle:after {
-            display: inline-block;
-            width: 0;
-            height: 0;
-            margin-left: 0.6em;
-            vertical-align: middle;
-            content: "";
-            border-top: 0.3em solid;
-            border-right: 0.3em solid transparent;
-            border-left: 0.3em solid transparent;
-            position: absolute;
-            color: white;
-            top: 19px;
-            left: 93px;
-            font-size: 1.313rem; }
-            @media (max-width: 767px) {
-              body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle:after {
-                top: 15px; } }
+        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle span {
+          display: block;
+          float: left;
+          padding-right: 10px; }
         body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu {
           margin: 0;
-          background-color: #28818f; }
+          padding: 0;
+          background-color: #28818f;
+          list-style: none; }
           body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu li {
             padding: 8px 12px; }
             @media (max-width: 767px) {

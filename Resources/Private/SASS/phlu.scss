@@ -3540,37 +3540,19 @@ body {
                   }
                   margin-bottom: 15px;
                   .dropdown-toggle {
-                    width: 130px;
-                    height: 46px;
-                    @include media-breakpoint-down("sm") {
-                      height: 38px;
-                    }
-                    padding: 10px;
-                    color: white;
-                    background-color: $turquoise;
-                    &:after {
-                      display: inline-block;
-                      width: 0;
-                      height: 0;
-                      margin-left: 0.6em;
-                      vertical-align: middle;
-                      content: "";
-                      border-top: 0.3em solid;
-                      border-right: 0.3em solid transparent;
-                      border-left: 0.3em solid transparent;
-                      position: absolute;
-                      color: white;
-                      top: 19px;
-                      @include media-breakpoint-down("sm") {
-                        top: 15px;
-                      }
-                      left: 93px;
-                      font-size: $font-size-form-dropdown-big;
-                    }
+
+                   span {
+                     display:block;
+                     float:left;
+                     padding-right:10px;
+                   }
+
                   }
                   .dropdown-menu {
                     margin: 0;
+                    padding: 0;
                     background-color: $turquoise;
+                    list-style: none;
                     li {
                       padding: 8px 12px;
                       @include media-breakpoint-down("sm") {

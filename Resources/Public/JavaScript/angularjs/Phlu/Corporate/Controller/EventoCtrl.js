@@ -8,6 +8,7 @@ PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
     $scope.graduation = {};
     $scope.nodetypes = [];
     $scope.searchquery = '';
+    $scope.isopen = 0;
 
     $scope.setQuery = function (value) {
         $scope.list.setQuery(value, $scope);
@@ -32,6 +33,7 @@ PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
     $scope.clearFilter = function (filtertype) {
         $scope[filtertype] = {};
     };
+
 
     $scope.setNodeTypes = function (nodetypes) {
         if (nodetypes == null) {
@@ -131,6 +133,36 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         });
     });
 
+
+    /**
+     * @public
+     * if detail is open
+     * @returns void
+     */
+    $scope.isOpen = function (node) {
+        return $scope.isopen === node.identifier;
+    };
+
+    /**
+     * @public
+     * set detail is open
+     * @returns void
+     */
+    $scope.setOpen = function (node,index) {
+        $scope.isopen = $scope.isopen === node.identifier ? 0 : node.identifier;
+
+        window.setTimeout(function() {
+            if (jQuery("#node-" + index).length) {
+                jQuery('html, body').stop().animate({
+                    'scrollTop': jQuery("#node-" + index).offset().top - (jQuery("#node-" + index).height() / 2)
+                }, 900, 'swing', function () {
+
+                });
+            }
+        },10);
+
+
+    };
 
     /**
      * @public
@@ -537,8 +569,22 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * Load more
      * @returns integer
      */
-    $scope.loadMore = function () {
+    $scope.loadMore = function (objId) {
+
         $scope.limit = $scope.limit + $scope.limitChunkSize;
+
+
+
+        window.setTimeout(function() {
+            if (jQuery(objId).length) {
+                jQuery('html, body').stop().animate({
+                    'scrollTop': jQuery(objId).offset().top
+                }, 900, 'swing', function () {
+
+                });
+            }
+        },10);
+
     };
 
     /**
@@ -576,4 +622,40 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
 
 }]);
+
+PhluCorporateApp.filter('castDate', function () {
+    return function (input) {
+
+        if (isNaN(input.substr(0,1))) {
+            return input;
+        }
+
+        var date = null;
+        try {
+            date = new Date();
+            date.setTime(Date.parse(input));
+        } catch (e) {
+            //
+            return input;
+        }
+
+        return date.toLocaleDateString("de-CH");
+
+    };
+});
+
+
+PhluCorporateApp.filter('previewText', function () {
+    return function (input) {
+
+        if (input.length > 255) {
+            return (input.substr(0,255+input.substr(255).indexOf(".")) + '.').substr(0,300);
+
+        } else {
+            return input;
+        }
+
+    };
+});
+
 

@@ -182,7 +182,8 @@
                                     </a>
                                 </div>
                                 <ul class="dropdown-menu">
-                                    <li value="" data-ng-repeat="graduation in result.getDistinct('graduation')  | orderObjectBy:'value'">
+                                    <li value=""
+                                        data-ng-repeat="graduation in result.getDistinct('graduation')  | orderObjectBy:'value'">
                                         <a href="#"
                                            data-ng-click="toggleFilterSelection(graduation,'Studiengang','graduation')">
                                             <i class="fa " aria-hidden="true"
@@ -440,14 +441,14 @@
                                 </th>
                             </tr>
                             </thead>
-                            <tbody ng-repeat="node in result.getNodes(limit)">
-                            <tr class="icon hat clickable" data-ng-class="{open: node.isopen,noborder: $index > 0}"
-                                data-node-id="{{node.identifier}}"
-                                data-ng-click="node.isopen = node.isopen ? false : true">
+                            <tbody ng-repeat="node in result.getNodes(limit)" id="node-{{$index}}">
+                            <tr class="icon hat clickable" data-ng-class="{open: isOpen(node),noborder: $index > 0}"
+                                data-ng-click="setOpen(node,$index);">
                                 <td>
-                                    <span data-ng-if="!node.currentyear" data-ng-init="node.currentyear = node.getProperty('years.0')"></span>
+                                    <span data-ng-if="!node.currentyear"
+                                          data-ng-init="node.currentyear = node.getProperty('years.0')"></span>
                                     <span class="oi"
-                                          data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
+                                          data-ng-class="{'oi-caret-right': !isOpen(node), 'oi-caret-bottom': isOpen(node)}"></span>
 
                                     <span data-ng-bind="node.getProperty('title')"></span>
                                 </td>
@@ -470,11 +471,11 @@
 
                                 </td>
                             </tr>
-                            <tr class="result-preview" data-ng-show="node.isopen">
+                            <tr class="result-preview" data-ng-show="isOpen(node)">
                                 <td colspan="4">
                                     <div class="result-preview-contents">
-                                        <p data-ng-bind="node.getProperty('description')">
-                                        </p>
+                                        <span data-ng-bind="node.getProperty('description') | previewText">
+                                        </span>
 
                                         <table class="table">
                                             <tbody>
@@ -491,7 +492,7 @@
                                                     Buchbar
                                                     <div class="mobile-view-columns">
                                                         <i class="fa fa-circle bookable" aria-hidden="true"
-                                                        data-ng-if="node.getProperty('years.Bookable').indexOf(true) > -1"></i>
+                                                           data-ng-if="node.getProperty('years.Bookable').indexOf(true) > -1"></i>
                                                         <i class="fa fa-circle booked-out" aria-hidden="true"
                                                            data-ng-if="node.getProperty('years.Bookable').indexOf(true) == -1"></i>
                                                     </div>
@@ -501,7 +502,8 @@
                                                 <td>
                                                     Typ
                                                     <div class="mobile-view-columns">
-                                                        <i class="fa fa-graduation-cap" alt="Studiengang" aria-hidden="true"
+                                                        <i class="fa fa-graduation-cap" alt="Studiengang"
+                                                           aria-hidden="true"
                                                            data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-study-furthereducation'"></i>
                                                         <i class="fa fa-calendar" alt="Veranstaltung" aria-hidden="true"
                                                            data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-event-furthereducation'"></i>
@@ -543,12 +545,13 @@
                                                             <div class="dropdown-toggle " data-toggle="dropdown"
                                                                  role="button" aria-haspopup="true"
                                                                  aria-expanded="false">
-                                                                <span data-ng-bind="node.currentyear.StartText"></span>
+                                                                <span data-ng-bind="node.currentyear.StartText | castDate"></span>
                                                             </div>
                                                             <ul class="dropdown-menu">
-                                                                <li data-ng-repeat="year in node.getProperty('years')" data-ng-click="node.currentyear = year;">
+                                                                <li data-ng-repeat="year in node.getProperty('years')"
+                                                                    data-ng-click="node.currentyear = year;">
                                                                     <a data-ng-click="node.currentyear = year;">
-                                                                        <span data-ng-bind="year.StartText"></span>
+                                                                        <span data-ng-bind="year.StartText | castDate"></span>
                                                                     </a>
                                                                 </li>
                                                             </ul>
@@ -557,23 +560,26 @@
                                                 </td>
                                                 <td>
 
-                                                    <div class="dropdown" data-ng-if="node.getProperty('years').length > 1">
-                                                        <div class="dropdown-toggle " data-toggle="dropdown"
-                                                             role="button" aria-haspopup="true" aria-expanded="false">
-                                                            <span data-ng-bind="node.currentyear.StartText"></span>
-                                                        </div>
+
+                                                    <div class="input-group-btn" data-ng-if="node.getProperty('years').length > 1">
+                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                                aria-haspopup="true" aria-expanded="false">
+                                                            <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                        </button>
                                                         <ul class="dropdown-menu">
-                                                            <li data-ng-repeat="year in node.getProperty('years')" data-ng-click="node.currentyear = year;">
+                                                            <li data-ng-repeat="year in node.getProperty('years')"
+                                                                data-ng-click="node.currentyear = year;">
                                                                 <a data-ng-click="node.currentyear = year;">
-                                                                    <span data-ng-bind="year.StartText"></span>
+                                                                    <span data-ng-bind="year.StartText | castDate"></span>
                                                                 </a>
                                                             </li>
                                                         </ul>
-                                                    </div>
+                                                    </div><!-- /btn-group -->
+
 
                                                     <div data-ng-if="node.getProperty('years').length == 1">
                                                         <div>
-                                                            <span data-ng-bind="node.currentyear.StartText"></span>
+                                                            <span data-ng-bind="node.currentyear.StartText | castDate"></span>
                                                         </div>
                                                     </div>
 
@@ -584,7 +590,6 @@
 
                                     </div>
                                     <div class="details">
-                                        <span data-ng-bind="node.getProperty('')"></span>
                                         <a class="btn btn-primary"
                                            data-ng-href="{{node.getUrl()}}">
                                             Details
@@ -615,7 +620,7 @@
 
                     <div class="row">
                         <div class="col-center">
-                            <a data-ng-click="loadMore();" class="btn loadMore"
+                            <a data-ng-click="loadMore('#loadmore1');" class="btn loadMore"
                                data-ng-if="result.count() > limit">
                                 <!--{{limitChunkSize}} -->
                                 mehr anzeigen
