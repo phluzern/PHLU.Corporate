@@ -3223,6 +3223,9 @@ body {
                   td {
                     background-color: $lightgrey;
                     border-bottom: 0;
+                    &:first-child {
+                      font-weight: bold;
+                    }
                   }
                 }
               }
