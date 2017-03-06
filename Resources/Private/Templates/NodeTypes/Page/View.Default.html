@@ -64,14 +64,14 @@
                     <f:for each="{sections}" as="item" iteration="iterator">
                         <li class="{f:if(condition: iterator.isFirst, then: 'active', else: '')}">
                             <a class="nav-item nav-link anchor-nav"
-                               href="#node-{item.Identifier}">{item.properties.title}</a>
+                               data-target="#node-{item.Identifier}">{item.properties.title}</a>
                         </li>
                     </f:for>
                     <f:if condition="{contactIsHidden}">
                         <f:else>
                             <li>
                                 <a class="nav-item nav-link anchor-nav"
-                                   href="#kontakt">Kontakt</a>
+                                   data-target="#kontakt">Kontakt</a>
                             </li>
                         </f:else>
                     </f:if>

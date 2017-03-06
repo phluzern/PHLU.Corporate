@@ -14,7 +14,7 @@
                 <f:if condition="{node.properties.ishidden}">
                     <f:else>
                         <li>
-                            <a class="nav-item nav-link anchor-nav" href="#aktuelles">Aktuelles</a>
+                            <a class="nav-item nav-link anchor-nav" data-target="#aktuelles">Aktuelles</a>
                         </li>
                     </f:else>
                 </f:if>
@@ -23,13 +23,13 @@
             <f:for each="{items}" as="item" iteration="iterator">
                 <li class="{f:if(condition: iterator.isFirst, then: 'active', else: '')}">
                     <a class="nav-item nav-link anchor-nav"
-                       href="#{item.node.properties.uriPathSegment}">{item.label}</a>
+                       data-target="#{item.node.properties.uriPathSegment}">{item.label}</a>
                 </li>
             </f:for>
 
             <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.View.Dossier'">
                 <li>
-                    <a class="nav-item nav-link anchor-nav" href="#kontakt">Kontakt</a>
+                    <a class="nav-item nav-link anchor-nav" data-target="#kontakt">Kontakt</a>
                 </li>
             </f:if>
 

@@ -24,34 +24,34 @@
                 </div>
                 <ul class="nav nav-pills">
                     <li>
-                        <a class="nav-item nav-link anchor-nav" href="#uebersicht">Übersicht</a>
+                        <a class="nav-item nav-link anchor-nav" data-target="#uebersicht">Übersicht</a>
                     </li>
                     <li>
-                        <a class="nav-item nav-link anchor-nav" href="#fakten">Fakten</a>
+                        <a class="nav-item nav-link anchor-nav" data-target="#fakten">Fakten</a>
                     </li>
                     <f:if condition="{project.participants}">
                         <li>
-                            <a class="nav-item nav-link anchor-nav" href="#beteiligtepersonen">Beteiligte Personen</a>
+                            <a class="nav-item nav-link anchor-nav" data-target="#beteiligtepersonen">Beteiligte Personen</a>
                         </li>
                     </f:if>
                     <f:if condition="{project.documents}">
                         <li>
-                            <a class="nav-item nav-link anchor-nav" href="#dokumente">Dokumente</a>
+                            <a class="nav-item nav-link anchor-nav" data-target="#dokumente">Dokumente</a>
                         </li>
                     </f:if>
                     <f:if condition="{project.photos}">
                         <li>
-                            <a class="nav-item nav-link anchor-nav" href="#photos">Bilder</a>
+                            <a class="nav-item nav-link anchor-nav" data-target="#photos">Bilder</a>
                         </li>
                     </f:if>
                     <f:if condition="{project.links}">
                         <li>
-                            <a class="nav-item nav-link anchor-nav" href="#links">Links</a>
+                            <a class="nav-item nav-link anchor-nav" data-target="#links">Links</a>
                         </li>
                     </f:if>
                     <f:if condition="{project.publications}">
                         <li>
-                            <a class="nav-item nav-link anchor-nav" href="#publikationen">Publikationen</a>
+                            <a class="nav-item nav-link anchor-nav" data-target="#publikationen">Publikationen</a>
                         </li>
                     </f:if>
                 </ul>
