@@ -3,6 +3,12 @@
  */
 
 $(document).ready(function () {
+    initFrontend();
+});
+
+function initFrontend() {
+
+
 
     var isBackend = jQuery("body").hasClass("neos-backend");
 
@@ -62,31 +68,6 @@ $(document).ready(function () {
         if ($(e.target).attr('href') != undefined && $(e.target).attr('href') != "#") window.location.href = $(e.target).attr('href');
     });
 
-    /* smooth scrolling [href^="#"] */
-    $('a.anchor-nav').on('click', function (e) {
-        e.preventDefault();
-
-        if (jQuery(this).attr('data-target')) {
-            var target = jQuery(this).attr('data-target');
-            var $target = $(target);
-        } else {
-            var target = this.hash != '' ? this.hash : $(e.target).closest("a").get(0).attr('href');
-            var $target = $(target);
-        }
-
-
-
-        if (target != "#") {
-
-            $('html, body').stop().animate({
-                'scrollTop': $target.offset().top - 40
-            }, 900, 'swing', function () {
-
-            });
-        }
-
-
-    });
 
     /* top link nav */
     $(window).scroll(function () {
@@ -110,6 +91,9 @@ $(document).ready(function () {
     $('.carousel-inner').each(function () {
         if ($(this).children('div').length === 1) $(this).siblings('.carousel-control, .carousel-indicators').hide();
     });
+
+
+    initSmothScrolling();
 
 
     /*
@@ -238,14 +222,14 @@ $(document).ready(function () {
     initCarousel();
 
     /*
-    * show extended Search Filters
+     * show extended Search Filters
      */
     $('.extendedSearch button').on('click', function () {
         $('.extendedSearchBg').toggleClass('on');
         $('.extendedSearchFilter').toggle();
     });
     /*
-    *  Open accordion panel from url hash
+     *  Open accordion panel from url hash
      */
     if(location.hash != null && location.hash != ""){
         $('.collapse').removeClass('in');
@@ -255,8 +239,8 @@ $(document).ready(function () {
     }
 
     /*
-    * target-group-codes
-    * show fullname
+     * target-group-codes
+     * show fullname
      */
     $( ".target-group-codes .code" ).hover(
         function() {
@@ -266,8 +250,36 @@ $(document).ready(function () {
         }
     );
 
-});
+}
 
+function initSmothScrolling() {
+
+    /* smooth scrolling [href^="#"] */
+    $('a.anchor-nav').on('click', function (e) {
+        e.preventDefault();
+
+        if (jQuery(this).attr('data-target')) {
+            var target = jQuery(this).attr('data-target');
+            var $target = $(target);
+        } else {
+            var target = this.hash != '' ? this.hash : $(e.target).closest("a").get(0).attr('href');
+            var $target = $(target);
+        }
+
+
+
+        if (target != "#") {
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top - 40
+            }, 900, 'swing', function () {
+
+            });
+        }
+
+
+    });
+}
 
 function initCarousel() {
 

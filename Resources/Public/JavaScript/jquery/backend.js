@@ -17,6 +17,11 @@ $(document).ready(function () {
     }, false);
 
 
+    document.addEventListener('Neos.PageLoaded', function(event) {
+        initFrontend();
+    }, false);
+
+
     // override aloha repository for inline editing link editor
     var customAlohaAssetRepositoryOverride = false;
     if (typeof document.addEventListener === 'function') {
