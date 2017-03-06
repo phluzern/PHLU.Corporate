@@ -78,10 +78,12 @@ class GetYearViewHelper extends AbstractViewHelper
 
         }
 
+
+
         if (is_array($y)) {
             $this->templateVariableContainer->add($variable, $y);
         } else {
-            $this->templateVariableContainer->add($variable, null);
+            $this->templateVariableContainer->add($variable, array());
         }
 
 
