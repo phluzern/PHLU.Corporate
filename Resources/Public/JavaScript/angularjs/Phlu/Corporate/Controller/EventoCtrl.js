@@ -58,8 +58,8 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     var search = new $hybridsearchObject(hybridsearch);
     var searchAll = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();
-    $scope.limit = 15;
-    $scope.limitChunkSize = 15;
+    $scope.limit = 10;
+    $scope.limitChunkSize = 10;
     $scope.searchquery = '';
     $scope.search = {};
     $scope.bookable = {
@@ -572,9 +572,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.loadMore = function (objId) {
 
         $scope.limit = $scope.limit + $scope.limitChunkSize;
-
-
-
         window.setTimeout(function() {
             if (jQuery(objId).length) {
                 jQuery('html, body').stop().animate({
