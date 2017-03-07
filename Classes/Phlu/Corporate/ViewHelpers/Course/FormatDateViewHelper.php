@@ -12,6 +12,7 @@ namespace Phlu\Corporate\ViewHelpers\Course;
  */
 
 use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Error\Exception;
 use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
 use Neos\ContentRepository\Domain\Model\Node;
 
@@ -40,7 +41,12 @@ class FormatDateViewHelper extends AbstractViewHelper
 
         $tage = array("So", "Mo", "Di", "Mi", "Do", "Fr", "Sa");
 
-        $date = new \DateTime($datestring);
+
+        try {
+            $date = new \DateTime($datestring);
+        } catch (Exception $e) {
+            return $datestring;
+        }
 
         if ($type == 'hour') {
             return "<span class='hour'>".$date->format("H:i")." Uhr</span>";

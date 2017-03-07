@@ -116,15 +116,15 @@
                                         <td>
                                             Anmeldeschluss
                                             <div class="mobile-view-columns">
-                                                {f:format.date(date: year.BookableUntil.date, format: 'd.m.Y')}
+                                                {course:Date(date: year.BookableUntil.date, format: 'd.m.Y')}
                                             </div>
                                         </td>
                                         <td>
-                                            {f:format.date(date: year.BookableUntil.date, format: 'd.m.Y')}
+                                            {course:Date(date: year.BookableUntil.date, format: 'd.m.Y')}
                                         </td>
                                     </tr>
                                 </f:if>
-                                <f:if condition="{f:format.date(date: year.Start.date, format: 'Y')} > 1970">
+                                <f:if condition="{course:Date(date: year.Start.date, format: 'Y')} > 1970">
                                     <tr>
                                         <td>
                                             Startdatum
@@ -133,8 +133,8 @@
                                                 <div class="dropdown">
                                                     <div class="dropdown-toggle " data-toggle="dropdown"
                                                          role="button" aria-haspopup="true" aria-expanded="false">
-                                                        <f:if condition="{f:format.date(date: year.StartText, format: 'Y')} > 1970">
-                                                            <f:then><span>{f:format.date(date: year.StartText, format: 'd.m.Y')}</span>
+                                                        <f:if condition="{course:Date(date: year.StartText, format: 'Y')} > 1970">
+                                                            <f:then><span>{course:Date(date: year.StartText, format: 'd.m.Y')}</span>
                                                             </f:then>
                                                             <f:else><span>{year.StartText}</span></f:else>
                                                         </f:if>
@@ -144,8 +144,8 @@
                                                             <li value="">
 
                                                                 <a href="{option.url}">
-                                                                    <f:if condition="{f:format.date(date: option.value.StartText, format: 'Y')} > 1970">
-                                                                        <f:then><span>{f:format.date(date: option.value.StartText, format: 'd.m.Y')}</span>
+                                                                    <f:if condition="{course:Date(date: option.value.StartText, format: 'Y')} > 1970">
+                                                                        <f:then><span>{course:Date(date: option.value.StartText, format: 'd.m.Y')}</span>
                                                                         </f:then>
                                                                         <f:else><span>{option.value.StartText}</span>
                                                                         </f:else>
@@ -176,16 +176,16 @@
                                         </td>
                                     </tr>
                                 </f:if>
-                                <f:if condition="{f:format.date(date: year.End.date, format: 'Y')} > 1970">
+                                <f:if condition="{course:Date(date: year.End.date, format: 'Y')} > 1970">
                                     <tr>
                                         <td>
                                             Dauer
                                             <div class="mobile-view-columns">
-                                                {f:format.date(date: year.End.date, format: 'd.m.Y')}
+                                                {course:Date(date: year.End.date, format: 'd.m.Y')}
                                             </div>
                                         </td>
                                         <td>
-                                            {f:format.date(date: year.End.date, format: 'd.m.Y')}
+                                            {course:Date(date: year.End.date, format: 'd.m.Y')}
                                         </td>
                                     </tr>
                                 </f:if>
