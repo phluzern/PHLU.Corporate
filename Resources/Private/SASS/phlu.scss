@@ -3479,7 +3479,7 @@ body {
 
           .further-education-list {
             .table {
-              thead {
+              thead, .booking-status, .course-number, .course-type {
                 display: none;
               }
               tbody > tr > td > span.oi {

@@ -10249,7 +10249,7 @@ body {
               background-color: #edeae8; }
             body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr:first-child td {
               border: 0; }
-        body .all .blackBgFullWidthContents .tab-content .result-panel .further-education-list .table thead {
+        body .all .blackBgFullWidthContents .tab-content .result-panel .further-education-list .table thead, body .all .blackBgFullWidthContents .tab-content .result-panel .further-education-list .table .booking-status, body .all .blackBgFullWidthContents .tab-content .result-panel .further-education-list .table .course-number, body .all .blackBgFullWidthContents .tab-content .result-panel .further-education-list .table .course-type {
           display: none; }
         body .all .blackBgFullWidthContents .tab-content .result-panel .further-education-list .table tbody > tr > td > span.oi {
           max-width: 20px;
