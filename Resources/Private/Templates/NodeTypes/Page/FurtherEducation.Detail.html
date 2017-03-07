@@ -24,7 +24,7 @@
                     <span class="code">
                         <span class="fullname">
                             <f:if condition="{targetgroup.Bezeichnung}"><f:then>
-                               <f:if condition="{targetgroups -> f:count()} > 5">
+                               <f:if condition="{targetgroups -> f:count()} > 3">
                                  <f:then>{targetgroup.Bezeichnung}</f:then>
                                  <f:else>{targetgroup.Zg}</f:else>
                              </f:if>
@@ -36,7 +36,7 @@
 
 
                          <f:if condition="{targetgroup.Zg}"><f:then>
-                             <f:if condition="{targetgroups -> f:count()} > 5">
+                             <f:if condition="{targetgroups -> f:count()} > 3">
                                  <f:then>{targetgroup.Zg}</f:then>
                                  <f:else>{targetgroup.Bezeichnung}</f:else>
                              </f:if>
