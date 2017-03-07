@@ -1,3 +1,4 @@
+
 <div class="table-responsive">
     <table class="table">
         <thead>
@@ -16,9 +17,9 @@
             </th>
         </tr>
         </thead>
-        <tbody ng-repeat="node in result.getNodes(limit)" id="node-{{$index}}">
+        <tbody ng-repeat="node in result.getNodes(limit)" id="node-{{result.getIdentifier()}}-{{$index}}">
         <tr class="icon hat clickable" data-ng-class="{open: isOpen(node),noborder: $index > 0}"
-            data-ng-click="setOpen(node,$index);">
+            data-ng-click="setOpen(node,$index,result.getIdentifier());">
             <td>
                                     <span data-ng-if="!node.currentyear"
                                           data-ng-init="node.currentyear = node.getProperty('years.0')"></span>

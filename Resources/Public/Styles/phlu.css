@@ -10170,7 +10170,7 @@ body {
         min-height: inherit; }
       body .all .blackBgFullWidthContents .tab-content .result-panel {
         padding-bottom: 30px; }
-        body .all .blackBgFullWidthContents .tab-content .result-panel h3 {
+        body .all .blackBgFullWidthContents .tab-content .result-panel h3, body .all .blackBgFullWidthContents .tab-content .result-panel h2 {
           font-size: 1.125rem;
           font-weight: 700;
           margin: 30px 0 25px;
@@ -10249,6 +10249,14 @@ body {
               background-color: #edeae8; }
             body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr:first-child td {
               border: 0; }
+        body .all .blackBgFullWidthContents .tab-content .result-panel .further-education-list .table thead {
+          display: none; }
+        body .all .blackBgFullWidthContents .tab-content .result-panel .further-education-list .table tbody > tr > td > span.oi {
+          max-width: 20px;
+          overflow: hidden; }
+        body .all .blackBgFullWidthContents .tab-content .result-panel .further-education-list div {
+          margin-bottom: 0;
+          padding-bottom: 0; }
       body .all .blackBgFullWidthContents.filter-bar > .col-xs-12 {
         margin: 0; }
     body .all .blackBgFullWidthTabs .nav-pills .nav-item + .nav-item, body .all .blackBgFullWidthContents .nav-pills .nav-item + .nav-item {

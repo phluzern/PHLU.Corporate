@@ -176,9 +176,13 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * set detail is open
      * @returns void
      */
-    $scope.setOpen = function (node,index) {
+    $scope.setOpen = function (node,index,containerId) {
         $scope.isopen = $scope.isopen === node.identifier ? 0 : node.identifier;
         $scope.setCurrentYear(node);
+
+        if (containerId !== undefined) {
+            index = containerId+"-"+index;
+        }
 
         window.setTimeout(function() {
             if (jQuery("#node-" + index).length) {
@@ -644,8 +648,8 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         }
 
     });
-    search.run();
 
+    search.run();
 
 }]);
 

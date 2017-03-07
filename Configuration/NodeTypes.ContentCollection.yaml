@@ -141,6 +141,7 @@
       'Phlu.Corporate:Text': true
       'Phlu.Corporate:Headline': true
       'Phlu.Corporate:TextWithImage': true
+
 'Phlu.Neos.NodeTypes:ContentCollection.Contacts':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
@@ -167,6 +168,14 @@
     nodeTypes:
       '*': false
       'Phlu.Corporate:CarouselImage': true
+
+'Phlu.Corporate:ContentCollection.Widget':
+  superTypes:
+    'Phlu.Corporate:ContentCollection': true
+  constraints:
+    nodeTypes:
+      '*': true
+      'Phlu.Corporate:Section': true
 
 'Phlu.Corporate:ContentCollection.Page.FurtherEducation.Detail':
   superTypes:

@@ -114,15 +114,14 @@ class FurtherEducationDataSource extends AbstractDataSource {
 
             foreach ($this->moduleCourseRepository->findAll() as $course) {
                 /* @var Module $course */
-                $data[$course->getNr()] = array('value' => $course->getNr(), 'label' => $course->getNr() . " ".$course->getTitle());
+                $data[$course->getNr()] = array('value' => $course->getNr(), 'label' => $course->getNr() . " ".$course->getTitle(),'group' => 'Kurs');
             }
 
             foreach ($this->studyCourseRepository->findAll() as $study) {
                 /* @var Study $study */
-                $data[$course->getNr()] = array('value' => $course->getNr(), 'label' => $course->getNr() . " ".$course->getTitle());
+                $data[$study->getNr()] = array('value' => $study->getNr(), 'label' => $study->getNr() . " ".$study->getTitle(), 'group' => 'Studiengang');
             }
 
-            break;
 
 
         }

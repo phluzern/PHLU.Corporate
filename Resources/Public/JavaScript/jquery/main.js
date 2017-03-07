@@ -26,12 +26,11 @@ function initFrontend() {
         return false;
     });
 
-    $('ul.nav.nav-pills li.nav-item a.nav-link').click(function (event) {
+    $('ul.nav.nav-pills li.nav-item a.nav-link, .nav-item .a.nav-link').click(function (event) {
 
 
-        if (isBackend) {
             event.preventDefault();
-        }
+
 
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');

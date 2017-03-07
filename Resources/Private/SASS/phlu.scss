@@ -3353,7 +3353,7 @@ body {
       }
       .tab-content {
         .result-panel {
-          h3 {
+          h3, h2 {
             font-size: $font-size-nav-teaser-header;
             font-weight: $font-weight-bold;
             margin: 30px 0 25px;
@@ -3474,6 +3474,22 @@ body {
 
                 }
               }
+            }
+          }
+
+          .further-education-list {
+            .table {
+              thead {
+                display: none;
+              }
+              tbody > tr > td > span.oi {
+                max-width:20px;
+                overflow: hidden;
+              }
+            }
+             div {
+              margin-bottom:0;
+              padding-bottom:0;
             }
           }
         }

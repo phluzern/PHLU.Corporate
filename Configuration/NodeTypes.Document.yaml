@@ -19,6 +19,8 @@
       type: 'Phlu.Corporate:Content.Page.TargetGroup'
     carouselnews:
       type: 'Phlu.Corporate:Content.CarouselNews'
+    widget:
+      type: 'Phlu.Corporate:ContentCollection.Widget'
   constraints:
     nodeTypes:
       '*': false
