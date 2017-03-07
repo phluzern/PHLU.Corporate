@@ -10,6 +10,7 @@ PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
     $scope.searchquery = '';
     $scope.isopen = 0;
 
+
     $scope.setQuery = function (value) {
         $scope.list.setQuery(value, $scope);
     };
@@ -57,6 +58,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     var search = new $hybridsearchObject(hybridsearch);
     var searchAll = new $hybridsearchObject(hybridsearch);
+    $scope.currentYears = {};
     $scope.result = new $hybridsearchResultsObject();
     $scope.limit = 10;
     $scope.limitChunkSize = 10;
@@ -136,6 +138,32 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     /**
      * @public
+     * set current year of given node
+     * @param node node
+     * @param array year
+     * @returns void
+     */
+    $scope.setCurrentYear = function (node,year) {
+
+        if (year === undefined && $scope.currentYears[node.identifier] == undefined) {
+           year = node.getProperty('years.0');
+        }
+
+        if (year !== undefined) {
+            node.currentyear = year;
+            $scope.currentYears[node.identifier] = year;
+        }
+
+        if ($scope.currentYears[node.identifier] !== undefined && year !== undefined && year.Id !== undefined) {
+            $scope.currentYears[node.identifier].url = node.getUrl().substr(0,node.getUrl().lastIndexOf("/"))+"/"+node.getProperty('id')+"/"+year.Id+node.getUrl().substr(node.getUrl().lastIndexOf("/"));
+        }
+
+    };
+
+
+
+    /**
+     * @public
      * if detail is open
      * @returns void
      */
@@ -150,6 +178,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      */
     $scope.setOpen = function (node,index) {
         $scope.isopen = $scope.isopen === node.identifier ? 0 : node.identifier;
+        $scope.setCurrentYear(node);
 
         window.setTimeout(function() {
             if (jQuery("#node-" + index).length) {

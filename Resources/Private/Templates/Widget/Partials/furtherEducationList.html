@@ -135,7 +135,6 @@
                             </td>
                             <td>
 
-
                                 <div class="input-group-btn" data-ng-if="node.getProperty('years').length > 1">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                                             aria-haspopup="true" aria-expanded="false">
@@ -143,7 +142,7 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li data-ng-repeat="year in node.getProperty('years')"
-                                            data-ng-click="node.currentyear = year;">
+                                            data-ng-click="setCurrentYear(node,year)">
                                             <a data-ng-click="node.currentyear = year;">
                                                 <span data-ng-bind="year.StartText | castDate"></span>
                                             </a>
@@ -165,7 +164,11 @@
 
                 </div>
                 <div class="details">
-                    <a class="btn btn-primary"
+                    <a class="btn btn-primary" data-ng-if="currentYears[node.identifier].url"
+                       data-ng-href="{{currentYears[node.identifier].url}}">
+                        Details
+                    </a>
+                    <a class="btn btn-primary" data-ng-if="!currentYears[node.identifier].url"
                        data-ng-href="{{node.getUrl()}}">
                         Details
                     </a>
@@ -179,8 +182,8 @@
                                             Teilen
                                         </span>
                     </a>
-                    <a class="btn btn-primary" data-ng-if="node.currentyear.RegistrationLink"
-                       data-ng-href="{{node.currentyear.RegistrationLink}}">
+                    <a class="btn btn-primary" data-ng-show="currentYears[node.identifier].RegistrationLink"
+                       data-ng-href="{{currentYears[node.identifier].RegistrationLink}}">
                         Anmelden
                     </a>
                 </div>
