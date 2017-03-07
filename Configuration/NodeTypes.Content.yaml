@@ -119,6 +119,7 @@
 'Phlu.Corporate:Headline':
   superTypes:
     'Phlu.Neos.NodeTypes:Headline': true
+
 'Phlu.Corporate:Text':
   superTypes:
     'Phlu.Neos.NodeTypes:TextPlain': true

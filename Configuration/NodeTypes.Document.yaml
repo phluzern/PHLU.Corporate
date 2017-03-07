@@ -241,7 +241,7 @@
     header:
       type: 'Phlu.Corporate:Content.Page.HeaderDefault'
     hero:
-      type: 'Phlu.Corporate:HereUnit.ThreeCols'
+      type: 'Phlu.Corporate:HeroUnit.ThreeCols'
   ui:
     label: 'Kurs'
 
@@ -260,6 +260,6 @@
     header:
       type: 'Phlu.Corporate:Content.Page.HeaderDefault'
     hero:
-      type: 'Phlu.Corporate:HereUnit.ThreeCols'
+      type: 'Phlu.Corporate:HeroUnit.ThreeCols'
   ui:
     label: 'Studiengang'

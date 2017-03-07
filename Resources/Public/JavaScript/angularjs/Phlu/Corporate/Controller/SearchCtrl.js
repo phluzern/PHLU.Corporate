@@ -392,6 +392,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     });
 
     $rootScope.$watch('siteSearch', function (i) {
+
         $scope.siteSearch = i;
         if (i === '' && wasClosed == false) {
             $scope.siteSearchLastQuery = '';

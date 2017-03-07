@@ -73,29 +73,18 @@
             <div class="logoAndSearchBar {parts.logoAndSearchBarGetClass -> f:format.raw()}">
                 <div class="row">
                     <div class="col-xl-12">
-                            <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
-                                <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/phluLogo.svg')}"
-                                     alt="PH Luzern Logo"
-                                     onerror="this.onerror=null; this.src='Images/phluLogo.png'"/>
-                            </a>
-                            <f:if condition="{neos:rendering.inBackend()}">
-                                <f:then>
-                                    <div class="site-search-field">
-                                        <input type="text" class="c-input form-control" id="siteSearch">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                        <div class="searchResult">
+                        <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
+                            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/phluLogo.svg')}"
+                                 alt="PH Luzern Logo"
+                                 onerror="this.onerror=null; this.src='Images/phluLogo.png'"/>
+                        </a>
 
-                                        </div>
-                                    </div>
-                                </f:then>
-                                <f:else>
-                                    <div class="site-search-field">
-                                        <input type="text" class="c-input form-control" data-ng-model="siteSearch"
-                                               data-ng-click="startSearch();">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </div>
-                                </f:else>
-                            </f:if>
+                        <div class="site-search-field">
+                            <input type="text" class="c-input form-control" data-ng-model="siteSearch"
+                                   data-ng-click="startSearch();">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+
 
                     </div>
                 </div>
@@ -129,7 +118,7 @@
         <div class="row">
             <div class="col-xs-12 site-search-field">
                 <input type="text" class="c-input form-control ng-pristine ng-valid ng-empty ng-touched"
-                       id="siteSearchMobile" data-ng-model="siteSearch" data-ng-click="startSearch();">
+                       id="siteSearchSearchMobile" data-ng-model="siteSearch" data-ng-click="startSearch();">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </div>
             {footer -> f:format.raw()}

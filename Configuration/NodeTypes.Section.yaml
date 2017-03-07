@@ -233,6 +233,39 @@
         reloadIfChanged: true
         inspector:
           group: filters
+    orderby:
+      type: string
+      ui:
+        label: 'Sortieren nach'
+        reloadIfChanged: true
+        inspector:
+          group: filters
+          position: 900
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            multiple: false
+            values:
+              '-nr':
+                label: 'Nummer (absteigend)'
+              'nr':
+                label: 'Nummer'
+              '-title':
+                label: 'Titel (absteigend)'
+              'title':
+                label: 'Titel (aufsteigend)'
+              '-created':
+                label: 'Erstellungsdatum (absteigend)'
+              'created':
+                label: 'Erstellungsdatum (aufsteigend)'
+              '-lastmodified':
+                label: 'Letzte Änderung (absteigend)'
+              'lastmodified':
+                label: 'Letzte Änderung (aufsteigend)'
+              '-id':
+                label: 'Id (absteigend)'
+              'id':
+                label: 'Id (aufsteigend)'
+
     types:
       type: array
       ui:

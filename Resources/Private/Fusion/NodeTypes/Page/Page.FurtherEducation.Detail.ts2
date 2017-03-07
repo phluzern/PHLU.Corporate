@@ -10,7 +10,7 @@ prototype(Phlu.Corporate:Page.FurtherEducation.Detail) < prototype(Phlu.Corporat
         genre = ${q(node).property('genre')}
         fee = ${q(node).property('fee')}
 
-        heroRenderer = Phlu.Corporate:HereUnit.ThreeCols
+        heroRenderer = Phlu.Corporate:HeroUnit.ThreeCols
         hero = ${q(node).children('hero').get(0)}
 
 }

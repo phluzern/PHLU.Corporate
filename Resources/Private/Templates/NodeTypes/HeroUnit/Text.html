@@ -1,0 +1,12 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+{namespace youtube=Phlu\Corporate\ViewHelpers\Youtube}
+
+
+
+<div {attributes -> f:format.raw()}>
+    <div class="box4">
+        {neos:contentElement.editable(property: 'text')}
+    </div>
+</div>

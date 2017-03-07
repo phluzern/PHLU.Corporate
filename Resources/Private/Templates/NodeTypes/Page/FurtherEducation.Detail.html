@@ -181,11 +181,11 @@
                                         <td>
                                             Dauer
                                             <div class="mobile-view-columns">
-                                                {course:Date(date: year.End.date, format: 'd.m.Y')}
+                                                {course:Date(date: year.Start.date, format: 'd.m.Y')} - {course:Date(date: year.End.date, format: 'd.m.Y')}
                                             </div>
                                         </td>
                                         <td>
-                                            {course:Date(date: year.End.date, format: 'd.m.Y')}
+                                            {course:Date(date: year.Start.date, format: 'd.m.Y')} - {course:Date(date: year.End.date, format: 'd.m.Y')}
                                         </td>
                                     </tr>
                                 </f:if>

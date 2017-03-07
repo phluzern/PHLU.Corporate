@@ -1,11 +1,13 @@
-'Phlu.Corporate:HereUnit.ThreeCols':
+'Phlu.Corporate:HeroUnit.ThreeCols':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
-      'Phlu.Corporate:HereUnit.Quote': true
-      'Phlu.Corporate:HereUnit.Video': true
-      'Phlu.Corporate:HereUnit.Features': true
+      'Phlu.Corporate:HeroUnit.Quote': true
+      'Phlu.Corporate:HeroUnit.Video': true
+      'Phlu.Corporate:HeroUnit.Features': true
+      'Phlu.Corporate:HeroUnit.Text': true
+      'Phlu.Corporate:HeroUnit.Image': true
   ui:
     label: 'Banner'
     icon: icon-picture
@@ -16,7 +18,7 @@
     inlineEditable: true
     position: 400
 
-'Phlu.Corporate:HereUnit.Quote':
+'Phlu.Corporate:HeroUnit.Quote':
   superTypes:
     'Phlu.Corporate:Content': true
   constraints:
@@ -47,7 +49,7 @@
           group: general
           position: 140
 
-'Phlu.Corporate:HereUnit.Features':
+'Phlu.Corporate:HeroUnit.Features':
   superTypes:
     'Phlu.Corporate:Content': true
   constraints:
@@ -70,7 +72,69 @@
       type: string
       defaultValue: '<p>Vermittlungskompetenzen</p><p>Projektmanagement-kompetenzen</p><p>Beratungskompetenzen</p>'
 
-'Phlu.Corporate:HereUnit.Video':
+'Phlu.Corporate:HeroUnit.Text':
+  superTypes:
+    'Phlu.Neos.NodeTypes:TextPlain': true
+  properties:
+    text:
+      ui:
+        aloha:
+          autoparagraph: true
+          format:
+            strong: true
+            b: false
+            em: false
+            i: false
+            u: false
+            sub: false
+            sup: false
+            p: false
+            h1: false
+            h2: false
+            h3: false
+            h4: false
+            h5: false
+            h6: false
+            code: false
+            removeFormat: true
+          table:
+            table: false
+          link:
+            a: false
+          list:
+            ul: true
+            ol: true
+          alignment:
+            left: false
+            center: false
+            right: false
+            justify: false
+          formatlesspaste:
+            button: false
+            formatlessPasteOption: true
+            strippedElements:
+              - '*'
+            autoparagraph: false
+
+'Phlu.Corporate:HeroUnit.Image':
+  superTypes:
+    'Phlu.Corporate:Image': true
+  properties:
+    image:
+      ui:
+        inspector:
+          editorOptions:
+            features:
+              crop: TRUE
+            crop:
+              aspectRatio:
+                locked:
+                  width: 500
+                  height: 600
+
+
+
+'Phlu.Corporate:HeroUnit.Video':
   superTypes:
     'Phlu.Corporate:Content': true
   constraints:

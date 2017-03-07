@@ -286,6 +286,16 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     };
 
+    /**
+     * @public
+     * Set order by
+     * @param string limit
+     * @returns void
+     */
+    $scope.setOrderBy = function (orderby) {
+       search.setOrderBy({'*': orderby})
+    };
+
 
 
     /**
@@ -650,6 +660,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     search
         .setQuery('searchquery', $scope)
         .setNodeType('nodetypes', $scope)
+        .setOrderBy({'*': '-id'})
         .$bind('result', $scope);
 
     angular.forEach($scope.filters, function (filter, name) {

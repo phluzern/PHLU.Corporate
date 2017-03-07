@@ -3,8 +3,8 @@
 {namespace nl=Neoslive\Hybridsearch\ViewHelpers}
 
 <div class="row" data-ng-controller="SearchCtrl" id="search" data-ng-init='setNodeTypeProperties({nl:properties()});'>
-    <f:if condition="{neos:rendering.inBackend()}">
-        <f:else>
+
+
             <div data-ng-class="{'hasSearchResults': siteSearch != '', 'noSearchResults': siteSearch == ''}"
                  class="noSearchResults ">
 
@@ -501,6 +501,5 @@
                 </div>
 
             </div>
-        </f:else>
-    </f:if>
+
 </div>
