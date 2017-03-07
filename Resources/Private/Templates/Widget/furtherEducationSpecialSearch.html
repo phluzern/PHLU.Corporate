@@ -428,7 +428,7 @@
 
                     <div class="row">
                         <div class="col-center">
-                            <a data-ng-click="loadMore('#node-'+limit);" class="btn loadMore"
+                            <a data-ng-click="loadMore('#node-'+result.getIdentifier()+'-'+limit);" class="btn loadMore"
                                data-ng-if="result.count() > limit">
                                 <!--{{limitChunkSize}} -->
                                 mehr anzeigen

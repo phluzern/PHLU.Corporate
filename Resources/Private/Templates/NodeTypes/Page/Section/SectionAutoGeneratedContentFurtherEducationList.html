@@ -14,6 +14,7 @@
     <span data-ng-init="setFilter({genres},'genre')"></span>
     <span data-ng-init="setFilter({targetgroups},'targetgroups')"></span>
     <span data-ng-init="setFilter({nrs},'nr')"></span>
+    <f:if condition="{maxitems} > 0"><span data-ng-init="setMaxItems({maxitems})"></span></f:if>
 
     <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
          data-ng-if="result.isLoading()"/>

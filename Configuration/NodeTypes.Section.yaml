@@ -225,6 +225,14 @@
   properties:
     title:
       defaultValue: Weiterbildung
+    maxitems:
+      type: integer
+      defaultValue: 0
+      ui:
+        label: 'max. Resultate'
+        reloadIfChanged: true
+        inspector:
+          group: filters
     types:
       type: array
       ui:

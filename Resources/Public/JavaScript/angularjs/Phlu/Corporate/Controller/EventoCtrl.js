@@ -57,7 +57,7 @@ PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
 PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
     var search = new $hybridsearchObject(hybridsearch);
-    var searchAll = new $hybridsearchObject(hybridsearch);
+
     $scope.currentYears = {};
     $scope.result = new $hybridsearchResultsObject();
     $scope.limit = 10;
@@ -271,6 +271,19 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             }, category === undefined ? 'Alle' : category, filtername);
 
         });
+    };
+
+
+    /**
+     * @public
+     * Set max results
+     * @param integer limit
+     * @returns void
+     */
+    $scope.setMaxItems = function (limit) {
+
+        search.setLimit(limit);
+
     };
 
 
