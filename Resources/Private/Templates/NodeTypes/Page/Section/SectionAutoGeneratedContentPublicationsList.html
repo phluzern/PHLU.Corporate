@@ -239,15 +239,15 @@
                                id="node-{{group.getHashKey()}}-{{$index}}" >
                                 <td data-ng-if="node.getProperty('url') == ''">
                                     <div>
-                                    <span data-ng-if="node.getProperty('citationstyle') != ''" data-ng-bind="node.getProperty('citationstyle')"></span>
-                                    <span data-ng-if="node.getProperty('citationstyle') == ''" data-ng-bind="node.getProperty('title')"></span>
+                                    <span data-ng-if="node.getProperty('citationstyle') != ''" data-ng-bind-html="node.getProperty('citationstyle')"></span>
+                                    <span data-ng-if="node.getProperty('citationstyle') == ''" data-ng-bind-html="node.getProperty('title')"></span>
                                     </div>
                                 </td>
                                 <td data-ng-if="node.getProperty('url') != ''">
                                     <div>
                                     <a data-ng-href="{{node.getProperty('url')}}" target="_blank">
-                                        <span data-ng-if="node.getProperty('citationstyle') != ''" data-ng-bind="node.getProperty('citationstyle')"></span>
-                                        <span data-ng-if="node.getProperty('citationstyle') == ''" data-ng-bind="node.getProperty('title')"></span>
+                                        <span data-ng-if="node.getProperty('citationstyle') != ''" data-ng-bind-html="node.getProperty('citationstyle')"></span>
+                                        <span data-ng-if="node.getProperty('citationstyle') == ''" data-ng-bind-html="node.getProperty('title')"></span>
                                     </a>
                                     </div>
                                 </td>
