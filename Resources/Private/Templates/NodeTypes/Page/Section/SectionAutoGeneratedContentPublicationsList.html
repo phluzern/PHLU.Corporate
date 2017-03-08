@@ -10,7 +10,10 @@
         </f:then>
     </f:if>
 
-    <ts:render path="top"></ts:render>
+
+    <f:if condition="{top}">
+        <ts:render path="top"></ts:render>
+    </f:if>
 
     <div class="searchResultsListStartupLoadingScreen" data-ng-if="result.isStarted() === false">
         <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
@@ -271,6 +274,8 @@
         </div>
     </div>
 
-    <ts:render path="bottom"></ts:render>
+    <f:if condition="{bottom}">
+        <ts:render path="bottom"></ts:render>
+    </f:if>
 
 </div>

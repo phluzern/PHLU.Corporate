@@ -20,7 +20,9 @@
     <f:if condition="{maxitems} > 0"><span data-ng-init="setMaxItems({maxitems})"></span></f:if>
     <f:if condition="{orderby} != ''"><span data-ng-init="setOrderBy('{orderby}')"></span></f:if>
 
+    <f:if condition="{top}">
     <ts:render path="top"></ts:render>
+    </f:if>
 
     <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading"
          class="loadingIcon"
@@ -53,6 +55,7 @@
         </div>
     </div>
 
-
+    <f:if condition="{bottom}">
     <ts:render path="bottom"></ts:render>
+    </f:if>
 </div>
