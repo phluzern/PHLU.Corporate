@@ -9639,6 +9639,8 @@ body {
       margin: 70px 0 65px; }
       body .all .phlu-accordion.list-multiple {
         margin: 0; }
+    body .all .phlu-corporate-section .phlu-accordion {
+      margin: 0 0 0; }
     body .all .phlu-accordion .panel, body .all .phlu-corporate-section .panel {
       padding-bottom: 17px; }
       body .all .phlu-accordion .panel .panel-heading .panel-title, body .all .phlu-corporate-section .panel .panel-heading .panel-title {
