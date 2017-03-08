@@ -51,6 +51,7 @@
     nodeTypes:
       'Phlu.Corporate:Text': true
       'Phlu.Corporate:Headline': true
+      'Phlu.Corporate:Image': true
 
 'Phlu.Corporate:ContentCollection.SectionCenterLinks':
   superTypes:
