@@ -13,6 +13,11 @@ prototype(Phlu.Corporate:Page.FurtherEducation.Detail) < prototype(Phlu.Corporat
         heroRenderer = Phlu.Corporate:HeroUnit.ThreeCols
         hero = ${q(node).children('hero').get(0)}
 
+
+        prototype(Phlu.Corporate:Section) {
+                sectionCount = 2
+        }
+
 }
 
 
