@@ -46,7 +46,7 @@ class OusDataSource extends AbstractDataSource {
                 /** @var Node $tag */
                 $group = '';
                 if ($tag->getParent() && $tag->getParent()->getProperty('title')) $group = $tag->getParent()->getProperty('title');
-                $ous[$group][$tag->getIdentifier()] = array('value' => $tag->getIdentifier(), 'label' => $tag->getProperty('title'), 'group' => $group, 'icon' => $tag->getNodeType()->getConfiguration('ui.icon'));
+                $ous[$group][(string)$tag->getIdentifier()] = array('value' => (string)$tag->getIdentifier(), 'label' => (string)$tag->getProperty('title'), 'group' => (string)$group, 'icon' => $tag->getNodeType()->getConfiguration('ui.icon'));
             }
 
 
