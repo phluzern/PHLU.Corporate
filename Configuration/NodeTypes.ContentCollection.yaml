@@ -50,6 +50,7 @@
   constraints:
     nodeTypes:
       'Phlu.Corporate:Text': true
+      'Phlu.Corporate:Headline': true
 
 'Phlu.Corporate:ContentCollection.SectionCenterLinks':
   superTypes:
