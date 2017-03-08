@@ -17,8 +17,9 @@
         </f:then>
     </f:if>
 
-
-    <ts:render path="top"></ts:render>
+    <f:if condition="{top}">
+        <ts:render path="top"></ts:render>
+    </f:if>
 
     <div class="searchResultsListStartupLoadingScreen" data-ng-if="result.isStarted() === false">
         <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading"
@@ -64,7 +65,8 @@
 
 
         <div class="col-xs-12">
-            <div class="row results-table {f:if(condition:'{bottomCount}>0', then:'hasbottomtext', else:'no')}" data-ng-show="isShowingResultList()">
+            <div class="row results-table {f:if(condition:'{bottomCount}>0', then:'hasbottomtext', else:'no')}"
+                 data-ng-show="isShowingResultList()">
                 <div class="col-xs-12">
                     <f:if condition="{showSearchInput}">
                         <div class="resultsCount">
@@ -147,10 +149,12 @@
                 </div>
             </div>
 
+            <f:if condition="{bottom}">
             <ts:render path="bottom"></ts:render>
 
             <f:if condition="{bottomCount} > 0">
                 <hr>
+            </f:if>
             </f:if>
 
 
