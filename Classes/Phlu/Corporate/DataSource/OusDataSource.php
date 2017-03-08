@@ -35,7 +35,8 @@ class OusDataSource extends AbstractDataSource {
         $flowQuery = new FlowQuery(array(
             $node->getContext()->getNodeByIdentifier('3903eff9-838f-45ad-8140-f2a88cb97be1'),
             $node->getContext()->getNodeByIdentifier('3a338745-b7c7-4f91-99f5-1191a94f9395'),
-            $node->getContext()->getNodeByIdentifier('7f434ec8-ad74-4032-a8fe-6842c4d3e4a1')
+            $node->getContext()->getNodeByIdentifier('7f434ec8-ad74-4032-a8fe-6842c4d3e4a1'),
+            $node->getContext()->getNodeByIdentifier('ac58fa97-872e-4ba1-8275-defd5bff160d')
         ));
 
         if ($flowQuery->get(0) && $flowQuery->get(1) && $flowQuery->get(2)) {
