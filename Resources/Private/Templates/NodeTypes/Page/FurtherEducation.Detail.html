@@ -60,7 +60,7 @@
 
         <f:if condition="{year}">
 
-
+<f:debug>{node.properties}</f:debug>
             <div class="row greyBgFullwidth2colTable">
                 <div class="col-xs-12 ">
                     <h2>Kontakt und Anmeldung</h2>
@@ -70,16 +70,16 @@
                     <div class="table-responsive">
                         <table class="table">
                             <tbody>
-                            <f:if condition="{EctsPunkte}">
+                            <f:if condition="{year.EctsPunkte}">
                                 <tr>
                                     <td>
                                         ETCS-Punkte
                                         <div class="mobile-view-columns">
-                                            {EctsPunkte}
+                                            {year.EctsPunkte}
                                         </div>
                                     </td>
                                     <td>
-                                        {EctsPunkte}
+                                        {year.EctsPunkte}
                                     </td>
                                 </tr>
                             </f:if>
