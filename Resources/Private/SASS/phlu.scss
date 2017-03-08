@@ -3157,6 +3157,9 @@ body {
         .results-table {
           z-index: 8;
           margin-bottom: 60px;
+          &.hasbottomtext {
+            margin-bottom: 30px;
+          }
           .table-responsive {
 
             .table {

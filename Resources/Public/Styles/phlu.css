@@ -10027,6 +10027,8 @@ body {
     body .all .ppdb-list .results-table, body .all .further-education-list .results-table, body .all .further-education-special-search .results-table {
       z-index: 8;
       margin-bottom: 60px; }
+      body .all .ppdb-list .results-table.hasbottomtext, body .all .further-education-list .results-table.hasbottomtext, body .all .further-education-special-search .results-table.hasbottomtext {
+        margin-bottom: 30px; }
       body .all .ppdb-list .results-table .table-responsive .table .oi-caret-bottom, body .all .ppdb-list .results-table .table-responsive .table .oi-caret-right, body .all .further-education-list .results-table .table-responsive .table .oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table .oi-caret-right, body .all .further-education-special-search .results-table .table-responsive .table .oi-caret-bottom, body .all .further-education-special-search .results-table .table-responsive .table .oi-caret-right {
         font-size: 12px; }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr td a, body .all .further-education-list .results-table .table-responsive .table tbody tr td a, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td a {
