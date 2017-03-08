@@ -113,6 +113,14 @@
 'Phlu.Corporate:HeroUnit.Image':
   superTypes:
     'Neos.NodeTypes:ImageMixin': true
+    'Phlu.Corporate:Content': true
+  ui:
+    label: 'Bild'
+    icon: icon-picture
+    inspector:
+      groups:
+        general:
+          label: Banner
   properties:
     image:
       ui:

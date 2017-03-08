@@ -4,6 +4,7 @@
   superTypes:
     'Phlu.Neos.NodeTypes:Content': true
   abstract: true
+
 'Phlu.Corporate:Content.Page.HeaderDefault':
   ui:
     label: Header
