@@ -9,6 +9,9 @@
             {neos:contentElement.editable(property: 'title', tag: 'h2')}
         </f:then>
     </f:if>
+
+    <ts:render path="top"></ts:render>
+
     <div class="searchResultsListStartupLoadingScreen" data-ng-if="result.isStarted() === false">
         <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
         />
@@ -267,4 +270,7 @@
             </div>
         </div>
     </div>
+
+    <ts:render path="bottom"></ts:render>
+
 </div>

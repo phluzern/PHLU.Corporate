@@ -288,9 +288,10 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.MediaGallery'
+
 'Phlu.Corporate:CarouselImage':
   superTypes:
-    'Phlu.Corporate:Image': true
+    'Neos.NodeTypes:ImageMixin': true
   ui:
     label: Bild
     icon: icon-picture

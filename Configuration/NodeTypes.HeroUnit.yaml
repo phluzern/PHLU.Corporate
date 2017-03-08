@@ -21,9 +21,6 @@
 'Phlu.Corporate:HeroUnit.Quote':
   superTypes:
     'Phlu.Corporate:Content': true
-  constraints:
-    nodeTypes:
-      'Phlu.Corporate:CarouselImage': true
   ui:
     label: 'Zitat'
     icon: icon-picture
@@ -52,9 +49,6 @@
 'Phlu.Corporate:HeroUnit.Features':
   superTypes:
     'Phlu.Corporate:Content': true
-  constraints:
-    nodeTypes:
-      'Phlu.Corporate:CarouselImage': true
   ui:
     label: 'Features'
     icon: icon-picture
@@ -118,7 +112,7 @@
 
 'Phlu.Corporate:HeroUnit.Image':
   superTypes:
-    'Phlu.Corporate:Image': true
+    'Neos.NodeTypes:ImageMixin': true
   properties:
     image:
       ui:
@@ -137,9 +131,6 @@
 'Phlu.Corporate:HeroUnit.Video':
   superTypes:
     'Phlu.Corporate:Content': true
-  constraints:
-    nodeTypes:
-      'Phlu.Corporate:CarouselImage': true
   ui:
     label: 'Video'
     icon: icon-picture
