@@ -63,9 +63,9 @@ class FurtherEducationDataSource extends AbstractDataSource {
                 if (is_array($course->getGenre())) {
                     foreach ($course->getGenre() as $genre) {
                         if (is_string($genre)) {
-                            $data[$genre] = array('value' => $genre, 'label' => $genre);
+                            $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
                         } else {
-                            $data[$genre->Id] = array('value' => $genre->Id, 'label' => $genre->Name);
+                            $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
                         }
                     }
                 }
@@ -76,9 +76,9 @@ class FurtherEducationDataSource extends AbstractDataSource {
                 if (is_array($study->getGenre())) {
                     foreach ($study->getGenre() as $genre) {
                         if (is_string($genre)) {
-                            $data[$genre] = array('value' => $genre, 'label' => $genre);
+                            $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
                         } else {
-                            $data[$genre->Id] = array('value' => $genre->Id, 'label' => $genre->Name);
+                            $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
                         }
                     }
                 }
@@ -93,7 +93,7 @@ class FurtherEducationDataSource extends AbstractDataSource {
                 /* @var Module $course */
                 if (is_array($course->getTargetgroups())) {
                     foreach ($course->getTargetgroups() as $targetgroup) {
-                        $data[$targetgroup->Bezeichnung] = array('value' => $targetgroup->Bezeichnung, 'label' => $targetgroup->Bezeichnung);
+                        $data[(string)$targetgroup->Bezeichnung] = array('value' => (string)$targetgroup->Bezeichnung, 'label' => $targetgroup->Bezeichnung);
                     }
                 }
             }
@@ -102,7 +102,7 @@ class FurtherEducationDataSource extends AbstractDataSource {
                 /* @var Study $study */
                 if (is_array($study->getTargetgroups())) {
                     foreach ($study->getTargetgroups() as $targetgroup) {
-                        $data[$targetgroup->Bezeichnung] = array('value' => $targetgroup->Bezeichnung, 'label' => $targetgroup->Bezeichnung);
+                        $data[(string)$targetgroup->Bezeichnung] = array('value' => (string)$targetgroup->Bezeichnung, 'label' => $targetgroup->Bezeichnung);
                     }
                 }
             }
@@ -114,13 +114,30 @@ class FurtherEducationDataSource extends AbstractDataSource {
 
             foreach ($this->moduleCourseRepository->findAll() as $course) {
                 /* @var Module $course */
-                $data[$course->getNr()] = array('value' => $course->getNr(), 'label' => $course->getNr() . " ".$course->getTitle(),'group' => 'Kurs');
+                $data[(string)$course->getNr()] = array('value' => (string)$course->getNr(), 'label' => $course->getNr() . " ".$course->getTitle(),'group' => 'Kurs');
             }
 
             foreach ($this->studyCourseRepository->findAll() as $study) {
                 /* @var Study $study */
-                $data[$study->getNr()] = array('value' => $study->getNr(), 'label' => $study->getNr() . " ".$study->getTitle(), 'group' => 'Studiengang');
+                $data[(string)$study->getNr()] = array('value' => (string)$study->getNr(), 'label' => $study->getNr() . " ".$study->getTitle(), 'group' => 'Studiengang');
             }
+            break;
+
+
+
+            case 'ids':
+
+            foreach ($this->moduleCourseRepository->findAll() as $course) {
+                /* @var Module $course */
+                $data[(string)$course->getId()] = array('value' => (string)$course->getId(), 'label' => $course->getNr() . " ".$course->getTitle(),'group' => 'Kurs');
+            }
+
+            foreach ($this->studyCourseRepository->findAll() as $study) {
+                /* @var Study $study */
+                $data[(string)$study->getId()] = array('value' => (string)$study->getId(), 'label' => $study->getNr() . " ".$study->getTitle(), 'group' => 'Studiengang');
+            }
+            break;
+
 
 
 

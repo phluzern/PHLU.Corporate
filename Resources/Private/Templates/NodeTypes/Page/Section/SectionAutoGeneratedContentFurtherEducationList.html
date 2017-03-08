@@ -14,6 +14,10 @@
     <span data-ng-init="setFilter({genres},'genre')"></span>
     <span data-ng-init="setFilter({targetgroups},'targetgroups')"></span>
     <span data-ng-init="setFilter({nrs},'nr')"></span>
+    <span data-ng-init="setFilter({ids},'id')"></span>
+
+    <f:if condition="{query}"><span data-ng-init="searchquery = '{query}'"></span></f:if>
+
     <f:if condition="{maxitems} > 0"><span data-ng-init="setMaxItems({maxitems})"></span></f:if>
     <f:if condition="{orderby} != ''"><span data-ng-init="setOrderBy('{orderby}')"></span></f:if>
 

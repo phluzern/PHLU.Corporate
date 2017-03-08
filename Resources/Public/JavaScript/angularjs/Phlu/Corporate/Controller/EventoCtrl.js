@@ -107,10 +107,14 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             'categories': ['Kurs', 'Studiengang', 'Alle'],
             'fulltext': true
         },
-        'leaders': {
-            'property': 'furthereducation-leaders.Fullname',
+        'id': {
+            'property': 'furthereducation-id',
             'categories': ['Kurs', 'Studiengang', 'Alle'],
             'fulltext': true
+        },
+        'leaders': {
+            'property': 'furthereducation-leaders.Fullname',
+            'categories': ['Kurs', 'Studiengang', 'Alle']
         },
         'bookable': {
             'property': 'years.Bookable.indexOf(true)',
