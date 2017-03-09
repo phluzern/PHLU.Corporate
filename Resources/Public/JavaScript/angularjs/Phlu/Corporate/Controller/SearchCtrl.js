@@ -242,7 +242,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var external =
         [
             {
-                http: "https://d4jj42ydaxxx2.cloudfront.net/weiterbildung/feed/",
+                http: "http://blog.phlu.ch/weiterbildung/feed/",
                 parser: {
                     type: 'xml',
                     config: {
@@ -258,23 +258,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                 }
             },
             {
-                http: "http://d4jj42ydaxxx2.cloudfront.net/hd-blog/feed/",
-                parser: {
-                    type: 'xml',
-                    config: {
-                        'nodeType': 'blog',
-                        'results': {'selector': 'rss.channel.item'},
-                        'fields': {
-                            'title': 'title',
-                            'rawcontent': 'description',
-                            'url': 'link',
-                            'content': 'encoded'
-                        }
-                    }
-                }
-            },
-            {
-                http: "http://d4jj42ydaxxx2.cloudfront.net/weiter/feed/",
+                http: "http://blog.phlu.ch/hd-blog/feed/",
                 parser: {
                     type: 'xml',
                     config: {
@@ -289,6 +273,93 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                     }
                 }
             }
+            ,
+            {
+                http: "http://blog.phlu.ch/weiter/feed/",
+                parser: {
+                    type: 'xml',
+                    config: {
+                        'nodeType': 'blog',
+                        'results': {'selector': 'rss.channel.item'},
+                        'fields': {
+                            'title': 'title',
+                            'rawcontent': 'description',
+                            'url': 'link',
+                            'content': 'encoded'
+                        }
+                    }
+                }
+            }
+            ,
+            {
+                http: "http://blog.phlu.ch/businessapplications/feed/",
+                parser: {
+                    type: 'xml',
+                    config: {
+                        'nodeType': 'blog',
+                        'results': {'selector': 'rss.channel.item'},
+                        'fields': {
+                            'title': 'title',
+                            'rawcontent': 'description',
+                            'url': 'link',
+                            'content': 'encoded'
+                        }
+                    }
+                }
+            }
+            ,
+            {
+                http: "http://blog.phlu.ch/international/feed/",
+                parser: {
+                    type: 'xml',
+                    config: {
+                        'nodeType': 'blog',
+                        'results': {'selector': 'rss.channel.item'},
+                        'fields': {
+                            'title': 'title',
+                            'rawcontent': 'description',
+                            'url': 'link',
+                            'content': 'encoded'
+                        }
+                    }
+                }
+            }
+            ,
+            {
+                http: "http://blog.phlu.ch/eduweb/feed/",
+                parser: {
+                    type: 'xml',
+                    config: {
+                        'nodeType': 'blog',
+                        'results': {'selector': 'rss.channel.item'},
+                        'fields': {
+                            'title': 'title',
+                            'rawcontent': 'description',
+                            'url': 'link',
+                            'content': 'encoded'
+                        }
+                    }
+                }
+            }
+            ,
+            {
+                http: "http://blog.phlu.ch/theaterpaedagogik/feed/",
+                parser: {
+                    type: 'xml',
+                    config: {
+                        'nodeType': 'blog',
+                        'results': {'selector': 'rss.channel.item'},
+                        'fields': {
+                            'title': 'title',
+                            'rawcontent': 'description',
+                            'url': 'link',
+                            'content': 'encoded'
+                        }
+                    }
+                }
+            }
+
+
         ];
 
 
