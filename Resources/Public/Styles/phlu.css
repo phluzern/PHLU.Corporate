@@ -10273,44 +10273,44 @@ body {
       padding: 12px 20px; }
     body .all .further-education-special-search .table-responsive .table tbody tr {
       /*           &.icon {
-                             td {
-                               &:before {
-                                 right: 25px;
-                                 @include media-breakpoint-between("lg", "xxl") {
-                                   right: 64px;
-                                 }
-                                 @include media-breakpoint-down("md") {
-                                   right: 40px;
-                                 }
-                                 position: absolute;
+                           td {
+                             &:before {
+                               right: 25px;
+                               @include media-breakpoint-between("lg", "xxl") {
+                                 right: 64px;
                                }
+                               @include media-breakpoint-down("md") {
+                                 right: 40px;
+                               }
+                               position: absolute;
                              }
                            }
-                           &.hat {
-                             td {
-                               &:before {
-                                 font-family: FontAwesome;
-                                 content: " \f19d";
-                               }
+                         }
+                         &.hat {
+                           td {
+                             &:before {
+                               font-family: FontAwesome;
+                               content: " \f19d";
                              }
                            }
-                           &.calendar {
-                             td {
-                               &:before {
-                                 font-family: FontAwesome;
-                                 content: " \f073";
-                               }
+                         }
+                         &.calendar {
+                           td {
+                             &:before {
+                               font-family: FontAwesome;
+                               content: " \f073";
                              }
                            }
-                           &.book {
-                             td {
-                               &:before {
-                                 font-family: FontAwesome;
-                                 content: " \f02d";
-                               }
+                         }
+                         &.book {
+                           td {
+                             &:before {
+                               font-family: FontAwesome;
+                               content: " \f02d";
                              }
                            }
-             */ }
+                         }
+           */ }
       body .all .further-education-special-search .table-responsive .table tbody tr td .bookable {
         color: green; }
       body .all .further-education-special-search .table-responsive .table tbody tr td .booked-out {
@@ -10501,6 +10501,10 @@ body {
         height: auto; }
     body .all .phlu-locations .row.departments .phlu-teaser.navigation.subpage {
       margin: 0; }
+    body .all .phlu-qmpilot-nodetypes-files a.preview img, body .all .phlu-qmpilot-nodetypes-file a.preview img {
+      width: 100%;
+      max-width: 500px;
+      height: auto; }
     body .all .phlu-qmpilot-nodetypes-files.last, body .all .phlu-qmpilot-nodetypes-file.last {
       margin-bottom: 31px; }
     body .all .row.subjectsfilternav.phlu-filelinks {
@@ -11260,11 +11264,11 @@ body {
       padding-top: 20px;
       color: white;
       /*
-          Prevent main col from getting too wide to the right side on xxxl screens
-        @include media-breakpoint-up("xxxl") {
-          max-width: 1648px;
-        }
-        */ }
+        Prevent main col from getting too wide to the right side on xxxl screens
+      @include media-breakpoint-up("xxxl") {
+        max-width: 1648px;
+      }
+      */ }
       @media (max-width: 991px) {
         body .all .footer {
           height: 641px; } }
