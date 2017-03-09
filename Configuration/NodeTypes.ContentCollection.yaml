@@ -120,6 +120,7 @@
     nodeTypes:
       'Phlu.Corporate:Text': true
       'Phlu.Corporate:TextWithImage': true
+
 'Phlu.Corporate:ContentCollection.Accordeon':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
@@ -132,6 +133,7 @@
       'Phlu.Qmpilot.NodeTypes:File': true
       'Phlu.Corporate:AccordeonElement': false
       'Phlu.Corporate:Accordeon': true
+
 'Phlu.Corporate:ContentCollection.Page.TargetGroup':
   superTypes:
     'Phlu.Corporate:ContentCollection': true

@@ -1,0 +1,12 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+<tr {attributes -> f:format.raw()}>
+    <td>
+        {neos:contentElement.editable(property: 'title')}
+        <div class="mobile-view-columns">
+            {neos:contentElement.editable(property: 'text')}
+        </div>
+    </td>
+    <td>
+        {neos:contentElement.editable(property: 'text')}
+    </td>
+</tr>

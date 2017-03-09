@@ -63,17 +63,28 @@
 
             <div class="row greyBgFullwidth2colTable">
                 <div class="col-xs-12 ">
-                    <h2>Kontakt und Anmeldung</h2>
-                    <p>
-                        {graduation}
-                    </p>
-                    <div class="table-responsive">
+                    <h2>Übersicht</h2>
+
+                     <div class="table-responsive">
                         <table class="table">
                             <tbody>
+                            <f:if condition="{graduation}">
+                                <tr>
+                                    <td>
+                                        Studienziel
+                                        <div class="mobile-view-columns">
+                                            {graduation}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {graduation}
+                                    </td>
+                                </tr>
+                            </f:if>
                             <f:if condition="{year.EctsPunkte}">
                                 <tr>
                                     <td>
-                                        ETCS-Punkte
+                                        ECTS-Punkte
                                         <div class="mobile-view-columns">
                                             {year.EctsPunkte}
                                         </div>
@@ -205,9 +216,15 @@
                                     </td>
                                 </tr>
                             </f:if>
+
+                            <ts:render path="overviewRenderer" context="{node: overview}"/>
+
                             </tbody>
+
                         </table>
                     </div>
+
+
                     <div class="shareAndRegister">
                         <a class="btn btn-primary share"
                            href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
