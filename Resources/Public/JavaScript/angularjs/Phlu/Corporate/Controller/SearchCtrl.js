@@ -355,27 +355,27 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                     }
                 }
             }
-            //
-            // ,
-            // {
-            //     //https://www.swissbib.ch/Search/Results?sort=relevance&advancedSearchFormRequest=advancedSearchFormRequest&join=AND&bool0%5B%5D=OR&lookfor0%5B%5D=heilp%C3%A4dagogik&type0%5B%5D=AllFields&lookfor0%5B%5D=&type0%5B%5D=AllFields&lookfor0%5B%5D=&type0%5B%5D=AllFields&filter%5B%5D=~union%3A%22IDSLU%22&daterange%5B%5D=publishDate&publishDatefrom=&publishDateto=&limit=100
-            //     http: "https://d2ks5nh4pi3x9c.cloudfront.net/Search/Results?lookfor=$query&type=AllFields&filter%5B%5D=union%3A%22IDSLU%22&filter%5B%5D=filter_str_mv%3A%22ONL%22&limit=100&sort=relevance&view=rss",
-            //     parser: {
-            //         type: 'xml',
-            //         config: {
-            //             'nodeType': 'bibliothek',
-            //             'results': {'selector': 'rss.channel.item'},
-            //             'fields': {
-            //                 'title': 'title',
-            //                 'format': 'dc:format',
-            //                 'url': 'link',
-            //                 'pubDate': 'pubDate',
-            //                 'author': 'author',
-            //                 'date': 'dc:date'
-            //             }
-            //         }
-            //     }
-            // }
+
+            ,
+            {
+
+                http: "/swissbib/$query",
+                parser: {
+                    type: 'xml',
+                    config: {
+                        'nodeType': 'bibliothek',
+                        'results': {'selector': 'rss.channel.item'},
+                        'fields': {
+                            'title': 'title',
+                            'format': 'format',
+                            'creator': 'creator',
+                            'url': 'link',
+                            'pubDate': 'pubDate',
+                            'author': 'author'
+                        }
+                    }
+                }
+            }
 
 
         ];

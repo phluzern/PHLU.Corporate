@@ -1,8 +1,8 @@
-<h3>
-    <a class="content-link-internal" href="{{node.getUrl()}}" target="_blank" data-ng-bind="node.getProperty('title')"></a>
-    <p data-ng-bind="node.getProperty('author')"></p>
-    <p data-ng-bind="node.getProperty('dc:date')"></p>
-</h3>
+
 <div class="searchresult-body">
-    {{node.getPreview()}}
+    <h3>
+        <a class="content-link-internal" href="{{node.getUrl()}}" target="_blank" data-ng-bind="node.getProperty('title')"></a>
+    </h3>
+    <p data-ng-bind="node.getProperty('creator').toString()"></p>
+    <p>{{node.getPreview()}}</p>
 </div>
