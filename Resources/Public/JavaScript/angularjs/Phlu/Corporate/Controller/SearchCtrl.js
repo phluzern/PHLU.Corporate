@@ -357,22 +357,44 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                 }
             }
 
+            // ,
+            // {
+            //
+            //     http: "/swissbib/$query",
+            //     parser: {
+            //         type: 'xml',
+            //         config: {
+            //             'nodeType': 'bibliothek',
+            //             'results': {'selector': 'rss.channel.item'},
+            //             'fields': {
+            //                 'bibliothek-title': 'title',
+            //                 'bibliothek-format': 'format',
+            //                 'bibliothek-creator': 'creator',
+            //                 'url': 'link',
+            //                 'bibliothek-pubDate': 'pubDate',
+            //                 'bibliothek-author': 'author'
+            //             }
+            //         }
+            //     }
+            // }
+
             ,
             {
 
-                http: "/swissbib/$query",
+                http: "/iluplus/$query",
                 parser: {
-                    type: 'xml',
+                    type: 'json',
                     config: {
                         'nodeType': 'bibliothek',
-                        'results': {'selector': 'rss.channel.item'},
                         'fields': {
-                            'bibliothek-title': 'title',
-                            'bibliothek-format': 'format',
-                            'bibliothek-creator': 'creator',
+                            'bibliothek-title': 'EXLResultTitle',
+                            'bibliothek-format': 'EXLThumbnailCaption',
+                            'bibliothek-autor': 'EXLResultAuthor',
+                            'bibliothek-isbn': 'EXLResultFourthLine',
+                            'bibliothek-details': 'EXLResultDetails',
+                            'rawcontent': 'rawcontent',
                             'url': 'link',
-                            'bibliothek-pubDate': 'pubDate',
-                            'bibliothek-author': 'author'
+                            'image': 'image',
                         }
                     }
                 }

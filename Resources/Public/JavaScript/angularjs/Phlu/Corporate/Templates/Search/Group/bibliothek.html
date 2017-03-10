@@ -1,8 +1,15 @@
 
-<div class="searchresult-body">
-    <h3>
-        <a class="content-link-internal" href="{{node.getUrl()}}" target="_blank" data-ng-bind="node.getProperty('title')"></a>
-    </h3>
-    <p data-ng-bind="node.getProperty('creator').toString()"></p>
-    <p>{{node.getPreview()}}</p>
+
+<div class="row searchresult-body">
+    <div class="col-xs-8 col-sm-9 col-md-10">
+        <h3>
+            <a class="content-link-internal" href="{{node.getUrl()}}" target="_blank" data-ng-bind="node.getProperty('title')"></a>
+        </h3>
+        <p data-ng-bind="node.getProperty('autor')"></p>
+    </div>
+
+    <div class="col-xs-4 col-sm-3 col-md-2 contactperson-portrait-image" data-ng-show="node.getProperty('image')">
+        <img src="{{node.getProperty('image')}}" class="img-fluid"/>
+    </div>
+
 </div>
