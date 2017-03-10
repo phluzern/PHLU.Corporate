@@ -205,7 +205,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-functioncustom': -1, // dont'search here
         'phlu-corporate-contactsgroup.phlu-corporate-contact-firstname': 60,
         'phlu-corporate-contactsgroup.phlu-corporate-contact-lastname': 60,
-        'phlu-corporate-contact-phone': 15000
+        'phlu-corporate-contact-phone': 15000,
+        'bibliothek-title': 1
 
 
     };
