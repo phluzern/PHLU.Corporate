@@ -389,7 +389,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             //             'fields': {
             //                 'bibliothek-title': 'EXLResultTitle',
             //                 'bibliothek-format': 'EXLThumbnailCaption',
-            //                 'bibliothek-autor': 'EXLResultAuthor',
+            //                 'bibliothek-author': 'EXLResultAuthor',
             //                 'bibliothek-isbn': 'EXLResultFourthLine',
             //                 'bibliothek-details': 'EXLResultDetails',
             //                 'rawcontent': 'rawcontent',

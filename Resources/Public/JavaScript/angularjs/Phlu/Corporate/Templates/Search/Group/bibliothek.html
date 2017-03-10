@@ -5,7 +5,8 @@
         <h3>
             <a class="content-link-internal" href="{{node.getUrl()}}" target="_blank" data-ng-bind="node.getProperty('title')"></a>
         </h3>
-        <p data-ng-bind="node.getProperty('autor')"></p>
+        <p data-ng-bind="node.getProperty('author')"></p>
+        <p data-ng-bind="node.getPreview()"></p>
     </div>
 
     <div class="col-xs-4 col-sm-3 col-md-2 contactperson-portrait-image" data-ng-show="node.getProperty('image')">
