@@ -370,7 +370,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                             'bibliothek-title': 'title',
                             'bibliothek-format': 'format',
                             'bibliothek-creator': 'creator',
-                            'bibliothek-url': 'link',
+                            'url': 'link',
                             'bibliothek-pubDate': 'pubDate',
                             'bibliothek-author': 'author'
                         }
