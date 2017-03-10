@@ -367,12 +367,12 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'nodeType': 'bibliothek',
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
-                            'title': 'title',
-                            'format': 'format',
-                            'creator': 'creator',
-                            'url': 'link',
-                            'pubDate': 'pubDate',
-                            'author': 'author'
+                            'bibliothek-title': 'title',
+                            'bibliothek-format': 'format',
+                            'bibliothek-creator': 'creator',
+                            'bibliothek-url': 'link',
+                            'bibliothek-pubDate': 'pubDate',
+                            'bibliothek-author': 'author'
                         }
                     }
                 }
