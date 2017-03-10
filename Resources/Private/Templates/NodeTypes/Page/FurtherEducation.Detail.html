@@ -269,18 +269,50 @@
 
         <div class="row">
 
+
+
             <div class="col-xs-12 phlu-team-members">
                 <h2>Kontakt</h2>
                 <div class="row phlu-teaser navigation subpage">
 
-                    <f:for each="{leaders}" as="leader">
+
                         <div class="col-xs-12 col-md-6 nav-teaser-item">
                             <div class="row">
-                                <a href="#" title="Studierende"></a>
+                                <div class="phlu-teaser-body col-xs-8">
+                                    <address>
+                                        <b>{leaders.0.Fullname}</b><br>
+                                        Leitung
+                                        <f:if condition="{leaders.0.Phone}">
+                                            <div class="telephone">
+                                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                                {leaders.0.Phone}<br>
+                                            </div>
+                                        </f:if>
+                                        <a class="content-link-email-contact-person"
+                                           href="mailto:{leaders.0.Email}">{leaders.0.Email}</a><br>
+                                        <f:if condition="{leaders.0.eventoId}">
+                                            <portrait:link node="null" eventoId="{leaders.0.eventoId}">Portrait
+                                            </portrait:link>
+                                        </f:if>
+                                    </address>
+                                </div>
+                                <div class="phlu-teaser-caret-right col-xs-4">
+                                    <f:if condition="{leaders.0.ImgeUrl}">
+                                        <img src="{leaders.0.ImgeUrl}" class="img-fluid"/>
+                                    </f:if>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    <f:for each="{contacts}" as="leader">
+                        <div class="col-xs-12 col-md-6 nav-teaser-item">
+                            <div class="row">
+
                                 <div class="phlu-teaser-body col-xs-8">
                                     <address>
                                         <b>{leader.Fullname}</b><br>
-                                        {leader.Title}
+                                       Administration
                                         <f:if condition="{leader.Phone}">
                                             <div class="telephone">
                                                 <i class="fa fa-phone" aria-hidden="true"></i>
@@ -302,13 +334,17 @@
                                 </div>
                             </div>
                         </div>
-
                     </f:for>
+
 
 
                 </div>
                 <hr>
             </div>
+
+
+
+
         </div>
     </f:if>
 </course:getYear>
