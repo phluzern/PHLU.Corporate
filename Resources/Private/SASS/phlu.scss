@@ -103,6 +103,7 @@ $font-size-table-href: 1rem;
 $nav-link-font-size: 1rem;
 $font-size-accordion-table: 1rem;
 $font-size-infobox-small: 1rem;
+$font-size-phlu-team-members-mobile: 1rem;
 
 $font-size-btn: 1.125rem;
 $font-size-href: 1.125rem;
@@ -1751,6 +1752,9 @@ body {
     //
     .phlu-teaser {
       padding: 0 25px 61px 25px;
+      @include media-breakpoint-only("md") {
+        padding:0;
+      }
       @include media-breakpoint-up("lg") {
         padding: 0 0 65px;
       }
@@ -2571,8 +2575,14 @@ body {
     // team members group
     //
     .phlu-team-members {
+      @include media-breakpoint-down('sm') {
+        h3 {
+          margin-top:20px;
+        }
+      }
       .phlu-teaser.navigation.subpage {
         .nav-teaser-item {
+          margin-bottom: 30px;
           .row {
             margin: 0;
             &.detailView {
@@ -2586,6 +2596,11 @@ body {
             .phlu-teaser-body {
               address {
                 white-space: nowrap;
+              }
+              address, a {
+                @include media-breakpoint-down("lg") {
+                  font-size: $font-size-phlu-team-members-mobile;
+                }
               }
             }
             .phlu-teaser-caret-right {
@@ -2623,7 +2638,6 @@ body {
           padding: 0;
         }
       }
-
       .panel-heading {
         cursor: pointer;
         border-bottom: solid 1px $hazelbrowndark;
@@ -2869,9 +2883,18 @@ body {
     // ppdb-detail page
     //
     .ppdb-detail {
-      .phlu-team-members {
-        margin-bottom: 0;
+      .row {
+        .phlu-team-members {
+          margin-bottom: 0;
+          .phlu-teaser {
+            padding-bottom: 0;
+          }
+          hr {
+            border:0;
+          }
+        }
       }
+
       .phlu-accordion {
         margin-top: 10px;
       }
@@ -3933,7 +3956,7 @@ body {
           margin: 0 0 1px;
           .row {
             .phlu-teaser-body {
-              background-color: $sephia;
+              background-color: $turquoise;
               h3 {
                 padding-left: 50px;
                 &::before {
@@ -3941,19 +3964,13 @@ body {
                   top: 50%;
                   left: 25px;
                   transform: translateY(-50%);
-                  color: $hazelbrowndark;
+                  color: white;
                   font-weight: bold;
                 }
                 margin-top: inherit;
               }
-            }
-            .phlu-teaser-caret-right {
-              background-color: $sephia;
-              font-family: FontAwesome;
-              &::after {
-                //content: " \f019";
-                content: " ";
-                margin-top: 3px;
+              &:hover {
+                background-color: $turquoisedark;
               }
             }
           }
@@ -4767,7 +4784,7 @@ body {
         //
         // remove margin-bottom of last element of main section
         //
-        > div > .row > div > *:last-child {
+        > div > .row > div > div:last-child, > div > .row > div > ul:last-child {
           margin-bottom: 0;
         }
         //
