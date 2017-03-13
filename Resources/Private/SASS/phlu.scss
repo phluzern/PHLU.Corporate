@@ -3853,7 +3853,16 @@ body {
         .box5 {
           background-size:cover;
           img {
-            width: 100%;
+            display: none;
+          }
+          @include media-breakpoint-down("sm") {
+            background-image: none !important;
+            img {
+              display: block;
+              height: 100%;
+              width: auto;
+              margin: auto;
+            }
           }
         }
       }

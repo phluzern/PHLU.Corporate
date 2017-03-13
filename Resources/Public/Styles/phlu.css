@@ -10495,7 +10495,15 @@ body {
         body .all .infoboxes > div > div > div .box5 {
           background-size: cover; }
           body .all .infoboxes > div > div > div .box5 img {
-            width: 100%; }
+            display: none; }
+          @media (max-width: 767px) {
+            body .all .infoboxes > div > div > div .box5 {
+              background-image: none !important; }
+              body .all .infoboxes > div > div > div .box5 img {
+                display: block;
+                height: 100%;
+                width: auto;
+                margin: auto; } }
     body .all .phlu-locations .row.subjectsfilternav .nav-pills {
       margin-bottom: 31px; }
       body .all .phlu-locations .row.subjectsfilternav .nav-pills li a.nav-link {
