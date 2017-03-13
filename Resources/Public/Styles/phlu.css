@@ -9690,7 +9690,7 @@ body {
         text-align: right; }
     @media (max-width: 767px) {
       body .all .phlu-team-members h3 {
-        margin-top: 20px; } }
+        margin: 0px; } }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item {
       margin-bottom: 30px; }
       body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row {
@@ -9700,7 +9700,8 @@ body {
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
           background-color: #edeae8; }
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address {
-          white-space: nowrap; }
+          white-space: nowrap;
+          margin-bottom: 0; }
         @media (max-width: 1279px) {
           body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body a {
             font-size: 1rem; } }

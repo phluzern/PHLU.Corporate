@@ -2577,7 +2577,7 @@ body {
     .phlu-team-members {
       @include media-breakpoint-down('sm') {
         h3 {
-          margin-top:20px;
+          margin:0px;
         }
       }
       .phlu-teaser.navigation.subpage {
@@ -2596,6 +2596,7 @@ body {
             .phlu-teaser-body {
               address {
                 white-space: nowrap;
+                margin-bottom: 0;
               }
               address, a {
                 @include media-breakpoint-down("lg") {

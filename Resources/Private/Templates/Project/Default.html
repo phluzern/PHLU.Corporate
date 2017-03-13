@@ -227,29 +227,34 @@
                                             <address>
                                                 <b>{participantsType}</b><br>
                                                 {participant.name}
-                                                <f:if condition="participant.phone == ''">
-                                                    <f:then><br/></f:then>
-                                                    <f:else>
-                                                        <div class="telephone">
-                                                            <i class="fa fa-phone" aria-hidden="true"></i>
-                                                            {participant.phone}<br>
-                                                        </div>
-                                                    </f:else>
+                                                <f:if condition="{participant.phone}">
+                                                    <f:if condition="participant.phone == ''">
+                                                        <f:then><br/></f:then>
+                                                        <f:else>
+                                                            <div class="telephone">
+                                                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                                                {participant.phone}<br>
+                                                            </div>
+                                                        </f:else>
+                                                    </f:if>
                                                 </f:if>
-                                                <f:if condition="participant.phone == ''">
-                                                    <f:then><br/></f:then>
-                                                    <f:else>
-                                                        <a class="content-link-email-contact-person"
-                                                           href="mailto:{participant.email}">{participant.email}</a><br>
-                                                        <portrait:link node="{node}" eventoId="{participant.EventoID}"
-                                                                       target="top">
-                                                            Portrait
-                                                        </portrait:link>
-                                                    </f:else>
+                                                <f:if condition="{participant.email}">
+                                                    <f:if condition="participant.phone == ''">
+                                                        <f:then><br/></f:then>
+                                                        <f:else>
+                                                            <a class="content-link-email-contact-person"
+                                                               href="mailto:{participant.email}">{participant.email}</a><br>
+                                                            <portrait:link node="{node}"
+                                                                           eventoId="{participant.EventoID}"
+                                                                           target="top">
+                                                                Portrait
+                                                            </portrait:link>
+                                                        </f:else>
+                                                    </f:if>
                                                 </f:if>
                                             </address>
                                         </div>
-                                        <div class="col-xs-4">
+                                        <div class="phlu-teaser-caret-right col-xs-4">
                                             <f:if condition="{resource:GetFromString(resource:participant.ImageResource, asset: true)}">
                                                 <media:image
                                                         image="{resource:GetFromString(resource:participant.ImageResource, asset: true)}"
