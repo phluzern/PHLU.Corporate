@@ -9140,6 +9140,10 @@ body {
       font-style: italic; }
     body .all .phlu-teaser {
       padding: 0 25px 61px 25px; }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body .all .phlu-teaser {
+    padding: 0; } }
       @media (min-width: 992px) {
         body .all .phlu-teaser {
           padding: 0 0 65px; } }
@@ -9684,29 +9688,37 @@ body {
       body .all .phlu-accordion .panel .panel-collapse .table-responsive .table tbody tr td:last-child, body .all .phlu-corporate-section .panel .panel-collapse .table-responsive .table tbody tr td:last-child {
         padding-right: 0;
         text-align: right; }
-    body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row {
-      margin: 0; }
-      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-caret-right.col-xs-2 {
-        background-color: #edeae8; }
-      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
-        background-color: #edeae8; }
-      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address {
-        white-space: nowrap; }
-      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
-        position: relative;
-        top: 17px;
-        left: 15px;
-        width: auto; }
-        @media (max-width: 1599px) {
-          body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
-            left: 0; } }
-        @media (max-width: 767px) {
-          body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
-            margin: 0 0 0 auto; } }
     @media (max-width: 767px) {
-      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item {
-        margin-top: 12px;
-        margin-bottom: 12px; } }
+      body .all .phlu-team-members h3 {
+        margin-top: 20px; } }
+    body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item {
+      margin-bottom: 30px; }
+      body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row {
+        margin: 0; }
+        body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-caret-right.col-xs-2 {
+          background-color: #edeae8; }
+        body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
+          background-color: #edeae8; }
+        body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address {
+          white-space: nowrap; }
+        @media (max-width: 1279px) {
+          body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body a {
+            font-size: 1rem; } }
+        body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
+          position: relative;
+          top: 17px;
+          left: 15px;
+          width: auto; }
+          @media (max-width: 1599px) {
+            body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
+              left: 0; } }
+          @media (max-width: 767px) {
+            body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
+              margin: 0 0 0 auto; } }
+      @media (max-width: 767px) {
+        body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item {
+          margin-top: 12px;
+          margin-bottom: 12px; } }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .phlu-corporate-contactsgroup h3 {
       margin-top: 36px; }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .phlu-corporate-contactsgroup .phlu-accordion {
@@ -9849,8 +9861,12 @@ body {
       margin-bottom: 60px; }
       body .all .phlu-dozpage .row:last-child hr {
         display: none; }
-    body .all .ppdb-detail .phlu-team-members {
+    body .all .ppdb-detail .row .phlu-team-members {
       margin-bottom: 0; }
+      body .all .ppdb-detail .row .phlu-team-members .phlu-teaser {
+        padding-bottom: 0; }
+      body .all .ppdb-detail .row .phlu-team-members hr {
+        border: 0; }
     body .all .ppdb-detail .phlu-accordion {
       margin-top: 10px; }
     body .all .ppdb-detail .fastFacts {
@@ -10520,7 +10536,7 @@ body {
       body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item {
         margin: 0 0 1px; }
         body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body {
-          background-color: #e9e0d8; }
+          background-color: #28818f; }
           body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
             padding-left: 50px;
             margin-top: inherit; }
@@ -10529,14 +10545,10 @@ body {
               top: 50%;
               left: 25px;
               transform: translateY(-50%);
-              color: #9f632a;
+              color: white;
               font-weight: bold; }
-        body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
-          background-color: #e9e0d8;
-          font-family: FontAwesome; }
-          body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right::after {
-            content: " ";
-            margin-top: 3px; }
+          body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body:hover {
+            background-color: #216A75; }
         body .all .row.subjectsfilternav.phlu-filelinks .phlu-teaser.navigation.subpage .nav-teaser-item.pdfFile .row .phlu-teaser-body h3::before {
           font-family: FontAwesome;
           content: " \f1c1"; }
@@ -11150,7 +11162,7 @@ body {
           margin-left: -20px;
           font-family: FontAwesome;
           content: "\f100 \2000"; }
-      body .all .main > .row > div > .row > div > *:last-child, body .all .main > .row-fullwidth-content > .row > div > .row > div > *:last-child {
+      body .all .main > .row > div > .row > div > div:last-child, body .all .main > .row > div > .row > div > ul:last-child, body .all .main > .row-fullwidth-content > .row > div > .row > div > div:last-child, body .all .main > .row-fullwidth-content > .row > div > .row > div > ul:last-child {
         margin-bottom: 0; }
       @media (min-width: 992px) {
         body .all .main > .row > div, body .all .main > .row-fullwidth-content > .row > div {

@@ -138,14 +138,14 @@
                                     </td>
                                 </tr>
                             </f:if>
-<!--                            <f:if condition="{project.ProjectType}">
-                                <tr>
-                                    <th>Leistungsart</th>
-                                    <td>
-                                        {project.ProjectType}
-                                    </td>
-                                </tr>
-                            </f:if>-->
+                            <!--                            <f:if condition="{project.ProjectType}">
+                                                            <tr>
+                                                                <th>Leistungsart</th>
+                                                                <td>
+                                                                    {project.ProjectType}
+                                                                </td>
+                                                            </tr>
+                                                        </f:if>-->
                         </table>
                     </div>
                 </div>
@@ -196,7 +196,7 @@
                                                 </f:if>
                                             </address>
                                         </div>
-                                        <div class="col-xs-4">
+                                        <div class="phlu-teaser-caret-right col-xs-4">
                                             <f:if condition="{resource:GetFromString(resource:participant.ImageResource, asset: true)}">
                                                 <media:image
                                                         image="{resource:GetFromString(resource:participant.ImageResource, asset: true)}"
@@ -268,8 +268,6 @@
                 </div>
             </div>
         </f:if>
-
-
         <f:if condition="{project.documents}">
             <div class="row subjectsfilternav phlu-filelinks nofilter" id="dokumente">
                 <div class="col-xs-12">
