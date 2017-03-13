@@ -9,7 +9,7 @@
             «{neos:contentElement.editable(property: 'title', tag: 'span')}»
         </p>
         <div class="row bottomContent">
-            <div class="col-xs-4 col-md-6">
+            <div class="col-xs-4 col-sm-3 col-md-6">
                 <f:if condition="{image}">
                 <f:then>
                     <media:image image="{image}" alt="" title="{title}"
@@ -19,7 +19,7 @@
             </f:if>
 
             </div>
-            <div class="col-xs-8 col-md-6">{neos:contentElement.editable(property: 'text', tag: 'span')}</div>
+            <div class="col-xs-4 col-md-6">{neos:contentElement.editable(property: 'text', tag: 'span')}</div>
         </div>
 
     </div>
