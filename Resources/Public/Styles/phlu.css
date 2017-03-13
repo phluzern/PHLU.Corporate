@@ -10476,8 +10476,10 @@ body {
         body .all .infoboxes > div > div > div .box4 ul {
           margin-left: 15px;
           margin-top: 15px; }
-        body .all .infoboxes > div > div > div .box5 img {
-          width: 100%; }
+        body .all .infoboxes > div > div > div .box5 {
+          background-size: cover; }
+          body .all .infoboxes > div > div > div .box5 img {
+            width: 100%; }
     body .all .phlu-locations .row.subjectsfilternav .nav-pills {
       margin-bottom: 31px; }
       body .all .phlu-locations .row.subjectsfilternav .nav-pills li a.nav-link {
