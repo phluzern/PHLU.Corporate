@@ -65,7 +65,7 @@ class ContactsDataSource extends AbstractDataSource
                                     $organisationPath = " ($organisationPath)";
                                 }
 
-                                $contacts[$organisation['OrganisationId']] = array('value' => $organisation['OrganisationId'], 'group' => $group, 'label' => $organisation['OrganisationName'] . $organisationPath);
+                                $contacts[(string)$organisation['OrganisationId']] = array('value' => (string)$organisation['OrganisationId'], 'group' => (string)$group, 'label' => (string)$organisation['OrganisationName'] . $organisationPath);
                             }
                         }
                     }
@@ -73,7 +73,7 @@ class ContactsDataSource extends AbstractDataSource
 
                 }
 
-                return $contacts;
+                return ($contacts);
 
                 break;
 
