@@ -8367,6 +8367,13 @@ body.neos-backend .neos-contentelement.neos-contentelement-active .disabled-for-
     color: red;
     display: block; }
 
+body.neos-backend .neos-contentelement.neos-contentelement-active .disabled.content-link-wrapper {
+  opacity: 0.8; }
+  body.neos-backend .neos-contentelement.neos-contentelement-active .disabled.content-link-wrapper::before {
+    content: 'Qmpilot-Datei ist nicht öffentlich zum Ansehen freigegeben.';
+    color: red;
+    display: block; }
+
 body.neos-backend.neos-navigate-panel-open .sidebar.level0, body.neos-backend.neos-navigate-panel-open .sidebar.level1, body.neos-backend.neos-navigate-panel-open .logoAndSearchBar {
   display: none; }
 
@@ -11010,6 +11017,9 @@ body {
       body .all .main > .row .content-link-wrapper, body .all .main > .row-fullwidth-content > .row .content-link-wrapper {
         display: block;
         width: 100%; }
+        body .all .main > .row .content-link-wrapper.disabled *, body .all .main > .row-fullwidth-content > .row .content-link-wrapper.disabled * {
+          color: rgba(159, 99, 42, 0.44);
+          opacity: 0.8; }
         body .all .main > .row .content-link-wrapper .content-link-default-file, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file {
           display: inline-flex;
           text-overflow: ellipsis; }
