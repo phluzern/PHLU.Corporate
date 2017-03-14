@@ -129,31 +129,46 @@
                                             Startdatum
 
                                             <div class="mobile-view-columns">
-                                                <div class="dropdown">
-                                                    <div class="dropdown-toggle " data-toggle="dropdown"
-                                                         role="button" aria-haspopup="true" aria-expanded="false">
+
+
+                                                <f:if condition="{year.options -> f:count()} > 1">
+                                                    <f:then>
+                                                        <div class="input-group-btn">
+                                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false">
+                                                                <f:if condition="{course:Date(date: year.StartText, format: 'Y')} > 1970">
+                                                                    <f:then><span>{course:Date(date: year.StartText, format: 'd.m.Y')}</span>
+                                                                    </f:then>
+                                                                    <f:else><span>{year.StartText}</span></f:else>
+                                                                </f:if>
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <f:for each="{year.options}" as="option">
+                                                                    <li value="">
+                                                                        <a href="{option.url}">
+                                                                            <f:if condition="{course:Date(date: option.value.StartText, format: 'Y')} > 1970">
+                                                                                <f:then><span>{course:Date(date: option.value.StartText, format: 'd.m.Y')}</span>
+                                                                                </f:then>
+                                                                                <f:else><span>{option.value.StartText}</span>
+                                                                                </f:else>
+                                                                            </f:if>
+                                                                        </a>
+                                                                    </li>
+                                                                </f:for>
+                                                            </ul>
+                                                        </div>
+                                                    </f:then>
+                                                    <f:else>
                                                         <f:if condition="{course:Date(date: year.StartText, format: 'Y')} > 1970">
                                                             <f:then><span>{course:Date(date: year.StartText, format: 'd.m.Y')}</span>
                                                             </f:then>
                                                             <f:else><span>{year.StartText}</span></f:else>
                                                         </f:if>
-                                                    </div>
-                                                    <ul class="dropdown-menu">
-                                                        <f:for each="{year.options}" as="option">
-                                                            <li value="">
+                                                    </f:else>
+                                                </f:if>
 
-                                                                <a href="{option.url}">
-                                                                    <f:if condition="{course:Date(date: option.value.StartText, format: 'Y')} > 1970">
-                                                                        <f:then><span>{course:Date(date: option.value.StartText, format: 'd.m.Y')}</span>
-                                                                        </f:then>
-                                                                        <f:else><span>{option.value.StartText}</span>
-                                                                        </f:else>
-                                                                    </f:if>
-                                                                </a>
-                                                            </li>
-                                                        </f:for>
-                                                    </ul>
-                                                </div>
+
+
                                             </div>
                                         </td>
                                         <td>
