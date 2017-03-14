@@ -8433,7 +8433,6 @@ body.neos-backend .neos-tooltip {
 
 body.neos-backend .phlu-corporate-text a[href^='http://'] {
   background-image: url("../Images/linkbottomline.png");
-  font-size: 1.125rem;
   color: #9f632a;
   background-repeat: repeat-x;
   background-position: bottom;
@@ -9140,16 +9139,12 @@ body {
       font-style: italic; }
     body .all .phlu-teaser {
       padding: 0 25px 61px 25px; }
-
-@media (min-width: 768px) and (max-width: 991px) {
-  body .all .phlu-teaser {
-    padding: 0; } }
       @media (min-width: 992px) {
         body .all .phlu-teaser {
           padding: 0 0 65px; } }
       body .all .phlu-teaser .phlu-teaser-type {
         background-color: #333333;
-        font-size: 11px;
+        font-size: 0.688px;
         letter-spacing: 0.4px;
         color: white;
         padding: 7px 20px;
@@ -9317,22 +9312,22 @@ body {
           line-height: 1; }
         body .all .phlu-teaser.carousel .carousel-control .icon-prev {
           left: 50%;
-          margin-left: -30%; }
+          margin-left: -50%; }
           @media (min-width: 544px) {
             body .all .phlu-teaser.carousel .carousel-control .icon-prev {
-              margin-left: -40%; } }
+              margin-left: -47%; } }
           @media (min-width: 768px) {
             body .all .phlu-teaser.carousel .carousel-control .icon-prev {
               margin-left: -50%; } }
           @media (min-width: 992px) {
             body .all .phlu-teaser.carousel .carousel-control .icon-prev {
-              margin-left: -70%; } }
+              margin-left: -80%; } }
           body .all .phlu-teaser.carousel .carousel-control .icon-prev::before {
             font-family: Icons;
             content: "\e02e"; }
         body .all .phlu-teaser.carousel .carousel-control .icon-next {
           right: 50%;
-          margin-right: -60%; }
+          margin-right: -50%; }
           @media (min-width: 992px) {
             body .all .phlu-teaser.carousel .carousel-control .icon-next {
               margin-right: -80%; } }
@@ -9690,7 +9685,11 @@ body {
         text-align: right; }
     @media (max-width: 767px) {
       body .all .phlu-team-members h3 {
-        margin-top: 20px; } }
+        margin: 0px; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body .all .phlu-team-members .phlu-teaser.navigation.subpage {
+    padding: 0; } }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item {
       margin-bottom: 30px; }
       body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row {
@@ -9700,7 +9699,8 @@ body {
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
           background-color: #edeae8; }
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address {
-          white-space: nowrap; }
+          white-space: nowrap;
+          margin-bottom: 0; }
         @media (max-width: 1279px) {
           body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body a {
             font-size: 1rem; } }
@@ -9768,7 +9768,6 @@ body {
       padding-bottom: 20px; }
     body .all .phlu-dozpage .row .col-xs-12 ul li a {
       background-image: url("../Images/linkbottomline.png");
-      font-size: 1.125rem;
       color: #9f632a;
       background-repeat: repeat-x;
       background-position: bottom;
@@ -9867,6 +9866,9 @@ body {
         padding-bottom: 0; }
       body .all .ppdb-detail .row .phlu-team-members hr {
         border: 0; }
+    body .all .ppdb-detail .leadtext p {
+      font-size: 1.313rem;
+      width: 100%; }
     body .all .ppdb-detail .phlu-accordion {
       margin-top: 10px; }
     body .all .ppdb-detail .fastFacts {
@@ -10477,33 +10479,61 @@ body {
             body .all .infoboxes > div > div > div .box1 .bottomContent > [class^="col-"], body .all .infoboxes > div > div > div .box1 .bottomContent > [class^=" col-"], body .all .infoboxes > div > div > div .box2 .bottomContent > [class^="col-"], body .all .infoboxes > div > div > div .box2 .bottomContent > [class^=" col-"], body .all .infoboxes > div > div > div .box3 .bottomContent > [class^="col-"], body .all .infoboxes > div > div > div .box3 .bottomContent > [class^=" col-"], body .all .infoboxes > div > div > div .box4 .bottomContent > [class^="col-"], body .all .infoboxes > div > div > div .box4 .bottomContent > [class^=" col-"], body .all .infoboxes > div > div > div .box5 .bottomContent > [class^="col-"], body .all .infoboxes > div > div > div .box5 .bottomContent > [class^=" col-"] {
               padding-right: 2px;
               padding-left: 2px; }
-        body .all .infoboxes > div > div > div .box2 .centeredBox p::after {
-          display: block;
-          content: ' ';
-          border-bottom: 2px solid #85889A;
-          width: 60%;
-          margin: auto;
-          padding-top: 20px;
-          margin-bottom: 20px; }
-        body .all .infoboxes > div > div > div .box2 .centeredBox p:last-child::after {
-          display: none; }
+        @media (max-width: 767px) {
+          body .all .infoboxes > div > div > div .box1 .bottomContent {
+            text-align: center;
+            margin-bottom: 30px; }
+            body .all .infoboxes > div > div > div .box1 .bottomContent img {
+              width: auto;
+              height: inherit;
+              max-height: 150px;
+              margin-bottom: 10px; } }
+        body .all .infoboxes > div > div > div .box2 {
+          position: relative;
+          overflow: hidden; }
+          body .all .infoboxes > div > div > div .box2 .centeredBox {
+            position: absolute;
+            top: -9999px;
+            bottom: -9999px;
+            left: -9999px;
+            right: -9999px;
+            margin: auto;
+            width: 245px;
+            height: auto;
+            display: table; }
+            @media (max-width: 767px) {
+              body .all .infoboxes > div > div > div .box2 .centeredBox {
+                width: 500px; } }
+            @media (max-width: 543px) {
+              body .all .infoboxes > div > div > div .box2 .centeredBox {
+                width: 338px; } }
+            body .all .infoboxes > div > div > div .box2 .centeredBox p::after {
+              display: block;
+              content: ' ';
+              border-bottom: 2px solid #85889A;
+              width: 40%;
+              margin: auto;
+              padding-top: 20px;
+              margin-bottom: 20px; }
+            body .all .infoboxes > div > div > div .box2 .centeredBox p:last-child::after {
+              display: none; }
         body .all .infoboxes > div > div > div .box4 p {
           font-weight: inherit; }
         body .all .infoboxes > div > div > div .box4 ul {
           margin-left: 15px;
           margin-top: 15px; }
         body .all .infoboxes > div > div > div .box5 {
-          background-size: cover; }
+          position: relative;
+          overflow: hidden; }
           body .all .infoboxes > div > div > div .box5 img {
-            display: none; }
-          @media (max-width: 767px) {
-            body .all .infoboxes > div > div > div .box5 {
-              background-image: none !important; }
-              body .all .infoboxes > div > div > div .box5 img {
-                display: block;
-                height: 100%;
-                width: auto;
-                margin: auto; } }
+            position: absolute;
+            top: -9999px;
+            bottom: -9999px;
+            left: -9999px;
+            right: -9999px;
+            margin: auto;
+            width: auto;
+            height: 320px; }
     body .all .phlu-locations .row.subjectsfilternav .nav-pills {
       margin-bottom: 31px; }
       body .all .phlu-locations .row.subjectsfilternav .nav-pills li a.nav-link {
@@ -11009,14 +11039,12 @@ body {
           body .all .main > .row .content-link-wrapper .content-link-default-file span.nofiledesc, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file span.nofiledesc {
             margin-left: 0; }
       body .all .main > .row .content-link-email, body .all .main > .row-fullwidth-content > .row .content-link-email {
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
         padding-bottom: 4px; }
       body .all .main > .row .content-link-email-contact-person, body .all .main > .row-fullwidth-content > .row .content-link-email-contact-person {
         background-image: url("../Images/linkbottomline.png");
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
@@ -11026,7 +11054,6 @@ body {
           content: "\f003 \2000"; }
       body .all .main > .row .content-link-external, body .all .main > .row .content-link-shortcut-file, body .all .main > .row .content-link-lnk-file, body .all .main > .row-fullwidth-content > .row .content-link-external, body .all .main > .row-fullwidth-content > .row .content-link-shortcut-file, body .all .main > .row-fullwidth-content > .row .content-link-lnk-file {
         background-image: url("../Images/linkbottomline.png");
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
@@ -11042,7 +11069,6 @@ body {
           background-repeat: repeat; }
       body .all .main > .row a[target='_blank'], body .all .main > .row-fullwidth-content > .row a[target='_blank'] {
         background-image: url("../Images/linkbottomline.png");
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
@@ -11058,7 +11084,6 @@ body {
           content: ""; }
       body .all .main > .row .content-link-internal, body .all .main > .row a[data-gentics-aloha-repository='node-repository'], body .all .main > .row-fullwidth-content > .row .content-link-internal, body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] {
         background-image: url("../Images/linkbottomline.png");
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
@@ -11068,7 +11093,6 @@ body {
           background-repeat: repeat; }
       body .all .main > .row .content-link-portrait, body .all .main > .row-fullwidth-content > .row .content-link-portrait {
         background-image: url("../Images/linkbottomline.png");
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
@@ -11078,7 +11102,6 @@ body {
           content: "\f007 \2000"; }
       body .all .main > .row .content-link-location, body .all .main > .row-fullwidth-content > .row .content-link-location {
         background-image: url("../Images/linkbottomline.png");
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
@@ -11088,7 +11111,6 @@ body {
           content: "\f041 \2000"; }
       body .all .main > .row .content-link-default-file, body .all .main > .row-fullwidth-content > .row .content-link-default-file {
         background-image: inherit;
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
@@ -11098,7 +11120,6 @@ body {
           content: "\f016 \2000"; }
       body .all .main > .row .content-link-internal-file, body .all .main > .row-fullwidth-content > .row .content-link-internal-file {
         background-image: inherit;
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
@@ -11108,7 +11129,6 @@ body {
           content: "\f0c1 \2000"; }
       body .all .main > .row .content-link-shortcut-file, body .all .main > .row-fullwidth-content > .row .content-link-shortcut-file {
         background-image: inherit;
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
@@ -11118,7 +11138,6 @@ body {
           content: "\f0c1 \2000"; }
       body .all .main > .row .content-link-jpeg-file, body .all .main > .row-fullwidth-content > .row .content-link-jpeg-file {
         background-image: inherit;
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
@@ -11128,7 +11147,6 @@ body {
           content: "\f1c5 \2000"; }
       body .all .main > .row .content-link-pdf-file, body .all .main > .row-fullwidth-content > .row .content-link-pdf-file {
         background-image: inherit;
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
@@ -11138,7 +11156,6 @@ body {
           content: "\f1c1 \2000"; }
       body .all .main > .row .content-link-excel-file, body .all .main > .row-fullwidth-content > .row .content-link-excel-file {
         background-image: inherit;
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
@@ -11148,7 +11165,6 @@ body {
           content: "\f1c3 \2000"; }
       body .all .main > .row .content-link-word-file, body .all .main > .row-fullwidth-content > .row .content-link-word-file {
         background-image: inherit;
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
@@ -11159,7 +11175,6 @@ body {
       body .all .main > .row .content-link-history-back, body .all .main > .row-fullwidth-content > .row .content-link-history-back {
         background-image: url("../Images/linkbottomline.png");
         padding-left: 20px;
-        font-size: 1.125rem;
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;

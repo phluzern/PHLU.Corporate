@@ -76,10 +76,10 @@ $font-size-h4: 1.1rem;
 $font-size-h4-desktop: 1.313rem;
 
 $font-size-form-dropdown-big: 1.313rem;
-$font-size-form-dropdown: 1rem;
 $lead-font-size: 1.313rem;
+
 $lead-font-size-mobile: 1.188rem;
-$teaser-type-font-size: 11px;
+$teaser-type-font-size: 0.688px;
 $teaser-body-font-size: 0.875rem;
 $teaser-letter-spacing: 0.4px;
 $font-size-caption: 0.8rem;
@@ -97,16 +97,16 @@ $dropdown-menu-font-size: 1.125rem;
 $font-size-langnav: 1.125rem;
 $font-size-search-filters: 1.125rem;
 $font-size-phlu-team-members: 1.125rem;
+$font-size-btn: 1.125rem;
+$font-size-href: 1.125rem;
 
+$font-size-form-dropdown: 1rem;
 $font-size-paragraph-mobile: 1rem;
 $font-size-table-href: 1rem;
 $nav-link-font-size: 1rem;
 $font-size-accordion-table: 1rem;
 $font-size-infobox-small: 1rem;
 $font-size-phlu-team-members-mobile: 1rem;
-
-$font-size-btn: 1.125rem;
-$font-size-href: 1.125rem;
 
 $font-size-table-mobile-cols: 0.75rem;
 $font-size-small: 0.75rem;
@@ -281,7 +281,6 @@ $input-search-field-big: 50px;
       content: "\f100 \2000";
     }
   }
-  font-size: $font-size-href;
   color: $hazelbrowndark;
   //border-bottom: 7px solid $lightgrey;
   background-repeat: repeat-x;
@@ -1752,9 +1751,6 @@ body {
     //
     .phlu-teaser {
       padding: 0 25px 61px 25px;
-      @include media-breakpoint-only("md") {
-        padding:0;
-      }
       @include media-breakpoint-up("lg") {
         padding: 0 0 65px;
       }
@@ -1976,15 +1972,15 @@ body {
           }
           .icon-prev {
             left: 50%;
-            margin-left: -30%;
+            margin-left: -50%;
             @include media-breakpoint-up("sm") {
-              margin-left: -40%;
+              margin-left: -47%;
             }
             @include media-breakpoint-up("md") {
               margin-left: -50%;
             }
             @include media-breakpoint-up("lg") {
-              margin-left: -70%;
+              margin-left: -80%;
             }
             &::before {
               font-family: Icons;
@@ -1993,7 +1989,7 @@ body {
           }
           .icon-next {
             right: 50%;
-            margin-right: -60%;
+            margin-right: -50%;
             @include media-breakpoint-up("lg") {
               margin-right: -80%;
             }
@@ -2577,10 +2573,13 @@ body {
     .phlu-team-members {
       @include media-breakpoint-down('sm') {
         h3 {
-          margin-top:20px;
+          margin: 0px;
         }
       }
       .phlu-teaser.navigation.subpage {
+        @include media-breakpoint-only("md") {
+          padding: 0;
+        }
         .nav-teaser-item {
           margin-bottom: 30px;
           .row {
@@ -2596,6 +2595,7 @@ body {
             .phlu-teaser-body {
               address {
                 white-space: nowrap;
+                margin-bottom: 0;
               }
               address, a {
                 @include media-breakpoint-down("lg") {
@@ -2890,11 +2890,16 @@ body {
             padding-bottom: 0;
           }
           hr {
-            border:0;
+            border: 0;
           }
         }
       }
-
+      .leadtext {
+        p {
+          font-size: $lead-font-size;
+          width: 100%;
+        }
+      }
       .phlu-accordion {
         margin-top: 10px;
       }
@@ -3821,14 +3826,46 @@ body {
             font-size: $font-size-caption;
           }
         }
+        .box1 {
+          .bottomContent {
+            @include media-breakpoint-down("sm") {
+              text-align: center;
+              margin-bottom: 30px;
+              img {
+                width: auto;
+                height: inherit;
+                max-height: 150px;
+                margin-bottom: 10px;
+              }
+            }
+          }
+
+        }
         .box2 {
+          position: relative;
+          overflow: hidden;
           .centeredBox {
+            position: absolute;
+            top: -9999px;
+            bottom: -9999px;
+            left: -9999px;
+            right: -9999px;
+            margin: auto;
+            width: 245px;
+            @include media-breakpoint-down("sm") {
+              width: 500px;
+            }
+            @include media-breakpoint-down("xs") {
+              width: 338px;
+            }
+            height: auto;
+            display: table;
             p {
               &::after {
                 display: block;
                 content: ' ';
                 border-bottom: 2px solid $greyblue;
-                width: 60%;
+                width: 40%;
                 margin: auto;
                 padding-top: 20px;
                 margin-bottom: 20px;
@@ -3851,18 +3888,17 @@ body {
           }
         }
         .box5 {
-          background-size:cover;
+          position: relative;
+          overflow: hidden;
           img {
-            display: none;
-          }
-          @include media-breakpoint-down("sm") {
-            background-image: none !important;
-            img {
-              display: block;
-              height: 100%;
-              width: auto;
-              margin: auto;
-            }
+            position: absolute;
+            top: -9999px;
+            bottom: -9999px;
+            left: -9999px;
+            right: -9999px;
+            margin: auto;
+            width: auto;
+            height: 320px;
           }
         }
       }
