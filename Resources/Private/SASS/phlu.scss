@@ -658,10 +658,12 @@ body.neos-backend {
   }
 
   .phlu-qmpilot-nodetypes-file.neos-contentelement-active {
-    &::before {
-      content: 'Qmpilot-Datei ist nicht öffentlich zum Ansehen freigegeben.';
-      color: red;
-      display: block;
+    .disabled-qmpilot {
+      &::before {
+        content: 'Qmpilot-Datei ist nicht öffentlich zum Ansehen freigegeben.';
+        color: red;
+        display: block;
+      }
     }
   }
 

@@ -8371,7 +8371,7 @@ body.neos-backend .disabled-qmpilot * {
   color: rgba(159, 99, 42, 0.44);
   opacity: 0.8; }
 
-body.neos-backend .phlu-qmpilot-nodetypes-file.neos-contentelement-active::before {
+body.neos-backend .phlu-qmpilot-nodetypes-file.neos-contentelement-active .disabled-qmpilot::before {
   content: 'Qmpilot-Datei ist nicht öffentlich zum Ansehen freigegeben.';
   color: red;
   display: block; }
