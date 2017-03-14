@@ -3,14 +3,58 @@
 {namespace phlu=Phlu\Corporate\ViewHelpers}
 <div{attributes -> f:format.raw()} data-asset-count="{assetcount}">
 
-
 <f:if condition="{asset}">
+    <f:then>
+        <f:if condition="{asset.resource.collectionName} !== 'disabled'">
+            <f:then>
+                <f:render section="file" arguments="{_all}"></f:render>
+            </f:then>
+            <f:else>
+                <f:if condition="{neos:rendering.inBackend()}">
+                    <f:then>
+                        <div class="disabled-qmpilot">
+                            <f:render section="file" arguments="{_all}"></f:render>
+                        </div>
+                    </f:then>
+                    <f:else></f:else>
+                </f:if>
+            </f:else>
+        </f:if>
 
+    </f:then>
+    <f:else>
+
+        <f:if condition="{neos:rendering.inBackend()}">
+            <f:then>
+                <div class="content-link-wrapper empty-qmpilot">
+
+                    <div class="content-link-default-file content-link-doc-file">
+                        <span>Datei / Link auswählen ... <span>(siehe Inspector "Qmpilot") </span></span>
+                    </div>
+
+                </div>
+
+            </f:then>
+        </f:if>
+
+    </f:else>
+</f:if>
+
+
+</div>
+
+
+<f:section name="file">
 
     <f:if condition="{preview}">
         <f:then>
 
-            <a  href="{f:if(condition: link, then: " {link}", else: "{f:uri.resource(resource: asset.resource)}")}" target="{asset.target}" class="preview"><m:thumbnail asset="{asset}" alt="{asset.label}" width="1000" maximumHeight="1800" allowUpScaling="false"/></a>
+            <a href="{f:if(condition: link, then: " {link}", else: "{f:uri.resource(resource:
+            asset.resource)}")}"
+            target="{asset.target}" class="preview">
+            <m:thumbnail asset="{asset}" alt="{asset.label}" width="1000" maximumHeight="1800"
+                         allowUpScaling="false"/>
+            </a>
 
 
         </f:then>
@@ -26,7 +70,8 @@
 
                                 <div class="content-link-default-file content-link-{asset.mediatypeshortname}-file"
                                      href="{f:if(condition: link, then: " {link}
-                                ", else: "{f:uri.resource(resource: asset.resource)}")}" target="{asset.target}">
+                                ", else: "{f:uri.resource(resource: asset.resource)}")}"
+                                target="{asset.target}">
                                 {neos:contentElement.editable(property: 'title',tag: 'span')} <span>{f:if(condition: asset.filedescription, then: "({asset.filedescription})", else: '')}</span>
                             </div>
 
@@ -57,5 +102,5 @@
 
         </f:else>
     </f:if>
-</f:if>
-</div>
+
+</f:section>

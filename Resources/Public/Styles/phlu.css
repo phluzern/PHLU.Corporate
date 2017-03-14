@@ -8367,6 +8367,15 @@ body.neos-backend .neos-contentelement.neos-contentelement-active .disabled-for-
     color: red;
     display: block; }
 
+body.neos-backend .disabled-qmpilot * {
+  color: rgba(159, 99, 42, 0.44);
+  opacity: 0.8; }
+
+body.neos-backend .phlu-qmpilot-nodetypes-file.neos-contentelement-active .disabled-qmpilot::before {
+  content: 'Datei ist nicht öffentlich. Im Frontend wird diese daher solange ausgeblendet bis der Status im Qmpilot auf "öffentlich Ansehen" gesetzt wird.';
+  color: red;
+  display: block; }
+
 body.neos-backend.neos-navigate-panel-open .sidebar.level0, body.neos-backend.neos-navigate-panel-open .sidebar.level1, body.neos-backend.neos-navigate-panel-open .logoAndSearchBar {
   display: none; }
 
