@@ -117,12 +117,11 @@
                                 Startdatum
                                 <div class="mobile-view-columns">
 
-                                    <div class="dropdown">
-                                        <div class="dropdown-toggle " data-toggle="dropdown"
-                                             role="button" aria-haspopup="true"
-                                             aria-expanded="false">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
                                             <span data-ng-bind="node.currentyear.StartText | castDate"></span>
-                                        </div>
+                                        </button>
                                         <ul class="dropdown-menu">
                                             <li data-ng-repeat="year in node.getProperty('years')"
                                                 data-ng-click="node.currentyear = year;">
