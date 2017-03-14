@@ -650,14 +650,18 @@ body.neos-backend {
     }
   }
 
-  .neos-contentelement.neos-contentelement-active {
-    .disabled.content-link-wrapper {
+  .disabled-qmpilot {
+    * {
+      color: rgba(159, 99, 42, 0.44);
       opacity: 0.8;
-      &::before {
-        content: 'Qmpilot-Datei ist nicht öffentlich zum Ansehen freigegeben.';
-        color: red;
-        display: block;
-      }
+    }
+  }
+
+  .phlu-qmpilot-nodetypes-file.neos-contentelement-active {
+    &::before {
+      content: 'Qmpilot-Datei ist nicht öffentlich zum Ansehen freigegeben.';
+      color: red;
+      display: block;
     }
   }
 
@@ -4753,12 +4757,6 @@ body {
         }
 
         .content-link-wrapper {
-          &.disabled {
-            * {
-              color: rgba(159, 99, 42, 0.44);
-              opacity: 0.8;
-            }
-          }
 
           display: block;
           width: 100%;
