@@ -2088,9 +2088,7 @@ body {
     //
     .overview-tiles-bg {
       background-color: $lightgrey;
-      h3 {
-        margin: 50px 0 30px;
-      }
+      padding-top:33px;
       .phlu-teaser.navigation {
         @include media-breakpoint-down("sm") {
           display: block;

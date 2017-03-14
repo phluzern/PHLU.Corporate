@@ -9393,9 +9393,8 @@ body {
           body .all .phlu-teaser.carousel#carousel-phlu-teaser-xl {
             display: block; } }
     body .all .overview-tiles-bg {
-      background-color: #edeae8; }
-      body .all .overview-tiles-bg h3 {
-        margin: 50px 0 30px; }
+      background-color: #edeae8;
+      padding-top: 33px; }
       body .all .overview-tiles-bg .phlu-teaser.navigation {
         margin-right: -2px;
         margin-left: -2px; }
