@@ -10402,6 +10402,8 @@ body {
         @media (max-width: 767px) {
           body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
             display: table-row; } }
+    body .all .has-no-target-group-codes {
+      margin-bottom: 50px; }
     body .all .target-group-codes {
       margin: 40px 0 50px; }
       body .all .target-group-codes .code {

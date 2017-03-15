@@ -19,7 +19,7 @@
 
 
                     <f:if condition="{sectionsCountInPage}>1">
-                        <div class="col-xs-12 col-lg-12">
+                        <div class="col-xs-12 col-lg-12 {f:if(condition: targetgroups, then: '', else: 'has-no-target-group-codes')}">
                             <ul class="nav nav-pills">
                                 <f:for each="{sectionsInPage}" as="item" iteration="iterator">
                                     <li class="{f:if(condition: iterator.isFirst, then: 'active', else: '')}">
