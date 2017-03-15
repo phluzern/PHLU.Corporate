@@ -9545,7 +9545,8 @@ body {
           body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.all, body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.no-icon {
             padding-left: 23px; }
           body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.active {
-            background-color: #55696d; }
+            color: white;
+            background-color: #171815; }
           body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.hover {
             background-color: #cccccc; }
           body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link .phlu-corporate-tag {

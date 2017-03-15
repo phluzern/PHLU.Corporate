@@ -2315,7 +2315,8 @@ body {
                 padding-left: 23px;
               }
               &.active {
-                background-color: $grey6;
+                color:white;
+                background-color: $naviBlack;
               }
               &.hover {
                 background-color: $grey12;
