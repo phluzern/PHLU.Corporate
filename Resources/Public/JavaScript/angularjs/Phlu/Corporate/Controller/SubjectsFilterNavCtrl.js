@@ -48,6 +48,8 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
     $scope.toggleFilter = function(id) {
 
 
+        $scope.filter = {};
+
         // unset filter all if other filters are set
         if (id !== 0) {
             delete $scope.filter[0];
@@ -58,22 +60,21 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
             }
         }
 
+
         // toggle filter all
-        if (id === 0) {
-            $scope.filter[id] = $scope.filter[id] ? false : true;
+        // if (id === 0) {
+        //     angular.forEach($scope.filterAll, function (val,nodeId) {
+        //         if (nodeId !== 0) {
+        //             if (nodeId === id) {
+        //                 $scope.filter[nodeId] = true;
+        //             } else {
+        //                 $scope.filter[nodeId] = $scope.filter[id] ? false : true;
+        //             }
+        //         }
+        //
+        //     });
+        // }
 
-            angular.forEach($scope.filterAll, function (val,nodeId) {
-                if (nodeId !== 0) {
-                    if (nodeId === id) {
-                        $scope.filter[nodeId] = true;
-                    } else {
-                        $scope.filter[nodeId] = $scope.filter[id] ? false : true;
-                    }
-                }
-
-
-            });
-        }
 
         // set filter all if no other filters are set
         if (Object.keys($scope.filter).length === 0) $scope.filter[0] = true;
