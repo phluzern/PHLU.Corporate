@@ -50,12 +50,16 @@ class ContactsDataSource extends AbstractDataSource
                     if (is_array($contact->getOrganisations())) {
                         foreach ($contact->getOrganisations() as $organisation) {
 
-                            if ($organisation['OrganisationId'] && isset($contacts[$organisation['OrganisationId']]) === false) {
+                            if ($organisation['OrganisationId']) {
 
-                                $group = current(array_splice($organisation['OrganisationPath'], -1, 1))['name'];
+
 
                                 $organisationPath = '';
+                                $groupname = null;
                                 foreach ($organisation['OrganisationPath'] as $path) {
+
+                                        $groupname = $path['name'];
+
                                     if ($organisationPath != '') {
                                         $organisationPath .= " / ";
                                     }
@@ -65,7 +69,18 @@ class ContactsDataSource extends AbstractDataSource
                                     $organisationPath = " ($organisationPath)";
                                 }
 
-                                $contacts[(string)$organisation['OrganisationId']] = array('value' => (string)$organisation['OrganisationId'], 'group' => (string)$group, 'label' => (string)$organisation['OrganisationName'] . $organisationPath);
+                                $contacts[(string)$organisation['OrganisationId']] = array('value' => (string)$organisation['OrganisationId'], 'group' => (string)$groupname, 'label' => (string)$organisation['OrganisationName'] . $organisationPath);
+
+                                $lastgroup = current($organisation['OrganisationPath']);
+                                reset($organisation['OrganisationPath']);
+                                foreach ($organisation['OrganisationPath'] as $ogroup) {
+                                    if (isset($ogroup['id'])) {
+                                        $contacts[(string)$ogroup['id']] = array('value' => (string)$ogroup['id'], 'group' => (string)$lastgroup['name'], 'label' => (string)$ogroup['name']);
+                                        $lastgroup = $ogroup;
+                                    }
+                                }
+
+
                             }
                         }
                     }
@@ -73,7 +88,20 @@ class ContactsDataSource extends AbstractDataSource
 
                 }
 
-                return ($contacts);
+                // TODO refactoring, see https://jira.neos.io/browse/NEOS-1476
+                $contactsGrouped = array();
+                foreach ($contacts as $key => $val) {
+                    $contactsGrouped[$val['group']][$key] = $val;
+                }
+
+                $contactsGroupedFinal = array();
+                foreach ($contactsGrouped as $key => $group) {
+                  foreach ($group as $id => $item) {
+                      $contactsGroupedFinal[$id] = $item;
+                  }
+                }
+
+                return ($contactsGroupedFinal);
 
                 break;
 

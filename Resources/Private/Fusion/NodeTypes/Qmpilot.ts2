@@ -22,6 +22,9 @@ prototype(Phlu.Qmpilot.NodeTypes:File) {
         forceConversion = true
     }
 
+    assetIsButton = ${q(q(node).property('asset')).get(0).fileDescription == '' ? q(node).parentsUntil("[instanceof Phlu.Corporate:Section]").find("[instanceof Phlu.Qmpilot.NodeTypes:File]").count() == 1 ? true : false : false}
+
+
     assetcount = ${q(node).property('asset') ? '1' : '0'}
 
     attributes.class = ${(q(node).next().get(0).nodeType.name != 'Phlu.Qmpilot.NodeTypes:File' ? 'last ' : '')}
