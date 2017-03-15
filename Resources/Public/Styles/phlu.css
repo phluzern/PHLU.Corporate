@@ -9545,7 +9545,8 @@ body {
           body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.all, body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.no-icon {
             padding-left: 23px; }
           body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.active {
-            background-color: #55696d; }
+            color: white;
+            background-color: #171815; }
           body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.hover {
             background-color: #cccccc; }
           body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link .phlu-corporate-tag {
@@ -9706,7 +9707,11 @@ body {
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item {
       margin-bottom: 30px; }
       body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row {
-        margin: 0; }
+        margin: 0;
+        height: 175px; }
+        @media (max-width: 767px) {
+          body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row {
+            height: 161px; } }
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-caret-right.col-xs-2 {
           background-color: #edeae8; }
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
@@ -9719,15 +9724,17 @@ body {
             font-size: 1rem; } }
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
           position: relative;
-          top: 17px;
-          left: 15px;
-          width: auto; }
+          top: 10px;
+          height: auto; }
           @media (max-width: 1599px) {
             body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
               left: 0; } }
           @media (max-width: 767px) {
             body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
-              margin: 0 0 0 auto; } }
+              width: auto;
+              margin-right: 0;
+              margin-top: 14px;
+              top: inherit; } }
       @media (max-width: 767px) {
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item {
           margin-top: 12px;
@@ -10402,6 +10409,8 @@ body {
         @media (max-width: 767px) {
           body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
             display: table-row; } }
+    body .all .has-no-target-group-codes {
+      margin-bottom: 50px; }
     body .all .target-group-codes {
       margin: 40px 0 50px; }
       body .all .target-group-codes .code {
