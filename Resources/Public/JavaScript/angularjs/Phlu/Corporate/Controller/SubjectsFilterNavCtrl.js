@@ -94,7 +94,10 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
 
     $scope.applyFilters = function(animated) {
 
+
+
         $scope.animated = animated === true ? true : false;
+
 
         // apply filters to items list
         angular.forEach($scope.filterItems, function (tags, nodeId) {
@@ -103,7 +106,7 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
             var found = false;
             angular.forEach(tags, function (val, tag) {
                 if ($scope.filter[tag] !== undefined && $scope.filter[tag] !== false) {
-                    found = true;
+                     found = true;
                 }
             });
 
@@ -113,13 +116,15 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
                 $timeout(function () {
                     $scope.filteredOut[nodeId] = true;
                     $scope.filteredIn[nodeId] = false;
-                }, animated === false ? 0 : 500);
+                }, animated === false ? 0 : 0);
             } else {
                 $scope.filteredOut[nodeId] = false;
                 $scope.filteredIn[nodeId] = true;
             }
 
         });
+
+
     }
 
 
@@ -136,6 +141,11 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
         $scope.filter = $cookies.get(appId) ? JSON.parse($cookies.get(appId)).filter : {};
         if ($cookies.get(appId)) $scope.applyFilters(false);
     })
+
+    // apply last states from cookies
+    $scope.$watch("filterItems", function(filteritems) {
+        if ($cookies.get($scope.appId)) $scope.applyFilters(false);
+    },true);
 
 
 
