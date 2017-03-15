@@ -10,6 +10,9 @@ prototype(Phlu.Corporate:Page.FurtherEducation.Detail) < prototype(Phlu.Corporat
         genre = ${q(node).property('genre')}
         fee = ${q(node).property('fee')}
 
+		sectionsInPage = ${q(node).children('main').find('[instanceof Phlu.Corporate:Section]').get()}
+		sectionsCountInPage = ${q(node).children('main').find('[instanceof Phlu.Corporate:Section]').count()}
+
         heroRenderer = Phlu.Corporate:HeroUnit.ThreeCols
         overviewRenderer = Phlu.Neos.NodeTypes:Course.ContentCollection.Overview
         hero = ${q(node).children('hero').get(0)}

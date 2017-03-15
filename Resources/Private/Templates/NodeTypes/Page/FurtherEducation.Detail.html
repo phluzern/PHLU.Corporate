@@ -16,6 +16,28 @@
                     <div class="col-xs-12">
                         <ts:render path="defaultRenderer" context="{node: header}"/>
                     </div>
+
+
+                    <f:if condition="{sectionsCountInPage}>1">
+                        <div class="col-xs-12 col-lg-12">
+                            <ul class="nav nav-pills">
+                                <f:for each="{sectionsInPage}" as="item" iteration="iterator">
+                                    <li class="{f:if(condition: iterator.isFirst, then: 'active', else: '')}">
+                                        <a class="nav-item nav-link anchor-nav"
+                                           href="#node-{item.Identifier}">{item.properties.title}</a>
+                                    </li>
+                                </f:for>
+                            <li>
+                                <a class="nav-item nav-link anchor-nav"
+                                   href="#kontakt">Kontakt</a>
+                            </li>
+
+                            </ul>
+                        </div>
+
+                    </f:if>
+
+
                     <f:if condition="{targetgroups}">
                         <div class="col-xs-12 target-group-codes">
                             <f:for each="{targetgroups}" as="targetgroup">
@@ -134,7 +156,9 @@
                                                 <f:if condition="{year.options -> f:count()} > 1">
                                                     <f:then>
                                                         <div class="input-group-btn">
-                                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                            <button type="button"
+                                                                    class="btn btn-default dropdown-toggle"
+                                                                    data-toggle="dropdown"
                                                                     aria-haspopup="true" aria-expanded="false">
                                                                 <f:if condition="{course:Date(date: year.StartText, format: 'Y')} > 1970">
                                                                     <f:then><span>{course:Date(date: year.StartText, format: 'd.m.Y')}</span>
@@ -149,7 +173,8 @@
                                                                             <f:if condition="{course:Date(date: option.value.StartText, format: 'Y')} > 1970">
                                                                                 <f:then><span>{course:Date(date: option.value.StartText, format: 'd.m.Y')}</span>
                                                                                 </f:then>
-                                                                                <f:else><span>{option.value.StartText}</span>
+                                                                                <f:else>
+                                                                                    <span>{option.value.StartText}</span>
                                                                                 </f:else>
                                                                             </f:if>
                                                                         </a>
@@ -168,14 +193,14 @@
                                                 </f:if>
 
 
-
                                             </div>
                                         </td>
                                         <td>
                                             <f:if condition="{year.options -> f:count()} > 1">
                                                 <f:then>
                                                     <div class="input-group-btn">
-                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                        <button type="button" class="btn btn-default dropdown-toggle"
+                                                                data-toggle="dropdown"
                                                                 aria-haspopup="true" aria-expanded="false">
                                                             <f:if condition="{course:Date(date: year.StartText, format: 'Y')} > 1970">
                                                                 <f:then><span>{course:Date(date: year.StartText, format: 'd.m.Y')}</span>
@@ -190,7 +215,8 @@
                                                                         <f:if condition="{course:Date(date: option.value.StartText, format: 'Y')} > 1970">
                                                                             <f:then><span>{course:Date(date: option.value.StartText, format: 'd.m.Y')}</span>
                                                                             </f:then>
-                                                                            <f:else><span>{option.value.StartText}</span>
+                                                                            <f:else>
+                                                                                <span>{option.value.StartText}</span>
                                                                             </f:else>
                                                                         </f:if>
                                                                     </a>
@@ -279,7 +305,7 @@
                 <ts:render path="collectionRenderer" context="{node: main}"/>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="kontakt">
             <div class="col-xs-12 phlu-team-members">
                 <h2>Kontakt</h2>
                 <div class="row phlu-teaser navigation subpage">

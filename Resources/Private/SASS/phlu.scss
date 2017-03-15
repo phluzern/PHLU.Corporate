@@ -2964,6 +2964,11 @@ body {
           }
         }
       }
+      .phlu-corporate-text {
+        p {
+          width: 100%;
+        }
+      }
     }
     .greyBgFullwidth2colTable {
 
@@ -3264,6 +3269,9 @@ body {
                       .btn {
                         color: white;
                         background-color: $petrol;
+                        &:hover {
+                          background-color: $petroldark;
+                        }
                       }
                     }
                     .mobile-view-columns {
