@@ -9,10 +9,25 @@
             {neos:contentElement.editable(property: 'title', tag: 'h2')}
         </f:then>
     </f:if>
-    <div class="panel-group" id="node-{node.Identifier}">
-        <div class="phlu-accordion list-multiple">
-            <ts:render path="collectionRenderer" context="{node: main}"/>
-        </div>
-    </div>
+
+
+    <f:if condition="{groupedMode}">
+        <f:then>
+            <div class="panel-group" id="node-{node.Identifier}">
+                <div class="phlu-accordion list-multiple">
+                    <ts:render path="collectionRenderer" context="{node: main}"/>
+                </div>
+            </div>
+        </f:then>
+        <f:else>
+
+            <div class="phlu-team-members phlu-corporate-section">
+                <ts:render path="contactsRenderer"/>
+            </div>
+
+        </f:else>
+    </f:if>
+
+
     <hr>
 </div>
