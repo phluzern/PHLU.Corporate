@@ -3,6 +3,8 @@
 {namespace phlu=Phlu\Corporate\ViewHelpers}
 <div{attributes -> f:format.raw()} data-asset-count="{assetcount}">
 
+
+
 <f:if condition="{asset}">
     <f:then>
         <f:if condition="{asset.resource.collectionName} !== 'disabled'">
@@ -68,11 +70,22 @@
                         <f:then>
                             <div class="content-link-wrapper">
 
-                                <div class="content-link-default-file content-link-{asset.mediatypeshortname}-file"
-                                     href="{f:if(condition: link, then: " {link}
-                                ", else: "{f:uri.resource(resource: asset.resource)}")}"
-                                target="{asset.target}">
-                                {neos:contentElement.editable(property: 'title',tag: 'span')} <span>{f:if(condition: asset.filedescription, then: "({asset.filedescription})", else: '')}</span>
+                                <f:if condition="{assetIsButton}">
+                                    <f:then>
+                                        <div class="btn btn-primary"
+                                             href="{f:if(condition: link, then: " {link}
+                                        ", else: "{f:uri.resource(resource: asset.resource)}")}"
+                                        target="{asset.target}">
+                                        {neos:contentElement.editable(property: 'title',tag: 'span')} <span>{f:if(condition: asset.filedescription, then: "({asset.filedescription})", else: '')}</span>
+                                    </f:then>
+                                    <f:else>
+                                        <div class="content-link-default-file content-link-{asset.mediatypeshortname}-file"
+                                             href="{f:if(condition: link, then: " {link}
+                                        ", else: "{f:uri.resource(resource: asset.resource)}")}"
+                                        target="{asset.target}">
+                                        {neos:contentElement.editable(property: 'title',tag: 'span')} <span>{f:if(condition: asset.filedescription, then: "({asset.filedescription})", else: '')}</span>
+                                    </f:else>
+                                </f:if>
                             </div>
 
                             </div>
@@ -80,12 +93,29 @@
                         </f:then>
                         <f:else>
 
-                        <span class="content-link-wrapper"><a
-                                class="content-link-default-file content-link-{asset.mediatypeshortname}-file"
-                                href="{f:if(condition: link, then: " {link}", else: "{f:uri.resource(resource: asset.resource)}")}" target="{asset.target}">
 
+                            <f:if condition="{assetIsButton}">
+                                <f:then>
+                                    <a
+                                            class="btn btn-primary"
+                                            href="{f:if(condition: link, then: link, else: " {f:uri.resource(resource:
+                                            asset.resource)}")}" target="{asset.target}">
+                                    <span>{f:if(condition: title, then: "{title -> f:format.raw()}", else: "{asset.title}")}</span>{f:if(condition:
+                                    asset.filedescription, then: "<span>({asset.filedescription})</span>", else: "<span
+                                        class='nofiledesc'></span>")}</a>
+
+                                </f:then>
+                                <f:else>
+                                                        <span class="content-link-wrapper"><a
+                                                                class="content-link-default-file content-link-{asset.mediatypeshortname}-file"
+                                                                href="{f:if(condition: link, then: link, else: "
+                                                                {f:uri.resource(resource: asset.resource)}")}" target="{asset.target}">
                            <span>{f:if(condition: title, then: "{title -> f:format.raw()}", else: "{asset.title}")}</span>{f:if(condition: asset.filedescription, then: "<span>({asset.filedescription})</span>", else: "<span
-                                    class='nofiledesc'></span>")}</a></span>
+                                                                    class='nofiledesc'></span>")}</a></span>
+
+                                </f:else>
+                            </f:if>
+
 
                         </f:else>
                     </f:if>
