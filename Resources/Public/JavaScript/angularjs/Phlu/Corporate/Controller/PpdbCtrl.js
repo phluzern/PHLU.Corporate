@@ -67,7 +67,14 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
     $scope.setFilterProjectType = function (f) {
         $scope.initialFilters['projecttype'] = true;
-        $scope.projecttype = JSON.parse(f);
+        var p = [];
+        try {
+            p = JSON.parse(f);
+        } catch(errro) {
+            p = f;
+        }
+
+        $scope.projecttype = p;
     };
 
     /**
