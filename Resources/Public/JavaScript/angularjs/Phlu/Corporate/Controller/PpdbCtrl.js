@@ -3,7 +3,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.list = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();
     $scope.search = '';
-    $scope.filterProjectType = {};
+    $scope.projecttype = "Forschung und Entwicklung";
     $scope.filterLifetime = {};
     $scope.financingtype = {};
     $scope.projectparticipants = {};
