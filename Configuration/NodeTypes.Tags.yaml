@@ -12,18 +12,32 @@
             dataSourceIdentifier: phlu-corporate-tags-icon
             allowEmpty: true
             multiple: false
+
+
 'Phlu.Corporate:Tags.Menu':
   superTypes:
     'Phlu.Corporate:Content': true
   ui:
     icon: icon-tag
     label: Menu
+    inspector:
+      groups:
+        general:
+          label: Allgemein
   properties:
     title:
       type: string
       defaultValue: Filter
       ui:
         inlineEditable: true
+    maximumLevels:
+      type: integer
+      defaultValue: 0
+      ui:
+        label: Max. Level Unterseiten
+        inspector:
+          group: general
+          position: 50
   constraints:
     nodeTypes:
       'Phlu.Corporate:Tag': true

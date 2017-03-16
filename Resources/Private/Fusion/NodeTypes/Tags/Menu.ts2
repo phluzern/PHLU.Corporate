@@ -1,27 +1,31 @@
-prototype(Phlu.Corporate:Tags.Menu) <  prototype(Phlu.Corporate:Content)  {
+prototype(Phlu.Corporate:Tags.Menu) < prototype(Phlu.Corporate:Content) {
 
-        templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Tags/Menu.html'
-
-
-        filterCollection =  ${q(node).children().get(0)}
-
-        filterMenu = Menu {
-                entryLevel = 0
-                templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Tags/MenuFilter.html'
-                sectionName = 'default'
-                maximumLevels = ${q(node).closest('[instanceof Phlu.Corporate:Page]').children('[instanceof Phlu.Corporate:Page.View.Default.Default]').children('[instanceof Phlu.Corporate:Page.View.Default]') ? 2 : 1}
-                filter = 'Neos.Neos:Shortcut, Phlu.Corporate:Page'
-                startingPoint = ${q(node).parent().parent().get(0)}
-                alltags = ${q(node).find('[instanceof Phlu.Neos.NodeTypes:Tag]').get()}
-                label = ${q(node).property('lable')}
-                title = ${q(node).property('title')}
-                tagRenderer = Phlu.Corporate:Tag
-                filterCollection =  ${q(node).children().get(0)}
+templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Tags/Menu.html'
 
 
-        }
+filterCollection = ${q(node).children().get(0)}
+isHidden = ${q(q(node).closest('[instanceof Phlu.Corporate:Page]').parentsUntil('[instanceof Phlu.Corporate:Tags.Menu]').children('tagsmenu').find('[instanceof Phlu.Corporate:Tags.Menu]').get(0)).property('maximumLevels') == 1 ? true : false}
 
 
-        title = ${q(node).property('title')}
+
+filterMenu = Menu {
+entryLevel = 0
+templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Tags/MenuFilter.html'
+sectionName = 'default'
+maximumLevels = ${q(node).property('maximumLevels')? q(node).property('maximumLevels'):(q(node).closest('[instanceof Phlu.Corporate:Page]').children('[instanceof Phlu.Corporate:Page.View.Default.Default]').children('[instanceof Phlu.Corporate:Page.View.Default]')? 2 : 1)}
+
+filter = 'Neos.Neos:Shortcut, Phlu.Corporate:Page'
+startingPoint = ${q(node).parent().parent().get(0)}
+alltags = ${q(node).find('[instanceof Phlu.Neos.NodeTypes:Tag]').get()}
+label = ${q(node).property('lable')}
+title = ${q(node).property('title')}
+tagRenderer = Phlu.Corporate:Tag
+filterCollection = ${q(node).children().get(0)}
+
+
+}
+
+
+title = ${q(node).property('title')}
 
 }
