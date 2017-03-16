@@ -77,7 +77,6 @@
       defaultValue: Projekte
     projecttype:
       type: string
-      defaultValue: ['Forschung und Entwicklung']
       ui:
         reloadIfChanged: true
         label: 'Projekt-Type'
