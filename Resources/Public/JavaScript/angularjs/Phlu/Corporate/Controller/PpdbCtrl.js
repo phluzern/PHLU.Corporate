@@ -3,6 +3,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.list = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();
     $scope.search = '';
+    $scope.filterProjectType = {};
     $scope.filterLifetime = {};
     $scope.financingtype = {};
     $scope.projectparticipants = {};
@@ -62,6 +63,11 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.setFilterOrganisations = function (f) {
         $scope.initialFilters['organisations'] = true;
         $scope.organisations = f;
+    };
+
+    $scope.setFilterProjectType = function (f) {
+        $scope.initialFilters['projecttype'] = true;
+        $scope.projecttype = f;
     };
 
     /**
@@ -154,9 +160,9 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         .addPropertyFilter('researchunit.ID', 'researchunit', $scope)
         .addPropertyFilter('financingtypes', 'financingtype', $scope)
         .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
-        .addPropertyFilter('projecttype', 'Forschung und Entwicklung')
-        .setNodeType('phlu-neos-nodetypes-project')
+        .addPropertyFilter('projecttype', 'projecttype', $scope)
         .addPropertyFilter('title', '', null, true)
+        .setNodeType('phlu-neos-nodetypes-project')
         .$bind('result', $scope)
         .run();
 

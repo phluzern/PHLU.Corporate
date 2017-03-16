@@ -75,6 +75,24 @@
     title:
       type: string
       defaultValue: Projekte
+    projecttype:
+      type: string
+      defaultValue: ['Forschung und Entwicklung']
+      ui:
+        reloadIfChanged: true
+        label: 'Projekt-Type'
+        inspector:
+          position: 9
+          group: filters
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            multiple: truepwd
+            values:
+              'Forschung und Entwicklung':
+                label: 'Forschung und Entwicklung'
+              'Weiterbildung':
+                label: 'Weiterbildung'
+
     researchfocustype:
       type: array
       ui:
