@@ -85,7 +85,7 @@
           group: filters
           editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-            multiple: truepwd
+            multiple: true
             values:
               'Forschung und Entwicklung':
                 label: 'Forschung und Entwicklung'
