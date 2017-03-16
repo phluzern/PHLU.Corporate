@@ -73,8 +73,11 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         } catch(errro) {
             p = f;
         }
-
-        $scope.projecttype = p;
+        if (p.length) {
+            $scope.projecttype = p;
+        } else {
+            $scope.projecttype = [];
+        }
     };
 
     /**
