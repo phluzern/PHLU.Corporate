@@ -1,0 +1,50 @@
+
+
+'Phlu.Corporate:ContentCollection.Widget':
+  superTypes:
+    'Phlu.Corporate:ContentCollection': true
+  constraints:
+    nodeTypes:
+      '*': false
+      'Phlu.Corporate:ContentCollection.WidgetGroupReferences': true
+
+
+'Phlu.Corporate:ContentCollection.WidgetGroupReferencesPage':
+  superTypes:
+    'Neos.NodeTypes:ContentReferences': TRUE
+  ui:
+    label: 'Links zu internen Seiten'
+  properties:
+    references:
+      type: 'references'
+      ui:
+        inspector:
+          group: 'references'
+          editorOptions:
+            nodeTypes: ['Phlu.Corporate:Page']
+        label: 'Seiten auswählen'
+        reloadIfChanged: TRUE
+
+
+'Phlu.Corporate:ContentCollection.WidgetGroupReferences':
+  superTypes:
+    'Phlu.Corporate:ContentCollection': true
+    'Phlu.Corporate:Content': true
+  constraints:
+    nodeTypes:
+      '*': false
+      'Phlu.Corporate:ContentCollection.WidgetGroupReferencesPage': true
+      'Phlu.Corporate:Headline': true
+      'Phlu.Corporate:Section': true
+  ui:
+    label: 'Widget Gruppe'
+    icon: icon-folder
+  properties:
+    name:
+      type: string
+      ui:
+        reloadIfChanged: true
+        label: 'Bezeichnung'
+        inspector:
+          group: general
+          position: 50

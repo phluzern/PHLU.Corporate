@@ -1,0 +1,16 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
+
+<f:if condition="{referenceNodesArray}">
+    <ul class="nav nav-pills " role="tablist">
+        <f:for each="{referenceNodesArray}" as="link">
+            <li class="col-xs-12 col-sm-6 nav-item clickable ">
+                <a class="nav-link" href="{neos:uri.node(node:link)}">
+                    <span>{link.properties.title}</span>
+                </a>
+            </li>
+        </f:for>
+    </ul>
+</f:if>
+
