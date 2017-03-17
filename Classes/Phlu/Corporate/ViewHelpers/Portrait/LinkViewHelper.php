@@ -59,6 +59,8 @@ class LinkViewHelper extends AbstractViewHelper
         }
 
 
+
+
         if ($contact) {
             if ($contact->isShowPortrait() === false) {
                 return '';
@@ -71,9 +73,10 @@ class LinkViewHelper extends AbstractViewHelper
 
             $contactShortId = substr_count($contact->getEmail(), "@phlu.ch") ? $contact->getEmailPart() : str_replace("@", "-at-", $contact->getEmail());
 
-            if ($target === 'self') {
-                $flowQuery = new FlowQuery(array($node));
-                $pageNode = $flowQuery->closest("[instanceof Phlu.Corporate:Page]")->get(0);
+            $flowQuery = new FlowQuery(array($node));
+            $pageNode = $flowQuery->closest("[instanceof Phlu.Corporate:Page]")->get(0);
+
+            if ($target === 'self' && $pageNode) {
 
                 if ($this->renderChildren() == '') {
                     return $this->controllerContext->getUriBuilder()->reset()->setCreateAbsoluteUri(true)->setFormat('html')->uriFor('view', array('node' => $pageNode, 'contact' => $contactShortId), 'Portrait', 'Phlu.Corporate');
