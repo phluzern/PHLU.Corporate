@@ -35,6 +35,7 @@
       defaultValue: 0
       ui:
         label: Max. Level Unterseiten
+        reloadIfChanged: TRUE
         inspector:
           group: general
           position: 50
