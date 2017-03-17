@@ -38,6 +38,14 @@
         inspector:
           group: general
           position: 50
+    disabled:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: 'Deaktivieren'
+        inspector:
+          group: general
+          position: 60
   constraints:
     nodeTypes:
       'Phlu.Corporate:Tag': true
