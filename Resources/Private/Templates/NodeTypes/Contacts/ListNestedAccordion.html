@@ -1,0 +1,74 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+{namespace portrait=Phlu\Corporate\ViewHelpers\Portrait}
+
+
+<div {attributes -> f:format.raw()}>
+    <f:if condition="{isHidden}">
+        <f:else>
+            <div class=" panel-heading" role="tab" id="tab-{node.Identifier}" data-toggle="collapse"
+                 data-parent="#accordion-{wrapperNode.Identifier}"
+                 data-target="#collapse-{node.Identifier}" aria-expanded="false">
+
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-7 col-md-4 ">
+                        {node.properties.firstname} {node.properties.lastname}
+                    </div>
+                    <div class="col-xs-12 col-sm-5 col-md-3">
+                        <span class="telephone">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            {node.properties.phone}
+                        </span>
+
+
+
+                    </div>
+                    <div class="col-md-5 email">
+                        <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{node.properties.email}</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div id="collapse-{node.Identifier}" class="panel-collapse collapse" role="tabpanel"
+                 aria-labelledby="tab-{node.Identifier}">
+
+                <div class="row panel-body">
+
+                    <div class="col-xs-12 col-sm-10">
+                        <address>
+<!--                        <f:if condition="{node.properties.image}">
+                            <f:then>
+                                    {node.properties.firstname} {node.properties.lastname}<br>
+                            </f:then>
+                        </f:if>-->
+                            <f:if condition="{node.properties.titlename} != ''">{node.properties.titlename}<br></f:if>
+                            <span>{node.properties.street}</span>
+                            <f:if condition="{node.properties.street2} != ''">{node.properties.street2}<br></f:if>
+                            <br>
+                            {node.properties.zip} {node.properties.city}
+                        </address>
+
+                    </div>
+                    <f:if condition="{node.properties.image}">
+                        <f:then>
+                            <div class="col-xs-12 col-sm-2">
+                                <media:image image="{node.properties.image}" class="img-fluid"
+                                             alt="{node.properties.firstname} {node.properties.lastname}" width="400"
+                                             maximumWidth="100" height="300" maximumHeight="300"
+                                             allowUpScaling="false"/>
+                            </div>
+                        </f:then>
+                    </f:if>
+                </div>
+
+            </div>
+
+
+
+        </f:else>
+    </f:if>
+</div>
