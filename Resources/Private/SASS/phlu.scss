@@ -2635,18 +2635,18 @@ body {
               }
             }
             .panel-body {
-              img {
-                margin-top:20px;
-                margin-left: 5px;
-              }
-              address {
-                margin-left: 20px;
-              }
+              margin-top:20px;
             }
             &:first-child {
               padding-top: 5px;
             }
             padding-top: 15px;
+          }
+            .panel-collapse {
+              margin-left:20px;
+              .panel-body {
+                @include gutter-width(1);
+              }
           }
         }
       }

@@ -9731,13 +9731,18 @@ body {
                 left: 41px; } }
           body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading[aria-expanded=true]::before, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading[aria-expanded=true]::before {
             content: "\e02d"; }
-        body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-body img, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-body img {
-          margin-top: 20px;
-          margin-left: 5px; }
-        body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-body address, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-body address {
-          margin-left: 20px; }
+        body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-body, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-body {
+          margin-top: 20px; }
         body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem:first-child, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem:first-child {
           padding-top: 5px; }
+      body .all .phlu-accordion .panel .panel-collapse .panel-collapse, body .all .phlu-corporate-section .panel .panel-collapse .panel-collapse {
+        margin-left: 20px; }
+        body .all .phlu-accordion .panel .panel-collapse .panel-collapse .panel-body, body .all .phlu-corporate-section .panel .panel-collapse .panel-collapse .panel-body {
+          margin-right: -1px;
+          margin-left: -1px; }
+          body .all .phlu-accordion .panel .panel-collapse .panel-collapse .panel-body > [class^="col-"], body .all .phlu-accordion .panel .panel-collapse .panel-collapse .panel-body > [class^=" col-"], body .all .phlu-corporate-section .panel .panel-collapse .panel-collapse .panel-body > [class^="col-"], body .all .phlu-corporate-section .panel .panel-collapse .panel-collapse .panel-body > [class^=" col-"] {
+            padding-right: 1px;
+            padding-left: 1px; }
     @media (max-width: 767px) {
       body .all .phlu-team-members h3 {
         margin: 0px; } }

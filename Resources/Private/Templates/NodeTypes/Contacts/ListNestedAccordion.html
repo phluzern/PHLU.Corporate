@@ -8,7 +8,7 @@
     <f:if condition="{isHidden}">
         <f:else>
             <div class=" panel-heading" role="tab" id="tab-{node.Identifier}" data-toggle="collapse"
-                 data-parent="#accordion-{wrapperNode.Identifier}"
+                 data-parent="#accordeon-{wrapperNode.Identifier}"
                  data-target="#collapse-{node.Identifier}" aria-expanded="false">
 
 
@@ -37,22 +37,6 @@
                  aria-labelledby="tab-{node.Identifier}">
 
                 <div class="row panel-body">
-
-                    <div class="col-xs-12 col-sm-10">
-                        <address>
-<!--                        <f:if condition="{node.properties.image}">
-                            <f:then>
-                                    {node.properties.firstname} {node.properties.lastname}<br>
-                            </f:then>
-                        </f:if>-->
-                            <f:if condition="{node.properties.titlename} != ''">{node.properties.titlename}<br></f:if>
-                            <span>{node.properties.street}</span>
-                            <f:if condition="{node.properties.street2} != ''">{node.properties.street2}<br></f:if>
-                            <br>
-                            {node.properties.zip} {node.properties.city}
-                        </address>
-
-                    </div>
                     <f:if condition="{node.properties.image}">
                         <f:then>
                             <div class="col-xs-12 col-sm-2">
@@ -63,6 +47,21 @@
                             </div>
                         </f:then>
                     </f:if>
+                    <div class="col-xs-12 col-sm-10">
+                        <address>
+                        <f:if condition="{node.properties.image}">
+                            <f:then>
+                                    {node.properties.firstname} {node.properties.lastname}<br>
+                            </f:then>
+                        </f:if>
+                            <f:if condition="{node.properties.titlename} != ''">{node.properties.titlename}<br></f:if>
+                            <span>{node.properties.street}</span>
+                            <f:if condition="{node.properties.street2} != ''">{node.properties.street2}<br></f:if>
+                            <br>
+                            {node.properties.zip} {node.properties.city}
+                        </address>
+
+                    </div>
                 </div>
 
             </div>
