@@ -1,5 +1,8 @@
 {namespace neos=Neos\Neos\ViewHelpers}
-
-<div {attributes -> f:format.raw()}>
-    {filterMenu -> f:format.raw()}
-</div>
+<f:if condition="{isHidden}">
+    <f:else>
+        <div {attributes -> f:format.raw()}>
+            {filterMenu -> f:format.raw()}
+        </div>
+    </f:else>
+</f:if>

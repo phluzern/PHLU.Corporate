@@ -182,13 +182,6 @@
       '*': false
       'Phlu.Corporate:CarouselImage': true
 
-'Phlu.Corporate:ContentCollection.Widget':
-  superTypes:
-    'Phlu.Corporate:ContentCollection': true
-  constraints:
-    nodeTypes:
-      '*': true
-      'Phlu.Corporate:Section': true
 
 'Phlu.Corporate:ContentCollection.Page.FurtherEducation.Detail':
   superTypes:
