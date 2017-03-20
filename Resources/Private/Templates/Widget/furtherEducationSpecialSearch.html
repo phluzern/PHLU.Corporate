@@ -563,17 +563,15 @@
 
     </div>
 
-
-    <div class="row bluebg furtherEducationNews" id="aktuelles">
-
-        <div class="col-xs-12">
-            <f:if condition="{carouselnews}">
-                <ts:render path="defaultRenderer" context="{node: carouselnews}"/>
-            </f:if>
+    <f:if condition="{carouselnews}">
+        <div class="row bluebg furtherEducationNews" id="aktuelles">
+            <div class="col-xs-12">
+                <f:if condition="{carouselnews}">
+                    <ts:render path="defaultRenderer" context="{node: carouselnews}"/>
+                </f:if>
+            </div>
         </div>
-
-    </div>
-
+    </f:if>
 
     <div class="row contactperson ">
         <div class="col-xs-12">
