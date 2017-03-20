@@ -5,6 +5,8 @@ prototype(Phlu.Corporate:Widget) < prototype(Neos.Neos:Content) {
 
     widget = ${q(node).children('widget').get(0)}
 
+    carouselnews = ${q(node).children('carouselnews').get(0)}
+
     WidgetGroupReferences = ${q(node).children('widget').find('[instanceof Phlu.Corporate:ContentCollection.WidgetGroupReferences]').get()}
 
 
