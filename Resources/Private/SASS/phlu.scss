@@ -2537,10 +2537,10 @@ body {
                 content: " \002b";
                 right: 20px;
                 @include media-breakpoint-down('xxl') {
-                  right:53px;
+                  right: 53px;
                 }
                 @include media-breakpoint-down('md') {
-                  right:30px;
+                  right: 30px;
                 }
                 margin-top: -13px;
               }
@@ -2616,16 +2616,16 @@ body {
               > div {
                 margin-left: 10px;
               }
-.telephone, .email {
-  @include media-breakpoint-only('sm') {
-    text-align: right;
-    padding-right:30px;
-  }
-}
+              .telephone, .email {
+                @include media-breakpoint-only('sm') {
+                  text-align: right;
+                  padding-right: 30px;
+                }
+              }
               .telephone {
                 color: $hazelbrowndark;
                 i {
-                  margin-right:5px;
+                  margin-right: 5px;
                 }
               }
               .email {
@@ -2641,21 +2641,21 @@ body {
               }
             }
             .panel-body {
-              margin-top:20px;
+              margin-top: 20px;
             }
             &:first-child {
               padding-top: 5px;
             }
             padding-top: 15px;
           }
-            .panel-collapse {
-              margin-left:20px;
-              .panel-body {
-                img {
-                  width: 100%;
-                  height: auto;
-                }
+          .panel-collapse {
+            margin-left: 20px;
+            .panel-body {
+              img {
+                width: 100%;
+                height: auto;
               }
+            }
           }
         }
       }

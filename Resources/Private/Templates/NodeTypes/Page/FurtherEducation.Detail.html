@@ -107,6 +107,26 @@
                                     </td>
                                 </tr>
                             </f:if>
+
+                            <f:for each="{node.properties.sections}" as="section">
+                                <f:if condition="{section.Nr} == 4">
+                                    <f:then>
+                                        <tr>
+                                            <td>
+                                                Teilnehmende
+                                                <div class="mobile-view-columns">
+                                                    {section.Text}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {section.Text}
+                                            </td>
+                                        </tr>
+                                    </f:then>
+                                </f:if>
+                            </f:for>
+
+
                             <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Module'">
                                 <f:if condition="{node.properties.lessons}">
                                     <tr>
