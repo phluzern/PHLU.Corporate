@@ -508,7 +508,7 @@
         <div class="col-xs-12">
             <div class="tab-content">
                 <div class="result-panel tab-pane " id="focustopics" role="tabpanel">
-                    <div data-ng-if="tab['focustopics'] !== undefined">
+                    <div data-ng-if="{f:if(condition: '{neos:rendering.inBackend()}',then:'1==1 ||')}tab['focustopics'] !== undefined">
                         <f:if condition="{WidgetGroupReferences.0}">
                             <ts:render path="defaultRenderer"
                                        context="{node: WidgetGroupReferences.0}"/>
@@ -516,7 +516,7 @@
                     </div>
                 </div>
                 <div class="result-panel tab-pane " id="latestoffers" role="tabpanel">
-                    <div data-ng-if="tab['latestoffers'] !== undefined">
+                    <div data-ng-if="{f:if(condition: '{neos:rendering.inBackend()}',then:'1==1 ||')}tab['latestoffers'] !== undefined">
                         <f:if condition="{WidgetGroupReferences.1}">
                             <ts:render path="defaultRenderer"
                                        context="{node: WidgetGroupReferences.1}"/>
@@ -524,7 +524,7 @@
                     </div>
                 </div>
                 <div class="result-panel tab-pane " id="recommendedoffers" role="tabpanel">
-                    <div data-ng-if="tab['recommendedoffers'] !== undefined">
+                    <div data-ng-if="{f:if(condition: '{neos:rendering.inBackend()}',then:'1==1 ||')}tab['recommendedoffers'] !== undefined">
                         <f:if condition="{WidgetGroupReferences.2}">
                             <ts:render path="defaultRenderer"
                                        context="{node: WidgetGroupReferences.2}"/>
@@ -532,7 +532,7 @@
                     </div>
                 </div>
                 <div class="result-panel tab-pane " id="lastminute" role="tabpanel">
-                    <div data-ng-if="tab['lastminute'] !== undefined">
+                    <div data-ng-if="{f:if(condition: '{neos:rendering.inBackend()}',then:'1==1 ||')}tab['lastminute'] !== undefined">
                         <f:if condition="{WidgetGroupReferences.3}">
                             <ts:render path="defaultRenderer"
                                        context="{node: WidgetGroupReferences.3}"/>
@@ -540,7 +540,7 @@
                     </div>
                 </div>
                 <div class="result-panel tab-pane " id="customoffers" role="tabpanel">
-                    <div data-ng-if="tab['customoffers'] !== undefined">
+                    <div data-ng-if="{f:if(condition: '{neos:rendering.inBackend()}',then:'1==1 ||')}tab['customoffers'] !== undefined">
                         <f:if condition="{WidgetGroupReferences.4}">
                             <ts:render path="defaultRenderer"
                                        context="{node: WidgetGroupReferences.4}"/>
@@ -548,7 +548,7 @@
                     </div>
                 </div>
                 <div class="result-panel tab-pane " id="lastvisit" role="tabpanel">
-                    <div data-ng-if="tab['lastvisit'] !== undefined">
+                    <div data-ng-if="{f:if(condition: '{neos:rendering.inBackend()}',then:'1==1 ||')}tab['lastvisit'] !== undefined">
                         <f:if condition="{WidgetGroupReferences.5}">
                             <ts:render path="defaultRenderer"
                                        context="{node: WidgetGroupReferences.5}"/>
