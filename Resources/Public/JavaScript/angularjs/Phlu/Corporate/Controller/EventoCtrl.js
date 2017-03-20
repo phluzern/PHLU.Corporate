@@ -64,6 +64,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.limitChunkSize = 10;
     $scope.searchquery = '';
     $scope.search = {};
+    $scope.tab = {};
     $scope.bookable = {
         'Alle' : null,
         'Studiengang' : null,
@@ -677,7 +678,9 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     });
 
-    search.run();
+    //search.run();
+
+
 
 }]);
 
