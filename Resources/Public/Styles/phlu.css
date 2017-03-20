@@ -9680,6 +9680,9 @@ body {
             @media (max-width: 1599px) {
               body .all .phlu-accordion .panel .panel-heading .panel-title a::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a::after {
                 right: 53px; } }
+            @media (max-width: 991px) {
+              body .all .phlu-accordion .panel .panel-heading .panel-title a::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a::after {
+                right: 30px; } }
           body .all .phlu-accordion .panel .panel-heading .panel-title a[aria-expanded=false]::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a[aria-expanded=false]::after {
             content: " \002b"; }
           body .all .phlu-accordion .panel .panel-heading .panel-title a[aria-expanded=true]::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a[aria-expanded=true]::after {
@@ -9711,38 +9714,36 @@ body {
         padding-top: 15px; }
         body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem:last-child, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem:last-child {
           border-bottom: 0; }
-        body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading {
-          margin-left: 20px; }
-          body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone {
-            color: #9f632a; }
-            body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone i, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone i {
-              margin-right: 5px; }
-          body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email .content-link-email-contact-person, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email .content-link-email-contact-person {
-            background-image: none; }
-          body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading::before, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading::before {
-            font-family: Icons;
-            content: '\e02f';
-            font-size: 12px;
-            position: absolute;
-            margin-top: 6px;
-            left: 0; }
-            @media (max-width: 1599px) {
-              body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading::before, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading::before {
-                left: 41px; } }
-          body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading[aria-expanded=true]::before, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading[aria-expanded=true]::before {
-            content: "\e02d"; }
+        body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading::before, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading::before {
+          font-family: Icons;
+          content: '\e02f';
+          font-size: 12px;
+          position: absolute;
+          margin-top: 6px; }
+        body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading > div, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading > div {
+          margin-left: 10px; }
+
+@media (min-width: 544px) and (max-width: 767px) {
+  body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone, body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email {
+    text-align: right;
+    padding-right: 30px; } }
+        body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone {
+          color: #9f632a; }
+          body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone i, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone i {
+            margin-right: 5px; }
+        body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email .content-link-email-contact-person, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email .content-link-email-contact-person {
+          background-image: none; }
+        body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading[aria-expanded=true]::before, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading[aria-expanded=true]::before {
+          content: "\e02d"; }
         body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-body, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-body {
           margin-top: 20px; }
         body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem:first-child, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem:first-child {
           padding-top: 5px; }
       body .all .phlu-accordion .panel .panel-collapse .panel-collapse, body .all .phlu-corporate-section .panel .panel-collapse .panel-collapse {
         margin-left: 20px; }
-        body .all .phlu-accordion .panel .panel-collapse .panel-collapse .panel-body, body .all .phlu-corporate-section .panel .panel-collapse .panel-collapse .panel-body {
-          margin-right: -1px;
-          margin-left: -1px; }
-          body .all .phlu-accordion .panel .panel-collapse .panel-collapse .panel-body > [class^="col-"], body .all .phlu-accordion .panel .panel-collapse .panel-collapse .panel-body > [class^=" col-"], body .all .phlu-corporate-section .panel .panel-collapse .panel-collapse .panel-body > [class^="col-"], body .all .phlu-corporate-section .panel .panel-collapse .panel-collapse .panel-body > [class^=" col-"] {
-            padding-right: 1px;
-            padding-left: 1px; }
+        body .all .phlu-accordion .panel .panel-collapse .panel-collapse .panel-body img, body .all .phlu-corporate-section .panel .panel-collapse .panel-collapse .panel-body img {
+          width: 100%;
+          height: auto; }
     @media (max-width: 767px) {
       body .all .phlu-team-members h3 {
         margin: 0px; } }

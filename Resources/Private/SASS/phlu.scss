@@ -2539,6 +2539,9 @@ body {
                 @include media-breakpoint-down('xxl') {
                   right:53px;
                 }
+                @include media-breakpoint-down('md') {
+                  right:30px;
+                }
                 margin-top: -13px;
               }
               &[aria-expanded=false] {
@@ -2603,7 +2606,22 @@ body {
             font-size: $font-size-phlu-team-members;
             cursor: pointer;
             .panel-heading {
-              margin-left: 20px;
+              &::before {
+                font-family: Icons;
+                content: '\e02f';
+                font-size: 12px;
+                position: absolute;
+                margin-top: 6px;
+              }
+              > div {
+                margin-left: 10px;
+              }
+.telephone, .email {
+  @include media-breakpoint-only('sm') {
+    text-align: right;
+    padding-right:30px;
+  }
+}
               .telephone {
                 color: $hazelbrowndark;
                 i {
@@ -2616,18 +2634,6 @@ body {
                 }
               }
 
-              &::before {
-                font-family: Icons;
-                content: '\e02f';
-                font-size: 12px;
-                position: absolute;
-                margin-top: 6px;
-                left: 0;
-                @include media-breakpoint-down('xxl') {
-                  left:41px;
-                }
-
-              }
               &[aria-expanded=true] {
                 &::before {
                   content: "\e02d";
@@ -2645,7 +2651,10 @@ body {
             .panel-collapse {
               margin-left:20px;
               .panel-body {
-                @include gutter-width(1);
+                img {
+                  width: 100%;
+                  height: auto;
+                }
               }
           }
         }
