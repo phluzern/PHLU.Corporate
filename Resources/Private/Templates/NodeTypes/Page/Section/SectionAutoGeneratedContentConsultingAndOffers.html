@@ -1,6 +1,7 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
+{namespace p=Phlu\Corporate\ViewHelpers\ConsultingAndOffers}
 
 <div {attributes -> f:format.raw()}>
     <f:if condition="{sectionCount}>1">
@@ -12,25 +13,35 @@
     <div class="row subjectsfilternav">
         <div class="col-xs-12">
             <div class="row phlu-teaser navigation subpage">
-                <f:for each="{nodes}" as="item">
-                    <f:for each="{item.properties.ou}" as="ouId">
-                        <f:if condition="{ouId} == {pageIdentifier}">
-                            <f:then>
-                                <div class="col-xs-12 nav-teaser-item {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}  ">
-                                    <div class="row">
-                                        <div class="phlu-teaser-body col-xs-12">
-                                            <h3>
-                                                <neos:link.node node="{item}">
-                                                    {item.properties.title}
-                                                </neos:link.node>
-                                            </h3>
+
+
+                <f:for each="{p:getGroupedOus(nodes:nodes, pageIdentifier: pageIdentifier)}" as="group">
+                    <div class="col-xs-12 nav-teaser-item ">
+                        <h3>{group.name}</h3>
+
+                        <f:for each="{group.items}" as="item">
+                            <f:for each="{item.properties.ou}" as="ouId">
+                                <f:if condition="{ouId} == {pageIdentifier}">
+                                    <f:then>
+                                        <div class="col-xs-12 nav-teaser-item {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}  ">
+                                        <div class="row">
+                                            <div class="phlu-teaser-body col-xs-12">
+                                                <h3>
+                                                    <neos:link.node node="{item}">
+                                                        {item.properties.title}
+                                                    </neos:link.node>
+                                                </h3>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </f:then>
-                        </f:if>
-                    </f:for>
+                                        </div>
+                                    </f:then>
+                                </f:if>
+                            </f:for>
+                        </f:for>
+                    </div>
                 </f:for>
+
+
             </div>
         </div>
     </div>
