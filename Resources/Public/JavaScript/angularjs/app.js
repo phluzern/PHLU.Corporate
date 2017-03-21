@@ -63,7 +63,7 @@ PhluCorporateApp.controller('initController', ['$scope','$hybridsearch', functio
           PhluCorporateApp.$$conf.workspaceName = workspaceName;
           PhluCorporateApp.$$conf.siteNodeName = siteNodeName;
           PhluCorporateApp.$$conf.dimensionHash = dimensionHash;
-          PhluCorporateApp.$$conf.cdnHost = 'https://d2desbmrc4hxtg.cloudfront.net';
+          PhluCorporateApp.$$conf.cdnHost = 'https://d1zsa2wyk011a7.cloudfront.net';
   };
 
 
