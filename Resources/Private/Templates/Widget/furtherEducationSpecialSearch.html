@@ -51,8 +51,7 @@
 
                 </div>
 
-                <div class="row extendedSearchFilter"
-                     data-ng-show="result.isLoading() === false">
+                <div class="row extendedSearchFilter">
 
                     <div data-ng-show="nodetypesFilterCurrentLabel == 'Alle'" class="col-xs-12">
                         <h3>Kurse und Studiengänge</h3>
@@ -414,15 +413,16 @@
             <div class="row results-table">
                 <div class="col-xs-12"
                      data-ng-if="isShowingResult()">
-                    <div class="searchResultsListLoadingScreen" data-ng-if="result.isLoading()">
-                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
-                             alt="loading"
-                             class="loadingIcon"
-                        />
-                    </div>
+
                     <div class="resultsCount">
                         <h3 data-ng-bind="'Treffer '+ result.count()"></h3>
                     </div>
+
+                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
+                             alt="loading"
+                             class="loadingIcon"
+                             data-ng-if="result.isLoading()"
+                        />
 
                     <f:render partial="furtherEducationList" arguments="{_all}"/>
 
