@@ -680,13 +680,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     search.run();
 
-    // angular.forEach($scope.nodetypesFilter, function(nodetypesFilter) {
-    //     $scope.setNodetypesFilter(nodetypesFilter);
-    // });
-    // $scope.setNodetypesFilter($scope.nodetypesFilter[0]);
-
-
-
 
 }]);
 
