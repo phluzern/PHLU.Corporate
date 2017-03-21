@@ -59,6 +59,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     var search = new $hybridsearchObject(hybridsearch);
 
     $scope.currentYears = {};
+    $scope.started = false;
     $scope.result = new $hybridsearchResultsObject();
     $scope.limit = 10;
     $scope.limitChunkSize = 10;
@@ -666,6 +667,9 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         .setQuery('searchquery', $scope)
         .setNodeType('nodetypes', $scope)
         .setOrderBy({'*': '-id'})
+        .$watch(function (i) {
+            $scope.started = true;
+        })
         .$bind('result', $scope);
 
     angular.forEach($scope.filters, function (filter, name) {
