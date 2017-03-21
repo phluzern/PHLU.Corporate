@@ -48,7 +48,8 @@ PhluCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsear
             PhluCorporateApp.$$conf.firebaseEndpoint,
             PhluCorporateApp.$$conf.workspaceName,
             PhluCorporateApp.$$conf.dimensionHash,
-            PhluCorporateApp.$$conf.siteNodeName
+            PhluCorporateApp.$$conf.siteNodeName,
+            PhluCorporateApp.$$conf.cdnHost
             );
 
 
@@ -62,6 +63,7 @@ PhluCorporateApp.controller('initController', ['$scope','$hybridsearch', functio
           PhluCorporateApp.$$conf.workspaceName = workspaceName;
           PhluCorporateApp.$$conf.siteNodeName = siteNodeName;
           PhluCorporateApp.$$conf.dimensionHash = dimensionHash;
+          PhluCorporateApp.$$conf.cdnHost = 'https://d2desbmrc4hxtg.cloudfront.net';
   };
 
 
