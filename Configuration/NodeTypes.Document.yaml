@@ -66,6 +66,10 @@
 'Phlu.Corporate:Page.Overview.Tiles':
   ui:
     label: 'Übersichtsseite (Kacheln)'
+    inspector:
+      groups:
+        navigation:
+          label: Navigation
   superTypes:
     'Phlu.Corporate:Page': true
   constraints:
@@ -76,6 +80,14 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.Overview.Tiles'
+  properties:
+    moodimage:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'Stimmungsbild anzeigen'
+        reloadIfChanged: true
+        inspector:
+          group: navigation
 
 
 

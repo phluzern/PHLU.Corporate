@@ -99,6 +99,7 @@ page = Page {
             }
 
 	        ambientImage = Neos.Fusion:Template {
+                moodimage = ${q(node).property('moodimage')}
 		        templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/AmbientImage/Default.html'
 	        }
 
