@@ -10493,7 +10493,7 @@ body {
             left: 5px;
             bottom: -8px; }
     body .all .infoboxes {
-      background-color: #85889A;
+      background-color: #86829B;
       margin-top: 13px; }
       body .all .infoboxes > div {
         min-height: inherit; }
@@ -10509,7 +10509,7 @@ body {
             overflow: hidden;
             position: relative;
             height: 320px;
-            background-color: #DADCE8; }
+            background-color: #DAD8E9; }
             body .all .infoboxes > div > div > div .box1 .centeredBox, body .all .infoboxes > div > div > div .box2 .centeredBox, body .all .infoboxes > div > div > div .box3 .centeredBox, body .all .infoboxes > div > div > div .box4 .centeredBox, body .all .infoboxes > div > div > div .box5 .centeredBox {
               position: relative;
               top: 6%;
@@ -10529,7 +10529,7 @@ body {
                 font-weight: normal; }
             body .all .infoboxes > div > div > div .box1 hr.infobox, body .all .infoboxes > div > div > div .box2 hr.infobox, body .all .infoboxes > div > div > div .box3 hr.infobox, body .all .infoboxes > div > div > div .box4 hr.infobox, body .all .infoboxes > div > div > div .box5 hr.infobox {
               margin: 20px 90px;
-              border-color: #85889A; }
+              border-color: #86829B; }
             body .all .infoboxes > div > div > div .box1 img, body .all .infoboxes > div > div > div .box2 img, body .all .infoboxes > div > div > div .box3 img, body .all .infoboxes > div > div > div .box4 img, body .all .infoboxes > div > div > div .box5 img {
               width: 100%;
               height: auto; }
@@ -10578,7 +10578,7 @@ body {
               body .all .infoboxes > div > div > div .box2 .centeredBox p::after {
                 display: block;
                 content: ' ';
-                border-bottom: 2px solid #85889A;
+                border-bottom: 2px solid #86829B;
                 width: 40%;
                 margin: auto;
                 padding-top: 20px;
