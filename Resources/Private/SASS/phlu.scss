@@ -2677,7 +2677,7 @@ body {
           margin-bottom: 30px;
           .row {
             margin: 0;
-            height: 175px;
+            height: 232px;
             @include media-breakpoint-down("sm") {
               height: 161px;
             }
@@ -2691,7 +2691,6 @@ body {
             }
             .phlu-teaser-body {
               address {
-                white-space: nowrap;
                 margin-bottom: 0;
               }
               address, a {
@@ -2703,7 +2702,7 @@ body {
             .phlu-teaser-caret-right {
               img {
                 position: relative;
-                top: 10px;
+                top: 18px;
                 height: auto;
                 @include media-breakpoint-down("xxl") {
                   left: 0;

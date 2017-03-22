@@ -9755,7 +9755,7 @@ body {
       margin-bottom: 30px; }
       body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row {
         margin: 0;
-        height: 175px; }
+        height: 232px; }
         @media (max-width: 767px) {
           body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row {
             height: 161px; } }
@@ -9764,14 +9764,13 @@ body {
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
           background-color: #edeae8; }
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address {
-          white-space: nowrap;
           margin-bottom: 0; }
         @media (max-width: 1279px) {
           body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body a {
             font-size: 1rem; } }
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
           position: relative;
-          top: 10px;
+          top: 18px;
           height: auto; }
           @media (max-width: 1599px) {
             body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
