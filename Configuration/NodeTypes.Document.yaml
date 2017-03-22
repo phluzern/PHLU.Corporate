@@ -126,14 +126,13 @@
         inspector:
           group: navigation
         reloadIfChanged: true
-    hasmoodimage:
-      type: boolean
+    moodimage:
+      type: Neos\Media\Domain\Model\ImageInterface
       ui:
         label: 'Stimmungsbild anzeigen'
-        defaultValue: false
+        reloadIfChanged: true
         inspector:
           group: navigation
-        reloadIfChanged: true
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.View.Default'

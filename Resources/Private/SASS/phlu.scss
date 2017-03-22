@@ -4650,11 +4650,10 @@ body {
         .phlu-corporate-textplain {
           p {
             width: 100%;
+            font-size: $lead-font-size-mobile;
             @include media-breakpoint-up("xl") {
               font-size: $lead-font-size;
-            }
-            @include media-breakpoint-up("xs") {
-              font-size: $lead-font-size-mobile;
+              width: 75%;
             }
           }
         }

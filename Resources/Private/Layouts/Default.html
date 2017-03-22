@@ -54,8 +54,7 @@
 <f:section name="body">
 
 
-    <div class="all" data-ng-app="PhluCorporateApp" {f:if(condition:
-    '{neos:rendering.inBackend()}',then:'style="display: none"', else: '')}>
+    <div class="all" data-ng-app="PhluCorporateApp" {f:if(condition: '{neos:rendering.inBackend()}',then:'style="display: none"', else: '')}>
     <span data-ng-controller="initController"
           data-ng-init="init('{firebaseEndpoint}','{site.context.currentSite.nodeName}','{site.workspace.name}','{site.nodeData.dimensionsHash}')"></span>
 
@@ -107,7 +106,9 @@
                           arguments="{firebaseEndpoint: parts.neosliveHybridsearchFirebaseEndpoint, site: parts.site}"/>
                 {content.main -> f:format.raw()}
                 {parts.breadcrumbFooter -> f:format.raw()}
-                {parts.ambientImage -> f:format.raw()}
+                <f:if condition="{node.parent.nodeType.name} == 'Phlu.Corporate:Page.Home'">
+                    {parts.ambientImage -> f:format.raw()}
+                </f:if>
                 {parts.teaserMenu -> f:format.raw()}
             </div>
         </div>

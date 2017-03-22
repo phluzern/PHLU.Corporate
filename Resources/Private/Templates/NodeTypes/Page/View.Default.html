@@ -1,5 +1,6 @@
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace neos=Neos\Neos\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
 {namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
 
 
@@ -9,8 +10,6 @@
             <f:if condition="{sectionsCount}==0">
                 <div id="neos-shortcut">
                     <div>
-
-
                         <ul>
                             <li><b>Dossier "{node.parent.properties.title}"</b><br>
                                 Klicken Sie,
@@ -23,9 +22,7 @@
                                 Inhalte der Unterseite
                                 zu bearbeiten.
                             </li>
-
                         </ul>
-
                     </div>
                 </div>
             </f:if>
@@ -39,25 +36,25 @@
     </div>
 </div>
 
-
-
-
 <div class="row">
     <div class="col-xs-12 col-lg-12">
         <ts:render path="defaultRenderer" context="{node: header}"/>
     </div>
 </div>
-
+<f:if condition="{node.properties.moodimage}">
+    <div class="row ambient-img-body" style="background-image: url('{media:uri.image(image: node.properties.moodimage)}')">
+    </div>
+</f:if>
 {widgetRenderer -> f:format.raw()}
 
 <f:if condition="{showCarousel}">
-    <f:then><ts:render path="defaultRenderer" context="{node: carouselnews}"/></f:then>
+    <f:then>
+        <ts:render path="defaultRenderer" context="{node: carouselnews}"/>
+    </f:then>
 </f:if>
-
 
 <div class="row">
     <div class="col-xs-12 col-lg-12">
-
         <f:if condition="{hasanchornavigation}">
             <f:if condition="{sectionsCount}>1">
                 <ul class="nav nav-pills">
@@ -75,29 +72,14 @@
                             </li>
                         </f:else>
                     </f:if>
-
                 </ul>
-
-
             </f:if>
         </f:if>
-
-        <f:if condition="{hasmoodimage}">
-            hasmoodimage
-        </f:if>
-
-
         <ts:render path="collectionRenderer" context="{node: main}"/>
-
-
         <f:if condition="{tagsMenu}">
             <ts:render path="collectionRenderer" context="{node: tagsMenu}"/>
         </f:if>
-
-
-
     </div>
-
 </div>
 
 <ts:render path="defaultRenderer" context="{node: contact}"/>
