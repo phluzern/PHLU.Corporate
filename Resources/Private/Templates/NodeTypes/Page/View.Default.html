@@ -41,10 +41,6 @@
         <ts:render path="defaultRenderer" context="{node: header}"/>
     </div>
 </div>
-<f:if condition="{node.properties.moodimage}">
-    <div class="row ambient-img-body" style="background-image: url('{media:uri.image(image: node.properties.moodimage)}')">
-    </div>
-</f:if>
 {widgetRenderer -> f:format.raw()}
 
 <f:if condition="{showCarousel}">
@@ -75,6 +71,14 @@
                 </ul>
             </f:if>
         </f:if>
+    </div>
+</div>
+        <f:if condition="{node.properties.moodimage}">
+            <div class="row ambient-img-body" style="background-image: url('{media:uri.image(image: node.properties.moodimage)}')">
+            </div>
+        </f:if>
+<div class="row">
+    <div class="col-xs-12 col-lg-12">
         <ts:render path="collectionRenderer" context="{node: main}"/>
         <f:if condition="{tagsMenu}">
             <ts:render path="collectionRenderer" context="{node: tagsMenu}"/>

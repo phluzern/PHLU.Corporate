@@ -11360,8 +11360,7 @@ body {
         background-repeat: no-repeat;
         padding-bottom: 330px;
         background-position: bottom center;
-        background-size: cover;
-        margin-bottom: 32px; }
+        background-size: cover; }
       body .all .main > .row .phlu-corporate-section:last-child hr, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section:last-child hr {
         border-top: 0;
         padding-bottom: 40px; }
