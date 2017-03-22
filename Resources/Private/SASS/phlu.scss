@@ -4653,7 +4653,6 @@ body {
             font-size: $lead-font-size-mobile;
             @include media-breakpoint-up("xl") {
               font-size: $lead-font-size;
-              width: 75%;
             }
           }
         }
