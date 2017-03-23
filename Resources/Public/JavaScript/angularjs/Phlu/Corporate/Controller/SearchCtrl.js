@@ -447,7 +447,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             });
 
 
-        }, 60);
+        }, 10);
 
 
     });
