@@ -1,13 +1,16 @@
 {namespace ts=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
 {namespace neos=Neos\Neos\ViewHelpers}
 
 
 <div {attributes -> f:format.raw()}>
-
-
-
-    <div class="row ambient-img-footer"></div>
-
-
-
+    <f:if condition="{moodimage}">
+        <f:then>
+            <div class="row ambient-img-footer"
+                 style="background-image: url('{media:uri.image(image: moodimage)}')"></div>
+        </f:then>
+        <f:else>
+            <div class="row ambient-img-footer"></div>
+        </f:else>
+    </f:if>
 </div>

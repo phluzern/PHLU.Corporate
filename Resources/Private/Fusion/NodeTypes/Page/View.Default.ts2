@@ -10,7 +10,7 @@ tagsMenu = ${q(node).get(0).identifier != '58c164e4-6f08-4f22-a07e-d0cd38bd0c6f'
 sections = ${q(node).children('main').find('[instanceof Phlu.Corporate:Section]').get()}
 sectionsCount = ${q(node).children('main').find('[instanceof Phlu.Corporate:Section]').count()}
 hasanchornavigation = ${q(node).property('hasanchornavigation')}
-hasmoodimage = ${q(node).property('hasmoodimage')}
+moodimage = ${q(node).property('moodimage')}
 contactIsHidden = ${q(q(node).children('contact').get(0)).context.workspaceName == 'live' ?((String.length(q(q(node).children('contact').get(0)).property('lastname'))> 0 || q(q(node).children('contact').get(0)).property('contact'))> 0 && q(q(node).children('contact').get(0)).property('ishidden')!= TRUE ? false : true): q(q(node).children('contact').get(0)).property('ishidden')}
 templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
 title = ${q(node).property('title')}
