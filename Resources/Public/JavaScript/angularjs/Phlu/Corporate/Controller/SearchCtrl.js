@@ -146,6 +146,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     $scope.result = new $hybridsearchResultsObject();
 
     $rootScope.siteSearch = '';
+    $rootScope.quickNode = null;
+
     if ($rootScope.siteSearchTabs === undefined) {
         $rootScope.siteSearchTabs = {};
     }
@@ -414,10 +416,14 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         if (searchResultApplyTimer) {
             window.clearTimeout(searchResultApplyTimer);
         }
+
+
         searchResultApplyTimer = setTimeout(function () {
 
-
             $scope.$apply(function () {
+
+                $rootScope.quickNode = data.getQuickNodes()[0];
+
 
                 angular.forEach($rootScope.siteSearchTabs, function (group, id) {
                     $rootScope.siteSearchTabs[id] = false;
