@@ -315,15 +315,36 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         if (orderby != 0) {
             search.setOrderBy({'*': orderby})
         } else {
-            search.setOrderBy({
-                'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
-                    return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-id']].counter
-                },
-                'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
-                    return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-id']].counter
-                }
-            })
+
+            if ($scope.filters.id !== undefined) {
+                search.setOrderBy({
+                    'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
+                        return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-id']].counter
+                    },
+                    'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
+                        return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-id']].counter
+                    }
+                })
+
+            }
+
+            if ($scope.filters.nr !== undefined) {
+                search.setOrderBy({
+                    'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
+                        return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-nr']].counter
+                    },
+                    'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
+                        return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-nr']].counter
+                    }
+                })
+
+            }
+
+
+
         }
+
+
     };
 
 
