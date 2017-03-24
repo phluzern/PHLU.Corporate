@@ -331,10 +331,10 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             if ($scope.filters.nr !== undefined) {
                 search.setOrderBy({
                     'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
-                        return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-nr']].counter
+                        return $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-nr']].counter
                     },
                     'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
-                        return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-nr']].counter
+                        return $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-nr']].counter
                     }
                 })
 
