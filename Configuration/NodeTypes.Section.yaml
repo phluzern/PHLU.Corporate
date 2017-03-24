@@ -282,6 +282,7 @@
           group: filters
     orderby:
       type: string
+      defaultValue: 0
       ui:
         label: 'Sortieren nach'
         reloadIfChanged: true
@@ -292,6 +293,8 @@
           editorOptions:
             multiple: false
             values:
+              '0':
+                label: 'Automatisch'
               '-nr':
                 label: 'Nummer (absteigend)'
               'nr':

@@ -67,9 +67,9 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.search = {};
     $scope.tab = {};
     $scope.bookable = {
-        'Alle' : null,
-        'Studiengang' : null,
-        'Kurs' : null
+        'Alle': null,
+        'Studiengang': null,
+        'Kurs': null
     };
 
     $scope.graduation = {};
@@ -161,10 +161,10 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @param array year
      * @returns void
      */
-    $scope.setCurrentYear = function (node,year) {
+    $scope.setCurrentYear = function (node, year) {
 
         if (year === undefined && $scope.currentYears[node.identifier] == undefined) {
-           year = node.getProperty('years.0');
+            year = node.getProperty('years.0');
         }
 
         if (year !== undefined) {
@@ -173,11 +173,10 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         }
 
         if ($scope.currentYears[node.identifier] !== undefined && year !== undefined && year.Id !== undefined) {
-            $scope.currentYears[node.identifier].url = node.getUrl().substr(0,node.getUrl().lastIndexOf("/"))+"/"+node.getProperty('id')+"/"+year.Id+node.getUrl().substr(node.getUrl().lastIndexOf("/"));
+            $scope.currentYears[node.identifier].url = node.getUrl().substr(0, node.getUrl().lastIndexOf("/")) + "/" + node.getProperty('id') + "/" + year.Id + node.getUrl().substr(node.getUrl().lastIndexOf("/"));
         }
 
     };
-
 
 
     /**
@@ -194,15 +193,15 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * set detail is open
      * @returns void
      */
-    $scope.setOpen = function (node,index,containerId) {
+    $scope.setOpen = function (node, index, containerId) {
         $scope.isopen = $scope.isopen === node.identifier ? 0 : node.identifier;
         $scope.setCurrentYear(node);
 
         if (containerId !== undefined) {
-            index = containerId+"-"+index;
+            index = containerId + "-" + index;
         }
 
-        window.setTimeout(function() {
+        window.setTimeout(function () {
             if (jQuery("#node-" + index).length) {
                 jQuery('html, body').stop().animate({
                     'scrollTop': jQuery("#node-" + index).offset().top - (jQuery("#node-" + index).height() / 2)
@@ -210,7 +209,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
                 });
             }
-        },10);
+        }, 10);
 
 
     };
@@ -279,13 +278,14 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @param string category
      * @returns void
      */
-    $scope.setFilter = function (values, filtername,category) {
+    $scope.setFilter = function (values, filtername, category) {
 
-        angular.forEach(values, function (value) {
+        angular.forEach(values, function (value, counter) {
             $scope.toggleFilterSelection({
                 id: value,
                 value: value,
-                state: false
+                state: false,
+                counter: counter
             }, category === undefined ? 'Alle' : category, filtername);
 
         });
@@ -311,9 +311,20 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @returns void
      */
     $scope.setOrderBy = function (orderby) {
-       search.setOrderBy({'*': orderby})
-    };
 
+        if (orderby != 0) {
+            search.setOrderBy({'*': orderby})
+        } else {
+            search.setOrderBy({
+                'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
+                    return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-id']].counter
+                },
+                'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
+                    return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-id']].counter
+                }
+            })
+        }
+    };
 
 
     /**
@@ -322,7 +333,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @param array genres
      * @returns void
      */
-    $scope.resetFilter = function (category,filtername) {
+    $scope.resetFilter = function (category, filtername) {
 
         if (category === undefined) {
             category = "Alle";
@@ -334,8 +345,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
 
     };
-
-
 
 
     /**
@@ -514,12 +523,11 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @param string category
      * @returns string
      */
-    $scope.isFilterValueSelected = function (value,filter) {
+    $scope.isFilterValueSelected = function (value, filter) {
 
         return $scope.getFilterSelectedValue(filter).indexOf(value) > -1 ? true : false;
 
     };
-
 
 
     /**
@@ -646,7 +654,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.loadMore = function (objId) {
 
         $scope.limit = $scope.limit + $scope.limitChunkSize;
-        window.setTimeout(function() {
+        window.setTimeout(function () {
             if (jQuery(objId).length) {
                 jQuery('html, body').stop().animate({
                     'scrollTop': jQuery(objId).offset().top
@@ -654,7 +662,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
                 });
             }
-        },10);
+        }, 10);
 
     };
 
@@ -702,7 +710,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 PhluCorporateApp.filter('castDate', function () {
     return function (input) {
 
-        if (isNaN(input.substr(0,1))) {
+        if (isNaN(input.substr(0, 1))) {
             return input;
         }
 
@@ -725,7 +733,7 @@ PhluCorporateApp.filter('previewText', function () {
     return function (input) {
 
         if (input.length > 255) {
-            return (input.substr(0,255+input.substr(255).indexOf(".")) + '.').substr(0,300);
+            return (input.substr(0, 255 + input.substr(255).indexOf(".")) + '.').substr(0, 300);
 
         } else {
             return input;

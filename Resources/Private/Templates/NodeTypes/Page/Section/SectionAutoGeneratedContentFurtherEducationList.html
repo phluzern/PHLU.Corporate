@@ -12,9 +12,11 @@
     </f:if>
 
     <f:if condition="{nodetypes}"><span data-ng-init="setNodeTypes({nodetypes})"></span></f:if>
+
     <f:if condition="{genres}"><span data-ng-init="setFilter({genres},'genre')"></span></f:if>
     <f:if condition="{targetgroups}"><span data-ng-init="setFilter({targetgroups},'targetgroups')"></span></f:if>
     <f:if condition="{nrs}"><span data-ng-init="setFilter({nrs},'nr')"></span></f:if>
+
     <f:if condition="{ids}"><span data-ng-init="setFilter({ids},'id')"></span></f:if>
 
     <f:if condition="{isEmpfohlen}"><span data-ng-init="setFilter({isEmpfohlen},'isEmpfohlen')"></span></f:if>
