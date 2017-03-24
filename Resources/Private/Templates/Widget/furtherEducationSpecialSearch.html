@@ -3,7 +3,6 @@
 {namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
 <div class="row-fullwidth-content further-education-special-search" data-ng-controller="EventoFurtherEducationCtrl">
 
-
     <div class="row extendedSearchBg">
 
         <div class="col-xs-12">
@@ -12,10 +11,10 @@
                 <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
                      alt="loading"
                      class="loadingIcon"
-                     data-ng-if="started == false"
+                     data-ng-if="!isLoadedFirst()"
                 />
 
-                <div class="row" data-ng-show="started" >
+                <div class="row" data-ng-show="isLoadedFirst()" >
 
 
                     <div class="col-xs-12">
@@ -50,7 +49,7 @@
 
                 </div>
 
-                <div class="row extendedSearchFilter">
+                <div class="row extendedSearchFilter" data-ng-if="isLoadedFirst()">
 
                     <div data-ng-show="nodetypesFilterCurrentLabel == 'Alle'" class="col-xs-12">
                         <h3>Kurse und Studiengänge</h3>
@@ -441,7 +440,7 @@
     </div>
 
 
-    <div class="row blackBgFullWidthTabs">
+    <div class="row blackBgFullWidthTabs" data-ng-if="isLoadedFirst()">
         <div class="col-xs-12">
 
             <ul class="nav nav-pills" role="tablist">

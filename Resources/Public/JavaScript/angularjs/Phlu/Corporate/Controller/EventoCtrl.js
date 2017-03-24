@@ -54,12 +54,16 @@ PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
 
 }]);
 
-PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
+PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject','$rootScope', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $rootScope) {
+
 
     var search = new $hybridsearchObject(hybridsearch);
 
+    if ($rootScope.isLoadedFirst === undefined) {
+        $rootScope.isLoadedFirst = false;
+    }
+
     $scope.currentYears = {};
-    $scope.started = false;
     $scope.result = new $hybridsearchResultsObject();
     $scope.limit = 10;
     $scope.limitChunkSize = 10;
@@ -153,6 +157,10 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         });
     });
 
+
+    $scope.isLoadedFirst = function() {
+        return $rootScope.isLoadedFirst !== undefined ? $rootScope.isLoadedFirst : false;
+    }
 
     /**
      * @public
@@ -709,7 +717,11 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         .setNodeType('nodetypes', $scope)
         .setOrderBy({'*': '-id'})
         .$watch(function (i) {
-            $scope.started = true;
+            if ($rootScope.isLoadedFirst == false && i.count() > 0) {
+                window.setTimeout(function() {
+                    $rootScope.isLoadedFirst = true;
+                },1000);
+            }
         })
         .$bind('result', $scope);
 
