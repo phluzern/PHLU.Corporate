@@ -100,6 +100,18 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             'property': 'genre.Name',
             'categories': ['Kurs', 'Studiengang', 'Alle'],
         },
+        'IsEmpfohlen': {
+            'property': 'IsEmpfohlen',
+            'categories': ['Kurs', 'Studiengang', 'Alle'],
+        },
+        'IsLastMinute': {
+            'property': 'IsLastMinute',
+            'categories': ['Kurs', 'Studiengang', 'Alle'],
+        },
+        'IsNeuste': {
+            'property': 'IsNeuste',
+            'categories': ['Kurs', 'Studiengang', 'Alle'],
+        },
         'dayofweek': {
             'property': 'module-furthereducation-start.format.A',
             'categories': ['Kurs'],

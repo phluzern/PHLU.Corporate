@@ -16,6 +16,12 @@
     <f:if condition="{targetgroups}"><span data-ng-init="setFilter({targetgroups},'targetgroups')"></span></f:if>
     <f:if condition="{nrs}"><span data-ng-init="setFilter({nrs},'nr')"></span></f:if>
     <f:if condition="{ids}"><span data-ng-init="setFilter({ids},'id')"></span></f:if>
+
+    <f:if condition="{IsEmpfohlen}"><span data-ng-init="setFilter({IsEmpfohlen},'IsEmpfohlen')"></span></f:if>
+    <f:if condition="{IsLastMinute}"><span data-ng-init="setFilter({IsLastMinute},'IsLastMinute')"></span></f:if>
+    <f:if condition="{IsNeuste}"><span data-ng-init="setFilter({IsNeuste},'IsNeuste')"></span></f:if>
+
+
     <f:if condition="{query}"><span data-ng-init="searchquery = '{query}'"></span></f:if>
     <f:if condition="{maxitems} > 0"><span data-ng-init="setMaxItems({maxitems})"></span></f:if>
     <f:if condition="{orderby} != ''"><span data-ng-init="setOrderBy('{orderby}')"></span></f:if>

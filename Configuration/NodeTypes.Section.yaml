@@ -387,7 +387,30 @@
             dataSourceIdentifier: phlu-neos-furthereducation
             dataSourceAdditionalData:
               property: ids
-
+    IsNeuste:
+      type: boolean
+      ui:
+        label: 'Nur neueste Angebote'
+        reloadIfChanged: true
+        inspector:
+          group: filters
+          position: 300
+    IsLastMinute:
+      type: boolean
+      ui:
+        label: 'Nur last-minute Angebote'
+        reloadIfChanged: true
+        inspector:
+          group: filters
+          position: 300
+    IsEmpfohlen:
+      type: boolean
+      ui:
+        label: 'Nur empfohlene Angebote'
+        reloadIfChanged: true
+        inspector:
+          group: filters
+          position: 300
 
 # Section
 #
