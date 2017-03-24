@@ -58,12 +58,12 @@ PhluCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsear
 PhluCorporateApp.controller('initController', ['$scope','$hybridsearch', function ($scope,$hybridsearch) {
 
 
-
   $scope.init = function(firebaseEndpoint,siteNodeName,workspaceName,dimensionHash) {
-          PhluCorporateApp.$$conf.firebaseEndpoint = firebaseEndpoint;
-          PhluCorporateApp.$$conf.workspaceName = workspaceName;
-          PhluCorporateApp.$$conf.siteNodeName = siteNodeName;
-          PhluCorporateApp.$$conf.dimensionHash = dimensionHash;
+
+      PhluCorporateApp.$$conf.firebaseEndpoint = firebaseEndpoint;
+          PhluCorporateApp.$$conf.workspaceName = workspaceName !== '' ? workspaceName : 'live';
+          PhluCorporateApp.$$conf.siteNodeName = siteNodeName !== '' ? siteNodeName : 'corporate';
+          PhluCorporateApp.$$conf.dimensionHash = dimensionHash !== '' ? dimensionHash : 'fb11fdde869d0a8fcfe00a2fd35c031d';
           PhluCorporateApp.$$conf.cdnHost = window.location.host == 'phlu.ch.phlu-eduweb5.nine.ch' ? 'https://d1zsa2wyk011a7.cloudfront.net' : undefined;
   };
 
