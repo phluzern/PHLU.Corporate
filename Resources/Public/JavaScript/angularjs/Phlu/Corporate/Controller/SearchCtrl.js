@@ -459,7 +459,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     });
 
-    
+
 
     $("#searchInput").keypress(function(e) {
         if(e.which == 13) {
