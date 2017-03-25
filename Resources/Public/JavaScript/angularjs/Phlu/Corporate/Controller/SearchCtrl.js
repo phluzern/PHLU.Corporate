@@ -128,7 +128,7 @@ PhluCorporateApp.directive('quicknode', function ($sce) {
                     return '';
                 }
 
-                var isnumeric = $scope.$root.siteSearch.match(/\d\./g) == null ? false : true;
+                var isnumeric = $scope.$root.siteSearch.match(/\d/g) == null ? false : true;
 
                 switch ($scope.node.getNodeType()) {
 
