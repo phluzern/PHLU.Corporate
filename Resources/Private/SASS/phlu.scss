@@ -402,12 +402,25 @@ html {
     margin-top: -31px;
     float: right;
     right: 42px;
-    max-width: 20%;
+    max-width: 180px;
     overflow: hidden;
     line-height: 11px;
-    height: 21px;
+    height: 20px;
     padding-top: 10px;
     text-overflow: ellipsis;
+    text-transform: uppercase;
+    text-align: right;
+  }
+}
+#searchInput {
+  padding-right:200px;
+}
+.oneCol {
+  #searchInput {
+    padding-right:90px;
+  }
+  #searchquicknode a {
+    max-width: 60px;
   }
 }
 
