@@ -425,6 +425,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                 $rootScope.quickNode = data.getQuickNodes()[0];
 
 
+
                 angular.forEach($rootScope.siteSearchTabs, function (group, id) {
                     $rootScope.siteSearchTabs[id] = false;
                 });
@@ -456,6 +457,16 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         }, 10);
 
 
+    });
+
+    
+
+    $("#searchInput").keypress(function(e) {
+        if(e.which == 13) {
+          if ($rootScope.quickNode.getUrl()) {
+              window.location.href = $rootScope.quickNode.getUrl();
+          }
+        }
     });
 
 

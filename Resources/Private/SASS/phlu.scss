@@ -402,6 +402,12 @@ html {
     margin-top: -31px;
     float: right;
     right: 42px;
+    max-width: 20%;
+    overflow: hidden;
+    line-height: 11px;
+    height: 21px;
+    padding-top: 10px;
+    text-overflow: ellipsis;
   }
 }
 
