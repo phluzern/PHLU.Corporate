@@ -84,7 +84,7 @@
                                    data-ng-click="startSearch();">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             <div id="searchquicknode" data-ng-if="quickNode">
-                                <a class="content-link-internal" href="{{quickNode.getUrl()}}">{{quickNode.getDocumentNode().getProperty('title')}}</a>
+                                <quicknode data="quickNode"></quicknode>
                             </div>
                         </div>
 

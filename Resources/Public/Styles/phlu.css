@@ -8208,32 +8208,33 @@ html {
   margin-left: 10px;
   margin-top: 47px; }
 
-#searchquicknode a {
-  color: #707070;
+#searchquicknode {
+  white-space: nowrap;
   width: auto;
   display: block;
   font-size: 80%;
   padding: 5px;
   position: absolute;
-  margin-top: -31px;
+  margin-top: -36px;
   float: right;
   right: 42px;
-  max-width: 180px;
+  max-width: 230px;
   overflow: hidden;
-  line-height: 11px;
-  height: 20px;
+  height: 32px;
   padding-top: 10px;
   text-overflow: ellipsis;
   text-transform: uppercase;
   text-align: right; }
+  #searchquicknode a, #searchquicknode * {
+    color: #707070; }
 
 #searchInput {
-  padding-right: 200px; }
+  padding-right: 250px; }
 
 .oneCol #searchInput {
   padding-right: 90px; }
 
-.oneCol #searchquicknode a {
+.oneCol #searchquicknode {
   max-width: 60px; }
 
 #search .hasSearchResults {

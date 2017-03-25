@@ -108,6 +108,64 @@ PhluCorporateApp.directive('search', function ($sce) {
 
 });
 
+
+PhluCorporateApp.directive('quicknode', function ($sce) {
+
+
+    var template = '/_Resources/Static/Packages/Phlu.Corporate/JavaScript/angularjs/Phlu/Corporate/Templates/Search/Quicknode/';
+
+    return {
+        template: '<ng-include src="getTemplateUrl()"/>',
+        scope: {
+            node: '=data'
+        },
+        restrict: 'E',
+        controller: function ($scope) {
+
+            $scope.getTemplateUrl = function () {
+
+                if ($scope.node === undefined) {
+                    return '';
+                }
+
+                var isnumeric = $scope.$root.siteSearch.match(/\d\./g) == null ? false : true;
+
+                switch ($scope.node.getNodeType()) {
+
+                    case 'phlu-corporate-contact':
+
+                        if (isnumeric) {
+                            return template + 'phlu-corporate-contact-name.html';
+                        } else {
+                            return template + 'phlu-corporate-contact.html';
+                        }
+
+
+                        break;
+
+                    case 'phlu-neos-nodetypes-course-study-furthereducation':
+                    case 'phlu-neos-nodetypes-course-module-furthereducation':
+
+                        if (isnumeric) {
+                            return template + 'phlu-neos-nodetypes-course-study-furthereducation-title.html';
+                        } else {
+                            return template + 'phlu-neos-nodetypes-course-study-furthereducation.html';
+                        }
+                        break;
+
+                    default:
+                        return template + 'default.html';
+                }
+
+
+            };
+
+        }
+    };
+
+
+});
+
 PhluCorporateApp.filter('orderObjectBy', function () {
     return function (items, field, reverse) {
         var filtered = [];
@@ -425,7 +483,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                 $rootScope.quickNode = data.getQuickNodes()[0];
 
 
-
                 angular.forEach($rootScope.siteSearchTabs, function (group, id) {
                     $rootScope.siteSearchTabs[id] = false;
                 });
@@ -460,12 +517,11 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     });
 
 
-
-    $("#searchInput").keypress(function(e) {
-        if(e.which == 13) {
-          if ($rootScope.quickNode.getUrl()) {
-              window.location.href = $rootScope.quickNode.getUrl();
-          }
+    $("#searchInput").keypress(function (e) {
+        if (e.which == 13) {
+            if ($rootScope.quickNode.getUrl()) {
+                window.location.href = $rootScope.quickNode.getUrl();
+            }
         }
     });
 
