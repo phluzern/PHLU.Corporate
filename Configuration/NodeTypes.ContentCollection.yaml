@@ -154,6 +154,7 @@
       'Phlu.Corporate:Text': true
       'Phlu.Corporate:Headline': true
       'Phlu.Corporate:TextWithImage': true
+      'Phlu.Qmpilot.NodeTypes:File': true
 
 'Phlu.Neos.NodeTypes:ContentCollection.Contacts':
   superTypes:
