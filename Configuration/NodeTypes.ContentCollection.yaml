@@ -146,15 +146,11 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:Tags.Menu'
+
+
 'Phlu.Corporate:ContentCollection.Page.Service':
   superTypes:
-    'Phlu.Corporate:ContentCollection': true
-  constraints:
-    nodeTypes:
-      'Phlu.Corporate:Text': true
-      'Phlu.Corporate:Headline': true
-      'Phlu.Corporate:TextWithImage': true
-      'Phlu.Qmpilot.NodeTypes:File': true
+    'Phlu.Corporate:ContentCollection.Page.View.Default': true
 
 'Phlu.Neos.NodeTypes:ContentCollection.Contacts':
   superTypes:
