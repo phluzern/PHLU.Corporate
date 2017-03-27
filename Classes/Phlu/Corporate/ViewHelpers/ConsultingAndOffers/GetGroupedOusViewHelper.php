@@ -12,7 +12,9 @@ namespace Phlu\Corporate\ViewHelpers\ConsultingAndOffers;
  */
 
 use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
+use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Exception;
 use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
 
 
@@ -46,19 +48,40 @@ class GetGroupedOusViewHelper extends AbstractViewHelper
     {
 
 
-        $groupes = array();
+        $groups = array();
+        $groupsOrdered = array();
         foreach ($nodes as $node) {
+            /* @var \Neos\ContentRepository\Domain\Model\Node $node */
             foreach ($node->getProperty('ou') as $nodeIdentifier) {
                 if ($nodeIdentifier == $pageIdentifier) {
-                    $groupes[$node->getParent()->getIdentifier()]['items'][] = $node;
-                    $groupes[$node->getParent()->getIdentifier()]['name'] = $node->getParent()->getProperty('title');
+
+                    $parent = $node->getParent();
+                    while ($parent && $parent->getDepth() > 4) {
+                        $parent = $parent->getParent();
+                    }
+
+                    if ($parent) {
+                        $groups[$parent->getIndex()."-".$parent->getIdentifier()][$parent->getIdentifier()]['items'][] = $node;
+                        $groups[$parent->getIndex()."-".$parent->getIdentifier()][$parent->getIdentifier()]['name'] = $parent->getProperty('title');
+                    }
+
+
+
                 }
+            }
+        }
+
+
+        ksort($groups);
+        foreach ($groups as $unordered) {
+            foreach ($unordered as $item) {
+                array_push($groupsOrdered,$item);
             }
 
         }
 
 
-        return $groupes;
+        return $groupsOrdered;
 
 
     }
