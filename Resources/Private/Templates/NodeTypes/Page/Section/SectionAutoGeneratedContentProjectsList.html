@@ -95,6 +95,9 @@
                                 <th class="clickable">
                                     <a href="#">Projektname</a>
                                 </th>
+                                <th class="clickable">
+                                    <a href="#">Schwerpunkte</a>
+                                </th>
                             </tr>
                             </thead>
                             <tbody ng-repeat="node in result.getNodes(limit)"
@@ -123,7 +126,13 @@
                                             </ul>
                                         </span>
                                     </div>
+                                </td>
+                                <td>
+                                    <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index"
+                                        data-ng-bind="focus.name">
 
+                                    </span>
+                                </td>
                             </tr>
                             <tr class="result-preview" data-ng-show="isOpen(node)">
                                 <td colspan="2">

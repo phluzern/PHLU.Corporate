@@ -40,8 +40,6 @@ PhluCorporateApp.controller('initCtrl', ['$scope','hybridsearch', function ($sco
 
 }]);
 
-
-
 PhluCorporateApp.directive('myEnter', function () {
     return function (scope, element, attrs) {
         element.bind("keydown keypress", function (event) {
@@ -55,8 +53,6 @@ PhluCorporateApp.directive('myEnter', function () {
         });
     };
 });
-
-
 
 PhluCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsearch) {
 
@@ -85,3 +81,19 @@ PhluCorporateApp.controller('initController', ['$scope','$hybridsearch', functio
 
 
 }]);
+
+PhluCorporateApp.filter('orderObjectBy', function () {
+    return function (items, field, reverse) {
+        var filtered = [];
+        angular.forEach(items, function (item) {
+            filtered.push(item);
+        });
+
+        filtered.sort(function (a, b) {
+            console.log(field,a,a[field],b[field]);
+            return (a[field] > b[field] ? 1 : -1);
+        });
+        if (reverse) filtered.reverse();
+        return filtered;
+    };
+});

@@ -392,5 +392,82 @@
                 </div>
             </div>
         </div>
+
+        <!--<div class="further-education-order-button-float-top">
+
+
+Startdatum:
+            <f:if condition="{year.options -> f:count()} > 1">
+                <f:then>
+                    <div class="input-group-btn">
+                        <button type="button"
+                                class="btn btn-default dropdown-toggle"
+                                data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            <f:if condition="{course:Date(date: year.StartText, format: 'Y')} > 1970">
+                                <f:then><span>{course:Date(date: year.StartText, format: 'd.m.Y')}</span>
+                                </f:then>
+                                <f:else><span>{year.StartText}</span></f:else>
+                            </f:if>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <f:for each="{year.options}" as="option">
+                                <li value="">
+                                    <a href="{option.url}">
+                                        <f:if condition="{course:Date(date: option.value.StartText, format: 'Y')} > 1970">
+                                            <f:then><span>{course:Date(date: option.value.StartText, format: 'd.m.Y')}</span>
+                                            </f:then>
+                                            <f:else>
+                                                <span>{option.value.StartText}</span>
+                                            </f:else>
+                                        </f:if>
+                                    </a>
+                                </li>
+                            </f:for>
+                        </ul>
+                    </div>
+                </f:then>
+                <f:else>
+                    <f:if condition="{course:Date(date: year.StartText, format: 'Y')} > 1970">
+                        <f:then><span>{course:Date(date: year.StartText, format: 'd.m.Y')}</span>
+                        </f:then>
+                        <f:else><span>{year.StartText}</span></f:else>
+                    </f:if>
+                </f:else>
+            </f:if>
+
+
+
+
+            <div class="shareAndRegister">
+                <a class="btn btn-primary share"
+                   href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                    <br>
+                    <span class="shareText">
+                                            Teilen
+                                        </span>
+                </a>
+                <f:if condition="{year.Bookable}">
+                    <f:then>
+                        <a class="btn btn-primary "
+                           href="{year.RegistrationLink}">
+                            Anmelden
+                        </a>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{StatusLabel}">
+                            <f:then>
+                                <a>{StatusLabel}</a>
+                            </f:then>
+                            <f:else>
+                                <a>{year.StartText}</a>
+                            </f:else>
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </div>
+        </div>-->
+
     </f:if>
 </course:getYear>

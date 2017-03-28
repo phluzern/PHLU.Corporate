@@ -9,6 +9,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.projectparticipants = {};
     $scope.researchmainfocus = {};
     $scope.organisations = {};
+    $scope.organisationunits = {};
     $scope.researchunit = {};
     $scope.initialFilters = {};
     $scope.limit = 5;
@@ -153,6 +154,10 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
             return true;
         }
 
+        if ($scope.sizeOf($scope.organisationunits)) {
+            return true;
+        }
+
         if ($scope.search.length > 0) {
             return true;
         }
@@ -165,6 +170,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.list
         .setOrderBy({'phlu-neos-nodetypes-project': 'title'})
         .addPropertyFilter('organisationunits.id', 'organisations', $scope)
+        .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
         .addPropertyFilter('lifetime', 'filterLifetime', $scope)
         .addPropertyFilter('researchmainfocus.ID', 'researchmainfocus', $scope)
         .addPropertyFilter('researchunit.ID', 'researchunit', $scope)
