@@ -3,7 +3,7 @@
 {namespace media=Neos\Media\ViewHelpers}
 
 
-<div class="{breakpointClass} news singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)}">
+<div class="{breakpointClass} {f:if(condition: '{neos:rendering.inBackend()}', then: 'col-xs-4')} news singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)}">
     {neos:contentElement.editable(property: 'teasertype', tag: 'div', class: 'phlu-teaser-type')}
     <div class="phlu-teaser-body">
         <div class="scrollbody">

@@ -9303,6 +9303,14 @@ body {
         background-color: #333333; }
       body .all .phlu-teaser img {
         width: 100%; }
+      body .all .phlu-teaser .content-link-wrapper .content-link-default-file::before {
+        display: none; }
+      body .all .phlu-teaser .content-link-wrapper .content-link-default-file span:first-child {
+        margin-left: 0 !important; }
+      body .all .phlu-teaser .content-link-wrapper .content-link-default-file span:last-child {
+        display: none; }
+      body .all .phlu-teaser .content-link-wrapper.empty-qmpilot .content-link-default-file span {
+        display: block; }
       body .all .phlu-teaser.carousel .phlu-teaser-body {
         background-color: white; }
       body .all .phlu-teaser.carousel .carousel-indicators {

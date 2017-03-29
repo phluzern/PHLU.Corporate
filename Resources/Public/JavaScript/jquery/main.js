@@ -299,7 +299,7 @@ function initCarousel() {
     /*
      * image gallery lightbox
      */
-    $("#blueimpgallery, .carousel-inner").on('click', function (event) {
+    $("#blueimpgallery").on('click', function (event) {
         event = event || window.event;
         var target = event.target || event.srcElement,
             link = target.src ? target.parentNode : target,

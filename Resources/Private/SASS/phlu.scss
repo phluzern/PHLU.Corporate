@@ -1971,6 +1971,29 @@ body {
         @extend .img-fluid;
         width: 100%;
       }
+      .content-link-wrapper {
+        .content-link-default-file {
+          &::before {
+            display: none;
+          }
+          span {
+            &:first-child {
+              margin-left: 0 !important;
+            }
+            &:last-child {
+              display: none;
+            }
+          }
+        }
+        &.empty-qmpilot {
+          .content-link-default-file {
+            span {
+              display: block;
+            }
+          }
+
+        }
+      }
       &.carousel {
         .phlu-teaser-body {
           background-color: white;

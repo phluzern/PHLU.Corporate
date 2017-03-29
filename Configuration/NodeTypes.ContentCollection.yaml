@@ -103,6 +103,8 @@
         inspector:
           group: general
           position: 40
+
+
 'Phlu.Corporate:ContentCollection.Carousel':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
@@ -110,6 +112,10 @@
     nodeTypes:
       'Phlu.Corporate:Event': true
       'Phlu.Corporate:NewsItem': true
+      'Phlu.Corporate:GenericTeaser': true
+
+
+
 'Phlu.Corporate:ContentCollection.CarouselNews':
   superTypes:
     'Phlu.Corporate:ContentCollection.Carousel': true
