@@ -701,6 +701,19 @@ body.neos-backend {
     }
   }
 
+  .row {
+    &.bluebg {
+      .news {
+        &.singleitem {
+          width: 280px;
+          margin-right:30px;
+          margin-bottom:30px;
+        }
+      }
+    }
+  }
+
+
   .phlu-qmpilot-nodetypes-file.neos-contentelement-active {
     .disabled-qmpilot {
       &::before {
