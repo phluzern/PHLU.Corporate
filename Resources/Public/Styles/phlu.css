@@ -8406,6 +8406,8 @@ body.neos-backend .disabled-qmpilot * {
 
 body.neos-backend .row.bluebg .news.singleitem {
   margin-bottom: 30px; }
+  body.neos-backend .row.bluebg .news.singleitem .phlu-teaser-body {
+    background-color: white; }
 
 body.neos-backend .phlu-qmpilot-nodetypes-file.neos-contentelement-active .disabled-qmpilot::before {
   content: 'Datei ist nicht öffentlich. Im Frontend wird diese daher solange ausgeblendet bis der Status im Qmpilot auf "öffentlich Ansehen" gesetzt wird.';

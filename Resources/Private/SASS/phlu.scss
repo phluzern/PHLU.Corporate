@@ -706,6 +706,9 @@ body.neos-backend {
       .news {
         &.singleitem {
           margin-bottom:30px;
+          .phlu-teaser-body {
+            background-color: white;
+          }
         }
       }
     }
