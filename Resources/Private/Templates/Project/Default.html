@@ -138,6 +138,52 @@
                                     </td>
                                 </tr>
                             </f:if>
+
+
+                            <f:if condition="{project.financiersExternal}">
+                                <tr>
+                                    <th>Externe Projektfinanzierer</th>
+                                    <td>
+                                        <f:for each="{project.financiersExternal}" as="financierExternal"
+                                               iteration="iterator">
+                                            <f:if condition="{iterator.isFirst}">
+                                                <f:else>
+                                                    <br/>
+                                                </f:else>
+                                            </f:if>
+                                            <f:if condition="{financierExternal.subtitle3} !== ''">
+                                                <f:then><a href="{financierExternal.subtitle3}" target="_blank">{financierExternal.title}</a>
+                                                </f:then>
+                                                <f:else>{financierExternal.title}</f:else>
+                                            </f:if>
+
+                                        </f:for>
+                                    </td>
+                                </tr>
+                            </f:if>
+
+                            <f:if condition="{project.partnersExternal}">
+                                <tr>
+                                    <th>Externe Projektpartner</th>
+                                    <td>
+                                        <f:for each="{project.partnersExternal}" as="partnerExternal"
+                                               iteration="iterator">
+                                            <f:if condition="{iterator.isFirst}">
+                                                <f:else>
+                                                    <br/>
+                                                </f:else>
+                                            </f:if>
+                                            <f:if condition="{partnerExternal.subtitle3} !== ''">
+                                                <f:then><a href="{partnerExternal.subtitle3}" target="_blank">{partnerExternal.title}</a>
+                                                </f:then>
+                                                <f:else>{partnerExternal.title}</f:else>
+                                            </f:if>
+                                        </f:for>
+                                    </td>
+                                </tr>
+                            </f:if>
+
+
                             <!--                            <f:if condition="{project.ProjectType}">
                                                             <tr>
                                                                 <th>Leistungsart</th>
@@ -152,6 +198,7 @@
                 <hr>
             </div>
         </div>
+
 
         <f:if condition="{project.participants}">
             <div class="row">
@@ -174,7 +221,7 @@
                                             <address>
                                                 <b>{participantsType}</b><br>
                                                 {participant.name}
-                                                <f:if condition="participant.phone == ''">
+                                                <f:if condition="!{participant.phone}">
                                                     <f:then><br/></f:then>
                                                     <f:else>
                                                         <div class="telephone">
@@ -183,7 +230,7 @@
                                                         </div>
                                                     </f:else>
                                                 </f:if>
-                                                <f:if condition="participant.phone == ''">
+                                                <f:if condition="!{participant.phone}">
                                                     <f:then><br/></f:then>
                                                     <f:else>
                                                         <a class="content-link-email-contact-person"
@@ -228,7 +275,7 @@
                                                 <b>{participantsType}</b><br>
                                                 {participant.name}
                                                 <f:if condition="{participant.phone}">
-                                                    <f:if condition="participant.phone == ''">
+                                                    <f:if condition="!{participant.phone}">
                                                         <f:then><br/></f:then>
                                                         <f:else>
                                                             <div class="telephone">
@@ -239,7 +286,7 @@
                                                     </f:if>
                                                 </f:if>
                                                 <f:if condition="{participant.email}">
-                                                    <f:if condition="participant.phone == ''">
+                                                    <f:if condition="!{participant.phone}">
                                                         <f:then><br/></f:then>
                                                         <f:else>
                                                             <a class="content-link-email-contact-person"

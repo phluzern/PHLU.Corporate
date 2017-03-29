@@ -67,14 +67,16 @@ class ReferencesViewHelper extends AbstractViewHelper
 
             $referenceNode = $flowQuery->closest("[instanceof Phlu.Neos.NodeTypes:Page]")->get(0);
 
-            if (isset($references[$referenceNode->getIdentifier()]) === false && $referenceNode->getParent()) {
-                if (isset($nodes[$referenceNode->getParent()->getNodeData()->getProperty('title')]) === false) {
-                    $nodes[$referenceNode->getParent()->getNodeData()->getProperty('title')] = array();
+            if ($referenceNode) {
+                if (isset($references[$referenceNode->getIdentifier()]) === false && $referenceNode->getParent()) {
+                    if (isset($nodes[$referenceNode->getParent()->getNodeData()->getProperty('title')]) === false) {
+                        $nodes[$referenceNode->getParent()->getNodeData()->getProperty('title')] = array();
+                    }
+                    array_push($nodes[$referenceNode->getParent()->getNodeData()->getProperty('title')], $referenceNode);
+                    $references[$referenceNode->getIdentifier()] = true;
                 }
-                array_push($nodes[$referenceNode->getParent()->getNodeData()->getProperty('title')], $referenceNode);
-                $references[$referenceNode->getIdentifier()] = true;
-            }
 
+            }
 
         }
 

@@ -140,9 +140,9 @@
                                         <tbody>
                                         <tr class="clickable"
                                             data-ng-click="participants[person.value.EventoID] = person.value.Nachname+ ' ' + person.value.Vorname;"
-                                            data-ng-repeat="(key,person) in result.getDistinct('persons',false) | inArrayFilter:participantsSearch"
+                                            data-ng-repeat="(key,person) in result.getDistinct('persons',false) |  toArray:false | orderBy:'value.Nachname' | inArrayFilter:participantsSearch"
                                             data-ng-if="person.value.EventoID > 0"
-                                            data-ng-show="participants[person.value.EventoID] == undefined || participants[person.value.EventoID] == false">
+                                            data-ng-show="participants[person.value.EventoID] == undefined || participants[person.value.Nachname] == false">
                                             <td>
                                                 <a href="javascript:void(0);" data-ng-bind="person.value.Vorname + ' ' + person.value.Nachname">
 
