@@ -151,7 +151,12 @@
                                                     <br/>
                                                 </f:else>
                                             </f:if>
-                                            {financierExternal.title}
+                                            <f:if condition="{financierExternal.subtitle3} !== ''">
+                                                <f:then><a href="{financierExternal.subtitle3}" target="_blank">{financierExternal.title}</a>
+                                                </f:then>
+                                                <f:else>{financierExternal.title}</f:else>
+                                            </f:if>
+
                                         </f:for>
                                     </td>
                                 </tr>
@@ -168,7 +173,11 @@
                                                     <br/>
                                                 </f:else>
                                             </f:if>
-                                            {partnerExternal.title}
+                                            <f:if condition="{partnerExternal.subtitle3} !== ''">
+                                                <f:then><a href="{partnerExternal.subtitle3}" target="_blank">{partnerExternal.title}</a>
+                                                </f:then>
+                                                <f:else>{partnerExternal.title}</f:else>
+                                            </f:if>
                                         </f:for>
                                     </td>
                                 </tr>
