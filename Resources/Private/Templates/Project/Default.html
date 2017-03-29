@@ -221,7 +221,7 @@
                                             <address>
                                                 <b>{participantsType}</b><br>
                                                 {participant.name}
-                                                <f:if condition="participant.phone == ''">
+                                                <f:if condition="!{participant.phone}">
                                                     <f:then><br/></f:then>
                                                     <f:else>
                                                         <div class="telephone">
@@ -230,7 +230,7 @@
                                                         </div>
                                                     </f:else>
                                                 </f:if>
-                                                <f:if condition="participant.phone == ''">
+                                                <f:if condition="!{participant.phone}">
                                                     <f:then><br/></f:then>
                                                     <f:else>
                                                         <a class="content-link-email-contact-person"
@@ -275,7 +275,7 @@
                                                 <b>{participantsType}</b><br>
                                                 {participant.name}
                                                 <f:if condition="{participant.phone}">
-                                                    <f:if condition="participant.phone == ''">
+                                                    <f:if condition="!{participant.phone}">
                                                         <f:then><br/></f:then>
                                                         <f:else>
                                                             <div class="telephone">
@@ -286,7 +286,7 @@
                                                     </f:if>
                                                 </f:if>
                                                 <f:if condition="{participant.email}">
-                                                    <f:if condition="participant.phone == ''">
+                                                    <f:if condition="!{participant.phone}">
                                                         <f:then><br/></f:then>
                                                         <f:else>
                                                             <a class="content-link-email-contact-person"
