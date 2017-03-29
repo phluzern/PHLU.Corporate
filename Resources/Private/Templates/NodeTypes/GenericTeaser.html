@@ -4,7 +4,7 @@
 {namespace uri=Phlu\Corporate\ViewHelpers\Uri}
 
 
-<div class="{breakpointClass} {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')} news singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)}">
+<div class="{breakpointClass} <f:if condition="{isexternal}"><f:else>{f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}</f:else></f:if> news singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)}">
 
     <div class="phlu-teaser-type">
         <f:switch expression="{reference.nodeType.name}">
