@@ -40,6 +40,13 @@ prototype(Phlu.Corporate:ContentCollection.CarouselNews) < prototype(Neos.Neos:C
             }
 
 
+        prototype(Phlu.Corporate:GenericTeaser) {
+
+                breakpointClass = 'col-xl-4'
+
+            }
+
+
 
 }
 
