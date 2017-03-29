@@ -138,6 +138,43 @@
                                     </td>
                                 </tr>
                             </f:if>
+
+
+                            <f:if condition="{project.financiersExternal}">
+                                <tr>
+                                    <th>Externe Projektfinanzierer</th>
+                                    <td>
+                                        <f:for each="{project.financiersExternal}" as="financierExternal"
+                                               iteration="iterator">
+                                            <f:if condition="{iterator.isFirst}">
+                                                <f:else>
+                                                    <br/>
+                                                </f:else>
+                                            </f:if>
+                                            {financierExternal.title}
+                                        </f:for>
+                                    </td>
+                                </tr>
+                            </f:if>
+
+                            <f:if condition="{project.partnersExternal}">
+                                <tr>
+                                    <th>Externe Projektpartner</th>
+                                    <td>
+                                        <f:for each="{project.partnersExternal}" as="partnerExternal"
+                                               iteration="iterator">
+                                            <f:if condition="{iterator.isFirst}">
+                                                <f:else>
+                                                    <br/>
+                                                </f:else>
+                                            </f:if>
+                                            {partnerExternal.title}
+                                        </f:for>
+                                    </td>
+                                </tr>
+                            </f:if>
+
+
                             <!--                            <f:if condition="{project.ProjectType}">
                                                             <tr>
                                                                 <th>Leistungsart</th>
@@ -152,6 +189,7 @@
                 <hr>
             </div>
         </div>
+
 
         <f:if condition="{project.participants}">
             <div class="row">
