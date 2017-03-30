@@ -113,6 +113,7 @@
       'Phlu.Corporate:Event': true
       'Phlu.Corporate:NewsItem': true
       'Phlu.Corporate:GenericTeaser': true
+      'Phlu.Corporate:Page.News': false
 
 
 

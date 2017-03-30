@@ -247,6 +247,7 @@
   superTypes:
     'Phlu.Corporate:Page.NotInMenu': true
     'Phlu.Corporate:Page.View.Default': true
+    'Phlu.Corporate:NewsItem': true
   constraints:
     nodeTypes:
       '*': false
