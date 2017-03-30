@@ -722,7 +722,7 @@ body.neos-backend {
 
   .row {
     &.bluebg {
-      .news {
+      .news, .event {
         &.singleitem {
           margin-bottom:30px;
           .phlu-teaser-body {

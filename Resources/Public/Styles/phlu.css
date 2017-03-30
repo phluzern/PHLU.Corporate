@@ -8413,9 +8413,9 @@ body.neos-backend .disabled-qmpilot * {
   color: rgba(159, 99, 42, 0.44);
   opacity: 0.8; }
 
-body.neos-backend .row.bluebg .news.singleitem {
+body.neos-backend .row.bluebg .news.singleitem, body.neos-backend .row.bluebg .event.singleitem {
   margin-bottom: 30px; }
-  body.neos-backend .row.bluebg .news.singleitem .phlu-teaser-body {
+  body.neos-backend .row.bluebg .news.singleitem .phlu-teaser-body, body.neos-backend .row.bluebg .event.singleitem .phlu-teaser-body {
     background-color: white; }
 
 body.neos-backend .phlu-qmpilot-nodetypes-file.neos-contentelement-active .disabled-qmpilot::before {
