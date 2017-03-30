@@ -8404,6 +8404,11 @@ body.neos-backend .disabled-qmpilot * {
   color: rgba(159, 99, 42, 0.44);
   opacity: 0.8; }
 
+body.neos-backend .row.bluebg .news.singleitem {
+  margin-bottom: 30px; }
+  body.neos-backend .row.bluebg .news.singleitem .phlu-teaser-body {
+    background-color: white; }
+
 body.neos-backend .phlu-qmpilot-nodetypes-file.neos-contentelement-active .disabled-qmpilot::before {
   content: 'Datei ist nicht öffentlich. Im Frontend wird diese daher solange ausgeblendet bis der Status im Qmpilot auf "öffentlich Ansehen" gesetzt wird.';
   color: red;
@@ -9303,6 +9308,14 @@ body {
         background-color: #333333; }
       body .all .phlu-teaser img {
         width: 100%; }
+      body .all .phlu-teaser .content-link-wrapper .content-link-default-file::before {
+        display: none; }
+      body .all .phlu-teaser .content-link-wrapper .content-link-default-file span:first-child {
+        margin-left: 0 !important; }
+      body .all .phlu-teaser .content-link-wrapper .content-link-default-file span:last-child {
+        display: none; }
+      body .all .phlu-teaser .content-link-wrapper.empty-qmpilot .content-link-default-file span {
+        display: block; }
       body .all .phlu-teaser.carousel .phlu-teaser-body {
         background-color: white; }
       body .all .phlu-teaser.carousel .carousel-indicators {

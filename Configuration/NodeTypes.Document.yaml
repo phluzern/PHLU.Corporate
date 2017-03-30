@@ -46,6 +46,7 @@
 'Phlu.Corporate:Page.NotInMenu':
   superTypes:
     'Phlu.Corporate:Page': true
+
 'Phlu.Corporate:Page.Home':
   ui:
     label: 'Home Page Phlu'
@@ -59,6 +60,7 @@
       'Phlu.Corporate:Page.View.Default': true
       'Phlu.Corporate:Page.View.Default.Prototype': true
       'Phlu.Corporate:Page.View.Default.Default': false
+      'Phlu.Corporate:Page.News': true
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.Home'
@@ -238,6 +240,20 @@
       type: 'Phlu.Corporate:ContentCollection.Page.Service'
 
 
+'Phlu.Corporate:Page.News':
+  ui:
+    label: 'News Seite'
+    icon: icon-newspaper-o
+  superTypes:
+    'Phlu.Corporate:Page.NotInMenu': true
+    'Phlu.Corporate:Page.View.Default': true
+  constraints:
+    nodeTypes:
+      '*': false
+      'Phlu.Corporate:Page.Service': false
+      'Phlu.Corporate:Page.News': true
+      'Phlu.Corporate:Page.View.Default': false
+      'Phlu.Corporate:Page.View.Default.Default': true
 
 'Phlu.Corporate:Page.FurtherEducation.Detail.Module':
   superTypes:

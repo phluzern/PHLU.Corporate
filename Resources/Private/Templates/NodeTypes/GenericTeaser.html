@@ -1,0 +1,55 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+{namespace uri=Phlu\Corporate\ViewHelpers\Uri}
+
+
+<div class="{breakpointClass} <f:if condition="{isexternal}"><f:else>{f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}</f:else></f:if> news singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)}">
+
+    <div class="phlu-teaser-type">
+        <f:switch expression="{reference.nodeType.name}">
+            <f:case value="Phlu.Neos.NodeTypes:Project">Projekt</f:case>
+            <f:case value="Phlu.Corporate:Page.FurtherEducation.Detail.Study">Studiengang</f:case>
+            <f:case value="Phlu.Corporate:Page.FurtherEducation.Detail.Module">Kurs</f:case>
+            <f:defaultCase>{neos:contentElement.editable(property: 'teasertype', tag: 'span')}</f:defaultCase>
+        </f:switch>
+
+    </div>
+    <div class="phlu-teaser-body">
+        <div class="scrollbody">
+            {neos:contentElement.editable(property: 'teaserHeadline', tag: 'h3')}
+            {neos:contentElement.editable(property: 'teaserText', tag: 'p')}
+            <f:if condition="{reference}">
+                <f:then>
+                    <a data-gentics-aloha-repository="node-repository" href="{uri:node(node: reference)}">mehr</a>
+                </f:then>
+                <f:else>
+                    <f:if condition="{isexternal}">
+                        <f:then>
+                            <f:if condition="{external}">
+                                <f:then>
+                                    <ts:render path="renderer" context="{node: external}"/>
+                                </f:then>
+                            </f:if>
+                        </f:then>
+                    </f:if>
+
+                </f:else>
+            </f:if>
+
+
+        </div>
+
+    </div>
+    <f:if condition="{node.properties.teaserImage}">
+        <f:then>
+            <media:image image="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}" width="{width}"
+                         maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
+                         allowUpScaling="{allowUpScaling}"/>
+        </f:then>
+        <f:else>
+            <img class="img-fluid"
+                 src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/spacer-white-teaser.png')}" alt="spacer">
+        </f:else>
+    </f:if>
+</div>

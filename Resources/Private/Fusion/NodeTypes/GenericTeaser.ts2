@@ -1,0 +1,12 @@
+# Content
+prototype(Phlu.Corporate:GenericTeaser) < prototype(Phlu.Corporate:Content) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/GenericTeaser.html'
+    reference = ${q(node).property('reference')}
+    isexternal = ${q(node).property('isexternal')}
+    renderer = Neos.Neos:ContentCase
+    external = ${q(node).children('external').get(0)}
+
+}
+
+

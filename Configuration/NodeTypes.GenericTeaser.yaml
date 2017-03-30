@@ -1,0 +1,41 @@
+# Generic Teaser
+
+'Phlu.Corporate:GenericTeaser':
+  superTypes:
+    'Phlu.Neos.NodeTypes:TeaserMixin': true
+    'Phlu.Neos.NodeTypes:Content': true
+  ui:
+    label: Teaser
+    icon: icon-picture
+    position: 300
+    inspector:
+      groups:
+        teaser:
+          label: 'Teaser'
+  childNodes:
+    external:
+      type: 'Phlu.Qmpilot.NodeTypes:File'
+  properties:
+    isexternal:
+      type: boolean
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Verwende externer Link'
+        inspector:
+          group: 'teaser'
+          position: 85
+    teasertype:
+      type: string
+      defaultValue: ''
+      ui:
+        inlineEditable: true
+    reference:
+      type: reference
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Link auswählen'
+        inspector:
+          group: 'teaser'
+          position: 80
+          editorOptions:
+            nodeTypes: ['Phlu.Corporate:Page.FurtherEducation.Detail.Study','Phlu.Corporate:Page.FurtherEducation.Detail.Module','Phlu.Neos.NodeTypes:Project','Phlu.Corporate:Page']
