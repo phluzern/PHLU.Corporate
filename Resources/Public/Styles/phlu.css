@@ -10849,14 +10849,18 @@ body {
           padding-bottom: 30px; } }
       body .all .flowtext-phlu-event > .row .date-title-preview-text div, body .all .flowtext-phlu-news > .row .date-title-preview-text div {
         padding-top: 15px; }
+    body .all .flowtext-phlu-news > div {
+      padding-bottom: 60px; }
     body .all .flowtext-phlu-news > .row .initial {
       background-color: #91a103; }
     body .all .flowtext-phlu-news.detailView .full-date {
       margin: 0; }
     body .all .flowtext-phlu-news.detailView h2 {
       margin: 32px 0; }
-    body .all .flowtext-phlu-event > .row .initial {
-      background-color: #28818f; }
+    body .all .flowtext-phlu-event > .row {
+      padding-bottom: 60px; }
+      body .all .flowtext-phlu-event > .row .initial {
+        background-color: #28818f; }
     body .all .table-responsive {
       overflow-x: inherit; }
       body .all .table-responsive .table thead tr th {

@@ -4503,6 +4503,9 @@ body {
 
     }
     .flowtext-phlu-news {
+      > div {
+        padding-bottom:60px;
+      }
       > .row {
         .initial {
           background-color: $olivegreen;
@@ -4519,6 +4522,7 @@ body {
     }
     .flowtext-phlu-event {
       > .row {
+        padding-bottom:60px;
         .initial {
           background-color: $petrol;
         }

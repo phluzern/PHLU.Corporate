@@ -277,7 +277,7 @@
         reloadIfChanged: true
         label: Datum
         inspector:
-          group: news
+          group: teaser
           position: 50
           editorOptions:
             format: d.m.Y
@@ -318,7 +318,7 @@
         reloadIfChanged: true
         label: Datum
         inspector:
-          group: news
+          group: teaser
           position: 50
           editorOptions:
             format: d.m.Y
@@ -329,7 +329,7 @@
         reloadIfChanged: true
         label: Zeit
         inspector:
-          group: event
+          group: teaser
           position: 50
           editorOptions:
             format: 'h:i'
@@ -341,7 +341,7 @@
         reloadIfChanged: true
         label: Ort
         inspector:
-          group: event
+          group: teaser
           position: 50
 
 

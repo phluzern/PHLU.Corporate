@@ -151,8 +151,11 @@ class TeaserAspect
 
             $detailNode->setProperty('teaserHeadline', $object->getProperty('teaserHeadline'));
             $detailNode->setProperty('teaserText', $object->getProperty('teaserText'));
-            $detailNode->setProperty('date', $object->getProperty('date'));
+            if ($object->getProperty('date')) $detailNode->setProperty('date', $object->getProperty('date'));
+            if ($object->getProperty('time')) $detailNode->setProperty('time', $object->getProperty('time'));
+            if ($object->getProperty('location')) $detailNode->setProperty('location', $object->getProperty('location'));
             $detailNode->setProperty('title', $object->getProperty('teaserHeadline'));
+
 
             $context = $this->nodeFactory->createContextMatchingNodeData($object);
             $basenode = $this->nodeFactory->createFromNodeData($object, $context);

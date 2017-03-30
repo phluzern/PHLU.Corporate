@@ -13,7 +13,15 @@ hasanchornavigation = ${q(node).property('hasanchornavigation')}
 moodimage = ${q(node).property('moodimage')}
 contactIsHidden = ${q(q(node).children('contact').get(0)).context.workspaceName == 'live' ?((String.length(q(q(node).children('contact').get(0)).property('lastname'))> 0 || q(q(node).children('contact').get(0)).property('contact'))> 0 && q(q(node).children('contact').get(0)).property('ishidden')!= TRUE ? false : true): q(q(node).children('contact').get(0)).property('ishidden')}
 templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
+
 title = ${q(node).property('title')}
+
+teasertype = ${q(node).property('teasertype')}
+date = ${q(node).property('date')}
+time = ${q(node).property('time')}
+location = ${q(node).property('location')}
+
+
 showCarousel = ${q(node).property('showCarousel')}
 
 # Contacts wrapper (tile)
