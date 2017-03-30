@@ -9756,16 +9756,30 @@ body {
   body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone, body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email {
     text-align: right;
     padding-right: 30px; } }
-        body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone {
-          color: #9f632a; }
-          body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone i, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone i {
-            margin-right: 5px; }
-        body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email .content-link-email-contact-person, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email .content-link-email-contact-person {
-          background-image: none; }
+        body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone, body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email {
+          color: #9f632a;
+          text-align: right;
+          padding-right: 35px; }
+          @media (max-width: 1599px) {
+            body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone, body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email {
+              padding-right: 30px; } }
+          @media (max-width: 543px) {
+            body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone, body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email {
+              padding-right: 0;
+              text-align: left; } }
+          body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone a, body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email a, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone a, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email a {
+            padding-left: 7px;
+            color: #9f632a; }
+          body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone .content-link-email-contact-person, body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email .content-link-email-contact-person, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone .content-link-email-contact-person, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email .content-link-email-contact-person {
+            background-image: none; }
         body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading[aria-expanded=true]::before, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading[aria-expanded=true]::before {
           content: "\e02d"; }
         body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-body, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-body {
           margin-top: 20px; }
+          body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-body .panel-email, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-body .panel-email {
+            color: #9f632a; }
+            body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-body .panel-email .fa, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-body .panel-email .fa {
+              margin-right: 5px; }
         body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem:first-child, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem:first-child {
           padding-top: 5px; }
       body .all .phlu-accordion .panel .panel-collapse .panel-collapse, body .all .phlu-corporate-section .panel .panel-collapse .panel-collapse {

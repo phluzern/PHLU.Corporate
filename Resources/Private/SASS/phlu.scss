@@ -2660,18 +2660,27 @@ body {
                   padding-right: 30px;
                 }
               }
-              .telephone {
+              .telephone, .email {
                 color: $hazelbrowndark;
-                i {
-                  margin-right: 5px;
+                text-align: right;
+                padding-right: 35px;
+                @include media-breakpoint-down('xxl') {
+                  padding-right: 30px;
                 }
-              }
-              .email {
+                @include media-breakpoint-down('xs') {
+                  padding-right: 0;
+                  text-align: left;
+                }
+                a {
+                  padding-left:7px;
+                  color: $hazelbrowndark;
+                }
+
                 .content-link-email-contact-person {
                   background-image: none;
                 }
-              }
 
+              }
               &[aria-expanded=true] {
                 &::before {
                   content: "\e02d";
@@ -2680,6 +2689,12 @@ body {
             }
             .panel-body {
               margin-top: 20px;
+              .panel-email {
+                color: $hazelbrowndark;
+                .fa {
+                  margin-right:5px;
+                }
+              }
             }
             &:first-child {
               padding-top: 5px;
