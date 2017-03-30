@@ -30,11 +30,55 @@
     </f:if>
 </f:if>
 
+
 <div class="row">
     <div class="col-xs-12 col-lg-12">
         {breadcrumb -> f:format.raw()}
     </div>
 </div>
+
+
+<f:switch expression="{teasertype}">
+    <f:case value="News">
+        <f:if condition="{date}">
+            <div class="row">
+                <div class="col-xs-12 flowtext-phlu-news detailview">
+                    <div class="full-date">
+                        <b>
+                            <f:format.date format="d. F Y">{date}</f:format.date>
+                        </b>
+                    </div>
+                </div>
+            </div>
+        </f:if>
+    </f:case>
+    <f:case value="Event">
+        <f:if condition="{date}">
+        <div class="row">
+            <div class="col-xs-12 flowtext-phlu-event detailview">
+                <div class="row">
+                    <div class=" col-xs-12">
+                        <div class="initial">
+                            <f:format.date format="d">{node.properties.date}</f:format.date>.
+                        </div>
+                        <div class="date-location-title">
+                            <b>
+                                <f:format.date format="F Y">{date}</f:format.date>
+                            </b>
+                            <f:if condition="{time}"> /
+                                <f:format.date format="H:i">{time}</f:format.date>
+                            </f:if>
+                            <br>
+                            {location}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </f:if>
+    </f:case>
+</f:switch>
+
 
 <div class="row">
     <div class="col-xs-12 col-lg-12">
@@ -73,10 +117,11 @@
         </f:if>
     </div>
 </div>
-        <f:if condition="{node.properties.moodimage}">
-            <div class="row ambient-img-body" style="background-image: url('{media:uri.image(image: node.properties.moodimage)}')">
-            </div>
-        </f:if>
+<f:if condition="{node.properties.moodimage}">
+    <div class="row ambient-img-body"
+         style="background-image: url('{media:uri.image(image: node.properties.moodimage)}')">
+    </div>
+</f:if>
 <div class="row">
     <div class="col-xs-12 col-lg-12">
         <ts:render path="collectionRenderer" context="{node: main}"/>

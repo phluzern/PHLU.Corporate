@@ -61,6 +61,7 @@
       'Phlu.Corporate:Page.View.Default.Prototype': true
       'Phlu.Corporate:Page.View.Default.Default': false
       'Phlu.Corporate:Page.News': true
+      'Phlu.Corporate:Page.Event': true
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.Home'
@@ -276,10 +277,74 @@
         reloadIfChanged: true
         label: Datum
         inspector:
-          group: news
+          group: teaser
           position: 50
           editorOptions:
             format: d.m.Y
+
+'Phlu.Corporate:Page.Event':
+  ui:
+    label: 'Veranstaltung Seite'
+    icon: icon-newspaper-o
+  superTypes:
+    'Phlu.Corporate:Page.NotInMenu': true
+    'Phlu.Corporate:Page.View.Default': true
+    'Phlu.Neos.NodeTypes:TeaserMixin': true
+  constraints:
+    nodeTypes:
+      '*': false
+      'Phlu.Corporate:Page.Service': false
+      'Phlu.Corporate:Page.Event': true
+      'Phlu.Corporate:Page.View.Default': false
+      'Phlu.Corporate:Page.View.Default.Default': true
+  properties:
+    reference:
+      type: reference
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Link auswählen'
+        inspector:
+          editorOptions:
+            nodeTypes: ['Phlu.Corporate:Page']
+    teasertype:
+      type: string
+      defaultValue: 'Event'
+      ui:
+        inlineEditable: true
+    date:
+      type: DateTime
+      ui:
+        inlineEditable: false
+        reloadIfChanged: true
+        label: Datum
+        inspector:
+          group: teaser
+          position: 50
+          editorOptions:
+            format: d.m.Y
+    time:
+      type: DateTime
+      ui:
+        inlineEditable: false
+        reloadIfChanged: true
+        label: Zeit
+        inspector:
+          group: teaser
+          position: 50
+          editorOptions:
+            format: 'h:i'
+    location:
+      type: string
+      defaultValue: Ort
+      ui:
+        inlineEditable: true
+        reloadIfChanged: true
+        label: Ort
+        inspector:
+          group: teaser
+          position: 50
+
+
 
 'Phlu.Corporate:Page.FurtherEducation.Detail.Module':
   superTypes:

@@ -18,7 +18,7 @@ use Neos\Flow\Aop\JoinPointInterface;
  * @Flow\Scope("singleton")
  * @Flow\Aspect
  */
-class NewsAspect
+class TeaserAspect
 {
 
 
@@ -55,30 +55,62 @@ class NewsAspect
 
 
     /**
-     * @Flow\Before("within(Neos\ContentRepository\Domain\Repository\NodeDataRepository) && method(public .+->(add|update)(object.nodeType.name == 'Phlu.Corporate:NewsItem'))")
+     * @Flow\After("within(Neos\ContentRepository\Domain\Repository\NodeDataRepository) && method(public .+->(add|update)(object.nodeType.name == 'Phlu.Corporate:NewsItem'))")
      * @return void
      */
-    public function update(JoinPointInterface $joinPoint)
+    public function updateNews(JoinPointInterface $joinPoint)
     {
 
 
         $object = $joinPoint->getMethodArgument('object');
         /* @var \Neos\ContentRepository\Domain\Model\NodeData $object */
 
+        $this->updateDetailNodePage($object, '4dd85a03-8c05-426f-b422-9b9f67c94072', 'Phlu.Corporate:Page.News');
+
+
+    }
+
+    /**
+     * @Flow\After("within(Neos\ContentRepository\Domain\Repository\NodeDataRepository) && method(public .+->(add|update)(object.nodeType.name == 'Phlu.Corporate:Event'))")
+     * @return void
+     */
+    public function updateEvent(JoinPointInterface $joinPoint)
+    {
+
+
+        $object = $joinPoint->getMethodArgument('object');
+        /* @var \Neos\ContentRepository\Domain\Model\NodeData $object */
+
+        $this->updateDetailNodePage($object, 'aabd211c-b235-4d5c-9413-ba1f4395cd55', 'Phlu.Corporate:Page.Event');
+
+
+    }
+
+
+    /**
+     * @param NodeData $nodeData
+     * @param string $detailNodeIdentitifier DetailNodeIdentitifier
+     * @param string $detailNodeTypeName DetailNodeTypeName
+     * @return void
+     */
+    private function updateDetailNodePage($nodeData, $detailNodeIdentitifier, $detailNodeTypeName)
+    {
+
+        $object = $nodeData;
+
 
         if (!$object->getProperty('reference')) {
             $context = $this->nodeFactory->createContextMatchingNodeData($object);
-            $detailNode = $this->nodeDataRepository->findByNodeIdentifier('4dd85a03-8c05-426f-b422-9b9f67c94072')->getFirst();
+            $detailNode = $this->nodeDataRepository->findByNodeIdentifier($detailNodeIdentitifier)->getFirst();
             if (!$detailNode) {
                 return null;
             }
             $basenode = $this->nodeFactory->createFromNodeData($detailNode, $context);
 
-
-
-            $detailNode = $basenode->createNode('news' . $object->getIdentifier(), $this->nodeTypeManager->getNodeType('Phlu.Corporate:Page.News'));
+            $detailNode = $basenode->createNode('news' . $object->getIdentifier(), $this->nodeTypeManager->getNodeType($detailNodeTypeName));
             $this->persistenceManager->persistAll();
             $object->setProperty('reference', $detailNode->getIdentifier());
+
         }
 
         // update detailpage
@@ -90,28 +122,25 @@ class NewsAspect
         }
 
 
-
-
         $flowQuery = new FlowQuery(array($detailNode));
-        $headline = $flowQuery->children('header')->find('[instanceof Phlu.Corporate:Headline]')->get(0);
 
-        if ($headline) {
-            /* @var \Neos\ContentRepository\Domain\Model\Node $headline */
-            if (strlen($headline->getProperty('text')) == 0) {
+
+        if ($flowQuery->children('main')->find('[instanceof Neos.Neos:Node]')->count() < 1) {
+
+            $headline = $flowQuery->children('header')->find('[instanceof Phlu.Corporate:Headline]')->get(0);
+            if ($headline) {
+                /* @var \Neos\ContentRepository\Domain\Model\Node $headline */
                 $headline->setProperty('text', $object->getProperty('teaserHeadline'));
                 $this->nodeDataRepository->update($headline->getNodeData());
             }
-        }
-
-        $text = $flowQuery->children('header')->find('[instanceof Phlu.Corporate:TextPlain]')->get(0);
-
-
-        if ($text) {
-            if (strlen($text->getProperty('text')) == 0) {
+            $text = $flowQuery->children('header')->find('[instanceof Phlu.Corporate:TextPlain]')->get(0);
+            if ($text) {
                 /* @var \Neos\ContentRepository\Domain\Model\Node $text */
                 $text->setProperty('text', $object->getProperty('teaserText'));
                 $this->nodeDataRepository->update($text->getNodeData());
             }
+
+
         }
 
         if ($detailNode) {
@@ -120,17 +149,20 @@ class NewsAspect
                 $detailNode->setProperty('uriPathSegment', $this->nodeUriPathSegmentGenerator->generateUriPathSegment(null, $object->getProperty('teaserHeadline')));
             }
 
-            $detailNode->setProperty('teaserHeadline',$object->getProperty('teaserHeadline'));
-            $detailNode->setProperty('teaserText',$object->getProperty('teaserText'));
-            $detailNode->setProperty('date',$object->getProperty('date'));
-            $detailNode->setProperty('title',$object->getProperty('teaserHeadline'));
+            $detailNode->setProperty('teaserHeadline', $object->getProperty('teaserHeadline'));
+            $detailNode->setProperty('teaserText', $object->getProperty('teaserText'));
+            if ($object->getProperty('date')) $detailNode->setProperty('date', $object->getProperty('date'));
+            if ($object->getProperty('time')) $detailNode->setProperty('time', $object->getProperty('time'));
+            if ($object->getProperty('location')) $detailNode->setProperty('location', $object->getProperty('location'));
+            $detailNode->setProperty('title', $object->getProperty('teaserHeadline'));
+
 
             $context = $this->nodeFactory->createContextMatchingNodeData($object);
             $basenode = $this->nodeFactory->createFromNodeData($object, $context);
             $flowQuery = new FlowQuery(array($basenode));
             $parentPageNode = $flowQuery->closest('[instanceof Neos.NodeTypes:Page]')->get(0);
             if ($parentPageNode) {
-                $detailNode->setProperty('reference',$parentPageNode->getIdentifier());
+                $detailNode->setProperty('reference', $parentPageNode->getIdentifier());
             }
             $this->nodeDataRepository->update($detailNode->getNodeData());
 

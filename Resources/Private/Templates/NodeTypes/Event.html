@@ -1,6 +1,7 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace media=Neos\Media\ViewHelpers}
+{namespace uri=Phlu\Corporate\ViewHelpers\Uri}
 
 
 <div class="{breakpointClass}  event singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)} {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}">
@@ -21,13 +22,25 @@
     <div class="phlu-teaser-body">
 
         <div class="scrollbody">
-            {neos:contentElement.editable(property: 'teaserHeadline', tag: 'h3')}
+            <h3>{teaserHeadline}</h3>
             <p>
                 <a href="#">
-                    {neos:contentElement.editable(property: 'teaserText', tag: 'span')}
+                    {teaserText}
                 </a>
             </p>
+            <f:if condition="{ishiddendetaillink}">
+                <f:else>
+                    <f:if condition="{reference}">
+                        <f:then>
+                            <a data-gentics-aloha-repository="node-repository" href="{uri:node(node: reference)}">mehr</a>
+                        </f:then>
+                    </f:if>
+
+                </f:else>
+            </f:if>
+
         </div>
+
     </div>
 
     <f:if condition="{node.properties.teaserImage}">

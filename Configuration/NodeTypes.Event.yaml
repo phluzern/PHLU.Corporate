@@ -4,6 +4,17 @@
   superTypes:
     'Phlu.Neos.NodeTypes:Event': true
     'Phlu.Corporate:Content': true
+  properties:
+    ishiddendetaillink:
+      type: boolean
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Verberge Detail/Mehr-Link'
+        inspector:
+          group: 'event'
+          position: 85
+
+
 'Phlu.Corporate:Events':
   superTypes:
     'Phlu.Neos.NodeTypes:Events': true
