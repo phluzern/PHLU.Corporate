@@ -81,7 +81,7 @@ class TeaserAspect
         $object = $joinPoint->getMethodArgument('object');
         /* @var \Neos\ContentRepository\Domain\Model\NodeData $object */
 
-        $this->updateDetailNodePage($object, '31115f23-4842-4d45-bf92-506d66d0c0fe', 'Phlu.Corporate:Page.Event');
+        $this->updateDetailNodePage($object, 'aabd211c-b235-4d5c-9413-ba1f4395cd55', 'Phlu.Corporate:Page.Event');
 
 
     }
