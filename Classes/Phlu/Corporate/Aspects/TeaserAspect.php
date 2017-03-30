@@ -146,7 +146,7 @@ class TeaserAspect
                     if ($image) {
                         $image = $image->getProperty('image');
 
-                        if ($image) {
+                        if ($image instanceof Image) {
                             /* @var Image $image */
                             $adjustment = new CropImageAdjustment();
                             $adjustment->setHeight(912);
