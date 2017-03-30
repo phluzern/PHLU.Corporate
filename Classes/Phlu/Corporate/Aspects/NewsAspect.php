@@ -131,6 +131,7 @@ class NewsAspect
             if ($parentPageNode) {
                 $detailNode->setProperty('reference',$parentPageNode->getIdentifier());
             }
+            $this->nodeDataRepository->update($detailNode->getNodeData());
 
 
         }
