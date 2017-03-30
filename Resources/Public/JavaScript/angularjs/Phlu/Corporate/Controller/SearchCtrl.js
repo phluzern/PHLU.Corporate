@@ -337,6 +337,23 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             }
             ,
             {
+                http: "http://blog.phlu.ch/mathe-blog/feed/",
+                parser: {
+                    type: 'xml',
+                    config: {
+                        'nodeType': 'blog',
+                        'results': {'selector': 'rss.channel.item'},
+                        'fields': {
+                            'title': 'title',
+                            'rawcontent': 'description',
+                            'url': 'link',
+                            'content': 'encoded'
+                        }
+                    }
+                }
+            }
+            ,
+            {
                 http: "http://blog.phlu.ch/businessapplications/feed/",
                 parser: {
                     type: 'xml',
