@@ -247,6 +247,7 @@
   superTypes:
     'Phlu.Corporate:Page.NotInMenu': true
     'Phlu.Corporate:Page.View.Default': true
+    'Phlu.Neos.NodeTypes:TeaserMixin': true
   constraints:
     nodeTypes:
       '*': false
@@ -254,6 +255,31 @@
       'Phlu.Corporate:Page.News': true
       'Phlu.Corporate:Page.View.Default': false
       'Phlu.Corporate:Page.View.Default.Default': true
+  properties:
+    reference:
+      type: reference
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Link auswählen'
+        inspector:
+          editorOptions:
+            nodeTypes: ['Phlu.Corporate:Page']
+    teasertype:
+      type: string
+      defaultValue: 'News'
+      ui:
+        inlineEditable: true
+    date:
+      type: DateTime
+      ui:
+        inlineEditable: false
+        reloadIfChanged: true
+        label: Datum
+        inspector:
+          group: news
+          position: 50
+          editorOptions:
+            format: d.m.Y
 
 'Phlu.Corporate:Page.FurtherEducation.Detail.Module':
   superTypes:

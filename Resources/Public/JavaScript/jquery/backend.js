@@ -4,6 +4,15 @@
 
 $(document).ready(function () {
 
+    var initBackend = function() {
+
+        $(".phlu-teaser-body a[data-gentics-aloha-repository='node-repository']").bind("click",function() {
+            window.history.pushState("", "", $(this).attr('href'));
+            Typo3Neos.Content.reloadPage();
+        });
+
+    }
+
     document.addEventListener('Neos.NodeCreated', function(event) {
         if ($(event.detail.element).attr('typeof') == 'typo3:Phlu.Corporate:Section' || $(event.detail.element).attr('typeof') == 'typo3:Phlu.Corporate:ContactsGroup') {
             Typo3Neos.Content.reloadPage();
@@ -19,7 +28,11 @@ $(document).ready(function () {
 
     document.addEventListener('Neos.PageLoaded', function(event) {
         initFrontend();
+        initBackend();
     }, false);
+
+
+
 
 
     // override aloha repository for inline editing link editor
@@ -39,6 +52,7 @@ $(document).ready(function () {
         }, false);
     }
 
+    initBackend();
 
 
 });

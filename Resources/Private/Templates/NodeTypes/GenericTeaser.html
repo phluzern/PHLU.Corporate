@@ -11,14 +11,25 @@
             <f:case value="Phlu.Neos.NodeTypes:Project">Projekt</f:case>
             <f:case value="Phlu.Corporate:Page.FurtherEducation.Detail.Study">Studiengang</f:case>
             <f:case value="Phlu.Corporate:Page.FurtherEducation.Detail.Module">Kurs</f:case>
+            <f:case value="Phlu.Corporate:Page.News">News</f:case>
             <f:defaultCase>{neos:contentElement.editable(property: 'teasertype', tag: 'span')}</f:defaultCase>
         </f:switch>
 
     </div>
     <div class="phlu-teaser-body">
         <div class="scrollbody">
-            {neos:contentElement.editable(property: 'teaserHeadline', tag: 'h3')}
-            {neos:contentElement.editable(property: 'teaserText', tag: 'p')}
+            <f:switch expression="{reference.nodeType.name}">
+                <f:case value="Phlu.Corporate:Page.News">
+                    <h3>{teaserHeadline}</h3>
+                    <p>{teaserText}</p>
+                </f:case>
+                <f:defaultCase>
+                    {neos:contentElement.editable(property: 'teaserHeadline', tag: 'h3')}
+                    {neos:contentElement.editable(property: 'teaserText', tag: 'p')}
+                </f:defaultCase>
+            </f:switch>
+
+
             <f:if condition="{reference}">
                 <f:then>
                     <a data-gentics-aloha-repository="node-repository" href="{uri:node(node: reference)}">mehr</a>

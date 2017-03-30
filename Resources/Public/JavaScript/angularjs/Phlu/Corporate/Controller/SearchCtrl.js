@@ -206,7 +206,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     $scope.lastActiveTabVisited = {'alle': true};
 
     var wasClosed = false;
-
+    var isBackend = jQuery("body").hasClass("neos-backend");
 
     var labels = {
 
@@ -494,7 +494,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
                 }
 
-
             });
 
 
@@ -504,13 +503,27 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     });
 
 
-    $("#searchInput").keypress(function (e) {
-        if (e.which == 13) {
-            if ($rootScope.quickNode.getUrl()) {
-                window.location.href = $rootScope.quickNode.getUrl();
+
+    if (isBackend) {
+        $("#searchInput").keypress(function (e) {
+            if (e.which == 13) {
+                if ($rootScope.quickNode.getUrl()) {
+                    window.history.pushState("", "", $rootScope.quickNode.getUrl());
+                    Typo3Neos.Content.reloadPage();
+
+                }
             }
-        }
-    });
+        });
+
+    } else {
+        $("#searchInput").keypress(function (e) {
+            if (e.which == 13) {
+                if ($rootScope.quickNode.getUrl()) {
+                    window.location.href = $rootScope.quickNode.getUrl();
+                }
+            }
+        });
+    }
 
 
     $scope.setLastActiveTabname = function (name) {
