@@ -8389,6 +8389,15 @@ html {
 .ico-family-fa::before {
   font-family: FontAwesome; }
 
+.icon-news::before {
+  content: '\f1ea'; }
+
+.icon-teaser::before {
+  content: '\f2d0'; }
+
+.icon-accordion::before {
+  content: '\f039'; }
+
 body.neos-backend button[data-original-title='Phlu.Corporate:Page.FurtherEducation.Detail.Module'],
 body.neos-backend button[data-original-title='Phlu.Corporate:Page.FurtherEducation.Detail.Study'] {
   display: none; }
@@ -9674,10 +9683,8 @@ body {
             top: -6px;
             left: -5px; }
           @media (max-width: 543px) {
-            body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i {
-              margin-bottom: 20px; }
-              body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.last {
-                float: inherit; } }
+            body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.last {
+              float: inherit; } }
         body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
           margin: 0;
           display: table-cell; }

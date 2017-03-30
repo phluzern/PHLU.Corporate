@@ -674,6 +674,25 @@ html {
   }
 }
 
+
+.icon-news {
+  &::before {
+    content: '\f1ea';
+  }
+}
+
+.icon-teaser {
+  &::before {
+    content: '\f2d0';
+  }
+}
+
+.icon-accordion {
+  &::before {
+    content: '\f039';
+  }
+}
+
 // backend only
 body.neos-backend {
 
@@ -2528,7 +2547,6 @@ body {
                   }
                 }
                 @include media-breakpoint-down("xs") {
-                  margin-bottom: 20px;
                   &.last {
                     float: inherit;
                   }
