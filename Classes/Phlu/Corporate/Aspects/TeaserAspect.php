@@ -8,11 +8,16 @@ use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
 use Neos\ContentRepository\Domain\Service\NodeTypeManager;
 use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Flow\Persistence\PersistenceManagerInterface;
+use Neos\Media\Domain\Model\Adjustment\CropImageAdjustment;
+use Neos\Media\Domain\Model\Image;
+use Neos\Media\Domain\Model\ImageVariant;
 use Neos\Neos\Utility\NodeUriPathSegmentGenerator;
 use org\bovigo\vfs\vfsStreamWrapperAlreadyRegisteredTestCase;
 use Phlu\Evento\Service\Contact\ImportService;
 use Neos\Flow\Annotations as Flow;
+use Neos\Media\TypeConverter\ImageInterfaceConverter;
 use Neos\Flow\Aop\JoinPointInterface;
+
 
 /**
  * @Flow\Scope("singleton")
@@ -54,6 +59,8 @@ class TeaserAspect
     protected $nodeUriPathSegmentGenerator;
 
 
+
+
     /**
      * @Flow\After("within(Neos\ContentRepository\Domain\Repository\NodeDataRepository) && method(public .+->(add|update)(object.nodeType.name == 'Phlu.Corporate:NewsItem'))")
      * @return void
@@ -82,6 +89,84 @@ class TeaserAspect
         /* @var \Neos\ContentRepository\Domain\Model\NodeData $object */
 
         $this->updateDetailNodePage($object, 'aabd211c-b235-4d5c-9413-ba1f4395cd55', 'Phlu.Corporate:Page.Event');
+
+
+    }
+
+    /**
+     * @Flow\After("within(Neos\ContentRepository\Domain\Repository\NodeDataRepository) && method(public .+->(update)(object.nodeType.name == 'Phlu.Corporate:GenericTeaser'))")
+     * @return void
+     */
+    public function updateGenericTeaser(JoinPointInterface $joinPoint)
+    {
+
+
+        $object = $joinPoint->getMethodArgument('object');
+        /* @var \Neos\ContentRepository\Domain\Model\NodeData $object */
+
+        $this->fetchContentFromReference($object);
+
+
+    }
+
+
+    /**
+     * @param NodeData $nodeData
+     * @return void
+     */
+    private function fetchContentFromReference($nodeData)
+    {
+
+
+        if ($nodeData->getProperty('reference')) {
+
+            $context = $this->nodeFactory->createContextMatchingNodeData($nodeData);
+            $referenceNode = $this->nodeFactory->createFromNodeData($this->nodeDataRepository->findByNodeIdentifier($nodeData->getProperty('reference'))->getFirst(), $context);
+
+            if ($referenceNode) {
+
+                $flowQuery = new FlowQuery(array($referenceNode));
+
+                if ($nodeData->getNodeType()->getConfiguration('properties.teaserHeadline.defaultValue') == $nodeData->getProperty('teaserHeadline')) {
+                    $headline = $flowQuery->children('header')->find('[instanceof Phlu.Corporate:Headline]')->get(0);
+                    if ($headline) {
+                        $nodeData->setProperty('teaserHeadline', $headline->getProperty('text'));
+                    }
+                }
+
+                if ($nodeData->getNodeType()->getConfiguration('properties.teaserText.defaultValue') == $nodeData->getProperty('teaserText')) {
+                    $text = $flowQuery->children('header')->find('[instanceof Phlu.Corporate:TextPlain]')->get(0);
+                    if ($text) {
+                        $nodeData->setProperty('teaserText', $text->getProperty('text'));
+                    }
+                }
+
+                if ($nodeData->getNodeType()->getConfiguration('properties.teaserImage.defaultValue') == $nodeData->getProperty('teaserImage') && $nodeData->getProperty('wasfetchedonce') !== true) {
+                    $image = $flowQuery->find('[instanceof Phlu.Corporate:Image]')->get(0);
+                    if ($image) {
+                        $image = $image->getProperty('image');
+
+                        if ($image) {
+                            /* @var Image $image */
+                            $adjustment = new CropImageAdjustment();
+                            $adjustment->setHeight(912);
+                            $adjustment->setWidth(1372);
+                            $adjustment->setX(0);
+                            $adjustment->setY(0);
+                            $imageVariant = new ImageVariant($image);
+                            $imageVariant->addAdjustment($adjustment);
+                            $nodeData->setProperty('teaserImage', $imageVariant);
+                            $nodeData->setProperty('wasfetchedonce',true);
+                        }
+
+                    }
+                }
+
+
+            }
+
+
+        }
 
 
     }

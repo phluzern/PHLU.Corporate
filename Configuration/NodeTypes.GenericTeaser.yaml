@@ -8,6 +8,7 @@
     label: Teaser
     icon: icon-teaser
     position: 300
+    group: 'teaserEmpty'
     inspector:
       groups:
         teaser:
@@ -24,6 +25,8 @@
         inspector:
           group: 'teaser'
           position: 85
+    wasfetchedonce:
+      type: boolean
     teasertype:
       type: string
       defaultValue: ''
@@ -36,6 +39,6 @@
         label: 'Link auswählen'
         inspector:
           group: 'teaser'
-          position: 80
+          position: 1
           editorOptions:
             nodeTypes: ['Phlu.Corporate:Page.News','Phlu.Corporate:Page.FurtherEducation.Detail.Study','Phlu.Corporate:Page.FurtherEducation.Detail.Module','Phlu.Neos.NodeTypes:Project','Phlu.Corporate:Page']

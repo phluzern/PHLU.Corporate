@@ -1,11 +1,31 @@
 # Content
 prototype(Phlu.Corporate:GenericTeaser) < prototype(Phlu.Corporate:Content) {
 
-    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/GenericTeaser.html'
+
+
+    templatePath = Neos.Fusion:Case {
+        event {
+            condition = ${q(q(node).property('reference')).is('[instanceof Phlu.Corporate:Page.Event]')}
+            renderer = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Event.html'
+        }
+        fallback {
+            condition = TRUE
+            renderer = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/GenericTeaser.html'
+        }
+    }
+
+
     reference = ${q(node).property('reference')}
     isexternal = ${q(node).property('isexternal')}
     renderer = Neos.Neos:ContentCase
     external = ${q(node).children('external').get(0)}
+
+
+    date = ${q(q(node).property('reference')).property('date')}
+    time = ${q(q(node).property('reference')).property('time')}
+    location = ${q(q(node).property('reference')).property('location')}
+
+
 
 }
 

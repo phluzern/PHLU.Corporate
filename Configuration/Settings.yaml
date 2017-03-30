@@ -24,6 +24,16 @@ Neos:
           label: 'Spezialseiten'
           collapsed: true
           icon: icon-fort-awesome
+        teaserEmpty:
+          position: 60
+          label: 'Teaser aus bestehenden Inhalten erstellen'
+          collapsed: false
+          icon: icon-fort
+        teaserNewContent:
+          position: 60
+          label: 'Teaser aus neuen Inhalten erstellen'
+          collapsed: false
+          icon: icon-fort
     fusion:
       autoInclude:
         Phlu.Corporate: true

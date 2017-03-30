@@ -4,6 +4,8 @@
   superTypes:
     'Phlu.Neos.NodeTypes:Event': true
     'Phlu.Corporate:Content': true
+  ui:
+    group: 'teaserNewContent'
   properties:
     ishiddendetaillink:
       type: boolean
