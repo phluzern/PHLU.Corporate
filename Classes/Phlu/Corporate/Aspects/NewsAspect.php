@@ -55,7 +55,7 @@ class NewsAspect
 
 
     /**
-     * @Flow\After("within(Neos\ContentRepository\Domain\Repository\NodeDataRepository) && method(public .+->(add|update)(object.nodeType.name == 'Phlu.Corporate:NewsItem'))")
+     * @Flow\Before("within(Neos\ContentRepository\Domain\Repository\NodeDataRepository) && method(public .+->(add|update)(object.nodeType.name == 'Phlu.Corporate:NewsItem'))")
      * @return void
      */
     public function update(JoinPointInterface $joinPoint)
@@ -97,7 +97,7 @@ class NewsAspect
 
         if ($headline) {
             /* @var \Neos\ContentRepository\Domain\Model\Node $headline */
-            if (strlen($headline->getProperty('text'))) {
+            if (strlen($headline->getProperty('text')) == 0) {
                 $headline->setProperty('text', $object->getProperty('teaserHeadline'));
                 $this->nodeDataRepository->update($headline->getNodeData());
             }
@@ -105,8 +105,9 @@ class NewsAspect
 
         $text = $flowQuery->children('header')->find('[instanceof Phlu.Corporate:TextPlain]')->get(0);
 
+
         if ($text) {
-            if (strlen($text->getProperty('text'))) {
+            if (strlen($text->getProperty('text')) == 0) {
                 /* @var \Neos\ContentRepository\Domain\Model\Node $text */
                 $text->setProperty('text', $object->getProperty('teaserText'));
                 $this->nodeDataRepository->update($text->getNodeData());
