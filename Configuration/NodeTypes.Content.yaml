@@ -106,7 +106,7 @@
     'Phlu.Neos.NodeTypes:PlainTitleMixin': true
   ui:
     label: 'Accordeon Element'
-    icon: icon-header
+    icon: icon-accordion
     inlineEditable: true
   constraints:
     nodeTypes:

@@ -6,7 +6,7 @@
     'Phlu.Neos.NodeTypes:Content': true
   ui:
     label: Teaser
-    icon: icon-picture
+    icon: icon-teaser
     position: 300
     inspector:
       groups:
