@@ -4,3 +4,12 @@
   superTypes:
     'Phlu.Neos.NodeTypes:NewsItem': true
     'Phlu.Corporate:Content': true
+  properties:
+    reference:
+      type: reference
+      ui:
+        reloadIfChanged: TRUE
+        label: 'Link auswählen'
+        inspector:
+          editorOptions:
+            nodeTypes: ['Phlu.Corporate:Page.News']
