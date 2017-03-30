@@ -30,23 +30,28 @@
             </f:switch>
 
 
-            <f:if condition="{reference}">
+            <f:if condition="{isexternal}">
                 <f:then>
-                    <a data-gentics-aloha-repository="node-repository" href="{uri:node(node: reference)}">mehr</a>
-                </f:then>
-                <f:else>
-                    <f:if condition="{isexternal}">
+                    <f:if condition="{external}">
                         <f:then>
-                            <f:if condition="{external}">
-                                <f:then>
-                                    <ts:render path="renderer" context="{node: external}"/>
-                                </f:then>
-                            </f:if>
+                            <ts:render path="renderer" context="{node: external}"/>
                         </f:then>
                     </f:if>
+                </f:then>
+                <f:else>
+                    <f:if condition="{reference}">
+                        <f:then>
+                            <a data-gentics-aloha-repository="node-repository" href="{uri:node(node: reference)}">mehr</a>
+                        </f:then>
+                        <f:else>
 
+
+                        </f:else>
+                    </f:if>
                 </f:else>
             </f:if>
+
+
 
 
         </div>

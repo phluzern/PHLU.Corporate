@@ -12,6 +12,8 @@ namespace Phlu\Corporate\ViewHelpers\Uri;
  * source code.
  */
 
+use Neos\ContentRepository\Domain\Factory\NodeFactory;
+use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
 use Neos\Flow\Annotations as Flow;
 use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
 use Neos\ContentRepository\Domain\Model\Node;
@@ -31,6 +33,18 @@ class NodeViewHelper extends \Neos\Neos\ViewHelpers\Uri\NodeViewHelper
     protected $escapeOutput = FALSE;
 
 
+    /**
+     * @Flow\Inject
+     * @var NodeFactory
+     */
+    protected $nodeFactory;
+
+    /**
+     * @Flow\Inject
+     * @var NodeDataRepository
+     */
+    protected $nodeDataRepository;
+
 
     /**
      * Renders the URI.
@@ -49,6 +63,21 @@ class NodeViewHelper extends \Neos\Neos\ViewHelpers\Uri\NodeViewHelper
      */
     public function render($node = null, $format = null, $absolute = false, array $arguments = array(), $section = '', $addQueryString = false, array $argumentsToBeExcludedFromQueryString = array(), $baseNodeName = 'documentNode', $resolveShortcuts = true)
     {
+
+
+        if ($node instanceof Node == false) {
+
+            $nodedata = $this->nodeDataRepository->findByNodeIdentifier($node)->getFirst();
+            if ($nodedata) {
+                $baseNode = $this->getContextVariable($baseNodeName);
+                $node = $this->nodeFactory->createFromNodeData($nodedata, $baseNode->getContext());
+            }
+
+        }
+
+        if ($node instanceof Node == false) {
+            return null;
+        }
 
 
         $baseNode = null;

@@ -1,0 +1,10 @@
+# Page News
+prototype(Phlu.Corporate:Page.Event) < prototype(Phlu.Corporate:Page.View.Default) {
+
+
+        templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
+
+
+}
+
+
