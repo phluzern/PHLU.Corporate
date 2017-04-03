@@ -770,6 +770,22 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             if ($rootScope.isLoadedFirst == false && $scope.isLoadingFirst == false && i.count() > 0) {
                 $scope.setIsLoadedFirst();
             }
+
+            if ($scope.getProgressValue() == 0) {
+                var progressInterval2 = window.setInterval(function () {
+                    $scope.isLoadedFirstProgress++;
+                    if ($scope.isLoadedFirstProgress >= 50) {
+                        window.clearInterval(progressInterval2);
+                        $rootScope.isLoadedFirst = true;
+                        $scope.isLoadedFirstProgress = 50;
+                    }
+                    window.setTimeout(function () {
+                        $scope.$apply();
+                    });
+                }, 50);
+            }
+
+
         })
         .$bind('result', $scope);
 
