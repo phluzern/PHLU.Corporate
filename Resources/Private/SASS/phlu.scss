@@ -674,7 +674,6 @@ html {
   }
 }
 
-
 .icon-news {
   &::before {
     content: '\f1ea';
@@ -724,7 +723,7 @@ body.neos-backend {
     &.bluebg {
       .news, .event {
         &.singleitem {
-          margin-bottom:30px;
+          margin-bottom: 30px;
           .phlu-teaser-body {
             background-color: white;
           }
@@ -732,7 +731,6 @@ body.neos-backend {
       }
     }
   }
-
 
   .phlu-qmpilot-nodetypes-file.neos-contentelement-active {
     .disabled-qmpilot {
@@ -1881,8 +1879,18 @@ body {
 
       .event, .publication, .news {
         //@include carousel-teaser-shadow;
-        .phlu-teaser-body {
-          height: 212px;
+        &.singleitem {
+          .phlu-teaser-body {
+            padding: 0;
+            .scrollbody {
+              padding: 10px 20px 20px;
+              overflow-y: auto;
+              p {
+                margin-bottom: inherit;
+              }
+            }
+          }
+
         }
       }
 
@@ -1912,7 +1920,6 @@ body {
           }
         }
         .phlu-teaser-body {
-          height: 163px;
           padding: 30px 20px 20px;
         }
         .phlu-teaser-type {
@@ -1923,17 +1930,10 @@ body {
           left: 15px;
         }
         &.singleitem {
-          .phlu-teaser-body {
-            padding: 0;
-            .scrollbody {
-              padding: 10px 20px 20px;
-              overflow-y: auto;
-              height: 162%;
-              @include media-breakpoint-up("xxl") {
-                height: 175%;
-              }
-              p {
-                margin-bottom: inherit;
+          &.noimg {
+            .phlu-teaser-body {
+              .scrollbody {
+                height: 304px;
               }
             }
           }
@@ -1999,6 +1999,26 @@ body {
         .phlu-teaser-type {
           background-color: $black;
         }
+        &.singleitem {
+          .phlu-teaser-body {
+            .scrollbody {
+              height: 173px;
+            }
+          }
+          .teaser-image {
+            height: 180px;
+            background-size: cover;
+          }
+          }
+        &.singleitem {
+          &.noimg {
+            .phlu-teaser-body {
+              .scrollbody {
+                height: 353px;
+              }
+            }
+          }
+        }
       }
       img {
         @extend .img-fluid;
@@ -2033,6 +2053,8 @@ body {
         }
         .carousel-indicators {
           bottom: 0;
+          left:30%;
+          width: 100%;
           li {
             margin-left: 15px;
             margin-right: 15px;
@@ -2727,7 +2749,7 @@ body {
                   text-align: left;
                 }
                 a {
-                  padding-left:7px;
+                  padding-left: 7px;
                   color: $hazelbrowndark;
                 }
 
@@ -2747,7 +2769,7 @@ body {
               .panel-email {
                 color: $hazelbrowndark;
                 .fa {
-                  margin-right:5px;
+                  margin-right: 5px;
                 }
               }
             }
@@ -4504,7 +4526,7 @@ body {
     }
     .flowtext-phlu-news {
       > div {
-        padding-bottom:60px;
+        padding-bottom: 60px;
       }
       > .row {
         .initial {
@@ -4522,7 +4544,7 @@ body {
     }
     .flowtext-phlu-event {
       > .row {
-        padding-bottom:60px;
+        padding-bottom: 60px;
         .initial {
           background-color: $petrol;
         }
@@ -4857,7 +4879,7 @@ body {
         background-image: url("../Images/ambienteexample.jpg");
         background-repeat: no-repeat;
         padding-bottom: 330px;
-        background-position: bottom center;
+        background-position: center center;
         background-size: cover;
       }
       > .row, > .row-fullwidth-content > .row {
