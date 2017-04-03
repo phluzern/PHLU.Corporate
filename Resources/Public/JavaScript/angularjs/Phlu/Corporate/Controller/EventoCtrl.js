@@ -176,7 +176,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         var t = 1000 * ($scope.nodetypesFilter.length + 1);
 
         var progressInterval = window.setInterval(function () {
-            $scope.isLoadedFirstProgress = Math.floor($scope.isLoadedFirstProgress + ((100 / (t-1000) / 50) * 50 * 100));
+            $scope.isLoadedFirstProgress = Math.floor($scope.isLoadedFirstProgress + ((100 / (t) / 50) * 50 * 100));
             window.setTimeout(function () {
                 $scope.$apply();
             });
