@@ -10411,6 +10411,19 @@ body {
         margin: 0; }
     body .all .blackBgFullWidthTabs .nav-pills .nav-item + .nav-item, body .all .blackBgFullWidthContents .nav-pills .nav-item + .nav-item {
       margin-left: 0; }
+    body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .dropdown-toggle::after {
+      border: 0; }
+    body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .loadingIcon {
+      color: white;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      margin-top: 5px;
+      margin-right: 6px; }
+    body .all .further-education-special-search .extendedSearch button .loadingIcon {
+      color: white;
+      width: 30px;
+      height: 30px; }
     body .all .further-education-special-search .progress {
       background-color: #edeae8;
       height: inherit; }
