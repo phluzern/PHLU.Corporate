@@ -51,7 +51,6 @@ $lightgreyblue: #DAD8E9;
 $black: #333333;
 $naviBlack: #171815;
 
-$hazelbrownmedium: #9f632a;
 $hazelbrowndark: #9f632a;
 $hazelbrownlight: #c4b8ae;
 
@@ -1003,8 +1002,8 @@ body {
       padding-left: 0;
       li {
         a.nav-link {
-          color: $hazelbrownmedium;
-          border: 2px solid $hazelbrownmedium;
+          color: $hazelbrowndark;
+          border: 2px solid $hazelbrowndark;
           border-radius: $nav-pills-border-radius;
           font-size: $nav-link-font-size;
           cursor: pointer !important;
@@ -1628,7 +1627,7 @@ body {
           padding: 0;
           li {
             a {
-              color: $hazelbrownmedium;
+              color: $hazelbrowndark;
               font-size: $nav-link-font-size-desktop;
               display: block;
               padding: 12px 0;
@@ -2658,7 +2657,7 @@ body {
                       font-weight: $font-weight-bold;
                     }
                     .telephone {
-                      color: $hazelbrownmedium;
+                      color: $hazelbrowndark;
                       i {
                         margin-right: 5px;
                       }
@@ -3792,12 +3791,23 @@ body {
     // lists
     //
     .further-education-special-search {
-      .progress-bar  {
-        height:52px;
-        background-color:$gray-light;
-        color:white;
-        padding-left:15px;
-        line-height:52px;
+      .progress {
+        background-color:$lightgrey;
+        height: inherit;
+        .progress-bar  {
+          height:30px;
+          background-color:$hazelbrowndark;
+          color:white;
+          padding-left:15px;
+          line-height:34px;
+        }
+        .progress-bar-striped {
+          background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+          background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+          background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+          -webkit-background-size: 1rem 1rem;
+          background-size: 1rem 1rem;
+        }
       }
       .table-responsive {
         .table {

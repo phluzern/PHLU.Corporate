@@ -9,7 +9,7 @@
             <div {attributes -> f:format.raw()}>
 
                 <div class="progress hidden-xs-up" data-ng-class="{'hidden-xs-up': !getProgressValue()}" data-ng-if="!isLoadedFirst()">
-                    <div class="progress-bar" role="progressbar" style="width: {{getProgressValue()}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{getProgressValue()}}%</div>
+                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{getProgressValue()}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{getProgressValue()}}%</div>
                 </div>
 
                 <div class="row" data-ng-show="isLoadedFirst()">
@@ -413,11 +413,7 @@
                         <h3 data-ng-bind="'Treffer '+ result.count()"></h3>
                     </div>
 
-                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
-                             alt="loading"
-                             class="loadingIcon"
-                             data-ng-if="result.isLoading()"
-                        />
+               
 
                     <f:render partial="furtherEducationList" arguments="{_all}"/>
 
