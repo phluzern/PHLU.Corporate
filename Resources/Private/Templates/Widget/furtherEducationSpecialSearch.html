@@ -14,7 +14,7 @@
                      data-ng-if="!isLoadedFirst()"
                 />
 
-                <div class="row" data-ng-show="isLoadedFirst()" >
+                <div class="row" data-ng-if="isLoadedFirst()" >
 
 
                     <div class="col-xs-12">
@@ -49,7 +49,7 @@
 
                 </div>
 
-                <div class="row extendedSearchFilter" data-ng-if="isLoadedFirst()">
+                <div class="row extendedSearchFilter" data-ng-show="isLoadedFirst()">
 
                     <div data-ng-show="nodetypesFilterCurrentLabel == 'Alle'" class="col-xs-12">
                         <h3>Kurse und Studiengänge</h3>

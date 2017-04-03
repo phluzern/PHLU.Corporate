@@ -54,7 +54,7 @@ PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
 
 }]);
 
-PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject','$rootScope', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $rootScope) {
+PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$rootScope', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $rootScope) {
 
 
     var search = new $hybridsearchObject(hybridsearch);
@@ -64,6 +64,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     }
 
     $scope.currentYears = {};
+    $scope.isLoadingFirst = false;
     $scope.result = new $hybridsearchResultsObject();
     $scope.limit = 10;
     $scope.limitChunkSize = 10;
@@ -158,8 +159,28 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     });
 
 
-    $scope.isLoadedFirst = function() {
+    $scope.isLoadedFirst = function () {
         return $rootScope.isLoadedFirst !== undefined ? $rootScope.isLoadedFirst : false;
+    }
+
+    $scope.setIsLoadedFirst = function () {
+
+
+        var t = 4000;
+        angular.forEach($scope.nodetypesFilter, function (filter, i) {
+
+            window.setTimeout(function () {
+                $scope.setNodetypesFilter(filter);
+
+                if (i == $scope.nodetypesFilter.length - 1) {
+                    $rootScope.isLoadedFirst = true;
+                }
+
+            }, t - (i * 10));
+
+        });
+
+
     }
 
     /**
@@ -347,7 +368,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                 })
 
             }
-
 
 
         }
@@ -717,10 +737,10 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         .setNodeType('nodetypes', $scope)
         .setOrderBy({'*': '-id'})
         .$watch(function (i) {
-            if ($rootScope.isLoadedFirst == false && i.count() > 0) {
-                window.setTimeout(function() {
-                    $rootScope.isLoadedFirst = true;
-                },1000);
+
+            if ($rootScope.isLoadedFirst == false && $scope.isLoadingFirst == false && i.count() > 0) {
+                $scope.isLoadingFirst = true;
+                $scope.setIsLoadedFirst();
             }
         })
         .$bind('result', $scope);
