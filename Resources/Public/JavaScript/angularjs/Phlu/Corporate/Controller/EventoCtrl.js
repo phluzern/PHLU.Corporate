@@ -185,7 +185,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                 window.clearInterval(progressInterval);
             }
 
-        }, 100);
+        }, 50);
 
         angular.forEach($scope.nodetypesFilter, function (filter, i) {
             window.setTimeout(function () {
