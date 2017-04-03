@@ -391,42 +391,6 @@ html {
 //
 // search
 //
-#searchquicknode {
-
-  a, * {
-    color: #707070;
-  }
-  white-space: nowrap;
-  width: auto;
-  display: block;
-  font-size: 80%;
-  padding: 5px;
-  position: absolute;
-  margin-top: -36px;
-  float: right;
-  right: 42px;
-  max-width: 230px;
-  overflow: hidden;
-  height: 32px;
-  padding-top: 10px;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  text-align: right;
-
-}
-
-#searchInput {
-  padding-right: 250px;
-}
-
-.oneCol {
-  #searchInput {
-    padding-right: 90px;
-  }
-  #searchquicknode {
-    max-width: 60px;
-  }
-}
 
 #search {
 
@@ -638,9 +602,11 @@ html {
       }
     }
   }
+
   .noSearchResults {
     display: none;
   }
+
 }
 
 @include media-breakpoint-down("lg") {
@@ -673,7 +639,6 @@ html {
     font-family: FontAwesome;
   }
 }
-
 
 .icon-news {
   &::before {
@@ -724,7 +689,7 @@ body.neos-backend {
     &.bluebg {
       .news, .event {
         &.singleitem {
-          margin-bottom:30px;
+          margin-bottom: 30px;
           .phlu-teaser-body {
             background-color: white;
           }
@@ -732,7 +697,6 @@ body.neos-backend {
       }
     }
   }
-
 
   .phlu-qmpilot-nodetypes-file.neos-contentelement-active {
     .disabled-qmpilot {
@@ -2727,7 +2691,7 @@ body {
                   text-align: left;
                 }
                 a {
-                  padding-left:7px;
+                  padding-left: 7px;
                   color: $hazelbrowndark;
                 }
 
@@ -2747,7 +2711,7 @@ body {
               .panel-email {
                 color: $hazelbrowndark;
                 .fa {
-                  margin-right:5px;
+                  margin-right: 5px;
                 }
               }
             }
@@ -4504,7 +4468,7 @@ body {
     }
     .flowtext-phlu-news {
       > div {
-        padding-bottom:60px;
+        padding-bottom: 60px;
       }
       > .row {
         .initial {
@@ -4522,7 +4486,7 @@ body {
     }
     .flowtext-phlu-event {
       > .row {
-        padding-bottom:60px;
+        padding-bottom: 60px;
         .initial {
           background-color: $petrol;
         }
