@@ -172,6 +172,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     $scope.setIsLoadedFirst = function () {
 
+        $scope.isLoadingFirst = true;
 
         var t = 1000 * ($scope.nodetypesFilter.length + 1);
 
@@ -772,6 +773,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             }
 
             if ($scope.getProgressValue() == 0) {
+                $scope.isLoadedFirstProgress = 1;
                 var progressInterval2 = window.setInterval(function () {
                     $scope.isLoadedFirstProgress++;
                     if ($scope.isLoadedFirstProgress >= 10) {
