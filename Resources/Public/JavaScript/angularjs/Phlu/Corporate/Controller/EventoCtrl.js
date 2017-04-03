@@ -166,7 +166,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.setIsLoadedFirst = function () {
 
 
-        var t = 4000;
+        var t = 1000*($scope.nodetypesFilter.length+1);
         angular.forEach($scope.nodetypesFilter, function (filter, i) {
 
             window.setTimeout(function () {
