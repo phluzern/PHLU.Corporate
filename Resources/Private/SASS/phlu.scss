@@ -319,6 +319,7 @@ $input-search-field-big: 50px;
 }
 
 @import "../../Public/Vendor/Bootstrap/scss/bootstrap";
+
 // convert px to rem
 // @import "rem-mixin";
 
@@ -387,6 +388,7 @@ html {
     margin-top: 47px;
   }
 }
+
 
 //
 // search
@@ -3766,6 +3768,13 @@ body {
     // lists
     //
     .further-education-special-search {
+      .progress-bar  {
+        height:52px;
+        background-color:$gray-light;
+        color:white;
+        padding-left:15px;
+        line-height:52px;
+      }
       .table-responsive {
         .table {
           thead {

@@ -10407,6 +10407,12 @@ body {
         margin: 0; }
     body .all .blackBgFullWidthTabs .nav-pills .nav-item + .nav-item, body .all .blackBgFullWidthContents .nav-pills .nav-item + .nav-item {
       margin-left: 0; }
+    body .all .further-education-special-search .progress-bar {
+      height: 52px;
+      background-color: #818a91;
+      color: white;
+      padding-left: 15px;
+      line-height: 52px; }
     body .all .further-education-special-search .table-responsive .table thead tr th {
       padding: 12px 20px; }
     body .all .further-education-special-search .table-responsive .table tbody tr {
