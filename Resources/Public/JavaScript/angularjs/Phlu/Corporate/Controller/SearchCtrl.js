@@ -167,7 +167,6 @@ PhluCorporateApp.directive('quicknode', function ($sce) {
 });
 
 
-
 PhluCorporateApp.directive('nodeType', function ($sce) {
 
     var labels = {};
@@ -469,10 +468,10 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     var searchResultApplyTimer = null;
+    var lasthash = null;
 
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
     search.setExternalSources(external);
-
     search.setGroupedBy(groupedBy).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
         if (searchResultApplyTimer) {
@@ -481,44 +480,47 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
         searchResultApplyTimer = setTimeout(function () {
+            var lh = data.getHash();
 
-            $scope.$apply(function () {
+            if (lasthash !== lh) {
+                $scope.$apply(function () {
 
-                $rootScope.quickNode = data.getQuickNodes()[0];
+                    $rootScope.quickNode = data.getQuickNodes()[0];
 
 
-                angular.forEach($rootScope.siteSearchTabs, function (group, id) {
-                    $rootScope.siteSearchTabs[id] = false;
-                });
-                angular.forEach(data.getGrouped().getItems(), function (group) {
-                    $rootScope.siteSearchTabs[group.label] = true;
-                });
+                    angular.forEach($rootScope.siteSearchTabs, function (group, id) {
+                        $rootScope.siteSearchTabs[id] = false;
+                    });
+                    angular.forEach(data.getGrouped().getItems(), function (group) {
+                        $rootScope.siteSearchTabs[group.label] = true;
+                    });
 
-                var i = 'alle';
-                angular.forEach($rootScope.siteSearchTabs, function (value, group) {
-                    if (value && group !== 'alle') {
-                        i = group;
+                    var i = 'alle';
+                    angular.forEach($rootScope.siteSearchTabs, function (value, group) {
+                        if (value && group !== 'alle') {
+                            i = group;
+                        }
+                    });
+
+                    if ($rootScope.siteSearchTabs[$rootScope.lastActiveTabName] === false) {
+                        $("#search .phlu-corporate-tags-menu ul.nav-pills > li a").removeClass('active');
+                        $("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='#" + i + "']").addClass('active');
+                        if ($rootScope.lastActiveTabVisited === undefined) {
+                            $rootScope.lastActiveTabVisited = {};
+                        }
+                        $scope.setLastActiveTabname(i);
+
                     }
+
                 });
+            }
 
-                if ($rootScope.siteSearchTabs[$rootScope.lastActiveTabName] === false) {
-                    $("#search .phlu-corporate-tags-menu ul.nav-pills > li a").removeClass('active');
-                    $("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='#" + i + "']").addClass('active');
-                    if ($rootScope.lastActiveTabVisited === undefined) {
-                        $rootScope.lastActiveTabVisited = {};
-                    }
-                    $scope.setLastActiveTabname(i);
-
-                }
-
-            });
-
+            lasthash = lh;
 
         }, 1);
 
 
     });
-
 
 
     if (isBackend) {
