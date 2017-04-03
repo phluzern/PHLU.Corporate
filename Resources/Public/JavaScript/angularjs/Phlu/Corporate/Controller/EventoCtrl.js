@@ -179,7 +179,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         var progressInterval = window.setInterval(function () {
             $scope.isLoadedFirstProgress = Math.floor($scope.isLoadedFirstProgress + ((100 / (t) / 50) * 50 * 100));
             window.setTimeout(function () {
-                $scope.$apply();
+                $scope.$digest();
             });
             if ($scope.isLoadedFirstProgress >= 85) {
                 window.clearInterval(progressInterval);
@@ -200,7 +200,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                             $scope.isLoadedFirstProgress = 100;
                         }
                         window.setTimeout(function () {
-                            $scope.$apply();
+                            $scope.$digest();
                         });
                     }, 5);
 
@@ -780,7 +780,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                         window.clearInterval(progressInterval2);
                     }
                     window.setTimeout(function () {
-                        $scope.$apply();
+                        $scope.$digest();
                     });
                 }, 50);
             }
