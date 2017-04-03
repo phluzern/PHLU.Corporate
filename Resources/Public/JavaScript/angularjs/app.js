@@ -90,7 +90,6 @@ PhluCorporateApp.filter('orderObjectBy', function () {
         });
 
         filtered.sort(function (a, b) {
-            console.log(field,a,a[field],b[field]);
             return (a[field] > b[field] ? 1 : -1);
         });
         if (reverse) filtered.reverse();
