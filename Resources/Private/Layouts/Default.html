@@ -82,10 +82,7 @@
 
                             <input id="searchInput" type="text" class="c-input form-control" data-ng-model="siteSearch"
                                    data-ng-click="startSearch();">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            <div id="searchquicknode" data-ng-if="quickNode">
-                                <quicknode data="quickNode"></quicknode>
-                            </div>
+                                <i class="fa fa-search" aria-hidden="true" data-ng-class="{'fa-search-plus': quickNode}"></i>
                         </div>
 
                     </div>

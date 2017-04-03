@@ -319,6 +319,7 @@ $input-search-field-big: 50px;
 }
 
 @import "../../Public/Vendor/Bootstrap/scss/bootstrap";
+
 // convert px to rem
 // @import "rem-mixin";
 
@@ -388,45 +389,10 @@ html {
   }
 }
 
+
 //
 // search
 //
-#searchquicknode {
-
-  a, * {
-    color: #707070;
-  }
-  white-space: nowrap;
-  width: auto;
-  display: block;
-  font-size: 80%;
-  padding: 5px;
-  position: absolute;
-  margin-top: -36px;
-  float: right;
-  right: 42px;
-  max-width: 230px;
-  overflow: hidden;
-  height: 32px;
-  padding-top: 10px;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  text-align: right;
-
-}
-
-#searchInput {
-  padding-right: 250px;
-}
-
-.oneCol {
-  #searchInput {
-    padding-right: 90px;
-  }
-  #searchquicknode {
-    max-width: 60px;
-  }
-}
 
 #search {
 
@@ -638,9 +604,11 @@ html {
       }
     }
   }
+
   .noSearchResults {
     display: none;
   }
+
 }
 
 @include media-breakpoint-down("lg") {
@@ -3824,6 +3792,13 @@ body {
     // lists
     //
     .further-education-special-search {
+      .progress-bar  {
+        height:52px;
+        background-color:$gray-light;
+        color:white;
+        padding-left:15px;
+        line-height:52px;
+      }
       .table-responsive {
         .table {
           thead {

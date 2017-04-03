@@ -8,14 +8,11 @@
         <div class="col-xs-12">
             <div {attributes -> f:format.raw()}>
 
-                <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
-                     alt="loading"
-                     class="loadingIcon"
-                     data-ng-if="!isLoadedFirst()"
-                />
+                <div class="progress hidden-xs-up" data-ng-class="{'hidden-xs-up': !getProgressValue()}" data-ng-if="!isLoadedFirst()">
+                    <div class="progress-bar" role="progressbar" style="width: {{getProgressValue()}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{getProgressValue()}}%</div>
+                </div>
 
-                <div class="row" data-ng-show="isLoadedFirst()" >
-
+                <div class="row" data-ng-show="isLoadedFirst()">
 
                     <div class="col-xs-12">
                         <div class="input-group">
@@ -49,7 +46,7 @@
 
                 </div>
 
-                <div class="row extendedSearchFilter" data-ng-if="isLoadedFirst()">
+                <div class="row extendedSearchFilter" >
 
                     <div data-ng-show="nodetypesFilterCurrentLabel == 'Alle'" class="col-xs-12">
                         <h3>Kurse und Studiengänge</h3>
@@ -85,7 +82,7 @@
                             </div>
 
 
-                            <div class="input-item-col col-xs-12 col-sm-6">
+                            <div class="input-item-col col-xs-12 col-sm-6"  data-ng-class="{disabled: result.getDistinctCount('targetgroups.Bezeichnung') == 0}">
                                 <label>Zielgruppen</label>
                                 <div class="dropdown-toggle search-result-tags" data-toggle="dropdown" role="button"
                                      aria-haspopup="true" aria-expanded="false"
@@ -410,7 +407,7 @@
         <div class="col-xs-12">
             <div class="row results-table">
                 <div class="col-xs-12"
-                     data-ng-if="isShowingResult()">
+                     data-ng-if="isShowingResult() && isLoadedFirst()">
 
                     <div class="resultsCount">
                         <h3 data-ng-bind="'Treffer '+ result.count()"></h3>

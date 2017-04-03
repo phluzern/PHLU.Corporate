@@ -54,7 +54,7 @@ PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
 
 }]);
 
-PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject','$rootScope', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $rootScope) {
+PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$rootScope', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $rootScope) {
 
 
     var search = new $hybridsearchObject(hybridsearch);
@@ -64,6 +64,8 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     }
 
     $scope.currentYears = {};
+    $scope.isLoadedFirstProgress = 0;
+    $scope.isLoadingFirst = false;
     $scope.result = new $hybridsearchResultsObject();
     $scope.limit = 10;
     $scope.limitChunkSize = 10;
@@ -158,8 +160,57 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     });
 
 
-    $scope.isLoadedFirst = function() {
+    $scope.isLoadedFirst = function () {
         return $rootScope.isLoadedFirst !== undefined ? $rootScope.isLoadedFirst : false;
+    }
+
+    $scope.getProgressValue = function () {
+
+        return $scope.isLoadedFirstProgress <= 100 ? $scope.isLoadedFirstProgress : 100;
+
+    }
+
+    $scope.setIsLoadedFirst = function () {
+
+        $scope.isLoadingFirst = true;
+
+        var t = 1000 * ($scope.nodetypesFilter.length + 1);
+
+        var progressInterval = window.setInterval(function () {
+            $scope.isLoadedFirstProgress = Math.floor($scope.isLoadedFirstProgress + ((100 / (t) / 50) * 50 * 100));
+            window.setTimeout(function () {
+                $scope.$apply();
+            });
+            if ($scope.isLoadedFirstProgress >= 85) {
+                window.clearInterval(progressInterval);
+            }
+
+        }, 100);
+
+        angular.forEach($scope.nodetypesFilter, function (filter, i) {
+            window.setTimeout(function () {
+
+                $scope.setNodetypesFilter(filter);
+                if (i == $scope.nodetypesFilter.length - 1) {
+                    var progressInterval1 = window.setInterval(function () {
+                        $scope.isLoadedFirstProgress++;
+                        if ($scope.isLoadedFirstProgress >= 100) {
+                            window.clearInterval(progressInterval1);
+                            $rootScope.isLoadedFirst = true;
+                            $scope.isLoadedFirstProgress = 100;
+                        }
+                        window.setTimeout(function () {
+                            $scope.$apply();
+                        });
+                    }, 5);
+
+                }
+
+            }, t - (i * 10));
+
+        });
+
+
     }
 
     /**
@@ -347,7 +398,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                 })
 
             }
-
 
 
         }
@@ -717,11 +767,25 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         .setNodeType('nodetypes', $scope)
         .setOrderBy({'*': '-id'})
         .$watch(function (i) {
-            if ($rootScope.isLoadedFirst == false && i.count() > 0) {
-                window.setTimeout(function() {
-                    $rootScope.isLoadedFirst = true;
-                },1000);
+
+            if ($rootScope.isLoadedFirst == false && $scope.isLoadingFirst == false && i.count() > 0) {
+                $scope.setIsLoadedFirst();
             }
+
+            if ($scope.getProgressValue() == 0) {
+                $scope.isLoadedFirstProgress = 1;
+                var progressInterval2 = window.setInterval(function () {
+                    $scope.isLoadedFirstProgress++;
+                    if ($scope.isLoadedFirstProgress >= 10) {
+                        window.clearInterval(progressInterval2);
+                    }
+                    window.setTimeout(function () {
+                        $scope.$apply();
+                    });
+                }, 50);
+            }
+
+
         })
         .$bind('result', $scope);
 

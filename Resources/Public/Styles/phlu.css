@@ -8208,35 +8208,6 @@ html {
   margin-left: 10px;
   margin-top: 47px; }
 
-#searchquicknode {
-  white-space: nowrap;
-  width: auto;
-  display: block;
-  font-size: 80%;
-  padding: 5px;
-  position: absolute;
-  margin-top: -36px;
-  float: right;
-  right: 42px;
-  max-width: 230px;
-  overflow: hidden;
-  height: 32px;
-  padding-top: 10px;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  text-align: right; }
-  #searchquicknode a, #searchquicknode * {
-    color: #707070; }
-
-#searchInput {
-  padding-right: 250px; }
-
-.oneCol #searchInput {
-  padding-right: 90px; }
-
-.oneCol #searchquicknode {
-  max-width: 60px; }
-
 #search .hasSearchResults {
   background-color: rgba(255, 255, 255, 0.98);
   overflow: auto;
@@ -10440,6 +10411,12 @@ body {
         margin: 0; }
     body .all .blackBgFullWidthTabs .nav-pills .nav-item + .nav-item, body .all .blackBgFullWidthContents .nav-pills .nav-item + .nav-item {
       margin-left: 0; }
+    body .all .further-education-special-search .progress-bar {
+      height: 52px;
+      background-color: #818a91;
+      color: white;
+      padding-left: 15px;
+      line-height: 52px; }
     body .all .further-education-special-search .table-responsive .table thead tr th {
       padding: 12px 20px; }
     body .all .further-education-special-search .table-responsive .table tbody tr {
