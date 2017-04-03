@@ -26,12 +26,12 @@ Neos:
           icon: icon-fort-awesome
         teaserEmpty:
           position: 60
-          label: 'Teaser aus bestehenden Inhalten erstellen'
+          label: 'Teaser mit Links auf bestehende Inhalte'
           collapsed: false
           icon: icon-fort
         teaserNewContent:
           position: 60
-          label: 'Teaser aus neuen Inhalten erstellen'
+          label: 'Teaser für News und Veranstaltungen erstellen'
           collapsed: false
           icon: icon-fort
     fusion:

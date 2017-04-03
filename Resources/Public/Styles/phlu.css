@@ -9198,8 +9198,13 @@ body {
           width: 100%; }
         body .all .phlu-teaser .phlu-teaser-body a {
           color: #707070; }
-      body .all .phlu-teaser .event .phlu-teaser-body, body .all .phlu-teaser .publication .phlu-teaser-body, body .all .phlu-teaser .news .phlu-teaser-body {
-        height: 212px; }
+      body .all .phlu-teaser .event.singleitem .phlu-teaser-body, body .all .phlu-teaser .publication.singleitem .phlu-teaser-body, body .all .phlu-teaser .news.singleitem .phlu-teaser-body {
+        padding: 0; }
+        body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody, body .all .phlu-teaser .publication.singleitem .phlu-teaser-body .scrollbody, body .all .phlu-teaser .news.singleitem .phlu-teaser-body .scrollbody {
+          padding: 10px 20px 20px;
+          overflow-y: auto; }
+          body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody p, body .all .phlu-teaser .publication.singleitem .phlu-teaser-body .scrollbody p, body .all .phlu-teaser .news.singleitem .phlu-teaser-body .scrollbody p {
+            margin-bottom: inherit; }
       body .all .phlu-teaser .event .event-date-day {
         float: left;
         padding: 11px;
@@ -9221,7 +9226,6 @@ body {
         body .all .phlu-teaser .event .event-date-month-year-location > div {
           margin-top: 10px; }
       body .all .phlu-teaser .event .phlu-teaser-body {
-        height: 163px;
         padding: 30px 20px 20px; }
       body .all .phlu-teaser .event .phlu-teaser-type {
         background-color: #333333;
@@ -9229,17 +9233,8 @@ body {
         bottom: 0;
         right: 15px;
         left: 15px; }
-      body .all .phlu-teaser .event.singleitem .phlu-teaser-body {
-        padding: 0; }
-        body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody {
-          padding: 10px 20px 20px;
-          overflow-y: auto;
-          height: 162%; }
-          @media (min-width: 1400px) {
-            body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody {
-              height: 175%; } }
-          body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody p {
-            margin-bottom: inherit; }
+      body .all .phlu-teaser .event.singleitem.noimg .phlu-teaser-body .scrollbody {
+        height: 304px; }
       body .all .phlu-teaser .event.listing .phlu-teaser-type {
         background-color: #28818f;
         position: relative;
@@ -9286,6 +9281,13 @@ body {
           float: none; }
       body .all .phlu-teaser .news .phlu-teaser-type {
         background-color: #333333; }
+      body .all .phlu-teaser .news.singleitem .phlu-teaser-body .scrollbody {
+        height: 173px; }
+      body .all .phlu-teaser .news.singleitem .teaser-image {
+        height: 180px;
+        background-size: cover; }
+      body .all .phlu-teaser .news.singleitem.noimg .phlu-teaser-body .scrollbody {
+        height: 353px; }
       body .all .phlu-teaser img {
         width: 100%; }
       body .all .phlu-teaser .content-link-wrapper .content-link-default-file::before {
@@ -9299,7 +9301,9 @@ body {
       body .all .phlu-teaser.carousel .phlu-teaser-body {
         background-color: white; }
       body .all .phlu-teaser.carousel .carousel-indicators {
-        bottom: 0; }
+        bottom: 0;
+        left: 30%;
+        width: 100%; }
         body .all .phlu-teaser.carousel .carousel-indicators li {
           margin-left: 15px;
           margin-right: 15px;
@@ -11058,7 +11062,7 @@ body {
         background-image: url("../Images/ambienteexample.jpg");
         background-repeat: no-repeat;
         padding-bottom: 330px;
-        background-position: bottom center;
+        background-position: center center;
         background-size: cover; }
       body .all .main > .row p, body .all .main > .row-fullwidth-content > .row p {
         margin-bottom: 31px; }

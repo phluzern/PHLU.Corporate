@@ -59,13 +59,8 @@
     </div>
     <f:if condition="{node.properties.teaserImage}">
         <f:then>
-            <media:image image="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}" width="{width}"
-                         maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
-                         allowUpScaling="{allowUpScaling}"/>
+            <div class="teaser-image" style="background-image: url('{media:uri.image(image: node.properties.teaserImage)}')"></div>
         </f:then>
-        <f:else>
-            <img class="img-fluid"
-                 src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/spacer-white-teaser.png')}" alt="spacer">
-        </f:else>
+
     </f:if>
 </div>
