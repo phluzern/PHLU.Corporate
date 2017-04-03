@@ -188,17 +188,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
         var t = 1000 * ($scope.nodetypesFilter.length + 1);
 
-        var progressInterval = window.setInterval(function () {
-            $scope.isLoadedFirstProgress = Math.floor($scope.isLoadedFirstProgress + ((100 / (t) / 50) * 50 * 100));
-            window.setTimeout(function () {
-                $scope.$digest();
-            });
-            if ($scope.isLoadedFirstProgress >= 85) {
-                window.clearInterval(progressInterval);
-            }
-
-        }, 50);
-
         angular.forEach($scope.nodetypesFilter, function (filter, i) {
             window.setTimeout(function () {
 
@@ -206,23 +195,12 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                     $scope.setNodetypesFilter(filter,true);
 
                     if (i == $scope.nodetypesFilter.length - 1) {
-                        var progressInterval1 = window.setInterval(function () {
-                            $scope.isLoadedFirstProgress++;
-                            if ($scope.isLoadedFirstProgress >= 100) {
-                                window.clearInterval(progressInterval1);
-                                $rootScope.isLoadedFirst = true;
-                                $scope.isLoadedFirstProgress = 100;
-                                $scope.setNodetypesFilter($scope.nodetypesFilter[0],true);
-                            }
-                            window.setTimeout(function () {
-                                $scope.$digest();
-                            });
-                        }, 5);
+                        $rootScope.isLoadedFirst = true;
+                        $scope.setNodetypesFilter($scope.nodetypesFilter[0],true);
                     }
 
                 } else {
                         $rootScope.isLoadedFirst = true;
-                        $scope.isLoadedFirstProgress = 100;
                         window.setTimeout(function () {
                             $scope.$digest();
                         })
@@ -797,18 +775,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                 $scope.setIsLoadedFirst();
             }
 
-            if ($scope.getProgressValue() == 0) {
-                $scope.isLoadedFirstProgress = 1;
-                var progressInterval2 = window.setInterval(function () {
-                    $scope.isLoadedFirstProgress++;
-                    if ($scope.isLoadedFirstProgress >= 10) {
-                        window.clearInterval(progressInterval2);
-                    }
-                    window.setTimeout(function () {
-                        $scope.$digest();
-                    });
-                }, 50);
-            }
 
 
         })
