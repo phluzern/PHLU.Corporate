@@ -4,6 +4,7 @@ namespace Phlu\Corporate\Aspects;
 
 
 use Neos\ContentRepository\Domain\Factory\NodeFactory;
+use Neos\ContentRepository\Domain\Model\NodeData;
 use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
 use Neos\ContentRepository\Domain\Service\NodeTypeManager;
 use Neos\Eel\FlowQuery\FlowQuery;
@@ -184,6 +185,7 @@ class TeaserAspect
         $object = $nodeData;
 
 
+
         if (!$object->getProperty('reference')) {
             $context = $this->nodeFactory->createContextMatchingNodeData($object);
             $detailNode = $this->nodeDataRepository->findByNodeIdentifier($detailNodeIdentitifier)->getFirst();
@@ -192,9 +194,24 @@ class TeaserAspect
             }
             $basenode = $this->nodeFactory->createFromNodeData($detailNode, $context);
 
-            $detailNode = $basenode->createNode('news' . $object->getIdentifier(), $this->nodeTypeManager->getNodeType($detailNodeTypeName));
-            $this->persistenceManager->persistAll();
+            $flowQuery = new FlowQuery(array($basenode));
+            $detailNodes = $flowQuery->find('[instanceof '.$detailNodeTypeName.']');
+            
+            $detailNode = null;
+            foreach($detailNodes as $node) {
+                /* @var NodeData $node */
+                if ($detailNode == null && $node->getName() == 'news' . $object->getIdentifier()) {
+                    $detailNode = $node;
+                }
+            }
+
+            if ($detailNode == null) {
+                $detailNode = $basenode->createNode('news' . $object->getIdentifier(), $this->nodeTypeManager->getNodeType($detailNodeTypeName));
+                $this->persistenceManager->persistAll();
+            }
+
             $object->setProperty('reference', $detailNode->getIdentifier());
+
 
         }
 
