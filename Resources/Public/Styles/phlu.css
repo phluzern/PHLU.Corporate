@@ -10197,6 +10197,8 @@ body {
           background-color: #28818f; }
           body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn:hover, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn:hover, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn:hover {
             background-color: #216A75; }
+          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn.share:hover, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn.share:hover, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn.share:hover {
+            background-color: inherit; }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header {
           padding-left: 0; }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table {
@@ -10524,7 +10526,9 @@ body {
         background-color: #545454;
         padding: 5px 10px;
         margin-right: 2px;
-        cursor: pointer; }
+        cursor: pointer;
+        line-height: 31px;
+        white-space: nowrap; }
         body .all .target-group-codes .code:hover {
           color: #5c5c5c;
           background-color: #edeae8; }

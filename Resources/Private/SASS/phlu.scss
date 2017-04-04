@@ -3455,6 +3455,11 @@ body {
                         &:hover {
                           background-color: $petroldark;
                         }
+                        &.share {
+                          &:hover {
+                            background-color: inherit;
+                          }
+                        }
                       }
                     }
                     .mobile-view-columns {
@@ -3956,6 +3961,8 @@ body {
         padding: 5px 10px;
         margin-right: 2px;
         cursor: pointer;
+        line-height: 31px;
+        white-space: nowrap;
         &:hover {
           color: $font-color;
           background-color: $lightgrey;

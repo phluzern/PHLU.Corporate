@@ -413,7 +413,11 @@
                         <h3 data-ng-bind="'Treffer '+ result.count()"></h3>
                     </div>
 
-               
+               <!--         <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
+                             alt="loading"
+                             class="loadingIcon"
+                             data-ng-if="result.isLoading()"
+                        />-->
 
                     <f:render partial="furtherEducationList" arguments="{_all}"/>
 
