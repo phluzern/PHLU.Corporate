@@ -11,6 +11,8 @@
 
 <div {attributes -> f:format.raw()} data-ng-controller="PpdbCtrl">
 
+    <button data-ng-click="snapshot()">snapshot</button>
+
     <f:if condition="{sectionCount}>1">
         <f:then>
             {neos:contentElement.editable(property: 'title', tag: 'h2')}
@@ -27,7 +29,7 @@
         />
     </div>
 
-    <div class="row ppdb-list hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
+    <div class="row ppdb-list " >
 
 
         <f:for each="{projectsByIdentifier}" as="project">
@@ -68,7 +70,8 @@
 
         <div class="col-xs-12">
             <div class="row results-table {f:if(condition:'{bottomCount}>0', then:'hasbottomtext', else:'no')}"
-                 data-ng-show="isShowingResultList()">
+             >
+                <h1>1232</h1>
                 <div class="col-xs-12">
                     <f:if condition="{showSearchInput}">
                         <div class="resultsCount">
