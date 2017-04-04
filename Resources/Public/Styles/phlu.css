@@ -11395,6 +11395,43 @@ body {
         @media (min-width: 992px) {
           body .all .main > .row.bluebg, body .all .main > .row-fullwidth-content > .row.bluebg {
             margin-bottom: 35px; } }
+        body .all .main > .row.bluebg .carousel-inner, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-inner {
+          left: -15px;
+          position: relative; }
+          @media (max-width: 767px) {
+            body .all .main > .row.bluebg .carousel-inner, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-inner {
+              left: inherit;
+              position: inherit; } }
+          body .all .main > .row.bluebg .carousel-inner .carousel-item .row, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-inner .carousel-item .row {
+            margin: 0; }
+            body .all .main > .row.bluebg .carousel-inner .carousel-item .row > div, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-inner .carousel-item .row > div {
+              padding-top: 15px;
+              padding-bottom: 15px; }
+              body .all .main > .row.bluebg .carousel-inner .carousel-item .row > div .singleitem, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-inner .carousel-item .row > div .singleitem {
+                -webkit-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.21);
+                -moz-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.21);
+                box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.21);
+                -moz-transition: all 0.3s;
+                -webkit-transition: all 0.3s;
+                transition: all 0.3s;
+                max-width: 100%; }
+                body .all .main > .row.bluebg .carousel-inner .carousel-item .row > div .singleitem:hover, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-inner .carousel-item .row > div .singleitem:hover {
+                  -webkit-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.05);
+                  -moz-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.05);
+                  box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.05);
+                  -moz-transform: scale(1.04);
+                  -webkit-transform: scale(1.04);
+                  transform: scale(1.04); }
+        body .all .main > .row.bluebg .carousel-control.left, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-control.left {
+          left: -15px; }
+          @media (max-width: 767px) {
+            body .all .main > .row.bluebg .carousel-control.left, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-control.left {
+              left: -8px; } }
+        body .all .main > .row.bluebg .carousel-control.right, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-control.right {
+          right: 15px; }
+          @media (max-width: 767px) {
+            body .all .main > .row.bluebg .carousel-control.right, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-control.right {
+              right: -8px; } }
         body .all .main > .row.bluebg.furtherEducationNews, body .all .main > .row-fullwidth-content > .row.bluebg.furtherEducationNews {
           margin-bottom: 0; }
           body .all .main > .row.bluebg.furtherEducationNews .newsSwitch, body .all .main > .row-fullwidth-content > .row.bluebg.furtherEducationNews .newsSwitch {

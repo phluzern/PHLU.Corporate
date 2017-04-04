@@ -3802,8 +3802,8 @@ body {
           position: absolute;
           margin-top: 5px;
           margin-right: 6px;
-          margin-left:5px;
-          padding-right:10px;
+          margin-left: 5px;
+          padding-right: 10px;
         }
         &.open {
           &.isloading {
@@ -3881,10 +3881,10 @@ body {
                       font-family: $font-family-sans-serif;
                       display: block;
                       position: absolute;
-                      margin-top:-20px;
-                      margin-left:30px;
+                      margin-top: -20px;
+                      margin-left: 30px;
                       background-color: $lightgrey;
-                      padding:5px 10px;
+                      padding: 5px 10px;
                     }
                   }
                 }
@@ -5187,6 +5187,52 @@ body {
           }
           @include media-breakpoint-up("lg") {
             margin-bottom: 35px;
+          }
+          .carousel-inner {
+            left: -15px;
+            position: relative;
+            @include media-breakpoint-down("sm") {
+              left: inherit;
+              position: inherit;
+            }
+            .carousel-item {
+              .row {
+                margin: 0;
+                > div {
+                  padding-top: 15px;
+                  padding-bottom: 15px;
+                  .singleitem {
+                    -webkit-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.21);
+                    -moz-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.21);
+                    box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.21);
+                    -moz-transition: all 0.3s;
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                    max-width: 100%;
+                    &:hover {
+                      -webkit-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.05);
+                      -moz-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.05);
+                      box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.05);
+                      -moz-transform: scale(1.04);
+                      -webkit-transform: scale(1.04);
+                      transform: scale(1.04);
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .carousel-control.left {
+            left: -15px;
+            @include media-breakpoint-down("sm") {
+              left: -8px;
+            }
+          }
+          .carousel-control.right {
+            right: 15px;
+            @include media-breakpoint-down("sm") {
+              right: -8px;
+            }
           }
           // further education aktuelles
           //
