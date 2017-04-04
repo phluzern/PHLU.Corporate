@@ -184,12 +184,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     $scope.setIsLoadedFirst = function () {
 
-console.log(search.$$app.isLoadedFromLocalStorage());
-        if (search.$$app.isLoadedFromLocalStorage()) {
-            $rootScope.isLoadedFirst = true;
-            return true;
-        }
-
         $scope.isLoadingFirst = true;
 
         var t = 1000 * ($scope.nodetypesFilter.length + 1);
@@ -775,7 +769,6 @@ console.log(search.$$app.isLoadedFromLocalStorage());
         .setQuery('searchquery', $scope)
         .setNodeType('nodetypes', $scope)
         .setOrderBy({'*': '-id'})
-        .load()
         .$watch(function (i) {
 
             if ($rootScope.isLoadedFirst == false && $scope.isLoadingFirst == false && i.count() > 0) {
@@ -799,6 +792,13 @@ console.log(search.$$app.isLoadedFromLocalStorage());
 
     search.run();
 
+    $scope.snapshot = function() {
+
+        var snapshot = search.createSnapshot();
+
+        console.log(snapshot.val());
+
+    }
 
 
 
