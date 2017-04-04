@@ -10197,6 +10197,8 @@ body {
           background-color: #28818f; }
           body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn:hover, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn:hover, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn:hover {
             background-color: #216A75; }
+          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn.share:hover, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn.share:hover, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn.share:hover {
+            background-color: inherit; }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header {
           padding-left: 0; }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table {
@@ -10224,8 +10226,6 @@ body {
       body .all .ppdb-list .results-table .table-responsive .table tbody tr.open td, body .all .further-education-list .results-table .table-responsive .table tbody tr.open td, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.open td {
         background-color: #edeae8;
         border-bottom: 0; }
-        body .all .ppdb-list .results-table .table-responsive .table tbody tr.open td:first-child, body .all .further-education-list .results-table .table-responsive .table tbody tr.open td:first-child, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.open td:first-child {
-          font-weight: bold; }
     body .all .blackBgFullWidthTabs .nav-pills {
       margin-bottom: 0; }
       @media (max-width: 767px) {
@@ -10411,15 +10411,20 @@ body {
         margin: 0; }
     body .all .blackBgFullWidthTabs .nav-pills .nav-item + .nav-item, body .all .blackBgFullWidthContents .nav-pills .nav-item + .nav-item {
       margin-left: 0; }
-    body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .dropdown-toggle::after {
-      border: 0; }
-    body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .loadingIcon {
+    body .all .further-education-special-search .nodeTypeSwitcher .loadingIcon {
+      display: none;
       color: white;
       width: 30px;
       height: 30px;
       position: absolute;
       margin-top: 5px;
-      margin-right: 6px; }
+      margin-right: 6px;
+      margin-left: 5px;
+      padding-right: 10px; }
+    body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .dropdown-toggle::after {
+      border-top: 0; }
+    body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .loadingIcon {
+      display: inline-block; }
     body .all .further-education-special-search .extendedSearch button .loadingIcon {
       color: white;
       width: 30px;
@@ -10481,20 +10486,30 @@ body {
                            }
                          }
            */ }
-      body .all .further-education-special-search .table-responsive .table tbody tr td .bookable {
+      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status, body .all .further-education-special-search .table-responsive .table tbody tr td.course-number, body .all .further-education-special-search .table-responsive .table tbody tr td.course-type {
+        width: 100px; }
+      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status .bookable {
         color: green; }
-      body .all .further-education-special-search .table-responsive .table tbody tr td .booked-out {
+      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status .booked-out {
         color: red; }
-      body .all .further-education-special-search .table-responsive .table tbody tr td .booking-info {
+      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status .booking-info {
         color: blue; }
       body .all .further-education-special-search .table-responsive .table tbody tr td.course-number {
         white-space: nowrap; }
       body .all .further-education-special-search .table-responsive .table tbody tr td.course-type {
         white-space: nowrap; }
         body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i:hover::after {
+          font-family: "Droid Sans", sans-serif;
           display: block;
-          content: 'Kurs';
-          position: absolute; }
+          position: absolute;
+          margin-top: -20px;
+          margin-left: 30px;
+          background-color: #edeae8;
+          padding: 5px 10px; }
+        body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-book:hover::after {
+          content: 'Kurs'; }
+        body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-graduation-cap:hover::after {
+          content: 'Studiengang'; }
       body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status {
         text-align: center; }
       body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
@@ -10537,7 +10552,9 @@ body {
         background-color: #545454;
         padding: 5px 10px;
         margin-right: 2px;
-        cursor: pointer; }
+        cursor: pointer;
+        line-height: 31px;
+        white-space: nowrap; }
         body .all .target-group-codes .code:hover {
           color: #5c5c5c;
           background-color: #edeae8; }
@@ -10582,7 +10599,14 @@ body {
             overflow: hidden;
             position: relative;
             height: 320px;
-            background-color: #DAD8E9; }
+            background-color: #DAD8E9;
+            max-width: 100%;
+            -webkit-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.21);
+            -moz-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.21);
+            box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.21);
+            -moz-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s; }
             body .all .infoboxes > div > div > div .box1 .centeredBox, body .all .infoboxes > div > div > div .box2 .centeredBox, body .all .infoboxes > div > div > div .box3 .centeredBox, body .all .infoboxes > div > div > div .box4 .centeredBox, body .all .infoboxes > div > div > div .box5 .centeredBox {
               position: relative;
               top: 6%;
@@ -11378,6 +11402,43 @@ body {
         @media (min-width: 992px) {
           body .all .main > .row.bluebg, body .all .main > .row-fullwidth-content > .row.bluebg {
             margin-bottom: 35px; } }
+        body .all .main > .row.bluebg .carousel-inner, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-inner {
+          left: -15px;
+          position: relative; }
+          @media (max-width: 767px) {
+            body .all .main > .row.bluebg .carousel-inner, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-inner {
+              left: inherit;
+              position: inherit; } }
+          body .all .main > .row.bluebg .carousel-inner .carousel-item .row, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-inner .carousel-item .row {
+            margin: 0; }
+            body .all .main > .row.bluebg .carousel-inner .carousel-item .row > div, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-inner .carousel-item .row > div {
+              padding-top: 15px;
+              padding-bottom: 15px; }
+              body .all .main > .row.bluebg .carousel-inner .carousel-item .row > div .singleitem, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-inner .carousel-item .row > div .singleitem {
+                -webkit-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.21);
+                -moz-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.21);
+                box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.21);
+                -moz-transition: all 0.3s;
+                -webkit-transition: all 0.3s;
+                transition: all 0.3s;
+                max-width: 100%; }
+                body .all .main > .row.bluebg .carousel-inner .carousel-item .row > div .singleitem:hover, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-inner .carousel-item .row > div .singleitem:hover {
+                  -webkit-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.05);
+                  -moz-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.05);
+                  box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.05);
+                  -moz-transform: scale(1.04);
+                  -webkit-transform: scale(1.04);
+                  transform: scale(1.04); }
+        body .all .main > .row.bluebg .carousel-control.left, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-control.left {
+          left: -15px; }
+          @media (max-width: 767px) {
+            body .all .main > .row.bluebg .carousel-control.left, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-control.left {
+              left: -8px; } }
+        body .all .main > .row.bluebg .carousel-control.right, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-control.right {
+          right: 15px; }
+          @media (max-width: 767px) {
+            body .all .main > .row.bluebg .carousel-control.right, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-control.right {
+              right: -8px; } }
         body .all .main > .row.bluebg.furtherEducationNews, body .all .main > .row-fullwidth-content > .row.bluebg.furtherEducationNews {
           margin-bottom: 0; }
           body .all .main > .row.bluebg.furtherEducationNews .newsSwitch, body .all .main > .row-fullwidth-content > .row.bluebg.furtherEducationNews .newsSwitch {

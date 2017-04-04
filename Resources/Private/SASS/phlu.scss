@@ -294,10 +294,22 @@ $input-search-field-big: 50px;
   box-shadow: 16px 0px 53px -1px rgba(0, 0, 0, 0.02);
 }
 
-@mixin carousel-teaser-shadow() {
-  -webkit-box-shadow: 13px 12px 46px 6px rgba(0, 0, 0, 0.09);
-  -moz-box-shadow: 13px 12px 46px 6px rgba(0, 0, 0, 0.09);
-  box-shadow: 13px 12px 46px 6px rgba(0, 0, 0, 0.09);
+@mixin teaser-shadow($opacity) {
+  -webkit-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, $opacity);
+  -moz-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, $opacity);
+  box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, $opacity);
+}
+
+@mixin teaser-transition($seconds) {
+  -moz-transition: all $seconds+s;
+  -webkit-transition: all $seconds+s;
+  transition: all $seconds+s;
+}
+
+@mixin teaser-transform-scale($scale) {
+  -moz-transform: scale($scale);
+  -webkit-transform: scale($scale);
+  transform: scale($scale);
 }
 
 // wrap too long words in headers
@@ -1844,7 +1856,6 @@ body {
       }
 
       .event, .publication, .news {
-        //@include carousel-teaser-shadow;
         &.singleitem {
           .phlu-teaser-body {
             padding: 0;
@@ -3436,6 +3447,7 @@ body {
                     }
                     @include media-breakpoint-up("md") {
                       border-left: 0;
+
                     }
                   }
                 }
@@ -3453,6 +3465,11 @@ body {
                         background-color: $petrol;
                         &:hover {
                           background-color: $petroldark;
+                        }
+                        &.share {
+                          &:hover {
+                            background-color: inherit;
+                          }
                         }
                       }
                     }
@@ -3503,9 +3520,6 @@ body {
                   td {
                     background-color: $lightgrey;
                     border-bottom: 0;
-                    &:first-child {
-                      font-weight: bold;
-                    }
                   }
                 }
               }
@@ -3791,20 +3805,27 @@ body {
     //
     .further-education-special-search {
       .nodeTypeSwitcher {
+        .loadingIcon {
+          display: none;
+          color: white;
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          margin-top: 5px;
+          margin-right: 6px;
+          margin-left: 5px;
+          padding-right: 10px;
+        }
         &.open {
           &.isloading {
             .dropdown-toggle {
               &::after {
-                border: 0;
+                border-top: 0;
+
               }
             }
             .loadingIcon {
-              color: white;
-              width: 30px;
-              height: 30px;
-              position: absolute;
-              margin-top: 5px;
-              margin-right: 6px;
+              display: inline-block;
             }
           }
         }
@@ -3847,7 +3868,10 @@ body {
           }
           tbody {
             tr {
-              td {
+              td.booking-status, td.course-number, td.course-type {
+                width: 100px;
+              }
+              td.booking-status {
                 .bookable {
                   color: green;
                 }
@@ -3865,12 +3889,29 @@ body {
                 i {
                   &:hover {
                     &::after {
+                      font-family: $font-family-sans-serif;
                       display: block;
-                      content: 'Kurs';
                       position: absolute;
+                      margin-top: -20px;
+                      margin-left: 30px;
+                      background-color: $lightgrey;
+                      padding: 5px 10px;
                     }
                   }
-
+                }
+                i.fa-book {
+                  &:hover {
+                    &::after {
+                      content: 'Kurs';
+                    }
+                  }
+                }
+                i.fa-graduation-cap {
+                  &:hover {
+                    &::after {
+                      content: 'Studiengang';
+                    }
+                  }
                 }
                 white-space: nowrap;
               }
@@ -3983,6 +4024,8 @@ body {
         padding: 5px 10px;
         margin-right: 2px;
         cursor: pointer;
+        line-height: 31px;
+        white-space: nowrap;
         &:hover {
           color: $font-color;
           background-color: $lightgrey;
@@ -4033,12 +4076,14 @@ body {
             }
           }
           color: $black;
-
           .box1, .box2, .box3, .box4, .box5 {
             overflow: hidden;
             position: relative;
             height: 320px;
             background-color: $lightgreyblue;
+            max-width: 100%;
+            @include teaser-shadow(0.21);
+            @include teaser-transition(0.3);
             .centeredBox {
               position: relative;
               top: 6%;
@@ -5155,6 +5200,44 @@ body {
           }
           @include media-breakpoint-up("lg") {
             margin-bottom: 35px;
+          }
+          .carousel-inner {
+            left: -15px;
+            position: relative;
+            @include media-breakpoint-down("sm") {
+              left: inherit;
+              position: inherit;
+            }
+            .carousel-item {
+              .row {
+                margin: 0;
+                > div {
+                  padding-top: 15px;
+                  padding-bottom: 15px;
+                  .singleitem {
+                    @include teaser-shadow(0.21);
+                    @include teaser-transition(0.3);
+                    max-width: 100%;
+                    &:hover {
+                      @include teaser-shadow(0.05);
+                      @include teaser-transform-scale(1.04);
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .carousel-control.left {
+            left: -15px;
+            @include media-breakpoint-down("sm") {
+              left: -8px;
+            }
+          }
+          .carousel-control.right {
+            right: 15px;
+            @include media-breakpoint-down("sm") {
+              right: -8px;
+            }
           }
           // further education aktuelles
           //

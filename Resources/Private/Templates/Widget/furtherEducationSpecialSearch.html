@@ -45,7 +45,7 @@
 
                         <div class="extendedSearch" data-ng-show="!result.isLoading()">
 
-                            <button type="button" class="btn btn-default" data-ng-click="setUserExtendedSearch()"
+                            <button ng-cloak type="button" class="btn btn-default" data-ng-click="setUserExtendedSearch()"
                                     data-ng-class="{isloading:isUserExtendedSearch && !isLoadedFirst(), disabled: result.isLoading() === true || (isUserChangedNodeType && !isLoadedFirst())}">
                                 Erweiterte Suche
                                 <span class="oi oi-x" data-ng-if="isUserExtendedSearch && isLoadedFirst()"></span>
@@ -57,7 +57,7 @@
                                 />
                                 <span class="count" data-ng-bind="countCurrentFilters(nodetypesFilterCurrentCategory)"
                                       data-ng-show="countCurrentFilters(nodetypesFilterCurrentCategory) > 0"></span>
-                            </button>
+                            </buttonng-cloak>
 
                         </div>
                     </div><!-- /.col-lg-6 -->
@@ -436,16 +436,15 @@
                      data-ng-if="isShowingResult()">
 
 
-                    <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
+                    <!--<img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
                          alt="loading"
                          class="loadingIcon"
                          data-ng-if="!isLoadedFirst()"
-                    />
+                    />-->
 
                     <div class="resultsCount">
                         <h3 data-ng-bind="'Treffer '+ result.count()"></h3>
                     </div>
-
 
                     <f:render partial="furtherEducationList" arguments="{_all}"/>
 
