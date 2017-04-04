@@ -17,6 +17,9 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.showResultsListOnDemand = false;
     $scope.isopen = 0;
 
+
+
+
     $scope.clearFilter = function(filtertype) {
         $scope[filtertype] = {};
     };
@@ -180,8 +183,14 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         .addPropertyFilter('title', '', null, true)
         .setNodeType('phlu-neos-nodetypes-project')
         .$bind('result', $scope)
+        .load()
         .run();
 
+    $scope.snapshot = function() {
+
+        $scope.list.save();
+
+    }
 
 }]);
 
