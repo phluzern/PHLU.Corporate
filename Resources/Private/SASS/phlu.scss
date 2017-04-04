@@ -294,10 +294,22 @@ $input-search-field-big: 50px;
   box-shadow: 16px 0px 53px -1px rgba(0, 0, 0, 0.02);
 }
 
-@mixin carousel-teaser-shadow() {
-  -webkit-box-shadow: 13px 12px 46px 6px rgba(0, 0, 0, 0.09);
-  -moz-box-shadow: 13px 12px 46px 6px rgba(0, 0, 0, 0.09);
-  box-shadow: 13px 12px 46px 6px rgba(0, 0, 0, 0.09);
+@mixin teaser-shadow($opacity) {
+  -webkit-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, $opacity);
+  -moz-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, $opacity);
+  box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, $opacity);
+}
+
+@mixin teaser-transition($seconds) {
+  -moz-transition: all $seconds+s;
+  -webkit-transition: all $seconds+s;
+  transition: all $seconds+s;
+}
+
+@mixin teaser-transform-scale($scale) {
+  -moz-transform: scale($scale);
+  -webkit-transform: scale($scale);
+  transform: scale($scale);
 }
 
 // wrap too long words in headers
@@ -1844,7 +1856,6 @@ body {
       }
 
       .event, .publication, .news {
-        //@include carousel-teaser-shadow;
         &.singleitem {
           .phlu-teaser-body {
             padding: 0;
@@ -4065,12 +4076,14 @@ body {
             }
           }
           color: $black;
-
           .box1, .box2, .box3, .box4, .box5 {
             overflow: hidden;
             position: relative;
             height: 320px;
             background-color: $lightgreyblue;
+            max-width: 100%;
+            @include teaser-shadow(0.21);
+            @include teaser-transition(0.3);
             .centeredBox {
               position: relative;
               top: 6%;
@@ -5202,20 +5215,12 @@ body {
                   padding-top: 15px;
                   padding-bottom: 15px;
                   .singleitem {
-                    -webkit-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.21);
-                    -moz-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.21);
-                    box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.21);
-                    -moz-transition: all 0.3s;
-                    -webkit-transition: all 0.3s;
-                    transition: all 0.3s;
+                    @include teaser-shadow(0.21);
+                    @include teaser-transition(0.3);
                     max-width: 100%;
                     &:hover {
-                      -webkit-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.05);
-                      -moz-box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.05);
-                      box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.05);
-                      -moz-transform: scale(1.04);
-                      -webkit-transform: scale(1.04);
-                      transform: scale(1.04);
+                      @include teaser-shadow(0.05);
+                      @include teaser-transform-scale(1.04);
                     }
                   }
                 }
