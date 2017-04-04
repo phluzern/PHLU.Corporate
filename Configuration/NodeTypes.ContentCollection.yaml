@@ -52,6 +52,7 @@
       'Phlu.Corporate:Text': true
       'Phlu.Corporate:Headline': true
       'Phlu.Corporate:Image': true
+      'Phlu.Qmpilot.NodeTypes:File': true
 
 'Phlu.Corporate:ContentCollection.SectionCenterLinks':
   superTypes:
