@@ -3436,6 +3436,7 @@ body {
                     }
                     @include media-breakpoint-up("md") {
                       border-left: 0;
+
                     }
                   }
                 }
@@ -3508,9 +3509,6 @@ body {
                   td {
                     background-color: $lightgrey;
                     border-bottom: 0;
-                    &:first-child {
-                      font-weight: bold;
-                    }
                   }
                 }
               }
@@ -3796,20 +3794,27 @@ body {
     //
     .further-education-special-search {
       .nodeTypeSwitcher {
+        .loadingIcon {
+          display: none;
+          color: white;
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          margin-top: 5px;
+          margin-right: 6px;
+          margin-left:5px;
+          padding-right:10px;
+        }
         &.open {
           &.isloading {
             .dropdown-toggle {
               &::after {
-                border: 0;
+                border-top: 0;
+
               }
             }
             .loadingIcon {
-              color: white;
-              width: 30px;
-              height: 30px;
-              position: absolute;
-              margin-top: 5px;
-              margin-right: 6px;
+              display: inline-block;
             }
           }
         }
@@ -3852,7 +3857,10 @@ body {
           }
           tbody {
             tr {
-              td {
+              td.booking-status, td.course-number, td.course-type {
+                width: 100px;
+              }
+              td.booking-status {
                 .bookable {
                   color: green;
                 }
@@ -3870,12 +3878,29 @@ body {
                 i {
                   &:hover {
                     &::after {
+                      font-family: $font-family-sans-serif;
                       display: block;
-                      content: 'Kurs';
                       position: absolute;
+                      margin-top:-20px;
+                      margin-left:30px;
+                      background-color: $lightgrey;
+                      padding:5px 10px;
                     }
                   }
-
+                }
+                i.fa-book {
+                  &:hover {
+                    &::after {
+                      content: 'Kurs';
+                    }
+                  }
+                }
+                i.fa-graduation-cap {
+                  &:hover {
+                    &::after {
+                      content: 'Studiengang';
+                    }
+                  }
                 }
                 white-space: nowrap;
               }

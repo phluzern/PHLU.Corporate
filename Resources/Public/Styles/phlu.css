@@ -10226,8 +10226,6 @@ body {
       body .all .ppdb-list .results-table .table-responsive .table tbody tr.open td, body .all .further-education-list .results-table .table-responsive .table tbody tr.open td, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.open td {
         background-color: #edeae8;
         border-bottom: 0; }
-        body .all .ppdb-list .results-table .table-responsive .table tbody tr.open td:first-child, body .all .further-education-list .results-table .table-responsive .table tbody tr.open td:first-child, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.open td:first-child {
-          font-weight: bold; }
     body .all .blackBgFullWidthTabs .nav-pills {
       margin-bottom: 0; }
       @media (max-width: 767px) {
@@ -10413,15 +10411,20 @@ body {
         margin: 0; }
     body .all .blackBgFullWidthTabs .nav-pills .nav-item + .nav-item, body .all .blackBgFullWidthContents .nav-pills .nav-item + .nav-item {
       margin-left: 0; }
-    body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .dropdown-toggle::after {
-      border: 0; }
-    body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .loadingIcon {
+    body .all .further-education-special-search .nodeTypeSwitcher .loadingIcon {
+      display: none;
       color: white;
       width: 30px;
       height: 30px;
       position: absolute;
       margin-top: 5px;
-      margin-right: 6px; }
+      margin-right: 6px;
+      margin-left: 5px;
+      padding-right: 10px; }
+    body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .dropdown-toggle::after {
+      border-top: 0; }
+    body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .loadingIcon {
+      display: inline-block; }
     body .all .further-education-special-search .extendedSearch button .loadingIcon {
       color: white;
       width: 30px;
@@ -10483,20 +10486,30 @@ body {
                            }
                          }
            */ }
-      body .all .further-education-special-search .table-responsive .table tbody tr td .bookable {
+      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status, body .all .further-education-special-search .table-responsive .table tbody tr td.course-number, body .all .further-education-special-search .table-responsive .table tbody tr td.course-type {
+        width: 100px; }
+      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status .bookable {
         color: green; }
-      body .all .further-education-special-search .table-responsive .table tbody tr td .booked-out {
+      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status .booked-out {
         color: red; }
-      body .all .further-education-special-search .table-responsive .table tbody tr td .booking-info {
+      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status .booking-info {
         color: blue; }
       body .all .further-education-special-search .table-responsive .table tbody tr td.course-number {
         white-space: nowrap; }
       body .all .further-education-special-search .table-responsive .table tbody tr td.course-type {
         white-space: nowrap; }
         body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i:hover::after {
+          font-family: "Droid Sans", sans-serif;
           display: block;
-          content: 'Kurs';
-          position: absolute; }
+          position: absolute;
+          margin-top: -20px;
+          margin-left: 30px;
+          background-color: #edeae8;
+          padding: 5px 10px; }
+        body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-book:hover::after {
+          content: 'Kurs'; }
+        body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-graduation-cap:hover::after {
+          content: 'Studiengang'; }
       body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status {
         text-align: center; }
       body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
