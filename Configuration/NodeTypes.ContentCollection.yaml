@@ -37,6 +37,7 @@
       'Phlu.Corporate:Image': true
       'Phlu.Corporate:CarouselImage': false
       'Phlu.Corporate:Event': true
+      'Phlu.Corporate:NewsItem': true
       'Phlu.Corporate:Contacts': true
       'Phlu.Qmpilot.NodeTypes:File': true
       'Phlu.Corporate:Table': true

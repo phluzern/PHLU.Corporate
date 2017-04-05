@@ -651,7 +651,9 @@ html {
     font-family: FontAwesome;
   }
 }
-
+//
+// additional icons for backend dialogs
+//
 .icon-news {
   &::before {
     content: '\f1ea';
@@ -667,6 +669,12 @@ html {
 .icon-accordion {
   &::before {
     content: '\f039';
+  }
+}
+
+.icon-graduation {
+  &::before {
+    content: '\f19d';
   }
 }
 
@@ -4474,10 +4482,6 @@ body {
         color: $grey;
       }
       > .row {
-        &.first {
-          padding-top: 10px;
-        }
-        padding-top: 30px;
         .initial, .date-location-title, .preview-image, .date-title-preview-text {
           float: left;
         }
@@ -4583,7 +4587,7 @@ body {
     }
     .flowtext-phlu-news {
       > div {
-        padding-bottom: 60px;
+        padding-bottom: 30px;
       }
       > .row {
         .initial {
@@ -4601,7 +4605,7 @@ body {
     }
     .flowtext-phlu-event {
       > .row {
-        padding-bottom: 60px;
+        padding-bottom: 30px;
         .initial {
           background-color: $petrol;
         }

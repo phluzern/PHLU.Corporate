@@ -31,7 +31,7 @@ Neos:
           icon: icon-fort
         teaserNewContent:
           position: 60
-          label: 'Teaser für News und Veranstaltungen erstellen'
+          label: 'News und Veranstaltungen erstellen'
           collapsed: false
           icon: icon-fort
     fusion:

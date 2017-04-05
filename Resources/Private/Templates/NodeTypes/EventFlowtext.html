@@ -1,0 +1,68 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+{namespace uri=Phlu\Corporate\ViewHelpers\Uri}
+
+
+<div class="row ">
+    <div class="col-xs-12 flowtext-phlu-event">
+        <div class="row {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}">
+            <div class=" col-xs-12">
+                <f:if condition="{eventType} == 'isEvent'">
+                    <div class="initial">
+                        <f:format.date format="d">{fromDate}</f:format.date>.
+                    </div>
+                </f:if>
+                <f:if condition="{eventType} == 'isExhibition'">
+                    <div class="initial exhibition">
+                        A
+                        <div class="description">
+                            Ausstellung
+                        </div>
+                    </div>
+                </f:if>
+                <f:if condition="{eventType} == 'isMeeting'">
+                    <div class="initial meeting">
+                        T
+                        <div class="description">
+                            Tagung
+                        </div>
+                    </div>
+                </f:if>
+
+                <div class="date-location-title">
+
+                    <f:if condition="{eventType} == 'isExhibition'">
+                        <f:then>
+                            <b>
+                                <f:format.date format="d. F Y">{fromDate}</f:format.date>
+                                -
+                                <f:format.date format="d. F Y">{toDate}</f:format.date>
+                            </b>
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{eventType} == 'isMeeting'">
+                                <f:then>
+                                    <b>
+                                        <f:format.date format="d. F Y">{fromDate}</f:format.date>
+                                        -
+                                        <f:format.date format="d. F Y">{toDate}</f:format.date>
+                                    </b>
+                                </f:then>
+                                <f:else>
+                                    <b>
+                                        <f:format.date format="F Y">{fromDate}</f:format.date>
+                                    </b>
+                                </f:else>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+                    / {location}
+                    <br/>
+                    <a data-gentics-aloha-repository="node-repository" href="{uri:node(node: reference)}">{teaserHeadline}</a>
+                    ... <span class="more-link oi oi-caret-right"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

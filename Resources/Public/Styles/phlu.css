@@ -8369,6 +8369,9 @@ html {
 .icon-accordion::before {
   content: '\f039'; }
 
+.icon-graduation::before {
+  content: '\f19d'; }
+
 body.neos-backend button[data-original-title='Phlu.Corporate:Page.FurtherEducation.Detail.Module'],
 body.neos-backend button[data-original-title='Phlu.Corporate:Page.FurtherEducation.Detail.Study'] {
   display: none; }
@@ -10796,88 +10799,84 @@ body {
           background-color: #216A75; }
     body .all .flowtext-phlu-event a, body .all .flowtext-phlu-event a:hover, body .all .flowtext-phlu-news a, body .all .flowtext-phlu-news a:hover {
       color: #707070; }
-    body .all .flowtext-phlu-event > .row, body .all .flowtext-phlu-news > .row {
-      padding-top: 30px; }
-      body .all .flowtext-phlu-event > .row.first, body .all .flowtext-phlu-news > .row.first {
-        padding-top: 10px; }
-      body .all .flowtext-phlu-event > .row .initial, body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-event > .row .preview-image, body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .initial, body .all .flowtext-phlu-news > .row .date-location-title, body .all .flowtext-phlu-news > .row .preview-image, body .all .flowtext-phlu-news > .row .date-title-preview-text {
-        float: left; }
-      body .all .flowtext-phlu-event > .row .initial, body .all .flowtext-phlu-news > .row .initial {
-        width: 70px;
-        height: 70px;
-        color: white;
-        font-size: 28px;
-        padding: 15px 15px; }
-        body .all .flowtext-phlu-event > .row .initial.exhibition, body .all .flowtext-phlu-news > .row .initial.exhibition {
-          font-size: 40px;
-          padding: 4px 0 0 23px; }
-          body .all .flowtext-phlu-event > .row .initial.exhibition .description, body .all .flowtext-phlu-news > .row .initial.exhibition .description {
-            position: absolute;
-            font-size: 10px;
-            top: 50px;
-            left: 24px; }
-        body .all .flowtext-phlu-event > .row .initial.meeting, body .all .flowtext-phlu-news > .row .initial.meeting {
-          font-size: 38px;
-          padding: 4px 0 0 25px; }
-          body .all .flowtext-phlu-event > .row .initial.meeting .description, body .all .flowtext-phlu-news > .row .initial.meeting .description {
-            position: absolute;
-            font-size: 10px;
-            top: 50px;
-            left: 33px; }
-      body .all .flowtext-phlu-event > .row .preview-image img, body .all .flowtext-phlu-news > .row .preview-image img {
-        width: 150px;
-        height: 150px; }
-        @media (max-width: 543px) {
-          body .all .flowtext-phlu-event > .row .preview-image img, body .all .flowtext-phlu-news > .row .preview-image img {
-            width: inherit;
-            height: auto; } }
+    body .all .flowtext-phlu-event > .row .initial, body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-event > .row .preview-image, body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .initial, body .all .flowtext-phlu-news > .row .date-location-title, body .all .flowtext-phlu-news > .row .preview-image, body .all .flowtext-phlu-news > .row .date-title-preview-text {
+      float: left; }
+    body .all .flowtext-phlu-event > .row .initial, body .all .flowtext-phlu-news > .row .initial {
+      width: 70px;
+      height: 70px;
+      color: white;
+      font-size: 28px;
+      padding: 15px 15px; }
+      body .all .flowtext-phlu-event > .row .initial.exhibition, body .all .flowtext-phlu-news > .row .initial.exhibition {
+        font-size: 40px;
+        padding: 4px 0 0 23px; }
+        body .all .flowtext-phlu-event > .row .initial.exhibition .description, body .all .flowtext-phlu-news > .row .initial.exhibition .description {
+          position: absolute;
+          font-size: 10px;
+          top: 50px;
+          left: 24px; }
+      body .all .flowtext-phlu-event > .row .initial.meeting, body .all .flowtext-phlu-news > .row .initial.meeting {
+        font-size: 38px;
+        padding: 4px 0 0 25px; }
+        body .all .flowtext-phlu-event > .row .initial.meeting .description, body .all .flowtext-phlu-news > .row .initial.meeting .description {
+          position: absolute;
+          font-size: 10px;
+          top: 50px;
+          left: 33px; }
+    body .all .flowtext-phlu-event > .row .preview-image img, body .all .flowtext-phlu-news > .row .preview-image img {
+      width: 150px;
+      height: 150px; }
       @media (max-width: 543px) {
-        body .all .flowtext-phlu-event > .row .preview-image, body .all .flowtext-phlu-news > .row .preview-image {
-          float: none; } }
-      body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-title-preview-text {
-        padding-left: 20px;
-        overflow: hidden; }
-        body .all .flowtext-phlu-event > .row .date-location-title a, body .all .flowtext-phlu-event > .row .date-title-preview-text a, body .all .flowtext-phlu-news > .row .date-location-title a, body .all .flowtext-phlu-news > .row .date-title-preview-text a {
-          font-size: 20px; }
-        body .all .flowtext-phlu-event > .row .date-location-title .more-link, body .all .flowtext-phlu-event > .row .date-title-preview-text .more-link, body .all .flowtext-phlu-news > .row .date-location-title .more-link, body .all .flowtext-phlu-news > .row .date-title-preview-text .more-link {
-          padding-left: 5px;
-          font-size: 14px; }
-      body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
-        max-width: 80%; }
-        @media (min-width: 1600px) {
-          body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
-            max-width: 92%; } }
-        @media (min-width: 1400px) {
-          body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
-            max-width: 91%; } }
-        @media (min-width: 768px) {
-          body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
-            max-width: 90%; } }
-        @media (min-width: 544px) {
-          body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
-            max-width: 86%; } }
+        body .all .flowtext-phlu-event > .row .preview-image img, body .all .flowtext-phlu-news > .row .preview-image img {
+          width: inherit;
+          height: auto; } }
+    @media (max-width: 543px) {
+      body .all .flowtext-phlu-event > .row .preview-image, body .all .flowtext-phlu-news > .row .preview-image {
+        float: none; } }
+    body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-title-preview-text {
+      padding-left: 20px;
+      overflow: hidden; }
+      body .all .flowtext-phlu-event > .row .date-location-title a, body .all .flowtext-phlu-event > .row .date-title-preview-text a, body .all .flowtext-phlu-news > .row .date-location-title a, body .all .flowtext-phlu-news > .row .date-title-preview-text a {
+        font-size: 20px; }
+      body .all .flowtext-phlu-event > .row .date-location-title .more-link, body .all .flowtext-phlu-event > .row .date-title-preview-text .more-link, body .all .flowtext-phlu-news > .row .date-location-title .more-link, body .all .flowtext-phlu-news > .row .date-title-preview-text .more-link {
+        padding-left: 5px;
+        font-size: 14px; }
+    body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
+      max-width: 80%; }
       @media (min-width: 1600px) {
-        body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
-          max-width: 83%; } }
-      @media (min-width: 992px) {
-        body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
-          max-width: 80%; } }
+        body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
+          max-width: 92%; } }
+      @media (min-width: 1400px) {
+        body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
+          max-width: 91%; } }
       @media (min-width: 768px) {
-        body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
-          max-width: 79%; } }
+        body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
+          max-width: 90%; } }
       @media (min-width: 544px) {
-        body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
-          max-width: 70%; } }
-      @media (max-width: 543px) {
-        body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
-          max-width: 100%;
-          padding-left: 0;
-          padding-top: 30px;
-          padding-bottom: 30px; } }
-      body .all .flowtext-phlu-event > .row .date-title-preview-text div, body .all .flowtext-phlu-news > .row .date-title-preview-text div {
-        padding-top: 15px; }
+        body .all .flowtext-phlu-event > .row .date-location-title, body .all .flowtext-phlu-news > .row .date-location-title {
+          max-width: 86%; } }
+    @media (min-width: 1600px) {
+      body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
+        max-width: 83%; } }
+    @media (min-width: 992px) {
+      body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
+        max-width: 80%; } }
+    @media (min-width: 768px) {
+      body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
+        max-width: 79%; } }
+    @media (min-width: 544px) {
+      body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
+        max-width: 70%; } }
+    @media (max-width: 543px) {
+      body .all .flowtext-phlu-event > .row .date-title-preview-text, body .all .flowtext-phlu-news > .row .date-title-preview-text {
+        max-width: 100%;
+        padding-left: 0;
+        padding-top: 30px;
+        padding-bottom: 30px; } }
+    body .all .flowtext-phlu-event > .row .date-title-preview-text div, body .all .flowtext-phlu-news > .row .date-title-preview-text div {
+      padding-top: 15px; }
     body .all .flowtext-phlu-news > div {
-      padding-bottom: 60px; }
+      padding-bottom: 30px; }
     body .all .flowtext-phlu-news > .row .initial {
       background-color: #91a103; }
     body .all .flowtext-phlu-news.detailView .full-date {
@@ -10885,7 +10884,7 @@ body {
     body .all .flowtext-phlu-news.detailView h2 {
       margin: 32px 0; }
     body .all .flowtext-phlu-event > .row {
-      padding-bottom: 60px; }
+      padding-bottom: 30px; }
       body .all .flowtext-phlu-event > .row .initial {
         background-color: #28818f; }
     body .all .table-responsive {

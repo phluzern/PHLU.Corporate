@@ -1,0 +1,31 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+{namespace uri=Phlu\Corporate\ViewHelpers\Uri}
+
+<div class="row ">
+    <div class="col-xs-12 flowtext-phlu-news {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="preview-image">
+                    <media:image image="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}"
+                                 width="150"
+                                 height="150"
+                                 allowUpScaling="{allowUpScaling}" allowCropping="true"/>
+                </div>
+                <div class="date-title-preview-text">
+                    <b>
+                        <f:format.date format="d. F Y">{date}</f:format.date>
+                    </b>
+                    <br/>
+                    <a href="{uri:node(node: reference)}" title="News">{teaserHeadline}</a>
+                    <br>
+                    <div>
+                        <f:format.crop maxCharacters="240">{teaserText}</f:format.crop> <i
+                            class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
