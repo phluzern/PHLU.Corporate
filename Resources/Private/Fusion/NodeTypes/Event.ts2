@@ -4,8 +4,11 @@ prototype(Phlu.Corporate:Event) < prototype(Phlu.Corporate:Content) {
     templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Event.html'
     reference = ${q(node).property('reference')}
     location = ${q(node).property('location')}
-    date = ${q(node).property('date')}
-    time = ${q(node).property('time')}
+    fromDate = ${q(node).property('fromDate')}
+    fromTime = ${q(node).property('fromTime')}
+    toDate = ${q(node).property('toDate')}
+    toTime = ${q(node).property('toTime')}
+    eventType = ${q(node).property('eventType')}
     ishiddendetaillink = ${q(node).property('ishiddendetaillink')}
     renderer = Neos.Neos:ContentCase
 
