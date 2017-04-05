@@ -792,15 +792,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     search.run();
 
-    $scope.snapshot = function() {
-
-        var snapshot = search.createSnapshot();
-
-        console.log(snapshot.val());
-
-    }
-
-
 
 }]);
 
