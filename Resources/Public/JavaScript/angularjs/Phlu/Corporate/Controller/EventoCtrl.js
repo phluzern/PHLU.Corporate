@@ -180,6 +180,9 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     $scope.setUserExtendedSearch = function () {
         $scope.isUserExtendedSearch = true;
+        if ($rootScope.isLoadedFirst == false) {
+            $scope.setIsLoadedFirst();
+        }
     }
 
     $scope.setIsLoadedFirst = function () {
