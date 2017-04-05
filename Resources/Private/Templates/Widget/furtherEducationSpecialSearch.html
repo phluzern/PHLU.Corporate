@@ -29,9 +29,9 @@
 
                                 <ul class="dropdown-menu">
                                     <li data-ng-if="!isLoadedFirst()"/>
-                                    <li data-ng-if="isLoadedFirst()" href="#" data-ng-repeat="f in nodetypesFilter"
+                                    <li data-ng-if="isLoadedFirst()" data-ng-repeat="f in nodetypesFilter"
                                         data-ng-click="setNodetypesFilter(f);">
-                                        <a href="#" data-ng-bind="f.label"></a>
+                                        <a href="javascript:void(0);" data-ng-bind="f.label"></a>
                                     </li>
                                 </ul>
 
@@ -83,14 +83,14 @@
                                     <div class="tagFadeOutBg"></div>
                                     <div class="deleteDropdownSelectionButton"
                                          data-ng-show="countCurrentFilters('Alle','year') > 0">
-                                        <a class="preventDefault" href="#" data-ng-click="resetFilter('Alle','year')">
+                                        <a class="preventDefault" href="javascript:void(0)" data-ng-click="resetFilter('Alle','year')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
                                     </div>
                                     <ul class="dropdown-menu">
                                         <li value=""
                                             data-ng-repeat="year in result.getDistinct('furthereducation-years.Year.*',false)  | orderObjectBy:'value'">
-                                            <a href="#" data-ng-click="toggleFilterSelection(year,'Alle','year')">
+                                            <a href="javascript:void(0)" data-ng-click="toggleFilterSelection(year,'Alle','year')">
                                                 <i class="fa " aria-hidden="true"
                                                    data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
                                                 <span data-ng-bind="year.value"></span>
@@ -112,7 +112,7 @@
                                     <div class="tagFadeOutBg"></div>
                                     <div class="deleteDropdownSelectionButton"
                                          data-ng-show="countCurrentFilters('Alle','targetgroups') > 0">
-                                        <a class="preventDefault" href="#"
+                                        <a class="preventDefault" href="javascript:void(0)"
                                            data-ng-click="resetFilter('Alle','targetgroups')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
@@ -120,7 +120,7 @@
                                     <ul class="dropdown-menu">
                                         <li value=""
                                             data-ng-repeat="targetgroup in result.getDistinct('targetgroups.Bezeichnung')  | orderObjectBy:'value'">
-                                            <a href="#"
+                                            <a href="javascript:void(0)"
                                                data-ng-click="toggleFilterSelection(targetgroup,'Alle','targetgroups')">
                                                 <i class="fa " aria-hidden="true"
                                                    data-ng-class="{'fa-check-square-o': isFilterValueSelected(targetgroup.value,filters.targetgroups), 'fa-square-o': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"></i>
@@ -160,7 +160,7 @@
                                     <div class="tagFadeOutBg"></div>
                                     <div class="deleteDropdownSelectionButton"
                                          data-ng-show="countCurrentFilters('Studiengang','year') > 0">
-                                        <a class="preventDefault" href="#"
+                                        <a class="preventDefault" href="javascript:void(0)"
                                            data-ng-click="resetFilter('Studiengang','year')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
@@ -168,7 +168,7 @@
                                     <ul class="dropdown-menu">
                                         <li value=""
                                             data-ng-repeat="year in result.getDistinct('study-furthereducation-years.Year.*', false)  | orderObjectBy:'value'">
-                                            <a href="#"
+                                            <a href="javascript:void(0)"
                                                data-ng-click="toggleFilterSelection(year,'Studiengang','year')">
                                                 <i class="fa " aria-hidden="true"
                                                    data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
@@ -184,7 +184,7 @@
                                          aria-haspopup="true" aria-expanded="false"
                                          data-ng-class="{'with-delete-btn': countCurrentFilters('Studiengang','graduation') > 0}">
                                         <span data-ng-bind="getFilterSelectedPreview(filters.graduation,'Studiengang')"></span>
-                                        <!--<a href="#" class="search-result-tag" data-ng-repeat="item in filters.graduation.selected" data-ng-show="item.state">-->
+                                        <!--<a href="javascript:void(0)" class="search-result-tag" data-ng-repeat="item in filters.graduation.selected" data-ng-show="item.state">-->
                                         <!--<span data-ng-bind="item.value"></span>-->
                                         <!--&lt;!&ndash;<i class="fa fa-times clickable" aria-hidden="true"></i>&ndash;&gt;-->
                                         <!--</a>-->
@@ -192,7 +192,7 @@
                                     <div class="tagFadeOutBg"></div>
                                     <div class="deleteDropdownSelectionButton"
                                          data-ng-show="countCurrentFilters('Studiengang','graduation') > 0">
-                                        <a class="preventDefault" href="#"
+                                        <a class="preventDefault" href="javascript:void(0)"
                                            data-ng-click="resetFilter('Studiengang','graduation')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
@@ -200,7 +200,7 @@
                                     <ul class="dropdown-menu">
                                         <li value=""
                                             data-ng-repeat="graduation in result.getDistinct('graduation')  | orderObjectBy:'value'">
-                                            <a href="#"
+                                            <a href="javascript:void(0)"
                                                data-ng-click="toggleFilterSelection(graduation,'Studiengang','graduation')">
                                                 <i class="fa " aria-hidden="true"
                                                    data-ng-class="{'fa-check-square-o': isFilterValueSelected(graduation.value,filters.graduation), 'fa-square-o': !isFilterValueSelected(graduation.value,filters.graduation)}"></i>
@@ -220,7 +220,7 @@
                                     <div class="tagFadeOutBg"></div>
                                     <div class="deleteDropdownSelectionButton"
                                          data-ng-show="countCurrentFilters('Studiengang','targetgroups') > 0">
-                                        <a class="preventDefault" href="#"
+                                        <a class="preventDefault" href="javascript:void(0)"
                                            data-ng-click="resetFilter('Studiengang','targetgroups')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
@@ -228,7 +228,7 @@
                                     <ul class="dropdown-menu">
                                         <li value=""
                                             data-ng-repeat="targetgroup in result.getDistinct('study-furthereducation-targetgroups.Bezeichnung')  | orderObjectBy:'value'">
-                                            <a href="#"
+                                            <a href="javascript:void(0)"
                                                data-ng-click="toggleFilterSelection(targetgroup,'Studiengang','targetgroups')">
                                                 <i class="fa " aria-hidden="true"
                                                    data-ng-class="{'fa-check-square-o': isFilterValueSelected(targetgroup.value,filters.targetgroups), 'fa-square-o': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"></i>
@@ -270,14 +270,14 @@
                                     <div class="tagFadeOutBg"></div>
                                     <div class="deleteDropdownSelectionButton"
                                          data-ng-show="countCurrentFilters('Kurs','year') > 0">
-                                        <a class="preventDefault" href="#" data-ng-click="resetFilter('Kurs','year')">
+                                        <a class="preventDefault" href="javascript:void(0)" data-ng-click="resetFilter('Kurs','year')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
                                     </div>
                                     <ul class="dropdown-menu">
                                         <li value=""
                                             data-ng-repeat="year in result.getDistinct('module-furthereducation-years.Year.*', false)  | orderObjectBy:'value'">
-                                            <a href="#" data-ng-click="toggleFilterSelection(year,'Kurs','year')">
+                                            <a href="javascript:void(0)" data-ng-click="toggleFilterSelection(year,'Kurs','year')">
                                                 <i class="fa " aria-hidden="true"
                                                    data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
                                                 <span data-ng-bind="year.value"></span>
@@ -307,7 +307,7 @@
                                     <div class="tagFadeOutBg"></div>
                                     <div class="deleteDropdownSelectionButton"
                                          data-ng-show="countCurrentFilters('Kurs','dayofweek') > 0">
-                                        <a class="preventDefault" href="#"
+                                        <a class="preventDefault" href="javascript:void(0)"
                                            data-ng-click="resetFilter('Kurs','dayofweek')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
@@ -315,7 +315,7 @@
                                     <ul class="dropdown-menu">
                                         <li value=""
                                             data-ng-repeat="dayofweek in result.getDistinct('module-furthereducation-start.format.A')  | orderObjectBy:'value'">
-                                            <a href="#"
+                                            <a href="javascript:void(0)"
                                                data-ng-click="toggleFilterSelection(dayofweek,'Kurs','dayofweek')">
                                                 <i class="fa " aria-hidden="true"
                                                    data-ng-class="{'fa-check-square-o': isFilterValueSelected(dayofweek.value,filters.dayofweek), 'fa-square-o': !isFilterValueSelected(dayofweek.value,filters.dayofweek)}"></i>
@@ -351,7 +351,7 @@
                                     <div class="tagFadeOutBg"></div>
                                     <div class="deleteDropdownSelectionButton"
                                          data-ng-show="countCurrentFilters('Kurs','targetgroups') > 0">
-                                        <a class="preventDefault" href="#"
+                                        <a class="preventDefault" href="javascript:void(0)"
                                            data-ng-click="resetFilter('Kurs','targetgroups')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
@@ -359,7 +359,7 @@
                                     <ul class="dropdown-menu">
                                         <li value=""
                                             data-ng-repeat="targetgroup in result.getDistinct('targetgroups.Bezeichnung')  | orderObjectBy:'value'">
-                                            <a href="#"
+                                            <a href="javascript:void(0)"
                                                data-ng-click="toggleFilterSelection(targetgroup,'Kurs','targetgroups')">
                                                 <i class="fa " aria-hidden="true"
                                                    data-ng-class="{'fa-check-square-o': isFilterValueSelected(targetgroup.value,filters.targetgroups), 'fa-square-o': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"></i>
@@ -381,14 +381,14 @@
                                     <div class="tagFadeOutBg"></div>
                                     <div class="deleteDropdownSelectionButton"
                                          data-ng-show="countCurrentFilters('Kurs','genre') > 0">
-                                        <a class="preventDefault" href="#" data-ng-click="resetFilter('Kurs','genre')">
+                                        <a class="preventDefault" href="javascript:void(0)" data-ng-click="resetFilter('Kurs','genre')">
                                             <i class="fa fa-times" aria-hidden="true"></i>
                                         </a>
                                     </div>
                                     <ul class="dropdown-menu">
                                         <li value=""
                                             data-ng-repeat="genre in result.getDistinct('genre.Name') | orderObjectBy:'value'">
-                                            <a href="#"
+                                            <a href="javascript:void(0)"
                                                data-ng-click="toggleFilterSelection(genre,'Kurs','genre')">
                                                 <i class="fa " aria-hidden="true"
                                                    data-ng-class="{'fa-check-square-o': isFilterValueSelected(genre.value,filters.genre), 'fa-square-o': !isFilterValueSelected(genre.value,filters.genre)}"></i>
