@@ -1,6 +1,6 @@
 PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
-    $scope.list = new $hybridsearchObject(hybridsearch);
+    var list = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();
     $scope.search = '';
     $scope.projecttype = 'Forschung und Entwicklung';
@@ -29,11 +29,11 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     };
 
     $scope.addPropertyFilter = function (property, value) {
-        $scope.list.addPropertyFilter(property, value, $scope);
+        list.addPropertyFilter(property, value, $scope);
     }
 
     $scope.setQuery = function (value) {
-        $scope.list.setQuery(value, $scope);
+        list.setQuery(value, $scope);
     }
 
     $scope.setFilterLifetime = function (f) {
@@ -167,7 +167,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         return false;
     }
 
-    $scope.list
+    list
         .setOrderBy({'phlu-neos-nodetypes-project': 'title'})
         .addPropertyFilter('organisationunits.id', 'organisations', $scope)
         .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
@@ -187,7 +187,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
 PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
-    $scope.list = new $hybridsearchObject(hybridsearch);
+    list = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();
     $scope.participants = {};
     $scope.organisations = {};
@@ -202,7 +202,7 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     };
 
     $scope.setQuery = function (value) {
-        $scope.list.setQuery(value, $scope);
+        list.setQuery(value, $scope);
     }
 
     $scope.setFilterParticipants = function (f) {
@@ -250,7 +250,7 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     };
 
 
-    $scope.list
+    list
         .setCategorizedBy('publicationtype.name')
         .setOrderBy({'phlu-neos-nodetypes-publication': 'citationstyle'})
         .setNodeType('phlu-neos-nodetypes-publication')
