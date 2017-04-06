@@ -11358,8 +11358,10 @@ body {
         @media (max-width: 1279px) {
           body .all .main.contents {
             margin-top: inherit; } }
-      body .all .main .further-education-detail .phlu-team-members .phlu-teaser .nav-teaser-item {
-        margin-bottom: inherit; }
+      body .all .main .further-education-detail .phlu-team-members .phlu-teaser {
+        padding: 0; }
+        body .all .main .further-education-detail .phlu-team-members .phlu-teaser .nav-teaser-item {
+          margin-bottom: inherit; }
       body .all .main .further-education-detail .phlu-accordion {
         margin-top: 10px; }
       body .all .main .further-education-detail .row.fees table tr th {
