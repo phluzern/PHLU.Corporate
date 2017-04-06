@@ -4,7 +4,6 @@
 {namespace uri=Phlu\Corporate\ViewHelpers\Uri}
 
 <div class="{breakpointClass}  event singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)} {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}">
-    <f:debug>{toDate}</f:debug>
     <div class="event-date-day">
         <f:format.date format="d">{date}</f:format.date>.
     </div>
