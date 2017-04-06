@@ -1,486 +1,482 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
+<div class="row-fullwidth-content further-education-special-search">
 
 
-<div class="row-fullwidth-content further-education-special-search" data-ng-controller="EventoFurtherEducationCtrl">
-    <div class="row extendedSearchBg">
+        <div class="row extendedSearchBg"  data-ng-controller="EventoFurtherEducationCtrl">
 
-        <div class="col-xs-12">
-            <div {attributes -> f:format.raw()}>
+            <div class="col-xs-12">
+                <div {attributes -> f:format.raw()}>
 
 
-                <div class="row">
+                    <div class="row">
 
-                    <div class="col-xs-12">
-                        <div class="input-group">
-                            <div class="input-group-btn nodeTypeSwitcher"
-                                 data-ng-class="{'isloading': isUserChangedNodeType && !isLoadedFirst()}">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false"
-                                        data-ng-click="setUserChangedNodeType()">
-                                    <span data-ng-bind="nodetypesFilterCurrentLabel"></span>
+                        <div class="col-xs-12">
+                            <div class="input-group">
+                                <div class="input-group-btn nodeTypeSwitcher"
+                                     data-ng-class="{'isloading': isUserChangedNodeType && !isLoadedFirst()}">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false"
+                                            data-ng-click="setUserChangedNodeType()">
+                                        <span data-ng-bind="nodetypesFilterCurrentLabel"></span>
+
+                                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading-white.svg')}"
+                                             alt="loading"
+                                             class="loadingIcon"
+                                             data-ng-if="isUserChangedNodeType && !isLoadedFirst()"
+                                        />
+
+                                    </button>
+
+                                    <ul class="dropdown-menu">
+                                        <li data-ng-if="!isLoadedFirst()"/>
+                                        <li data-ng-if="isLoadedFirst()" data-ng-repeat="f in nodetypesFilter"
+                                            data-ng-click="setNodetypesFilter(f);">
+                                            <a href="javascript:void(0);" data-ng-bind="f.label"></a>
+                                        </li>
+                                    </ul>
+
+                                </div><!-- /btn-group -->
+                                <input type="text" class="form-control" aria-label="Suche" data-ng-model="searchquery"
+                                       value="">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </div><!-- /input-group -->
+
+                            <div class="extendedSearch" data-ng-show="!result.isLoading()">
+
+                                <button ng-cloak type="button" class="btn btn-default"
+                                        data-ng-click="setUserExtendedSearch()"
+                                        data-ng-class="{isloading:isUserExtendedSearch && !isLoadedFirst(), disabled: result.isLoading() === true || (isUserChangedNodeType && !isLoadedFirst())}">
+                                    Erweiterte Suche
+                                    <span class="oi oi-x" data-ng-if="isUserExtendedSearch && isLoadedFirst()"></span>
 
                                     <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading-white.svg')}"
                                          alt="loading"
                                          class="loadingIcon"
-                                         data-ng-if="isUserChangedNodeType && !isLoadedFirst()"
+                                         data-ng-if="isUserExtendedSearch && !isLoadedFirst()"
                                     />
-
-                                </button>
-
-                                <ul class="dropdown-menu">
-                                    <li data-ng-if="!isLoadedFirst()"/>
-                                    <li data-ng-if="isLoadedFirst()" data-ng-repeat="f in nodetypesFilter"
-                                        data-ng-click="setNodetypesFilter(f);">
-                                        <a href="javascript:void(0);" data-ng-bind="f.label"></a>
-                                    </li>
-                                </ul>
-
-                            </div><!-- /btn-group -->
-                            <input type="text" class="form-control" aria-label="Suche" data-ng-model="searchquery"
-                                   value="">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </div><!-- /input-group -->
-
-                        <div class="extendedSearch" data-ng-show="!result.isLoading()">
-
-                            <button ng-cloak type="button" class="btn btn-default"
-                                    data-ng-click="setUserExtendedSearch()"
-                                    data-ng-class="{isloading:isUserExtendedSearch && !isLoadedFirst(), disabled: result.isLoading() === true || (isUserChangedNodeType && !isLoadedFirst())}">
-                                Erweiterte Suche
-                                <span class="oi oi-x" data-ng-if="isUserExtendedSearch && isLoadedFirst()"></span>
-
-                                <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading-white.svg')}"
-                                     alt="loading"
-                                     class="loadingIcon"
-                                     data-ng-if="isUserExtendedSearch && !isLoadedFirst()"
-                                />
-                                <span class="count"
-                                      data-ng-bind="countCurrentFilters(nodetypesFilterCurrentCategory)"
-                                      data-ng-show="countCurrentFilters(nodetypesFilterCurrentCategory) > 0"></span>
-                            </button>
-
-                        </div>
-                    </div><!-- /.col-lg-6 -->
-
-                </div>
-
-                <div class="row extendedSearchFilter">
-
-
-                    <div data-ng-show="isLoadedFirst()">
-                        <div data-ng-show="nodetypesFilterCurrentLabel == 'Alle'" class="col-xs-12">
-                            <h3>Kurse und Studiengänge</h3>
-
-                            <div class="row input-group">
-                                <div class="input-item-col col-xs-12 col-sm-3">
-                                    <label>Schul-/Studienjahr </label>
-                                    <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
-                                         role="button"
-                                         aria-haspopup="true" aria-expanded="false"
-                                         data-ng-class="{'with-delete-btn': countCurrentFilters('Alle','year') > 0}">
-                                        <span data-ng-bind="getFilterSelectedPreview(filters.year,'Alle')"></span>
-
-                                    </div>
-
-                                    <div class="tagFadeOutBg"></div>
-                                    <div class="deleteDropdownSelectionButton"
-                                         data-ng-show="countCurrentFilters('Alle','year') > 0">
-                                        <a class="preventDefault" href="javascript:void(0)"
-                                           data-ng-click="resetFilter('Alle','year')">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                    <ul class="dropdown-menu">
-                                        <li value=""
-                                            data-ng-repeat="year in result.getDistinct('furthereducation-years.Year.*',false)  | orderObjectBy:'value'">
-                                            <a href="javascript:void(0)"
-                                               data-ng-click="toggleFilterSelection(year,'Alle','year')">
-                                                <i class="fa " aria-hidden="true"
-                                                   data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
-                                                <span data-ng-bind="year.value"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                </div>
-
-
-                                <div class="input-item-col col-xs-12 col-sm-6"
-                                     data-ng-class="{disabled: result.getDistinctCount('targetgroups.Bezeichnung') == 0}">
-                                    <label>Zielgruppen</label>
-                                    <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
-                                         role="button"
-                                         aria-haspopup="true" aria-expanded="false"
-                                         data-ng-class="{'with-delete-btn': countCurrentFilters('Alle','targetgroups') > 0}">
-                                        <span data-ng-bind="getFilterSelectedPreview(filters.targetgroups,'Alle')"></span>
-                                    </div>
-                                    <div class="tagFadeOutBg"></div>
-                                    <div class="deleteDropdownSelectionButton"
-                                         data-ng-show="countCurrentFilters('Alle','targetgroups') > 0">
-                                        <a class="preventDefault" href="javascript:void(0)"
-                                           data-ng-click="resetFilter('Alle','targetgroups')">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                    <ul class="dropdown-menu">
-                                        <li value=""
-                                            data-ng-repeat="targetgroup in result.getDistinct('targetgroups.Bezeichnung')  | orderObjectBy:'value'">
-                                            <a href="javascript:void(0)"
-                                               data-ng-click="toggleFilterSelection(targetgroup,'Alle','targetgroups')">
-                                                <i class="fa " aria-hidden="true"
-                                                   data-ng-class="{'fa-check-square-o': isFilterValueSelected(targetgroup.value,filters.targetgroups), 'fa-square-o': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"></i>
-                                                <span data-ng-bind="targetgroup.value"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="row input-group">
-                                <div class="input-item-col col-xs-6 col-sm-3">
-                                    <div class="checkbox">
-                                        <input type="checkbox" id="freie-plaetze-kurse-all"
-                                               data-ng-model="bookable.Alle"
-                                               data-ng-change="changeBookable('Alle')" data-ng-true-value="1"
-                                               data-ng-false-value="0"
-                                               name="freie-plaetze-kurse-all"/>
-                                        <label for="freie-plaetze-kurse-all"><span>&nbsp;</span>Freie Plätze</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div data-ng-show="nodetypesFilterCurrentCategory == 'Studiengang'" class="col-xs-12">
-                            <h3>Weiterbildungsstudiengänge</h3>
-
-
-                            <div class="row input-group">
-                                <div class="input-item-col col-xs-12 col-sm-3">
-                                    <label>Schul-/Studienjahr</label>
-                                    <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
-                                         role="button"
-                                         aria-haspopup="true" aria-expanded="false"
-                                         data-ng-class="{'with-delete-btn': countCurrentFilters('Studiengang','year') > 0}">
-                                        <span data-ng-bind="getFilterSelectedPreview(filters.year,'Studiengang')"></span>
-                                    </div>
-                                    <div class="tagFadeOutBg"></div>
-                                    <div class="deleteDropdownSelectionButton"
-                                         data-ng-show="countCurrentFilters('Studiengang','year') > 0">
-                                        <a class="preventDefault" href="javascript:void(0)"
-                                           data-ng-click="resetFilter('Studiengang','year')">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                    <ul class="dropdown-menu">
-                                        <li value=""
-                                            data-ng-repeat="year in result.getDistinct('study-furthereducation-years.Year.*', false)  | orderObjectBy:'value'">
-                                            <a href="javascript:void(0)"
-                                               data-ng-click="toggleFilterSelection(year,'Studiengang','year')">
-                                                <i class="fa " aria-hidden="true"
-                                                   data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
-                                                <span data-ng-bind="year.value"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div name="targetDegree" class="input-item-col col-xs-12 col-sm-6">
-                                    <label>Typ/Abschluss</label>
-                                    <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
-                                         role="button"
-                                         aria-haspopup="true" aria-expanded="false"
-                                         data-ng-class="{'with-delete-btn': countCurrentFilters('Studiengang','graduation') > 0}">
-                                        <span data-ng-bind="getFilterSelectedPreview(filters.graduation,'Studiengang')"></span>
-                                        <!--<a href="javascript:void(0)" class="search-result-tag" data-ng-repeat="item in filters.graduation.selected" data-ng-show="item.state">-->
-                                        <!--<span data-ng-bind="item.value"></span>-->
-                                        <!--&lt;!&ndash;<i class="fa fa-times clickable" aria-hidden="true"></i>&ndash;&gt;-->
-                                        <!--</a>-->
-                                    </div>
-                                    <div class="tagFadeOutBg"></div>
-                                    <div class="deleteDropdownSelectionButton"
-                                         data-ng-show="countCurrentFilters('Studiengang','graduation') > 0">
-                                        <a class="preventDefault" href="javascript:void(0)"
-                                           data-ng-click="resetFilter('Studiengang','graduation')">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                    <ul class="dropdown-menu">
-                                        <li value=""
-                                            data-ng-repeat="graduation in result.getDistinct('graduation')  | orderObjectBy:'value'">
-                                            <a href="javascript:void(0)"
-                                               data-ng-click="toggleFilterSelection(graduation,'Studiengang','graduation')">
-                                                <i class="fa " aria-hidden="true"
-                                                   data-ng-class="{'fa-check-square-o': isFilterValueSelected(graduation.value,filters.graduation), 'fa-square-o': !isFilterValueSelected(graduation.value,filters.graduation)}"></i>
-                                                <span data-ng-bind="graduation.value"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="input-item-col col-xs-12 col-sm-3">
-                                    <label>Zielgruppen</label>
-                                    <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
-                                         role="button"
-                                         aria-haspopup="true" aria-expanded="false"
-                                         data-ng-class="{'with-delete-btn': countCurrentFilters('Studiengang','targetgroups') > 0}">
-                                        <span data-ng-bind="getFilterSelectedPreview(filters.targetgroups,'Studiengang')"></span>
-                                    </div>
-                                    <div class="tagFadeOutBg"></div>
-                                    <div class="deleteDropdownSelectionButton"
-                                         data-ng-show="countCurrentFilters('Studiengang','targetgroups') > 0">
-                                        <a class="preventDefault" href="javascript:void(0)"
-                                           data-ng-click="resetFilter('Studiengang','targetgroups')">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                    <ul class="dropdown-menu">
-                                        <li value=""
-                                            data-ng-repeat="targetgroup in result.getDistinct('study-furthereducation-targetgroups.Bezeichnung')  | orderObjectBy:'value'">
-                                            <a href="javascript:void(0)"
-                                               data-ng-click="toggleFilterSelection(targetgroup,'Studiengang','targetgroups')">
-                                                <i class="fa " aria-hidden="true"
-                                                   data-ng-class="{'fa-check-square-o': isFilterValueSelected(targetgroup.value,filters.targetgroups), 'fa-square-o': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"></i>
-                                                <span data-ng-bind="targetgroup.value"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                </div>
+                                    <span class="count"
+                                          data-ng-bind="countCurrentFilters(nodetypesFilterCurrentCategory)"
+                                          data-ng-show="countCurrentFilters(nodetypesFilterCurrentCategory) > 0"></span>
+                                    </buttonng-cloak>
 
                             </div>
+                        </div><!-- /.col-lg-6 -->
 
-                            <div class="row input-group">
-                                <div class="input-item-col col-xs-6 col-sm-3">
-                                    <div class="checkbox">
-                                        <input type="checkbox" id="freie-plaetze-studiengang"
-                                               data-ng-model="bookable.Studiengang"
-                                               data-ng-change="changeBookable('Studiengang')" data-ng-true-value="1"
-                                               data-ng-false-value="0"
-                                               name="freie-plaetze"/>
-                                        <label for="freie-plaetze-studiengang"><span>&nbsp;</span>Freie
-                                            Plätze</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div data-ng-show="nodetypesFilterCurrentLabel == 'Kurse'" class="col-xs-12">
-                            <h3>Kurse</h3>
-
-                            <div class="row input-group">
-
-                                <div class="input-item-col col-xs-12 col-sm-3">
-                                    <label>Schul-/Studienjahr</label>
-                                    <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
-                                         role="button"
-                                         aria-haspopup="true" aria-expanded="false"
-                                         data-ng-class="{'with-delete-btn': countCurrentFilters('Kurs','year') > 0}">
-                                        <span data-ng-bind="getFilterSelectedPreview(filters.year,'Kurs')"></span>
-                                    </div>
-                                    <div class="tagFadeOutBg"></div>
-                                    <div class="deleteDropdownSelectionButton"
-                                         data-ng-show="countCurrentFilters('Kurs','year') > 0">
-                                        <a class="preventDefault" href="javascript:void(0)"
-                                           data-ng-click="resetFilter('Kurs','year')">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                    <ul class="dropdown-menu">
-                                        <li value=""
-                                            data-ng-repeat="year in result.getDistinct('module-furthereducation-years.Year.*', false)  | orderObjectBy:'value'">
-                                            <a href="javascript:void(0)"
-                                               data-ng-click="toggleFilterSelection(year,'Kurs','year')">
-                                                <i class="fa " aria-hidden="true"
-                                                   data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
-                                                <span data-ng-bind="year.value"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                </div>
-
-                                <div class="input-item-col col-xs-12 col-sm-3">
-
-                                    <label>Kursnummer</label>
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                    <input type="text" class="form-control"
-                                           data-ng-model="search.courseNrModule"
-                                           data-ng-change="setFilterSelectionValue(search.courseNrModule,'Kurs','nr');">
-
-
-                                </div>
-                                <div class="input-item-col col-xs-12 col-sm-3">
-                                    <label>Wochentag</label>
-                                    <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
-                                         role="button"
-                                         aria-haspopup="true" aria-expanded="false"
-                                         data-ng-class="{'with-delete-btn': countCurrentFilters('Kurs','dayofweek') > 0}">
-                                        <span data-ng-bind="getFilterSelectedPreview(filters.dayofweek,'Kurs')"></span>
-                                    </div>
-                                    <div class="tagFadeOutBg"></div>
-                                    <div class="deleteDropdownSelectionButton"
-                                         data-ng-show="countCurrentFilters('Kurs','dayofweek') > 0">
-                                        <a class="preventDefault" href="javascript:void(0)"
-                                           data-ng-click="resetFilter('Kurs','dayofweek')">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                    <ul class="dropdown-menu">
-                                        <li value=""
-                                            data-ng-repeat="dayofweek in result.getDistinct('module-furthereducation-start.format.A')  | orderObjectBy:'value'">
-                                            <a href="javascript:void(0)"
-                                               data-ng-click="toggleFilterSelection(dayofweek,'Kurs','dayofweek')">
-                                                <i class="fa " aria-hidden="true"
-                                                   data-ng-class="{'fa-check-square-o': isFilterValueSelected(dayofweek.value,filters.dayofweek), 'fa-square-o': !isFilterValueSelected(dayofweek.value,filters.dayofweek)}"></i>
-                                                <span data-ng-bind="dayofweek.value"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                </div>
-                                <div class="input-item-col col-xs-12 col-sm-3">
-
-                                    <label>Kursleitung</label>
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                    <input type="text" class="form-control"
-                                           data-ng-model="search.courseLeaderModule"
-                                           data-ng-change="setFilterSelectionValue(search.courseLeaderModule,'Kurs','leaders');">
-
-
-                                </div>
-                            </div>
-
-
-                            <div class="row input-group">
-
-
-                                <div class="input-item-col col-xs-12 col-sm-6">
-                                    <label>Zielgruppen</label>
-                                    <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
-                                         role="button"
-                                         aria-haspopup="true" aria-expanded="false"
-                                         data-ng-class="{'with-delete-btn': countCurrentFilters('Kurs','targetgroups') > 0}">
-                                        <span data-ng-bind="getFilterSelectedPreview(filters.targetgroups,'Kurs')"></span>
-                                    </div>
-                                    <div class="tagFadeOutBg"></div>
-                                    <div class="deleteDropdownSelectionButton"
-                                         data-ng-show="countCurrentFilters('Kurs','targetgroups') > 0">
-                                        <a class="preventDefault" href="javascript:void(0)"
-                                           data-ng-click="resetFilter('Kurs','targetgroups')">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                    <ul class="dropdown-menu">
-                                        <li value=""
-                                            data-ng-repeat="targetgroup in result.getDistinct('targetgroups.Bezeichnung')  | orderObjectBy:'value'">
-                                            <a href="javascript:void(0)"
-                                               data-ng-click="toggleFilterSelection(targetgroup,'Kurs','targetgroups')">
-                                                <i class="fa " aria-hidden="true"
-                                                   data-ng-class="{'fa-check-square-o': isFilterValueSelected(targetgroup.value,filters.targetgroups), 'fa-square-o': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"></i>
-                                                <span data-ng-bind="targetgroup.value"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                </div>
-
-
-                                <div class="input-item-col col-xs-12 col-sm-6">
-                                    <label>Inhaltsverzeichnis</label>
-                                    <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
-                                         role="button"
-                                         aria-haspopup="true" aria-expanded="false"
-                                         data-ng-class="{'with-delete-btn': countCurrentFilters('Kurs','genre') > 0}">
-                                        <span data-ng-bind="getFilterSelectedPreview(filters.genre,'Kurs')"></span>
-                                    </div>
-                                    <div class="tagFadeOutBg"></div>
-                                    <div class="deleteDropdownSelectionButton"
-                                         data-ng-show="countCurrentFilters('Kurs','genre') > 0">
-                                        <a class="preventDefault" href="javascript:void(0)"
-                                           data-ng-click="resetFilter('Kurs','genre')">
-                                            <i class="fa fa-times" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                    <ul class="dropdown-menu">
-                                        <li value=""
-                                            data-ng-repeat="genre in result.getDistinct('genre.Name') | orderObjectBy:'value'">
-                                            <a href="javascript:void(0)"
-                                               data-ng-click="toggleFilterSelection(genre,'Kurs','genre')">
-                                                <i class="fa " aria-hidden="true"
-                                                   data-ng-class="{'fa-check-square-o': isFilterValueSelected(genre.value,filters.genre), 'fa-square-o': !isFilterValueSelected(genre.value,filters.genre)}"></i>
-                                                <span data-ng-bind="genre.value"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                </div>
-
-                            </div>
-                            <div class="row input-group">
-                                <div class="input-item-col col-xs-6 col-sm-3 disabled">
-                                    <div class="checkbox">
-                                        <input type="checkbox" id="nur-holkurse" name="nur-holkurse"/>
-                                        <label for="nur-holkurse"><span>&nbsp;</span>Nur Holkurse</label>
-                                    </div>
-                                </div>
-                                <div class="input-item-col col-xs-6 col-sm-3">
-                                    <div class="checkbox">
-                                        <input type="checkbox" id="freie-plaetze-kurse"
-                                               data-ng-model="bookable.Kurs"
-                                               data-ng-change="changeBookable('Kurs')" data-ng-true-value="1"
-                                               data-ng-false-value="0"
-                                               name="freie-plaetze-kurse"/>
-                                        <label for="freie-plaetze-kurse"><span>&nbsp;</span>Freie Plätze</label>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
                     </div>
 
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="row results-table">
-                <div class="col-xs-12"
-                     data-ng-if="isShowingResult()">
+                    <div class="row extendedSearchFilter">
 
 
-                    <!--<img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
-                         alt="loading"
-                         class="loadingIcon"
-                         data-ng-if="!isLoadedFirst()"
-                    />-->
+                        <div data-ng-show="isLoadedFirst()">
+                            <div data-ng-show="nodetypesFilterCurrentLabel == 'Alle'" class="col-xs-12">
+                                <h3>Kurse und Studiengänge</h3>
 
-                    <div class="resultsCount">
-                        <h3 data-ng-bind="'Treffer '+ result.count()"></h3>
-                    </div>
+                                <div class="row input-group">
+                                    <div class="input-item-col col-xs-12 col-sm-3">
+                                        <label>Schul-/Studienjahr </label>
+                                        <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
+                                             role="button"
+                                             aria-haspopup="true" aria-expanded="false"
+                                             data-ng-class="{'with-delete-btn': countCurrentFilters('Alle','year') > 0}">
+                                            <span data-ng-bind="getFilterSelectedPreview(filters.year,'Alle')"></span>
 
-                    <f:render partial="furtherEducationList" arguments="{_all}"/>
+                                        </div>
 
-                    <div class="row">
-                        <div class="col-center">
-                            <a data-ng-click="loadMore('#node-'+result.getIdentifier()+'-'+limit);"
-                               class="btn loadMore"
-                               data-ng-if="result.count() > limit">
-                                <!--{{limitChunkSize}} -->
-                                mehr anzeigen
-                            </a>
+                                        <div class="tagFadeOutBg"></div>
+                                        <div class="deleteDropdownSelectionButton"
+                                             data-ng-show="countCurrentFilters('Alle','year') > 0">
+                                            <a class="preventDefault" href="javascript:void(0)"
+                                               data-ng-click="resetFilter('Alle','year')">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li value=""
+                                                data-ng-repeat="year in result.getDistinct('furthereducation-years.Year.*',false)  | orderObjectBy:'value'">
+                                                <a href="javascript:void(0)"
+                                                   data-ng-click="toggleFilterSelection(year,'Alle','year')">
+                                                    <i class="fa " aria-hidden="true"
+                                                       data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
+                                                    <span data-ng-bind="year.value"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+
+
+                                    <div class="input-item-col col-xs-12 col-sm-6"
+                                         data-ng-class="{disabled: result.getDistinctCount('targetgroups.Bezeichnung') == 0}">
+                                        <label>Zielgruppen</label>
+                                        <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
+                                             role="button"
+                                             aria-haspopup="true" aria-expanded="false"
+                                             data-ng-class="{'with-delete-btn': countCurrentFilters('Alle','targetgroups') > 0}">
+                                            <span data-ng-bind="getFilterSelectedPreview(filters.targetgroups,'Alle')"></span>
+                                        </div>
+                                        <div class="tagFadeOutBg"></div>
+                                        <div class="deleteDropdownSelectionButton"
+                                             data-ng-show="countCurrentFilters('Alle','targetgroups') > 0">
+                                            <a class="preventDefault" href="javascript:void(0)"
+                                               data-ng-click="resetFilter('Alle','targetgroups')">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li value=""
+                                                data-ng-repeat="targetgroup in result.getDistinct('targetgroups.Bezeichnung')  | orderObjectBy:'value'">
+                                                <a href="javascript:void(0)"
+                                                   data-ng-click="toggleFilterSelection(targetgroup,'Alle','targetgroups')">
+                                                    <i class="fa " aria-hidden="true"
+                                                       data-ng-class="{'fa-check-square-o': isFilterValueSelected(targetgroup.value,filters.targetgroups), 'fa-square-o': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"></i>
+                                                    <span data-ng-bind="targetgroup.value"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="row input-group">
+                                    <div class="input-item-col col-xs-6 col-sm-3">
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="freie-plaetze-kurse-all"
+                                                   data-ng-model="bookable.Alle"
+                                                   data-ng-change="changeBookable('Alle')" data-ng-true-value="1"
+                                                   data-ng-false-value="0"
+                                                   name="freie-plaetze-kurse-all"/>
+                                            <label for="freie-plaetze-kurse-all"><span>&nbsp;</span>Freie Plätze</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div data-ng-show="nodetypesFilterCurrentCategory == 'Studiengang'" class="col-xs-12">
+                                <h3>Weiterbildungsstudiengänge</h3>
+
+
+                                <div class="row input-group">
+                                    <div class="input-item-col col-xs-12 col-sm-3">
+                                        <label>Schul-/Studienjahr</label>
+                                        <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
+                                             role="button"
+                                             aria-haspopup="true" aria-expanded="false"
+                                             data-ng-class="{'with-delete-btn': countCurrentFilters('Studiengang','year') > 0}">
+                                            <span data-ng-bind="getFilterSelectedPreview(filters.year,'Studiengang')"></span>
+                                        </div>
+                                        <div class="tagFadeOutBg"></div>
+                                        <div class="deleteDropdownSelectionButton"
+                                             data-ng-show="countCurrentFilters('Studiengang','year') > 0">
+                                            <a class="preventDefault" href="javascript:void(0)"
+                                               data-ng-click="resetFilter('Studiengang','year')">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li value=""
+                                                data-ng-repeat="year in result.getDistinct('study-furthereducation-years.Year.*', false)  | orderObjectBy:'value'">
+                                                <a href="javascript:void(0)"
+                                                   data-ng-click="toggleFilterSelection(year,'Studiengang','year')">
+                                                    <i class="fa " aria-hidden="true"
+                                                       data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
+                                                    <span data-ng-bind="year.value"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div name="targetDegree" class="input-item-col col-xs-12 col-sm-6">
+                                        <label>Typ/Abschluss</label>
+                                        <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
+                                             role="button"
+                                             aria-haspopup="true" aria-expanded="false"
+                                             data-ng-class="{'with-delete-btn': countCurrentFilters('Studiengang','graduation') > 0}">
+                                            <span data-ng-bind="getFilterSelectedPreview(filters.graduation,'Studiengang')"></span>
+                                            <!--<a href="javascript:void(0)" class="search-result-tag" data-ng-repeat="item in filters.graduation.selected" data-ng-show="item.state">-->
+                                            <!--<span data-ng-bind="item.value"></span>-->
+                                            <!--&lt;!&ndash;<i class="fa fa-times clickable" aria-hidden="true"></i>&ndash;&gt;-->
+                                            <!--</a>-->
+                                        </div>
+                                        <div class="tagFadeOutBg"></div>
+                                        <div class="deleteDropdownSelectionButton"
+                                             data-ng-show="countCurrentFilters('Studiengang','graduation') > 0">
+                                            <a class="preventDefault" href="javascript:void(0)"
+                                               data-ng-click="resetFilter('Studiengang','graduation')">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li value=""
+                                                data-ng-repeat="graduation in result.getDistinct('graduation')  | orderObjectBy:'value'">
+                                                <a href="javascript:void(0)"
+                                                   data-ng-click="toggleFilterSelection(graduation,'Studiengang','graduation')">
+                                                    <i class="fa " aria-hidden="true"
+                                                       data-ng-class="{'fa-check-square-o': isFilterValueSelected(graduation.value,filters.graduation), 'fa-square-o': !isFilterValueSelected(graduation.value,filters.graduation)}"></i>
+                                                    <span data-ng-bind="graduation.value"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="input-item-col col-xs-12 col-sm-3">
+                                        <label>Zielgruppen</label>
+                                        <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
+                                             role="button"
+                                             aria-haspopup="true" aria-expanded="false"
+                                             data-ng-class="{'with-delete-btn': countCurrentFilters('Studiengang','targetgroups') > 0}">
+                                            <span data-ng-bind="getFilterSelectedPreview(filters.targetgroups,'Studiengang')"></span>
+                                        </div>
+                                        <div class="tagFadeOutBg"></div>
+                                        <div class="deleteDropdownSelectionButton"
+                                             data-ng-show="countCurrentFilters('Studiengang','targetgroups') > 0">
+                                            <a class="preventDefault" href="javascript:void(0)"
+                                               data-ng-click="resetFilter('Studiengang','targetgroups')">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li value=""
+                                                data-ng-repeat="targetgroup in result.getDistinct('study-furthereducation-targetgroups.Bezeichnung')  | orderObjectBy:'value'">
+                                                <a href="javascript:void(0)"
+                                                   data-ng-click="toggleFilterSelection(targetgroup,'Studiengang','targetgroups')">
+                                                    <i class="fa " aria-hidden="true"
+                                                       data-ng-class="{'fa-check-square-o': isFilterValueSelected(targetgroup.value,filters.targetgroups), 'fa-square-o': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"></i>
+                                                    <span data-ng-bind="targetgroup.value"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row input-group">
+                                    <div class="input-item-col col-xs-6 col-sm-3">
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="freie-plaetze-studiengang"
+                                                   data-ng-model="bookable.Studiengang"
+                                                   data-ng-change="changeBookable('Studiengang')" data-ng-true-value="1"
+                                                   data-ng-false-value="0"
+                                                   name="freie-plaetze"/>
+                                            <label for="freie-plaetze-studiengang"><span>&nbsp;</span>Freie
+                                                Plätze</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div data-ng-show="nodetypesFilterCurrentLabel == 'Kurse'" class="col-xs-12">
+                                <h3>Kurse</h3>
+
+                                <div class="row input-group">
+
+                                    <div class="input-item-col col-xs-12 col-sm-3">
+                                        <label>Schul-/Studienjahr</label>
+                                        <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
+                                             role="button"
+                                             aria-haspopup="true" aria-expanded="false"
+                                             data-ng-class="{'with-delete-btn': countCurrentFilters('Kurs','year') > 0}">
+                                            <span data-ng-bind="getFilterSelectedPreview(filters.year,'Kurs')"></span>
+                                        </div>
+                                        <div class="tagFadeOutBg"></div>
+                                        <div class="deleteDropdownSelectionButton"
+                                             data-ng-show="countCurrentFilters('Kurs','year') > 0">
+                                            <a class="preventDefault" href="javascript:void(0)"
+                                               data-ng-click="resetFilter('Kurs','year')">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li value=""
+                                                data-ng-repeat="year in result.getDistinct('module-furthereducation-years.Year.*', false)  | orderObjectBy:'value'">
+                                                <a href="javascript:void(0)"
+                                                   data-ng-click="toggleFilterSelection(year,'Kurs','year')">
+                                                    <i class="fa " aria-hidden="true"
+                                                       data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
+                                                    <span data-ng-bind="year.value"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="input-item-col col-xs-12 col-sm-3">
+
+                                        <label>Kursnummer</label>
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                        <input type="text" class="form-control"
+                                               data-ng-model="search.courseNrModule"
+                                               data-ng-change="setFilterSelectionValue(search.courseNrModule,'Kurs','nr');">
+
+
+                                    </div>
+                                    <div class="input-item-col col-xs-12 col-sm-3">
+                                        <label>Wochentag</label>
+                                        <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
+                                             role="button"
+                                             aria-haspopup="true" aria-expanded="false"
+                                             data-ng-class="{'with-delete-btn': countCurrentFilters('Kurs','dayofweek') > 0}">
+                                            <span data-ng-bind="getFilterSelectedPreview(filters.dayofweek,'Kurs')"></span>
+                                        </div>
+                                        <div class="tagFadeOutBg"></div>
+                                        <div class="deleteDropdownSelectionButton"
+                                             data-ng-show="countCurrentFilters('Kurs','dayofweek') > 0">
+                                            <a class="preventDefault" href="javascript:void(0)"
+                                               data-ng-click="resetFilter('Kurs','dayofweek')">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li value=""
+                                                data-ng-repeat="dayofweek in result.getDistinct('module-furthereducation-start.format.A')  | orderObjectBy:'value'">
+                                                <a href="javascript:void(0)"
+                                                   data-ng-click="toggleFilterSelection(dayofweek,'Kurs','dayofweek')">
+                                                    <i class="fa " aria-hidden="true"
+                                                       data-ng-class="{'fa-check-square-o': isFilterValueSelected(dayofweek.value,filters.dayofweek), 'fa-square-o': !isFilterValueSelected(dayofweek.value,filters.dayofweek)}"></i>
+                                                    <span data-ng-bind="dayofweek.value"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="input-item-col col-xs-12 col-sm-3">
+
+                                        <label>Kursleitung</label>
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                        <input type="text" class="form-control"
+                                               data-ng-model="search.courseLeaderModule"
+                                               data-ng-change="setFilterSelectionValue(search.courseLeaderModule,'Kurs','leaders');">
+
+
+                                    </div>
+                                </div>
+
+
+                                <div class="row input-group">
+
+
+                                    <div class="input-item-col col-xs-12 col-sm-6">
+                                        <label>Zielgruppen</label>
+                                        <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
+                                             role="button"
+                                             aria-haspopup="true" aria-expanded="false"
+                                             data-ng-class="{'with-delete-btn': countCurrentFilters('Kurs','targetgroups') > 0}">
+                                            <span data-ng-bind="getFilterSelectedPreview(filters.targetgroups,'Kurs')"></span>
+                                        </div>
+                                        <div class="tagFadeOutBg"></div>
+                                        <div class="deleteDropdownSelectionButton"
+                                             data-ng-show="countCurrentFilters('Kurs','targetgroups') > 0">
+                                            <a class="preventDefault" href="javascript:void(0)"
+                                               data-ng-click="resetFilter('Kurs','targetgroups')">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li value=""
+                                                data-ng-repeat="targetgroup in result.getDistinct('targetgroups.Bezeichnung')  | orderObjectBy:'value'">
+                                                <a href="javascript:void(0)"
+                                                   data-ng-click="toggleFilterSelection(targetgroup,'Kurs','targetgroups')">
+                                                    <i class="fa " aria-hidden="true"
+                                                       data-ng-class="{'fa-check-square-o': isFilterValueSelected(targetgroup.value,filters.targetgroups), 'fa-square-o': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"></i>
+                                                    <span data-ng-bind="targetgroup.value"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+
+
+                                    <div class="input-item-col col-xs-12 col-sm-6">
+                                        <label>Inhaltsverzeichnis</label>
+                                        <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
+                                             role="button"
+                                             aria-haspopup="true" aria-expanded="false"
+                                             data-ng-class="{'with-delete-btn': countCurrentFilters('Kurs','genre') > 0}">
+                                            <span data-ng-bind="getFilterSelectedPreview(filters.genre,'Kurs')"></span>
+                                        </div>
+                                        <div class="tagFadeOutBg"></div>
+                                        <div class="deleteDropdownSelectionButton"
+                                             data-ng-show="countCurrentFilters('Kurs','genre') > 0">
+                                            <a class="preventDefault" href="javascript:void(0)"
+                                               data-ng-click="resetFilter('Kurs','genre')">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li value=""
+                                                data-ng-repeat="genre in result.getDistinct('genre.Name') | orderObjectBy:'value'">
+                                                <a href="javascript:void(0)"
+                                                   data-ng-click="toggleFilterSelection(genre,'Kurs','genre')">
+                                                    <i class="fa " aria-hidden="true"
+                                                       data-ng-class="{'fa-check-square-o': isFilterValueSelected(genre.value,filters.genre), 'fa-square-o': !isFilterValueSelected(genre.value,filters.genre)}"></i>
+                                                    <span data-ng-bind="genre.value"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+                                <div class="row input-group">
+                                    <div class="input-item-col col-xs-6 col-sm-3 disabled">
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="nur-holkurse" name="nur-holkurse"/>
+                                            <label for="nur-holkurse"><span>&nbsp;</span>Nur Holkurse</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-item-col col-xs-6 col-sm-3">
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="freie-plaetze-kurse"
+                                                   data-ng-model="bookable.Kurs"
+                                                   data-ng-change="changeBookable('Kurs')" data-ng-true-value="1"
+                                                   data-ng-false-value="0"
+                                                   name="freie-plaetze-kurse"/>
+                                            <label for="freie-plaetze-kurse"><span>&nbsp;</span>Freie Plätze</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
 
+
+                <div class="col-xs-12">
+                    <div class="row results-table">
+                        <div class="col-xs-12"
+                             data-ng-if="isShowingResult()">
+
+
+                            <div class="resultsCount">
+                                <h3 data-ng-bind="'Treffer '+ result.count()"></h3>
+                            </div>
+
+                            <f:render partial="furtherEducationList" arguments="{_all}"/>
+
+                            <div class="row">
+                                <div class="col-center">
+                                    <a data-ng-click="loadMore('#node-'+result.getIdentifier()+'-'+limit);"
+                                       class="btn loadMore"
+                                       data-ng-if="result.count() > limit">
+                                        <!--{{limitChunkSize}} -->
+                                        mehr anzeigen
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
         </div>
-    </div>
-</div>
-<div class="row-fullwidth-content further-education-special-search">
+
+
     <div class="row blackBgFullWidthTabs">
         <div class="col-xs-12">
 
@@ -538,7 +534,6 @@
 
 
         </div>
-
     </div>
 
 
@@ -643,4 +638,5 @@
 
         </div>
     </div>
+
 </div>
