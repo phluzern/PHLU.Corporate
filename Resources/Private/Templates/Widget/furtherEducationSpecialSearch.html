@@ -523,12 +523,13 @@
                     </li>
                 </f:if>
                 <f:if condition="{WidgetGroupReferences.5}">
-                    <li class="nav-item  ">
+                    <li class="nav-item">
                         <a class=" nav-link" data-toggle="pill" href="#lastvisit" role="pill"
                            data-ng-click="tab['lastvisit'] = true">
                             <span>Zuletzt <br>besucht</span>
                         </a>
                     </li>
+
                 </f:if>
             </ul>
 
@@ -581,8 +582,8 @@
                         </f:if>
                     </div>
                 </div>
-                <div class="result-panel tab-pane " id="lastvisit" role="tabpanel">
-                    <div data-ng-if="{f:if(condition: '{neos:rendering.inBackend()}',then:'1==1 ||')}tab['lastvisit'] !== undefined">
+                <div class="result-panel tab-pane " id="lastvisit" role="tabpanel" data-ng-controller="EventoLastVisitedCtrl">
+                    <div data-ng-if="{f:if(condition: '{neos:rendering.inBackend()}',then:'1==1 ||')}tab['lastvisit'] !== undefined"  data-ng-show="countVisitedNodes() > 0">
                         <f:if condition="{WidgetGroupReferences.5}">
                             <ts:render path="defaultRenderer"
                                        context="{node: WidgetGroupReferences.5}"/>

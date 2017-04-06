@@ -54,6 +54,34 @@ PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
 
 }]);
 
+PhluCorporateApp.controller('EventoLastVisitedCtrl', ['$scope', '$window', function ($scope, $window) {
+
+
+    var getVisitedNodes = function () {
+
+        var visitednodes = [];
+        var storage = $window.localStorage['furtherEducationNodesVisited'];
+        try {
+
+            angular.forEach(angular.fromJson(storage), function (k, n) {
+                visitednodes.push(n);
+            });
+        } catch (e) {
+            // skipp
+        }
+
+        return visitednodes;
+
+    };
+
+    $scope.countVisitedNodes = function() {
+
+        return getVisitedNodes().length;
+    }
+
+
+}]);
+
 PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$rootScope', '$window', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $rootScope, $window) {
 
 
