@@ -22,7 +22,7 @@
     <f:if condition="{isEmpfohlen}"><span data-ng-init="setFilter({isEmpfohlen},'isEmpfohlen')"></span></f:if>
     <f:if condition="{isLastMinute}"><span data-ng-init="setFilter({isLastMinute},'isLastMinute')"></span></f:if>
     <f:if condition="{isNeuste}"><span data-ng-init="setFilter({isNeuste},'isNeuste')"></span></f:if>
-
+    <f:if condition="{isVisited}"><span data-ng-init="setFilter(getVisitedNodes(),'isVisited')"></span></f:if>
 
     <f:if condition="{query}"><span data-ng-init="searchquery = '{query}'"></span></f:if>
     <f:if condition="{maxitems} > 0"><span data-ng-init="setMaxItems({maxitems})"></span></f:if>
@@ -31,6 +31,8 @@
     <f:if condition="{top}">
         <ts:render path="top"></ts:render>
     </f:if>
+
+    {widgetRenderer -> f:format.raw()}
 
     <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading"
          class="loadingIcon"

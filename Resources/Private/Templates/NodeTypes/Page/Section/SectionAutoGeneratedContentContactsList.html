@@ -10,7 +10,7 @@
         </f:then>
     </f:if>
 
-
+    {widgetRenderer -> f:format.raw()}
     <f:if condition="{groupedMode}">
         <f:then>
             <div class="panel-group" id="node-{node.Identifier}">

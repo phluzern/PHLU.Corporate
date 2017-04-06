@@ -424,6 +424,14 @@
         inspector:
           group: filters
           position: 300
+    isVisited:
+      type: boolean
+      ui:
+        label: 'Nur zuletzt besuchte Angebote'
+        reloadIfChanged: true
+        inspector:
+          group: filters
+          position: 300
 
 # Section
 #

@@ -45,6 +45,7 @@
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/PpdbCtrl.js', package: 'Phlu.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/EventoCtrl.js', package: 'Phlu.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/LocationCtrl.js', package: 'Phlu.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/LogCtrl.js', package: 'Phlu.Corporate')}"></script>
     </f:section>
 
 </head>
@@ -54,7 +55,15 @@
 <f:section name="body">
 
 
-    <div class="all" data-ng-app="PhluCorporateApp" {f:if(condition: '{neos:rendering.inBackend()}',then:'style="display: none"', else: '')}>
+    <div class="all" data-ng-app="PhluCorporateApp" {f:if(condition:
+    '{neos:rendering.inBackend()}',then:'style="display: none"', else: '')}>
+    <f:if condition="{neos:rendering.inBackend()}">
+        <f:else>
+            <span data-ng-controller="LogCtrl"
+                  data-ng-init="setLogStore('{node.Identifier}','{node.nodeType.name}','{neos:uri.node(node: node, absolute: false)}');"></span>
+        </f:else>
+    </f:if>
+
     <span data-ng-controller="initController"
           data-ng-init="init('{firebaseEndpoint}','{site.context.currentSite.nodeName}','{site.workspace.name}','{site.nodeData.dimensionsHash}')"></span>
 
@@ -82,7 +91,8 @@
 
                             <input id="searchInput" type="text" class="c-input form-control" data-ng-model="siteSearch"
                                    data-ng-click="startSearch();">
-                                <i class="fa fa-search" aria-hidden="true" data-ng-class="{'fa-search-plus': quickNode}"></i>
+                            <i class="fa fa-search" aria-hidden="true"
+                               data-ng-class="{'fa-search-plus': quickNode}"></i>
                         </div>
 
                     </div>
@@ -239,8 +249,8 @@
                 ga('send', 'pageview');
 
             </script>
-        </f:else>
 
+        </f:else>
     </f:if>
 </f:section>
 </body>
