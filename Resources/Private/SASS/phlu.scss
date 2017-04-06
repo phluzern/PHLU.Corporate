@@ -651,6 +651,7 @@ html {
     font-family: FontAwesome;
   }
 }
+
 //
 // additional icons for backend dialogs
 //
@@ -3126,132 +3127,6 @@ body {
       }
     }
     //
-    // further education detail page (weiterbildung)
-    //
-    .further-education-detail {
-      .phlu-team-members {
-        padding-bottom: 17px;
-      }
-      .phlu-accordion {
-        margin-top: 10px;
-      }
-      .row {
-        &.fees {
-          table {
-            tr {
-              th {
-                width: 75%;
-              }
-              td {
-                text-align: right;
-              }
-            }
-          }
-        }
-        &.topics {
-          p {
-            width: 100%;
-          }
-        }
-      }
-      .phlu-corporate-text {
-        p {
-          width: 100%;
-        }
-      }
-    }
-    .further-education-order-button-float-top {
-      position: fixed;
-      top: 0;
-      right: 0;
-      background-color: $lightgrey;
-      padding: 5px 20px;
-      .btn {
-        font-size: 12px;
-
-      }
-    }
-    .shareAndRegister {
-      float: right;
-      .btn.share {
-        color: $petrol;
-        background-color: inherit;
-        line-height: 9px;
-        .shareText {
-          font-size: $font-size-small;
-        }
-        @include media-breakpoint-down("sm") {
-          padding: 0 19px;
-        }
-      }
-    }
-    .greyBgFullwidth2colTable {
-
-      .day, .date, .hour {
-        min-width: 30px;
-        display: block;
-        float: left;
-        margin-right: 5px;
-      }
-      .delim {
-        display: block;
-        float: left;
-      }
-      .hour {
-        margin-left: 5px;
-      }
-      .date {
-        margin-right: 15px;
-      }
-
-      color: $black;
-      font-size: $font-size-table-desktop;
-      background-color: $grey9;
-      padding-bottom: 27px;
-      .table-responsive {
-        table {
-          margin: 40px 0;
-          tbody {
-            tr {
-              border-bottom: 2px solid $grey7;
-              td {
-                padding: 15px;
-                .input-group-btn {
-                  button {
-                    color: white;
-                    background-color: $petrol;
-                  }
-                }
-                &:first-child {
-                  padding-left: 0;
-                  border-right: 2px solid $grey7;
-                  @include media-breakpoint-down("sm") {
-                    border-right: 0;
-                    .mobile-view-columns {
-                      margin: 0;
-                    }
-                  }
-                }
-              }
-              &:first-child {
-                td {
-                  padding-top: 0;
-                  border-top: 0;
-                }
-              }
-              &:last-child {
-                border-bottom: 0;
-                td {
-                  padding-bottom: 0;
-                  border-bottom: 0;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    //
     // phlu about pages
     //
     .phlu-about-detailview {
@@ -4621,7 +4496,6 @@ body {
             }
             th {
               width: 40%;
-              //background-image: url("../Images/table-cell-dottedline.png");
               border-bottom: 2px solid $hr-border-color;
             }
             td {
@@ -4629,9 +4503,7 @@ body {
                 margin: 0;
                 font-size: $font-size-paragraph-desktop/3*2;
               }
-              //background-image: url("../Images/table-cell-dottedline-raspberry-red.png");
               border-bottom: 2px solid $hr-border-color;
-              //border-left: 23px solid $beigelight;
               .dropdown-menu {
                 margin: 0;
                 padding: 0;
@@ -5215,8 +5087,202 @@ body {
         }
       }
 
+      //
+      // further education detail page (weiterbildung)
+      //
+      .further-education-detail {
+        .phlu-team-members {
+          .phlu-teaser {
+            .nav-teaser-item {
+              margin-bottom: inherit;
+            }
+          }
+        }
+        .phlu-accordion {
+          margin-top: 10px;
+        }
+        .row {
+          &.fees {
+            table {
+              tr {
+                th {
+                  width: 75%;
+                }
+                td {
+                  text-align: right;
+                }
+              }
+            }
+          }
+          &.topics {
+            p {
+              width: 100%;
+            }
+          }
+        }
+        .phlu-corporate-text {
+          p {
+            width: 100%;
+          }
+        }
+        .registration {
+          margin-bottom: 90px;
+          .greybgBody {
+            padding: 20px;
+            background-color: $grey9;
+            .startDate {
+              > div {
+                float: left;
+                .startDate {
+                  text-align: right;
+                }
+                &:first-child {
+                  padding-right: 15px;
+                }
+                &:last-child {
+                  border-left: 2px solid $lightgrey;
+                  padding-left: 15px;
+                  @include media-breakpoint-down("sm") {
+                    float: right;
+                  }
+                  .dropdown-menu {
+                    margin: 0;
+                    padding: 0;
+                    background-color: $petrol;
+                    list-style: none;
+                    border: 0;
+                    border-radius: 0;
+                    li {
+                      padding: 8px 12px;
 
+                      @include media-breakpoint-down("sm") {
+                        font-size: $font-size-form-dropdown;
+                      }
+                      a {
+                        color: white;
+                        cursor: pointer;
+                      }
+                      &:hover {
+                        background-color: $darkgrey;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .shareAndRegister {
+              text-align: right;
+              float: none;
+              @include media-breakpoint-down("sm") {
+                margin-top: 30px;
+              }
+            }
+          }
+        }
+      }
+      /*      .further-education-order-button-float-top {
+              position: fixed;
+              top: 0;
+              right: 0;
+              background-color: $lightgrey;
+              padding: 5px 20px;
+              .btn {
+                font-size: 12px;
 
+              }
+            }*/
+      .shareAndRegister {
+        float: right;
+        .btn.share {
+          color: $petrol;
+          background-color: inherit;
+          line-height: 9px;
+          .shareText {
+            font-size: $font-size-small;
+          }
+          @include media-breakpoint-down("sm") {
+            padding: 0 19px;
+          }
+        }
+      }
+      .greyBgFullwidth2colTable {
+
+        .day, .date, .hour {
+          min-width: 30px;
+          display: block;
+          float: left;
+          margin-right: 5px;
+        }
+        .delim {
+          display: block;
+          float: left;
+        }
+        .hour {
+          margin-left: 5px;
+        }
+        .date {
+          margin-right: 15px;
+        }
+
+        color: $black;
+        font-size: $font-size-table-desktop;
+        background-color: $grey9;
+        padding-bottom: 27px;
+        .table-responsive {
+          table {
+            margin: 40px 0;
+            tbody {
+              tr {
+                border-bottom: 2px solid $grey7;
+                td {
+                  padding: 15px;
+                  .input-group-btn {
+                    button {
+                      color: white;
+                      background-color: $petrol;
+                    }
+                  }
+                  &:first-child {
+                    padding-left: 0;
+                    border-right: 2px solid $grey7;
+                    @include media-breakpoint-down("sm") {
+                      border-right: 0;
+                      .mobile-view-columns {
+                        margin: 0;
+                      }
+                    }
+                  }
+                }
+                &:first-child {
+                  td {
+                    padding-top: 0;
+                    border-top: 0;
+                  }
+                }
+                &:last-child {
+                  border-bottom: 0;
+                  td {
+                    padding-bottom: 0;
+                    border-bottom: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      //
+      // furthereducation detailview hr
+      //
+      .row.further-education-detail {
+        .phlu-corporate-section {
+          hr {
+            border-top: 2px solid $lightgrey;
+            padding-bottom: 0;
+          }
+        }
+      }
 
       //
       // news and events flow text version
@@ -5355,14 +5421,10 @@ body {
           }
           a[data-gentics-aloha-repository='node-repository'] {
             background-image: inherit;
-            color:$font-color;
+            color: $font-color;
           }
         }
       }
-
-
-
-
 
     }
     //
