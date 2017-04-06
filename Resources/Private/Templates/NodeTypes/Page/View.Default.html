@@ -2,7 +2,7 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace media=Neos\Media\ViewHelpers}
 {namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
-
+{namespace uri=Phlu\Corporate\ViewHelpers\Uri}
 
 <f:if condition="{neos:rendering.inBackend()}">
     <f:if condition="{node.parent.nodeType.name} == 'Phlu.Corporate:Page.View.Dossier'">
@@ -53,24 +53,63 @@
         </f:if>
     </f:case>
     <f:case value="Event">
-        <f:if condition="{date}">
+        <f:if condition="{fromDate}">
         <div class="row">
-            <div class="col-xs-12 flowtext-phlu-event detailview">
-                <div class="row">
+            <div class="col-xs-12 flowtext-phlu-event">
+                <div class="row {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}">
                     <div class=" col-xs-12">
-                        <div class="initial">
-                            <f:format.date format="d">{node.properties.date}</f:format.date>.
-                        </div>
+                        <f:if condition="{eventType} == 'isEvent'">
+                            <div class="initial">
+                                <f:format.date format="d">{fromDate}</f:format.date>.
+                            </div>
+                        </f:if>
+                        <f:if condition="{eventType} == 'isExhibition'">
+                            <div class="initial exhibition">
+                                A
+                                <div class="description">
+                                    Ausstellung
+                                </div>
+                            </div>
+                        </f:if>
+                        <f:if condition="{eventType} == 'isMeeting'">
+                            <div class="initial meeting">
+                                T
+                                <div class="description">
+                                    Tagung
+                                </div>
+                            </div>
+                        </f:if>
+
                         <div class="date-location-title">
-                            <b>
-                                <f:format.date format="F Y">{date}</f:format.date>
-                            </b>
-                            <f:if condition="{time}"> /
-                                <f:format.date format="H:i">{time}</f:format.date>
+
+                            <f:if condition="{eventType} == 'isExhibition'">
+                                <f:then>
+                                    <b>
+                                        <f:format.date format="d. F Y">{fromDate}</f:format.date>
+                                        -
+                                        <f:format.date format="d. F Y">{toDate}</f:format.date>
+                                    </b>
+                                </f:then>
+                                <f:else>
+                                    <f:if condition="{eventType} == 'isMeeting'">
+                                        <f:then>
+                                            <b>
+                                                <f:format.date format="d. F Y">{fromDate}</f:format.date>
+                                                -
+                                                <f:format.date format="d. F Y">{toDate}</f:format.date>
+                                            </b>
+                                        </f:then>
+                                        <f:else>
+                                            <b>
+                                                <f:format.date format="F Y">{fromDate}</f:format.date>
+                                            </b>
+                                        </f:else>
+                                    </f:if>
+                                </f:else>
                             </f:if>
-                            <br>
-                            {location}
+                            <br>{location}
                         </div>
+
                     </div>
                 </div>
             </div>
