@@ -56,7 +56,6 @@ PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
 
 PhluCorporateApp.controller('EventoLastVisitedCtrl', ['$scope', '$window', function ($scope, $window) {
 
-
     var getVisitedNodes = function () {
 
         var visitednodes = [];
@@ -74,7 +73,8 @@ PhluCorporateApp.controller('EventoLastVisitedCtrl', ['$scope', '$window', funct
 
     };
 
-    $scope.countVisitedNodes = function() {
+    $scope.countVisitedNodes = function () {
+
 
         return getVisitedNodes().length;
     }
