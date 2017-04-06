@@ -15,6 +15,7 @@
         <ts:render path="top"></ts:render>
     </f:if>
 
+    {widgetRenderer -> f:format.raw()}
 
 
     <div class="row ppdb-list hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">

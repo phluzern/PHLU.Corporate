@@ -1,4 +1,4 @@
-PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
+PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$window', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $window) {
 
     $scope.list = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();
@@ -54,7 +54,7 @@ PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
 
 }]);
 
-PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$rootScope', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $rootScope) {
+PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$rootScope', '$window', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $rootScope, $window) {
 
 
     var search = new $hybridsearchObject(hybridsearch);
@@ -120,6 +120,10 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             'property': 'isNeuste',
             'categories': ['Kurs', 'Studiengang', 'Alle'],
         },
+        'isVisited': {
+            'property': 'url',
+            'categories': ['Kurs', 'Studiengang', 'Alle'],
+        },
         'dayofweek': {
             'property': 'module-furthereducation-start.format.A',
             'categories': ['Kurs'],
@@ -173,13 +177,29 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     }
 
     $scope.setUserChangedNodeType = function () {
-
         $scope.isUserChangedNodeType = true;
-
     }
 
     $scope.setUserExtendedSearch = function () {
         $scope.isUserExtendedSearch = true;
+    }
+
+    $scope.getVisitedNodes = function () {
+
+        var visitednodes = [];
+        var storage = $window.localStorage['furtherEducationNodesVisited'];
+        try {
+
+            angular.forEach(angular.fromJson(storage), function (k, n) {
+                visitednodes.push(n);
+            });
+        } catch (e) {
+            // skipp
+        }
+
+        console.log(visitednodes);
+        return visitednodes;
+
     }
 
     $scope.setIsLoadedFirst = function () {
@@ -192,7 +212,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                 $scope.$digest();
             })
 
-        },1000);
+        }, 1000);
 
         return true;
 
@@ -202,18 +222,18 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             window.setTimeout(function () {
 
                 if ($scope.isShowingResult() == false && $scope.isUserChangedNodeType == false) {
-                    $scope.setNodetypesFilter(filter,true);
+                    $scope.setNodetypesFilter(filter, true);
 
                     if (i == $scope.nodetypesFilter.length - 1) {
                         $rootScope.isLoadedFirst = true;
-                        $scope.setNodetypesFilter($scope.nodetypesFilter[0],true);
+                        $scope.setNodetypesFilter($scope.nodetypesFilter[0], true);
                     }
 
                 } else {
-                        $rootScope.isLoadedFirst = true;
-                        window.setTimeout(function () {
-                            $scope.$digest();
-                        })
+                    $rootScope.isLoadedFirst = true;
+                    window.setTimeout(function () {
+                        $scope.$digest();
+                    })
                 }
 
             }, t - (i * 10));
@@ -299,7 +319,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @param boolean notrigger
      * @returns void
      */
-    $scope.setNodetypesFilter = function (filter,notrigger) {
+    $scope.setNodetypesFilter = function (filter, notrigger) {
 
         angular.forEach($scope.nodetypesFilter, function (val, key) {
             val.state = false;
@@ -781,16 +801,16 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         .setOrderBy({'*': '-id'})
         .$watch(function (i) {
 
-            if ($rootScope.isLoadedFirst == false && $scope.isLoadingFirst == false ) {
+            if ($rootScope.isLoadedFirst == false && $scope.isLoadingFirst == false) {
                 $scope.setIsLoadedFirst();
             }
-
 
 
         })
         .$bind('result', $scope);
 
     angular.forEach($scope.filters, function (filter, name) {
+
 
         if (filter.fulltext !== undefined && filter.fulltext) {
             search.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope, filter.reverse == undefined ? false : filter.reverse, false, false, true);

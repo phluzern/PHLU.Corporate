@@ -21,6 +21,9 @@ prototype(Phlu.Corporate:ContentCollection.WidgetGroupReferences) < prototype(Ph
         tag = 'h3'
     }
 
+    widgetRendererElement = Phlu.Corporate:Widget
+    widgetRenderer = ${q(node).property('widget') ? this.widgetRendererElement : ''}
+
 }
 
 prototype(Phlu.Corporate:ContentCollection.WidgetGroupReferencesPage) < prototype(Neos.NodeTypes:ContentReferences){
