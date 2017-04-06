@@ -151,6 +151,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     $scope.$watch('filters', function (filters) {
         angular.forEach(filters, function (filter) {
+
             if (filter.selected == undefined) {
                 filter.selected = {};
             }
@@ -197,7 +198,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             // skipp
         }
 
-        console.log(visitednodes);
         return visitednodes;
 
     }
