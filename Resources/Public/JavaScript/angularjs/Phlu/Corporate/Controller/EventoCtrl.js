@@ -184,7 +184,17 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     $scope.setIsLoadedFirst = function () {
 
+
         $scope.isLoadingFirst = true;
+        window.setTimeout(function () {
+            $rootScope.isLoadedFirst = true;
+            window.setTimeout(function () {
+                $scope.$digest();
+            })
+
+        },1000);
+
+        return true;
 
         var t = 1000 * ($scope.nodetypesFilter.length + 1);
 
@@ -771,7 +781,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         .setOrderBy({'*': '-id'})
         .$watch(function (i) {
 
-            if ($rootScope.isLoadedFirst == false && $scope.isLoadingFirst == false && i.count() > 0) {
+            if ($rootScope.isLoadedFirst == false && $scope.isLoadingFirst == false ) {
                 $scope.setIsLoadedFirst();
             }
 
