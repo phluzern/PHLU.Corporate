@@ -4475,143 +4475,6 @@ body {
       }
     }
     //
-    // news and events flow text version
-    //
-    .flowtext-phlu-event, .flowtext-phlu-news {
-      a, a:hover {
-        color: $grey;
-      }
-      > .row {
-        .initial, .date-location-title, .preview-image, .date-title-preview-text {
-          float: left;
-        }
-        .initial {
-          width: 70px;
-          height: 70px;
-          color: white;
-          font-size: 28px;
-          padding: 15px 15px;
-          &.exhibition {
-            font-size: 40px;
-            padding: 4px 0 0 23px;
-            .description {
-              position: absolute;
-              font-size: 10px;
-              top: 50px;
-              left: 24px;
-            }
-          }
-          &.meeting {
-            font-size: 38px;
-            padding: 4px 0 0 25px;
-            .description {
-              position: absolute;
-              font-size: 10px;
-              top: 50px;
-              left: 33px;
-            }
-          }
-        }
-
-        .preview-image {
-
-          img {
-            width: 150px;
-            height: 150px;
-            @include media-breakpoint-down("xs") {
-              width: inherit;
-              height: auto;
-            }
-          }
-          @include media-breakpoint-down("xs") {
-            float: none;
-          }
-        }
-
-        .date-location-title, .date-title-preview-text {
-          padding-left: 20px;
-          overflow: hidden;
-          a {
-            font-size: 20px;
-          }
-          .more-link {
-            padding-left: 5px;
-            font-size: 14px;
-          }
-        }
-
-        .date-location-title {
-          @include media-breakpoint-up("xxxl") {
-            max-width: 92%;
-          }
-          @include media-breakpoint-up("xxl") {
-            max-width: 91%;
-          }
-          @include media-breakpoint-up("md") {
-            max-width: 90%;
-          }
-          @include media-breakpoint-up("sm") {
-            max-width: 86%;
-          }
-          @include media-breakpoint-up("xs") {
-            max-width: 80%;
-          }
-
-        }
-        .date-title-preview-text {
-          @include media-breakpoint-up("xxxl") {
-            max-width: 83%;
-          }
-          @include media-breakpoint-up("lg") {
-            max-width: 80%;
-          }
-          @include media-breakpoint-up("md") {
-            max-width: 79%;
-          }
-          @include media-breakpoint-up("sm") {
-            max-width: 70%;
-          }
-          @include media-breakpoint-down("xs") {
-            max-width: 100%;
-            padding-left: 0;
-            padding-top: 30px;
-            padding-bottom: 30px;
-          }
-
-          div {
-            padding-top: 15px;
-          }
-        }
-      }
-
-    }
-    .flowtext-phlu-news {
-      > div {
-        padding-bottom: 30px;
-      }
-      > .row {
-        .initial {
-          background-color: $olivegreen;
-        }
-      }
-      &.detailView {
-        .full-date {
-          margin: 0;
-        }
-        h2 {
-          margin: 32px 0;
-        }
-      }
-    }
-    .flowtext-phlu-event {
-      > .row {
-        padding-bottom: 30px;
-        .initial {
-          background-color: $petrol;
-        }
-      }
-    }
-    //
     // phlu-table
     //
     .table-responsive {
@@ -5351,6 +5214,156 @@ body {
           margin-top: inherit;
         }
       }
+
+
+
+
+      //
+      // news and events flow text version
+      //
+      .flowtext-phlu-event, .flowtext-phlu-news {
+        a, a:hover {
+          color: $grey;
+        }
+        > .row {
+          .initial, .date-location-title, .preview-image, .date-title-preview-text {
+            float: left;
+          }
+          .initial {
+            width: 70px;
+            height: 70px;
+            color: white;
+            font-size: 28px;
+            padding: 15px 15px;
+            &.exhibition {
+              font-size: 40px;
+              padding: 4px 0 0 23px;
+              .description {
+                position: absolute;
+                font-size: 10px;
+                top: 50px;
+                left: 24px;
+              }
+            }
+            &.meeting {
+              font-size: 38px;
+              padding: 4px 0 0 25px;
+              .description {
+                position: absolute;
+                font-size: 10px;
+                top: 50px;
+                left: 33px;
+              }
+            }
+          }
+
+          .preview-image {
+
+            img {
+              width: 150px;
+              height: 150px;
+              @include media-breakpoint-down("xs") {
+                width: inherit;
+                height: auto;
+              }
+            }
+            @include media-breakpoint-down("xs") {
+              float: none;
+            }
+          }
+
+          .date-location-title, .date-title-preview-text {
+            padding-left: 20px;
+            overflow: hidden;
+            a {
+              font-size: 20px;
+            }
+            .more-link {
+              padding-left: 5px;
+              font-size: 14px;
+            }
+          }
+
+          .date-location-title {
+            @include media-breakpoint-up("xxxl") {
+              max-width: 92%;
+            }
+            @include media-breakpoint-up("xxl") {
+              max-width: 91%;
+            }
+            @include media-breakpoint-up("md") {
+              max-width: 90%;
+            }
+            @include media-breakpoint-up("sm") {
+              max-width: 86%;
+            }
+            @include media-breakpoint-up("xs") {
+              max-width: 80%;
+            }
+
+          }
+          .date-title-preview-text {
+            @include media-breakpoint-up("xxxl") {
+              max-width: 83%;
+            }
+            @include media-breakpoint-up("lg") {
+              max-width: 80%;
+            }
+            @include media-breakpoint-up("md") {
+              max-width: 79%;
+            }
+            @include media-breakpoint-up("sm") {
+              max-width: 70%;
+            }
+            @include media-breakpoint-down("xs") {
+              max-width: 100%;
+              padding-left: 0;
+              padding-top: 30px;
+              padding-bottom: 30px;
+            }
+
+            div {
+              padding-top: 15px;
+            }
+          }
+        }
+
+      }
+      .flowtext-phlu-news {
+        > div {
+          padding-bottom: 30px;
+        }
+        > .row {
+          .initial {
+            background-color: $olivegreen;
+          }
+        }
+        &.detailView {
+          .full-date {
+            margin: 0;
+          }
+          h2 {
+            margin: 32px 0;
+          }
+        }
+      }
+      .flowtext-phlu-event {
+        > .row {
+          padding-bottom: 30px;
+          .initial {
+            background-color: $petrol;
+          }
+          a[data-gentics-aloha-repository='node-repository'] {
+            background-image: inherit;
+            color:$font-color;
+          }
+        }
+      }
+
+
+
+
+
     }
     //
     // breadcrumb bottom

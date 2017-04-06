@@ -289,7 +289,7 @@
   superTypes:
     'Phlu.Corporate:Page.NotInMenu': true
     'Phlu.Corporate:Page.View.Default': true
-    'Phlu.Neos.NodeTypes:TeaserMixin': true
+    'Phlu.Neos.NodeTypes:EventMixin': true
   constraints:
     nodeTypes:
       '*': false
@@ -298,6 +298,16 @@
       'Phlu.Corporate:Page.View.Default': false
       'Phlu.Corporate:Page.View.Default.Default': true
   properties:
+    fromDate:
+      ui: ~
+    fromTime:
+      ui: ~
+    toDate:
+      ui: ~
+    toTime:
+      ui: ~
+    eventType:
+      ui: ~
     reference:
       type: reference
       ui:

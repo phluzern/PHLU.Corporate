@@ -205,6 +205,8 @@ class TeaserAspect
                 }
             }
 
+
+
             if ($detailNode == null) {
                 $detailNode = $basenode->createNode('news' . $object->getIdentifier(), $this->nodeTypeManager->getNodeType($detailNodeTypeName));
                 $this->persistenceManager->persistAll();
@@ -256,6 +258,12 @@ class TeaserAspect
             if ($object->getProperty('date')) $detailNode->setProperty('date', $object->getProperty('date'));
             if ($object->getProperty('time')) $detailNode->setProperty('time', $object->getProperty('time'));
             if ($object->getProperty('location')) $detailNode->setProperty('location', $object->getProperty('location'));
+            if ($object->getProperty('fromDate')) $detailNode->setProperty('fromDate', $object->getProperty('fromDate'));
+            if ($object->getProperty('fromTime')) $detailNode->setProperty('fromTime', $object->getProperty('fromTime'));
+            if ($object->getProperty('toDate')) $detailNode->setProperty('toDate', $object->getProperty('toDate'));
+            if ($object->getProperty('toTime')) $detailNode->setProperty('toTime', $object->getProperty('toTime'));
+            if ($object->getProperty('eventType')) $detailNode->setProperty('eventType', $object->getProperty('eventType'));
+
             $detailNode->setProperty('title', $object->getProperty('teaserHeadline'));
 
 

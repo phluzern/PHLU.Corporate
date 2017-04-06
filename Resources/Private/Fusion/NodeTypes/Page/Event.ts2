@@ -1,9 +1,13 @@
 # Page News
 prototype(Phlu.Corporate:Page.Event) < prototype(Phlu.Corporate:Page.View.Default) {
 
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
 
-        templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
-
+    fromDate = ${q(node).property('fromDate')}
+    fromTime = ${q(node).property('fromTime')}
+    toDate = ${q(node).property('toDate')}
+    toTime = ${q(node).property('toTime')}
+    eventType = ${q(node).property('eventType')}
 
 }
 
