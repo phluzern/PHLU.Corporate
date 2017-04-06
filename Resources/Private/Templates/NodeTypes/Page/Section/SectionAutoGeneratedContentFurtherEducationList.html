@@ -29,7 +29,7 @@
     <f:if condition="{orderby} != ''"><span data-ng-init="setOrderBy('{orderby}')"></span></f:if>
 
     <f:if condition="{top}">
-    <ts:render path="top"></ts:render>
+        <ts:render path="top"></ts:render>
     </f:if>
 
     <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading"
@@ -63,7 +63,12 @@
         </div>
     </div>
     <f:if condition="{bottom}">
-    <ts:render path="bottom"></ts:render>
+        <ts:render path="bottom"></ts:render>
     </f:if>
-    <hr/>
+    <f:if condition="{node.parent.nodeType.name} == 'Phlu.Corporate:ContentCollection.WidgetGroupReferences'">
+        <f:else>
+            <hr/>
+        </f:else>
+    </f:if>
+
 </div>

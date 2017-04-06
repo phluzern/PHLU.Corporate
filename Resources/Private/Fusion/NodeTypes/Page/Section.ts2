@@ -7,6 +7,9 @@ prototype(Phlu.Corporate:Section) < prototype(Phlu.Corporate:Content) {
     sectionCount = ${q(node).parent().find('[instanceof Phlu.Corporate:Section]').count()}
     attributes.id = ${'node-' + node.Identifier}
 
+    widgetRendererElement = Phlu.Corporate:Widget
+    widgetRenderer = ${q(node).property('widget') ? this.widgetRendererElement : ''}
+
     prototype(Phlu.Corporate:ContentCollection)  {
 
         prototype(Phlu.Corporate:Headline) {

@@ -8,6 +8,7 @@
         {neos:contentElement.editable(property: 'title', tag: 'h2')}
         </f:then>
     </f:if>
+    {widgetRenderer -> f:format.raw()}
     <ts:render path="collectionRenderer" context="{node: main}"/>
     <hr>
 </div>

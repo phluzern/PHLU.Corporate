@@ -13,6 +13,8 @@
       groups:
         general:
           label: Allgemein
+        special:
+          label: Erweitert
   constraints:
     nodeTypes:
       '*': false
@@ -27,6 +29,14 @@
           position: 50
     internalid:
       type: integer
+    widget:
+      type: string
+      ui:
+        label: Widget
+        defaultValue: false
+        inspector:
+          group: special
+        reloadIfChanged: true
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Section'
