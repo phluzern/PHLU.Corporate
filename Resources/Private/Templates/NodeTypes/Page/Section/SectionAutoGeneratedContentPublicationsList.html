@@ -59,7 +59,7 @@
                         <ul class="nav nav-pills" role="tablist">
 
                             <li class="nav-item"
-                                data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('persons',false) > 1">
+                                data-ng-show="initialFilters.participants === undefined ">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#participants-{node.Identifier}" role="tab">
                                     <i class="fa fa-users" aria-hidden="true"></i>
@@ -78,7 +78,7 @@
                             </li>
 
                             <li class="nav-item"
-                                data-ng-show="initialFilters.organisations === undefined && result.getDistinctCount('organisations',false) > 1">
+                                data-ng-show="initialFilters.organisations === undefined ">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#organisations-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
@@ -93,7 +93,7 @@
                             </li>
 
                             <li class="nav-item"
-                                data-ng-show="initialFilters.publicationtype === undefined && result.getDistinctCount('publicationtype',false) > 1">
+                                data-ng-show="initialFilters.publicationtype === undefined ">
                                 <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#publicationtype-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
