@@ -267,14 +267,14 @@
                     <a class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                 </div>
                 <div class="result-panel tab-pane " id="organisationunits-{node.Identifier}" role="tabpanel"
-                     data-ng-show="result.getDistinctCount('organisationunits') > 1">
+                     data-ng-show="result.getDistinctCount('organisationunits',false) > 1">
                     <div class="table-responsive">
 
                         <table class="table">
                             <tbody>
                             <tr data-ng-click="organisationunits[lt.value.id] = !organisationunits[lt.value.id] ? true : false;"
                                 data-ng-class="{checked: organisationunits[lt.value.id]}"
-                                data-ng-repeat="lt in result.getDistinct('organisationunits') | toArray:false | orderBy:'value.name'">
+                                data-ng-repeat="lt in result.getDistinct('organisationunits',false) | toArray:false | orderBy:'value.name'">
                                 <td>
                                     <a href="javascript:void(0);">
                                         <i class="fa"
