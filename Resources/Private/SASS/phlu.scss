@@ -1155,7 +1155,7 @@ body {
           font-size: $font-size-form-dropdown-big;
           @include media-breakpoint-down("sm") {
             font-size: $font-size-form-dropdown;
-            padding:11px 25px;
+            padding: 11px 25px;
           }
           background-color: $petrol;
         }
@@ -1356,7 +1356,7 @@ body {
               i.fa {
                 width: 32px;
                 height: 27px;
-                padding-top:6px;
+                padding-top: 6px;
                 color: white;
               }
             }
@@ -1410,7 +1410,7 @@ body {
                   padding-left: 26px;
                   margin-top: -6px;
                   @include media-breakpoint-down("sm") {
-                    margin-top:-3px;;
+                    margin-top: -3px;;
                   }
                 }
               }
@@ -1432,7 +1432,7 @@ body {
                       width: 80%;
                     }
                     @include media-breakpoint-up("lg") {
-                      float:inherit;
+                      float: inherit;
                     }
                   }
                 }
@@ -2665,6 +2665,43 @@ body {
         margin: 0 0 0;
       }
     }
+    .publications-list, &.science-projects {
+      .phlu-accordion {
+        margin: 0;
+        .panel-default {
+          .panel-collapse {
+            > div {
+              p {
+                width: 100%;
+                i {
+                  font-style: italic;
+                }
+              }
+              > div:last-child {
+                p {
+                  border-bottom: 0;
+                }
+              }
+              .loadMore {
+                margin-bottom:30px;
+              }
+            }
+          }
+        }
+
+      }
+    }
+    .publications-list {
+      .phlu-accordion {
+        .panel-default {
+          .panel-collapse {
+            p {
+              border-bottom: 2px $lightgrey solid;
+            }
+          }
+        }
+      }
+    }
 
     .phlu-accordion, .phlu-corporate-section {
 
@@ -3132,35 +3169,6 @@ body {
           }
         }
 
-        &.publications-list, &.science-projects {
-          .phlu-accordion {
-            margin: 0;
-            .panel-default {
-              .panel-collapse {
-                p {
-                  width: 100%;
-                  i {
-                    font-style:italic;
-                  }
-                  &:last-child {
-                    border-bottom: 0;
-                  }
-                }
-              }
-            }
-          }
-        }
-        &.publications-list {
-          .phlu-accordion {
-            .panel-default {
-              .panel-collapse {
-                p {
-                  border-bottom:2px $lightgrey solid;
-                }
-              }
-            }
-          }
-        }
       }
       .row:last-child {
         margin-bottom: 60px;

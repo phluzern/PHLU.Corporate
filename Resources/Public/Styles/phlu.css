@@ -9716,6 +9716,18 @@ body {
         margin: 0; }
     body .all .phlu-corporate-section .phlu-accordion {
       margin: 0 0 0; }
+    body .all .publications-list .phlu-accordion, body .all.science-projects .phlu-accordion {
+      margin: 0; }
+      body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div p, body .all.science-projects .phlu-accordion .panel-default .panel-collapse > div p {
+        width: 100%; }
+        body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div p i, body .all.science-projects .phlu-accordion .panel-default .panel-collapse > div p i {
+          font-style: italic; }
+      body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div > div:last-child p, body .all.science-projects .phlu-accordion .panel-default .panel-collapse > div > div:last-child p {
+        border-bottom: 0; }
+      body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div .loadMore, body .all.science-projects .phlu-accordion .panel-default .panel-collapse > div .loadMore {
+        margin-bottom: 30px; }
+    body .all .publications-list .phlu-accordion .panel-default .panel-collapse p {
+      border-bottom: 2px #edeae8 solid; }
     body .all .phlu-accordion .panel, body .all .phlu-corporate-section .panel {
       padding-bottom: 17px; }
       body .all .phlu-accordion .panel .panel-heading .panel-title, body .all .phlu-corporate-section .panel .panel-heading .panel-title {
@@ -9994,16 +10006,6 @@ body {
         padding-left: 0; }
         body .all .phlu-dozpage .row.cv ul.list li ul {
           list-style-type: square; }
-    body .all .phlu-dozpage .row.publications-list .phlu-accordion, body .all .phlu-dozpage .row.science-projects .phlu-accordion {
-      margin: 0; }
-      body .all .phlu-dozpage .row.publications-list .phlu-accordion .panel-default .panel-collapse p, body .all .phlu-dozpage .row.science-projects .phlu-accordion .panel-default .panel-collapse p {
-        width: 100%; }
-        body .all .phlu-dozpage .row.publications-list .phlu-accordion .panel-default .panel-collapse p i, body .all .phlu-dozpage .row.science-projects .phlu-accordion .panel-default .panel-collapse p i {
-          font-style: italic; }
-        body .all .phlu-dozpage .row.publications-list .phlu-accordion .panel-default .panel-collapse p:last-child, body .all .phlu-dozpage .row.science-projects .phlu-accordion .panel-default .panel-collapse p:last-child {
-          border-bottom: 0; }
-    body .all .phlu-dozpage .row.publications-list .phlu-accordion .panel-default .panel-collapse p {
-      border-bottom: 2px #edeae8 solid; }
     body .all .phlu-dozpage .row:last-child {
       margin-bottom: 60px; }
       body .all .phlu-dozpage .row:last-child hr {
