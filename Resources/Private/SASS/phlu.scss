@@ -1152,6 +1152,7 @@ body {
           font-size: $font-size-form-dropdown-big;
           @include media-breakpoint-down("sm") {
             font-size: $font-size-form-dropdown;
+            padding:11px 25px;
           }
           background-color: $petrol;
         }
@@ -1164,7 +1165,7 @@ body {
         color: $petrol;
         margin: 16px 23px 0 0;
         @include media-breakpoint-down("sm") {
-          margin: 11px 23px 0 0;
+          margin: 17px 23px 0 0;
         }
         position: absolute;
         right: 0;
@@ -1351,7 +1352,8 @@ body {
               text-align: center;
               i.fa {
                 width: 32px;
-                height: 23px;
+                height: 27px;
+                padding-top:6px;
                 color: white;
               }
             }
@@ -1397,13 +1399,54 @@ body {
                 display: table;
                 width: 100%;
                 i {
-                  padding-right: 15px;
+                  display: block;
+                  float: left;
+                }
+                span {
+                  display: block;
+                  padding-left: 26px;
+                  margin-top: -6px;
+                  @include media-breakpoint-down("sm") {
+                    margin-top:-3px;;
+                  }
                 }
               }
               &:hover {
                 background-color: $lightgrey;
               }
 
+            }
+          }
+          &[name='scholarYear'] {
+            .dropdown-menu {
+              li {
+                a {
+                  span {
+                    @include media-breakpoint-only("sm") {
+                      width: 97%;
+                    }
+                    @include media-breakpoint-only("md") {
+                      width: 80%;
+                    }
+                    @include media-breakpoint-up("lg") {
+                      float:inherit;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &[name='weekday'] {
+            .dropdown-menu {
+              li {
+                a {
+                  span {
+                    @include media-breakpoint-up("md") {
+                      width: 87%;
+                    }
+                  }
+                }
+              }
             }
           }
           .form-control {
@@ -3694,7 +3737,10 @@ body {
           width: 30px;
           height: 30px;
           position: absolute;
-          margin-top: 5px;
+          margin-top: 6px;
+          @include media-breakpoint-down("sm") {
+            margin-top: 0;
+          }
           margin-right: 6px;
           margin-left: 5px;
           padding-right: 10px;
@@ -5093,7 +5139,7 @@ body {
       .further-education-detail {
         .phlu-team-members {
           .phlu-teaser {
-            padding:0;
+            padding: 0;
             .nav-teaser-item {
               margin-bottom: inherit;
             }

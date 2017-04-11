@@ -74,7 +74,7 @@
                             <h3>Kurse und Studiengänge</h3>
 
                             <div class="row input-group">
-                                <div class="input-item-col col-xs-12 col-sm-3">
+                                <div name="scholarYear" class="input-item-col col-sm-12 col-md-2">
                                     <label>Schul-/Studienjahr </label>
                                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
                                          role="button"
@@ -106,8 +106,7 @@
 
                                 </div>
 
-
-                                <div class="input-item-col col-xs-12 col-sm-6"
+                                <div class="input-item-col col-sm-12 col-md-5"
                                      data-ng-class="{disabled: result.getDistinctCount('targetgroups.Bezeichnung') == 0}">
                                     <label>Zielgruppen</label>
                                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
@@ -157,7 +156,7 @@
 
 
                             <div class="row input-group">
-                                <div class="input-item-col col-xs-12 col-sm-3">
+                                <div name="scholarYear" class="input-item-col col-sm-12 col-md-2">
                                     <label>Schul-/Studienjahr</label>
                                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
                                          role="button"
@@ -186,7 +185,7 @@
                                     </ul>
                                 </div>
 
-                                <div name="targetDegree" class="input-item-col col-xs-12 col-sm-6">
+                                <div name="targetDegree" class="input-item-col col-sm-12 col-md-5" data-ng-class="{'disabled': !result.getDistinctCount('graduation')}">
                                     <label>Typ/Abschluss</label>
                                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
                                          role="button"
@@ -219,7 +218,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="input-item-col col-xs-12 col-sm-3">
+                                <div class="input-item-col col-sm-12 col-md-5" data-ng-class="{'disabled': !result.getDistinctCount('study-furthereducation-targetgroups.Bezeichnung')}">
                                     <label>Zielgruppen</label>
                                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
                                          role="button"
@@ -252,7 +251,7 @@
                             </div>
 
                             <div class="row input-group">
-                                <div class="input-item-col col-xs-6 col-sm-3">
+                                <div class="input-item-col col-sm-6 col-md-3">
                                     <div class="checkbox">
                                         <input type="checkbox" id="freie-plaetze-studiengang"
                                                data-ng-model="bookable.Studiengang"
@@ -270,8 +269,7 @@
                             <h3>Kurse</h3>
 
                             <div class="row input-group">
-
-                                <div class="input-item-col col-xs-12 col-sm-3">
+                                <div name="scholarYear" class="input-item-col col-sm-12 col-md-3">
                                     <label>Schul-/Studienjahr</label>
                                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
                                          role="button"
@@ -300,8 +298,7 @@
                                     </ul>
 
                                 </div>
-
-                                <div class="input-item-col col-xs-12 col-sm-3">
+                                <div class="input-item-col col-sm-12 col-md-3">
 
                                     <label>Kursnummer</label>
                                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -311,7 +308,7 @@
 
 
                                 </div>
-                                <div class="input-item-col col-xs-12 col-sm-3">
+                                <div name="weekday" class="input-item-col col-sm-12 col-md-3">
                                     <label>Wochentag</label>
                                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
                                          role="button"
@@ -340,7 +337,7 @@
                                     </ul>
 
                                 </div>
-                                <div class="input-item-col col-xs-12 col-sm-3">
+                                <div class="input-item-col col-sm-12 col-md-3">
 
                                     <label>Kursleitung</label>
                                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -355,8 +352,7 @@
 
                             <div class="row input-group">
 
-
-                                <div class="input-item-col col-xs-12 col-sm-6">
+                                <div class="input-item-col col-sm-12 col-md-6">
                                     <label>Zielgruppen</label>
                                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
                                          role="button"
@@ -385,9 +381,7 @@
                                     </ul>
 
                                 </div>
-
-
-                                <div class="input-item-col col-xs-12 col-sm-6">
+                                <div class="input-item-col col-sm-12 col-md-6">
                                     <label>Inhaltsverzeichnis</label>
                                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
                                          role="button"
@@ -416,16 +410,15 @@
                                     </ul>
 
                                 </div>
-
                             </div>
                             <div class="row input-group">
-                                <div class="input-item-col col-xs-6 col-sm-3 disabled">
+                                <div class="input-item-col col-sm-6 col-md-3 disabled">
                                     <div class="checkbox">
                                         <input type="checkbox" id="nur-holkurse" name="nur-holkurse"/>
                                         <label for="nur-holkurse"><span>&nbsp;</span>Nur Holkurse</label>
                                     </div>
                                 </div>
-                                <div class="input-item-col col-xs-6 col-sm-3">
+                                <div class="input-item-col col-sm-6 col-md-3">
                                     <div class="checkbox">
                                         <input type="checkbox" id="freie-plaetze-kurse"
                                                data-ng-model="bookable.Kurs"

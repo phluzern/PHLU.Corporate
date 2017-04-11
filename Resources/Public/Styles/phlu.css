@@ -8721,7 +8721,8 @@ body {
         background-color: #28818f; }
         @media (max-width: 767px) {
           body .all .input-group .input-group-btn button {
-            font-size: 1rem; } }
+            font-size: 1rem;
+            padding: 11px 25px; } }
       body .all .input-group .form-control {
         border: solid 2px #28818f; }
       body .all .input-group .fa.fa-search {
@@ -8733,7 +8734,7 @@ body {
         z-index: 98; }
         @media (max-width: 767px) {
           body .all .input-group .fa.fa-search {
-            margin: 11px 23px 0 0; } }
+            margin: 17px 23px 0 0; } }
       body .all .input-group .dropdown-menu {
         list-style-type: none;
         background-color: #28818f;
@@ -8871,7 +8872,8 @@ body {
             text-align: center; }
             body .all .extendedSearchBg .extendedSearchFilter .input-item-col .deleteDropdownSelectionButton a i.fa {
               width: 32px;
-              height: 23px;
+              height: 27px;
+              padding-top: 6px;
               color: white; }
           body .all .extendedSearchBg .extendedSearchFilter .input-item-col .deleteDropdownSelectionButton.on {
             display: block; }
@@ -8902,9 +8904,31 @@ body {
               display: table;
               width: 100%; }
               body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a i {
-                padding-right: 15px; }
+                display: block;
+                float: left; }
+              body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span {
+                display: block;
+                padding-left: 26px;
+                margin-top: -6px; }
+                @media (max-width: 767px) {
+                  body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span {
+                    margin-top: -3px; } }
             body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li:hover {
               background-color: #edeae8; }
+
+@media (min-width: 544px) and (max-width: 767px) {
+  body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='scholarYear'] .dropdown-menu li a span {
+    width: 97%; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='scholarYear'] .dropdown-menu li a span {
+    width: 80%; } }
+        @media (min-width: 992px) {
+          body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='scholarYear'] .dropdown-menu li a span {
+            float: inherit; } }
+        @media (min-width: 768px) {
+          body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='weekday'] .dropdown-menu li a span {
+            width: 87%; } }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col .form-control {
           border: 0; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col input.form-control {
@@ -10347,10 +10371,13 @@ body {
       width: 30px;
       height: 30px;
       position: absolute;
-      margin-top: 5px;
+      margin-top: 6px;
       margin-right: 6px;
       margin-left: 5px;
       padding-right: 10px; }
+      @media (max-width: 767px) {
+        body .all .further-education-special-search .nodeTypeSwitcher .loadingIcon {
+          margin-top: 0; } }
     body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .dropdown-toggle::after {
       border-top: 0; }
     body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .loadingIcon {
