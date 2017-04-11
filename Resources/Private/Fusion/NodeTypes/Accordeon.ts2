@@ -4,7 +4,7 @@ prototype(Phlu.Corporate:AccordeonElement) < prototype(Phlu.Corporate:Content) {
     templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/AccordeonElement.html'
     collectionRenderer = Neos.Neos:ContentCollection
     main = ${q(node).children('main').get(0)}
-
+    attributes.class = 'phlu-accordion'
 
 }
 
