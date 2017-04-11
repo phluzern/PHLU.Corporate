@@ -97,8 +97,8 @@ $font-size-langnav: 1.125rem;
 $font-size-search-filters: 1.125rem;
 $font-size-phlu-team-members: 1.125rem;
 $font-size-btn: 1.125rem;
+$font-size-btn-mobile: 1rem;
 $font-size-href: 1.125rem;
-
 $font-size-form-dropdown: 1rem;
 $font-size-paragraph-mobile: 1rem;
 $font-size-table-href: 1rem;
@@ -968,6 +968,9 @@ body {
     }
     .btn {
       font-size: $font-size-btn;
+      @include media-breakpoint-down("sm") {
+        font-size: $font-size-btn-mobile;
+      }
       padding: 5px 25px;
       line-height: 2;
       &.btn-info {
@@ -1152,6 +1155,7 @@ body {
           font-size: $font-size-form-dropdown-big;
           @include media-breakpoint-down("sm") {
             font-size: $font-size-form-dropdown;
+            padding:11px 25px;
           }
           background-color: $petrol;
         }
@@ -1164,7 +1168,7 @@ body {
         color: $petrol;
         margin: 16px 23px 0 0;
         @include media-breakpoint-down("sm") {
-          margin: 11px 23px 0 0;
+          margin: 17px 23px 0 0;
         }
         position: absolute;
         right: 0;
@@ -1351,7 +1355,8 @@ body {
               text-align: center;
               i.fa {
                 width: 32px;
-                height: 23px;
+                height: 27px;
+                padding-top:6px;
                 color: white;
               }
             }
@@ -1397,13 +1402,54 @@ body {
                 display: table;
                 width: 100%;
                 i {
-                  padding-right: 15px;
+                  display: block;
+                  float: left;
+                }
+                span {
+                  display: block;
+                  padding-left: 26px;
+                  margin-top: -6px;
+                  @include media-breakpoint-down("sm") {
+                    margin-top:-3px;;
+                  }
                 }
               }
               &:hover {
                 background-color: $lightgrey;
               }
 
+            }
+          }
+          &[name='scholarYear'] {
+            .dropdown-menu {
+              li {
+                a {
+                  span {
+                    @include media-breakpoint-only("sm") {
+                      width: 97%;
+                    }
+                    @include media-breakpoint-only("md") {
+                      width: 80%;
+                    }
+                    @include media-breakpoint-up("lg") {
+                      float:inherit;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &[name='weekday'] {
+            .dropdown-menu {
+              li {
+                a {
+                  span {
+                    @include media-breakpoint-up("md") {
+                      width: 87%;
+                    }
+                  }
+                }
+              }
             }
           }
           .form-control {
@@ -3085,9 +3131,34 @@ body {
             }
           }
         }
+
         &.publications-list, &.science-projects {
           .phlu-accordion {
             margin: 0;
+            .panel-default {
+              .panel-collapse {
+                p {
+                  width: 100%;
+                  i {
+                    font-style:italic;
+                  }
+                  &:last-child {
+                    border-bottom: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &.publications-list {
+          .phlu-accordion {
+            .panel-default {
+              .panel-collapse {
+                p {
+                  border-bottom:2px $lightgrey solid;
+                }
+              }
+            }
           }
         }
       }
@@ -3694,7 +3765,10 @@ body {
           width: 30px;
           height: 30px;
           position: absolute;
-          margin-top: 5px;
+          margin-top: 6px;
+          @include media-breakpoint-down("sm") {
+            margin-top: 0;
+          }
           margin-right: 6px;
           margin-left: 5px;
           padding-right: 10px;
@@ -3754,16 +3828,14 @@ body {
               td.booking-status, td.course-number, td.course-type {
                 width: 100px;
               }
-              td.booking-status {
-                .bookable {
-                  color: green;
-                }
-                .booked-out {
-                  color: red;
-                }
-                .booking-info {
-                  color: blue;
-                }
+              .bookable {
+                color: green;
+              }
+              .booked-out {
+                color: red;
+              }
+              .booking-info {
+                color: blue;
               }
               td.course-number {
                 white-space: nowrap;
@@ -5093,7 +5165,7 @@ body {
       .further-education-detail {
         .phlu-team-members {
           .phlu-teaser {
-            padding:0;
+            padding: 0;
             .nav-teaser-item {
               margin-bottom: inherit;
             }
