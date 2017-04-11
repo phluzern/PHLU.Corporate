@@ -8595,6 +8595,9 @@ body {
       font-size: 1.125rem;
       padding: 5px 25px;
       line-height: 2; }
+      @media (max-width: 767px) {
+        body .all .btn {
+          font-size: 1rem; } }
       body .all .btn.btn-info {
         text-align: left; }
       body .all .btn.btn-primary:hover {
@@ -9993,6 +9996,14 @@ body {
           list-style-type: square; }
     body .all .phlu-dozpage .row.publications-list .phlu-accordion, body .all .phlu-dozpage .row.science-projects .phlu-accordion {
       margin: 0; }
+      body .all .phlu-dozpage .row.publications-list .phlu-accordion .panel-default .panel-collapse p, body .all .phlu-dozpage .row.science-projects .phlu-accordion .panel-default .panel-collapse p {
+        width: 100%; }
+        body .all .phlu-dozpage .row.publications-list .phlu-accordion .panel-default .panel-collapse p i, body .all .phlu-dozpage .row.science-projects .phlu-accordion .panel-default .panel-collapse p i {
+          font-style: italic; }
+        body .all .phlu-dozpage .row.publications-list .phlu-accordion .panel-default .panel-collapse p:last-child, body .all .phlu-dozpage .row.science-projects .phlu-accordion .panel-default .panel-collapse p:last-child {
+          border-bottom: 0; }
+    body .all .phlu-dozpage .row.publications-list .phlu-accordion .panel-default .panel-collapse p {
+      border-bottom: 2px #edeae8 solid; }
     body .all .phlu-dozpage .row:last-child {
       margin-bottom: 60px; }
       body .all .phlu-dozpage .row:last-child hr {
@@ -10445,11 +10456,11 @@ body {
            */ }
       body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status, body .all .further-education-special-search .table-responsive .table tbody tr td.course-number, body .all .further-education-special-search .table-responsive .table tbody tr td.course-type {
         width: 100px; }
-      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status .bookable {
+      body .all .further-education-special-search .table-responsive .table tbody tr .bookable {
         color: green; }
-      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status .booked-out {
+      body .all .further-education-special-search .table-responsive .table tbody tr .booked-out {
         color: red; }
-      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status .booking-info {
+      body .all .further-education-special-search .table-responsive .table tbody tr .booking-info {
         color: blue; }
       body .all .further-education-special-search .table-responsive .table tbody tr td.course-number {
         white-space: nowrap; }
