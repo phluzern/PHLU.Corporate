@@ -16,7 +16,7 @@ city = ${q(node).property('city')}
 eventoId = ${q(node).property('contact')}
 image = ${q(node).property('image')}
 fullname = ${q(node).property('titlename')== '' ? this.titlename + " " + this.firstname + " " + this.lastname : this.firstname + " " + this.lastname}
-
+wrapperNode = ${q(node).closest('[instanceof Phlu.Corporate:Section]').get(0)}
 
 }
 
@@ -33,19 +33,6 @@ defaultRenderer = Neos.Neos:ContentCase
 collectionRenderer = Phlu.Corporate:ContentCollection {
 
     }
-
-
-
-prototype(Phlu.Corporate:Contact)  {
-wrapperNode = ${q(node).closest('[instanceof Phlu.Corporate:Contacts]').get(0)}
-@cache {
-mode = 'uncached'
-context {
-1 = 'node'
-2 = 'documentNode'
-}
-            }
-        }
 
 prototype(Phlu.Corporate:ContactsGroup)  {
 
