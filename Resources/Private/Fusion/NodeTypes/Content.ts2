@@ -9,6 +9,10 @@ prototype(Phlu.Corporate:PrimaryContent) < prototype(Neos.Neos:ContentCase) {
 prototype(Phlu.Corporate:Content) < prototype(Neos.Neos:Content) {
 
 
+    attributes.data-next = ${q(node).next().get() ? String.toLowerCase(String.pregReplace(q(node).next().get(0).nodeType.name, '/[[:^alnum:]]/', '-')) : 'empty'}
+    attributes.data-prev = ${q(node).prev().get() ? String.toLowerCase(String.pregReplace(q(node).prev().get(0).nodeType.name, '/[[:^alnum:]]/', '-')) : 'empty'}
+
+
 }
 
 
