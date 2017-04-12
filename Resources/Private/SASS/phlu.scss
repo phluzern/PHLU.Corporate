@@ -88,7 +88,6 @@ $font-size-breadcrumb: 0.875rem;
 $font-size-google-maps-bubble-title: 0.875rem;
 $font-size-searchresults-count: 0.875rem;
 
-$font-size-nav-teaser-header: 1.125rem;
 $font-size-paragraph-desktop: 1.125rem;
 $font-size-table-desktop: 1.125rem;
 $font-size-onepage-teasers: 1.125rem;
@@ -96,9 +95,11 @@ $dropdown-menu-font-size: 1.125rem;
 $font-size-langnav: 1.125rem;
 $font-size-search-filters: 1.125rem;
 $font-size-phlu-team-members: 1.125rem;
-$font-size-btn: 1.125rem;
-$font-size-btn-mobile: 1rem;
 $font-size-href: 1.125rem;
+$font-size-nav-teaser-header: 1.125rem;
+$font-size-nav-teaser-header-mobile: 1rem;
+$font-size-btn: 1rem;
+$font-size-btn-mobile: 1rem;
 $font-size-form-dropdown: 1rem;
 $font-size-paragraph-mobile: 1rem;
 $font-size-table-href: 1rem;
@@ -120,8 +121,7 @@ $component-active-bg: #895119;
 
 // phlu flowtext formatting
 $line-height-lg: 2;
-$line-height-sm: 1.4;
-$line-height-xs: 1.2;
+$line-height-sm: 1.8;
 $flowtext-narrow-width: 80%;
 
 // phlu carousel elements
@@ -154,8 +154,8 @@ $breadcrumb-padding-horizontal: 0;
 $breadcrumb-margin-bottom: 0;
 
 // phlu hr
-$spacer-y: 60px;
-$spacer-y-desktop: 90px;
+$spacer-y: 50px;
+$spacer-y-desktop: 70px;
 $hr-border-width: 2px;
 $hr-border-color: #e5e5e5;
 
@@ -888,13 +888,10 @@ body {
     overflow: hidden;
   }
   margin-bottom: 711px;
-  @include media-breakpoint-down("md") {
-    margin-bottom: 641px;
-  }
   @include media-breakpoint-up("xxxl") {
     background-color: #efefef;
   }
-  color: $grey;
+  color: $font-color;
 
   .all {
     display: block !important;
@@ -1024,6 +1021,10 @@ body {
       padding-top: 21px;
       list-style-type: none;
       padding-left: 0;
+      margin-bottom: 0;
+      @include media-breakpoint-down("lg") {
+        padding-bottom:20px;
+      }
       li {
         a.nav-link {
           color: $hazelbrowndark;
@@ -1773,15 +1774,6 @@ body {
         }
       }
     }
-    // hidden level1 subnav for filter navigation page
-
-    //.nosubnav {
-    //  .main {
-    //    @include media-breakpoint-up("xxxl") {
-    //      max-width: 1384px;
-    //    }
-    //  }
-    //}
     //
     // breadcrumb navigation
     //
@@ -1938,7 +1930,7 @@ body {
         }
         .event-date-month-year-location {
           font-size: $font-size-nav-teasers;
-          line-height: $line-height-xs;
+          line-height: $line-height-sm;
           background-color: white;
           padding-top: 14px;
           padding-bottom: 4px;
@@ -2244,6 +2236,9 @@ body {
     .overview-tiles-bg {
       background-color: $lightgrey;
       padding-top: 33px;
+      @include media-breakpoint-down("xxl") {
+        padding-top: 66px;
+      }
       .phlu-teaser.navigation {
         @include media-breakpoint-down("sm") {
           display: block;
@@ -2258,6 +2253,9 @@ body {
             height: 111px;
             h3 {
               font-size: $font-size-nav-teaser-header;
+              @include media-breakpoint-down("md") {
+                font-size: $font-size-nav-teaser-header-mobile;
+              }
               margin: 0 0 8px;
             }
             p {
@@ -2276,7 +2274,6 @@ body {
         }
       }
     }
-
     //
     // special navigation
     //
@@ -2302,6 +2299,9 @@ body {
               padding: 15px 20px;
               h3 {
                 font-size: $font-size-nav-teaser-header;
+                @include media-breakpoint-down("md") {
+                  font-size: $font-size-nav-teaser-header-mobile;
+                }
                 margin: 0 0 8px;
               }
               p {
@@ -2384,6 +2384,9 @@ body {
             .phlu-teaser-body {
               h3 {
                 font-size: $font-size-nav-teaser-header;
+                @include media-breakpoint-down("md") {
+                  font-size: $font-size-nav-teaser-header-mobile;
+                }
                 margin: 2px 0 13px;
                 a {
                   color: inherit;
@@ -2557,11 +2560,10 @@ body {
               height: inherit;
             }
             .phlu-teaser-body {
-
               i {
                 float: left;
                 height: 22px;
-                width: 43px;
+                width: 36px;
                 &::before {
                   color: white;
                   font-size: 25px;
@@ -2573,20 +2575,23 @@ body {
                 &.strategieIco {
                   &::before {
                     top: -12px;
-                    left: -8px;
                     font-size: 30px;
                   }
                 }
-                &.faecherIco, &.forschungIco, &.themaIco {
+                &.faecherIco {
                   &::before {
                     top: -6px;
-                    left: -4px;
+                  }
+                }
+                &.forschungIco {
+                  &::before {
+                    top: -7px;
                   }
                 }
                 &.themaIco {
                   &::before {
-                    top: -6px;
-                    left: -5px;
+                    top: -7px;
+                    left: -2px;
                   }
                 }
                 @include media-breakpoint-down("xs") {
@@ -2595,11 +2600,12 @@ body {
                   }
                 }
               }
-
               h3 {
                 margin: 0;
                 display: table-cell;
-
+                @include media-breakpoint-down("md") {
+                  padding-top: 2px;
+                }
                 @include media-breakpoint-down("xs") {
                   display: block;
                   float: inherit;
@@ -2616,7 +2622,6 @@ body {
           }
         }
       }
-
     }
     .sectionAutoGeneratedContentCenterLinks {
       .row.subjectsfilternav {
@@ -2672,7 +2677,7 @@ body {
                 }
               }
               .loadMore {
-                margin-bottom:30px;
+                margin-bottom: 30px;
               }
             }
           }
@@ -2691,7 +2696,6 @@ body {
         }
       }
     }
-
     .phlu-accordion, .phlu-corporate-section {
 
       .panel {
@@ -2858,16 +2862,17 @@ body {
         }
       }
       .phlu-teaser.navigation.subpage {
-        @include media-breakpoint-only("md") {
+        @include media-breakpoint-up("md") {
           padding: 0;
         }
         .nav-teaser-item {
           margin-bottom: 30px;
           .row {
-            margin: 0;
+            margin-right: 0;
+            margin-left: 0;
             height: 232px;
             @include media-breakpoint-down("sm") {
-              height: 161px;
+              height: 186px;
             }
             &.detailView {
               .phlu-teaser-body, .phlu-teaser-caret-right.col-xs-2 {
@@ -3167,6 +3172,12 @@ body {
       }
     }
     //
+    // phlu-dossier
+    //
+    .phlu-dossier {
+      margin-bottom: 90px;
+    }
+    //
     // ppdb-detail page
     //
     .ppdb-detail {
@@ -3179,6 +3190,9 @@ body {
           hr {
             border: 0;
           }
+        }
+        &:last-child {
+          margin-bottom: 60px;
         }
       }
       .leadtext {
@@ -3208,7 +3222,6 @@ body {
     //    ppdb lists
     //    further education lists
     //
-
     .ppdb-list, .further-education-list, .further-education-special-search {
       .list-search-field, .dropdown-search-field {
         input {
@@ -3600,6 +3613,9 @@ body {
         .result-panel {
           h3, h2 {
             font-size: $font-size-nav-teaser-header;
+            @include media-breakpoint-down("md") {
+              font-size: $font-size-nav-teaser-header-mobile;
+            }
             font-weight: $font-weight-bold;
             margin: 30px 0 25px;
             color: white;
@@ -3614,6 +3630,9 @@ body {
                 white-space: nowrap;
                 color: white;
                 font-size: $font-size-nav-teaser-header;
+                @include media-breakpoint-down("md") {
+                  font-size: $font-size-nav-teaser-header-mobile;
+                }
                 background-color: $petrol;
                 padding-top: 14px;
                 min-height: 54px;
@@ -3960,7 +3979,6 @@ body {
         }
       }
     }
-
     //
     // further-education
     // target-group-codes
@@ -3985,7 +4003,7 @@ body {
         .fullname {
           position: absolute;
           display: none;
-          color: #5c5c5c;
+          color: $font-color;
           background-color: #edeae8;
           margin-top: -40px;
           margin-left: -10px;
@@ -4159,63 +4177,67 @@ body {
       }
 
     }
-
     //
     // phlu locations (Standorte)
     //
-    .phlu-locations {
-      .row.subjectsfilternav {
-        .nav-pills {
-          margin-bottom: 31px;
-          li {
-            a.nav-link {
-              padding-left: 23px;
+    .phlu-corporate-location {
+      &[data-next='empty'] {
+        margin-bottom: 90px;
+      }
+      .phlu-locations {
+        .row.subjectsfilternav {
+          .nav-pills {
+            margin-bottom: 31px;
+            li {
+              a.nav-link {
+                padding-left: 23px;
+              }
             }
           }
         }
-      }
-      .phlu-corporate-table {
-        table {
-          tbody {
-            tr {
-              th {
-                span:first-child {
-                  padding-right: 20px;
+        .phlu-corporate-table {
+          table {
+            tbody {
+              tr {
+                th {
+                  span:first-child {
+                    padding-right: 20px;
+                  }
                 }
-              }
-              td {
-                address {
-                  margin-bottom: 0;
-                }
+                td {
+                  address {
+                    margin-bottom: 0;
+                  }
 
-              }
-              .details-link-cell {
-                text-align: right;
-                vertical-align: bottom;
-                padding-right: 0;
-              }
-              .mobile-view-columns {
+                }
                 .details-link-cell {
-                  display: block;
-                  a {
-                    width: 100%;
+                  text-align: right;
+                  vertical-align: bottom;
+                  padding-right: 0;
+                }
+                .mobile-view-columns {
+                  .details-link-cell {
+                    display: block;
+                    a {
+                      width: 100%;
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
-      .location-building-image {
-        margin-bottom: 50px;
-        img {
-          width: 100%;
-          height: auto;
+        .location-building-image {
+          margin-bottom: 50px;
+          img {
+            width: 100%;
+            height: auto;
+          }
         }
-      }
-      .row.departments {
-        .phlu-teaser.navigation.subpage {
-          margin: 0;
+        .row.departments {
+          .phlu-teaser.navigation.subpage {
+            margin: 0;
+          }
         }
       }
     }
@@ -4610,7 +4632,6 @@ body {
         }
       }
     }
-
     //
     // google-maps-iframe
     //
@@ -4753,13 +4774,15 @@ body {
         }
         hr {
           margin-top: $spacer-y;
-          @include media-breakpoint-up("lg") {
-            margin-top: $spacer-y-desktop;
-          }
           margin-bottom: 0;
           border: 0;
           border-top: $hr-border-width solid $hr-border-color;
-
+          margin-right: -30px;
+          margin-left: -30px;
+          @include media-breakpoint-down("md") {
+            margin-right: inherit;
+            margin-left: inherit;
+          }
           &.last {
             border: 0;
             padding-bottom: 40px;
@@ -5001,13 +5024,14 @@ body {
         &.bluebg {
           background-color: $lightblue;
           margin-top: 50px;
+          margin-bottom: 35px;
+          @include media-breakpoint-down("md") {
+            margin-top:0;
+          }
           h2 {
             @include media-breakpoint-up("lg") {
               margin: 35px 0 32px;
             }
-          }
-          @include media-breakpoint-up("lg") {
-            margin-bottom: 35px;
           }
           .carousel-inner {
             left: -15px;
@@ -5067,7 +5091,6 @@ body {
         }
         &.lightgreybg {
           background-color: $grey9;
-          margin-top: 60px;
           h2 {
             @include media-breakpoint-up("lg") {
               margin: 45px 0 32px;
@@ -5075,9 +5098,6 @@ body {
             @include media-breakpoint-up("xl") {
               margin: 40px 0 32px;
             }
-          }
-          @include media-breakpoint-up("lg") {
-            margin-top: 90px;
           }
           address {
             a {
@@ -5087,7 +5107,9 @@ body {
         }
         &.contactperson {
           color: $grey;
-          padding-bottom: 60px;
+          > .col-xs-12 {
+            padding-bottom: 60px;
+          }
           .col-sm-6 {
             @include media-breakpoint-up("sm") {
               padding-top: 10px;
@@ -5134,16 +5156,21 @@ body {
           padding-bottom: 330px;
           background-position: bottom center;
           background-size: cover;
+          margin-top: 48px;
         }
 
         //
         // sections in content
         //
-        .phlu-corporate-section:last-child {
-          hr {
-            border-top: 0;
-            padding-bottom: 40px;
+        .phlu-corporate-section {
+          &[data-next='empty'] {
+            margin-bottom: 90px;
+            hr {
+              border-top: 0;
+              margin: 0;
+            }
           }
+
         }
       }
       &.col-xl-8, &.col-xl-10 {
@@ -5155,7 +5182,6 @@ body {
           margin-top: inherit;
         }
       }
-
       //
       // further education detail page (weiterbildung)
       //
@@ -5242,6 +5268,11 @@ body {
                 margin-top: 30px;
               }
             }
+          }
+        }
+        .phlu-corporate-section {
+          &[data-next='empty'] {
+            margin-bottom: 0;
           }
         }
       }
@@ -5336,7 +5367,6 @@ body {
           }
         }
       }
-
       //
       // furthereducation detailview hr
       //
@@ -5348,7 +5378,6 @@ body {
           }
         }
       }
-
       //
       // news and events flow text version
       //
@@ -5490,7 +5519,6 @@ body {
           }
         }
       }
-
     }
     //
     // breadcrumb bottom
@@ -5516,9 +5544,6 @@ body {
       bottom: 0;
       width: 100%;
       height: 711px;
-      @include media-breakpoint-down("md") {
-        height: 641px;
-      }
       background-color: $black;
       padding-top: 20px;
       color: white;
@@ -5674,15 +5699,6 @@ body {
         }
       }
     }
-    //
-    // Prevent main col from getting too wide to the right side on xxxl screens
-    //
-
-    //@include media-breakpoint-up("xxxl") {
-    //  .main {
-    //    max-width: 1120px;
-    //  }
-    //}
   }
 
 }

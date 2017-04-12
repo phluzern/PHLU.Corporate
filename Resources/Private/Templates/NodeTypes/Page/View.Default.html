@@ -126,12 +126,6 @@
 </div>
 {widgetRenderer -> f:format.raw()}
 
-<f:if condition="{showCarousel}">
-    <f:then>
-        <ts:render path="defaultRenderer" context="{node: carouselnews}"/>
-    </f:then>
-</f:if>
-
 <div class="row">
     <div class="col-xs-12 col-lg-12">
         <f:if condition="{hasanchornavigation}">
@@ -156,6 +150,13 @@
         </f:if>
     </div>
 </div>
+
+<f:if condition="{showCarousel}">
+    <f:then>
+        <ts:render path="defaultRenderer" context="{node: carouselnews}"/>
+    </f:then>
+</f:if>
+
 <f:if condition="{node.properties.moodimage}">
     <div class="row ambient-img-body"
          style="background-image: url('{media:uri.image(image: node.properties.moodimage)}')">

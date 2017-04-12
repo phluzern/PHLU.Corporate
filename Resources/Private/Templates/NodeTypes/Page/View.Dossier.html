@@ -22,12 +22,15 @@
 </div>
 
 <f:if condition="{ishidden}">
-<f:else><ts:render path="defaultRenderer" context="{node: carouselnews}"/></f:else>
+    <f:else>
+        <ts:render path="defaultRenderer" context="{node: carouselnews}"/>
+    </f:else>
 </f:if>
-
-{onePageContent -> f:format.raw()}
-
-
+<div class="row phlu-dossier">
+    <div class="col-xs-12">
+        {onePageContent -> f:format.raw()}
+    </div>
+</div>
 <f:if condition="{mainVisible}">
     <f:then>
         <div class="row">
