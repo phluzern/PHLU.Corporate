@@ -8570,7 +8570,7 @@ body {
       line-height: 1.4; }
       @media (min-width: 1280px) {
         body .all p {
-          width: 75%;
+          width: 80%;
           font-size: 1.125rem; } }
     body .all b,
     body .all strong {
@@ -8588,7 +8588,7 @@ body {
           font-size: 1.125rem; } }
       @media (min-width: 1280px) {
         body .all ul.flowtext-smallwidth {
-          width: 75%; } }
+          width: 80%; } }
     body .all .clickable, body .all .clickable * {
       cursor: pointer; }
     body .all .btn {
@@ -9561,16 +9561,6 @@ body {
             color: #9f632a; }
           body .all .row.subjectsfilternav .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-body.col-xs-10 {
             padding-right: 0; }
-          body .all .row.subjectsfilternav .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-caret-right.col-xs-2 {
-            font-size: 20px;
-            font-family: Icons; }
-            body .all .row.subjectsfilternav .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-caret-right.col-xs-2::after {
-              position: absolute;
-              color: white;
-              top: 50%;
-              transform: translateY(-50%);
-              right: 25px;
-              content: " \e02f"; }
       body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item > h3 {
         margin-top: 30px; }
         body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item > h3 a {
@@ -11081,7 +11071,7 @@ body {
       body .all .main > .row .phlu-corporate-image .img-and-caption, body .all .main > .row-fullwidth-content > .row .phlu-corporate-image .img-and-caption {
         width: 100%; }
         body .all .main > .row .phlu-corporate-image .img-and-caption img, body .all .main > .row-fullwidth-content > .row .phlu-corporate-image .img-and-caption img {
-          width: 75%;
+          width: 80%;
           height: auto; }
           @media (max-width: 1279px) {
             body .all .main > .row .phlu-corporate-image .img-and-caption img, body .all .main > .row-fullwidth-content > .row .phlu-corporate-image .img-and-caption img {
@@ -11101,7 +11091,7 @@ body {
             align-self: flex-start; }
             @media (max-width: 991px) {
               body .all .main > .row .content-link-wrapper .content-link-default-file span:first-child, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file span:first-child {
-                width: 75% !important; } }
+                width: 80% !important; } }
           body .all .main > .row .content-link-wrapper .content-link-default-file span:last-child, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file span:last-child {
             margin-left: 10px;
             width: auto;

@@ -122,6 +122,7 @@ $component-active-bg: #895119;
 $line-height-lg: 2;
 $line-height-sm: 1.4;
 $line-height-xs: 1.2;
+$flowtext-narrow-width: 80%;
 
 // phlu carousel elements
 $carousel-control-color: white;
@@ -935,7 +936,7 @@ body {
     p {
       line-height: $line-height-sm;
       @include media-breakpoint-up("xl") {
-        width: 75%;
+        width: $flowtext-narrow-width;
         font-size: $font-size-paragraph-desktop;
       }
     }
@@ -958,7 +959,7 @@ body {
       }
       &.flowtext-smallwidth {
         @include media-breakpoint-up("xl") {
-          width: 75%;
+          width: $flowtext-narrow-width;
         }
       }
     }
@@ -2396,18 +2397,6 @@ body {
               }
               &.col-xs-10 {
                 padding-right: 0;
-              }
-            }
-            .phlu-teaser-caret-right.col-xs-2 {
-              font-size: 20px;
-              font-family: Icons;
-              &::after {
-                position: absolute;
-                color: white;
-                top: 50%;
-                transform: translateY(-50%);
-                right: 25px;
-                content: " \e02f";
               }
             }
           }
@@ -4877,7 +4866,7 @@ body {
           .img-and-caption {
             width: 100%;
             img {
-              width: 75%;
+              width: $flowtext-narrow-width;
               @include media-breakpoint-down("lg") {
                 width: 100%;
               }
@@ -4903,7 +4892,7 @@ body {
                 width: auto;
                 align-self: flex-start;
                 @include media-breakpoint-down("md") {
-                  width: 75% !important;
+                  width: $flowtext-narrow-width !important;
                 }
               }
               &:last-child {

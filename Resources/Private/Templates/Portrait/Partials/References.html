@@ -9,19 +9,13 @@
         <div class="row subjectsfilternav">
             <div class="col-xs-12">
                 <div class="row phlu-teaser navigation subpage">
-
-
                     <f:for each="{portrait:references(contact: contact)}" as="refs" iteration="iterator"
                            key="key">
-
-
-                        <div class="col-xs-12 nav-teaser-item clickable">
+                        <div class="ol-xs-12 nav-teaser-item ">
                             <h3>
                                 {key}
                             </h3>
                         </div>
-
-
                         <f:for each="{refs}" as="ref">
                             <div class="col-xs-12 nav-teaser-item clickable">
                                 <div class="row">
@@ -38,8 +32,6 @@
                                 </div>
                             </div>
                         </f:for>
-
-
                     </f:for>
                 </div>
             </div>
