@@ -1,0 +1,59 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
+
+<div class="col-xs-12">
+    <div class="row ">
+        <div class="col-xs-12">
+
+            <div class="list-search-field">
+                <input type="text" class="c-input form-control" data-ng-model="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <div class="row subjectsfilternav">
+        <div class="col-xs-12">
+            <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item">
+                    <a href="#" class="nav-link preventDefaultTab" data-toggle="tab" data-target="#category-{node.Identifier}" role="tab">
+                        <i class="fa fa-flask" aria-hidden="true"></i>
+                        <span>Kategorien</span>
+                        <span class="count" data-ng-show="sizeOf(filterCategory) > 0" data-ng-bind="sizeOf(filterCategory)"></span>
+                    </a>
+                    <span data-ng-show="sizeOf(filterCategory) > 0" class="resetFilter">
+                        <a ng-click="clearFilter('filterCategory')"><span class="oi oi-x"></span></a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="tab-content">
+                <div class="result-panel tab-pane" id="category-{node.Identifier}" role="tabpanel" data-ng-show="result.getDistinctCount('documentnode.identifier',false) > 1">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody data-ng-repeat="(keyg,ltg) in result.getDistinct('documentnode.properties.phlu-corporate-page-view-default-title',false)">
+                                <tr data-ng-click="filterCategory[ltg.value] = !filterCategory[ltg.value] ? true : false;" data-ng-class="{checked: filterCategory[ltg.value]}">
+                                    <td>
+                                        <a href="javascript:void(0);">
+                                            <i class="fa"
+                                               data-ng-class="{'fa-check-square-o': filterCategory[ltg.value],'fa-square-o': !filterCategory[ltg.value]}"
+                                               aria-hidden="true"></i>
+                                            <span data-ng-bind="ltg.value + ' (' + ltg.count + ')'"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <a class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
+
+<div {attributes -> f:format.raw()} data-ng-controller="NewsCtrl">
+    <f:if condition="{sectionCount}>1">
+        <f:then>
+            {neos:contentElement.editable(property: 'title', tag: 'h2')}
+        </f:then>
+    </f:if>
+
+    <f:if condition="{top}">
+        <ts:render path="top"></ts:render>
+    </f:if>
+
+    {widgetRenderer -> f:format.raw()}
+
+    <div class="row news-list hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
+        <f:render partial="NewsFilters" arguments="{_all}"/>
+
+        <div class="col-xs-12">
+            <div class="row results-table">
+                <div class="col-xs-12">
+
+                    <div class="resultsCount">
+                        <h3 data-ng-bind="'Treffer '+ result.count()"></h3>
+                    </div>
+
+                    <div class="searchResultsListLoadingScreen" data-ng-if="result.isLoading()">
+                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon" />
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table" data-ng-show="result.isLoading() === false && result.count() > 0">
+                            <thead>
+                                <tr>
+                                    <th class="clickable">
+                                        <a href="#">News</a>
+                                    </th>
+                                    <th class="clickable">
+                                        <a href="#">Kategorie</a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="node in result.getNodes(limit)" data-ng-click="setOpen(node,$index);" id="node-{{$index}}">
+                                <tr data-ng-class="{open: isOpen(node),noborder: $index > 0}" class="clickable" data-node-id="{{node.identifier}}">
+                                    <td>
+                                        <span class="oi" data-ng-class="{'oi-caret-right': !isOpen(node), 'oi-caret-bottom': isOpen(node)}"></span>
+                                        <span data-ng-bind="node.getProperty('title')"></span>
+                                    </td>
+                                    <td>
+                                        <span data-ng-bind="node.getProperty('documentnode').getProperty('title')"></span>
+                                    </td>
+                                </tr>
+                                <tr class="result-preview" data-ng-show="isOpen(node)">
+                                    <td colspan="2">
+                                        <div>
+                                            <p ng-bind-html="node.getProperty('teasertext').substr(0,255)"></p>
+                                            <a class="btn btn-primary" href="{{node.getUrl()}}">Details</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-center">
+                            <a data-ng-click="loadMore('#node-'+result.getIdentifier()+'-'+limit);" class="btn loadMore" data-ng-if="result.count() > limit">
+                                mehr anzeigen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <f:if condition="{bottom}">
+        <ts:render path="bottom"></ts:render>
+    </f:if>
+
+    <f:comment><!--<div data-ng-repeat="group in result.getGrouped().getItems()">
+        <h3><span data-ng-bind="group.getProperty('documentnode').getProperty('title')"></span> (<span data-ng-bind="group.count()"></span>)</h3>
+        <ul>
+            <li data-ng-repeat="node in group.getNodes()">
+                <span data-ng-bind="node.getProperty('title')"></span>
+            </li>
+        </ul>
+    </div>--></f:comment>
+</div>

@@ -257,12 +257,13 @@
       'Phlu.Corporate:Page.View.Default': false
       'Phlu.Corporate:Page.View.Default.Default': true
   properties:
-    reference:
+    documentNode:
       type: reference
       ui:
-        reloadIfChanged: TRUE
-        label: 'Link auswählen'
+        label: 'Document Node'
         inspector:
+          group: document
+          position: 1
           editorOptions:
             nodeTypes: ['Phlu.Corporate:Page']
     teasertype:
