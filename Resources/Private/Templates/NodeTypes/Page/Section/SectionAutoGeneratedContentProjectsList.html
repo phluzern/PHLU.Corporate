@@ -82,7 +82,7 @@
                         </f:else>
                     </f:if>
 
-                    <div class="searchResultsListLoadingScreen" data-ng-if="result.isLoading()">
+                    <div class="searchResultsListLoadingScreen" data-ng-if="result.isLoading() && result.count()">
                         <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading"
                              class="loadingIcon"
                         />
