@@ -1,1 +1,33 @@
-# see global configuration
+privilegeTargets:
+
+  'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+
+    'Phlu.Corporate:Portrait':
+      matcher: 'method(Phlu\Corporate\Controller\PortraitController->(view|viewPortrait)Action())'
+
+    'Phlu.Corporate:Project':
+      matcher: 'method(Phlu\Corporate\Controller\ProjectController->(view|viewPortrait)Action())'
+
+  'Neos\Flow\Security\Authorization\Privilege\Entity\Doctrine\EntityPrivilege':
+
+    'Phlu.Neos.Models.RestrictableEntity.AssetCollections':
+      matcher: 'isType("Neos\Media\Domain\Model\AssetCollection") && property("hidden") == TRUE && property("hidden") != NULL'
+
+roles:
+
+  'Neos.Flow:Everybody':
+    privileges:
+      -
+        privilegeTarget: 'Phlu.Corporate:Portrait'
+        permission: GRANT
+
+      -
+        privilegeTarget: 'Phlu.Corporate:Project'
+        permission: GRANT
+
+
+  'Neos.Neos:AbstractEditor':
+    privileges:
+      -
+        privilegeTarget: 'Phlu.Neos.Models.RestrictableEntity.AssetCollections'
+        permission: DENY
