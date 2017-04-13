@@ -11110,8 +11110,12 @@ body {
             body .all .main > .row .phlu-corporate-image .img-and-caption img, body .all .main > .row-fullwidth-content > .row .phlu-corporate-image .img-and-caption img {
               width: 100%; } }
       body .all .main > .row .content-link-wrapper, body .all .main > .row-fullwidth-content > .row .content-link-wrapper {
+        font-size: 1.125rem;
         display: block;
         width: 100%; }
+        @media (max-width: 1279px) {
+          body .all .main > .row .content-link-wrapper, body .all .main > .row-fullwidth-content > .row .content-link-wrapper {
+            font-size: 1rem; } }
         body .all .main > .row .content-link-wrapper .content-link-default-file, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file {
           display: inline-flex;
           text-overflow: ellipsis; }

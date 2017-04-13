@@ -102,6 +102,7 @@ $font-size-btn: 1rem;
 $font-size-btn-mobile: 1rem;
 $font-size-form-dropdown: 1rem;
 $font-size-paragraph-mobile: 1rem;
+$font-size-href-mobile: 1rem;
 $font-size-table-href: 1rem;
 $nav-link-font-size: 1rem;
 $font-size-accordion-table: 1rem;
@@ -1023,7 +1024,7 @@ body {
       padding-left: 0;
       margin-bottom: 0;
       @include media-breakpoint-down("lg") {
-        padding-bottom:20px;
+        padding-bottom: 20px;
       }
       li {
         a.nav-link {
@@ -4907,7 +4908,10 @@ body {
         }
 
         .content-link-wrapper {
-
+          font-size: $font-size-href;
+          @include media-breakpoint-down("lg") {
+            font-size: $font-size-href-mobile;
+          }
           display: block;
           width: 100%;
           .content-link-default-file {
@@ -5026,7 +5030,7 @@ body {
           margin-top: 50px;
           margin-bottom: 35px;
           @include media-breakpoint-down("md") {
-            margin-top:0;
+            margin-top: 0;
           }
           h2 {
             @include media-breakpoint-up("lg") {
