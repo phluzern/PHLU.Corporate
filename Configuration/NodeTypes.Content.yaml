@@ -294,6 +294,7 @@
 
 'Phlu.Corporate:CarouselImage':
   superTypes:
+    'Phlu.Corporate:Content': true
     'Neos.NodeTypes:ImageMixin': true
   ui:
     label: Bild

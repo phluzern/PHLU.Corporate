@@ -37,7 +37,7 @@
                                 </f:then>
                                 <f:else>
                                     <f:render section="imageGallery"
-                                              arguments="{imageGalleryItems: imageGalleryItems}"></f:render>
+                                              arguments="{imageGalleryItems: imageGalleryItems, targetId: 'carousel-phlu-image-gallery-{node.identifier}'}"></f:render>
                                 </f:else>
                             </f:if>
 
@@ -53,7 +53,7 @@
 <f:section name="carousel">
     <f:render section="indicators"
               arguments="{carouselItems: carouselItems, spliceNum: spliceNum, itemClass: 'col-xs-12', targetId: targetId}"></f:render>
-    <div id="blueimpgallery" class="carousel-inner" role="listbox">
+    <div id="blueimpgallery-{targetId}" class="carousel-inner" role="listbox">
         <f:for each="{phlu:SpliceArray(items: carouselItems, spliceNum:spliceNum)}" as="item" iteration="iterator">
             <div class="carousel-item {f:if(condition: iterator.isFirst, then: 'active', else: '')}">
                 <div class=" phlu-corporate-image">
@@ -66,11 +66,13 @@
                                         <img src="{media:uri.image(image: col.properties.image)}"
                                              class="img-fluid">
                                     </a>
-                                    <div class="caption">
-                                       <span>
-                                          {col.properties.title}
-                                       </span>
-                                    </div>
+                                    <f:if condition="{col.properties.title}">
+                                        <div class="caption">
+                                           <span>
+                                              {col.properties.title}
+                                           </span>
+                                        </div>
+                                    </f:if>
                                 </div>
                             </div>
                         </f:for>
@@ -79,16 +81,16 @@
             </div>
         </f:for>
     </div>
-    <f:if condition="{carouselItems}">
-        <a class="left carousel-control" href="#{targetId}" role="button" data-slide="prev">
-            <span class="icon-prev" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#{targetId}" role="button" data-slide="next">
-            <span class="icon-next" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </f:if>
+    <!--    <f:if condition="{carouselItems}">
+            <a class="left carousel-control" href="#{targetId}" role="button" data-slide="prev">
+                <span class="icon-prev" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#{targetId}" role="button" data-slide="next">
+                <span class="icon-next" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </f:if>-->
 </f:section>
 <f:section name="indicators">
     <ol class="carousel-indicators">
@@ -100,7 +102,7 @@
 </f:section>
 <f:section name="imageGallery">
 
-    <div id="blueimpgallery" class="row">
+    <div id="blueimpgallery-{targetId}" class="row">
         <f:for each="{imageGalleryItems}" as="item" iteration="iterator">
             <div class="col-xs-12 col-sm-6 ">
                 <a href="{media:uri.image(image: item.properties.image)}"
@@ -108,11 +110,13 @@
                     <img src="{media:uri.image(image: item.properties.image)}"
                          class="img-fluid">
                 </a>
-                <div class="caption">
-                                       <span>
-                                          {item.properties.title}
-                                       </span>
-                </div>
+                <f:if condition="{col.properties.title}">
+                    <div class="caption">
+                                           <span>
+                                              {item.properties.title}
+                                           </span>
+                    </div>
+                </f:if>
             </div>
         </f:for>
     </div>

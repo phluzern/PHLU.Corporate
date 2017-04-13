@@ -4851,8 +4851,20 @@ body {
         }
         .phlu-corporate-media-container {
           .phlu-teaser {
-            @include media-breakpoint-down("sm") {
               padding: 0 0 25px;
+            .carousel-indicators {
+              bottom: -35px;
+              width: $flowtext-narrow-width;
+              @include media-breakpoint-down("lg") {
+                width: 100%;
+              }
+              li {
+                border-color: transparent $lightgrey transparent transparent;
+                background-color: inherit;
+                &.active {
+                  border-color: transparent $naviBlack transparent transparent;
+                }
+              }
             }
           }
           .carousel-control {
@@ -4896,12 +4908,12 @@ body {
         }
         .phlu-corporate-image {
           .img-and-caption {
-            width: 100%;
+            width: $flowtext-narrow-width;
+            @include media-breakpoint-down("lg") {
+              width: 100%;
+            }
             img {
-              width: $flowtext-narrow-width;
-              @include media-breakpoint-down("lg") {
-                width: 100%;
-              }
+              width: 100%;
               height: auto;
             }
           }
@@ -5865,6 +5877,11 @@ body:last-child {
       &:hover {
         opacity: 0.7;
       }
+    }
+  }
+  .blueimp-gallery-playing {
+    > .play-pause {
+      background-position: -39px 0;
     }
   }
 }
