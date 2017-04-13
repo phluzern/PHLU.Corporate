@@ -10,8 +10,9 @@
     reference:
       type: reference
       ui:
-        reloadIfChanged: TRUE
-        label: 'Link auswählen'
+        label: 'Detail Page'
         inspector:
+          group: teaser
+          position: 1
           editorOptions:
             nodeTypes: ['Phlu.Corporate:Page.News']

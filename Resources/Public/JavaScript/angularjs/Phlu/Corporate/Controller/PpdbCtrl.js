@@ -16,12 +16,11 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.limitChunkSize = 5;
     $scope.showResultsListOnDemand = false;
     $scope.isopen = 0;
-    $scope.nodesByIdentifier = null;
+    $scope.nodesByIdentifier = [];
 
-    $scope.clearFilter = function(filtertype) {
+    $scope.clearFilter = function (filtertype) {
         $scope[filtertype] = {};
     };
-
 
 
     $scope.sizeOf = function (obj) {
@@ -31,8 +30,10 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         return Object.keys(obj).length;
     };
 
-    $scope.addNodesByIdentifier = function(nodes) {
-        $scope.nodesByIdentifier = nodes;
+    $scope.addNodesByIdentifier = function (nodes) {
+        angular.forEach(nodes, function (node) {
+            $scope.nodesByIdentifier.push(node);
+        });
     }
 
     $scope.addPropertyFilter = function (property, value) {
@@ -41,6 +42,9 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
     $scope.setQuery = function (value) {
         list.setQuery(value, $scope);
+    }
+    $scope.setQueryInitial = function (value) {
+        list.setQuery(value);
     }
 
     $scope.setFilterLifetime = function (f) {
@@ -78,7 +82,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         var p = [];
         try {
             p = JSON.parse(f);
-        } catch(errro) {
+        } catch (errro) {
             p = f;
         }
         if (p.length) {
@@ -102,10 +106,10 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
      * set detail is open
      * @returns void
      */
-    $scope.setOpen = function (node,index) {
+    $scope.setOpen = function (node, index) {
         $scope.isopen = $scope.isopen === node.identifier ? 0 : node.identifier;
 
-        window.setTimeout(function() {
+        window.setTimeout(function () {
             if (jQuery("#node-" + index).length) {
                 jQuery('html, body').stop().animate({
                     'scrollTop': jQuery("#node-" + index).offset().top - (jQuery("#node-" + index).height() / 2)
@@ -113,10 +117,39 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
                 });
             }
-        },10);
+        }, 10);
 
 
     };
+
+    /**
+     * @public
+     * Set max results
+     * @param integer limit
+     * @returns void
+     */
+    $scope.setMaxItems = function (limit) {
+
+        list.setLimit(limit);
+
+    };
+
+    /**
+     * @public
+     * Set order by
+     * @param string limit
+     * @returns void
+     */
+    $scope.setOrderBy = function (orderby) {
+
+        if (orderby != 0) {
+            list.setOrderBy({'*': orderby})
+        } else {
+            list.setOrderBy({'*': '__index'})
+        }
+
+    };
+
 
     /**
      * @private
@@ -126,7 +159,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.loadMore = function (objId) {
 
         $scope.limit = $scope.limit + $scope.limitChunkSize;
-        window.setTimeout(function() {
+        window.setTimeout(function () {
             if (jQuery(objId).length) {
                 jQuery('html, body').stop().animate({
                     'scrollTop': jQuery(objId).offset().top
@@ -134,7 +167,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
                 });
             }
-        },10);
+        }, 10);
 
     };
 
@@ -143,7 +176,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     //     console.log(d);
     // }, true);
 
-    $scope.isShowingResultList = function() {
+    $scope.isShowingResultList = function () {
 
         if ($scope.showResultsListOnDemand == false) {
             return true;
@@ -170,14 +203,12 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         }
 
 
-
         return false;
     }
 
-    $scope.run = function() {
+    $scope.run = function () {
 
         list
-            .setOrderBy({'phlu-neos-nodetypes-project': 'title'})
             .addPropertyFilter('organisationunits.id', 'organisations', $scope)
             .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
             .addPropertyFilter('lifetime', 'filterLifetime', $scope)
@@ -188,8 +219,8 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
             .addPropertyFilter('projecttype', 'projecttype', $scope)
             .addPropertyFilter('title', '', null, true);
 
-        if ($scope.nodesByIdentifier) {
-            list.addNodesByIdentifier(['34dd40cf-58ab-45cf-b4b6-8da8637508aa']);
+        if ($scope.nodesByIdentifier.length) {
+            list.addNodesByIdentifier($scope.nodesByIdentifier);
         } else {
             list.setNodeType('phlu-neos-nodetypes-project');
         }
@@ -214,7 +245,7 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     $scope.limit = {};
     $scope.limitChunkSize = 5;
 
-    $scope.clearFilter = function(filtertype) {
+    $scope.clearFilter = function (filtertype) {
         $scope[filtertype] = {};
     };
 
@@ -237,13 +268,13 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         $scope.initialFilters['publicationtype'] = true;
     };
 
-    $scope.loadMore = function (group,objId) {
+    $scope.loadMore = function (group, objId) {
         if ($scope.limit[group] === undefined) {
             $scope.limit[group] = $scope.limitChunkSize;
         }
 
         $scope.limit[group] = $scope.limit[group] + $scope.limitChunkSize;
-        window.setTimeout(function() {
+        window.setTimeout(function () {
             if (jQuery(objId).length) {
                 jQuery('html, body').stop().animate({
                     'scrollTop': jQuery(objId).offset().top
@@ -251,7 +282,7 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
 
                 });
             }
-        },10);
+        }, 10);
     };
 
     $scope.sizeOf = function (obj) {
@@ -294,7 +325,7 @@ PhluCorporateApp.filter('toArray', function () {
                 var value = obj[key];
                 return angular.isObject(value) ?
                     Object.defineProperty(value, '$key', {enumerable: false, value: key}) :
-                {$key: key, $value: value};
+                    {$key: key, $value: value};
             });
         }
     };

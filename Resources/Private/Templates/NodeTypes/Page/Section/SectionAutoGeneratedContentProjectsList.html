@@ -57,6 +57,9 @@
                         data-ng-init="setFilterOrganisations({organisations});"></span></f:if>
                 <f:if condition="{projecttype} != 'null'"><span
                         data-ng-init="setFilterProjectType({projecttype});"></span></f:if>
+                <f:if condition="{query}"><span data-ng-init="setQueryInitial('{query}')"></span></f:if>
+                <f:if condition="{maxitems} > 0"><span data-ng-init="setMaxItems({maxitems})"></span></f:if>
+                <f:if condition="{orderby} != ''"><span data-ng-init="setOrderBy('{orderby}')"></span></f:if>
             </f:then>
             <f:else>
                 <span data-ng-init="showResultsListOnDemand = true;"></span>
@@ -110,8 +113,7 @@
 
                                     </span>
 
-
-                                    <div class="mobile-view-columns">
+                                        <div class="mobile-view-columns">
                                                         <span class="header">
                                                             Schwerpunkte
                                                         </span>
