@@ -43,6 +43,9 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.setQuery = function (value) {
         list.setQuery(value, $scope);
     }
+    $scope.setQueryInitial = function (value) {
+        list.setQuery(value);
+    }
 
     $scope.setFilterLifetime = function (f) {
         $scope.filterLifetime = f;
@@ -120,6 +123,35 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     };
 
     /**
+     * @public
+     * Set max results
+     * @param integer limit
+     * @returns void
+     */
+    $scope.setMaxItems = function (limit) {
+
+        list.setLimit(limit);
+
+    };
+
+    /**
+     * @public
+     * Set order by
+     * @param string limit
+     * @returns void
+     */
+    $scope.setOrderBy = function (orderby) {
+
+        if (orderby != 0) {
+            list.setOrderBy({'*': orderby})
+        } else {
+            list.setOrderBy({'*': '__index'})
+        }
+
+    };
+
+
+    /**
      * @private
      * Load more
      * @returns integer
@@ -177,7 +209,6 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.run = function () {
 
         list
-            .setOrderBy({'phlu-neos-nodetypes-project': 'title'})
             .addPropertyFilter('organisationunits.id', 'organisations', $scope)
             .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
             .addPropertyFilter('lifetime', 'filterLifetime', $scope)
