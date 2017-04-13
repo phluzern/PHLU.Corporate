@@ -5,7 +5,7 @@ prototype(Phlu.Corporate:AccordeonElement) < prototype(Phlu.Corporate:Content) {
     collectionRenderer = Neos.Neos:ContentCollection
     main = ${q(node).children('main').get(0)}
 
-
+    wrapperNode = ${q(node).closest('[instanceof Phlu.Corporate:Section]').get(0)}
 }
 
 # Content collection

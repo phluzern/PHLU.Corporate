@@ -35,6 +35,10 @@
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
+'Phlu.Corporate:Page.News':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': true
+
 'Phlu.Corporate:Page.View.Default':
   superTypes:
     'Neoslive.Hybridsearch:Content': true

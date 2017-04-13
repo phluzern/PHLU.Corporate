@@ -144,32 +144,32 @@
                                              class="panel-collapse collapse" role="tabpanel">
                                             <div>
                                                 <f:for each="{publicationtype.items}" as="publication">
-
-                                                    <f:if condition="{publication.URL}">
-                                                        <f:then>
-                                                            <p><a href="{publication.URL}" class="" target="_blank">
+                                                    <div>
+                                                        <f:if condition="{publication.URL}">
+                                                            <f:then>
+                                                                <p><a href="{publication.URL}" class="" target="_blank">
+                                                                    <f:if condition="{publication.Citationstyle} == ''">
+                                                                        <f:then>
+                                                                            {publication.Title -> f:format.raw()}
+                                                                        </f:then>
+                                                                        <f:else>{publication.Citationstyle ->
+                                                                            f:format.raw()}
+                                                                        </f:else>
+                                                                    </f:if>
+                                                                </a></p>
+                                                            </f:then>
+                                                            <f:else>
                                                                 <f:if condition="{publication.Citationstyle} == ''">
-                                                                    <f:then>
-                                                                        {publication.Title -> f:format.raw()}
+                                                                    <f:then><p>{publication.Title -> f:format.raw()}</p>
                                                                     </f:then>
-                                                                    <f:else>{publication.Citationstyle ->
-                                                                        f:format.raw()}
+                                                                    <f:else><p>{publication.Citationstyle ->
+                                                                        f:format.raw()}</p>
                                                                     </f:else>
                                                                 </f:if>
-                                                            </a></p>
-                                                        </f:then>
-                                                        <f:else>
-                                                            <f:if condition="{publication.Citationstyle} == ''">
-                                                                <f:then><p>{publication.Title -> f:format.raw()}</p>
-                                                                </f:then>
-                                                                <f:else><p>{publication.Citationstyle ->
-                                                                    f:format.raw()}</p>
-                                                                </f:else>
-                                                            </f:if>
-                                                        </f:else>
-                                                    </f:if>
+                                                            </f:else>
+                                                        </f:if>
 
-
+                                                    </div>
                                                 </f:for>
                                             </div>
                                         </div>
@@ -202,7 +202,8 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading" role="tab">
                                                 <h4 class="panel-title">
-                                                    <a href="#" data-toggle="collapse" data-parent="#phlu-accordion-projects"
+                                                    <a href="#" data-toggle="collapse"
+                                                       data-parent="#phlu-accordion-projects"
                                                        data-target="#phlu-accordion-project-{project.ID}"
                                                        aria-expanded="false"
                                                        aria-controls="phlu-accordion-projects-{project.ID}">

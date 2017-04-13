@@ -25,8 +25,8 @@
         </f:for>
 
 
-
-        <f:if condition="{publicationtype} != 'null'"><span data-ng-init="setFilterPublicationType({publicationtype});"></span>
+        <f:if condition="{publicationtype} != 'null'"><span
+                data-ng-init="setFilterPublicationType({publicationtype});"></span>
         </f:if>
 
         <f:if condition="{participants} != 'null'"><span data-ng-init="setFilterParticipants({participants});"></span>
@@ -60,17 +60,18 @@
 
                             <li class="nav-item"
                                 data-ng-show="initialFilters.participants === undefined ">
-                                <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                                <a  href="javascript:void(0)" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#participants-{node.Identifier}" role="tab">
                                     <i class="fa fa-users" aria-hidden="true"></i>
                                     <span data-toggle="filterCountTag"
                                           data-template='<div class="tooltip filterCountTag" role="tooltip"><span class="tooltip-inner"></span><span class="oi oi-media-record"></span></div>'
                                           data-placement="right" title="" data-offset="26px -6px"
                                           data-trigger="manual">Beteiligte Personen</span>
-                                    <span class="count" data-ng-show="sizeOf(participants) > 0" data-ng-bind="sizeOf(participants)"></span>
+                                    <span class="count" data-ng-show="sizeOf(participants) > 0"
+                                          data-ng-bind="sizeOf(participants)"></span>
                                 </a>
                                 <span data-ng-show="sizeOf(participants) > 0" class="resetFilter">
-                                    <a  ng-click="clearFilter('participants')" >
+                                    <a ng-click="clearFilter('participants')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -79,14 +80,15 @@
 
                             <li class="nav-item"
                                 data-ng-show="initialFilters.organisations === undefined ">
-                                <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                                <a  href="javascript:void(0)" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#organisations-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
                                     <span>Abteilung</span>
-                                    <span class="count" data-ng-show="sizeOf(organisations) > 0" data-ng-bind="sizeOf(organisations)"></span>
+                                    <span class="count" data-ng-show="sizeOf(organisations) > 0"
+                                          data-ng-bind="sizeOf(organisations)"></span>
                                 </a>
                                 <span data-ng-show="sizeOf(organisations) > 0" class="resetFilter">
-                                    <a  ng-click="clearFilter('organisations')" >
+                                    <a ng-click="clearFilter('organisations')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -94,14 +96,15 @@
 
                             <li class="nav-item"
                                 data-ng-show="initialFilters.publicationtype === undefined ">
-                                <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
+                                <a  href="javascript:void(0)" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#publicationtype-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
                                     <span>Publikationstyp</span>
-                                    <span class="count" data-ng-show="sizeOf(publicationtype) > 0" data-ng-bind="sizeOf(publicationtype)"></span>
+                                    <span class="count" data-ng-show="sizeOf(publicationtype) > 0"
+                                          data-ng-bind="sizeOf(publicationtype)"></span>
                                 </a>
                                 <span data-ng-show="sizeOf(publicationtype) > 0" class="resetFilter">
-                                    <a  ng-click="clearFilter('publicationtype')" >
+                                    <a ng-click="clearFilter('publicationtype')">
                                         <span class="oi oi-x"></span>
                                     </a>
                                 </span>
@@ -116,7 +119,7 @@
                             <div class="result-panel tab-pane " id="participants-{node.Identifier}"
                                  role="tabpanel"
                                  data-ng-show="result.getDistinctCount('persons',false) > 1"><a
-                                                                                          class="close-btn"><i
+                                    class="close-btn"><i
                                     class="fa fa-times" aria-hidden="true"></i></a>
                                 <div class="dropdown-search-field">
                                     <input type="text" class="c-input form-control"
@@ -126,7 +129,8 @@
                                 </div>
                                 <div class="search-result-tags">
                                     <span class="search-result-tag"
-                                          data-ng-repeat="(eventoID,val) in participants" data-ng-if="val"><span data-ng-bind="val"></span> <i
+                                          data-ng-repeat="(eventoID,val) in participants" data-ng-if="val"><span
+                                            data-ng-bind="val"></span> <i
                                             class="fa fa-times clickable"
                                             aria-hidden="true"
                                             data-ng-click="participants[eventoID] = false;"></i></span>
@@ -134,7 +138,8 @@
                                 </div>
 
                                 <div class="table-responsive">
-                                    <table class="table" data-ng-show="result.isLoading() === false && result.count() > 0">
+                                    <table class="table"
+                                           data-ng-show="result.isLoading() === false && result.count() > 0">
                                         <tbody>
                                         <tr class="clickable"
                                             data-ng-click="participants[person.value.EventoID] = person.value.Nachname+ ' ' + person.value.Vorname;"
@@ -142,7 +147,8 @@
                                             data-ng-if="person.value.EventoID > 0"
                                             data-ng-show="participants[person.value.EventoID] == undefined || participants[person.value.Nachname] == false">
                                             <td>
-                                                <a href="javascript:void(0);" data-ng-bind="person.value.Vorname + ' ' + person.value.Nachname">
+                                                <a href="javascript:void(0);"
+                                                   data-ng-bind="person.value.Vorname + ' ' + person.value.Nachname">
 
                                                 </a>
                                             </td>
@@ -177,12 +183,12 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <a  class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                <a class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                             </div>
 
                             <div class="result-panel tab-pane " id="publicationtype-{node.Identifier}" role="tabpanel"
                                  data-ng-show="result.getDistinctCount('publicationtype',false) > 1">
-                                   <!--<a  class="close-btn">&nbsp;</a>-->
+                                <!--<a  class="close-btn">&nbsp;</a>-->
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tbody>
@@ -201,7 +207,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <a  class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                <a class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                             </div>
 
                         </div>
@@ -212,63 +218,152 @@
         </f:if>
 
 
-        <div class="col-xs-12">
-            <div class="row ">
+        <f:if condition="{showSearchInput}">
+            <f:then>
                 <div class="col-xs-12">
-                    <f:if condition="{showSearchInput}"><div class="resultsCount"><h3 data-ng-bind="'Treffer '+result.count()" data-ng-show="result.count()>0"></h3></div></f:if>
-                    <div class="searchResultsListLoadingScreen" data-ng-if="result.isLoading()">
-                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading" class="loadingIcon"
-                        />
+                    <div class="row ">
+                        <div class="col-xs-12">
+                            <f:if condition="{showSearchInput}">
+                                <div class="resultsCount"><h3 data-ng-bind="'Treffer '+result.count()"
+                                                              data-ng-show="result.count()>0"></h3></div>
+                            </f:if>
+                            <div class="searchResultsListLoadingScreen" data-ng-if="result.isLoading()">
+                                <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
+                                     alt="loading" class="loadingIcon"
+                                />
+                            </div>
+
+
+                            <div class="table-responsive results-table"
+                                 data-ng-repeat="(groupkey,group) in result.getGrouped().getItems() | orderBy:'getProperty(\'type.sorting\')'">
+
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th class="clickable publicationsHeader">
+                                            <a data-ng-bind="group.getLabel()"></a>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <tr ng-repeat="node in group.getNodes(getLimit(group.getLabel()))"
+                                        id="node-{{group.getHashKey()}}-{{$index}}">
+                                        <td data-ng-if="node.getProperty('url') == ''">
+                                            <div>
+                                                <span data-ng-if="node.getProperty('citationstyle') != ''"
+                                                      data-ng-bind-html="node.getProperty('citationstyle')"></span>
+                                                <span data-ng-if="node.getProperty('citationstyle') == ''"
+                                                      data-ng-bind-html="node.getProperty('title')"></span>
+                                            </div>
+                                        </td>
+                                        <td data-ng-if="node.getProperty('url') != ''">
+                                            <div>
+                                                <a data-ng-href="{{node.getProperty('url')}}" target="_blank">
+                                                    <span data-ng-if="node.getProperty('citationstyle') != ''"
+                                                          data-ng-bind-html="node.getProperty('citationstyle')"></span>
+                                                    <span data-ng-if="node.getProperty('citationstyle') == ''"
+                                                          data-ng-bind-html="node.getProperty('title')"></span>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <div class="row">
+                                    <div class="col-center">
+                                        <a data-ng-click="loadMore(group.getLabel(),'#node-'+group.getHashKey()+'-'+getLimit(group.getLabel()))"
+                                           class="btn loadMore"
+                                           data-ng-if="group.count() > getLimit(group.getLabel())">
+                                            <!--{{limitChunkSize}} -->
+                                            mehr anzeigen
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
+                </div>
+            </f:then>
+            <f:else>
 
 
-                    <div class="table-responsive results-table"  data-ng-repeat="(groupkey,group) in result.getGrouped().getItems() | orderBy:'getProperty(\'type.sorting\')'">
+                <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
+                     alt="loading" class="loadingIcon" data-ng-if="result.isLoading()"
+                />
 
-                           <table class="table">
-                            <thead>
-                            <tr>
-                                <th class="clickable publicationsHeader">
-                                    <a data-ng-bind="group.getLabel()"></a>
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
 
-                            <tr ng-repeat="node in group.getNodes(getLimit(group.getLabel()))"
-                               id="node-{{group.getHashKey()}}-{{$index}}" >
-                                <td data-ng-if="node.getProperty('url') == ''">
-                                    <div>
-                                    <span data-ng-if="node.getProperty('citationstyle') != ''" data-ng-bind-html="node.getProperty('citationstyle')"></span>
-                                    <span data-ng-if="node.getProperty('citationstyle') == ''" data-ng-bind-html="node.getProperty('title')"></span>
-                                    </div>
-                                </td>
-                                <td data-ng-if="node.getProperty('url') != ''">
-                                    <div>
-                                    <a data-ng-href="{{node.getProperty('url')}}" target="_blank">
-                                        <span data-ng-if="node.getProperty('citationstyle') != ''" data-ng-bind-html="node.getProperty('citationstyle')"></span>
-                                        <span data-ng-if="node.getProperty('citationstyle') == ''" data-ng-bind-html="node.getProperty('title')"></span>
+                <div class="col-xs-12 publications-list">
+                    <div id="phlu-accordion-publications-{node.identifier}" class="phlu-accordion" role="tablist">
+
+                        <div class="panel panel-default"
+                             data-ng-repeat="(groupkey,group) in result.getGrouped().getItems() | orderBy:'getProperty(\'type.sorting\')'">
+                            <div class="panel-heading" role="tab">
+                                <h4 class="panel-title">
+
+                                    <a class="collapsed" data-toggle="collapse"
+                                       data-parent="#phlu-accordion-publications-{node.identifier}"
+                                       href="javascript:void(0)"
+                                       data-target="#phlu-accordion-publications-{node.identifier}-{{$index}}"
+                                       aria-expanded="false"
+                                       aria-controls="#phlu-accordion-publications-{iterator.index}">
+                                        <span data-ng-bind="group.getLabel()"></span> (<span
+                                            data-ng-bind="group.count()"></span>)
                                     </a>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
 
-                        <div class="row">
-                            <div class="col-center">
-                                <a data-ng-click="loadMore(group.getLabel(),'#node-'+group.getHashKey()+'-'+getLimit(group.getLabel()))" class="btn loadMore"
-                                   data-ng-if="group.count() > getLimit(group.getLabel())">
-                                    <!--{{limitChunkSize}} -->
-                                    mehr anzeigen
-                                </a>
+                                </h4>
+                            </div>
+                            <div id="phlu-accordion-publications-{node.identifier}-{{$index}}"
+                                 class="panel-collapse collapse" role="tabpanel">
+                                <div>
+                                    <div id="node-{node.identifier}-{{group.getHashKey()}}-{{$index}}"
+                                         ng-repeat="node in group.getNodes(getLimit(group.getLabel()))">
+
+                                        <p data-ng-if="node.getProperty('url') == ''">
+
+                                                <span data-ng-if="node.getProperty('citationstyle') != ''"
+                                                      data-ng-bind-html="node.getProperty('citationstyle')"></span>
+                                            <span data-ng-if="node.getProperty('citationstyle') == ''"
+                                                  data-ng-bind-html="node.getProperty('title')"></span>
+
+                                        </p>
+                                        <p data-ng-if="node.getProperty('url') != ''">
+
+                                            <a data-ng-href="{{node.getProperty('url')}}" target="_blank">
+                                                    <span data-ng-if="node.getProperty('citationstyle') != ''"
+                                                          data-ng-bind-html="node.getProperty('citationstyle')"></span>
+                                                <span data-ng-if="node.getProperty('citationstyle') == ''"
+                                                      data-ng-bind-html="node.getProperty('title')"></span>
+                                            </a>
+
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-center">
+                                        <a data-ng-click="loadMore(group.getLabel(),'#node-{node.identifier}-'+group.getHashKey()+'-'+getLimit(group.getLabel()))"
+                                           class="btn loadMore"
+                                           data-ng-if="group.count() > getLimit(group.getLabel())">
+                                            <!--{{limitChunkSize}} -->
+                                            mehr anzeigen
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                     </div>
-
                 </div>
-            </div>
-        </div>
+
+            </f:else>
+        </f:if>
+
+
     </div>
+    <hr>
 
     <f:if condition="{bottom}">
         <ts:render path="bottom"></ts:render>

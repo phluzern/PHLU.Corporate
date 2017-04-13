@@ -420,15 +420,15 @@
                                                                 </span>
                                                         <span>
                                                                     <ul>
-                                                                        <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">{{focus.name}}</li>
+                                                                        <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index" data-ng-bind="focus.name"></li>
                                                                     </ul>
                                                                 </span>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <ul>
-                                                        <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index">
-                                                            {{focus.name}}
+                                                        <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index" data-ng-bind="focus.name">
+
                                                         </li>
                                                     </ul>
                                                 </td>

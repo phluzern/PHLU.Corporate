@@ -1,10 +1,10 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
-<div class="phlu-accordion">
+<div{attributes -> f:format.raw()}>
     <div class="panel panel-default">
         <div class="panel-heading" role="tab">
             <h4 class="panel-title">
-                <a href="#" data-toggle="collapse" data-parent="#phlu-accordion" data-target="#accordion-{node.Identifier}"
+                <a href="#" data-toggle="collapse" data-parent="#node-{wrapperNode.Identifier}" data-target="#accordion-{node.Identifier}"
                    aria-expanded="false" aria-controls="accordeon-{node.Identifier}">
                     {neos:contentElement.editable(property: 'title', tag: 'span')}
                 </a>

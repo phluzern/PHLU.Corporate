@@ -1,4 +1,5 @@
 {namespace ts=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
 
 <div class="row">
 
@@ -22,12 +23,20 @@
 </div>
 
 <f:if condition="{ishidden}">
-<f:else><ts:render path="defaultRenderer" context="{node: carouselnews}"/></f:else>
+    <f:else>
+        <ts:render path="defaultRenderer" context="{node: carouselnews}"/>
+    </f:else>
 </f:if>
-
-{onePageContent -> f:format.raw()}
-
-
+<f:if condition="{node.properties.moodimage}">
+    <div class="row ambient-img-body"
+         style="background-image: url('{media:uri.image(image: node.properties.moodimage)}')">
+    </div>
+</f:if>
+<div class="row phlu-dossier">
+    <div class="col-xs-12">
+        {onePageContent -> f:format.raw()}
+    </div>
+</div>
 <f:if condition="{mainVisible}">
     <f:then>
         <div class="row">
