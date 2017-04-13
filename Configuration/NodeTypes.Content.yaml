@@ -255,9 +255,6 @@
 'Phlu.Corporate:MediaGallery':
   superTypes:
     'Phlu.Corporate:Content': true
-  constraints:
-    nodeTypes:
-      'Phlu.Corporate:CarouselImage': true
   ui:
     label: Mediensammlung
     icon: icon-picture
@@ -273,7 +270,7 @@
       defaultValue: 'Medien Galerie'
     mediaGalleryType:
       type: string
-      defaultValue: ''
+      defaultValue: carousel
       ui:
         label: Darstellungsform
         reloadIfChanged: true

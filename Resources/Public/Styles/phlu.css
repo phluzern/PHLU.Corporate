@@ -11074,7 +11074,8 @@ body {
         body .all .main > .row .phlu-corporate-textwithimage .img-and-caption, body .all .main > .row-fullwidth-content > .row .phlu-corporate-textwithimage .img-and-caption {
           width: 237px; } }
       body .all .main > .row .phlu-corporate-media-container .phlu-teaser, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .phlu-teaser {
-        padding: 0 0 25px; }
+        padding: 0 0 25px;
+        margin-bottom: 30px; }
         body .all .main > .row .phlu-corporate-media-container .phlu-teaser .carousel-indicators, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .phlu-teaser .carousel-indicators {
           bottom: -35px;
           width: 80%; }
