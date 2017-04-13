@@ -7,6 +7,7 @@
 <address>
     {node.properties.firstname} {node.properties.lastname}<br>
     <f:if condition="{node.properties.titlename} != ''">{node.properties.titlename}<br></f:if>
+    <f:if condition="{node.properties.function}">{node.properties.function}<br></f:if>
     <span>{node.properties.street}</span>
     <f:if condition="{node.properties.street2} != ''">{node.properties.street2}<br></f:if>
     <br>
