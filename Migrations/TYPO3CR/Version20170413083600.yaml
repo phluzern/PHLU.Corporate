@@ -1,0 +1,31 @@
+up:
+  comments: 'Migrate news nodes: rename reference property to documentNode'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'Phlu.Corporate:Page.News'
+      transformations:
+        -
+          type: 'RenameProperty'
+          settings:
+            from: 'reference'
+            to: 'documentNode'
+
+down:
+  comments: 'Migrate news nodes: rename documentNode property to reference'
+  migration:
+    -
+      filters:
+        -
+          type: 'NodeType'
+          settings:
+            nodeType: 'Phlu.Corporate:Page.News'
+      transformations:
+        -
+          type: 'RenameProperty'
+          settings:
+            from: 'documentNode'
+            to: 'reference'

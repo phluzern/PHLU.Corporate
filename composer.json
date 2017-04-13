@@ -2,13 +2,13 @@
     "description": "Phlu Corporate Neos Site",
     "type": "neos-site",
     "require": {
-        "typo3/neos": "*",
-        "typo3/neos-nodetypes": "*",
+        "neos/neos": "*",
+        "neos/nodetypes": "*",
         "phlu/evento": "*",
         "phlu/ppdb": "*"
     },
     "suggest": {
-        "typo3/neos-seo": "*"
+        "neos/seo": "*"
     },
     "name": "phlu/corporate",
     "autoload": {

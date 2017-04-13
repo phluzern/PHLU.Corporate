@@ -234,14 +234,18 @@ class TeaserAspect
             $headline = $flowQuery->children('header')->find('[instanceof Phlu.Corporate:Headline]')->get(0);
             if ($headline) {
                 /* @var \Neos\ContentRepository\Domain\Model\Node $headline */
-                $headline->setProperty('text', $object->getProperty('teaserHeadline'));
-                $this->nodeDataRepository->update($headline->getNodeData());
+                if ($headline->getProperty('text') == $object->getProperty('teaserHeadline')) {
+                    $headline->setProperty('text', $object->getProperty('teaserHeadline'));
+                    $this->nodeDataRepository->update($headline->getNodeData());
+                }
             }
             $text = $flowQuery->children('header')->find('[instanceof Phlu.Corporate:TextPlain]')->get(0);
             if ($text) {
                 /* @var \Neos\ContentRepository\Domain\Model\Node $text */
-                $text->setProperty('text', $object->getProperty('teaserText'));
-                $this->nodeDataRepository->update($text->getNodeData());
+                if ($text->getProperty('text') == $object->getProperty('teaserText')) {
+                    $text->setProperty('text', $object->getProperty('teaserText'));
+                    $this->nodeDataRepository->update($text->getNodeData());
+                }
             }
 
 
@@ -272,7 +276,7 @@ class TeaserAspect
             $flowQuery = new FlowQuery(array($basenode));
             $parentPageNode = $flowQuery->closest('[instanceof Neos.NodeTypes:Page]')->get(0);
             if ($parentPageNode) {
-                $detailNode->setProperty('reference', $parentPageNode->getIdentifier());
+                $detailNode->setProperty('documentNode', $parentPageNode->getIdentifier());
             }
             $this->nodeDataRepository->update($detailNode->getNodeData());
 
