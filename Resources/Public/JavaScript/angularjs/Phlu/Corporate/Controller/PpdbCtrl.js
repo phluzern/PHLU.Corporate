@@ -16,10 +16,13 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.limitChunkSize = 5;
     $scope.showResultsListOnDemand = false;
     $scope.isopen = 0;
+    $scope.nodesByIdentifier = null;
 
     $scope.clearFilter = function(filtertype) {
         $scope[filtertype] = {};
     };
+
+
 
     $scope.sizeOf = function (obj) {
         if (obj === undefined) {
@@ -27,6 +30,10 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         }
         return Object.keys(obj).length;
     };
+
+    $scope.addNodesByIdentifier = function(nodes) {
+        $scope.nodesByIdentifier = nodes;
+    }
 
     $scope.addPropertyFilter = function (property, value) {
         list.addPropertyFilter(property, value, $scope);
@@ -167,21 +174,31 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         return false;
     }
 
-    list
-        .setOrderBy({'phlu-neos-nodetypes-project': 'title'})
-        .addPropertyFilter('organisationunits.id', 'organisations', $scope)
-        .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
-        .addPropertyFilter('lifetime', 'filterLifetime', $scope)
-        .addPropertyFilter('researchmainfocus.ID', 'researchmainfocus', $scope)
-        .addPropertyFilter('researchunit.ID', 'researchunit', $scope)
-        .addPropertyFilter('financingtypes', 'financingtype', $scope)
-        .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
-        .addPropertyFilter('projecttype', 'projecttype', $scope)
-        .addPropertyFilter('title', '', null, true)
-        .setNodeType('phlu-neos-nodetypes-project')
-        .$bind('result', $scope)
-        .run();
+    $scope.run = function() {
 
+        list
+            .setOrderBy({'phlu-neos-nodetypes-project': 'title'})
+            .addPropertyFilter('organisationunits.id', 'organisations', $scope)
+            .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
+            .addPropertyFilter('lifetime', 'filterLifetime', $scope)
+            .addPropertyFilter('researchmainfocus.ID', 'researchmainfocus', $scope)
+            .addPropertyFilter('researchunit.ID', 'researchunit', $scope)
+            .addPropertyFilter('financingtypes', 'financingtype', $scope)
+            .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
+            .addPropertyFilter('projecttype', 'projecttype', $scope)
+            .addPropertyFilter('title', '', null, true);
+
+        if ($scope.nodesByIdentifier) {
+            list.addNodesByIdentifier(['34dd40cf-58ab-45cf-b4b6-8da8637508aa']);
+        } else {
+            list.setNodeType('phlu-neos-nodetypes-project');
+        }
+
+
+        list.$bind('result', $scope)
+            .run();
+
+    }
 
 }]);
 
