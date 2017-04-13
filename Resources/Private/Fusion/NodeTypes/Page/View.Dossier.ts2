@@ -5,7 +5,7 @@ prototype(Phlu.Corporate:Page.View.Dossier) < prototype(Phlu.Corporate:Page.Over
         onePageContent.defaultRenderer.sectionName = 'contentdossier'
         onePageContent.defaultRenderer.mainCount = ${q(node).children('main').children().count()}
         onePageContent.defaultRenderer.title = ${q(node).property('title')}
-
+        moodimage = ${q(node).property('moodimage')}
         ishidden = ${q(node).property('ishidden')}
 
 

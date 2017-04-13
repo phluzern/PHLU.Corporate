@@ -11903,7 +11903,7 @@ body:last-child .blueimp-gallery > .play-pause {
 
 body .all .startpage .main > .row.mobileBg {
   display: none;
-  background-image: url("../Images/ambienteexample.jpg");
+  background-image: url("../Images/ambientImgStartpageMobile.jpg");
   background-size: cover;
   height: 150px; }
   @media (max-width: 1279px) {
@@ -11911,7 +11911,7 @@ body .all .startpage .main > .row.mobileBg {
       display: block; } }
 
 body .all .startpage .main > .row.aktuelles {
-  background-image: url("../Images/ambienteexample.jpg");
+  background-image: url("../Images/ambientImgStartpage.jpg");
   background-size: cover; }
   @media (max-width: 1279px) {
     body .all .startpage .main > .row.aktuelles {

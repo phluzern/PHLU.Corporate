@@ -5947,7 +5947,7 @@ body {
         }
         > .row.mobileBg {
           display: none;
-          background-image: url("../Images/ambienteexample.jpg");
+          background-image: url("../Images/ambientImgStartpageMobile.jpg");
           background-size: cover;
           height: 150px;
           @include media-breakpoint-down("lg") {
@@ -5955,7 +5955,7 @@ body {
           }
         }
         > .row.aktuelles {
-          background-image: url("../Images/ambienteexample.jpg");
+          background-image: url("../Images/ambientImgStartpage.jpg");
           background-size: cover;
           @include media-breakpoint-down("lg") {
             background-image: none;

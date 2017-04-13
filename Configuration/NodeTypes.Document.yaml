@@ -210,6 +210,8 @@
       groups:
         carouselnews:
           label: Karussell
+        moodImageGroup:
+          label: Stimmungsbild
   superTypes:
     'Phlu.Corporate:Page': true
   constraints:
@@ -228,6 +230,12 @@
         inspector:
           group: carouselnews
         reloadIfChanged: true
+    moodimage:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        reloadIfChanged: true
+        inspector:
+          group: moodImageGroup
 
 
 'Phlu.Corporate:Page.Service':
