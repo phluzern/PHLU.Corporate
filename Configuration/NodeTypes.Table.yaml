@@ -585,7 +585,7 @@
         aloha:
           format:
             strong: false
-            b: false
+            b: true
             em: false
             i: false
             u: false
@@ -603,7 +603,7 @@
           table:
             table: false
           link:
-            a: false
+            a: true
           list:
             ul: false
             ol: false
@@ -627,8 +627,8 @@
         reloadPageIfChanged: false
         aloha:
           format:
-            strong: true
-            b: false
+            strong: false
+            b: true
             em: false
             i: false
             u: false
@@ -646,7 +646,7 @@
           table:
             table: false
           link:
-            a: false
+            a: true
           list:
             ul: false
             ol: false
@@ -670,8 +670,8 @@
         reloadPageIfChanged: false
         aloha:
           format:
-            strong: true
-            b: false
+            strong: false
+            b: true
             em: false
             i: false
             u: false
@@ -689,7 +689,7 @@
           table:
             table: false
           link:
-            a: false
+            a: true
           list:
             ul: false
             ol: false
@@ -713,8 +713,8 @@
         reloadPageIfChanged: false
         aloha:
           format:
-            strong: true
-            b: false
+            strong: false
+            b: true
             em: false
             i: false
             u: false
@@ -732,7 +732,7 @@
           table:
             table: false
           link:
-            a: false
+            a: true
           list:
             ul: false
             ol: false
@@ -756,8 +756,8 @@
         reloadPageIfChanged: false
         aloha:
           format:
-            strong: true
-            b: false
+            strong: false
+            b: true
             em: false
             i: false
             u: false
@@ -775,7 +775,7 @@
           table:
             table: false
           link:
-            a: false
+            a: true
           list:
             ul: false
             ol: false
@@ -799,8 +799,8 @@
         reloadPageIfChanged: false
         aloha:
           format:
-            strong: true
-            b: false
+            strong: false
+            b: true
             em: false
             i: false
             u: false
@@ -818,7 +818,7 @@
           table:
             table: false
           link:
-            a: false
+            a: true
           list:
             ul: false
             ol: false
@@ -842,8 +842,8 @@
         reloadPageIfChanged: false
         aloha:
           format:
-            strong: true
-            b: false
+            strong: false
+            b: true
             em: false
             i: false
             u: false
@@ -861,7 +861,7 @@
           table:
             table: false
           link:
-            a: false
+            a: true
           list:
             ul: false
             ol: false
@@ -885,8 +885,8 @@
         reloadPageIfChanged: false
         aloha:
           format:
-            strong: true
-            b: false
+            strong: false
+            b: true
             em: false
             i: false
             u: false
@@ -904,7 +904,7 @@
           table:
             table: false
           link:
-            a: false
+            a: true
           list:
             ul: false
             ol: false
@@ -928,8 +928,8 @@
         reloadPageIfChanged: false
         aloha:
           format:
-            strong: true
-            b: false
+            strong: false
+            b: true
             em: false
             i: false
             u: false
@@ -947,7 +947,7 @@
           table:
             table: false
           link:
-            a: false
+            a: true
           list:
             ul: false
             ol: false
@@ -971,8 +971,8 @@
         reloadPageIfChanged: false
         aloha:
           format:
-            strong: true
-            b: false
+            strong: false
+            b: true
             em: false
             i: false
             u: false
@@ -990,7 +990,7 @@
           table:
             table: false
           link:
-            a: false
+            a: true
           list:
             ul: false
             ol: false

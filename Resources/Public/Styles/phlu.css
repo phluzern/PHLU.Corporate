@@ -10857,6 +10857,8 @@ body {
           flex: 0 0 80%; }
         body .all .table-responsive .table tbody tr th .mobile-view-columns, body .all .table-responsive .table tbody tr td .mobile-view-columns {
           display: none; }
+          body .all .table-responsive .table tbody tr th .mobile-view-columns a, body .all .table-responsive .table tbody tr td .mobile-view-columns a {
+            font-size: 0.75rem; }
         @media (max-width: 767px) {
           body .all .table-responsive .table tbody tr th, body .all .table-responsive .table tbody tr td {
             display: none; }

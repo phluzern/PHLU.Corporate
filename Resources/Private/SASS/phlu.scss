@@ -4560,6 +4560,9 @@ body {
               }
               .mobile-view-columns {
                 display: none;
+                a {
+                  font-size:$font-size-table-mobile-cols;
+                }
               }
               @include media-breakpoint-down("sm") {
                 display: none;
