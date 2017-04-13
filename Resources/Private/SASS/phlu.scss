@@ -4723,7 +4723,7 @@ body {
         margin-left: -$spacer-x;
         margin-top: $spacer-y;
         margin-bottom: $spacer;
-        background-position: center center;
+        background-position: top center;
         background-position-x: center;
 
         @include media-breakpoint-only("sm") {
@@ -4766,7 +4766,7 @@ body {
         background-image: url("../Images/ambienteexample.jpg");
         background-repeat: no-repeat;
         padding-bottom: 330px;
-        background-position: center center;
+        background-position: top center;
         background-size: cover;
       }
       > .row, > .row-fullwidth-content > .row {
@@ -5158,7 +5158,7 @@ body {
           background-image: url("../Images/ambienteexample.jpg");
           background-repeat: no-repeat;
           padding-bottom: 330px;
-          background-position: bottom center;
+          background-position: top center;
           background-size: cover;
           margin-top: 48px;
         }

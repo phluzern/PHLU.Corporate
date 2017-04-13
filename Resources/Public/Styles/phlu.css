@@ -10966,7 +10966,7 @@ body {
         margin-left: -1rem;
         margin-top: 50px;
         margin-bottom: 1rem;
-        background-position: center center;
+        background-position: top center;
         background-position-x: center; }
 
 @media (min-width: 544px) and (max-width: 767px) {
@@ -11013,7 +11013,7 @@ body {
         background-image: url("../Images/ambienteexample.jpg");
         background-repeat: no-repeat;
         padding-bottom: 330px;
-        background-position: center center;
+        background-position: top center;
         background-size: cover; }
       body .all .main > .row p, body .all .main > .row-fullwidth-content > .row p {
         margin-bottom: 31px; }
@@ -11409,7 +11409,7 @@ body {
         background-image: url("../Images/ambienteexample.jpg");
         background-repeat: no-repeat;
         padding-bottom: 330px;
-        background-position: bottom center;
+        background-position: top center;
         background-size: cover;
         margin-top: 48px; }
       body .all .main > .row .phlu-corporate-section[data-next='empty'], body .all .main > .row-fullwidth-content > .row .phlu-corporate-section[data-next='empty'] {
