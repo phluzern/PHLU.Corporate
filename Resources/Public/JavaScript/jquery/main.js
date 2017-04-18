@@ -92,7 +92,7 @@ function initFrontend() {
     });
 
 
-    initSmothScrolling();
+    initSmoothScrolling();
 
 
     /*
@@ -251,7 +251,7 @@ function initFrontend() {
 
 }
 
-function initSmothScrolling() {
+function initSmoothScrolling() {
 
     /* smooth scrolling [href^="#"] */
     $('a.anchor-nav').on('click', function (e) {
