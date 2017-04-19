@@ -166,7 +166,7 @@ page = Page {
             entryLevel = 1
             templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/FooterMenu.html'
             maximumLevels = 1
-            filter = 'Phlu.Corporate:Page.Service'
+            filter = 'Phlu.Corporate:Page.Service, Neos.Neos:Shortcut'
             startingPoint = ${q(site).get(0)}
         }
 
