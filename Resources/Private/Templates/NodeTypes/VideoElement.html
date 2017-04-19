@@ -1,0 +1,11 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace youtube=Phlu\Corporate\ViewHelpers\Youtube}
+<div{attributes -> f:format.raw()}>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="responsive-video"> 
+                <iframe src="https://www.youtube.com/embed/{youtube:getEmbededCode(url: videoUrl)}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>

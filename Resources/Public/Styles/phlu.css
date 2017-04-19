@@ -8372,6 +8372,9 @@ html {
 .icon-graduation::before {
   content: '\f19d'; }
 
+.icon-video::before {
+  content: '\f03d'; }
+
 body.neos-backend button[data-original-title='Phlu.Corporate:Page.FurtherEducation.Detail.Module'],
 body.neos-backend button[data-original-title='Phlu.Corporate:Page.FurtherEducation.Detail.Study'] {
   display: none; }
@@ -9927,7 +9930,7 @@ body {
           padding: 0 3px 0 10px; }
           @media (max-width: 767px) {
             body .all .phlu-team-members .panel-heading .panel-infos .panel-email {
-              padding: 0 0 0 10px; } }
+              padding: 0 0 0 4px; } }
     body .all .phlu-team-members .panel-heading, body .all .phlu-team-members a {
       color: #9f632a; }
     body .all .phlu-team-members .panel-body {
@@ -10941,6 +10944,12 @@ body {
         body .all .google-maps-iframe .locationsMap .infobox div:first-child > div:nth-child(3) div {
           box-shadow: none !important;
           transform-origin: 0px 3px 0px !important; }
+    body .all .responsive-video iframe {
+      width: 80%;
+      height: 380px; }
+      @media (max-width: 1279px) {
+        body .all .responsive-video iframe {
+          width: 100%; } }
     body .all .main {
       background-color: #FFFCFA;
       flex-grow: 1;

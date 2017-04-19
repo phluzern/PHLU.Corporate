@@ -105,7 +105,7 @@
     'Phlu.Neos.NodeTypes:Content': true
     'Phlu.Neos.NodeTypes:PlainTitleMixin': true
   ui:
-    label: 'Accordeon Element'
+    label: 'Accordion Element'
     icon: icon-accordion
     inlineEditable: true
   constraints:
@@ -120,10 +120,17 @@
 'Phlu.Corporate:Headline':
   superTypes:
     'Phlu.Neos.NodeTypes:Headline': true
+  ui:
+    label: 'Titel'
+    position: 99
 
 'Phlu.Corporate:Text':
   superTypes:
     'Phlu.Neos.NodeTypes:TextPlain': true
+  ui:
+    label: 'Text'
+    inlineEditable: true
+    position: 100
   properties:
     internalid:
       type: integer
@@ -256,12 +263,12 @@
   superTypes:
     'Phlu.Corporate:Content': true
   ui:
-    label: Mediensammlung
+    label: Bildergalerie / Slideshow
     icon: icon-picture
     inspector:
       groups:
         general:
-          label: Mediensammlung
+          label: Bildergalerie / Slideshow
     inlineEditable: true
     position: 400
   properties:
@@ -309,3 +316,27 @@
                 locked:
                   width: 900
                   height: 530
+
+'Phlu.Corporate:Video':
+  superTypes:
+    'Phlu.Corporate:Content': true
+  ui:
+    label: Video
+    icon: icon-video
+    inspector:
+      groups:
+        general:
+          label: Video
+    inlineEditable: true
+    position: 400
+  properties:
+    videoUrl:
+      type: string
+      ui:
+        label: 'Video URL'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'general'
+  childNodes:
+    main:
+      type: 'Phlu.Corporate:ContentCollection.Video'
