@@ -62,6 +62,7 @@
       'Phlu.Corporate:Page.View.Default.Default': false
       'Phlu.Corporate:Page.News': true
       'Phlu.Corporate:Page.Event': true
+      'Neos.Neos:Shortcut': true
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.Home'
