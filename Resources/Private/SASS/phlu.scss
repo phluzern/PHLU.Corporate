@@ -108,6 +108,7 @@ $nav-link-font-size: 1rem;
 $font-size-accordion-table: 1rem;
 $font-size-infobox-small: 1rem;
 $font-size-phlu-team-members-mobile: 1rem;
+$font-size-phlu-team-member-function: 1rem;
 
 $font-size-table-mobile-cols: 0.75rem;
 $font-size-small: 0.75rem;
@@ -959,6 +960,12 @@ body {
         @include media-breakpoint-up("xl") {
           width: $flowtext-narrow-width;
         }
+      }
+    }
+    ol {
+      font-size:$font-size-paragraph-desktop;
+      @include media-breakpoint-down("lg") {
+        font-size: $font-size-paragraph-mobile;
       }
     }
 
@@ -2964,6 +2971,10 @@ body {
             }
           }
         }
+        .panel-contact-function {
+          color:$font-color;
+          font-size: $font-size-phlu-team-member-function;
+        }
         .panel-infos {
           text-align: right;
           @include media-breakpoint-down("xs") {
@@ -2975,7 +2986,7 @@ body {
             }
           }
           right: 20px;
-
+          margin-top:auto;
           .panel-email {
             padding: 0 5px 0 10px;
           }
@@ -5190,7 +5201,12 @@ body {
               margin: 0;
             }
           }
-
+          .phlu-corporate-text {
+            ol {
+              padding:15px;
+              width: $flowtext-narrow-width;
+            }
+          }
         }
       }
       &.col-xl-8, &.col-xl-10 {

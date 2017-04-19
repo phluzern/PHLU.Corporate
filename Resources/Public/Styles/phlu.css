@@ -8586,6 +8586,11 @@ body {
       @media (min-width: 1280px) {
         body .all ul.flowtext-smallwidth {
           width: 80%; } }
+    body .all ol {
+      font-size: 1.125rem; }
+      @media (max-width: 1279px) {
+        body .all ol {
+          font-size: 1rem; } }
     body .all .clickable, body .all .clickable * {
       cursor: pointer; }
     body .all .btn {
@@ -9899,9 +9904,13 @@ body {
         @media (max-width: 1279px) {
           body .all .phlu-team-members .panel-heading .panel-switch::after {
             margin-top: -14px; } }
+      body .all .phlu-team-members .panel-heading .panel-contact-function {
+        color: #5c5c5c;
+        font-size: 1rem; }
       body .all .phlu-team-members .panel-heading .panel-infos {
         text-align: right;
-        right: 20px; }
+        right: 20px;
+        margin-top: auto; }
         @media (max-width: 543px) {
           body .all .phlu-team-members .panel-heading .panel-infos {
             text-align: inherit;
@@ -11430,6 +11439,9 @@ body {
         body .all .main > .row .phlu-corporate-section[data-next='empty'] hr, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section[data-next='empty'] hr {
           border-top: 0;
           margin: 0; }
+      body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol {
+        padding: 15px;
+        width: 80%; }
       body .all .main.col-xl-8, body .all .main.col-xl-10 {
         max-width: inherit; }
       body .all .main.contents {
