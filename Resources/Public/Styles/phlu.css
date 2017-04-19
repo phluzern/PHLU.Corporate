@@ -9886,6 +9886,11 @@ body {
         margin-bottom: 12px;
         display: block;
         padding: 0; } }
+    body .all .phlu-team-members .panel-default .panel-collapse hr {
+      margin-right: inherit;
+      margin-left: inherit;
+      margin-top: 0;
+      margin-bottom: 20px; }
     body .all .phlu-team-members .panel-heading {
       cursor: pointer;
       border-bottom: solid 1px #9f632a;
@@ -9919,7 +9924,10 @@ body {
               position: absolute;
               right: 35px; } }
         body .all .phlu-team-members .panel-heading .panel-infos .panel-email {
-          padding: 0 5px 0 10px; }
+          padding: 0 3px 0 10px; }
+          @media (max-width: 767px) {
+            body .all .phlu-team-members .panel-heading .panel-infos .panel-email {
+              padding: 0 0 0 10px; } }
     body .all .phlu-team-members .panel-heading, body .all .phlu-team-members a {
       color: #9f632a; }
     body .all .phlu-team-members .panel-body {
@@ -11434,9 +11442,9 @@ body {
         background-position: top center;
         background-size: cover;
         margin-top: 48px; }
-      body .all .main > .row .phlu-corporate-section[data-next='empty'], body .all .main > .row-fullwidth-content > .row .phlu-corporate-section[data-next='empty'] {
+      > body .all .main > .row .phlu-corporate-section[data-next='empty'], > body .all .main > .row-fullwidth-content > .row .phlu-corporate-section[data-next='empty'] {
         margin-bottom: 90px; }
-        body .all .main > .row .phlu-corporate-section[data-next='empty'] hr, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section[data-next='empty'] hr {
+        > body .all .main > .row .phlu-corporate-section[data-next='empty'] hr, > body .all .main > .row-fullwidth-content > .row .phlu-corporate-section[data-next='empty'] hr {
           border-top: 0;
           margin: 0; }
       body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol {

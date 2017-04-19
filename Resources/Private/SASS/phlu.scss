@@ -2937,6 +2937,17 @@ body {
           padding: 0;
         }
       }
+      .panel-default {
+        .panel-collapse {
+          hr {
+            margin-right: inherit;
+            margin-left: inherit;
+            margin-top:0;
+            margin-bottom: 20px;
+          }
+        }
+      }
+
       .panel-heading {
         cursor: pointer;
         border-bottom: solid 1px $hazelbrowndark;
@@ -2988,7 +2999,10 @@ body {
           right: 20px;
           margin-top:auto;
           .panel-email {
-            padding: 0 5px 0 10px;
+            padding: 0 3px 0 10px;
+            @include media-breakpoint-down("sm") {
+              padding: 0 0 0 10px;
+            }
           }
         }
       }
@@ -5194,7 +5208,7 @@ body {
         // sections in content
         //
         .phlu-corporate-section {
-          &[data-next='empty'] {
+          > &[data-next='empty'] {
             margin-bottom: 90px;
             hr {
               border-top: 0;

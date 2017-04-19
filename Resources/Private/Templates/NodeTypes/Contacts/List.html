@@ -12,16 +12,19 @@
                  data-target="#collapse-{node.Identifier}" aria-expanded="false">
 
                 <div class="row">
-                    <div class="col-sm-7 col-md-8 col-xs-12">
+                    <div class="col-xs-12 col-sm-12 col-md-4">
                         {node.properties.firstname} {node.properties.lastname}
-                        <div class="panel-contact-function">
-                            {node.properties.function}
-                        </div>
+
                     </div>
-                    <div class="col-sm-5 col-md-4 col-xs-12 panel-infos">
-                                                            <span class="panel-telephone">
-                                                                 {node.properties.phone}
-                                                            </span>
+                    <div class="col-xs-12 col-sm-8 col-md-5">
+                        <span class="panel-contact-function">
+                           <f:format.crop maxCharacters="31" append="...">{node.properties.function}</f:format.crop>
+                        </span>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-3 panel-infos">
+                        <span class="panel-telephone">
+                            {node.properties.phone}
+                        </span>
                         <a href="mailto:{node.properties.email}" class="panel-email" alt="Email">
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
                         </a>
@@ -30,8 +33,6 @@
 
                     </div>
                 </div>
-
-
             </div>
 
             <div id="collapse-{node.Identifier}" class="panel-collapse collapse" role="tabpanel"
@@ -52,7 +53,6 @@
                         <f:render partial="Adressblock" arguments="{_all}"/>
                     </div>
                 </div>
-
             </div>
         </f:else>
     </f:if>
