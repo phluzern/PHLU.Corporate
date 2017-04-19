@@ -1,0 +1,15 @@
+# Content
+prototype(Phlu.Corporate:Video) < prototype(Phlu.Corporate:Content) {
+
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/VideoElement.html'
+    collectionRenderer = Neos.Neos:ContentCollection
+    main = ${q(node).children('main').get(0)}
+}
+
+# Content collection
+prototype(Phlu.Corporate:ContentCollection.Video) < prototype(Phlu.Corporate:ContentCollection) {
+
+
+
+}
+

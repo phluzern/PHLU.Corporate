@@ -42,6 +42,7 @@
       'Phlu.Qmpilot.NodeTypes:File': true
       'Phlu.Corporate:Table': true
       'Phlu.Corporate:MediaGallery': true
+      'Phlu.Corporate:Video': true
       'Neoslive.Nodeform:Form': true
       'Phlu.Corporate:AccordeonElement': true
 
@@ -196,3 +197,10 @@
     nodeTypes:
       '*': false
       'Phlu.Corporate:Section': true
+
+'Phlu.Corporate:ContentCollection.Video':
+  superTypes:
+    'Phlu.Corporate:ContentCollection': true
+  constraints:
+    nodeTypes:
+      '*': false
