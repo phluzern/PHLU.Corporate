@@ -47,7 +47,7 @@
                         <ul class="nav nav-pills" role="tablist">
                             <li class="nav-item"
                                 data-ng-show="initialFilters.participants === undefined ">
-                                <a  href="javascript:void(0)" class=" nav-link preventDefaultTab" data-toggle="tab"
+                                <a href="javascript:void(0)" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#participants-{node.Identifier}" role="tab">
                                     <i class="fa fa-users" aria-hidden="true"></i>
                                     <span data-toggle="filterCountTag"
@@ -65,7 +65,7 @@
                             </li>
                             <li class="nav-item"
                                 data-ng-show="initialFilters.organisations === undefined ">
-                                <a  href="javascript:void(0)" class=" nav-link preventDefaultTab" data-toggle="tab"
+                                <a href="javascript:void(0)" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#organisations-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
                                     <span>Organisation</span>
@@ -80,7 +80,7 @@
                             </li>
                             <li class="nav-item"
                                 data-ng-show="initialFilters.publicationtype === undefined ">
-                                <a  href="javascript:void(0)" class=" nav-link preventDefaultTab" data-toggle="tab"
+                                <a href="javascript:void(0)" class=" nav-link preventDefaultTab" data-toggle="tab"
                                    data-target="#publicationtype-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
                                     <span>Publikationstyp</span>
@@ -197,13 +197,16 @@
                     <div class="row ">
                         <div class="col-xs-12">
                             <f:if condition="{showSearchInput}">
-                                <div class="resultsCount"><h3 data-ng-bind="'Treffer '+result.count()" data-ng-show="result.count()>0"></h3></div>
+                                <div class="resultsCount">
+                                    <h3>
+                                        <span>Treffer</span>
+                                        <span class="loading bar" data-ng-if="result.isLoading()"></span>
+                                        <span class="" data-ng-show="result.count()>0"
+                                              data-ng-bind="result.count()"></span>
+                                    </h3>
+                                </div>
                             </f:if>
-                            <div class="searchResultsListLoadingScreen" data-ng-if="result.isLoading()">
-                                <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
-                                     alt="loading" class="loadingIcon"
-                                />
-                            </div>
+
                             <div class="table-responsive results-table"
                                  data-ng-repeat="(groupkey,group) in result.getGrouped().getItems() | orderBy:'getProperty(\'type.sorting\')'">
                                 <table class="table">
@@ -253,9 +256,8 @@
                 </div>
             </f:then>
             <f:else>
-                <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}"
-                     alt="loading" class="loadingIcon" data-ng-if="result.isLoading()"
-                />
+
+                <span class="loading bar" data-ng-if="result.isLoading()"></span>
                 <div class="col-xs-12 publications-list">
                     <div id="phlu-accordion-publications-{node.identifier}" class="phlu-accordion" role="tablist">
                         <div class="panel panel-default"

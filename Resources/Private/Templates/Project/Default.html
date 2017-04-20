@@ -212,7 +212,7 @@
         </f:if>
 
         <f:if condition="{project.participantsIntern}">
-            <div class="row">
+            <div class="row beteiligtepersonen">
                 <div class="col-xs-12 phlu-team-members" id="beteiligtepersonenintern">
                     <h3>intern</h3>
                     <div class="row phlu-teaser navigation subpage">
@@ -265,8 +265,8 @@
             </div>
         </f:if>
         <f:if condition="{project.participantsExtern}">
-            <div class="row">
-                <div class="col-xs-12 phlu-team-members" id="beteiligtepersonenextern">
+            <div class="row beteiligtepersonen">
+                <div class="col-xs-12 phlu-team-members beteiligtepersonenextern" id="beteiligtepersonenextern">
                     <h3>extern</h3>
                     <div class="row phlu-teaser navigation subpage">
                         <f:for each="{project.participantsExtern}" key="participantsType" as="participantsGroup">

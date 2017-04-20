@@ -41,15 +41,15 @@
                 <div class="row panel-body">
                     <f:if condition="{node.properties.image}">
                         <f:then>
-                            <div class="col-xs-12 col-sm-2">
+                            <div class="col-xs-12 col-sm-3">
                                 <media:image image="{node.properties.image}" class="img-fluid"
                                              alt="{node.properties.firstname} {node.properties.lastname}" width="400"
                                              maximumWidth="400" height="300" maximumHeight="300"
-                                             allowUpScaling="false"/>
+                                             allowUpScaling="true"/>
                             </div>
                         </f:then>
                     </f:if>
-                    <div class="col-xs-12 col-sm-10">
+                    <div class="col-xs-12 col-sm-9">
                         <f:render partial="Adressblock" arguments="{_all}"/>
                     </div>
                 </div>

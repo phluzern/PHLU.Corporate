@@ -87,7 +87,7 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr data-ng-if="node.getProperty('graduation')">
+                        <tr class="desktop-view" data-ng-if="node.getProperty('graduation')">
                             <td>
                                 Studienziel
                                 <div class="mobile-view-columns"
@@ -99,7 +99,7 @@
 
                             </td>
                         </tr>
-                        <tr data-ng-if="node.getProperty('ects')">
+                        <tr class="desktop-view" data-ng-if="node.getProperty('ects')">
                             <td>
                                 ETCS-Punkte
                                 <div class="mobile-view-columns"
@@ -111,12 +111,11 @@
 
                             </td>
                         </tr>
-                        <tr data-ng-if="node.currentyear.StartText">
+                        <tr class="desktop-view" data-ng-if="node.currentyear.StartText">
                             <td>
                                 Startdatum
                                 <div class="mobile-view-columns">
-
-                                    <div class="input-group-btn">
+                                    <div class="input-group-btn" data-ng-if="node.getProperty('years').length > 1">
                                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                                                 aria-haspopup="true" aria-expanded="false">
                                             <span data-ng-bind="node.currentyear.StartText | castDate"></span>
@@ -130,10 +129,14 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    <div data-ng-if="node.getProperty('years').length == 1">
+                                        <div>
+                                            <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                        </div>
+                                    </div>
                                 </div>
                             </td>
                             <td>
-
                                 <div class="input-group-btn" data-ng-if="node.getProperty('years').length > 1">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                                             aria-haspopup="true" aria-expanded="false">
@@ -147,15 +150,12 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </div><!-- /btn-group -->
-
-
+                                </div>
                                 <div data-ng-if="node.getProperty('years').length == 1">
                                     <div>
                                         <span data-ng-bind="node.currentyear.StartText | castDate"></span>
                                     </div>
                                 </div>
-
                             </td>
                         </tr>
                         </tbody>

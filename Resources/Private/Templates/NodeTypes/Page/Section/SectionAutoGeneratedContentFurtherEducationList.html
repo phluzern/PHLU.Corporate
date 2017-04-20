@@ -34,10 +34,6 @@
 
     {widgetRenderer -> f:format.raw()}
 
-    <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/loading.svg')}" alt="loading"
-         class="loadingIcon"
-         data-ng-if="result.isLoading()"/>
-
     <div class="row further-education-list hidden-xs-up"
          data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
 
@@ -64,6 +60,7 @@
             </div>
         </div>
     </div>
+    <span class="loading bar" data-ng-if="result.isLoading()"></span>
     <f:if condition="{bottom}">
         <ts:render path="bottom"></ts:render>
     </f:if>

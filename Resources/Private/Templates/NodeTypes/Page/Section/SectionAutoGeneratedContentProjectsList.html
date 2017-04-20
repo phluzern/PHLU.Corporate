@@ -18,7 +18,6 @@
     </f:if>
 
 
-
     <f:if condition="{top}">
         <ts:render path="top"></ts:render>
     </f:if>
@@ -113,7 +112,7 @@
 
                                     </span>
 
-                                        <div class="mobile-view-columns">
+                                    <div class="mobile-view-columns">
                                                         <span class="header">
                                                             Schwerpunkte
                                                         </span>
@@ -129,10 +128,14 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <span data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index"
-                                        data-ng-bind="focus.name">
+                                    <span>
+                                            <ul>
+                                                <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index"
+                                                    data-ng-bind="focus.name">
 
-                                    </span>
+                                                </li>
+                                            </ul>
+                                        </span>
                                 </td>
                             </tr>
                             <tr class="result-preview" data-ng-show="isOpen(node)">
@@ -162,11 +165,11 @@
             </div>
 
             <f:if condition="{bottom}">
-            <ts:render path="bottom"></ts:render>
+                <ts:render path="bottom"></ts:render>
 
-            <f:if condition="{bottomCount} > 0">
-                <hr>
-            </f:if>
+                <f:if condition="{bottomCount} > 0">
+                    <hr>
+                </f:if>
             </f:if>
 
 
