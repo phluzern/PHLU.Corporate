@@ -10063,8 +10063,20 @@ body {
         padding-bottom: 0; }
       body .all .ppdb-detail .row .phlu-team-members hr {
         border: 0; }
+    body .all .ppdb-detail .row.beteiligtepersonen .phlu-team-members h3 {
+      margin-top: 0; }
+    body .all .ppdb-detail .row.beteiligtepersonen .phlu-team-members .phlu-teaser .nav-teaser-item > .row {
+      margin-bottom: 0; }
+    body .all .ppdb-detail .row.beteiligtepersonen .phlu-team-members hr {
+      border-top: 2px solid #e5e5e5;
+      margin-top: 30px; }
     body .all .ppdb-detail .row:last-child {
       margin-bottom: 60px; }
+      body .all .ppdb-detail .row:last-child hr {
+        margin-top: inherit;
+        border-top: inherit; }
+      body .all .ppdb-detail .row:last-child.subjectsfilternav.phlu-filelinks.nofilter {
+        margin-bottom: 60px; }
     body .all .ppdb-detail .leadtext p {
       font-size: 1.313rem;
       width: 100%; }

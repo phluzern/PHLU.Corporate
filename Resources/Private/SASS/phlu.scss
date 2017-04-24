@@ -3274,8 +3274,33 @@ body {
             border: 0;
           }
         }
+        &.beteiligtepersonen {
+          .phlu-team-members {
+            h3 {
+              margin-top: 0;
+            }
+            .phlu-teaser {
+              .nav-teaser-item {
+                > .row {
+                  margin-bottom: 0;
+                }
+              }
+            }
+            hr {
+              border-top:2px solid $hr-border-color;
+              margin-top:30px;
+            }
+          }
+        }
         &:last-child {
           margin-bottom: 60px;
+          hr {
+            margin-top:inherit;
+            border-top:inherit;
+          }
+          &.subjectsfilternav.phlu-filelinks.nofilter {
+            margin-bottom: 60px;
+          }
         }
       }
       .leadtext {
@@ -3480,9 +3505,9 @@ body {
             tbody {
               tr {
                 td {
-                    ul {
-                      margin:0;
-                    }
+                  ul {
+                    margin: 0;
+                  }
 
                   &:first-child {
                     span {
@@ -3518,9 +3543,9 @@ body {
                       .btn {
                         color: white;
                         background-color: $petrol;
-                        font-size:$font-size-btn;
+                        font-size: $font-size-btn;
                         @include media-breakpoint-down("sm") {
-                          font-size:$font-size-btn-mobile;
+                          font-size: $font-size-btn-mobile;
                         }
                         &:hover {
                           background-color: $petroldark;
