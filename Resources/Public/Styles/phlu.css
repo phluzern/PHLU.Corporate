@@ -10006,7 +10006,7 @@ body {
               margin-left: -11px; }
     body .all .phlu-dozpage .row.function ul {
       margin-bottom: 10px; }
-      body .all .phlu-dozpage .row.function ul.list li {
+      body .all .phlu-dozpage .row.function ul.list > li {
         margin-bottom: 10px; }
     body .all .phlu-dozpage .row.education ul, body .all .phlu-dozpage .row.cv ul, body .all .phlu-dozpage .row.professional-activities ul, body .all .phlu-dozpage .row.expertises ul, body .all .phlu-dozpage .row.consultation-priorities ul {
       list-style-type: none;
@@ -11237,10 +11237,6 @@ body {
             align-self: flex-start;
             text-overflow: ellipsis;
             white-space: nowrap; }
-            @media (max-width: 991px) {
-              body .all .main > .row .content-link-wrapper .content-link-default-file span:last-child, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file span:last-child {
-                width: 15% !important;
-                min-width: 150px !important; } }
             @media (min-width: 1280px) {
               body .all .main > .row .content-link-wrapper .content-link-default-file span:last-child, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file span:last-child {
                 overflow: visible; } }
