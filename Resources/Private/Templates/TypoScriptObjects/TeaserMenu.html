@@ -23,5 +23,7 @@
     <h3>
         <neos:link.node node="{teaserlink.parent}">{teaserheader.properties.text}</neos:link.node>
     </h3>
-    <p>{teasertext.properties.text}</p>
+    <p>
+        <f:format.crop maxCharacters="155" append="...">{teasertext.properties.text}</f:format.crop>
+    </p>
 </f:section>

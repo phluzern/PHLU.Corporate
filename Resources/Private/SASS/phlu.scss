@@ -2307,7 +2307,11 @@ body {
             padding: 12px 20px;
             background-color: white;
             height: 125px;
+            @include media-breakpoint-only("md") {
+              height: 150px;
+            }
             h3 {
+              white-space: nowrap;
               font-size: $font-size-nav-teaser-header;
               @include media-breakpoint-down("md") {
                 font-size: $font-size-nav-teaser-header-mobile;

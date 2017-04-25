@@ -9496,7 +9496,12 @@ body {
             padding: 12px 20px;
             background-color: white;
             height: 125px; }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body .all .overview-tiles-bg .phlu-teaser.navigation .nav-teaser-item div {
+    height: 150px; } }
             body .all .overview-tiles-bg .phlu-teaser.navigation .nav-teaser-item div h3 {
+              white-space: nowrap;
               font-size: 1.125rem;
               margin: 0 0 8px; }
               @media (max-width: 991px) {
