@@ -420,7 +420,7 @@ span.loading {
 #search {
 
   .hasSearchResults {
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: $beigelight;
     overflow: auto;
     z-index: 99;
     position: absolute;
@@ -499,12 +499,11 @@ span.loading {
           }
           .searchresult-body {
             font-size: 0;
+            address {
+              padding:20px;
+            }
           }
           .searchresult-body, h3 {
-
-            padding: 15px;
-            padding-top: 35px;
-            margin-left: 15px;
 
             > div {
               display: none;
@@ -531,15 +530,14 @@ span.loading {
         .tab-content {
 
           .info {
-            background-color: rgb(251, 250, 244);
+            background-color: $lightgrey;
             padding: 0;
             margin-bottom: 60px;
-            border: 1px solid gainsboro;
             margin-left: 0;
             margin-right: 0;
 
             .img-fluid {
-              max-height: 200px;
+              margin:20px;
               float: right;
             }
 
@@ -4151,7 +4149,7 @@ body {
           position: absolute;
           display: none;
           color: $font-color;
-          background-color: #edeae8;
+          background-color: $lightgrey;
           margin-top: -40px;
           margin-left: -10px;
           padding: 0px 9px;
@@ -4823,18 +4821,23 @@ body {
     //
     // Video Node
     //
-    .responsive-video {
-      position: relative;
-      height: 388px;
-      iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 80%;
-        @include media-breakpoint-down("lg") {
-          width: 100%;
+    .phlu-corporate-video {
+      .responsive-video {
+        position: relative;
+        height: 388px;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 80%;
+          @include media-breakpoint-down("lg") {
+            width: 100%;
+          }
+          height: 380px;
         }
-        height: 380px;
+      }
+      &[data-next='phlu-corporate-accordeonelement'] {
+        margin-bottom: 30px;
       }
     }
     //

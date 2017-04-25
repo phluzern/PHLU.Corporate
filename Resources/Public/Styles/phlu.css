@@ -8215,7 +8215,7 @@ span.loading.bar {
   margin-top: 47px; }
 
 #search .hasSearchResults {
-  background-color: rgba(255, 255, 255, 0.98);
+  background-color: #FFFCFA;
   overflow: auto;
   z-index: 99;
   position: absolute;
@@ -8270,15 +8270,13 @@ span.loading.bar {
       display: none; }
     #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body {
       font-size: 0; }
-    #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body, #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode h3 {
-      padding: 15px;
-      padding-top: 35px;
-      margin-left: 15px; }
-      #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body > div, #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode h3 > div {
-        display: none; }
-      #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body > div:first-child, #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode h3 > div:first-child {
-        display: block;
-        font-size: 1rem; }
+      #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body address {
+        padding: 20px; }
+    #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body > div, #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode h3 > div {
+      display: none; }
+    #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body > div:first-child, #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode h3 > div:first-child {
+      display: block;
+      font-size: 1rem; }
     #search .hasSearchResults .phlu-searchresults .results-quick-result ul, #search .hasSearchResults .phlu-searchresults .results-quick-result td p {
       zoom: 0.7;
       margin-bottom: 5px;
@@ -8287,15 +8285,14 @@ span.loading.bar {
       padding-top: 10px;
       font-weight: bold; }
     #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info {
-      background-color: #fbfaf4;
+      background-color: #edeae8;
       padding: 0;
       margin-bottom: 60px;
-      border: 1px solid gainsboro;
       margin-left: 0;
       margin-right: 0; }
       #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .img-fluid, #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .carousel-inner > .carousel-item > img, #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info
       .carousel-inner > .carousel-item > a > img, #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info body .all .phlu-teaser img, body .all .phlu-teaser #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info img {
-        max-height: 200px;
+        margin: 20px;
         float: right; }
       #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info > div {
         padding-right: 0;
@@ -11002,18 +10999,20 @@ body {
         body .all .google-maps-iframe .locationsMap .infobox div:first-child > div:nth-child(3) div {
           box-shadow: none !important;
           transform-origin: 0px 3px 0px !important; }
-    body .all .responsive-video {
+    body .all .phlu-corporate-video .responsive-video {
       position: relative;
       height: 388px; }
-      body .all .responsive-video iframe {
+      body .all .phlu-corporate-video .responsive-video iframe {
         position: absolute;
         top: 0;
         left: 0;
         width: 80%;
         height: 380px; }
         @media (max-width: 1279px) {
-          body .all .responsive-video iframe {
+          body .all .phlu-corporate-video .responsive-video iframe {
             width: 100%; } }
+    body .all .phlu-corporate-video[data-next='phlu-corporate-accordeonelement'] {
+      margin-bottom: 30px; }
     body .all .main {
       background-color: #FFFCFA;
       flex-grow: 1;
