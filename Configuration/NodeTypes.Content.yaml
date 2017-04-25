@@ -17,6 +17,7 @@
       type: 'Phlu.Corporate:Headline'
     text:
       type: 'Phlu.Corporate:TextPlain'
+
 'Phlu.Corporate:Content.Page.TeaserDefault':
   ui:
     label: Teaser
@@ -28,6 +29,7 @@
     teaserText:
       type: string
       defaultValue: 'Bitte geben Sie einen Teaser-Text ein.'
+
 'Phlu.Corporate:Content.Carousel':
   abstract: true
   ui:
@@ -44,12 +46,14 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Carousel'
+
 'Phlu.Corporate:Content.CarouselNews':
   superTypes:
     'Phlu.Corporate:Content.Carousel': true
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.CarouselNews'
+
 'Phlu.Corporate:Content.Page.TargetGroup':
   ui:
     label: Zielpublikum
@@ -65,6 +69,7 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.TargetGroup'
+
 'Phlu.Corporate:Content.Page.TargetGroupElement':
   superTypes:
     'Phlu.Neos.NodeTypes:Content': true
@@ -100,6 +105,7 @@
   childNodes:
     header:
       type: 'Phlu.Corporate:Content.Page.HeaderDefault'
+
 'Phlu.Corporate:AccordeonElement':
   superTypes:
     'Phlu.Neos.NodeTypes:Content': true
@@ -117,12 +123,14 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Accordeon'
+
 'Phlu.Corporate:Headline':
   superTypes:
     'Phlu.Neos.NodeTypes:Headline': true
   ui:
     label: 'Titel'
     position: 99
+
 
 'Phlu.Corporate:Text':
   superTypes:
@@ -183,6 +191,7 @@
   superTypes:
     'Neos.NodeTypes:ImageMixin': true
     'Phlu.Corporate.NodeTypes:ImageCaptionMixin': true
+
 'Phlu.Corporate.NodeTypes:ImageCaptionMixin':
   abstract: true
   superTypes:
@@ -192,6 +201,7 @@
       ui:
         aloha:
           autoparagraph: false
+
 'Phlu.Corporate:TextWithImage':
   superTypes:
     'Phlu.Corporate:Text': true
@@ -250,6 +260,7 @@
                 locked:
                   width: 237
                   height: 336
+
 'Phlu.Corporate:Image':
   superTypes:
     'Phlu.Corporate:Content': true

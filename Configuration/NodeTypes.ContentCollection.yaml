@@ -140,6 +140,7 @@
       'Phlu.Corporate:Text': true
       'Phlu.Corporate:Headline': true
       'Phlu.Corporate:TextWithImage': true
+      'Phlu.Corporate:Image': true
       'Phlu.Qmpilot.NodeTypes:File': true
       'Phlu.Corporate:AccordeonElement': false
       'Phlu.Corporate:Accordeon': true

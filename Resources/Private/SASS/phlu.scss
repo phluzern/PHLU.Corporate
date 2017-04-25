@@ -1178,7 +1178,6 @@ body {
       .input-group-btn {
         button {
           color: white;
-          font-weight: $font-weight-bold;
           font-size: $font-size-form-dropdown-big;
           @include media-breakpoint-down("sm") {
             font-size: $font-size-form-dropdown;
@@ -2724,8 +2723,15 @@ body {
       .phlu-accordion {
         margin: 0 0 0;
       }
+      .phlu-corporate-accordeonelement {
+        .phlu-corporate-textwithimage {
+          .img-and-caption {
+            margin-top:29px;
+          }
+        }
+      }
     }
-    .publications-list, &.science-projects {
+    .publications-list, .science-projects {
       .phlu-accordion {
         margin: 0;
         .panel-default {
@@ -4031,13 +4037,16 @@ body {
                   }
                   margin-bottom: 15px;
                   .dropdown-toggle {
-
                     span {
                       display: block;
                       float: left;
                       padding-right: 10px;
                     }
-
+                  }
+                  .dropdown-menu {
+                    a {
+                      font-size:$font-size-form-dropdown;
+                    }
                   }
 
                 }

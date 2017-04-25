@@ -8735,7 +8735,6 @@ body {
         margin-top: 20px; }
       body .all .input-group .input-group-btn button {
         color: white;
-        font-weight: 700;
         font-size: 1.313rem;
         background-color: #28818f; }
         @media (max-width: 767px) {
@@ -9751,15 +9750,17 @@ body {
         margin: 0; }
     body .all .phlu-corporate-section .phlu-accordion {
       margin: 0 0 0; }
-    body .all .publications-list .phlu-accordion, body .all.science-projects .phlu-accordion {
+    body .all .phlu-corporate-section .phlu-corporate-accordeonelement .phlu-corporate-textwithimage .img-and-caption {
+      margin-top: 29px; }
+    body .all .publications-list .phlu-accordion, body .all .science-projects .phlu-accordion {
       margin: 0; }
-      body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div p, body .all.science-projects .phlu-accordion .panel-default .panel-collapse > div p {
+      body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div p, body .all .science-projects .phlu-accordion .panel-default .panel-collapse > div p {
         width: 100%; }
-        body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div p i, body .all.science-projects .phlu-accordion .panel-default .panel-collapse > div p i {
+        body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div p i, body .all .science-projects .phlu-accordion .panel-default .panel-collapse > div p i {
           font-style: italic; }
-      body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div > div:last-child p, body .all.science-projects .phlu-accordion .panel-default .panel-collapse > div > div:last-child p {
+      body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div > div:last-child p, body .all .science-projects .phlu-accordion .panel-default .panel-collapse > div > div:last-child p {
         border-bottom: 0; }
-      body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div .loadMore, body .all.science-projects .phlu-accordion .panel-default .panel-collapse > div .loadMore {
+      body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div .loadMore, body .all .science-projects .phlu-accordion .panel-default .panel-collapse > div .loadMore {
         margin-bottom: 30px; }
     body .all .publications-list .phlu-accordion .panel-default .panel-collapse p {
       border-bottom: 2px #edeae8 solid; }
@@ -10580,6 +10581,8 @@ body {
           display: block;
           float: left;
           padding-right: 10px; }
+        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu a {
+          font-size: 1rem; }
       body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .details {
         float: left;
         margin-left: 0; }
