@@ -35,23 +35,23 @@
                     <f:if condition="{eventType} == 'isExhibition'">
                         <f:then>
                             <b>
-                                <f:format.date format="d. F Y">{fromDate}</f:format.date>
+                                <f:format.date forceLocale="de_CH" cldrFormat="d. MMMM yyyy">{fromDate}</f:format.date>
                                 -
-                                <f:format.date format="d. F Y">{toDate}</f:format.date>
+                                <f:format.date forceLocale="de_CH" cldrFormat="d. MMMM yyyy">{toDate}</f:format.date>
                             </b>
                         </f:then>
                         <f:else>
                             <f:if condition="{eventType} == 'isMeeting'">
                                 <f:then>
                                     <b>
-                                        <f:format.date format="d. F Y">{fromDate}</f:format.date>
+                                        <f:format.date forceLocale="de_CH" cldrFormat="d. MMMM yyyy">{fromDate}</f:format.date>
                                         -
-                                        <f:format.date format="d. F Y">{toDate}</f:format.date>
+                                        <f:format.date forceLocale="de_CH" cldrFormat="d. MMMM yyyy">{toDate}</f:format.date>
                                     </b>
                                 </f:then>
                                 <f:else>
                                     <b>
-                                        <f:format.date format="F Y">{fromDate}</f:format.date>
+                                        <f:format.date forceLocale="de_CH" cldrFormat="MMMM yyyy">{fromDate}</f:format.date>
                                     </b>
                                 </f:else>
                             </f:if>

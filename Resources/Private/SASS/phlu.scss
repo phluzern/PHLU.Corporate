@@ -2310,6 +2310,9 @@ body {
             @include media-breakpoint-only("md") {
               height: 150px;
             }
+            @include media-breakpoint-only("xs") {
+              height: 150px;
+            }
             h3 {
               white-space: nowrap;
               font-size: $font-size-nav-teaser-header;
