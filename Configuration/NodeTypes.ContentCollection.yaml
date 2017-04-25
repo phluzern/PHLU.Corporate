@@ -17,6 +17,7 @@
   constraints:
     nodeTypes:
       'Phlu.Corporate:Section': true
+
 'Phlu.Corporate:ContentCollection.Page.View.Default':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
@@ -62,21 +63,25 @@
   constraints:
     nodeTypes:
       '*': false
+
 'Phlu.Corporate:ContentCollection.Page.View.Default.Default':
   superTypes:
     'Phlu.Corporate:ContentCollection.Page.View.Default': true
+
 'Phlu.Corporate:ContentCollection.Page.Home':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       '*': false
+
 'Phlu.Corporate:ContentCollection.Page.Overview.Tiles':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
   constraints:
     nodeTypes:
       '*': false
+
 'Phlu.Corporate:ContentCollection.Page.Overview.OnePage':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
@@ -107,7 +112,6 @@
           group: general
           position: 40
 
-
 'Phlu.Corporate:ContentCollection.Carousel':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
@@ -117,8 +121,6 @@
       'Phlu.Corporate:NewsItem': true
       'Phlu.Corporate:GenericTeaser': true
       'Phlu.Corporate:Page.News': false
-
-
 
 'Phlu.Corporate:ContentCollection.CarouselNews':
   superTypes:
@@ -151,13 +153,13 @@
   constraints:
     nodeTypes:
       'Phlu.Corporate:Content.Page.TargetGroupElement': true
+
 'Phlu.Corporate:ContentCollection.Tags.Menu':
   superTypes:
     'Phlu.Corporate:ContentCollection': true
   childNodes:
     main:
       type: 'Phlu.Corporate:Tags.Menu'
-
 
 'Phlu.Corporate:ContentCollection.Page.Service':
   superTypes:
@@ -170,7 +172,6 @@
     nodeTypes:
       'Phlu.Corporate:ContactsGroup': true
       'Phlu.Corporate:Contact': true
-
 
 'Phlu.Neos.NodeTypes:ContentCollection.ContactsGroup':
   superTypes:
@@ -189,7 +190,6 @@
     nodeTypes:
       '*': false
       'Phlu.Corporate:CarouselImage': true
-
 
 'Phlu.Corporate:ContentCollection.Page.FurtherEducation.Detail':
   superTypes:

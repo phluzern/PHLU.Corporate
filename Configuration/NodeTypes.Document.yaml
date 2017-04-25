@@ -79,6 +79,7 @@
   constraints:
     nodeTypes:
       'Phlu.Corporate:Page.Overview.OnePage': true
+      'Phlu.Corporate:Page.Overview.Tiles': true
       'Phlu.Corporate:Page.View.Default': true
       'Phlu.Corporate:Page.View.Default.Default': false
   childNodes:
