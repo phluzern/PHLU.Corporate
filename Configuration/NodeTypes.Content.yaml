@@ -253,13 +253,27 @@
       ui:
         inspector:
           editorOptions:
+            maximumFileSize: 2mb
             features:
               crop: true
             crop:
               aspectRatio:
-                locked:
-                  width: 237
-                  height: 336
+                options:
+                  image:
+                    width: 237
+                    height: 336
+                    label: Text mit Bild
+                  square: ~
+                  fourFive: ~
+                  fiveSeven: ~
+                  twoThree: ~
+                  fourThree: ~
+                  sixteenNine: ~
+                enableOriginal: true
+                allowCustom: true
+                #locked:
+                #  width: 237
+                #  height: 336
 
 'Phlu.Corporate:Image':
   superTypes:
