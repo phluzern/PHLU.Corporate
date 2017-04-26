@@ -14,19 +14,34 @@
                     <address>
                         <f:if condition="{function} == ''">
                             <f:then>
-                                <b>{fullname}</b>
+                                <b>{titlename} {fullname}</b>
                             </f:then>
                             <f:else>
                                 <b>{function}</b><br>
-                                {fullname}
+                                {titlename} {fullname}
                             </f:else>
                         </f:if>
-                        <div class="telephone">
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                            {phone}<br>
-                        </div>
+                        <f:if condition="{street} !== ''">
+                                <br>{street} {street2}
+                        </f:if>
+                        <f:if condition="{city} !== ''">
+                                <br>{city} {zip}
+                        </f:if>
+                        <f:if condition="{phone} !== ''">
+                            <f:then>
+                                <div class="telephone">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    {phone}<br>
+                                </div>
+                            </f:then>
+                            <f:else>
+                                <br>
+                            </f:else>
+                        </f:if>
+                        <f:if condition="{email} !== ''">
                         <a class="content-link-email-contact-person"
                            href="mailto:{participant.email}">{email}</a><br>
+                        </f:if>
                         <portrait:link node="{node}" eventoId="{eventoId}"
                                        target="top">
                             Portrait
