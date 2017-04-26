@@ -183,7 +183,7 @@
 <f:section name="item">
 
 
-    <div class="col-xs-12 nav-teaser-item {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}  "
+    <div class="col-xs-12 nav-teaser-item {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: '{f:if(condition: "{title}", then: "", else:"clickable")}')}  "
          data-ng-hide="filteredOut['{item.node.Identifier}'] === true"
          data-ng-class="{animated: animated === true, fadeIn: filteredIn['{item.node.Identifier}'] === true, fadeOut: filteredIn['{item.node.Identifier}'] === false}"
          data-ng-if="search == '' || result.isInDistinct('uri.path','<neos:uri.node node="{item.node}"/>')"
@@ -197,9 +197,7 @@
     <f:if condition="{title}">
         <f:then>
             <h3>
-                <neos:link.node node="{item.node}">
-                    {item.node.properties.title}
-                </neos:link.node>
+                {item.node.properties.title}
             </h3>
         </f:then>
         <f:else>
