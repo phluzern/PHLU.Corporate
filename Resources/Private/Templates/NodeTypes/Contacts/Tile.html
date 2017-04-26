@@ -14,18 +14,21 @@
                     <address>
                         <f:if condition="{function} == ''">
                             <f:then>
-                                <b>{titlename} {fullname}</b>
+                                <b>{fullname}</b>
                             </f:then>
                             <f:else>
                                 <b>{function}</b><br>
-                                {titlename} {fullname}
+                                {fullname}
                             </f:else>
                         </f:if>
                         <f:if condition="{street} !== ''">
-                                <br>{street} {street2}
+                            <br>{street}
+                        </f:if>
+                        <f:if condition="{street2} !== ''">
+                            <br>{street2}
                         </f:if>
                         <f:if condition="{city} !== ''">
-                                <br>{city} {zip}
+                                <br>{zip} {city}
                         </f:if>
                         <f:if condition="{phone} !== ''">
                             <f:then>
