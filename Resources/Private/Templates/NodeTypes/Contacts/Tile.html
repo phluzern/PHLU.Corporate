@@ -10,7 +10,7 @@
 
         <div class="col-xs-12 col-md-6 nav-teaser-item">
             <div class="row">
-                <div class="phlu-teaser-body col-xs-8">
+                <div class="phlu-teaser-body {f:if(condition: image, then:'col-xs-8', else:'col-xs-12')}">
                     <address>
                         <f:if condition="{function} == ''">
                             <f:then>
@@ -47,7 +47,7 @@
                         <f:if condition="{email}">
                             <f:if condition="{email} !== ''">
                                 <a class="content-link-email-contact-person"
-                                       href="mailto:{participant.email}">{email}</a>
+                                   href="mailto:{participant.email}">{email}</a>
                             </f:if>
                         </f:if>
                         <br>
@@ -57,15 +57,15 @@
                         </portrait:link>
                     </address>
                 </div>
-                <div class="phlu-teaser-caret-right col-xs-4">
-                    <f:if condition="{image}">
+                <f:if condition="{image}">
+                    <div class="phlu-teaser-caret-right col-xs-4">
                         <media:image
                                 image="{image}"
                                 class="img-fluid"
                                 alt="{participant.name}" height="133" width="100" allowCropping="true"
                                 allowUpScaling="true"/>
-                    </f:if>
-                </div>
+                    </div>
+                </f:if>
             </div>
         </div>
     </f:else>

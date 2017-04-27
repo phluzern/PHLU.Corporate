@@ -2950,10 +2950,10 @@ body {
         }
         .nav-teaser-item {
           margin-bottom: 30px;
+          height: 232px;
           .row {
             margin-right: 0;
             margin-left: 0;
-            height: 232px;
             @include media-breakpoint-down("lg") {
               height: 210px;
             }
@@ -2963,11 +2963,15 @@ body {
               }
             }
             .phlu-teaser-body, .phlu-teaser-caret-right {
+              height: 232px;
               background-color: $lightgrey;
             }
             .phlu-teaser-body {
               address {
                 margin-bottom: 0;
+                a.content-link-email-contact-person {
+                  background-image: none;
+                }
               }
               address, a {
                 @include media-breakpoint-down("lg") {
@@ -3065,6 +3069,9 @@ body {
         }
         .panel-infos {
           text-align: right;
+          a[href^='mailto'] {
+            background-image: none;
+          }
           @include media-breakpoint-down("xs") {
             text-align: inherit;
             right: inherit;

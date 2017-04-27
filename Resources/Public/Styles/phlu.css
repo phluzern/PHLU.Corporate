@@ -9872,20 +9872,23 @@ body {
       body .all .phlu-team-members .phlu-teaser.navigation.subpage {
         padding: 0; } }
     body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item {
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      height: 232px; }
       body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row {
         margin-right: 0;
-        margin-left: 0;
-        height: 232px; }
+        margin-left: 0; }
         @media (max-width: 1279px) {
           body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row {
             height: 210px; } }
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-caret-right.col-xs-2 {
           background-color: #edeae8; }
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
+          height: 232px;
           background-color: #edeae8; }
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address {
           margin-bottom: 0; }
+          body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address a.content-link-email-contact-person {
+            background-image: none; }
         @media (max-width: 1279px) {
           body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body a {
             font-size: 1rem; } }
@@ -9951,6 +9954,8 @@ body {
         text-align: right;
         right: 20px;
         margin-top: auto; }
+        body .all .phlu-team-members .panel-heading .panel-infos a[href^='mailto'] {
+          background-image: none; }
         @media (max-width: 543px) {
           body .all .phlu-team-members .panel-heading .panel-infos {
             text-align: inherit;
