@@ -2948,8 +2948,8 @@ body {
             margin-right: 0;
             margin-left: 0;
             height: 232px;
-            @include media-breakpoint-down("sm") {
-              height: 186px;
+            @include media-breakpoint-down("lg") {
+              height: 210px;
             }
             &.detailView {
               .phlu-teaser-body, .phlu-teaser-caret-right.col-xs-2 {

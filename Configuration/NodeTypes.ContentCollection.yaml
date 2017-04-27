@@ -125,6 +125,7 @@
 'Phlu.Corporate:ContentCollection.CarouselNews':
   superTypes:
     'Phlu.Corporate:ContentCollection.Carousel': true
+
 'Phlu.Corporate:ContentCollection.Page.View.Dossier':
   superTypes:
     'Phlu.Corporate:ContentCollection': true

@@ -1,12 +1,7 @@
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace neos=Neos\Neos\ViewHelpers}
 
-
 <div {attributes -> f:format.raw()}>
-
-
-
     <ts:render path="defaultRenderer" context="{node: title}"/>
     <ts:render path="defaultRenderer" context="{node: text}"/>
-
 </div>

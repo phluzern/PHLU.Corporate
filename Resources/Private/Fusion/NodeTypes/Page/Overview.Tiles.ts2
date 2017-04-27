@@ -20,6 +20,7 @@ templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/Overv
 	                    teaserlink = ${q(node).children('header').get(0)}
                         teaserheader = ${q(node).children('header').children('title').get(0)}
 	                    teasertext  = ${q(node).children('header').children('text').get(0)}
+                        altteasertext  = ${q(node).children('header').property('altTeaserText')}
                         renderer = Neos.Neos:ContentCase
                     }
 

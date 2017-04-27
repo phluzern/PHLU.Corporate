@@ -9877,9 +9877,9 @@ body {
         margin-right: 0;
         margin-left: 0;
         height: 232px; }
-        @media (max-width: 767px) {
+        @media (max-width: 1279px) {
           body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row {
-            height: 186px; } }
+            height: 210px; } }
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row.detailView .phlu-teaser-caret-right.col-xs-2 {
           background-color: #edeae8; }
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {

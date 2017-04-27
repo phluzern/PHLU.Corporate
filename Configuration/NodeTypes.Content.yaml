@@ -6,12 +6,32 @@
   abstract: true
 
 'Phlu.Corporate:Content.Page.HeaderDefault':
+  superTypes:
+    'Phlu.Neos.NodeTypes:Content': true
   ui:
     label: Header
     icon: icon-header
+    inspector:
+      groups:
+        general:
+          label: 'Allgemein'
+    inlineEditable: false
   constraints:
     nodeTypes:
       '*': false
+  properties:
+    altTeaserText:
+      type: string
+      ui:
+        label: 'Alternativer Leadtext'
+        reloadIfChanged: true
+        inspector:
+          group: general
+          position: 50
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
+          editorOptions:
+            rows: 7
+            placeholder: 'Alternativer Leadtext zur Anzeige auf übergeordneter Seite. Maximal 145 Zeichen.'
   childNodes:
     title:
       type: 'Phlu.Corporate:Headline'
