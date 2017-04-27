@@ -39,15 +39,18 @@
                         <f:if condition="{phone}">
                             <f:if condition="{phone} !== ''">
                                 <div class="telephone">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                    <br>{phone}
+                                    <br><i class="fa fa-phone" aria-hidden="true"></i>
+                                    {phone}
                                 </div>
                             </f:if>
                         </f:if>
-                        <f:if condition="{email} !== ''">
-                            <br><a class="content-link-email-contact-person"
-                               href="mailto:{participant.email}">{email}</a><br>
+                        <f:if condition="{email}">
+                            <f:if condition="{email} !== ''">
+                                <br><a class="content-link-email-contact-person"
+                                       href="mailto:{participant.email}">{email}</a>
+                            </f:if>
                         </f:if>
+                        <br>
                         <portrait:link node="{node}" eventoId="{eventoId}"
                                        target="top">
                             Portrait
