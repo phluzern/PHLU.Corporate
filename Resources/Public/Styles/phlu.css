@@ -11263,10 +11263,14 @@ body {
           body .all .main > .row .content-link-wrapper .content-link-default-file span.nofiledesc, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file span.nofiledesc {
             margin-left: 0; }
       body .all .main > .row .content-link-email, body .all .main > .row-fullwidth-content > .row .content-link-email {
+        background-image: url("../Images/linkbottomline.png");
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
         padding-bottom: 4px; }
+        body .all .main > .row .content-link-email:hover, body .all .main > .row-fullwidth-content > .row .content-link-email:hover {
+          background-position: 0 0;
+          background-repeat: repeat; }
       body .all .main > .row .content-link-email-contact-person, body .all .main > .row-fullwidth-content > .row .content-link-email-contact-person {
         background-image: url("../Images/linkbottomline.png");
         color: #9f632a;
@@ -11306,6 +11310,15 @@ body {
           background-position: 0 3px;
           padding-right: 25px;
           content: ""; }
+      body .all .main > .row a[href^='mailto'], body .all .main > .row-fullwidth-content > .row a[href^='mailto'] {
+        background-image: url("../Images/linkbottomline.png");
+        color: #9f632a;
+        background-repeat: repeat-x;
+        background-position: bottom;
+        padding-bottom: 4px; }
+        body .all .main > .row a[href^='mailto']:hover, body .all .main > .row-fullwidth-content > .row a[href^='mailto']:hover {
+          background-position: 0 0;
+          background-repeat: repeat; }
       body .all .main > .row .content-link-internal, body .all .main > .row a[data-gentics-aloha-repository='node-repository'], body .all .main > .row-fullwidth-content > .row .content-link-internal, body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] {
         background-image: url("../Images/linkbottomline.png");
         color: #9f632a;

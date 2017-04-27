@@ -225,6 +225,12 @@ $input-search-field-big: 50px;
       font-family: FontAwesome;
       content: "\f003 \2000";
     }
+  } @else if $type == email {
+    background-image: url("../Images/linkbottomline.png");
+    &:hover {
+      background-position: 0 0;
+      background-repeat: repeat;
+    }
   } @else if $type == portrait {
     background-image: url("../Images/linkbottomline.png");
     &::before {
@@ -5154,6 +5160,9 @@ body {
         }
         a[target='_blank'] {
           @include content-link("externalflowtext");
+        }
+        a[href^='mailto'] {
+          @include content-link("email");
         }
         .content-link-internal, a[data-gentics-aloha-repository='node-repository'] {
           @include content-link("internal");
