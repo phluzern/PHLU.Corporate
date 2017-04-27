@@ -24,7 +24,7 @@
         <neos:link.node node="{teaserlink.parent}">{teaserheader.properties.text}</neos:link.node>
     </h3>
     <p>
-        <f:if condition="{altteasertext} !== ''">
+        <f:if condition="{altteasertext}">
             <f:then>
                 <f:format.crop maxCharacters="145" append="...">{altteasertext}</f:format.crop>
             </f:then>

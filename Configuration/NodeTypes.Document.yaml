@@ -183,8 +183,6 @@
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.View.Default.Default'
 
-
-
 'Phlu.Corporate:Page.View.Default.Prototype':
   ui:
     label: Prototype-Seite
