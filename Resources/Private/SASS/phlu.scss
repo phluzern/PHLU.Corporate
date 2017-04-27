@@ -3085,6 +3085,10 @@ body {
         .col-xs-12 {
           img.img-fluid {
             margin: 0 0 32px;
+            @include media-breakpoint-down('xs') {
+              width: 100%;
+              height: auto;
+            }
           }
         }
       }
@@ -5366,6 +5370,9 @@ body {
               padding-left: 18px;
               padding-right: 18px;
               width: $flowtext-narrow-width;
+              @include media-breakpoint-down("lg") {
+                width: inherit;
+              }
             }
           }
         }
@@ -6278,6 +6285,7 @@ body {
           border-bottom: 1px solid $grey7;
           padding: 30px 30px 20px;
           h3 {
+            margin-top:0;
             margin-bottom: 10px;
           }
           a, p {

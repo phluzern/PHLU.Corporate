@@ -12,16 +12,14 @@
             <div class="row">
                 <div class="phlu-teaser-body col-xs-8">
                     <address>
-                        <f:if condition="{function}">
-                            <f:if condition="{function} == ''">
-                                <f:then>
-                                    <b>{fullname}</b>
-                                </f:then>
-                                <f:else>
-                                    <b>{function}</b><br>
-                                    {fullname}
-                                </f:else>
-                            </f:if>
+                        <f:if condition="{function} == ''">
+                            <f:then>
+                                <b>{fullname}</b>
+                            </f:then>
+                            <f:else>
+                                <b>{function}</b><br>
+                                {fullname}
+                            </f:else>
                         </f:if>
                         <f:if condition="{street}">
                             <f:if condition="{street} !== ''">

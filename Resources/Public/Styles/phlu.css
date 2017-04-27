@@ -9970,6 +9970,11 @@ body {
       body .all .phlu-team-members .panel-body .col-xs-12 img.img-fluid, body .all .phlu-team-members .panel-body .col-xs-12 .carousel-inner > .carousel-item > img, body .all .phlu-team-members .panel-body .col-xs-12
       .carousel-inner > .carousel-item > a > img, body .all .phlu-team-members .panel-body .col-xs-12 .phlu-teaser img, body .all .phlu-teaser .phlu-team-members .panel-body .col-xs-12 img {
         margin: 0 0 32px; }
+        @media (max-width: 543px) {
+          body .all .phlu-team-members .panel-body .col-xs-12 img.img-fluid, body .all .phlu-team-members .panel-body .col-xs-12 .carousel-inner > .carousel-item > img, body .all .phlu-team-members .panel-body .col-xs-12
+          .carousel-inner > .carousel-item > a > img, body .all .phlu-team-members .panel-body .col-xs-12 .phlu-teaser img, body .all .phlu-teaser .phlu-team-members .panel-body .col-xs-12 img {
+            width: 100%;
+            height: auto; } }
     body .all .phlu-team-members .content-link-location {
       margin-left: 8px; }
     body .all .phlu-team-members.phlu-corporate-contacts > .row > .col-xs-12 > .row > .col-xs-12 {
@@ -11532,6 +11537,9 @@ body {
         padding-left: 18px;
         padding-right: 18px;
         width: 80%; }
+        @media (max-width: 1279px) {
+          body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol {
+            width: inherit; } }
       body .all .main.col-xl-8, body .all .main.col-xl-10 {
         max-width: inherit; }
       body .all .main.contents {
@@ -12126,6 +12134,7 @@ body .all .startpage .phlu-teaser.navigation {
     border-bottom: 1px solid #dcdcdc;
     padding: 30px 30px 20px; }
     body .all .startpage .phlu-teaser.navigation .nav-teaser-item h3 {
+      margin-top: 0;
       margin-bottom: 10px; }
     body .all .startpage .phlu-teaser.navigation .nav-teaser-item a, body .all .startpage .phlu-teaser.navigation .nav-teaser-item p {
       color: #9f632a; }
