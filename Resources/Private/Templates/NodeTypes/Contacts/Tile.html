@@ -12,38 +12,48 @@
             <div class="row">
                 <div class="phlu-teaser-body col-xs-8">
                     <address>
-                        <f:if condition="{function} == ''">
-                            <f:then>
-                                <b>{fullname}</b>
-                            </f:then>
-                            <f:else>
-                                <b>{function}</b><br>
-                                {fullname}
-                            </f:else>
+                        <f:if condition="{function}">
+                            <f:if condition="{function} == ''">
+                                <f:then>
+                                    <b>{fullname}</b>
+                                </f:then>
+                                <f:else>
+                                    <b>{function}</b><br>
+                                    {fullname}
+                                </f:else>
+                            </f:if>
                         </f:if>
-                        <f:if condition="{street} !== ''">
-                            <br>{street}
+                        <f:if condition="{street}">
+                            <f:if condition="{street} !== ''">
+                                <br>{street}
+                            </f:if>
                         </f:if>
-                        <f:if condition="{street2} !== ''">
-                            <br>{street2}
+                        <f:if condition="{street2}">
+                            <f:if condition="{street2} !== ''">
+                                <br>{street2}
+                            </f:if>
                         </f:if>
-                        <f:if condition="{city} !== ''">
+                        <f:if condition="{city}">
+                            <f:if condition="{city} !== ''">
                                 <br>{zip} {city}
+                            </f:if>
                         </f:if>
-                        <f:if condition="{phone} !== ''">
-                            <f:then>
-                                <div class="telephone">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                    {phone}<br>
-                                </div>
-                            </f:then>
-                            <f:else>
-                                <br>
-                            </f:else>
+                        <f:if condition="{phone}">
+                            <f:if condition="{phone} !== ''">
+                                <f:then>
+                                    <div class="telephone">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                        {phone}<br>
+                                    </div>
+                                </f:then>
+                                <f:else>
+                                    <br>
+                                </f:else>
+                            </f:if>
                         </f:if>
                         <f:if condition="{email} !== ''">
-                        <a class="content-link-email-contact-person"
-                           href="mailto:{participant.email}">{email}</a><br>
+                            <a class="content-link-email-contact-person"
+                               href="mailto:{participant.email}">{email}</a><br>
                         </f:if>
                         <portrait:link node="{node}" eventoId="{eventoId}"
                                        target="top">

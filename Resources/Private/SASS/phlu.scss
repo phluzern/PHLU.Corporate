@@ -3018,6 +3018,9 @@ body {
       }
 
       .panel-heading {
+        > .row {
+          @include gutter-width(5);
+        }
         cursor: pointer;
         border-bottom: solid 1px $hazelbrowndark;
         font-size: $font-size-h4-desktop;
@@ -3052,7 +3055,6 @@ body {
           }
         }
         .panel-contact-function {
-          color: $font-color;
           font-size: $font-size-phlu-team-member-function;
         }
         .panel-infos {

@@ -9925,6 +9925,12 @@ body {
       cursor: pointer;
       border-bottom: solid 1px #9f632a;
       font-size: 1.313rem; }
+      body .all .phlu-team-members .panel-heading > .row {
+        margin-right: -5px;
+        margin-left: -5px; }
+        body .all .phlu-team-members .panel-heading > .row > [class^="col-"], body .all .phlu-team-members .panel-heading > .row > [class^=" col-"] {
+          padding-right: 5px;
+          padding-left: 5px; }
       @media (max-width: 1279px) {
         body .all .phlu-team-members .panel-heading {
           font-size: 1.1rem; } }
@@ -9940,7 +9946,6 @@ body {
           body .all .phlu-team-members .panel-heading .panel-switch::after {
             margin-top: -14px; } }
       body .all .phlu-team-members .panel-heading .panel-contact-function {
-        color: #5c5c5c;
         font-size: 1rem; }
       body .all .phlu-team-members .panel-heading .panel-infos {
         text-align: right;
