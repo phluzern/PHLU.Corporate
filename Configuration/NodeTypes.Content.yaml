@@ -201,6 +201,7 @@
             strippedElements:
               - '*'
             autoparagraph: false
+      defaultValue: ~
 
 'Phlu.Corporate:TextPlain':
   superTypes:
