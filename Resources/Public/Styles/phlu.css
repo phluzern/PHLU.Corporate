@@ -8566,9 +8566,6 @@ body {
       letter-spacing: 0.2px; }
     body .all h4 {
       text-transform: uppercase; }
-      @media (min-width: 1280px) {
-        body .all h4 {
-          font-size: 1.313rem; } }
     body .all p {
       line-height: 1.8; }
       @media (min-width: 1280px) {
@@ -8597,6 +8594,8 @@ body {
       @media (max-width: 1279px) {
         body .all ol {
           font-size: 1rem; } }
+    body .all .tel {
+      color: #9f632a; }
     body .all .clickable, body .all .clickable * {
       cursor: pointer; }
     body .all .btn {
@@ -9777,7 +9776,11 @@ body {
         padding-bottom: 5px; }
         body .all .phlu-accordion .panel .panel-heading .panel-title a, body .all .phlu-corporate-section .panel .panel-heading .panel-title a {
           display: block;
-          color: #9f632a; }
+          color: #9f632a;
+          font-size: 1.125rem; }
+          @media (max-width: 1279px) {
+            body .all .phlu-accordion .panel .panel-heading .panel-title a, body .all .phlu-corporate-section .panel .panel-heading .panel-title a {
+              font-size: 1.1rem; } }
           body .all .phlu-accordion .panel .panel-heading .panel-title a::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a::after {
             font-size: 35px;
             position: absolute;
@@ -9846,6 +9849,7 @@ body {
               padding-right: 0;
               text-align: left; } }
           body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone a, body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email a, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone a, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email a {
+            background-image: none;
             padding-left: 7px;
             color: #9f632a; }
           body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone .content-link-email-contact-person, body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email .content-link-email-contact-person, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .telephone .content-link-email-contact-person, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-heading .email .content-link-email-contact-person {
@@ -9855,7 +9859,8 @@ body {
         body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-body, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-body {
           margin-top: 20px; }
           body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-body .panel-email, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-body .panel-email {
-            color: #9f632a; }
+            color: #9f632a;
+            background-image: none; }
             body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem .panel-body .panel-email .fa, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem .panel-body .panel-email .fa {
               margin-right: 5px; }
         body .all .phlu-accordion .panel .panel-collapse .nestedAccordionContactItem:first-child, body .all .phlu-corporate-section .panel .panel-collapse .nestedAccordionContactItem:first-child {
@@ -9927,7 +9932,7 @@ body {
     body .all .phlu-team-members .panel-heading {
       cursor: pointer;
       border-bottom: solid 1px #9f632a;
-      font-size: 1.313rem; }
+      font-size: 1.125rem; }
       body .all .phlu-team-members .panel-heading > .row {
         margin-right: -5px;
         margin-left: -5px; }
@@ -11155,6 +11160,8 @@ body {
           color: #9f632a; }
           body .all .main > .row address .telephone .fa-phone, body .all .main > .row-fullwidth-content > .row address .telephone .fa-phone {
             padding-right: 6px; }
+        body .all .main > .row address .email, body .all .main > .row-fullwidth-content > .row address .email {
+          color: #9f632a; }
         body .all .main > .row address .content-link-email-contact-person, body .all .main > .row address .content-link-portrait, body .all .main > .row address .content-link-location, body .all .main > .row-fullwidth-content > .row address .content-link-email-contact-person, body .all .main > .row-fullwidth-content > .row address .content-link-portrait, body .all .main > .row-fullwidth-content > .row address .content-link-location {
           background-image: none;
           font-size: 1.125rem; }

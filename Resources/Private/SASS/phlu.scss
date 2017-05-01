@@ -72,7 +72,7 @@ $font-size-h3: 1.25rem;
 $nav-link-font-size-desktop: 1.125rem;
 $h3-letter-spacing: 0.2px;
 $font-size-h4: 1.1rem;
-$font-size-h4-desktop: 1.313rem;
+$font-size-h4-desktop: 1.125rem;
 
 $font-size-form-dropdown-big: 1.313rem;
 $lead-font-size: 1.313rem;
@@ -948,9 +948,6 @@ body {
     }
     h4 {
       text-transform: uppercase;
-      @include media-breakpoint-up("xl") {
-        font-size: $font-size-h4-desktop;
-      }
     }
     p {
       line-height: $line-height-sm;
@@ -988,7 +985,10 @@ body {
         font-size: $font-size-paragraph-mobile;
       }
     }
-
+    // format telephone numbers for iphone
+    .tel {
+      color:$hazelbrowndark;
+    }
     .clickable, .clickable * {
       cursor: pointer;
     }
@@ -2791,6 +2791,10 @@ body {
             a {
               display: block;
               color: $hazelbrowndark;
+              font-size: $font-size-h4-desktop;
+              @include media-breakpoint-down('lg') {
+                font-size: $font-size-h4;
+              }
               &::after {
                 font-size: 35px;
                 position: absolute;
@@ -2894,6 +2898,7 @@ body {
                   text-align: left;
                 }
                 a {
+                  background-image: none;
                   padding-left: 7px;
                   color: $hazelbrowndark;
                 }
@@ -2913,6 +2918,7 @@ body {
               margin-top: 20px;
               .panel-email {
                 color: $hazelbrowndark;
+                background-image: none;
                 .fa {
                   margin-right: 5px;
                 }

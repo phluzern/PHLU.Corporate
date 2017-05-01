@@ -1,49 +1,49 @@
 # Content
 prototype(Phlu.Corporate:Contact) < prototype(Phlu.Corporate:Content) {
 
-templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Fullwidth.html'
-isHidden = ${q(node).get(0).context.workspaceName == 'live' ?((String.length(q(node).property('function'))> 0 || String.length(q(node).property('lastname'))> 0 || q(node).property('contact'))> 0 && q(node).property('ishidden')!= TRUE ? false : true): q(node).property('ishidden')}
-lastname = ${q(node).property('lastname')}
-firstname = ${q(node).property('firstname')}
-lastname = ${q(node).property('lastname')}
-phone = ${q(node).property('phone')}
-email = ${q(node).property('email')}
-function = ${q(node).property('function')}
-titlename = ${q(node).property('titlename')}
-street = ${q(node).property('street')}
-zip = ${q(node).property('zip')}
-city = ${q(node).property('city')}
-eventoId = ${q(node).property('contact')}
-image = ${q(node).property('image')}
-fullname = ${q(node).property('titlename')== '' ? this.titlename + " " + this.firstname + " " + this.lastname : this.firstname + " " + this.lastname}
-wrapperNode = ${q(node).closest('[instanceof Phlu.Corporate:Section]').get(0)}
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Fullwidth.html'
+    isHidden = ${q(node).get(0).context.workspaceName == 'live' ?((String.length(q(node).property('function')) > 0 || String.length(q(node).property('lastname')) > 0 || q(node).property('contact')) > 0 && q(node).property('ishidden') != TRUE ? false : true): q(node).property('ishidden')}
+    lastname = ${q(node).property('lastname')}
+    firstname = ${q(node).property('firstname')}
+    lastname = ${q(node).property('lastname')}
+    phone = ${q(node).property('phone')}
+    email = ${q(node).property('email')}
+    function = ${q(node).property('function')}
+    titlename = ${q(node).property('titlename')}
+    street = ${q(node).property('street')}
+    zip = ${q(node).property('zip')}
+    city = ${q(node).property('city')}
+    eventoId = ${q(node).property('contact')}
+    image = ${q(node).property('image')}
+    fullname = ${q(node).property('titlename') == '' ? this.titlename + " " + this.firstname + " " + this.lastname : this.firstname + " " + this.lastname}
+    wrapperNode = ${q(node).closest('[instanceof Phlu.Corporate:Section]').get(0)}
 
 }
 
 # Contacts wrapper (default)
-prototype(Phlu.Corporate:Contacts)< prototype(Phlu.Corporate:Content) {
+prototype(Phlu.Corporate:Contacts) < prototype(Phlu.Corporate:Content) {
 
-templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Wrapper.html'
-attributes.class = 'phlu-team-members'
-items = ${q(node).children('main')}
-defaultRenderer = Neos.Neos:ContentCase
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Wrapper.html'
+    attributes.class = 'phlu-team-members'
+    items = ${q(node).children('main')}
+    defaultRenderer = Neos.Neos:ContentCase
 
 
 
-collectionRenderer = Phlu.Corporate:ContentCollection {
+    collectionRenderer = Phlu.Corporate:ContentCollection {
 
     }
 
-prototype(Phlu.Corporate:ContactsGroup)  {
+    prototype(Phlu.Corporate:ContactsGroup) {
 
-contactGroupsCount = ${q(node).parent().find('[instanceof Phlu.Corporate:ContactsGroup]').count()}
-templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Group.html'
-collectionRenderer = Phlu.Corporate:ContentCollection {
+        contactGroupsCount = ${q(node).parent().find('[instanceof Phlu.Corporate:ContactsGroup]').count()}
+        templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Group.html'
+        collectionRenderer = Phlu.Corporate:ContentCollection {
 
-                }
-main = ${q(node).children('main').get(0)}
+        }
+        main = ${q(node).children('main').get(0)}
 
-}
+    }
 
 }
 
@@ -53,25 +53,25 @@ main = ${q(node).children('main').get(0)}
 # Contacts wrapper (tile)
 prototype(Phlu.Corporate:Contacts) {
 
-collectionRenderer.attributes.class = 'row phlu-teaser navigation subpage'
-prototype(Phlu.Corporate:Contact).templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Tile.html'
-prototype(Phlu.Corporate:Contact).attributes.class = 'col-xs-12 col-md-6 nav-teaser-item'
-prototype(Phlu.Corporate:ContactsGroup).attributes.class = 'col-xs-12'
-prototype(Phlu.Corporate:ContactsGroup).collectionRenderer.attributes.class = 'row'
+    collectionRenderer.attributes.class = 'row phlu-teaser navigation subpage'
+    prototype(Phlu.Corporate:Contact).templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Tile.html'
+    prototype(Phlu.Corporate:Contact).attributes.class = 'col-xs-12 col-md-6 nav-teaser-item'
+    prototype(Phlu.Corporate:ContactsGroup).attributes.class = 'col-xs-12'
+    prototype(Phlu.Corporate:ContactsGroup).collectionRenderer.attributes.class = 'row'
 }
 
 
 # Contacts wrapper (list)
 prototype(Phlu.Corporate:Contacts) {
 
-collectionRenderer.attributes.id = ${'accordion-' + q(node).parent().get(0).Identifier}
-collectionRenderer.attributes.class = 'phlu-accordion'
-collectionRenderer.attributes.role = 'tablist'
-collectionRenderer.attributes.aria-multiselectable = 'true'
-prototype(Phlu.Corporate:ContactsGroup).attributes.class = ''
-prototype(Phlu.Corporate:ContactsGroup).collectionRenderer.attributes.class = ''
-prototype(Phlu.Corporate:Contact).templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/List.html'
-prototype(Phlu.Corporate:Contact).attributes.class = 'panel panel-default'
+    collectionRenderer.attributes.id = ${'accordion-' + q(node).parent().get(0).Identifier}
+    collectionRenderer.attributes.class = 'phlu-accordion'
+    collectionRenderer.attributes.role = 'tablist'
+    collectionRenderer.attributes.aria-multiselectable = 'true'
+    prototype(Phlu.Corporate:ContactsGroup).attributes.class = ''
+    prototype(Phlu.Corporate:ContactsGroup).collectionRenderer.attributes.class = ''
+    prototype(Phlu.Corporate:Contact).templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/List.html'
+    prototype(Phlu.Corporate:Contact).attributes.class = 'panel panel-default'
 
 }
 
@@ -80,7 +80,7 @@ prototype(Phlu.Corporate:Contact).attributes.class = 'panel panel-default'
 
 
 neosliveHybridsearchContactsPortraitUrl = Neos.Fusion:Template {
-templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/PortraitUrl.html'
-node = ${node}
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/PortraitUrl.html'
+    node = ${node}
 }
 
