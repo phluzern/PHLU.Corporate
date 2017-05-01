@@ -506,7 +506,7 @@ span.loading {
           .searchresult-body {
             font-size: 0;
             address {
-              padding:20px;
+              padding: 20px;
             }
           }
           .searchresult-body, h3 {
@@ -543,7 +543,7 @@ span.loading {
             margin-right: 0;
 
             .img-fluid {
-              margin:20px;
+              margin: 20px;
               float: right;
             }
 
@@ -719,6 +719,12 @@ body.neos-backend {
         color: red;
         display: block;
       }
+    }
+  }
+
+  .phlu-corporate-contacts {
+    .neos-empty-contentcollection-overlay {
+      margin: 30px;
     }
   }
 
@@ -2737,7 +2743,7 @@ body {
       .phlu-corporate-accordeonelement {
         .phlu-corporate-textwithimage {
           .img-and-caption {
-            margin-top:29px;
+            margin-top: 29px;
           }
         }
       }
@@ -4069,7 +4075,7 @@ body {
                   }
                   .dropdown-menu {
                     a {
-                      font-size:$font-size-form-dropdown;
+                      font-size: $font-size-form-dropdown;
                     }
                   }
 
@@ -5411,7 +5417,7 @@ body {
       .further-education-detail {
         .phlu-team-members {
           hr {
-            margin-top:60px;
+            margin-top: 60px;
           }
           .phlu-teaser {
             padding: 0;
@@ -6304,7 +6310,7 @@ body {
           border-bottom: 1px solid $grey7;
           padding: 30px 30px 20px;
           h3 {
-            margin-top:0;
+            margin-top: 0;
             margin-bottom: 10px;
           }
           a, p {

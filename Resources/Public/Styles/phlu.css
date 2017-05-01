@@ -8389,6 +8389,9 @@ body.neos-backend .neos-contentelement.neos-contentelement-active .disabled-for-
     color: red;
     display: block; }
 
+body.neos-backend .phlu-corporate-contacts .neos-empty-contentcollection-overlay {
+  margin: 30px; }
+
 body.neos-backend .disabled-qmpilot * {
   color: rgba(159, 99, 42, 0.44);
   opacity: 0.8; }
@@ -11155,6 +11158,8 @@ body {
           color: #9f632a; }
           body .all .main > .row address .telephone .fa-phone, body .all .main > .row-fullwidth-content > .row address .telephone .fa-phone {
             padding-right: 6px; }
+        body .all .main > .row address .email, body .all .main > .row-fullwidth-content > .row address .email {
+          color: #9f632a; }
         body .all .main > .row address .content-link-email-contact-person, body .all .main > .row address .content-link-portrait, body .all .main > .row address .content-link-location, body .all .main > .row-fullwidth-content > .row address .content-link-email-contact-person, body .all .main > .row-fullwidth-content > .row address .content-link-portrait, body .all .main > .row-fullwidth-content > .row address .content-link-location {
           background-image: none;
           font-size: 1.125rem; }

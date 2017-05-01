@@ -1,8 +1,8 @@
 # Content
 prototype(Phlu.Corporate:Contact) < prototype(Phlu.Corporate:Content) {
 
-templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Fullwidth.html'
-isHidden = ${q(node).get(0).context.workspaceName == 'live' ?((String.length(q(node).property('function'))> 0 || String.length(q(node).property('lastname'))> 0 || q(node).property('contact'))> 0 && q(node).property('ishidden')!= TRUE ? false : true): q(node).property('ishidden')}
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Fullwidth.html'
+    isHidden = ${q(node).get(0).context.workspaceName == 'live' ?((String.length(q(node).property('function')) > 0 || String.length(q(node).property('lastname')) > 0 || q(node).property('contact')) > 0 && q(node).property('ishidden') != TRUE ? false : true): q(node).property('ishidden')}
 lastname = ${q(node).property('lastname')}
 firstname = ${q(node).property('firstname')}
 lastname = ${q(node).property('lastname')}
@@ -21,7 +21,7 @@ wrapperNode = ${q(node).closest('[instanceof Phlu.Corporate:Section]').get(0)}
 }
 
 # Contacts wrapper (default)
-prototype(Phlu.Corporate:Contacts)< prototype(Phlu.Corporate:Content) {
+prototype(Phlu.Corporate:Contacts) < prototype(Phlu.Corporate:Content) {
 
 templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Wrapper.html'
 attributes.class = 'phlu-team-members'
@@ -32,7 +32,7 @@ defaultRenderer = Neos.Neos:ContentCase
 
 collectionRenderer = Phlu.Corporate:ContentCollection {
 
-    }
+}
 
 prototype(Phlu.Corporate:ContactsGroup)  {
 
@@ -40,7 +40,7 @@ contactGroupsCount = ${q(node).parent().find('[instanceof Phlu.Corporate:Contact
 templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/Group.html'
 collectionRenderer = Phlu.Corporate:ContentCollection {
 
-                }
+}
 main = ${q(node).children('main').get(0)}
 
 }
@@ -74,7 +74,6 @@ prototype(Phlu.Corporate:Contact).templatePath = 'resource://Phlu.Corporate/Priv
 prototype(Phlu.Corporate:Contact).attributes.class = 'panel panel-default'
 
 }
-
 
 
 
