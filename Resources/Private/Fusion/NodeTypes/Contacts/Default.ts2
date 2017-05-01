@@ -47,9 +47,6 @@ prototype(Phlu.Corporate:Contacts) < prototype(Phlu.Corporate:Content) {
 
 }
 
-
-
-
 # Contacts wrapper (tile)
 prototype(Phlu.Corporate:Contacts) {
 
@@ -59,7 +56,6 @@ prototype(Phlu.Corporate:Contacts) {
     prototype(Phlu.Corporate:ContactsGroup).attributes.class = 'col-xs-12'
     prototype(Phlu.Corporate:ContactsGroup).collectionRenderer.attributes.class = 'row'
 }
-
 
 # Contacts wrapper (list)
 prototype(Phlu.Corporate:Contacts) {
@@ -74,10 +70,6 @@ prototype(Phlu.Corporate:Contacts) {
     prototype(Phlu.Corporate:Contact).attributes.class = 'panel panel-default'
 
 }
-
-
-
-
 
 neosliveHybridsearchContactsPortraitUrl = Neos.Fusion:Template {
     templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Contacts/PortraitUrl.html'

@@ -52,15 +52,7 @@ PhluCorporateApp.controller('NewsCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.setOpen = function (node, index) {
         $scope.isopen = $scope.isopen === node.identifier ? 0 : node.identifier;
 
-        window.setTimeout(function () {
-            if (jQuery("#node-" + index).length) {
-                jQuery('html, body').stop().animate({
-                    'scrollTop': jQuery("#node-" + index).offset().top - (jQuery("#node-" + index).height() / 2)
-                }, 900, 'swing', function () {
 
-                });
-            }
-        }, 10);
     };
 
     /**

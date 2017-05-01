@@ -8389,6 +8389,9 @@ body.neos-backend .neos-contentelement.neos-contentelement-active .disabled-for-
     color: red;
     display: block; }
 
+body.neos-backend .phlu-corporate-contacts .neos-empty-contentcollection-overlay {
+  margin: 30px; }
+
 body.neos-backend .disabled-qmpilot * {
   color: rgba(159, 99, 42, 0.44);
   opacity: 0.8; }
