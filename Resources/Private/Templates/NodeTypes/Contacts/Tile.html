@@ -46,8 +46,10 @@
                         </f:if>
                         <f:if condition="{email}">
                             <f:if condition="{email} !== ''">
-                                <a class="content-link-email-contact-person"
-                                   href="mailto:{participant.email}">{email}</a>
+                                <div class="email">
+                                    <a class="content-link-email-contact-person"
+                                       href="mailto:{participant.email}">{email}</a>
+                                </div>
                             </f:if>
                         </f:if>
                         <br>
