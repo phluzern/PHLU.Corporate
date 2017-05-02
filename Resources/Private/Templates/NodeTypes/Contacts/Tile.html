@@ -17,8 +17,13 @@
                                 <b>{fullname}</b>
                             </f:then>
                             <f:else>
-                                <b>{function}</b><br>
-                                {fullname}
+                                <span class="corporate-function">
+                                    <b>{function}</b>
+                                </span>
+                                <f:if condition="{fullnameLength} !== ''">
+                                    <br>
+                                    {fullname}
+                                </f:if>
                             </f:else>
                         </f:if>
                         <f:if condition="{street}">

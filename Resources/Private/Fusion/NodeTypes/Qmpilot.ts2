@@ -9,7 +9,7 @@ prototype(Phlu.Qmpilot.NodeTypes:Files) {
 
 
 # File
-prototype(Phlu.Qmpilot.NodeTypes:File) {
+prototype(Phlu.Qmpilot.NodeTypes:File) < prototype(Phlu.Corporate:Content) {
 
 
     templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/File/Default.html'
