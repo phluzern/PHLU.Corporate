@@ -370,6 +370,8 @@
   superTypes:
     'Phlu.Neos.NodeTypes:Page': true
     'Phlu.Neos.NodeTypes:Course.Module': true
+  hybridsearch:
+    'skip': TRUE
   properties:
     internalid:
       type: integer
@@ -389,6 +391,8 @@
   superTypes:
     'Phlu.Neos.NodeTypes:Page': true
     'Phlu.Neos.NodeTypes:Course.Study': true
+  hybridsearch:
+    'skip': TRUE
   properties:
     internalid:
       type: integer
