@@ -6,6 +6,13 @@ neosliveHybridsearchCourseUrl = Neos.Fusion:Template {
 	detail = ${q(site).find('[instanceof Phlu.Neos.NodeTypes:Page][internalid='+this.courseid+']').get(0)}
 }
 
+neosliveHybridsearchDetailPage = Neos.Fusion:Template {
+	templatePath = 'resource://Phlu.Corporate/Private/Templates/Course/Detailpage.html'
+	node = ${node}
+	courseid = ${q(node).property('id')}
+	hidden = ${Json.stringify(q(site).find('[instanceof Phlu.Neos.NodeTypes:Page][internalid='+this.courseid+']').first().is('hidden'))}
+}
+
 prototype(Phlu.Neos.NodeTypes:Course.ContentCollection.Overview) < prototype(Phlu.Corporate:ContentCollection)  {
 }
 
