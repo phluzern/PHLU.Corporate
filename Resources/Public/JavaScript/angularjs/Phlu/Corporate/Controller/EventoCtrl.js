@@ -818,6 +818,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         .setQuery('searchquery', $scope)
         .setNodeType('nodetypes', $scope)
         .setOrderBy({'*': '-id'})
+        .addPropertyFilter('detailpage.hidden','false')
         .$watch(function (i) {
 
             if ($rootScope.isLoadedFirst == false && $scope.isLoadingFirst == false) {
