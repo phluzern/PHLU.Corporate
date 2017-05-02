@@ -116,6 +116,7 @@ $font-size-small: 0.75rem;
 
 $headings-font-weight: normal;
 $font-weight-bold: 700;
+$font-weight-normal: 400;
 
 // phlu nav elements
 $nav-pills-border-radius: 0;
@@ -1993,6 +1994,7 @@ body {
         h3 {
           margin: 5px 0 28px;
           letter-spacing: $h3-letter-spacing;
+          font-weight: $font-weight-normal;
           @include word-wrap();
           a {
             color: $darkgrey;
@@ -2363,6 +2365,7 @@ body {
             }
             h3 {
               white-space: nowrap;
+              font-weight: $font-weight-normal;
               font-size: $font-size-nav-teaser-header;
               @include media-breakpoint-down("md") {
                 font-size: $font-size-nav-teaser-header-mobile;
