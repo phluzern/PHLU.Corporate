@@ -9254,6 +9254,7 @@ body {
         body .all .phlu-teaser .phlu-teaser-body h3 {
           margin: 5px 0 28px;
           letter-spacing: 0.2px;
+          font-weight: 400;
           overflow-wrap: break-word;
           word-wrap: break-word;
           -ms-word-break: break-all;
@@ -9524,6 +9525,7 @@ body {
                 height: 150px; } }
             body .all .overview-tiles-bg .phlu-teaser.navigation .nav-teaser-item div h3 {
               white-space: nowrap;
+              font-weight: 400;
               font-size: 1.125rem;
               margin: 0 0 8px; }
               @media (max-width: 991px) {
