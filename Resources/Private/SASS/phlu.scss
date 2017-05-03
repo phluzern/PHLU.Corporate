@@ -71,7 +71,7 @@ $font-size-h2-desktop: 2rem;
 $font-size-h3: 1.125rem;
 $nav-link-font-size-desktop: 1.125rem;
 $h3-letter-spacing: 0.2px;
-$font-size-h4: 1.1rem;
+$font-size-h4: 1rem;
 $font-size-h4-desktop: 1.125rem;
 
 $font-size-form-dropdown-big: 1.313rem;
@@ -1978,6 +1978,31 @@ body {
       .panel-default {
         padding-bottom: 17px;
       }
+      .phlu-accordion {
+        .nav-teaser-item {
+          .phlu-teaser-body {
+            background-color: $lightgrey;
+            padding:18px;
+            address {
+              margin:0;
+            }
+          }
+        }
+        > div {
+          > div {
+            &:first-child {
+              &.nav-teaser-item {
+                margin-bottom: 30px;
+              }
+            }
+            &:last-child {
+              &.nav-teaser-item {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
     }
 
     //
@@ -3011,10 +3036,6 @@ body {
       }
     }
 
-
-
-
-
     //
     // team members group
     //
@@ -3087,9 +3108,6 @@ body {
         .phlu-corporate-contactsgroup {
           h3 {
             margin-top: 36px;
-          }
-          .phlu-accordion {
-            margin: 32px 0 0;
           }
         }
         @include media-breakpoint-down("sm") {
@@ -3223,6 +3241,8 @@ body {
       .row {
         .col-xs-12 {
           img {
+            margin: inherit;
+            width: 100%;
             padding-bottom: 20px;
           }
           ul {
@@ -4519,7 +4539,7 @@ body {
     }
     .phlu-qmpilot-nodetypes-file {
       &[data-prev='phlu-corporate-accordeonelement'] {
-        padding-top:31px;
+        padding-top: 31px;
       }
     }
     //
