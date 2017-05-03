@@ -470,6 +470,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var searchResultApplyTimer = null;
     var lasthash = null;
 
+    search.disableRealtime();
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
     search.setExternalSources(external);
     search.setGroupedBy(groupedBy).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
