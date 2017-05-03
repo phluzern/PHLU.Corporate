@@ -10,7 +10,7 @@ neosliveHybridsearchDetailPage = Neos.Fusion:Template {
 	templatePath = 'resource://Phlu.Corporate/Private/Templates/Course/Detailpage.html'
 	node = ${node}
 	courseid = ${q(node).property('id')}
-	hidden = ${Json.stringify(q(site).find('[instanceof Phlu.Neos.NodeTypes:Page][internalid='+this.courseid+']').first().is('hidden'))}
+	hidden = ${Json.stringify(q(site).find('[instanceof Phlu.Neos.NodeTypes:Page][internalid='+this.courseid+']').first().is('hiddeninindex'))}
 }
 
 prototype(Phlu.Neos.NodeTypes:Course.ContentCollection.Overview) < prototype(Phlu.Corporate:ContentCollection)  {
