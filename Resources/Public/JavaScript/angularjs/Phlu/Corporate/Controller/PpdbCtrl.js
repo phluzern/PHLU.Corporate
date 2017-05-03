@@ -205,7 +205,8 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
             .addPropertyFilter('financingtypes', 'financingtype', $scope)
             .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
             .addPropertyFilter('projecttype', 'projecttype', $scope)
-            .addPropertyFilter('title', '', null, true);
+            .addPropertyFilter('title', '', null, true)
+            .disableRealtime();
 
         if ($scope.nodesByIdentifier.length) {
             list.addNodesByIdentifier($scope.nodesByIdentifier);
@@ -294,6 +295,7 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         .addPropertyFilter('persons.EventoID', 'participants', $scope)
         .addPropertyFilter('publicationtype.id', 'publicationtype', $scope)
         .addPropertyFilter('organisations.OrganisationId', 'organisations', $scope)
+        .disableRealtime()
         .$bind('result', $scope)
         .run();
 
