@@ -8326,9 +8326,11 @@ span.loading.bar {
               margin-top: 15px;
               display: block; }
     #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table {
-      margin-bottom: 60px; }
+      margin-bottom: 10px; }
       #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {
         padding-right: 0; }
+        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 {
+          font-weight: 400; }
         #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address {
           margin-bottom: 0; }
           #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location {

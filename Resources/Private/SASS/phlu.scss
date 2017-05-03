@@ -599,9 +599,12 @@ span.loading {
       .results-table {
         .table-responsive {
           .table {
-            margin-bottom: 60px;
+            margin-bottom: 10px;
             td {
               padding-right: 0;
+              h3 {
+                font-weight: $font-weight-normal;
+              }
               .searchresult-body {
                 address {
                   margin-bottom: 0;
