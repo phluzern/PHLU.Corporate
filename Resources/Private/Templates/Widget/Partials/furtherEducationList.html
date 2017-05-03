@@ -27,7 +27,9 @@
 
                 <span data-ng-bind="node.getProperty('title')"></span>
             </td>
-            <td class="course-number"><span data-ng-bind="node.getProperty('nr')"></span></td>
+            <td class="course-number">
+                <span data-ng-bind="node.getProperty('nr')"></span>
+            </td>
             <td class="booking-status">
                 <i class="fa fa-circle bookable" aria-hidden="true"
                    data-ng-if="node.getProperty('years.Bookable').indexOf(true) > -1"></i>
