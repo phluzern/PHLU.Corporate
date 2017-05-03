@@ -71,7 +71,7 @@ $font-size-h2-desktop: 2rem;
 $font-size-h3: 1.125rem;
 $nav-link-font-size-desktop: 1.125rem;
 $h3-letter-spacing: 0.2px;
-$font-size-h4: 1.1rem;
+$font-size-h4: 1rem;
 $font-size-h4-desktop: 1.125rem;
 
 $font-size-form-dropdown-big: 1.313rem;
@@ -3108,9 +3108,6 @@ body {
         .phlu-corporate-contactsgroup {
           h3 {
             margin-top: 36px;
-          }
-          .phlu-accordion {
-            margin: 32px 0 0;
           }
         }
         @include media-breakpoint-down("sm") {
