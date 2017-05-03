@@ -1978,6 +1978,31 @@ body {
       .panel-default {
         padding-bottom: 17px;
       }
+      .phlu-accordion {
+        .nav-teaser-item {
+          .phlu-teaser-body {
+            background-color: $lightgrey;
+            padding:18px;
+            address {
+              margin:0;
+            }
+          }
+        }
+        > div {
+          > div {
+            &:first-child {
+              &.nav-teaser-item {
+                margin-bottom: 30px;
+              }
+            }
+            &:last-child {
+              &.nav-teaser-item {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
     }
 
     //
@@ -3011,10 +3036,6 @@ body {
       }
     }
 
-
-
-
-
     //
     // team members group
     //
@@ -3223,6 +3244,8 @@ body {
       .row {
         .col-xs-12 {
           img {
+            margin: inherit;
+            width: 100%;
             padding-bottom: 20px;
           }
           ul {
@@ -4519,7 +4542,7 @@ body {
     }
     .phlu-qmpilot-nodetypes-file {
       &[data-prev='phlu-corporate-accordeonelement'] {
-        padding-top:31px;
+        padding-top: 31px;
       }
     }
     //
