@@ -7388,38 +7388,84 @@
     <f:then>
         <div class="row">
             <div class="col-xs-12">
-                {breadcrumb -> f:format.raw()}
+                <div class="rcrumbs-wrapper">
+                    <div class="rcrumbs-container rcrumbs">
+
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item show">
+                                <a href="/">Fehler 404</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row ">
             <div class="col-xs-12">
-                <div class="neos-contentcollection">
-                    <div class=" phlu-corporate-section">
-                        <h1>Seite nicht gefunden - Fehler 404</h1>
-                        <div class="neos-contentcollection">
-                            <div class=" phlu-corporate-text">
-                                <div>
-                                    <p>
-                                        Die von Ihnen gewünschte Seite kann nicht angezeigt werden. Dies kann folgende
-                                        Ursachen haben:
-                                    </p>
-                                    <ul>
-                                        <li>das verwendete Lesezeichen ist veraltet</li>
-                                        <li>die Seite wurde umbenannt oder gelöscht</li>
-                                        <li>die Adresse/URL wurde falsch eingegeben</li>
-                                    </ul>
-                                    <p>
-                                        Aufgrund der eingegebenen Adresse/URL schlagen wir Ihnen folgende Treffer vor:
-                                    </p>
 
+                <div class=" phlu-corporate-content-page-headerdefault"
+                     data-next="phlu-corporate-content-page-teaserdefault"
+                     data-prev="phlu-corporate-contentcollection-page-view-default">
+                    <h1 class="page-header phlu-corporate-headline">
+                        <span>Seite nicht gefunden - Fehler 404</span>
+                    </h1>
+                    <div class=" phlu-corporate-textplain">
+                        <p>
+                            Die von Ihnen gewünschte Seite kann nicht angezeigt werden.
+                            Dies kann folgende Ursachen haben:
+                        </p>
+                    </div>
+                </div>
+
+                <div class="neos-contentcollection">
+                    <div class="phlu-corporate-section phlu-404-page">
+
+                        <div class="neos-contentcollection">
+                            <div class="img-fluid phlu-corporate-textwithimage">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 phlu-404-icon">
+                                        <span class="oi oi-circle-x"></span>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-10">
+                                        <div>
+                                            <ul>
+                                                <li>das verwendete Lesezeichen ist veraltet</li>
+                                                <li>die Seite wurde umbenannt oder gelöscht</li>
+                                                <li>die Adresse/URL wurde falsch eingegeben</li>
+                                            </ul>
+                                            <p>
+                                                Aufgrund der eingegebenen Adresse/URL schlagen wir Ihnen folgende
+                                                Treffer vor:
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <!--
+                                                        <div class=" phlu-corporate-text">
+                                                            <div>
+                                                                <p>
+                                                                    Die von Ihnen gewünschte Seite kann nicht angezeigt werden. Dies kann folgende
+                                                                    Ursachen haben:
+                                                                </p>
+                                                                <ul>
+                                                                    <li>das verwendete Lesezeichen ist veraltet</li>
+                                                                    <li>die Seite wurde umbenannt oder gelöscht</li>
+                                                                    <li>die Adresse/URL wurde falsch eingegeben</li>
+                                                                </ul>
+                                                                <p>
+                                                                    Aufgrund der eingegebenen Adresse/URL schlagen wir Ihnen folgende Treffer vor:
+                                                                </p>
+
+                                                            </div>
+                                                        </div>-->
                         </div>
 
-                        <div class="row ng-scope" >
+                        <div class="row ng-scope">
                             <div class="col-xs-12 phlu-searchresults">
                                 <div class="searchresults-count ng-binding">
-                                   <br> Suchergebnisse (45)
+                                    <br> Suchergebnisse (45)
                                 </div>
 
                                 <div class="phlu-corporate-tags-menu ng-scope">
@@ -7429,7 +7475,8 @@
                                                 <div class="col-xs-12">
                                                     <ul class="nav nav-pills nav-justified" role="tablist">
                                                         <li class="nav-item clickable " role="menuitem">
-                                                            <a class="nav-link all active" style="background-color:black; color:white"
+                                                            <a class="nav-link all active"
+                                                               style="background-color:black; color:white"
                                                                data-ng-click="setLastActiveTabname('alle')"
                                                                data-toggle="tab" href="#alle" role="tab">Alle</a>
                                                         </li>

@@ -10128,6 +10128,21 @@ body {
       margin-bottom: 60px; }
       body .all .phlu-dozpage .row:last-child hr {
         display: none; }
+    @media (max-width: 543px) {
+      body .all .phlu-404-page .row .phlu-404-icon {
+        text-align: center; } }
+    body .all .phlu-404-page .row .phlu-404-icon .oi {
+      font-size: 120px;
+      color: #9f632a;
+      top: 12px;
+      position: relative; }
+      @media (max-width: 767px) {
+        body .all .phlu-404-page .row .phlu-404-icon .oi {
+          font-size: 80px; } }
+      @media (max-width: 543px) {
+        body .all .phlu-404-page .row .phlu-404-icon .oi {
+          font-size: 180px;
+          padding-bottom: 20px; } }
     body .all .phlu-dossier {
       margin-bottom: 90px; }
     body .all .ppdb-detail .row .phlu-team-members {

@@ -1982,9 +1982,9 @@ body {
         .nav-teaser-item {
           .phlu-teaser-body {
             background-color: $lightgrey;
-            padding:18px;
+            padding: 18px;
             address {
-              margin:0;
+              margin: 0;
             }
           }
         }
@@ -3391,6 +3391,31 @@ body {
         margin-bottom: 60px;
         hr {
           display: none;
+        }
+      }
+    }
+    //
+    // phlu 404 page
+    //
+    .phlu-404-page {
+      .row {
+        .phlu-404-icon {
+          @include media-breakpoint-down("xs") {
+            text-align: center;
+          }
+          .oi {
+            font-size: 120px;
+            @include media-breakpoint-down("sm") {
+              font-size:80px;
+            }
+            @include media-breakpoint-down("xs") {
+              font-size:180px;
+              padding-bottom: 20px;
+            }
+            color: $hazelbrowndark;
+            top: 12px;
+            position: relative;
+          }
         }
       }
     }
