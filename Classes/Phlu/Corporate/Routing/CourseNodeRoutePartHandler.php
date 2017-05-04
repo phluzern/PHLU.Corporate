@@ -19,6 +19,7 @@ use Neos\Neos\Routing\Exception;
 use Phlu\Evento\Service\Course\ImportService;
 use Phlu\Neos\Models\Domain\Repository\Course\Study\FurtherEducation\CourseRepository as StudyRepository;
 use Phlu\Neos\Models\Domain\Repository\Course\Module\FurtherEducation\CourseRepository as ModuleRepository;
+use Phlu\Neos\Models\Domain\Repository\Course\Event\FurtherEducation\CourseRepository as EventRepository;
 use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
 
 /**
@@ -39,6 +40,12 @@ class CourseNodeRoutePartHandler extends FrontendNodeRoutePartHandler
      * @var ModuleRepository
      */
     protected $moduleRepository;
+
+    /**
+     * @Flow\Inject
+     * @var EventRepository
+     */
+    protected $eventRepository;
 
     /**
      * @Flow\Inject
@@ -75,6 +82,10 @@ class CourseNodeRoutePartHandler extends FrontendNodeRoutePartHandler
 
         if (!$course) {
             $course = $this->moduleRepository->getOneById($requestPath);
+        }
+
+        if (!$course) {
+            $course = $this->eventRepository->getOneById($requestPath);
         }
 
         $settings = $this->importService->getSettingsFromObject($course);
