@@ -76,7 +76,7 @@ PhluCorporateApp.controller('initController', ['$scope','$hybridsearch', functio
           PhluCorporateApp.$$conf.workspaceName = workspaceName !== '' ? workspaceName : 'live';
           PhluCorporateApp.$$conf.siteNodeName = siteNodeName !== '' ? siteNodeName : 'corporate';
           PhluCorporateApp.$$conf.dimensionHash = dimensionHash !== '' ? dimensionHash : 'fb11fdde869d0a8fcfe00a2fd35c031d';
-          PhluCorporateApp.$$conf.cdnHost = window.location.host == 'phlu.ch.phlu-eduweb5.nine.ch' ? 'https://d2or9b3ovniy97.cloudfront.net' : undefined;
+          PhluCorporateApp.$$conf.cdnHost = window.location.host == 'phlu.ch.phlu-eduweb5.nine.ch' ? 'https://d148k8y55gwilo.cloudfront.net' : undefined;
   };
 
 
