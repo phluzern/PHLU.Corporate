@@ -34,11 +34,7 @@
 'Phlu.Corporate:Page.View.Default':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
-  hybridsearch:
-    render: true
 
 'Phlu.Corporate:Page.View.Default.Default':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
-  hybridsearch:
-    render: true

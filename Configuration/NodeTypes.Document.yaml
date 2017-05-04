@@ -176,8 +176,6 @@
       'Neos.Neos:Shortcut': true
 
 'Phlu.Corporate:Page.View.Default.Default':
-  hybridsearch:
-    render: true
   superTypes:
     'Phlu.Corporate:Page.View.Default': true
     'Phlu.Neos.NodeTypes:TagMixin': true
