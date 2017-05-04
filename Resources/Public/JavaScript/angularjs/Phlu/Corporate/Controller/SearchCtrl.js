@@ -259,6 +259,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-course-module-furthereducation-title': -1,
         'phlu-neos-nodetypes-course-module-furthereducation-grandparent': -1,
         'phlu-neos-nodetypes-course-module-furthereducation-url': -1,
+        'phlu-qmpilot-nodetypes-file-asset': -1,
         'url': -1,
         'grandparent': -1
 
