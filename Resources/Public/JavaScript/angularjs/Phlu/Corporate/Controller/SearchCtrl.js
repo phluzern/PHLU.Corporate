@@ -65,6 +65,7 @@ PhluCorporateApp.directive('search', function ($sce) {
 
                         case 'phlu-neos-nodetypes-course-study-furthereducation':
                         case 'phlu-neos-nodetypes-course-module-furthereducation':
+                        case 'phlu-neos-nodetypes-course-event-furthereducation':
 
                             if ($scope.view === 'all') {
                                 return template + '/All/phlu-neos-nodetypes-course-study-furthereducation.html';
@@ -145,6 +146,7 @@ PhluCorporateApp.directive('quicknode', function ($sce) {
 
                     case 'phlu-neos-nodetypes-course-study-furthereducation':
                     case 'phlu-neos-nodetypes-course-module-furthereducation':
+                    case 'phlu-neos-nodetypes-course-event-furthereducation':
 
                         if (isnumeric) {
                             return template + 'phlu-neos-nodetypes-course-study-furthereducation-title.html';
@@ -231,6 +233,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-page-furthereducation-detail-study': 'Weiterbildungsstudiengänge',
         'phlu-corporate-page-furthereducation-detail-module': 'Weiterbildungsskurse',
         'phlu-neos-nodetypes-course-module-furthereducation': 'Weiterbildungsskurse',
+        'phlu-neos-nodetypes-course-event-furthereducation': 'Weiterbildungsveranstaltungen',
+        'phlu-corporate-page-furthereducation-detail-event': 'Weiterbildungsveranstaltungen',
         'zebis': 'Unterrichtsmaterial',
         'blog': 'Blog',
         'wiki': 'Wiki',
