@@ -3,14 +3,6 @@
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
-'Phlu.Corporate:Text':
-  superTypes:
-    'Neoslive.Hybridsearch:Content': true
-
-'Phlu.Corporate:Table':
-  superTypes:
-    'Neoslive.Hybridsearch:Content': true
-
 'Phlu.Qmpilot.NodeTypes:File':
   superTypes:
     'Neoslive.Hybridsearch:Content': true

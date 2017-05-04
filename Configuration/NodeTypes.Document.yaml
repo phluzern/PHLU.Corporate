@@ -46,6 +46,8 @@
 'Phlu.Corporate:Page.NotInMenu':
   superTypes:
     'Phlu.Corporate:Page': true
+  hybridsearch:
+    'skip': TRUE
 
 'Phlu.Corporate:Page.Home':
   ui:
@@ -66,6 +68,8 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.Home'
+  hybridsearch:
+    'skip': TRUE
 
 'Phlu.Corporate:Page.Overview.Tiles':
   ui:
@@ -94,7 +98,8 @@
         reloadIfChanged: true
         inspector:
           group: navigation
-
+  hybridsearch:
+    'skip': TRUE
 
 
 'Phlu.Corporate:Page.Overview.OnePage':
@@ -111,7 +116,8 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.Overview.OnePage'
-
+  hybridsearch:
+    'skip': TRUE
 
 'Phlu.Corporate:Page.View.Default':
   ui:
@@ -204,6 +210,8 @@
       'Phlu.Corporate:Page.View.Default.Default': false
       'Neos.Neos:Shortcut': false
       'Phlu.Corporate:Page.View.Default.Prototype': true
+  hybridsearch:
+    'skip': TRUE
 
 'Phlu.Corporate:Page.View.Dossier':
   ui:
@@ -292,6 +300,8 @@
           position: 50
           editorOptions:
             format: d.m.Y
+  hybridsearch:
+    'skip': TRUE
 
 'Phlu.Corporate:Page.Event':
   ui:
@@ -364,7 +374,8 @@
         inspector:
           group: teaser
           position: 50
-
+  hybridsearch:
+    'skip': TRUE
 
 
 'Phlu.Corporate:Page.FurtherEducation.Detail.Module':
