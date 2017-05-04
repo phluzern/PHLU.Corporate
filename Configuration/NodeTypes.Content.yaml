@@ -380,6 +380,8 @@
       type: string
       ui:
         label: 'Video URL'
+        help:
+          message: 'z.B. https://youtu.be/NCb1-G4KF3g'
         reloadIfChanged: TRUE
         inspector:
           group: 'general'
