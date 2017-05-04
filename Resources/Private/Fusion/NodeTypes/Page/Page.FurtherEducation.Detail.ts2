@@ -48,3 +48,8 @@ prototype(Phlu.Corporate:Page.FurtherEducation.Detail.Study) < prototype(Phlu.Co
 templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/FurtherEducation.Detail.html'
 
 }
+prototype(Phlu.Corporate:Page.FurtherEducation.Detail.Event) < prototype(Phlu.Corporate:Page.FurtherEducation.Detail) {
+
+templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/FurtherEducation.Detail.html'
+
+}

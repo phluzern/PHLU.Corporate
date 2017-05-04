@@ -33,6 +33,13 @@ class FurtherEducationDataSource extends AbstractDataSource {
     protected $studyCourseRepository;
 
 
+    /**
+     * @Flow\Inject
+     * @var \Phlu\Neos\Models\Domain\Repository\Course\Event\FurtherEducation\CourseRepository
+     */
+    protected $eventCourseRepository;
+
+
 
 
     /**
@@ -84,6 +91,19 @@ class FurtherEducationDataSource extends AbstractDataSource {
                 }
             }
 
+            foreach ($this->eventCourseRepository->findAll() as $study) {
+                /* @var Study $study */
+                if (is_array($study->getGenre())) {
+                    foreach ($study->getGenre() as $genre) {
+                        if (is_string($genre)) {
+                            $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
+                        } else {
+                            $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                        }
+                    }
+                }
+            }
+
             break;
 
 
@@ -106,6 +126,14 @@ class FurtherEducationDataSource extends AbstractDataSource {
                     }
                 }
             }
+            foreach ($this->eventCourseRepository->findAll() as $study) {
+                /* @var Study $study */
+                if (is_array($study->getTargetgroups())) {
+                    foreach ($study->getTargetgroups() as $targetgroup) {
+                        $data[(string)$targetgroup->Bezeichnung] = array('value' => (string)$targetgroup->Bezeichnung, 'label' => $targetgroup->Bezeichnung);
+                    }
+                }
+            }
 
             break;
 
@@ -121,6 +149,11 @@ class FurtherEducationDataSource extends AbstractDataSource {
                 /* @var Study $study */
                 $data[(string)$study->getNr()] = array('value' => (string)$study->getNr(), 'label' => $study->getNr() . " ".$study->getTitle(), 'group' => 'Studiengang');
             }
+            foreach ($this->eventCourseRepository->findAll() as $study) {
+                /* @var Study $study */
+                $data[(string)$study->getNr()] = array('value' => (string)$study->getNr(), 'label' => $study->getNr() . " ".$study->getTitle(), 'group' => 'Veranstaltung');
+            }
+
             break;
 
 
@@ -136,6 +169,12 @@ class FurtherEducationDataSource extends AbstractDataSource {
                 /* @var Study $study */
                 $data[(string)$study->getId()] = array('value' => (string)$study->getId(), 'label' => $study->getNr() . " ".$study->getTitle(), 'group' => 'Studiengang');
             }
+            foreach ($this->eventCourseRepository->findAll() as $study) {
+                /* @var Study $study */
+                $data[(string)$study->getId()] = array('value' => (string)$study->getId(), 'label' => $study->getNr() . " ".$study->getTitle(), 'group' => 'Veranstaltung');
+            }
+
+
             break;
 
 

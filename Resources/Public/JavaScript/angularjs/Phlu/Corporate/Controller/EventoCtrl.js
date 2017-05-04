@@ -109,12 +109,13 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     };
 
     $scope.graduation = {};
-    $scope.nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation'];
+    $scope.nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation','phlu-neos-nodetypes-course-event-furthereducation'];
 
     $scope.nodetypesFilter = [
         {id: 'all', label: 'Alle', category: 'Alle'},
         {id: 'phlu-neos-nodetypes-course-study-furthereducation', label: 'Studiengänge', category: 'Studiengang'},
-        {id: 'phlu-neos-nodetypes-course-module-furthereducation', label: 'Kurse', category: 'Kurs'}
+        {id: 'phlu-neos-nodetypes-course-module-furthereducation', label: 'Kurse', category: 'Kurs'},
+        {id: 'phlu-neos-nodetypes-course-event-furthereducation', label: 'Veranstaltungen', category: 'Veranstaltung'}
     ];
 
     $scope.nodetypesFilterCurrentLabel = 'Alle';
