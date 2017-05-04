@@ -139,6 +139,21 @@
     'node':
       handler:     'Phlu\Corporate\Routing\CourseNodeRoutePartHandler'
 
+#
+# Phlu corporate routes (use for link uri builder)
+#
+-
+  name: 'weiterbildung veranstaltungen Route Builder'
+  uriPattern: 'weiterbildung/veranstaltungen/{node}/{year}/{uri}<defaultUriSuffix>'
+  defaults:
+    '@package':    'Neos.Neos'
+    '@controller': 'Frontend\Node'
+    '@action':     'show'
+    '@format':     'html'
+  routeParts:
+    'node':
+      handler:     'Phlu\Corporate\Routing\CourseNodeRoutePartHandler'
+
 
 #
 # Phlu corporate routes (use for link uri builder)
