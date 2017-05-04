@@ -387,6 +387,9 @@
               phlu-neos-nodetypes-course-module-furthereducation:
                 label: Kurse
                 icon: icon-fire
+              phlu-neos-nodetypes-course-event-furthereducation:
+                label: Veranstaltungen
+                icon: icon-calendar
     genres:
       type: array
       ui:

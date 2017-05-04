@@ -151,7 +151,7 @@ class FurtherEducationDataSource extends AbstractDataSource {
             }
             foreach ($this->eventCourseRepository->findAll() as $study) {
                 /* @var Study $study */
-                $data[(string)$study->getNr()] = array('value' => (string)$study->getNr(), 'label' => $study->getNr() . " ".$study->getTitle(), 'group' => 'Studiengang');
+                $data[(string)$study->getNr()] = array('value' => (string)$study->getNr(), 'label' => $study->getNr() . " ".$study->getTitle(), 'group' => 'Veranstaltung');
             }
 
             break;
@@ -171,7 +171,7 @@ class FurtherEducationDataSource extends AbstractDataSource {
             }
             foreach ($this->eventCourseRepository->findAll() as $study) {
                 /* @var Study $study */
-                $data[(string)$study->getId()] = array('value' => (string)$study->getId(), 'label' => $study->getNr() . " ".$study->getTitle(), 'group' => 'Studiengang');
+                $data[(string)$study->getId()] = array('value' => (string)$study->getId(), 'label' => $study->getNr() . " ".$study->getTitle(), 'group' => 'Veranstaltung');
             }
 
 
