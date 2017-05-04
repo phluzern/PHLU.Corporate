@@ -257,15 +257,19 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contactsgroup.phlu-corporate-contact-lastname': 60,
         'phlu-corporate-contact-phone': 15000,
         'phlu-neos-nodetypes-course-module-furthereducation-title': -1,
-        'bibliothek-title': 1
+        'phlu-neos-nodetypes-course-module-furthereducation-grandparent': -1,
+        'phlu-neos-nodetypes-course-module-furthereducation-url': -1,
+        'url': -1,
+        'grandparent': -1
 
 
     };
 
     var boostParentNodeType = {
-        'Phlu.Neos.NodeTypes:ContentCollection.ContactsGroup': 1.2,
-        'Phlu.Neos.NodeTypes:ContentCollection.Contacts': 1.8,
-        'Phlu.Corporate:ContentCollection.Page.View.Default': 1.5
+        'Phlu.Neos.NodeTypes:ContentCollection.ContactsGroup': 10,
+        'Phlu.Neos.NodeTypes:ContentCollection.Contacts': 10,
+        'Phlu.Corporate:ContentCollection.Page.View.Default': 100,
+        'Phlu.Corporate:Page.View.Default.Default': 0
     };
 
     var groupedBy = {
