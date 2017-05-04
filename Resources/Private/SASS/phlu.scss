@@ -5318,7 +5318,11 @@ body {
         a[href^='mailto'] {
           @include content-link("email");
         }
-        .content-link-internal, a[data-gentics-aloha-repository='node-repository'] {
+        .content-link-internal,
+        a[data-gentics-aloha-repository='node-repository'],
+        a[href^='http://www.phlu.ch'],
+        a[href^='http://phlu.ch'],
+        a[href^='http://neos.phlu.dev'] {
           @include content-link("internal");
         }
         .content-link-portrait {
