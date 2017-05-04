@@ -1,6 +1,8 @@
 PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
     var list = new $hybridsearchObject(hybridsearch);
+    list.disableRealtime();
+
     $scope.result = new $hybridsearchResultsObject();
     $scope.search = '';
     $scope.projecttype = 'Forschung und Entwicklung';
@@ -206,7 +208,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
             .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
             .addPropertyFilter('projecttype', 'projecttype', $scope)
             .addPropertyFilter('title', '', null, true)
-            .disableRealtime();
+
 
         if ($scope.nodesByIdentifier.length) {
             list.addNodesByIdentifier($scope.nodesByIdentifier);
