@@ -256,7 +256,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contactsgroup.phlu-corporate-contact-firstname': 60,
         'phlu-corporate-contactsgroup.phlu-corporate-contact-lastname': 60,
         'phlu-corporate-contact-phone': 15000,
-        'phlu-qmpilot-nodetypes-file-title': 1,
+        'phlu-neos-nodetypes-course-module-furthereducation-title': -1,
         'bibliothek-title': 1
 
 
