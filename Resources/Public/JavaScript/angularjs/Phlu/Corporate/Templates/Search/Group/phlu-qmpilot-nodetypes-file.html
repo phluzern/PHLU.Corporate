@@ -1,8 +1,14 @@
 <h3>
-    <a class="content-link-internal content-link-{{node.getProperty('asset').extension}}-file" target="_blank"
-       href="{{node.getProperty('asset').url}}"><span
+    <a class="content-link-internal" data-ng-if="node.getProperty('asset').url"
+       href="{{node.getProperty('asset').url}}" target="_blank"><span
             data-ng-if="node.getProperty('asset').title == ''">{{node.getProperty('asset').filename}}</span><span
-            data-ng-if="node.getProperty('asset').title !== ''">{{node.getProperty('asset').title}}</span></a>
+            data-ng-if="node.getProperty('asset').title !== ''">{{node.getProperty('asset').title}}</span>
+    </a>
+    <a class="content-link-internal" data-ng-if="!node.getProperty('asset').url"
+       href="{{node.getUrl()}}"><span
+            data-ng-if="node.getProperty('asset').title == ''">{{node.getProperty('asset').filename}}</span><span
+            data-ng-if="node.getProperty('asset').title !== ''">{{node.getProperty('asset').title}}</span>
+    </a>
 
 </h3>
 <div class="searchresult-body">
