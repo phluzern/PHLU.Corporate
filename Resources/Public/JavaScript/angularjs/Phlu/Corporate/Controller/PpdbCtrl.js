@@ -291,7 +291,7 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
 
     list
         .setCategorizedBy('publicationtype.name')
-        .setOrderBy({'phlu-neos-nodetypes-publication': 'citationstyle'})
+        .setOrderBy({'phlu-neos-nodetypes-publication': '-sortingkey'})
         .setNodeType('phlu-neos-nodetypes-publication')
         .addPropertyFilter('title', '', null, true)
         .addPropertyFilter('persons.EventoID', 'participants', $scope)
