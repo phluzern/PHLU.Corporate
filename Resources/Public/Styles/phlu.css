@@ -11398,28 +11398,16 @@ body {
           background-position: 0 0;
           background-repeat: repeat; }
       body .all .main > .row .content-link-internal,
-      body .all .main > .row a[data-gentics-aloha-repository='node-repository'],
-      body .all .main > .row a[href^='http://www.phlu.ch'],
-      body .all .main > .row a[href^='http://phlu.ch'],
-      body .all .main > .row a[href^='http://neos.phlu.dev'], body .all .main > .row-fullwidth-content > .row .content-link-internal,
-      body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'],
-      body .all .main > .row-fullwidth-content > .row a[href^='http://www.phlu.ch'],
-      body .all .main > .row-fullwidth-content > .row a[href^='http://phlu.ch'],
-      body .all .main > .row-fullwidth-content > .row a[href^='http://neos.phlu.dev'] {
+      body .all .main > .row a[data-gentics-aloha-repository='node-repository'], body .all .main > .row-fullwidth-content > .row .content-link-internal,
+      body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] {
         background-image: url("../Images/linkbottomline.png");
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
         padding-bottom: 4px; }
         body .all .main > .row .content-link-internal:hover,
-        body .all .main > .row a[data-gentics-aloha-repository='node-repository']:hover,
-        body .all .main > .row a[href^='http://www.phlu.ch']:hover,
-        body .all .main > .row a[href^='http://phlu.ch']:hover,
-        body .all .main > .row a[href^='http://neos.phlu.dev']:hover, body .all .main > .row-fullwidth-content > .row .content-link-internal:hover,
-        body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository']:hover,
-        body .all .main > .row-fullwidth-content > .row a[href^='http://www.phlu.ch']:hover,
-        body .all .main > .row-fullwidth-content > .row a[href^='http://phlu.ch']:hover,
-        body .all .main > .row-fullwidth-content > .row a[href^='http://neos.phlu.dev']:hover {
+        body .all .main > .row a[data-gentics-aloha-repository='node-repository']:hover, body .all .main > .row-fullwidth-content > .row .content-link-internal:hover,
+        body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository']:hover {
           background-position: 0 0;
           background-repeat: repeat; }
       body .all .main > .row .content-link-portrait, body .all .main > .row-fullwidth-content > .row .content-link-portrait {
