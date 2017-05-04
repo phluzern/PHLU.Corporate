@@ -10,7 +10,6 @@ prototype(Phlu.Corporate:Widget) < prototype(Neos.Neos:Content) {
     WidgetGroupReferences = ${q(node).children('widget').find('[instanceof Phlu.Corporate:ContentCollection.WidgetGroupReferences]').get()}
 
 
-
 }
 
 prototype(Phlu.Corporate:ContentCollection.WidgetGroupReferences) < prototype(Phlu.Corporate:ContentCollection)  {
