@@ -172,8 +172,6 @@
       'Phlu.Corporate:Page.FurtherEducation.Detail.Study': true
       'Phlu.Corporate:Page.FurtherEducation.Detail.Event': true
       'Neos.Neos:Shortcut': true
-  hybridsearch:
-    'render': TRUE
 
 'Phlu.Corporate:Page.View.Default.Default':
   superTypes:
