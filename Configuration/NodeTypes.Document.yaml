@@ -46,8 +46,6 @@
 'Phlu.Corporate:Page.NotInMenu':
   superTypes:
     'Phlu.Corporate:Page': true
-  hybridsearch:
-    skip: TRUE
 
 'Phlu.Corporate:Page.Home':
   ui:
