@@ -8,7 +8,7 @@
     'Neoslive.Hybridsearch:Content': true
   hybridsearch:
     skip: TRUE
-    
+
 'Phlu.Neos.NodeTypes:Project':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
