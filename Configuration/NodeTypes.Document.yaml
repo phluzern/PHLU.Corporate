@@ -189,8 +189,7 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.View.Default.Default'
-  hybridsearch:
-    'render': TRUE
+
 
 'Phlu.Corporate:Page.View.Default.Prototype':
   ui:
