@@ -19,6 +19,10 @@
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
+'Phlu.Neos.NodeTypes:Database':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': true
+
 'Phlu.Corporate:Page.News':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
@@ -26,7 +30,11 @@
 'Phlu.Corporate:Page.View.Default':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
+  hybridsearch:
+    render: true
 
 'Phlu.Corporate:Page.View.Default.Default':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
+  hybridsearch:
+    render: true
