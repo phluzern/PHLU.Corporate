@@ -47,7 +47,7 @@
   superTypes:
     'Phlu.Corporate:Page': true
   hybridsearch:
-    'skip': TRUE
+    skip: TRUE
 
 'Phlu.Corporate:Page.Home':
   ui:
@@ -69,7 +69,7 @@
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.Home'
   hybridsearch:
-    'skip': TRUE
+    skip: TRUE
 
 'Phlu.Corporate:Page.Overview.Tiles':
   ui:
@@ -99,7 +99,7 @@
         inspector:
           group: navigation
   hybridsearch:
-    'skip': TRUE
+    skip: TRUE
 
 
 'Phlu.Corporate:Page.Overview.OnePage':
@@ -117,7 +117,7 @@
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.Overview.OnePage'
   hybridsearch:
-    'skip': TRUE
+    skip: TRUE
 
 'Phlu.Corporate:Page.View.Default':
   ui:
@@ -213,7 +213,7 @@
       'Neos.Neos:Shortcut': false
       'Phlu.Corporate:Page.View.Default.Prototype': true
   hybridsearch:
-    'skip': TRUE
+    skip: TRUE
 
 'Phlu.Corporate:Page.View.Dossier':
   ui:
@@ -303,7 +303,7 @@
           editorOptions:
             format: d.m.Y
   hybridsearch:
-    'skip': TRUE
+    skip: TRUE
 
 'Phlu.Corporate:Page.Event':
   ui:
@@ -377,7 +377,7 @@
           group: teaser
           position: 50
   hybridsearch:
-    'skip': TRUE
+    skip: TRUE
 
 
 'Phlu.Corporate:Page.FurtherEducation.Detail.Module':
@@ -385,7 +385,7 @@
     'Phlu.Neos.NodeTypes:Page': true
     'Phlu.Neos.NodeTypes:Course.Module': true
   hybridsearch:
-    'skip': TRUE
+    skip: TRUE
   properties:
     internalid:
       type: integer
@@ -406,7 +406,7 @@
     'Phlu.Neos.NodeTypes:Page': true
     'Phlu.Neos.NodeTypes:Course.Study': true
   hybridsearch:
-    'skip': TRUE
+    skip: TRUE
   properties:
     internalid:
       type: integer
@@ -426,7 +426,7 @@
     'Phlu.Neos.NodeTypes:Page': true
     'Phlu.Neos.NodeTypes:Course.Event': true
   hybridsearch:
-    'skip': TRUE
+    skip: TRUE
   properties:
     internalid:
       type: integer
