@@ -1,8 +1,4 @@
 # Searchable content
-'Phlu.Corporate:Content.Page.HeaderDefault':
-  superTypes:
-    'Neoslive.Hybridsearch:Content': true
-
 'Phlu.Qmpilot.NodeTypes:File':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
