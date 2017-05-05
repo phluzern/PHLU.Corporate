@@ -84,7 +84,13 @@ PhluCorporateApp.directive('search', function ($sce) {
 
                         case 'blog':
 
-                            return template + '/Group/blog.html';
+                            if ($scope.view === 'all') {
+                                return template + '/All/blog.html';
+                            } else {
+                                return template + '/Group/blog.html';
+                            }
+
+
 
                         case 'phlu-neos-nodetypes-publication':
 
@@ -304,7 +310,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -320,7 +326,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -337,7 +343,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -354,7 +360,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -371,7 +377,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -388,7 +394,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -405,7 +411,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -422,7 +428,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
