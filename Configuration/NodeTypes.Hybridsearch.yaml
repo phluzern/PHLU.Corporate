@@ -7,6 +7,7 @@
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
+
 'Phlu.Neos.NodeTypes:Project':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
@@ -23,7 +24,11 @@
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
-'Phlu.Neos.NodeTypes:Content':
+'Phlu.Corporate:TextPlain':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': true
+
+'Phlu.Corporate:Text':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
