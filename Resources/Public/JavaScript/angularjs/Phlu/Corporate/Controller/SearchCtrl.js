@@ -254,7 +254,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-text': 150,
         'phlu-corporate-contact-education': -1, // dont'search here
         'phlu-corporate-contact-activities': -1, // dont'search here
-        'phlu-corporate-contact-function': 10,
+        'phlu-corporate-contact-function': 1,
         'phlu-corporate-contact-functions': -1,
         'phlu-corporate-contact-consulting': -1, // dont'search here
         'phlu-corporate-contact-expertise': -1, // dont'search here
@@ -266,6 +266,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-course-module-furthereducation-grandparent': -1,
         'phlu-neos-nodetypes-course-module-furthereducation-url': -1,
         'phlu-qmpilot-nodetypes-file-asset': -1,
+        'phlu-corporate-textplain-grandparent': 100,
         'url': -1,
         'grandparent': -1
 
@@ -273,9 +274,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var boostParentNodeType = {
-        'Phlu.Neos.NodeTypes:ContentCollection.ContactsGroup': 10,
-        'Phlu.Neos.NodeTypes:ContentCollection.Contacts': 10,
-        'Phlu.Corporate:ContentCollection.Page.View.Default': 100,
         'Phlu.Corporate:Page.View.Default.Default': 0
     };
 
@@ -285,8 +283,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Standorte': ['lng', 'lat'],
         'Projekte': 'title',
         'Seiten': 'breadcrumb',
-        'Weiterbildungsstudiengänge': 'url',
-        'Weiterbildungsskurse': 'url'
+        'Weiterbildungsstudiengänge': 'breadcrumb',
+        'Weiterbildungsskurse': 'breadcrumb',
+        'Weiterbildungsveranstaltungen': 'breadcrumb'
 
 
     };
