@@ -23,18 +23,22 @@
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
-'Phlu.Corporate:Page.News':
+'Phlu.Neos.NodeTypes:Content':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
-'Phlu.Corporate:Page.View.Default':
-  superTypes:
-    'Neoslive.Hybridsearch:Content': true
-  hybridsearch:
-    render: true
-
-'Phlu.Corporate:Page.View.Default.Default':
-  superTypes:
-    'Neoslive.Hybridsearch:Content': true
-  hybridsearch:
-    render: true
+#'Phlu.Corporate:Page.News':
+#  superTypes:
+#    'Neoslive.Hybridsearch:Content': true
+#
+#'Phlu.Corporate:Page.View.Default':
+#  superTypes:
+#    'Neoslive.Hybridsearch:Content': true
+#  hybridsearch:
+#    render: true
+#
+#'Phlu.Corporate:Page.View.Default.Default':
+#  superTypes:
+#    'Neoslive.Hybridsearch:Content': true
+#  hybridsearch:
+#    render: true
