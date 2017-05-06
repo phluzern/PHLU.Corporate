@@ -40,8 +40,7 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Section'
-  hybridsearch:
-    skip: TRUE
+
 
 # Section
 #
