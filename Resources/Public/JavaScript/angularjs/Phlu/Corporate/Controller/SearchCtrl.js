@@ -282,10 +282,10 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Kontakte': ['email', 'phone'],
         'Standorte': ['lng', 'lat'],
         'Projekte': 'title',
-        'Seiten': 'breadcrumb',
-        'Weiterbildungsstudiengänge': 'breadcrumb',
-        'Weiterbildungsskurse': 'breadcrumb',
-        'Weiterbildungsveranstaltungen': 'breadcrumb'
+        'Seiten': 'url',
+        'Weiterbildungsstudiengänge': 'url',
+        'Weiterbildungsskurse': 'url',
+        'Weiterbildungsveranstaltungen': 'url'
 
 
     };
