@@ -28,6 +28,10 @@
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
+'Phlu.Corporate:TextWithImage':
+  superTypes:
+    'Neoslive.Hybridsearch:Content': true
+
 'Phlu.Neos.NodeTypes:Course':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
