@@ -278,16 +278,13 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var groupedBy = {
-
         'Kontakte': ['email', 'phone'],
         'Standorte': ['lng', 'lat'],
         'Projekte': 'title',
-        'Seiten': 'url',
+        'Seiten': ['url','documentNode.title'],
         'Weiterbildungsstudiengänge': 'url',
         'Weiterbildungsskurse': 'url',
         'Weiterbildungsveranstaltungen': 'url'
-
-
     };
 
     var orderBy = {
