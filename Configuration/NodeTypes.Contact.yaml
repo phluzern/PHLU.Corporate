@@ -212,6 +212,7 @@
 'Phlu.Corporate:ContactsGroup':
   superTypes:
     'Phlu.Corporate:Content': true
+    'Phlu.Corporate:Section': true
     'Phlu.Neos.NodeTypes:PlainTitleMixin': true
   ui:
     label: Team

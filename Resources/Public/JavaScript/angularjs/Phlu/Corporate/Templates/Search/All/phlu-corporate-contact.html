@@ -10,7 +10,14 @@
 </h3>
 
 <div class="searchresult-body">
-    <span data-ng-bind="node.getProperty('function')"></span><br>
+
+
+    <span data-ng-if="node.getParent()">
+        <span data-ng-bind="node.getParent().getProperty('title')"></span>,
+    </span>
+    <span data-ng-if="node.getProperty('function')">
+        <span data-ng-bind="node.getProperty('function')"></span>,
+    </span>
     <span data-ng-show="node.getProperty('phone') != ''">{{node.getProperty('phone')}},</span>
     {{node.getProperty('email')}}
 </div>
