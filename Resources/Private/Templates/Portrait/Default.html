@@ -39,6 +39,11 @@
                     </f:if>
                     <a class="content-link-email-contact-person"
                        href="mailto:{contact.email}">{contact.email}</a><br>
+
+                    <f:if condition="{contact.linkssocial} != ''">
+                                {contact.linkssocial -> f:format.raw()}
+                    </f:if>
+
                 </address>
             </div>
 
@@ -295,7 +300,6 @@
             </div>
 
         </f:if>
-
 
         <f:if condition="{contact.links} != ''">
             <div class="row links">

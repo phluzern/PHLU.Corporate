@@ -278,7 +278,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var boostParentNodeType = {
-        'Phlu.Corporate:Page.View.Default.Default': 0
+        'Phlu.Corporate:Contacts': 100
     };
 
     var groupedBy = {
