@@ -280,7 +280,6 @@
                                 <div>
                                     <div id="node-{node.identifier}-{{group.getHashKey()}}-{{$index}}"
                                          ng-repeat="node in group.getNodes(getLimit(group.getLabel()))">
-
                                         <p data-ng-if="node.getProperty('url') == ''">
                                                 <span data-ng-if="node.getProperty('citationstyle') != ''"
                                                       data-ng-bind-html="node.getProperty('citationstyle')"></span>
