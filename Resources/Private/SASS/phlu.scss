@@ -5319,7 +5319,10 @@ body {
           @include content-link("email");
         }
         .content-link-internal,
-        a[data-gentics-aloha-repository='node-repository'] {
+        a[data-gentics-aloha-repository='node-repository'],
+        .phlu-corporate-text a[href^='http://www.phlu.ch'],
+        a[href^='http://phlu.ch'],
+        a[href^='http://neos.phlu.dev'] {
           @include content-link("internal");
         }
         .content-link-portrait {
