@@ -6,9 +6,8 @@
             </b>
 
             <span data-ng-show="node.getProperty('titlename') !== ''"><br>{{node.getProperty('titlename')}}</span>
-            <span data-ng-if="node.getProperty('titlename') == ''">
-            <span data-ng-show="node.getParent().getProperty('title') !== ''"><br>{{node.getParent().getProperty('title')}}</span>
-            <span data-ng-show="node.getParent().getProperty('title') == ''"><br>{{node.getProperty('function')}}</span>
+            <span data-ng-if="node.getProperty('function')"><br>
+            <span data-ng-bind="node.getProperty('function')"></span>
             </span>
 
             <div class="telephone">

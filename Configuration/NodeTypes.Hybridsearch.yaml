@@ -1,16 +1,4 @@
 # Searchable content
-'Phlu.Corporate:Content.Page.HeaderDefault':
-  superTypes:
-    'Neoslive.Hybridsearch:Content': true
-
-'Phlu.Corporate:Text':
-  superTypes:
-    'Neoslive.Hybridsearch:Content': true
-
-'Phlu.Corporate:Table':
-  superTypes:
-    'Neoslive.Hybridsearch:Content': true
-
 'Phlu.Qmpilot.NodeTypes:File':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
@@ -18,6 +6,7 @@
 'Phlu.Corporate:Contact':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
+
 
 'Phlu.Neos.NodeTypes:Project':
   superTypes:
@@ -31,22 +20,36 @@
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
-'Phlu.Neos.NodeTypes:Database':
+'Phlu.Corporate:TextPlain':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
-'Phlu.Corporate:Page.News':
+'Phlu.Corporate:Text':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
-'Phlu.Corporate:Page.View.Default':
+'Phlu.Corporate:TextWithImage':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
-  hybridsearch:
-    render: true
 
-'Phlu.Corporate:Page.View.Default.Default':
+'Phlu.Neos.NodeTypes:Course':
   superTypes:
     'Neoslive.Hybridsearch:Content': true
-  hybridsearch:
-    render: true
+
+
+
+#'Phlu.Corporate:Page.News':
+#  superTypes:
+#    'Neoslive.Hybridsearch:Content': true
+#
+#'Phlu.Corporate:Page.View.Default':
+#  superTypes:
+#    'Neoslive.Hybridsearch:Content': true
+#  hybridsearch:
+#    render: true
+#
+#'Phlu.Corporate:Page.View.Default.Default':
+#  superTypes:
+#    'Neoslive.Hybridsearch:Content': true
+#  hybridsearch:
+#    render: true

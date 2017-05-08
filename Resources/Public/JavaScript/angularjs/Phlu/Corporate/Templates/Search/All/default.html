@@ -2,6 +2,6 @@
     <a class="content-link-internal" href="{{node.getUrl()}}">{{node.getDocumentNode().getProperty('title')}}</a>
 </h3>
 <div class="searchresult-body">
-    {{node.getPreview()}}
+    <span data-ng-bind="node.getPreview(128,'text')"></span>
 </div>
 <div ng-bind-html="node.getBreadcrumb()"></div>

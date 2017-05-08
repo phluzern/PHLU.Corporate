@@ -84,7 +84,13 @@ PhluCorporateApp.directive('search', function ($sce) {
 
                         case 'blog':
 
-                            return template + '/Group/blog.html';
+                            if ($scope.view === 'all') {
+                                return template + '/All/blog.html';
+                            } else {
+                                return template + '/Group/blog.html';
+                            }
+
+
 
                         case 'phlu-neos-nodetypes-publication':
 
@@ -248,7 +254,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-text': 150,
         'phlu-corporate-contact-education': -1, // dont'search here
         'phlu-corporate-contact-activities': -1, // dont'search here
-        'phlu-corporate-contact-function': 10,
+        'phlu-corporate-contact-function': 1,
         'phlu-corporate-contact-functions': -1,
         'phlu-corporate-contact-consulting': -1, // dont'search here
         'phlu-corporate-contact-expertise': -1, // dont'search here
@@ -256,15 +262,19 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contactsgroup.phlu-corporate-contact-firstname': 60,
         'phlu-corporate-contactsgroup.phlu-corporate-contact-lastname': 60,
         'phlu-corporate-contact-phone': 15000,
-        'bibliothek-title': 1
+        'phlu-neos-nodetypes-course-module-furthereducation-title': -1,
+        'phlu-neos-nodetypes-course-module-furthereducation-grandparent': -1,
+        'phlu-neos-nodetypes-course-module-furthereducation-url': -1,
+        'phlu-qmpilot-nodetypes-file-asset': -1,
+        'phlu-corporate-textplain-grandparent': 100,
+        'url': -1,
+        'grandparent': -1
 
 
     };
 
     var boostParentNodeType = {
-        'Phlu.Neos.NodeTypes:ContentCollection.ContactsGroup': 1.2,
-        'Phlu.Neos.NodeTypes:ContentCollection.Contacts': 1.8,
-        'Phlu.Corporate:ContentCollection.Page.View.Default': 1.5
+        'Phlu.Corporate:Page.View.Default.Default': 0
     };
 
     var groupedBy = {
@@ -272,9 +282,10 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Kontakte': ['email', 'phone'],
         'Standorte': ['lng', 'lat'],
         'Projekte': 'title',
-        'Seiten': 'breadcrumb',
+        'Seiten': 'url',
         'Weiterbildungsstudiengänge': 'url',
-        'Weiterbildungsskurse': 'url'
+        'Weiterbildungsskurse': 'url',
+        'Weiterbildungsveranstaltungen': 'url'
 
 
     };
@@ -298,7 +309,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -314,7 +325,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -331,7 +342,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -348,7 +359,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -365,7 +376,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -382,7 +393,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -399,7 +410,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -416,7 +427,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         'results': {'selector': 'rss.channel.item'},
                         'fields': {
                             'title': 'title',
-                            'rawcontent': 'description',
+                            'description': 'description',
                             'url': 'link',
                             'content': 'encoded'
                         }
@@ -474,9 +485,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var searchResultApplyTimer = null;
     var lasthash = null;
 
-    
+    search.disableRealtime();
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
-    search.setExternalSources(external);
+    //search.setExternalSources(external);
     search.setGroupedBy(groupedBy).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
         if (searchResultApplyTimer) {
