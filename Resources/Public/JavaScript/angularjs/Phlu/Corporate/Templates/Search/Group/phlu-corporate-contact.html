@@ -4,10 +4,13 @@
             <b>
                 {{node.getProperty('lastname')}} {{node.getProperty('firstname')}}
             </b>
-
-            <span data-ng-show="node.getProperty('titlename') !== ''"><br>{{node.getProperty('titlename')}}</span>
-            <span data-ng-if="node.getProperty('function')"><br>
-            <span data-ng-bind="node.getProperty('function')"></span>
+            <span data-ng-if="node.getParent().getProperty('title')">
+             <br> <span data-ng-bind="node.getParent().getProperty('title')"></span>
+            </span>
+            <span data-ng-if="!node.getParent().getProperty('title').length">
+                <span data-ng-if="node.getProperty('function')"><br>
+                    <span data-ng-bind="node.getProperty('function')"></span>
+                </span>
             </span>
 
             <div class="telephone">
