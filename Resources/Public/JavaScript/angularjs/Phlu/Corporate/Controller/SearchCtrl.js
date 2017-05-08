@@ -262,10 +262,14 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contactsgroup.phlu-corporate-contact-firstname': 60,
         'phlu-corporate-contactsgroup.phlu-corporate-contact-lastname': 60,
         'phlu-corporate-contact-phone': 15000,
-        'phlu-neos-nodetypes-course-module-furthereducation-title': -1,
-        'phlu-neos-nodetypes-course-module-furthereducation-grandparent': -1,
-        'phlu-neos-nodetypes-course-module-furthereducation-url': -1,
-        'phlu-qmpilot-nodetypes-file-asset': -1,
+        'phlu-neos-nodetypes-course-module-furthereducation-title': 100,
+        'phlu-neos-nodetypes-course-study-furthereducation-title': 100,
+        'phlu-neos-nodetypes-course-event-furthereducation-title': 100,
+        'phlu-neos-nodetypes-course-module-furthereducation-genre': 100,
+        'phlu-neos-nodetypes-course-study-furthereducation-genre': 100,
+        'phlu-neos-nodetypes-course-module-furthereducation-nr': 200,
+        'phlu-neos-nodetypes-course-study-furthereducation-nr': 200,
+        'phlu-neos-nodetypes-course-event-furthereducation-nr': 200,
         'phlu-corporate-textplain-grandparent': 100,
         'url': -1,
         'grandparent': -1
@@ -484,6 +488,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     search.disableRealtime();
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
+    search.addPropertyFilter('asset.url', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
+
     //search.setExternalSources(external);
     search.setGroupedBy(groupedBy).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
