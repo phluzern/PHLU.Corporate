@@ -94,7 +94,6 @@ $font-size-onepage-teasers: 1.125rem;
 $dropdown-menu-font-size: 1.125rem;
 $font-size-langnav: 1.125rem;
 $font-size-search-filters: 1.125rem;
-$font-size-phlu-team-members: 1.125rem;
 $font-size-href: 1.125rem;
 $font-size-nav-teaser-header: 1.125rem;
 $font-size-btn: 1.125rem;
@@ -108,6 +107,7 @@ $font-size-table-href: 1rem;
 $nav-link-font-size: 1rem;
 $font-size-accordion-table: 1rem;
 $font-size-infobox-small: 1rem;
+$font-size-phlu-team-members: 1rem;
 $font-size-phlu-team-members-mobile: 1rem;
 $font-size-phlu-team-member-function: 1rem;
 
@@ -1141,7 +1141,7 @@ body {
           color: $hazelbrowndark;
         }
         &::after {
-          color:$hazelbrowndark;
+          color: $hazelbrowndark;
         }
       }
       ul {
@@ -1153,13 +1153,13 @@ body {
         width: 100%;
 
         li {
-          padding:15px 0;
+          padding: 15px 0;
           a {
             color: $hazelbrowndark;
             width: 100%;
             display: block;
             &:hover {
-              color:$font-color;
+              color: $font-color;
             }
           }
 
@@ -2026,11 +2026,35 @@ body {
       }
       .phlu-accordion {
         .nav-teaser-item {
-          .phlu-teaser-body {
-            background-color: $lightgrey;
-            padding: 18px;
-            address {
-              margin: 0;
+          @include media-breakpoint-down("sm") {
+            padding-right:0;
+
+          }
+          .row {
+            margin-right:0;
+            .phlu-teaser-body, .phlu-teaser-caret-right {
+              background-color: $lightgrey;
+              height: 232px;
+            }
+            .phlu-teaser-body {
+              padding: 18px;
+              address {
+                margin: 0;
+                .content-link-email-contact-person {
+                  white-space: nowrap;
+                }
+              }
+            }
+            .phlu-teaser-caret-right {
+              img {
+                position: relative;
+                top: 18px;
+                width: 100%;
+                @include media-breakpoint-down("sm") {
+                  width: auto;
+                  margin-right:0;
+                }
+              }
             }
           }
         }
@@ -2050,7 +2074,6 @@ body {
         }
       }
     }
-
     //
     // news & events teasers
     //
@@ -3121,6 +3144,7 @@ body {
                 margin-bottom: 0;
                 a.content-link-email-contact-person {
                   background-image: none;
+                  white-space: nowrap;
                 }
               }
               address, a {
