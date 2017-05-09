@@ -486,7 +486,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var searchResultApplyTimer = null;
     var lasthash = null;
 
-    search.disableRealtime();
+    //search.disableRealtime();
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('asset.url', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
 

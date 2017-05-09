@@ -9,7 +9,6 @@
         <div class="col-xs-12">
             <div>
 
-
                 <div class="row">
 
                     <div class="col-xs-12">
@@ -43,6 +42,7 @@
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </div><!-- /input-group -->
 
+
                         <div class="extendedSearch">
 
                             <button ng-cloak type="button" class="btn btn-default"
@@ -69,7 +69,7 @@
                 <div class="row extendedSearchFilter">
 
 
-                    <div data-ng-show="isLoadedFirst()">
+                    <div data-ng-if="isLoadedFirst()">
                         <div data-ng-show="nodetypesFilterCurrentLabel == 'Alle'" class="col-xs-12">
                             <h3>Kurse und Studiengänge</h3>
 

@@ -1,7 +1,7 @@
 PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
     var list = new $hybridsearchObject(hybridsearch);
-    list.disableRealtime();
+    //list.disableRealtime();
 
     $scope.result = new $hybridsearchResultsObject();
     $scope.search = '';
@@ -297,7 +297,7 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         .addPropertyFilter('persons.EventoID', 'participants', $scope)
         .addPropertyFilter('publicationtype.id', 'publicationtype', $scope)
         .addPropertyFilter('organisations.OrganisationId', 'organisations', $scope)
-        .disableRealtime()
+        //.disableRealtime()
         .$bind('result', $scope)
         .run();
 

@@ -241,7 +241,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                 $scope.$digest();
             })
 
-        }, 1000);
+        }, 200);
 
         return true;
 
