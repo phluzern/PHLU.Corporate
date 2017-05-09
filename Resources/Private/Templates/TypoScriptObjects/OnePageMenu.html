@@ -34,6 +34,20 @@
             </f:if>
 
         </ul>
+        <div class="anchors-mobile-view">
+            <ul>
+                <f:for each="{items}" as="item" iteration="iterator">
+                    <li>
+                        <a class="nav-item nav-link anchor-nav" href="#{item.node.properties.uriPathSegment}">{item.label}</a>
+                    </li>
+                </f:for>
+                <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.View.Dossier'">
+                    <li>
+                        <a class="nav-item nav-link anchor-nav" href="#kontakt">Kontakt</a>
+                    </li>
+                </f:if>
+            </ul>
+        </div>
 
     </f:if>
 </f:section>

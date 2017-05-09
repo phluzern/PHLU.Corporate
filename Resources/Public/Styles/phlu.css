@@ -8654,6 +8654,9 @@ body {
       @media (max-width: 1279px) {
         body .all .nav-pills {
           padding-bottom: 20px; } }
+      @media (max-width: 543px) {
+        body .all .nav-pills {
+          display: none; } }
       body .all .nav-pills li a.nav-link {
         color: #9f632a;
         border: 2px solid #9f632a;
@@ -8695,6 +8698,38 @@ body {
         body .all .nav-pills li .resetFilter a {
           color: #333333;
           font-weight: 100; }
+    body .all .anchors-mobile-view {
+      display: none;
+      padding: 33px 0; }
+      @media (max-width: 543px) {
+        body .all .anchors-mobile-view {
+          display: block; } }
+      body .all .anchors-mobile-view button {
+        width: 100%;
+        background-color: white;
+        text-align: left;
+        border: 2px solid #9f632a; }
+        body .all .anchors-mobile-view button a {
+          color: #9f632a; }
+        body .all .anchors-mobile-view button::after {
+          color: #9f632a; }
+      body .all .anchors-mobile-view ul {
+        display: block;
+        position: relative;
+        border: 2px solid #9f632a;
+        list-style-type: none;
+        border-radius: 0;
+        width: 100%; }
+        body .all .anchors-mobile-view ul li {
+          padding: 15px 0; }
+          body .all .anchors-mobile-view ul li a {
+            color: #9f632a;
+            width: 100%;
+            display: block; }
+            body .all .anchors-mobile-view ul li a:hover {
+              color: #5c5c5c; }
+        body .all .anchors-mobile-view ul:hover {
+          border: 2px solid #171815; }
     body .all .form-control {
       padding: 0.313rem 0.3125rem;
       border-radius: 4px;
@@ -11707,6 +11742,9 @@ body {
           body .all .main .further-education-detail .registration .greybgBody .shareAndRegister {
             text-align: right;
             float: none; }
+            body .all .main .further-education-detail .registration .greybgBody .shareAndRegister a {
+              background-image: none;
+              margin-top: 0; }
             @media (max-width: 767px) {
               body .all .main .further-education-detail .registration .greybgBody .shareAndRegister {
                 margin-top: 30px; } }
@@ -11716,6 +11754,10 @@ body {
         margin-bottom: 0; }
       body .all .main .shareAndRegister {
         float: right; }
+        body .all .main .shareAndRegister a {
+          margin-top: 0; }
+          body .all .main .shareAndRegister a.share {
+            background-image: none; }
         body .all .main .shareAndRegister .btn.share {
           color: #28818f;
           background-color: inherit;

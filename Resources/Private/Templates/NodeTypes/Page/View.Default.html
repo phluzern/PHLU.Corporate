@@ -54,66 +54,67 @@
     </f:case>
     <f:case value="Event">
         <f:if condition="{fromDate}">
-        <div class="row">
-            <div class="col-xs-12 flowtext-phlu-event">
-                <div class="row {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}">
-                    <div class=" col-xs-12">
-                        <f:if condition="{eventType} == 'isEvent'">
-                            <div class="initial">
-                                <f:format.date format="d">{fromDate}</f:format.date>.
-                            </div>
-                        </f:if>
-                        <f:if condition="{eventType} == 'isExhibition'">
-                            <div class="initial exhibition">
-                                A
-                                <div class="description">
-                                    Ausstellung
+            <div class="row">
+                <div class="col-xs-12 flowtext-phlu-event">
+                    <div class="row {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}">
+                        <div class=" col-xs-12">
+                            <f:if condition="{eventType} == 'isEvent'">
+                                <div class="initial">
+                                    <f:format.date format="d">{fromDate}</f:format.date>
+                                    .
                                 </div>
-                            </div>
-                        </f:if>
-                        <f:if condition="{eventType} == 'isMeeting'">
-                            <div class="initial meeting">
-                                T
-                                <div class="description">
-                                    Tagung
-                                </div>
-                            </div>
-                        </f:if>
-
-                        <div class="date-location-title">
-
-                            <f:if condition="{eventType} == 'isExhibition'">
-                                <f:then>
-                                    <b>
-                                        <f:format.date format="d. F Y">{fromDate}</f:format.date>
-                                        -
-                                        <f:format.date format="d. F Y">{toDate}</f:format.date>
-                                    </b>
-                                </f:then>
-                                <f:else>
-                                    <f:if condition="{eventType} == 'isMeeting'">
-                                        <f:then>
-                                            <b>
-                                                <f:format.date format="d. F Y">{fromDate}</f:format.date>
-                                                -
-                                                <f:format.date format="d. F Y">{toDate}</f:format.date>
-                                            </b>
-                                        </f:then>
-                                        <f:else>
-                                            <b>
-                                                <f:format.date format="F Y">{fromDate}</f:format.date>
-                                            </b>
-                                        </f:else>
-                                    </f:if>
-                                </f:else>
                             </f:if>
-                            <br>{location}
-                        </div>
+                            <f:if condition="{eventType} == 'isExhibition'">
+                                <div class="initial exhibition">
+                                    A
+                                    <div class="description">
+                                        Ausstellung
+                                    </div>
+                                </div>
+                            </f:if>
+                            <f:if condition="{eventType} == 'isMeeting'">
+                                <div class="initial meeting">
+                                    T
+                                    <div class="description">
+                                        Tagung
+                                    </div>
+                                </div>
+                            </f:if>
 
+                            <div class="date-location-title">
+
+                                <f:if condition="{eventType} == 'isExhibition'">
+                                    <f:then>
+                                        <b>
+                                            <f:format.date format="d. F Y">{fromDate}</f:format.date>
+                                            -
+                                            <f:format.date format="d. F Y">{toDate}</f:format.date>
+                                        </b>
+                                    </f:then>
+                                    <f:else>
+                                        <f:if condition="{eventType} == 'isMeeting'">
+                                            <f:then>
+                                                <b>
+                                                    <f:format.date format="d. F Y">{fromDate}</f:format.date>
+                                                    -
+                                                    <f:format.date format="d. F Y">{toDate}</f:format.date>
+                                                </b>
+                                            </f:then>
+                                            <f:else>
+                                                <b>
+                                                    <f:format.date format="F Y">{fromDate}</f:format.date>
+                                                </b>
+                                            </f:else>
+                                        </f:if>
+                                    </f:else>
+                                </f:if>
+                                <br>{location}
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </f:if>
     </f:case>
 </f:switch>
@@ -146,6 +147,22 @@
                         </f:else>
                     </f:if>
                 </ul>
+                <div class="anchors-mobile-view">
+                    <ul>
+                        <f:for each="{sections}" as="item" iteration="iterator">
+                            <li >
+                                <a class="nav-item nav-link anchor-nav" href="#node-{item.Identifier}">{item.properties.title}</a>
+                            </li>
+                        </f:for>
+                        <f:if condition="{contactIsHidden}">
+                            <f:else>
+                                <li>
+                                    <a class="nav-item nav-link anchor-nav" href="#contactperson">Kontakt</a>
+                                </li>
+                            </f:else>
+                        </f:if>
+                    </ul>
+                </div>
             </f:if>
         </f:if>
     </div>
