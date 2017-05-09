@@ -228,7 +228,7 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
 
     list = new $hybridsearchObject(hybridsearch);
     list.disableRealtime();
-    
+
     $scope.result = new $hybridsearchResultsObject();
     $scope.participants = {};
     $scope.organisations = {};
