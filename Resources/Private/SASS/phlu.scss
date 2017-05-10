@@ -3339,6 +3339,48 @@ body {
               margin-top: -3px;
             }
           }
+          .telephone {
+            i.fa-phone {
+              padding-right:10px;
+            }
+          }
+          .content-link-email-contact-person {
+            &::before {
+              margin-right:5px;
+            }
+          }
+          .social {
+            list-style-type: none;
+            li {
+              a {
+                margin-left:5px;
+              }
+            }
+            .twitter {
+              background-image: none;
+              &::before {
+                font-family: FontAwesome;
+                content: " \f099";
+                position: absolute;
+                left:15px;
+              }
+              &::after {
+                background-image: none;
+              }
+            }
+            .blog {
+              background-image: none;
+              &::before {
+                font-family: FontAwesome;
+                content: " \f086";
+                position: absolute;
+                left:15px;
+              }
+              &::after {
+                background-image: none;
+              }
+            }
+          }
         }
         &.function, &.working-priorities, &.consultation-priorities, &.achievements, &.talks, &.links {
           ul {
