@@ -1,7 +1,7 @@
 PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
     var list = new $hybridsearchObject(hybridsearch);
-    //list.disableRealtime();
+    list.disableRealtime();
 
     $scope.result = new $hybridsearchResultsObject();
     $scope.search = '';
