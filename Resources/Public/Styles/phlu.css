@@ -9695,7 +9695,7 @@ body {
           body .all .row.subjectsfilternav .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-body.col-xs-10 {
             padding-right: 0; }
       body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item > h3 {
-        margin-top: 30px; }
+        margin: 30px 0 20px; }
         body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item > h3 a {
           color: #545454; }
       body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row {
@@ -9918,7 +9918,7 @@ body {
     body .all .phlu-accordion .panel > .panel-collapse .nestedAccordionContactItem, body .all .phlu-corporate-section .panel > .panel-collapse .nestedAccordionContactItem {
       border-bottom: 2px solid #edeae8;
       padding-top: 15px;
-      font-size: 1rem;
+      font-size: 1.125rem;
       cursor: pointer; }
       body .all .phlu-accordion .panel > .panel-collapse .nestedAccordionContactItem:last-child, body .all .phlu-corporate-section .panel > .panel-collapse .nestedAccordionContactItem:last-child {
         border-bottom: 0; }
@@ -9993,9 +9993,8 @@ body {
           body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address a.content-link-email-contact-person {
             background-image: none;
             white-space: nowrap; }
-        @media (max-width: 1279px) {
-          body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body a {
-            font-size: 1rem; } }
+        body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body address, body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body a {
+          font-size: 1rem; }
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
           position: relative;
           top: 18px;
@@ -10207,6 +10206,8 @@ body {
         padding-left: 0; }
         body .all .phlu-dozpage .row.cv ul.list li ul {
           list-style-type: square; }
+    body .all .phlu-dozpage .row.publications-list .phlu-accordion .collapsed::after, body .all .phlu-dozpage .row.science-projects .phlu-accordion .collapsed::after {
+      right: 30px; }
     body .all .phlu-dozpage .row:last-child {
       margin-bottom: 60px; }
       body .all .phlu-dozpage .row:last-child hr {
@@ -11298,7 +11299,7 @@ body {
           border: 0;
           padding-bottom: 40px; }
       body .all .main > .row address, body .all .main > .row-fullwidth-content > .row address {
-        font-size: 1rem; }
+        font-size: 1.125rem; }
         @media (max-width: 1279px) {
           body .all .main > .row address, body .all .main > .row-fullwidth-content > .row address {
             font-size: 1rem; } }
@@ -11313,7 +11314,7 @@ body {
           color: #9f632a; }
         body .all .main > .row address a.content-link-email-contact-person, body .all .main > .row address a.content-link-portrait, body .all .main > .row address a.content-link-location, body .all .main > .row-fullwidth-content > .row address a.content-link-email-contact-person, body .all .main > .row-fullwidth-content > .row address a.content-link-portrait, body .all .main > .row-fullwidth-content > .row address a.content-link-location {
           background-image: none;
-          font-size: 1rem; }
+          font-size: 1.125rem; }
           @media (max-width: 1279px) {
             body .all .main > .row address a.content-link-email-contact-person, body .all .main > .row address a.content-link-portrait, body .all .main > .row address a.content-link-location, body .all .main > .row-fullwidth-content > .row address a.content-link-email-contact-person, body .all .main > .row-fullwidth-content > .row address a.content-link-portrait, body .all .main > .row-fullwidth-content > .row address a.content-link-location {
               font-size: 1rem; } }
