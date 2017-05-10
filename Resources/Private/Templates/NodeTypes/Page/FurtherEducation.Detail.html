@@ -41,6 +41,27 @@
                                 </li>
 
                             </ul>
+                            <div class="anchors-mobile-view">
+                                <ul>
+                                    <li>
+                                        <a class="nav-item nav-link anchor-nav"
+                                           href="#uebersicht">Übersicht</a>
+                                    </li>
+                                    <f:for each="{sectionsInPage}" as="item" iteration="iterator">
+                                        <li >
+                                            <a class="nav-item nav-link anchor-nav" href="#node-{item.Identifier}">{item.properties.title}</a>
+                                        </li>
+                                    </f:for>
+                                    <li>
+                                        <a class="nav-item nav-link anchor-nav"
+                                           href="#kontakt">Kontakt</a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-item nav-link anchor-nav"
+                                           href="#anmeldung">Anmeldung</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
                     </f:if>
