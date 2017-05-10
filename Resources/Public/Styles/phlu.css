@@ -8558,6 +8558,9 @@ body {
         body .all h1 {
           font-size: 2.875rem;
           margin: 0 0 35px; } }
+      @media (max-width: 1279px) {
+        body .all h1 {
+          line-height: 40px; } }
     body .all h2 {
       margin: 24px 0 19px; }
       @media (min-width: 992px) {
@@ -8575,6 +8578,9 @@ body {
       text-transform: uppercase; }
     body .all p {
       line-height: 1.8; }
+      @media (max-width: 1279px) {
+        body .all p {
+          line-height: 30px; } }
       @media (min-width: 1280px) {
         body .all p {
           width: 80%;
@@ -9886,14 +9892,8 @@ body {
           font-size: 35px;
           position: absolute;
           content: " \002b";
-          right: 20px;
+          right: 30px;
           margin-top: -8px; }
-          @media (max-width: 1599px) {
-            body .all .phlu-accordion .panel .panel-heading .panel-title a::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a::after {
-              right: 53px; } }
-          @media (max-width: 991px) {
-            body .all .phlu-accordion .panel .panel-heading .panel-title a::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a::after {
-              right: 30px; } }
         body .all .phlu-accordion .panel .panel-heading .panel-title a[aria-expanded=false]::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a[aria-expanded=false]::after {
           content: " \002b"; }
         body .all .phlu-accordion .panel .panel-heading .panel-title a[aria-expanded=true]::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a[aria-expanded=true]::after {
@@ -10402,7 +10402,8 @@ body {
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn {
           color: white;
           background-color: #28818f;
-          font-size: 1.125rem; }
+          font-size: 1.125rem;
+          background-image: none; }
           @media (max-width: 767px) {
             body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn {
               font-size: 1rem; } }

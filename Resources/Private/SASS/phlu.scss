@@ -126,6 +126,8 @@ $component-active-bg: #895119;
 // phlu flowtext formatting
 $line-height-lg: 2;
 $line-height-sm: 1.8;
+$line-height-mobile-h1:40px;
+$line-height-mobile-p:30px;
 $flowtext-narrow-width: 80%;
 
 // phlu carousel elements
@@ -942,6 +944,9 @@ body {
         font-size: $font-size-h1-desktop;
         margin: 0 0 35px;
       }
+      @include media-breakpoint-down("lg") {
+        line-height: $line-height-mobile-h1;
+      }
     }
     h2 {
       margin: 24px 0 19px;
@@ -963,6 +968,9 @@ body {
     }
     p {
       line-height: $line-height-sm;
+      @include media-breakpoint-down("lg") {
+        line-height: $line-height-mobile-p;
+      }
       @include media-breakpoint-up("xl") {
         width: $flowtext-narrow-width;
         font-size: $font-size-paragraph-desktop;
@@ -2972,13 +2980,7 @@ body {
                 font-size: 35px;
                 position: absolute;
                 content: " \002b";
-                right: 20px;
-                @include media-breakpoint-down('xxl') {
-                  right: 53px;
-                }
-                @include media-breakpoint-down('md') {
-                  right: 30px;
-                }
+                right: 30px;
                 margin-top: -8px;
               }
               &[aria-expanded=false] {
@@ -3833,6 +3835,7 @@ body {
                         color: white;
                         background-color: $petrol;
                         font-size: $font-size-btn;
+                        background-image: none;
                         @include media-breakpoint-down("sm") {
                           font-size: $font-size-btn-mobile;
                         }
