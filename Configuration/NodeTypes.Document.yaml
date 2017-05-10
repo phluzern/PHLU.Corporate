@@ -171,6 +171,8 @@
       'Neos.Neos:Shortcut': true
 
 'Phlu.Corporate:Page.View.Default.Default':
+  ui:
+    label: Standard-Seite (Unterseite)
   superTypes:
     'Phlu.Corporate:Page.View.Default': true
     'Phlu.Neos.NodeTypes:TagMixin': true
