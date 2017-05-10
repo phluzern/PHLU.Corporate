@@ -1093,6 +1093,10 @@ body {
             position: relative;
             margin-right: -30px;
             margin-top: -46px;
+            @include media-breakpoint-down("xs") {
+              margin-right: -5px;
+              margin-top: 0;
+            }
             color: white;
             font-weight: $font-weight-bold;
             background-color: $petroldark;
@@ -1120,16 +1124,17 @@ body {
           margin-right: -16px;
           font-size: 10px;
           cursor: pointer;
+          @include media-breakpoint-down("xs") {
+            margin-top: -39px;
+            margin-right: 5px;
+          }
           a {
+            color: $black;
+            font-weight: 100;
             &:hover {
               background-color: inherit;
               border: 0;
             }
-          }
-
-          a {
-            color: $black;
-            font-weight: 100;
           }
         }
       }
@@ -3664,6 +3669,9 @@ body {
       }
       .row.subjectsfilternav {
         .nav-pills {
+          @include media-breakpoint-down("sm") {
+            display: block;
+          }
           padding-bottom: 4px;
           li {
             a.nav-link {
@@ -3682,6 +3690,9 @@ body {
             }
             &.nav-item {
               margin-left: 0;
+              @include media-breakpoint-down("xs") {
+               width: 100%;
+              }
             }
           }
         }
@@ -5512,9 +5523,6 @@ body {
           background-color: $lightblue;
           margin-top: 50px;
           margin-bottom: 35px;
-          @include media-breakpoint-down("md") {
-            margin-top: 0;
-          }
           h2 {
             @include media-breakpoint-up("lg") {
               margin: 35px 0 32px;

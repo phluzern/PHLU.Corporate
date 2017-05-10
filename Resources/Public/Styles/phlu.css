@@ -8685,6 +8685,10 @@ body {
           padding: 3px;
           border-radius: 13px;
           font-size: 14px; }
+          @media (max-width: 543px) {
+            body .all .nav-pills li a.nav-link .count {
+              margin-right: -5px;
+              margin-top: 0; } }
       body .all .nav-pills li a.nav-item {
         margin: 0 5px 5px 0; }
       body .all .nav-pills li a:hover, body .all .nav-pills li a:active {
@@ -8698,12 +8702,16 @@ body {
         margin-right: -16px;
         font-size: 10px;
         cursor: pointer; }
-        body .all .nav-pills li .resetFilter a:hover {
-          background-color: inherit;
-          border: 0; }
+        @media (max-width: 543px) {
+          body .all .nav-pills li .resetFilter {
+            margin-top: -39px;
+            margin-right: 5px; } }
         body .all .nav-pills li .resetFilter a {
           color: #333333;
           font-weight: 100; }
+          body .all .nav-pills li .resetFilter a:hover {
+            background-color: inherit;
+            border: 0; }
     body .all .anchors-mobile-view {
       display: none;
       padding: 33px 0; }
@@ -10291,6 +10299,9 @@ body {
         margin-right: 10px; }
     body .all .ppdb-list .row.subjectsfilternav .nav-pills, body .all .further-education-list .row.subjectsfilternav .nav-pills, body .all .further-education-special-search .row.subjectsfilternav .nav-pills {
       padding-bottom: 4px; }
+      @media (max-width: 767px) {
+        body .all .ppdb-list .row.subjectsfilternav .nav-pills, body .all .further-education-list .row.subjectsfilternav .nav-pills, body .all .further-education-special-search .row.subjectsfilternav .nav-pills {
+          display: block; } }
       body .all .ppdb-list .row.subjectsfilternav .nav-pills li a.nav-link, body .all .further-education-list .row.subjectsfilternav .nav-pills li a.nav-link, body .all .further-education-special-search .row.subjectsfilternav .nav-pills li a.nav-link {
         color: #333333;
         border: 0;
@@ -10303,6 +10314,9 @@ body {
           padding-right: 5px; }
       body .all .ppdb-list .row.subjectsfilternav .nav-pills li.nav-item, body .all .further-education-list .row.subjectsfilternav .nav-pills li.nav-item, body .all .further-education-special-search .row.subjectsfilternav .nav-pills li.nav-item {
         margin-left: 0; }
+        @media (max-width: 543px) {
+          body .all .ppdb-list .row.subjectsfilternav .nav-pills li.nav-item, body .all .further-education-list .row.subjectsfilternav .nav-pills li.nav-item, body .all .further-education-special-search .row.subjectsfilternav .nav-pills li.nav-item {
+            width: 100%; } }
     body .all .ppdb-list .row.subjectsfilternav .result-panel, body .all .further-education-list .row.subjectsfilternav .result-panel, body .all .further-education-special-search .row.subjectsfilternav .result-panel {
       max-height: 400px;
       overflow-y: auto;
@@ -11619,9 +11633,6 @@ body {
         background-color: #DADCE8;
         margin-top: 50px;
         margin-bottom: 35px; }
-        @media (max-width: 991px) {
-          body .all .main > .row.bluebg, body .all .main > .row-fullwidth-content > .row.bluebg {
-            margin-top: 0; } }
         @media (min-width: 992px) {
           body .all .main > .row.bluebg h2, body .all .main > .row-fullwidth-content > .row.bluebg h2 {
             margin: 35px 0 32px; } }
