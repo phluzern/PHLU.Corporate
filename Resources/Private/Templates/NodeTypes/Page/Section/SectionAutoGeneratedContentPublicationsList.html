@@ -247,6 +247,11 @@
                                            data-ng-if="group.count() > getLimit(group.getLabel())">
                                             <!--{{limitChunkSize}} -->
                                             mehr anzeigen
+                                            <div>
+                                                <div data-ng-bind="getLimit(group.getLabel())"></div>
+                                                <div class="counter-divider">von</div>
+                                                <div data-ng-bind="group.count()"></div>
+                                            </div>
                                         </a>
                                     </div>
                                 </div>
@@ -303,7 +308,7 @@
                                            class="btn loadMore"
                                            data-ng-if="group.count() > getLimit(group.getLabel())">
                                             <!--{{limitChunkSize}} -->
-                                            mehr anzeigen
+                                            mehr anzeigen <span>(<span data-ng-bind="getLimit(group.getLabel())"></span> / <span data-ng-bind="group.count()"></span>)</span>
                                         </a>
                                     </div>
                                 </div>

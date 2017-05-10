@@ -1030,15 +1030,33 @@ body {
         }
       }
       &.loadMore {
-
         background-color: $grey11;
         margin: auto;
-        padding: 6px 23px 6px 46px;
+        padding: 6px 54px 6px 46px;
         color: $naviBlack;
         display: block;
         width: auto;
-        max-width: 200px;
-
+        > div {
+          color:$black;
+          font-size:$font-size-small;
+          font-weight: $font-weight-bold;
+          padding:5px 7px;
+          position: absolute;
+          margin-left: 140px;
+          margin-top: -43px;
+          border-left:1px solid white;
+          > div {
+            padding: 0;
+            height: 13px;
+            position: relative;
+            top: -5px;
+            &.counter-divider {
+              position: relative;
+              top:-4px;
+              font-size:0.6rem;
+            }
+          }
+        }
         &:hover {
           background-color: $grey12;
         }

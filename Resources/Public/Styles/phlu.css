@@ -8628,11 +8628,28 @@ body {
       body .all .btn.loadMore {
         background-color: #e6e6e6;
         margin: auto;
-        padding: 6px 23px 6px 46px;
+        padding: 6px 54px 6px 46px;
         color: #171815;
         display: block;
-        width: auto;
-        max-width: 200px; }
+        width: auto; }
+        body .all .btn.loadMore > div {
+          color: #333333;
+          font-size: 0.75rem;
+          font-weight: 700;
+          padding: 5px 7px;
+          position: absolute;
+          margin-left: 140px;
+          margin-top: -43px;
+          border-left: 1px solid white; }
+          body .all .btn.loadMore > div > div {
+            padding: 0;
+            height: 13px;
+            position: relative;
+            top: -5px; }
+            body .all .btn.loadMore > div > div.counter-divider {
+              position: relative;
+              top: -4px;
+              font-size: 0.6rem; }
         body .all .btn.loadMore:hover {
           background-color: #cccccc; }
         body .all .btn.loadMore:before {
