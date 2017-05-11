@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
     initFrontend();
+    initBackend();
 });
 
 function initFrontend() {
@@ -309,6 +310,13 @@ function initCarousel() {
     });
 }
 
+function initBackend() {
+    $('.neos-tooltip-inner').click(function () {
+            $(this).hide();
+    });
+}
+
+
 /* init rcrumbs */
 $(document).mousemove(function (event) {
     window.mouseLastEvent = event;
@@ -422,4 +430,3 @@ $('.rcrumbs-container').rcrumbs({
         }
     }
 });
-

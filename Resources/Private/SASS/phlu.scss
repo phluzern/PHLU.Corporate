@@ -126,8 +126,8 @@ $component-active-bg: #895119;
 // phlu flowtext formatting
 $line-height-lg: 2;
 $line-height-sm: 1.8;
-$line-height-mobile-h1:40px;
-$line-height-mobile-p:30px;
+$line-height-mobile-h1: 40px;
+$line-height-mobile-p: 30px;
 $flowtext-narrow-width: 80%;
 
 // phlu carousel elements
@@ -167,13 +167,13 @@ $hr-border-color: #e5e5e5;
 
 // phlu forms
 $input-border-radius: 2px;
-$input-btn-sidebar-border-width: 1px;
-$input-sidebar-border-color: $grey10;
+$input-btn-sidebar-border-width: 2px;
+$input-sidebar-border-color: $naviBlack;
 $input-btn-border-width: 0;
 $input-bg-footer: #ededed;
 $input-padding-y: 0.313rem; // 3px
 $input-padding-x: 0.3125rem; // 5px
-$input-search-field-big: 50px;
+$input-search-field-big: 55px;
 
 // mixins:
 // gutter-width class
@@ -1037,17 +1037,17 @@ body {
         display: block;
         width: auto;
         > span {
-          color:$black;
-          font-size:$font-size-small;
+          color: $black;
+          font-size: $font-size-small;
           font-weight: $font-weight-bold;
-          padding:5px 7px 4px;
+          padding: 5px 7px 4px;
           position: absolute;
           margin-left: 19px;
           margin-top: -6px;
           @include media-breakpoint-down("sm") {
             margin-top: -8px;
           }
-          border-left:1px solid white;
+          border-left: 1px solid white;
           > span {
             padding: 0;
             height: 13px;
@@ -1056,8 +1056,8 @@ body {
             top: -5px;
             &.counter-divider {
               position: relative;
-              top:-4px;
-              font-size:0.6rem;
+              top: -4px;
+              font-size: 0.6rem;
             }
           }
         }
@@ -1077,7 +1077,7 @@ body {
       position: absolute;
       right: 0;
       margin: -26px 25px 0 0;
-      color: $hazelbrowndark;
+      color: $naviBlack;
       display: block;
     }
     .col-center {
@@ -1116,7 +1116,7 @@ body {
             margin-right: -30px;
             margin-top: -46px;
             @include media-breakpoint-down("xs") {
-              margin-right: -5px;
+              margin-right: 14px;
               margin-top: 0;
             }
             color: white;
@@ -1147,8 +1147,8 @@ body {
           font-size: 10px;
           cursor: pointer;
           @include media-breakpoint-down("xs") {
-            margin-top: -39px;
-            margin-right: 5px;
+            margin-top: -31px;
+            margin-right: 14px;
           }
           a {
             color: $black;
@@ -1207,10 +1207,12 @@ body {
     //
     // phlu form elements
     //
-    .form-control {
-      padding: $input-padding-y $input-padding-x;
-      border-radius: 4px;
-      border: 1px solid $grey5;
+    input.form-control, button.btn {
+      height: $input-search-field-big;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0;
+      border: 0;
     }
     .checkbox {
 
@@ -1300,6 +1302,7 @@ body {
       }
       .dropdown-menu {
         list-style-type: none;
+        min-width: inherit;
         background-color: $petrol;
         border-radius: inherit;
         background-clip: inherit;
@@ -1313,7 +1316,7 @@ body {
               font-size: $font-size-form-dropdown;
             }
             color: white;
-            padding: 14px 24px;
+            padding: 17px 24px;
             display: block;
           }
           &:hover {
@@ -1334,7 +1337,11 @@ body {
         .form-control {
           border-top: 0;
           border-right: 0;
+          border-left: 0;
           border-bottom: 0;
+          &[data-ng-model='searchquery'] {
+            border-left: solid 2px $petrol;
+          }
         }
         .extendedSearch {
           button {
@@ -1403,6 +1410,7 @@ body {
 
       label {
         display: block;
+        white-space: nowrap;
       }
       input, select {
         width: 100%;
@@ -1452,7 +1460,7 @@ body {
               right: 15px;
               color: white;
               background-color: #28818f;
-              height: 55px;
+              height: $input-search-field-big;
               width: 32px;
               margin-top: -14px;
               padding-left: 12px;
@@ -1528,11 +1536,12 @@ body {
                 i {
                   display: block;
                   float: left;
+                  margin-top: 6px;
                 }
                 span {
                   display: block;
                   padding-left: 26px;
-                  margin-top: -6px;
+                  margin-top: 0;
                   @include media-breakpoint-down("sm") {
                     margin-top: -3px;;
                   }
@@ -1575,15 +1584,6 @@ body {
                 }
               }
             }
-          }
-          .form-control {
-            border: 0;
-          }
-          input.form-control {
-            height: 55px;
-            -webkit-border-radius: 0;
-            -moz-border-radius: 0;
-            border-radius: 0;
           }
 
           i.fa-search {
@@ -1641,6 +1641,11 @@ body {
                       }
                     }
                   }
+                }
+              }
+              .dropdown-search-field {
+                input {
+                  border: 0;
                 }
               }
             }
@@ -1753,7 +1758,7 @@ body {
           }
           &.isLast {
             font-weight: $font-weight-bold;
-            background: url(../Images/menuActiveStateMarkerLevel1.png) repeat-y;
+            background: url('../Images/menuActiveStateMarkerLevel1.png') repeat-y;
             padding-right: 10px;
           }
         }
@@ -1787,6 +1792,12 @@ body {
       @include sidebar-shadow();
       @include media-breakpoint-down("lg") {
         display: none;
+      }
+      .site-search-field {
+        .fa.fa-search {
+          color: $naviBlack;
+          margin: -36px 33px 0 0;
+        }
       }
     }
     //
@@ -2694,9 +2705,10 @@ body {
         input {
           height: $input-search-field-big;
           margin-top: 16px;
+          border: solid $input-btn-sidebar-border-width $input-sidebar-border-color;
         }
         .fa-search {
-          margin: -33px 33px 0 0;
+          margin: -36px 33px 0 0;
           color: $naviBlack;
         }
       }
@@ -2847,11 +2859,6 @@ body {
                   &::before {
                     top: -7px;
                     left: -2px;
-                  }
-                }
-                @include media-breakpoint-down("xs") {
-                  &.last {
-                    float: inherit;
                   }
                 }
               }
@@ -3649,26 +3656,23 @@ body {
     .ppdb-list, .further-education-list, .further-education-special-search {
       .list-search-field, .dropdown-search-field {
         input {
-          border: 1px solid $grey;
-          height: $input-search-field-big;
+          border: $input-btn-sidebar-border-width solid $input-sidebar-border-color;
         }
         .fa-search {
-          margin: -33px 33px 0 0;
+          margin: -36px 33px 0 0;
         }
       }
-      .dropdown-search-field {
-        margin: 13px 20px;
-        input {
-          border: 0;
-        }
-        .fa-search {
-          position: relative;
-          margin: -33px 50px 0 96%;
-          @include media-breakpoint-only("xs") {
-            margin: -33px 50px 0 92%;
-          }
-          @include media-breakpoint-only("sm") {
-            margin: -33px 50px 0 95%;
+      .row.subjectsfilternav {
+        .result-panel {
+          .dropdown-search-field {
+            margin: 13px 20px;
+            input {
+              border: 0;
+            }
+            .fa-search {
+              position: relative;
+              margin: -36px 20px 0 0;
+            }
           }
         }
       }
@@ -3683,9 +3687,13 @@ body {
           display: inline-block;
           padding: 5px;
           margin-top: 4px;
-          margin-right: 10px;
+          margin-right: 4px;
         }
-
+        span.oi-x {
+          font-size: 10px;
+          position: relative;
+          top: -1px;
+        }
       }
       .row.subjectsfilternav {
         .nav-pills {
@@ -3711,13 +3719,17 @@ body {
             &.nav-item {
               margin-left: 0;
               @include media-breakpoint-down("xs") {
-               width: 100%;
+                width: 100%;
               }
             }
           }
         }
         .result-panel {
           max-height: 400px;
+          margin-bottom: 15px;
+          @include media-breakpoint-down("xs") {
+            max-height: inherit;
+          }
           overflow-y: auto;
           background-color: $petrol;
           color: white;
@@ -3735,7 +3747,7 @@ body {
             width: 50px;
             position: absolute;
             right: 15px;
-            bottom: -53px;
+            bottom: -39px;
             background-color: $petrol;
             padding: 2px 14px 0px;
             color: white;
@@ -3777,19 +3789,19 @@ body {
                   a {
                     color: white;
                     display: table;
-
+                    width: 100%;
                     &.subitem {
-                      margin-left: 40px;
+                      margin-left: 20px;
+                      span.oi {
+                        right:20px;
+                        padding-left:20px;
+                      }
                     }
-
                     i, span {
                       display: table-cell;
                     }
-                    span {
-                      padding-left: 20px;
-                    }
-                    i {
-                      width: 17px;
+                    span.oi {
+                      text-align: right;
                     }
                   }
                   &:hover {
@@ -4439,7 +4451,7 @@ body {
         }
       }
       .loadMore {
-        margin-top:30px;
+        margin-top: 30px;
       }
     }
     //
@@ -4558,6 +4570,10 @@ body {
               width: 100%;
               @include gutter-width(2);
               font-size: $font-size-caption;
+              span {
+                position: relative;
+                left: -16px;
+              }
             }
           }
           .box1 {
@@ -6152,6 +6168,7 @@ body {
         }
         .fa.fa-search {
           color: $naviBlack;
+          margin: -36px 33px 0 0;
         }
       }
       .quicklinks {
