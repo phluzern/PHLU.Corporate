@@ -26,6 +26,7 @@ class LocationsSource extends AbstractDataSource
     public function getData(NodeInterface $node = NULL, array $arguments)
     {
 
+        $this->controllerContext->getResponse()->getHeaders()->setCacheControlDirective('max-age','3600');
 
         $ous = array();
 
