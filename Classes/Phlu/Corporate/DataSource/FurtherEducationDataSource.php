@@ -52,6 +52,7 @@ class FurtherEducationDataSource extends AbstractDataSource {
     public function getData(NodeInterface $node = NULL, array $arguments)
     {
 
+        $this->controllerContext->getResponse()->getHeaders()->setCacheControlDirective('max-age','3600');
 
         if (isset($arguments['property']) === false) {
             return array();
@@ -65,27 +66,38 @@ class FurtherEducationDataSource extends AbstractDataSource {
 
             case 'genre':
 
+
+
             foreach ($this->moduleCourseRepository->findAll() as $course) {
+
                 /* @var Module $course */
-                if (is_array($course->getGenre())) {
-                    foreach ($course->getGenre() as $genre) {
+                $genres = $course->getGenre();
+                if (is_array($genres)) {
+                    foreach ($genres as $genre) {
                         if (is_string($genre)) {
                             $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
                         } else {
-                            $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                            if ($genre) {
+                                $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                            }
                         }
                     }
                 }
+
             }
+
 
             foreach ($this->studyCourseRepository->findAll() as $study) {
                 /* @var Study $study */
-                if (is_array($study->getGenre())) {
-                    foreach ($study->getGenre() as $genre) {
+                $genres = $study->getGenre();
+                if (is_array($genres)) {
+                    foreach ($genres as $genre) {
                         if (is_string($genre)) {
                             $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
                         } else {
-                            $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                            if ($genre) {
+                                $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                            }
                         }
                     }
                 }
@@ -93,12 +105,15 @@ class FurtherEducationDataSource extends AbstractDataSource {
 
             foreach ($this->eventCourseRepository->findAll() as $study) {
                 /* @var Study $study */
-                if (is_array($study->getGenre())) {
-                    foreach ($study->getGenre() as $genre) {
+                $genres = $study->getGenre();
+                if (is_array($genres)) {
+                    foreach ($genres as $genre) {
                         if (is_string($genre)) {
                             $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
                         } else {
-                            $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                            if ($genre) {
+                                $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                            }
                         }
                     }
                 }
