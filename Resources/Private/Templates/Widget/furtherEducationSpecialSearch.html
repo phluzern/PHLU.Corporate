@@ -185,7 +185,8 @@
                                     </ul>
                                 </div>
 
-                                <div name="targetDegree" class="input-item-col col-sm-12 col-md-5" data-ng-class="{'disabled': !result.getDistinctCount('graduation')}">
+                                <div name="targetDegree" class="input-item-col col-sm-12 col-md-5"
+                                     data-ng-class="{'disabled': !result.getDistinctCount('graduation')}">
                                     <label>Typ/Abschluss</label>
                                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
                                          role="button"
@@ -218,7 +219,8 @@
                                     </ul>
                                 </div>
 
-                                <div class="input-item-col col-sm-12 col-md-5" data-ng-class="{'disabled': !result.getDistinctCount('study-furthereducation-targetgroups.Bezeichnung')}">
+                                <div class="input-item-col col-sm-12 col-md-5"
+                                     data-ng-class="{'disabled': !result.getDistinctCount('study-furthereducation-targetgroups.Bezeichnung')}">
                                     <label>Zielgruppen</label>
                                     <div class="dropdown-toggle search-result-tags" data-toggle="dropdown"
                                          role="button"
@@ -464,6 +466,11 @@
                                data-ng-if="result.count() > limit">
                                 <!--{{limitChunkSize}} -->
                                 mehr anzeigen
+                                <span>
+                                    <span data-ng-bind="limit"></span>
+                                    <span class="counter-divider">von</span>
+                                    <span data-ng-bind="result.count()"></span>
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -581,7 +588,8 @@
                     </div>
                 </div>
                 <div class="result-panel tab-pane " id="lastvisit" role="tabpanel">
-                    <div data-ng-if="{f:if(condition: '{neos:rendering.inBackend()}',then:'1==1 ||')}tab['lastvisit'] !== undefined" data-ng-controller="EventoLastVisitedCtrl" data-ng-show="countVisitedNodes()">
+                    <div data-ng-if="{f:if(condition: '{neos:rendering.inBackend()}',then:'1==1 ||')}tab['lastvisit'] !== undefined"
+                         data-ng-controller="EventoLastVisitedCtrl" data-ng-show="countVisitedNodes()">
 
                         <f:if condition="{WidgetGroupReferences.5}">
                             <ts:render path="defaultRenderer"

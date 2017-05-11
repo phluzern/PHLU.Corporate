@@ -8632,21 +8632,25 @@ body {
         color: #171815;
         display: block;
         width: auto; }
-        body .all .btn.loadMore > div {
+        body .all .btn.loadMore > span {
           color: #333333;
           font-size: 0.75rem;
           font-weight: 700;
           padding: 5px 7px;
           position: absolute;
-          margin-left: 140px;
-          margin-top: -43px;
+          margin-left: 19px;
+          margin-top: -6px;
           border-left: 1px solid white; }
-          body .all .btn.loadMore > div > div {
+          @media (max-width: 767px) {
+            body .all .btn.loadMore > span {
+              margin-top: -8px; } }
+          body .all .btn.loadMore > span > span {
             padding: 0;
             height: 13px;
             position: relative;
+            display: block;
             top: -5px; }
-            body .all .btn.loadMore > div > div.counter-divider {
+            body .all .btn.loadMore > span > span.counter-divider {
               position: relative;
               top: -4px;
               font-size: 0.6rem; }
