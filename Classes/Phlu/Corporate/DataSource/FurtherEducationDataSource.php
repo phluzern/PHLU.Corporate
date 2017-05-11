@@ -72,7 +72,9 @@ class FurtherEducationDataSource extends AbstractDataSource {
                         if (is_string($genre)) {
                             $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
                         } else {
-                            $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                            if ($genre) {
+                                $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                            }
                         }
                     }
                 }
@@ -85,7 +87,9 @@ class FurtherEducationDataSource extends AbstractDataSource {
                         if (is_string($genre)) {
                             $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
                         } else {
-                            $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                            if ($genre) {
+                                $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                            }
                         }
                     }
                 }
@@ -98,7 +102,9 @@ class FurtherEducationDataSource extends AbstractDataSource {
                         if (is_string($genre)) {
                             $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
                         } else {
-                            $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                            if ($genre) {
+                                $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                            }
                         }
                     }
                 }
