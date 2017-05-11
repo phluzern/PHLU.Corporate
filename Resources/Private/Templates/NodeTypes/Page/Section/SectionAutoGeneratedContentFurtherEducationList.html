@@ -51,6 +51,11 @@
                                data-ng-if="result.count() > limit">
                                 <!--{{limitChunkSize}} -->
                                 mehr anzeigen
+                                <span>
+                                    <span data-ng-bind="limit"></span>
+                                    <span class="counter-divider">von</span>
+                                    <span data-ng-bind="result.count()"></span>
+                                </span>
                             </a>
                         </div>
                     </div>

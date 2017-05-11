@@ -8632,21 +8632,25 @@ body {
         color: #171815;
         display: block;
         width: auto; }
-        body .all .btn.loadMore > div {
+        body .all .btn.loadMore > span {
           color: #333333;
           font-size: 0.75rem;
           font-weight: 700;
-          padding: 5px 7px;
+          padding: 5px 7px 4px;
           position: absolute;
-          margin-left: 140px;
-          margin-top: -43px;
+          margin-left: 19px;
+          margin-top: -6px;
           border-left: 1px solid white; }
-          body .all .btn.loadMore > div > div {
+          @media (max-width: 767px) {
+            body .all .btn.loadMore > span {
+              margin-top: -8px; } }
+          body .all .btn.loadMore > span > span {
             padding: 0;
             height: 13px;
             position: relative;
+            display: block;
             top: -5px; }
-            body .all .btn.loadMore > div > div.counter-divider {
+            body .all .btn.loadMore > span > span.counter-divider {
               position: relative;
               top: -4px;
               font-size: 0.6rem; }
@@ -8662,7 +8666,7 @@ body {
       position: absolute;
       right: 0;
       margin: -26px 25px 0 0;
-      color: #9f632a;
+      color: #171815;
       display: block; }
     body .all .col-center {
       float: none;
@@ -8704,7 +8708,7 @@ body {
           font-size: 14px; }
           @media (max-width: 543px) {
             body .all .nav-pills li a.nav-link .count {
-              margin-right: -5px;
+              margin-right: 14px;
               margin-top: 0; } }
       body .all .nav-pills li a.nav-item {
         margin: 0 5px 5px 0; }
@@ -8721,8 +8725,8 @@ body {
         cursor: pointer; }
         @media (max-width: 543px) {
           body .all .nav-pills li .resetFilter {
-            margin-top: -39px;
-            margin-right: 5px; } }
+            margin-top: -31px;
+            margin-right: 14px; } }
         body .all .nav-pills li .resetFilter a {
           color: #333333;
           font-weight: 100; }
@@ -8761,10 +8765,12 @@ body {
               color: #5c5c5c; }
         body .all .anchors-mobile-view ul:hover {
           border: 2px solid #171815; }
-    body .all .form-control {
-      padding: 0.313rem 0.3125rem;
-      border-radius: 4px;
-      border: 1px solid #9b9b9b; }
+    body .all input.form-control, body .all button.btn {
+      height: 55px;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0;
+      border: 0; }
     body .all .checkbox input[type="checkbox"] {
       display: none; }
     body .all .checkbox input[type="checkbox"] + label span {
@@ -8826,6 +8832,7 @@ body {
             margin: 17px 23px 0 0; } }
       body .all .input-group .dropdown-menu {
         list-style-type: none;
+        min-width: inherit;
         background-color: #28818f;
         border-radius: inherit;
         background-clip: inherit;
@@ -8835,7 +8842,7 @@ body {
         body .all .input-group .dropdown-menu li a {
           font-size: 1.125rem;
           color: white;
-          padding: 14px 24px;
+          padding: 17px 24px;
           display: block; }
           @media (max-width: 767px) {
             body .all .input-group .dropdown-menu li a {
@@ -8850,7 +8857,10 @@ body {
         body .all .extendedSearchBg.on .form-control {
           border-top: 0;
           border-right: 0;
+          border-left: 0;
           border-bottom: 0; }
+          body .all .extendedSearchBg.on .form-control[data-ng-model='searchquery'] {
+            border-left: solid 2px #28818f; }
         body .all .extendedSearchBg.on .extendedSearch button {
           color: white;
           background-color: #707070; }
@@ -8901,7 +8911,8 @@ body {
             body .all .extendedSearchBg .extendedSearch .resetFilter a:hover {
               background-color: inherit; }
       body .all .extendedSearchBg label {
-        display: block; }
+        display: block;
+        white-space: nowrap; }
       body .all .extendedSearchBg input, body .all .extendedSearchBg select {
         width: 100%; }
       body .all .extendedSearchBg .extendedSearchFilter {
@@ -8994,11 +9005,12 @@ body {
               width: 100%; }
               body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a i {
                 display: block;
-                float: left; }
+                float: left;
+                margin-top: 6px; }
               body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span {
                 display: block;
                 padding-left: 26px;
-                margin-top: -6px; }
+                margin-top: 0; }
                 @media (max-width: 767px) {
                   body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span {
                     margin-top: -3px; } }
@@ -9018,13 +9030,6 @@ body {
         @media (min-width: 768px) {
           body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='weekday'] .dropdown-menu li a span {
             width: 87%; } }
-        body .all .extendedSearchBg .extendedSearchFilter .input-item-col .form-control {
-          border: 0; }
-        body .all .extendedSearchBg .extendedSearchFilter .input-item-col input.form-control {
-          height: 55px;
-          -webkit-border-radius: 0;
-          -moz-border-radius: 0;
-          border-radius: 0; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col i.fa-search {
           color: #5c5c5c;
           right: 11px; }
@@ -9047,6 +9052,8 @@ body {
             color: #333333; }
             body .all .extendedSearchBg .extendedSearchFilter .subjectsfilternav .col-xs-12 .result-panel .table-responsive .table tbody tr.checked td a {
               color: #333333; }
+          body .all .extendedSearchBg .extendedSearchFilter .subjectsfilternav .col-xs-12 .result-panel .dropdown-search-field input {
+            border: 0; }
     body .all .searchresults-filter .dropdown-menu {
       right: 0; }
       body .all .searchresults-filter .dropdown-menu li a {
@@ -9085,10 +9092,12 @@ body {
           position: absolute;
           right: 15px; }
         body .all .navbar .navbar-toggler.open.activeStateMarker {
-          background: none; }
+          background: none;
+          border-bottom: 2px solid #edeae8; }
         body .all .navbar .navbar-toggler.open::after {
           content: " \e030";
           color: #171815;
+          background-color: white;
           border-top: solid #edeae8 2px;
           border-left: solid #edeae8 2px;
           border-bottom: solid white 2px;
@@ -9102,7 +9111,7 @@ body {
           background-position: bottom right;
           color: white; }
         body .all .navbar .navbar-toggler.activeStateMarker {
-          background: url(../Images/menuActiveStateMarkerLevel1.png) repeat-y;
+          background: url("../Images/menuActiveStateMarkerLevel1.png") repeat-y;
           padding-right: 10px; }
       body .all .navbar .navbar-nav {
         font-size: 0.875rem; }
@@ -9111,8 +9120,6 @@ body {
           display: block;
           padding: 9px 11px 9px 21px;
           border-top: 1px solid white; }
-          body .all .navbar .navbar-nav a.level0 {
-            border-top: 2px #edeae8 solid; }
           body .all .navbar .navbar-nav a.level1 {
             padding-left: 35px; }
           body .all .navbar .navbar-nav a.level2 {
@@ -9123,7 +9130,7 @@ body {
             padding-left: 65px; }
           body .all .navbar .navbar-nav a.isLast {
             font-weight: 700;
-            background: url(../Images/menuActiveStateMarkerLevel1.png) repeat-y;
+            background: url("../Images/menuActiveStateMarkerLevel1.png") repeat-y;
             padding-right: 10px; }
     body .all .logoAndSearchBar {
       background-color: white;
@@ -9143,7 +9150,7 @@ body {
           max-width: 212px; }
       body .all .logoAndSearchBar .form-control {
         margin-top: 47px;
-        border: 1px solid #B3B3B3; }
+        border: 2px solid #171815; }
       body .all .logoAndSearchBar.oneCol {
         max-width: 263px; }
       body .all .logoAndSearchBar.twoCol {
@@ -9151,6 +9158,9 @@ body {
       @media (max-width: 1279px) {
         body .all .logoAndSearchBar {
           display: none; } }
+      body .all .logoAndSearchBar .site-search-field .fa.fa-search {
+        color: #171815;
+        margin: -36px 33px 0 0; }
     body .all .sidebar {
       position: relative;
       display: block;
@@ -9740,10 +9750,11 @@ body {
       body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item:first-child h3 {
         margin-top: 0; }
     body .all .row.subjectsfilternav .list-search-field input, body .all .row.subjectsfilternav .dropdown-search-field input {
-      height: 50px;
-      margin-top: 16px; }
+      height: 55px;
+      margin-top: 16px;
+      border: solid 2px #171815; }
     body .all .row.subjectsfilternav .list-search-field .fa-search, body .all .row.subjectsfilternav .dropdown-search-field .fa-search {
-      margin: -33px 33px 0 0;
+      margin: -36px 33px 0 0;
       color: #171815; }
     body .all .row.subjectsfilternav .col-xs-12 .nav-pills {
       padding-top: 30px;
@@ -9841,9 +9852,6 @@ body {
           body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.themaIco::before {
             top: -7px;
             left: -2px; }
-          @media (max-width: 543px) {
-            body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.last {
-              float: inherit; } }
         body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
           margin: 0;
           display: table-cell; }
@@ -10284,24 +10292,16 @@ body {
     body .all .phlu-about-detailview .row.subjectsfilternav .nav-pills {
       padding-top: 0; }
     body .all .ppdb-list .list-search-field input, body .all .ppdb-list .dropdown-search-field input, body .all .further-education-list .list-search-field input, body .all .further-education-list .dropdown-search-field input, body .all .further-education-special-search .list-search-field input, body .all .further-education-special-search .dropdown-search-field input {
-      border: 1px solid #707070;
-      height: 50px; }
+      border: 2px solid #171815; }
     body .all .ppdb-list .list-search-field .fa-search, body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .list-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search, body .all .further-education-special-search .list-search-field .fa-search, body .all .further-education-special-search .dropdown-search-field .fa-search {
-      margin: -33px 33px 0 0; }
-    body .all .ppdb-list .dropdown-search-field, body .all .further-education-list .dropdown-search-field, body .all .further-education-special-search .dropdown-search-field {
+      margin: -36px 33px 0 0; }
+    body .all .ppdb-list .row.subjectsfilternav .result-panel .dropdown-search-field, body .all .further-education-list .row.subjectsfilternav .result-panel .dropdown-search-field, body .all .further-education-special-search .row.subjectsfilternav .result-panel .dropdown-search-field {
       margin: 13px 20px; }
-      body .all .ppdb-list .dropdown-search-field input, body .all .further-education-list .dropdown-search-field input, body .all .further-education-special-search .dropdown-search-field input {
+      body .all .ppdb-list .row.subjectsfilternav .result-panel .dropdown-search-field input, body .all .further-education-list .row.subjectsfilternav .result-panel .dropdown-search-field input, body .all .further-education-special-search .row.subjectsfilternav .result-panel .dropdown-search-field input {
         border: 0; }
-      body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search, body .all .further-education-special-search .dropdown-search-field .fa-search {
+      body .all .ppdb-list .row.subjectsfilternav .result-panel .dropdown-search-field .fa-search, body .all .further-education-list .row.subjectsfilternav .result-panel .dropdown-search-field .fa-search, body .all .further-education-special-search .row.subjectsfilternav .result-panel .dropdown-search-field .fa-search {
         position: relative;
-        margin: -33px 50px 0 96%; }
-        @media (max-width: 543px) {
-          body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search, body .all .further-education-special-search .dropdown-search-field .fa-search {
-            margin: -33px 50px 0 92%; } }
-
-@media (min-width: 544px) and (max-width: 767px) {
-  body .all .ppdb-list .dropdown-search-field .fa-search, body .all .further-education-list .dropdown-search-field .fa-search, body .all .further-education-special-search .dropdown-search-field .fa-search {
-    margin: -33px 50px 0 95%; } }
+        margin: -36px 20px 0 0; }
     body .all .ppdb-list .search-result-tags, body .all .further-education-list .search-result-tags, body .all .further-education-special-search .search-result-tags {
       padding-top: 16px;
       margin: 20px; }
@@ -10313,7 +10313,11 @@ body {
         display: inline-block;
         padding: 5px;
         margin-top: 4px;
-        margin-right: 10px; }
+        margin-right: 4px; }
+      body .all .ppdb-list .search-result-tags span.oi-x, body .all .further-education-list .search-result-tags span.oi-x, body .all .further-education-special-search .search-result-tags span.oi-x {
+        font-size: 10px;
+        position: relative;
+        top: -1px; }
     body .all .ppdb-list .row.subjectsfilternav .nav-pills, body .all .further-education-list .row.subjectsfilternav .nav-pills, body .all .further-education-special-search .row.subjectsfilternav .nav-pills {
       padding-bottom: 4px; }
       @media (max-width: 767px) {
@@ -10336,9 +10340,13 @@ body {
             width: 100%; } }
     body .all .ppdb-list .row.subjectsfilternav .result-panel, body .all .further-education-list .row.subjectsfilternav .result-panel, body .all .further-education-special-search .row.subjectsfilternav .result-panel {
       max-height: 400px;
+      margin-bottom: 15px;
       overflow-y: auto;
       background-color: #28818f;
       color: white; }
+      @media (max-width: 543px) {
+        body .all .ppdb-list .row.subjectsfilternav .result-panel, body .all .further-education-list .row.subjectsfilternav .result-panel, body .all .further-education-special-search .row.subjectsfilternav .result-panel {
+          max-height: inherit; } }
       body .all .ppdb-list .row.subjectsfilternav .result-panel .fa-search, body .all .further-education-list .row.subjectsfilternav .result-panel .fa-search, body .all .further-education-special-search .row.subjectsfilternav .result-panel .fa-search {
         margin: -33px 13px 0 0;
         float: right; }
@@ -10351,7 +10359,7 @@ body {
         width: 50px;
         position: absolute;
         right: 15px;
-        bottom: -53px;
+        bottom: -39px;
         background-color: #28818f;
         padding: 2px 14px 0px;
         color: white;
@@ -10380,15 +10388,17 @@ body {
                 font-size: 1rem; } }
             body .all .ppdb-list .row.subjectsfilternav .result-panel .table tbody tr td a, body .all .further-education-list .row.subjectsfilternav .result-panel .table tbody tr td a, body .all .further-education-special-search .row.subjectsfilternav .result-panel .table tbody tr td a {
               color: white;
-              display: table; }
+              display: table;
+              width: 100%; }
               body .all .ppdb-list .row.subjectsfilternav .result-panel .table tbody tr td a.subitem, body .all .further-education-list .row.subjectsfilternav .result-panel .table tbody tr td a.subitem, body .all .further-education-special-search .row.subjectsfilternav .result-panel .table tbody tr td a.subitem {
-                margin-left: 40px; }
+                margin-left: 20px; }
+                body .all .ppdb-list .row.subjectsfilternav .result-panel .table tbody tr td a.subitem span.oi, body .all .further-education-list .row.subjectsfilternav .result-panel .table tbody tr td a.subitem span.oi, body .all .further-education-special-search .row.subjectsfilternav .result-panel .table tbody tr td a.subitem span.oi {
+                  right: 20px;
+                  padding-left: 20px; }
               body .all .ppdb-list .row.subjectsfilternav .result-panel .table tbody tr td a i, body .all .ppdb-list .row.subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-list .row.subjectsfilternav .result-panel .table tbody tr td a i, body .all .further-education-list .row.subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-special-search .row.subjectsfilternav .result-panel .table tbody tr td a i, body .all .further-education-special-search .row.subjectsfilternav .result-panel .table tbody tr td a span {
                 display: table-cell; }
-              body .all .ppdb-list .row.subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-list .row.subjectsfilternav .result-panel .table tbody tr td a span, body .all .further-education-special-search .row.subjectsfilternav .result-panel .table tbody tr td a span {
-                padding-left: 20px; }
-              body .all .ppdb-list .row.subjectsfilternav .result-panel .table tbody tr td a i, body .all .further-education-list .row.subjectsfilternav .result-panel .table tbody tr td a i, body .all .further-education-special-search .row.subjectsfilternav .result-panel .table tbody tr td a i {
-                width: 17px; }
+              body .all .ppdb-list .row.subjectsfilternav .result-panel .table tbody tr td a span.oi, body .all .further-education-list .row.subjectsfilternav .result-panel .table tbody tr td a span.oi, body .all .further-education-special-search .row.subjectsfilternav .result-panel .table tbody tr td a span.oi {
+                text-align: right; }
             body .all .ppdb-list .row.subjectsfilternav .result-panel .table tbody tr td:hover, body .all .further-education-list .row.subjectsfilternav .result-panel .table tbody tr td:hover, body .all .further-education-special-search .row.subjectsfilternav .result-panel .table tbody tr td:hover {
               background-color: #216A75; }
             body .all .ppdb-list .row.subjectsfilternav .result-panel .table tbody tr td.theme-code, body .all .further-education-list .row.subjectsfilternav .result-panel .table tbody tr td.theme-code, body .all .further-education-special-search .row.subjectsfilternav .result-panel .table tbody tr td.theme-code {
@@ -10807,6 +10817,8 @@ body {
             display: table-row; } }
         body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only td {
           border-top: 0; }
+    body .all .further-education-special-search .loadMore {
+      margin-top: 30px; }
     body .all .has-no-target-group-codes {
       margin-bottom: 50px; }
     body .all .target-group-codes {
@@ -10908,6 +10920,9 @@ body {
               body .all .infoboxes > div > div > div .box1 .bottomContent > [class^="col-"], body .all .infoboxes > div > div > div .box1 .bottomContent > [class^=" col-"], body .all .infoboxes > div > div > div .box2 .bottomContent > [class^="col-"], body .all .infoboxes > div > div > div .box2 .bottomContent > [class^=" col-"], body .all .infoboxes > div > div > div .box3 .bottomContent > [class^="col-"], body .all .infoboxes > div > div > div .box3 .bottomContent > [class^=" col-"], body .all .infoboxes > div > div > div .box4 .bottomContent > [class^="col-"], body .all .infoboxes > div > div > div .box4 .bottomContent > [class^=" col-"], body .all .infoboxes > div > div > div .box5 .bottomContent > [class^="col-"], body .all .infoboxes > div > div > div .box5 .bottomContent > [class^=" col-"] {
                 padding-right: 2px;
                 padding-left: 2px; }
+              body .all .infoboxes > div > div > div .box1 .bottomContent span, body .all .infoboxes > div > div > div .box2 .bottomContent span, body .all .infoboxes > div > div > div .box3 .bottomContent span, body .all .infoboxes > div > div > div .box4 .bottomContent span, body .all .infoboxes > div > div > div .box5 .bottomContent span {
+                position: relative;
+                left: -16px; }
           @media (max-width: 767px) {
             body .all .infoboxes > div > div > div .box1 .bottomContent {
               text-align: center;
@@ -11069,10 +11084,8 @@ body {
         line-height: 1.5;
         vertical-align: top;
         border-top: 0; }
-        body .all .table-responsive .table thead tr th:first-child {
-          padding-left: 0; }
-          body .all .table-responsive .table thead tr th:first-child h3 {
-            margin: 0; }
+        body .all .table-responsive .table thead tr th:first-child h3 {
+          margin: 0; }
         body .all .table-responsive .table thead tr th.is-currency {
           text-align: right; }
         @media (max-width: 767px) {
@@ -12055,7 +12068,8 @@ body {
         body .all .footer .site-search-field {
           display: none; } }
       body .all .footer .site-search-field .fa.fa-search {
-        color: #171815; }
+        color: #171815;
+        margin: -36px 33px 0 0; }
       body .all .footer .quicklinks {
         padding-top: 20px; }
         body .all .footer .quicklinks a {

@@ -130,13 +130,12 @@
                                 <td>
                                     <a href="javascript:void(0);"
                                        data-ng-class="{'subitem': ltg.value.ResearchUnitName !== ''}">
-                                        <i class="fa"
-                                           data-ng-class="{'fa-check-square-o': researchmainfocus[ltg.value.ID],'fa-square-o': !researchmainfocus[ltg.value.ID]}"
-                                           aria-hidden="true">
-                                        </i>
+
                                         <span data-ng-bind="ltg.value.name + ' (' + ltg.count + ')'">
 
                                                     </span>
+                                        <span class="oi" data-ng-class="{'oi-check': researchmainfocus[ltg.value.ID],'': !researchmainfocus[ltg.value.ID]}"
+                                              aria-hidden="true"></span>
                                     </a>
                                 </td>
                             </tr>
@@ -149,13 +148,12 @@
                                 <td>
                                     <a href="javascript:void(0);"
                                        data-ng-class="{'subitem': lt.value.ResearchUnitName !== ''}">
-                                        <i class="fa"
-                                           data-ng-class="{'fa-check-square-o': researchmainfocus[lt.value.ID],'fa-square-o': !researchmainfocus[lt.value.ID]}"
-                                           aria-hidden="true">
-                                        </i>
+
                                         <span data-ng-bind="lt.value.name + ' (' + lt.count + ')'">
 
                                                     </span>
+                                        <span class="oi" data-ng-class="{'oi-check': researchmainfocus[lt.value.ID],'': !researchmainfocus[lt.value.ID]}"
+                                              aria-hidden="true"></span>
                                     </a>
                                 </td>
                             </tr>
@@ -177,13 +175,11 @@
                                 data-ng-repeat="(key,lt) in result.getDistinct('financingtype',false)">
                                 <td>
                                     <a href="javascript:void(0);">
-                                        <i class="fa"
-                                           data-ng-class="{'fa-check-square-o': financingtype[lt.value],'fa-square-o': !financingtype[lt.value]}"
-                                           aria-hidden="true">
-                                        </i>
                                         <span data-ng-bind="ltg.value.name + ' (' + ltg.count + ')'">
 
                                                     </span>
+                                        <span class="oi" data-ng-class="{'oi-check': researchmainfocus[lt.value],'': !researchmainfocus[lt.value]}"
+                                              aria-hidden="true"></span>
                                     </a>
                                 </td>
                             </tr>
@@ -196,24 +192,19 @@
                 </div>
                 <div class="result-panel tab-pane " id="projectparticipants-{node.Identifier}"
                      role="tabpanel"
-                     data-ng-show="result.getDistinctCount('participants',false) > 1"><a href="#"
-                                                                                         class="close-btn"><i
-                        class="fa fa-times" aria-hidden="true"></i></a>
+                     data-ng-show="result.getDistinctCount('participants',false) > 1">
+                    <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                     <div class="dropdown-search-field">
                         <input type="text" class="c-input form-control"
                                data-ng-model="projectparticipantsSearch">
                         <i class="fa fa-search" data-ng-class="{'fa-times': projectparticipantsSearch.length}"
                            aria-hidden="true" data-ng-click="projectparticipantsSearch = '';"></i>
-
                     </div>
-                    <div class="search-result-tags">
-                                    <span class="search-result-tag"
-                                          data-ng-repeat="(eventoID,val) in projectparticipants" data-ng-if="val"><span
-                                            data-ng-bind="val"></span> <i
-                                            class="fa fa-times clickable"
-                                            aria-hidden="true"
-                                            data-ng-click="projectparticipants[eventoID] = false;"></i></span>
-
+                    <div class="search-result-tags" data-ng-show="sizeOf(projectparticipants) > 0">
+                                    <span class="search-result-tag" data-ng-repeat="(eventoID,val) in projectparticipants" data-ng-if="val">
+                                        <span data-ng-bind="val"></span>
+                                        <span class="oi oi-x clickable" aria-hidden="true" data-ng-click="projectparticipants[eventoID] = false;"></span>
+                                    </span>
                     </div>
                     <div class="table-responsive">
                         <table class="table">
@@ -245,11 +236,9 @@
                                 data-ng-repeat="(key,lt) in result.getDistinct('lifetime',false)">
                                 <td>
                                     <a href="javascript:void(0);">
-                                        <i class="fa"
-                                           data-ng-class="{'fa-check-square-o': filterLifetime[lt.value],'fa-square-o': !filterLifetime[lt.value]}"
-                                           aria-hidden="true">
-                                        </i>
                                         <span data-ng-bind="lt.value + ' ('+ lt.count + ')'"></span>
+                                        <span class="oi" data-ng-class="{'oi-check': filterLifetime[lt.value],'': !filterLifetime[lt.value]}"
+                                              aria-hidden="true"></span>
                                     </a>
                                 </td>
                             </tr>
@@ -274,13 +263,11 @@
                                 data-ng-repeat="lt in result.getDistinct('organisationunits',false) | toArray:false | orderBy:'value.name'">
                                 <td>
                                     <a href="javascript:void(0);">
-                                        <i class="fa"
-                                           data-ng-class="{'fa-check-square-o': organisationunits[lt.value.id],'fa-square-o': !organisationunits[lt.value.id]}"
-                                           aria-hidden="true">
-                                        </i>
                                         <span data-ng-bind="lt.value.name + ' ('+ lt.count+')'">
 
                                                     </span>
+                                        <span class="oi" data-ng-class="{'oi-check': organisationunits[lt.value.id],'': !organisationunits[lt.value.id]}"
+                                              aria-hidden="true"></span>
                                     </a>
                                 </td>
                             </tr>
