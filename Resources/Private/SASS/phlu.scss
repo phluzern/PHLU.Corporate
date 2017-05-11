@@ -1040,7 +1040,7 @@ body {
           color:$black;
           font-size:$font-size-small;
           font-weight: $font-weight-bold;
-          padding:5px 7px;
+          padding:5px 7px 4px;
           position: absolute;
           margin-left: 19px;
           margin-top: -6px;
@@ -1694,7 +1694,6 @@ body {
         border-radius: 0;
         width: 100%;
         height: 43px;
-        //@include x-rem(height, 43px);
         text-align: left;
         &::after {
           font-family: Icons;
@@ -1706,10 +1705,12 @@ body {
         &.open {
           &.activeStateMarker {
             background: none;
+            border-bottom: 2px solid $lightgrey;
           }
           &::after {
             content: " \e030";
             color: $naviBlack;
+            background-color: white;
             border-top: solid $lightgrey 2px;
             border-left: solid $lightgrey 2px;
             border-bottom: solid white 2px;
@@ -1726,7 +1727,7 @@ body {
           color: white;
         }
         &.activeStateMarker {
-          background: url(../Images/menuActiveStateMarkerLevel1.png) repeat-y;
+          background: url("../Images/menuActiveStateMarkerLevel1.png") repeat-y;
           padding-right: 10px;
         }
       }
@@ -1738,9 +1739,6 @@ body {
           display: block;
           padding: 9px 11px 9px 21px;
           border-top: 1px solid white;
-          &.level0 {
-            border-top: 2px $lightgrey solid;
-          }
           &.level1 {
             padding-left: 35px;
           }
@@ -4440,6 +4438,9 @@ body {
           }
         }
       }
+      .loadMore {
+        margin-top:30px;
+      }
     }
     //
     // further-education
@@ -4922,11 +4923,9 @@ body {
               border-top: 0;
               //border-left: 23px solid $beigelight;
               &:first-child {
-                //border-left: 0;
                 h3 {
                   margin: 0;
                 }
-                padding-left: 0;
               }
               &.is-currency {
                 text-align: right;
