@@ -502,7 +502,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             var lh = data.getHash();
 
             if (lasthash !== lh) {
-                $scope.$digest(function () {
+                $scope.$apply(function () {
 
                     $rootScope.quickNode = data.getQuickNodes()[0];
 
