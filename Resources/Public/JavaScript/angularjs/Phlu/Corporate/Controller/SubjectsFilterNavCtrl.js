@@ -25,7 +25,11 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
         'phlu-corporate-contact-city': -1,
         'phlu-corporate-contact-organisations': -1,
         'phlu-corporate-contact-portrait': -1,
-        'phlu-corporate-contact-zip': -1
+        'phlu-corporate-contact-zip': -1,
+        'phlu-corporate-contact-consulting': -1,
+        'phlu-corporate-contact-education': -1,
+        'phlu-corporate-contact-expertise': -1,
+        'phlu-corporate-contact-title': -1
 
     };
 
@@ -36,6 +40,9 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
         .setPropertiesBoost(boost)
         .setNodeType(['phlu-corporate-contact','phlu-corporate-textplain'])
         .setNodePath(window.location.pathname.substr(0,window.location.pathname.length - 5))
+        .$watch(function(i) {
+            console.log(i.getNodes());
+        })
         .setQuery('search', $scope);
 
 
