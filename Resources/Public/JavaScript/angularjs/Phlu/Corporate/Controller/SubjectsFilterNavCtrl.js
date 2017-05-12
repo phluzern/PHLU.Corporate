@@ -40,9 +40,6 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
         .setPropertiesBoost(boost)
         .setNodeType(['phlu-corporate-contact','phlu-corporate-textplain'])
         .setNodePath(window.location.pathname.substr(0,window.location.pathname.length - 5))
-        .$watch(function(i) {
-            console.log(i.getNodes());
-        })
         .setQuery('search', $scope);
 
 
