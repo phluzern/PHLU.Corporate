@@ -115,6 +115,9 @@
       ui:
         reloadIfChanged: true
         label: EventoID
+        inspector:
+          editorOptions:
+            allowEmpty: true
     education:
       type: string
       ui:
