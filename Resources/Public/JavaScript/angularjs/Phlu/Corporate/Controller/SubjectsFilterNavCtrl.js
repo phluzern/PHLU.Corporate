@@ -2,7 +2,7 @@
 PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$timeout', '$cookies', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $timeout, $cookies) {
 
 
-    $scope.list = new $hybridsearchObject(hybridsearch);
+    var list = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();
     $scope.search = '';
     $scope.distinctUri = [];
@@ -21,26 +21,20 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
 
     var boost = {
 
-        'phlu-corporate-contact-firstname': 50,
-        'phlu-corporate-contact-lastname': 50,
-        'phlu-corporate-contact-education': -1, // dont'search here
-        'phlu-corporate-contact-activities': -1, // dont'search here
-        'phlu-corporate-contact-function': 10,
-        'phlu-corporate-contact-functions': -1,
-        'phlu-corporate-contact-consulting': -1, // dont'search here
-        'phlu-corporate-contact-expertise': -1, // dont'search here
-        'phlu-corporate-contact-functioncustom': -1, // dont'search here
-        'phlu-corporate-contactsgroup.phlu-corporate-contact-firstname': 60,
-        'phlu-corporate-contactsgroup.phlu-corporate-contact-lastname': 60,
-        'phlu-corporate-contact-phone': 10
-
+        'phlu-corporate-contact-image': -1,
+        'phlu-corporate-contact-city': -1,
+        'phlu-corporate-contact-organisations': -1,
+        'phlu-corporate-contact-portrait': -1,
+        'phlu-corporate-contact-zip': -1
 
     };
 
 
-    $scope.list
+    list
+        .disableRealtime()
         .$bind('result', $scope)
         .setPropertiesBoost(boost)
+        .setNodeType(['phlu-corporate-contact','phlu-corporate-textplain'])
         .setNodePath(window.location.pathname.substr(0,window.location.pathname.length - 5))
         .setQuery('search', $scope);
 
