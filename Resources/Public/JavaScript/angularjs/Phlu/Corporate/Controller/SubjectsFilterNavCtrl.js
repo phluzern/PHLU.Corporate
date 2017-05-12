@@ -38,7 +38,7 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
         .disableRealtime()
         .$bind('result', $scope)
         .setPropertiesBoost(boost)
-        .setNodeType(['phlu-corporate-contact','phlu-corporate-textplain'])
+        .setNodeType(['phlu-corporate-contact','phlu-corporate-text'])
         .setNodePath(window.location.pathname.substr(0,window.location.pathname.length - 5))
         .setQuery('search', $scope);
 
