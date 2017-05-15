@@ -182,7 +182,7 @@
                             </f:if>
 
                             <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Study'">
-                                <f:if condition="course:Date(date: year.BookableUntil.date, format: 'Y')} > 1970">
+                                <f:if condition="{course:Date(date: year.BookableUntil.date, format: 'Y')} > 1970">
                                     <f:if condition="{year.BookableUntil}">
                                         <tr>
                                             <td>
