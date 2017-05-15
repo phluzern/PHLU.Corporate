@@ -8691,12 +8691,16 @@ body {
         font-size: 1rem;
         cursor: pointer !important;
         padding: 8px 23px; }
-        body .all .nav-pills li a.nav-link .count {
-          float: right;
-          display: block;
-          position: relative;
-          margin-right: -30px;
-          margin-top: -46px;
+      body .all .nav-pills li > span {
+        float: right;
+        margin-top: -54px;
+        margin-right: 14px; }
+        @media (max-width: 543px) {
+          body .all .nav-pills li > span {
+            margin-right: 61px;
+            margin-top: -34px; } }
+        body .all .nav-pills li > span .count {
+          position: absolute;
           color: white;
           font-weight: 700;
           background-color: #216A75;
@@ -8706,33 +8710,25 @@ body {
           padding: 3px;
           border-radius: 13px;
           font-size: 14px; }
+        body .all .nav-pills li > span .resetFilter {
+          position: absolute;
+          font-size: 10px;
+          margin-left: 22px;
+          margin-top: -10px;
+          cursor: pointer; }
           @media (max-width: 543px) {
-            body .all .nav-pills li a.nav-link .count {
-              margin-right: 14px;
-              margin-top: 0; } }
-      body .all .nav-pills li a.nav-item {
-        margin: 0 5px 5px 0; }
+            body .all .nav-pills li > span .resetFilter {
+              margin-top: 4px;
+              margin-left: 37px; } }
+          body .all .nav-pills li > span .resetFilter a {
+            color: #333333;
+            font-weight: 100; }
+            body .all .nav-pills li > span .resetFilter a:hover {
+              background-color: inherit;
+              border: 0; }
       body .all .nav-pills li a:hover, body .all .nav-pills li a:active {
         border: 2px solid #171815;
         color: #171815; }
-      body .all .nav-pills li .resetFilter {
-        float: right;
-        display: block;
-        position: relative;
-        margin-top: -65px;
-        margin-right: -16px;
-        font-size: 10px;
-        cursor: pointer; }
-        @media (max-width: 543px) {
-          body .all .nav-pills li .resetFilter {
-            margin-top: -31px;
-            margin-right: 14px; } }
-        body .all .nav-pills li .resetFilter a {
-          color: #333333;
-          font-weight: 100; }
-          body .all .nav-pills li .resetFilter a:hover {
-            background-color: inherit;
-            border: 0; }
     body .all .anchors-mobile-view {
       display: none;
       padding: 33px 0; }

@@ -1109,16 +1109,17 @@ body {
           cursor: pointer !important;
           padding: 8px 23px;
 
+        }
+        > span {
+          float: right;
+          margin-top: -54px;
+          margin-right: 14px;
+          @include media-breakpoint-down("xs") {
+            margin-right: 61px;
+            margin-top: -34px;
+          }
           .count {
-            float: right;
-            display: block;
-            position: relative;
-            margin-right: -30px;
-            margin-top: -46px;
-            @include media-breakpoint-down("xs") {
-              margin-right: 14px;
-              margin-top: 0;
-            }
+            position: absolute;
             color: white;
             font-weight: $font-weight-bold;
             background-color: $petroldark;
@@ -1129,35 +1130,29 @@ body {
             border-radius: 13px;
             font-size: 14px;
           }
-
-        }
-        a.nav-item {
-          margin: 0 5px 5px 0;
+          .resetFilter {
+            position: absolute;
+            font-size: 10px;
+            margin-left: 22px;
+            margin-top: -10px;
+            cursor: pointer;
+            @include media-breakpoint-down("xs") {
+              margin-top: 4px;
+              margin-left: 37px;
+            }
+            a {
+              color: $black;
+              font-weight: 100;
+              &:hover {
+                background-color: inherit;
+                border: 0;
+              }
+            }
+          }
         }
         a:hover, a:active {
           border: 2px solid $naviBlack;
           color: $naviBlack;
-        }
-        .resetFilter {
-          float: right;
-          display: block;
-          position: relative;
-          margin-top: -65px;
-          margin-right: -16px;
-          font-size: 10px;
-          cursor: pointer;
-          @include media-breakpoint-down("xs") {
-            margin-top: -31px;
-            margin-right: 14px;
-          }
-          a {
-            color: $black;
-            font-weight: 100;
-            &:hover {
-              background-color: inherit;
-              border: 0;
-            }
-          }
         }
       }
     }
