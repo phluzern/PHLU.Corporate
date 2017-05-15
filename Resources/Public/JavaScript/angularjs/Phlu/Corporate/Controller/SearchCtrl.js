@@ -91,7 +91,6 @@ PhluCorporateApp.directive('search', function ($sce) {
                             }
 
 
-
                         case 'phlu-neos-nodetypes-publication':
 
                             if ($scope.view === 'all') {
@@ -192,7 +191,7 @@ PhluCorporateApp.directive('nodeType', function ($sce) {
 });
 
 
-PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$compile', function ($scope, $rootScope, $sce, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $compile) {
+PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$compile', '$document', function ($scope, $rootScope, $sce, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $compile, $document) {
 
 
     $scope.result = new $hybridsearchResultsObject();
@@ -285,7 +284,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Kontakte': ['email', 'phone'],
         'Standorte': ['lng', 'lat'],
         'Projekte': 'title',
-        'Seiten': ['url','documentNode.title'],
+        'Seiten': ['url', 'documentNode.title'],
         'Weiterbildungsstudiengänge': 'url',
         'Weiterbildungsskurse': 'url',
         'Weiterbildungsveranstaltungen': 'url'
@@ -496,15 +495,22 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             window.clearTimeout(searchResultApplyTimer);
         }
 
+        if (lasthash === null) {
+            // watch for escape
+            $document.bind('keydown', function (e) {
+                if (e.keyCode == 27) {
+                    $scope.stopSearch();
+                }
+            });
+        }
 
         searchResultApplyTimer = setTimeout(function () {
             var lh = data.getHash();
 
             if (lasthash !== lh) {
-                $scope.$apply(function () {
+                $scope.$digest(function () {
 
                     $rootScope.quickNode = data.getQuickNodes()[0];
-
 
                     angular.forEach($rootScope.siteSearchTabs, function (group, id) {
                         $rootScope.siteSearchTabs[id] = false;
@@ -535,7 +541,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
             lasthash = lh;
 
-        }, 1);
+        }, 10);
 
 
     });
@@ -581,10 +587,15 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         $scope.results = [];
         wasClosed = true;
         $scope.isSearch = false;
+        window.setTimeout(function () {
+            $rootScope.$digest();
+            $scope.$digest();
+        }, 1);
     };
 
     $scope.startSearch = function () {
         if (wasClosed) {
+            console.log('bind');
             wasClosed = false;
             $scope.siteSearch = $scope.siteSearchLastQuery;
         }
@@ -613,6 +624,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     });
 
+
+    var isbinded = false;
+
     $rootScope.$watch('siteSearch', function (i) {
 
         $scope.siteSearch = i;
@@ -622,17 +636,26 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             $(".sidebar").removeClass('siteSearchActive');
             $("body").removeClass('siteSearchActive');
             $("#search div").addClass('noSearchResults');
+            isbinded = false;
+
         } else {
-            if (wasClosed) {
-                $("body").removeClass('siteSearchActive');
-                wasClosed = false;
+
+            if (isbinded == false) {
+
+                if (wasClosed) {
+                    $("body").removeClass('siteSearchActive');
+                    wasClosed = false;
+                }
+                else {
+                    $(".sidebar").addClass('siteSearchActive');
+                    $("body").addClass('siteSearchActive');
+                    $("#search div").removeClass('noSearchResults');
+                    search.run();
+                }
+
             }
-            else {
-                $(".sidebar").addClass('siteSearchActive');
-                $("body").addClass('siteSearchActive');
-                $("#search div").removeClass('noSearchResults');
-                search.run();
-            }
+
+            isbinded = true;
 
         }
     });
