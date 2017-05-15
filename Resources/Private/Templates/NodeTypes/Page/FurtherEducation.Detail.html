@@ -48,7 +48,7 @@
                                            href="#uebersicht">Übersicht</a>
                                     </li>
                                     <f:for each="{sectionsInPage}" as="item" iteration="iterator">
-                                        <li >
+                                        <li>
                                             <a class="nav-item nav-link anchor-nav" href="#node-{item.Identifier}">{item.properties.title}</a>
                                         </li>
                                     </f:for>
@@ -180,19 +180,22 @@
                                     </tr>
                                 </f:if>
                             </f:if>
+
                             <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Study'">
-                                <f:if condition="{year.BookableUntil}">
-                                    <tr>
-                                        <td>
-                                            Anmeldeschluss
-                                            <div class="mobile-view-columns">
+                                <f:if condition="course:Date(date: year.BookableUntil.date, format: 'Y')} > 1970">
+                                    <f:if condition="{year.BookableUntil}">
+                                        <tr>
+                                            <td>
+                                                Anmeldeschluss
+                                                <div class="mobile-view-columns">
+                                                    {course:Date(date: year.BookableUntil.date, format: 'd.m.Y')}
+                                                </div>
+                                            </td>
+                                            <td>
                                                 {course:Date(date: year.BookableUntil.date, format: 'd.m.Y')}
-                                            </div>
-                                        </td>
-                                        <td>
-                                            {course:Date(date: year.BookableUntil.date, format: 'd.m.Y')}
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
+                                    </f:if>
                                 </f:if>
                                 <tr>
                                     <td>
