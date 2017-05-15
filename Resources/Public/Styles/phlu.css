@@ -9004,13 +9004,16 @@ body {
                 float: left;
                 margin-top: 6px; }
               body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span {
-                display: block;
                 margin-top: 0; }
+                body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span.oi {
+                  float: right; }
                 @media (max-width: 767px) {
                   body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span {
                     margin-top: -3px; } }
             body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li:hover, body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li.selected {
               background-color: #edeae8; }
+        body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='scholarYear'] .dropdown-menu li a span {
+          float: left; }
 
 @media (min-width: 544px) and (max-width: 767px) {
   body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='scholarYear'] .dropdown-menu li a span {
@@ -9019,12 +9022,9 @@ body {
 @media (min-width: 768px) and (max-width: 991px) {
   body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='scholarYear'] .dropdown-menu li a span {
     width: 80%; } }
-        @media (min-width: 992px) {
-          body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='scholarYear'] .dropdown-menu li a span {
-            float: inherit; } }
-        @media (min-width: 768px) {
-          body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='weekday'] .dropdown-menu li a span {
-            width: 87%; } }
+          body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='scholarYear'] .dropdown-menu li a span:last-child {
+            margin-left: 11px;
+            float: right; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col i.fa-search {
           color: #5c5c5c;
           right: 11px; }
