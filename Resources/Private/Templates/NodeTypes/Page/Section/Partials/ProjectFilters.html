@@ -28,14 +28,15 @@
                        data-target="#organisationunits-{node.Identifier}" role="tab">
                         <i class="fa fa-flask" aria-hidden="true"></i>
                         <span>Organisation</span>
-                        <span class="count" data-ng-show="sizeOf(organisationunits) > 0"
-                              data-ng-bind="sizeOf(organisationunits)"></span>
                     </a>
-                    <span data-ng-show="sizeOf(organisationunits) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('organisationunits')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
-                                </span>
+                    <span>
+                        <span class="count" data-ng-show="sizeOf(organisationunits) > 0" data-ng-bind="sizeOf(organisationunits)"></span>
+                        <span data-ng-show="sizeOf(organisationunits) > 0" class="resetFilter">
+                            <a ng-click="clearFilter('organisationunits')">
+                                <span class="oi oi-x"></span>
+                            </a>
+                        </span>
+                    </span>
                 </li>
                 <li class="nav-item"
                     data-ng-show="initialFilters.participants === undefined">
@@ -43,14 +44,15 @@
                        data-target="#projectparticipants-{node.Identifier}" role="tab">
                         <i class="fa fa-users" aria-hidden="true"></i>
                         <span>Projektbeteiligte Personen</span>
-                        <span class="count" data-ng-show="sizeOf(projectparticipants) > 0"
-                              data-ng-bind="sizeOf(projectparticipants)"></span>
                     </a>
-                    <span data-ng-show="sizeOf(projectparticipants) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('projectparticipants')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
-                                </span>
+                    <span>
+                        <span class="count" data-ng-show="sizeOf(projectparticipants) > 0" data-ng-bind="sizeOf(projectparticipants)"></span>
+                        <span data-ng-show="sizeOf(projectparticipants) > 0" class="resetFilter">
+                            <a ng-click="clearFilter('projectparticipants')">
+                                <span class="oi oi-x"></span>
+                            </a>
+                        </span>
+                    </span>
                 </li>
                 <li class="nav-item"
                     data-ng-show="initialFilters.financingtype === undefined && result.getDistinctCount('financingtype',false) > 1">
@@ -58,14 +60,15 @@
                        data-target="#financing-{node.Identifier}" role="tab">
                         <i class="fa fa-usd" aria-hidden="true"></i>
                         <span>Finanzierungstyp</span>
-                        <span class="count" data-ng-show="sizeOf(financingtype) > 0"
-                              data-ng-bind="sizeOf(financingtype)"></span>
                     </a>
-                    <span data-ng-show="sizeOf(financingtype) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('financingtype')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
-                                </span>
+                    <span>
+                        <span class="count" data-ng-show="sizeOf(financingtype) > 0" data-ng-bind="sizeOf(financingtype)"></span>
+                        <span data-ng-show="sizeOf(financingtype) > 0" class="resetFilter">
+                            <a ng-click="clearFilter('financingtype')">
+                                <span class="oi oi-x"></span>
+                            </a>
+                        </span>
+                    </span>
                 </li>
                 <li class="nav-item"
                     data-ng-show="initialFilters.researchmainfocus === undefined ">
@@ -73,14 +76,15 @@
                        data-target="#researchfocus-{node.Identifier}" role="tab">
                         <i class="fa fa-flask" aria-hidden="true"></i>
                         <span>Forschungsschwerpunkte</span>
-                        <span class="count" data-ng-show="sizeOf(researchmainfocus) > 0"
-                              data-ng-bind="sizeOf(researchmainfocus)"></span>
                     </a>
-                    <span data-ng-show="sizeOf(researchmainfocus) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('researchmainfocus')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
-                                </span>
+                    <span>
+                        <span class="count" data-ng-show="sizeOf(researchmainfocus) > 0" data-ng-bind="sizeOf(researchmainfocus)"></span>
+                        <span data-ng-show="sizeOf(researchmainfocus) > 0" class="resetFilter">
+                            <a ng-click="clearFilter('researchmainfocus')">
+                                <span class="oi oi-x"></span>
+                            </a>
+                        </span>
+                    </span>
                 </li>
                 <li class="nav-item"
                     data-ng-show="initialFilters.lifetime === undefined">
@@ -88,28 +92,31 @@
                        data-target="#projectstate-{node.Identifier}" role="tab">
                         <i class="fa fa-hourglass-start" aria-hidden="true"></i>
                         <span>Projektstatus</span>
-                        <span class="count" data-ng-show="sizeOf(filterLifetime) > 0"
-                              data-ng-bind="sizeOf(filterLifetime)"></span>
                     </a>
-                    <span data-ng-show="sizeOf(filterLifetime) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('filterLifetime')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
-                                </span>
+                    <span>
+                        <span class="count" data-ng-show="sizeOf(filterLifetime) > 0" data-ng-bind="sizeOf(filterLifetime)"></span>
+                        <span data-ng-show="sizeOf(filterLifetime) > 0" class="resetFilter">
+                            <a ng-click="clearFilter('filterLifetime')">
+                                <span class="oi oi-x"></span>
+                            </a>
+                        </span>
+                    </span>
                 </li>
                 <li class="nav-item" data-ng-show="result.getDistinctCount('projectend',false) > 1">
                     <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                        data-target="#projectenddate-{node.Identifier}" role="tab">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
                         <span>Projektende</span>
-                        <span class="count"
-                              data-ng-show="sizeOf(projectend) > 0" data-ng-bind="sizeOf(projectend)"></span>
                     </a>
-                    <span data-ng-show="sizeOf(projectend) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('projectend')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
-                                </span>
+                    <span>
+                        <span class="count" data-ng-show="sizeOf(projectend) > 0" data-ng-bind="sizeOf(projectend)"></span>
+                        <span data-ng-show="sizeOf(projectend) > 0" class="resetFilter">
+                            <a ng-click="clearFilter('projectend')">
+                                <span class="oi oi-x"></span>
+                            </a>
+                        </span>
+                    </span>
+
                 </li>
             </ul>
         </div>
@@ -134,7 +141,8 @@
                                         <span data-ng-bind="ltg.value.name + ' (' + ltg.count + ')'">
 
                                                     </span>
-                                        <span class="oi" data-ng-class="{'oi-check': researchmainfocus[ltg.value.ID],'': !researchmainfocus[ltg.value.ID]}"
+                                        <span class="oi"
+                                              data-ng-class="{'oi-check': researchmainfocus[ltg.value.ID],'': !researchmainfocus[ltg.value.ID]}"
                                               aria-hidden="true"></span>
                                     </a>
                                 </td>
@@ -152,7 +160,8 @@
                                         <span data-ng-bind="lt.value.name + ' (' + lt.count + ')'">
 
                                                     </span>
-                                        <span class="oi" data-ng-class="{'oi-check': researchmainfocus[lt.value.ID],'': !researchmainfocus[lt.value.ID]}"
+                                        <span class="oi"
+                                              data-ng-class="{'oi-check': researchmainfocus[lt.value.ID],'': !researchmainfocus[lt.value.ID]}"
                                               aria-hidden="true"></span>
                                     </a>
                                 </td>
@@ -178,7 +187,8 @@
                                         <span data-ng-bind="ltg.value.name + ' (' + ltg.count + ')'">
 
                                                     </span>
-                                        <span class="oi" data-ng-class="{'oi-check': researchmainfocus[lt.value],'': !researchmainfocus[lt.value]}"
+                                        <span class="oi"
+                                              data-ng-class="{'oi-check': researchmainfocus[lt.value],'': !researchmainfocus[lt.value]}"
                                               aria-hidden="true"></span>
                                     </a>
                                 </td>
@@ -201,9 +211,11 @@
                            aria-hidden="true" data-ng-click="projectparticipantsSearch = '';"></i>
                     </div>
                     <div class="search-result-tags" data-ng-show="sizeOf(projectparticipants) > 0">
-                                    <span class="search-result-tag" data-ng-repeat="(eventoID,val) in projectparticipants" data-ng-if="val">
+                                    <span class="search-result-tag"
+                                          data-ng-repeat="(eventoID,val) in projectparticipants" data-ng-if="val">
                                         <span data-ng-bind="val"></span>
-                                        <span class="oi oi-x clickable" aria-hidden="true" data-ng-click="projectparticipants[eventoID] = false;"></span>
+                                        <span class="oi oi-x clickable" aria-hidden="true"
+                                              data-ng-click="projectparticipants[eventoID] = false;"></span>
                                     </span>
                     </div>
                     <div class="table-responsive">
@@ -237,7 +249,8 @@
                                 <td>
                                     <a href="javascript:void(0);">
                                         <span data-ng-bind="lt.value + ' ('+ lt.count + ')'"></span>
-                                        <span class="oi" data-ng-class="{'oi-check': filterLifetime[lt.value],'': !filterLifetime[lt.value]}"
+                                        <span class="oi"
+                                              data-ng-class="{'oi-check': filterLifetime[lt.value],'': !filterLifetime[lt.value]}"
                                               aria-hidden="true"></span>
                                     </a>
                                 </td>
@@ -266,7 +279,8 @@
                                         <span data-ng-bind="lt.value.name + ' ('+ lt.count+')'">
 
                                                     </span>
-                                        <span class="oi" data-ng-class="{'oi-check': organisationunits[lt.value.id],'': !organisationunits[lt.value.id]}"
+                                        <span class="oi"
+                                              data-ng-class="{'oi-check': organisationunits[lt.value.id],'': !organisationunits[lt.value.id]}"
                                               aria-hidden="true"></span>
                                     </a>
                                 </td>

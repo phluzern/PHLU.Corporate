@@ -97,9 +97,9 @@
                                             data-ng-repeat="year in result.getDistinct('furthereducation-years.Year.*',false)  | orderObjectBy:'value'">
                                             <a href="javascript:void(0)"
                                                data-ng-click="toggleFilterSelection(year,'Alle','year')">
-                                                <i class="fa " aria-hidden="true"
-                                                   data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
                                                 <span data-ng-bind="year.value"></span>
+                                                <span class="oi" data-ng-class="{'oi-check': isFilterValueSelected(year.value,filters.year),'': !isFilterValueSelected(year.value,filters.year)}"
+                                                      aria-hidden="true"></span>
                                             </a>
                                         </li>
                                     </ul>
@@ -128,9 +128,9 @@
                                             data-ng-repeat="targetgroup in result.getDistinct('targetgroups.Bezeichnung')  | orderObjectBy:'value'">
                                             <a href="javascript:void(0)"
                                                data-ng-click="toggleFilterSelection(targetgroup,'Alle','targetgroups')">
-                                                <i class="fa " aria-hidden="true"
-                                                   data-ng-class="{'fa-check-square-o': isFilterValueSelected(targetgroup.value,filters.targetgroups), 'fa-square-o': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"></i>
                                                 <span data-ng-bind="targetgroup.value"></span>
+                                                <span class="oi" data-ng-class="{'oi-check': isFilterValueSelected(targetgroup.value,filters.targetgroups),'': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"
+                                                      aria-hidden="true"></span>
                                             </a>
                                         </li>
                                     </ul>
@@ -180,6 +180,7 @@
                                                 <i class="fa " aria-hidden="true"
                                                    data-ng-class="{'fa-check-square-o': isFilterValueSelected(year.value,filters.year), 'fa-square-o': !isFilterValueSelected(year.value,filters.year)}"></i>
                                                 <span data-ng-bind="year.value"></span>
+
                                             </a>
                                         </li>
                                     </ul>
@@ -207,8 +208,7 @@
                                         </a>
                                     </div>
                                     <ul class="dropdown-menu">
-                                        <li value=""
-                                            data-ng-repeat="graduation in result.getDistinct('graduation')  | orderObjectBy:'value'">
+                                        <li value="" data-ng-repeat="graduation in result.getDistinct('graduation')  | orderObjectBy:'value'" data-ng-class="{'selected': isFilterValueSelected(graduation.value,filters.graduation), '': !isFilterValueSelected(graduation.value,filters.graduation)}">
                                             <a href="javascript:void(0)"
                                                data-ng-click="toggleFilterSelection(graduation,'Studiengang','graduation')">
                                                 <i class="fa " aria-hidden="true"

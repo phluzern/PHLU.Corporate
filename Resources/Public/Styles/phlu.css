@@ -8691,12 +8691,16 @@ body {
         font-size: 1rem;
         cursor: pointer !important;
         padding: 8px 23px; }
-        body .all .nav-pills li a.nav-link .count {
-          float: right;
-          display: block;
-          position: relative;
-          margin-right: -30px;
-          margin-top: -46px;
+      body .all .nav-pills li > span {
+        float: right;
+        margin-top: -54px;
+        margin-right: 14px; }
+        @media (max-width: 543px) {
+          body .all .nav-pills li > span {
+            margin-right: 61px;
+            margin-top: -34px; } }
+        body .all .nav-pills li > span .count {
+          position: absolute;
           color: white;
           font-weight: 700;
           background-color: #216A75;
@@ -8706,33 +8710,25 @@ body {
           padding: 3px;
           border-radius: 13px;
           font-size: 14px; }
+        body .all .nav-pills li > span .resetFilter {
+          position: absolute;
+          font-size: 10px;
+          margin-left: 22px;
+          margin-top: -10px;
+          cursor: pointer; }
           @media (max-width: 543px) {
-            body .all .nav-pills li a.nav-link .count {
-              margin-right: 14px;
-              margin-top: 0; } }
-      body .all .nav-pills li a.nav-item {
-        margin: 0 5px 5px 0; }
+            body .all .nav-pills li > span .resetFilter {
+              margin-top: 4px;
+              margin-left: 37px; } }
+          body .all .nav-pills li > span .resetFilter a {
+            color: #333333;
+            font-weight: 100; }
+            body .all .nav-pills li > span .resetFilter a:hover {
+              background-color: inherit;
+              border: 0; }
       body .all .nav-pills li a:hover, body .all .nav-pills li a:active {
         border: 2px solid #171815;
         color: #171815; }
-      body .all .nav-pills li .resetFilter {
-        float: right;
-        display: block;
-        position: relative;
-        margin-top: -65px;
-        margin-right: -16px;
-        font-size: 10px;
-        cursor: pointer; }
-        @media (max-width: 543px) {
-          body .all .nav-pills li .resetFilter {
-            margin-top: -31px;
-            margin-right: 14px; } }
-        body .all .nav-pills li .resetFilter a {
-          color: #333333;
-          font-weight: 100; }
-          body .all .nav-pills li .resetFilter a:hover {
-            background-color: inherit;
-            border: 0; }
     body .all .anchors-mobile-view {
       display: none;
       padding: 33px 0; }
@@ -9009,12 +9005,11 @@ body {
                 margin-top: 6px; }
               body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span {
                 display: block;
-                padding-left: 26px;
                 margin-top: 0; }
                 @media (max-width: 767px) {
                   body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span {
                     margin-top: -3px; } }
-            body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li:hover {
+            body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li:hover, body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li.selected {
               background-color: #edeae8; }
 
 @media (min-width: 544px) and (max-width: 767px) {
@@ -10714,6 +10709,8 @@ body {
         background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
         -webkit-background-size: 1rem 1rem;
         background-size: 1rem 1rem; }
+    body .all .further-education-special-search .table-responsive .table thead tr .centered-column, body .all .further-education-special-search .table-responsive .table tbody tr .centered-column {
+      text-align: center; }
     body .all .further-education-special-search .table-responsive .table thead tr th {
       padding: 12px 20px; }
     body .all .further-education-special-search .table-responsive .table tbody tr {
@@ -10756,8 +10753,6 @@ body {
                            }
                          }
            */ }
-      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status, body .all .further-education-special-search .table-responsive .table tbody tr td.course-number, body .all .further-education-special-search .table-responsive .table tbody tr td.course-type {
-        width: 100px; }
       body .all .further-education-special-search .table-responsive .table tbody tr .bookable {
         color: green; }
       body .all .further-education-special-search .table-responsive .table tbody tr .booked-out {
@@ -10780,8 +10775,6 @@ body {
           content: 'Kurs'; }
         body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-graduation-cap:hover::after {
           content: 'Studiengang'; }
-      body .all .further-education-special-search .table-responsive .table tbody tr td.booking-status {
-        text-align: center; }
       body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
         margin: 0 30px;
         margin-bottom: 15px; }
