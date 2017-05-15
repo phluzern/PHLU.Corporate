@@ -1540,17 +1540,15 @@ body {
                 }
                 span {
                   display: block;
-                  padding-left: 26px;
                   margin-top: 0;
                   @include media-breakpoint-down("sm") {
                     margin-top: -3px;;
                   }
                 }
               }
-              &:hover {
+              &:hover, &.selected {
                 background-color: $lightgrey;
               }
-
             }
           }
           &[name='scholarYear'] {
@@ -3793,8 +3791,8 @@ body {
                     &.subitem {
                       margin-left: 20px;
                       span.oi {
-                        right:20px;
-                        padding-left:20px;
+                        right: 20px;
+                        padding-left: 20px;
                       }
                     }
                     i, span {
@@ -4297,6 +4295,13 @@ body {
       }
       .table-responsive {
         .table {
+          thead, tbody {
+            tr {
+              .centered-column {
+                text-align: center;
+              }
+            }
+          }
           thead {
             tr {
               th {
@@ -4306,9 +4311,6 @@ body {
           }
           tbody {
             tr {
-              td.booking-status, td.course-number, td.course-type {
-                width: 100px;
-              }
               .bookable {
                 color: green;
               }
@@ -4350,9 +4352,6 @@ body {
                   }
                 }
                 white-space: nowrap;
-              }
-              td.booking-status {
-                text-align: center;
               }
               &.result-preview {
                 .result-preview-contents {

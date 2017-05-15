@@ -2,17 +2,17 @@
     <table class="table">
         <thead>
         <tr>
-            <th class="clickable">
-                <a href="#">Beschreibung</a>
+            <th>
+                Beschreibung
             </th>
-            <th class="clickable">
-                <a href="#">Nummer</a>
+            <th>
+                Nummer
             </th>
-            <th class="clickable">
-                <a href="#">Buchbar</a>
+            <th class="centered-column">
+                Buchbar
             </th>
-            <th class="clickable">
-                <a href="#">Typ</a>
+            <th class="centered-column">
+                Typ
             </th>
         </tr>
         </thead>
@@ -30,7 +30,7 @@
             <td class="course-number">
                 <span data-ng-bind="node.getProperty('nr')"></span>
             </td>
-            <td class="booking-status">
+            <td class="centered-column">
                 <i class="fa fa-circle bookable" aria-hidden="true"
                    data-ng-if="node.getProperty('years.Bookable').indexOf(true) > -1"></i>
                 <i class="fa fa-circle booked-out" aria-hidden="true"
@@ -38,7 +38,7 @@
                 <!--                                    <br>
                                                     <i class="fa fa-info-circle booking-info" aria-hidden="true"></i>-->
             </td>
-            <td class="course-type">
+            <td class="course-type centered-column">
                 <i class="fa fa-graduation-cap" alt="Studiengang" aria-hidden="true"
                    data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-study-furthereducation'"></i>
                 <i class="fa fa-calendar" alt="Veranstaltung" aria-hidden="true"
