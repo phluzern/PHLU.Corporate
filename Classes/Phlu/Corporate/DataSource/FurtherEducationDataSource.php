@@ -39,7 +39,17 @@ class FurtherEducationDataSource extends AbstractDataSource {
      */
     protected $eventCourseRepository;
 
+    /**
+     * @Flow\Inject
+     * @var \Neos\Flow\Http\Client\CurlEngine
+     */
+    protected $browserRequestEngine;
 
+    /**
+     * @Flow\Inject
+     * @var \Neos\Flow\Http\Client\Browser
+     */
+    protected $browser;
 
 
     /**
@@ -118,6 +128,26 @@ class FurtherEducationDataSource extends AbstractDataSource {
                     }
                 }
             }
+
+
+                // import asset from url
+                $headers = array(
+                    "Cache-Control: no-cache",
+                );
+
+                $this->browserRequestEngine->setOption(CURLOPT_HTTPHEADER, $headers);
+                $this->browserRequestEngine->setOption(CURLOPT_SSL_VERIFYPEER, FALSE);
+                $this->browserRequestEngine->setOption(CURLOPT_CONNECTTIMEOUT, 60);
+                $this->browserRequestEngine->setOption(CURLOPT_TIMEOUT, 60);
+                $this->browserRequestEngine->setOption(CURLOPT_TIMEOUT, 60);
+                $this->browserRequestEngine->setOption(CURLOPT_FRESH_CONNECT, TRUE);
+                $this->browser->setRequestEngine($this->browserRequestEngine);
+
+                $genres = \json_decode($this->browser->request('https://api.phlu.ch/api/Anlass/WB/Kurs/Rubriken', 'GET'));
+                foreach ($genres as $genre) {
+                        $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+                }
+
 
             break;
 
