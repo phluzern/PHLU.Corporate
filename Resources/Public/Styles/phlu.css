@@ -10135,28 +10135,6 @@ body {
       padding-right: 10px; }
     body .all .phlu-dozpage .row address .content-link-email-contact-person::before {
       margin-right: 5px; }
-    body .all .phlu-dozpage .row address .social {
-      list-style-type: none; }
-      body .all .phlu-dozpage .row address .social li a {
-        margin-left: 5px; }
-      body .all .phlu-dozpage .row address .social .twitter {
-        background-image: none; }
-        body .all .phlu-dozpage .row address .social .twitter::before {
-          font-family: FontAwesome;
-          content: " \f099";
-          position: absolute;
-          left: 15px; }
-        body .all .phlu-dozpage .row address .social .twitter::after {
-          background-image: none; }
-      body .all .phlu-dozpage .row address .social .blog {
-        background-image: none; }
-        body .all .phlu-dozpage .row address .social .blog::before {
-          font-family: FontAwesome;
-          content: " \f086";
-          position: absolute;
-          left: 15px; }
-        body .all .phlu-dozpage .row address .social .blog::after {
-          background-image: none; }
     body .all .phlu-dozpage .row.function ul, body .all .phlu-dozpage .row.working-priorities ul, body .all .phlu-dozpage .row.consultation-priorities ul, body .all .phlu-dozpage .row.achievements ul, body .all .phlu-dozpage .row.talks ul, body .all .phlu-dozpage .row.links ul {
       margin-bottom: inherit; }
       body .all .phlu-dozpage .row.function ul li, body .all .phlu-dozpage .row.working-priorities ul li, body .all .phlu-dozpage .row.consultation-priorities ul li, body .all .phlu-dozpage .row.achievements ul li, body .all .phlu-dozpage .row.talks ul li, body .all .phlu-dozpage .row.links ul li {
@@ -10671,110 +10649,6 @@ body {
         margin: 0; }
     body .all .blackBgFullWidthTabs .nav-pills .nav-item + .nav-item, body .all .blackBgFullWidthContents .nav-pills .nav-item + .nav-item {
       margin-left: 0; }
-    body .all .further-education-special-search .nodeTypeSwitcher .dropdown-toggle {
-      height: 55px; }
-    body .all .further-education-special-search .nodeTypeSwitcher .loadingIcon {
-      display: none;
-      color: white;
-      width: 30px;
-      height: 30px;
-      position: absolute;
-      margin-top: 6px;
-      margin-right: 6px;
-      margin-left: 5px;
-      padding-right: 10px; }
-      @media (max-width: 767px) {
-        body .all .further-education-special-search .nodeTypeSwitcher .loadingIcon {
-          margin-top: 0; } }
-    body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .dropdown-toggle::after {
-      border-top: 0; }
-    body .all .further-education-special-search .nodeTypeSwitcher.open.isloading .loadingIcon {
-      display: inline-block; }
-    body .all .further-education-special-search .extendedSearch button .loadingIcon {
-      color: white;
-      width: 30px;
-      height: 30px; }
-    body .all .further-education-special-search .progress {
-      background-color: #edeae8;
-      height: inherit; }
-      body .all .further-education-special-search .progress .progress-bar {
-        height: 30px;
-        background-color: #9f632a;
-        color: white;
-        padding-left: 15px;
-        line-height: 34px; }
-      body .all .further-education-special-search .progress .progress-bar-striped {
-        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-        background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-        -webkit-background-size: 1rem 1rem;
-        background-size: 1rem 1rem; }
-    body .all .further-education-special-search .table-responsive .table thead tr .centered-column, body .all .further-education-special-search .table-responsive .table tbody tr .centered-column {
-      text-align: center; }
-    body .all .further-education-special-search .table-responsive .table thead tr th {
-      padding: 12px 20px; }
-    body .all .further-education-special-search .table-responsive .table tbody {
-      border-top: 2px solid #edeae8; }
-      body .all .further-education-special-search .table-responsive .table tbody tr .bookable {
-        color: green; }
-      body .all .further-education-special-search .table-responsive .table tbody tr .booked-out {
-        color: red; }
-      body .all .further-education-special-search .table-responsive .table tbody tr .booking-info {
-        color: blue; }
-      body .all .further-education-special-search .table-responsive .table tbody tr td.course-number {
-        white-space: nowrap; }
-      body .all .further-education-special-search .table-responsive .table tbody tr td.course-type {
-        white-space: nowrap; }
-        body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i:hover::after {
-          font-family: "Droid Sans", sans-serif;
-          display: block;
-          position: absolute;
-          margin-top: -20px;
-          margin-left: 30px;
-          background-color: #edeae8;
-          padding: 5px 10px; }
-        body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-book:hover::after {
-          content: 'Kurs'; }
-        body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-graduation-cap:hover::after {
-          content: 'Studiengang'; }
-      body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
-        margin: 0 30px;
-        margin-bottom: 15px; }
-        @media (max-width: 767px) {
-          body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
-            margin: 0 20px; } }
-        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle span {
-          display: block;
-          float: left;
-          padding-right: 10px; }
-        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu a {
-          font-size: 1rem; }
-      body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .details {
-        float: left;
-        margin-left: 0; }
-      body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister {
-        float: right; }
-        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
-          color: #28818f;
-          background-color: inherit;
-          line-height: 9px; }
-          body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share .shareText {
-            display: inherit;
-            overflow: inherit;
-            font-size: 0.75rem; }
-          @media (max-width: 767px) {
-            body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
-              padding: 0 19px; } }
-          @media (max-width: 543px) {
-            body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
-              padding: 0 5px 0 0; } }
-      body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
-        display: none; }
-        @media (max-width: 767px) {
-          body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
-            display: table-row; } }
-        body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only td {
-          border-top: 0; }
     body .all .has-no-target-group-codes {
       margin-bottom: 50px; }
     body .all .target-group-codes {
@@ -11189,18 +11063,7 @@ body {
       margin-bottom: 30px; }
     body .all .main {
       background-color: #FFFCFA;
-      flex-grow: 1;
-      /*      .further-education-order-button-float-top {
-              position: fixed;
-              top: 0;
-              right: 0;
-              background-color: $lightgrey;
-              padding: 5px 20px;
-              .btn {
-                font-size: 12px;
-
-              }
-            }*/ }
+      flex-grow: 1; }
       body .all .main .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
         width: 100%;
         font-size: 1.188rem; }
@@ -11306,7 +11169,7 @@ body {
         body .all .main > .row address .corporate-function, body .all .main > .row-fullwidth-content > .row address .corporate-function {
           white-space: nowrap; }
         body .all .main > .row address .telephone, body .all .main > .row-fullwidth-content > .row address .telephone {
-          margin-top: 5px;
+          margin-top: 10px;
           color: #9f632a; }
           body .all .main > .row address .telephone .fa-phone, body .all .main > .row-fullwidth-content > .row address .telephone .fa-phone {
             padding-right: 6px; }
@@ -11320,6 +11183,28 @@ body {
               font-size: 1rem; } }
         body .all .main > .row address .content-link-portrait:before, body .all .main > .row-fullwidth-content > .row address .content-link-portrait:before {
           padding-right: 4px; }
+      body .all .main > .row .social, body .all .main > .row-fullwidth-content > .row .social {
+        list-style-type: none; }
+        body .all .main > .row .social li a, body .all .main > .row-fullwidth-content > .row .social li a {
+          margin-left: 5px; }
+        body .all .main > .row .social .twitter, body .all .main > .row-fullwidth-content > .row .social .twitter {
+          background-image: none; }
+          body .all .main > .row .social .twitter::before, body .all .main > .row-fullwidth-content > .row .social .twitter::before {
+            font-family: FontAwesome;
+            content: " \f099";
+            position: absolute;
+            left: 15px; }
+          body .all .main > .row .social .twitter::after, body .all .main > .row-fullwidth-content > .row .social .twitter::after {
+            background-image: none; }
+        body .all .main > .row .social .blog, body .all .main > .row-fullwidth-content > .row .social .blog {
+          background-image: none; }
+          body .all .main > .row .social .blog::before, body .all .main > .row-fullwidth-content > .row .social .blog::before {
+            font-family: FontAwesome;
+            content: " \f086";
+            position: absolute;
+            left: 15px; }
+          body .all .main > .row .social .blog::after, body .all .main > .row-fullwidth-content > .row .social .blog::after {
+            background-image: none; }
       @media (max-width: 991px) {
         body .all .main > .row .img-fluid, body .all .main > .row .carousel-inner > .carousel-item > img, body .all .main > .row
         .carousel-inner > .carousel-item > a > img, body .all .main > .row .phlu-teaser img, body .all .phlu-teaser .main > .row img, body .all .main > .row-fullwidth-content > .row .img-fluid, body .all .main > .row-fullwidth-content > .row .carousel-inner > .carousel-item > img, body .all .main > .row-fullwidth-content > .row
@@ -11481,12 +11366,16 @@ body {
         body .all .main > .row a[href^='mailto']:hover, body .all .main > .row-fullwidth-content > .row a[href^='mailto']:hover {
           background-position: 0 0;
           background-repeat: repeat; }
-      body .all .main > .row .content-link-internal,
-      body .all .main > .row a[data-gentics-aloha-repository='node-repository'],
+      body .all .main > .row .content-link-internal a[href^='http://www.phlu.ch'], body .all .main > .row .content-link-internal a[href^='http://phlu.ch'], body .all .main > .row .content-link-internal a[href^='http://neos.phlu.dev'],
+      body .all .main > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://www.phlu.ch'],
+      body .all .main > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://phlu.ch'],
+      body .all .main > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://neos.phlu.dev'],
       body .all .main > .row .phlu-corporate-text a[href^='http://www.phlu.ch'],
       body .all .main > .row .phlu-corporate-text a[href^='http://phlu.ch'],
-      body .all .main > .row .phlu-corporate-text a[href^='http://neos.phlu.dev'], body .all .main > .row-fullwidth-content > .row .content-link-internal,
-      body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'],
+      body .all .main > .row .phlu-corporate-text a[href^='http://neos.phlu.dev'], body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://www.phlu.ch'], body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://phlu.ch'], body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://neos.phlu.dev'],
+      body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://www.phlu.ch'],
+      body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://phlu.ch'],
+      body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://neos.phlu.dev'],
       body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://www.phlu.ch'],
       body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://phlu.ch'],
       body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://neos.phlu.dev'] {
@@ -11495,12 +11384,16 @@ body {
         background-repeat: repeat-x;
         background-position: bottom;
         padding-bottom: 4px; }
-        body .all .main > .row .content-link-internal:hover,
-        body .all .main > .row a[data-gentics-aloha-repository='node-repository']:hover,
+        body .all .main > .row .content-link-internal a[href^='http://www.phlu.ch']:hover, body .all .main > .row .content-link-internal a[href^='http://phlu.ch']:hover, body .all .main > .row .content-link-internal a[href^='http://neos.phlu.dev']:hover,
+        body .all .main > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://www.phlu.ch']:hover,
+        body .all .main > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://phlu.ch']:hover,
+        body .all .main > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://neos.phlu.dev']:hover,
         body .all .main > .row .phlu-corporate-text a[href^='http://www.phlu.ch']:hover,
         body .all .main > .row .phlu-corporate-text a[href^='http://phlu.ch']:hover,
-        body .all .main > .row .phlu-corporate-text a[href^='http://neos.phlu.dev']:hover, body .all .main > .row-fullwidth-content > .row .content-link-internal:hover,
-        body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository']:hover,
+        body .all .main > .row .phlu-corporate-text a[href^='http://neos.phlu.dev']:hover, body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://www.phlu.ch']:hover, body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://phlu.ch']:hover, body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://neos.phlu.dev']:hover,
+        body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://www.phlu.ch']:hover,
+        body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://phlu.ch']:hover,
+        body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://neos.phlu.dev']:hover,
         body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://www.phlu.ch']:hover,
         body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://phlu.ch']:hover,
         body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://neos.phlu.dev']:hover {
@@ -11736,6 +11629,112 @@ body {
         @media (max-width: 1279px) {
           body .all .main.contents {
             margin-top: inherit; } }
+      body .all .main .further-education-special-search .nodeTypeSwitcher .dropdown-toggle {
+        height: 55px; }
+      body .all .main .further-education-special-search .nodeTypeSwitcher .loadingIcon {
+        display: none;
+        color: white;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        margin-top: 6px;
+        margin-right: 6px;
+        margin-left: 5px;
+        padding-right: 10px; }
+        @media (max-width: 767px) {
+          body .all .main .further-education-special-search .nodeTypeSwitcher .loadingIcon {
+            margin-top: 0; } }
+      body .all .main .further-education-special-search .nodeTypeSwitcher.open.isloading .dropdown-toggle::after {
+        border-top: 0; }
+      body .all .main .further-education-special-search .nodeTypeSwitcher.open.isloading .loadingIcon {
+        display: inline-block; }
+      body .all .main .further-education-special-search .extendedSearch button .loadingIcon {
+        color: white;
+        width: 30px;
+        height: 30px; }
+      body .all .main .further-education-special-search .progress {
+        background-color: #edeae8;
+        height: inherit; }
+        body .all .main .further-education-special-search .progress .progress-bar {
+          height: 30px;
+          background-color: #9f632a;
+          color: white;
+          padding-left: 15px;
+          line-height: 34px; }
+        body .all .main .further-education-special-search .progress .progress-bar-striped {
+          background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+          background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+          background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+          -webkit-background-size: 1rem 1rem;
+          background-size: 1rem 1rem; }
+      body .all .main .further-education-special-search .table-responsive .table thead tr .centered-column, body .all .main .further-education-special-search .table-responsive .table tbody tr .centered-column {
+        text-align: center; }
+      body .all .main .further-education-special-search .table-responsive .table thead tr th {
+        padding: 12px 20px; }
+      body .all .main .further-education-special-search .table-responsive .table tbody {
+        border-top: 2px solid #edeae8; }
+        body .all .main .further-education-special-search .table-responsive .table tbody tr .bookable {
+          color: green; }
+        body .all .main .further-education-special-search .table-responsive .table tbody tr .booked-out {
+          color: red; }
+        body .all .main .further-education-special-search .table-responsive .table tbody tr .booking-info {
+          color: blue; }
+        body .all .main .further-education-special-search .table-responsive .table tbody tr td.course-number {
+          white-space: nowrap; }
+        body .all .main .further-education-special-search .table-responsive .table tbody tr td.course-type {
+          white-space: nowrap; }
+          body .all .main .further-education-special-search .table-responsive .table tbody tr td.course-type i:hover::after {
+            font-family: "Droid Sans", sans-serif;
+            display: block;
+            position: absolute;
+            margin-top: -20px;
+            margin-left: 30px;
+            background-color: #edeae8;
+            padding: 5px 10px; }
+          body .all .main .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-book:hover::after {
+            content: 'Kurs'; }
+          body .all .main .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-graduation-cap:hover::after {
+            content: 'Studiengang'; }
+        body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
+          margin: 0 30px;
+          margin-bottom: 15px; }
+          @media (max-width: 767px) {
+            body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
+              margin: 0 20px; } }
+          body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle span {
+            display: block;
+            float: left;
+            padding-right: 10px; }
+          body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu a {
+            font-size: 1rem; }
+        body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .details {
+          float: left;
+          margin-left: 0; }
+        body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister {
+          float: right; }
+          body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
+            color: #28818f;
+            background-color: inherit;
+            line-height: 9px; }
+            body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share .shareText {
+              display: inherit;
+              overflow: inherit;
+              font-size: 0.75rem; }
+            @media (max-width: 767px) {
+              body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
+                padding: 0 19px; } }
+            @media (max-width: 543px) {
+              body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
+                padding: 0 5px 0 0; } }
+        body .all .main .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
+          display: none; }
+          @media (max-width: 767px) {
+            body .all .main .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
+              display: table-row; } }
+          body .all .main .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only td {
+            border-top: 0; }
+      body .all .main .further-education-special-search.row.contactperson > .col-xs-12 {
+        padding-bottom: 0; }
       body .all .main .further-education-detail .phlu-team-members hr {
         margin-top: 60px; }
       body .all .main .further-education-detail .phlu-team-members .phlu-teaser {

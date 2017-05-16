@@ -3359,38 +3359,6 @@ body {
               margin-right: 5px;
             }
           }
-          .social {
-            list-style-type: none;
-            li {
-              a {
-                margin-left: 5px;
-              }
-            }
-            .twitter {
-              background-image: none;
-              &::before {
-                font-family: FontAwesome;
-                content: " \f099";
-                position: absolute;
-                left: 15px;
-              }
-              &::after {
-                background-image: none;
-              }
-            }
-            .blog {
-              background-image: none;
-              &::before {
-                font-family: FontAwesome;
-                content: " \f086";
-                position: absolute;
-                left: 15px;
-              }
-              &::after {
-                background-image: none;
-              }
-            }
-          }
         }
         &.function, &.working-priorities, &.consultation-priorities, &.achievements, &.talks, &.links {
           ul {
@@ -4215,191 +4183,6 @@ body {
     .blackBgFullWidthTabs, .blackBgFullWidthContents {
       .nav-pills .nav-item + .nav-item {
         margin-left: 0;
-      }
-    }
-    //
-    // further education special search
-    // lists
-    //
-    .further-education-special-search {
-      .nodeTypeSwitcher {
-        .dropdown-toggle {
-          height: 55px;
-        }
-        .loadingIcon {
-          display: none;
-          color: white;
-          width: 30px;
-          height: 30px;
-          position: absolute;
-          margin-top: 6px;
-          @include media-breakpoint-down("sm") {
-            margin-top: 0;
-          }
-          margin-right: 6px;
-          margin-left: 5px;
-          padding-right: 10px;
-        }
-        &.open {
-          &.isloading {
-            .dropdown-toggle {
-              &::after {
-                border-top: 0;
-
-              }
-            }
-            .loadingIcon {
-              display: inline-block;
-            }
-          }
-        }
-      }
-      .extendedSearch {
-        button {
-          .loadingIcon {
-            color: white;
-            width: 30px;
-            height: 30px;
-          }
-        }
-      }
-      .progress {
-        background-color: $lightgrey;
-        height: inherit;
-        .progress-bar {
-          height: 30px;
-          background-color: $hazelbrowndark;
-          color: white;
-          padding-left: 15px;
-          line-height: 34px;
-        }
-        .progress-bar-striped {
-          background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-          background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-          background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-          -webkit-background-size: 1rem 1rem;
-          background-size: 1rem 1rem;
-        }
-      }
-      .table-responsive {
-        .table {
-          thead, tbody {
-            tr {
-              .centered-column {
-                text-align: center;
-              }
-            }
-          }
-          thead {
-            tr {
-              th {
-                padding: 12px 20px;
-              }
-            }
-          }
-          tbody {
-            border-top:2px solid $lightgrey;
-            tr {
-              .bookable {
-                color: green;
-              }
-              .booked-out {
-                color: red;
-              }
-              .booking-info {
-                color: blue;
-              }
-              td.course-number {
-                white-space: nowrap;
-              }
-              td.course-type {
-                i {
-                  &:hover {
-                    &::after {
-                      font-family: $font-family-sans-serif;
-                      display: block;
-                      position: absolute;
-                      margin-top: -20px;
-                      margin-left: 30px;
-                      background-color: $lightgrey;
-                      padding: 5px 10px;
-                    }
-                  }
-                }
-                i.fa-book {
-                  &:hover {
-                    &::after {
-                      content: 'Kurs';
-                    }
-                  }
-                }
-                i.fa-graduation-cap {
-                  &:hover {
-                    &::after {
-                      content: 'Studiengang';
-                    }
-                  }
-                }
-                white-space: nowrap;
-              }
-              &.result-preview {
-                .result-preview-contents {
-                  margin: 0 30px;
-                  @include media-breakpoint-down("sm") {
-                    margin: 0 20px;
-                  }
-                  margin-bottom: 15px;
-                  .dropdown-toggle {
-                    span {
-                      display: block;
-                      float: left;
-                      padding-right: 10px;
-                    }
-                  }
-                  .dropdown-menu {
-                    a {
-                      font-size: $font-size-form-dropdown;
-                    }
-                  }
-
-                }
-                .details {
-                  float: left;
-                  margin-left: 0;
-                }
-                .shareAndRegister {
-                  float: right;
-                  .btn.share {
-                    color: $petrol;
-                    background-color: inherit;
-                    line-height: 9px;
-                    .shareText {
-                      display: inherit;
-                      overflow: inherit;
-                      font-size: $font-size-small;
-                    }
-                    @include media-breakpoint-down("sm") {
-                      padding: 0 19px;
-                    }
-                    @include media-breakpoint-down("xs") {
-                      padding: 0 5px 0 0;
-                    }
-                  }
-                }
-              }
-              &.mobile-view-tablerow-only {
-                display: none;
-                @include media-breakpoint-down("sm") {
-                  display: table-row;
-                }
-                td {
-                  border-top: 0;
-
-                }
-              }
-            }
-          }
-        }
       }
     }
     //
@@ -5254,7 +5037,7 @@ body {
             white-space: nowrap;
           }
           .telephone {
-            margin-top: 5px;
+            margin-top: 10px;
             color: $hazelbrowndark;
             .fa-phone {
               padding-right: 6px;
@@ -5276,6 +5059,42 @@ body {
             }
           }
         }
+
+
+        .social {
+          list-style-type: none;
+          li {
+            a {
+              margin-left: 5px;
+            }
+          }
+          .twitter {
+            background-image: none;
+            &::before {
+              font-family: FontAwesome;
+              content: " \f099";
+              position: absolute;
+              left: 15px;
+            }
+            &::after {
+              background-image: none;
+            }
+          }
+          .blog {
+            background-image: none;
+            &::before {
+              font-family: FontAwesome;
+              content: " \f086";
+              position: absolute;
+              left: 15px;
+            }
+            &::after {
+              background-image: none;
+            }
+          }
+        }
+
+
 
         .img-fluid {
           @include media-breakpoint-down("md") {
@@ -5439,10 +5258,10 @@ body {
         }
         .content-link-internal,
         a[data-gentics-aloha-repository='node-repository'],
-        .phlu-corporate-text a[href^='http://www.phlu.ch'],
-        .phlu-corporate-text a[href^='http://phlu.ch'],
-        .phlu-corporate-text a[href^='http://neos.phlu.dev'] {
-          @include content-link("internal");
+        .phlu-corporate-text {
+          a[href^='http://www.phlu.ch'], a[href^='http://phlu.ch'], a[href^='http://neos.phlu.dev'] {
+            @include content-link("internal");
+          }
         }
         .content-link-portrait {
           @include content-link("portrait");
@@ -5671,6 +5490,196 @@ body {
         }
       }
       //
+      // further education special search
+      // lists
+      //
+      .further-education-special-search {
+        .nodeTypeSwitcher {
+          .dropdown-toggle {
+            height: 55px;
+          }
+          .loadingIcon {
+            display: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            margin-top: 6px;
+            @include media-breakpoint-down("sm") {
+              margin-top: 0;
+            }
+            margin-right: 6px;
+            margin-left: 5px;
+            padding-right: 10px;
+          }
+          &.open {
+            &.isloading {
+              .dropdown-toggle {
+                &::after {
+                  border-top: 0;
+
+                }
+              }
+              .loadingIcon {
+                display: inline-block;
+              }
+            }
+          }
+        }
+        .extendedSearch {
+          button {
+            .loadingIcon {
+              color: white;
+              width: 30px;
+              height: 30px;
+            }
+          }
+        }
+        .progress {
+          background-color: $lightgrey;
+          height: inherit;
+          .progress-bar {
+            height: 30px;
+            background-color: $hazelbrowndark;
+            color: white;
+            padding-left: 15px;
+            line-height: 34px;
+          }
+          .progress-bar-striped {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+            background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+            background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+            -webkit-background-size: 1rem 1rem;
+            background-size: 1rem 1rem;
+          }
+        }
+        .table-responsive {
+          .table {
+            thead, tbody {
+              tr {
+                .centered-column {
+                  text-align: center;
+                }
+              }
+            }
+            thead {
+              tr {
+                th {
+                  padding: 12px 20px;
+                }
+              }
+            }
+            tbody {
+              border-top:2px solid $lightgrey;
+              tr {
+                .bookable {
+                  color: green;
+                }
+                .booked-out {
+                  color: red;
+                }
+                .booking-info {
+                  color: blue;
+                }
+                td.course-number {
+                  white-space: nowrap;
+                }
+                td.course-type {
+                  i {
+                    &:hover {
+                      &::after {
+                        font-family: $font-family-sans-serif;
+                        display: block;
+                        position: absolute;
+                        margin-top: -20px;
+                        margin-left: 30px;
+                        background-color: $lightgrey;
+                        padding: 5px 10px;
+                      }
+                    }
+                  }
+                  i.fa-book {
+                    &:hover {
+                      &::after {
+                        content: 'Kurs';
+                      }
+                    }
+                  }
+                  i.fa-graduation-cap {
+                    &:hover {
+                      &::after {
+                        content: 'Studiengang';
+                      }
+                    }
+                  }
+                  white-space: nowrap;
+                }
+                &.result-preview {
+                  .result-preview-contents {
+                    margin: 0 30px;
+                    @include media-breakpoint-down("sm") {
+                      margin: 0 20px;
+                    }
+                    margin-bottom: 15px;
+                    .dropdown-toggle {
+                      span {
+                        display: block;
+                        float: left;
+                        padding-right: 10px;
+                      }
+                    }
+                    .dropdown-menu {
+                      a {
+                        font-size: $font-size-form-dropdown;
+                      }
+                    }
+
+                  }
+                  .details {
+                    float: left;
+                    margin-left: 0;
+                  }
+                  .shareAndRegister {
+                    float: right;
+                    .btn.share {
+                      color: $petrol;
+                      background-color: inherit;
+                      line-height: 9px;
+                      .shareText {
+                        display: inherit;
+                        overflow: inherit;
+                        font-size: $font-size-small;
+                      }
+                      @include media-breakpoint-down("sm") {
+                        padding: 0 19px;
+                      }
+                      @include media-breakpoint-down("xs") {
+                        padding: 0 5px 0 0;
+                      }
+                    }
+                  }
+                }
+                &.mobile-view-tablerow-only {
+                  display: none;
+                  @include media-breakpoint-down("sm") {
+                    display: table-row;
+                  }
+                  td {
+                    border-top: 0;
+
+                  }
+                }
+              }
+            }
+          }
+        }
+        &.row.contactperson {
+          > .col-xs-12 {
+            padding-bottom: 0;
+          }
+        }
+      }
+      //
       // further education detail page (weiterbildung)
       //
       .further-education-detail {
@@ -5777,17 +5786,6 @@ body {
           }
         }
       }
-      /*      .further-education-order-button-float-top {
-              position: fixed;
-              top: 0;
-              right: 0;
-              background-color: $lightgrey;
-              padding: 5px 20px;
-              .btn {
-                font-size: 12px;
-
-              }
-            }*/
       .shareAndRegister {
         float: right;
         a {
