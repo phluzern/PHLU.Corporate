@@ -54,13 +54,14 @@
                                           data-template='<div class="tooltip filterCountTag" role="tooltip"><span class="tooltip-inner"></span><span class="oi oi-media-record"></span></div>'
                                           data-placement="right" title="" data-offset="26px -6px"
                                           data-trigger="manual">Beteiligte Personen</span>
-                                    <span class="count" data-ng-show="sizeOf(participants) > 0"
-                                          data-ng-bind="sizeOf(participants)"></span>
                                 </a>
-                                <span data-ng-show="sizeOf(participants) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('participants')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
+                                <span>
+                                    <span class="count" data-ng-show="sizeOf(participants) > 0" data-ng-bind="sizeOf(participants)"></span>
+                                    <span data-ng-show="sizeOf(participants) > 0" class="resetFilter">
+                                        <a ng-click="clearFilter('participants')">
+                                            <span class="oi oi-x"></span>
+                                        </a>
+                                    </span>
                                 </span>
                             </li>
                             <li class="nav-item"
@@ -69,13 +70,14 @@
                                    data-target="#organisations-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
                                     <span>Organisation</span>
-                                    <span class="count" data-ng-show="sizeOf(organisations) > 0"
-                                          data-ng-bind="sizeOf(organisations)"></span>
                                 </a>
-                                <span data-ng-show="sizeOf(organisations) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('organisations')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
+                                <span>
+                                    <span class="count" data-ng-show="sizeOf(organisations) > 0" data-ng-bind="sizeOf(organisations)"></span>
+                                    <span data-ng-show="sizeOf(organisations) > 0" class="resetFilter">
+                                        <a ng-click="clearFilter('organisations')">
+                                            <span class="oi oi-x"></span>
+                                        </a>
+                                    </span>
                                 </span>
                             </li>
                             <li class="nav-item"
@@ -84,13 +86,14 @@
                                    data-target="#publicationtype-{node.Identifier}" role="tab">
                                     <i class="fa fa-flask" aria-hidden="true"></i>
                                     <span>Publikationstyp</span>
-                                    <span class="count" data-ng-show="sizeOf(publicationtype) > 0"
-                                          data-ng-bind="sizeOf(publicationtype)"></span>
                                 </a>
-                                <span data-ng-show="sizeOf(publicationtype) > 0" class="resetFilter">
-                                    <a ng-click="clearFilter('publicationtype')">
-                                        <span class="oi oi-x"></span>
-                                    </a>
+                                <span>
+                                    <span class="count" data-ng-show="sizeOf(publicationtype) > 0" data-ng-bind="sizeOf(publicationtype)"></span>
+                                    <span data-ng-show="sizeOf(publicationtype) > 0" class="resetFilter">
+                                        <a ng-click="clearFilter('publicationtype')">
+                                            <span class="oi oi-x"></span>
+                                        </a>
+                                    </span>
                                 </span>
                             </li>
                         </ul>

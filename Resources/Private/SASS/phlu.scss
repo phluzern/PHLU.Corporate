@@ -1109,6 +1109,9 @@ body {
           cursor: pointer !important;
           padding: 8px 23px;
           margin-right:5px;
+          @include media-breakpoint-down("xs") {
+            margin-right:0;
+          }
           margin-bottom:5px;
 
         }
@@ -1117,7 +1120,7 @@ body {
           margin-top: -54px;
           margin-right: 14px;
           @include media-breakpoint-down("xs") {
-            margin-right: 61px;
+            margin-right: 64px;
             margin-top: -34px;
           }
           .count {
@@ -1205,7 +1208,6 @@ body {
     // phlu form elements
     //
     input.form-control, button.btn {
-      height: $input-search-field-big;
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
       border-radius: 0;
@@ -1313,7 +1315,7 @@ body {
               font-size: $font-size-form-dropdown;
             }
             color: white;
-            padding: 17px 24px;
+            padding: 13px 24px;
             display: block;
           }
           &:hover {
@@ -1332,10 +1334,8 @@ body {
         background-color: $darkgrey;
         padding: 20px 0;
         .form-control {
-          border-top: 0;
-          border-right: 0;
-          border-left: 0;
-          border-bottom: 0;
+          border:0;
+          height: 55px;
           &[data-ng-model='searchquery'] {
             border-left: solid 2px $petrol;
           }
@@ -1761,6 +1761,7 @@ body {
         }
       }
       .form-control {
+        height: 52px;
         margin-top: 47px;
         border: $input-btn-sidebar-border-width solid $input-sidebar-border-color;
       }
@@ -2889,9 +2890,6 @@ body {
         .results-table {
           margin-bottom: 0;
         }
-        .table {
-          margin-top: -15px;
-        }
       }
     }
     //
@@ -3636,6 +3634,7 @@ body {
     .ppdb-list, .further-education-list, .further-education-special-search {
       .list-search-field, .dropdown-search-field {
         input {
+          height: 52px;
           border: $input-btn-sidebar-border-width solid $input-sidebar-border-color;
         }
         .fa-search {
@@ -4067,6 +4066,7 @@ body {
           }
           padding-bottom: 30px;
           .nav-pills {
+            padding-top:0;
             @include gutter-width(1);
             margin-bottom: 0;
             .nav-item {
@@ -4223,6 +4223,9 @@ body {
     //
     .further-education-special-search {
       .nodeTypeSwitcher {
+        .dropdown-toggle {
+          height: 55px;
+        }
         .loadingIcon {
           display: none;
           color: white;
@@ -4378,49 +4381,12 @@ body {
                     @include media-breakpoint-down("sm") {
                       padding: 0 19px;
                     }
+                    @include media-breakpoint-down("xs") {
+                      padding: 0 5px 0 0;
+                    }
                   }
                 }
               }
-
-              /*           &.icon {
-                           td {
-                             &:before {
-                               right: 25px;
-                               @include media-breakpoint-between("lg", "xxl") {
-                                 right: 64px;
-                               }
-                               @include media-breakpoint-down("md") {
-                                 right: 40px;
-                               }
-                               position: absolute;
-                             }
-                           }
-                         }
-                         &.hat {
-                           td {
-                             &:before {
-                               font-family: FontAwesome;
-                               content: " \f19d";
-                             }
-                           }
-                         }
-                         &.calendar {
-                           td {
-                             &:before {
-                               font-family: FontAwesome;
-                               content: " \f073";
-                             }
-                           }
-                         }
-                         &.book {
-                           td {
-                             &:before {
-                               font-family: FontAwesome;
-                               content: " \f02d";
-                             }
-                           }
-                         }
-           */
               &.mobile-view-tablerow-only {
                 display: none;
                 @include media-breakpoint-down("sm") {
@@ -4434,9 +4400,6 @@ body {
             }
           }
         }
-      }
-      .loadMore {
-        margin-top: 30px;
       }
     }
     //
@@ -5073,8 +5036,7 @@ body {
                 border: 0;
                 border-radius: 0;
                 li {
-                  padding: 8px 12px;
-                  height: 43px;
+                  padding: 12px 12px;
                   @include media-breakpoint-down("sm") {
                     font-size: $font-size-form-dropdown;
                   }
@@ -5478,8 +5440,8 @@ body {
         .content-link-internal,
         a[data-gentics-aloha-repository='node-repository'],
         .phlu-corporate-text a[href^='http://www.phlu.ch'],
-        a[href^='http://phlu.ch'],
-        a[href^='http://neos.phlu.dev'] {
+        .phlu-corporate-text a[href^='http://phlu.ch'],
+        .phlu-corporate-text a[href^='http://neos.phlu.dev'] {
           @include content-link("internal");
         }
         .content-link-portrait {
@@ -6150,6 +6112,9 @@ body {
       .site-search-field {
         @include media-breakpoint-up("xl") {
           display: none;
+        }
+        .form-control {
+          height: 52px;
         }
         .fa.fa-search {
           color: $naviBlack;
