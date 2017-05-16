@@ -640,9 +640,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         } else {
 
-            if (isbinded == false) {
 
-                if (wasClosed) {
+               if (wasClosed) {
                     $("body").removeClass('siteSearchActive');
                     wasClosed = false;
                 }
@@ -652,8 +651,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                     $("#search div").removeClass('noSearchResults');
                     search.run();
                 }
-
-            }
 
             isbinded = true;
 
