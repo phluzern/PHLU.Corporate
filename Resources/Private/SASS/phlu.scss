@@ -607,6 +607,9 @@ span.loading {
               h3 {
                 font-weight: $font-weight-normal;
                 margin: 10px 0 20px;
+                a {
+                  line-height: $line-height-sm;
+                }
               }
               .searchresult-body {
                 address {
@@ -635,6 +638,9 @@ span.loading {
       .breadcrumbs {
         padding: 10px 0;
         font-weight: normal;
+      }
+      .loadMore {
+        width: 220px;
       }
     }
   }
@@ -5256,9 +5262,12 @@ body {
         a[href^='mailto'] {
           @include content-link("email");
         }
+        .content-link-internal {
+          @include content-link("internal");
+        }
         .content-link-internal,
         a[data-gentics-aloha-repository='node-repository'],
-        .phlu-corporate-text {
+        .phlu-corporate-text, .phlu-searchresults {
           a[href^='http://www.phlu.ch'], a[href^='http://phlu.ch'], a[href^='http://neos.phlu.dev'] {
             @include content-link("internal");
           }

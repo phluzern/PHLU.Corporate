@@ -132,6 +132,11 @@
                                            class="btn loadMore"
                                            data-ng-if="result.count() > limit['all'] || (result.count() > 9 && limit['all'] === undefined)">
                                             mehr anzeigen
+                                            <span>
+                                                <span data-ng-if="limit['all'] === undefined ? limit['all'] = 10 : limit['all'] = limit['all']" data-ng-bind="limit['all']"></span>
+                                                <span class="counter-divider">von</span>
+                                                <span data-ng-bind="result.count()"></span>
+                                            </span>
                                         </a>
                                     </td>
                                 </tr>
@@ -277,6 +282,11 @@
                                                    class="btn loadMore"
                                                    data-ng-if="g.count() > limit[g.getLabel()] || (g.count() > 9 && limit[g.getLabel()] === undefined)">
                                                     mehr anzeigen
+                                                    <span>
+                                                        <span data-ng-bind="limit[g.getLabel()]"></span>
+                                                        <span class="counter-divider">von</span>
+                                                        <span data-ng-bind="g.count()"></span>
+                                                    </span>
                                                 </a>
                                             </td>
                                         </tr>

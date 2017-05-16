@@ -8332,6 +8332,8 @@ span.loading.bar {
         #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 {
           font-weight: 400;
           margin: 10px 0 20px; }
+          #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 a {
+            line-height: 1.8; }
         #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address {
           margin-bottom: 0; }
           #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location {
@@ -8348,6 +8350,8 @@ span.loading.bar {
     #search .hasSearchResults .phlu-searchresults .breadcrumbs {
       padding: 10px 0;
       font-weight: normal; }
+    #search .hasSearchResults .phlu-searchresults .loadMore {
+      width: 220px; }
 
 #search .noSearchResults {
   display: none; }
@@ -11366,19 +11370,28 @@ body {
         body .all .main > .row a[href^='mailto']:hover, body .all .main > .row-fullwidth-content > .row a[href^='mailto']:hover {
           background-position: 0 0;
           background-repeat: repeat; }
+      body .all .main > .row .content-link-internal, body .all .main > .row-fullwidth-content > .row .content-link-internal {
+        background-image: url("../Images/linkbottomline.png");
+        color: #9f632a;
+        background-repeat: repeat-x;
+        background-position: bottom;
+        padding-bottom: 4px; }
+        body .all .main > .row .content-link-internal:hover, body .all .main > .row-fullwidth-content > .row .content-link-internal:hover {
+          background-position: 0 0;
+          background-repeat: repeat; }
       body .all .main > .row .content-link-internal a[href^='http://www.phlu.ch'], body .all .main > .row .content-link-internal a[href^='http://phlu.ch'], body .all .main > .row .content-link-internal a[href^='http://neos.phlu.dev'],
       body .all .main > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://www.phlu.ch'],
       body .all .main > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://phlu.ch'],
       body .all .main > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://neos.phlu.dev'],
       body .all .main > .row .phlu-corporate-text a[href^='http://www.phlu.ch'],
       body .all .main > .row .phlu-corporate-text a[href^='http://phlu.ch'],
-      body .all .main > .row .phlu-corporate-text a[href^='http://neos.phlu.dev'], body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://www.phlu.ch'], body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://phlu.ch'], body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://neos.phlu.dev'],
+      body .all .main > .row .phlu-corporate-text a[href^='http://neos.phlu.dev'], body .all .main > .row .phlu-searchresults a[href^='http://www.phlu.ch'], body .all .main > .row .phlu-searchresults a[href^='http://phlu.ch'], body .all .main > .row .phlu-searchresults a[href^='http://neos.phlu.dev'], body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://www.phlu.ch'], body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://phlu.ch'], body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://neos.phlu.dev'],
       body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://www.phlu.ch'],
       body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://phlu.ch'],
       body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://neos.phlu.dev'],
       body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://www.phlu.ch'],
       body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://phlu.ch'],
-      body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://neos.phlu.dev'] {
+      body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://neos.phlu.dev'], body .all .main > .row-fullwidth-content > .row .phlu-searchresults a[href^='http://www.phlu.ch'], body .all .main > .row-fullwidth-content > .row .phlu-searchresults a[href^='http://phlu.ch'], body .all .main > .row-fullwidth-content > .row .phlu-searchresults a[href^='http://neos.phlu.dev'] {
         background-image: url("../Images/linkbottomline.png");
         color: #9f632a;
         background-repeat: repeat-x;
@@ -11390,13 +11403,13 @@ body {
         body .all .main > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://neos.phlu.dev']:hover,
         body .all .main > .row .phlu-corporate-text a[href^='http://www.phlu.ch']:hover,
         body .all .main > .row .phlu-corporate-text a[href^='http://phlu.ch']:hover,
-        body .all .main > .row .phlu-corporate-text a[href^='http://neos.phlu.dev']:hover, body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://www.phlu.ch']:hover, body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://phlu.ch']:hover, body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://neos.phlu.dev']:hover,
+        body .all .main > .row .phlu-corporate-text a[href^='http://neos.phlu.dev']:hover, body .all .main > .row .phlu-searchresults a[href^='http://www.phlu.ch']:hover, body .all .main > .row .phlu-searchresults a[href^='http://phlu.ch']:hover, body .all .main > .row .phlu-searchresults a[href^='http://neos.phlu.dev']:hover, body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://www.phlu.ch']:hover, body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://phlu.ch']:hover, body .all .main > .row-fullwidth-content > .row .content-link-internal a[href^='http://neos.phlu.dev']:hover,
         body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://www.phlu.ch']:hover,
         body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://phlu.ch']:hover,
         body .all .main > .row-fullwidth-content > .row a[data-gentics-aloha-repository='node-repository'] a[href^='http://neos.phlu.dev']:hover,
         body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://www.phlu.ch']:hover,
         body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://phlu.ch']:hover,
-        body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://neos.phlu.dev']:hover {
+        body .all .main > .row-fullwidth-content > .row .phlu-corporate-text a[href^='http://neos.phlu.dev']:hover, body .all .main > .row-fullwidth-content > .row .phlu-searchresults a[href^='http://www.phlu.ch']:hover, body .all .main > .row-fullwidth-content > .row .phlu-searchresults a[href^='http://phlu.ch']:hover, body .all .main > .row-fullwidth-content > .row .phlu-searchresults a[href^='http://neos.phlu.dev']:hover {
           background-position: 0 0;
           background-repeat: repeat; }
       body .all .main > .row .content-link-portrait, body .all .main > .row-fullwidth-content > .row .content-link-portrait {
