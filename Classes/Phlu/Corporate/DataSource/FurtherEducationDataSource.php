@@ -77,57 +77,57 @@ class FurtherEducationDataSource extends AbstractDataSource {
             case 'genre':
 
 
-
-            foreach ($this->moduleCourseRepository->findAll() as $course) {
-
-                /* @var Module $course */
-                $genres = $course->getGenre();
-                if (is_array($genres)) {
-                    foreach ($genres as $genre) {
-                        if (is_string($genre)) {
-                            $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
-                        } else {
-                            if ($genre) {
-                                $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
-                            }
-                        }
-                    }
-                }
-
-            }
-
-
-            foreach ($this->studyCourseRepository->findAll() as $study) {
-                /* @var Study $study */
-                $genres = $study->getGenre();
-                if (is_array($genres)) {
-                    foreach ($genres as $genre) {
-                        if (is_string($genre)) {
-                            $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
-                        } else {
-                            if ($genre) {
-                                $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
-                            }
-                        }
-                    }
-                }
-            }
-
-            foreach ($this->eventCourseRepository->findAll() as $study) {
-                /* @var Study $study */
-                $genres = $study->getGenre();
-                if (is_array($genres)) {
-                    foreach ($genres as $genre) {
-                        if (is_string($genre)) {
-                            $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
-                        } else {
-                            if ($genre) {
-                                $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
-                            }
-                        }
-                    }
-                }
-            }
+//
+//            foreach ($this->moduleCourseRepository->findAll() as $course) {
+//
+//                /* @var Module $course */
+//                $genres = $course->getGenre();
+//                if (is_array($genres)) {
+//                    foreach ($genres as $genre) {
+//                        if (is_string($genre)) {
+//                            $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
+//                        } else {
+//                            if ($genre) {
+//                                $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+//                            }
+//                        }
+//                    }
+//                }
+//
+//            }
+//
+//
+//            foreach ($this->studyCourseRepository->findAll() as $study) {
+//                /* @var Study $study */
+//                $genres = $study->getGenre();
+//                if (is_array($genres)) {
+//                    foreach ($genres as $genre) {
+//                        if (is_string($genre)) {
+//                            $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
+//                        } else {
+//                            if ($genre) {
+//                                $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//
+//            foreach ($this->eventCourseRepository->findAll() as $study) {
+//                /* @var Study $study */
+//                $genres = $study->getGenre();
+//                if (is_array($genres)) {
+//                    foreach ($genres as $genre) {
+//                        if (is_string($genre)) {
+//                            $data[(string)$genre] = array('value' => (string)$genre, 'label' => $genre);
+//                        } else {
+//                            if ($genre) {
+//                                $data[(string)$genre->Id] = array('value' => (string)$genre->Id, 'label' => $genre->Name);
+//                            }
+//                        }
+//                    }
+//                }
+//            }
 
 
                 // import asset from url
