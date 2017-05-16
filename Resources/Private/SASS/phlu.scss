@@ -1108,6 +1108,8 @@ body {
           font-size: $nav-link-font-size;
           cursor: pointer !important;
           padding: 8px 23px;
+          margin-right:5px;
+          margin-bottom:5px;
 
         }
         > span {
@@ -1534,10 +1536,9 @@ body {
                   margin-top: 6px;
                 }
                 span {
-                  display: block;
-                  margin-top: 0;
-                  @include media-breakpoint-down("sm") {
-                    margin-top: -3px;;
+                  &.oi {
+                    float:right;
+                    margin-top: 3px;
                   }
                 }
               }
@@ -1557,21 +1558,8 @@ body {
                     @include media-breakpoint-only("md") {
                       width: 80%;
                     }
-                    @include media-breakpoint-up("lg") {
-                      float: inherit;
-                    }
-                  }
-                }
-              }
-            }
-          }
-          &[name='weekday'] {
-            .dropdown-menu {
-              li {
-                a {
-                  span {
-                    @include media-breakpoint-up("md") {
-                      width: 87%;
+                    &:last-child {
+                      margin-left:11px;
                     }
                   }
                 }
@@ -2711,11 +2699,10 @@ body {
           margin-bottom: 0;
           li {
             margin-top: 4px;
-            margin-right: 4px;
             margin-left: 0;
             a.nav-link {
               background-color: $grey11;
-              padding-top: 9px;
+              padding-top: 10px;
               padding-bottom: 10px;
               &.all, &.no-icon {
                 padding-left: 23px;
@@ -3699,6 +3686,7 @@ body {
               color: $grey8;
               border: 0;
               padding-left: 18px;
+              margin-bottom: 0;
               .oi-chevron-bottom, .oi-chevron-top {
                 font-size: 12px;
               }
@@ -3972,6 +3960,7 @@ body {
             background-color: inherit;
             padding: 5px 33px 0;
             border: 0;
+            margin:0;
             @include media-breakpoint-down("xxl") {
               padding: 5px 26.5px;
             }
@@ -4086,6 +4075,7 @@ body {
                 white-space: nowrap;
                 color: white;
                 font-size: $font-size-nav-teaser-header;
+                margin:0;
                 @include media-breakpoint-down("md") {
                   font-size: $font-size-nav-teaser-header-mobile;
                 }
@@ -4305,6 +4295,7 @@ body {
             }
           }
           tbody {
+            border-top:2px solid $lightgrey;
             tr {
               .bookable {
                 color: green;
@@ -5073,7 +5064,7 @@ body {
                 margin: 0;
                 font-size: $font-size-paragraph-desktop/3*2;
               }
-              border-bottom: 2px solid $hr-border-color;
+              border-bottom: 2px solid $lightgrey;
               .dropdown-menu {
                 margin: 0;
                 padding: 0;

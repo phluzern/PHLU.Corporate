@@ -8690,7 +8690,9 @@ body {
         border-radius: 0;
         font-size: 1rem;
         cursor: pointer !important;
-        padding: 8px 23px; }
+        padding: 8px 23px;
+        margin-right: 5px;
+        margin-bottom: 5px; }
       body .all .nav-pills li > span {
         float: right;
         margin-top: -54px;
@@ -9003,12 +9005,9 @@ body {
                 display: block;
                 float: left;
                 margin-top: 6px; }
-              body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span {
-                display: block;
-                margin-top: 0; }
-                @media (max-width: 767px) {
-                  body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span {
-                    margin-top: -3px; } }
+              body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a span.oi {
+                float: right;
+                margin-top: 3px; }
             body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li:hover, body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li.selected {
               background-color: #edeae8; }
 
@@ -9019,12 +9018,8 @@ body {
 @media (min-width: 768px) and (max-width: 991px) {
   body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='scholarYear'] .dropdown-menu li a span {
     width: 80%; } }
-        @media (min-width: 992px) {
-          body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='scholarYear'] .dropdown-menu li a span {
-            float: inherit; } }
-        @media (min-width: 768px) {
-          body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='weekday'] .dropdown-menu li a span {
-            width: 87%; } }
+        body .all .extendedSearchBg .extendedSearchFilter .input-item-col[name='scholarYear'] .dropdown-menu li a span:last-child {
+          margin-left: 11px; }
         body .all .extendedSearchBg .extendedSearchFilter .input-item-col i.fa-search {
           color: #5c5c5c;
           right: 11px; }
@@ -9756,11 +9751,10 @@ body {
       margin-bottom: 0; }
       body .all .row.subjectsfilternav .col-xs-12 .nav-pills li {
         margin-top: 4px;
-        margin-right: 4px;
         margin-left: 0; }
         body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link {
           background-color: #e6e6e6;
-          padding-top: 9px;
+          padding-top: 10px;
           padding-bottom: 10px; }
           body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.all, body .all .row.subjectsfilternav .col-xs-12 .nav-pills li a.nav-link.no-icon {
             padding-left: 23px; }
@@ -10321,7 +10315,8 @@ body {
       body .all .ppdb-list .row.subjectsfilternav .nav-pills li a.nav-link, body .all .further-education-list .row.subjectsfilternav .nav-pills li a.nav-link, body .all .further-education-special-search .row.subjectsfilternav .nav-pills li a.nav-link {
         color: #333333;
         border: 0;
-        padding-left: 18px; }
+        padding-left: 18px;
+        margin-bottom: 0; }
         body .all .ppdb-list .row.subjectsfilternav .nav-pills li a.nav-link .oi-chevron-bottom, body .all .ppdb-list .row.subjectsfilternav .nav-pills li a.nav-link .oi-chevron-top, body .all .further-education-list .row.subjectsfilternav .nav-pills li a.nav-link .oi-chevron-bottom, body .all .further-education-list .row.subjectsfilternav .nav-pills li a.nav-link .oi-chevron-top, body .all .further-education-special-search .row.subjectsfilternav .nav-pills li a.nav-link .oi-chevron-bottom, body .all .further-education-special-search .row.subjectsfilternav .nav-pills li a.nav-link .oi-chevron-top {
           font-size: 12px; }
         body .all .ppdb-list .row.subjectsfilternav .nav-pills li a.nav-link:hover, body .all .ppdb-list .row.subjectsfilternav .nav-pills li a.nav-link.active, body .all .further-education-list .row.subjectsfilternav .nav-pills li a.nav-link:hover, body .all .further-education-list .row.subjectsfilternav .nav-pills li a.nav-link.active, body .all .further-education-special-search .row.subjectsfilternav .nav-pills li a.nav-link:hover, body .all .further-education-special-search .row.subjectsfilternav .nav-pills li a.nav-link.active {
@@ -10502,6 +10497,7 @@ body {
         background-color: inherit;
         padding: 5px 33px 0;
         border: 0;
+        margin: 0;
         height: 60px; }
         @media (max-width: 1599px) {
           body .all .blackBgFullWidthTabs .nav-pills .nav-item a.nav-link {
@@ -10596,6 +10592,7 @@ body {
               white-space: nowrap;
               color: white;
               font-size: 1.125rem;
+              margin: 0;
               background-color: #28818f;
               padding-top: 14px;
               min-height: 54px; }
@@ -10713,8 +10710,10 @@ body {
       text-align: center; }
     body .all .further-education-special-search .table-responsive .table thead tr th {
       padding: 12px 20px; }
-    body .all .further-education-special-search .table-responsive .table tbody tr {
-      /*           &.icon {
+    body .all .further-education-special-search .table-responsive .table tbody {
+      border-top: 2px solid #edeae8; }
+      body .all .further-education-special-search .table-responsive .table tbody tr {
+        /*           &.icon {
                            td {
                              &:before {
                                right: 25px;
@@ -10753,63 +10752,63 @@ body {
                            }
                          }
            */ }
-      body .all .further-education-special-search .table-responsive .table tbody tr .bookable {
-        color: green; }
-      body .all .further-education-special-search .table-responsive .table tbody tr .booked-out {
-        color: red; }
-      body .all .further-education-special-search .table-responsive .table tbody tr .booking-info {
-        color: blue; }
-      body .all .further-education-special-search .table-responsive .table tbody tr td.course-number {
-        white-space: nowrap; }
-      body .all .further-education-special-search .table-responsive .table tbody tr td.course-type {
-        white-space: nowrap; }
-        body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i:hover::after {
-          font-family: "Droid Sans", sans-serif;
-          display: block;
-          position: absolute;
-          margin-top: -20px;
-          margin-left: 30px;
-          background-color: #edeae8;
-          padding: 5px 10px; }
-        body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-book:hover::after {
-          content: 'Kurs'; }
-        body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-graduation-cap:hover::after {
-          content: 'Studiengang'; }
-      body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
-        margin: 0 30px;
-        margin-bottom: 15px; }
-        @media (max-width: 767px) {
-          body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
-            margin: 0 20px; } }
-        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle span {
-          display: block;
-          float: left;
-          padding-right: 10px; }
-        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu a {
-          font-size: 1rem; }
-      body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .details {
-        float: left;
-        margin-left: 0; }
-      body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister {
-        float: right; }
-        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
-          color: #28818f;
-          background-color: inherit;
-          line-height: 9px; }
-          body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share .shareText {
-            display: inherit;
-            overflow: inherit;
-            font-size: 0.75rem; }
+        body .all .further-education-special-search .table-responsive .table tbody tr .bookable {
+          color: green; }
+        body .all .further-education-special-search .table-responsive .table tbody tr .booked-out {
+          color: red; }
+        body .all .further-education-special-search .table-responsive .table tbody tr .booking-info {
+          color: blue; }
+        body .all .further-education-special-search .table-responsive .table tbody tr td.course-number {
+          white-space: nowrap; }
+        body .all .further-education-special-search .table-responsive .table tbody tr td.course-type {
+          white-space: nowrap; }
+          body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i:hover::after {
+            font-family: "Droid Sans", sans-serif;
+            display: block;
+            position: absolute;
+            margin-top: -20px;
+            margin-left: 30px;
+            background-color: #edeae8;
+            padding: 5px 10px; }
+          body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-book:hover::after {
+            content: 'Kurs'; }
+          body .all .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-graduation-cap:hover::after {
+            content: 'Studiengang'; }
+        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
+          margin: 0 30px;
+          margin-bottom: 15px; }
           @media (max-width: 767px) {
-            body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
-              padding: 0 19px; } }
-      body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
-        display: none; }
-        @media (max-width: 767px) {
-          body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
-            display: table-row; } }
-        body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only td {
-          border-top: 0; }
+            body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
+              margin: 0 20px; } }
+          body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle span {
+            display: block;
+            float: left;
+            padding-right: 10px; }
+          body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu a {
+            font-size: 1rem; }
+        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .details {
+          float: left;
+          margin-left: 0; }
+        body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister {
+          float: right; }
+          body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
+            color: #28818f;
+            background-color: inherit;
+            line-height: 9px; }
+            body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share .shareText {
+              display: inherit;
+              overflow: inherit;
+              font-size: 0.75rem; }
+            @media (max-width: 767px) {
+              body .all .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
+                padding: 0 19px; } }
+        body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
+          display: none; }
+          @media (max-width: 767px) {
+            body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
+              display: table-row; } }
+          body .all .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only td {
+            border-top: 0; }
     body .all .further-education-special-search .loadMore {
       margin-top: 30px; }
     body .all .has-no-target-group-codes {
@@ -11169,7 +11168,7 @@ body {
         width: 40%;
         border-bottom: 2px solid #e5e5e5; }
       body .all .table-responsive .table tbody tr td {
-        border-bottom: 2px solid #e5e5e5; }
+        border-bottom: 2px solid #edeae8; }
         body .all .table-responsive .table tbody tr td .cellList {
           margin: 0;
           font-size: 0.75rem; }
