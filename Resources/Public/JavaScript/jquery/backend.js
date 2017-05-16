@@ -10,8 +10,10 @@ $(document).ready(function () {
             window.history.pushState("", "", $(this).attr('href'));
             Typo3Neos.Content.reloadPage();
         });
-
-    }
+        /* remove link from tiles ex. Startpage Links to main sections in mobile view */
+        $(".nav-teaser-item").find('a').removeAttr('href');
+        $(".nav-teaser-item").removeClass('clickable');
+    };
 
     document.addEventListener('Neos.NodeCreated', function(event) {
         if ($(event.detail.element).attr('typeof') == 'typo3:Phlu.Corporate:Section' || $(event.detail.element).attr('typeof') == 'typo3:Phlu.Corporate:ContactsGroup') {

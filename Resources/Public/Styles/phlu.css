@@ -8543,6 +8543,9 @@ body.neos-backend .link {
   text-decoration: none;
   cursor: pointer; }
 
+body.neos-backend .startpage .phlu-teaser.navigation .nav-teaser-item.clickable {
+  pointer-events: none; }
+
 body {
   margin-bottom: 711px;
   color: #5c5c5c; }

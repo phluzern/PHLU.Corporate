@@ -580,7 +580,7 @@
           label: 'Kontakte Filter'
   properties:
     title:
-      defaultValue: Kontakte
+      defaultValue: Kontakt
     organisations:
       type: array
       ui:

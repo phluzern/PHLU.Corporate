@@ -922,6 +922,19 @@ body.neos-backend {
     cursor: pointer;
   }
 
+  .startpage {
+    .phlu-teaser {
+      &.navigation {
+        .nav-teaser-item {
+          &.clickable {
+            pointer-events: none;
+          }
+        }
+
+      }
+    }
+  }
+
 }
 
 body {
@@ -1114,11 +1127,11 @@ body {
           font-size: $nav-link-font-size;
           cursor: pointer !important;
           padding: 8px 23px;
-          margin-right:5px;
+          margin-right: 5px;
           @include media-breakpoint-down("xs") {
-            margin-right:0;
+            margin-right: 0;
           }
-          margin-bottom:5px;
+          margin-bottom: 5px;
 
         }
         > span {
@@ -1340,7 +1353,7 @@ body {
         background-color: $darkgrey;
         padding: 20px 0;
         .form-control {
-          border:0;
+          border: 0;
           height: 55px;
           &[data-ng-model='searchquery'] {
             border-left: solid 2px $petrol;
@@ -1543,7 +1556,7 @@ body {
                 }
                 span {
                   &.oi {
-                    float:right;
+                    float: right;
                     margin-top: 3px;
                   }
                 }
@@ -1565,7 +1578,7 @@ body {
                       width: 80%;
                     }
                     &:last-child {
-                      margin-left:11px;
+                      margin-left: 11px;
                     }
                   }
                 }
@@ -3933,7 +3946,7 @@ body {
             background-color: inherit;
             padding: 5px 33px 0;
             border: 0;
-            margin:0;
+            margin: 0;
             @include media-breakpoint-down("xxl") {
               padding: 5px 26.5px;
             }
@@ -4040,7 +4053,7 @@ body {
           }
           padding-bottom: 30px;
           .nav-pills {
-            padding-top:0;
+            padding-top: 0;
             @include gutter-width(1);
             margin-bottom: 0;
             .nav-item {
@@ -4049,7 +4062,7 @@ body {
                 white-space: nowrap;
                 color: white;
                 font-size: $font-size-nav-teaser-header;
-                margin:0;
+                margin: 0;
                 @include media-breakpoint-down("md") {
                   font-size: $font-size-nav-teaser-header-mobile;
                 }
@@ -5066,7 +5079,6 @@ body {
           }
         }
 
-
         .social {
           list-style-type: none;
           li {
@@ -5099,8 +5111,6 @@ body {
             }
           }
         }
-
-
 
         .img-fluid {
           @include media-breakpoint-down("md") {
@@ -5579,7 +5589,7 @@ body {
               }
             }
             tbody {
-              border-top:2px solid $lightgrey;
+              border-top: 2px solid $lightgrey;
               tr {
                 .bookable {
                   color: green;
