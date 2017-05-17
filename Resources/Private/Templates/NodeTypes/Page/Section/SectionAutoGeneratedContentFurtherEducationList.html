@@ -39,6 +39,35 @@
 
         <div class="col-xs-12">
 
+            <div class="panel panel-default accordion-filters">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                        <a href="#" data-toggle="collapse"
+                           data-target="#accordion-filter-{node.Identifier}"
+                           aria-expanded="false"
+                           class="collapsed">
+                            <i class="fa fa-filter" aria-hidden="true"></i> Filter
+                        </a>
+                    </h4>
+                </div>
+                <div id="accordion-filter-{node.Identifier}"
+                     class="panel-collapse collapse" role="tabpanel"
+                     aria-labelledby="accordion-filter-{node.Identifier}"
+                     aria-expanded="false" style="height: 0px;">
+
+
+
+                    <f:render partial="FurtherEducationFilters" arguments="{_all}"/>
+
+
+
+                </div>
+            </div>
+
+
+
+
+
             <div class="row results-table further-education-special-search">
                 <div class="col-xs-12">
 

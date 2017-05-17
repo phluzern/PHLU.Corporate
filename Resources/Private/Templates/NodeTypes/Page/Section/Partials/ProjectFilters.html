@@ -87,7 +87,7 @@
                     </span>
                 </li>
                 <li class="nav-item"
-                    data-ng-show="initialFilters.lifetime === undefined">
+                    data-ng-show="initialFilters.lifetime === undefined && result.getDistinctCount('lifetime',false) > 1">
                     <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                        data-target="#projectstate-{node.Identifier}" role="tab">
                         <i class="fa fa-hourglass-start" aria-hidden="true"></i>
