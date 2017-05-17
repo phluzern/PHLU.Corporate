@@ -8,6 +8,12 @@
         <meta content="deutsch,de" name="language">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- Chrome, Firefox OS and Opera -->
+        <meta name="theme-color" content="#333333">
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#333333">
+        <!-- iOS Safari -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="#333333">
     </f:section>
 
     <f:section name="csslinks">
@@ -132,9 +138,12 @@
     <div class="container-fluid footer">
         <div class="row">
             <div class="col-xs-12 site-search-field">
+             <form data-ng-submit="siteSearchMobileSubmit()" data-ng-controller="SearchMobileCtrl">
                 <input type="text" class="c-input form-control ng-pristine ng-valid ng-empty ng-touched"
-                       id="siteSearchSearchMobile" data-ng-model="siteSearch" data-ng-click="startSearch();">
-                <i class="fa fa-search" aria-hidden="true"></i>
+                       id="siteSearchSearchMobile" data-ng-model="siteSearchSearchMobile">
+                <i class="fa fa-search" aria-hidden="true" data-ng-click="siteSearchMobileSubmit()"></i>
+                 <input type="submit" id="submit" value="Submit" style="display: none"/>
+             </form>
             </div>
             {footer -> f:format.raw()}
             <div class="col-xs-12 col-xl-2 flexfirst">
