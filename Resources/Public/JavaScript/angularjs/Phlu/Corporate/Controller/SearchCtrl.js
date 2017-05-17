@@ -197,6 +197,8 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
     $scope.siteSearchMobileSubmit = function() {
         $rootScope.siteSearch = $scope.siteSearchSearchMobile;
 
+        jQuery("#siteSearchSearchMobile").blur();
+
         window.setTimeout(function () {
                 jQuery('html, body').stop().animate({
                     'scrollTop': 0
@@ -610,6 +612,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         $scope.results = [];
         wasClosed = true;
         $scope.isSearch = false;
+        jQuery("#siteSearchSearchMobile").val("");
         window.setTimeout(function () {
             $rootScope.$digest();
             $scope.$digest();
