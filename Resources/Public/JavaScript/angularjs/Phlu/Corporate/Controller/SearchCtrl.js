@@ -278,11 +278,10 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-text': 150,
         'phlu-corporate-contact-education': -1, // dont'search here
         'phlu-corporate-contact-activities': -1, // dont'search here
-        'phlu-corporate-contact-function': 1,
         'phlu-corporate-contact-functions': -1,
         'phlu-corporate-contact-consulting': -1, // dont'search here
         'phlu-corporate-contact-expertise': -1, // dont'search here
-        'phlu-corporate-contact-functioncustom': -1, // dont'search here
+        'phlu-corporate-contact-function': 50, // dont'search here
         'phlu-corporate-contactsgroup.phlu-corporate-contact-firstname': 60,
         'phlu-corporate-contactsgroup.phlu-corporate-contact-lastname': 60,
         'phlu-corporate-contact-phone': 15000,
@@ -302,7 +301,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var boostParentNodeType = {
-        'Phlu.Corporate:Contacts': 100
+
     };
 
     var groupedBy = {
