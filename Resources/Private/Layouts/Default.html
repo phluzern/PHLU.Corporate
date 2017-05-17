@@ -132,9 +132,12 @@
     <div class="container-fluid footer">
         <div class="row">
             <div class="col-xs-12 site-search-field">
+             <form data-ng-submit="siteSearchMobileSubmit()" data-ng-controller="SearchMobileCtrl">
                 <input type="text" class="c-input form-control ng-pristine ng-valid ng-empty ng-touched"
-                       id="siteSearchSearchMobile" data-ng-model="siteSearch" data-ng-click="startSearch();">
-                <i class="fa fa-search" aria-hidden="true"></i>
+                       id="siteSearchSearchMobile" data-ng-model="siteSearchSearchMobile">
+                <i class="fa fa-search" aria-hidden="true" data-ng-click="siteSearchMobileSubmit()"></i>
+                 <input type="submit" id="submit" value="Submit" style="display: none"/>
+             </form>
             </div>
             {footer -> f:format.raw()}
             <div class="col-xs-12 col-xl-2 flexfirst">

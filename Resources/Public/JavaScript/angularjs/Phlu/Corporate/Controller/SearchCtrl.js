@@ -190,6 +190,28 @@ PhluCorporateApp.directive('nodeType', function ($sce) {
 
 });
 
+PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+
+    $scope.siteSearchSearchMobile = '';
+
+    $scope.siteSearchMobileSubmit = function() {
+        $rootScope.siteSearch = $scope.siteSearchSearchMobile;
+
+        window.setTimeout(function () {
+                jQuery('html, body').stop().animate({
+                    'scrollTop': 0
+                }, 100, 'swing', function () {
+
+                });
+        }, 5);
+
+        return false;
+    }
+
+
+
+}]);
+
 
 PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$compile', '$document', function ($scope, $rootScope, $sce, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $compile, $document) {
 
@@ -205,6 +227,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     $scope.limit = {};
     $scope.siteSearch = '';
     $scope.siteSearchLastQuery = '';
+
     $scope.siteSearchPath = '';
     $scope.siteSearchPathName = '';
     $scope.isSearch = false;
@@ -601,6 +624,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         }
         $scope.isSearch = true;
     };
+
 
     $scope.setNodeTypeProperties = function (nodeTypeProperties) {
         search.setNodeTypeProperties(nodeTypeProperties);
