@@ -171,6 +171,14 @@
         inspector:
           group: evento
           position: 1
+    featured:
+      type: boolean
+      ui:
+        label: 'Vorangestellt / Leitungsperson'
+        reloadIfChanged: true
+        inspector:
+          group: evento
+          position: 1
     image:
       type: Neos\Media\Domain\Model\ImageInterface
       ui:

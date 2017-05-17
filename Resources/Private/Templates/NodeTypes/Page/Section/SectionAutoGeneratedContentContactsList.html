@@ -11,6 +11,17 @@
     </f:if>
 
     {widgetRenderer -> f:format.raw()}
+
+    <f:if condition="{featuredContactsCount} > 0">
+        <f:then>
+            <div class="phlu-team-members phlu-corporate-contacts">
+                <div class="row phlu-teaser navigation subpage neos-contentcollection">
+                    <ts:render path="contactsRendererFeatured"/>
+                </div>
+            </div>
+        </f:then>
+    </f:if>
+
     <f:if condition="{groupedMode}">
         <f:then>
             <div class="panel-group" id="node-{node.Identifier}">
