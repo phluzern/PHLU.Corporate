@@ -8586,7 +8586,7 @@ body {
       line-height: 1.8; }
       @media (max-width: 1279px) {
         body .all p {
-          line-height: 30px; } }
+          line-height: 20px; } }
       @media (min-width: 1280px) {
         body .all p {
           width: 80%;
@@ -10517,6 +10517,9 @@ body {
           body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .btn.dropdown-toggle::after, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .btn.dropdown-toggle::after, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .btn.dropdown-toggle::after {
             float: right;
             margin-top: 14px; }
+        @media (max-width: 767px) {
+          body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td span, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td span, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td span {
+            font-size: 0.75rem; } }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table {
         margin: 40px 0; }
         @media (max-width: 767px) {
@@ -11668,8 +11671,7 @@ body {
             body .all .main > .row.contactperson img, body .all .main > .row-fullwidth-content > .row.contactperson img {
               padding: 0; } }
         body .all .main > .row.contactperson .contactperson-role, body .all .main > .row-fullwidth-content > .row.contactperson .contactperson-role {
-          font-weight: 700;
-          margin-bottom: 12px; }
+          font-weight: 700; }
         body .all .main > .row.contactperson address, body .all .main > .row-fullwidth-content > .row.contactperson address {
           margin-bottom: 17px; }
           body .all .main > .row.contactperson address span .fa, body .all .main > .row-fullwidth-content > .row.contactperson address span .fa {

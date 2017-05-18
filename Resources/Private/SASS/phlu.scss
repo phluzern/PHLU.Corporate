@@ -127,7 +127,7 @@ $component-active-bg: #895119;
 $line-height-lg: 2;
 $line-height-sm: 1.8;
 $line-height-mobile-h1: 40px;
-$line-height-mobile-p: 30px;
+$line-height-mobile-p: 20px;
 $flowtext-narrow-width: 80%;
 
 // phlu carousel elements
@@ -4002,6 +4002,11 @@ body {
                         }
                       }
                     }
+                    span {
+                      @include media-breakpoint-down("sm") {
+                        font-size:$font-size-table-mobile-cols;
+                      }
+                    }
                   }
 
                   table {
@@ -5581,7 +5586,6 @@ body {
           }
           .contactperson-role {
             font-weight: $font-weight-bold;
-            margin-bottom: 12px;
           }
           address {
             margin-bottom: 17px;
