@@ -127,7 +127,7 @@ $component-active-bg: #895119;
 $line-height-lg: 2;
 $line-height-sm: 1.8;
 $line-height-mobile-h1: 40px;
-$line-height-mobile-p: 20px;
+$line-height-mobile-p: 25px;
 $flowtext-narrow-width: 80%;
 
 // phlu carousel elements
@@ -5079,6 +5079,9 @@ body {
             font-size: $lead-font-size-mobile;
             @include media-breakpoint-up("xl") {
               font-size: $lead-font-size;
+            }
+            @include media-breakpoint-down("sm") {
+             line-height: $line-height-mobile-p;
             }
           }
           br {

@@ -8586,7 +8586,7 @@ body {
       line-height: 1.8; }
       @media (max-width: 1279px) {
         body .all p {
-          line-height: 20px; } }
+          line-height: 25px; } }
       @media (min-width: 1280px) {
         body .all p {
           width: 80%;
@@ -11166,6 +11166,9 @@ body {
         @media (min-width: 1280px) {
           body .all .main .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
             font-size: 1.313rem; } }
+        @media (max-width: 767px) {
+          body .all .main .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
+            line-height: 25px; } }
       body .all .main .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain br {
         display: none; }
       body .all .main .onepage-teaser-content .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
