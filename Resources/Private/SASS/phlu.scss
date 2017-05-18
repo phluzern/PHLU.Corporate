@@ -127,7 +127,7 @@ $component-active-bg: #895119;
 $line-height-lg: 2;
 $line-height-sm: 1.8;
 $line-height-mobile-h1: 40px;
-$line-height-mobile-p: 20px;
+$line-height-mobile-p: 25px;
 $flowtext-narrow-width: 80%;
 
 // phlu carousel elements
@@ -5080,6 +5080,9 @@ body {
             @include media-breakpoint-up("xl") {
               font-size: $lead-font-size;
             }
+            @include media-breakpoint-down("sm") {
+             line-height: $line-height-mobile-p;
+            }
           }
           br {
             display: none;
@@ -5761,6 +5764,13 @@ body {
                     &:hover {
                       &::after {
                         content: 'Studiengang';
+                      }
+                    }
+                  }
+                  i.fa-calendar {
+                    &:hover {
+                      &::after {
+                        content: 'Veranstaltung';
                       }
                     }
                   }
@@ -6731,7 +6741,7 @@ body {
         }
         .nav-teaser-item {
           border-bottom: 1px solid $grey7;
-          padding: 30px 30px 20px;
+          padding: 30px;
           h3 {
             margin-top: 0;
             margin-bottom: 10px;

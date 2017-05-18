@@ -8586,7 +8586,7 @@ body {
       line-height: 1.8; }
       @media (max-width: 1279px) {
         body .all p {
-          line-height: 20px; } }
+          line-height: 25px; } }
       @media (min-width: 1280px) {
         body .all p {
           width: 80%;
@@ -11166,6 +11166,9 @@ body {
         @media (min-width: 1280px) {
           body .all .main .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
             font-size: 1.313rem; } }
+        @media (max-width: 767px) {
+          body .all .main .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
+            line-height: 25px; } }
       body .all .main .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain br {
         display: none; }
       body .all .main .onepage-teaser-content .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
@@ -11770,6 +11773,8 @@ body {
             content: 'Kurs'; }
           body .all .main .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-graduation-cap:hover::after {
             content: 'Studiengang'; }
+          body .all .main .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-calendar:hover::after {
+            content: 'Veranstaltung'; }
         body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
           margin: 0 30px;
           margin-bottom: 15px; }
@@ -12405,7 +12410,7 @@ body .all .startpage .phlu-teaser.navigation {
       display: none; } }
   body .all .startpage .phlu-teaser.navigation .nav-teaser-item {
     border-bottom: 1px solid #dcdcdc;
-    padding: 30px 30px 20px; }
+    padding: 30px; }
     body .all .startpage .phlu-teaser.navigation .nav-teaser-item h3 {
       margin-top: 0;
       margin-bottom: 10px; }
