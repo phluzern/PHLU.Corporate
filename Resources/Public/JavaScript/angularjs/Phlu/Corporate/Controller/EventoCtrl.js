@@ -38,7 +38,7 @@ PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsea
 
     $scope.setNodeTypes = function (nodetypes) {
         if (nodetypes == null) {
-            nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation']
+            nodetypes = ['phlu-neos-nodetypes-course-event-furthereducation', 'phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation']
         }
         $scope.nodetypes = nodetypes;
     };
@@ -379,7 +379,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      */
     $scope.setNodeTypes = function (nodetypes) {
         if (nodetypes == null) {
-            nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation']
+            nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-event-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation']
         }
         $scope.nodetypes = nodetypes;
     };
