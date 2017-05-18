@@ -196,6 +196,8 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         return false;
     }
 
+
+
     $scope.run = function () {
 
         list
@@ -291,7 +293,25 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     };
 
 
+    var boost = {
+
+        'phlu-neos-nodetypes-publication-date': -1,
+        'phlu-neos-nodetypes-publication-grandparent': -1,
+        'phlu-neos-nodetypes-publication-id': -1,
+        'phlu-neos-nodetypes-publication-language': -1,
+        'phlu-neos-nodetypes-publication-publicationtype': -1,
+        'phlu-neos-nodetypes-publication-title': -1,
+        'phlu-neos-nodetypes-publication-sortingkey': 500,
+        'url': -1,
+        'grandparent': -1
+
+
+    };
+
+
+
     list
+        .setPropertiesBoost(boost)
         .setCategorizedBy('publicationtype.name')
         .setOrderBy({'phlu-neos-nodetypes-publication': function(node) {return (10000-parseInt(node.properties['phlu-neos-nodetypes-publication-sortingkey'].substr(0,4)));}})
         .setNodeType('phlu-neos-nodetypes-publication')
