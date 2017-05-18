@@ -1541,6 +1541,9 @@ body {
 
             li {
               margin: 0 15px;
+              @include media-breakpoint-down("sm") {
+                margin:0;
+              }
               background-color: white;
               -webkit-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
               -moz-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
@@ -1589,6 +1592,9 @@ body {
           i.fa-search {
             color: $font-color;
             right: 11px;
+            @include media-breakpoint-down("sm") {
+              right: 0;
+            }
           }
           #datepicker-further-education {
             .datepicker-inline {
@@ -2059,7 +2065,7 @@ body {
           }
           > div {
             &:last-child {
-              margin-bottom:60px;
+              margin-bottom:30px;
             }
           }
         }
@@ -2120,6 +2126,9 @@ body {
                 padding-left:9px;
                 padding-top:12px;
                 right:15px;
+                @include media-breakpoint-down("sm") {
+                  right:0;
+                }
                 margin-top:-16px;
               }
             }
@@ -2145,6 +2154,9 @@ body {
             .input-item-col {
               padding-right: 15px;
               padding-left: 15px;
+              @include media-breakpoint-down("sm") {
+               padding:0;
+              }
               .dropdown-menu {
                 border-top:white;
                 margin-top:-2px;
@@ -2164,6 +2176,9 @@ body {
               }
               .deleteDropdownSelectionButton {
                 right:15px;
+                @include media-breakpoint-down("sm") {
+                  right:0;
+                }
               }
             }
           }
@@ -3727,7 +3742,7 @@ body {
           border: $input-btn-sidebar-border-width solid $input-sidebar-border-color;
         }
         .fa-search {
-          margin: -36px 33px 0 0;
+          margin: -36px 20px 0 0;
         }
       }
       .row.subjectsfilternav {

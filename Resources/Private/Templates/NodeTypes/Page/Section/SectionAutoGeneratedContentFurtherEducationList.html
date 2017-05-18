@@ -54,7 +54,23 @@
                      class="panel-collapse collapse" role="tabpanel"
                      aria-labelledby="accordion-filter-{node.Identifier}"
                      aria-expanded="false" style="height: 0px;">
-                    <f:render partial="furtherEducationFilters" arguments="{_all}"/>
+
+
+
+                    <div class="row ">
+                        <div class="col-xs-12">
+
+                            <div class="list-search-field">
+                                <input type="text" class="c-input form-control ng-pristine ng-valid ng-empty ng-touched"
+                                       data-ng-model="searchquery">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <span data-ng-init="setQuery('search');"></span>
+                            </div>
+
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
 
