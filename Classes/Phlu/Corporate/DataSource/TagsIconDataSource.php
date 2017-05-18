@@ -35,7 +35,7 @@ class TagsIconDataSource extends AbstractDataSource {
     {
 
 
-        $this->controllerContext->getResponse()->getHeaders()->setCacheControlDirective('max-age','3600');
+
 
         $icons = array();
 

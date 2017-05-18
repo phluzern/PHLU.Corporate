@@ -171,14 +171,24 @@
         inspector:
           group: evento
           position: 1
-    featured:
-      type: boolean
+    featuredContact:
+      type: integer
+      defaultValue: 0
       ui:
-        label: 'Vorangestellt / Leitungsperson'
+        label: 'Vorangestellt'
         reloadIfChanged: true
         inspector:
-          group: evento
           position: 1
+          group: evento
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              0:
+                label: 'Nein'
+              1:
+                label: 'Ja (Leitungsfunktion)'
+              2:
+                label: 'Ja (Administration)'
     image:
       type: Neos\Media\Domain\Model\ImageInterface
       ui:
@@ -197,10 +207,10 @@
         inspector:
           group: evento
           position: 1
-          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editor: 'Content/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Kontakt auswählen'
-            dataSourceIdentifier: phlu-corporate-contacts
+            dataSourceIdentifier: 'phlu-corporate-contacts'
             allowEmpty: true
             multiple: false
           editorListeners:
