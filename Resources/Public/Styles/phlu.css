@@ -9690,7 +9690,8 @@ body {
             display: block; } }
     body .all .overview-tiles-bg {
       background-color: #edeae8;
-      padding-top: 33px; }
+      padding-top: 33px;
+      margin-top: 50px; }
       @media (max-width: 1599px) {
         body .all .overview-tiles-bg {
           padding-top: 66px; } }
@@ -9722,7 +9723,16 @@ body {
               margin: 0 0 8px; }
             body .all .overview-tiles-bg .phlu-teaser.navigation .nav-teaser-item div p {
               font-size: 0.875rem;
-              width: 100%; }
+              width: 100%;
+              overflow: hidden;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: horizontal;
+              text-overflow: ellipsis;
+              height: 73px;
+              text-align: justify;
+              -ms-hyphens: auto;
+              -webkit-hyphens: auto;
+              hyphens: auto; }
             body .all .overview-tiles-bg .phlu-teaser.navigation .nav-teaser-item div h3 a, body .all .overview-tiles-bg .phlu-teaser.navigation .nav-teaser-item div p {
               color: #9f632a; }
           body .all .overview-tiles-bg .phlu-teaser.navigation .nav-teaser-item:hover a, body .all .overview-tiles-bg .phlu-teaser.navigation .nav-teaser-item:hover p {

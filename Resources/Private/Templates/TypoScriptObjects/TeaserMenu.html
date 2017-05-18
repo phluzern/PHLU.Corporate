@@ -26,10 +26,10 @@
     <p>
         <f:if condition="{altteasertext}">
             <f:then>
-                <f:format.crop maxCharacters="105" append="...">{altteasertext}</f:format.crop>
+                <f:format.stripTags>{altteasertext}</f:format.stripTags>
             </f:then>
             <f:else>
-                <f:format.crop maxCharacters="105" append="...">{teasertext.properties.text}</f:format.crop>
+                <f:format.stripTags>{teasertext.properties.text}</f:format.stripTags>
             </f:else>
         </f:if>
     </p>
