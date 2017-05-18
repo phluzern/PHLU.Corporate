@@ -2628,6 +2628,7 @@ body {
     .overview-tiles-bg {
       background-color: $lightgrey;
       padding-top: 33px;
+      margin-top:50px;
       @include media-breakpoint-down("xxl") {
         padding-top: 66px;
       }
@@ -2656,6 +2657,15 @@ body {
             p {
               font-size: $font-size-nav-teasers;
               width: 100%;
+              overflow: hidden;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: horizontal;
+              text-overflow: ellipsis;
+              height: 73px;
+              text-align: justify;
+              -ms-hyphens: auto;
+              -webkit-hyphens: auto;
+              hyphens: auto;
             }
             h3 a, p {
               color: $hazelbrowndark;
