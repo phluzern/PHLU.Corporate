@@ -26,7 +26,8 @@
 
     <f:if condition="{query}"><span data-ng-init="searchquery = '{query}'"></span></f:if>
     <f:if condition="{maxitems} > 0"><span data-ng-init="setMaxItems({maxitems})"></span></f:if>
-    <f:if condition="{orderby} != ''"><span data-ng-init="setOrderBy('{orderby}')"></span></f:if>
+
+    <span data-ng-init="setOrderBy('{orderby}')"></span>
 
     <f:if condition="{top}">
         <ts:render path="top"></ts:render>
