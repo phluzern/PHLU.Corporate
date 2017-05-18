@@ -12,42 +12,43 @@
 
     {widgetRenderer -> f:format.raw()}
 
-    <f:if condition="{top}">
-        <ts:render path="top"></ts:render>
-    </f:if>
 
     <f:if condition="{featuredContactsCount} > 0">
         <f:then>
+            <f:if condition="{top}">
+                <ts:render path="top"></ts:render>
+            </f:if>
             <div class="phlu-team-members phlu-corporate-contacts">
                 <div class="row phlu-teaser navigation subpage neos-contentcollection">
                     <ts:render path="contactsRendererFeatured"/>
                 </div>
             </div>
+
         </f:then>
     </f:if>
 
-    <f:if condition="{bottom}">
-        <ts:render path="bottom"></ts:render>
-    </f:if>
 
-    <f:if condition="{groupedMode}">
-        <f:then>
-            <div class="panel-group" id="node-{node.Identifier}">
-                <div class="phlu-accordion list-multiple">
-                    <ts:render path="collectionRenderer" context="{node: main}"/>
+        <f:if condition="{groupedMode}">
+            <f:then>
+                <f:if condition="{bottom}">
+                    <ts:render path="bottom"></ts:render>
+                </f:if>
+                <div class="panel-group" id="node-{node.Identifier}">
+                    <div class="phlu-accordion list-multiple">
+                        <ts:render path="collectionRenderer" context="{node: main}"/>
+                    </div>
                 </div>
-            </div>
-        </f:then>
-        <f:else>
+            </f:then>
+            <f:else>
 
-            <div class="phlu-team-members phlu-corporate-section">
-                <ts:render path="contactsRenderer"/>
-            </div>
+                <ts:render path="contactsRenderer" context="{node: main}"/>
 
-        </f:else>
-    </f:if>
+                <div class="phlu-team-members phlu-corporate-section">
+                    <ts:render path="contactsRenderer"/>
+                </div>
 
-
+            </f:else>
+        </f:if>
 
     <hr>
 </div>
