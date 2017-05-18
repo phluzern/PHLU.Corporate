@@ -14,6 +14,32 @@
     </f:if>
     {widgetRenderer -> f:format.raw()}
     <div class="row ppdb-list hidden-xs-up" data-ng-class="{'hidden-xs-up': result.isStarted() === false}">
+        <f:if condition="{showSearchInput}">
+            <f:else>
+                <div class="col-xs-12">
+                    <div class="panel panel-default accordion-filters">
+                        <div class="panel-heading" role="tab">
+                            <h4 class="panel-title">
+                                <a href="#" data-toggle="collapse"
+                                   data-target="#accordion-filter-{node.Identifier}"
+                                   aria-expanded="false"
+                                   class="collapsed">
+                                    <i class="fa fa-filter" aria-hidden="true"></i> Filter
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="accordion-filter-{node.Identifier}"
+                             class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="accordion-filter-{node.Identifier}"
+                             aria-expanded="false" style="height: 0px;">
+
+                            <f:render partial="ProjectFilters" arguments="{_all}"/>
+
+                        </div>
+                    </div>
+                </div>
+            </f:else>
+        </f:if>
         <f:for each="{publicationsByIdentifier}" as="publication">
             <span data-ng-init="list.addNodesByIdentifier(['{publication.Identifier}']);"></span>
         </f:for>
@@ -56,7 +82,8 @@
                                           data-trigger="manual">Beteiligte Personen</span>
                                 </a>
                                 <span>
-                                    <span class="count" data-ng-show="sizeOf(participants) > 0" data-ng-bind="sizeOf(participants)"></span>
+                                    <span class="count" data-ng-show="sizeOf(participants) > 0"
+                                          data-ng-bind="sizeOf(participants)"></span>
                                     <span data-ng-show="sizeOf(participants) > 0" class="resetFilter">
                                         <a ng-click="clearFilter('participants')">
                                             <span class="oi oi-x"></span>
@@ -72,7 +99,8 @@
                                     <span>Organisation</span>
                                 </a>
                                 <span>
-                                    <span class="count" data-ng-show="sizeOf(organisations) > 0" data-ng-bind="sizeOf(organisations)"></span>
+                                    <span class="count" data-ng-show="sizeOf(organisations) > 0"
+                                          data-ng-bind="sizeOf(organisations)"></span>
                                     <span data-ng-show="sizeOf(organisations) > 0" class="resetFilter">
                                         <a ng-click="clearFilter('organisations')">
                                             <span class="oi oi-x"></span>
@@ -88,7 +116,8 @@
                                     <span>Publikationstyp</span>
                                 </a>
                                 <span>
-                                    <span class="count" data-ng-show="sizeOf(publicationtype) > 0" data-ng-bind="sizeOf(publicationtype)"></span>
+                                    <span class="count" data-ng-show="sizeOf(publicationtype) > 0"
+                                          data-ng-bind="sizeOf(publicationtype)"></span>
                                     <span data-ng-show="sizeOf(publicationtype) > 0" class="resetFilter">
                                         <a ng-click="clearFilter('publicationtype')">
                                             <span class="oi oi-x"></span>
@@ -151,7 +180,8 @@
                                             <td>
                                                 <a href="javascript:void(0);">
                                                     <span data-ng-bind="lt.value.OrganisationName + ' ('+ lt.count+')'"></span>
-                                                    <span class="oi" data-ng-class="{'oi-check': organisations[lt.value.OrganisationId],'': !organisations[lt.value.OrganisationId]}"
+                                                    <span class="oi"
+                                                          data-ng-class="{'oi-check': organisations[lt.value.OrganisationId],'': !organisations[lt.value.OrganisationId]}"
                                                           aria-hidden="true"></span>
                                                 </a>
                                             </td>
@@ -173,7 +203,8 @@
                                             <td>
                                                 <a href="javascript:void(0);">
                                                     <span data-ng-bind="lt.value.name + ' (' + lt.count + ')'"></span>
-                                                    <span class="oi" data-ng-class="{'oi-check': publicationtype[lt.value.id],'': !publicationtype[lt.value.id]}"
+                                                    <span class="oi"
+                                                          data-ng-class="{'oi-check': publicationtype[lt.value.id],'': !publicationtype[lt.value.id]}"
                                                           aria-hidden="true"></span>
                                                 </a>
                                             </td>
@@ -250,7 +281,7 @@
                                                 <span class="counter-divider">von</span>
                                                 <span data-ng-bind="group.count()"></span>
                                             </span>
-                              
+
                                         </a>
                                     </div>
                                 </div>
@@ -326,4 +357,5 @@
     <f:if condition="{bottom}">
         <ts:render path="bottom"></ts:render>
     </f:if>
+    <hr>
 </div>
