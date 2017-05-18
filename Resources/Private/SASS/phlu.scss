@@ -5764,6 +5764,13 @@ body {
                       }
                     }
                   }
+                  i.fa-calendar {
+                    &:hover {
+                      &::after {
+                        content: 'Veranstaltung';
+                      }
+                    }
+                  }
                   white-space: nowrap;
                 }
                 &.result-preview {
@@ -6731,7 +6738,7 @@ body {
         }
         .nav-teaser-item {
           border-bottom: 1px solid $grey7;
-          padding: 30px 30px 20px;
+          padding: 30px;
           h3 {
             margin-top: 0;
             margin-bottom: 10px;
