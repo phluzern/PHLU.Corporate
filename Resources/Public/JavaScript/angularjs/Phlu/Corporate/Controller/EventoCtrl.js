@@ -426,17 +426,24 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      */
     $scope.setOrderBy = function (orderby) {
 
+
+
         if (orderby != 0) {
             search.setOrderBy({'*': orderby})
         } else {
 
             if ($scope.filters.id !== undefined) {
+
                 search.setOrderBy({
                     'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
                         return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-id']].counter
                     },
                     'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
+
                         return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-id']].counter
+                    },
+                    'phlu-neos-nodetypes-course-event-furthereducation': function (node) {
+                        return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-id']].counter
                     }
                 })
 
@@ -449,6 +456,9 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                     },
                     'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
                         return $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-nr']].counter
+                    },
+                    'phlu-neos-nodetypes-course-event-furthereducation': function (node) {
+                        return $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-nr']].counter
                     }
                 })
 
@@ -811,6 +821,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         }
         return Object.keys(obj).length;
     };
+
 
 
     /**
