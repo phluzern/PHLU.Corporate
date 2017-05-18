@@ -434,8 +434,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
             if ($scope.filters.id !== undefined) {
 
-                console.log(1);
-
                 search.setOrderBy({
                     'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
                         return $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-id']].counter
