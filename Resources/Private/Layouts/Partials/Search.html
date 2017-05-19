@@ -44,7 +44,7 @@
                                     <li class="nav-item clickable " role="menuitem">
                                         <a class="nav-link all" data-ng-click="setLastActiveTabname('alle')"
                                            data-ng-class="{active: lastActiveTabName == 'alle'}"
-                                           data-toggle="tab" href="#alle" role="tab">Alle</a>
+                                           data-toggle="tab" data-target="#alle" href="#" role="tab">Alle</a>
                                     </li>
                                     <li class="nav-item clickable"
                                         ng-repeat="group in result.getGrouped().getItems()">
@@ -52,7 +52,7 @@
                                         <a class="nav-link"
                                            data-ng-click="setLastActiveTabname(group.getLabel())"
                                            data-ng-class="{active: lastActiveTabName == group.getLabel()}"
-                                           data-toggle="tab" href="#{{group.getLabel()}}"
+                                           data-toggle="tab" data-target="#{{group.getLabel()}}" href="#"
                                            role="tab"><span node-type name="{{group.getLabel()}}"></span>
                                             <span>({{group.count()}})</span></a>
                                     </li>

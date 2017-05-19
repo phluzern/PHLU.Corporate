@@ -511,7 +511,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     //search.disableRealtime();
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('asset.url', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
-    //search.setExternalSources(external);
+    search.setExternalSources(external);
     search.setGroupedBy(groupedBy).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
         if (searchResultApplyTimer) {
@@ -531,7 +531,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             var lh = data.getHash();
 
             if (lasthash !== lh) {
-                $scope.$digest(function () {
+                $scope.$apply(function () {
 
                     $rootScope.quickNode = data.getQuickNodes()[0];
 
@@ -550,6 +550,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                     });
 
                     if ($rootScope.siteSearchTabs[$rootScope.lastActiveTabName] === false) {
+                        console.log(1);
                         $("#search .phlu-corporate-tags-menu ul.nav-pills > li a").removeClass('active');
                         $("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='#" + i + "']").addClass('active');
                         if ($rootScope.lastActiveTabVisited === undefined) {
