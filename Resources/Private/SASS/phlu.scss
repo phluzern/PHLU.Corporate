@@ -4633,9 +4633,9 @@ body {
     .phlu-qmpilot-nodetypes-files, .phlu-qmpilot-nodetypes-file {
       a.preview {
         img {
-          width: 100%;
-          max-width: 500px;
+          width: auto;
           height: auto;
+          max-width:100%;
         }
 
       }

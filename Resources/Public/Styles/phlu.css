@@ -10944,9 +10944,9 @@ body {
     body .all .phlu-corporate-location .phlu-locations .row.departments .phlu-teaser.navigation.subpage {
       margin: 0; }
     body .all .phlu-qmpilot-nodetypes-files a.preview img, body .all .phlu-qmpilot-nodetypes-file a.preview img {
-      width: 100%;
-      max-width: 500px;
-      height: auto; }
+      width: auto;
+      height: auto;
+      max-width: 100%; }
     body .all .phlu-qmpilot-nodetypes-files.last, body .all .phlu-qmpilot-nodetypes-file.last {
       margin-bottom: 15px; }
     body .all .phlu-qmpilot-nodetypes-file[data-prev='phlu-corporate-accordeonelement'] {
