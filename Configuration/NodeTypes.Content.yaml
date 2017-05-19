@@ -388,3 +388,29 @@
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Video'
+
+
+'Phlu.Corporate:PublicationCollection':
+  superTypes:
+    'Phlu.Corporate:Content': true
+  ui:
+    label: 'Publikation/en'
+    icon: icon-cube
+    inspector:
+      groups:
+        general:
+          label: Publikation
+    inlineEditable: true
+    position: 400
+  properties:
+    reference:
+      type: references
+      ui:
+        label: 'Wählen Sie bestehende Publikationen'
+        reloadIfChanged: true
+        inspector:
+          group: general
+          position: 50
+          editorOptions:
+            nodeTypes:
+              - 'Phlu.Neos.NodeTypes:Publication'

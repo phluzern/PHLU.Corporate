@@ -1,0 +1,9 @@
+# Content
+prototype(Phlu.Corporate:PublicationCollection) < prototype(Phlu.Corporate:Content) {
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/PublicationCollection.html'
+    references = ${q(node).getProperty('reference'}
+    renderer = Neos.Neos:ContentCase
+}
+
+
+

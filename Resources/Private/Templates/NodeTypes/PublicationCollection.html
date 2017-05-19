@@ -1,0 +1,19 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+<f:if condition="{reference}">
+	<f:if condition="{reference -> f:count()} == 1">
+		<f:then>
+			<f:for each="{reference}" as="publication">
+				<p>{publication.properties.Citationstyle -> f:format.raw()}</p>
+			</f:for>
+		</f:then>
+		<f:else>
+			<ul class="neos-list-square">
+			<f:for each="{reference}" as="publication">
+				<li>{publication.properties.Citationstyle -> f:format.raw()}</li>
+			</f:for>
+			</ul>
+		</f:else>
+
+	</f:if>
+</f:if>
+
