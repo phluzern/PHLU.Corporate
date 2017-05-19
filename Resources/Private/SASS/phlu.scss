@@ -3450,6 +3450,11 @@ body {
             }
           }
         }
+        .address-block-small {
+          address, a, div, .content-link-email-contact-person  {
+            font-size: $font-size-phlu-team-members-mobile;
+          }
+        }
       }
       .nav-teaser-item {
         .row {

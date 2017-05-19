@@ -10202,7 +10202,10 @@ body {
           body .all .phlu-team-members .panel-body .col-xs-12 img.img-fluid, body .all .phlu-team-members .panel-body .col-xs-12 .carousel-inner > .carousel-item > img, body .all .phlu-team-members .panel-body .col-xs-12
           .carousel-inner > .carousel-item > a > img, body .all .phlu-team-members .panel-body .col-xs-12 .phlu-teaser img, body .all .phlu-teaser .phlu-team-members .panel-body .col-xs-12 img {
             width: 100%;
+            max-width: 100%;
             height: auto; } }
+      body .all .phlu-team-members .panel-body .address-block-small address, body .all .phlu-team-members .panel-body .address-block-small a, body .all .phlu-team-members .panel-body .address-block-small div, body .all .phlu-team-members .panel-body .address-block-small .content-link-email-contact-person {
+        font-size: 1rem; }
     body .all .phlu-team-members .content-link-location {
       margin-left: 8px; }
     body .all .phlu-team-members.phlu-corporate-contacts > .row > .col-xs-12 > .row > .col-xs-12 {
