@@ -1,5 +1,6 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 <f:if condition="{reference}">
+	<f:then>
 	<f:if condition="{reference -> f:count()} == 1">
 		<f:then>
 			<f:for each="{reference}" as="publication">
@@ -13,7 +14,14 @@
 			</f:for>
 			</ul>
 		</f:else>
-
 	</f:if>
+	</f:then>
+	<f:else>
+		<f:if condition="{neos:rendering.inBackend()}">
+			<f:then>
+				<p>Wählen Sie eine oder mehrere Publikationen mit Hilfe des Inspektors aus.</p>
+			</f:then>
+		</f:if>
+	</f:else>
 </f:if>
 
