@@ -201,6 +201,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.run = function () {
 
         list
+            .disableRealtime()
             .addPropertyFilter('organisationunits.id', 'organisations', $scope)
             .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
             .addPropertyFilter('lifetime', 'filterLifetime', $scope)
@@ -220,7 +221,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
 
         list.$bind('result', $scope)
-            .run();
+        .run();
 
     }
 
