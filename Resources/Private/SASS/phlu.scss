@@ -3442,6 +3442,7 @@ body {
         .col-xs-12 {
           img.img-fluid {
             margin: 0 0 32px;
+            max-width: 115px;
             @include media-breakpoint-down('xs') {
               width: 100%;
               height: auto;
