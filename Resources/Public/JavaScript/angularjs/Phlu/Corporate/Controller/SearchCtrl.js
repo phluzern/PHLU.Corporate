@@ -511,7 +511,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     //search.disableRealtime();
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('asset.url', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
-    search.setExternalSources(external);
+    //search.setExternalSources(external);
     search.setGroupedBy(groupedBy).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
         if (searchResultApplyTimer) {
