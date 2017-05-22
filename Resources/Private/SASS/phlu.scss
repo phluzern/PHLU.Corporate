@@ -1137,7 +1137,7 @@ body {
         > span {
           float: right;
           margin-top: -54px;
-          margin-right: 14px;
+          margin-right: 20px;
           @include media-breakpoint-down("xs") {
             margin-right: 64px;
             margin-top: -34px;
@@ -2068,6 +2068,11 @@ body {
               margin-bottom: 30px;
             }
           }
+          .subjectsfilternav {
+            &:last-child {
+              margin-bottom: 70px;
+            }
+          }
         }
       }
       .ppdb-list, .further-education-list {
@@ -2628,7 +2633,7 @@ body {
     .overview-tiles-bg {
       background-color: $lightgrey;
       padding-top: 33px;
-      margin-top:50px;
+      margin-top: 50px;
       @include media-breakpoint-down("xxl") {
         padding-top: 66px;
       }
@@ -3448,7 +3453,7 @@ body {
           }
         }
         .address-block-small {
-          address, a, div, .content-link-email-contact-person  {
+          address, a, div, .content-link-email-contact-person {
             font-size: $font-size-phlu-team-members-mobile;
           }
         }
@@ -3952,6 +3957,8 @@ body {
                 td {
                   ul {
                     margin: 0;
+                    padding: 0;
+                    list-style-type: none;
                   }
 
                   &:first-child {
@@ -3972,6 +3979,19 @@ body {
                     @include media-breakpoint-up("md") {
                       border-left: 0;
 
+                    }
+                  }
+                  &.researchmainfocus, div.researchmainfocus {
+                    ul {
+                      li {
+                        font-size: $font-size-small;
+                        background-color: $lightgrey;
+                        border-radius: 4px;
+                        display: inline-block;
+                        padding: 5px;
+                        margin-left: 5px;
+                        margin-bottom: 5px;
+                      }
                     }
                   }
                 }
@@ -4018,7 +4038,7 @@ body {
                     }
                     span {
                       @include media-breakpoint-down("sm") {
-                        font-size:$font-size-table-mobile-cols;
+                        font-size: $font-size-table-mobile-cols;
                       }
                     }
                   }
@@ -4058,6 +4078,13 @@ body {
                   td {
                     background-color: $lightgrey;
                     border-bottom: 0;
+                    &.researchmainfocus, div.researchmainfocus {
+                      ul {
+                        li {
+                          background-color: $grey13;
+                        }
+                      }
+                    }
                   }
                 }
                 &:last-child {
@@ -4632,7 +4659,7 @@ body {
         img {
           width: auto;
           height: auto;
-          max-width:100%;
+          max-width: 100%;
         }
 
       }
@@ -5095,7 +5122,7 @@ body {
               font-size: $lead-font-size;
             }
             @include media-breakpoint-down("sm") {
-             line-height: $line-height-mobile-p;
+              line-height: $line-height-mobile-p;
             }
           }
           br {
