@@ -180,7 +180,7 @@
   constraints:
     nodeTypes:
       'Phlu.Corporate:Page.View.Default': true
-      'Phlu.Corporate:Page.View.Default.Default': false
+      'Phlu.Corporate:Page.View.Default.Default': true
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.View.Default.Default'
