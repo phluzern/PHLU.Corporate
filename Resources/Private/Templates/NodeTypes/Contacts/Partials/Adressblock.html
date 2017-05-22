@@ -6,17 +6,32 @@
 
 <address>
     {node.properties.firstname} {node.properties.lastname}<br>
-    <f:if condition="{node.properties.titlename} != ''">{node.properties.titlename}<br></f:if>
-    <f:if condition="{node.properties.function}">{node.properties.function}<br></f:if>
-    <span>{node.properties.street}</span>
-    <f:if condition="{node.properties.street2} != ''">{node.properties.street2}<br></f:if>
-    <br>
-    {node.properties.zip} {node.properties.city}<br>
-    <div class="telephone">
-        <i class="fa fa-phone" aria-hidden="true"></i>
-        {node.properties.phone}<br>
-    </div>
-    <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{node.properties.email}</a><br>
+    <f:if condition="{node.properties.titlename} != ''">
+        {node.properties.titlename}<br>
+    </f:if>
+    <f:if condition="{node.properties.function}">
+        {node.properties.function}<br>
+    </f:if>
+    <f:if condition="{node.properties.street}">
+
+        {node.properties.street}<br>
+    </f:if>
+    <f:if condition="{node.properties.street2}">
+        {node.properties.street2}<br>
+    </f:if>
+    <f:if condition="{node.properties.city}">
+        {node.properties.zip} {node.properties.city}<br>
+    </f:if>
+    <f:if condition="{node.properties.phone}">
+        <div class="telephone">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            {node.properties.phone}<br>
+        </div>
+    </f:if>
+    <f:if condition="{node.properties.email}">
+        <a class="content-link-email-contact-person"
+           href="mailto:{node.properties.email}">{node.properties.email}</a><br>
+    </f:if>
     <portrait:link node="{node}">Portrait</portrait:link>
 </address>
 
