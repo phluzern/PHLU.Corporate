@@ -44,6 +44,7 @@
       'Phlu.Corporate:Table': true
       'Phlu.Corporate:MediaGallery': true
       'Phlu.Corporate:Video': true
+      'Phlu.Corporate:PublicationCollection': true
       'Neoslive.Nodeform:Form': true
       'Phlu.Corporate:AccordeonElement': true
 
@@ -147,6 +148,7 @@
       'Phlu.Qmpilot.NodeTypes:File': true
       'Phlu.Corporate:AccordeonElement': false
       'Phlu.Corporate:Accordeon': true
+      'Phlu.Corporate:PublicationCollection': true
 
 'Phlu.Corporate:ContentCollection.Page.TargetGroup':
   superTypes:

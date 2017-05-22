@@ -282,18 +282,17 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-consulting': -1, // dont'search here
         'phlu-corporate-contact-expertise': -1, // dont'search here
         'phlu-corporate-contact-function': 50, // dont'search here
-        'phlu-corporate-contactsgroup.phlu-corporate-contact-firstname': 60,
-        'phlu-corporate-contactsgroup.phlu-corporate-contact-lastname': 60,
         'phlu-corporate-contact-phone': 15000,
-        'phlu-neos-nodetypes-course-module-furthereducation-title': 100,
+        'phlu-neos-nodetypes-course-module-furthereducation-title': 50,
         'phlu-neos-nodetypes-course-study-furthereducation-title': 100,
-        'phlu-neos-nodetypes-course-event-furthereducation-title': 100,
-        'phlu-neos-nodetypes-course-module-furthereducation-genre': 100,
-        'phlu-neos-nodetypes-course-study-furthereducation-genre': 100,
+        'phlu-neos-nodetypes-course-event-furthereducation-title': 50,
+        'phlu-neos-nodetypes-course-module-furthereducation-genre': 1,
+        'phlu-neos-nodetypes-course-study-furthereducation-genre': 1,
         'phlu-neos-nodetypes-course-module-furthereducation-nr': 200,
         'phlu-neos-nodetypes-course-study-furthereducation-nr': 200,
         'phlu-neos-nodetypes-course-event-furthereducation-nr': 200,
         'phlu-corporate-textplain-grandparent': 100,
+        'phlu-neos-nodetypes-publication-date': -1,
         'url': -1,
         'grandparent': -1
 
@@ -532,7 +531,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             var lh = data.getHash();
 
             if (lasthash !== lh) {
-                $scope.$digest(function () {
+                $scope.$apply(function () {
 
                     $rootScope.quickNode = data.getQuickNodes()[0];
 
@@ -551,6 +550,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                     });
 
                     if ($rootScope.siteSearchTabs[$rootScope.lastActiveTabName] === false) {
+                        console.log(1);
                         $("#search .phlu-corporate-tags-menu ul.nav-pills > li a").removeClass('active');
                         $("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='#" + i + "']").addClass('active');
                         if ($rootScope.lastActiveTabVisited === undefined) {

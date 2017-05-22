@@ -10196,12 +10196,16 @@ body {
       padding: 20px 0 10px; }
       body .all .phlu-team-members .panel-body .col-xs-12 img.img-fluid, body .all .phlu-team-members .panel-body .col-xs-12 .carousel-inner > .carousel-item > img, body .all .phlu-team-members .panel-body .col-xs-12
       .carousel-inner > .carousel-item > a > img, body .all .phlu-team-members .panel-body .col-xs-12 .phlu-teaser img, body .all .phlu-teaser .phlu-team-members .panel-body .col-xs-12 img {
-        margin: 0 0 32px; }
+        margin: 0 0 32px;
+        max-width: 115px; }
         @media (max-width: 543px) {
           body .all .phlu-team-members .panel-body .col-xs-12 img.img-fluid, body .all .phlu-team-members .panel-body .col-xs-12 .carousel-inner > .carousel-item > img, body .all .phlu-team-members .panel-body .col-xs-12
           .carousel-inner > .carousel-item > a > img, body .all .phlu-team-members .panel-body .col-xs-12 .phlu-teaser img, body .all .phlu-teaser .phlu-team-members .panel-body .col-xs-12 img {
             width: 100%;
+            max-width: 100%;
             height: auto; } }
+      body .all .phlu-team-members .panel-body .address-block-small address, body .all .phlu-team-members .panel-body .address-block-small a, body .all .phlu-team-members .panel-body .address-block-small div, body .all .phlu-team-members .panel-body .address-block-small .content-link-email-contact-person {
+        font-size: 1rem; }
     body .all .phlu-team-members .content-link-location {
       margin-left: 8px; }
     body .all .phlu-team-members.phlu-corporate-contacts > .row > .col-xs-12 > .row > .col-xs-12 {
@@ -10940,9 +10944,9 @@ body {
     body .all .phlu-corporate-location .phlu-locations .row.departments .phlu-teaser.navigation.subpage {
       margin: 0; }
     body .all .phlu-qmpilot-nodetypes-files a.preview img, body .all .phlu-qmpilot-nodetypes-file a.preview img {
-      width: 100%;
-      max-width: 500px;
-      height: auto; }
+      width: auto;
+      height: auto;
+      max-width: 100%; }
     body .all .phlu-qmpilot-nodetypes-files.last, body .all .phlu-qmpilot-nodetypes-file.last {
       margin-bottom: 15px; }
     body .all .phlu-qmpilot-nodetypes-file[data-prev='phlu-corporate-accordeonelement'] {
