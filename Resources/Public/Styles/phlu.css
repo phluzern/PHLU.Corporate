@@ -8351,7 +8351,9 @@ span.loading.bar {
       padding: 10px 0;
       font-weight: normal; }
     #search .hasSearchResults .phlu-searchresults .loadMore {
-      width: 220px; }
+      width: 220px;
+      margin-left: auto;
+      margin-right: auto; }
 
 #search .noSearchResults {
   display: none; }
@@ -10507,8 +10509,9 @@ body {
           border-left: 0; } }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .ppdb-list .results-table .table-responsive .table tbody tr td div.researchmainfocus ul li, body .all .further-education-list .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .further-education-list .results-table .table-responsive .table tbody tr td div.researchmainfocus ul li, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td div.researchmainfocus ul li {
         font-size: 0.75rem;
-        background-color: #edeae8;
+        background-color: inherit;
         border-radius: 4px;
+        border: 2px solid #edeae8;
         display: inline-block;
         padding: 5px;
         margin-left: 5px;
@@ -10568,7 +10571,7 @@ body {
         background-color: #edeae8;
         border-bottom: 0; }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.open td.researchmainfocus ul li, body .all .ppdb-list .results-table .table-responsive .table tbody tr.open td div.researchmainfocus ul li, body .all .further-education-list .results-table .table-responsive .table tbody tr.open td.researchmainfocus ul li, body .all .further-education-list .results-table .table-responsive .table tbody tr.open td div.researchmainfocus ul li, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.open td.researchmainfocus ul li, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.open td div.researchmainfocus ul li {
-          background-color: #DEDBD9; }
+          border: 2px solid #DEDBD9; }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr:last-child td, body .all .further-education-list .results-table .table-responsive .table tbody tr:last-child td, body .all .further-education-special-search .results-table .table-responsive .table tbody tr:last-child td {
         border-bottom: 0; }
     body .all .blackBgFullWidthTabs .nav-pills {
