@@ -97,8 +97,8 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.isLoadingFirst = false;
     $scope.isUserExtendedSearch = false;
     $scope.result = new $hybridsearchResultsObject();
-    $scope.limit = 10;
-    $scope.limitChunkSize = 10;
+    $scope.limit = 5;
+    $scope.limitChunkSize = 5;
     $scope.searchquery = '';
     $scope.search = {};
     $scope.tab = {};
