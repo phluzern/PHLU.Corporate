@@ -433,7 +433,7 @@ h2, .h2 {
   font-size: 1.55rem; }
 
 h3, .h3 {
-  font-size: 1.125rem; }
+  font-size: 1.25rem; }
 
 h4, .h4 {
   font-size: 1rem; }
@@ -8615,7 +8615,7 @@ body {
       @media (max-width: 1279px) {
         body .all ol {
           font-size: 1rem; } }
-    body .all .tel {
+    body .all a[href^="tel"] {
       color: #9f632a; }
     body .all .clickable, body .all .clickable * {
       cursor: pointer; }
@@ -8731,14 +8731,19 @@ body {
           cursor: pointer; }
           @media (max-width: 543px) {
             body .all .nav-pills li > span .resetFilter {
-              margin-top: 4px;
-              margin-left: 37px; } }
+              margin-top: -12px;
+              margin-left: 25px; } }
           body .all .nav-pills li > span .resetFilter a {
             color: #333333;
             font-weight: 100; }
             body .all .nav-pills li > span .resetFilter a:hover {
               background-color: inherit;
               border: 0; }
+            body .all .nav-pills li > span .resetFilter a .oi {
+              width: 24px;
+              height: 28px;
+              margin-left: 15px;
+              margin-top: 17px; }
       body .all .nav-pills li a:hover, body .all .nav-pills li a:active {
         border: 2px solid #171815;
         color: #171815; }
@@ -9005,9 +9010,6 @@ body {
             -webkit-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
             -moz-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
             box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3); }
-            @media (max-width: 767px) {
-              body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li {
-                margin: 0; } }
             body .all .extendedSearchBg .extendedSearchFilter .input-item-col .dropdown-menu li a {
               color: #5c5c5c;
               display: table;
@@ -9534,7 +9536,7 @@ body {
             float: none; }
           body .all .phlu-teaser .event.listing .phlu-teaser-body .scrollbody .event-date-day, body .all .phlu-teaser .event.listing .phlu-teaser-body .scrollbody .event-date-month-year {
             color: #5c5c5c;
-            font-size: 1.125rem; }
+            font-size: 1.25rem; }
           body .all .phlu-teaser .event.listing .phlu-teaser-body .scrollbody .event-date-month-year {
             position: relative;
             top: -5px;
@@ -9620,8 +9622,7 @@ body {
           font-size: 20px;
           line-height: 1; }
         body .all .phlu-teaser.carousel .carousel-control .icon-prev {
-          left: 50%;
-          margin-left: -50%; }
+          left: 50%; }
           @media (min-width: 544px) {
             body .all .phlu-teaser.carousel .carousel-control .icon-prev {
               margin-left: -47%; } }
@@ -9635,8 +9636,7 @@ body {
             font-family: Icons;
             content: "\e02e"; }
         body .all .phlu-teaser.carousel .carousel-control .icon-next {
-          right: 50%;
-          margin-right: -50%; }
+          right: 50%; }
           @media (min-width: 992px) {
             body .all .phlu-teaser.carousel .carousel-control .icon-next {
               margin-right: -80%; } }
@@ -10011,8 +10011,14 @@ body {
           font-size: 35px;
           position: absolute;
           content: " \002b";
-          right: 30px;
+          right: 20px;
           margin-top: -8px; }
+          @media (max-width: 1599px) {
+            body .all .phlu-accordion .panel .panel-heading .panel-title a::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a::after {
+              right: 60px; } }
+          @media (max-width: 991px) {
+            body .all .phlu-accordion .panel .panel-heading .panel-title a::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a::after {
+              right: 35px; } }
         body .all .phlu-accordion .panel .panel-heading .panel-title a[aria-expanded=false]::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a[aria-expanded=false]::after {
           content: " \002b"; }
         body .all .phlu-accordion .panel .panel-heading .panel-title a[aria-expanded=true]::after, body .all .phlu-corporate-section .panel .panel-heading .panel-title a[aria-expanded=true]::after {
@@ -10507,7 +10513,12 @@ body {
       @media (min-width: 768px) {
         body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td:first-child {
           border-left: 0; } }
-      body .all .ppdb-list .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .ppdb-list .results-table .table-responsive .table tbody tr td div.researchmainfocus ul li, body .all .further-education-list .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .further-education-list .results-table .table-responsive .table tbody tr td div.researchmainfocus ul li, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td div.researchmainfocus ul li {
+      body .all .ppdb-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span, body .all .further-education-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span {
+        display: block; }
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span ul, body .all .further-education-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span ul, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span ul {
+          margin-left: 14px;
+          margin-top: 5px; }
+      body .all .ppdb-list .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .ppdb-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus ul li, body .all .further-education-list .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .further-education-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus ul li, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus ul li {
         font-size: 0.75rem;
         background-color: inherit;
         border-radius: 4px;
