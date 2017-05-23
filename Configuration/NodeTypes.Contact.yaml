@@ -32,12 +32,6 @@
     ishidden:
       type: boolean
       defaultValue: 0
-      ui:
-        reloadIfChanged: true
-        label: Ausblenden
-        inspector:
-          group: general
-          position: 10
     organisations:
       type: array
     text:

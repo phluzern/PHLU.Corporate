@@ -50,8 +50,9 @@
 </f:if>
 
 
-<ts:render path="defaultRenderer" context="{node: contact}"/>
-
+<f:if condition="{contact}">
+    <ts:render path="defaultRenderer" context="{node: contact}"/>
+</f:if>
 
 <ts:render path="defaultRenderer" context="{node: targetgroup}"/>
 
