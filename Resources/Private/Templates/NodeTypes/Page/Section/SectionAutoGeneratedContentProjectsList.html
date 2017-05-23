@@ -147,8 +147,10 @@
                                         <span>
                                             <ul>
                                                 <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index"
-                                                    data-ng-bind="focus.name" data-ng-if="focus.ResearchUnitName != ''">
-
+                                                    data-ng-bind="focus.name" data-ng-if="focus.ResearchUnitName != ''" data-ng-init="node.focushaschilds = true;">
+                                                </li>
+                                                <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index"
+                                                    data-ng-bind="focus.name"  data-ng-if="!node.focushaschilds">
                                                 </li>
                                             </ul>
                                         </span>

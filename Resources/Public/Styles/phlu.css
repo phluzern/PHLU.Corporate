@@ -433,7 +433,7 @@ h2, .h2 {
   font-size: 1.55rem; }
 
 h3, .h3 {
-  font-size: 1.25rem; }
+  font-size: 1.35rem; }
 
 h4, .h4 {
   font-size: 1rem; }
@@ -1763,7 +1763,7 @@ select.form-control:focus::-ms-value {
 select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.form-control:not([size]):not([multiple]),
 .input-group-sm > select.input-group-addon:not([size]):not([multiple]),
 .input-group-sm > .input-group-btn > select.btn:not([size]):not([multiple]) {
-  height: 2.075rem; }
+  height: 1.9875rem; }
 
 .form-control-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
@@ -8333,7 +8333,7 @@ span.loading.bar {
           font-weight: 400;
           margin: 10px 0 20px; }
           #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 a {
-            line-height: 1.8; }
+            line-height: 1.7; }
         #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address {
           margin-bottom: 0; }
           #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location {
@@ -8585,7 +8585,7 @@ body {
     body .all h4 {
       text-transform: uppercase; }
     body .all p {
-      line-height: 1.8; }
+      line-height: 1.7; }
       @media (max-width: 1279px) {
         body .all p {
           line-height: 25px; } }
@@ -8642,7 +8642,7 @@ body {
         width: auto; }
         body .all .btn.loadMore > span {
           color: #333333;
-          font-size: 0.75rem;
+          font-size: 0.8rem;
           font-weight: 700;
           padding: 5px 7px 4px;
           position: absolute;
@@ -9487,7 +9487,7 @@ body {
         margin: 0 20px 0 0; }
       body .all .phlu-teaser .event .event-date-month-year-location {
         font-size: 0.875rem;
-        line-height: 1.8;
+        line-height: 1.7;
         background-color: white;
         padding-top: 14px;
         padding-bottom: 4px;
@@ -9537,7 +9537,7 @@ body {
             float: none; }
           body .all .phlu-teaser .event.listing .phlu-teaser-body .scrollbody .event-date-day, body .all .phlu-teaser .event.listing .phlu-teaser-body .scrollbody .event-date-month-year {
             color: #5c5c5c;
-            font-size: 1.25rem; }
+            font-size: 1.35rem; }
           body .all .phlu-teaser .event.listing .phlu-teaser-body .scrollbody .event-date-month-year {
             position: relative;
             top: -5px;
@@ -10520,7 +10520,7 @@ body {
           margin-left: 14px;
           margin-top: 5px; }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .ppdb-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus ul li, body .all .further-education-list .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .further-education-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus ul li, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus ul li {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         background-color: inherit;
         border-radius: 4px;
         border: 2px solid #edeae8;
@@ -10529,12 +10529,13 @@ body {
         margin-left: 5px;
         margin-bottom: 5px; }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td {
-        background-color: #edeae8; }
+        background-color: #edeae8;
+        padding-top: 0; }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div p {
           width: 100%; }
           @media (max-width: 767px) {
             body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div p, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div p {
-              font-size: 0.75rem;
+              font-size: 0.8rem;
               padding: 0 20px; } }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn {
           color: white;
@@ -10557,7 +10558,7 @@ body {
             margin-top: 14px; }
         @media (max-width: 767px) {
           body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td span, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td span, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td span {
-            font-size: 0.75rem; } }
+            font-size: 0.8rem; } }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table {
         margin: 40px 0; }
         @media (max-width: 767px) {
@@ -10734,7 +10735,7 @@ body {
               body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr td span.oi {
                 margin-top: 7px;
                 margin-right: 10px;
-                font-size: 0.75rem; }
+                font-size: 0.8rem; }
             body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.open {
               border-bottom: 0; }
             body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.open, body .all .blackBgFullWidthContents .tab-content .result-panel .table-responsive .table > tbody tr.result-preview {
@@ -11117,7 +11118,7 @@ body {
         body .all .table-responsive .table tbody tr th .mobile-view-columns, body .all .table-responsive .table tbody tr td .mobile-view-columns {
           display: none; }
           body .all .table-responsive .table tbody tr th .mobile-view-columns a, body .all .table-responsive .table tbody tr td .mobile-view-columns a {
-            font-size: 0.75rem; }
+            font-size: 0.8rem; }
         @media (max-width: 767px) {
           body .all .table-responsive .table tbody tr th, body .all .table-responsive .table tbody tr td {
             display: none; }
@@ -11127,7 +11128,7 @@ body {
               font-weight: normal;
               display: block;
               margin-top: 10px;
-              font-size: 0.75rem; }
+              font-size: 0.8rem; }
               body .all .table-responsive .table tbody tr th .mobile-view-columns > span, body .all .table-responsive .table tbody tr td .mobile-view-columns > span {
                 display: table-cell; }
               body .all .table-responsive .table tbody tr th .mobile-view-columns .header, body .all .table-responsive .table tbody tr td .mobile-view-columns .header {
@@ -11208,7 +11209,7 @@ body {
             font-size: 1.313rem; } }
         @media (max-width: 767px) {
           body .all .main .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
-            line-height: 25px; } }
+            line-height: 1.7; } }
       body .all .main .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain br {
         display: none; }
       body .all .main .onepage-teaser-content .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
@@ -11839,7 +11840,7 @@ body {
             body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share .shareText {
               display: inherit;
               overflow: inherit;
-              font-size: 0.75rem; }
+              font-size: 0.8rem; }
             @media (max-width: 767px) {
               body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
                 padding: 0 19px; } }
@@ -11928,7 +11929,7 @@ body {
           background-color: inherit;
           line-height: 9px; }
           body .all .main .shareAndRegister .btn.share .shareText {
-            font-size: 0.75rem; }
+            font-size: 0.8rem; }
           @media (max-width: 767px) {
             body .all .main .shareAndRegister .btn.share {
               padding: 0 19px; } }
