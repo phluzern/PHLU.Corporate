@@ -431,7 +431,7 @@ span.loading {
   .hasSearchResults {
     background-color: $beigelight;
     overflow: auto;
-    z-index: 99;
+    z-index: 101;
     position: absolute;
     width: 100%;
     max-width: 860px;
@@ -1174,10 +1174,12 @@ body {
                 border: 0;
               }
               .oi {
-                width: 24px;
-                height: 28px;
-                margin-left: 15px;
-                margin-top: 17px;
+                @include media-breakpoint-down("xs") {
+                  width: 24px;
+                  height: 28px;
+                  margin-left: 15px;
+                  margin-top: 17px;
+                }
               }
             }
           }
