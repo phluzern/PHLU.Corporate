@@ -10945,8 +10945,13 @@ body {
               left: -9999px;
               right: -9999px;
               margin: auto;
-              width: auto;
-              height: 320px; }
+              width: 100%;
+              height: auto; }
+
+@media (min-width: 768px) and (max-width: 1599px) {
+  body .all .infoboxes > div > div > div .box5 img {
+    width: auto;
+    height: 100%; } }
     body .all .phlu-corporate-location[data-next='empty'] {
       margin-bottom: 90px; }
     body .all .phlu-corporate-location .phlu-locations .row.subjectsfilternav .nav-pills {
@@ -11308,7 +11313,7 @@ body {
         @media (max-width: 1279px) {
           body .all .main > .row address, body .all .main > .row-fullwidth-content > .row address {
             font-size: 1rem; } }
-        body .all .main > .row address .corporate-function, body .all .main > .row-fullwidth-content > .row address .corporate-function {
+        body .all .main > .row address .corporate-function, body .all .main > .row address .person-fullname, body .all .main > .row-fullwidth-content > .row address .corporate-function, body .all .main > .row-fullwidth-content > .row address .person-fullname {
           white-space: nowrap; }
         body .all .main > .row address .telephone, body .all .main > .row-fullwidth-content > .row address .telephone {
           margin-top: 10px;

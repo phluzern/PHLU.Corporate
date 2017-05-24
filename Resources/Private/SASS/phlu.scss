@@ -4602,8 +4602,12 @@ body {
               left: -9999px;
               right: -9999px;
               margin: auto;
-              width: auto;
-              height: 320px;
+              width: 100%;
+              height: auto;
+              @include media-breakpoint-between("md","xxl") {
+                width: auto;
+                height: 100%;
+              }
             }
           }
         }
@@ -5260,7 +5264,7 @@ body {
           @include media-breakpoint-down("lg") {
             font-size: $font-size-phlu-team-members-mobile;
           }
-          .corporate-function {
+          .corporate-function, .person-fullname {
             white-space: nowrap;
           }
           .telephone {
