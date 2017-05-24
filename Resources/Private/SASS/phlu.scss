@@ -3537,7 +3537,13 @@ body {
           }
           .content-link-email-contact-person {
             &::before {
-              margin-right: 5px;
+              margin-right: 4px;
+            }
+          }
+          a.cv {
+            background-image: none;
+            i {
+              padding-right:7px;
             }
           }
         }

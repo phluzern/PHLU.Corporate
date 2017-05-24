@@ -10247,7 +10247,11 @@ body {
     body .all .phlu-dozpage .row address .telephone i.fa-phone {
       padding-right: 10px; }
     body .all .phlu-dozpage .row address .content-link-email-contact-person::before {
-      margin-right: 5px; }
+      margin-right: 4px; }
+    body .all .phlu-dozpage .row address a.cv {
+      background-image: none; }
+      body .all .phlu-dozpage .row address a.cv i {
+        padding-right: 7px; }
     body .all .phlu-dozpage .row.function ul, body .all .phlu-dozpage .row.working-priorities ul, body .all .phlu-dozpage .row.consultation-priorities ul, body .all .phlu-dozpage .row.achievements ul, body .all .phlu-dozpage .row.talks ul, body .all .phlu-dozpage .row.links ul {
       margin-bottom: inherit; }
       body .all .phlu-dozpage .row.function ul li, body .all .phlu-dozpage .row.working-priorities ul li, body .all .phlu-dozpage .row.consultation-priorities ul li, body .all .phlu-dozpage .row.achievements ul li, body .all .phlu-dozpage .row.talks ul li, body .all .phlu-dozpage .row.links ul li {
