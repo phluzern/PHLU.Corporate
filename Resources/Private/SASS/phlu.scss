@@ -1362,6 +1362,7 @@ body {
       &.on {
         background-color: $darkgrey;
         padding: 20px 0;
+        margin-bottom: 30px;
         .form-control {
           border: 0;
           height: 55px;
@@ -5751,6 +5752,12 @@ body {
               width: 30px;
               height: 30px;
             }
+          }
+        }
+        .resultsCount {
+          margin-top:0;
+          h3 {
+            margin-top:0;
           }
         }
         .progress {

@@ -8867,7 +8867,8 @@ body {
       padding: 20px 0; }
       body .all .extendedSearchBg.on {
         background-color: #545454;
-        padding: 20px 0; }
+        padding: 20px 0;
+        margin-bottom: 30px; }
         body .all .extendedSearchBg.on .form-control {
           border: 0;
           height: 55px; }
@@ -11771,6 +11772,10 @@ body {
         color: white;
         width: 30px;
         height: 30px; }
+      body .all .main .further-education-special-search .resultsCount {
+        margin-top: 0; }
+        body .all .main .further-education-special-search .resultsCount h3 {
+          margin-top: 0; }
       body .all .main .further-education-special-search .progress {
         background-color: #edeae8;
         height: inherit; }
