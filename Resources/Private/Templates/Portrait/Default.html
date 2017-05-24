@@ -42,12 +42,14 @@
                        href="mailto:{contact.email}">{contact.email}</a><br>
 
                     <f:if condition="{contact.linkssocial} != ''">
-                                {contact.linkssocial -> f:format.raw()}
+                        {contact.linkssocial -> f:format.raw()}
                     </f:if>
 
                     <f:if condition="{contact.cv} != ''">
-                        <a class="content-link-external cv"
-                           href="{phluuri:sha1(sha1: contact.cv)}" target="_blank">Curriculum Vitae</a><br>
+                        <f:if condition="{phluuri:sha1(sha1: contact.cv)} != ''">
+                            <a class="content-link-external cv"
+                               href="{phluuri:sha1(sha1: contact.cv)}" target="_blank">Curriculum Vitae</a><br>
+                        </f:if>
                     </f:if>
                 </address>
             </div>
