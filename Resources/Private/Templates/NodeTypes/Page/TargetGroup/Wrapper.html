@@ -1,14 +1,12 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
-
-
-
-<div class="row targetgroup-switcher" id="targetgroup-switcher">
-      <div class="col-xs-12">
+<f:if condition="{hasChildren}">
+    <div class="row targetgroup-switcher" id="targetgroup-switcher">
+        <div class="col-xs-12">
             {neos:contentElement.editable(property: 'title', tag: 'h4')}
             <div class="phlu-teaser navigation subpage ">
-                  <ts:render path="collectionRenderer" context="{node: main}"/>
+                <ts:render path="collectionRenderer" context="{node: main}"/>
             </div>
-      </div>
-</div>
-
+        </div>
+    </div>
+</f:if>

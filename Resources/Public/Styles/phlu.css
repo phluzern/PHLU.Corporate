@@ -9744,6 +9744,7 @@ body {
       background-color: #edeae8;
       padding-top: 30px; }
       body .all .row.targetgroup-switcher h4 {
+        font-size: 1.125rem;
         margin-bottom: 30px; }
       @media (max-width: 767px) {
         body .all .row.targetgroup-switcher .phlu-teaser.navigation.subpage {
