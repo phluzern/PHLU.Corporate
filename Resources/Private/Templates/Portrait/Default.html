@@ -1,6 +1,8 @@
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
+{namespace phluuri=Phlu\Corporate\ViewHelpers\Uri}
+{namespace phluasset=Phlu\Corporate\ViewHelpers\Asset}
 {namespace media=Neos\Media\ViewHelpers}
 {namespace portrait=Phlu\Corporate\ViewHelpers\Portrait}
 
@@ -41,9 +43,15 @@
                        href="mailto:{contact.email}">{contact.email}</a><br>
 
                     <f:if condition="{contact.linkssocial} != ''">
-                                {contact.linkssocial -> f:format.raw()}
+                        {contact.linkssocial -> f:format.raw()}
                     </f:if>
 
+                    <f:if condition="{contact.cv} != ''">
+                        <f:if condition="{phluuri:sha1(sha1: contact.cv)} != ''">
+                            <a class="content-link-external cv"
+                               href="{phluuri:sha1(sha1: contact.cv)}" target="_blank"><phluasset:getOneBySha1 sha1="{contact.cv}" variable="asset">{asset.title}</phluasset:getOneBySha1></a><br>
+                        </f:if>
+                    </f:if>
                 </address>
             </div>
 
