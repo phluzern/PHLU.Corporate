@@ -1,6 +1,7 @@
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
+{namespace phluuri=Phlu\Corporate\ViewHelpers\Uri}
 {namespace media=Neos\Media\ViewHelpers}
 {namespace portrait=Phlu\Corporate\ViewHelpers\Portrait}
 
@@ -44,6 +45,10 @@
                                 {contact.linkssocial -> f:format.raw()}
                     </f:if>
 
+                    <f:if condition="{contact.cv} != ''">
+                        <a class="content-link-external cv"
+                           href="{phluuri:sha1(sha1: contact.cv)}" target="_blank">Curriculum Vitae</a><br>
+                    </f:if>
                 </address>
             </div>
 
