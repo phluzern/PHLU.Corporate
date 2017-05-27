@@ -1,7 +1,8 @@
 PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
     var list = new $hybridsearchObject(hybridsearch);
-    //list.disableRealtime();
+    list.enableCache();
+
 
     $scope.result = new $hybridsearchResultsObject();
     $scope.search = '';
@@ -230,7 +231,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
     list = new $hybridsearchObject(hybridsearch);
-    //list.disableRealtime();
+    list.enableCache();
 
     $scope.result = new $hybridsearchResultsObject();
     $scope.participants = {};

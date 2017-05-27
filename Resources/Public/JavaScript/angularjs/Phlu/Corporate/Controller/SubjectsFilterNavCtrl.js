@@ -35,7 +35,7 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
 
 
     list
-        //.disableRealtime()
+        .enableCache()
         .$bind('result', $scope)
         .setPropertiesBoost(boost)
         .setNodeType(['phlu-corporate-contact','phlu-corporate-text'])
