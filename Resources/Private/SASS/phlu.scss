@@ -1362,6 +1362,7 @@ body {
       &.on {
         background-color: $darkgrey;
         padding: 20px 0;
+        margin-bottom: 30px;
         .form-control {
           border: 0;
           height: 55px;
@@ -2693,6 +2694,7 @@ body {
       background-color: $lightgrey;
       padding-top: 30px;
       h4 {
+        font-size: $font-size-h4-desktop;
         margin-bottom: 30px;
       }
       .phlu-teaser.navigation.subpage {
@@ -3535,7 +3537,13 @@ body {
           }
           .content-link-email-contact-person {
             &::before {
-              margin-right: 5px;
+              margin-right: 4px;
+            }
+          }
+          a.cv {
+            background-image: none;
+            i {
+              padding-right:7px;
             }
           }
         }
@@ -4600,8 +4608,12 @@ body {
               left: -9999px;
               right: -9999px;
               margin: auto;
-              width: auto;
-              height: 320px;
+              width: 100%;
+              height: auto;
+              @include media-breakpoint-between("md","xxl") {
+                width: auto;
+                height: 100%;
+              }
             }
           }
         }
@@ -5258,7 +5270,7 @@ body {
           @include media-breakpoint-down("lg") {
             font-size: $font-size-phlu-team-members-mobile;
           }
-          .corporate-function {
+          .corporate-function, .person-fullname {
             white-space: nowrap;
           }
           .telephone {
@@ -5751,6 +5763,12 @@ body {
               width: 30px;
               height: 30px;
             }
+          }
+        }
+        .resultsCount {
+          margin-top:0;
+          h3 {
+            margin-top:0;
           }
         }
         .progress {

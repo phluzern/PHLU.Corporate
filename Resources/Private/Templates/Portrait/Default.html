@@ -49,7 +49,10 @@
                     <f:if condition="{contact.cv} != ''">
                         <f:if condition="{phluuri:sha1(sha1: contact.cv)} != ''">
                             <a class="content-link-external cv"
-                               href="{phluuri:sha1(sha1: contact.cv)}" target="_blank"><phluasset:getOneBySha1 sha1="{contact.cv}" variable="asset">{asset.title}</phluasset:getOneBySha1></a><br>
+                               href="{phluuri:sha1(sha1: contact.cv)}" target="_blank">
+                                <i class="fa fa-map-signs" aria-hidden="true"></i>
+                                <phluasset:getOneBySha1 sha1="{contact.cv}" variable="asset">{asset.title}</phluasset:getOneBySha1>
+                            </a><br>
                         </f:if>
                     </f:if>
                 </address>

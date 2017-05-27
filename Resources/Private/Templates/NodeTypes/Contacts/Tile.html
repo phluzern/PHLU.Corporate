@@ -14,15 +14,25 @@
                     <address>
                         <f:if condition="{function} == ''">
                             <f:then>
-                                <b>{fullname}</b>
+                                <f:if condition="{titlename}">
+                                    <br>{titlename}
+                                </f:if>
+                                <span class="person-fullname">
+                                    <b>{fullname}</b>
+                                </span>
                             </f:then>
                             <f:else>
                                 <span class="corporate-function">
                                     <b>{function}</b>
                                 </span>
                                 <f:if condition="{fullnameLength} !== ''">
+                                    <f:if condition="{titlename}">
+                                        <br>{titlename}
+                                    </f:if>
                                     <br>
-                                    {fullname}
+                                    <span class="person-fullname">
+                                        {fullname}
+                                    </span>
                                 </f:if>
                             </f:else>
                         </f:if>

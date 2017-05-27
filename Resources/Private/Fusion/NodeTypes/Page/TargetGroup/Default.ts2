@@ -3,6 +3,7 @@ prototype(Phlu.Corporate:Content.Page.TargetGroup) < prototype(Phlu.Corporate:Co
     templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/TargetGroup/Wrapper.html'
 
     main = ${q(node).children('main').get(0)}
+    hasChildren = ${q(node).children('main').children().count()}
 
     collectionRenderer = Phlu.Corporate:ContentCollection.Page.TargetGroup {
         attributes.class = 'row'
