@@ -2508,25 +2508,6 @@ body {
           color: $carousel-control-color;
           text-shadow: $carousel-text-shadow;
           opacity: $carousel-control-opacity;
-          //border:1px solid red;
-          // Set gradients for backgrounds
-          &.left {
-            left: -8px;
-            @include gradient-x($start-color: rgba(0, 0, 0, .0), $end-color: rgba(0, 0, 0, .0));
-          }
-          &.right {
-            right: -8px;
-            left: auto;
-            @include gradient-x($start-color: rgba(0, 0, 0, .0), $end-color: rgba(0, 0, 0, .0));
-          }
-
-          // Hover/focus state
-          @include hover-focus {
-            color: $carousel-control-color;
-            text-decoration: none;
-            outline: 0;
-            opacity: .9;
-          }
           // Toggles
           .icon-prev,
           .icon-next {
@@ -2539,31 +2520,43 @@ body {
             font-size: 20px;
             line-height: 1;
           }
-          .icon-prev {
-            left: 50%;
-            @include media-breakpoint-up("sm") {
-              margin-left: -47%;
-            }
-            @include media-breakpoint-up("md") {
-              margin-left: -50%;
-            }
-            @include media-breakpoint-up("lg") {
-              margin-left: -80%;
-            }
-            &::before {
-              font-family: Icons;
-              content: "\e02e";
+          &.left {
+            @include gradient-x($start-color: rgba(0, 0, 0, .0), $end-color: rgba(0, 0, 0, .0));
+            .icon-prev {
+              @include media-breakpoint-up("xs") {
+                left:20px;
+              }
+              @include media-breakpoint-up("lg") {
+                left:-5px;
+              }
+              &::before {
+                font-family: Icons;
+                content: "\e02e";
+              }
             }
           }
-          .icon-next {
-            right: 50%;
-            @include media-breakpoint-up("lg") {
-              margin-right: -80%;
+          &.right {
+            @include gradient-x($start-color: rgba(0, 0, 0, .0), $end-color: rgba(0, 0, 0, .0));
+            .icon-next {
+              @include media-breakpoint-up("xs") {
+                right:20px;
+              }
+              @include media-breakpoint-up("md") {
+                right:-6px;
+              }
+              &::before {
+                font-family: Icons;
+                content: "\e02f";
+              }
             }
-            &::before {
-              font-family: Icons;
-              content: "\e02f";
-            }
+          }
+
+          // Hover/focus state
+          @include hover-focus {
+            color: $carousel-control-color;
+            text-decoration: none;
+            outline: 0;
+            opacity: .9;
           }
         }
         &#carousel-phlu-teaser-xs {
@@ -2571,9 +2564,6 @@ body {
             display: block;
           }
           @include media-breakpoint-up("sm") {
-            display: none;
-          }
-          @include media-breakpoint-up("md") {
             display: none;
           }
         }
@@ -2587,24 +2577,16 @@ body {
           @include media-breakpoint-up("md") {
             display: none;
           }
-          @include media-breakpoint-up("lg") {
-            display: none;
-          }
         }
         &#carousel-phlu-teaser-md {
           @include media-breakpoint-up("xs") {
             display: none;
           }
-          @include media-breakpoint-up("sm") {
-            display: none;
-          }
           @include media-breakpoint-up("md") {
             display: block;
+            padding: 0 0 61px 25px;
           }
           @include media-breakpoint-up("lg") {
-            display: none;
-          }
-          @include media-breakpoint-up("xl") {
             display: none;
           }
         }
@@ -2622,9 +2604,6 @@ body {
         }
         &#carousel-phlu-teaser-xl {
           @include media-breakpoint-up("xs") {
-            display: none;
-          }
-          @include media-breakpoint-up("lg") {
             display: none;
           }
           @include media-breakpoint-up("xl") {
@@ -3329,11 +3308,22 @@ body {
             .phlu-teaser-body {
               address {
                 margin-bottom: 0;
+                .contactperson-role {
+                  white-space: nowrap;
+                }
+                .telephone {
+                  i {
+                    padding-right:10px;
+                  }
+                }
                 a.content-link-email-contact-person {
                   background-image: none;
                   white-space: nowrap;
                   z-index: 99;
                   position: relative;
+                  &::before {
+                    padding-right:5px;
+                  }
                 }
               }
               address, a {
@@ -4424,6 +4414,9 @@ body {
     }
     .target-group-codes {
       margin: 40px 0 50px;
+      @include media-breakpoint-down("xs") {
+        margin: 0 0 30px;
+      }
       .code {
         color: white;
         background-color: $darkgrey;
@@ -4534,6 +4527,9 @@ body {
               span {
                 position: relative;
                 left: -16px;
+                @include media-breakpoint-down("sm") {
+                  left:0;
+                }
               }
             }
           }
@@ -5301,7 +5297,7 @@ body {
           list-style-type: none;
           li {
             a {
-              margin-left: 5px;
+              margin-left: 8px;
             }
           }
           .twitter {
@@ -6763,35 +6759,25 @@ body {
             color: white;
           }
           &.left {
+            left:-24px;
             .icon-prev {
               @include media-breakpoint-up("xs") {
-                margin-left: -55%;
+                left:10px;
               }
               @include media-breakpoint-up("sm") {
-                margin-left: -62%;
+                left:20px;
               }
-              @include media-breakpoint-up("md") {
-                margin-left: -50%;
-              }
-              @include media-breakpoint-up("lg") {
-                margin-left: -30%;
-              }
-            }
-            @include media-breakpoint-up("lg") {
-              left: -40px;
             }
           }
           &.right {
+            right:-24px;
             .icon-next {
-              @include media-breakpoint-up("md") {
-                margin-right: -50%;
+              @include media-breakpoint-up("xs") {
+                right:10px;
               }
-              @include media-breakpoint-up("lg") {
-                margin-right: -30%;
+              @include media-breakpoint-up("sm") {
+                right:20px;
               }
-            }
-            @include media-breakpoint-up("lg") {
-              right: -40px;
             }
           }
         }
@@ -6812,6 +6798,9 @@ body {
       }
       .phlu-teaser.carousel {
         padding: 0 25px 65px;
+        @include media-breakpoint-down("xs") {
+          padding: 0 5px 65px;
+        }
       }
       .phlu-teaser.navigation {
         margin-top: 0;
