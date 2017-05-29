@@ -14,11 +14,15 @@
                     <address>
                         <f:if condition="{functionCustom}">
                             <f:then>
-                                <b>{functionCustom}</b><br>
+                                <span class="contactperson-role">
+                                    <b>{functionCustom}</b><br>
+                                </span>
                             </f:then>
                             <f:else>
                                 <f:if condition="{function}">
-                                    <b>{function}</b><br>
+                                    <span class="contactperson-role">
+                                        <b>{function}</b><br>
+                                    </span>
                                 </f:if>
                             </f:else>
                         </f:if>
