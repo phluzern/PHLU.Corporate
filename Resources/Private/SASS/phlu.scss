@@ -3329,11 +3329,19 @@ body {
             .phlu-teaser-body {
               address {
                 margin-bottom: 0;
+                .telephone {
+                  i {
+                    padding-right:10px;
+                  }
+                }
                 a.content-link-email-contact-person {
                   background-image: none;
                   white-space: nowrap;
                   z-index: 99;
                   position: relative;
+                  &::before {
+                    padding-right:5px;
+                  }
                 }
               }
               address, a {
