@@ -14,7 +14,7 @@ PhluCorporateApp.controller('LocationCtrl', ['$scope', 'hybridsearch', '$hybrids
     }
 
     var list = new $hybridsearchObject(hybridsearch);
-    list.disableRealtime();
+    list.enableCache();
 
     $scope.result = new $hybridsearchResultsObject();
     $scope.locations = {};
