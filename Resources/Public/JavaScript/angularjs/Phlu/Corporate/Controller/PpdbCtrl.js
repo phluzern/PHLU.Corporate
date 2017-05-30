@@ -26,6 +26,24 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     };
 
 
+    $scope.organisationunitsFunction = function(node) {
+
+        var distincts = [];
+        var d = node.getProperty('organisationunits');
+        if (typeof d == 'object') {
+
+            angular.forEach(d, function(i) {
+               if (i.dept == 0) {
+                   distincts.push(i);
+               }
+            });
+
+        }
+
+
+        return distincts;
+    }
+
     $scope.sizeOf = function (obj) {
         if (obj === undefined) {
             return 0;
@@ -76,8 +94,8 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     };
 
     $scope.setFilterOrganisations = function (f) {
-        $scope.initialFilters['organisations'] = true;
-        $scope.organisations = f;
+        $scope.initialFilters['organisationunits'] = true;
+        $scope.organisationunits = f;
     };
 
     $scope.setFilterProjectType = function (f) {
@@ -203,7 +221,6 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
         list
             //.disableRealtime()
-            .addPropertyFilter('organisationunits.id', 'organisations', $scope)
             .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
             .addPropertyFilter('lifetime', 'filterLifetime', $scope)
             .addPropertyFilter('researchmainfocus.ID', 'researchmainfocus', $scope)
@@ -368,4 +385,5 @@ PhluCorporateApp.filter('inArrayFilter', function () {
 
     };
 });
+
 
