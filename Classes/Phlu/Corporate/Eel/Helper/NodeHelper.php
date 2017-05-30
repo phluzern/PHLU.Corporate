@@ -138,9 +138,8 @@ class NodeHelper implements ProtectedContextAwareInterface
         $qmpilotNode = $flowQuery->find('#' . $route['identifier'])->first()->get(0);
 
         $link = $qmpilotNode->getProperty('asset')->getResource()->getLink();
-        $link = str_replace("//phlu.ch","//iframe.phlu.ch",$link);
+        $link = str_replace("//phlu.ch","//www.iframe.phlu.ch",$link);
         $link = str_replace("www.phlu.ch","www.iframe.phlu.ch",$link);
-        $link = str_replace("www.iframe.phlu.ch","iframe.phlu.ch",$link);
 
 
         return array(
