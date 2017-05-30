@@ -55,8 +55,7 @@
                         </f:if>
                             <f:if condition="{node.properties.titlename} != ''">{node.properties.titlename}<br></f:if>
                             <span>{node.properties.street}</span>
-                            <f:if condition="{node.properties.street2} != ''">{node.properties.street2}<br></f:if>
-                            <br>
+                            <f:if condition="{node.properties.street2} != ''"><br>{node.properties.street2}<br></f:if>
                             {node.properties.zip} {node.properties.city}
                             <br>
                                 <a href="mailto:{node.properties.email}" class="panel-email" alt="Email">

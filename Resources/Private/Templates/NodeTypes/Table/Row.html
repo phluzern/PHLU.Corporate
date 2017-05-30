@@ -26,11 +26,11 @@
         <td class="{class1} {cell1isCurrencyClass}">
             <f:if condition="{firstColHidden}">
                 <div class="mobile-view-columns">
-                <span class="header">
-                     {neos:contentElement.editable(property: 'th1', tag: 'span')}
-                 </span>
-                    {neos:contentElement.editable(property: 'cell1', tag: 'span')}
-                </div>
+                    <span class="header">
+                         {neos:contentElement.editable(property: 'th1', tag: 'span')}
+                     </span>
+                        {neos:contentElement.editable(property: 'cell1', tag: 'span')}
+                    </div>
             </f:if>
             {neos:contentElement.editable(property: 'cell1', tag: 'span')}
             <f:render partial="TableCols" arguments="{_all}"/>
