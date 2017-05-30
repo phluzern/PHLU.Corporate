@@ -31,6 +31,8 @@
       options:
         onlyMatchSiteNodes: false
 
+
+
 -
   name: 'Dozpage Route Resolver'
   uriPattern: '{contact}<defaultUriSuffix>'
@@ -73,6 +75,25 @@
   defaults:
     '@package': 'Phlu.Corporate'
     '@controller': 'Portrait'
+    '@format': 'html'
+    '@action': 'view'
+  routeParts:
+    'node':
+      handler: 'Neos\Neos\Routing\FrontendNodeRoutePartHandler'
+      options:
+        onlyMatchSiteNodes: false
+
+
+
+#
+# Phlu corporate routes
+#
+-
+  name: 'External Typo3 iframe Route Builder'
+  uriPattern: '{node}/embedded/{identifier}<defaultUriSuffix>'
+  defaults:
+    '@package': 'Phlu.Corporate'
+    '@controller': 'Embedded'
     '@format': 'html'
     '@action': 'view'
   routeParts:

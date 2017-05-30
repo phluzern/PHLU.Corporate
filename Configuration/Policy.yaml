@@ -8,6 +8,9 @@ privilegeTargets:
     'Phlu.Corporate:Project':
       matcher: 'method(Phlu\Corporate\Controller\ProjectController->(view|viewPortrait)Action())'
 
+    'Phlu.Corporate:Embedded':
+      matcher: 'method(Phlu\Corporate\Controller\EmbeddedController->(view|viewPortrait)Action())'
+
   'Neos\Flow\Security\Authorization\Privilege\Entity\Doctrine\EntityPrivilege':
 
     'Phlu.Neos.Models.RestrictableEntity.AssetCollections':
@@ -23,6 +26,10 @@ roles:
 
       -
         privilegeTarget: 'Phlu.Corporate:Project'
+        permission: GRANT
+
+      -
+        privilegeTarget: 'Phlu.Corporate:Embedded'
         permission: GRANT
 
 

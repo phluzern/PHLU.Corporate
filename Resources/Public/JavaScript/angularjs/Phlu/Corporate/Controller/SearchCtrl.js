@@ -304,7 +304,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var groupedBy = {
-        'Kontakte': ['email', 'phone'],
+        'Kontakte': [function(node) {return node.getProperty('eventoid') ? node.getProperty('eventoid') : node.getProperty('email');}],
         'Standorte': ['lng', 'lat'],
         'Projekte': 'title',
         'Seiten': ['url', 'documentNode.title'],
@@ -528,6 +528,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             });
         }
 
+
+
         searchResultApplyTimer = setTimeout(function () {
             var lh = data.getHash();
 
@@ -551,7 +553,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                     });
 
                     if ($rootScope.siteSearchTabs[$rootScope.lastActiveTabName] === false) {
-                        console.log(1);
+
                         $("#search .phlu-corporate-tags-menu ul.nav-pills > li a").removeClass('active');
                         $("#search .phlu-corporate-tags-menu ul.nav-pills > li a[href='#" + i + "']").addClass('active');
                         if ($rootScope.lastActiveTabVisited === undefined) {

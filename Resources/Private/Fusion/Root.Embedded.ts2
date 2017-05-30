@@ -1,0 +1,25 @@
+
+
+embedded < page
+
+embedded {
+
+    body {
+
+        content.main = Phlu.Corporate:Page {
+
+            templatePath = 'resource://Phlu.Corporate/Private/Templates/Embedded/Default.html'
+            node = ${q(node).get(0)}
+
+            embedded = ${Phlu.Corporate.getEmbedded(node)}
+            title = ${q(this.embedded).property('title')}
+
+            breadcrumb = BreadcrumbMenu {
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/Embedded/Breadcrumb.html'
+            }
+
+        }
+
+
+    }
+}

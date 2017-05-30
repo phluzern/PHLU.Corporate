@@ -13,7 +13,7 @@
                 </span>
             </span>
 
-            <div class="telephone">
+            <div class="telephone" data-ng-if="node.getProperty('phone')">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 {{node.getProperty('phone')}}<br>
             </div>
