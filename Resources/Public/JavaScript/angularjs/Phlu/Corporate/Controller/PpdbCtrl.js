@@ -26,6 +26,24 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     };
 
 
+    $scope.organisationunitsFunction = function(node) {
+
+        var distincts = [];
+        var d = node.getProperty('organisationunits');
+        if (typeof d == 'object') {
+
+            angular.forEach(d, function(i) {
+               if (i.dept == 0) {
+                   distincts.push(i);
+               }
+            });
+
+        }
+
+
+        return distincts;
+    }
+
     $scope.sizeOf = function (obj) {
         if (obj === undefined) {
             return 0;
@@ -367,4 +385,5 @@ PhluCorporateApp.filter('inArrayFilter', function () {
 
     };
 });
+
 

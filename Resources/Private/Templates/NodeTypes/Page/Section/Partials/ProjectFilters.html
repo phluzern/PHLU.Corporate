@@ -23,7 +23,7 @@
         <div class="col-xs-12">
             <ul class="nav nav-pills" role="tablist">
                 <li class="nav-item"
-                    data-ng-show="initialFilters.organisationunits === undefined && result.getDistinctCount('organisationunits',false) > 1">
+                    data-ng-show="initialFilters.organisationunits === undefined && result.getDistinctCount(organisationunitsFunction,false) > 1">
                     <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                        data-target="#organisationunits-{node.Identifier}" role="tab">
                         <i class="fa fa-sitemap" aria-hidden="true"></i>
@@ -266,14 +266,14 @@
                     <a class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                 </div>
                 <div class="result-panel tab-pane " id="organisationunits-{node.Identifier}" role="tabpanel"
-                     data-ng-show="result.getDistinctCount('organisationunits',false) > 1">
+                     data-ng-show="result.getDistinctCount(organisationunitsFunction,false) > 1">
                     <div class="table-responsive">
 
                         <table class="table">
                             <tbody>
                             <tr data-ng-click="organisationunits[lt.value.id] = !organisationunits[lt.value.id] ? true : false;"
                                 data-ng-class="{checked: organisationunits[lt.value.id]}"
-                                data-ng-repeat="lt in result.getDistinct('organisationunits',false) | toArray:false | orderBy:'value.name'">
+                                data-ng-repeat="lt in result.getDistinct(organisationunitsFunction,false) | toArray:false | orderBy:'value.name'">
                                 <td>
                                     <a href="javascript:void(0);">
                                         <span data-ng-bind="lt.value.name + ' ('+ lt.count+')'">
