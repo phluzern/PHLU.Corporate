@@ -936,6 +936,22 @@ body.neos-backend {
       }
     }
   }
+.neos-contentelement-hover {
+  > .goto-teaser-target {
+    position: absolute;
+    margin-top:-45px;
+    right:25px;
+    display: inline-block!important;
+    background-image: none!important;
+    &:hover {
+      background-image: none!important;
+    }
+    i {
+      font-size: 40px;
+    }
+  }
+}
+
 
 }
 
@@ -2342,16 +2358,13 @@ body {
           font-size: $font-size-nav-teasers;
           line-height: $line-height-sm;
           background-color: white;
-          padding-top: 14px;
+          padding-top: 10px;
           padding-bottom: 4px;
           height: 79px;
           .event-location {
             margin-top: 5px;
             line-height: 1rem;
             margin-left: 81px;
-          }
-          > div {
-            margin-top: 10px;
           }
         }
         .phlu-teaser-body {
@@ -2529,13 +2542,13 @@ body {
             @include gradient-x($start-color: rgba(0, 0, 0, .0), $end-color: rgba(0, 0, 0, .0));
             .icon-prev {
               @include media-breakpoint-up("xs") {
-                left:10px;
+                left: 10px;
               }
               @include media-breakpoint-up("md") {
-                left:20px;
+                left: 20px;
               }
               @include media-breakpoint-up("lg") {
-                left:-5px;
+                left: -5px;
               }
               &::before {
                 font-family: Icons;
@@ -2547,10 +2560,10 @@ body {
             @include gradient-x($start-color: rgba(0, 0, 0, .0), $end-color: rgba(0, 0, 0, .0));
             .icon-next {
               @include media-breakpoint-up("xs") {
-                right:10px;
+                right: 10px;
               }
               @include media-breakpoint-up("md") {
-                right:-8px;
+                right: -8px;
               }
               &::before {
                 font-family: Icons;
@@ -3312,7 +3325,7 @@ body {
                 }
                 .telephone {
                   i {
-                    padding-right:10px;
+                    padding-right: 10px;
                   }
                 }
                 a.content-link-email-contact-person {
@@ -3321,7 +3334,7 @@ body {
                   z-index: 99;
                   position: relative;
                   &::before {
-                    padding-right:5px;
+                    padding-right: 5px;
                   }
                 }
               }
@@ -3532,7 +3545,7 @@ body {
           a.cv {
             background-image: none;
             i {
-              padding-right:7px;
+              padding-right: 7px;
             }
           }
         }
@@ -4016,7 +4029,7 @@ body {
                 &.result-preview {
                   td {
                     background-color: $lightgrey;
-                    padding-top:0;
+                    padding-top: 0;
                     div {
                       p {
                         width: 100%;
@@ -4527,7 +4540,7 @@ body {
                 position: relative;
                 left: -16px;
                 @include media-breakpoint-down("sm") {
-                  left:0;
+                  left: 0;
                 }
               }
             }
@@ -4605,7 +4618,7 @@ body {
               margin: auto;
               width: 100%;
               height: auto;
-              @include media-breakpoint-between("md","xxl") {
+              @include media-breakpoint-between("md", "xxl") {
                 width: auto;
                 height: 100%;
               }
@@ -4897,7 +4910,7 @@ body {
               line-height: 1.5;
               vertical-align: top;
               border-top: 0;
-              @include word-wrap();
+              // @include word-wrap();
               &:first-child {
                 h3 {
                   margin: 0;
@@ -5705,7 +5718,7 @@ body {
               }
               li {
                 a {
-                  color:$hazelbrowndark;
+                  color: $hazelbrowndark;
                 }
               }
             }
@@ -5768,9 +5781,9 @@ body {
           }
         }
         .resultsCount {
-          margin-top:0;
+          margin-top: 0;
           h3 {
-            margin-top:0;
+            margin-top: 0;
           }
         }
         .progress {
@@ -6775,30 +6788,30 @@ body {
             color: white;
           }
           &.left {
-            left:-24px;
+            left: -24px;
             .icon-prev {
               @include media-breakpoint-up("xs") {
-                left:10px;
+                left: 10px;
               }
               @include media-breakpoint-up("sm") {
-                left:13px;
+                left: 13px;
               }
               @include media-breakpoint-up("md") {
-                left:20px;
+                left: 20px;
               }
             }
           }
           &.right {
-            right:-24px;
+            right: -24px;
             .icon-next {
               @include media-breakpoint-up("xs") {
-                right:10px;
+                right: 10px;
               }
               @include media-breakpoint-up("sm") {
-                right:13px;
+                right: 13px;
               }
               @include media-breakpoint-up("md") {
-                right:20px;
+                right: 20px;
               }
             }
           }

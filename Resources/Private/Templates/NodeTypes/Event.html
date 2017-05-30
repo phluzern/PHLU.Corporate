@@ -5,17 +5,15 @@
 
 <div class="{breakpointClass}  event singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)} {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}">
     <div class="event-date-day">
-        <f:format.date format="d">{date}</f:format.date>.
+        <f:format.date format="d">{fromDate}</f:format.date>.
     </div>
     <div class="event-date-month-year-location">
         <b>
-            <f:format.date format="M. Y">{date}</f:format.date>
+            <f:format.date forceLocale="de_CH" cldrFormat="MMMM yyyy">{fromDate}</f:format.date>
         </b>
-        <f:if condition="{node.properties.time}"> /
-            <f:format.date format="H:i">{time}</f:format.date>
+        <f:if condition="{fromTime}"> /
+            <f:format.date format="H:i">{fromTime}</f:format.date>
         </f:if>
-
-        <br>
         <div>{location}</div>
     </div>
     <div class="phlu-teaser-body">
@@ -49,4 +47,7 @@
                          allowUpScaling="{allowUpScaling}"/>
         </f:then>
     </f:if>
+    <a class="goto-teaser-target" style="display: none" title="zur Zielseite wechseln" data-gentics-aloha-repository="node-repository" href="{uri:node(node: reference)}">
+        <i class="fa fa-external-link-square" aria-hidden="true"></i>
+    </a>
 </div>

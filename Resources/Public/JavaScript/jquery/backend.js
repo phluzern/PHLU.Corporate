@@ -13,6 +13,11 @@ $(document).ready(function () {
         /* remove link from tiles ex. Startpage Links to main sections in mobile view */
         $(".nav-teaser-item").find('a').removeAttr('href');
         $(".nav-teaser-item").removeClass('clickable');
+
+        $(".goto-teaser-target").click(function(event) {
+            location.href = $(this).attr('href');
+        })
+
     };
 
     document.addEventListener('Neos.NodeCreated', function(event) {
