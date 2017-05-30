@@ -8548,6 +8548,17 @@ body.neos-backend .link {
 body.neos-backend .startpage .phlu-teaser.navigation .nav-teaser-item.clickable {
   pointer-events: none; }
 
+body.neos-backend .neos-contentelement-hover > .goto-teaser-target {
+  position: absolute;
+  margin-top: -45px;
+  right: 25px;
+  display: inline-block !important;
+  background-image: none !important; }
+  body.neos-backend .neos-contentelement-hover > .goto-teaser-target:hover {
+    background-image: none !important; }
+  body.neos-backend .neos-contentelement-hover > .goto-teaser-target i {
+    font-size: 40px; }
+
 body {
   margin-bottom: 711px;
   color: #5c5c5c; }
@@ -9490,15 +9501,13 @@ body {
         font-size: 0.875rem;
         line-height: 1.7;
         background-color: white;
-        padding-top: 14px;
+        padding-top: 10px;
         padding-bottom: 4px;
         height: 79px; }
         body .all .phlu-teaser .event .event-date-month-year-location .event-location {
           margin-top: 5px;
           line-height: 1rem;
           margin-left: 81px; }
-        body .all .phlu-teaser .event .event-date-month-year-location > div {
-          margin-top: 10px; }
       body .all .phlu-teaser .event .phlu-teaser-body {
         padding: 30px 20px 20px; }
       body .all .phlu-teaser .event .phlu-teaser-type {
@@ -11051,15 +11060,7 @@ body {
         padding: 12px 20px 12px 20px;
         line-height: 1.5;
         vertical-align: top;
-        border-top: 0;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        -ms-word-break: break-all;
-        word-break: break-word;
-        -ms-hyphens: auto;
-        -moz-hyphens: auto;
-        -webkit-hyphens: auto;
-        hyphens: auto; }
+        border-top: 0; }
         body .all .table-responsive .table thead tr th:first-child h3 {
           margin: 0; }
         body .all .table-responsive .table thead tr th.is-currency {
