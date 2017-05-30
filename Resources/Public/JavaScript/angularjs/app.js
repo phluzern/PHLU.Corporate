@@ -96,3 +96,11 @@ PhluCorporateApp.filter('orderObjectBy', function () {
         return filtered;
     };
 });
+
+
+PhluCorporateApp.filter('debug', function() {
+    return function(input) {
+        console.log(input);
+       return input;
+    };
+});

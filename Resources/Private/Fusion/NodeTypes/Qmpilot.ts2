@@ -17,10 +17,16 @@ prototype(Phlu.Qmpilot.NodeTypes:File) < prototype(Phlu.Corporate:Content) {
     customTitle = ${q(node).property('customTitle')}
     title = ${q(node).property('title')}
 
-    link = ${q(node).property('asset').resource.link}
-    link.@process.convertUris = Neos.Neos:ConvertUris {
+    linkRaw = ${q(node).property('asset').resource.link}
+    linkRaw.@process.convertUris = Neos.Neos:ConvertUris {
         forceConversion = true
     }
+
+    uriBuilder = Neos.Fusion:UriBuilder {
+
+    }
+
+    link = ${Phlu.Corporate.getEmbeddedLink(this.node,this.linkRaw, request)}
 
     assetIsButton = ${q(q(node).property('asset')).get(0).fileDescription == '' ? q(node).parentsUntil("[instanceof Phlu.Corporate:Section]").find("[instanceof Phlu.Qmpilot.NodeTypes:File]").count() == 1 ? true : false : false}
 
