@@ -167,13 +167,11 @@
         </f:if>
     </div>
 </div>
-
-<f:if condition="{showCarousel}">
-    <f:then>
+<f:if condition="!{node.properties.moodimage}">
+    <f:if condition="{showCarousel}">
         <ts:render path="defaultRenderer" context="{node: carouselnews}"/>
-    </f:then>
+    </f:if>
 </f:if>
-
 <f:if condition="{node.properties.moodimage}">
     <div class="row ambient-img-body"
          style="background-image: url('{media:uri.image(image: node.properties.moodimage)}')">
