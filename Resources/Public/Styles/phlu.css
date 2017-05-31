@@ -433,7 +433,7 @@ h2, .h2 {
   font-size: 1.55rem; }
 
 h3, .h3 {
-  font-size: 1.35rem; }
+  font-size: 1.3rem; }
 
 h4, .h4 {
   font-size: 1rem; }
@@ -8591,7 +8591,7 @@ body {
           margin: 50px 0 32px;
           font-size: 2rem; } }
     body .all h3 {
-      margin: 40px 0 30px;
+      margin: 30px 0 20px;
       letter-spacing: 0.2px; }
     body .all h4 {
       text-transform: uppercase; }
@@ -9547,7 +9547,7 @@ body {
             float: none; }
           body .all .phlu-teaser .event.listing .phlu-teaser-body .scrollbody .event-date-day, body .all .phlu-teaser .event.listing .phlu-teaser-body .scrollbody .event-date-month-year {
             color: #5c5c5c;
-            font-size: 1.35rem; }
+            font-size: 1.3rem; }
           body .all .phlu-teaser .event.listing .phlu-teaser-body .scrollbody .event-date-month-year {
             position: relative;
             top: -5px;
@@ -11737,6 +11737,13 @@ body {
         background-position: top center;
         background-size: cover;
         margin-top: 48px; }
+        @media (min-width: 1600px) {
+          body .all .main > .row.ambient-img-body, body .all .main > .row-fullwidth-content > .row.ambient-img-body {
+            padding-bottom: 430px; } }
+
+@media (min-width: 992px) and (max-width: 1279px) {
+  body .all .main > .row.ambient-img-body, body .all .main > .row-fullwidth-content > .row.ambient-img-body {
+    padding-bottom: 430px; } }
       body .all .main > .row .phlu-corporate-section[data-next='empty'], body .all .main > .row-fullwidth-content > .row .phlu-corporate-section[data-next='empty'] {
         margin-bottom: 90px; }
         body .all .main > .row .phlu-corporate-section[data-next='empty'] hr, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section[data-next='empty'] hr {
