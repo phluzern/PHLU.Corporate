@@ -319,8 +319,13 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         'phlu-neos-nodetypes-publication-id': -1,
         'phlu-neos-nodetypes-publication-language': -1,
         'phlu-neos-nodetypes-publication-publicationtype': -1,
+        'phlu-neos-nodetypes-publication-organisations': -1,
+        'phlu-neos-nodetypes-publication-persons': -1,
         'phlu-neos-nodetypes-publication-title': -1,
-        'phlu-neos-nodetypes-publication-sortingkey': 500,
+        'phlu-neos-nodetypes-publication-url': -1,
+        'phlu-neos-nodetypes-publication-sortingkey': -1,
+        'type': -1,
+        'publicationtype': -1,
         'url': -1,
         'grandparent': -1
 
