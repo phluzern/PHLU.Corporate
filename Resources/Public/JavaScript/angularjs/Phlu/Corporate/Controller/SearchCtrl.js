@@ -293,6 +293,15 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-course-event-furthereducation-nr': 200,
         'phlu-corporate-textplain-grandparent': 100,
         'phlu-neos-nodetypes-publication-date': -1,
+        'phlu-neos-nodetypes-publication-grandparent': -1,
+        'phlu-neos-nodetypes-publication-id': -1,
+        'phlu-neos-nodetypes-publication-language': -1,
+        'phlu-neos-nodetypes-publication-publicationtype': -1,
+        'phlu-neos-nodetypes-publication-organisations': -1,
+        'phlu-neos-nodetypes-publication-persons': -1,
+        'phlu-neos-nodetypes-publication-title': -1,
+        'phlu-neos-nodetypes-publication-url': -1,
+        'phlu-neos-nodetypes-publication-sortingkey': -1,
         'url': -1,
         'grandparent': -1
 
