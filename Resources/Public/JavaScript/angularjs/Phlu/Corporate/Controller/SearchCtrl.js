@@ -313,7 +313,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var groupedBy = {
-        'Kontakte': [function(node) {return node.getProperty('eventoid') ? node.getProperty('eventoid') : node.getProperty('email');}],
+        //'Kontakte': [function(node) {return node.getProperty('eventoid') ? node.getProperty('eventoid') : node.getProperty('email');}],
+        'Kontakte': ['lastname','firstname'],
         'Standorte': ['lng', 'lat'],
         'Projekte': 'title',
         'Seiten': ['url', 'documentNode.title'],
