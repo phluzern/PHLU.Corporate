@@ -8560,7 +8560,7 @@ body.neos-backend .neos-contentelement-hover > .goto-teaser-target {
     font-size: 40px; }
 
 body {
-  margin-bottom: 711px;
+  margin-bottom: 668px;
   color: #5c5c5c; }
   body.siteSearchActive {
     overflow: hidden; }
@@ -8668,10 +8668,10 @@ body {
             height: 13px;
             position: relative;
             display: block;
-            top: -5px; }
+            top: -7px; }
             body .all .btn.loadMore > span > span.counter-divider {
               position: relative;
-              top: -4px;
+              top: -5px;
               font-size: 0.6rem; }
         body .all .btn.loadMore:hover {
           background-color: #cccccc; }
@@ -10858,16 +10858,20 @@ body {
               padding: 0; }
               body .all .infoboxes > div > div > div .box1 .centeredBox p, body .all .infoboxes > div > div > div .box2 .centeredBox p, body .all .infoboxes > div > div > div .box3 .centeredBox p, body .all .infoboxes > div > div > div .box4 .centeredBox p, body .all .infoboxes > div > div > div .box5 .centeredBox p {
                 text-align: center;
-                padding-top: 0; }
+                padding-top: 0;
+                font-weight: normal; }
             body .all .infoboxes > div > div > div .box1 p, body .all .infoboxes > div > div > div .box2 p, body .all .infoboxes > div > div > div .box3 p, body .all .infoboxes > div > div > div .box4 p, body .all .infoboxes > div > div > div .box5 p {
               margin: 0;
-              padding: 10px 10px 0;
+              padding: 15px 15px 0;
               width: inherit;
               line-height: 23px;
               font-weight: 700; }
               body .all .infoboxes > div > div > div .box1 p.smalltext, body .all .infoboxes > div > div > div .box2 p.smalltext, body .all .infoboxes > div > div > div .box3 p.smalltext, body .all .infoboxes > div > div > div .box4 p.smalltext, body .all .infoboxes > div > div > div .box5 p.smalltext {
                 font-size: 1rem;
-                font-weight: normal; }
+                border: solid 1px #171815;
+                margin: 5px 5px 0;
+                padding: 4px 2px;
+                text-align: center; }
             body .all .infoboxes > div > div > div .box1 hr.infobox, body .all .infoboxes > div > div > div .box2 hr.infobox, body .all .infoboxes > div > div > div .box3 hr.infobox, body .all .infoboxes > div > div > div .box4 hr.infobox, body .all .infoboxes > div > div > div .box5 hr.infobox {
               margin: 20px 90px;
               border-color: #86829B; }
@@ -12117,7 +12121,7 @@ body {
       z-index: 1;
       bottom: 0;
       width: 100%;
-      height: 711px;
+      height: 668px;
       background-color: #333333;
       padding-top: 20px;
       color: white;
