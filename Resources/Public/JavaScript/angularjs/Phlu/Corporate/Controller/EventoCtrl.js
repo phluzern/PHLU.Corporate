@@ -140,15 +140,15 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             'categories': ['Kurs', 'Studiengang', 'Alle'],
         },
         'isEmpfohlen': {
-            'property': 'isEmpfohlen',
+            'property': 'isempfohlen',
             'categories': ['Kurs', 'Studiengang', 'Alle'],
         },
         'isLastMinute': {
-            'property': 'isLastMinute',
+            'property': 'islastminute',
             'categories': ['Kurs', 'Studiengang', 'Alle'],
         },
         'isNeuste': {
-            'property': 'isNeuste',
+            'property': 'isneuste',
             'categories': ['Kurs', 'Studiengang', 'Alle'],
         },
         'isVisited': {
@@ -394,8 +394,20 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      */
     $scope.setFilter = function (values, filtername, category) {
 
-        angular.forEach(values, function (value, counter) {
+
+        if (typeof values !== 'object') {
             $scope.toggleFilterSelection({
+                id: filtername,
+                value: values,
+                state: false,
+                counter: 0
+            }, category === undefined ? 'Alle' : category, filtername);
+            return null;
+        }
+
+
+        angular.forEach(values, function (value, counter) {
+                $scope.toggleFilterSelection({
                 id: value,
                 value: value,
                 state: false,
@@ -403,6 +415,9 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             }, category === undefined ? 'Alle' : category, filtername);
 
         });
+
+
+        console.log();
     };
 
 
@@ -845,14 +860,11 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         .$bind('result', $scope);
 
     angular.forEach($scope.filters, function (filter, name) {
-
-
         if (filter.fulltext !== undefined && filter.fulltext) {
             $scope.list.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope, filter.reverse == undefined ? false : filter.reverse, false, false, true);
         } else {
             $scope.list.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope, filter.reverse == undefined ? false : filter.reverse);
         }
-
     });
 
     $scope.list.run();
