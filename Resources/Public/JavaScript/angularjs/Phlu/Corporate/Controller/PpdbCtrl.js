@@ -1,7 +1,7 @@
 PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
-    var list = new $hybridsearchObject(hybridsearch);
-    list.enableCache();
+    $scope.list = new $hybridsearchObject(hybridsearch);
+    $scope.list.enableCache();
 
 
     $scope.result = new $hybridsearchResultsObject();
@@ -58,14 +58,14 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     }
 
     $scope.addPropertyFilter = function (property, value) {
-        list.addPropertyFilter(property, value, $scope);
+        $scope.list.addPropertyFilter(property, value, $scope);
     }
 
     $scope.setQuery = function (value) {
-        list.setQuery(value, $scope);
+        $scope.list.setQuery(value, $scope);
     }
     $scope.setQueryInitial = function (value) {
-        list.setQuery(value);
+        $scope.list.setQuery(value);
     }
 
     $scope.setFilterLifetime = function (f) {
@@ -139,7 +139,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
      */
     $scope.setMaxItems = function (limit) {
 
-        list.setLimit(limit);
+        $scope.list.setLimit(limit);
 
     };
 
@@ -152,9 +152,9 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.setOrderBy = function (orderby) {
 
         if (orderby != 0) {
-            list.setOrderBy({'*': orderby})
+            $scope.list.setOrderBy({'*': orderby})
         } else {
-            list.setOrderBy({'*': '__index'})
+            $scope.list.setOrderBy({'*': '__index'})
         }
 
     };
@@ -219,7 +219,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
     $scope.run = function () {
 
-        list
+        $scope.list
             //.disableRealtime()
             .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
             .addPropertyFilter('lifetime', 'filterLifetime', $scope)
@@ -232,13 +232,13 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
 
         if ($scope.nodesByIdentifier.length) {
-            list.addNodesByIdentifier($scope.nodesByIdentifier);
+            $scope.list.addNodesByIdentifier($scope.nodesByIdentifier);
         } else {
-            list.setNodeType('phlu-neos-nodetypes-project');
+            $scope.list.setNodeType('phlu-neos-nodetypes-project');
         }
 
 
-        list.$bind('result', $scope)
+        $scope.list.$bind('result', $scope)
         .run();
 
     }
@@ -247,8 +247,8 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
 PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
-    list = new $hybridsearchObject(hybridsearch);
-    list.enableCache();
+    $scope.list = new $hybridsearchObject(hybridsearch);
+    $scope.list.enableCache();
 
     $scope.result = new $hybridsearchResultsObject();
     $scope.participants = {};
@@ -264,7 +264,7 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     };
 
     $scope.setQuery = function (value) {
-        list.setQuery(value, $scope);
+        $scope.list.setQuery(value, $scope);
     }
 
     $scope.setFilterParticipants = function (f) {
@@ -334,7 +334,7 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
 
 
 
-    list
+    $scope.list
         .setPropertiesBoost(boost)
         .setCategorizedBy('publicationtype.name')
         .setOrderBy({'phlu-neos-nodetypes-publication': function(node) {return (10000-parseInt(node.properties['phlu-neos-nodetypes-publication-sortingkey'].substr(0,4)));}})

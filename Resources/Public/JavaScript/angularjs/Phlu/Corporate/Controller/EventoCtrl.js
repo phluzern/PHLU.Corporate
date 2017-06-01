@@ -85,7 +85,7 @@ PhluCorporateApp.controller('EventoLastVisitedCtrl', ['$scope', '$window', funct
 PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$rootScope', '$window', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $rootScope, $window) {
 
 
-    var search = new $hybridsearchObject(hybridsearch);
+    $scope.list = new $hybridsearchObject(hybridsearch);
 
     if ($rootScope.isLoadedFirst === undefined) {
         $rootScope.isLoadedFirst = false;
@@ -414,7 +414,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      */
     $scope.setMaxItems = function (limit) {
 
-        search.setLimit(limit);
+        $scope.list.setLimit(limit);
 
     };
 
@@ -429,12 +429,12 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
 
         if (orderby != 0) {
-            search.setOrderBy({'*': orderby})
+            $scope.list.setOrderBy({'*': orderby})
         } else {
 
             if ($scope.filters.id !== undefined) {
 
-                search.setOrderBy({
+                $scope.list.setOrderBy({
                     'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
                         return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-id']].counter
                     },
@@ -450,7 +450,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             }
 
             if ($scope.filters.nr !== undefined) {
-                search.setOrderBy({
+                $scope.list.setOrderBy({
                     'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
                         return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-nr']].counter
                     },
@@ -828,7 +828,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @private
      * Initialize hybridsearch list
      */
-    search
+    $scope.list
         .enableCache()
         .setQuery('searchquery', $scope)
         .setNodeType('nodetypes', $scope)
@@ -848,14 +848,14 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
 
         if (filter.fulltext !== undefined && filter.fulltext) {
-            search.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope, filter.reverse == undefined ? false : filter.reverse, false, false, true);
+            $scope.list.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope, filter.reverse == undefined ? false : filter.reverse, false, false, true);
         } else {
-            search.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope, filter.reverse == undefined ? false : filter.reverse);
+            $scope.list.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope, filter.reverse == undefined ? false : filter.reverse);
         }
 
     });
 
-    search.run();
+    $scope.list.run();
 
 
 }]);
