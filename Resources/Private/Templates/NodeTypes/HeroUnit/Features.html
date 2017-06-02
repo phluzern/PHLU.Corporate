@@ -5,10 +5,20 @@
 
 <div {attributes -> f:format.raw()}>
     <div class="box2">
+        <f:if condition="{neos:rendering.inBackend()}">
+            <f:then>
         <p class="smalltext">
             {neos:contentElement.editable(property: 'title', tag: 'span')}
         </p>
-
+            </f:then>
+            <f:else>
+                <f:if condition="{title}">
+                <p class="smalltext">
+                    {neos:contentElement.editable(property: 'title', tag: 'span')}
+                </p>
+                </f:if>
+            </f:else>
+        </f:if>
        {neos:contentElement.editable(property: 'text', tag: 'div', class: 'centeredBox')}
 
     </div>
