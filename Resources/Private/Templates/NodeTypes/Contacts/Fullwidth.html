@@ -20,8 +20,22 @@
                         <address>
                             <div class="contactperson-role">
                                 {node.properties.function}
+                                <f:if condition="{node.properties.functionCustom}">
+                                    <f:then>
+                                        {node.properties.functionCustom}
+                                    </f:then>
+                                    <f:else>
+                                        {node.properties.function}
+                                    </f:else>
+                                </f:if>
                             </div>
-                            {node.properties.firstname} {node.properties.lastname}<f:if condition="{node.properties.firstname} != ''"><f:then><br></f:then><f:else><f:if condition="{node.properties.lastname} != ''"><br></f:if></f:else></f:if>
+                            {node.properties.firstname} {node.properties.lastname}
+                            <f:if condition="{node.properties.firstname} != ''">
+                                <f:then><br></f:then>
+                                <f:else>
+                                    <f:if condition="{node.properties.lastname} != ''"><br></f:if>
+                                </f:else>
+                            </f:if>
                             <f:if condition="{node.properties.titlename} != ''">{node.properties.titlename}<br></f:if>
                             {node.properties.street}<br>
                             <f:if condition="{node.properties.street2} != ''">{node.properties.street2}<br></f:if>
@@ -30,7 +44,8 @@
                         <address>
                             <div class="telephone">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
-                                <a class="tel" tabIndex="-1" href="tel:{node.properties.phone}">{node.properties.phone}</a>
+                                <a class="tel" tabIndex="-1"
+                                   href="tel:{node.properties.phone}">{node.properties.phone}</a>
                                 <br>
                             </div>
                             <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{node.properties.email}</a><br>
@@ -43,7 +58,8 @@
                         <f:then>
                             <f:if condition="{node.properties.image}">
                                 <div class="col-xs-12 col-sm-6 flexfirst col-md-3">
-                                    <media:image image="{image}" class="img-fluid" width="280" allowCropping="true"  alt="" />
+                                    <media:image image="{image}" class="img-fluid" width="280" allowCropping="true"
+                                                 alt=""/>
                                 </div>
                             </f:if>
                         </f:then>

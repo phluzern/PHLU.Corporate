@@ -17,7 +17,14 @@
                         {node.properties.firstname} {node.properties.lastname}
                     </div>
                     <div class="col-xs-12 col-sm-3 col-md-4 col-lg-5  ">
-                        {node.properties.function}
+                        <f:if condition="{node.properties.functionCustom}">
+                            <f:then>
+                                {node.properties.functionCustom}
+                            </f:then>
+                            <f:else>
+                                {node.properties.function}
+                            </f:else>
+                        </f:if>
                     </div>
                     <div class="col-xs-12 col-sm-5 col-md-3 telephone email">
                             {node.properties.phone}

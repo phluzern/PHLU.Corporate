@@ -18,7 +18,15 @@
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-5">
                         <span class="panel-contact-function">
-                           <f:format.crop maxCharacters="31" append="...">{node.properties.function}</f:format.crop>
+                            <f:if condition="{node.properties.functionCustom}">
+                                <f:then>
+                                    <f:format.crop maxCharacters="31" append="...">{node.properties.functionCustom}</f:format.crop>
+                                </f:then>
+                                <f:else>
+                                <f:format.crop maxCharacters="31" append="...">{node.properties.function}</f:format.crop>
+                                </f:else>
+                            </f:if>
+
                         </span>
                     </div>
                     <div class="col-xs-12 col-sm-4 col-md-3 panel-infos">
