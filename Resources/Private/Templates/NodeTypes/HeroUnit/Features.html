@@ -12,7 +12,7 @@
         </p>
             </f:then>
             <f:else>
-                <f:if condition="{title}">
+                <f:if condition="{title -> f:format.stripTags()}">
                 <p class="smalltext">
                     {neos:contentElement.editable(property: 'title', tag: 'span')}
                 </p>
