@@ -40,7 +40,7 @@
                     </span>
                 </li>
                 <li class="nav-item"
-                    data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('participants') > 1">
+                    data-ng-show="initialFilters.participants === undefined && result.getDistinctCount('participants',false) > 1">
                     <a href="#" class=" nav-link preventDefaultTab" data-toggle="tab"
                        data-target="#projectparticipants-{node.Identifier}" role="tab">
                         <i class="fa fa-users" aria-hidden="true"></i>
@@ -203,7 +203,7 @@
                 </div>
                 <div class="result-panel tab-pane " id="projectparticipants-{node.Identifier}"
                      role="tabpanel"
-                     data-ng-show="result.getDistinctCount('participants') > 1">
+                     data-ng-show="result.getDistinctCount('participants',false) > 1">
                     <a href="#" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                     <div class="dropdown-search-field">
                         <input type="text" class="c-input form-control"
@@ -224,7 +224,7 @@
                             <tbody>
                             <tr class="clickable"
                                 data-ng-click="projectparticipants[person.value.EventoID] = person.value.Nachname+ ' ' + person.value.Vorname;"
-                                data-ng-repeat="(key,person) in result.getDistinct('participants.*') | toArray:false | orderBy:'value.Nachname' | inArrayFilter:projectparticipantsSearch"
+                                data-ng-repeat="(key,person) in result.getDistinct('participants.*',false) | toArray:false | orderBy:'value.Nachname' | inArrayFilter:projectparticipantsSearch"
                                 data-ng-if="person.value.EventoID > 0"
                                 data-ng-show="projectparticipants[person.value.EventoID] == undefined || projectparticipants[person.value.EventoID] == false">
                                 <td>
@@ -262,7 +262,7 @@
                     </div>
                 </div>
                 <div class="result-panel tab-pane " id="projectenddate-{node.Identifier}" role="tabpanel"
-                     data-ng-show="result.getDistinctCount('projectend') > 1">
+                     data-ng-show="result.getDistinctCount('projectend',false) > 1">
                     <div id="datepicker"></div>
                     <a class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
                 </div>
