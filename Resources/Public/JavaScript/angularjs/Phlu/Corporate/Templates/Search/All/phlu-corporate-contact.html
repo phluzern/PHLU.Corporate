@@ -21,4 +21,6 @@
     <span data-ng-show="node.getProperty('phone') != ''">{{node.getProperty('phone')}},</span>
     {{node.getProperty('email')}}
 </div>
-<div ng-bind-html="node.getBreadcrumb()"></div>
+<div class="rcrumbs-wrapper">
+    <div class="rcrumbs-container rcrumbs" ng-bind-html="node.getBreadcrumb()"></div>
+</div>
