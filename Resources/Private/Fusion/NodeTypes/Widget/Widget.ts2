@@ -2,13 +2,9 @@ prototype(Phlu.Corporate:Widget) < prototype(Neos.Neos:Content) {
     templatePath = ${'resource://Phlu.Corporate/Private/Templates/' +  q(node).property('widget') + '.html'}
 
     defaultRenderer = Neos.Neos:ContentCase
-
     widget = ${q(node).children('widget').get(0)}
-
     carouselnews = ${q(node).children('carouselnews').get(0)}
-
     WidgetGroupReferences = ${q(node).children('widget').find('[instanceof Phlu.Corporate:ContentCollection.WidgetGroupReferences]').get()}
-
 
 }
 
