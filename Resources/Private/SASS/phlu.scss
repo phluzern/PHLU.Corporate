@@ -3863,6 +3863,17 @@ body {
       }
       .fastFacts {
         margin-bottom: 20px;
+        ul {
+          list-style-type: none;
+          li {
+            border: solid 2px $lightgrey;
+            border-radius: 4px;
+            padding:10px;
+            margin-bottom: 5px;
+            font-size: $font-size-small;
+            display: inline-block;
+          }
+        }
       }
     }
     //
@@ -4083,8 +4094,9 @@ body {
                       &.oi-caret-right, &.oi-caret-bottom {
                         width: 30px;
                         font-size: $font-size-caption;
-                        @include media-breakpoint-down("xs") {
+                        @include media-breakpoint-down("sm") {
                           width: 20px;
+                          left:-6px;
                         }
                       }
                     }
@@ -4099,6 +4111,9 @@ body {
                       ul {
                         margin-left: 14px;
                         margin-top: 5px;
+                      }
+                      &.header {
+                        padding-left: 20px;
                       }
                     }
                   }
