@@ -1,6 +1,19 @@
 #
 # Phlu corporate routes
 #
+#
+#-
+#  name: 'Short url'
+#  uriPattern: '{uri}'
+#  defaults:
+#    '@package':    'Neos.Neos'
+#    '@controller': 'Frontend\Node'
+#    '@action':     'show'
+#    '@format':     'html'
+#  routeParts:
+#    'uri':
+#      handler:     'Phlu\Corporate\Routing\ShortUrlRoutePartHandler'
+
 -
   name: 'Portrait Route Resolver'
   uriPattern: '{node}/portrait/{contact}<defaultUriSuffix>'

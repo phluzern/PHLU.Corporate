@@ -149,6 +149,7 @@
       'Phlu.Corporate:AccordeonElement': false
       'Phlu.Corporate:Accordeon': true
       'Phlu.Corporate:PublicationCollection': true
+      'Phlu.Corporate:Contact': true
 
 'Phlu.Corporate:ContentCollection.Page.TargetGroup':
   superTypes:
