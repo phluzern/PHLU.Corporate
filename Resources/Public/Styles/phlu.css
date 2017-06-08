@@ -10098,6 +10098,8 @@ body {
       margin-top: 20px; }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-next='empty'] > div {
       padding: 0; }
+    body .all .phlu-corporate-section .neos-list-square i {
+      font-style: italic; }
     body .all .publications-list .phlu-accordion, body .all .science-projects .phlu-accordion {
       margin: 0; }
       body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div p, body .all .science-projects .phlu-accordion .panel-default .panel-collapse > div p {
