@@ -11427,7 +11427,7 @@ body {
         @media (max-width: 1279px) {
           body .all .main > .row address, body .all .main > .row-fullwidth-content > .row address {
             font-size: 1rem; } }
-        body .all .main > .row address .corporate-function, body .all .main > .row address .person-fullname, body .all .main > .row-fullwidth-content > .row address .corporate-function, body .all .main > .row-fullwidth-content > .row address .person-fullname {
+        body .all .main > .row address .corporate-function, body .all .main > .row address .person-fullname, body .all .main > .row address .titlename, body .all .main > .row-fullwidth-content > .row address .corporate-function, body .all .main > .row-fullwidth-content > .row address .person-fullname, body .all .main > .row-fullwidth-content > .row address .titlename {
           white-space: nowrap; }
         body .all .main > .row address .telephone, body .all .main > .row-fullwidth-content > .row address .telephone {
           margin-top: 10px;

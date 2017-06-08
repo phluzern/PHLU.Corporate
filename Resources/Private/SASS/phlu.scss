@@ -5423,7 +5423,7 @@ body {
           @include media-breakpoint-down("lg") {
             font-size: $font-size-phlu-team-members-mobile;
           }
-          .corporate-function, .person-fullname {
+          .corporate-function, .person-fullname, .titlename {
             white-space: nowrap;
           }
           .telephone {
