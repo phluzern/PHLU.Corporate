@@ -3148,6 +3148,23 @@ body {
       margin: 70px 0 65px;
       &.list-multiple {
         margin: 0;
+        .phlu-corporate-contactsgroup {
+          .panel-heading {
+            .panel-title {
+              a {
+                &::after {
+                  right:20px;
+                  @include media-breakpoint-down('xxl') {
+                    right:60px;
+                  }
+                  @include media-breakpoint-down('md') {
+                    right:35px;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
     .phlu-corporate-section {
@@ -3163,6 +3180,21 @@ body {
               p {
                 padding: 0;
                 margin: 0;
+              }
+            }
+          }
+          .panel-heading {
+            .panel-title {
+              a {
+                &::after {
+                  right:20px;
+                  @include media-breakpoint-down('xxl') {
+                    right:60px;
+                  }
+                  @include media-breakpoint-down('md') {
+                    right:35px;
+                  }
+                }
               }
             }
           }
@@ -3865,10 +3897,11 @@ body {
         margin-bottom: 20px;
         ul {
           list-style-type: none;
+          padding-left:0;
           li {
             border: solid 2px $lightgrey;
             border-radius: 4px;
-            padding:10px;
+            padding:5px;
             margin-bottom: 5px;
             font-size: $font-size-small;
             display: inline-block;

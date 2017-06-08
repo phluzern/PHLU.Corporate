@@ -10037,6 +10037,14 @@ body {
       margin: 70px 0 65px; }
       body .all .phlu-accordion.list-multiple {
         margin: 0; }
+        body .all .phlu-accordion.list-multiple .phlu-corporate-contactsgroup .panel-heading .panel-title a::after {
+          right: 20px; }
+          @media (max-width: 1599px) {
+            body .all .phlu-accordion.list-multiple .phlu-corporate-contactsgroup .panel-heading .panel-title a::after {
+              right: 60px; } }
+          @media (max-width: 991px) {
+            body .all .phlu-accordion.list-multiple .phlu-corporate-contactsgroup .panel-heading .panel-title a::after {
+              right: 35px; } }
     body .all .phlu-corporate-section .phlu-accordion {
       margin: 0 0 0; }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection {
@@ -10045,6 +10053,14 @@ body {
       body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection p {
         padding: 0;
         margin: 0; }
+    body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default .panel-heading .panel-title a::after {
+      right: 20px; }
+      @media (max-width: 1599px) {
+        body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default .panel-heading .panel-title a::after {
+          right: 60px; } }
+      @media (max-width: 991px) {
+        body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default .panel-heading .panel-title a::after {
+          right: 35px; } }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement .phlu-corporate-textwithimage .img-and-caption {
       margin-top: 29px; }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-prev='phlu-corporate-text'], body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-prev='phlu-corporate-accordeonelement'] {
@@ -10443,11 +10459,12 @@ body {
     body .all .ppdb-detail .fastFacts {
       margin-bottom: 20px; }
       body .all .ppdb-detail .fastFacts ul {
-        list-style-type: none; }
+        list-style-type: none;
+        padding-left: 0; }
         body .all .ppdb-detail .fastFacts ul li {
           border: solid 2px #edeae8;
           border-radius: 4px;
-          padding: 10px;
+          padding: 5px;
           margin-bottom: 5px;
           font-size: 0.8rem;
           display: inline-block; }
