@@ -465,9 +465,18 @@ span.loading {
         min-height: 200px;
       }
       .breadcrumb {
+        @include media-breakpoint-up("lg") {
+          width: 735px;
+        }
         margin-top: 15px;
         > li {
           display: inline-block;
+          @include media-breakpoint-down("lg") {
+            display: block;
+          }
+          @include media-breakpoint-down("xs") {
+            display: block;
+          }
         }
       }
       .searchresults-count {
@@ -490,9 +499,16 @@ span.loading {
       }
       .row.subjectsfilternav {
         .nav-pills {
+          @include media-breakpoint-down("xs") {
+            display: block;
+          }
           li {
+            @include media-breakpoint-down("xs") {
+              margin-right: 5px;
+            }
             a.nav-link {
               padding-left: 18px;
+              margin-bottom: 0;
             }
             i {
               padding-right: 10px;
@@ -625,6 +641,24 @@ span.loading {
                   }
                 }
               }
+              .rcrumbs-wrapper {
+                padding: 5px 10px 10px 0;
+                @include media-breakpoint-down("lg") {
+                  display: block;
+                }
+                .rcrumbs-container {
+                  height: inherit;
+                  .breadcrumb {
+                    @include media-breakpoint-down("lg") {
+                      display: block;
+                    }
+                  }
+                }
+
+              }
+              &.col-center {
+                padding-bottom: 80px;
+              }
             }
           }
         }
@@ -640,9 +674,15 @@ span.loading {
         font-weight: normal;
       }
       .loadMore {
-        width: 220px;
+        width: 205px;
         margin-left: auto;
         margin-right: auto;
+        > span {
+          margin-left: 7px;
+          @include media-breakpoint-down("sm") {
+            margin-left: 18px;
+          }
+        }
       }
     }
   }
@@ -936,22 +976,21 @@ body.neos-backend {
       }
     }
   }
-.neos-contentelement-hover {
-  > .goto-teaser-target {
-    position: absolute;
-    margin-top:-45px;
-    right:25px;
-    display: inline-block!important;
-    background-image: none!important;
-    &:hover {
-      background-image: none!important;
-    }
-    i {
-      font-size: 40px;
+  .neos-contentelement-hover {
+    > .goto-teaser-target {
+      position: absolute;
+      margin-top: -45px;
+      right: 25px;
+      display: inline-block !important;
+      background-image: none !important;
+      &:hover {
+        background-image: none !important;
+      }
+      i {
+        font-size: 40px;
+      }
     }
   }
-}
-
 
 }
 
@@ -1256,11 +1295,9 @@ body {
       border: 0;
     }
     .checkbox {
-
       input[type="checkbox"] {
         display: none;
       }
-
       input[type="checkbox"] + label span {
         display: inline-block;
         width: 30px;
@@ -1271,20 +1308,49 @@ body {
         background-color: white;
         cursor: pointer;
       }
-
       input[type="checkbox"]:checked + label span {
         background-color: $lightgrey;
       }
-
       input[type="checkbox"]:checked + label span {
         &::before {
           font-family: Icons;
           content: "\e033";
           color: $black;
         }
-
       }
-
+    }
+    .radio-btn {
+      label {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        padding-left: 41px;
+        margin-right: 15px;
+        padding-bottom: 4px;
+      }
+      input[type=radio] {
+        display: none;
+      }
+      label:before {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+        background-color: $naviBlack;
+        border-radius: 0px;
+      }
+      input[type=radio]:checked + label:before {
+        font-family: Icons;
+        content: "\e033";
+        color: white;
+        font-size: 18px;
+        padding-left: 6px;
+        padding-top: 2px;
+      }
     }
     .dropdown {
       button {
@@ -1310,6 +1376,10 @@ body {
           }
         }
       }
+    }
+    button[type=submit] {
+      background-color: $petroldark;
+      color:white;
     }
     .input-group {
       width: initial;
@@ -1366,7 +1436,20 @@ body {
         }
       }
     }
-
+    //
+    // Newsletter Registration form (cleverreach snippet)
+    //
+    .phlu-nl-registration-form {
+      .form-control {
+        border: solid 2px $naviBlack;
+        display: inline-block;
+        width: 300px;
+        height: 55px;
+      }
+      .radio-btn {
+        margin-bottom: 20px;
+      }
+    }
     //
     //  extended Search Filters
     //
@@ -2102,11 +2185,6 @@ body {
               margin-bottom: 30px;
             }
           }
-          .subjectsfilternav {
-            &:last-child {
-              margin-bottom: 70px;
-            }
-          }
         }
       }
       .ppdb-list, .further-education-list {
@@ -2126,6 +2204,9 @@ body {
           border-top: 0;
         }
       }
+      .accordion-filters {
+        padding-bottom: 15px;
+      }
 
     }
     .phlu-corporate-sectionautogeneratedcontentprojectslist {
@@ -2137,6 +2218,11 @@ body {
             margin-top: 0;
           }
           padding: 15px 0 30px;
+        }
+        .subjectsfilternav {
+          &:last-child {
+            margin-bottom: 70px;
+          }
         }
       }
     }
@@ -3062,6 +3148,23 @@ body {
       margin: 70px 0 65px;
       &.list-multiple {
         margin: 0;
+        .phlu-corporate-contactsgroup {
+          .panel-heading {
+            .panel-title {
+              a {
+                &::after {
+                  right:20px;
+                  @include media-breakpoint-down('xxl') {
+                    right:60px;
+                  }
+                  @include media-breakpoint-down('md') {
+                    right:35px;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
     .phlu-corporate-section {
@@ -3077,6 +3180,21 @@ body {
               p {
                 padding: 0;
                 margin: 0;
+              }
+            }
+          }
+          .panel-heading {
+            .panel-title {
+              a {
+                &::after {
+                  right:20px;
+                  @include media-breakpoint-down('xxl') {
+                    right:60px;
+                  }
+                  @include media-breakpoint-down('md') {
+                    right:35px;
+                  }
+                }
               }
             }
           }
@@ -3154,6 +3272,12 @@ body {
                 position: absolute;
                 content: " \002b";
                 right: 15px;
+                @include media-breakpoint-up('sm') {
+                  right: 36px;
+                }
+                @include media-breakpoint-up('lg') {
+                  right: 56px;
+                }
                 margin-top: -8px;
               }
               &[aria-expanded=false] {
@@ -3455,7 +3579,7 @@ body {
         color: $hazelbrowndark;
       }
       .panel-body {
-        padding: 20px 0 10px;
+        padding: 30px 0 20px;
         .col-xs-12 {
           img.img-fluid {
             margin: 0 0 32px;
@@ -3771,6 +3895,18 @@ body {
       }
       .fastFacts {
         margin-bottom: 20px;
+        ul {
+          list-style-type: none;
+          padding-left:0;
+          li {
+            border: solid 2px $lightgrey;
+            border-radius: 4px;
+            padding:5px;
+            margin-bottom: 5px;
+            font-size: $font-size-small;
+            display: inline-block;
+          }
+        }
       }
     }
     //
@@ -3991,8 +4127,9 @@ body {
                       &.oi-caret-right, &.oi-caret-bottom {
                         width: 30px;
                         font-size: $font-size-caption;
-                        @include media-breakpoint-down("xs") {
+                        @include media-breakpoint-down("sm") {
                           width: 20px;
+                          left:-6px;
                         }
                       }
                     }
@@ -4007,6 +4144,9 @@ body {
                       ul {
                         margin-left: 14px;
                         margin-top: 5px;
+                      }
+                      &.header {
+                        padding-left: 20px;
                       }
                     }
                   }
@@ -4514,9 +4654,9 @@ body {
               font-weight: $font-weight-bold;
               &.smalltext {
                 font-size: $font-size-infobox-small;
-                border:solid 1px $naviBlack;
-                margin:5px 5px 0;
-                padding:4px 2px;
+                border: solid 1px $naviBlack;
+                margin: 5px 5px 0;
+                padding: 4px 2px;
                 text-align: center;
               }
             }
@@ -5283,7 +5423,7 @@ body {
           @include media-breakpoint-down("lg") {
             font-size: $font-size-phlu-team-members-mobile;
           }
-          .corporate-function, .person-fullname {
+          .corporate-function, .person-fullname, .titlename {
             white-space: nowrap;
           }
           .telephone {

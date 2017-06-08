@@ -102,26 +102,24 @@
                                 <tr>
                                     <th>
                                         Forschungsschwerpunkt / Themenfeld
-                                        <div class="mobile-view-columns">
-                                            <f:for each="{project.researchMainFocus}" as="focus" iteration="iterator">
-                                                <f:if condition="{iterator.isFirst}">
-                                                    <f:else>
-                                                        <br/>
-                                                    </f:else>
-                                                </f:if>
-                                                {focus.name}
-                                            </f:for>
+                                        <div class="mobile-view-columns researchmainfocus">
+                                            <ul>
+                                                <f:for each="{project.researchMainFocus}" as="focus" iteration="iterator">
+                                                    <li>
+                                                        {focus.name}
+                                                    </li>
+                                                </f:for>
+                                            </ul>
                                         </div>
                                     </th>
-                                    <td>
-                                        <f:for each="{project.researchMainFocus}" as="focus" iteration="iterator">
-                                            <f:if condition="{iterator.isFirst}">
-                                                <f:else>
-                                                    <br/>
-                                                </f:else>
-                                            </f:if>
-                                            {focus.name}
-                                        </f:for>
+                                    <td class="researchmainfocus">
+                                        <ul>
+                                            <f:for each="{project.researchMainFocus}" as="focus" iteration="iterator">
+                                                <li>
+                                                    {focus.name}
+                                                </li>
+                                            </f:for>
+                                        </ul>
                                     </td>
                                 </tr>
                             </f:if>

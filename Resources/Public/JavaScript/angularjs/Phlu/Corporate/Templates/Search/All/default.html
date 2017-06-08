@@ -4,4 +4,8 @@
 <div class="searchresult-body">
     <span data-ng-bind="node.getPreview('text')"></span>
 </div>
-<div ng-bind-html="node.getBreadcrumb()"></div>
+<div class="rcrumbs-wrapper">
+    <div class="rcrumbs-container rcrumbs" ng-bind-html="node.getBreadcrumb()"></div>
+</div>
+
+
