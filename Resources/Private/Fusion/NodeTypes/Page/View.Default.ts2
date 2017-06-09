@@ -13,7 +13,8 @@ hasanchornavigation = ${q(node).property('hasanchornavigation')}
 moodimage = ${q(node).property('moodimage')}
 
 
-contactIsHidden = ${node.context.inBackend ? false : (String.length(q(q(node).children('contact').get(0)).property('phone')) == 0 || q(q(node).children('contact').get(0)).property('_hidden') == TRUE ? true : false)}
+contactIsHidden = ${node.context.inBackend ? false : (q(q(node).children('contact').get(0)).property('ishidden') || String.length(q(q(node).children('contact').get(0)).property('phone')) == 0 || q(q(node).children('contact').get(0)).property('_hidden') == TRUE ? true : false)}
+
 
 templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/View.Default.html'
 
