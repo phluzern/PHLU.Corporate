@@ -43,9 +43,9 @@ class RegistrationButtonViewHelper extends AbstractViewHelper
 
             $hash = sha1($url).rand(5, 15);
 
-            $html = ' <iframe id="iframe'.$hash.'" src="'.$url.'" frameborder="0" seamless allowTransparency="true" scrolling="no" width="100%" height="500" style="display:none;padding-top:15px"></iframe>';
+            $html = ' <iframe id="iframe'.$hash.'" src="'.$url.'" frameborder="0" seamless allowTransparency="true" scrolling="no" width="100%" height="auto" style="background-color:white;display:none;padding-top:15px"></iframe>';
             $html .= '<a class="btn btn-primary " href="javascript:void(0)" onclick="jQuery(this).hide();jQuery(\'#iframe'.$hash.'\').slideDown().show()">Anmelden</a>';
-            $html .= '<script>iFrameResize({checkOrigin:false}, \'#iframe'.$hash.'\')</script>';
+            $html .= '<script>iFrameResize({checkOrigin:false, bodyMargin: 15}, \'#iframe'.$hash.'\')</script>';
 
         } else {
             $html = '<a class="btn btn-primary " href="'.$url.'">Anmelden</a>';

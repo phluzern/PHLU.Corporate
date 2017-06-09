@@ -11,22 +11,20 @@
             </div>
             <div class="col-xs-12">
 
-                <h1 class="page-header">
-                    {embedded.title}
-                </h1>
                 <div class="phlu-corporate-textplain leadtext">
-                    <p>
-                        {embedded.teaser}
-                    </p>
+
                 </div>
 
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <iframe src="{embedded.link}" frameborder="0"
-                        seamless
-                        allowTransparency="true" width="100%" height="500"></iframe>
+
+                 <iframe id="iframe{node.Identifier}" src="{embedded.link}" frameborder="0" seamless allowTransparency="true" scrolling="no" width="100%" height="auto"></iframe>
+
+                 <script>iFrameResize({checkOrigin:false},'#iframe{node.Identifier}')</script>
+
+
             </div>
         </div>
 
