@@ -1379,7 +1379,7 @@ body {
     }
     button[type=submit] {
       background-color: $petroldark;
-      color:white;
+      color: white;
     }
     .input-group {
       width: initial;
@@ -3153,12 +3153,12 @@ body {
             .panel-title {
               a {
                 &::after {
-                  right:20px;
+                  right: 20px;
                   @include media-breakpoint-down('xxl') {
-                    right:60px;
+                    right: 60px;
                   }
                   @include media-breakpoint-down('md') {
-                    right:35px;
+                    right: 35px;
                   }
                 }
               }
@@ -3181,18 +3181,56 @@ body {
                 padding: 0;
                 margin: 0;
               }
+              .nav-teaser-item {
+                padding-left: 0;
+                @include media-breakpoint-down("sm") {
+                  padding-right: 0;
+                }
+                .row {
+                  margin-right: 0;
+                  margin-left: 0;
+                  .phlu-teaser-body {
+                    background-color: $lightgrey;
+                    height: 232px;
+                    padding: 18px;
+                    a {
+                      position: relative;
+                      white-space: nowrap;
+                      z-index: 99;
+                    }
+                    address, a {
+                      font-size: $font-size-phlu-team-members-mobile;
+                    }
+                  }
+                  .phlu-teaser-caret-right {
+                    background-color: $lightgrey;
+                    height: 232px;
+                    img {
+                      position: relative;
+                      top: 18px;
+                      width: 100%;
+                      @include media-breakpoint-down("sm") {
+                        width: auto;
+                        margin-right: 0;
+                        margin-top: 14px;
+                        top: inherit;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
           .panel-heading {
             .panel-title {
               a {
                 &::after {
-                  right:20px;
+                  right: 20px;
                   @include media-breakpoint-down('xxl') {
-                    right:60px;
+                    right: 60px;
                   }
                   @include media-breakpoint-down('md') {
-                    right:35px;
+                    right: 35px;
                   }
                 }
               }
@@ -3211,6 +3249,11 @@ body {
           > div {
             padding: 0;
           }
+        }
+      }
+      .neos-list-square {
+        i {
+          font-style: italic;
         }
       }
     }
@@ -3897,11 +3940,11 @@ body {
         margin-bottom: 20px;
         ul {
           list-style-type: none;
-          padding-left:0;
+          padding-left: 0;
           li {
             border: solid 2px $lightgrey;
             border-radius: 4px;
-            padding:5px;
+            padding: 5px;
             margin-bottom: 5px;
             font-size: $font-size-small;
             display: inline-block;
@@ -4129,7 +4172,7 @@ body {
                         font-size: $font-size-caption;
                         @include media-breakpoint-down("sm") {
                           width: 20px;
-                          left:-6px;
+                          left: -6px;
                         }
                       }
                     }

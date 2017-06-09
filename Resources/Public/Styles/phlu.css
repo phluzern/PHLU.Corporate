@@ -10053,6 +10053,37 @@ body {
       body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection p {
         padding: 0;
         margin: 0; }
+      body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection .nav-teaser-item {
+        padding-left: 0; }
+        @media (max-width: 767px) {
+          body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection .nav-teaser-item {
+            padding-right: 0; } }
+        body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection .nav-teaser-item .row {
+          margin-right: 0;
+          margin-left: 0; }
+          body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection .nav-teaser-item .row .phlu-teaser-body {
+            background-color: #edeae8;
+            height: 232px;
+            padding: 18px; }
+            body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection .nav-teaser-item .row .phlu-teaser-body a {
+              position: relative;
+              white-space: nowrap;
+              z-index: 99; }
+            body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection .nav-teaser-item .row .phlu-teaser-body address, body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection .nav-teaser-item .row .phlu-teaser-body a {
+              font-size: 1rem; }
+          body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection .nav-teaser-item .row .phlu-teaser-caret-right {
+            background-color: #edeae8;
+            height: 232px; }
+            body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection .nav-teaser-item .row .phlu-teaser-caret-right img {
+              position: relative;
+              top: 18px;
+              width: 100%; }
+              @media (max-width: 767px) {
+                body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection .nav-teaser-item .row .phlu-teaser-caret-right img {
+                  width: auto;
+                  margin-right: 0;
+                  margin-top: 14px;
+                  top: inherit; } }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default .panel-heading .panel-title a::after {
       right: 20px; }
       @media (max-width: 1599px) {
@@ -10067,6 +10098,8 @@ body {
       margin-top: 20px; }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-next='empty'] > div {
       padding: 0; }
+    body .all .phlu-corporate-section .neos-list-square i {
+      font-style: italic; }
     body .all .publications-list .phlu-accordion, body .all .science-projects .phlu-accordion {
       margin: 0; }
       body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div p, body .all .science-projects .phlu-accordion .panel-default .panel-collapse > div p {
