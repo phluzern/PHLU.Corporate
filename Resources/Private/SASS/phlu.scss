@@ -6238,6 +6238,12 @@ body {
       }
       .shareAndRegister {
         float: right;
+        &.shareAndRegisterFurtherEducationDetail {
+          width:100%;
+          a, iframe {
+            float:right;
+          }
+        }
         a {
           margin-top: 15px;
           &.share {

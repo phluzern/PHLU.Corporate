@@ -5,7 +5,6 @@
 {namespace portrait=Phlu\Corporate\ViewHelpers\Portrait}
 
 
-
 <course:getYear node="{node}" variable="year">
 
     <f:if condition="{year}">
@@ -297,7 +296,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="shareAndRegister">
+                    <div class="shareAndRegister shareAndRegisterFurtherEducationDetail">
                         <a class="btn btn-primary share"
                            href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
                             <i class="fa fa-share-alt" aria-hidden="true"></i>
@@ -308,10 +307,7 @@
                         </a>
                         <f:if condition="{year.Bookable}">
                             <f:then>
-                                <a class="btn btn-primary "
-                                   href="{year.RegistrationLink}">
-                                    Anmelden
-                                </a>
+                                <course:RegistrationButton url="{year.RegistrationLink}"></course:RegistrationButton>
                             </f:then>
                             <f:else>
                                 <f:if condition="{StatusLabel}">

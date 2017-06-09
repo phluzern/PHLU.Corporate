@@ -12087,6 +12087,10 @@ body {
         margin-bottom: 0; }
       body .all .main .shareAndRegister {
         float: right; }
+        body .all .main .shareAndRegister.shareAndRegisterFurtherEducationDetail {
+          width: 100%; }
+          body .all .main .shareAndRegister.shareAndRegisterFurtherEducationDetail a, body .all .main .shareAndRegister.shareAndRegisterFurtherEducationDetail iframe {
+            float: right; }
         body .all .main .shareAndRegister a {
           margin-top: 15px; }
           body .all .main .shareAndRegister a.share {
