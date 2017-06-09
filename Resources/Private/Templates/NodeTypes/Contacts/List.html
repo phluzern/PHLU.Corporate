@@ -20,10 +20,10 @@
                         <span class="panel-contact-function">
                             <f:if condition="{node.properties.functionCustom}">
                                 <f:then>
-                                    <f:format.crop maxCharacters="31" append="...">{node.properties.functionCustom}</f:format.crop>
+                                    <f:format.crop maxCharacters="31" append="...">{node.properties.functionCustom}</f:format.crop><br>
                                 </f:then>
                                 <f:else>
-                                <f:format.crop maxCharacters="31" append="...">{node.properties.function}</f:format.crop>
+                                <f:format.crop maxCharacters="31" append="...">{node.properties.function}</f:format.crop><br>
                                 </f:else>
                             </f:if>
 
