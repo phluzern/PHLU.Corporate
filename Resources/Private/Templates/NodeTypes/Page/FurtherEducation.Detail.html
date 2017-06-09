@@ -416,8 +416,8 @@
                                         </f:if>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-5">
-                                    <div class="shareAndRegister">
+                                <div class="col-sm-12">
+                                    <div class="shareAndRegister shareAndRegisterFurtherEducationDetail">
                                         <a class="btn btn-primary share"
                                            href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
                                             <i class="fa fa-share-alt" aria-hidden="true"></i>
@@ -428,10 +428,7 @@
                                         </a>
                                         <f:if condition="{year.Bookable}">
                                             <f:then>
-                                                <a class="btn btn-primary "
-                                                   href="{year.RegistrationLink}">
-                                                    Anmelden
-                                                </a>
+                                                <course:RegistrationButton url="{year.RegistrationLink}"></course:RegistrationButton>
                                             </f:then>
                                             <f:else>
                                                 <f:if condition="{StatusLabel}">

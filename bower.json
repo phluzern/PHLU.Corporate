@@ -9,6 +9,7 @@
     "font-awesome": "4.6.*",
     "animate.css": "*",
     "jquery-rcrumbs": "*",
-    "bootstrap-datepicker": "*"
+    "bootstrap-datepicker": "*",
+    "iframe-resizer": "*"
   }
 }
