@@ -25,9 +25,11 @@
     </div>
 </div>
 
-
-<ts:render path="defaultRenderer" context="{node: contact}"/>
-
+<f:if condition="{contact}">
+    <f:then>
+        <ts:render path="defaultRenderer" context="{node: contact}"/>
+    </f:then>
+</f:if>
 
 <ts:render path="defaultRenderer" context="{node: targetgroup}"/>
 
