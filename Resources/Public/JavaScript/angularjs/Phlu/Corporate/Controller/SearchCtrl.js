@@ -190,6 +190,7 @@ PhluCorporateApp.directive('nodeType', function ($sce) {
 
 });
 
+
 PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
     $scope.siteSearchSearchMobile = '';
@@ -633,7 +634,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     $scope.startSearch = function () {
         if (wasClosed) {
-            console.log('bind');
             wasClosed = false;
             $scope.siteSearch = $scope.siteSearchLastQuery;
         }
