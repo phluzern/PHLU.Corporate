@@ -11800,12 +11800,14 @@ body {
                   -webkit-transform: scale(1.04);
                   transform: scale(1.04); }
         body .all .main > .row.bluebg .carousel-control.left, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-control.left {
-          left: -15px; }
+          left: -15px;
+          width: 15px; }
           @media (max-width: 767px) {
             body .all .main > .row.bluebg .carousel-control.left, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-control.left {
               left: -8px; } }
         body .all .main > .row.bluebg .carousel-control.right, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-control.right {
-          right: 15px; }
+          right: 15px;
+          width: 15px; }
           @media (max-width: 767px) {
             body .all .main > .row.bluebg .carousel-control.right, body .all .main > .row-fullwidth-content > .row.bluebg .carousel-control.right {
               right: -8px; } }
