@@ -8512,22 +8512,6 @@ body.neos-backend .main.contents {
 body.neos-backend .neos-tooltip {
   display: none; }
 
-body.neos-backend .phlu-corporate-text a[href^='http://'] {
-  background-image: url("../Images/linkbottomline.png");
-  color: #9f632a;
-  background-repeat: repeat-x;
-  background-position: bottom;
-  padding-bottom: 4px; }
-  body.neos-backend .phlu-corporate-text a[href^='http://']:hover {
-    background-position: 0 0;
-    background-repeat: repeat; }
-  body.neos-backend .phlu-corporate-text a[href^='http://']::after {
-    background-image: url("../Images/externalLinkArrow.png");
-    background-repeat: no-repeat;
-    background-position: 0 3px;
-    padding-right: 25px;
-    content: ""; }
-
 body.neos-backend .phlu-qmpilot-nodetypes-files.assetsCount-0, body.neos-backend .phlu-qmpilot-nodetypes-file.assetsCount-0 {
   min-height: 30px;
   border: 1px dotted lightgrey; }
@@ -11904,6 +11888,15 @@ body {
             width: inherit; } }
         body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol li a, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol li a {
           color: #9f632a; }
+      body .all .main > .row .phlu-corporate-section .phlu-corporate-text .phlu-corporate-text a[href^='http://phlu.ch'], body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text .phlu-corporate-text a[href^='http://phlu.ch'] {
+        background-image: url("../Images/linkbottomline.png");
+        color: #9f632a;
+        background-repeat: repeat-x;
+        background-position: bottom;
+        padding-bottom: 4px; }
+        body .all .main > .row .phlu-corporate-section .phlu-corporate-text .phlu-corporate-text a[href^='http://phlu.ch']:hover, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text .phlu-corporate-text a[href^='http://phlu.ch']:hover {
+          background-position: 0 0;
+          background-repeat: repeat; }
       body .all .main.col-xl-8, body .all .main.col-xl-10 {
         max-width: inherit; }
       body .all .main.contents {
