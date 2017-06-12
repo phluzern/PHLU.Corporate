@@ -520,6 +520,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var lasthash = null;
 
     //search.disableRealtime();
+    search.enableCache();
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('asset.url', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
     //search.setExternalSources(external);
