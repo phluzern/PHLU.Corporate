@@ -33,8 +33,13 @@
                         <div class="row filter-bar">
 
                             <div class="col-xs-12">
-                                <f:if condition="{tags -> f:count()}">
+
+
+
+
+
                                     <ul class="nav nav-pills" role="menubar">
+
                                         <f:if condition="{startingPoint.nodeType.name} != 'Phlu.Corporate:Page.View.Default.Default'">
                                             <f:then>
                                                 <f:if condition="{items}">
@@ -48,7 +53,7 @@
                                                 </f:if>
                                             </f:then>
                                             <f:else>
-
+                                                <f:if condition="{tags -> f:count()} > 1">
                                                 <f:if condition="{tags}">
                                                     <li role="menuitem"
                                                         data-ng-class="{active: filter['0'] === true}">
@@ -56,7 +61,7 @@
                                                            data-ng-click="toggleFilter(0);">Alle</a>
                                                     </li>
                                                 </f:if>
-
+                                                </f:if>
 
                                             </f:else>
                                         </f:if>
@@ -125,7 +130,7 @@
                                         <input type="text" class="c-input form-control" data-ng-model="search">
                                         <i class="fa fa-search" aria-hidden="true"></i>
                                     </div>
-                                </f:if>
+
                             </div>
 
                         </div>
