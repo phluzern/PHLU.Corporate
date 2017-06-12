@@ -297,14 +297,6 @@
                         </table>
                     </div>
                     <div class="shareAndRegister shareAndRegisterFurtherEducationDetail">
-                        <a class="btn btn-primary share"
-                           href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
-                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                            <br>
-                            <span class="shareText">
-                                            Teilen
-                                        </span>
-                        </a>
                         <f:if condition="{year.Bookable}">
                             <f:then>
                                 <course:RegistrationButton url="{year.RegistrationLink}"></course:RegistrationButton>
@@ -320,6 +312,14 @@
                                 </f:if>
                             </f:else>
                         </f:if>
+                        <a class="btn btn-primary share"
+                           href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
+                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                            <br>
+                            <span class="shareText">
+                                            Teilen
+                                        </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -416,16 +416,8 @@
                                         </f:if>
                                     </div>
                                 </div>
-                                <div class="col-sm-12">
+                                <div class="col-sm-12 col-md-5" >
                                     <div class="shareAndRegister shareAndRegisterFurtherEducationDetail">
-                                        <a class="btn btn-primary share"
-                                           href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                            <br>
-                                            <span class="shareText">
-                                            Teilen
-                                        </span>
-                                        </a>
                                         <f:if condition="{year.Bookable}">
                                             <f:then>
                                                 <course:RegistrationButton url="{year.RegistrationLink}"></course:RegistrationButton>
@@ -441,6 +433,13 @@
                                                 </f:if>
                                             </f:else>
                                         </f:if>
+                                        <a class="btn btn-primary share" href="#">
+                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                            <br>
+                                            <span class="shareText">
+                                            Teilen
+                                        </span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
