@@ -898,12 +898,6 @@ body.neos-backend {
     display: none;
   }
 
-  .phlu-corporate-text {
-    a[href^='http://'] {
-      @include content-link("externalflowtext");
-    }
-  }
-
   .phlu-qmpilot-nodetypes-files, .phlu-qmpilot-nodetypes-file {
 
     &.assetsCount-0 {
@@ -5912,6 +5906,11 @@ body {
                 a {
                   color: $hazelbrowndark;
                 }
+              }
+            }
+            .phlu-corporate-text {
+              a[href^='http://phlu.ch'] {
+                @include content-link("internal");
               }
             }
           }
