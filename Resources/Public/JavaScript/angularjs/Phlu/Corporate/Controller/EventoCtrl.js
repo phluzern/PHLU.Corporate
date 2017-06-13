@@ -179,6 +179,23 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         }
     };
 
+    var boost = {
+
+        'phlu-neos-nodetypes-course-module-furthereducation-title': 50,
+        'phlu-neos-nodetypes-course-study-furthereducation-title': 100,
+        'phlu-neos-nodetypes-course-event-furthereducation-title': 50,
+        'phlu-neos-nodetypes-course-module-furthereducation-genre': 1,
+        'phlu-neos-nodetypes-course-study-furthereducation-genre': 1,
+        'phlu-neos-nodetypes-course-module-furthereducation-nr': 200,
+        'phlu-neos-nodetypes-course-study-furthereducation-nr': 200,
+        'phlu-neos-nodetypes-course-event-furthereducation-nr': 200,
+        'url': -1,
+        'grandparent': -1
+
+
+    };
+
+
     $scope.$watch('filters', function (filters) {
         angular.forEach(filters, function (filter) {
 
@@ -843,6 +860,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * Initialize hybridsearch list
      */
     $scope.list
+        .setPropertiesBoost(boost)
         .enableCache()
         .setQuery('searchquery', $scope)
         .setNodeType('nodetypes', $scope)

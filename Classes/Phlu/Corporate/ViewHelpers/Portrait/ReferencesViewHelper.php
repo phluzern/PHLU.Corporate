@@ -11,6 +11,7 @@ namespace Phlu\Corporate\ViewHelpers\Portrait;
  * source code.
  */
 
+use org\bovigo\vfs\vfsStreamResolveIncludePathTestCase;
 use Phlu\Neos\Models\Domain\Model\Contact;
 use Neos\Flow\Annotations as Flow;
 use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
@@ -68,22 +69,78 @@ class ReferencesViewHelper extends AbstractViewHelper
             $referenceNode = $flowQuery->closest("[instanceof Phlu.Neos.NodeTypes:Page]")->get(0);
 
             if ($referenceNode) {
+
+                $orderingKey = $this->getOrdering($referenceNode);
+
                 if (isset($references[$referenceNode->getIdentifier()]) === false && $referenceNode->getParent()) {
-                    if (isset($nodes[$referenceNode->getParent()->getNodeData()->getProperty('title')]) === false) {
-                        $nodes[$referenceNode->getParent()->getNodeData()->getProperty('title')] = array();
+
+
+                    if (isset($nodes[$orderingKey]) === false) {
+                        $nodes[$orderingKey] = array();
                     }
-                    array_push($nodes[$referenceNode->getParent()->getNodeData()->getProperty('title')], $referenceNode);
+
+                    if (isset($nodes[$orderingKey][$referenceNode->getParent()->getNodeData()->getProperty('title')]) === false) {
+                        $nodes[$orderingKey][$referenceNode->getParent()->getNodeData()->getProperty('title')] = array();
+                    }
+
+                    array_push($nodes[$orderingKey][$referenceNode->getParent()->getNodeData()->getProperty('title')], $referenceNode);
                     $references[$referenceNode->getIdentifier()] = true;
                 }
+
 
             }
 
         }
 
+        ksort($nodes);
+
+        $ordered = array();
+
+        foreach ($nodes as $orderingKey => $val) {
+
+            if ($orderingKey < 999999) {
+                foreach ($val as $k => $v) {
+                    $ordered[$k] = $v;
+                }
+            }
+        }
+
+        return $ordered;
 
 
-        return $nodes;
+    }
 
+    /*
+     * @param Node $node
+     * @return string
+     */
+    private function getOrdering($node) {
+
+        $orderings = array();
+        $orderings['Organisation und Kontakte'] = 1;
+        $orderings['Institute und Forschungsgruppen'] = 2;
+        $orderings['Dienstleistungszentren'] = 3;
+        $orderings['Fächer und Schwerpunkte'] = 4;
+        $orderings['Beratungen und Angebote'] = 5;
+
+        $counter = 0;
+        $parent = $node->getParent();
+        $ordering = 999999;
+
+        while ($counter < 50 && $parent) {
+
+
+
+            if ($parent->hasProperty('title') && isset($orderings[$parent->getProperty('title')])) {
+                $ordering = $orderings[$parent->getProperty('title')];
+                break;
+            }
+            $parent = $parent->getParent();
+            $counter++;
+
+        }
+
+        return $ordering;
 
     }
 

@@ -60,8 +60,6 @@ class TeaserAspect
     protected $nodeUriPathSegmentGenerator;
 
 
-
-
     /**
      * @Flow\After("within(Neos\ContentRepository\Domain\Repository\NodeDataRepository) && method(public .+->(add|update)(object.nodeType.name == 'Phlu.Corporate:NewsItem'))")
      * @return void
@@ -122,7 +120,11 @@ class TeaserAspect
         if ($nodeData->getProperty('reference')) {
 
             $context = $this->nodeFactory->createContextMatchingNodeData($nodeData);
-            $referenceNode = $this->nodeFactory->createFromNodeData($this->nodeDataRepository->findByNodeIdentifier($nodeData->getProperty('reference'))->getFirst(), $context);
+            $referenceNodeData = $this->nodeDataRepository->findByNodeIdentifier($nodeData->getProperty('reference'))->getFirst();
+            $referenceNode = null;
+            if ($referenceNodeData) {
+                $referenceNode = $this->nodeFactory->createFromNodeData($referenceNodeData, $context);
+            }
 
             if ($referenceNode) {
 
@@ -157,7 +159,7 @@ class TeaserAspect
                             $imageVariant = new ImageVariant($image);
                             $imageVariant->addAdjustment($adjustment);
                             $nodeData->setProperty('teaserImage', $imageVariant);
-                            $nodeData->setProperty('wasfetchedonce',true);
+                            $nodeData->setProperty('wasfetchedonce', true);
                         }
 
                     }
@@ -185,7 +187,6 @@ class TeaserAspect
         $object = $nodeData;
 
 
-
         if (!$object->getProperty('reference')) {
             $context = $this->nodeFactory->createContextMatchingNodeData($object);
             $detailNode = $this->nodeDataRepository->findByNodeIdentifier($detailNodeIdentitifier)->getFirst();
@@ -195,16 +196,15 @@ class TeaserAspect
             $basenode = $this->nodeFactory->createFromNodeData($detailNode, $context);
 
             $flowQuery = new FlowQuery(array($basenode));
-            $detailNodes = $flowQuery->find('[instanceof '.$detailNodeTypeName.']');
-            
+            $detailNodes = $flowQuery->find('[instanceof ' . $detailNodeTypeName . ']');
+
             $detailNode = null;
-            foreach($detailNodes as $node) {
+            foreach ($detailNodes as $node) {
                 /* @var NodeData $node */
                 if ($detailNode == null && $node->getName() == 'news' . $object->getIdentifier()) {
                     $detailNode = $node;
                 }
             }
-
 
 
             if ($detailNode == null) {

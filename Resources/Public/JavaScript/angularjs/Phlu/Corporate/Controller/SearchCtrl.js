@@ -190,6 +190,7 @@ PhluCorporateApp.directive('nodeType', function ($sce) {
 
 });
 
+
 PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
     $scope.siteSearchSearchMobile = '';
@@ -519,6 +520,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var lasthash = null;
 
     //search.disableRealtime();
+    search.enableCache();
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('asset.url', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
     //search.setExternalSources(external);
@@ -633,7 +635,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     $scope.startSearch = function () {
         if (wasClosed) {
-            console.log('bind');
             wasClosed = false;
             $scope.siteSearch = $scope.siteSearchLastQuery;
         }
