@@ -176,11 +176,32 @@
                                                                 </a></p>
                                                             </f:then>
                                                             <f:else>
-                                                                <f:if condition="{publication.Citationstyle} == ''">
-                                                                    <f:then><p>{publication.Title -> f:format.raw()}</p>
+
+
+                                                                <f:if condition="{publication.edocURL}">
+                                                                    <f:then>
+                                                                        <p><a href="{publication.edocURL}" class=""
+                                                                              target="_blank">
+                                                                            <f:if condition="{publication.Citationstyle} == ''">
+                                                                                <f:then>
+                                                                                    {publication.Title ->
+                                                                                    f:format.raw()}
+                                                                                </f:then>
+                                                                                <f:else>{publication.Citationstyle ->
+                                                                                    f:format.raw()}
+                                                                                </f:else>
+                                                                            </f:if>
+                                                                        </a></p>
                                                                     </f:then>
-                                                                    <f:else><p>{publication.Citationstyle ->
-                                                                        f:format.raw()}</p>
+                                                                    <f:else>
+                                                                        <f:if condition="{publication.Citationstyle} == ''">
+                                                                            <f:then><p>{publication.Title ->
+                                                                                f:format.raw()}</p>
+                                                                            </f:then>
+                                                                            <f:else><p>{publication.Citationstyle ->
+                                                                                f:format.raw()}</p>
+                                                                            </f:else>
+                                                                        </f:if>
                                                                     </f:else>
                                                                 </f:if>
                                                             </f:else>
