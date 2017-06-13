@@ -109,7 +109,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     };
 
     $scope.graduation = {};
-    $scope.nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation','phlu-neos-nodetypes-course-event-furthereducation'];
+    $scope.nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation', 'phlu-neos-nodetypes-course-event-furthereducation'];
 
     $scope.nodetypesFilter = [
         {id: 'all', label: 'Alle', category: 'Alle'},
@@ -117,7 +117,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         {id: 'phlu-neos-nodetypes-course-module-furthereducation', label: 'Kurse', category: 'Kurs'},
         {id: 'phlu-neos-nodetypes-course-event-furthereducation', label: 'Veranstaltungen', category: 'Veranstaltung'}
     ];
-
 
 
     $scope.nodetypesFilterCurrentLabel = 'Alle';
@@ -314,14 +313,16 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @returns void
      */
     $scope.setOpen = function (node, index, containerId) {
+
         $scope.isopen = $scope.isopen === node.identifier ? 0 : node.identifier;
         $scope.setCurrentYear(node);
 
         if (containerId !== undefined) {
             index = containerId + "-" + index;
+            window.setTimeout(function() {
+                addthis.button("#share-"+index, {}, {});
+            },100);
         }
-
-
 
     };
 
@@ -407,7 +408,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
 
         angular.forEach(values, function (value, counter) {
-                $scope.toggleFilterSelection({
+            $scope.toggleFilterSelection({
                 id: value,
                 value: value,
                 state: false,
@@ -440,7 +441,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @returns void
      */
     $scope.setOrderBy = function (orderby) {
-
 
 
         if (orderby != 0) {
@@ -838,7 +838,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     };
 
 
-
     /**
      * @private
      * Initialize hybridsearch list
@@ -848,7 +847,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         .setQuery('searchquery', $scope)
         .setNodeType('nodetypes', $scope)
         .setOrderBy({'*': '-id'})
-        .addPropertyFilter('detailpage.hidden','false')
+        .addPropertyFilter('detailpage.hidden', 'false')
         .$watch(function (i) {
 
             if ($rootScope.isLoadedFirst == false && $scope.isLoadingFirst == false) {
@@ -870,7 +869,8 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.list.run();
 
 
-}]);
+}])
+;
 
 PhluCorporateApp.filter('castDate', function () {
     return function (input) {

@@ -3631,6 +3631,11 @@ body {
           address, a, div, .content-link-email-contact-person {
             font-size: $font-size-phlu-team-members-mobile;
           }
+          address {
+            .street {
+              white-space: nowrap;
+            }
+          }
         }
       }
       .nav-teaser-item {
@@ -6220,6 +6225,11 @@ body {
                 background-image: none;
                 margin-top: 0;
               }
+              .btn.share {
+                @include media-breakpoint-up("sm") {
+                  padding-top: 0;
+                }
+              }
               @include media-breakpoint-down("sm") {
                 margin-top: 30px;
               }
@@ -6255,10 +6265,12 @@ body {
           color: $petrol;
           background-color: inherit;
           line-height: 9px;
+          margin-top:10px;
           .shareText {
             font-size: $font-size-small;
           }
           @include media-breakpoint-down("sm") {
+            margin-top:13px;
             padding: 0 19px;
           }
         }
@@ -6672,6 +6684,23 @@ body {
       > div > .copyright {
         @include media-breakpoint-up("lg") {
           display: none;
+        }
+      }
+    }
+  }
+  //
+  // addthis layer
+  //
+  .atm {
+    .atm-i {
+      border:0;
+      box-shadow: none;
+      .atm-s {
+        a {
+          padding-top:8px!important;
+          padding-bottom:8px!important;
+          padding-left:15px!important;
+          padding-right:15px!important;
         }
       }
     }

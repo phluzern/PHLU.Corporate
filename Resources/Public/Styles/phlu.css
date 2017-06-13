@@ -10319,6 +10319,8 @@ body {
             height: auto; } }
       body .all .phlu-team-members .panel-body .address-block-small address, body .all .phlu-team-members .panel-body .address-block-small a, body .all .phlu-team-members .panel-body .address-block-small div, body .all .phlu-team-members .panel-body .address-block-small .content-link-email-contact-person {
         font-size: 1rem; }
+      body .all .phlu-team-members .panel-body .address-block-small address .street {
+        white-space: nowrap; }
     body .all .phlu-team-members .content-link-location {
       margin-left: 8px; }
     body .all .phlu-team-members.phlu-corporate-contacts > .row > .col-xs-12 > .row > .col-xs-12 {
@@ -12073,6 +12075,9 @@ body {
             body .all .main .further-education-detail .registration .greybgBody .shareAndRegister a {
               background-image: none;
               margin-top: 0; }
+            @media (min-width: 544px) {
+              body .all .main .further-education-detail .registration .greybgBody .shareAndRegister .btn.share {
+                padding-top: 0; } }
             @media (max-width: 767px) {
               body .all .main .further-education-detail .registration .greybgBody .shareAndRegister {
                 margin-top: 30px; } }
@@ -12093,11 +12098,13 @@ body {
         body .all .main .shareAndRegister .btn.share {
           color: #28818f;
           background-color: inherit;
-          line-height: 9px; }
+          line-height: 9px;
+          margin-top: 10px; }
           body .all .main .shareAndRegister .btn.share .shareText {
             font-size: 0.8rem; }
           @media (max-width: 767px) {
             body .all .main .shareAndRegister .btn.share {
+              margin-top: 13px;
               padding: 0 19px; } }
       body .all .main .greyBgFullwidth2colTable {
         color: #333333;
@@ -12385,6 +12392,14 @@ body {
       @media (min-width: 992px) {
         body .all .footer > div > .copyright {
           display: none; } }
+  body .atm .atm-i {
+    border: 0;
+    box-shadow: none; }
+    body .atm .atm-i .atm-s a {
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important; }
 
 .datepicker {
   font-size: 1.125rem;

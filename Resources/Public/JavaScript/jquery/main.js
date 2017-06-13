@@ -7,6 +7,8 @@ $(document).ready(function () {
     initBackend();
 });
 
+
+
 function initFrontend() {
 
 
