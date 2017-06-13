@@ -60,8 +60,7 @@ PhluCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsear
         PhluCorporateApp.$$conf.workspaceName,
         PhluCorporateApp.$$conf.dimensionHash,
         PhluCorporateApp.$$conf.siteNodeName,
-        PhluCorporateApp.$$conf.cdnHost,
-        PhluCorporateApp.$$conf.cdnStaticHost
+        PhluCorporateApp.$$conf.cdnHost
     );
 
 
