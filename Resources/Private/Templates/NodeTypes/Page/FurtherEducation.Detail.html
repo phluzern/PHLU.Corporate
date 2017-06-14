@@ -312,14 +312,15 @@
                                 </f:if>
                             </f:else>
                         </f:if>
-                        <a class="btn btn-primary share"
-                           href="http://phlu.ch.phlu-eduweb5.nine.ch/forschung/projekte/2557/detail.html">
-                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+
+                        <a class="btn btn-primary share addthis_button" addthis:url="{{node.getUrl()}}" addthis:title="{{node.getProperty('title')}}">
+                            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/wb-share-btn.svg')}" width="32" height="32" border="0" alt="Share" />
                             <br>
                             <span class="shareText">
                                             Teilen
                                         </span>
                         </a>
+
                     </div>
                 </div>
             </div>
@@ -433,13 +434,14 @@
                                                 </f:if>
                                             </f:else>
                                         </f:if>
-                                        <a class="btn btn-primary share" href="#">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                        <a class="btn btn-primary share addthis_button" addthis:url="{{node.getUrl()}}" addthis:title="{{node.getProperty('title')}}">
+                                            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/wb-share-btn.svg')}" width="32" height="32" border="0" alt="Share" />
                                             <br>
                                             <span class="shareText">
                                             Teilen
                                         </span>
                                         </a>
+
                                     </div>
                                 </div>
                             </div>
