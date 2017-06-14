@@ -11908,6 +11908,8 @@ body {
         body .all .main > .row .phlu-corporate-section .phlu-corporate-text .phlu-corporate-text a[href^='http://phlu.ch']:hover, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text .phlu-corporate-text a[href^='http://phlu.ch']:hover {
           background-position: 0 0;
           background-repeat: repeat; }
+      body .all .main > .row .phlu-corporate-section .single-publication i, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .single-publication i {
+        font-style: italic; }
       body .all .main.col-xl-8, body .all .main.col-xl-10 {
         max-width: inherit; }
       body .all .main.contents {
