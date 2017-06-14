@@ -11635,6 +11635,8 @@ body {
           background-position: 0 3px;
           padding-right: 25px;
           content: ""; }
+      body .all .main > .row a[target='_self']:after, body .all .main > .row-fullwidth-content > .row a[target='_self']:after {
+        background-image: inherit; }
       body .all .main > .row a[href^='mailto'], body .all .main > .row-fullwidth-content > .row a[href^='mailto'] {
         background-image: url("../Images/linkbottomline.png");
         color: #9f632a;

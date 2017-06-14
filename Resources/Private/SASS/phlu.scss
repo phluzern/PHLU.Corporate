@@ -5677,6 +5677,9 @@ body {
         a[target='_blank'] {
           @include content-link("externalflowtext");
         }
+        a[target='_self']:after {
+          background-image: inherit;
+        }
         a[href^='mailto'] {
           @include content-link("email");
         }
