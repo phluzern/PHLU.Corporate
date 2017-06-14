@@ -4,6 +4,7 @@
 	<f:if condition="{reference -> f:count()} == 1">
 		<f:then>
 			<f:for each="{reference}" as="publication">
+				<div
 				<p>{publication.properties.Citationstyle -> f:format.raw()}</p>
 			</f:for>
 		</f:then>

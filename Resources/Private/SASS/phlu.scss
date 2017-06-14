@@ -5904,6 +5904,14 @@ body {
             }
           }
           .phlu-corporate-text {
+            ul {
+              @include media-breakpoint-up("md") {
+                width:$flowtext-narrow-width;
+              }
+              li {
+                margin-bottom: 10px;
+              }
+            }
             ol {
               padding-left: 18px;
               padding-right: 18px;
