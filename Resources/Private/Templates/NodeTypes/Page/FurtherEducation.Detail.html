@@ -297,9 +297,10 @@
                         </table>
                     </div>
                     <div class="shareAndRegister shareAndRegisterFurtherEducationDetail">
+
                         <f:if condition="{year.Bookable}">
                             <f:then>
-                                <course:RegistrationButton url="{year.RegistrationLink}"></course:RegistrationButton>
+                                <course:RegistrationButton url="{year.RegistrationLink}" identifier="1"></course:RegistrationButton>
                             </f:then>
                             <f:else>
                                 <f:if condition="{StatusLabel}">
@@ -421,7 +422,7 @@
                                     <div class="shareAndRegister shareAndRegisterFurtherEducationDetail">
                                         <f:if condition="{year.Bookable}">
                                             <f:then>
-                                                <course:RegistrationButton url="{year.RegistrationLink}"></course:RegistrationButton>
+                                                <course:RegistrationButton url="{year.RegistrationLink}" identifier="2"></course:RegistrationButton>
                                             </f:then>
                                             <f:else>
                                                 <f:if condition="{StatusLabel}">

@@ -31,9 +31,10 @@ class RegistrationButtonViewHelper extends AbstractViewHelper
 
     /**
      * @param string $url
+     * @param string $identifier avoid cache behaviour
      * @return array
      */
-    public function render($url)
+    public function render($url, $identifier)
     {
 
         $url = str_replace("//phlu.ch","//www.iframe.phlu.ch",$url);
@@ -41,11 +42,11 @@ class RegistrationButtonViewHelper extends AbstractViewHelper
 
         if (substr_count($url,"iframe.phlu.ch")) {
 
-            $hash = sha1($url).rand(5, 15);
-
-            $html = ' <iframe id="iframe'.$hash.'" src="'.$url.'" frameborder="0" seamless allowTransparency="true" width="100%" height="auto" style="background-color:white;display:none;margin-top:15px;margin-bottom:15px;"></iframe>';
+            $hash = sha1($url).rand(5, 15).$identifier;
+            $html = ' <iframe id="iframe'.$hash.'" src="'.$url.'" frameborder="0" scrolling="no" width="100%" style="width:100%"></iframe>';
+            $html .= '<script>iFrameResize({checkOrigin:false, bodyMargin: 0,sizeWidth: false, bodyBackground: \'#ffffff\'}, \'#iframe'.$hash.'\');jQuery(\'#iframe'.$hash.'\').hide();</script>';
             $html .= '<a class="btn btn-primary " href="javascript:void(0)" onclick="jQuery(this).parentsUntil(\'col-md-5\').removeClass(\'col-md-5\');jQuery(this).hide();jQuery(\'#iframe'.$hash.'\').slideDown().show()">Anmelden</a>';
-            $html .= '<script>iFrameResize({checkOrigin:false, bodyMargin: 20}, \'#iframe'.$hash.'\')</script>';
+
 
         } else {
             $html = '<a class="btn btn-primary " href="'.$url.'">Anmelden</a>';
