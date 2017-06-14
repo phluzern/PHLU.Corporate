@@ -11884,6 +11884,11 @@ body {
           border-top: 0;
           margin-top: 0;
           margin-bottom: 0; }
+      @media (min-width: 768px) {
+        body .all .main > .row .phlu-corporate-section .phlu-corporate-text ul, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ul {
+          width: 80%; } }
+      body .all .main > .row .phlu-corporate-section .phlu-corporate-text ul li, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ul li {
+        margin-bottom: 10px; }
       body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol {
         padding-left: 18px;
         padding-right: 18px;
@@ -11903,6 +11908,8 @@ body {
         body .all .main > .row .phlu-corporate-section .phlu-corporate-text .phlu-corporate-text a[href^='http://phlu.ch']:hover, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text .phlu-corporate-text a[href^='http://phlu.ch']:hover {
           background-position: 0 0;
           background-repeat: repeat; }
+      body .all .main > .row .phlu-corporate-section .single-publication i, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .single-publication i {
+        font-style: italic; }
       body .all .main.col-xl-8, body .all .main.col-xl-10 {
         max-width: inherit; }
       body .all .main.contents {
