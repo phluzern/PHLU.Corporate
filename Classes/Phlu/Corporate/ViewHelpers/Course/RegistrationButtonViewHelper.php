@@ -43,9 +43,9 @@ class RegistrationButtonViewHelper extends AbstractViewHelper
         if (substr_count($url,"iframe.phlu.ch")) {
 
             $hash = sha1($url).rand(5, 15).$identifier;
-            $html = ' <iframe id="iframe'.$hash.'" src="'.$url.'" frameborder="0" scrolling="no" width="100%" style="width:100%"></iframe>';
-            $html .= '<script>iFrameResize({checkOrigin:false, bodyMargin: 0,sizeWidth: false, bodyBackground: \'#ffffff\', heightCalculationMethod: \'documentElementOffset\'}, \'#iframe'.$hash.'\');jQuery(\'#iframe'.$hash.'\').hide();</script>';
-            $html .= '<a class="btn btn-primary " href="javascript:void(0)" onclick="jQuery(this).parentsUntil(\'col-md-5\').removeClass(\'col-md-5\');jQuery(this).hide();jQuery(\'#iframe'.$hash.'\').slideDown().show()">Anmelden</a>';
+            $html = ' <iframe id="iframe'.$hash.'" src="'.$url.'" frameborder="0" scrolling="no" width="100%" style="display:none;width:100%"></iframe>';
+            $html .= '<script>jQuery(\'#iframe'.$hash.'\').iFrameResize({checkOrigin:false, heightCalculationMethod: \'documentElementOffset\'}); function iframe'.$hash.'(self) {jQuery(self).parentsUntil(\'col-md-5\').removeClass(\'col-md-5\');jQuery(self).hide();jQuery(\'#iframe'.$hash.'\').slideDown().show();jQuery(\'#iframe'.$hash.'\').get(0).iFrameResizer.resize();}</script>';
+            $html .= '<a class="btn btn-primary " href="javascript:void(0)" onclick="iframe'.$hash.'(this);">Anmelden</a>';
 
 
         } else {
