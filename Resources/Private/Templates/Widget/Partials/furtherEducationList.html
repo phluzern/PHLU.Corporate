@@ -176,16 +176,21 @@
                     </a>
                 </div>
                 <div class="shareAndRegister">
-
-                    <a class="btn btn-primary share" id="share-{{result.getIdentifier()}}-{{$index}}" addthis:url="{{node.getUrl()}}" addthis:title="{{node.getProperty('title')}}">
+                    <a class="btn btn-primary share" id="share-{{result.getIdentifier()}}-{{$index}}" addthis:url="{{node.getUrl(true)}}" addthis:title="{{node.getProperty('title')}}">
                         <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/wb-share-btn.svg')}" width="32" height="32" border="0" alt="Share" />
                         <br>
                         <span class="shareText">
                                             Teilen
                                         </span>
                     </a>
-                    <a class="btn btn-primary" data-ng-show="currentYears[node.identifier].RegistrationLink"
+
+                    <a class="btn btn-primary" data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') < 0" data-ng-show="currentYears[node.identifier].RegistrationLink"
                        data-ng-href="{{currentYears[node.identifier].RegistrationLink}}">
+                        Anmelden
+                    </a>
+
+                    <a class="btn btn-primary" data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') > 0" data-ng-show="currentYears[node.identifier].RegistrationLink"
+                       data-ng-href="{{node.getUrl()}}">
                         Anmelden
                     </a>
                 </div>
