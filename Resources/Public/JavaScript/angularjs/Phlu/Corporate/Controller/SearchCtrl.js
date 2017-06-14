@@ -345,7 +345,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                             'title': 'title',
                             'description': 'description',
                             'url': 'link',
-                            'content': 'encoded'
+                            'content': 'encoded',
+                            'creator': 'creator',
+                            'pubDate': 'pubDate',
                         }
                     }
                 }
@@ -361,7 +363,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                             'title': 'title',
                             'description': 'description',
                             'url': 'link',
-                            'content': 'encoded'
+                            'content': 'encoded',
+                            'creator': 'creator',
+                            'pubDate': 'pubDate'
                         }
                     }
                 }
@@ -378,7 +382,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                             'title': 'title',
                             'description': 'description',
                             'url': 'link',
-                            'content': 'encoded'
+                            'content': 'encoded',
+                            'creator': 'creator',
+                            'pubDate': 'pubDate'
                         }
                     }
                 }
@@ -395,7 +401,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                             'title': 'title',
                             'description': 'description',
                             'url': 'link',
-                            'content': 'encoded'
+                            'content': 'encoded',
+                            'creator': 'creator',
+                            'pubDate': 'pubDate'
                         }
                     }
                 }
@@ -412,7 +420,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                             'title': 'title',
                             'description': 'description',
                             'url': 'link',
-                            'content': 'encoded'
+                            'content': 'encoded',
+                            'creator': 'creator',
+                            'pubDate': 'pubDate'
                         }
                     }
                 }
@@ -429,7 +439,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                             'title': 'title',
                             'description': 'description',
                             'url': 'link',
-                            'content': 'encoded'
+                            'content': 'encoded',
+                            'creator': 'creator',
+                            'pubDate': 'pubDate'
                         }
                     }
                 }
@@ -446,7 +458,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                             'title': 'title',
                             'description': 'description',
                             'url': 'link',
-                            'content': 'encoded'
+                            'content': 'encoded',
+                            'creator': 'creator',
+                            'pubDate': 'pubDate'
                         }
                     }
                 }
@@ -463,7 +477,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                             'title': 'title',
                             'description': 'description',
                             'url': 'link',
-                            'content': 'encoded'
+                            'content': 'encoded',
+                            'creator': 'creator',
+                            'pubDate': 'pubDate'
                         }
                     }
                 }

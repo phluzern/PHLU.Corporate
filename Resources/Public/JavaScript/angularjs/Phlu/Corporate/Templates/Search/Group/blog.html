@@ -2,5 +2,7 @@
     <a class="content-link-internal" href="{{node.getUrl()}}" target="_blank">{{node.getDocumentNode().getProperty('title')}}</a>
 </h3>
 <div class="searchresult-body">
+    <span data-ng-bind="node.getProperty('creator')"></span>
+    (<span data-ng-bind="node.getProperty('pubDate.toLocaleDateString()')"></span>).
     {{node.getProperty('description.substr(0,256)')}}..
 </div>
