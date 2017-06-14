@@ -11890,15 +11890,21 @@ body {
       body .all .main > .row .phlu-corporate-section .phlu-corporate-text ul li, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ul li {
         margin-bottom: 10px; }
       body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol {
-        padding-left: 18px;
-        padding-right: 18px;
+        padding-left: 15px;
+        padding-right: 15px;
         margin-bottom: 0;
         width: 80%; }
+        @media (min-width: 544px) {
+          body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol {
+            padding-left: 18px;
+            padding-right: 18px; } }
         @media (max-width: 1279px) {
           body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol {
             width: inherit; } }
-        body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol li a, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol li a {
-          color: #9f632a; }
+        body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol li, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol li {
+          padding-left: 5px; }
+          body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol li a, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol li a {
+            color: #9f632a; }
       body .all .main > .row .phlu-corporate-section .phlu-corporate-text .phlu-corporate-text a[href^='http://phlu.ch'], body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text .phlu-corporate-text a[href^='http://phlu.ch'] {
         background-image: url("../Images/linkbottomline.png");
         color: #9f632a;
