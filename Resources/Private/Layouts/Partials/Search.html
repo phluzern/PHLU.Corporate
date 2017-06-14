@@ -474,7 +474,7 @@
                                                     <span class="oi"
                                                           data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
                                                     <span>{{node.getProperty('title')}}</span>
-                                                    <div class="mobile-view-columns">
+                                                    <div class="mobile-view-columns researchmainfocus">
                                                                 <span class="header">
                                                                     Schwerpunkte
                                                                 </span>
@@ -485,7 +485,7 @@
                                                                 </span>
                                                     </div>
                                                 </td>
-                                                <td>
+                                                <td class="researchmainfocus">
                                                     <ul>
                                                         <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index" data-ng-bind="focus.name">
 
