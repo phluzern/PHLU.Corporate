@@ -322,7 +322,7 @@ function initBackend() {
 window.addEventListener('message', function (event) {
 //Here We have to check content of the message event  for safety purpose
 //event data contains message sent from page added in iframe as shown in step 3
-    console.log(event);
+    //console.log(event);
     if (event.data.hasOwnProperty("FrameHeight")) {
         //Set height of the Iframe
         $("iframe").css("height", event.data.FrameHeight);
