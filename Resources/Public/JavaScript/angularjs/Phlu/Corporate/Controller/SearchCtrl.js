@@ -42,6 +42,14 @@ PhluCorporateApp.directive('search', function ($sce) {
                                 return template + '/Group/phlu-corporate-event.html';
                             }
 
+                        case 'phlu-corporate-text':
+
+                            if ($scope.view === 'all') {
+                                return template + '/All/phlu-corporate-text.html';
+                            } else {
+                                return template + '/Group/phlu-corporate-text.html';
+                            }
+
                         case 'phlu-corporate-newsitem':
 
                             if ($scope.view === 'all') {
