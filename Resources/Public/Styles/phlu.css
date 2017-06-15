@@ -8579,7 +8579,7 @@ body.neos-backend .neos-contentelement-hover > .goto-teaser-target {
 body {
   margin-bottom: 668px;
   color: #5c5c5c; }
-  body .neos-contentcollection, body .table-responsive {
+  body .neos-contentcollection, body .results-table {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   body.siteSearchActive {
