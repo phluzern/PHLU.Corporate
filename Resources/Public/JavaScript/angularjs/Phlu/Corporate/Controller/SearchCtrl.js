@@ -359,27 +359,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         }
                     }
                 }
-            },
-            {
-                http: "http://blog.phlu.ch/hd-blog/feed/",
-                parser: {
-                    type: 'xml',
-                    config: {
-                        'nodeType': 'blog',
-                        'results': {'selector': 'rss.channel.item'},
-                        'fields': {
-                            'title': 'title',
-                            'description': 'description',
-                            'url': 'link',
-                            'content': 'encoded',
-                            'creator': 'creator',
-                            'pubDate': 'pubDate'
-                        }
-                    }
-                }
             }
-
-
             // ,
             // {
             //
