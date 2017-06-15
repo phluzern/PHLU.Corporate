@@ -989,6 +989,10 @@ body.neos-backend {
 }
 
 body {
+  .neos-contentcollection, .table-responsive {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   &.siteSearchActive {
     overflow: hidden;
   }
