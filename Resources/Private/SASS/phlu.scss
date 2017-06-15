@@ -5917,14 +5917,19 @@ body {
               }
             }
             ol {
-              padding-left: 18px;
-              padding-right: 18px;
+              padding-left: 15px;
+              padding-right: 15px;
+              @include media-breakpoint-up("sm") {
+                padding-left: 18px;
+                padding-right: 18px;
+              }
               margin-bottom: 0;
               width: $flowtext-narrow-width;
               @include media-breakpoint-down("lg") {
                 width: inherit;
               }
               li {
+                padding-left:5px;
                 a {
                   color: $hazelbrowndark;
                 }

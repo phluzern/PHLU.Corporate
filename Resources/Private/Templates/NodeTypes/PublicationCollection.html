@@ -7,7 +7,7 @@
 			<f:for each="{reference}" as="publication">
 			<f:if condition="{publication.properties.Url}">
 				<f:then>
-					<p><a href="{publication.properties.Url}" target="_blank"><span>{publication.properties.Citationstyle -> f:format.raw()}</span></a></p>
+					<p class="single-publication"><a href="{publication.properties.Url}" target="_blank"><span>{publication.properties.Citationstyle -> f:format.raw()}</span></a></p>
 				</f:then>
 				<f:else>
 					<p class="single-publication">{publication.properties.Citationstyle -> f:format.raw()}</p>
@@ -17,7 +17,7 @@
 			</f:for>
 		</f:then>
 		<f:else>
-			<ul class="neos-list-square publication-list">
+			<ul class="neos-list-square publications-list">
 			<f:for each="{reference}" as="publication">
 				<li>
 					<f:if condition="{publication.properties.Url}">
