@@ -459,6 +459,19 @@ span.loading {
     // phlu search results
     //
     .phlu-searchresults {
+      .searchresult-body * {
+        font-size: $font-size-paragraph-desktop !important;
+      }
+
+      .searchresult-body a:not([class]) {
+          color: $hazelbrowndark;
+          @include content-link("externalflowtext");
+      }
+
+      span i {
+        font-style: italic;
+      }
+
       display: block;
       margin-top: 30px;
       @include media-breakpoint-down("sm") {
@@ -625,6 +638,7 @@ span.loading {
                 margin: 10px 0 20px;
                 a {
                   line-height: $line-height-sm;
+                  font-size: $font-size-h3 !important;
                 }
               }
               .searchresult-body {
@@ -5694,6 +5708,7 @@ body {
         a[href^='mailto'] {
           @include content-link("email");
         }
+
         .content-link-internal,
         a[data-gentics-aloha-repository='node-repository'] {
           @include content-link("internal");

@@ -14,6 +14,7 @@
     </a>
 </h3>
 <div class="searchresult-body">
-    <div data-ng-if="node.getProperty('label.length') > 12"><span data-ng-bind="node.getProperty('label')"></span><br></div>
+    <div data-ng-if="node.getProperty('label.length') > 9"><span data-ng-bind="node.getProperty('label')"></span><br></div>
+    <div data-ng-if="node.getProperty('label.length') <= 9"><span data-ng-bind="node.getDocumentNode().getProperty('title')"></span><br></div>
 </div>
 <div ng-bind-html="node.getBreadcrumb()"></div>
