@@ -1,6 +1,6 @@
 <h3>
-    <a class="content-link-internal" href="{{node.getUrl()}}" data-ng-if="node.getProperty('label')">{{node.getProperty('label')}}</a>
-    <a class="content-link-internal" href="{{node.getUrl()}}"  data-ng-if="!node.getProperty('label')">{{node.getDocumentNode().getProperty('title')}}</a>
+    <a class="content-link-internal" href="{{node.getUrl()}}" data-ng-if="node.getProperty('label.length') > 12">{{node.getProperty('label')}}</a>
+    <a class="content-link-internal" href="{{node.getUrl()}}"  data-ng-if="node.getProperty('label.length') <= 12">{{node.getDocumentNode().getProperty('title')}}</a>
 </h3>
 <div class="searchresult-body">
     <div ng-bind-html="node.getProperty('text')" data-ng-if="node.getProperty('text.length') < 960"></div>
