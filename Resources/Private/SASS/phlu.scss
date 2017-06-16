@@ -2334,7 +2334,11 @@ body {
         padding-bottom: 17px;
       }
       .phlu-accordion {
+        .phlu-corporate-contactsgroup {
+          clear: both;
+        }
         .nav-teaser-item {
+          float:left;
           @include media-breakpoint-down("sm") {
             padding-right: 0;
           }
