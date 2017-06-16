@@ -23,6 +23,7 @@ prototype(Phlu.Corporate:Contact) < prototype(Phlu.Corporate:Content) {
         mode = 'dynamic'
         context {
             1 = 'node'
+            2 = 'documentNode'
         }
     }
 
