@@ -6,7 +6,7 @@
 	<f:then>
 		<f:if condition="{image}">
 			<f:then>
-				<media:image image="{image}" alt="{alternativeText}" class="backend-img-fullwidth" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
+				<media:image async="true" image="{image}" alt="{alternativeText}" class="backend-img-fullwidth" title="{title}" width="{width}" maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}" allowUpScaling="{allowUpScaling}" />
 			</f:then>
 			<f:else>
 				<f:if condition="{neos:rendering.inEditMode()}">

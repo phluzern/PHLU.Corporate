@@ -42,7 +42,7 @@
 
     <f:if condition="{node.properties.teaserImage}">
         <f:then>
-            <media:image image="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}" width="{width}"
+            <media:image async="true" image="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}" width="{width}"
                          maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
                          allowUpScaling="{allowUpScaling}"/>
         </f:then>

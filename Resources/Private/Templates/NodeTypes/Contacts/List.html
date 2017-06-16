@@ -50,7 +50,7 @@
                     <f:if condition="{node.properties.image}">
                         <f:then>
                             <div class="col-xs-12 col-sm-3 col-md-2">
-                                <media:image image="{node.properties.image}" class="img-fluid"
+                                <media:image async="true" image="{node.properties.image}" class="img-fluid"
                                              alt="{node.properties.firstname} {node.properties.lastname}" width="400"
                                              maximumWidth="400" height="300" maximumHeight="300"
                                              allowUpScaling="true"/>

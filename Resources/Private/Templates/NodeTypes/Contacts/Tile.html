@@ -78,11 +78,12 @@
                 </div>
                 <f:if condition="{image}">
                     <div class="phlu-teaser-caret-right col-xs-4">
-                        <media:image
+                        <media:image async="true"
                                 image="{image}"
                                 class="img-fluid"
                                 alt="{participant.name}" height="133" width="100" allowCropping="true"
-                                allowUpScaling="true"/>
+                                allowUpScaling="true"
+                        />
                     </div>
                 </f:if>
             </div>

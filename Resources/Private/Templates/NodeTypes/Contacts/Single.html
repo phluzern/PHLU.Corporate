@@ -13,7 +13,7 @@
                     <f:then>
                         <div class="col-xs-12 col-sm-6 flexfirst col-md-4">
                             <f:if condition="{node.properties.image}">
-                                <media:image class="img-fluid" image="{node.properties.image}"
+                                <media:image async="true" class="img-fluid" image="{node.properties.image}"
                                              alt="{node.properties.firstname} {node.properties.lastname}"
                                              title="{title}" width="{width}" maximumWidth="{maximumWidth}"
                                              height="{height}" maximumHeight="{maximumHeight}"
