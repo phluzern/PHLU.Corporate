@@ -21,6 +21,10 @@ prototype(Phlu.Corporate:Contact) < prototype(Phlu.Corporate:Content) {
 
     @cache {
         mode = 'uncached'
+        context {
+            1 = 'node'
+            2 = 'documentNode'
+        }
     }
 
 }
