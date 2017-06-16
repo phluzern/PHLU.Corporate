@@ -10061,7 +10061,8 @@ body {
       padding-bottom: 17px; }
       body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection p {
         padding: 0;
-        margin: 0; }
+        margin: 0 0;
+        margin-bottom: 15px; }
       body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection .nav-teaser-item {
         padding-left: 0; }
         @media (max-width: 767px) {
