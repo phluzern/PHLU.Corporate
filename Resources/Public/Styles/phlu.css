@@ -10102,8 +10102,6 @@ body {
       @media (max-width: 991px) {
         body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default .panel-heading .panel-title a::after {
           right: 35px; } }
-    body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default .phlu-qmpilot-nodetypes-file[data-prev='phlu-corporate-text'] {
-      padding-top: 15px; }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement .phlu-corporate-textwithimage .img-and-caption {
       margin-top: 29px; }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-prev='phlu-corporate-text'], body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-prev='phlu-corporate-accordeonelement'] {
