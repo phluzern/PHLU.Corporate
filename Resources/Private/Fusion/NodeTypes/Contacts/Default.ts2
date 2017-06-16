@@ -20,10 +20,9 @@ prototype(Phlu.Corporate:Contact) < prototype(Phlu.Corporate:Content) {
     wrapperNode = ${q(node).closest('[instanceof Phlu.Corporate:Section]').get(0)}
 
     @cache {
-        mode = 'uncached'
+        mode = 'dynamic'
         context {
             1 = 'node'
-            2 = 'documentNode'
         }
     }
 
