@@ -52,10 +52,9 @@
                         </address>
                     </div>
 
-
-                    <f:if condition="{node.properties.image}">
+                    <f:if condition="{image}">
                         <f:then>
-                            <f:if condition="{node.properties.image}">
+                            <f:if condition="{image}">
                                 <div class="col-xs-12 col-sm-6 flexfirst col-md-3">
                                     <media:image async="true" image="{image}" class="img-fluid" width="280" allowCropping="true"
                                                  alt=""/>

@@ -43,10 +43,10 @@
                  aria-labelledby="tab-{node.Identifier}">
 
                 <div class="row panel-body">
-                    <f:if condition="{node.properties.image}">
+                    <f:if condition="{image}">
                         <f:then>
                             <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
-                                <media:image async="true" image="{node.properties.image}" class="img-fluid"
+                                <media:image async="true" image="{image}" class="img-fluid"
                                              alt="{node.properties.firstname} {node.properties.lastname}" width="400"
                                              maximumWidth="100" height="300" maximumHeight="300"
                                              allowUpScaling="false"/>
@@ -55,7 +55,7 @@
                     </f:if>
                     <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
                         <address>
-                        <f:if condition="{node.properties.image}">
+                        <f:if condition="{image}">
                             <f:then>
                                     {node.properties.firstname} {node.properties.lastname}<br>
                             </f:then>
