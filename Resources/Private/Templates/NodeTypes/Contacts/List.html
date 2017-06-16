@@ -50,10 +50,11 @@
                     <f:if condition="{image}">
                         <f:then>
                             <div class="col-xs-12 col-sm-3 col-md-2">
-                                <media:image async="true" image="{image}" class="img-fluid"
-                                             alt="{node.properties.firstname} {node.properties.lastname}" width="400"
-                                             maximumWidth="400" height="300" maximumHeight="300"
-                                             allowUpScaling="true"/>
+                                <f:if condition="{image.resource}">
+                                    <f:then>
+                                        <img src="{f:uri.resource(resource: image.resource)}" width="300">
+                                    </f:then>
+                                </f:if>
                             </div>
                         </f:then>
                     </f:if>

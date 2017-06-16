@@ -78,12 +78,11 @@
                 </div>
                 <f:if condition="{image}">
                     <div class="phlu-teaser-caret-right col-xs-4">
-                        <media:image async="true"
-                                image="{image}"
-                                class="img-fluid"
-                                alt="{participant.name}" height="133" width="100" allowCropping="true"
-                                allowUpScaling="true"
-                        />
+                        <f:if condition="{image.resource}">
+                            <f:then>
+                                <img src="{f:uri.resource(resource: image.resource)}" class="img-fluid" width="100">
+                            </f:then>
+                        </f:if>
                     </div>
                 </f:if>
             </div>

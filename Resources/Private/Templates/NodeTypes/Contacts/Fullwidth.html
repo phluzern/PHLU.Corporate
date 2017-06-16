@@ -56,8 +56,11 @@
                         <f:then>
                             <f:if condition="{image}">
                                 <div class="col-xs-12 col-sm-6 flexfirst col-md-3">
-                                    <media:image async="true" image="{image}" class="img-fluid" width="280" allowCropping="true"
-                                                 alt=""/>
+                                    <f:if condition="{image.resource}">
+                                        <f:then>
+                                            <img src="{f:uri.resource(resource: image.resource)}" width="280">
+                                        </f:then>
+                                    </f:if>
                                 </div>
                             </f:if>
                         </f:then>

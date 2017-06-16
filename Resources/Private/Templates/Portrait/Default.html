@@ -19,8 +19,11 @@
 
             <f:if condition="{contact.image}">
                 <div class="col-xs-12 col-sm-6 col-md-3">
-                    <media:image async="true" class="img-fluid" image="{contact.image}" alt="{contact.name.fullname}" width="400"
-                                 maximumWidth="300" height="400" maximumHeight="300"/>
+                    <f:if condition="{contact.image.resource}">
+                        <f:then>
+                            <img src="{f:uri.resource(resource: contact.image.resource)}" width="300">
+                        </f:then>
+                    </f:if>
                 </div>
             </f:if>
 

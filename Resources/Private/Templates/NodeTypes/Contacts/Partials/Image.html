@@ -9,7 +9,9 @@
 
 
 <f:section name="imageRendering">
-    <media:image async="true" image="{image}" alt="{alternativeText}" title="{title}" width="{width}"
-                 maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
-                 allowUpScaling="{allowUpScaling}" allowCropping="{allowCropping}" />
+    <f:if condition="{image.resource}">
+        <f:then>
+            <img src="{f:uri.resource(resource: image.resource)}" width="{width}">
+        </f:then>
+    </f:if>
 </f:section>
