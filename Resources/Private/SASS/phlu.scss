@@ -5936,6 +5936,9 @@ body {
               li {
                 margin-top: 5px;
                 margin-bottom: 5px;
+                &:last-child {
+                  margin-bottom:15px;
+                }
               }
             }
             ol {

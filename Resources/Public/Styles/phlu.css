@@ -11917,6 +11917,8 @@ body {
       body .all .main > .row .phlu-corporate-section .phlu-corporate-text ul li, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ul li {
         margin-top: 5px;
         margin-bottom: 5px; }
+        body .all .main > .row .phlu-corporate-section .phlu-corporate-text ul li:last-child, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ul li:last-child {
+          margin-bottom: 15px; }
       body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol {
         padding-left: 15px;
         padding-right: 15px;
