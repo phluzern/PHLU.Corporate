@@ -119,12 +119,15 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
-                                <tr ng-repeat="node in result.getNodes(limit['all'] === undefined ? 10 : limit['all'])"
+
+
+                                <tr ng-repeat="node in result.getNodes(limit['all'] === undefined ? 10 : limit['all'],'_document.identifier')"
                                     data-ng-if="!node.isTurboNode() && node.getNodeType() != 'phlu-corporate-location'">
                                     <td  data-node-id="{{node.getIdentifier()}}">
                                         <search data="node" view="all"></search>
                                     </td>
                                 </tr>
+
                                 <tfoot class="">
                                 <tr>
                                     <td class="col-center">
@@ -150,6 +153,9 @@
                          data-ng-class="{active: lastActiveTabName == group.getLabel(), in: lastActiveTabName == group.getLabel()}"
                          id="{{group.getLabel()}}" role="tabpanel"
                          ng-repeat="group in result.getGrouped().getItems()">
+
+
+
                         <div data-ng-switch="group.getLabel()"
                              data-ng-if="lastActiveTabName == group.getLabel()">
 

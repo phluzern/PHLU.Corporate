@@ -8228,6 +8228,14 @@ span.loading.bar {
     font-family: Icons;
     content: '\e0db';
     float: right; }
+  #search .hasSearchResults .quickinfo {
+    padding: 5px;
+    padding-left: 0;
+    padding-right: 15px; }
+  #search .hasSearchResults .quickinfo-wrapper > .quickinfo:last-child {
+    padding-bottom: 20px; }
+  #search .hasSearchResults .quickinfo-wrapper > .quickinfo:first-child {
+    padding-top: 15px; }
   @media (min-width: 1280px) {
     #search .hasSearchResults {
       -webkit-box-shadow: 16px 0px 53px -1px rgba(0, 0, 0, 0.02);
@@ -8243,24 +8251,33 @@ span.loading.bar {
   #search .hasSearchResults .phlu-searchresults {
     display: block;
     margin-top: 30px; }
-    #search .hasSearchResults .phlu-searchresults .searchresult-body * {
-      font-size: 1.125rem !important; }
-    #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class]) {
-      color: #9f632a;
-      background-image: url("../Images/linkbottomline.png");
-      color: #9f632a;
-      background-repeat: repeat-x;
-      background-position: bottom;
-      padding-bottom: 4px; }
-      #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class]):hover {
-        background-position: 0 0;
-        background-repeat: repeat; }
-      #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class])::after {
-        background-image: url("../Images/externalLinkArrow.png");
-        background-repeat: no-repeat;
-        background-position: 0 3px;
-        padding-right: 25px;
-        content: ""; }
+    #search .hasSearchResults .phlu-searchresults .breadcrumb {
+      display: block;
+      height: auto; }
+      @media (max-width: 767px) {
+        #search .hasSearchResults .phlu-searchresults .breadcrumb {
+          overflow-y: scroll;
+          overflow-x: visible;
+          height: 20px;
+          width: 250px !important; } }
+    #search .hasSearchResults .phlu-searchresults .searchresult-body {
+      max-width: 100% !important; }
+      #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class]) {
+        color: #9f632a;
+        background-image: url("../Images/linkbottomline.png");
+        color: #9f632a;
+        background-repeat: repeat-x;
+        background-position: bottom;
+        padding-bottom: 4px; }
+        #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class]):hover {
+          background-position: 0 0;
+          background-repeat: repeat; }
+        #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class])::after {
+          background-image: url("../Images/externalLinkArrow.png");
+          background-repeat: no-repeat;
+          background-position: 0 3px;
+          padding-right: 25px;
+          content: ""; }
     #search .hasSearchResults .phlu-searchresults span i {
       font-style: italic; }
     @media (max-width: 767px) {
@@ -8365,8 +8382,11 @@ span.loading.bar {
       margin-bottom: 10px; }
       #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {
         padding-right: 0; }
+        @media (max-width: 767px) {
+          #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {
+            padding-left: 0; } }
         #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 {
-          font-weight: 400;
+          font-size: 1.3rem !important;
           margin: 10px 0 20px; }
           #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 a {
             line-height: 1.7;

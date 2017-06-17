@@ -290,7 +290,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-functions': -1,
         'phlu-corporate-contact-consulting': -1, // dont'search here
         'phlu-corporate-contact-expertise': -1, // dont'search here
-        'phlu-corporate-contact-function': 50, // dont'search here
+        'phlu-corporate-contact-function': 10, // dont'search here
+        'phlu-corporate-contact-functioncustom': 50, // dont'search here
         'phlu-corporate-contact-phone': 15000,
         'phlu-neos-nodetypes-course-module-furthereducation-title': 50,
         'phlu-neos-nodetypes-course-study-furthereducation-title': 100,
@@ -418,6 +419,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     search.setGroupedBy(groupedBy).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
+
         if (searchResultApplyTimer) {
             window.clearTimeout(searchResultApplyTimer);
         }
@@ -430,8 +432,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                 }
             });
         }
-
-
 
         searchResultApplyTimer = setTimeout(function () {
             var lh = data.getHash();
@@ -473,6 +473,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         }, 10);
 
+
+        //console.log(data.getDistinct('url'));
+        //console.log(data.getGroupedNodes(true));
 
     });
 

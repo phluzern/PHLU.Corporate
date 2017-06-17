@@ -445,6 +445,19 @@ span.loading {
         float: right;
       }
     }
+    .quickinfo {
+      padding: 5px;
+      padding-left: 0;
+      padding-right: 15px;
+    }
+    .quickinfo-wrapper {
+      > .quickinfo:last-child {
+        padding-bottom: 20px;
+      }
+    }
+    .quickinfo-wrapper > .quickinfo:first-child {
+      padding-top: 15px;
+    }
     @include media-breakpoint-up("xl") {
       @include sidebar-shadow();
     }
@@ -459,13 +472,25 @@ span.loading {
     // phlu search results
     //
     .phlu-searchresults {
-      .searchresult-body * {
-        font-size: $font-size-paragraph-desktop !important;
+
+      .breadcrumb {
+        display: block;
+        height: auto;
+        @include media-breakpoint-down("sm") {
+          overflow-y: scroll;
+          overflow-x: visible;
+          height:20px;
+          width: 250px!important;
+        }
       }
 
-      .searchresult-body a:not([class]) {
+      .searchresult-body {
+
+        max-width:100% !important;
+        a:not([class]) {
           color: $hazelbrowndark;
           @include content-link("externalflowtext");
+        }
       }
 
       span i {
@@ -633,8 +658,11 @@ span.loading {
             margin-bottom: 10px;
             td {
               padding-right: 0;
+              @include media-breakpoint-down("sm") {
+                padding-left:0;
+              }
               h3 {
-                font-weight: $font-weight-normal;
+                font-size: $font-size-h3 !important;
                 margin: 10px 0 20px;
                 a {
                   line-height: $line-height-sm;
@@ -2111,7 +2139,7 @@ body {
 
     // contacts
     .contact-image {
-      max-width:100%;
+      max-width: 100%;
     }
 
     //
@@ -2346,7 +2374,7 @@ body {
           }
         }
         .nav-teaser-item {
-          float:left;
+          float: left;
           @include media-breakpoint-down("sm") {
             padding-right: 0;
           }
@@ -5941,13 +5969,13 @@ body {
           .phlu-corporate-text {
             ul {
               @include media-breakpoint-up("md") {
-                width:$flowtext-narrow-width;
+                width: $flowtext-narrow-width;
               }
               li {
                 margin-top: 5px;
                 margin-bottom: 5px;
                 &:last-child {
-                  margin-bottom:30px;
+                  margin-bottom: 30px;
                 }
               }
             }
@@ -5964,7 +5992,7 @@ body {
                 width: inherit;
               }
               li {
-                padding-left:5px;
+                padding-left: 5px;
                 a {
                   color: $hazelbrowndark;
                 }
@@ -6310,9 +6338,9 @@ body {
       .shareAndRegister {
         float: right;
         &.shareAndRegisterFurtherEducationDetail {
-          width:100%;
+          width: 100%;
           a, iframe {
-            float:right;
+            float: right;
           }
         }
         a {
@@ -6325,12 +6353,12 @@ body {
           color: $petrol;
           background-color: inherit;
           line-height: 9px;
-          margin-top:10px;
+          margin-top: 10px;
           .shareText {
             font-size: $font-size-small;
           }
           @include media-breakpoint-down("sm") {
-            margin-top:13px;
+            margin-top: 13px;
             padding: 0 19px;
           }
         }
@@ -6753,14 +6781,14 @@ body {
   //
   .atm {
     .atm-i {
-      border:0;
+      border: 0;
       box-shadow: none;
       .atm-s {
         a {
-          padding-top:8px!important;
-          padding-bottom:8px!important;
-          padding-left:15px!important;
-          padding-right:15px!important;
+          padding-top: 8px !important;
+          padding-bottom: 8px !important;
+          padding-left: 15px !important;
+          padding-right: 15px !important;
         }
       }
     }
