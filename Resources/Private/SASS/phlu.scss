@@ -474,13 +474,25 @@ span.loading {
     .phlu-searchresults {
 
       .breadcrumb {
+        li {
+          display: none !important;
+        }
+        li:last-child, li:nth-last-child(2), li:nth-last-child(3)  {
+          display: block !important;
+          float:left;
+        }
+        li:nth-last-child(3):before  {
+          display: none !important;
+        }
+
         display: block;
         height: auto;
         @include media-breakpoint-down("sm") {
-          overflow-y: scroll;
-          overflow-x: visible;
-          height:20px;
-          width: 250px!important;
+          li:last-child, li:nth-last-child(2)  {
+            float:none !important;;
+            clear:both !important;;
+            width:auto !important;
+          }
         }
       }
 
@@ -490,6 +502,9 @@ span.loading {
         a:not([class]) {
           color: $hazelbrowndark;
           @include content-link("externalflowtext");
+        }
+        p, ul, li {
+          font-size: $font-size-base !important;
         }
       }
 
@@ -502,12 +517,20 @@ span.loading {
       @include media-breakpoint-down("sm") {
         min-height: 200px;
       }
+      .rcrumbs-container {
+        height:30px;
+        overflow: visible;
+      }
+      .rcrumbs-wrapper {
+        padding:0;
+      }
       .breadcrumb {
         @include media-breakpoint-up("lg") {
           width: 735px;
         }
         margin-top: 15px;
         > li {
+          height:30px;
           display: inline-block;
           @include media-breakpoint-down("lg") {
             display: block;
@@ -682,21 +705,6 @@ span.loading {
                     }
                   }
                 }
-              }
-              .rcrumbs-wrapper {
-                padding: 5px 10px 10px 0;
-                @include media-breakpoint-down("lg") {
-                  display: block;
-                }
-                .rcrumbs-container {
-                  height: inherit;
-                  .breadcrumb {
-                    @include media-breakpoint-down("lg") {
-                      display: block;
-                    }
-                  }
-                }
-
               }
               &.col-center {
                 padding-bottom: 80px;

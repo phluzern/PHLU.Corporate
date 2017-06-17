@@ -3,9 +3,6 @@
        href="{{node.getProperty('asset').url}}" target="_blank"><span
             data-ng-if="node.getProperty('asset').title == ''">{{node.getProperty('asset').name}}</span><span
             data-ng-if="node.getProperty('asset').title !== ''">{{node.getProperty('asset').title}}</span>
-
-        <span data-ng-if="node.getProperty('asset').size > 100" data-ng-if="node.getProperty('asset').extension != 'lnk'">({{node.getProperty('asset').extension}}, {{node.getProperty('asset').sizeH}})</span>
-
     </a>
     <a class="content-link-internal" data-ng-if="!node.getProperty('asset').url"
        href="{{node.getUrl()}}"><span
@@ -14,7 +11,7 @@
     </a>
 </h3>
 <div class="searchresult-body">
-    <div data-ng-if="node.getProperty('label.length') > 9"><span data-ng-bind="node.getProperty('label')"></span><br></div>
-    <div data-ng-if="node.getProperty('label.length') <= 9"><span data-ng-bind="node.getDocumentNode().getProperty('title')"></span><br></div>
+    <span data-ng-bind="node.getProperty('label')"></span>
+    <span data-ng-if="node.getProperty('asset').size > 100" data-ng-if="node.getProperty('asset').extension != 'lnk'"> ({{node.getProperty('asset').extension}}, {{node.getProperty('asset').sizeH}})</span>
 </div>
 <div ng-bind-html="node.getBreadcrumb()"></div>

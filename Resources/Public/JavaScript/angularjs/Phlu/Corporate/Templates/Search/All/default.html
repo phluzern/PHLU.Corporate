@@ -4,7 +4,6 @@
 <div class="searchresult-body">
     <span data-ng-bind="node.getPreview('text')"></span>
 
-
     <div data-ng-repeat="(nodeType,nodes) in node.getGroupedByNodeType('_document.identifier')">
         <div data-ng-switch="nodeType">
             <div class="quickinfo-wrapper" data-ng-switch-when="phlu-qmpilot-nodetypes-file">
