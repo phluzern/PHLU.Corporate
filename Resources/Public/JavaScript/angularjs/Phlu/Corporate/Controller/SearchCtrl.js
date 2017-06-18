@@ -293,15 +293,15 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-function': 10, // dont'search here
         'phlu-corporate-contact-functioncustom': 50, // dont'search here
         'phlu-corporate-contact-phone': 15000,
-        'phlu-neos-nodetypes-course-module-furthereducation-title': 50,
-        'phlu-neos-nodetypes-course-study-furthereducation-title': 100,
-        'phlu-neos-nodetypes-course-event-furthereducation-title': 50,
+        'phlu-neos-nodetypes-course-module-furthereducation-title': 1,
+        'phlu-neos-nodetypes-course-study-furthereducation-title': 1,
+        'phlu-neos-nodetypes-course-event-furthereducation-title': 1,
         'phlu-neos-nodetypes-course-module-furthereducation-genre': 1,
         'phlu-neos-nodetypes-course-study-furthereducation-genre': 1,
         'phlu-neos-nodetypes-course-module-furthereducation-nr': 200,
         'phlu-neos-nodetypes-course-study-furthereducation-nr': 200,
         'phlu-neos-nodetypes-course-event-furthereducation-nr': 200,
-        'phlu-corporate-page-furthereducation-detail-module-title': 200,
+        'phlu-qmpilot-nodetypes-file-asset': 1,
         'phlu-corporate-textplain-grandparent': 50,
         'phlu-neos-nodetypes-publication-date': -1,
         'phlu-neos-nodetypes-publication-grandparent': -1,
@@ -328,7 +328,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Kontakte': ['lastname','firstname'],
         'Standorte': ['lng', 'lat'],
         'Projekte': 'title',
-        'Seiten': ['url', 'documentNode.title'],
         'Weiterbildungsstudiengänge': 'url',
         'Weiterbildungsskurse': 'url',
         'Weiterbildungsveranstaltungen': 'url'
