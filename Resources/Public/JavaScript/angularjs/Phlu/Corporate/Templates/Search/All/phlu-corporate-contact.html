@@ -11,7 +11,6 @@
 
 <div class="searchresult-body">
 
-
     <span data-ng-if="node.getParent()">
         <span data-ng-bind="node.getParent().getProperty('title')"></span>,
     </span>
@@ -20,6 +19,32 @@
     </span>
     <span data-ng-show="node.getProperty('phone') != ''">{{node.getProperty('phone')}},</span>
     {{node.getProperty('email')}}
+
+    <div data-ng-repeat="(nodeType,nodes) in node.getGroupedByNodeType('_document.identifier')">
+        <div data-ng-switch="nodeType" class="quickinfo-wrapper quickinfo">
+            <div data-ng-switch-when="phlu-corporate-text">
+                <div class="" data-ng-repeat="groupedNode in nodes"
+                     data-ng-if="$index == 0 && groupedNode.getScore() > 10">
+                    <span data-ng-bind="groupedNode.getPreview('text')"></span>
+                </div>
+            </div>
+            <div class="quickinfo-wrapper" data-ng-switch-when="phlu-qmpilot-nodetypes-file"
+                 data-ng-init="node.more = 3;">
+                <div class="quickinfo" data-ng-repeat="groupedNode in nodes"
+                     data-ng-if="$index <= node.more && groupedNode.getProperty('asset').extension == 'pdf'">
+                    <a class="content-link-internal" data-ng-if="groupedNode.getProperty('asset').url"
+                       href="{{groupedNode.getProperty('asset').url}}" target="_blank"><span
+                            data-ng-if="groupedNode.getProperty('asset').title == ''">{{groupedNode.getProperty('asset').name}}</span><span
+                            data-ng-if="groupedNode.getProperty('asset').title !== ''">{{groupedNode.getProperty('asset').title}}</span>
+                    </a>
+                </div>
+                <span class="more-link-dots" data-ng-if="nodes.length-1 > node.more"
+                      data-ng-click="node.more = nodes.length">...</span>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 <div class="rcrumbs-wrapper">
     <div class="rcrumbs-container rcrumbs" ng-bind-html="node.getBreadcrumb()"></div>

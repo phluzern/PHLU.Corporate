@@ -8232,6 +8232,9 @@ span.loading.bar {
     padding: 5px;
     padding-left: 0;
     padding-right: 15px; }
+  #search .hasSearchResults .more-link-dots {
+    color: #9f632a;
+    cursor: pointer; }
   #search .hasSearchResults .quickinfo-wrapper > .quickinfo:last-child {
     padding-bottom: 20px; }
   #search .hasSearchResults .quickinfo-wrapper > .quickinfo:first-child {
