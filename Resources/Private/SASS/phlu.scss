@@ -450,6 +450,10 @@ span.loading {
       padding-left: 0;
       padding-right: 15px;
     }
+    .more-link-dots {
+      color: $hazelbrowndark;
+      cursor: pointer;
+    }
     .quickinfo-wrapper {
       > .quickinfo:last-child {
         padding-bottom: 20px;

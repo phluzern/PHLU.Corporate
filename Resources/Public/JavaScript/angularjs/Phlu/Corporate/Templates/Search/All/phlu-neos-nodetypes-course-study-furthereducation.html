@@ -4,17 +4,21 @@
 <div class="searchresult-body">
     <p data-ng-bind="node.getProperty('nr')"></p>
     <p data-ng-bind="node.getPreview('description')"></p>
+
     <div data-ng-repeat="(nodeType,nodes) in node.getGroupedByNodeType('_document.identifier')">
         <div data-ng-switch="nodeType">
-            <div class="quickinfo-wrapper" data-ng-switch-when="phlu-qmpilot-nodetypes-file">
+            <div class="quickinfo-wrapper" data-ng-switch-when="phlu-qmpilot-nodetypes-file"
+                 data-ng-init="node.more = 3;">
                 <div class="quickinfo" data-ng-repeat="groupedNode in nodes"
-                     data-ng-if="groupedNode.getProperty('asset').extension == 'pdf' && groupedNode.getScore() > 100">
+                     data-ng-if="$index <= node.more">
                     <a class="content-link-internal" data-ng-if="groupedNode.getProperty('asset').url"
                        href="{{groupedNode.getProperty('asset').url}}" target="_blank"><span
                             data-ng-if="groupedNode.getProperty('asset').title == ''">{{groupedNode.getProperty('asset').name}}</span><span
                             data-ng-if="groupedNode.getProperty('asset').title !== ''">{{groupedNode.getProperty('asset').title}}</span>
                     </a>
                 </div>
+                <span class="more-link-dots" data-ng-if="nodes.length-1 > node.more"
+                      data-ng-click="node.more = nodes.length">...</span>
             </div>
         </div>
     </div>

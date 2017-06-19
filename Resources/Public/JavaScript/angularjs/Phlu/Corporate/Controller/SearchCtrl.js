@@ -284,15 +284,19 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var boost = {
 
+        'phlu-corporate-contact-label': 1,
+        'phlu-corporate-contact-parent': 1,
+
         'phlu-corporate-contact-text': 150,
         'phlu-corporate-contact-education': -1, // dont'search here
         'phlu-corporate-contact-activities': -1, // dont'search here
         'phlu-corporate-contact-functions': -1,
         'phlu-corporate-contact-consulting': -1, // dont'search here
         'phlu-corporate-contact-expertise': -1, // dont'search here
-        'phlu-corporate-contact-function': 10, // dont'search here
-        'phlu-corporate-contact-functioncustom': 50, // dont'search here
+        'phlu-corporate-contact-function': 1, // dont'search here
+        'phlu-corporate-contact-functioncustom': 1, // dont'search here
         'phlu-corporate-contact-phone': 15000,
+
         'phlu-neos-nodetypes-course-module-furthereducation-title': 1,
         'phlu-neos-nodetypes-course-study-furthereducation-title': 1,
         'phlu-neos-nodetypes-course-event-furthereducation-title': 1,
@@ -302,7 +306,19 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-course-study-furthereducation-nr': 200,
         'phlu-neos-nodetypes-course-event-furthereducation-nr': 200,
         'phlu-qmpilot-nodetypes-file-asset': 1,
+
+        'phlu-qmpilot-nodetypes-file-grandparent': 1,
+        'phlu-qmpilot-nodetypes-file-parent': 1,
+        'phlu-qmpilot-nodetypes-file-label': 1,
+        'phlu-qmpilot-nodetypes-file-title': 1,
+
         'phlu-corporate-textplain-grandparent': 50,
+        'phlu-corporate-textplain-label': 10,
+        'phlu-corporate-textplain-parent': 10,
+
+        'phlu-corporate-text-label': 1,
+        'phlu-corporate-text-parent': 1,
+
         'phlu-neos-nodetypes-publication-date': -1,
         'phlu-neos-nodetypes-publication-grandparent': -1,
         'phlu-neos-nodetypes-publication-id': -1,
@@ -314,12 +330,26 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-publication-url': -1,
         'phlu-neos-nodetypes-publication-sortingkey': -1,
         'url': -1,
+        'label': 1,
+        'parent': 1,
         'grandparent': -1
 
 
     };
 
+
     var boostParentNodeType = {
+      //  'Phlu.Corporate:Content.Page.HeaderDefault': 3
+    };
+
+    var NodeUrlBoostFactor = {
+        '/studium/' : 7,
+        '/weiterbildung/' : 1,
+        '/weiterbildung/kurse/' : -1,
+        '/beratungen-angebote/' : 3,
+        '/forschung/' : 2,
+        '/faecher-und-schwerpunkte/' : 5,
+        '/ueber-uns/' : 0.5,
 
     };
 
@@ -328,6 +358,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Kontakte': ['lastname','firstname'],
         'Standorte': ['lng', 'lat'],
         'Projekte': 'title',
+        'Seiten': '_document.identifier',
         'Weiterbildungsstudiengänge': 'url',
         'Weiterbildungsskurse': 'url',
         'Weiterbildungsveranstaltungen': 'url'
@@ -414,10 +445,10 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     //search.disableRealtime();
     search.enableCache();
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
-    search.addPropertyFilter('asset.url', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
+    search.addPropertyFilter('asset.extension', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
     search.setExternalSources(external);
 
-    search.setGroupedBy(groupedBy).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
+    search.setGroupedBy(groupedBy).setNodeUrlBoostFactor(NodeUrlBoostFactor).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
 
         if (searchResultApplyTimer) {
