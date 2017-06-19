@@ -51,10 +51,7 @@ function initFrontend() {
 
     });
 
-
     /* init rcrumbs */
-
-
     $(document).mousemove(function (event) {
         window.mouseLastEvent = event;
     });

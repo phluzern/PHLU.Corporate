@@ -12474,6 +12474,7 @@ body {
         body .all .footer > div > .copyright {
           display: none; } }
   body .atm .atm-i {
+    display: none;
     border: 0;
     box-shadow: none; }
     body .atm .atm-i .atm-s a {
