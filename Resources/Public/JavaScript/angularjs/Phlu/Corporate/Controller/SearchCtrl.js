@@ -307,9 +307,10 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-course-event-furthereducation-nr': 200,
         'phlu-qmpilot-nodetypes-file-asset': 1,
 
-        'phlu-qmpilot-nodetypes-grandparent': 1,
-        'phlu-qmpilot-nodetypes-parent': 1,
-        'phlu-qmpilot-nodetypes-label': 1,
+        'phlu-qmpilot-nodetypes-file-grandparent': 1,
+        'phlu-qmpilot-nodetypes-file-parent': 1,
+        'phlu-qmpilot-nodetypes-file-label': 1,
+        'phlu-qmpilot-nodetypes-file-title': 1,
 
         'phlu-corporate-textplain-grandparent': 50,
         'phlu-corporate-textplain-label': 10,
@@ -338,7 +339,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     var boostParentNodeType = {
-        'Phlu.Corporate:Content.Page.HeaderDefault': 2
+        'Phlu.Corporate:Content.Page.HeaderDefault': 3
     };
 
     var NodeUrlBoostFactor = {
@@ -355,6 +356,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Kontakte': ['lastname','firstname'],
         'Standorte': ['lng', 'lat'],
         'Projekte': 'title',
+        'Seiten': '_document.identifier',
         'Weiterbildungsstudiengänge': 'url',
         'Weiterbildungsskurse': 'url',
         'Weiterbildungsveranstaltungen': 'url'

@@ -9,7 +9,7 @@
             <div class="quickinfo-wrapper" data-ng-switch-when="phlu-qmpilot-nodetypes-file"
                  data-ng-init="node.more = 3;">
                 <div class="quickinfo" data-ng-repeat="groupedNode in nodes"
-                     data-ng-if="$index <= node.more && groupedNode.getProperty('asset').extension == 'pdf'">
+                     data-ng-if="$index <= node.more">
                     <a class="content-link-internal" data-ng-if="groupedNode.getProperty('asset').url"
                        href="{{groupedNode.getProperty('asset').url}}" target="_blank"><span
                             data-ng-if="groupedNode.getProperty('asset').title == ''">{{groupedNode.getProperty('asset').name}}</span><span
