@@ -339,16 +339,18 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     var boostParentNodeType = {
-        'Phlu.Corporate:Content.Page.HeaderDefault': 3
+      //  'Phlu.Corporate:Content.Page.HeaderDefault': 3
     };
 
     var NodeUrlBoostFactor = {
         '/studium/' : 7,
-        '/weiterbildung/' : 0.75,
+        '/weiterbildung/' : 1,
+        '/weiterbildung/kurse/' : -1,
         '/beratungen-angebote/' : 3,
         '/forschung/' : 2,
-        '/faecher-und-schwerpunkte/' : 4,
+        '/faecher-und-schwerpunkte/' : 5,
         '/ueber-uns/' : 0.5,
+
     };
 
     var groupedBy = {
