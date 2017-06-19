@@ -10298,9 +10298,13 @@ body {
           @media (max-width: 767px) {
             body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
               width: auto;
+              height: 205px;
               margin-right: 0;
               margin-top: 14px;
               top: inherit; } }
+          @media (max-width: 543px) {
+            body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right img {
+              height: auto; } }
       @media (max-width: 767px) {
         body .all .phlu-team-members .phlu-teaser.navigation.subpage .nav-teaser-item {
           margin-top: 12px;
