@@ -338,7 +338,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     var boostParentNodeType = {
-
+        'Phlu.Corporate:Content.Page.HeaderDefault': 2
     };
 
     var NodeUrlBoostFactor = {
