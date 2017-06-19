@@ -19,14 +19,6 @@ prototype(Phlu.Corporate:Contact) < prototype(Phlu.Corporate:Content) {
     fullnameLength = ${String.trim(this.fullname)}
     wrapperNode = ${q(node).closest('[instanceof Phlu.Corporate:Section]').get(0)}
 
-    @cache {
-        mode = 'dynamic'
-        context {
-            1 = 'node'
-            2 = 'documentNode'
-        }
-    }
-
 }
 
 # Contacts wrapper (default)
