@@ -24,6 +24,7 @@ PhluCorporateApp.directive('search', function ($sce) {
                 if ($scope.node.isTurboNode()) {
                     return template + 'turbonode.html';
                 } else {
+
                     switch ($scope.node.getNodeType()) {
 
                         case 'phlu-corporate-contact':
@@ -81,8 +82,15 @@ PhluCorporateApp.directive('search', function ($sce) {
                                 return template + '/Group/phlu-neos-nodetypes-course-study-furthereducation.html';
                             }
 
-                        case 'phlu-neos-nodetypes-project':
+                        case 'phlu-corporate-location':
 
+                            if ($scope.view === 'all') {
+                                return template + '/All/phlu-corporate-location.html';
+                            } else {
+                                return template + '/Group/phlu-corporate-location.html';
+                            }
+
+                        case 'phlu-neos-nodetypes-project':
 
                             return template + '/All/phlu-neos-nodetypes-project.html';
 
@@ -122,64 +130,6 @@ PhluCorporateApp.directive('search', function ($sce) {
 
 });
 
-
-PhluCorporateApp.directive('quicknode', function ($sce) {
-
-
-    var template = '/_Resources/Static/Packages/Phlu.Corporate/JavaScript/angularjs/Phlu/Corporate/Templates/Search/Quicknode/';
-
-    return {
-        template: '<ng-include src="getTemplateUrl()"/>',
-        scope: {
-            node: '=data'
-        },
-        restrict: 'E',
-        controller: function ($scope) {
-
-            $scope.getTemplateUrl = function () {
-
-                if ($scope.node === undefined) {
-                    return '';
-                }
-
-                var isnumeric = $scope.$root.siteSearch.match(/\d/g) == null ? false : true;
-
-                switch ($scope.node.getNodeType()) {
-
-                    case 'phlu-corporate-contact':
-
-                        if (isnumeric) {
-                            return template + 'phlu-corporate-contact-name.html';
-                        } else {
-                            return template + 'phlu-corporate-contact.html';
-                        }
-
-
-                        break;
-
-                    case 'phlu-neos-nodetypes-course-study-furthereducation':
-                    case 'phlu-neos-nodetypes-course-module-furthereducation':
-                    case 'phlu-neos-nodetypes-course-event-furthereducation':
-
-                        if (isnumeric) {
-                            return template + 'phlu-neos-nodetypes-course-study-furthereducation-title.html';
-                        } else {
-                            return template + 'phlu-neos-nodetypes-course-study-furthereducation.html';
-                        }
-                        break;
-
-                    default:
-                        return template + 'default.html';
-                }
-
-
-            };
-
-        }
-    };
-
-
-});
 
 
 PhluCorporateApp.directive('nodeType', function ($sce) {
@@ -283,6 +233,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         'phlu-neos-nodetypes-course-study-furthereducation-title': 160,
         'phlu-neos-nodetypes-course-study-furthereducation-nr': 160,
+        'phlu-corporate-location-name': 550,
         //
         // 'phlu-corporate-contact-label': 1,
         // 'phlu-corporate-contact-parent': 1,
@@ -337,17 +288,16 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         // 'label': 1,
         // 'parent': 1,
         // 'grandparent': -1
-
+        'phlu-corporate-textplain-text': 1,
         'phlu-corporate-textplain-grandparent': -1,
-        'phlu-corporate-textplain-uri': -1,
-        'phlu-corporate-textplain-url': -1,
+        'phlu-corporate-textplain-uri': -1
 
 
     };
 
 
     var boostParentNodeType = {
-        'Phlu.Corporate:Content.Page.HeaderDefault': 100
+        'Phlu.Corporate:Content.Page.HeaderDefault': 5
     };
 
     var NodeUrlBoostFactor = {
@@ -357,7 +307,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '/beratungen-angebote/' : 3,
         '/forschung/' : 2,
         '/faecher-und-schwerpunkte/' : 5,
-        '/ueber-uns/' : 0.5,
+        '/ueber-uns/standorte' : 100,
+        '/ueber-uns/' : 0.5
 
     };
 

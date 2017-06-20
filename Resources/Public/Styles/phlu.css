@@ -8360,6 +8360,12 @@ span.loading.bar {
       margin-bottom: 60px;
       margin-left: 0;
       margin-right: 0; }
+      #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .topnode {
+        padding-left: 15px; }
+      #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info address {
+        padding-left: 0; }
+      #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .rcrumbs-wrapper {
+        display: none; }
       #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .img-fluid, #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .carousel-inner > .carousel-item > img, #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info
       .carousel-inner > .carousel-item > a > img, #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info body .all .phlu-teaser img, body .all .phlu-teaser #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info img {
         margin: 20px;
@@ -11519,6 +11525,13 @@ body {
           color: #9f632a; }
           body .all .main > .row address .telephone .fa-phone, body .all .main > .row-fullwidth-content > .row address .telephone .fa-phone {
             padding-right: 6px; }
+        body .all .main > .row address .map, body .all .main > .row-fullwidth-content > .row address .map {
+          margin-top: 10px;
+          color: #9f632a; }
+          body .all .main > .row address .map .fa-phone, body .all .main > .row-fullwidth-content > .row address .map .fa-phone {
+            padding-right: 6px; }
+          body .all .main > .row address .map a, body .all .main > .row-fullwidth-content > .row address .map a {
+            margin-left: 10px; }
         body .all .main > .row address .email, body .all .main > .row-fullwidth-content > .row address .email {
           color: #9f632a; }
         body .all .main > .row address a.content-link-email-contact-person, body .all .main > .row address a.content-link-portrait, body .all .main > .row address a.content-link-location, body .all .main > .row-fullwidth-content > .row address a.content-link-email-contact-person, body .all .main > .row-fullwidth-content > .row address a.content-link-portrait, body .all .main > .row-fullwidth-content > .row address a.content-link-location {

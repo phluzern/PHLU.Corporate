@@ -626,6 +626,16 @@ span.loading {
             margin-left: 0;
             margin-right: 0;
 
+            .topnode {
+              padding-left:15px;
+            }
+            address {
+              padding-left: 0;
+            }
+            .rcrumbs-wrapper {
+              display: none;
+            }
+
             .img-fluid {
               margin: 20px;
               float: right;
@@ -5551,6 +5561,16 @@ body {
             color: $hazelbrowndark;
             .fa-phone {
               padding-right: 6px;
+            }
+          }
+          .map {
+            margin-top: 10px;
+            color: $hazelbrowndark;
+            .fa-phone {
+              padding-right: 6px;
+            }
+            a {
+              margin-left:10px;
             }
           }
           .email {

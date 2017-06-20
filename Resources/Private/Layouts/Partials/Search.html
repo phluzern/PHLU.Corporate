@@ -70,13 +70,11 @@
                     <div class="result-panel tab-pane nofilter fade"
                          data-ng-class="{active: lastActiveTabName == 'alle', in: lastActiveTabName == 'alle'}"
                          id="alle" role="tabpanel">
-
                         <div class="row results-table results-quick-result"
                              data-ng-if="result.getQuickInfo().items.length">
                             <div class="col-xs-12 tab-content">
 
                                 <div class="info row">
-
                                     <div data-ng-if="result.getQuickInfo().items[0].term == ''"
                                          class="col-xs-9 table-responsive topnode">
                                         <search data="result.getQuickInfo().node" view="group"></search>
@@ -123,6 +121,7 @@
                                 <tr ng-repeat="node in result.getNodes(limit['all'] === undefined ? 10 : limit['all'],'_document.identifier')"
                                     data-ng-if="!node.isTurboNode()">
                                     <td  data-node-id="{{node.getIdentifier()}}">
+                       
                                         <search data="node" view="all"></search>
                                     </td>
                                 </tr>
