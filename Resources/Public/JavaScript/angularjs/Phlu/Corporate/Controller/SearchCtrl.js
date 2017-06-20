@@ -269,11 +269,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-event': 'Veranstaltungen',
         'phlu-corporate-newsitem': 'News',
         'phlu-neos-nodetypes-course-study-furthereducation': 'Weiterbildungsstudiengänge',
-        'phlu-corporate-page-furthereducation-detail-study': 'Weiterbildungsstudiengänge',
-        'phlu-corporate-page-furthereducation-detail-module': 'Weiterbildungsskurse',
         'phlu-neos-nodetypes-course-module-furthereducation': 'Weiterbildungsskurse',
         'phlu-neos-nodetypes-course-event-furthereducation': 'Weiterbildungsveranstaltungen',
-        'phlu-corporate-page-furthereducation-detail-event': 'Weiterbildungsveranstaltungen',
         'zebis': 'Unterrichtsmaterial',
         'blog': 'Blog',
         'wiki': 'Wiki',
@@ -283,6 +280,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var boost = {
+
+        'phlu-neos-nodetypes-course-study-furthereducation-title': 160,
+        'phlu-neos-nodetypes-course-study-furthereducation-nr': 160,
         //
         // 'phlu-corporate-contact-label': 1,
         // 'phlu-corporate-contact-parent': 1,
@@ -367,9 +367,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Standorte': ['lng', 'lat'],
         'Projekte': 'title',
         'Seiten': ['url'],
-        'Weiterbildungsstudiengänge': 'url',
-        'Weiterbildungsskurse': 'url',
-        'Weiterbildungsveranstaltungen': 'url'
+        'Weiterbildungsstudiengänge': ['url'],
+        'Weiterbildungsskurse': ['url'],
+        'Weiterbildungsveranstaltungen': ['url']
     };
 
     var orderBy = {
