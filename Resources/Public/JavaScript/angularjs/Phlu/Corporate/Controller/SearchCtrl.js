@@ -315,7 +315,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var groupedBy = {
         //'Kontakte': [function(node) {return node.getProperty('eventoid') ? node.getProperty('eventoid') : node.getProperty('email');}],
         'Kontakte': ['lastname','firstname'],
-        'Standorte': ['lng', 'lat'],
+        'Standorte': ['url'],
         'Projekte': 'title',
         'Seiten': ['url'],
         'Weiterbildungsstudiengänge': ['url'],
@@ -405,6 +405,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     search.enableCache();
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('asset.extension', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
+    search.addPropertyFilter('street', '', null, true, false, 'phlu-corporate-location');
     search.setExternalSources(external);
 
     search.setGroupedBy(groupedBy).setNodeUrlBoostFactor(NodeUrlBoostFactor).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
