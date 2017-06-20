@@ -318,9 +318,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Standorte': ['url'],
         'Projekte': 'title',
         'Seiten': ['url'],
-        'Weiterbildungsstudiengänge': ['url'],
-        'Weiterbildungsskurse': ['url'],
-        'Weiterbildungsveranstaltungen': ['url']
+        'Weiterbildungsstudiengänge': ['nr'],
+        'Weiterbildungsskurse': ['nr'],
+        'Weiterbildungsveranstaltungen': ['nr']
     };
 
     var orderBy = {
