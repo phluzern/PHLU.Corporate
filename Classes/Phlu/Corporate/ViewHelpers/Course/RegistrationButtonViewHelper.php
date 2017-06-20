@@ -44,7 +44,7 @@ class RegistrationButtonViewHelper extends AbstractViewHelper
 
             $hash = sha1($url).rand(5, 15).$identifier;
             $html = ' <iframe id="iframe'.$hash.'" src="'.$url.'" frameborder="0" scrolling="no" width="100%" style="display:none;width:100%"></iframe>';
-            $html .= '<script>jQuery(\'#iframe'.$hash.'\').iFrameResize({checkOrigin:false, heightCalculationMethod: \'bodyScroll\'}); function iframe'.$hash.'(self) {jQuery(self).parentsUntil(\'col-md-5\').removeClass(\'col-md-5\');jQuery(self).hide();jQuery(\'#iframe'.$hash.'\').show();jQuery(\'#iframe'.$hash.'\').get(0).iFrameResizer.resize();}</script>';
+            $html .= '<script>jQuery(\'#iframe'.$hash.'\').iFrameResize({checkOrigin:false, heightCalculationMethod: \'bodyScroll\'}); function iframe'.$hash.'(self) {jQuery(\'<div class="close-iframe"><a class="btn btn-primary" title="schliessen" href="#"><span class="oi oi-x"></span></a></div>\').insertBefore(self);jQuery(self).parentsUntil(\'col-md-5\').removeClass(\'col-md-5\');jQuery(self).hide();jQuery(\'#iframe'.$hash.'\').show();jQuery(\'#iframe'.$hash.'\').get(0).iFrameResizer.resize();jQuery(\'.close-iframe a\').on(\'click\',function(){$(this).parent().parent().find(\'iframe\').css({height: \'1px\',display:\'none\'});$(this).closest(\'.col-sm-12\').addClass(\'col-md-5\');$(this).parent().parent().find(\'.btn-primary\').css(\'display\',\'block\');$(this).parent().hide();$(\'html, body\').animate({scrollTop: $(self).offset().top}, 1000);});}</script>';
             $html .= '<a class="btn btn-primary " href="javascript:void(0)" onclick="iframe'.$hash.'(this);">Anmelden</a>';
 
 
