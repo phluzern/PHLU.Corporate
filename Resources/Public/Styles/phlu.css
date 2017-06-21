@@ -10231,17 +10231,16 @@ body {
             font-size: 25px;
             position: relative;
             top: 50%;
-            margin: 0;
-            transform: translateY(-50%); }
+            margin: 0; }
           body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.strategieIco::before {
             top: -12px;
             font-size: 30px; }
           body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.faecherIco::before {
-            top: -6px; }
+            top: -1px; }
           body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.forschungIco::before {
-            top: -7px; }
+            top: -3px; }
           body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.themaIco::before {
-            top: -7px;
+            top: -3px;
             left: -2px; }
         body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
           margin: 0;
@@ -10346,6 +10345,8 @@ body {
         border-bottom: 0; }
       body .all .publications-list .phlu-accordion .panel-default .panel-collapse > div .loadMore, body .all .science-projects .phlu-accordion .panel-default .panel-collapse > div .loadMore {
         margin-bottom: 30px; }
+    body .all .publications-list .project-publications i, body .all .science-projects .project-publications i {
+      font-style: italic; }
     body .all .publications-list .phlu-accordion .panel-default .panel-collapse p {
       border-bottom: 2px #edeae8 solid; }
     body .all .phlu-accordion .panel .panel-heading .panel-title, body .all .phlu-corporate-section .panel .panel-heading .panel-title {

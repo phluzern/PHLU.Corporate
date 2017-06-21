@@ -214,11 +214,11 @@
 
                 <div class="phlu-teaser-body col-xs-12"
                      data-ng-init="addFilterItem('{item.node.Identifier}',0);">
-                    <f:for each="{item.node.properties.tags}" as="tag" iteration="itemIteration">
-                        <i class="{f:if(condition: itemIteration.isLast, then: 'last')} {phlu:variable.get(name: 'tags.{tag}.properties.icon')}"
-                           data-ng-init="addFilterItem('{item.node.Identifier}','{tag}');"></i>
-                    </f:for>
                     <h3>
+                        <f:for each="{item.node.properties.tags}" as="tag" iteration="itemIteration">
+                            <i class="{f:if(condition: itemIteration.isLast, then: 'last')} {phlu:variable.get(name: 'tags.{tag}.properties.icon')}"
+                               data-ng-init="addFilterItem('{item.node.Identifier}','{tag}');"></i>
+                        </f:for>
                         <neos:link.node node="{item.node}">
                             {item.node.properties.title}
                         </neos:link.node>
