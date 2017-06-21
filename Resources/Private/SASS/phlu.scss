@@ -14,6 +14,8 @@ $grid-breakpoints: (
         xl: 1280px,
         xxl: 1400px,
         xxxl: 1600px,
+  // Extra large screen / wide desktop
+        iefix: 1685px,
 );
 
 // phlu colors
@@ -1950,7 +1952,7 @@ body {
         float: none;
         clear: both;
         img {
-          max-width: 212px;
+          width: 212px;
         }
       }
       .form-control {
@@ -1959,10 +1961,14 @@ body {
         border: $input-btn-sidebar-border-width solid $input-sidebar-border-color;
       }
       &.oneCol {
-        max-width: 263px;
+        @include media-breakpoint-up("iefix") {
+          max-width: 263px;
+        }
       }
       &.twoCol {
-        max-width: 526px;
+        @include media-breakpoint-up("iefix") {
+          max-width: 526px;
+        }
       }
       @include sidebar-shadow();
       @include media-breakpoint-down("lg") {
@@ -1986,7 +1992,7 @@ body {
       /*
          set fixed width on big screens
         */
-      @include media-breakpoint-up("xl") {
+      @include media-breakpoint-up("iefix") {
         max-width: 263px;
       }
       @include media-breakpoint-down("lg") {
@@ -3145,6 +3151,7 @@ body {
                   margin: 0;
                   transform: translateY(-50%);
                 }
+
                 &.strategieIco {
                   &::before {
                     top: -12px;
@@ -4250,7 +4257,7 @@ body {
                   &:first-child {
                     span {
                       display: table-cell;
-                      overflow-x: hidden;
+                      overflow: hidden;
                       @include media-breakpoint-up("xl") {
                         font-size: $font-size-paragraph-desktop;
                       }
@@ -6048,7 +6055,10 @@ body {
         }
       }
       &.col-xl-8, &.col-xl-10 {
-        max-width: inherit;
+        @include media-breakpoint-up("iefix") {
+          max-width: inherit;
+        }
+
       }
       &.contents {
         margin-top: -253px;
