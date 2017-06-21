@@ -5632,6 +5632,18 @@ body {
               background-image: none;
             }
           }
+          .map {
+            background-image: none;
+            &::before {
+              font-family: FontAwesome;
+              content: " \f041";
+              position: absolute;
+              left: 15px;
+            }
+            &::after {
+              background-image: none;
+            }
+          }
         }
 
         .img-fluid {
