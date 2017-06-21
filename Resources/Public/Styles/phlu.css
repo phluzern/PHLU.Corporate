@@ -11749,6 +11749,15 @@ body {
             left: 15px; }
           body .all .main > .row .social .blog::after, body .all .main > .row-fullwidth-content > .row .social .blog::after {
             background-image: none; }
+        body .all .main > .row .social .map, body .all .main > .row-fullwidth-content > .row .social .map {
+          background-image: none; }
+          body .all .main > .row .social .map::before, body .all .main > .row-fullwidth-content > .row .social .map::before {
+            font-family: FontAwesome;
+            content: " \f041";
+            position: absolute;
+            left: 15px; }
+          body .all .main > .row .social .map::after, body .all .main > .row-fullwidth-content > .row .social .map::after {
+            background-image: none; }
       @media (max-width: 991px) {
         body .all .main > .row .img-fluid, body .all .main > .row .carousel-inner > .carousel-item > img, body .all .main > .row
         .carousel-inner > .carousel-item > a > img, body .all .main > .row .phlu-teaser img, body .all .phlu-teaser .main > .row img, body .all .main > .row-fullwidth-content > .row .img-fluid, body .all .main > .row-fullwidth-content > .row .carousel-inner > .carousel-item > img, body .all .main > .row-fullwidth-content > .row

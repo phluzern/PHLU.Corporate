@@ -135,7 +135,9 @@
                     <f:for each="{sections}" as="item" iteration="iterator">
                         <li class="{f:if(condition: iterator.isFirst, then: 'active', else: '')}">
                             <a class="nav-item nav-link anchor-nav"
-                               href="#node-{item.Identifier}"><f:format.stripTags>{item.properties.title}</f:format.stripTags></a>
+                               href="#node-{item.Identifier}">
+                                <f:format.stripTags>{item.properties.title}</f:format.stripTags>
+                            </a>
                         </li>
                     </f:for>
                     <f:if condition="{contactIsHidden}">
@@ -150,8 +152,10 @@
                 <div class="anchors-mobile-view">
                     <ul>
                         <f:for each="{sections}" as="item" iteration="iterator">
-                            <li >
-                                <a class="nav-item nav-link anchor-nav" href="#node-{item.Identifier}"><f:format.stripTags>{item.properties.title}</f:format.stripTags></a>
+                            <li>
+                                <a class="nav-item nav-link anchor-nav" href="#node-{item.Identifier}">
+                                    <f:format.stripTags>{item.properties.title}</f:format.stripTags>
+                                </a>
                             </li>
                         </f:for>
                         <f:if condition="{contactIsHidden}">
@@ -167,15 +171,19 @@
         </f:if>
     </div>
 </div>
-<f:if condition="!{node.properties.moodimage}">
-    <f:if condition="{showCarousel}">
-        <ts:render path="defaultRenderer" context="{node: carouselnews}"/>
-    </f:if>
-</f:if>
-<f:if condition="{node.properties.moodimage}">
-    <div class="row ambient-img-body"
-         style="background-image: url('{media:uri.image(image: node.properties.moodimage)}')">
-    </div>
+<f:if condition="{node.parent.nodeType.name} == 'Phlu.Corporate:Page.Home'">
+    <f:else>
+        <f:if condition="!{node.properties.moodimage}">
+            <f:if condition="{showCarousel}">
+                <ts:render path="defaultRenderer" context="{node: carouselnews}"/>
+            </f:if>
+        </f:if>
+        <f:if condition="{node.properties.moodimage}">
+            <div class="row ambient-img-body"
+                 style="background-image: url('{media:uri.image(image: node.properties.moodimage)}')">
+            </div>
+        </f:if>
+    </f:else>
 </f:if>
 <div class="row">
     <div class="col-xs-12 col-lg-12">
