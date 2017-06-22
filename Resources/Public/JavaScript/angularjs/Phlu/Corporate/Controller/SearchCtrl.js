@@ -207,13 +207,13 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         }, 1000);
     }
 
-    $rootScope.siteSearchTopFocus = function () {
+    $rootScope.siteSearchTopSetFocus = function () {
         window.setTimeout(function () {
             $rootScope.siteSearchTopFocus = true;
             window.setTimeout(function () {
                 $rootScope.$digest();
             }, 1);
-        }, 500);
+        }, 10);
     }
 
     var wasClosed = false;
