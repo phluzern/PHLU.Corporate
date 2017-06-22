@@ -65,7 +65,8 @@
                         </li>
                         <f:if condition="{project.participants}">
                             <li>
-                                <a class="nav-item nav-link anchor-nav" href="#beteiligtepersonen">Beteiligte Personen</a>
+                                <a class="nav-item nav-link anchor-nav" href="#beteiligtepersonen">Beteiligte
+                                    Personen</a>
                             </li>
                         </f:if>
                         <f:if condition="{project.documents}">
@@ -104,7 +105,8 @@
                                         Forschungsschwerpunkt / Themenfeld
                                         <div class="mobile-view-columns researchmainfocus">
                                             <ul>
-                                                <f:for each="{project.researchMainFocus}" as="focus" iteration="iterator">
+                                                <f:for each="{project.researchMainFocus}" as="focus"
+                                                       iteration="iterator">
                                                     <li>
                                                         {focus.name}
                                                     </li>
@@ -294,7 +296,6 @@
                 </div>
             </div>
         </f:if>
-
         <f:if condition="{project.participantsIntern}">
             <div class="row beteiligtepersonen">
                 <div class="col-xs-12 phlu-team-members" id="beteiligtepersonenintern">
@@ -333,11 +334,11 @@
                                         <div class="phlu-teaser-caret-right col-xs-4">
                                             <f:if condition="{resource:GetFromString(resource:participant.ImageResource, asset: true)}">
                                                 <media:image async="true"
-                                                        image="{resource:GetFromString(resource:participant.ImageResource, asset: true)}"
-                                                        class="img-fluid"
-                                                        alt="{participant.name}"
-                                                        height="133" width="100" allowCropping="true"
-                                                        allowUpScaling="true"/>
+                                                             image="{resource:GetFromString(resource:participant.ImageResource, asset: true)}"
+                                                             class="img-fluid"
+                                                             alt="{participant.name}"
+                                                             height="133" width="100" allowCropping="true"
+                                                             allowUpScaling="true"/>
                                             </f:if>
                                         </div>
                                     </div>
@@ -391,11 +392,11 @@
                                         <div class="phlu-teaser-caret-right col-xs-4">
                                             <f:if condition="{resource:GetFromString(resource:participant.ImageResource, asset: true)}">
                                                 <media:image async="true"
-                                                        image="{resource:GetFromString(resource:participant.ImageResource, asset: true)}"
-                                                        class="img-fluid"
-                                                        alt="{participant.name}"
-                                                        height="133" width="100" allowCropping="true"
-                                                        allowUpScaling="true"/>
+                                                             image="{resource:GetFromString(resource:participant.ImageResource, asset: true)}"
+                                                             class="img-fluid"
+                                                             alt="{participant.name}"
+                                                             height="133" width="100" allowCropping="true"
+                                                             allowUpScaling="true"/>
                                             </f:if>
                                         </div>
                                     </div>
@@ -493,50 +494,70 @@
             </div>
         </f:if>
         <f:if condition="{project.publications}">
-
-            <div class="row publications-list">
+            <div id="publikationen" class="row publications-list">
                 <div class="col-xs-12">
 
                     <h2>Publikationen</h2>
                     <div class="row">
                         <div class="col-xs-12">
-                            <div id="phlu-accordion-publications" class="phlu-accordion">
+                            <div id="phlu-accordion-publications" class="project-publications">
 
-                                <f:for each="{project.publications}" as="publicationtype"
-                                       iteration="iterator">
+                                <f:for each="{project.publications}" as="publicationtype" iteration="iterator">
 
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading" role="tab">
-                                            <h4 class="panel-title">
-                                                <a href="#" data-toggle="collapse"
-                                                   data-parent="#phlu-accordion-publications"
-                                                   href="#phlu-accordion-publications-{iterator.index}"
-                                                   aria-expanded="false"
-                                                   aria-controls="phlu-accordion-publications-{iterator.index}">
-                                                    {publicationtype.type.name} ({publicationtype.type.count})
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="phlu-accordion-publications-{iterator.index}"
-                                             class="panel-collapse collapse" role="tabpanel">
-                                            <div>
-                                                <f:for each="{publicationtype.items}" as="publication">
-                                                    <p>{publication.Citationstyle -> f:format.raw()}</p>
-                                                </f:for>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <f:for each="{publicationtype.items}" as="publication">
+
+                                        <f:if condition="{publication.URL}">
+                                            <f:then>
+                                                <p><a href="{publication.URL}" class="" target="_blank">
+                                                    <f:if condition="{publication.Citationstyle} == ''">
+                                                        <f:then>
+                                                            {publication.Title -> f:format.raw()}
+                                                        </f:then>
+                                                        <f:else>{publication.Citationstyle ->
+                                                            f:format.raw()}
+                                                        </f:else>
+                                                    </f:if>
+                                                </a></p>
+                                            </f:then>
+                                            <f:else>
+
+
+                                                <f:if condition="{publication.edocURL}">
+                                                    <f:then>
+                                                        <p><a href="{publication.edocURL}" class=""
+                                                              target="_blank">
+                                                            <f:if condition="{publication.Citationstyle} == ''">
+                                                                <f:then>
+                                                                    {publication.Title ->
+                                                                    f:format.raw()}
+                                                                </f:then>
+                                                                <f:else>{publication.Citationstyle ->
+                                                                    f:format.raw()}
+                                                                </f:else>
+                                                            </f:if>
+                                                        </a></p>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:if condition="{publication.Citationstyle} == ''">
+                                                            <f:then><p>{publication.Title ->
+                                                                f:format.raw()}</p>
+                                                            </f:then>
+                                                            <f:else><p>{publication.Citationstyle ->
+                                                                f:format.raw()}</p>
+                                                            </f:else>
+                                                        </f:if>
+                                                    </f:else>
+                                                </f:if>
+                                            </f:else>
+                                        </f:if>
+                                    </f:for>
                                 </f:for>
-
-
                             </div>
                         </div>
                     </div>
                     <hr>
                 </div>
             </div>
-
         </f:if>
-
     </div>
 </div>
