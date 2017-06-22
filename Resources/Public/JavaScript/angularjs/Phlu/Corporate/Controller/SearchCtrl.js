@@ -207,6 +207,15 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         }, 1000);
     }
 
+    $rootScope.siteSearchTopFocus = function () {
+        window.setTimeout(function () {
+            $rootScope.siteSearchTopFocus = true;
+            window.setTimeout(function () {
+                $rootScope.$digest();
+            }, 1);
+        }, 500);
+    }
+
     var wasClosed = false;
     var isBackend = jQuery("body").hasClass("neos-backend");
 
