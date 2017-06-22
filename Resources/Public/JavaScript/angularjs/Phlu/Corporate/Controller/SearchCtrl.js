@@ -204,7 +204,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             window.setTimeout(function () {
                 $rootScope.$digest();
             }, 1);
-        }, 50);
+        }, 1000);
     }
 
     var wasClosed = false;
