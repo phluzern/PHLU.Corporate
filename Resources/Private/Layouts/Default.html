@@ -97,9 +97,11 @@
                         </a>
 
                         <div class="site-search-field">
-
                             <input id="searchInput" type="text" class="c-input form-control" data-ng-model="siteSearch"
                                    data-ng-click="startSearch();">
+                                <ul class="autocomplete" style="display: none; position: absolute">
+                                    <li data-ng-repeat="(a,i) in autocomplete"><span data-ng-bind="i"></span>:<span data-ng-bind="a"></span></li>
+                                </ul>
                             <i class="fa fa-search" aria-hidden="true"
                                data-ng-class="{'fa-search-plus': quickNode}"></i>
                         </div>

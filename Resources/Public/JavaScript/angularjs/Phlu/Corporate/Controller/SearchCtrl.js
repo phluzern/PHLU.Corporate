@@ -178,6 +178,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     $scope.result = new $hybridsearchResultsObject();
+    $rootScope.autocomplete = [];
 
     $rootScope.siteSearch = '';
     $rootScope.quickNode = null;
@@ -402,7 +403,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var lasthash = null;
 
     //search.disableRealtime();
-    search.enableCache();
+    //search.enableCache();
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('asset.extension', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
     search.addPropertyFilter('street', '', null, true, false, 'phlu-corporate-location');
@@ -410,7 +411,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     search.setGroupedBy(groupedBy).setNodeUrlBoostFactor(NodeUrlBoostFactor).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
-
+        $rootScope.autocomplete = data.getAutocomplete();
         if (searchResultApplyTimer) {
             window.clearTimeout(searchResultApplyTimer);
         }
@@ -504,6 +505,13 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         }
 
     }
+
+    $scope.$watch('result.getAutocomplete()',function(i) {
+        $rootScope.autocomplete = i;
+        window.setTimeout(function () {
+            $rootScope.$digest();
+        }, 1);
+    });
 
     $scope.stopSearch = function () {
         $scope.siteSearchLastQuery = $scope.siteSearch;
