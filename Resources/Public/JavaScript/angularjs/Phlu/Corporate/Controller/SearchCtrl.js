@@ -505,13 +505,17 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         }
 
     }
-
-    $scope.$watch('result.getAutocomplete()',function(i) {
-        $rootScope.autocomplete = i;
-        window.setTimeout(function () {
-            $rootScope.$digest();
-        }, 1);
-    });
+    //
+    // var searchInputField = jQuery("#siteSearchTop");
+    //
+    // $scope.$watch('result.getAutocomplete()',function(i) {
+    //     $rootScope.autocomplete = i;
+    //     console.log(searchInputField);
+    //     searchInputField.attr('data-attr',i);
+    //     // window.setTimeout(function () {
+    //     //     $rootScope.$digest();
+    //     // }, 1);
+    // });
 
     $scope.stopSearch = function () {
         $scope.siteSearchLastQuery = $scope.siteSearch;

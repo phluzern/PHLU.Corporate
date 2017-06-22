@@ -44,7 +44,7 @@
         <script src="{f:uri.resource(path: 'Vendor/angular-sanitize/angular-sanitize.min.js', package: 'Neoslive.Hybridsearch')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'Neoslive.Hybridsearch')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'Phlu.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'Vendor/iframe-resizer/js/iframeResizer.min.js', package: 'Phlu.Corporate')}" ></script>
+        <script src="{f:uri.resource(path: 'Vendor/iframe-resizer/js/iframeResizer.min.js', package: 'Phlu.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'Phlu.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'Phlu.Corporate')}"></script>
@@ -96,13 +96,10 @@
                                  onerror="this.onerror=null; this.src='Images/phluLogo.png'"/>
                         </a>
 
-                        <div class="site-search-field">
+                        <div class="site-search-field" id="siteSearchTop">
                             <input id="searchInput" type="text" class="c-input form-control" data-ng-model="siteSearch"
                                    data-ng-click="startSearch();">
-                                <ul class="autocomplete" style="display: none; position: absolute">
-                                    <li data-ng-repeat="(a,i) in autocomplete"><span data-ng-bind="i"></span>:<span data-ng-bind="a"></span></li>
-                                </ul>
-                            <i class="fa fa-search" aria-hidden="true"
+                             <i class="fa fa-search" aria-hidden="true"
                                data-ng-class="{'fa-search-plus': quickNode}"></i>
                         </div>
 
@@ -139,12 +136,12 @@
     <div class="container-fluid footer">
         <div class="row">
             <div class="col-xs-12 site-search-field">
-             <form data-ng-submit="siteSearchMobileSubmit()" data-ng-controller="SearchMobileCtrl">
-                <input type="text" class="c-input form-control ng-pristine ng-valid ng-empty ng-touched"
-                       id="siteSearchSearchMobile" data-ng-model="siteSearchSearchMobile">
-                <i class="fa fa-search" aria-hidden="true" data-ng-click="siteSearchMobileSubmit()"></i>
-                 <input type="submit" id="submit" value="Submit" style="display: none"/>
-             </form>
+                <form data-ng-submit="siteSearchMobileSubmit()" data-ng-controller="SearchMobileCtrl">
+                    <input type="text" class="c-input form-control ng-pristine ng-valid ng-empty ng-touched"
+                           id="siteSearchSearchMobile" data-ng-model="siteSearchSearchMobile">
+                    <i class="fa fa-search" aria-hidden="true" data-ng-click="siteSearchMobileSubmit()"></i>
+                    <input type="submit" id="submit" value="Submit" style="display: none"/>
+                </form>
             </div>
             {footer -> f:format.raw()}
             <div class="col-xs-12 col-xl-2 flexfirst">
@@ -228,7 +225,6 @@
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-593fa48787c8ed42"></script>
-
 
 
 </f:section>
