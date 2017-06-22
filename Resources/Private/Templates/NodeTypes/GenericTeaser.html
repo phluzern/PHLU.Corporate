@@ -3,7 +3,6 @@
 {namespace media=Neos\Media\ViewHelpers}
 {namespace uri=Phlu\Corporate\ViewHelpers\Uri}
 
-
 <div class="{breakpointClass} <f:if condition="{isexternal}"><f:else>{f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}</f:else></f:if> news singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)}">
 
     <div class="phlu-teaser-type">
@@ -11,6 +10,7 @@
             <f:case value="Phlu.Neos.NodeTypes:Project">Projekt</f:case>
             <f:case value="Phlu.Corporate:Page.FurtherEducation.Detail.Study">Studiengang</f:case>
             <f:case value="Phlu.Corporate:Page.FurtherEducation.Detail.Module">Kurs</f:case>
+            <f:case value="Phlu.Corporate:Page.FurtherEducation.Detail.Event">Veranstaltung</f:case>
             <f:comment><f:case value="Phlu.Corporate:Page.News">News</f:case></f:comment>
             <f:defaultCase>{neos:contentElement.editable(property: 'teasertype', tag: 'span')}</f:defaultCase>
         </f:switch>
