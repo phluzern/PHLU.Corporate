@@ -196,6 +196,10 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     $scope.lastActiveTabName = 'alle';
     $scope.lastActiveTabVisited = {'alle': true};
 
+    $rootScope.setSiteSearch = function(query) {
+        $rootScope.siteSearch = query;
+    }
+
     var wasClosed = false;
     var isBackend = jQuery("body").hasClass("neos-backend");
 
@@ -505,17 +509,18 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         }
 
     }
-    //
-    // var searchInputField = jQuery("#siteSearchTop");
-    //
-    // $scope.$watch('result.getAutocomplete()',function(i) {
-    //     $rootScope.autocomplete = i;
-    //     console.log(searchInputField);
-    //     searchInputField.attr('data-attr',i);
-    //     // window.setTimeout(function () {
-    //     //     $rootScope.$digest();
-    //     // }, 1);
-    // });
+
+
+
+
+    $scope.$watch('result.getAutocomplete()',function(i) {
+
+       // jQuery("#siteSearchAutocomplete").css('zIndex',9).css('width',jQuery("#searchInput").innerWidth()+4);
+        $rootScope.autocomplete = i;
+        window.setTimeout(function () {
+            $rootScope.$digest();
+        }, 1);
+    });
 
     $scope.stopSearch = function () {
         $scope.siteSearchLastQuery = $scope.siteSearch;
