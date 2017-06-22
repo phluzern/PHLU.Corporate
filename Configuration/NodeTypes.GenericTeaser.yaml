@@ -41,4 +41,4 @@
           group: 'teaser'
           position: 1
           editorOptions:
-            nodeTypes: ['Phlu.Corporate:Page.News','Phlu.Corporate:Page.FurtherEducation.Detail.Study','Phlu.Corporate:Page.FurtherEducation.Detail.Module','Phlu.Neos.NodeTypes:Project','Phlu.Corporate:Page']
+            nodeTypes: ['Phlu.Corporate:Page.News','Phlu.Corporate:Page.FurtherEducation.Detail.Event','Phlu.Corporate:Page.FurtherEducation.Detail.Study','Phlu.Corporate:Page.FurtherEducation.Detail.Module','Phlu.Neos.NodeTypes:Project','Phlu.Corporate:Page']
