@@ -12888,6 +12888,8 @@ body .all .startpage .phlu-teaser {
       color: white; }
     body .all .startpage .phlu-teaser .carousel-control.left .icon-prev, body .all .startpage .phlu-teaser .carousel-control.right .icon-next {
       color: white; }
+    body .all .startpage .phlu-teaser .carousel-control.left, body .all .startpage .phlu-teaser .carousel-control.right {
+      width: 49px; }
     body .all .startpage .phlu-teaser .carousel-control.left {
       left: -24px; }
       body .all .startpage .phlu-teaser .carousel-control.left .icon-prev {

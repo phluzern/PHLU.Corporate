@@ -31,7 +31,11 @@
       type: string
       defaultValue: ''
       ui:
-        inlineEditable: true
+        reloadIfChanged: TRUE
+        label: 'Teasertyp'
+        inspector:
+          group: 'teaser'
+          position: 86
     reference:
       type: reference
       ui:

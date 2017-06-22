@@ -7166,6 +7166,9 @@ body {
           &.left .icon-prev, &.right .icon-next {
             color: white;
           }
+          &.left, &.right {
+            width: 49px;
+          }
           &.left {
             left: -24px;
             .icon-prev {
