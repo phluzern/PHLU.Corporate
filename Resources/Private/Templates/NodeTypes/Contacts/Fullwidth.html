@@ -16,7 +16,6 @@
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-9">
-
                         <address>
                             <div class="contactperson-role">
                                 <f:if condition="{node.properties.functionCustom}">
@@ -36,18 +35,20 @@
                                 </f:else>
                             </f:if>
                             <f:if condition="{node.properties.titlename} != ''">{node.properties.titlename}<br></f:if>
-                            {node.properties.street}<br>
+                            <f:if condition="{node.properties.street} != ''">{node.properties.street}<br></f:if>
                             <f:if condition="{node.properties.street2} != ''">{node.properties.street2}<br></f:if>
-                            {node.properties.zip} {node.properties.city}
-                        </address>
-                        <address>
-                            <div class="telephone">
-                                <i class="fa fa-phone" aria-hidden="true"></i>
-                                <a class="tel" tabIndex="-1"
-                                   href="tel:{node.properties.phone}">{node.properties.phone}</a>
-                                <br>
-                            </div>
-                            <a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{node.properties.email}</a><br>
+                            <f:if condition="{node.properties.city} != ''">{node.properties.zip}
+                                {node.properties.city}
+                            </f:if>
+                            <f:if condition="{node.properties.phone} != ''">
+                                <div class="telephone">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    <a class="tel" tabIndex="-1"
+                                       href="tel:{node.properties.phone}">{node.properties.phone}</a>
+                                    <br>
+                                </div>
+                            </f:if>
+                            <f:if condition="{node.properties.email} != ''"><a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{node.properties.email}<br></a></f:if>
                             <portrait:link node="{node}">Portrait</portrait:link>
                         </address>
                     </div>
@@ -58,7 +59,8 @@
                                 <div class="col-xs-12 col-sm-6 flexfirst col-md-3">
                                     <f:if condition="{image.resource}">
                                         <f:then>
-                                            <img src="{f:uri.resource(resource: image.resource)}" class="contact-image" width="280">
+                                            <img src="{f:uri.resource(resource: image.resource)}" class="contact-image"
+                                                 width="280">
                                         </f:then>
                                     </f:if>
                                 </div>
