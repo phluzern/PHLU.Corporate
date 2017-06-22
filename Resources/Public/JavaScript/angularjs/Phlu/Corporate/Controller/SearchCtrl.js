@@ -131,7 +131,6 @@ PhluCorporateApp.directive('search', function ($sce) {
 });
 
 
-
 PhluCorporateApp.directive('nodeType', function ($sce) {
 
     var labels = {};
@@ -153,22 +152,21 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
 
     $scope.siteSearchSearchMobile = '';
 
-    $scope.siteSearchMobileSubmit = function() {
+    $scope.siteSearchMobileSubmit = function () {
         $rootScope.siteSearch = $scope.siteSearchSearchMobile;
 
         jQuery("#siteSearchSearchMobile").blur();
 
         window.setTimeout(function () {
-                jQuery('html, body').stop().animate({
-                    'scrollTop': 0
-                }, 100, 'swing', function () {
+            jQuery('html, body').stop().animate({
+                'scrollTop': 0
+            }, 100, 'swing', function () {
 
-                });
+            });
         }, 5);
 
         return false;
     }
-
 
 
 }]);
@@ -196,8 +194,17 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     $scope.lastActiveTabName = 'alle';
     $scope.lastActiveTabVisited = {'alle': true};
 
-    $rootScope.setSiteSearch = function(query) {
+    $rootScope.setSiteSearch = function (query) {
         $rootScope.siteSearch = query;
+    }
+
+    $rootScope.siteSearchTopBlur = function () {
+        window.setTimeout(function () {
+            $rootScope.siteSearchTopFocus = false;
+            window.setTimeout(function () {
+                $rootScope.$digest();
+            }, 1);
+        }, 100);
     }
 
     var wasClosed = false;
@@ -306,20 +313,20 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var NodeUrlBoostFactor = {
-        '/studium/' : 7,
-        '/weiterbildung/' : 5,
-        '/weiterbildung/kurse/' : 0.01,
-        '/beratungen-angebote/' : 3,
-        '/forschung/' : 2,
-        '/faecher-und-schwerpunkte/' : 5,
-        '/ueber-uns/standorte' : 100,
-        '/ueber-uns/' : 0.5
+        '/studium/': 7,
+        '/weiterbildung/': 5,
+        '/weiterbildung/kurse/': 0.01,
+        '/beratungen-angebote/': 3,
+        '/forschung/': 2,
+        '/faecher-und-schwerpunkte/': 5,
+        '/ueber-uns/standorte': 100,
+        '/ueber-uns/': 0.5
 
     };
 
     var groupedBy = {
         //'Kontakte': [function(node) {return node.getProperty('eventoid') ? node.getProperty('eventoid') : node.getProperty('email');}],
-        'Kontakte': ['lastname','firstname'],
+        'Kontakte': ['lastname', 'firstname'],
         'Standorte': ['url'],
         'Projekte': 'title',
         'Seiten': ['url'],
@@ -330,7 +337,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var orderBy = {
         'Projekte': 'title',
-        'phlu-neos-nodetypes-publication': function(node) {return (10000-parseInt(node.properties['phlu-neos-nodetypes-publication-sortingkey'].substr(0,4)));}
+        'phlu-neos-nodetypes-publication': function (node) {
+            return (10000 - parseInt(node.properties['phlu-neos-nodetypes-publication-sortingkey'].substr(0, 4)));
+        }
     };
 
 
@@ -511,11 +520,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     }
 
 
+    $scope.$watch('result.getAutocomplete()', function (i) {
 
-
-    $scope.$watch('result.getAutocomplete()',function(i) {
-
-       // jQuery("#siteSearchAutocomplete").css('zIndex',9).css('width',jQuery("#searchInput").innerWidth()+4);
+        // jQuery("#siteSearchAutocomplete").css('zIndex',9).css('width',jQuery("#searchInput").innerWidth()+4);
         $rootScope.autocomplete = i;
         window.setTimeout(function () {
             $rootScope.$digest();
@@ -583,16 +590,16 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         } else {
 
 
-               if (wasClosed) {
-                    $("body").removeClass('siteSearchActive');
-                    wasClosed = false;
-                }
-                else {
-                    $(".sidebar").addClass('siteSearchActive');
-                    $("body").addClass('siteSearchActive');
-                    $("#search div").removeClass('noSearchResults');
-                    search.run();
-                }
+            if (wasClosed) {
+                $("body").removeClass('siteSearchActive');
+                wasClosed = false;
+            }
+            else {
+                $(".sidebar").addClass('siteSearchActive');
+                $("body").addClass('siteSearchActive');
+                $("#search div").removeClass('noSearchResults');
+                search.run();
+            }
 
             isbinded = true;
 

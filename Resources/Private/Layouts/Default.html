@@ -96,12 +96,12 @@
                                  onerror="this.onerror=null; this.src='Images/phluLogo.png'"/>
                         </a>
 
-                        <div class="site-search-field" id="siteSearchTop" data-ng-class="{'hasautocomplete': autocomplete.length && siteSearch !== ''}">
-                            <input autocomplete="off" id="searchInput" type="text" class="c-input form-control" data-ng-model="siteSearch"
+                        <div class="site-search-field" id="siteSearchTop" data-ng-class="{'hasautocomplete': siteSearchTopFocus && autocomplete.length && siteSearch !== ''}">
+                            <input autocomplete="off" data-ng-focus="siteSearchTopFocus=true" data-ng-blur="siteSearchTopBlur()" id="searchInput" type="text" class="c-input form-control" data-ng-model="siteSearch"
                                    data-ng-click="startSearch();">
                              <i class="fa fa-search" aria-hidden="true"
                                data-ng-class="{'fa-search-plus': quickNode}"></i>
-                            <div id="siteSearchAutocomplete" class="hidden-xs-up" data-ng-show="siteSearch && autocomplete.length && siteSearch !== ''" data-ng-class="{'hidden-xs-up': siteSearch == '' || !autocomplete || autocomplete.lenght == 0}">
+                            <div id="siteSearchAutocomplete" class="hidden-xs-up" data-ng-show="siteSearchTopFocus && siteSearch && autocomplete.length && siteSearch !== ''" data-ng-class="{'hidden-xs-up': siteSearch == '' || !siteSearchTopFocus || !autocomplete || autocomplete.lenght == 0}">
                                 <ul>
                                     <li data-ng-repeat="item in autocomplete" data-ng-click="setSiteSearch(item);">
                                         <span data-ng-bind="item"></span>
