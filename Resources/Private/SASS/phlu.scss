@@ -452,7 +452,7 @@ span.loading {
       color: $hazelbrowndark;
       cursor: pointer;
       &.current {
-        background-color: rgba(228, 228, 228, 0.40);
+        background-color: $grey11;
         color: black;
       }
     }

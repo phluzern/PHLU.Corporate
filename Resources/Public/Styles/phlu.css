@@ -8421,7 +8421,7 @@ span.loading.bar {
       color: #9f632a;
       cursor: pointer; }
       #siteSearchAutocomplete ul li.current {
-        background-color: rgba(228, 228, 228, 0.4);
+        background-color: #e6e6e6;
         color: black; }
     #siteSearchAutocomplete ul > li:last-child {
       border: 0; }
