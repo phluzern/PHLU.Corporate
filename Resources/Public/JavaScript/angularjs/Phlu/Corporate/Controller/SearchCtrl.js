@@ -199,7 +199,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         $rootScope.siteSearch = query;
     }
 
-    $rootScope.setSiteSearchPreview = function (query,position) {
+    $rootScope.setSiteSearchPreview = function (query, position) {
         search.$$app.search(null, null, query);
         $rootScope.autocompleteLastPos = position;
         window.setTimeout(function () {
@@ -228,10 +228,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                     switch (e.which) {
 
                         case 13: // enter
-                            if ($rootScope.autocompleteLastPos) {
-                                $rootScope.siteSearch = $rootScope.autocomplete[$rootScope.autocompleteLastPos];
-                                jQuery("#searchInput").blur();
-                            }
+                            $rootScope.siteSearch = $rootScope.autocomplete[$rootScope.autocompleteLastPos];
+                            jQuery("#searchInput").blur();
                             break;
 
                         case 38: // up
@@ -239,7 +237,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                             break;
 
                         case 40: // down
-                            $rootScope.autocompleteLastPos =  $rootScope.autocompleteLastPos+1;
+                            $rootScope.autocompleteLastPos = $rootScope.autocompleteLastPos + 1;
                             break;
 
                         default:
@@ -251,7 +249,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         $rootScope.autocompleteLastPos = 0;
                     }
                     if ($rootScope.autocompleteLastPos >= $rootScope.autocomplete.length) {
-                        $rootScope.autocompleteLastPos = $rootScope.autocomplete.length-1;
+                        $rootScope.autocompleteLastPos = $rootScope.autocomplete.length - 1;
                     }
                     search.$$app.search(null, null, $rootScope.autocomplete[$rootScope.autocompleteLastPos]);
 
