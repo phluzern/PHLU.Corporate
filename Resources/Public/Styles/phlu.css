@@ -9478,7 +9478,7 @@ body {
             background: url("../Images/menuActiveStateMarkerLevel1.png") repeat-y;
             padding-right: 10px; }
     body .all .logoAndSearchBar {
-      background-color: white;
+      background-color: #fdfdfd;
       border-right: solid 1px #edeae8;
       padding: 15px 25px;
       height: 253px;

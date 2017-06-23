@@ -4,7 +4,7 @@
             <b>
                 {{node.getProperty('lastname')}} {{node.getProperty('firstname')}}
             </b>
-            <span data-ng-if="node.getParent().getProperty('title')">
+            <span data-ng-if="node.getParent().getProperty('title') && node.getParent().getProperty('title') !== 'Team Bezeichnung eingeben'">
              <br> <span data-ng-bind="node.getParent().getProperty('title')"></span>
             </span>
             <span data-ng-if="!node.getParent().getProperty('title').length">
