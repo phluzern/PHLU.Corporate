@@ -198,6 +198,11 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         $rootScope.siteSearch = query;
     }
 
+    $rootScope.setSiteSearchPreview = function (query) {
+
+        search.$$app.search(null,null,query);
+    }
+
     $rootScope.siteSearchTopBlur = function () {
         window.setTimeout(function () {
             $rootScope.siteSearchTopFocus = false;
@@ -215,6 +220,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             }, 1);
         }, 10);
     }
+
+
 
     var wasClosed = false;
     var isBackend = jQuery("body").hasClass("neos-backend");
