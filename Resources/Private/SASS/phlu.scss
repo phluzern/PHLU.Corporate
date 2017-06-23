@@ -451,8 +451,9 @@ span.loading {
       border-bottom: 1px solid $darkgrey;
       color: $hazelbrowndark;
       cursor: pointer;
-      &:hover {
-        background-color: $beigelight;
+      &.current {
+        background-color: rgba(228, 228, 228, 0.40);
+        color: black;
       }
     }
     > li:last-child {

@@ -177,6 +177,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     $scope.result = new $hybridsearchResultsObject();
     $rootScope.autocomplete = [];
+    $rootScope.autocompleteLastPos = -1;
 
     $rootScope.siteSearch = '';
     $rootScope.quickNode = null;
@@ -198,11 +199,17 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         $rootScope.siteSearch = query;
     }
 
-    $rootScope.setSiteSearchPreview = function (query) {
-
-        search.$$app.search(null,null,query);
+    $rootScope.setSiteSearchPreview = function (query,position) {
+        search.$$app.search(null, null, query);
+        $rootScope.autocompleteLastPos = position;
+        window.setTimeout(function () {
+            $rootScope.$digest();
+        }, 1);
     }
 
+
+    // autocomplete
+    var keybinded = false;
     $rootScope.siteSearchTopBlur = function () {
         window.setTimeout(function () {
             $rootScope.siteSearchTopFocus = false;
@@ -213,6 +220,50 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     }
 
     $rootScope.siteSearchTopSetFocus = function () {
+
+        if (keybinded == false) {
+            jQuery(document).keydown(function (e) {
+                if (jQuery(e.target).attr('id') == 'searchInput') {
+
+                    switch (e.which) {
+
+                        case 13: // enter
+                            if ($rootScope.autocompleteLastPos) {
+                                $rootScope.siteSearch = $rootScope.autocomplete[$rootScope.autocompleteLastPos];
+                                jQuery("#searchInput").blur();
+                            }
+                            break;
+
+                        case 38: // up
+                            $rootScope.autocompleteLastPos--;
+                            break;
+
+                        case 40: // down
+                            $rootScope.autocompleteLastPos =  $rootScope.autocompleteLastPos+1;
+                            break;
+
+                        default:
+                            return; // exit this handler for other keys
+                    }
+
+
+                    if ($rootScope.autocompleteLastPos < 0) {
+                        $rootScope.autocompleteLastPos = 0;
+                    }
+                    if ($rootScope.autocompleteLastPos >= $rootScope.autocomplete.length) {
+                        $rootScope.autocompleteLastPos = $rootScope.autocomplete.length-1;
+                    }
+                    search.$$app.search(null, null, $rootScope.autocomplete[$rootScope.autocompleteLastPos]);
+
+                    window.setTimeout(function () {
+                        $rootScope.$digest();
+                    }, 1);
+
+                }
+            });
+        }
+        keybinded = true;
+
         window.setTimeout(function () {
             $rootScope.siteSearchTopFocus = true;
             window.setTimeout(function () {
@@ -220,7 +271,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             }, 1);
         }, 10);
     }
-
 
 
     var wasClosed = false;

@@ -101,9 +101,10 @@
                                    data-ng-click="startSearch();">
                              <i class="fa fa-search" aria-hidden="true"
                                data-ng-class="{'fa-search-plus': quickNode}"></i>
+
                             <div id="siteSearchAutocomplete" class="hidden-xs-up" data-ng-show="siteSearchTopFocus && siteSearch && autocomplete.length && siteSearch !== ''" data-ng-class="{'hidden-xs-up': siteSearch == '' || !siteSearchTopFocus || !autocomplete || autocomplete.lenght == 0}">
                                 <ul>
-                                    <li data-ng-repeat="item in autocomplete" data-ng-mouseover="setSiteSearchPreview(item);" data-ng-click="setSiteSearch(item);" data-ng-if="$index < 25">
+                                    <li data-ng-repeat="item in autocomplete" data-ng-class="{current: autocompleteLastPos == $index}" data-ng-mouseover="setSiteSearchPreview(item,$index);" data-ng-click="setSiteSearch(item);" data-ng-if="$index < 25">
                                         <span data-ng-bind="item"></span>
                                     </li>
                                 </ul>

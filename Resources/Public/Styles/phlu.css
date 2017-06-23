@@ -8420,8 +8420,9 @@ span.loading.bar {
       border-bottom: 1px solid #545454;
       color: #9f632a;
       cursor: pointer; }
-      #siteSearchAutocomplete ul li:hover {
-        background-color: #FFFCFA; }
+      #siteSearchAutocomplete ul li.current {
+        background-color: rgba(228, 228, 228, 0.4);
+        color: black; }
     #siteSearchAutocomplete ul > li:last-child {
       border: 0; }
 
