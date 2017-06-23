@@ -1562,6 +1562,9 @@ body {
     //
     .extendedSearchBg {
       padding: 20px 0;
+      .search-input-wrapper {
+          background-color: white;
+      }
       &.on {
         background-color: $darkgrey;
         padding: 20px 0;

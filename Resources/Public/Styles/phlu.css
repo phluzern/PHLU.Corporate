@@ -9203,6 +9203,8 @@ body {
       margin-bottom: 20px; }
     body .all .extendedSearchBg {
       padding: 20px 0; }
+      body .all .extendedSearchBg .search-input-wrapper {
+        background-color: white; }
       body .all .extendedSearchBg.on {
         background-color: #545454;
         padding: 20px 0;
