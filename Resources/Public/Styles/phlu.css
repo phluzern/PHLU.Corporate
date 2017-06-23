@@ -10778,6 +10778,25 @@ body {
           display: inline-block; }
     body .all .phlu-about-detailview .row.subjectsfilternav .nav-pills {
       padding-top: 0; }
+    body .all .ppdb-list .searchQueryInputWrapper::before {
+      content: attr(data-autocomplete);
+      position: absolute;
+      width: auto;
+      overflow: visible;
+      height: 54px;
+      font-size: 1rem;
+      line-height: 1.25;
+      left: 15px;
+      z-index: 3;
+      float: left;
+      display: block;
+      margin-left: 7px;
+      padding-top: 17px;
+      color: #e6e6e6; }
+    body .all .ppdb-list .searchQueryInput {
+      background: transparent;
+      z-index: 5;
+      position: relative; }
     body .all .ppdb-list .list-search-field input, body .all .ppdb-list .dropdown-search-field input, body .all .further-education-list .list-search-field input, body .all .further-education-list .dropdown-search-field input, body .all .further-education-special-search .list-search-field input, body .all .further-education-special-search .dropdown-search-field input {
       height: 52px;
       border: 2px solid #171815; }
@@ -12234,6 +12253,24 @@ body {
         @media (max-width: 1279px) {
           body .all .main.contents {
             margin-top: inherit; } }
+      body .all .main .further-education-special-search .searchQueryInputWrapper::before {
+        content: attr(data-autocomplete);
+        position: absolute;
+        width: 100%;
+        overflow: visible;
+        height: 54px;
+        font-size: 1rem;
+        line-height: 1.25;
+        left: 100%;
+        z-index: 2;
+        float: left;
+        display: block;
+        margin-left: 7px;
+        padding-top: 18px;
+        color: #e6e6e6; }
+      body .all .main .further-education-special-search .searchQueryInput {
+        background: transparent;
+        z-index: 3; }
       body .all .main .further-education-special-search .nodeTypeSwitcher .dropdown-toggle {
         height: 55px; }
       body .all .main .further-education-special-search .nodeTypeSwitcher .loadingIcon {

@@ -430,24 +430,25 @@ span.loading {
 #siteSearchTop.hasautocomplete #searchInput {
   border-bottom: 0;
 }
+
 #siteSearchAutocomplete {
-  display:block;
-  position:relative;
-  width:100%;
+  display: block;
+  position: relative;
+  width: 100%;
   border-bottom: 2px solid black;
   border-left: 2px solid black;
   border-right: 2px solid black;
-  background:rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   border-top: 1px solid $darkgrey;
-  margin:0;
+  margin: 0;
   ul {
     list-style-type: none;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
     li {
-      font-size:80%;
-      padding-left:10px;
-      padding-right:10px;
+      font-size: 80%;
+      padding-left: 10px;
+      padding-right: 10px;
       border-bottom: 1px solid $darkgrey;
       color: $hazelbrowndark;
       cursor: pointer;
@@ -457,24 +458,24 @@ span.loading {
       }
     }
     > li:last-child {
-      border:0;
+      border: 0;
     }
   }
 }
+
 #siteSearchAutocomplete * {
   z-index: 999;
 }
 
 #search {
 
-
   .hasSearchResults {
     background-color: $beigelight;
     overflow: auto;
     z-index: 101;
     position: absolute;
-    top:0px;
-    left:0px;
+    top: 0px;
+    left: 0px;
     width: 100%;
     max-width: 860px;
     min-height: 100%;
@@ -523,28 +524,28 @@ span.loading {
         li {
           display: none !important;
         }
-        li:last-child, li:nth-last-child(2), li:nth-last-child(3)  {
+        li:last-child, li:nth-last-child(2), li:nth-last-child(3) {
           display: block !important;
-          float:left;
+          float: left;
         }
-        li:nth-last-child(3):before  {
+        li:nth-last-child(3):before {
           display: none !important;
         }
 
         display: block;
         height: auto;
         @include media-breakpoint-down("sm") {
-          li:last-child, li:nth-last-child(2)  {
-            float:none !important;
-            clear:both !important;
-            width:auto !important;
+          li:last-child, li:nth-last-child(2) {
+            float: none !important;
+            clear: both !important;
+            width: auto !important;
           }
         }
       }
 
       .searchresult-body {
 
-        max-width:100% !important;
+        max-width: 100% !important;
         a:not([class]) {
           color: $hazelbrowndark;
           @include content-link("externalflowtext");
@@ -564,11 +565,11 @@ span.loading {
         min-height: 200px;
       }
       .rcrumbs-container {
-        height:30px;
+        height: 30px;
         overflow: visible;
       }
       .rcrumbs-wrapper {
-        padding:0;
+        padding: 0;
       }
       .breadcrumb {
         @include media-breakpoint-up("lg") {
@@ -576,7 +577,7 @@ span.loading {
         }
         margin-top: 15px;
         > li {
-          height:30px;
+          height: 30px;
           display: inline-block;
           @include media-breakpoint-down("lg") {
             display: block;
@@ -1999,7 +2000,7 @@ body {
         height: 52px;
         margin-top: 47px;
         border: $input-btn-sidebar-border-width solid $input-sidebar-border-color;
-        padding-left:10px;
+        padding-left: 10px;
       }
       &.oneCol {
         @include media-breakpoint-up("iefix") {
@@ -4102,6 +4103,29 @@ body {
     //    ppdb lists
     //    further education lists
     //
+    .ppdb-list {
+      .searchQueryInputWrapper::before {
+        content: attr(data-autocomplete);
+        position: absolute;
+        width: auto;
+        overflow: visible;
+        height: 54px;
+        font-size: 1rem;
+        line-height: 1.25;
+        left: 15px;
+        z-index:3;
+        float: left;
+        display: block;
+        margin-left: 7px;
+        padding-top: 17px;
+        color: $grey11;
+      }
+      .searchQueryInput {
+        background:transparent;
+        z-index:5;
+        position: relative;
+      }
+    }
     .ppdb-list, .further-education-list, .further-education-special-search {
       .list-search-field, .dropdown-search-field {
         input {
@@ -5619,7 +5643,7 @@ body {
               padding-right: 6px;
             }
             a {
-              margin-left:10px;
+              margin-left: 10px;
             }
           }
           .email {
@@ -6125,6 +6149,26 @@ body {
       // lists
       //
       .further-education-special-search {
+        .searchQueryInputWrapper::before {
+          content: attr(data-autocomplete);
+          position: absolute;
+          width: 100%;
+          overflow: visible;
+          height: 54px;
+          font-size: 1rem;
+          line-height: 1.25;
+          left: 100%;
+          z-index: 2;
+          float: left;
+          display: block;
+          margin-left: 7px;
+          padding-top: 18px;
+          color: $grey11;
+        }
+        .searchQueryInput {
+          background: transparent;
+          z-index: 3;
+        }
         .nodeTypeSwitcher {
           .dropdown-toggle {
             height: 55px;

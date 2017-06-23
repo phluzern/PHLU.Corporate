@@ -11,8 +11,10 @@
             <div class="row">
 
                 <div class="col-xs-12">
-                    <div class="input-group">
-                        <div class="input-group-btn nodeTypeSwitcher"
+                    <div class="input-group"
+                         >
+
+                        <div class="input-group-btn nodeTypeSwitcher searchQueryInputWrapper" data-autocomplete="{{searchquery !== '' ? result.getAutocomplete()[autocompleteLastPosition] : searchquery}}"
                              data-ng-class="{'isloading': isUserChangedNodeType && !isLoadedFirst()}">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false"
@@ -36,9 +38,12 @@
                             </ul>
 
                         </div><!-- /btn-group -->
-                        <input type="text" class="form-control" aria-label="Suche" data-ng-model="searchquery"
+
+                        <input type="text" id="searchQueryInput-{node.Identifier}"
+                               class="form-control searchQueryInput" aria-label="Suche" data-ng-model="searchquery"
                                value="">
                         <i class="fa fa-search" aria-hidden="true"></i>
+
                     </div><!-- /input-group -->
 
 
@@ -98,7 +103,8 @@
                                         <a href="javascript:void(0)"
                                            data-ng-click="toggleFilterSelection(year,'Alle','year')">
                                             <span data-ng-bind="year.value"></span>
-                                            <span class="oi" data-ng-class="{'oi-check': isFilterValueSelected(year.value,filters.year),'': !isFilterValueSelected(year.value,filters.year)}"
+                                            <span class="oi"
+                                                  data-ng-class="{'oi-check': isFilterValueSelected(year.value,filters.year),'': !isFilterValueSelected(year.value,filters.year)}"
                                                   aria-hidden="true"></span>
                                         </a>
                                     </li>
@@ -130,7 +136,8 @@
                                         <a href="javascript:void(0)"
                                            data-ng-click="toggleFilterSelection(targetgroup,'Alle','targetgroups')">
                                             <span data-ng-bind="targetgroup.value"></span>
-                                            <span class="oi" data-ng-class="{'oi-check': isFilterValueSelected(targetgroup.value,filters.targetgroups),'': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"
+                                            <span class="oi"
+                                                  data-ng-class="{'oi-check': isFilterValueSelected(targetgroup.value,filters.targetgroups),'': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"
                                                   aria-hidden="true"></span>
                                         </a>
                                     </li>
@@ -181,7 +188,8 @@
                                         <a href="javascript:void(0)"
                                            data-ng-click="toggleFilterSelection(year,'Studiengang','year')">
                                             <span data-ng-bind="year.value"></span>
-                                            <span class="oi" data-ng-class="{'oi-check': isFilterValueSelected(year.value,filters.year),'': !isFilterValueSelected(year.value,filters.year)}"
+                                            <span class="oi"
+                                                  data-ng-class="{'oi-check': isFilterValueSelected(year.value,filters.year),'': !isFilterValueSelected(year.value,filters.year)}"
                                                   aria-hidden="true"></span>
                                         </a>
                                     </li>
@@ -217,7 +225,8 @@
                                         <a href="javascript:void(0)"
                                            data-ng-click="toggleFilterSelection(graduation,'Studiengang','graduation')">
                                             <span data-ng-bind="graduation.value"></span>
-                                            <span class="oi" data-ng-class="{'oi-check': isFilterValueSelected(graduation.value,filters.graduation),'': !isFilterValueSelected(graduation.value,filters.graduation)}"
+                                            <span class="oi"
+                                                  data-ng-class="{'oi-check': isFilterValueSelected(graduation.value,filters.graduation),'': !isFilterValueSelected(graduation.value,filters.graduation)}"
                                                   aria-hidden="true"></span>
                                         </a>
                                     </li>
@@ -249,7 +258,8 @@
                                         <a href="javascript:void(0)"
                                            data-ng-click="toggleFilterSelection(targetgroup,'Studiengang','targetgroups')">
                                             <span data-ng-bind="targetgroup.value"></span>
-                                            <span class="oi" data-ng-class="{'oi-check': isFilterValueSelected(targetgroup.value,filters.targetgroups),'': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"
+                                            <span class="oi"
+                                                  data-ng-class="{'oi-check': isFilterValueSelected(targetgroup.value,filters.targetgroups),'': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"
                                                   aria-hidden="true"></span>
                                         </a>
                                     </li>
@@ -299,7 +309,8 @@
                                         <a href="javascript:void(0)"
                                            data-ng-click="toggleFilterSelection(year,'Kurs','year')">
                                             <span data-ng-bind="year.value"></span>
-                                            <span class="oi" data-ng-class="{'oi-check': isFilterValueSelected(year.value,filters.year),'': !isFilterValueSelected(year.value,filters.year)}"
+                                            <span class="oi"
+                                                  data-ng-class="{'oi-check': isFilterValueSelected(year.value,filters.year),'': !isFilterValueSelected(year.value,filters.year)}"
                                                   aria-hidden="true"></span>
                                         </a>
                                     </li>
@@ -340,7 +351,8 @@
                                         <a href="javascript:void(0)"
                                            data-ng-click="toggleFilterSelection(dayofweek,'Kurs','dayofweek')">
                                             <span data-ng-bind="dayofweek.value"></span>
-                                            <span class="oi" data-ng-class="{'oi-check': isFilterValueSelected(dayofweek.value,filters.dayofweek),'': !isFilterValueSelected(dayofweek.value,filters.dayofweek)}"
+                                            <span class="oi"
+                                                  data-ng-class="{'oi-check': isFilterValueSelected(dayofweek.value,filters.dayofweek),'': !isFilterValueSelected(dayofweek.value,filters.dayofweek)}"
                                                   aria-hidden="true"></span>
                                         </a>
                                     </li>
@@ -386,7 +398,8 @@
                                         <a href="javascript:void(0)"
                                            data-ng-click="toggleFilterSelection(targetgroup,'Kurs','targetgroups')">
                                             <span data-ng-bind="targetgroup.value"></span>
-                                            <span class="oi" data-ng-class="{'oi-check': isFilterValueSelected(targetgroup.value,filters.targetgroups),'': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"
+                                            <span class="oi"
+                                                  data-ng-class="{'oi-check': isFilterValueSelected(targetgroup.value,filters.targetgroups),'': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"
                                                   aria-hidden="true"></span>
                                         </a>
                                     </li>
@@ -417,7 +430,8 @@
                                         <a href="javascript:void(0)"
                                            data-ng-click="toggleFilterSelection(genre,'Kurs','genre')">
                                             <span data-ng-bind="genre.value"></span>
-                                            <span class="oi" data-ng-class="{'oi-check': isFilterValueSelected(genre.value,filters.genre),'': !isFilterValueSelected(genre.value,filters.genre)}"
+                                            <span class="oi"
+                                                  data-ng-class="{'oi-check': isFilterValueSelected(genre.value,filters.genre),'': !isFilterValueSelected(genre.value,filters.genre)}"
                                                   aria-hidden="true"></span>
                                         </a>
                                     </li>
