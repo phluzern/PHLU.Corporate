@@ -490,8 +490,16 @@ span.loading {
       margin-left: 0px;
       padding: 0;
       li {
-        border-bottom:1px solid white;
-        padding:5px;
+        height: 50px;
+        overflow: hidden;
+        height: 20px;
+        padding-left:15px;
+        padding-right:15px;
+        padding-top: 10px;
+        padding-bottom: 31px;
+        &:nth-child(2n) {
+          background-color:$grey2;
+        }
       }
       > li:last-child {
         border:0;
@@ -7025,6 +7033,9 @@ body {
         padding-top: 30px;
         @include media-breakpoint-up("lg") {
           text-align: right;
+        }
+        @include media-breakpoint-down("xs") {
+          display: none;
         }
       }
       > div > .copyright {

@@ -144,7 +144,7 @@
     <div class="container-fluid footer" id="footer" data-ng-controller="SearchMobileCtrl" data-ng-class="{hasSearchResults: siteSearchSearchMobile != ''}">
         <div class="row">
 
-            <div data-ng-if="autocompleteIsShowing" id="siteSearchMobileAutocomplete" class="hidden-xs-up"  data-ng-class="{'hidden-xs-up': siteSearchSearchMobile == ''}">
+            <div data-ng-ddif="autocompleteIsShowing" id="siteSearchMobileAutocomplete" class="hidden-xs-up"  data-ng-class="{'hidden-xs-up': siteSearchSearchMobile == ''}">
                 <ul>
                     <li data-ng-repeat="item in getAutocompleteMobile()" data-ng-class="{current: autocompleteLastPos == $index}"  data-ng-click="setSiteSearch(item);" data-ng-if="$index < 25">
                         <span data-ng-bind="item"></span>

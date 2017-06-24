@@ -8447,8 +8447,15 @@ span.loading.bar {
       margin-left: 0px;
       padding: 0; }
       #siteSearchMobileAutocomplete ul li {
-        border-bottom: 1px solid white;
-        padding: 5px; }
+        height: 50px;
+        overflow: hidden;
+        height: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        padding-bottom: 31px; }
+        #siteSearchMobileAutocomplete ul li:nth-child(2n) {
+          background-color: #55696d; }
       #siteSearchMobileAutocomplete ul > li:last-child {
         border: 0; } }
 
@@ -12834,6 +12841,9 @@ body {
         @media (min-width: 992px) {
           body .all .footer .copyright {
             text-align: right; } }
+        @media (max-width: 543px) {
+          body .all .footer .copyright {
+            display: none; } }
       @media (min-width: 992px) {
         body .all .footer > div > .copyright {
           display: none; } }
