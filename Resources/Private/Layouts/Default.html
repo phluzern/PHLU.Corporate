@@ -144,6 +144,13 @@
     <div class="container-fluid footer" id="footer" data-ng-controller="SearchMobileCtrl" data-ng-class="{hasSearchResults: siteSearchSearchMobile != ''}">
         <div class="row">
 
+            <div data-ng-if="autocompleteIsShowing" id="siteSearchMobileAutocomplete" class="hidden-xs-up"  data-ng-class="{'hidden-xs-up': siteSearchSearchMobile == ''}">
+                <ul>
+                    <li data-ng-repeat="item in getAutocompleteMobile()" data-ng-class="{current: autocompleteLastPos == $index}"  data-ng-click="setSiteSearch(item);" data-ng-if="$index < 25">
+                        <span data-ng-bind="item"></span>
+                    </li>
+                </ul>
+            </div>
             <div class="col-xs-12 site-search-field" id="siteSearchMobileWrapper">
                 <form data-ng-submit="siteSearchMobileSubmit()" >
                     <input autocomplete="off" data-ng-focus="siteSearchTopSetFocus()" data-ng-mouseover="autocompleteLastPos = -1;" data-ng-click="siteSearchMobileSetFocus()" data-ng-blur="siteSearchMobileBlur()"  type="text" class="c-input form-control"
@@ -151,13 +158,7 @@
                     <i data-ng-if="siteSearchSearchMobile == ''" class="fa fa-search" aria-hidden="true" data-ng-click="siteSearchMobileSubmit()"></i>
                     <i data-ng-if="siteSearchSearchMobile != ''" class="fa fa-times" aria-hidden="true" data-ng-click="siteSearchMobileClose()"></i>
                     <input type="submit" id="submit" value="Submit" style="display: none"/>
-                    <div id="siteSearchMobileAutocomplete" class="hidden-xs-up" data-ng-show="siteSearchMobileFocus && siteSearchSearchMobile && autocomplete.length && siteSearchSearchMobile !== ''" data-ng-class="{'hidden-xs-up': siteSearchSearchMobile == '' || !siteSearchMobileFocus || !autocomplete || autocomplete.length == 0}">
-                        <ul>
-                            <li data-ng-repeat="item in getAutocompleteMobile()" data-ng-class="{current: autocompleteLastPos == $index}"  data-ng-click="setSiteSearch(item);" data-ng-if="$index < 25">
-                                <span data-ng-bind="item"></span>
-                            </li>
-                        </ul>
-                    </div>
+
                 </form>
             </div>
 

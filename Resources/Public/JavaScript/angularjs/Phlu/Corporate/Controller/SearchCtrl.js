@@ -151,13 +151,18 @@ PhluCorporateApp.directive('nodeType', function ($sce) {
 PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
     $scope.siteSearchSearchMobile = '';
+    $scope.autocompleteIsShowing = true;
     $scope.autocomplete = [];
     $scope.autocompleteLastPos = -1;
 
-    $scope.$watch('siteSearchSearchMobile',function(query) {
+    $scope.$watch('siteSearchSearchMobile',function(query,oldquery) {
         $rootScope.siteSearch = $scope.siteSearchSearchMobile;
-        console.log($rootScope.autocomplete);
-
+        if (oldquery !== query && query == '') {
+            $scope.autocompleteIsShowing = true;
+        }
+        if ($rootScope.autocomplete.length > 5) {
+            $scope.autocompleteIsShowing = true;
+        }
     });
 
     // autocomplete
@@ -165,6 +170,7 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
     $scope.siteSearchMobileBlur = function () {
         window.setTimeout(function () {
             $scope.siteSearchMobileFocus = false;
+            $scope.autocompleteIsShowing = false;
             if ($scope.autocompleteLastPos >= 0 && $scope.autocomplete[$scope.autocompleteLastPos] !== undefined) {
                 $scope.setSiteSearch($scope.autocomplete[$scope.autocompleteLastPos]);
             }
@@ -179,6 +185,7 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
         if (keybinded == false) {
 
 
+
         }
         keybinded = true;
         window.setTimeout(function () {
@@ -190,6 +197,24 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
 
     }
 
+
+    $scope.setSiteSearch = function (query) {
+
+        $scope.siteSearchSearchMobile = query;
+        $scope.autocompleteIsShowing = false;
+        $rootScope.siteSearch = $scope.siteSearchSearchMobile;
+
+        jQuery("#siteSearchSearchMobile").blur();
+
+        window.setTimeout(function () {
+            jQuery('html, body').stop().animate({
+                'scrollTop': 0
+            }, 100, 'swing', function () {
+
+            });
+        }, 5);
+
+    }
 
     $scope.siteSearchMobileSubmit = function () {
         $rootScope.siteSearch = $scope.siteSearchSearchMobile;
