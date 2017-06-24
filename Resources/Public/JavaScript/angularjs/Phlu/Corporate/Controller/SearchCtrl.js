@@ -197,6 +197,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     $rootScope.setSiteSearch = function (query) {
         $rootScope.siteSearch = query;
+        $rootScope.autocompleteLastPos = -1;
     }
 
     $rootScope.setSiteSearchPreview = function (query, position) {
@@ -213,6 +214,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     $rootScope.siteSearchTopBlur = function () {
         window.setTimeout(function () {
             $rootScope.siteSearchTopFocus = false;
+            if ($rootScope.autocompleteLastPos >= 0 && $rootScope.autocomplete[$rootScope.autocompleteLastPos] !== undefined) {
+                $rootScope.setSiteSearch($rootScope.autocomplete[$rootScope.autocompleteLastPos]);
+            }
             window.setTimeout(function () {
                 $rootScope.$digest();
             }, 1);
@@ -257,7 +261,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
                     if ($rootScope.autocompleteLastPos < 0) {
-                        $rootScope.autocompleteLastPos = 0;
+                        $rootScope.autocompleteLastPos = -1;
                     }
                     if ($rootScope.autocompleteLastPos >= $rootScope.autocomplete.length) {
                         $rootScope.autocompleteLastPos = $rootScope.autocomplete.length - 1;
