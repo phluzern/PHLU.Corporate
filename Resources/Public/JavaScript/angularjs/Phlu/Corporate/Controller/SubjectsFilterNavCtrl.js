@@ -15,6 +15,7 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
     $scope.filterItems = {};
     $scope.filterItemsWithPath = {};
     $scope.ishidden = true;
+    $scope.autocompleteLastPosition = 0;
 
     $scope.animated = true;
 
@@ -152,6 +153,70 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
         if ($cookies.get($scope.appId)) $scope.applyFilters(false);
     },true);
 
+
+
+    // autocomplate$
+    var keybinded = false;
+
+    $scope.$watch('searchquery',function() {
+
+        if (keybinded == false) {
+            jQuery(document).keydown(function (e) {
+
+
+
+                if (jQuery(e.target).hasClass('searchQueryInput')) {
+
+                    switch (e.which) {
+
+                        case 13: // enter
+                            //$rootScope.siteSearch = $rootScope.autocomplete[$rootScope.autocompleteLastPos];
+                            jQuery(e.target).val($scope.result.getAutocomplete()[$scope.autocompleteLastPosition]).blur();
+                            break;
+
+                        case 38: // up
+                            $scope.autocompleteLastPosition--;
+                            var el = document.getElementById(jQuery(e.target).attr('id'));
+                            window.setTimeout(function() {
+                                if (typeof el.selectionStart == "number") {
+                                    el.selectionStart = el.selectionEnd = el.value.length;
+                                } else if (typeof el.createTextRange != "undefined") {
+                                    el.focus();
+                                    var range = el.createTextRange();
+                                    range.collapse(false);
+                                    range.select();
+                                }
+                            }, 1);
+                            break;
+
+                        case 40: // down
+                            $scope.autocompleteLastPosition++;
+                            break;
+
+                        default:
+                            $scope.autocompleteLastPosition = 0;
+                            return; // exit this handler for other keys
+                    }
+
+
+                    if ($scope.autocompleteLastPosition < 0) {
+                        $scope.autocompleteLastPosition = 0;
+                    }
+                    if ($scope.autocompleteLastPosition >= $scope.result.countAutocomplete()) {
+                        $scope.autocompleteLastPosition = $scope.result.countAutocomplete() - 1;
+                    }
+
+                    window.setTimeout(function () {
+                        $scope.$digest();
+                    }, 1);
+                    //search.$$app.search(null, null, $rootScope.autocomplete[$rootScope.autocompleteLastPos]);
+
+                }
+            });
+        }
+        keybinded = true;
+
+    });
 
 
 }]);

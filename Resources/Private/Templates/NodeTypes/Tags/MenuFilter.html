@@ -124,11 +124,13 @@
                                 </ul>
 
                                 <div class="list-search-field">
-                                    <input type="text" class="c-input form-control" data-ng-model="search">
+                                    <input type="text" class="c-input form-control searchQueryInput" data-ng-focus="focus = true;" data-ng-blur="focus = false;" data-ng-model="search">
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                 </div>
+                                <div class="searchQueryInputWrapper" data-autocomplete="{{search !== '' && focus ? result.getAutocomplete()[autocompleteLastPosition] : search}}"></div>
 
                             </div>
+
 
                         </div>
 

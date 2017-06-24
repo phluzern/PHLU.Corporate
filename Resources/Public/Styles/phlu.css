@@ -10109,6 +10109,25 @@ body {
               color: #9f632a; }
             body .all .row.targetgroup-switcher .phlu-teaser.navigation.subpage .row .nav-teaser-item > div:hover a h3 span, body .all .row.targetgroup-switcher .phlu-teaser.navigation.subpage .row .nav-teaser-item > div:hover p {
               color: #545454; }
+    body .all .row.filter-bar .searchQueryInputWrapper::before {
+      content: attr(data-autocomplete);
+      position: absolute;
+      width: auto;
+      overflow: visible;
+      height: 54px;
+      font-size: 1rem;
+      line-height: 1.25;
+      left: 15px;
+      z-index: 3;
+      float: left;
+      display: block;
+      margin-left: 7px;
+      margin-top: -37px;
+      color: #e6e6e6; }
+    body .all .row.filter-bar .searchQueryInput {
+      background: transparent;
+      z-index: 5;
+      position: relative; }
     body .all .row.filter-bar .col-xs-12 {
       margin: 0 0 50px; }
       body .all .row.filter-bar .col-xs-12 .nav-pills li a.nav-link {
