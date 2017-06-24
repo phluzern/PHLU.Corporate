@@ -27,16 +27,16 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     };
 
 
-    $scope.organisationunitsFunction = function(node) {
+    $scope.organisationunitsFunction = function (node) {
 
         var distincts = [];
         var d = node.getProperty('organisationunits');
         if (typeof d == 'object') {
 
-            angular.forEach(d, function(i) {
-               if (i.dept == 0) {
-                   distincts.push(i);
-               }
+            angular.forEach(d, function (i) {
+                if (i.dept == 0) {
+                    distincts.push(i);
+                }
             });
 
         }
@@ -217,11 +217,10 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     }
 
 
-
     $scope.run = function () {
 
         $scope.list
-            //.disableRealtime()
+        //.disableRealtime()
             .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
             .addPropertyFilter('lifetime', 'filterLifetime', $scope)
             .addPropertyFilter('researchmainfocus.ID', 'researchmainfocus', $scope)
@@ -240,16 +239,15 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
 
         $scope.list.$bind('result', $scope)
-        .run();
+            .run();
 
     }
-
 
 
     // autocomplate
     var keybinded = false;
 
-    $scope.$watch('search',function() {
+    $scope.$watch('search', function () {
 
         if (keybinded == false) {
             jQuery(document).keydown(function (e) {
@@ -267,16 +265,18 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
                         case 38: // up
                             $scope.autocompleteLastPosition--;
                             var el = document.getElementById(jQuery(e.target).attr('id'));
-                            window.setTimeout(function() {
-                                if (typeof el.selectionStart == "number") {
-                                    el.selectionStart = el.selectionEnd = el.value.length;
-                                } else if (typeof el.createTextRange != "undefined") {
-                                    el.focus();
-                                    var range = el.createTextRange();
-                                    range.collapse(false);
-                                    range.select();
-                                }
-                            }, 1);
+                            if (el) {
+                                window.setTimeout(function () {
+                                    if (typeof el.selectionStart == "number") {
+                                        el.selectionStart = el.selectionEnd = el.value.length;
+                                    } else if (typeof el.createTextRange != "undefined") {
+                                        el.focus();
+                                        var range = el.createTextRange();
+                                        range.collapse(false);
+                                        range.select();
+                                    }
+                                }, 1);
+                            }
                             break;
 
                         case 40: // down
@@ -399,11 +399,14 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     };
 
 
-
     $scope.list
         .setPropertiesBoost(boost)
         .setCategorizedBy('publicationtype.name')
-        .setOrderBy({'phlu-neos-nodetypes-publication': function(node) {return (10000-parseInt(node.properties['phlu-neos-nodetypes-publication-sortingkey'].substr(0,4)));}})
+        .setOrderBy({
+            'phlu-neos-nodetypes-publication': function (node) {
+                return (10000 - parseInt(node.properties['phlu-neos-nodetypes-publication-sortingkey'].substr(0, 4)));
+            }
+        })
         .setNodeType('phlu-neos-nodetypes-publication')
         .addPropertyFilter('title', '', null, true)
         .addPropertyFilter('persons.EventoID', 'participants', $scope)
@@ -413,11 +416,10 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         .run();
 
 
-
     // autocomplate
     var keybinded = false;
 
-    $scope.$watch('search',function() {
+    $scope.$watch('search', function () {
 
         if (keybinded == false) {
             jQuery(document).keydown(function (e) {
@@ -435,16 +437,18 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
                         case 38: // up
                             $scope.autocompleteLastPosition--;
                             var el = document.getElementById(jQuery(e.target).attr('id'));
-                            window.setTimeout(function () {
-                                if (typeof el.selectionStart == "number") {
-                                    el.selectionStart = el.selectionEnd = el.value.length;
-                                } else if (typeof el.createTextRange != "undefined") {
-                                    el.focus();
-                                    var range = el.createTextRange();
-                                    range.collapse(false);
-                                    range.select();
-                                }
-                            }, 1);
+                            if (el) {
+                                window.setTimeout(function () {
+                                    if (typeof el.selectionStart == "number") {
+                                        el.selectionStart = el.selectionEnd = el.value.length;
+                                    } else if (typeof el.createTextRange != "undefined") {
+                                        el.focus();
+                                        var range = el.createTextRange();
+                                        range.collapse(false);
+                                        range.select();
+                                    }
+                                }, 1);
+                            }
                             break;
 
                         case 40: // down

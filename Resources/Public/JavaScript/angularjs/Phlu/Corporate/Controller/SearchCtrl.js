@@ -239,16 +239,18 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                         case 38: // up
                             $rootScope.autocompleteLastPos--;
                             var el = document.getElementById("searchInput");
-                            window.setTimeout(function() {
-                                if (typeof el.selectionStart == "number") {
-                                    el.selectionStart = el.selectionEnd = el.value.length;
-                                } else if (typeof el.createTextRange != "undefined") {
-                                    el.focus();
-                                    var range = el.createTextRange();
-                                    range.collapse(false);
-                                    range.select();
-                                }
-                            }, 1);
+                            if (el) {
+                                window.setTimeout(function () {
+                                    if (typeof el.selectionStart == "number") {
+                                        el.selectionStart = el.selectionEnd = el.value.length;
+                                    } else if (typeof el.createTextRange != "undefined") {
+                                        el.focus();
+                                        var range = el.createTextRange();
+                                        range.collapse(false);
+                                        range.select();
+                                    }
+                                }, 1);
+                            }
                             break;
 
                         case 40: // down

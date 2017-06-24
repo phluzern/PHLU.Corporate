@@ -909,16 +909,18 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                         case 38: // up
                             $scope.autocompleteLastPosition--;
                             var el = document.getElementById(jQuery(e.target).attr('id'));
-                            window.setTimeout(function() {
-                                if (typeof el.selectionStart == "number") {
-                                    el.selectionStart = el.selectionEnd = el.value.length;
-                                } else if (typeof el.createTextRange != "undefined") {
-                                    el.focus();
-                                    var range = el.createTextRange();
-                                    range.collapse(false);
-                                    range.select();
-                                }
-                            }, 1);
+                            if (el) {
+                                window.setTimeout(function () {
+                                    if (typeof el.selectionStart == "number") {
+                                        el.selectionStart = el.selectionEnd = el.value.length;
+                                    } else if (typeof el.createTextRange != "undefined") {
+                                        el.focus();
+                                        var range = el.createTextRange();
+                                        range.collapse(false);
+                                        range.select();
+                                    }
+                                }, 1);
+                            }
                             break;
 
                         case 40: // down
