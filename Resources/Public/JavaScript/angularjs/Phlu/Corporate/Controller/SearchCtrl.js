@@ -232,7 +232,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                     switch (e.which) {
 
                         case 13: // enter
-                            $rootScope.siteSearch = $rootScope.autocomplete[$rootScope.autocompleteLastPos];
+                            if ($rootScope.autocompleteLastPos >= 0 && $rootScope.autocomplete[$rootScope.autocompleteLastPos] !== undefined) {
+                                $rootScope.siteSearch = $rootScope.autocomplete[$rootScope.autocompleteLastPos];
+                            }
                             jQuery("#searchInput").blur();
                             break;
 
