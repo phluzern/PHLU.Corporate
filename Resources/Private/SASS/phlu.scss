@@ -484,6 +484,11 @@ span.loading {
     overflow: scroll;
     border-bottom: 2px solid white;
 
+    &.loading {
+      background-position: center center;
+      background-size: 25%;
+    }
+
     ul {
       list-style-type: none;
       margin-top: 95px;
