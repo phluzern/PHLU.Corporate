@@ -1194,6 +1194,10 @@ body {
     }
     .clickable, .clickable * {
       cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
     .btn {
       font-size: $font-size-btn;

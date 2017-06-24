@@ -8921,7 +8921,11 @@ body {
     body .all a[href^="tel"] {
       color: #9f632a; }
     body .all .clickable, body .all .clickable * {
-      cursor: pointer; }
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
     body .all .btn {
       font-size: 1.125rem;
       padding: 5px 25px;
