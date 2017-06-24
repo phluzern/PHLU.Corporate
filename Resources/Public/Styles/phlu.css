@@ -8429,6 +8429,17 @@ span.loading.bar {
 #siteSearchAutocomplete * {
   z-index: 999; }
 
+#footer.hasSearchResults {
+  position: fixed;
+  z-index: 999999;
+  bottom: 0;
+  width: 100%;
+  height: 668px;
+  background-color: #333333;
+  padding-top: 20px;
+  color: white;
+  height: 97px; }
+
 #search .hasSearchResults {
   background-color: #FFFCFA;
   overflow: auto;
@@ -8466,8 +8477,7 @@ span.loading.bar {
       max-width: inherit;
       min-height: inherit;
       margin-left: 0;
-      border: 0;
-      position: relative; } }
+      border: 0; } }
   #search .hasSearchResults .phlu-searchresults {
     display: block;
     margin-top: 30px; }
@@ -8669,6 +8679,24 @@ span.loading.bar {
     display: block; }
   .siteSearchActive .main.contents .breadcrumbs {
     display: block; } }
+
+@media (max-width: 543px) {
+  body.siteSearchActive {
+    overflow: hidden;
+    height: 100%;
+    position: fixed; }
+    body.siteSearchActive #search .hasSearchResults {
+      position: fixed;
+      z-index: 9999;
+      padding-bottom: 60px; }
+    body.siteSearchActive .navbar {
+      display: none; }
+    body.siteSearchActive .main.contents > .row {
+      display: none; }
+    body.siteSearchActive .main.contents > .row:first-child {
+      display: block; }
+    body.siteSearchActive .main.contents .breadcrumbs {
+      display: block; } }
 
 .ico-family-iconic::before {
   font-family: Icons; }
@@ -8981,6 +9009,12 @@ body {
       position: absolute;
       right: 0;
       margin: -26px 25px 0 0;
+      color: #171815;
+      display: block; }
+    body .all .fa.fa-times {
+      position: absolute;
+      right: 0;
+      margin: -35px 25px 0 0;
       color: #171815;
       display: block; }
     body .all .col-center {

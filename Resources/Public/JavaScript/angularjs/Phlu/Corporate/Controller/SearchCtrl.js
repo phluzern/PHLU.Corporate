@@ -151,6 +151,45 @@ PhluCorporateApp.directive('nodeType', function ($sce) {
 PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
     $scope.siteSearchSearchMobile = '';
+    $scope.autocomplete = [];
+    $scope.autocompleteLastPos = -1;
+
+    $scope.$watch('siteSearchSearchMobile',function(query) {
+        $rootScope.siteSearch = $scope.siteSearchSearchMobile;
+        console.log($rootScope.autocomplete);
+
+    });
+
+    // autocomplete
+    var keybinded = false;
+    $scope.siteSearchMobileBlur = function () {
+        window.setTimeout(function () {
+            $scope.siteSearchMobileFocus = false;
+            if ($scope.autocompleteLastPos >= 0 && $scope.autocomplete[$scope.autocompleteLastPos] !== undefined) {
+                $scope.setSiteSearch($scope.autocomplete[$scope.autocompleteLastPos]);
+            }
+            window.setTimeout(function () {
+                $scope.$digest();
+            }, 1);
+        }, 1000);
+    }
+
+    $scope.siteSearchMobileSetFocus = function () {
+
+        if (keybinded == false) {
+
+
+        }
+        keybinded = true;
+        window.setTimeout(function () {
+            $scope.siteSearchMobileFocus = true;
+            window.setTimeout(function () {
+                $scope.$digest();
+            }, 1);
+        }, 10);
+
+    }
+
 
     $scope.siteSearchMobileSubmit = function () {
         $rootScope.siteSearch = $scope.siteSearchSearchMobile;
@@ -166,6 +205,24 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
         }, 5);
 
         return false;
+    }
+
+    $scope.siteSearchMobileClose = function () {
+        $scope.siteSearchSearchMobile = '';
+        $rootScope.siteSearch = $scope.siteSearchSearchMobile;
+
+        jQuery("#siteSearchSearchMobile").blur();
+
+        window.setTimeout(function () {
+            $scope.$digest();
+            $rootScope.$digest();
+        }, 1);
+
+        return false;
+    }
+
+    $scope.getAutocompleteMobile = function() {
+        return $rootScope.autocomplete;
     }
 
 

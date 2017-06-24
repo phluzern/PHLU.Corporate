@@ -102,7 +102,7 @@
                              <i class="fa fa-search" aria-hidden="true"
                                data-ng-class="{'fa-search-plus': quickNode}"></i>
 
-                            <div id="siteSearchAutocomplete" class="hidden-xs-up" data-ng-show="siteSearchTopFocus && siteSearch && autocomplete.length && siteSearch !== ''" data-ng-class="{'hidden-xs-up': siteSearch == '' || !siteSearchTopFocus || !autocomplete || autocomplete.lenght == 0}">
+                            <div id="siteSearchAutocomplete" class="hidden-xs-up" data-ng-show="siteSearchTopFocus && siteSearch && autocomplete.length && siteSearch !== ''" data-ng-class="{'hidden-xs-up': siteSearch == '' || !siteSearchTopFocus || !autocomplete || autocomplete.length == 0}">
                                 <ul>
                                     <li data-ng-repeat="item in autocomplete" data-ng-class="{current: autocompleteLastPos == $index}" data-ng-mouseover="setSiteSearchPreview(item,$index);" data-ng-click="setSiteSearch(item);" data-ng-if="$index < 25">
                                         <span data-ng-bind="item"></span>
@@ -141,16 +141,26 @@
     </div>
 
 
-    <div class="container-fluid footer">
+    <div class="container-fluid footer" id="footer" data-ng-controller="SearchMobileCtrl" data-ng-class="{hasSearchResults: siteSearchSearchMobile != ''}">
         <div class="row">
-            <div class="col-xs-12 site-search-field">
-                <form data-ng-submit="siteSearchMobileSubmit()" data-ng-controller="SearchMobileCtrl">
-                    <input type="text" class="c-input form-control ng-pristine ng-valid ng-empty ng-touched"
+
+            <div class="col-xs-12 site-search-field" id="siteSearchMobileWrapper">
+                <form data-ng-submit="siteSearchMobileSubmit()" >
+                    <input autocomplete="off" data-ng-focus="siteSearchTopSetFocus()" data-ng-mouseover="autocompleteLastPos = -1;" data-ng-click="siteSearchMobileSetFocus()" data-ng-blur="siteSearchMobileBlur()"  type="text" class="c-input form-control"
                            id="siteSearchSearchMobile" data-ng-model="siteSearchSearchMobile">
-                    <i class="fa fa-search" aria-hidden="true" data-ng-click="siteSearchMobileSubmit()"></i>
+                    <i data-ng-if="siteSearchSearchMobile == ''" class="fa fa-search" aria-hidden="true" data-ng-click="siteSearchMobileSubmit()"></i>
+                    <i data-ng-if="siteSearchSearchMobile != ''" class="fa fa-times" aria-hidden="true" data-ng-click="siteSearchMobileClose()"></i>
                     <input type="submit" id="submit" value="Submit" style="display: none"/>
+                    <div id="siteSearchMobileAutocomplete" class="hidden-xs-up" data-ng-show="siteSearchMobileFocus && siteSearchSearchMobile && autocomplete.length && siteSearchSearchMobile !== ''" data-ng-class="{'hidden-xs-up': siteSearchSearchMobile == '' || !siteSearchMobileFocus || !autocomplete || autocomplete.length == 0}">
+                        <ul>
+                            <li data-ng-repeat="item in getAutocompleteMobile()" data-ng-class="{current: autocompleteLastPos == $index}"  data-ng-click="setSiteSearch(item);" data-ng-if="$index < 25">
+                                <span data-ng-bind="item"></span>
+                            </li>
+                        </ul>
+                    </div>
                 </form>
             </div>
+
             {footer -> f:format.raw()}
             <div class="col-xs-12 col-xl-2 flexfirst">
                 <nav class="nav langnav">

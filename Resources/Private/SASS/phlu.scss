@@ -427,6 +427,10 @@ span.loading {
 //
 // search
 //
+#siteSearchMobileWrapper {
+
+}
+
 #siteSearchTop.hasautocomplete #searchInput {
   border-bottom: 0;
 }
@@ -467,6 +471,18 @@ span.loading {
   z-index: 999;
 }
 
+#footer.hasSearchResults {
+  position: fixed;
+  z-index: 999999;
+  bottom: 0;
+  width: 100%;
+  height: 668px;
+  background-color: #333333;
+  padding-top: 20px;
+  color: white;
+  height: 97px;
+}
+
 #search {
 
   .hasSearchResults {
@@ -481,6 +497,7 @@ span.loading {
     min-height: 100%;
     color: #685f56;
     height: 100%;
+
     .close {
       &::after {
         font-family: Icons;
@@ -513,7 +530,7 @@ span.loading {
       min-height: inherit;
       margin-left: 0;
       border: 0;
-      position: relative;
+
     }
     //
     // phlu search results
@@ -802,6 +819,36 @@ span.loading {
 
 @include media-breakpoint-down("lg") {
   .siteSearchActive {
+    .main.contents {
+      > .row {
+        display: none;
+      }
+      > .row:first-child {
+        display: block;
+      }
+      .breadcrumbs {
+        display: block;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down("xs") {
+  body.siteSearchActive {
+
+    #search .hasSearchResults {
+      position: fixed;
+      z-index:9999;
+      padding-bottom: 60px;
+    }
+
+    overflow: hidden;
+    height: 100%;
+    position: fixed;
+
+    .navbar {
+      display: none;
+    }
     .main.contents {
       > .row {
         display: none;
@@ -1260,10 +1307,17 @@ body {
         }
       }
     }
-    .fa.fa-search {
+    .fa.fa-search{
       position: absolute;
       right: 0;
       margin: -26px 25px 0 0;
+      color: $naviBlack;
+      display: block;
+    }
+    .fa.fa-times {
+      position: absolute;
+      right: 0;
+      margin: -35px 25px 0 0;
       color: $naviBlack;
       display: block;
     }
@@ -1567,7 +1621,7 @@ body {
     .extendedSearchBg {
       padding: 20px 0;
       .search-input-wrapper {
-          background-color: white;
+        background-color: white;
       }
       &.on {
         background-color: $darkgrey;
@@ -2957,7 +3011,7 @@ body {
         font-size: 1rem;
         line-height: 1.25;
         left: 15px;
-        z-index:3;
+        z-index: 3;
         float: left;
         display: block;
         margin-left: 7px;
@@ -2965,8 +3019,8 @@ body {
         color: $grey11;
       }
       .searchQueryInput {
-        background:transparent;
-        z-index:5;
+        background: transparent;
+        z-index: 5;
         position: relative;
       }
       .col-xs-12 {
@@ -4142,7 +4196,7 @@ body {
         font-size: 1rem;
         line-height: 1.25;
         left: 15px;
-        z-index:3;
+        z-index: 3;
         float: left;
         display: block;
         margin-left: 7px;
@@ -4150,8 +4204,8 @@ body {
         color: $grey11;
       }
       .searchQueryInput {
-        background:transparent;
-        z-index:5;
+        background: transparent;
+        z-index: 5;
         position: relative;
       }
     }
