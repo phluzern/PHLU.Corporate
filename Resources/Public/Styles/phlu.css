@@ -8429,7 +8429,7 @@ span.loading.bar {
 #siteSearchAutocomplete * {
   z-index: 999; }
 
-@media (max-width: 543px) {
+@media (max-width: 1399px) {
   #siteSearchMobileAutocomplete {
     z-index: 999;
     position: fixed;
@@ -8706,6 +8706,10 @@ span.loading.bar {
   display: none; }
 
 @media (max-width: 1279px) {
+  .siteSearchActive .navbar {
+    display: none; }
+  .siteSearchActive .footerAddressLogoDesktop {
+    display: none; }
   .siteSearchActive .main.contents > .row {
     display: none; }
   .siteSearchActive .main.contents > .row:first-child {
@@ -8713,7 +8717,7 @@ span.loading.bar {
   .siteSearchActive .main.contents .breadcrumbs {
     display: block; } }
 
-@media (max-width: 543px) {
+@media (max-width: 1279px) {
   body.siteSearchActive {
     overflow: hidden;
     height: 100%;
@@ -8722,8 +8726,6 @@ span.loading.bar {
       position: fixed;
       z-index: 9999;
       padding-bottom: 60px; }
-    body.siteSearchActive .navbar {
-      display: none; }
     body.siteSearchActive .main.contents > .row {
       display: none; }
     body.siteSearchActive .main.contents > .row:first-child {
@@ -9567,6 +9569,9 @@ body {
         clear: both; }
         body .all .logoAndSearchBar .navbar-brand img {
           width: 212px; }
+        @media (min-width: 1280px) {
+          body .all .logoAndSearchBar .navbar-brand img {
+            width: 175px; } }
       body .all .logoAndSearchBar .form-control {
         height: 52px;
         margin-top: 47px;
