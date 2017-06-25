@@ -312,9 +312,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     $rootScope.siteSearchTopBlur = function () {
         window.setTimeout(function () {
             $rootScope.siteSearchTopFocus = false;
-            if ($rootScope.autocompleteLastPos >= 0 && $rootScope.autocomplete[$rootScope.autocompleteLastPos] !== undefined) {
-                $rootScope.setSiteSearch($rootScope.autocomplete[$rootScope.autocompleteLastPos]);
-            }
+            // if ($rootScope.autocompleteLastPos >= 0 && $rootScope.autocomplete[$rootScope.autocompleteLastPos] !== undefined) {
+            //     $rootScope.setSiteSearch($rootScope.autocomplete[$rootScope.autocompleteLastPos]);
+            // }
             window.setTimeout(function () {
                 $rootScope.$digest();
             }, 1);
