@@ -96,13 +96,13 @@
                                  onerror="this.onerror=null; this.src='Images/phluLogo.png'"/>
                         </a>
 
-                        <div class="site-search-field" id="siteSearchTop" data-ng-class="{'hasautocomplete': siteSearchTopFocus && autocomplete.length && siteSearch !== ''}">
+                        <div class="site-search-field" id="siteSearchTop" data-ng-class="{'hasautocomplete': siteSearchTopFocus &&  autocomplete.length > 1 && siteSearch !== ''}">
                             <input autocomplete="off" data-ng-focus="siteSearchTopSetFocus()" data-ng-mouseover="autocompleteLastPos = -1;" data-ng-click="siteSearchTopSetFocus()" data-ng-blur="siteSearchTopBlur()" id="searchInput" type="text" class="c-input form-control" data-ng-model="siteSearch"
                                    data-ng-click="startSearch();">
                              <i class="fa fa-search" aria-hidden="true"
                                data-ng-class="{'fa-search-plus': quickNode}"></i>
 
-                            <div id="siteSearchAutocomplete" class="hidden-xs-up" data-ng-show="siteSearchTopFocus && siteSearch && autocomplete.length && siteSearch !== ''" data-ng-class="{'hidden-xs-up': siteSearch == '' || !siteSearchTopFocus || !autocomplete || autocomplete.length == 0}">
+                            <div id="siteSearchAutocomplete" class="hidden-xs-up" data-ng-show="siteSearchTopFocus && siteSearch && autocomplete.length > 1 && siteSearch !== ''" data-ng-class="{'hidden-xs-up': siteSearch == '' || !siteSearchTopFocus || !autocomplete || autocomplete.length == 0}">
                                 <ul>
                                     <li data-ng-repeat="item in autocomplete" data-ng-class="{current: autocompleteLastPos == $index}" data-ng-mouseover="setSiteSearchPreview(item,$index);" data-ng-click="setSiteSearch(item);" data-ng-if="$index < 25">
                                         <span data-ng-bind="item"></span>

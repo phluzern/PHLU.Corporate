@@ -299,11 +299,11 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     }
 
     $rootScope.setSiteSearchPreview = function (query, position) {
-        search.$$app.search(null, null, query);
-        $rootScope.autocompleteLastPos = position;
-        window.setTimeout(function () {
-            $rootScope.$digest();
-        }, 1);
+            search.$$app.search(null, null, query);
+            $rootScope.autocompleteLastPos = position;
+            window.setTimeout(function () {
+                $rootScope.$digest();
+            }, 1);
     }
 
 
