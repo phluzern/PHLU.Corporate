@@ -311,6 +311,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var keybinded = false;
     $rootScope.siteSearchTopBlur = function () {
 
+        $rootScope.siteSearchTopFocus = false;
+
         window.setTimeout(function () {
             $rootScope.setSiteSearch($rootScope.siteSearch);
             $rootScope.$digest();
