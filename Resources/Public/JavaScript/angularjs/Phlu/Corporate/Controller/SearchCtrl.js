@@ -297,6 +297,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         $rootScope.siteSearch = query;
         window.setTimeout(function () {
             $rootScope.$digest();
+            $rootScope.siteSearchTopFocus = false;
         }, 1);
     }
 
@@ -314,8 +315,15 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     $rootScope.siteSearchTopBlur = function () {
 
         $rootScope.autocompleteLastPos = -1;
+
         window.setTimeout(function () {
             $rootScope.$digest();
+            window.setTimeout(function () {
+                $rootScope.siteSearchTopFocus = false;
+                window.setTimeout(function () {
+                    $rootScope.$digest();
+                }, 100);
+            }, 100);
         }, 1);
 
     }
