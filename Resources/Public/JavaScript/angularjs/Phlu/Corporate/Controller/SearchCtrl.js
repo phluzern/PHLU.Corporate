@@ -155,14 +155,31 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
     $scope.autocomplete = [];
     $scope.autocompleteLastPos = -1;
 
-    $scope.$watch('siteSearchSearchMobile',function(query,oldquery) {
-        $rootScope.siteSearch = $scope.siteSearchSearchMobile;
-        if (oldquery !== query && query == '') {
-            $scope.autocompleteIsShowing = true;
+    var timer = null;
+    $scope.$watch('siteSearchSearchMobile', function (query, oldquery) {
+
+        if (timer) {
+            window.clearTimeout(timer);
         }
-        if ($rootScope.autocomplete.length > 5) {
-            $scope.autocompleteIsShowing = true;
-        }
+
+        window.setTimeout(function () {
+
+            $rootScope.siteSearch = $scope.siteSearchSearchMobile;
+
+            if (oldquery !== query && query == '') {
+                $scope.autocompleteIsShowing = true;
+            }
+            if ($rootScope.autocomplete.length > 5) {
+                $scope.autocompleteIsShowing = true;
+            }
+
+            window.setTimeout(function () {
+                $scope.$digest();
+                $rootScope.$digest();
+            }, 1);
+
+        }, 100);
+
     });
 
     // autocomplete
@@ -183,7 +200,6 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
     $scope.siteSearchMobileSetFocus = function () {
 
         if (keybinded == false) {
-
 
 
         }
@@ -246,7 +262,7 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
         return false;
     }
 
-    $scope.getAutocompleteMobile = function() {
+    $scope.getAutocompleteMobile = function () {
         return $rootScope.autocomplete;
     }
 

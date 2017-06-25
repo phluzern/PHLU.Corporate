@@ -8396,6 +8396,13 @@ span.loading.bar {
   margin-left: 10px;
   margin-top: 47px; }
 
+#siteSearchMobileWrapper .fa.fa-times {
+  position: absolute;
+  right: 0;
+  margin: -35px 25px 0 0;
+  color: #171815;
+  display: block; }
+
 #siteSearchTop.hasautocomplete #searchInput {
   border-bottom: 0; }
 
@@ -8451,7 +8458,9 @@ span.loading.bar {
       padding: 0; }
       #siteSearchMobileAutocomplete ul li {
         height: 50px;
+        white-space: nowrap;
         overflow: hidden;
+        overflow-x: auto;
         height: 20px;
         padding-left: 15px;
         padding-right: 15px;
@@ -9044,12 +9053,6 @@ body {
       position: absolute;
       right: 0;
       margin: -26px 25px 0 0;
-      color: #171815;
-      display: block; }
-    body .all .fa.fa-times {
-      position: absolute;
-      right: 0;
-      margin: -35px 25px 0 0;
       color: #171815;
       display: block; }
     body .all .col-center {

@@ -428,7 +428,13 @@ span.loading {
 // search
 //
 #siteSearchMobileWrapper {
-
+  .fa.fa-times {
+    position: absolute;
+    right: 0;
+    margin: -35px 25px 0 0;
+    color: $naviBlack;
+    display: block;
+  }
 }
 
 #siteSearchTop.hasautocomplete #searchInput {
@@ -472,7 +478,9 @@ span.loading {
 }
 
 #siteSearchMobileAutocomplete {
+
   @include media-breakpoint-down("xl") {
+
     z-index: 999;
     position: fixed;
     top: -95px;
@@ -496,7 +504,9 @@ span.loading {
       padding: 0;
       li {
         height: 50px;
+        white-space:nowrap;
         overflow: hidden;
+        overflow-x: auto;
         height: 20px;
         padding-left: 15px;
         padding-right: 15px;
@@ -1359,13 +1369,6 @@ body {
       position: absolute;
       right: 0;
       margin: -26px 25px 0 0;
-      color: $naviBlack;
-      display: block;
-    }
-    .fa.fa-times {
-      position: absolute;
-      right: 0;
-      margin: -35px 25px 0 0;
       color: $naviBlack;
       display: block;
     }
