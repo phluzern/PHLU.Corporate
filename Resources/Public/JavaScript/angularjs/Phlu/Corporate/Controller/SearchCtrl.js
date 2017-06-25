@@ -313,20 +313,19 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         $rootScope.siteSearchTopFocus = false;
 
+
         window.setTimeout(function () {
+
             if ($rootScope.autocompleteLastPos >= 0) {
                 $rootScope.autocompleteLastPos = -1;
                 search.$$app.search(null, null, $rootScope.siteSearch);
             }
-            $rootScope.$digest();
-        }, 1);
-
-        window.setTimeout(function () {
             window.setTimeout(function () {
                 $rootScope.$digest();
 
             }, 1);
         }, 1000);
+
     }
 
     $rootScope.siteSearchTopSetFocus = function () {
