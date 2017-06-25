@@ -295,7 +295,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     $rootScope.setSiteSearch = function (query) {
         $rootScope.siteSearch = query;
-        $rootScope.autocompleteLastPos = -1;
     }
 
     $rootScope.setSiteSearchPreview = function (query, position) {
