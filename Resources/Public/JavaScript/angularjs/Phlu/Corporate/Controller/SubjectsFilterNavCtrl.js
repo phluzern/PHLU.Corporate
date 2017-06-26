@@ -39,10 +39,10 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
         .enableCache()
         .$bind('result', $scope)
         .setPropertiesBoost(boost)
-        .setNodeType(['phlu-corporate-contact','phlu-corporate-text'])
+        //.setNodeType(['phlu-corporate-contact','phlu-corporate-text'])
         .setNodePath(window.location.pathname.substr(0,window.location.pathname.length - 5))
-        .setQuery('search', $scope)
-        .run();
+        .setQuery('search', $scope);
+
 
 
     $scope.toggleFilter = function(id) {
