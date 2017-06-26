@@ -239,7 +239,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
 
         $scope.list.$bind('result', $scope)
-            .run();
+        .run();
 
     }
 
