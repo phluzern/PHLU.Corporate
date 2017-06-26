@@ -12,7 +12,7 @@
             <f:case value="Phlu.Corporate:Page.FurtherEducation.Detail.Module">Kurs</f:case>
             <f:case value="Phlu.Corporate:Page.FurtherEducation.Detail.Event">Veranstaltung</f:case>
             <f:comment><f:case value="Phlu.Corporate:Page.News">News</f:case></f:comment>
-            <f:defaultCase>{neos:contentElement.editable(property: 'teasertype', tag: 'span')}</f:defaultCase>
+            <f:defaultCase>{teasertype}</f:defaultCase>
         </f:switch>
 
     </div>
@@ -24,8 +24,8 @@
                     <p>{teaserText}</p>
                 </f:case>
                 <f:defaultCase>
-                    {neos:contentElement.editable(property: 'teaserHeadline', tag: 'h3')}
-                    {neos:contentElement.editable(property: 'teaserText', tag: 'p')}
+                    <h3>{teaserHeadline}</h3>
+                    <p>{teaserText}</p>
                 </f:defaultCase>
             </f:switch>
 

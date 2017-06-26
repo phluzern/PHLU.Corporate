@@ -21,9 +21,13 @@ prototype(Phlu.Corporate:GenericTeaser) < prototype(Phlu.Corporate:Content) {
     external = ${q(node).children('external').get(0)}
 
 
-    date = ${q(q(node).property('reference')).property('date')}
-    time = ${q(q(node).property('reference')).property('time')}
     location = ${q(q(node).property('reference')).property('location')}
+    fromDate = ${q(q(node).property('reference')).property('fromDate')}
+    fromTime = ${q(q(node).property('reference')).property('fromTime')}
+    toDate = ${q(q(node).property('reference')).property('toDate')}
+    toTime = ${q(q(node).property('reference')).property('toTime')}
+    eventType = ${q(q(node).property('reference')).property('eventType')}
+
 
 
 

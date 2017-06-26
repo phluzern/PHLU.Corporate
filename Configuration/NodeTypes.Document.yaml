@@ -270,6 +270,7 @@
       'Phlu.Corporate:Page.News': true
       'Phlu.Corporate:Page.View.Default': false
       'Phlu.Corporate:Page.View.Default.Default': true
+      'Phlu.Corporate:Page.FurtherEducation.Detail.Event': false
   properties:
     documentNode:
       type: reference
@@ -313,17 +314,8 @@
       'Phlu.Corporate:Page.Event': true
       'Phlu.Corporate:Page.View.Default': false
       'Phlu.Corporate:Page.View.Default.Default': true
+      'Phlu.Corporate:Page.FurtherEducation.Detail.Event': false
   properties:
-    fromDate:
-      ui: ~
-    fromTime:
-      ui: ~
-    toDate:
-      ui: ~
-    toTime:
-      ui: ~
-    eventType:
-      ui: ~
     reference:
       type: reference
       ui:
@@ -359,17 +351,6 @@
           position: 50
           editorOptions:
             format: 'h:i'
-    location:
-      type: string
-      defaultValue: Ort
-      ui:
-        inlineEditable: true
-        reloadIfChanged: true
-        label: Ort
-        inspector:
-          group: teaser
-          position: 50
-
 
 
 'Phlu.Corporate:Page.FurtherEducation.Detail.Module':
