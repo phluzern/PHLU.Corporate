@@ -343,9 +343,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
             jQuery(document).mousedown(function (e) {
 
-                console.log(jQuery(e.target).attr('href').indexOf(window.location.href),jQuery(e.target).attr('href'),window.location.href);
-                if (jQuery(e.target).attr('href').indexOf(window.location.href) == 0) {
-                    jQuery("#searchInput").blur();
+                if (jQuery(e.target).attr('href') && jQuery(e.target).attr('href').indexOf(window.location.href) == 0) {
+                    $scope.stopSearch();
                     e.preventDefault();
                     return false;
 
