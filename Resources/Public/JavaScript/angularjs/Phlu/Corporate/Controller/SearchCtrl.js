@@ -339,6 +339,20 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     $rootScope.siteSearchTopSetFocus = function () {
 
         if (keybinded == false) {
+
+
+            jQuery(document).mousedown(function (e) {
+
+                if (jQuery(e.target).attr('href').indexOf(window.location.href) == 0) {
+                    jQuery("#searchInput").blur();
+                    e.preventDefault();
+                    return false;
+
+                }
+
+            });
+
+
             jQuery(document).keydown(function (e) {
                 if (jQuery(e.target).attr('id') == 'searchInput') {
 
