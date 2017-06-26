@@ -431,7 +431,7 @@ span.loading {
   .fa.fa-times {
     position: absolute;
     right: 0;
-    margin: -35px 25px 0 0;
+    margin: -30px 25px 0 0;
     color: $naviBlack;
     display: block;
   }
@@ -490,7 +490,6 @@ span.loading {
     left: 0px;
     margin: 0;
     overflow: scroll;
-    border-bottom: 2px solid white;
 
     &.loading {
       background-position: center center;
@@ -872,31 +871,13 @@ span.loading {
 
 @include media-breakpoint-down("lg") {
   .siteSearchActive {
+    width: 100%;
     .navbar {
       display: none;
     }
     .footerAddressLogoDesktop {
       display: none;
     }
-    .main.contents {
-      > .row {
-        display: none;
-      }
-      > .row:first-child {
-        display: block;
-      }
-      .breadcrumbs {
-        display: block;
-      }
-    }
-  }
-}
-
-
-
-@include media-breakpoint-down("lg") {
-  body.siteSearchActive {
-
     #search .hasSearchResults {
       position: fixed;
       z-index: 9999;
@@ -906,7 +887,6 @@ span.loading {
     overflow: hidden;
     height: 100%;
     position: fixed;
-
     .main.contents {
       > .row {
         display: none;
@@ -920,6 +900,7 @@ span.loading {
     }
   }
 }
+
 
 //
 // icon families
@@ -6953,11 +6934,11 @@ body {
           display: none;
         }
         .form-control {
-          height: 52px;
+          height: 42px;
         }
         .fa.fa-search {
           color: $naviBlack;
-          margin: -36px 33px 0 0;
+          margin: -30px 33px 0 0;
         }
       }
       .quicklinks {

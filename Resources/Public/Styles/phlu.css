@@ -8399,7 +8399,7 @@ span.loading.bar {
 #siteSearchMobileWrapper .fa.fa-times {
   position: absolute;
   right: 0;
-  margin: -35px 25px 0 0;
+  margin: -30px 25px 0 0;
   color: #171815;
   display: block; }
 
@@ -8446,8 +8446,7 @@ span.loading.bar {
     height: 100%;
     left: 0px;
     margin: 0;
-    overflow: scroll;
-    border-bottom: 2px solid white; }
+    overflow: scroll; }
     #siteSearchMobileAutocomplete.loading {
       background-position: center center;
       background-size: 25%; }
@@ -8715,31 +8714,24 @@ span.loading.bar {
   display: none; }
 
 @media (max-width: 1279px) {
-  .siteSearchActive .navbar {
-    display: none; }
-  .siteSearchActive .footerAddressLogoDesktop {
-    display: none; }
-  .siteSearchActive .main.contents > .row {
-    display: none; }
-  .siteSearchActive .main.contents > .row:first-child {
-    display: block; }
-  .siteSearchActive .main.contents .breadcrumbs {
-    display: block; } }
-
-@media (max-width: 1279px) {
-  body.siteSearchActive {
+  .siteSearchActive {
+    width: 100%;
     overflow: hidden;
     height: 100%;
     position: fixed; }
-    body.siteSearchActive #search .hasSearchResults {
+    .siteSearchActive .navbar {
+      display: none; }
+    .siteSearchActive .footerAddressLogoDesktop {
+      display: none; }
+    .siteSearchActive #search .hasSearchResults {
       position: fixed;
       z-index: 9999;
       padding-bottom: 60px; }
-    body.siteSearchActive .main.contents > .row {
+    .siteSearchActive .main.contents > .row {
       display: none; }
-    body.siteSearchActive .main.contents > .row:first-child {
+    .siteSearchActive .main.contents > .row:first-child {
       display: block; }
-    body.siteSearchActive .main.contents .breadcrumbs {
+    .siteSearchActive .main.contents .breadcrumbs {
       display: block; } }
 
 .ico-family-iconic::before {
@@ -12779,10 +12771,10 @@ body {
         body .all .footer .site-search-field {
           display: none; } }
       body .all .footer .site-search-field .form-control {
-        height: 52px; }
+        height: 42px; }
       body .all .footer .site-search-field .fa.fa-search {
         color: #171815;
-        margin: -36px 33px 0 0; }
+        margin: -30px 33px 0 0; }
       body .all .footer .quicklinks {
         padding-top: 20px; }
         body .all .footer .quicklinks a {
