@@ -344,7 +344,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
             jQuery(document).mousedown(function (e) {
 
                 if (jQuery(e.target).attr('href') && jQuery(e.target).attr('href').indexOf(window.location.href) == 0) {
-                    $scope.stopSearch();
+                    location.reload();
                     e.preventDefault();
                     return false;
 
