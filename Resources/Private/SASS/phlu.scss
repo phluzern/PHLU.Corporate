@@ -503,7 +503,7 @@ span.loading {
       padding: 0;
       li {
         height: 50px;
-        white-space:nowrap;
+        white-space: nowrap;
         overflow: hidden;
         overflow-x: auto;
         height: 20px;
@@ -900,7 +900,6 @@ span.loading {
     }
   }
 }
-
 
 //
 // icon families
@@ -1370,9 +1369,7 @@ body {
       @include media-breakpoint-down("lg") {
         padding-bottom: 20px;
       }
-      @include media-breakpoint-down("xs") {
-        display: none;
-      }
+
       li {
         a.nav-link {
           color: $hazelbrowndark;
@@ -1382,9 +1379,6 @@ body {
           cursor: pointer !important;
           padding: 8px 23px;
           margin-right: 5px;
-          @include media-breakpoint-down("xs") {
-            margin-right: 0;
-          }
           margin-bottom: 5px;
 
         }
@@ -3105,17 +3099,6 @@ body {
           }
           .row {
             margin: 0;
-            a {
-              width: 93%;
-              @include media-breakpoint-down("sm") {
-                width: 96%;
-              }
-              @include media-breakpoint-down("xs") {
-                width: 94%;
-              }
-              height: 100%;
-              z-index: 99;
-            }
             .phlu-teaser-body, .phlu-teaser-caret-right {
               height: 165px;
             }
@@ -3298,41 +3281,6 @@ body {
               height: inherit;
             }
             .phlu-teaser-body {
-              i {
-                float: left;
-                height: 22px;
-                width: 36px;
-                &::before {
-                  color: white;
-                  font-size: 25px;
-                  position: relative;
-                  top: 50%;
-                  margin: 0;
-                }
-
-                &.strategieIco {
-                  &::before {
-                    top: -12px;
-                    font-size: 30px;
-                  }
-                }
-                &.faecherIco {
-                  &::before {
-                    top: -1px;
-                  }
-                }
-                &.forschungIco {
-                  &::before {
-                    top: -3px;
-                  }
-                }
-                &.themaIco {
-                  &::before {
-                    top: -3px;
-                    left: -2px;
-                  }
-                }
-              }
               h3 {
                 margin: 0;
                 display: table-cell;
@@ -3342,6 +3290,27 @@ body {
                 @include media-breakpoint-down("xs") {
                   display: block;
                   float: inherit;
+                }
+
+                i {
+                  &.first {
+                    &::before {
+                      top: 2px;
+                      margin-top: 0;
+                      margin-left: 5px;
+                    }
+                    &.themaIco, &.forschungIco {
+                      &::before {
+                        top: 0;
+                      }
+                    }
+                  }
+                  &::before {
+                    position: relative;
+                    top: 0;
+                    margin-top: 0;
+                    margin-left: -10px;
+                  }
                 }
               }
             }
@@ -6041,7 +6010,6 @@ body {
           > div {
             max-width: 900px;
             margin: 0 auto;
-            padding: 0 40px;
           }
         }
         @include media-breakpoint-up("xl") {
