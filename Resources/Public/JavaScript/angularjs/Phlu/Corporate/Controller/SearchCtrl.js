@@ -457,7 +457,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-course-study-furthereducation-nr': 160,
         'phlu-corporate-location-name': 550,
 
-        'phlu-corporate-contact-label': 1,
+        'phlu-corporate-contact-label': 1000,
         'phlu-corporate-contact-parent': 1,
 
         'phlu-corporate-contact-text': 150,
@@ -478,8 +478,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-course-module-furthereducation-nr': 200,
         'phlu-neos-nodetypes-course-study-furthereducation-nr': 200,
         'phlu-neos-nodetypes-course-event-furthereducation-nr': 200,
-        'phlu-qmpilot-nodetypes-file-asset': 1,
 
+        'phlu-qmpilot-nodetypes-file-asset': 1,
         'phlu-qmpilot-nodetypes-file-grandparent': 1,
         'phlu-qmpilot-nodetypes-file-parent': 1,
         'phlu-qmpilot-nodetypes-file-label': 1,
