@@ -449,17 +449,14 @@ span.loading {
   border-left: 2px solid black;
   border-right: 2px solid black;
   background: rgba(255, 255, 255, 0.95);
-  border-top: 1px solid $darkgrey;
   margin: 0;
   ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     li {
-      font-size: 80%;
-      padding-left: 10px;
-      padding-right: 10px;
-      border-bottom: 1px solid $darkgrey;
+      font-size: $font-size-form-dropdown;
+      padding:10px;
       color: $hazelbrowndark;
       cursor: pointer;
       &.current {
@@ -6452,7 +6449,7 @@ body {
         }
         &.row.contactperson {
           > .col-xs-12 {
-            padding-bottom: 0;
+            padding-bottom: 30px;
           }
         }
       }

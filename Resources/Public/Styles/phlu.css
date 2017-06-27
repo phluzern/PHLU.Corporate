@@ -8414,17 +8414,14 @@ span.loading.bar {
   border-left: 2px solid black;
   border-right: 2px solid black;
   background: rgba(255, 255, 255, 0.95);
-  border-top: 1px solid #545454;
   margin: 0; }
   #siteSearchAutocomplete ul {
     list-style-type: none;
     padding: 0;
     margin: 0; }
     #siteSearchAutocomplete ul li {
-      font-size: 80%;
-      padding-left: 10px;
-      padding-right: 10px;
-      border-bottom: 1px solid #545454;
+      font-size: 1rem;
+      padding: 10px;
       color: #9f632a;
       cursor: pointer; }
       #siteSearchAutocomplete ul li.current {
@@ -12448,7 +12445,7 @@ body {
           body .all .main .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only td {
             border-top: 0; }
       body .all .main .further-education-special-search.row.contactperson > .col-xs-12 {
-        padding-bottom: 0; }
+        padding-bottom: 30px; }
       body .all .main .further-education-detail .phlu-team-members hr {
         margin-top: 60px; }
       body .all .main .further-education-detail .phlu-team-members .phlu-teaser {
