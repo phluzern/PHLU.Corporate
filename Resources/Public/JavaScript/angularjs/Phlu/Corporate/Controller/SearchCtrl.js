@@ -339,6 +339,20 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     $rootScope.siteSearchTopSetFocus = function () {
 
         if (keybinded == false) {
+
+
+            jQuery(document).mousedown(function (e) {
+
+                if (jQuery(e.target).attr('href') && jQuery(e.target).attr('href').indexOf(window.location.href) == 0) {
+                    location.reload();
+                    e.preventDefault();
+                    return false;
+
+                }
+
+            });
+
+
             jQuery(document).keydown(function (e) {
                 if (jQuery(e.target).attr('id') == 'searchInput') {
 
@@ -510,12 +524,13 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var NodeUrlBoostFactor = {
         '/studium/': 7,
-        '/weiterbildung/': 5,
+        '/weiterbildung': 500,
         '/weiterbildung/kurse/': 0.01,
         '/beratungen-angebote/': 3,
         '/forschung/': 2,
         '/faecher-und-schwerpunkte/': 5,
         '/ueber-uns/standorte': 100,
+        '/ueber-uns/organisation-personen/weiterbildung': 0.001,
         '/ueber-uns/': 0.5
 
     };
@@ -523,9 +538,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var groupedBy = {
         //'Kontakte': [function(node) {return node.getProperty('eventoid') ? node.getProperty('eventoid') : node.getProperty('email');}],
         'Kontakte': ['lastname', 'firstname'],
-        'Standorte': ['url'],
-        'Projekte': 'title',
-        'Seiten': ['url'],
         'Weiterbildungsstudiengänge': ['nr'],
         'Weiterbildungsskurse': ['nr'],
         'Weiterbildungsveranstaltungen': ['nr']
