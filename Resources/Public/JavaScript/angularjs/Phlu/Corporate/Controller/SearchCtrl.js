@@ -454,8 +454,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var boost = {
 
 
-        'phlu-corporate-contact-label': 1000,
+
         'phlu-corporate-contact-phone': 1000,
+        'phlu-corporate-contact-label': -1,
         'phlu-corporate-contact-parent': -1, // dont'search here
         'phlu-corporate-contact-grandparent': -1, // dont'search here
         'phlu-corporate-contact-education': -1, // dont'search here
@@ -469,9 +470,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-project-participants': 100,
 
         'phlu-corporate-textplain-grandparent': -1,
-        'phlu-corporate-textplain-label': 20,
-        'phlu-corporate-textplain-parent': 20,
-        'phlu-corporate-textplain-text': 20,
+        'phlu-corporate-textplain-label': 15,
+        'phlu-corporate-textplain-parent': 15,
+        'phlu-corporate-textplain-text': 15,
 
         'phlu-corporate-text-grandparent': -1,
         'phlu-corporate-text-label': 20,
@@ -487,7 +488,15 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-course-event-furthereducation-title': 20,
 
 
-        'phlu-corporate-location-name': 2000,
+        'phlu-qmpilot-nodetypes-file-asset': -1,
+        'phlu-qmpilot-nodetypes-file-grandparent': -1,
+        'phlu-qmpilot-nodetypes-file-parent': 1,
+        'phlu-qmpilot-nodetypes-file-label': -1,
+        'phlu-qmpilot-nodetypes-file-title': 1,
+
+
+        'phlu-corporate-location-name': 20000,
+        'phlu-corporate-location-phone': 20000,
 
         'url': -1,
         'label': 1,
@@ -562,12 +571,10 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var NodeUrlBoostFactor = {
         '/studium/': 7,
-        '/weiterbildung': 500,
-        '/weiterbildung/kurse/': 0.01,
+        '/weiterbildung/': 1,
         '/beratungen-angebote/': 3,
         '/forschung/': 2,
         '/faecher-und-schwerpunkte/': 5,
-        '/ueber-uns/standorte': 100,
         '/ueber-uns/organisation-personen/weiterbildung': 0.001,
         '/ueber-uns/': 0.5
 
@@ -576,6 +583,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var groupedBy = {
         //'Kontakte': [function(node) {return node.getProperty('eventoid') ? node.getProperty('eventoid') : node.getProperty('email');}],
         'Kontakte': ['lastname', 'firstname'],
+        'Standorte': ['lng', 'lat'],
         'Weiterbildungsstudiengänge': ['nr'],
         'Weiterbildungsskurse': ['nr'],
         'Weiterbildungsveranstaltungen': ['nr']
