@@ -470,14 +470,13 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-project-participants': 100,
 
         'phlu-corporate-textplain-grandparent': -1,
-        'phlu-corporate-textplain-label': 15,
-        'phlu-corporate-textplain-parent': 15,
-        'phlu-corporate-textplain-text': 15,
+        'phlu-corporate-textplain-label': -1,
+        'phlu-corporate-textplain-parent': -1,
 
         'phlu-corporate-text-grandparent': -1,
-        'phlu-corporate-text-label': 20,
-        'phlu-corporate-text-parent': 20,
-        'phlu-corporate-text-text': 20,
+        'phlu-corporate-text-label': -1,
+        'phlu-corporate-text-parent': -1,
+
 
         'phlu-neos-nodetypes-course-module-furthereducation-nr': 200,
         'phlu-neos-nodetypes-course-study-furthereducation-nr': 200,
@@ -583,6 +582,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var groupedBy = {
         //'Kontakte': [function(node) {return node.getProperty('eventoid') ? node.getProperty('eventoid') : node.getProperty('email');}],
         'Kontakte': ['lastname', 'firstname'],
+        'Seiten': ['url'],
         'Standorte': ['lng', 'lat'],
         'Weiterbildungsstudiengänge': ['nr'],
         'Weiterbildungsskurse': ['nr'],
