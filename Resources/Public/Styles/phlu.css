@@ -8423,10 +8423,20 @@ span.loading.bar {
       font-size: 1rem;
       padding: 10px;
       color: #9f632a;
-      cursor: pointer; }
+      cursor: pointer;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      -ms-word-break: break-all;
+      word-break: break-word;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto; }
       #siteSearchAutocomplete ul li.current {
         background-color: #e6e6e6;
         color: black; }
+      #siteSearchAutocomplete ul li:hover {
+        background-color: #edeae8; }
     #siteSearchAutocomplete ul > li:last-child {
       border: 0; }
 

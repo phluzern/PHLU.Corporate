@@ -459,9 +459,13 @@ span.loading {
       padding:10px;
       color: $hazelbrowndark;
       cursor: pointer;
+      @include word-wrap();
       &.current {
         background-color: $grey11;
         color: black;
+      }
+      &:hover {
+        background-color: $lightgrey;
       }
     }
     > li:last-child {
