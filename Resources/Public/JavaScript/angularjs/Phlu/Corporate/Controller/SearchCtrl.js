@@ -196,6 +196,18 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
             }, 1);
         }, 1000);
     }
+    $scope.siteSearchMobileBlur = function () {
+        window.setTimeout(function () {
+            $scope.siteSearchMobileFocus = false;
+            $scope.autocompleteIsShowing = false;
+            if ($scope.autocompleteLastPos >= 0 && $scope.autocomplete[$scope.autocompleteLastPos] !== undefined) {
+                $scope.setSiteSearch($scope.autocomplete[$scope.autocompleteLastPos]);
+            }
+            window.setTimeout(function () {
+                $scope.$digest();
+            }, 1);
+        }, 1000);
+    }
 
     $scope.siteSearchMobileSetFocus = function () {
 
@@ -397,6 +409,11 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                     if ($rootScope.autocompleteLastPos >= $rootScope.autocomplete.length) {
                         $rootScope.autocompleteLastPos = $rootScope.autocomplete.length - 1;
                     }
+
+                    if ($rootScope.autocompleteLastPos >= 8) {
+                        $rootScope.autocompleteLastPos = 7;
+                    }
+
                     search.$$app.search(null, null, $rootScope.autocomplete[$rootScope.autocompleteLastPos]);
 
                     window.setTimeout(function () {
