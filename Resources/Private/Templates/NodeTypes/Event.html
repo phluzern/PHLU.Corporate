@@ -5,7 +5,8 @@
 
 <div class="{breakpointClass}  event singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)} {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}">
     <div class="event-date-day">
-        <f:format.date format="d">{fromDate}</f:format.date>.
+        <f:format.date format="d">{fromDate}</f:format.date>
+        .
     </div>
     <div class="event-date-month-year-location">
         <b>
@@ -21,15 +22,14 @@
         <div class="scrollbody">
             <h3>{teaserHeadline}</h3>
             <p>
-                <a href="#">
-                    {teaserText}
-                </a>
+                {teaserText}
             </p>
             <f:if condition="{ishiddendetaillink}">
                 <f:else>
                     <f:if condition="{reference}">
                         <f:then>
-                            <a style="display:none;" data-gentics-aloha-repository="node-repository" href="{uri:node(node: reference)}">mehr</a>
+                            <a style="display:none;" data-gentics-aloha-repository="node-repository"
+                               href="{uri:node(node: reference)}">mehr</a>
                         </f:then>
                     </f:if>
 
@@ -42,12 +42,14 @@
 
     <f:if condition="{node.properties.teaserImage}">
         <f:then>
-            <media:image async="true" image="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}" width="{width}"
+            <media:image async="true" image="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}"
+                         width="{width}"
                          maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
                          allowUpScaling="{allowUpScaling}"/>
         </f:then>
     </f:if>
-    <a class="goto-teaser-target" style="display: none" title="zur Zielseite wechseln" data-gentics-aloha-repository="node-repository" href="{uri:node(node: reference)}">
+    <a class="goto-teaser-target" style="display: none" title="zur Zielseite wechseln"
+       data-gentics-aloha-repository="node-repository" href="{uri:node(node: reference)}">
         <i class="fa fa-external-link-square" aria-hidden="true"></i>
     </a>
 </div>
