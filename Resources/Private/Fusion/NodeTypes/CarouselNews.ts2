@@ -7,11 +7,12 @@ prototype(Phlu.Corporate:Content.CarouselNews) < prototype(Phlu.Corporate:Conten
     main = ${q(node).children('main').get(0)}
 
 
-    carouselItems = ${q(node).children('main').children().get()}
+    carouselItems = ${node.context.inBackend ? q(node).children('main').find("[instanceof Phlu.Neos.NodeTypes:Content]").get() : q(node).children('main').find("[instanceof Phlu.Neos.NodeTypes:Content][reference]").get()}
+
+
     carouselItemsRenderer = Neos.Neos:ContentCase
     title = ${q(node).property('title')}
     teasertype = ${q(node).property('teasertype')}
-
 
 
 
