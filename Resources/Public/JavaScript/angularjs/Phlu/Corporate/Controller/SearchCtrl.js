@@ -495,6 +495,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
         'phlu-corporate-location-name': 20000,
+        'phlu-corporate-location-street': 20000,
         'phlu-corporate-location-phone': 20000,
 
         'url': -1,
@@ -502,63 +503,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'parent': 1,
         'grandparent': -1
 
-        // 'phlu-neos-nodetypes-course-study-furthereducation-title': 160,
-        // 'phlu-neos-nodetypes-course-study-furthereducation-nr': 160,
-        // 'phlu-corporate-location-name': 550,
-        //
-        // 'phlu-corporate-contact-label': 1000,
-        // 'phlu-corporate-contact-parent': 1,
-        //
-        // 'phlu-corporate-contact-text': 150,
-        // 'phlu-corporate-contact-education': -1, // dont'search here
-        // 'phlu-corporate-contact-activities': -1, // dont'search here
-        // 'phlu-corporate-contact-functions': -1,
-        // 'phlu-corporate-contact-consulting': -1, // dont'search here
-        // 'phlu-corporate-contact-expertise': -1, // dont'search here
-        // 'phlu-corporate-contact-function': 1, // dont'search here
-        // 'phlu-corporate-contact-functioncustom': 1, // dont'search here
-        // 'phlu-corporate-contact-phone': 15000,
-        //
-        // 'phlu-neos-nodetypes-course-module-furthereducation-title': 1,
-        // 'phlu-neos-nodetypes-course-study-furthereducation-title': 1,
-        // 'phlu-neos-nodetypes-course-event-furthereducation-title': 1,
-        // 'phlu-neos-nodetypes-course-module-furthereducation-genre': 1,
-        // 'phlu-neos-nodetypes-course-study-furthereducation-genre': 1,
-        // 'phlu-neos-nodetypes-course-module-furthereducation-nr': 200,
-        // 'phlu-neos-nodetypes-course-study-furthereducation-nr': 200,
-        // 'phlu-neos-nodetypes-course-event-furthereducation-nr': 200,
-        //
-        // 'phlu-qmpilot-nodetypes-file-asset': 1,
-        // 'phlu-qmpilot-nodetypes-file-grandparent': 1,
-        // 'phlu-qmpilot-nodetypes-file-parent': 1,
-        // 'phlu-qmpilot-nodetypes-file-label': 1,
-        // 'phlu-qmpilot-nodetypes-file-title': 1,
-        //
-        // 'phlu-corporate-textplain-grandparent': -1,
-        // 'phlu-corporate-textplain-label': 10,
-        // 'phlu-corporate-textplain-parent': 10,
-        //
-        // 'phlu-corporate-text-label': 1,
-        // 'phlu-corporate-text-parent': 1,
-        //
-        // 'phlu-neos-nodetypes-publication-date': -1,
-        // 'phlu-neos-nodetypes-publication-grandparent': -1,
-        // 'phlu-neos-nodetypes-publication-id': -1,
-        // 'phlu-neos-nodetypes-publication-language': -1,
-        // 'phlu-neos-nodetypes-publication-publicationtype': -1,
-        // 'phlu-neos-nodetypes-publication-organisations': -1,
-        // 'phlu-neos-nodetypes-publication-persons': -1,
-        // 'phlu-neos-nodetypes-publication-title': -1,
-        // 'phlu-neos-nodetypes-publication-url': -1,
-        // 'phlu-neos-nodetypes-publication-sortingkey': -1,
-        //
-        // 'phlu-corporate-page-furthereducation-detail-module-description': -1,
-        // 'phlu-neos-nodetypes-course-module-furthereducation-grandparent': -1,
-        //
-
-        // 'phlu-corporate-textplain-text': 1,
-        // 'phlu-corporate-textplain-grandparent': -1,
-        // 'phlu-corporate-textplain-uri': -1
 
 
     };
