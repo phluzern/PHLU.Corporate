@@ -9060,9 +9060,6 @@ body {
       @media (max-width: 1279px) {
         body .all .nav-pills {
           padding-bottom: 20px; } }
-      @media (max-width: 543px) {
-        body .all .nav-pills {
-          display: none; } }
       body .all .nav-pills li a.nav-link {
         color: #9f632a;
         border: 2px solid #9f632a;
@@ -9072,9 +9069,6 @@ body {
         padding: 8px 23px;
         margin-right: 5px;
         margin-bottom: 5px; }
-        @media (max-width: 543px) {
-          body .all .nav-pills li a.nav-link {
-            margin-right: 0; } }
       body .all .nav-pills li > span {
         float: right;
         margin-top: -54px;
@@ -10225,16 +10219,6 @@ body {
             padding: 0 12px; } }
         body .all .row.subjectsfilternav .phlu-teaser.navigation .nav-teaser-item .row {
           margin: 0; }
-          body .all .row.subjectsfilternav .phlu-teaser.navigation .nav-teaser-item .row a {
-            width: 93%;
-            height: 100%;
-            z-index: 99; }
-            @media (max-width: 767px) {
-              body .all .row.subjectsfilternav .phlu-teaser.navigation .nav-teaser-item .row a {
-                width: 96%; } }
-            @media (max-width: 543px) {
-              body .all .row.subjectsfilternav .phlu-teaser.navigation .nav-teaser-item .row a {
-                width: 94%; } }
           body .all .row.subjectsfilternav .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-body, body .all .row.subjectsfilternav .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-caret-right {
             height: 165px; }
           body .all .row.subjectsfilternav .phlu-teaser.navigation .nav-teaser-item .row .phlu-teaser-body h3 {
@@ -10346,26 +10330,6 @@ body {
         padding: 0; }
         body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body, body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right {
           height: inherit; }
-        body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i {
-          float: left;
-          height: 22px;
-          width: 36px; }
-          body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i::before {
-            color: white;
-            font-size: 25px;
-            position: relative;
-            top: 50%;
-            margin: 0; }
-          body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.strategieIco::before {
-            top: -12px;
-            font-size: 30px; }
-          body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.faecherIco::before {
-            top: -1px; }
-          body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.forschungIco::before {
-            top: -3px; }
-          body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body i.themaIco::before {
-            top: -3px;
-            left: -2px; }
         body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
           margin: 0;
           display: table-cell; }
@@ -10376,6 +10340,17 @@ body {
             body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 {
               display: block;
               float: inherit; } }
+          body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 i.first::before {
+            top: 2px;
+            margin-top: 0;
+            margin-left: 5px; }
+          body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 i.first.themaIco::before, body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 i.first.forschungIco::before {
+            top: 0; }
+          body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 i::before {
+            position: relative;
+            top: 0;
+            margin-top: 0;
+            margin-left: -10px; }
         body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right::after {
           bottom: inherit;
           top: 52%;
@@ -12177,8 +12152,7 @@ body {
       @media (min-width: 992px) {
         body .all .main > .row > div, body .all .main > .row-fullwidth-content > .row > div {
           max-width: 900px;
-          margin: 0 auto;
-          padding: 0 40px; } }
+          margin: 0 auto; } }
       @media (min-width: 1280px) {
         body .all .main > .row > .col-xs-12, body .all .main > .row-fullwidth-content > .row > .col-xs-12 {
           max-width: 900px; } }
