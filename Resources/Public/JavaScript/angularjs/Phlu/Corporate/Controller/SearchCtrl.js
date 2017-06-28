@@ -178,7 +178,7 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
                 $rootScope.$digest();
             }, 1);
 
-        }, 100);
+        }, 1);
 
     });
 
@@ -820,6 +820,99 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         }
     });
+
+
+    var filterAllNodesByNodeType = {
+        'phlu-neos-nodetypes-course-study-furthereducation': true,
+        'phlu-neos-nodetypes-course-module-furthereducation': true,
+        'phlu-neos-nodetypes-course-event-furthereducation': true,
+        'phlu-corporate-location': true
+    };
+
+
+    $scope.filterAllResults = function(node) {
+
+        if (filterAllNodesByNodeType[node.nodeType] !== undefined) {
+            return false;
+        }
+
+        if (node.isTurboNode()) {
+            return false;
+        }
+
+        return true;
+
+    }
+
+
+
+    /**
+     * clone from evento controller
+     */
+    $scope.currentYears = {};
+    $scope.isopen = 0;
+
+    /**
+     * @public
+     * if detail is open
+     * @returns void
+     */
+    $scope.isOpen = function (node) {
+        return $scope.isopen === node.identifier;
+    };
+
+    /**
+     * @public
+     * Set node type filter
+     * @returns void
+     */
+    $scope.changeBookable = function (category) {
+        $scope.setFilter([-1], 'bookable', category);
+    };
+
+    /**
+     * @public
+     * set current year of given node
+     * @param node node
+     * @param array year
+     * @returns void
+     */
+    $scope.setCurrentYear = function (node, year) {
+
+        if (year === undefined && $scope.currentYears[node.identifier] == undefined) {
+            year = node.getProperty('years.0');
+        }
+
+        if (year !== undefined) {
+            node.currentyear = year;
+            $scope.currentYears[node.identifier] = year;
+        }
+
+        if ($scope.currentYears[node.identifier] !== undefined && year !== undefined && year.Id !== undefined) {
+            $scope.currentYears[node.identifier].url = node.getUrl().substr(0, node.getUrl().lastIndexOf("/")) + "/" + node.getProperty('id') + "/" + year.Id + node.getUrl().substr(node.getUrl().lastIndexOf("/"));
+        }
+
+    };
+
+
+    /**
+     * @public
+     * set detail is open
+     * @returns void
+     */
+    $scope.setOpen = function (node, index, containerId) {
+
+        $scope.isopen = $scope.isopen === node.identifier ? 0 : node.identifier;
+        $scope.setCurrentYear(node);
+
+        if (containerId !== undefined) {
+            index = containerId + "-" + index;
+            window.setTimeout(function() {
+                addthis.button("#share-"+index, {}, {});
+            },100);
+        }
+
+    };
 
 
 }]);

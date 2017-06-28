@@ -484,7 +484,7 @@ span.loading {
 
     z-index: 999;
     position: fixed;
-    top: -95px;
+    top: -55px;
     background-color: $darkgrey;
     width: 100%;
     height: 100%;
@@ -499,7 +499,7 @@ span.loading {
 
     ul {
       list-style-type: none;
-      margin-top: 95px;
+      margin-top: 15px;
       margin-left: 0px;
       padding: 0;
       li {
@@ -531,9 +531,9 @@ span.loading {
   width: 100%;
   height: 668px;
   background-color: $grey8;
-  padding-top: 20px;
+  padding: 5px;
   color: white;
-  height: 97px;
+  height: 53px;
 }
 
 #search {
@@ -630,9 +630,12 @@ span.loading {
       }
 
       display: block;
-      margin-top: 30px;
+      padding:30px;
+
+
       @include media-breakpoint-down("sm") {
         min-height: 200px;
+        padding:15px;
       }
       .rcrumbs-container {
         height: 30px;
@@ -807,7 +810,6 @@ span.loading {
           .table {
             margin-bottom: 10px;
             td {
-              padding-right: 0;
               @include media-breakpoint-down("sm") {
                 padding-left: 0;
               }

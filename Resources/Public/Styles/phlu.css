@@ -8447,7 +8447,7 @@ span.loading.bar {
   #siteSearchMobileAutocomplete {
     z-index: 999;
     position: fixed;
-    top: -95px;
+    top: -55px;
     background-color: #545454;
     width: 100%;
     height: 100%;
@@ -8459,7 +8459,7 @@ span.loading.bar {
       background-size: 25%; }
     #siteSearchMobileAutocomplete ul {
       list-style-type: none;
-      margin-top: 95px;
+      margin-top: 15px;
       margin-left: 0px;
       padding: 0; }
       #siteSearchMobileAutocomplete ul li {
@@ -8484,9 +8484,9 @@ span.loading.bar {
   width: 100%;
   height: 668px;
   background-color: #333333;
-  padding-top: 20px;
+  padding: 5px;
   color: white;
-  height: 97px; }
+  height: 53px; }
 
 #search .hasSearchResults {
   background-color: #FFFCFA;
@@ -8528,7 +8528,7 @@ span.loading.bar {
       border: 0; } }
   #search .hasSearchResults .phlu-searchresults {
     display: block;
-    margin-top: 30px; }
+    padding: 30px; }
     #search .hasSearchResults .phlu-searchresults .breadcrumb {
       display: block;
       height: auto; }
@@ -8568,7 +8568,8 @@ span.loading.bar {
       font-style: italic; }
     @media (max-width: 767px) {
       #search .hasSearchResults .phlu-searchresults {
-        min-height: 200px; } }
+        min-height: 200px;
+        padding: 15px; } }
     #search .hasSearchResults .phlu-searchresults .rcrumbs-container {
       height: 30px;
       overflow: visible; }
@@ -8678,28 +8679,26 @@ span.loading.bar {
               display: block; }
     #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table {
       margin-bottom: 10px; }
-      #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {
-        padding-right: 0; }
-        @media (max-width: 767px) {
-          #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {
-            padding-left: 0; } }
-        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 {
-          font-size: 1.3rem !important;
-          margin: 10px 0 20px; }
-          #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 a {
-            line-height: 1.7;
-            font-size: 1.3rem !important; }
-        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address {
-          margin-bottom: 0; }
-          #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location {
-            margin-left: 23px; }
-            #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location:before {
-              position: absolute;
-              font-size: 20px;
-              margin-left: -23px;
-              margin-top: -3px; }
-        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td.col-center {
-          padding-bottom: 80px; }
+      @media (max-width: 767px) {
+        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {
+          padding-left: 0; } }
+      #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 {
+        font-size: 1.3rem !important;
+        margin: 10px 0 20px; }
+        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 a {
+          line-height: 1.7;
+          font-size: 1.3rem !important; }
+      #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address {
+        margin-bottom: 0; }
+        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location {
+          margin-left: 23px; }
+          #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location:before {
+            position: absolute;
+            font-size: 20px;
+            margin-left: -23px;
+            margin-top: -3px; }
+      #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td.col-center {
+        padding-bottom: 80px; }
     #search .hasSearchResults .phlu-searchresults .results-table .google-maps-iframe {
       padding: 0 15px; }
     #search .hasSearchResults .phlu-searchresults .results-table .nofilter {
