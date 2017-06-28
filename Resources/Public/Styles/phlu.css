@@ -8954,6 +8954,9 @@ body {
         body .all h2 {
           margin: 50px 0 32px;
           font-size: 2rem; } }
+      @media (max-width: 991px) {
+        body .all h2 {
+          margin: 30px 0 19px; } }
     body .all h3 {
       margin: 30px 0 20px;
       letter-spacing: 0.2px;
@@ -9009,7 +9012,13 @@ body {
       body .all .btn.btn-info {
         text-align: left; }
       body .all .btn.btn-primary {
-        margin-top: 15px; }
+        margin-top: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%; }
+        @media (max-width: 543px) {
+          body .all .btn.btn-primary {
+            width: 100%; } }
         body .all .btn.btn-primary:hover {
           background-color: #0A626C;
           border-color: #0A626C; }
@@ -9130,7 +9139,8 @@ body {
       padding: 33px 0; }
       @media (max-width: 543px) {
         body .all .anchors-mobile-view {
-          display: block; } }
+          display: block;
+          padding: 33px 0 10px; } }
       body .all .anchors-mobile-view button {
         width: 100%;
         background-color: white;
