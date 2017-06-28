@@ -1236,9 +1236,15 @@ body {
       @include media-breakpoint-up("lg") {
         margin: 32px 0 32px;
       }
+      @include media-breakpoint-up("lg") {
+        margin: 32px 0 32px;
+      }
       @include media-breakpoint-up("xl") {
         margin: 50px 0 32px;
         font-size: $font-size-h2-desktop;
+      }
+      @include media-breakpoint-down("md") {
+        margin: 30px 0 19px;
       }
     }
     h3 {
@@ -1312,6 +1318,12 @@ body {
       }
       &.btn-primary {
         margin-top: 15px;
+        overflow:hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        @include media-breakpoint-down("xs") {
+          width: 100%;
+        }
         &:hover {
           background-color: $iceblueDark;
           border-color: $iceblueDark;
@@ -1385,7 +1397,6 @@ body {
       @include media-breakpoint-down("lg") {
         padding-bottom: 20px;
       }
-
       li {
         a.nav-link {
           color: $hazelbrowndark;
@@ -1451,12 +1462,18 @@ body {
           color: $naviBlack;
         }
       }
+      &.anchors-desktop-view {
+        @include media-breakpoint-down("xs") {
+          display: none;
+        }
+      }
     }
     .anchors-mobile-view {
       display: none;
       padding: 33px 0;
       @include media-breakpoint-down("xs") {
         display: block;
+        padding: 33px 0 10px;
       }
       button {
         width: 100%;
@@ -2315,6 +2332,10 @@ body {
     // contacts
     .contact-image {
       max-width: 100%;
+      @include media-breakpoint-down("xs") {
+        width: 100%;
+        margin-bottom: 20px;
+      }
     }
 
     //
@@ -2544,8 +2565,10 @@ body {
       .phlu-accordion {
         .phlu-corporate-contactsgroup {
           clear: both;
-          @include media-breakpoint-down("sm") {
-            padding-top: 30px;
+          &:first-child {
+            @include media-breakpoint-down("sm") {
+              padding-top: 30px;
+            }
           }
         }
         .nav-teaser-item {
@@ -3190,10 +3213,16 @@ body {
           li {
             margin-top: 4px;
             margin-left: 0;
+            @include media-breakpoint-down("xs") {
+              clear:both;
+            }
             a.nav-link {
               background-color: $grey11;
               padding-top: 10px;
               padding-bottom: 10px;
+              @include media-breakpoint-down("xs") {
+                width:100%;
+              }
               &.all, &.no-icon {
                 padding-left: 23px;
               }
@@ -3304,6 +3333,7 @@ body {
                   padding-top: 2px;
                 }
                 @include media-breakpoint-down("xs") {
+                  padding-top: 0;
                   display: block;
                   float: inherit;
                 }
@@ -3454,10 +3484,10 @@ body {
                 &::after {
                   right: 20px;
                   @include media-breakpoint-down('xxl') {
-                    right: 60px;
-                  }
-                  @include media-breakpoint-down('md') {
                     right: 35px;
+                  }
+                  @include media-breakpoint-down('xs') {
+                    right: 20px;
                   }
                 }
               }
@@ -3759,6 +3789,7 @@ body {
                 }
                 @include media-breakpoint-down("xs") {
                   height: auto;
+                  margin-top:18px;
                 }
               }
             }
@@ -3842,7 +3873,7 @@ body {
             right: inherit;
             .panel-switch {
               position: absolute;
-              right: 35px;
+              right: 30px;
             }
           }
           right: 20px;
@@ -6026,6 +6057,7 @@ body {
           > div {
             max-width: 900px;
             margin: 0 auto;
+            padding: 0 40px;
           }
         }
         @include media-breakpoint-up("xl") {
