@@ -178,7 +178,7 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
                 $rootScope.$digest();
             }, 1);
 
-        }, 5);
+        }, 1);
 
     });
 
