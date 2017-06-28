@@ -809,7 +809,6 @@ span.loading {
           .table {
             margin-bottom: 10px;
             td {
-              padding-right: 0;
               @include media-breakpoint-down("sm") {
                 padding-left: 0;
               }

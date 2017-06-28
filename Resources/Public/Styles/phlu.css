@@ -8678,28 +8678,26 @@ span.loading.bar {
               display: block; }
     #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table {
       margin-bottom: 10px; }
-      #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {
-        padding-right: 0; }
-        @media (max-width: 767px) {
-          #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {
-            padding-left: 0; } }
-        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 {
-          font-size: 1.3rem !important;
-          margin: 10px 0 20px; }
-          #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 a {
-            line-height: 1.7;
-            font-size: 1.3rem !important; }
-        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address {
-          margin-bottom: 0; }
-          #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location {
-            margin-left: 23px; }
-            #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location:before {
-              position: absolute;
-              font-size: 20px;
-              margin-left: -23px;
-              margin-top: -3px; }
-        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td.col-center {
-          padding-bottom: 80px; }
+      @media (max-width: 767px) {
+        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td {
+          padding-left: 0; } }
+      #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 {
+        font-size: 1.3rem !important;
+        margin: 10px 0 20px; }
+        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td h3 a {
+          line-height: 1.7;
+          font-size: 1.3rem !important; }
+      #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address {
+        margin-bottom: 0; }
+        #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location {
+          margin-left: 23px; }
+          #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td .searchresult-body address .content-link-location:before {
+            position: absolute;
+            font-size: 20px;
+            margin-left: -23px;
+            margin-top: -3px; }
+      #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table td.col-center {
+        padding-bottom: 80px; }
     #search .hasSearchResults .phlu-searchresults .results-table .google-maps-iframe {
       padding: 0 15px; }
     #search .hasSearchResults .phlu-searchresults .results-table .nofilter {

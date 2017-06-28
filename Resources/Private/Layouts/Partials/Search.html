@@ -110,8 +110,8 @@
 
                             <table class="table">
                                 <tbody>
-                                <tr ng-repeat="node in result.getNodes(limit['all'] === undefined ? 50 : limit['all'],filterAllResults,'_document.identifier')">
-                                    <td  data-node-id="{{node.getIdentifier()}}">
+                                <tr ng-repeat="node in result.getNodes(limit['all'] === undefined ? 10 : limit['all'],filterAllResults,'_document.identifier')">
+                                    <td data-node-id="{{node.getIdentifier()}}">
                                         <search data="node" view="all"></search>
                                     </td>
                                 </tr>
@@ -119,12 +119,13 @@
                                 <tfoot class="">
                                 <tr>
                                     <td class="col-center">
-                                        <a data-ng-click="limit['all'] === undefined ? limit['all'] = 50 : limit['all'] = limit['all'] + 10"
+                                        <a data-ng-click="limit['all'] === undefined ? limit['all'] = 10 : limit['all'] = limit['all'] + 10"
                                            class="btn loadMore"
                                            data-ng-if="result.count() > limit['all'] || (result.count() > 9 && limit['all'] === undefined)">
                                             mehr anzeigen
                                             <span>
-                                                <span data-ng-if="limit['all'] === undefined ? limit['all'] = 50 : limit['all'] = limit['all']" data-ng-bind="limit['all']"></span>
+                                                <span data-ng-if="limit['all'] === undefined ? limit['all'] = 10 : limit['all'] = limit['all']"
+                                                      data-ng-bind="limit['all']"></span>
                                                 <span class="counter-divider">von</span>
                                                 <span data-ng-bind="result.count()"></span>
                                             </span>
@@ -141,7 +142,6 @@
                          data-ng-class="{active: lastActiveTabName == group.getLabel(), in: lastActiveTabName == group.getLabel()}"
                          id="{{group.getLabel()}}" role="tabpanel"
                          ng-repeat="group in result.getGrouped().getItems()">
-
 
 
                         <div data-ng-switch="group.getLabel()"
@@ -293,153 +293,725 @@
 
                             </div>
 
-                            <div class="ppdb-list" data-ng-switch-when="Weiterbildungsskurse">
+                            <div class="ppdb-list further-education-special-search" data-ng-switch-when="Weiterbildungsskurse">
 
-
-                                <div class=" results-table">
+                                <div class="results-table">
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                                <th class="clickable">
-                                                    <a href="#">Angeobt</a>
+                                                <th>
+                                                    Beschreibung
                                                 </th>
-                                                <th class="clickable">
-                                                    <a href="#">Nr</a>
+                                                <th>
+                                                    Nummer
+                                                </th>
+                                                <th class="centered-column">
+                                                    Buchbar
+                                                </th>
+                                                <th class="centered-column">
+                                                    Typ
                                                 </th>
                                             </tr>
                                             </thead>
-
                                             <tbody ng-repeat="node in group.getNodes()"
-                                                   data-ng-click="node.isopen = node.isopen ? false : true">
-                                            <tr data-ng-class="{open: node.isopen,noborder: $index > 0}"
-                                                class="clickable">
+                                                   id="node-{{result.getIdentifier()}}-{{$index}}">
+                                            <tr class="icon hat clickable"
+                                                data-ng-class="{open: isOpen(node),noborder: $index > 0}"
+                                                data-ng-click="setOpen(node,$index,result.getIdentifier());">
                                                 <td>
+                                    <span data-ng-if="!node.currentyear"
+                                          data-ng-init="node.currentyear = node.getProperty('years.0')"></span>
                                                     <span class="oi"
-                                                          data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
-                                                    <span>{{node.getProperty('title')}}</span>
+                                                          data-ng-class="{'oi-caret-right': !isOpen(node), 'oi-caret-bottom': isOpen(node)}"></span>
+
+                                                    <span data-ng-bind="node.getProperty('title')"></span>
                                                 </td>
-                                                <td>
-                                                    <span>{{node.getProperty('nr')}}</span>
+                                                <td class="course-number">
+                                                    <span data-ng-bind="node.getProperty('nr')"></span>
+                                                </td>
+                                                <td class="centered-column">
+                                                    <i class="fa fa-circle bookable" aria-hidden="true"
+                                                       data-ng-if="node.getProperty('years.Bookable').indexOf(true) > -1"></i>
+                                                    <i class="fa fa-circle booked-out" aria-hidden="true"
+                                                       data-ng-if="node.getProperty('years.Bookable').indexOf(true) == -1"></i>
+                                                    <!--                                    <br>
+                                                                                        <i class="fa fa-info-circle booking-info" aria-hidden="true"></i>-->
+                                                </td>
+                                                <td class="course-type centered-column">
+                                                    <i class="fa fa-graduation-cap" alt="Studiengang" aria-hidden="true"
+                                                       data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-study-furthereducation'"></i>
+                                                    <i class="fa fa-calendar" alt="Veranstaltung" aria-hidden="true"
+                                                       data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-event-furthereducation'"></i>
+                                                    <i class="fa fa-book" alt="Kurs" aria-hidden="true"
+                                                       data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-module-furthereducation'"></i>
+
                                                 </td>
                                             </tr>
-                                            <tr class="result-preview" data-ng-show="node.isopen">
-                                                <td colspan="2">
-                                                    <div>
-                                                        <div ng-bind-html="node.getProperty('description').substr(0,255) + '...'"></div>
-                                                        <a class="btn btn-primary" href="{{node.getUrl()}}">
+                                            <tr class="result-preview" data-ng-show="isOpen(node)">
+                                                <td colspan="4">
+                                                    <div class="result-preview-contents">
+                                                        <span data-ng-bind="node.getPreview('description',-1)"></span>
+
+                                                        <table class="table">
+                                                            <tbody>
+                                                            <tr class="mobile-view-tablerow-only">
+                                                                <td>
+                                                                    Kursnummer
+                                                                    <div class="mobile-view-columns">
+                                                                        <span data-ng-bind="node.getProperty('nr')"></span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="mobile-view-tablerow-only">
+                                                                <td>
+                                                                    Buchbar
+                                                                    <div class="mobile-view-columns">
+                                                                        <i class="fa fa-circle bookable"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getProperty('years.Bookable').indexOf(true) > -1"></i>
+                                                                        <i class="fa fa-circle booked-out"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getProperty('years.Bookable').indexOf(true) == -1"></i>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="mobile-view-tablerow-only">
+                                                                <td>
+                                                                    Typ
+                                                                    <div class="mobile-view-columns">
+                                                                        <i class="fa fa-graduation-cap"
+                                                                           alt="Studiengang"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-study-furthereducation'"></i>
+                                                                        <i class="fa fa-calendar" alt="Veranstaltung"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-event-furthereducation'"></i>
+                                                                        <i class="fa fa-book" alt="Kurs"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-module-furthereducation'"></i>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="desktop-view"
+                                                                data-ng-if="node.getProperty('graduation')">
+                                                                <td>
+                                                                    Studienziel
+                                                                    <div class="mobile-view-columns"
+                                                                         data-ng-bind="node.getProperty('graduation')">
+                                                                    </div>
+                                                                </td>
+                                                                <td data-ng-bind="node.getProperty('graduation')">
+                                                                    <span data-ng-bind="node.getProperty('graduation')"></span>
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="desktop-view"
+                                                                data-ng-if="node.getProperty('ects')">
+                                                                <td>
+                                                                    ETCS-Punkte
+                                                                    <div class="mobile-view-columns"
+                                                                         data-ng-bind="node.getProperty('ects')">
+
+                                                                    </div>
+                                                                </td>
+                                                                <td data-ng-bind="node.getProperty('ects')">
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="desktop-view"
+                                                                data-ng-if="node.currentyear.StartText">
+                                                                <td>
+                                                                    Beginn
+                                                                    <div class="mobile-view-columns">
+                                                                        <div class="input-group-btn"
+                                                                             data-ng-if="node.getProperty('years').length > 1">
+                                                                            <button type="button"
+                                                                                    class="btn btn-default dropdown-toggle"
+                                                                                    data-toggle="dropdown"
+                                                                                    aria-haspopup="true"
+                                                                                    aria-expanded="false">
+                                                                                <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                                            </button>
+                                                                            <ul class="dropdown-menu">
+                                                                                <li class="clickable"
+                                                                                    data-ng-repeat="year in node.getProperty('years')"
+                                                                                    data-ng-click="node.currentyear = year;">
+                                                                                    <a data-ng-click="node.currentyear = year;">
+                                                                                        <span data-ng-bind="year.StartText | castDate"></span>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div data-ng-if="node.getProperty('years').length == 1">
+                                                                            <div>
+                                                                                <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="input-group-btn"
+                                                                         data-ng-if="node.getProperty('years').length > 1">
+                                                                        <button type="button"
+                                                                                class="btn btn-default dropdown-toggle"
+                                                                                data-toggle="dropdown"
+                                                                                aria-haspopup="true"
+                                                                                aria-expanded="false">
+                                                                            <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li class="clickable"
+                                                                                data-ng-repeat="year in node.getProperty('years')"
+                                                                                data-ng-click="setCurrentYear(node,year)">
+                                                                                <a data-ng-click="node.currentyear = year;">
+                                                                                    <span data-ng-bind="year.StartText | castDate"></span>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div data-ng-if="node.getProperty('years').length == 1">
+                                                                        <div>
+                                                                            <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                    <div class="details">
+
+
+                                                        <a class="btn btn-primary"
+                                                           data-ng-if="currentYears[node.identifier].url"
+                                                           data-ng-href="{{currentYears[node.identifier].url}}">
+                                                            Details
+                                                        </a>
+                                                        <a class="btn btn-primary"
+                                                           data-ng-if="!currentYears[node.identifier].url"
+                                                           data-ng-href="{{node.getUrl()}}">
                                                             Details
                                                         </a>
                                                     </div>
+                                                    <div class="shareAndRegister">
+                                                        <a class="btn btn-primary share"
+                                                           id="share-{{result.getIdentifier()}}-{{$index}}"
+                                                           addthis:url="{{node.getUrl(true)}}"
+                                                           addthis:title="{{node.getProperty('title')}}">
+                                                            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/wb-share-btn.svg')}"
+                                                                 width="32" height="32" border="0" alt="Share"/>
+                                                            <br>
+                                                            <span class="shareText">
+                                            Teilen
+                                        </span>
+                                                        </a>
+
+                                                        <a class="btn btn-primary"
+                                                           data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') < 0"
+                                                           data-ng-show="currentYears[node.identifier].RegistrationLink"
+                                                           data-ng-href="{{currentYears[node.identifier].RegistrationLink}}">
+                                                            Anmelden
+                                                        </a>
+
+                                                        <a class="btn btn-primary"
+                                                           data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') > 0"
+                                                           data-ng-show="currentYears[node.identifier].RegistrationLink"
+                                                           data-ng-href="{{node.getUrl()}}">
+                                                            Anmelden
+                                                        </a>
+                                                    </div>
+
+
                                                 </td>
                                             </tr>
                                             </tbody>
 
                                         </table>
                                     </div>
-
                                 </div>
-
 
                             </div>
 
-                            <div class="ppdb-list" data-ng-switch-when="Weiterbildungsstudiengänge">
-
-
-                                <div class=" results-table">
+                            <div class="ppdb-list further-education-special-search"
+                                 data-ng-switch-when="Weiterbildungsstudiengänge">
+                                <div class="results-table">
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                                <th class="clickable">
-                                                    <a href="#">Angeobt</a>
+                                                <th>
+                                                    Beschreibung
                                                 </th>
-                                                <th class="clickable">
-                                                    <a href="#">Nr</a>
+                                                <th>
+                                                    Nummer
+                                                </th>
+                                                <th class="centered-column">
+                                                    Buchbar
+                                                </th>
+                                                <th class="centered-column">
+                                                    Typ
                                                 </th>
                                             </tr>
                                             </thead>
-
                                             <tbody ng-repeat="node in group.getNodes()"
-                                                   data-ng-click="node.isopen = node.isopen ? false : true">
-                                            <tr data-ng-class="{open: node.isopen,noborder: $index > 0}"
-                                                class="clickable">
+                                                   id="node-{{result.getIdentifier()}}-{{$index}}">
+                                            <tr class="icon hat clickable"
+                                                data-ng-class="{open: isOpen(node),noborder: $index > 0}"
+                                                data-ng-click="setOpen(node,$index,result.getIdentifier());">
                                                 <td>
+                                    <span data-ng-if="!node.currentyear"
+                                          data-ng-init="node.currentyear = node.getProperty('years.0')"></span>
                                                     <span class="oi"
-                                                          data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
-                                                    <span>{{node.getProperty('title')}}</span>
+                                                          data-ng-class="{'oi-caret-right': !isOpen(node), 'oi-caret-bottom': isOpen(node)}"></span>
+
+                                                    <span data-ng-bind="node.getProperty('title')"></span>
                                                 </td>
-                                                <td>
-                                                    <span>{{node.getProperty('nr')}}</span>
+                                                <td class="course-number">
+                                                    <span data-ng-bind="node.getProperty('nr')"></span>
+                                                </td>
+                                                <td class="centered-column">
+                                                    <i class="fa fa-circle bookable" aria-hidden="true"
+                                                       data-ng-if="node.getProperty('years.Bookable').indexOf(true) > -1"></i>
+                                                    <i class="fa fa-circle booked-out" aria-hidden="true"
+                                                       data-ng-if="node.getProperty('years.Bookable').indexOf(true) == -1"></i>
+                                                    <!--                                    <br>
+                                                                                        <i class="fa fa-info-circle booking-info" aria-hidden="true"></i>-->
+                                                </td>
+                                                <td class="course-type centered-column">
+                                                    <i class="fa fa-graduation-cap" alt="Studiengang" aria-hidden="true"
+                                                       data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-study-furthereducation'"></i>
+                                                    <i class="fa fa-calendar" alt="Veranstaltung" aria-hidden="true"
+                                                       data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-event-furthereducation'"></i>
+                                                    <i class="fa fa-book" alt="Kurs" aria-hidden="true"
+                                                       data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-module-furthereducation'"></i>
+
                                                 </td>
                                             </tr>
-                                            <tr class="result-preview" data-ng-show="node.isopen">
-                                                <td colspan="2">
-                                                    <div>
-                                                        <div ng-bind-html="node.getProperty('description').substr(0,255) + '...'"></div>
-                                                        <a class="btn btn-primary" href="{{node.getUrl()}}">
+                                            <tr class="result-preview" data-ng-show="isOpen(node)">
+                                                <td colspan="4">
+                                                    <div class="result-preview-contents">
+                                                        <span data-ng-bind="node.getPreview('description',-1)"></span>
+
+                                                        <table class="table">
+                                                            <tbody>
+                                                            <tr class="mobile-view-tablerow-only">
+                                                                <td>
+                                                                    Kursnummer
+                                                                    <div class="mobile-view-columns">
+                                                                        <span data-ng-bind="node.getProperty('nr')"></span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="mobile-view-tablerow-only">
+                                                                <td>
+                                                                    Buchbar
+                                                                    <div class="mobile-view-columns">
+                                                                        <i class="fa fa-circle bookable"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getProperty('years.Bookable').indexOf(true) > -1"></i>
+                                                                        <i class="fa fa-circle booked-out"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getProperty('years.Bookable').indexOf(true) == -1"></i>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="mobile-view-tablerow-only">
+                                                                <td>
+                                                                    Typ
+                                                                    <div class="mobile-view-columns">
+                                                                        <i class="fa fa-graduation-cap"
+                                                                           alt="Studiengang"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-study-furthereducation'"></i>
+                                                                        <i class="fa fa-calendar" alt="Veranstaltung"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-event-furthereducation'"></i>
+                                                                        <i class="fa fa-book" alt="Kurs"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-module-furthereducation'"></i>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="desktop-view"
+                                                                data-ng-if="node.getProperty('graduation')">
+                                                                <td>
+                                                                    Studienziel
+                                                                    <div class="mobile-view-columns"
+                                                                         data-ng-bind="node.getProperty('graduation')">
+                                                                    </div>
+                                                                </td>
+                                                                <td data-ng-bind="node.getProperty('graduation')">
+                                                                    <span data-ng-bind="node.getProperty('graduation')"></span>
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="desktop-view"
+                                                                data-ng-if="node.getProperty('ects')">
+                                                                <td>
+                                                                    ETCS-Punkte
+                                                                    <div class="mobile-view-columns"
+                                                                         data-ng-bind="node.getProperty('ects')">
+
+                                                                    </div>
+                                                                </td>
+                                                                <td data-ng-bind="node.getProperty('ects')">
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="desktop-view"
+                                                                data-ng-if="node.currentyear.StartText">
+                                                                <td>
+                                                                    Beginn
+                                                                    <div class="mobile-view-columns">
+                                                                        <div class="input-group-btn"
+                                                                             data-ng-if="node.getProperty('years').length > 1">
+                                                                            <button type="button"
+                                                                                    class="btn btn-default dropdown-toggle"
+                                                                                    data-toggle="dropdown"
+                                                                                    aria-haspopup="true"
+                                                                                    aria-expanded="false">
+                                                                                <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                                            </button>
+                                                                            <ul class="dropdown-menu">
+                                                                                <li class="clickable"
+                                                                                    data-ng-repeat="year in node.getProperty('years')"
+                                                                                    data-ng-click="node.currentyear = year;">
+                                                                                    <a data-ng-click="node.currentyear = year;">
+                                                                                        <span data-ng-bind="year.StartText | castDate"></span>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div data-ng-if="node.getProperty('years').length == 1">
+                                                                            <div>
+                                                                                <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="input-group-btn"
+                                                                         data-ng-if="node.getProperty('years').length > 1">
+                                                                        <button type="button"
+                                                                                class="btn btn-default dropdown-toggle"
+                                                                                data-toggle="dropdown"
+                                                                                aria-haspopup="true"
+                                                                                aria-expanded="false">
+                                                                            <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li class="clickable"
+                                                                                data-ng-repeat="year in node.getProperty('years')"
+                                                                                data-ng-click="setCurrentYear(node,year)">
+                                                                                <a data-ng-click="node.currentyear = year;">
+                                                                                    <span data-ng-bind="year.StartText | castDate"></span>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div data-ng-if="node.getProperty('years').length == 1">
+                                                                        <div>
+                                                                            <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                    <div class="details">
+
+
+                                                        <a class="btn btn-primary"
+                                                           data-ng-if="currentYears[node.identifier].url"
+                                                           data-ng-href="{{currentYears[node.identifier].url}}">
+                                                            Details
+                                                        </a>
+                                                        <a class="btn btn-primary"
+                                                           data-ng-if="!currentYears[node.identifier].url"
+                                                           data-ng-href="{{node.getUrl()}}">
                                                             Details
                                                         </a>
                                                     </div>
+                                                    <div class="shareAndRegister">
+                                                        <a class="btn btn-primary share"
+                                                           id="share-{{result.getIdentifier()}}-{{$index}}"
+                                                           addthis:url="{{node.getUrl(true)}}"
+                                                           addthis:title="{{node.getProperty('title')}}">
+                                                            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/wb-share-btn.svg')}"
+                                                                 width="32" height="32" border="0" alt="Share"/>
+                                                            <br>
+                                                            <span class="shareText">
+                                            Teilen
+                                        </span>
+                                                        </a>
+
+                                                        <a class="btn btn-primary"
+                                                           data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') < 0"
+                                                           data-ng-show="currentYears[node.identifier].RegistrationLink"
+                                                           data-ng-href="{{currentYears[node.identifier].RegistrationLink}}">
+                                                            Anmelden
+                                                        </a>
+
+                                                        <a class="btn btn-primary"
+                                                           data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') > 0"
+                                                           data-ng-show="currentYears[node.identifier].RegistrationLink"
+                                                           data-ng-href="{{node.getUrl()}}">
+                                                            Anmelden
+                                                        </a>
+                                                    </div>
+
+
                                                 </td>
                                             </tr>
                                             </tbody>
 
                                         </table>
                                     </div>
-
                                 </div>
-
-
                             </div>
 
-                            <div class="ppdb-list" data-ng-switch-when="Weiterbildungsveranstaltungen">
+                            <div class="ppdb-list further-education-special-search" data-ng-switch-when="Weiterbildungsveranstaltungen">
 
-
-                                <div class=" results-table">
+                                <div class="results-table">
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                                <th class="clickable">
-                                                    <a href="#">Angeobt</a>
+                                                <th>
+                                                    Beschreibung
                                                 </th>
-                                                <th class="clickable">
-                                                    <a href="#">Nr</a>
+                                                <th>
+                                                    Nummer
+                                                </th>
+                                                <th class="centered-column">
+                                                    Buchbar
+                                                </th>
+                                                <th class="centered-column">
+                                                    Typ
                                                 </th>
                                             </tr>
                                             </thead>
-
                                             <tbody ng-repeat="node in group.getNodes()"
-                                                   data-ng-click="node.isopen = node.isopen ? false : true">
-                                            <tr data-ng-class="{open: node.isopen,noborder: $index > 0}"
-                                                class="clickable">
+                                                   id="node-{{result.getIdentifier()}}-{{$index}}">
+                                            <tr class="icon hat clickable"
+                                                data-ng-class="{open: isOpen(node),noborder: $index > 0}"
+                                                data-ng-click="setOpen(node,$index,result.getIdentifier());">
                                                 <td>
+                                    <span data-ng-if="!node.currentyear"
+                                          data-ng-init="node.currentyear = node.getProperty('years.0')"></span>
                                                     <span class="oi"
-                                                          data-ng-class="{'oi-caret-right': !node.isopen, 'oi-caret-bottom': node.isopen}"></span>
-                                                    <span>{{node.getProperty('title')}}</span>
+                                                          data-ng-class="{'oi-caret-right': !isOpen(node), 'oi-caret-bottom': isOpen(node)}"></span>
+
+                                                    <span data-ng-bind="node.getProperty('title')"></span>
                                                 </td>
-                                                <td>
-                                                    <span>{{node.getProperty('nr')}}</span>
+                                                <td class="course-number">
+                                                    <span data-ng-bind="node.getProperty('nr')"></span>
+                                                </td>
+                                                <td class="centered-column">
+                                                    <i class="fa fa-circle bookable" aria-hidden="true"
+                                                       data-ng-if="node.getProperty('years.Bookable').indexOf(true) > -1"></i>
+                                                    <i class="fa fa-circle booked-out" aria-hidden="true"
+                                                       data-ng-if="node.getProperty('years.Bookable').indexOf(true) == -1"></i>
+                                                    <!--                                    <br>
+                                                                                        <i class="fa fa-info-circle booking-info" aria-hidden="true"></i>-->
+                                                </td>
+                                                <td class="course-type centered-column">
+                                                    <i class="fa fa-graduation-cap" alt="Studiengang" aria-hidden="true"
+                                                       data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-study-furthereducation'"></i>
+                                                    <i class="fa fa-calendar" alt="Veranstaltung" aria-hidden="true"
+                                                       data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-event-furthereducation'"></i>
+                                                    <i class="fa fa-book" alt="Kurs" aria-hidden="true"
+                                                       data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-module-furthereducation'"></i>
+
                                                 </td>
                                             </tr>
-                                            <tr class="result-preview" data-ng-show="node.isopen">
-                                                <td colspan="2">
-                                                    <div>
-                                                        <div ng-bind-html="node.getProperty('description').substr(0,255) + '...'"></div>
-                                                        <a class="btn btn-primary" href="{{node.getUrl()}}">
+                                            <tr class="result-preview" data-ng-show="isOpen(node)">
+                                                <td colspan="4">
+                                                    <div class="result-preview-contents">
+                                                        <span data-ng-bind="node.getPreview('description',-1)"></span>
+
+                                                        <table class="table">
+                                                            <tbody>
+                                                            <tr class="mobile-view-tablerow-only">
+                                                                <td>
+                                                                    Kursnummer
+                                                                    <div class="mobile-view-columns">
+                                                                        <span data-ng-bind="node.getProperty('nr')"></span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="mobile-view-tablerow-only">
+                                                                <td>
+                                                                    Buchbar
+                                                                    <div class="mobile-view-columns">
+                                                                        <i class="fa fa-circle bookable"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getProperty('years.Bookable').indexOf(true) > -1"></i>
+                                                                        <i class="fa fa-circle booked-out"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getProperty('years.Bookable').indexOf(true) == -1"></i>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="mobile-view-tablerow-only">
+                                                                <td>
+                                                                    Typ
+                                                                    <div class="mobile-view-columns">
+                                                                        <i class="fa fa-graduation-cap"
+                                                                           alt="Studiengang"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-study-furthereducation'"></i>
+                                                                        <i class="fa fa-calendar" alt="Veranstaltung"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-event-furthereducation'"></i>
+                                                                        <i class="fa fa-book" alt="Kurs"
+                                                                           aria-hidden="true"
+                                                                           data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-module-furthereducation'"></i>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="desktop-view"
+                                                                data-ng-if="node.getProperty('graduation')">
+                                                                <td>
+                                                                    Studienziel
+                                                                    <div class="mobile-view-columns"
+                                                                         data-ng-bind="node.getProperty('graduation')">
+                                                                    </div>
+                                                                </td>
+                                                                <td data-ng-bind="node.getProperty('graduation')">
+                                                                    <span data-ng-bind="node.getProperty('graduation')"></span>
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="desktop-view"
+                                                                data-ng-if="node.getProperty('ects')">
+                                                                <td>
+                                                                    ETCS-Punkte
+                                                                    <div class="mobile-view-columns"
+                                                                         data-ng-bind="node.getProperty('ects')">
+
+                                                                    </div>
+                                                                </td>
+                                                                <td data-ng-bind="node.getProperty('ects')">
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="desktop-view"
+                                                                data-ng-if="node.currentyear.StartText">
+                                                                <td>
+                                                                    Beginn
+                                                                    <div class="mobile-view-columns">
+                                                                        <div class="input-group-btn"
+                                                                             data-ng-if="node.getProperty('years').length > 1">
+                                                                            <button type="button"
+                                                                                    class="btn btn-default dropdown-toggle"
+                                                                                    data-toggle="dropdown"
+                                                                                    aria-haspopup="true"
+                                                                                    aria-expanded="false">
+                                                                                <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                                            </button>
+                                                                            <ul class="dropdown-menu">
+                                                                                <li class="clickable"
+                                                                                    data-ng-repeat="year in node.getProperty('years')"
+                                                                                    data-ng-click="node.currentyear = year;">
+                                                                                    <a data-ng-click="node.currentyear = year;">
+                                                                                        <span data-ng-bind="year.StartText | castDate"></span>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div data-ng-if="node.getProperty('years').length == 1">
+                                                                            <div>
+                                                                                <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="input-group-btn"
+                                                                         data-ng-if="node.getProperty('years').length > 1">
+                                                                        <button type="button"
+                                                                                class="btn btn-default dropdown-toggle"
+                                                                                data-toggle="dropdown"
+                                                                                aria-haspopup="true"
+                                                                                aria-expanded="false">
+                                                                            <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li class="clickable"
+                                                                                data-ng-repeat="year in node.getProperty('years')"
+                                                                                data-ng-click="setCurrentYear(node,year)">
+                                                                                <a data-ng-click="node.currentyear = year;">
+                                                                                    <span data-ng-bind="year.StartText | castDate"></span>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div data-ng-if="node.getProperty('years').length == 1">
+                                                                        <div>
+                                                                            <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                    <div class="details">
+
+
+                                                        <a class="btn btn-primary"
+                                                           data-ng-if="currentYears[node.identifier].url"
+                                                           data-ng-href="{{currentYears[node.identifier].url}}">
+                                                            Details
+                                                        </a>
+                                                        <a class="btn btn-primary"
+                                                           data-ng-if="!currentYears[node.identifier].url"
+                                                           data-ng-href="{{node.getUrl()}}">
                                                             Details
                                                         </a>
                                                     </div>
+                                                    <div class="shareAndRegister">
+                                                        <a class="btn btn-primary share"
+                                                           id="share-{{result.getIdentifier()}}-{{$index}}"
+                                                           addthis:url="{{node.getUrl(true)}}"
+                                                           addthis:title="{{node.getProperty('title')}}">
+                                                            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/wb-share-btn.svg')}"
+                                                                 width="32" height="32" border="0" alt="Share"/>
+                                                            <br>
+                                                            <span class="shareText">
+                                            Teilen
+                                        </span>
+                                                        </a>
+
+                                                        <a class="btn btn-primary"
+                                                           data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') < 0"
+                                                           data-ng-show="currentYears[node.identifier].RegistrationLink"
+                                                           data-ng-href="{{currentYears[node.identifier].RegistrationLink}}">
+                                                            Anmelden
+                                                        </a>
+
+                                                        <a class="btn btn-primary"
+                                                           data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') > 0"
+                                                           data-ng-show="currentYears[node.identifier].RegistrationLink"
+                                                           data-ng-href="{{node.getUrl()}}">
+                                                            Anmelden
+                                                        </a>
+                                                    </div>
+
+
                                                 </td>
                                             </tr>
                                             </tbody>
 
                                         </table>
                                     </div>
-
                                 </div>
-
 
                             </div>
 
@@ -474,14 +1046,16 @@
                                                                 </span>
                                                         <span>
                                                                     <ul>
-                                                                        <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index" data-ng-bind="focus.name"></li>
+                                                                        <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index"
+                                                                            data-ng-bind="focus.name"></li>
                                                                     </ul>
                                                                 </span>
                                                     </div>
                                                 </td>
                                                 <td class="researchmainfocus">
                                                     <ul>
-                                                        <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index" data-ng-bind="focus.name">
+                                                        <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index"
+                                                            data-ng-bind="focus.name">
 
                                                         </li>
                                                     </ul>
