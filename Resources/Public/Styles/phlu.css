@@ -8437,14 +8437,15 @@ span.loading.bar {
         color: black; }
       #siteSearchAutocomplete ul li .goodluck {
         display: none;
-        float: right;
-        font-size: 110%;
-        padding: 2px;
-        line-height: 110%; }
+        position: absolute;
+        margin-top: 3px;
+        margin-right: 6px;
+        right: 0;
+        font-size: 110%; }
       #siteSearchAutocomplete ul li:hover {
         background-color: #edeae8; }
         #siteSearchAutocomplete ul li:hover .goodluck {
-          display: block; }
+          display: inline-block; }
           #siteSearchAutocomplete ul li:hover .goodluck:hover {
             color: #545454; }
     #siteSearchAutocomplete ul > li:last-child {

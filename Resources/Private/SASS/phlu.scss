@@ -466,14 +466,17 @@ span.loading {
       }
       .goodluck {
         display: none;
-        float: right;
+        position: absolute;
+        margin-top:3px;
+        margin-right:6px;
+        right:0;
         font-size:110%;
-        padding:2px;
-        line-height:110%;
       }
+
+
       &:hover {
         .goodluck {
-          display: block;
+          display: inline-block;
           &:hover {
             color: $darkgrey;
           }
