@@ -141,7 +141,7 @@
     </div>
 
 
-    <div class="container-fluid footer" id="footer" data-ng-controller="SearchMobileCtrl" data-ng-class="{hasSearchResults: siteSearchSearchMobile != ''}">
+    <div class="container-fluid footer" id="footer" data-ng-controller="SearchMobileCtrl" data-ng-class="{hasSearchResults: siteSearchSearchMobile != '' && siteSearch !== ''}">
         <div class="row">
 
             <div data-ng-show="autocompleteIsShowing && getAutocompleteMobile().length > 5" id="siteSearchMobileAutocomplete" class="hidden-xs-up"  data-ng-class="{'loading bar': getAutocompleteMobile().length == 0, 'hidden-xs-up': siteSearchSearchMobile == ''}">
