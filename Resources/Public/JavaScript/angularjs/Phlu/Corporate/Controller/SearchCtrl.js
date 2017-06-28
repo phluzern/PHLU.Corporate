@@ -643,7 +643,26 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         ];
 
     var emojs = {
-        '📓': 'Notebook'
+        '🎒': 'Schule',
+        '🎓': 'Weiterbildung',
+        '🎅': 'Veranstaltungen',
+        '🎥': 'Videos',
+        '📷': 'Bilder',
+        '💾': 'ICT',
+        '📱': 'Smartphone',
+        '📺': 'Fernsehen',
+        '💊': 'Gesundheitsförderung',
+        '🔪': 'Hauswirtschaft',
+        '📅': 'Termine',
+        '🎼': 'Musik',
+        '🎹': 'Musik',
+        '🎸': 'Gitarre',
+        '🎲': 'Mathematik',
+        '⚽': 'Bewegung und Sport',
+        '🍺': 'Studorg',
+        '🏫': 'Standorte',
+        '🏢': 'Standorte',
+        '🎭': 'Theater'
     }
 
 
