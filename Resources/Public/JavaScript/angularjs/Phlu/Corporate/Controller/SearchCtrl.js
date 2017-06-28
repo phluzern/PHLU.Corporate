@@ -822,5 +822,27 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     });
 
 
+    var filterAllNodesByNodeType = {
+        'phlu-neos-nodetypes-course-study-furthereducation': true,
+        'phlu-neos-nodetypes-course-module-furthereducation': true,
+        'phlu-neos-nodetypes-course-event-furthereducation': true,
+        'phlu-corporate-location': true
+    };
+
+    $scope.filterAllResults = function(node) {
+
+        if (filterAllNodesByNodeType[node.nodeType] !== undefined) {
+            return false;
+        }
+
+        if (node.isTurboNode()) {
+            return false;
+        }
+
+        return true;
+
+    }
+
+
 }]);
 

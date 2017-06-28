@@ -8528,7 +8528,7 @@ span.loading.bar {
       border: 0; } }
   #search .hasSearchResults .phlu-searchresults {
     display: block;
-    margin-top: 30px; }
+    padding: 30px; }
     #search .hasSearchResults .phlu-searchresults .breadcrumb {
       display: block;
       height: auto; }

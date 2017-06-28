@@ -110,8 +110,7 @@
 
                             <table class="table">
                                 <tbody>
-                                <tr ng-repeat="node in result.getNodes(limit['all'] === undefined ? 50 : limit['all'],'_document.identifier')"
-                                    data-ng-if="!node.isTurboNode() && node.getNodeType() !== 'phlu-corporate-location'">
+                                <tr ng-repeat="node in result.getNodes(limit['all'] === undefined ? 50 : limit['all'],filterAllResults)">
                                     <td  data-node-id="{{node.getIdentifier()}}">
                                         <search data="node" view="all"></search>
                                     </td>

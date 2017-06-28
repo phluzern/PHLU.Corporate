@@ -630,7 +630,9 @@ span.loading {
       }
 
       display: block;
-      margin-top: 30px;
+      padding:30px;
+
+
       @include media-breakpoint-down("sm") {
         min-height: 200px;
       }
