@@ -339,6 +339,17 @@ $input-search-field-big: 55px;
   hyphens: auto;
 }
 
+@mixin custList {
+  counter-reset: item;
+  list-style: none;
+  & > li {
+    &::before {
+      content: counter(item) ".";
+      counter-increment: item;
+    }
+  }
+}
+
 // remove blue border around elements in google chrome browser
 *:focus {
   outline: none !important;
@@ -3260,7 +3271,7 @@ body {
           font-family: FontAwesome;
           content: " \f111 \2001";
           position: absolute;
-          margin-left: -33px;
+          margin-left: -30px;
           margin-top: -1px;
           font-size: 17px;
         }
@@ -6225,21 +6236,22 @@ body {
               }
             }
             ol {
-              padding-left: 15px;
-              padding-right: 15px;
-              @include media-breakpoint-up("sm") {
-                padding-left: 18px;
-                padding-right: 18px;
-              }
+              padding:0;
               margin-bottom: 0;
               width: $flowtext-narrow-width;
               @include media-breakpoint-down("lg") {
                 width: inherit;
               }
+              @include custList;
               li {
-                padding-left: 5px;
+                padding-left: 20px;
                 a {
                   color: $hazelbrowndark;
+                }
+                &::before {
+                  position: absolute;
+                  left:14px;
+                  content: " " counter(item) ". ";
                 }
               }
             }
