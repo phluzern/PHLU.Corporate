@@ -456,7 +456,7 @@ span.loading {
     margin: 0;
     li {
       font-size: $font-size-form-dropdown;
-      padding:10px;
+      padding: 10px;
       color: $hazelbrowndark;
       cursor: pointer;
       @include word-wrap();
@@ -464,9 +464,23 @@ span.loading {
         background-color: $grey11;
         color: black;
       }
+      .goodluck {
+        display: none;
+        float: right;
+        font-size:110%;
+        padding:2px;
+        line-height:110%;
+      }
       &:hover {
+        .goodluck {
+          display: block;
+          &:hover {
+            color: $darkgrey;
+          }
+        }
         background-color: $lightgrey;
       }
+
     }
     > li:last-child {
       border: 0;
@@ -630,12 +644,11 @@ span.loading {
       }
 
       display: block;
-      padding:30px;
-
+      padding: 30px;
 
       @include media-breakpoint-down("sm") {
         min-height: 200px;
-        padding:15px;
+        padding: 15px;
       }
       .rcrumbs-container {
         height: 30px;
