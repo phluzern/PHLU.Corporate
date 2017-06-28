@@ -8435,8 +8435,19 @@ span.loading.bar {
       #siteSearchAutocomplete ul li.current {
         background-color: #e6e6e6;
         color: black; }
+      #siteSearchAutocomplete ul li .goodluck {
+        display: none;
+        position: absolute;
+        margin-top: 3px;
+        margin-right: 6px;
+        right: 0;
+        font-size: 110%; }
       #siteSearchAutocomplete ul li:hover {
         background-color: #edeae8; }
+        #siteSearchAutocomplete ul li:hover .goodluck {
+          display: inline-block; }
+          #siteSearchAutocomplete ul li:hover .goodluck:hover {
+            color: #545454; }
     #siteSearchAutocomplete ul > li:last-child {
       border: 0; }
 

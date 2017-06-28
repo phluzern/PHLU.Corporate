@@ -226,7 +226,7 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
     }
 
 
-    $scope.setSiteSearch = function (query) {
+    $scope.setSiteSearch = function (query, event) {
 
         $scope.siteSearchSearchMobile = query;
         $scope.autocompleteIsShowing = false;
@@ -284,7 +284,7 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
 
 PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$compile', '$document', function ($scope, $rootScope, $sce, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $compile, $document) {
 
-
+    var search = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();
     $rootScope.autocomplete = [];
     $rootScope.autocompleteLastPos = -1;
@@ -305,20 +305,40 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     $scope.lastActiveTabName = 'alle';
     $scope.lastActiveTabVisited = {'alle': true};
 
-    $rootScope.setSiteSearch = function (query) {
+    $rootScope.setSiteSearch = function (query, event) {
+
+
+        if (jQuery(event.target).hasClass('goodluck')) {
+            search.$$app.search(null, null, query);
+            search.$watch(function (i) {
+               var node = i.getNodes(1);
+                if (node) {
+                    node = node[0];
+                    if (node.getProperty('portrait')) {
+                        location.replace(jQuery(node.getProperty('portrait')).attr('href'));
+                    } else {
+                        location.replace(node.getUrl());
+                    }
+                }
+
+            });
+        }
+
         $rootScope.siteSearch = query;
         window.setTimeout(function () {
             $rootScope.$digest();
             $rootScope.siteSearchTopFocus = false;
         }, 1);
+
+
     }
 
     $rootScope.setSiteSearchPreview = function (query, position) {
-            search.$$app.search(null, null, query);
-            $rootScope.autocompleteLastPos = position;
-            window.setTimeout(function () {
-                $rootScope.$digest();
-            }, 1);
+        search.$$app.search(null, null, query);
+        $rootScope.autocompleteLastPos = position;
+        window.setTimeout(function () {
+            $rootScope.$digest();
+        }, 1);
     }
 
 
@@ -471,7 +491,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var boost = {
 
 
-
         'phlu-corporate-contact-phone': 1000,
         'phlu-corporate-contact-label': -1,
         'phlu-corporate-contact-parent': -1, // dont'search here
@@ -521,7 +540,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'grandparent': -1
 
 
-
     };
 
 
@@ -557,8 +575,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         }
     };
 
-
-    var search = new $hybridsearchObject(hybridsearch);
 
     var external =
         [
@@ -626,12 +642,36 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         ];
 
+    var emojs = {
+        '🎒': 'Schule',
+        '🎓': 'Weiterbildung',
+        '🎅': 'Veranstaltungen',
+        '🎥': 'Videos',
+        '📷': 'Bilder',
+        '💾': 'ICT',
+        '📱': 'Smartphone',
+        '📺': 'Fernsehen',
+        '💊': 'Gesundheitsförderung',
+        '🔪': 'Hauswirtschaft',
+        '📅': 'Termine',
+        '🎼': 'Musik',
+        '🎹': 'Musik',
+        '🎸': 'Gitarre',
+        '🎲': 'Mathematik',
+        '⚽': 'Bewegung und Sport',
+        '🍺': 'Studorg',
+        '🏫': 'Standorte',
+        '🏢': 'Standorte',
+        '🎭': 'Theater'
+    }
+
 
     var searchResultApplyTimer = null;
     var lasthash = null;
 
     //search.disableRealtime();
     search.enableCache();
+    search.setEmojis(emojs);
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('asset.extension', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
     search.addPropertyFilter('street', '', null, true, false, 'phlu-corporate-location');
@@ -830,7 +870,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
 
-    $scope.filterAllResults = function(node) {
+    $scope.filterAllResults = function (node) {
 
         if (filterAllNodesByNodeType[node.nodeType] !== undefined) {
             return false;
@@ -843,7 +883,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         return true;
 
     }
-
 
 
     /**
@@ -907,13 +946,14 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         if (containerId !== undefined) {
             index = containerId + "-" + index;
-            window.setTimeout(function() {
-                addthis.button("#share-"+index, {}, {});
-            },100);
+            window.setTimeout(function () {
+                addthis.button("#share-" + index, {}, {});
+            }, 100);
         }
 
     };
 
 
-}]);
+}
+]);
 
