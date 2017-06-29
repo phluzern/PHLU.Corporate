@@ -339,6 +339,17 @@ $input-search-field-big: 55px;
   hyphens: auto;
 }
 
+@mixin custList {
+  counter-reset: item;
+  list-style: none;
+  & > li {
+    &::before {
+      content: counter(item) ".";
+      counter-increment: item;
+    }
+  }
+}
+
 // remove blue border around elements in google chrome browser
 *:focus {
   outline: none !important;
@@ -546,7 +557,7 @@ span.loading {
   z-index: 999999;
   bottom: 0;
   width: 100%;
-  height: 668px;
+  height: 573px;
   background-color: $grey8;
   padding: 5px;
   color: white;
@@ -702,6 +713,7 @@ span.loading {
           li {
             @include media-breakpoint-down("xs") {
               margin-right: 5px;
+              width: 100%;
             }
             a.nav-link {
               padding-left: 18px;
@@ -1208,7 +1220,7 @@ body {
   &.siteSearchActive {
     overflow: hidden;
   }
-  margin-bottom: 668px;
+  margin-bottom: 573px;
   @include media-breakpoint-up("xxxl") {
     background-color: #efefef;
   }
@@ -3276,7 +3288,7 @@ body {
           font-family: FontAwesome;
           content: " \f111 \2001";
           position: absolute;
-          margin-left: -33px;
+          margin-left: -30px;
           margin-top: -1px;
           font-size: 17px;
         }
@@ -3440,6 +3452,9 @@ body {
                 padding: 0;
                 margin: 0 0;
                 margin-bottom: 15px;
+                @include media-breakpoint-up("xs") {
+                  margin-bottom:0;
+                }
               }
               .nav-teaser-item {
                 padding-left: 0;
@@ -6241,21 +6256,22 @@ body {
               }
             }
             ol {
-              padding-left: 15px;
-              padding-right: 15px;
-              @include media-breakpoint-up("sm") {
-                padding-left: 18px;
-                padding-right: 18px;
-              }
+              padding:0;
               margin-bottom: 0;
               width: $flowtext-narrow-width;
               @include media-breakpoint-down("lg") {
                 width: inherit;
               }
+              @include custList;
               li {
-                padding-left: 5px;
+                padding-left: 20px;
                 a {
                   color: $hazelbrowndark;
+                }
+                &::before {
+                  position: absolute;
+                  left:14px;
+                  content: " " counter(item) ". ";
                 }
               }
             }
@@ -6899,7 +6915,7 @@ body {
       z-index: 1;
       bottom: 0;
       width: 100%;
-      height: 668px;
+      height: 573px;
       background-color: $black;
       padding-top: 20px;
       color: white;
@@ -6943,6 +6959,7 @@ body {
         color: white;
       }
       hr {
+        display: none;
         margin: 0 0 40px;
         @include media-breakpoint-up("lg") {
           display: none;
@@ -7001,6 +7018,7 @@ body {
         }
       }
       .sociallinks {
+        display: none;
         margin-bottom: 50px;
         @include media-breakpoint-up("xl") {
           margin-top: 110px;
@@ -7051,9 +7069,6 @@ body {
         padding-top: 30px;
         @include media-breakpoint-up("lg") {
           text-align: right;
-        }
-        @include media-breakpoint-down("xs") {
-          display: none;
         }
       }
       > div > .copyright {
