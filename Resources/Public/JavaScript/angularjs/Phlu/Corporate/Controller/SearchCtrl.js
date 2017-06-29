@@ -673,7 +673,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var lasthash = null;
 
     //search.disableRealtime();
-    //search.enableCache();
+    search.enableCache();
     search.setEmojis(emojs);
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('asset.extension', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
