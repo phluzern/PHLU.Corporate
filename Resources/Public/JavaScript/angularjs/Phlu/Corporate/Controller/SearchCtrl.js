@@ -549,6 +549,11 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Phlu.Corporate:ContactsGroup': 0.25
     };
 
+    var boostNodeType = {
+        'Phlu.Qmpilot.NodeTypes:File': 0.25,
+        'Phlu.Corporate:Contact': 0.0125
+    };
+
     var NodeUrlBoostFactor = {
         '/studium/': 4,
         '/studium/informationsveranstaltungen': 10,
@@ -682,7 +687,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     search.addPropertyFilter('street', '', null, true, false, 'phlu-corporate-location');
     search.setExternalSources(external);
 
-    search.setGroupedBy(groupedBy).setNodeUrlBoostFactor(NodeUrlBoostFactor).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
+    search.setGroupedBy(groupedBy).setNodeUrlBoostFactor(NodeUrlBoostFactor).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setNodeTypeBoostFactor(boostNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
         $rootScope.autocomplete = data.getAutocomplete();
         if (searchResultApplyTimer) {

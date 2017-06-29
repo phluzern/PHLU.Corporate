@@ -10,7 +10,7 @@
 </h3>
 
 <div class="searchresult-body">
-
+<h2 data-ng-bind="node.getScore()"></h2>
     <span data-ng-if="node.getParent()">
         <span data-ng-bind="node.getParent().getProperty('title')"></span>,
     </span>
