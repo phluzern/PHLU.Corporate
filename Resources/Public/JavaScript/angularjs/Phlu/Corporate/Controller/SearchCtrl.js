@@ -545,7 +545,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     var boostParentNodeType = {
-        'Phlu.Corporate:Page.FurtherEducation.Detail.Study': 2
+        'Phlu.Corporate:Page.FurtherEducation.Detail.Study': 2,
+        'Phlu.Corporate:ContactsGroup': 0.25
     };
 
     var NodeUrlBoostFactor = {
