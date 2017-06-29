@@ -500,9 +500,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-functions': -1,
         'phlu-corporate-contact-consulting': -1, // dont'search here
         'phlu-corporate-contact-expertise': -1, // dont'search here
-        'phlu-corporate-contact-function': 1, // dont'search here
-        'phlu-corporate-contact-functioncustom': 1, // dont'search here
-        'phlu-corporate-contact-organisations': 1, // dont'search here
+        'phlu-corporate-contact-function': 5, // dont'search here
+        'phlu-corporate-contact-functioncustom': 8, // dont'search here
+        'phlu-corporate-contact-organisations': 2, // dont'search here
         'phlu-corporate-contact-uri': -1, // dont'search here
         'phlu-corporate-contact-url': -1, // dont'search here
 
@@ -551,7 +551,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var boostNodeType = {
         'Phlu.Qmpilot.NodeTypes:File': 0.25,
-        'Phlu.Corporate:Contact': 0.0125
+        'Phlu.Corporate:Contact': 0.5
     };
 
     var NodeUrlBoostFactor = {
