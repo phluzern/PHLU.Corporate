@@ -98,7 +98,7 @@
                                 </div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="year in result.getDistinct('furthereducation-years.Year.*',false)  | orderObjectBy:'value'"
+                                        data-ng-repeat="year in result.getDistinct('furthereducation-years.Year.*')  | orderObjectBy:'value'"
                                         data-ng-class="{'selected': isFilterValueSelected(year.value,filters.year), '': !isFilterValueSelected(year.value,filters.year)}">
                                         <a href="javascript:void(0)"
                                            data-ng-click="toggleFilterSelection(year,'Alle','year')">
@@ -182,7 +182,7 @@
                                 </div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="year in result.getDistinct('study-furthereducation-years.Year.*', false)  | orderObjectBy:'value'"
+                                        data-ng-repeat="year in result.getDistinct('study-furthereducation-years.Year.*')  | orderObjectBy:'value'"
                                         data-ng-class="{'selected': isFilterValueSelected(year.value,filters.year), '': !isFilterValueSelected(year.value,filters.year)}"
                                     >
                                         <a href="javascript:void(0)"
@@ -303,7 +303,7 @@
                                 </div>
                                 <ul class="dropdown-menu">
                                     <li value=""
-                                        data-ng-repeat="year in result.getDistinct('module-furthereducation-years.Year.*', false)  | orderObjectBy:'value'"
+                                        data-ng-repeat="year in result.getDistinct('module-furthereducation-years.Year.*')  | orderObjectBy:'value'"
                                         data-ng-class="{'selected': isFilterValueSelected(year.value,filters.year), '': !isFilterValueSelected(year.value,filters.year)}"
                                     >
                                         <a href="javascript:void(0)"
