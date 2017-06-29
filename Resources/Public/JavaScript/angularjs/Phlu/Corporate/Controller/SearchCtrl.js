@@ -502,12 +502,14 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-expertise': -1, // dont'search here
         'phlu-corporate-contact-function': 1, // dont'search here
         'phlu-corporate-contact-functioncustom': 1, // dont'search here
+        'phlu-corporate-contact-uri': -1, // dont'search here
+        'phlu-corporate-contact-url': -1, // dont'search here
 
         'phlu-neos-nodetypes-project-participants': 100,
 
         'phlu-corporate-textplain-grandparent': -1,
-        'phlu-corporate-textplain-label': -1,
-        'phlu-corporate-textplain-parent': -1,
+        'phlu-corporate-textplain-label': 105,
+        'phlu-corporate-textplain-parent': 10,
 
         'phlu-corporate-text-grandparent': -1,
         'phlu-corporate-text-label': -1,
@@ -554,7 +556,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '/forschung/publikationen/': 0.0001,
         '/forschung/projekte/': 0.005,
         '/faecher-und-schwerpunkte/': 5,
-        '/ueber-uns/organisation-personen/weiterbildung': 0.001,
+        '/ueber-uns/organisation-personen/': 0.001,
         '/ueber-uns/': 0.5
 
     };
@@ -671,7 +673,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var lasthash = null;
 
     //search.disableRealtime();
-    search.enableCache();
+    //search.enableCache();
     search.setEmojis(emojs);
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('asset.extension', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
