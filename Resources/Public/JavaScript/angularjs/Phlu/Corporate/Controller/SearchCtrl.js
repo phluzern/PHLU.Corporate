@@ -522,12 +522,10 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-course-study-furthereducation-title': 20,
         'phlu-neos-nodetypes-course-event-furthereducation-title': 20,
 
-
         'phlu-qmpilot-nodetypes-file-asset': -1,
         'phlu-qmpilot-nodetypes-file-grandparent': -1,
         'phlu-qmpilot-nodetypes-file-parent': 1,
-        'phlu-qmpilot-nodetypes-file-label': -1,
-        'phlu-qmpilot-nodetypes-file-title': 1,
+        'phlu-qmpilot-nodetypes-file-title': -1,
 
 
         'phlu-corporate-location-name': 20000,
@@ -544,7 +542,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     var boostParentNodeType = {
-        'Phlu.Corporate:Content.Page.HeaderDefault': 5
+        'Phlu.Corporate:Page.FurtherEducation.Detail.Study': 2
     };
 
     var NodeUrlBoostFactor = {
@@ -552,6 +550,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '/weiterbildung/': 1,
         '/beratungen-angebote/': 3,
         '/forschung/': 2,
+        '/forschung/publikationen/': 0.0001,
+        '/forschung/projekte/': 0.005,
         '/faecher-und-schwerpunkte/': 5,
         '/ueber-uns/organisation-personen/weiterbildung': 0.001,
         '/ueber-uns/': 0.5
@@ -866,6 +866,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-course-study-furthereducation': true,
         'phlu-neos-nodetypes-course-module-furthereducation': true,
         'phlu-neos-nodetypes-course-event-furthereducation': true,
+        'phlu-neos-nodetypes-course-event-furthereducation': true,
+        'blog': true,
+        'phlu-neos-nodetypes-publication': true,
         'phlu-corporate-location': true
     };
 
