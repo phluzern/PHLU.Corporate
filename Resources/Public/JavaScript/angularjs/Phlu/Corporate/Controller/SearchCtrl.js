@@ -502,6 +502,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-expertise': -1, // dont'search here
         'phlu-corporate-contact-function': 1, // dont'search here
         'phlu-corporate-contact-functioncustom': 1, // dont'search here
+        'phlu-corporate-contact-organisations': 1, // dont'search here
         'phlu-corporate-contact-uri': -1, // dont'search here
         'phlu-corporate-contact-url': -1, // dont'search here
 
@@ -548,7 +549,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var NodeUrlBoostFactor = {
-        '/studium/': 7,
+        '/studium/': 4,
         '/studium/informationsveranstaltungen': 10,
         '/weiterbildung/': 1,
         '/beratungen-angebote/': 3,
