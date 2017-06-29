@@ -550,8 +550,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var boostNodeType = {
-        'Phlu.Qmpilot.NodeTypes:File': 0.25,
-        'Phlu.Corporate:Contact': 0.5
+        'Phlu.Qmpilot.NodeTypes:File': 0.125,
+        'Phlu.Corporate:Contact': 0.25
     };
 
     var NodeUrlBoostFactor = {
