@@ -112,9 +112,6 @@
                                 <tbody>
                                 <tr ng-repeat="node in result.getNodes(limit['all'] === undefined ? 10 : limit['all'],filterAllResults,'_document.identifier')">
                                     <td data-node-id="{{node.getIdentifier()}}">
-                                        <h2 data-ng-bind="node.getIdentifier()"></h2>
-                                        <h2 data-ng-bind="node.getScore()"></h2>
-                                        <h2 data-ng-bind="node.getNodeType()"></h2>
                                         <search data="node" view="all"></search>
                                     </td>
                                 </tr>

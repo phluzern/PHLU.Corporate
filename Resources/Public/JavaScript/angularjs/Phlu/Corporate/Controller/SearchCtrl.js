@@ -547,6 +547,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var NodeUrlBoostFactor = {
         '/studium/': 7,
+        '/studium/informationsveranstaltungen': 10,
         '/weiterbildung/': 1,
         '/beratungen-angebote/': 3,
         '/forschung/': 2,
