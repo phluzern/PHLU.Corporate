@@ -381,6 +381,7 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     var boost = {
 
         'phlu-neos-nodetypes-publication-date': -1,
+        'phlu-neos-nodetypes-publication-citationsyle': -1,
         'phlu-neos-nodetypes-publication-grandparent': -1,
         'phlu-neos-nodetypes-publication-id': -1,
         'phlu-neos-nodetypes-publication-language': -1,
