@@ -512,7 +512,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-image': -1, // dont'search here
         'phlu-corporate-contact-ishidden': -1, // dont'search here
         'phlu-corporate-contact-portrait': -1, // dont'search here
-        'phlu-corporate-contact-text': -1, // dont'search here
+        'phlu-corporate-contact-text': 15, // dont'search here
         'phlu-corporate-contact-title': -1, // dont'search here
         'phlu-corporate-contact-titlename': -1, // dont'search here
         'phlu-corporate-contact-zip': -1, // dont'search here
@@ -762,6 +762,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     search.enableCache();
     search.setEmojis(emojs);
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
+    search.addPropertyFilter('phone', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('asset.extension', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
     search.addPropertyFilter('street', '', null, true, false, 'phlu-corporate-location');
     search.setExternalSources(external);
