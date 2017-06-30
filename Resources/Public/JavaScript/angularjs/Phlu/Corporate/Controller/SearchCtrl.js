@@ -509,6 +509,18 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         'phlu-neos-nodetypes-project-participants': 100,
 
+        'phlu-neos-nodetypes-publication-date': -1,
+        'phlu-neos-nodetypes-publication-citationsyle': 10,
+        'phlu-neos-nodetypes-publication-grandparent': -1,
+        'phlu-neos-nodetypes-publication-id': -1,
+        'phlu-neos-nodetypes-publication-language': -1,
+        'phlu-neos-nodetypes-publication-publicationtype': -1,
+        'phlu-neos-nodetypes-publication-organisations': -1,
+        'phlu-neos-nodetypes-publication-persons': -1,
+        'phlu-neos-nodetypes-publication-title': -1,
+        'phlu-neos-nodetypes-publication-url': -1,
+        'phlu-neos-nodetypes-publication-sortingkey': -1,
+
         'phlu-corporate-textplain-grandparent': -1,
         'phlu-corporate-textplain-label': 105,
         'phlu-corporate-textplain-parent': 10,
