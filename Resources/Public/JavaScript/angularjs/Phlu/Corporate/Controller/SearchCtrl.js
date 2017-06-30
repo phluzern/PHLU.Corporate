@@ -683,7 +683,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var searchResultApplyTimer = null;
     var lasthash = null;
 
-    //search.disableRealtime();
+    search.disableRealtime();
     //.search.enableCache();
     search.setEmojis(emojs);
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
