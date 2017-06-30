@@ -165,6 +165,10 @@
         inspector:
           group: evento
           position: 1
+    shorthandSymbol:
+      type: string
+      ui:
+        label: 'Kürzel'
     featuredContact:
       type: integer
       defaultValue: 0

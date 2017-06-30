@@ -8575,6 +8575,9 @@ span.loading.bar {
           content: ""; }
       #search .hasSearchResults .phlu-searchresults .searchresult-body p, #search .hasSearchResults .phlu-searchresults .searchresult-body ul, #search .hasSearchResults .phlu-searchresults .searchresult-body li {
         font-size: 1rem !important; }
+      #search .hasSearchResults .phlu-searchresults .searchresult-body p {
+        margin: 0;
+        padding: 0; }
     #search .hasSearchResults .phlu-searchresults span i {
       font-style: italic; }
     @media (max-width: 767px) {

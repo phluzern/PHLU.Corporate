@@ -650,6 +650,10 @@ span.loading {
         p, ul, li {
           font-size: $font-size-base !important;
         }
+        p {
+          margin:0;
+          padding:0;
+        }
       }
 
       span i {
