@@ -873,12 +873,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     var filterAllNodesByNodeType = {
-        'phlu-neos-nodetypes-course-study-furthereducation': true,
-        'phlu-neos-nodetypes-course-module-furthereducation': true,
-        'phlu-neos-nodetypes-course-event-furthereducation': true,
-        'phlu-neos-nodetypes-course-event-furthereducation': true,
-        'blog': true,
-        'phlu-neos-nodetypes-publication': true,
         'phlu-corporate-location': true
     };
 
