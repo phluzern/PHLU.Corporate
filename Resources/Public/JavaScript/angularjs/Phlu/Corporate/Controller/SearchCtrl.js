@@ -551,7 +551,11 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var boostNodeType = {
         'Phlu.Qmpilot.NodeTypes:File': 0.125,
-        'Phlu.Corporate:Contact': 0.25
+        'Phlu.Corporate:Contact': 0.25,
+        'Phlu.Neos.NodeTypes:Course.Study.FurtherEducation': 0.125,
+        'Phlu.Neos.NodeTypes:Course.Module.FurtherEducation': 0.125,
+        'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.125
+
     };
 
     var NodeUrlBoostFactor = {
@@ -873,7 +877,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     var filterAllNodesByNodeType = {
-        'phlu-corporate-location': true
+       'phlu-corporate-location': true
     };
 
 
