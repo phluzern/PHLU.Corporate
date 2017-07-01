@@ -1,7 +1,7 @@
 # Contact
 
 'Phlu.Corporate:Contact':
-  label: ${q(node).property('titlename') + ' ' + ${q(node).property('firstname') + ' ' + q(node).property('lastname')}
+  label: ${q(node).property('titlename') + ' ' + q(node).property('firstname') + ' ' + q(node).property('lastname')}
   superTypes:
     'Phlu.Corporate:Content': true
     'Phlu.Neos.NodeTypes:Database': true
