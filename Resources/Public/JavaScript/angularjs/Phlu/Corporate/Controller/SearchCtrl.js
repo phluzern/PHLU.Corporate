@@ -512,7 +512,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
 
-        'phlu-neos-nodetypes-project-participants': 10,
+        'phlu-neos-nodetypes-project-participants': 15,
         'phlu-neos-nodetypes-project-status': -1,
         'phlu-neos-nodetypes-project-statuslifetime': -1,
         'phlu-neos-nodetypes-project-teasertextenglish': -1,
