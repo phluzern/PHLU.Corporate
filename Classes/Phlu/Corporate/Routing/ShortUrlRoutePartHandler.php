@@ -16,13 +16,13 @@ use Neos\ContentRepository\Domain\Model\Node;
 use Neos\ContentRepository\Exception\PageNotFoundException;
 use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Mvc\Controller\ControllerContext;
+use Neos\Flow\Http\Request;
 use Neos\Neos\Routing\FrontendNodeRoutePartHandler;
 use Neos\Neos\Routing\Exception;
-use org\bovigo\vfs\vfsStreamWrapperAlreadyRegisteredTestCase;
+use Phlu\Corporate\Eel\Helper\NodeHelper;
 use Phlu\Corporate\ViewHelpers\Uri\ResourceViewHelper;
-use Phlu\Evento\Service\Course\ImportService;
 use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
+use Neos\Flow\Mvc\ActionRequest;
 
 /**
  * A route part handler for finding nodes specifically in the website's frontend.
@@ -33,10 +33,16 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 
     /**
      * @Flow\Inject
+     * @var NodeHelper
+     */
+    protected $nodeHelper;
+
+
+    /**
+     * @Flow\Inject
      * @var NodeDataRepository
      */
     protected $nodeDataRepository;
-
 
 
     /**
@@ -81,8 +87,8 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 
                     $asset = $n->getProperty('asset');
                     if ($asset && $asset->getResource()) {
-                        $redirectUri = $this->resourceViewHelper->render(null,null,$asset->getResource());
-                        header("Location: ".$redirectUri);
+                        $redirectUri = $this->resourceViewHelper->render(null, null, $asset->getResource());
+                        header("Location: " . $redirectUri);
                         exit;
                     }
 
@@ -92,6 +98,43 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 
             }
         }
+
+
+        if ($node == null) {
+
+            $nodes = $this->nodeDataRepository->findByProperties("%", 'Phlu.Qmpilot.NodeTypes:File', $context->getWorkspace(), $context->getDimensions());
+
+
+            foreach ($nodes as $n) {
+
+
+                if ($node == null && $n->hasProperty('asset') && $n->getProperty('asset') && $n->getProperty('asset')->getResource()) {
+
+                    $asset = $n->getProperty('asset');
+                    $uri = $this->resourceViewHelper->render(null, null, $asset->getResource());
+                    $redirectUriSegments = explode("://", $uri);
+
+                    if (isset($redirectUriSegments[1]) && ($redirectUriSegments[1] == "www.phlu.ch/" . $requestPath || $redirectUriSegments[1] == "www.phlu.ch/" . $requestPath . "/")) {
+                        /** @var NodeInterface $node */
+                        $node = new Node($n, $context);
+
+                        $flowquery = new FlowQuery(array($node));
+                        $documentNode = $flowquery->closest("[instanceof Neos.NodeTypes:Page]")->get(0);
+
+                        if ($documentNode) {
+                            $request = new ActionRequest(new Request(array(), array(), array(), array()));
+                            $redirectUri = $this->nodeHelper->getEmbeddedLink($node, $uri, $request);
+                            if ($redirectUri) {
+                                header("Location: " . $redirectUri);
+                                exit;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
 
         if ($node == null) {
             throw new PageNotFoundException('Page ' . $requestPath . ' was not found.', 1346950755);
