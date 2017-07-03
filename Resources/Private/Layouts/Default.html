@@ -45,6 +45,7 @@
         <script src="{f:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'Neoslive.Hybridsearch')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'Phlu.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'Vendor/iframe-resizer/js/iframeResizer.min.js', package: 'Phlu.Corporate')}"></script>
+        <script src="{f:uri.resource(path: 'Vendor/algoliasearch/dist/algoliasearch.min.js', package: 'Neoslive.Hybridsearch')}"></script>
         <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'Phlu.Corporate')}"></script>
         <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'Phlu.Corporate')}"></script>
@@ -144,7 +145,7 @@
     <div class="container-fluid footer" id="footer" data-ng-controller="SearchMobileCtrl" data-ng-class="{hasSearchResults: siteSearchSearchMobile != '' && siteSearch !== ''}">
         <div class="row">
 
-            <div data-ng-show="autocompleteIsShowing && getAutocompleteMobile().length > 5" id="siteSearchMobileAutocomplete" class="hidden-xs-up"  data-ng-class="{'loading bar': getAutocompleteMobile().length == 0, 'hidden-xs-up': siteSearchSearchMobile == ''}">
+            <div data-ng-show="autocompleteIsShowing && getAutocompleteMobile().length > 0" id="siteSearchMobileAutocomplete" class="hidden-xs-up"  data-ng-class="{'loading bar': getAutocompleteMobile().length == 0, 'hidden-xs-up': siteSearchSearchMobile == ''}">
                 <ul>
                     <li data-ng-repeat="item in getAutocompleteMobile()" data-ng-class="{current: autocompleteLastPos == $index}"  data-ng-click="setSiteSearch(item);" data-ng-if="$index < 25">
                         <span data-ng-bind="item"></span>

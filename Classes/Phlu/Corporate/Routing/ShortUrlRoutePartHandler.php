@@ -1,4 +1,5 @@
 <?php
+
 namespace Phlu\Corporate\Routing;
 
 /*
@@ -13,10 +14,13 @@ namespace Phlu\Corporate\Routing;
 
 use Neos\ContentRepository\Domain\Model\Node;
 use Neos\ContentRepository\Exception\PageNotFoundException;
+use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Mvc\Controller\ControllerContext;
 use Neos\Neos\Routing\FrontendNodeRoutePartHandler;
 use Neos\Neos\Routing\Exception;
 use org\bovigo\vfs\vfsStreamWrapperAlreadyRegisteredTestCase;
+use Phlu\Corporate\ViewHelpers\Uri\ResourceViewHelper;
 use Phlu\Evento\Service\Course\ImportService;
 use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
 
@@ -27,13 +31,19 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 {
 
 
-
     /**
      * @Flow\Inject
      * @var NodeDataRepository
      */
     protected $nodeDataRepository;
 
+
+
+    /**
+     * @Flow\Inject
+     * @var ResourceViewHelper
+     */
+    protected $resourceViewHelper;
 
 
     /**
@@ -53,39 +63,45 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
     protected function matchValue($requestPath)
     {
 
-
         $context = current($this->contextFactory->getInstances());
-
+        $node = null;
 
         $nodes = $this->nodeDataRepository->findByProperties($requestPath, 'Phlu.Neos.NodeTypes:Shorturl', $context->getWorkspace(), $context->getDimensions());
-        foreach ($nodes as $node) {
 
-            \Neos\Flow\var_dump($node->getProperty('phluNeosNodeTypesShorturl'),$requestPath);
-            if ($node->hasProperty('phluNeosNodeTypesShorturl') && $node->getProperty('phluNeosNodeTypesShorturl') == $requestPath) {
+        foreach ($nodes as $n) {
+            if ($node == null && $n->hasProperty('phluNeosNodeTypesShorturl') && $n->getProperty('phluNeosNodeTypesShorturl') == $requestPath) {
 
-                \Neos\Flow\var_dump($node);exit;
+                /* @var \Neos\ContentRepository\Domain\Model\Node $node */
+                if ($node == null && $n->getNodeType()->isOfType("Neos.NodeTypes:Page")) {
+                    /** @var NodeInterface $node */
+                    $node = new Node($n, $context);
+                }
 
-                return null;
+                if ($node == null && $n->getNodeType()->isOfType("Phlu.Qmpilot.NodeTypes:File")) {
+
+                    $asset = $n->getProperty('asset');
+                    if ($asset && $asset->getResource()) {
+                        $redirectUri = $this->resourceViewHelper->render(null,null,$asset->getResource());
+                        header("Location: ".$redirectUri);
+                        exit;
+                    }
+
+
+                }
+
+
             }
         }
 
+        if ($node == null) {
+            throw new PageNotFoundException('Page ' . $requestPath . ' was not found.', 1346950755);
+            return false;
+        }
 
-          //  throw new PageNotFoundException('Page with course id '.$requestPath.' was not found.', 1346950755);
-          //  return false;
-
-
-//
-//        if ($this->onlyMatchSiteNodes() && $node !== $node->getContext()->getCurrentSiteNode()) {
-//            return false;
-//        }
-
-       // $this->value = $node->getContextPath();
-
-        \Neos\Flow\var_dump($requestPath);
-
-        exit;
+        $this->value = $node->getContextPath();
 
         return true;
+
     }
 
 

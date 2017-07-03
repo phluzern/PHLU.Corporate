@@ -1,6 +1,7 @@
 # Contact
 
 'Phlu.Corporate:Contact':
+  label: ${q(node).property('titlename') + ' ' + q(node).property('firstname') + ' ' + q(node).property('lastname')}
   superTypes:
     'Phlu.Corporate:Content': true
     'Phlu.Neos.NodeTypes:Database': true
@@ -34,8 +35,6 @@
       defaultValue: 0
     organisations:
       type: array
-    text:
-      type: string
     lastname:
       type: string
       ui:
@@ -165,6 +164,10 @@
         inspector:
           group: evento
           position: 1
+    shorthandSymbol:
+      type: string
+      ui:
+        label: 'Kürzel'
     featuredContact:
       type: integer
       defaultValue: 0

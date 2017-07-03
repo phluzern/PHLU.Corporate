@@ -859,6 +859,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @private
      * Initialize hybridsearch list
      */
+
     $scope.list
         .setPropertiesBoost(boost)
         .enableCache()
