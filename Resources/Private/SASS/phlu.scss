@@ -845,8 +845,8 @@ span.loading {
           font-size: $font-size-base !important;
         }
         p {
-          margin:0;
-          padding:0;
+          margin: 0;
+          padding: 0;
         }
       }
 
@@ -5389,10 +5389,11 @@ body {
       &.phlu-mediacenter {
         margin-bottom: 60px;
         .filter-bar {
+          margin-bottom: 40px;
           .col-xs-12 {
             margin: 0;
             .nav-pills {
-              padding-top:0;
+              padding:0;
               .nav-link {
                 padding-left: 23px;
               }
@@ -5411,6 +5412,7 @@ body {
                   &::after {
                     position: absolute;
                     color: $darkgrey;
+                    font-size: $font-size-small;
                     background-color: $lightgrey;
                     padding: 5px;
                     margin-left: 30px;
@@ -5428,16 +5430,42 @@ body {
         }
 
         .input-group {
+          float: right;
           @include media-breakpoint-up("sm") {
             margin-bottom: 5px;
           }
           .input-item-col {
+
             @include input-item-col();
 
             .dropdown-toggle {
               background-color: $lightgrey;
             }
             .dropdown-menu {
+              width: 250px;
+              left: inherit;
+              @include media-breakpoint-up("sm") {
+                margin-top: 5px;
+              }
+              right: 0;
+              li {
+                margin: 0;
+                a {
+                  white-space: nowrap;
+                  span {
+                    i {
+                      font-size: $font-size-paragraph-mobile;
+                      color: $font-color;
+                      font-weight: $font-weight-bold;
+                      margin-top: 5px;
+                      margin-right: 15px;
+                    }
+                  }
+                  span:last-child {
+                    margin-left: 10px;
+                  }
+                }
+              }
               .last-in-group {
                 border-bottom: 2px solid $lightgrey;
               }
@@ -5449,35 +5477,58 @@ body {
                 margin-bottom: 5px;
               }
               span {
-                &::before {
-                  position: absolute;
-                  background-color: transparent;
-                  color: $naviBlack;
-                  right: 70px;
+                a {
+                  &:hover {
+                    &::before {
+                      position: absolute;
+                      color: $darkgrey;
+                      background-color: $lightgrey;
+                      padding: 5px;
+                      right:0;
+                      margin-top: -33px;
+                      white-space: nowrap;
+                    }
+                  }
                 }
               }
               span.list-sort {
-                &::before {
-                  content: " Sortiert nach: Änderungsdatum ";
+                a {
+                  &:hover {
+                    &::before {
+                      content: " Sortiert nach: Änderungsdatum ";
+                    }
+                  }
                 }
               }
               span.filetype-sort {
-                &::before {
-                  content: " Dateityp: \0085 Alle ";
+                a {
+                  &:hover {
+                    &::before {
+                      content: " Zeige Dateityp: \0085 Alle ";
+                    }
+                  }
                 }
               }
-
+              span.download-all {
+                a {
+                  &:hover {
+                    &::before {
+                      content: " Alle Dateien runterladen (23.5M)";
+                    }
+                  }
+                }
+              }
               i {
-                background-color: $petrol;
+                background-color: $grey11;
                 padding: 10px;
                 margin-left: 5px;
-                color: white;
+                color: $naviBlack;
                 font-size: 20px;
                 width: 40px;
               }
               &:hover {
                 i {
-                  background-color: $petroldark;
+                  background-color: $grey12;
                 }
               }
             }
@@ -5653,10 +5704,10 @@ body {
                   margin-top: 10px;
                   font-size: $font-size-table-mobile-cols;
                   .header {
-                    font-weight: bold;
+                    font-weight: $font-weight-bold;
                     width: 160px;
                     padding: 0;
-                    font-weight: bold;
+                    font-weight: $font-weight-bold;
                   }
                 }
               }
