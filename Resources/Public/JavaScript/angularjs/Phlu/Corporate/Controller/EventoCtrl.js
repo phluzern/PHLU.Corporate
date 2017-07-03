@@ -519,7 +519,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                         return ordering[node.properties['phlu-neos-nodetypes-course-study-furthereducation-graduation']]+" "+node.properties['phlu-neos-nodetypes-course-study-furthereducation-title'];
                     },
                     'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
-                        return ordering[node.properties['Module']]+" "+node.properties['phlu-neos-nodetypes-module-study-furthereducation-title'];
+                        return ordering[node.properties['Module']]+" "+node.properties['phlu-neos-nodetypes-course-module-furthereducation-title'];
                     },
                     'phlu-neos-nodetypes-course-event-furthereducation': function (node) {
                         return ordering[node.properties['Event']]+" "+node.properties['phlu-neos-nodetypes-course-event-furthereducation-title'];
