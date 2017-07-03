@@ -842,7 +842,6 @@ span.loading {
 
       .searchresult-body {
 
-        max-width: 100% !important;
         a:not([class]) {
           color: $hazelbrowndark;
           @include content-link("externalflowtext");

@@ -270,13 +270,13 @@
                                         </tr>
                                         <tfoot>
                                         <tr>
-                                            <td class="col-center">
+                                            <td data-ng-class="{'col-center' : g.count() > limit[g.getLabel()] || (g.count() > 10 && limit[g.getLabel()] === undefined)}">
                                                 <a data-ng-click="limit[g.getLabel()] === undefined ? limit[g.getLabel()] = 20 : limit[g.getLabel()] = limit[g.getLabel()] + 10"
                                                    class="btn loadMore"
-                                                   data-ng-if="g.count() > limit[g.getLabel()] || (g.count() > 9 && limit[g.getLabel()] === undefined)">
+                                                   data-ng-if="g.count() > limit[g.getLabel()] || (g.count() > 10 && limit[g.getLabel()] === undefined)">
                                                     mehr anzeigen
                                                     <span>
-                                                        <span data-ng-bind="limit[g.getLabel()]"></span>
+                                                        <span data-ng-bind="limit[g.getLabel()] !== undefined ? limit[g.getLabel()] : 10"></span>
                                                         <span class="counter-divider">von</span>
                                                         <span data-ng-bind="g.count()"></span>
                                                     </span>
