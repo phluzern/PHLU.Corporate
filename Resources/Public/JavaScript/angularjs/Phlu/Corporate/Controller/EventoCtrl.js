@@ -460,12 +460,18 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.setOrderBy = function (orderby) {
 
 
+
         if (orderby != 0) {
+
             $scope.list.setOrderBy({'*': orderby})
+
         } else {
 
-            if ($scope.filters.id !== undefined) {
+            var hasManualFilter = false;
 
+            if ($scope.filters.id !== undefined && $scope.filters.id.selected !== undefined) {
+
+                hasManualFilter = true;
                 $scope.list.setOrderBy({
                     'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
                         return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-id']].counter
@@ -481,7 +487,8 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
             }
 
-            if ($scope.filters.nr !== undefined) {
+            if ($scope.filters.nr !== undefined && $scope.filters.nr.selected !== undefined) {
+                hasManualFilter = true;
                 $scope.list.setOrderBy({
                     'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
                         return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-nr']].counter
@@ -495,6 +502,31 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                 })
 
             }
+
+            if (hasManualFilter == false) {
+
+                var ordering = {
+                    'Certificate of Advanced Studies' : 'A',
+                    'Diploma of Advanced Studies' : 'B',
+                    'Master of Advanced Studies' : 'C',
+                    'Event' : 'D',
+                    'Module' : 'E'
+                };
+
+                $scope.list.setOrderBy({
+                    'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
+                        return ordering[node.properties['phlu-neos-nodetypes-course-study-furthereducation-graduation']]+" "+node.properties['phlu-neos-nodetypes-course-study-furthereducation-title'];
+                    },
+                    'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
+                        return ordering[node.properties['Module']]+" "+node.properties['phlu-neos-nodetypes-module-study-furthereducation-title'];
+                    },
+                    'phlu-neos-nodetypes-course-event-furthereducation': function (node) {
+                        return ordering[node.properties['Event']]+" "+node.properties['phlu-neos-nodetypes-course-event-furthereducation-title'];
+                    }
+                })
+
+            }
+
 
 
         }
