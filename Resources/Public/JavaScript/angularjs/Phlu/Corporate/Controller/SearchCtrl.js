@@ -752,6 +752,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     search.enableCache();
     //search.enableAlgolia('BPO2FNRO2H','989d3e117604044fb26d2f4b63352087')
     search.setEmojis(emojs);
+    search.addPropertyFilter('title', '', null, true, false, 'phlu-neos-nodetypes-project');
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('phone', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('asset.extension', '', null, true, false, 'phlu-qmpilot-nodetypes-file');

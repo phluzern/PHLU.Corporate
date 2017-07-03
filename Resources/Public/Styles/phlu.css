@@ -8540,6 +8540,10 @@ span.loading.bar {
   #search .hasSearchResults .phlu-searchresults {
     display: block;
     padding: 30px; }
+    #search .hasSearchResults .phlu-searchresults .rcrumbs-wrapper, #search .hasSearchResults .phlu-searchresults .rcrumbs-container, #search .hasSearchResults .phlu-searchresults .breadcrumb {
+      max-width: 100%;
+      overflow-x: hidden;
+      display: inline-block !important; }
     #search .hasSearchResults .phlu-searchresults .breadcrumb {
       display: block;
       height: auto; }
@@ -8555,29 +8559,27 @@ span.loading.bar {
           float: none !important;
           clear: both !important;
           width: auto !important; } }
-    #search .hasSearchResults .phlu-searchresults .searchresult-body {
-      max-width: 100% !important; }
-      #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class]) {
-        color: #9f632a;
-        background-image: url("../Images/linkbottomline.png");
-        color: #9f632a;
-        background-repeat: repeat-x;
-        background-position: bottom;
-        padding-bottom: 4px; }
-        #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class]):hover {
-          background-position: 0 0;
-          background-repeat: repeat; }
-        #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class])::after {
-          background-image: url("../Images/externalLinkArrow.png");
-          background-repeat: no-repeat;
-          background-position: 0 3px;
-          padding-right: 25px;
-          content: ""; }
-      #search .hasSearchResults .phlu-searchresults .searchresult-body p, #search .hasSearchResults .phlu-searchresults .searchresult-body ul, #search .hasSearchResults .phlu-searchresults .searchresult-body li {
-        font-size: 1rem !important; }
-      #search .hasSearchResults .phlu-searchresults .searchresult-body p {
-        margin: 0;
-        padding: 0; }
+    #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class]) {
+      color: #9f632a;
+      background-image: url("../Images/linkbottomline.png");
+      color: #9f632a;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      padding-bottom: 4px; }
+      #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class]):hover {
+        background-position: 0 0;
+        background-repeat: repeat; }
+      #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class])::after {
+        background-image: url("../Images/externalLinkArrow.png");
+        background-repeat: no-repeat;
+        background-position: 0 3px;
+        padding-right: 25px;
+        content: ""; }
+    #search .hasSearchResults .phlu-searchresults .searchresult-body p, #search .hasSearchResults .phlu-searchresults .searchresult-body ul, #search .hasSearchResults .phlu-searchresults .searchresult-body li {
+      font-size: 1rem !important; }
+    #search .hasSearchResults .phlu-searchresults .searchresult-body p {
+      margin: 0;
+      padding: 0; }
     #search .hasSearchResults .phlu-searchresults span i {
       font-style: italic; }
     @media (max-width: 767px) {
@@ -8593,7 +8595,7 @@ span.loading.bar {
       margin-top: 15px; }
       @media (min-width: 992px) {
         #search .hasSearchResults .phlu-searchresults .breadcrumb {
-          width: 735px; } }
+          width: 635px; } }
       #search .hasSearchResults .phlu-searchresults .breadcrumb > li {
         height: 30px;
         display: inline-block; }
@@ -8627,71 +8629,75 @@ span.loading.bar {
       margin-bottom: 0; }
     #search .hasSearchResults .phlu-searchresults .row.subjectsfilternav .nav-pills li i {
       padding-right: 10px; }
-    #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .breadcrumbs {
-      display: none; }
-    #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body {
-      font-size: 0; }
-      #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body address {
-        padding: 20px; }
-    #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body > div, #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode h3 > div {
-      display: none; }
-    #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body > div:first-child, #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode h3 > div:first-child {
-      display: block;
-      font-size: 1rem; }
-    #search .hasSearchResults .phlu-searchresults .results-quick-result ul, #search .hasSearchResults .phlu-searchresults .results-quick-result td p {
-      zoom: 0.7;
-      margin-bottom: 5px;
-      width: 95%; }
-    #search .hasSearchResults .phlu-searchresults .results-quick-result .dates {
-      padding-top: 10px;
-      font-weight: bold; }
-    #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info {
-      background-color: #edeae8;
-      padding: 0;
-      margin-bottom: 60px;
-      margin-left: 0;
-      margin-right: 0; }
-      #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .topnode {
-        padding-left: 15px; }
-      #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info address {
-        padding-left: 0; }
-      #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .rcrumbs-wrapper {
+    #search .hasSearchResults .phlu-searchresults .results-quick-result {
+      padding: 0; }
+      #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .breadcrumbs {
         display: none; }
-      #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .img-fluid, #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .carousel-inner > .carousel-item > img, #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info
-      .carousel-inner > .carousel-item > a > img, #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info body .all .phlu-teaser img, body .all .phlu-teaser #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info img {
-        margin: 20px;
-        float: right; }
-      #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info > div {
-        padding-right: 0;
-        padding-left: 0; }
-      #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .title {
-        padding-left: 15px;
-        margin-top: 15px;
-        max-height: 30px;
-        overflow: hidden;
-        text-transform: capitalize;
-        margin-bottom: 9px; }
-      #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table {
-        margin-bottom: 0; }
-        #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr:last-child td {
-          border-bottom: 0;
-          padding-bottom: 15px; }
-        #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td {
-          padding-left: 15px;
-          padding-top: 5px;
-          padding-bottom: 5px;
-          border-top: 0;
-          list-style-type: none;
-          font-size: 1rem;
-          text-transform: uppercase; }
-          #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span {
-            text-transform: none; }
-            #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span.single {
-              font-size: 135%; }
-            #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span.single-term {
-              text-transform: uppercase;
-              margin-top: 15px;
-              display: block; }
+      #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body {
+        font-size: 0; }
+        #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body address {
+          padding: 20px; }
+      #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body > div, #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode h3 > div {
+        display: none; }
+      #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode .searchresult-body > div:first-child, #search .hasSearchResults .phlu-searchresults .results-quick-result .topnode h3 > div:first-child {
+        display: block;
+        font-size: 1rem; }
+      #search .hasSearchResults .phlu-searchresults .results-quick-result ul, #search .hasSearchResults .phlu-searchresults .results-quick-result td p {
+        zoom: 0.7;
+        margin-bottom: 5px;
+        width: 95%; }
+      #search .hasSearchResults .phlu-searchresults .results-quick-result .dates {
+        padding-top: 10px;
+        font-weight: bold; }
+      #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content {
+        width: 100%;
+        overflow-x: hidden; }
+        #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .table-responsive .table tbody tr td {
+          padding: 0; }
+        #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info {
+          background-color: #edeae8;
+          padding: 20px;
+          margin-bottom: 60px;
+          margin-left: 0;
+          margin-right: 0; }
+          #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .img {
+            padding-left: 15px;
+            padding-right: 0; }
+          #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info address {
+            padding: 0; }
+          #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .rcrumbs-wrapper {
+            display: none; }
+          #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info > div {
+            padding-right: 0;
+            padding-left: 0; }
+          #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info .title {
+            padding-left: 15px;
+            margin-top: 15px;
+            max-height: 30px;
+            overflow: hidden;
+            text-transform: capitalize;
+            margin-bottom: 9px; }
+          #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table {
+            margin-bottom: 0; }
+            #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr:last-child td {
+              border-bottom: 0;
+              padding-bottom: 15px; }
+            #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td {
+              padding-left: 15px;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              border-top: 0;
+              list-style-type: none;
+              font-size: 1rem;
+              text-transform: uppercase; }
+              #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span {
+                text-transform: none; }
+                #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span.single {
+                  font-size: 135%; }
+                #search .hasSearchResults .phlu-searchresults .results-quick-result .tab-content .info table tr td span.single-term {
+                  text-transform: uppercase;
+                  margin-top: 15px;
+                  display: block; }
     #search .hasSearchResults .phlu-searchresults .results-table .table-responsive .table {
       margin-bottom: 10px; }
       @media (max-width: 767px) {
@@ -8935,7 +8941,7 @@ body.neos-backend .neos-contentelement-hover > .goto-teaser-target {
 body {
   margin-bottom: 573px;
   color: #5c5c5c; }
-  body .phlu-corporate-section .neos-contentcollection, body .sectionautogeneratedcontentfurthereducationlist, body .phlu-corporate-sectionautogeneratedcontentprojectslist, body .results-table, body .phlu-accordion, body .phlu-team-members {
+  body .phlu-teaser-body h3::before, body .phlu-corporate-section .neos-contentcollection, body .sectionautogeneratedcontentfurthereducationlist, body .phlu-corporate-sectionautogeneratedcontentprojectslist, body .results-table, body .phlu-accordion, body .phlu-team-members {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
   body.siteSearchActive {

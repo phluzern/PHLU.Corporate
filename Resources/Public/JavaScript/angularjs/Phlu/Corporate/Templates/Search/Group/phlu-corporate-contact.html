@@ -1,22 +1,38 @@
 <div class="row searchresult-body">
-    <div class="col-xs-8 col-sm-9 col-md-10">
+    <div class="col-xs-8 col-sm-9 col-md-9">
         <address>
+
             <b>
                 {{node.getProperty('lastname')}} {{node.getProperty('firstname')}}
             </b>
-            <span data-ng-if="node.getParent().getProperty('title') && node.getParent().getProperty('title') !== 'Team Bezeichnung eingeben'">
-             <br> <span data-ng-bind="node.getParent().getProperty('title')"></span>
-            </span>
+
             <span data-ng-if="!node.getParent().getProperty('title').length">
                 <span data-ng-if="node.getProperty('function')"><br>
                     <span data-ng-bind="node.getProperty('function')"></span>
                 </span>
             </span>
 
+            <span data-ng-if="node.getParent().getProperty('title') && node.getParent().getProperty('title') !== 'Team Bezeichnung eingeben'">
+             <br> <span data-ng-bind="node.getParent().getProperty('title')"></span>
+            </span>
+
+            <span data-ng-if="node.getProperty('street')">
+             <br> <span data-ng-bind="node.getProperty('street')"></span>
+            </span>
+
+            <span data-ng-if="node.getProperty('zip')">
+             <br> <span data-ng-bind="node.getProperty('zip')"></span> <span data-ng-bind="node.getProperty('city')"></span>
+            </span>
+
             <div class="telephone" data-ng-if="node.getProperty('phone')">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 {{node.getProperty('phone')}}<br>
             </div>
+
+            <div class="email" data-ng-if="node.getProperty('email')">
+                <a class="content-link-email-contact-person" href="mailto:{{node.getProperty('email')}}">{{node.getProperty('email')}}</a>
+            </div>
+
             <div ng-bind-html="node.getProperty('portrait')"></div>
 
         </address>
@@ -24,7 +40,7 @@
 
     </div>
 
-    <div class="col-xs-4 col-sm-3 col-md-2 contactperson-portrait-image" data-ng-show="node.getProperty('image')">
+    <div class="col-xs-4 col-sm-3 col-md-3 contactperson-portrait-image" data-ng-show="node.getProperty('image')">
         <img src="{{node.getProperty('image').url}}"
              title="{{node.getProperty('image').title}}" alt="{{node.getProperty('image').caption}}"
              class="img-fluid"/>
