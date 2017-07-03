@@ -811,6 +811,12 @@ span.loading {
     //
     .phlu-searchresults {
 
+    .rcrumbs-wrapper, .rcrumbs-container, .breadcrumb {
+      max-width: 100%;
+      overflow-x: hidden;
+      display: inline-block !important;
+    }
+
       .breadcrumb {
         li {
           display: none !important;
@@ -870,7 +876,7 @@ span.loading {
       }
       .breadcrumb {
         @include media-breakpoint-up("lg") {
-          width: 735px;
+          width: 635px;
         }
         margin-top: 15px;
         > li {
@@ -924,6 +930,8 @@ span.loading {
       }
       .results-quick-result {
 
+        padding: 0;
+
         .topnode {
           .breadcrumbs {
             display: none;
@@ -960,26 +968,30 @@ span.loading {
 
         .tab-content {
 
+          width: 100%;
+          overflow-x: hidden;
+
+          .table-responsive .table tbody tr td {
+            padding: 0;
+          }
+
           .info {
             background-color: $lightgrey;
-            padding: 0;
+            padding: 20px;
             margin-bottom: 60px;
             margin-left: 0;
             margin-right: 0;
 
-            .topnode {
+            .img {
               padding-left: 15px;
+              padding-right: 0;
             }
+
             address {
-              padding-left: 0;
+              padding: 0;
             }
             .rcrumbs-wrapper {
               display: none;
-            }
-
-            .img-fluid {
-              margin: 20px;
-              float: right;
             }
 
             > div {
