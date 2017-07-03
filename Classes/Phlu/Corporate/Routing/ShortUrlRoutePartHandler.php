@@ -20,6 +20,7 @@ use Neos\Flow\Mvc\Controller\ControllerContext;
 use Neos\Neos\Routing\FrontendNodeRoutePartHandler;
 use Neos\Neos\Routing\Exception;
 use org\bovigo\vfs\vfsStreamWrapperAlreadyRegisteredTestCase;
+use Phlu\Corporate\ViewHelpers\Uri\ResourceViewHelper;
 use Phlu\Evento\Service\Course\ImportService;
 use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
 
@@ -35,6 +36,14 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
      * @var NodeDataRepository
      */
     protected $nodeDataRepository;
+
+
+
+    /**
+     * @Flow\Inject
+     * @var ResourceViewHelper
+     */
+    protected $resourceViewHelper;
 
 
     /**
@@ -63,10 +72,23 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
             if ($node == null && $n->hasProperty('phluNeosNodeTypesShorturl') && $n->getProperty('phluNeosNodeTypesShorturl') == $requestPath) {
 
                 /* @var \Neos\ContentRepository\Domain\Model\Node $node */
-                if ($n->getNodeType()->isOfType("Neos.NodeTypes:Page")) {
+                if ($node == null && $n->getNodeType()->isOfType("Neos.NodeTypes:Page")) {
                     /** @var NodeInterface $node */
                     $node = new Node($n, $context);
                 }
+
+                if ($node == null && $n->getNodeType()->isOfType("Phlu.Qmpilot.NodeTypes:File")) {
+
+                    $asset = $n->getProperty('asset');
+                    if ($asset && $asset->getResource()) {
+                        $redirectUri = $this->resourceViewHelper->render(null,null,$asset->getResource());
+                        header("Location: ".$redirectUri);
+                        exit;
+                    }
+
+
+                }
+
 
             }
         }
