@@ -503,6 +503,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
             }
 
+
             if (hasManualFilter == false) {
 
                 var ordering = {
