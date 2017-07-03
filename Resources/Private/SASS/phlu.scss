@@ -2702,9 +2702,12 @@ body {
             padding: 0;
             .scrollbody {
               padding: 10px 20px 20px;
-              overflow-y: auto;
+              overflow: hidden;
+              text-overflow: ellipsis;
               p {
                 margin-bottom: inherit;
+                @include word-wrap;
+
               }
             }
           }
