@@ -11599,8 +11599,12 @@ body {
           margin-bottom: 0; }
       body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter {
         margin-bottom: 60px; }
-        body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .filter-bar .nav-pills .nav-link {
-          padding-left: 23px; }
+        body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .filter-bar .col-xs-12 {
+          margin: 0; }
+          body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .filter-bar .col-xs-12 .nav-pills {
+            padding-top: 0; }
+            body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .filter-bar .col-xs-12 .nav-pills .nav-link {
+              padding-left: 23px; }
         body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .phlu-teaser.navigation.subpage {
           margin: 0 0 30px; }
           body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .phlu-teaser.navigation.subpage .nav-teaser-item .phlu-teaser-caret-right {
@@ -11618,6 +11622,133 @@ body {
             body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .phlu-teaser.navigation.subpage .nav-teaser-item .phlu-teaser-caret-right .external-link-arrow img {
               width: 25px;
               display: inherit; }
+        @media (min-width: 544px) {
+          body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group {
+            margin-bottom: 5px; } }
+        body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-toggle {
+          background-color: white;
+          color: #5c5c5c;
+          display: block;
+          padding: 14px 8px; }
+          body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-toggle.search-result-tags {
+            margin: 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            overflow: hidden;
+            min-height: 55px; }
+            body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-toggle.search-result-tags span {
+              position: absolute;
+              font-size: 1.125rem;
+              height: 30px;
+              overflow: hidden; }
+            body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-toggle.search-result-tags .search-result-tag {
+              color: white;
+              float: left;
+              position: relative;
+              white-space: nowrap; }
+          body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-toggle::after {
+            font-family: FontAwesome;
+            content: " \f0d7";
+            border: inherit;
+            position: absolute;
+            right: 15px;
+            color: white;
+            background-color: #28818f;
+            height: 55px;
+            width: 32px;
+            margin-top: -14px;
+            padding-left: 12px;
+            padding-top: 17px; }
+          body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-toggle:hover::after {
+            background-color: #28818f; }
+        body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .with-delete-btn::after {
+          padding-top: 27px; }
+        body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .deleteDropdownSelectionButton {
+          position: absolute;
+          display: block;
+          bottom: 27px;
+          right: 14px; }
+          body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .deleteDropdownSelectionButton a {
+            display: block;
+            text-align: center; }
+            body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .deleteDropdownSelectionButton a i.fa {
+              width: 32px;
+              height: 27px;
+              padding-top: 6px;
+              color: white; }
+          body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .deleteDropdownSelectionButton.on {
+            display: block; }
+        body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-menu {
+          top: inherit;
+          width: 100%;
+          background-color: inherit; }
+          body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-menu li {
+            margin: 0 15px;
+            background-color: white;
+            -webkit-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 5px 6px -1px rgba(0, 0, 0, 0.3); }
+            body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-menu li a {
+              color: #5c5c5c;
+              display: table;
+              width: 100%; }
+              body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-menu li a i {
+                display: block;
+                float: left;
+                margin-top: 6px; }
+              body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-menu li a span.oi {
+                float: right;
+                margin-top: 3px; }
+            body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-menu li:hover, body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-menu li.selected {
+              background-color: #edeae8; }
+
+@media (min-width: 544px) and (max-width: 767px) {
+  body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col[name='scholarYear'] .dropdown-menu li a span {
+    width: 97%; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col[name='scholarYear'] .dropdown-menu li a span {
+    width: 80%; } }
+        body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col[name='scholarYear'] .dropdown-menu li a span:last-child {
+          margin-left: 11px; }
+        body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col i.fa-search {
+          color: #5c5c5c;
+          right: 11px; }
+          @media (max-width: 767px) {
+            body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col i.fa-search {
+              right: 0; } }
+        body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col #datepicker-further-education .datepicker-inline {
+          background-color: #9b9b9b; }
+        body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col #datepicker-further-education input {
+          height: 40px; }
+        body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-toggle {
+          background-color: #edeae8; }
+        body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-menu .last-in-group {
+          border-bottom: 2px solid #edeae8; }
+        body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-icon {
+          text-align: right;
+          font-size: 0.8rem; }
+          @media (max-width: 543px) {
+            body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-icon {
+              margin-bottom: 5px; } }
+          body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-icon span::before {
+            position: absolute;
+            background-color: transparent;
+            color: #171815;
+            right: 70px; }
+          body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-icon span.list-sort::before {
+            content: " Sortiert nach: Änderungsdatum "; }
+          body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-icon span.filetype-sort::before {
+            content: " Dateityp: \0085 Alle "; }
+          body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-icon i {
+            background-color: #28818f;
+            padding: 10px;
+            margin-left: 5px;
+            color: white;
+            font-size: 20px;
+            width: 40px; }
+          body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .input-group .input-item-col .dropdown-icon:hover i {
+            background-color: #216A75; }
         body .all .row.subjectsfilternav.phlu-filelinks.phlu-mediacenter .btn.loadMore {
           padding: 6px 27px 6px 46px;
           margin: 0; }
