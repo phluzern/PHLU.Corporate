@@ -9924,9 +9924,18 @@ body {
         padding: 0; }
         body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody, body .all .phlu-teaser .publication.singleitem .phlu-teaser-body .scrollbody, body .all .phlu-teaser .news.singleitem .phlu-teaser-body .scrollbody {
           padding: 10px 20px 20px;
-          overflow-y: auto; }
+          overflow: hidden;
+          text-overflow: ellipsis; }
           body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody p, body .all .phlu-teaser .publication.singleitem .phlu-teaser-body .scrollbody p, body .all .phlu-teaser .news.singleitem .phlu-teaser-body .scrollbody p {
-            margin-bottom: inherit; }
+            margin-bottom: inherit;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            -ms-word-break: break-all;
+            word-break: break-word;
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto; }
       body .all .phlu-teaser .event .event-date-day {
         float: left;
         padding: 11px;
