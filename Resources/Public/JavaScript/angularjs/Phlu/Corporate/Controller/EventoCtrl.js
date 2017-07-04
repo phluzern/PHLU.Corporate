@@ -722,11 +722,10 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             if (jQueryDropdownElementWrapper.isOnScreen() == false) {
                 $('html, body').stop().animate({
                     'scrollTop': jQueryDropdownElement.offset().top
-                }, 900, 'swing', function () {
+                }, 1, 'swing', function () {
                 });
             }
-            console.log(jQueryDropdownElement,jQueryDropdownElement.offset());
-        },100);
+        },1);
 
 
         return filterObject;
