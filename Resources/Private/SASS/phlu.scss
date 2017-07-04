@@ -811,11 +811,11 @@ span.loading {
     //
     .phlu-searchresults {
 
-    .rcrumbs-wrapper, .rcrumbs-container, .breadcrumb {
-      max-width: 100%;
-      overflow-x: hidden;
-      display: inline-block !important;
-    }
+      .rcrumbs-wrapper, .rcrumbs-container, .breadcrumb {
+        max-width: 100%;
+        overflow-x: hidden;
+        display: inline-block !important;
+      }
 
       .breadcrumb {
         li {
@@ -2473,7 +2473,6 @@ body {
             color: white;
             margin-top: 0;
           }
-          padding: 15px 0 30px;
         }
         .subjectsfilternav {
           &:last-child {
@@ -4152,6 +4151,17 @@ body {
             }
           }
         }
+        &.science-projects {
+          .phlu-accordion {
+            .panel-default {
+              .panel-collapse {
+                > div {
+                  padding: 15px 0 30px;
+                }
+              }
+            }
+          }
+        }
       }
       .row:last-child {
         margin-bottom: 60px;
@@ -5407,7 +5417,7 @@ body {
           .col-xs-12 {
             margin: 0;
             .nav-pills {
-              padding:0;
+              padding: 0;
               .nav-link {
                 padding-left: 23px;
               }
@@ -5498,7 +5508,7 @@ body {
                       color: $darkgrey;
                       background-color: $lightgrey;
                       padding: 5px;
-                      right:0;
+                      right: 0;
                       margin-top: -33px;
                       white-space: nowrap;
                     }

@@ -9,4 +9,5 @@ prototype(Phlu.Corporate:Page.View.Dossier) < prototype(Phlu.Corporate:Page.Over
         ishidden = ${q(node).property('ishidden')}
 
 
+
 }

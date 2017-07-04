@@ -51,7 +51,12 @@
 
 
 <f:if condition="{contact}">
-    <ts:render path="defaultRenderer" context="{node: contact}"/>
+    <f:if condition="{contactIsHidden}">
+        <f:else>
+            <ts:render path="defaultRenderer" context="{node: contact}"/>
+        </f:else>
+    </f:if>
+
 </f:if>
 
 <ts:render path="defaultRenderer" context="{node: targetgroup}"/>

@@ -27,11 +27,15 @@
                 </li>
             </f:for>
 
-            <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.View.Dossier'">
-                <li>
-                    <a class="nav-item nav-link anchor-nav" href="#kontakt">Kontakt</a>
-                </li>
-            </f:if>
+
+                <f:if condition="{contactIsHidden} === FALSE">
+                    <f:then>
+                        <li>
+                            <a class="nav-item nav-link anchor-nav" href="#contactperson">Kontakt</a>
+                        </li>
+                    </f:then>
+                </f:if>
+
 
         </ul>
         <div class="anchors-mobile-view">
@@ -41,10 +45,12 @@
                         <a class="nav-item nav-link anchor-nav" href="#{item.node.properties.uriPathSegment}">{item.label}</a>
                     </li>
                 </f:for>
-                <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.View.Dossier'">
-                    <li>
-                        <a class="nav-item nav-link anchor-nav" href="#kontakt">Kontakt</a>
-                    </li>
+                 <f:if condition="{contactIsHidden} === FALSE">
+                    <f:then>
+                        <li>
+                            <a class="nav-item nav-link anchor-nav" href="#contactperson">Kontakt</a>
+                        </li>
+                    </f:then>
                 </f:if>
             </ul>
         </div>
