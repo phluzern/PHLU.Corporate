@@ -632,6 +632,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '/beratungen-angebote/': 3,
         '/forschung/': 2,
         '/forschung/publikationen/': 0.0001,
+        '/ueber-uns/standorte/': 10,
         '/forschung/projekte/': 0.005,
         '/faecher-und-schwerpunkte/': 5,
         '/ueber-uns/organisation-personen/': {'*': 0.001, 'phlu-corporate-contact': 100},
