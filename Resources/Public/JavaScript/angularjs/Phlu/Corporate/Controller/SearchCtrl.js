@@ -158,9 +158,6 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
     var timer = null;
     $scope.$watch('siteSearchSearchMobile', function (query, oldquery) {
 
-        if (timer) {
-            window.clearTimeout(timer);
-        }
 
         window.setTimeout(function () {
 
@@ -169,16 +166,21 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
             if (oldquery !== query && query == '') {
                 $scope.autocompleteIsShowing = true;
             }
-            if ($rootScope.autocomplete.length > 5) {
+            if ($rootScope.autocomplete.length > 0) {
                 $scope.autocompleteIsShowing = true;
+            } else {
+                $scope.autocompleteIsShowing = false;
+                window.setTimeout(function () {
+                    $scope.$digest();
+                }, 1);
             }
 
             window.setTimeout(function () {
                 $scope.$digest();
                 $rootScope.$digest();
-            }, 1);
+            }, 10);
 
-        }, 1);
+        }, 5);
 
     });
 
@@ -275,6 +277,7 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
     }
 
     $scope.getAutocompleteMobile = function () {
+
         return $rootScope.autocomplete;
     }
 
