@@ -1,6 +1,7 @@
 # Page Overview Tiles
 prototype(Phlu.Corporate:Page.Overview.OnePage) < prototype(Phlu.Corporate:Page) {
     templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/Overview.OnePage.html'
+    contactIsHidden = ${node.context.inBackend ? false : (String.length(q(q(node).children('contact').get(0)).property('phone')) == 0 || q(q(node).children('contact').get(0)).property('_hidden') == TRUE ? true : false)}
 
 
     onePageContent = Menu {
@@ -50,7 +51,9 @@ prototype(Phlu.Corporate:Page.Overview.OnePage) < prototype(Phlu.Corporate:Page)
                 maximumLevels = 1
                 filter = '!Phlu.Corporate:Page.NotInMenu, Phlu.Corporate:Page'
                 startingPoint = ${q(node).get(0)}
-       }
+                contactIsHidden = ${node.context.inBackend ? false : (String.length(q(q(node).children('contact').get(0)).property('phone')) == 0 || q(q(node).children('contact').get(0)).property('_hidden') == TRUE ? true : false)}
+
+        }
 
 
 
