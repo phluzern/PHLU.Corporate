@@ -21,6 +21,18 @@ function initFrontend() {
         return false;
     });
 
+    /* click on nav brand home button */
+    $('a.navbar-brand').click(function (e) {
+           if (window.location.pathname == "/") {
+            location.reload();
+            e.preventDefault();
+            return false;
+        }
+
+    });
+
+
+
     /* close tabs in pane */
     $('.tab-pane .close-btn').click(function (event) {
         $("a[data-target='#" + $(this).closest('.tab-pane').attr('id') + "']").removeClass('active');
