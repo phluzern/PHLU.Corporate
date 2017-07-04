@@ -101,7 +101,7 @@
                                         data-ng-repeat="year in result.getDistinct('furthereducation-years.Year.*')  | orderObjectBy:'value'"
                                         data-ng-class="{'selected': isFilterValueSelected(year.value,filters.year), '': !isFilterValueSelected(year.value,filters.year)}">
                                         <a href="javascript:void(0)"
-                                           data-ng-click="toggleFilterSelection(year,'Alle','year')">
+                                           data-ng-click="toggleFilterSelection(year,'Alle','year',$event)">
                                             <span data-ng-bind="year.value"></span>
                                             <span class="oi"
                                                   data-ng-class="{'oi-check': isFilterValueSelected(year.value,filters.year),'': !isFilterValueSelected(year.value,filters.year)}"
@@ -134,7 +134,7 @@
                                         data-ng-repeat="targetgroup in result.getDistinct('targetgroups.Bezeichnung')  | orderObjectBy:'value'"
                                         data-ng-class="{'selected': isFilterValueSelected(targetgroup.value,filters.targetgroups), '': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}">
                                         <a href="javascript:void(0)"
-                                           data-ng-click="toggleFilterSelection(targetgroup,'Alle','targetgroups')">
+                                           data-ng-click="toggleFilterSelection(targetgroup,'Alle','targetgroups',$event)">
                                             <span data-ng-bind="targetgroup.value"></span>
                                             <span class="oi"
                                                   data-ng-class="{'oi-check': isFilterValueSelected(targetgroup.value,filters.targetgroups),'': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"
@@ -186,7 +186,7 @@
                                         data-ng-class="{'selected': isFilterValueSelected(year.value,filters.year), '': !isFilterValueSelected(year.value,filters.year)}"
                                     >
                                         <a href="javascript:void(0)"
-                                           data-ng-click="toggleFilterSelection(year,'Studiengang','year')">
+                                           data-ng-click="toggleFilterSelection(year,'Studiengang','year',$event)">
                                             <span data-ng-bind="year.value"></span>
                                             <span class="oi"
                                                   data-ng-class="{'oi-check': isFilterValueSelected(year.value,filters.year),'': !isFilterValueSelected(year.value,filters.year)}"
@@ -223,7 +223,7 @@
                                         data-ng-class="{'selected': isFilterValueSelected(graduation.value,filters.graduation), '': !isFilterValueSelected(graduation.value,filters.graduation)}"
                                     >
                                         <a href="javascript:void(0)"
-                                           data-ng-click="toggleFilterSelection(graduation,'Studiengang','graduation')">
+                                           data-ng-click="toggleFilterSelection(graduation,'Studiengang','graduation',$event)">
                                             <span data-ng-bind="graduation.value"></span>
                                             <span class="oi"
                                                   data-ng-class="{'oi-check': isFilterValueSelected(graduation.value,filters.graduation),'': !isFilterValueSelected(graduation.value,filters.graduation)}"
@@ -256,7 +256,7 @@
                                         data-ng-class="{'selected': isFilterValueSelected(targetgroup.value,filters.targetgroups), '': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"
                                     >
                                         <a href="javascript:void(0)"
-                                           data-ng-click="toggleFilterSelection(targetgroup,'Studiengang','targetgroups')">
+                                           data-ng-click="toggleFilterSelection(targetgroup,'Studiengang','targetgroups',$event)">
                                             <span data-ng-bind="targetgroup.value"></span>
                                             <span class="oi"
                                                   data-ng-class="{'oi-check': isFilterValueSelected(targetgroup.value,filters.targetgroups),'': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"
@@ -307,7 +307,7 @@
                                         data-ng-class="{'selected': isFilterValueSelected(year.value,filters.year), '': !isFilterValueSelected(year.value,filters.year)}"
                                     >
                                         <a href="javascript:void(0)"
-                                           data-ng-click="toggleFilterSelection(year,'Kurs','year')">
+                                           data-ng-click="toggleFilterSelection(year,'Kurs','year',$event)">
                                             <span data-ng-bind="year.value"></span>
                                             <span class="oi"
                                                   data-ng-class="{'oi-check': isFilterValueSelected(year.value,filters.year),'': !isFilterValueSelected(year.value,filters.year)}"
@@ -349,7 +349,7 @@
                                         data-ng-class="{'selected': isFilterValueSelected(dayofweek.value,filters.dayofweek), '': !isFilterValueSelected(dayofweek.value,filters.dayofweek)}"
                                     >
                                         <a href="javascript:void(0)"
-                                           data-ng-click="toggleFilterSelection(dayofweek,'Kurs','dayofweek')">
+                                           data-ng-click="toggleFilterSelection(dayofweek,'Kurs','dayofweek',$event)">
                                             <span data-ng-bind="dayofweek.value"></span>
                                             <span class="oi"
                                                   data-ng-class="{'oi-check': isFilterValueSelected(dayofweek.value,filters.dayofweek),'': !isFilterValueSelected(dayofweek.value,filters.dayofweek)}"
@@ -396,7 +396,7 @@
                                         data-ng-class="{'selected': isFilterValueSelected(targetgroup.value,filters.targetgroups), '': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"
                                     >
                                         <a href="javascript:void(0)"
-                                           data-ng-click="toggleFilterSelection(targetgroup,'Kurs','targetgroups')">
+                                           data-ng-click="toggleFilterSelection(targetgroup,'Kurs','targetgroups',$event)">
                                             <span data-ng-bind="targetgroup.value"></span>
                                             <span class="oi"
                                                   data-ng-class="{'oi-check': isFilterValueSelected(targetgroup.value,filters.targetgroups),'': !isFilterValueSelected(targetgroup.value,filters.targetgroups)}"
@@ -428,7 +428,7 @@
                                         data-ng-class="{'selected': isFilterValueSelected(genre.value,filters.genre), '': !isFilterValueSelected(genre.value,filters.genre)}"
                                     >
                                         <a href="javascript:void(0)"
-                                           data-ng-click="toggleFilterSelection(genre,'Kurs','genre')">
+                                           data-ng-click="toggleFilterSelection(genre,'Kurs','genre',$event)">
                                             <span data-ng-bind="genre.value"></span>
                                             <span class="oi"
                                                   data-ng-class="{'oi-check': isFilterValueSelected(genre.value,filters.genre),'': !isFilterValueSelected(genre.value,filters.genre)}"
