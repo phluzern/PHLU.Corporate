@@ -6697,8 +6697,18 @@ body {
                       }
                       @include media-breakpoint-down("xs") {
                         padding: 0 5px 0 0;
-                        position: absolute;
-                        left: 0;
+                      }
+                    }
+                    .btn.btn-primary {
+                      &:first-child {
+                        @include media-breakpoint-down("xs") {
+                          width: 42px;
+                        }
+                      }
+                      &:last-child {
+                        @include media-breakpoint-down("xs") {
+                          width: 130px;
+                        }
                       }
                     }
                   }
@@ -6832,6 +6842,11 @@ body {
         .phlu-corporate-section {
           &[data-next='empty'] {
             margin-bottom: 0;
+          }
+        }
+        .nav-pills {
+          @include media-breakpoint-down("xs") {
+            display: none;
           }
         }
       }

@@ -12695,9 +12695,13 @@ body {
                 padding: 0 19px; } }
             @media (max-width: 543px) {
               body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.share {
-                padding: 0 5px 0 0;
-                position: absolute;
-                left: 0; } }
+                padding: 0 5px 0 0; } }
+          @media (max-width: 543px) {
+            body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.btn-primary:first-child {
+              width: 42px; } }
+          @media (max-width: 543px) {
+            body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.btn-primary:last-child {
+              width: 130px; } }
         body .all .main .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
           display: none; }
           @media (max-width: 767px) {
@@ -12772,6 +12776,9 @@ body {
               color: #216A75; }
       body .all .main .further-education-detail .phlu-corporate-section[data-next='empty'] {
         margin-bottom: 0; }
+      @media (max-width: 543px) {
+        body .all .main .further-education-detail .nav-pills {
+          display: none; } }
       body .all .main .shareAndRegister {
         float: right; }
         body .all .main .shareAndRegister.shareAndRegisterFurtherEducationDetail {
