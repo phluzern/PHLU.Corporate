@@ -611,8 +611,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var boostParentNodeType = {
         'Phlu.Corporate:Page.FurtherEducation.Detail.Study': 2,
-        'Phlu.Corporate:ContactsGroup': 0.25,
-        'Phlu.Corporate:Location': 10
+        'Phlu.Corporate:ContactsGroup': 0.25
     };
 
     var boostNodeType = {
@@ -620,7 +619,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Phlu.Corporate:Contact': 0.25,
         'Phlu.Neos.NodeTypes:Course.Study.FurtherEducation': 0.125,
         'Phlu.Neos.NodeTypes:Course.Module.FurtherEducation': 0.125,
-        'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.125
+        'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.125,
+        'Phlu.Corporate:Location': 100
 
     };
 
@@ -633,7 +633,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '/beratungen-angebote/': 3,
         '/forschung/': 2,
         '/forschung/publikationen/': 0.0001,
-        '/ueber-uns/standorte/': 10,
         '/forschung/projekte/': 0.005,
         '/faecher-und-schwerpunkte/': 5,
         '/ueber-uns/organisation-personen/': {'*': 0.001, 'phlu-corporate-contact': 100},
