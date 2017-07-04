@@ -370,6 +370,14 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     $rootScope.siteSearchTopSetFocus = function () {
 
+
+        window.setTimeout(function () {
+            $rootScope.siteSearchTopFocus = true;
+            window.setTimeout(function () {
+                $rootScope.$digest();
+            }, 1);
+        }, 1);
+
         if (keybinded == false) {
 
 
@@ -384,9 +392,10 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
             });
 
+            jQuery(document).keyup(function (e) {
 
-            jQuery(document).keydown(function (e) {
                 if (jQuery(e.target).attr('id') == 'searchInput') {
+
 
                     switch (e.which) {
 
@@ -445,12 +454,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         }
         keybinded = true;
 
-        window.setTimeout(function () {
-            $rootScope.siteSearchTopFocus = true;
-            window.setTimeout(function () {
-                $rootScope.$digest();
-            }, 1);
-        }, 10);
     }
 
 
@@ -619,7 +622,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Phlu.Corporate:Contact': 0.25,
         'Phlu.Neos.NodeTypes:Course.Study.FurtherEducation': 0.125,
         'Phlu.Neos.NodeTypes:Course.Module.FurtherEducation': 0.125,
-        'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.125
+        'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.125,
+        'Phlu.Corporate:Location': 100
 
     };
 
@@ -764,6 +768,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     search.setGroupedBy(groupedBy).setNodeUrlBoostFactor(NodeUrlBoostFactor).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setNodeTypeBoostFactor(boostNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
+        $rootScope.siteSearchTopSetFocus();
         $rootScope.autocomplete = data.getAutocomplete();
         if (searchResultApplyTimer) {
             window.clearTimeout(searchResultApplyTimer);
@@ -1035,6 +1040,12 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     };
 
+
+    // set focus
+    jQuery(document).ready(function() {
+        jQuery("#siteSearchTop input").focus();
+
+    });
 
 }
 ]);
