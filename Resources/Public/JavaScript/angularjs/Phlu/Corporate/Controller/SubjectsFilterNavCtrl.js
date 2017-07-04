@@ -132,6 +132,25 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
     }
 
 
+    $scope.getParentUriSegment = function(uri) {
+        if (uri !== undefined) {
+            var e = uri.split("/");
+            var b = "";
+            var l = Object.keys(e).length;
+            angular.forEach(e,function(v,k) {
+               if (k < l-1) {
+                   if (b !== "") {
+                       b = b+"/";
+                   }
+                   b = b+v;
+               }
+            });
+            b = "/"+b+".html";
+            return b;
+        }
+        return uri;
+    };
+
     $scope.addFilterItem = function(nodeId,filterId) {
         if ($scope.filterItems[nodeId] === undefined) $scope.filterItems[nodeId] = {};
         $scope.filterItems[nodeId][filterId] = true;
