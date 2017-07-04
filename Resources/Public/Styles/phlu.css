@@ -8559,29 +8559,27 @@ span.loading.bar {
           float: none !important;
           clear: both !important;
           width: auto !important; } }
-    #search .hasSearchResults .phlu-searchresults .searchresult-body {
-      max-width: 100% !important; }
-      #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class]) {
-        color: #9f632a;
-        background-image: url("../Images/linkbottomline.png");
-        color: #9f632a;
-        background-repeat: repeat-x;
-        background-position: bottom;
-        padding-bottom: 4px; }
-        #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class]):hover {
-          background-position: 0 0;
-          background-repeat: repeat; }
-        #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class])::after {
-          background-image: url("../Images/externalLinkArrow.png");
-          background-repeat: no-repeat;
-          background-position: 0 3px;
-          padding-right: 25px;
-          content: ""; }
-      #search .hasSearchResults .phlu-searchresults .searchresult-body p, #search .hasSearchResults .phlu-searchresults .searchresult-body ul, #search .hasSearchResults .phlu-searchresults .searchresult-body li {
-        font-size: 1rem !important; }
-      #search .hasSearchResults .phlu-searchresults .searchresult-body p {
-        margin: 0;
-        padding: 0; }
+    #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class]) {
+      color: #9f632a;
+      background-image: url("../Images/linkbottomline.png");
+      color: #9f632a;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      padding-bottom: 4px; }
+      #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class]):hover {
+        background-position: 0 0;
+        background-repeat: repeat; }
+      #search .hasSearchResults .phlu-searchresults .searchresult-body a:not([class])::after {
+        background-image: url("../Images/externalLinkArrow.png");
+        background-repeat: no-repeat;
+        background-position: 0 3px;
+        padding-right: 25px;
+        content: ""; }
+    #search .hasSearchResults .phlu-searchresults .searchresult-body p, #search .hasSearchResults .phlu-searchresults .searchresult-body ul, #search .hasSearchResults .phlu-searchresults .searchresult-body li {
+      font-size: 1rem !important; }
+    #search .hasSearchResults .phlu-searchresults .searchresult-body p {
+      margin: 0;
+      padding: 0; }
     #search .hasSearchResults .phlu-searchresults span i {
       font-style: italic; }
     @media (max-width: 767px) {

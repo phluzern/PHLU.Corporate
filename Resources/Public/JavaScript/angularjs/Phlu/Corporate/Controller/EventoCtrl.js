@@ -595,6 +595,26 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     }
 
+    /** @private **/
+    $.fn.isOnScreen = function(){
+
+        var win = $(window);
+
+        var viewport = {
+            top : win.scrollTop(),
+            left : win.scrollLeft()
+        };
+        viewport.right = viewport.left + win.width();
+        viewport.bottom = viewport.top + win.height();
+
+        var bounds = this.offset();
+        bounds.right = bounds.left + this.outerWidth();
+        bounds.bottom = bounds.top + this.outerHeight();
+
+        return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+
+    };
+
     /**
      * @public
      * Toggle state of given filter
@@ -650,7 +670,19 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @param string filter name
      * @returns filterObject
      */
-    $scope.toggleFilterSelection = function (filterObject, category, filtername) {
+    $scope.toggleFilterSelection = function (filterObject, category, filtername, event) {
+
+
+
+        // if (jQueryDropdownElementWrapper.isOnScreen() == false) {
+        //     $('html, body').stop().animate({
+        //         'scrollTop': jQueryDropdownElement.offset().top
+        //     }, 900, 'swing', function () {
+        //     });
+        //     console.log(jQueryDropdownElement.offset().top);
+        // }
+
+
 
         if (category == undefined) {
             category = 'all';
@@ -681,6 +713,20 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
 
         filter.selected[category][filterObject.id].state = filter.selected[category][filterObject.id].state ? false : true;
+
+
+        var jQueryElement = jQuery(angular.element(event.target));
+        var jQueryDropdownElementWrapper = jQueryElement.parentsUntil('.dropdown-menu').parent().parent();
+        var jQueryDropdownElement = jQueryElement.closest('.dropdown-menu').parent().find('.dropdown-toggle').parent();
+        window.setTimeout(function() {
+            if (jQueryDropdownElementWrapper.isOnScreen() == false) {
+                $('html, body').stop().animate({
+                    'scrollTop': jQueryDropdownElement.offset().top
+                }, 900, 'swing', function () {
+                });
+            }
+            console.log(jQueryDropdownElement,jQueryDropdownElement.offset());
+        },100);
 
 
         return filterObject;
