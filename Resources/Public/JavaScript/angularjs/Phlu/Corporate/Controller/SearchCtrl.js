@@ -1037,6 +1037,12 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
 
+    // set focus
+    jQuery(document).ready(function() {
+        jQuery("#siteSearchTop input").focus();
+
+    });
+
 }
 ]);
 
