@@ -58,10 +58,11 @@ class NodeViewHelper extends \Neos\Neos\ViewHelpers\Uri\NodeViewHelper
      * @param array $argumentsToBeExcludedFromQueryString arguments to be removed from the URI. Only active if $addQueryString = TRUE
      * @param string $baseNodeName The name of the base node inside the TypoScript context to use for the ContentContext or resolving relative paths
      * @param boolean $resolveShortcuts INTERNAL Parameter - if FALSE, shortcuts are not redirected to their target. Only needed on rare backend occasions when we want to link to the shortcut itself.
+     * @param integer $croppathsegments crop last $croppathsegments path segments
      * @return string The rendered URI or NULL if no URI could be resolved for the given node
      * @throws ViewHelperException
      */
-    public function render($node = null, $format = null, $absolute = false, array $arguments = array(), $section = '', $addQueryString = false, array $argumentsToBeExcludedFromQueryString = array(), $baseNodeName = 'documentNode', $resolveShortcuts = true)
+    public function render($node = null, $format = null, $absolute = false, array $arguments = array(), $section = '', $addQueryString = false, array $argumentsToBeExcludedFromQueryString = array(), $baseNodeName = 'documentNode', $resolveShortcuts = true, $croppathsegments = 0)
     {
 
 
@@ -104,7 +105,8 @@ class NodeViewHelper extends \Neos\Neos\ViewHelpers\Uri\NodeViewHelper
             default:
 
                 try {
-                    return $this->linkingService->createNodeUri(
+
+                    $uri = $this->linkingService->createNodeUri(
                         $this->controllerContext,
                         $node,
                         $baseNode,
@@ -116,6 +118,23 @@ class NodeViewHelper extends \Neos\Neos\ViewHelpers\Uri\NodeViewHelper
                         $argumentsToBeExcludedFromQueryString,
                         $resolveShortcuts
                     );
+
+                    if ($croppathsegments) {
+                        $e = explode("/",$uri);
+                        $u = "";
+                        foreach ($e as $k => $v) {
+                            if ($k < count($e) - $croppathsegments) {
+                                $u = "/".$v;
+                            }
+                        }
+
+                        return $u;
+
+                    }
+
+
+                    return $uri;
+
                 } catch (NeosException $exception) {
                     $this->systemLogger->logException($exception);
                 } catch (NoMatchingRouteException $exception) {

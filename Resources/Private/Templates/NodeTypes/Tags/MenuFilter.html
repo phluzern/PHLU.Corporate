@@ -1,6 +1,7 @@
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
+{namespace p=Phlu\Corporate\ViewHelpers}
 
 <f:section name="default">
 
@@ -197,7 +198,7 @@
     data-ng-hide="filteredOut['{item.node.Identifier}'] === true"
     data-ng-class="{animated: animated === true, fadeIn: filteredIn['{item.node.Identifier}'] === true, fadeOut:
     filteredIn['{item.node.Identifier}'] === false}"
-    data-ng-if="search == '' || result.isInDistinct('uri.path','{neos:uri.node(node:item.node)}')"
+    data-ng-if="search == '' || result.isInDistinct('uri.path','{neos:uri.node(node:item.node)}') || result.isInDistinct('uri.path','{neos:uri.node(node:item.node)}',getParentUriSegment)"
     >
 
 
