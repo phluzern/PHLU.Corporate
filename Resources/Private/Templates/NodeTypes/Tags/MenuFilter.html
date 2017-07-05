@@ -221,12 +221,13 @@
                         <neos:link.node node="{item.node}">
                             {item.node.properties.title}
                         </neos:link.node>
-                        <f:for each="{item.node.properties.tags}" as="tag" iteration="itemIteration">
-                            <i class="{f:if(condition: itemIteration.isFirst, then: 'first')} {phlu:variable.get(name: 'tags.{tag}.properties.icon')}"
-                               data-ng-init="addFilterItem('{item.node.Identifier}','{tag}');"></i>
-                        </f:for>
                     </h3>
-
+                    <span>
+                        <f:for each="{item.node.properties.tags}" as="tag" iteration="itemIteration">
+                        <i class="{f:if(condition: itemIteration.isFirst, then: 'first')} {phlu:variable.get(name: 'tags.{tag}.properties.icon')}"
+                           data-ng-init="addFilterItem('{item.node.Identifier}','{tag}');"></i>
+                    </f:for>
+                    </span>
                 </div>
             </div>
 

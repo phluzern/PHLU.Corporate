@@ -15,7 +15,7 @@ $grid-breakpoints: (
         xxl: 1400px,
         xxxl: 1600px,
   // Extra large screen / wide desktop
-        iefix: 1685px,
+        iefix: 1775px,
 );
 
 // phlu colors
@@ -3369,7 +3369,14 @@ body {
                   float: inherit;
                 }
 
+
+              }
+              span {
+                position: absolute;
+                right: 0;
+                top: 13px;
                 i {
+                  color:white;
                   &.first {
                     &::before {
                       top: 2px;
@@ -3390,6 +3397,7 @@ body {
                   }
                 }
               }
+
             }
             .phlu-teaser-caret-right {
               &::after {

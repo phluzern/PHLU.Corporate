@@ -1534,7 +1534,7 @@ pre {
   .offset-xxxl-11 {
     margin-left: 91.6666666667%; } }
 
-@media (min-width: 1685px) {
+@media (min-width: 1775px) {
   .col-iefix {
     position: relative;
     flex-basis: 0;
@@ -4898,7 +4898,7 @@ a.bg-danger:focus, a.bg-danger:hover {
   .flex-items-xxxl-between {
     justify-content: space-between; } }
 
-@media (min-width: 1685px) {
+@media (min-width: 1775px) {
   .flex-iefix-first {
     order: -1; }
   .flex-iefix-last {
@@ -4906,7 +4906,7 @@ a.bg-danger:focus, a.bg-danger:hover {
   .flex-iefix-unordered {
     order: 0; } }
 
-@media (min-width: 1685px) {
+@media (min-width: 1775px) {
   .flex-items-iefix-top {
     align-items: flex-start; }
   .flex-items-iefix-middle {
@@ -4914,7 +4914,7 @@ a.bg-danger:focus, a.bg-danger:hover {
   .flex-items-iefix-bottom {
     align-items: flex-end; } }
 
-@media (min-width: 1685px) {
+@media (min-width: 1775px) {
   .flex-iefix-top {
     align-self: flex-start; }
   .flex-iefix-middle {
@@ -4922,7 +4922,7 @@ a.bg-danger:focus, a.bg-danger:hover {
   .flex-iefix-bottom {
     align-self: flex-end; } }
 
-@media (min-width: 1685px) {
+@media (min-width: 1775px) {
   .flex-items-iefix-left {
     justify-content: flex-start; }
   .flex-items-iefix-center {
@@ -4991,7 +4991,7 @@ a.bg-danger:focus, a.bg-danger:hover {
   .pull-xxxl-none {
     float: none !important; } }
 
-@media (min-width: 1685px) {
+@media (min-width: 1775px) {
   .pull-iefix-left {
     float: left !important; }
   .pull-iefix-right {
@@ -5283,7 +5283,7 @@ a.bg-danger:focus, a.bg-danger:hover {
   .text-xxxl-center {
     text-align: center !important; } }
 
-@media (min-width: 1685px) {
+@media (min-width: 1775px) {
   .text-iefix-left {
     text-align: left !important; }
   .text-iefix-right {
@@ -5406,11 +5406,11 @@ a.text-danger:focus, a.text-danger:hover {
   .hidden-xxxl-up {
     display: none !important; } }
 
-@media (max-width: 1684px) {
+@media (max-width: 1774px) {
   .hidden-xxxl-down {
     display: none !important; } }
 
-@media (min-width: 1685px) {
+@media (min-width: 1775px) {
   .hidden-iefix-up {
     display: none !important; } }
 
@@ -9614,10 +9614,10 @@ body {
         margin-top: 47px;
         border: 2px solid #171815;
         padding-left: 10px; }
-      @media (min-width: 1685px) {
+      @media (min-width: 1775px) {
         body .all .logoAndSearchBar.oneCol {
           max-width: 263px; } }
-      @media (min-width: 1685px) {
+      @media (min-width: 1775px) {
         body .all .logoAndSearchBar.twoCol {
           max-width: 526px; } }
       @media (max-width: 1279px) {
@@ -9633,7 +9633,7 @@ body {
       /*
          set fixed width on big screens
         */ }
-      @media (min-width: 1685px) {
+      @media (min-width: 1775px) {
         body .all .sidebar {
           max-width: 263px; } }
       @media (max-width: 1279px) {
@@ -10391,17 +10391,23 @@ body {
               padding-top: 0;
               display: block;
               float: inherit; } }
-          body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 i.first::before {
-            top: 2px;
-            margin-top: 0;
-            margin-left: 5px; }
-          body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 i.first.themaIco::before, body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 i.first.forschungIco::before {
-            top: 0; }
-          body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body h3 i::before {
-            position: relative;
-            top: 0;
-            margin-top: 0;
-            margin-left: -10px; }
+        body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body span {
+          position: absolute;
+          right: 0;
+          top: 13px; }
+          body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body span i {
+            color: white; }
+            body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body span i.first::before {
+              top: 2px;
+              margin-top: 0;
+              margin-left: 5px; }
+            body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body span i.first.themaIco::before, body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body span i.first.forschungIco::before {
+              top: 0; }
+            body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-body span i::before {
+              position: relative;
+              top: 0;
+              margin-top: 0;
+              margin-left: -10px; }
         body .all .row.subjectsfilternav .phlu-teaser.navigation.subpage .nav-teaser-item .row .phlu-teaser-caret-right::after {
           bottom: inherit;
           top: 52%;
@@ -12021,7 +12027,7 @@ body {
   body .all .main .ambient-img-fullwidth {
     min-height: 800px; } }
 
-@media (min-width: 1600px) and (max-width: 1684px) {
+@media (min-width: 1600px) and (max-width: 1774px) {
   body .all .main .ambient-img-fullwidth {
     background-position-x: -2rem;
     min-height: 800px; } }
@@ -12509,7 +12515,7 @@ body {
         background-size: cover;
         margin-top: 48px; }
 
-@media (min-width: 1600px) and (max-width: 1684px) {
+@media (min-width: 1600px) and (max-width: 1774px) {
   body .all .main > .row.ambient-img-body, body .all .main > .row-fullwidth-content > .row.ambient-img-body {
     padding-bottom: 430px; } }
 
@@ -12567,7 +12573,7 @@ body {
           background-repeat: repeat; }
       body .all .main > .row .phlu-corporate-section .single-publication i, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .single-publication i {
         font-style: italic; }
-      @media (min-width: 1685px) {
+      @media (min-width: 1775px) {
         body .all .main.col-xl-8, body .all .main.col-xl-10 {
           max-width: inherit; } }
       body .all .main.contents {
@@ -13135,7 +13141,7 @@ body {
     background-color: #91a103; }
   .datepicker .datepicker-switch:hover, .datepicker .next:hover, .datepicker .prev:hover {
     background-color: #91a103; }
-  @media (max-width: 1684px) {
+  @media (max-width: 1774px) {
     .datepicker.tag-zeit table tbody tr td {
       padding: 8px 36px; } }
   @media (max-width: 1599px) {
