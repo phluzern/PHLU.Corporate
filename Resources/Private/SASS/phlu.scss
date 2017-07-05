@@ -6455,7 +6455,7 @@ body {
                 width: inherit;
               }
               @include custList;
-              li {
+              > li {
                 padding-left: 20px;
                 a {
                   color: $hazelbrowndark;

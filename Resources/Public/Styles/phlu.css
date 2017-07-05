@@ -12542,19 +12542,19 @@ body {
         body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li::before {
           content: counter(item) ".";
           counter-increment: item; }
-        body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol li, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol li {
+        body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li {
           padding-left: 20px; }
-          body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol li a, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol li a {
+          body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li a, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li a {
             color: #9f632a; }
-          body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol li::before {
+          body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li::before {
             position: absolute;
             left: 14px;
             content: " " counter(item) ". "; }
             @media (min-width: 992px) {
-              body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol li::before {
+              body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li::before {
                 left: 39px; } }
             @media (min-width: 1600px) {
-              body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol li::before {
+              body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li::before {
                 left: 0; } }
       body .all .main > .row .phlu-corporate-section .phlu-corporate-text .phlu-corporate-text a[href^='http://phlu.ch'], body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text .phlu-corporate-text a[href^='http://phlu.ch'] {
         background-image: url("../Images/linkbottomline.png");
