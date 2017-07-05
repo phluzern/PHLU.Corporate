@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+<html>
+<head>
+    <meta content="deutsch,de" name="language">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#333333">
+
+    <title>{statusCode} - {errorTitle}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" media="all"/>
+    <style type="text/css">
+        * > body {
+            /*background: url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;
+            padding-right: 205px;*/
+        }
+
+        body {
+            font-family: 'Droid Sans', sans-serif;
+            margin: 7% auto 0;
+            max-width: 490px;
+            min-height: 180px;
+            padding: 30px 0 15px;
+        }
+
+        #logo {
+            display: inline-block;
+            height: 64px;
+            width: 150px;
+            background: url(//neos.phlu.dev/_Resources/Static/Packages/Phlu.Corporate/Images/phluLogoErrorPage.png) no-repeat;
+            margin-left: -2px;
+        }
+
+        p {
+            margin: 11px 0 22px;
+            overflow: hidden;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<a href="//www.phlu.ch/">
+    <span id="logo" aria-label="PH Luzern"></span>
+</a>
+<p>
+    <b>{statusCode}.</b> {errorTitle}.
+</p>
+<p>Die angeforderte Seite <span id="errorUrl"></span> konnte nicht gefunden werden.</p>
+
+
+<f:if condition="{renderingOptions.renderTechnicalDetails}">
+    <h2>Technical details:</h2>
+    <p>
+        {exception.message}
+        <f:if condition="{exception.referenceCode}">
+            (reference code: {exception.referenceCode})
+        </f:if>
+    </p>
+
+</f:if>
+<a href="/" title="zur Startseite" alt="zur Startseite">
+    Zur Startseite
+</a>
+<script type="text/javascript">
+    var pathArray = window.location.pathname.split( '/' );
+    pathArray.shift();
+    var relativeErrorPath = pathArray.join("/");
+    var errorUrlSpan = document.createElement('span');
+    errorUrlSpan.innerHTML = relativeErrorPath;
+    document.getElementById("errorUrl").appendChild(errorUrlSpan);
+</script>
+</body>
+</html>

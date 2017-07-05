@@ -40,3 +40,15 @@ Neos:
   Fusion:
     defaultContext:
       Phlu.Corporate: Phlu\Corporate\Eel\Helper\NodeHelper
+  Flow:
+    error:
+      exceptionHandler:
+         renderingGroups:
+           notFoundExceptions:
+             matchingStatusCodes: [404]
+             options:
+               logException: FALSE
+               templatePathAndFilename: 'resource://Phlu.Corporate/Private/Templates/Error/Default.html'
+               variables:
+                 errorTitle: 'Nicht gefunden'
+                 errorDescription: 'Die angeforderte Seite konnte nicht gefunden werden.'
