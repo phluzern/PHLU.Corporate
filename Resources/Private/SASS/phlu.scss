@@ -127,7 +127,7 @@ $component-active-bg: #895119;
 
 // phlu flowtext formatting
 $line-height-lg: 2;
-$line-height-sm: 1.7;
+$line-height-sm: 1.8;
 $line-height-mobile-h1: 40px;
 $line-height-mobile-p: 25px;
 $flowtext-narrow-width: 80%;
@@ -1445,30 +1445,24 @@ body {
     }
     font-size: $font-size-base;
     h1 {
-      margin: 33px 0 12px;
+      margin: 53px 0 32px;
       @include media-breakpoint-up("xl") {
-        font-size: $font-size-h1-desktop;
         margin: 0 0 35px;
       }
-      @include media-breakpoint-down("lg") {
-        line-height: $line-height-mobile-h1;
-      }
+      font-size: $font-size-h1-desktop;
     }
     h2 {
       margin: 24px 0 19px;
       @include media-breakpoint-up("lg") {
         margin: 32px 0 32px;
       }
-      @include media-breakpoint-up("lg") {
-        margin: 32px 0 32px;
-      }
       @include media-breakpoint-up("xl") {
         margin: 50px 0 32px;
-        font-size: $font-size-h2-desktop;
       }
       @include media-breakpoint-down("md") {
-        margin: 30px 0 19px;
+        margin: 36px 0;
       }
+      font-size: $font-size-h2-desktop;
     }
     h3 {
       margin: 30px 0 20px;
@@ -1479,11 +1473,11 @@ body {
     h4 {
       text-transform: uppercase;
     }
+    h1, h2, h3, h4 {
+      @include word-wrap;
+    }
     p {
       line-height: $line-height-sm;
-      @include media-breakpoint-down("lg") {
-        line-height: $line-height-mobile-p;
-      }
       @include media-breakpoint-up("xl") {
         width: $flowtext-narrow-width;
         font-size: $font-size-paragraph-desktop;
@@ -2576,8 +2570,7 @@ body {
               tbody:last-child {
                 tr {
                   td {
-                    border: 0;
-                    padding-bottom: 0;
+                    border-bottom: 0;
                   }
                 }
               }
@@ -2593,11 +2586,6 @@ body {
       .phlu-accordion {
         .phlu-corporate-contactsgroup {
           clear: both;
-          &:first-child {
-            @include media-breakpoint-down("sm") {
-              padding-top: 30px;
-            }
-          }
         }
         .nav-teaser-item {
           float: left;
@@ -3021,15 +3009,9 @@ body {
         .nav-teaser-item {
           margin-bottom: 4px;
           div {
-            padding: 12px 20px;
+            padding: 20px;
             background-color: white;
-            height: 125px;
-            @include media-breakpoint-only("md") {
-              height: 150px;
-            }
-            @include media-breakpoint-only("xs") {
-              height: 150px;
-            }
+            height: 150px;
             h3 {
               white-space: nowrap;
               margin: 0 0 8px;
@@ -3163,7 +3145,7 @@ body {
         }
         .nav-teaser-item {
           margin-top: 12px;
-          margin-bottom: 12px;
+          margin-bottom: 22px;
           @include media-breakpoint-up("lg") {
             padding: 0 12px;
           }
@@ -3369,14 +3351,13 @@ body {
                   float: inherit;
                 }
 
-
               }
               span {
                 position: absolute;
                 right: 0;
                 top: 13px;
                 i {
-                  color:white;
+                  color: white;
                   &.first {
                     &::before {
                       top: 2px;
@@ -3425,11 +3406,6 @@ body {
           top: 40px;
         }
       }
-      @include media-breakpoint-down('md') {
-        h2 {
-          margin: 24px 0 30px;
-        }
-      }
       .further-education-list {
         .results-table {
           margin-bottom: 0;
@@ -3471,17 +3447,17 @@ body {
           > .panel-collapse {
             > .neos-contentcollection {
               margin: 15px 0 0;
-              padding-bottom: 17px;
+              padding-bottom: 0;
               p {
-                padding: 0;
-                margin: 0 0;
-                margin-bottom: 15px;
+                margin: 0;
+                padding-bottom: 15px;
               }
               .nav-teaser-item {
                 padding-left: 0;
                 @include media-breakpoint-down("sm") {
                   padding-right: 0;
                 }
+                padding-bottom: 40px;
                 .row {
                   margin-right: 0;
                   margin-left: 0;
@@ -3517,6 +3493,14 @@ body {
                         top: inherit;
                       }
                     }
+                  }
+                }
+              }
+              .phlu-qmpilot-nodetypes-file {
+                &.last {
+                  margin-bottom:0;
+                  &[data-next='empty'] {
+                    padding-bottom: 15px;
                   }
                 }
               }
@@ -3718,8 +3702,10 @@ body {
                 }
                 a {
                   background-image: none;
-                  padding-left: 7px;
                   color: $hazelbrowndark;
+                  &:last-child {
+                    padding-left: 7px;
+                  }
                 }
 
                 .content-link-email-contact-person {
@@ -3735,6 +3721,10 @@ body {
             }
             .panel-body {
               margin-top: 20px;
+              @include media-breakpoint-down('sm') {
+                margin-top: 10px;
+                @include gutter-width(8);
+              }
               .panel-email {
                 color: $hazelbrowndark;
                 background-image: none;
@@ -3745,7 +3735,7 @@ body {
             }
           }
           .panel-collapse {
-            margin-left: 20px;
+            margin-left: 25px;
             .panel-body {
               img {
                 width: 100%;
@@ -3839,8 +3829,8 @@ body {
             }
           }
           @include media-breakpoint-down("sm") {
-            margin-top: 12px;
-            margin-bottom: 12px;
+            margin-top: 15px;
+            margin-bottom: 15px;
           }
         }
         .phlu-corporate-contactsgroup {
@@ -3850,7 +3840,7 @@ body {
         }
         @include media-breakpoint-down("sm") {
           margin-top: 12px;
-          margin-bottom: 12px;
+          margin-bottom: 22px;
           display: block;
           padding: 0;
         }
@@ -3935,6 +3925,10 @@ body {
       }
       .panel-body {
         padding: 30px 0 20px;
+        @include media-breakpoint-down('sm') {
+          padding: 15px 0 15px;
+          @include gutter-width(8);
+        }
         .col-xs-12 {
           img.img-fluid {
             margin: 0 0 32px;
@@ -4237,6 +4231,11 @@ body {
             }
           }
         }
+        .nav-pills {
+          @include media-breakpoint-down("xs") {
+            display: none;
+          }
+        }
         &:last-child {
           margin-bottom: 60px;
           hr {
@@ -4315,6 +4314,11 @@ body {
         background: transparent;
         z-index: 5;
         position: relative;
+      }
+      .result-panel {
+        .search-result-tags {
+          margin:0 20px 20px;
+        }
       }
     }
     .ppdb-list, .further-education-list, .further-education-special-search {
@@ -4618,7 +4622,7 @@ body {
                   table {
                     margin: 40px 0;
                     @include media-breakpoint-down("sm") {
-                      margin: 20px 0;
+                      margin: 15px 0 40px;
                     }
                     tbody {
                       tr {
@@ -5109,19 +5113,13 @@ body {
             overflow: hidden;
             .centeredBox {
               position: absolute;
-              top: -9999px;
-              bottom: -9999px;
-              left: -9999px;
-              right: -9999px;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
               margin: auto;
-              width: 245px;
-              @include media-breakpoint-down("sm") {
-                width: 500px;
-              }
-              @include media-breakpoint-down("xs") {
-                width: 338px;
-              }
-              height: auto;
+              width: 100%;
+              height: 100%;
               display: table;
               p {
                 &::after {
@@ -6358,17 +6356,25 @@ body {
         }
         &.lightgreybg {
           background-color: $grey9;
-          h2 {
-            @include media-breakpoint-up("lg") {
-              margin: 45px 0 32px;
+          .row {
+            @include media-breakpoint-down("sm") {
+              @include gutter-width(8);
             }
-            @include media-breakpoint-up("xl") {
-              margin: 40px 0 32px;
+            h2 {
+              @include media-breakpoint-up("lg") {
+                margin: 45px 0 32px;
+              }
+              @include media-breakpoint-up("xl") {
+                margin: 40px 0 32px;
+              }
             }
-          }
-          address {
-            a {
-              background-image: inherit;
+            img {
+              width: 100%;
+            }
+            address {
+              a {
+                background-image: inherit;
+              }
             }
           }
         }
@@ -6468,6 +6474,13 @@ body {
                 a {
                   color: $hazelbrowndark;
                 }
+                ul {
+                  li {
+                    &:last-child {
+                      margin-bottom: inherit;
+                    }
+                  }
+                }
                 &::before {
                   position: absolute;
                   left: 14px;
@@ -6485,6 +6498,11 @@ body {
               a[href^='http://phlu.ch'] {
                 @include content-link("internal");
               }
+            }
+          }
+          .phlu-corporate-table {
+            &[data-next='phlu-corporate-accordeonelement'] {
+              margin-bottom: 40px;
             }
           }
           .single-publication {
@@ -6613,7 +6631,6 @@ body {
               }
             }
             tbody {
-              border-top: 2px solid $lightgrey;
               tr {
                 .bookable {
                   color: green;
@@ -6691,7 +6708,7 @@ body {
                   }
                   .shareAndRegister {
                     float: right;
-                    .btn.share {
+                    .btn.btn-primary.share {
                       color: $petrol;
                       background-color: inherit;
                       line-height: 9px;
@@ -6705,18 +6722,15 @@ body {
                       }
                       @include media-breakpoint-down("xs") {
                         padding: 0 5px 0 0;
+                        width: 42px;
+                      }
+                      &:last-child {
+                        padding-right:0;
                       }
                     }
                     .btn.btn-primary {
-                      &:first-child {
-                        @include media-breakpoint-down("xs") {
-                          width: 42px;
-                        }
-                      }
-                      &:last-child {
-                        @include media-breakpoint-down("xs") {
-                          width: 130px;
-                        }
+                      @include media-breakpoint-down("xs") {
+                        width: 130px;
                       }
                     }
                   }
@@ -7182,8 +7196,8 @@ body {
         color: white;
       }
       hr {
-        display: none;
-        margin: 0 0 40px;
+        margin: 20px 0 40px;
+        border-top: 1px solid $hr-border-color;
         @include media-breakpoint-up("lg") {
           display: none;
         }
@@ -7225,6 +7239,7 @@ body {
         }
       }
       .langnav {
+        display: none;
         padding: 35px 0 60px;
         font-size: $font-size-langnav;
         @include media-breakpoint-up("lg") {
@@ -7289,7 +7304,7 @@ body {
         }
       }
       .copyright {
-        padding-top: 30px;
+        padding-top: 90px;
         @include media-breakpoint-up("lg") {
           text-align: right;
         }

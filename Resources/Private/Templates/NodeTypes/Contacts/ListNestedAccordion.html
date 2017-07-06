@@ -22,15 +22,21 @@
                                 {node.properties.functionCustom}<br>
                             </f:then>
                             <f:else>
-                                {node.properties.function}<br>
+                                <f:if condition="{node.properties.function}">
+                                    {node.properties.function}<br>
+                                </f:if>
                             </f:else>
                         </f:if>
                     </div>
                     <div class="col-xs-12 col-sm-5 col-md-3 telephone email">
+                        <f:if condition="{node.properties.phone}">
                             {node.properties.phone}
+                        </f:if>
+                        <f:if condition="{node.properties.email}">
                         <a href="mailto:{node.properties.email}" class="panel-email" alt="Email">
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
                         </a>
+                        </f:if>
                     </div>
 
 
@@ -54,7 +60,7 @@
                             </div>
                         </f:then>
                     </f:if>
-                    <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
+                    <div class="<f:if condition='{image.resource}'><f:then>col-xs-8 col-sm-8 col-md-10 col-lg-10</f:then><f:else>col-xs-12</f:else></f:if>">
                         <address>
                         <f:if condition="{image}">
                             <f:then>
@@ -62,15 +68,17 @@
                             </f:then>
                         </f:if>
                             <f:if condition="{node.properties.titlename} != ''">{node.properties.titlename}<br></f:if>
-                            <span>{node.properties.street}<br></span>
+                            <f:if condition="{node.properties.street} != ''"><span>{node.properties.street}<br></span></f:if>
                             <f:if condition="{node.properties.street2} != ''"><br>{node.properties.street2}<br></f:if>
-                            {node.properties.zip} {node.properties.city}
-                            <br>
+                            <f:if condition="{node.properties.city} != ''">{node.properties.zip} {node.properties.city}<br></f:if>
+                            <f:if condition="{node.properties.email} != ''">
                                 <a href="mailto:{node.properties.email}" class="panel-email" alt="Email">
                                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                     {node.properties.email}
                                 </a>
-                            <br>
+                                <br>
+                            </f:if>
+
                                 <portrait:link node="{node}">Portrait</portrait:link>
 
                         </address>
