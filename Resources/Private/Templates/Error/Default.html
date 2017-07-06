@@ -32,7 +32,7 @@
             display: inline-block;
             height: 64px;
             width: 150px;
-            background: url(//neos.phlu.dev/_Resources/Static/Packages/Phlu.Corporate/Images/phluLogoErrorPage.png) no-repeat;
+            background: url({f:uri.resource(package: 'Phlu.Corporate', path: 'Images/phluLogoErrorPage.png')}) no-repeat;
             margin-left: -2px;
         }
 
@@ -41,7 +41,7 @@
             overflow: hidden;
         }
 
-        #logo, p, a.backLink {
+        #logo, p, h2, a.backLink {
             margin-left:15px;
             margin-right:15px;
         }
