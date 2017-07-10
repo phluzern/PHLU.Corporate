@@ -112,6 +112,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.graduation = {};
     $scope.nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation', 'phlu-neos-nodetypes-course-event-furthereducation'];
 
+
     $scope.nodetypesFilter = [
         {id: 'all', label: 'Alle', category: 'Alle'},
         {id: 'phlu-neos-nodetypes-course-study-furthereducation', label: 'Studiengänge', category: 'Studiengang'},
@@ -260,33 +261,8 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                 $scope.$digest();
             })
 
-        }, 200);
+        }, 10);
 
-        return true;
-
-        var t = 1000 * ($scope.nodetypesFilter.length + 1);
-
-        angular.forEach($scope.nodetypesFilter, function (filter, i) {
-            window.setTimeout(function () {
-
-                if ($scope.isShowingResult() == false && $scope.isUserChangedNodeType == false) {
-                    $scope.setNodetypesFilter(filter, true);
-
-                    if (i == $scope.nodetypesFilter.length - 1) {
-                        $rootScope.isLoadedFirst = true;
-                        $scope.setNodetypesFilter($scope.nodetypesFilter[0], true);
-                    }
-
-                } else {
-                    $rootScope.isLoadedFirst = true;
-                    window.setTimeout(function () {
-                        $scope.$digest();
-                    })
-                }
-
-            }, t - (i * 10));
-
-        });
 
 
     }
@@ -397,7 +373,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @returns void
      */
     $scope.setNodeTypes = function (nodetypes) {
-        if (nodetypes == null) {
+        if (nodetypes == null || nodetypes.length == 0) {
             nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-event-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation']
         }
         $scope.nodetypes = nodetypes;
@@ -674,16 +650,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
 
 
-        // if (jQueryDropdownElementWrapper.isOnScreen() == false) {
-        //     $('html, body').stop().animate({
-        //         'scrollTop': jQueryDropdownElement.offset().top
-        //     }, 900, 'swing', function () {
-        //     });
-        //     console.log(jQueryDropdownElement.offset().top);
-        // }
-
-
-
         if (category == undefined) {
             category = 'all';
         }
@@ -715,17 +681,21 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         filter.selected[category][filterObject.id].state = filter.selected[category][filterObject.id].state ? false : true;
 
 
-        var jQueryElement = jQuery(angular.element(event.target));
-        var jQueryDropdownElementWrapper = jQueryElement.parentsUntil('.dropdown-menu').parent().parent();
-        var jQueryDropdownElement = jQueryElement.closest('.dropdown-menu').parent().find('.dropdown-toggle').parent();
-        window.setTimeout(function() {
-            if (jQueryDropdownElementWrapper.isOnScreen() == false) {
-                $('html, body').stop().animate({
-                    'scrollTop': jQueryDropdownElement.offset().top
-                }, 1, 'swing', function () {
-                });
-            }
-        },1);
+        if (event !== undefined) {
+            var jQueryElement = jQuery(angular.element(event.target));
+            var jQueryDropdownElementWrapper = jQueryElement.parentsUntil('.dropdown-menu').parent().parent();
+            var jQueryDropdownElement = jQueryElement.closest('.dropdown-menu').parent().find('.dropdown-toggle').parent();
+            window.setTimeout(function () {
+                if (jQueryDropdownElementWrapper.isOnScreen() == false) {
+                    $('html, body').stop().animate({
+                        'scrollTop': jQueryDropdownElement.offset().top
+                    }, 1, 'swing', function () {
+                    });
+                }
+            }, 1);
+        }
+
+
 
 
         return filterObject;
@@ -938,6 +908,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * Initialize hybridsearch list
      */
 
+
     $scope.list
         .setPropertiesBoost(boost)
         .enableCache()
@@ -962,6 +933,8 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             $scope.list.addPropertyFilter(filter.property, 'filters.' + name + '.selectedValues', $scope, filter.reverse == undefined ? false : filter.reverse);
         }
     });
+
+
 
     $scope.list.run();
 
