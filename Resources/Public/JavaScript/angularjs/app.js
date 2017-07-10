@@ -59,8 +59,8 @@ PhluCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsear
         PhluCorporateApp.$$conf.firebaseEndpoint,
         PhluCorporateApp.$$conf.workspaceName,
         PhluCorporateApp.$$conf.dimensionHash,
-        PhluCorporateApp.$$conf.siteNodeName
-        //PhluCorporateApp.$$conf.cdnHost,
+        PhluCorporateApp.$$conf.siteNodeName,
+        PhluCorporateApp.$$conf.cdnHost
         //PhluCorporateApp.$$conf.cdnStaticHost
     );
 
