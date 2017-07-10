@@ -69,6 +69,12 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
     protected function matchValue($requestPath)
     {
 
+
+        /* TODO refactoring */
+        if (substr_count($requestPath,"media/")) {
+            return false;
+        }
+
         $context = current($this->contextFactory->getInstances());
         $node = null;
 
