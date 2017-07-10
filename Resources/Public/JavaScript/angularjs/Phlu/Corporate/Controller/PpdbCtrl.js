@@ -100,17 +100,20 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     };
 
     $scope.setFilterProjectType = function (f) {
-        $scope.initialFilters['projecttype'] = true;
-        var p = [];
-        try {
-            p = JSON.parse(f);
-        } catch (errro) {
-            p = f;
-        }
-        if (p.length) {
-            $scope.projecttype = p;
-        } else {
-            $scope.projecttype = [];
+
+        if (f.length > 0) {
+            $scope.initialFilters['projecttype'] = true;
+            var p = [];
+            try {
+                p = JSON.parse(f);
+            } catch (errro) {
+                p = f;
+            }
+            if (p.length) {
+                $scope.projecttype = p;
+            } else {
+                $scope.projecttype = [];
+            }
         }
     };
 
@@ -238,8 +241,9 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
         }
 
 
+
         $scope.list.$bind('result', $scope)
-        .run();
+            .run();
 
     }
 
