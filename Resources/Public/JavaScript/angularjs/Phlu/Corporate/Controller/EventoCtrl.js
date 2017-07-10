@@ -191,6 +191,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         'phlu-neos-nodetypes-course-module-furthereducation-nr': 200,
         'phlu-neos-nodetypes-course-study-furthereducation-nr': 200,
         'phlu-neos-nodetypes-course-event-furthereducation-nr': 200,
+        'phlu-neos-nodetypes-course-module-furthereducation-years': 12,
         'url': -1,
         'grandparent': -1
 
