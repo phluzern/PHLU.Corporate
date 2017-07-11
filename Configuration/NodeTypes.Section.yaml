@@ -595,6 +595,14 @@
             dataSourceIdentifier: phlu-corporate-contacts
             dataSourceAdditionalData:
               property: organisations
+    forcegroupedmode:
+      type: boolean
+      ui:
+        label: 'Erzwinge gruppierte Ansicht'
+        reloadIfChanged: true
+        inspector:
+          group: filters
+
   childNodes:
     main:
       type: 'Phlu.Neos.NodeTypes:ContentCollection.Contacts'
