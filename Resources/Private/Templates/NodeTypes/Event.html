@@ -5,8 +5,7 @@
 
 <div class="{breakpointClass}  event singleitem {f:if(else: 'noimg', condition: node.properties.teaserImage)} {f:if(condition: '{neos:rendering.inBackend()}', then: '', else: 'clickable')}">
     <div class="event-date-day">
-        <f:format.date format="d">{fromDate}</f:format.date>
-        .
+        <f:format.date format="d">{fromDate}</f:format.date>.
     </div>
     <div class="event-date-month-year-location">
         <b>
@@ -40,12 +39,11 @@
 
     </div>
 
+
+
     <f:if condition="{node.properties.teaserImage}">
         <f:then>
-            <media:image async="true" image="{node.properties.teaserImage}" alt="{alternativeText}" title="{title}"
-                         width="{width}"
-                         maximumWidth="{maximumWidth}" height="{height}" maximumHeight="{maximumHeight}"
-                         allowUpScaling="{allowUpScaling}"/>
+            <div class="teaser-image" style="background-image: url('{media:uri.image(image: node.properties.teaserImage)}')"></div>
         </f:then>
     </f:if>
     <a class="goto-teaser-target" style="display: none" title="zur Zielseite wechseln"

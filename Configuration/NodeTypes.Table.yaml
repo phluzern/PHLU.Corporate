@@ -149,8 +149,8 @@
           link:
             a: false
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -192,8 +192,8 @@
           link:
             a: false
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -235,8 +235,8 @@
           link:
             a: false
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -278,8 +278,8 @@
           link:
             a: false
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -321,8 +321,8 @@
           link:
             a: false
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -364,8 +364,8 @@
           link:
             a: false
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -407,8 +407,8 @@
           link:
             a: false
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -450,8 +450,8 @@
           link:
             a: false
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -493,8 +493,8 @@
           link:
             a: false
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -536,8 +536,8 @@
           link:
             a: false
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -605,8 +605,8 @@
           link:
             a: true
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -648,8 +648,8 @@
           link:
             a: true
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -691,8 +691,8 @@
           link:
             a: true
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -734,8 +734,8 @@
           link:
             a: true
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -777,8 +777,8 @@
           link:
             a: true
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -820,8 +820,8 @@
           link:
             a: true
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -863,8 +863,8 @@
           link:
             a: true
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -906,8 +906,8 @@
           link:
             a: true
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -949,8 +949,8 @@
           link:
             a: true
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
@@ -992,8 +992,8 @@
           link:
             a: true
           list:
-            ul: false
-            ol: false
+            ul: true
+            ol: true
           alignment:
             left: false
             center: false
