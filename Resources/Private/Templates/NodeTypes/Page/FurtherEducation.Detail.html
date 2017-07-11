@@ -241,7 +241,7 @@
                                                             data-toggle="dropdown"
                                                             aria-haspopup="true" aria-expanded="false">
 
-                                                            <span>{year.StartText}</span>
+                                                        <span>{year.StartText}</span>
 
                                                     </button>
                                                     <ul class="dropdown-menu">
@@ -257,7 +257,7 @@
                                             </f:then>
                                             <f:else>
 
-                                                    <span>{year.StartText}</span>
+                                                <span>{year.StartText}</span>
 
                                             </f:else>
                                         </f:if>
@@ -300,7 +300,8 @@
 
                         <f:if condition="{year.Bookable}">
                             <f:then>
-                                <course:RegistrationButton url="{year.RegistrationLink}" identifier="1"></course:RegistrationButton>
+                                <course:RegistrationButton url="{year.RegistrationLink}"
+                                                           identifier="1"></course:RegistrationButton>
                             </f:then>
                             <f:else>
                                 <f:if condition="{StatusLabel}">
@@ -314,8 +315,10 @@
                             </f:else>
                         </f:if>
 
-                        <a class="btn btn-primary share addthis_button" addthis:url="{{node.getUrl(true)}}" addthis:title="{{node.getProperty('title')}}">
-                            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/wb-share-btn.svg')}" width="32" height="32" border="0" alt="Share" />
+                        <a class="btn btn-primary share addthis_button" addthis:url="{{node.getUrl(true)}}"
+                           addthis:title="{{node.getProperty('title')}}">
+                            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/wb-share-btn.svg')}"
+                                 width="32" height="32" border="0" alt="Share"/>
                             <br>
                             <span class="shareText">
                                             Teilen
@@ -341,12 +344,14 @@
                                 <address>
                                     <b>{leaders.0.Fullname}</b><br>
                                     Leitung
-                                    <f:if condition="{leaders.0.Phone}">
-                                        <div class="telephone">
+
+                                    <div class="telephone">
+                                        <f:if condition="{leaders.0.Phone}">
                                             <i class="fa fa-phone" aria-hidden="true"></i>
                                             {leaders.0.Phone}<br>
-                                        </div>
-                                    </f:if>
+                                        </f:if>
+                                    </div>
+
                                     <a class="content-link-email-contact-person"
                                        href="mailto:{leaders.0.Email}">{leaders.0.Email}</a><br>
                                     <f:if condition="{leaders.0.eventoId}">
@@ -418,11 +423,12 @@
                                         </f:if>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-5" >
+                                <div class="col-sm-12 col-md-5">
                                     <div class="shareAndRegister shareAndRegisterFurtherEducationDetail">
                                         <f:if condition="{year.Bookable}">
                                             <f:then>
-                                                <course:RegistrationButton url="{year.RegistrationLink}" identifier="2"></course:RegistrationButton>
+                                                <course:RegistrationButton url="{year.RegistrationLink}"
+                                                                           identifier="2"></course:RegistrationButton>
                                             </f:then>
                                             <f:else>
                                                 <f:if condition="{StatusLabel}">
@@ -435,8 +441,11 @@
                                                 </f:if>
                                             </f:else>
                                         </f:if>
-                                        <a class="btn btn-primary share addthis_button" addthis:url="{{node.getUrl(true)}}" addthis:title="{{node.getProperty('title')}}">
-                                            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/wb-share-btn.svg')}" width="32" height="32" border="0" alt="Share" />
+                                        <a class="btn btn-primary share addthis_button"
+                                           addthis:url="{{node.getUrl(true)}}"
+                                           addthis:title="{{node.getProperty('title')}}">
+                                            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/wb-share-btn.svg')}"
+                                                 width="32" height="32" border="0" alt="Share"/>
                                             <br>
                                             <span class="shareText">
                                             Teilen

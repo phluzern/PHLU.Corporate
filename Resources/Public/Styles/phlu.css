@@ -11138,7 +11138,8 @@ body {
           background-image: none; }
           @media (max-width: 767px) {
             body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn {
-              font-size: 1rem; } }
+              font-size: 1rem;
+              width: 100%; } }
           body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn:hover, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn:hover, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn:hover {
             background-color: #216A75; }
           body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn.share:hover, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn.share:hover, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn.share:hover {
@@ -11170,7 +11171,7 @@ body {
         margin: 40px 0; }
         @media (max-width: 767px) {
           body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table {
-            margin: 15px 0 0; } }
+            margin: 10px 0 0; } }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table tbody tr {
           border-bottom: 2px solid #dcdcdc; }
           body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr td, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview table tbody tr td, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview table tbody tr td {
@@ -11871,6 +11872,8 @@ body {
         border-top: 4px solid #707070; }
       body .all .table-responsive .table tbody tr:first-child.noborder th, body .all .table-responsive .table tbody tr:first-child.noborder td {
         border-top: 0; }
+      body .all .table-responsive .table tbody tr:last-child th, body .all .table-responsive .table tbody tr:last-child td {
+        border-bottom: 2px solid #55696d; }
       body .all .table-responsive .table tbody tr th, body .all .table-responsive .table tbody tr td {
         padding: 15px 20px;
         line-height: 1.8;
@@ -12586,7 +12589,6 @@ body {
         body .all .main > .row .phlu-corporate-section .phlu-corporate-text ul, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ul {
           width: 80%; } }
       body .all .main > .row .phlu-corporate-section .phlu-corporate-text ul li, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ul li {
-        margin-top: 5px;
         margin-bottom: 5px; }
         body .all .main > .row .phlu-corporate-section .phlu-corporate-text ul li:last-child, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ul li:last-child {
           margin-bottom: 30px; }
@@ -12735,7 +12737,7 @@ body {
         margin-bottom: 15px; }
         @media (max-width: 767px) {
           body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
-            margin: 0 20px; } }
+            margin: 0 20px 20px; } }
         body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle span {
           display: block;
           float: left;
@@ -12745,8 +12747,14 @@ body {
       body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .details {
         float: left;
         margin-left: 0; }
+        @media (max-width: 767px) {
+          body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .details {
+            float: none; } }
       body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister {
         float: right; }
+        @media (max-width: 767px) {
+          body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister {
+            float: none; } }
         body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.btn-primary.share {
           color: #28818f;
           background-color: inherit;
@@ -12758,15 +12766,8 @@ body {
           @media (max-width: 767px) {
             body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.btn-primary.share {
               padding: 0 19px; } }
-          @media (max-width: 543px) {
-            body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.btn-primary.share {
-              padding: 0 5px 0 0;
-              width: 42px; } }
           body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.btn-primary.share:last-child {
             padding-right: 0; }
-        @media (max-width: 543px) {
-          body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.btn-primary {
-            width: 130px; } }
       body .all .main .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
         display: none; }
         @media (max-width: 767px) {

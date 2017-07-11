@@ -123,10 +123,18 @@
 
                 </f:then>
                 <f:else>
-                            <span class="content-link-wrapper"><a
-                                    class="content-link-default-file content-link-{asset.mediatypeshortname}-file"
-                                    href="{f:if(condition: link, then: " {link}", else: "{f:uri.resource(resource: asset.resource)}")}" target="{asset.target}"><span>{f:if(condition: asset.title, then: "{asset.title}", else: "{asset.resource.filename}")}</span> {f:if(condition: asset.filedescription, then: "<span>({asset.filedescription})</span>", else: "<span
-                                    class='nofiledesc'></span>")}</a></span>
+                    <span class="content-link-wrapper">
+                        <a class="content-link-default-file content-link-{asset.mediatypeshortname}-file" href="{f:if(condition: link, then: " {link}", else: "{f:uri.resource(resource: asset.resource)}")}" target="{asset.target}"><span>{f:if(condition: asset.title, then: "{asset.title}", else: "{asset.resource.filename}")}</span> {f:if(condition: asset.filedescription, then: "<span class='nofiledesc'></span>", else: "<span
+                            class='nofiledesc'></span>")}
+                        </a>
+                    </span>
+                    <f:comment>
+                        <span class="content-link-wrapper">
+                                <a class="content-link-default-file content-link-{asset.mediatypeshortname}-file" href="{f:if(condition: link, then: " {link}", else: "{f:uri.resource(resource: asset.resource)}")}" target="{asset.target}"><span>{f:if(condition: asset.title, then: "{asset.title}", else: "{asset.resource.filename}")}</span> {f:if(condition: asset.filedescription, then: "<span>({asset.filedescription})</span>", else: "<span
+                                class='nofiledesc'></span>")}
+                            </a>
+                            </span>
+                    </f:comment>
                 </f:else>
             </f:if>
 

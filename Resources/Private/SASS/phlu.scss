@@ -4611,6 +4611,7 @@ body {
                         background-image: none;
                         @include media-breakpoint-down("sm") {
                           font-size: $font-size-btn-mobile;
+                          width: 100%;
                         }
                         &:hover {
                           background-color: $petroldark;
@@ -4662,7 +4663,7 @@ body {
                   table {
                     margin: 40px 0;
                     @include media-breakpoint-down("sm") {
-                      margin: 15px 0 0;
+                      margin: 10px 0 0;
                     }
                     tbody {
                       tr {
@@ -5688,6 +5689,11 @@ body {
 
             }
           }
+          tr:last-child {
+            th, td {
+              border-bottom: 2px solid $grey2;
+            }
+          }
           tr {
             th, td {
               padding: 15px 20px;
@@ -6506,7 +6512,6 @@ body {
                 width: $flowtext-narrow-width;
               }
               li {
-                margin-top: 5px;
                 margin-bottom: 5px;
                 &:last-child {
                   margin-bottom: 30px;
@@ -6741,7 +6746,7 @@ body {
                   .result-preview-contents {
                     margin: 0 30px;
                     @include media-breakpoint-down("sm") {
-                      margin: 0 20px;
+                      margin: 0 20px 20px;
                     }
                     margin-bottom: 15px;
                     .dropdown-toggle {
@@ -6761,9 +6766,15 @@ body {
                   .details {
                     float: left;
                     margin-left: 0;
+                    @include media-breakpoint-down("sm") {
+                      float:none;
+                    }
                   }
                   .shareAndRegister {
                     float: right;
+                    @include media-breakpoint-down("sm") {
+                      float:none;
+                    }
                     .btn.btn-primary.share {
                       color: $petrol;
                       background-color: inherit;
@@ -6776,17 +6787,8 @@ body {
                       @include media-breakpoint-down("sm") {
                         padding: 0 19px;
                       }
-                      @include media-breakpoint-down("xs") {
-                        padding: 0 5px 0 0;
-                        width: 42px;
-                      }
                       &:last-child {
                         padding-right: 0;
-                      }
-                    }
-                    .btn.btn-primary {
-                      @include media-breakpoint-down("xs") {
-                        width: 130px;
                       }
                     }
                   }
