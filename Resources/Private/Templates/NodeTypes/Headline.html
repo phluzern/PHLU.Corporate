@@ -3,6 +3,6 @@
 <f:if condition="{neos:rendering.inBackend()}">
     <f:then>{neos:contentElement.editable(property: 'text',tag: 'span')}</f:then>
     <f:else>
-        <span><f:format.raw><f:translate locale="de" package="Phlu.Corporate" source="hyphens">{text}</f:translate></f:format.raw></span></f:else>
+        <span><f:format.raw><f:translate locale="de" package="Phlu.Corporate" source="Hyphens">{text}</f:translate></f:format.raw></span></f:else>
 </f:if>
 </{tag}>
