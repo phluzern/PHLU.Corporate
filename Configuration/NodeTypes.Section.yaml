@@ -602,6 +602,13 @@
         reloadIfChanged: true
         inspector:
           group: filters
+    forcegroupedsorting:
+      type: boolean
+      ui:
+        label: 'Sortierung analog Filterauswahl'
+        reloadIfChanged: true
+        inspector:
+          group: filters
 
   childNodes:
     main:
