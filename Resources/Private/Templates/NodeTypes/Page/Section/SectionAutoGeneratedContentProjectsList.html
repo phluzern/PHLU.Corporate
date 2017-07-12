@@ -13,7 +13,12 @@
 
     <f:if condition="{sectionCount}>1">
         <f:then>
-            {neos:contentElement.editable(property: 'title', tag: 'h2')}
+            <f:if condition="{neos:rendering.inBackend()}">
+                <f:then>{neos:contentElement.editable(property: 'title', tag: 'h2')}</f:then>
+                <f:else>
+                    <h2><f:format.raw><f:translate locale="de" package="Phlu.Corporate" source="hyphens">{title}</f:translate></f:format.raw></h2>
+                </f:else>
+            </f:if>
         </f:then>
     </f:if>
 
