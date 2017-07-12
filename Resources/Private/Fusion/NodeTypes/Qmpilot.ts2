@@ -3,7 +3,7 @@ prototype(Phlu.Qmpilot.NodeTypes:Files) {
 
     templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Files/Default.html'
     assets = ${q(node).property('assets')}
-    attributes.class = ${q(node).property('assets') ? 'assetsCount-'+Array.length(q(node).property('assets')) : 'assetsCount-0'}
+    attributes.class = ${q(node).property('assets') ? 'assetsCount-' + Array.length(q(node).property('assets')) : 'assetsCount-0'}
 
 }
 
@@ -26,9 +26,9 @@ prototype(Phlu.Qmpilot.NodeTypes:File) < prototype(Phlu.Corporate:Content) {
 
     }
 
-    link = ${Phlu.Corporate.getEmbeddedLink(this.node,this.linkRaw, request)}
+    link = ${Phlu.Corporate.getEmbeddedLink(this.node, this.linkRaw, request)}
 
-    assetIsButton = ${q(q(node).property('asset')).get(0).fileDescription == '' ? (q(node).parentsUntil("[instanceof Phlu.Corporate:Section]").find("[instanceof Phlu.Qmpilot.NodeTypes:File]").count() == 1 || q(node).next().get(0).nodeType.name == NULL) ? true : false : false}
+    assetIsButton = ${q(node).property('forceAsButton') == true ? true : ( q(q(node).property('asset')).get(0).fileDescription == '' ? (q(node).parentsUntil("[instanceof Phlu.Corporate:Section]").find("[instanceof Phlu.Qmpilot.NodeTypes:File]").count() == 1) ? true : false : false)}
 
 
 
