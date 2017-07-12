@@ -28,7 +28,8 @@ prototype(Phlu.Qmpilot.NodeTypes:File) < prototype(Phlu.Corporate:Content) {
 
     link = ${Phlu.Corporate.getEmbeddedLink(this.node,this.linkRaw, request)}
 
-    assetIsButton = ${q(q(node).property('asset')).get(0).fileDescription == '' ? q(node).parentsUntil("[instanceof Phlu.Corporate:Section]").find("[instanceof Phlu.Qmpilot.NodeTypes:File]").count() == 1 ? true : false : false}
+    assetIsButton = ${q(q(node).property('asset')).get(0).fileDescription == '' ? (q(node).parentsUntil("[instanceof Phlu.Corporate:Section]").find("[instanceof Phlu.Qmpilot.NodeTypes:File]").count() == 1 || q(node).next().get(0).nodeType.name == NULL) ? true : false : false}
+
 
 
     assetcount = ${q(node).property('asset') ? '1' : '0'}
