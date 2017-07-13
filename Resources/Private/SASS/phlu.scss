@@ -3466,7 +3466,7 @@ body {
               }
               ol {
                 ul {
-                  margin-top:15px;
+                  margin-top: 15px;
                 }
               }
               .nav-teaser-item {
@@ -3517,7 +3517,7 @@ body {
                 > div {
                   > * {
                     &:last-child {
-                      padding-bottom:0;
+                      padding-bottom: 0;
                     }
                   }
                 }
@@ -3530,11 +3530,11 @@ body {
                   }
                 }
                 &[data-prev='phlu-corporate-text'] {
-                  padding-top:15px;
+                  padding-top: 15px;
                 }
               }
               > .nav-teaser-item {
-                padding-top:15px;
+                padding-top: 15px;
               }
               * {
                 &:last-child {
@@ -5308,7 +5308,7 @@ body {
         padding-top: 31px;
       }
       &[data-prev='phlu-corporate-table'] {
-        padding-top:20px;
+        padding-top: 20px;
       }
     }
     //
@@ -6574,10 +6574,8 @@ body {
                 }
               }
             }
-            .phlu-corporate-text {
-              a[href^='http://phlu.ch'] {
-                @include content-link("internal");
-              }
+            a[href^='http://phlu.ch'] {
+              @include content-link("internal");
             }
           }
           .phlu-corporate-table {
@@ -6786,13 +6784,13 @@ body {
                     float: left;
                     margin-left: 0;
                     @include media-breakpoint-down("sm") {
-                      float:none;
+                      float: none;
                     }
                   }
                   .shareAndRegister {
                     float: right;
                     @include media-breakpoint-down("sm") {
-                      float:none;
+                      float: none;
                       margin-bottom: 50px;
                     }
                     .btn.btn-primary.share {
@@ -6817,7 +6815,7 @@ body {
                     }
                     .btn.btn-primary {
                       &:last-child {
-                        margin-top:15px;
+                        margin-top: 15px;
                         right: 37px;
                       }
                     }

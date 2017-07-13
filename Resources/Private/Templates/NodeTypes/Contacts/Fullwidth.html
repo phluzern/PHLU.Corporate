@@ -17,16 +17,20 @@
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-9">
                         <address>
-                            <div class="contactperson-role">
                                 <f:if condition="{node.properties.functionCustom}">
                                     <f:then>
-                                        {node.properties.functionCustom}<br>
+                                        <div class="contactperson-role">
+                                            {node.properties.functionCustom}<br>
+                                        </div>
                                     </f:then>
                                     <f:else>
-                                        {node.properties.function}<br>
+                                        <f:if condition="{node.properties.function}">
+                                            <div class="contactperson-role">
+                                                {node.properties.function}<br>
+                                            </div>
+                                        </f:if>
                                     </f:else>
                                 </f:if>
-                            </div>
                             {node.properties.firstname} {node.properties.lastname}
                             <f:if condition="{node.properties.firstname} != ''">
                                 <f:then><br></f:then>
