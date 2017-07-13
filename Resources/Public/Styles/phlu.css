@@ -12938,6 +12938,9 @@ body {
         body .all .main .row.further-education-detail .phlu-corporate-section[data-next='empty'] hr {
           margin-top: 60px;
           margin-bottom: inherit; }
+      @media (max-width: 767px) {
+        body .all .main .flowtext-phlu-event, body .all .main .flowtext-phlu-news {
+          margin-top: 30px; } }
       body .all .main .flowtext-phlu-event a, body .all .main .flowtext-phlu-event a:hover, body .all .main .flowtext-phlu-news a, body .all .main .flowtext-phlu-news a:hover {
         color: #707070; }
       body .all .main .flowtext-phlu-event > .row .initial, body .all .main .flowtext-phlu-event > .row .date-location-title, body .all .main .flowtext-phlu-event > .row .preview-image, body .all .main .flowtext-phlu-event > .row .date-title-preview-text, body .all .main .flowtext-phlu-news > .row .initial, body .all .main .flowtext-phlu-news > .row .date-location-title, body .all .main .flowtext-phlu-news > .row .preview-image, body .all .main .flowtext-phlu-news > .row .date-title-preview-text {
@@ -13026,6 +13029,9 @@ body {
         margin: 32px 0; }
       body .all .main .flowtext-phlu-event > .row {
         padding-bottom: 30px; }
+        @media (max-width: 767px) {
+          body .all .main .flowtext-phlu-event > .row {
+            padding-bottom: 0; } }
         body .all .main .flowtext-phlu-event > .row .initial {
           background-color: #28818f; }
         body .all .main .flowtext-phlu-event > .row a[data-gentics-aloha-repository='node-repository'] {
