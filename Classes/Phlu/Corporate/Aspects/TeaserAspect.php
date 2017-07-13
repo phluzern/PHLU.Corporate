@@ -219,7 +219,12 @@ class TeaserAspect
 
         // update detailpage
         $context = $this->nodeFactory->createContextMatchingNodeData($object);
-        $detailNode = $this->nodeFactory->createFromNodeData($this->nodeDataRepository->findByNodeIdentifier($object->getProperty('reference'))->getFirst(), $context);
+        $detailNode = $this->nodeDataRepository->findOneByIdentifier($object->getProperty('reference'),$object->getWorkspace());
+
+
+        if (!$detailNode) {
+            $detailNode = $this->nodeFactory->createFromNodeData($this->nodeDataRepository->findByNodeIdentifier($object->getProperty('reference'))->getFirst(), $context);
+        }
 
         if (!$detailNode) {
             return null;
@@ -278,7 +283,7 @@ class TeaserAspect
             if ($parentPageNode) {
                 $detailNode->setProperty('documentNode', $parentPageNode->getIdentifier());
             }
-            $this->nodeDataRepository->update($detailNode->getNodeData());
+            $this->nodeDataRepository->update($detailNode);
 
 
         }
