@@ -51,7 +51,7 @@
         <tr class="result-preview" data-ng-show="isOpen(node)">
             <td colspan="4">
                 <div class="result-preview-contents">
-                        <span data-ng-bind="node.getPreview('description',-1)"></span>
+                        <span data-ng-bind="node.getProperty('description').substr(0,500) + (node.getProperty('description').length >= 500 ? '...' : '')"></span>
 
                     <table class="table">
                         <tbody>

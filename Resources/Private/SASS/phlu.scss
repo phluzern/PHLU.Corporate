@@ -129,6 +129,7 @@ $component-active-bg: #895119;
 $line-height-lg: 2;
 $line-height-sm: 1.8;
 $line-height-mobile-h1: 40px;
+$line-height-mobile-h3: 1.4;
 $line-height-mobile-p: 25px;
 $flowtext-narrow-width: 80%;
 
@@ -3463,12 +3464,17 @@ body {
                 margin: 0;
                 padding-bottom: 15px;
               }
+              ol {
+                ul {
+                  margin-top:15px;
+                }
+              }
               .nav-teaser-item {
                 padding-left: 0;
                 @include media-breakpoint-down("sm") {
                   padding-right: 0;
                 }
-                padding-bottom: 40px;
+                padding-bottom: 20px;
                 .row {
                   margin-right: 0;
                   margin-left: 0;
@@ -3507,14 +3513,6 @@ body {
                   }
                 }
               }
-              .phlu-qmpilot-nodetypes-file {
-                &.last {
-                  margin-bottom: 0;
-                  &[data-next='empty'] {
-                    padding-bottom: 15px;
-                  }
-                }
-              }
               .phlu-corporate-text {
                 > div {
                   > * {
@@ -3525,12 +3523,25 @@ body {
                 }
               }
               > .phlu-qmpilot-nodetypes-file {
+                &.last {
+                  margin-bottom: 0;
+                  &[data-next='empty'] {
+                    padding-bottom: 15px;
+                  }
+                }
                 &[data-prev='phlu-corporate-text'] {
                   padding-top:15px;
                 }
               }
               > .nav-teaser-item {
                 padding-top:15px;
+              }
+              * {
+                &:last-child {
+                  .nav-teaser-item {
+                    padding-bottom: 40px;
+                  }
+                }
               }
             }
           }
@@ -3952,7 +3963,7 @@ body {
         color: $hazelbrowndark;
       }
       .panel-body {
-        padding: 30px 0 20px;
+        padding: 20px 0 20px;
         @include media-breakpoint-down('sm') {
           padding: 15px 0 15px;
           @include gutter-width(8);
@@ -5296,6 +5307,9 @@ body {
       &[data-prev='phlu-corporate-accordeonelement'] {
         padding-top: 31px;
       }
+      &[data-prev='phlu-corporate-table'] {
+        padding-top:20px;
+      }
     }
     //
     // Media center
@@ -6500,6 +6514,9 @@ body {
 
           &[data-next='empty'] {
             margin-bottom: 90px;
+            @include media-breakpoint-down("sm") {
+              margin-bottom: 60px;
+            }
             hr {
               border-top: 0;
               margin-top: 0;
@@ -6513,15 +6530,17 @@ body {
               }
               li {
                 margin-bottom: 5px;
+                line-height: $line-height-sm;
                 &:last-child {
-                  margin-bottom: 30px;
+                  margin-bottom: 15px;
                 }
               }
             }
             ol {
               padding: 0;
-              margin-bottom: 0;
+              margin-bottom: 15px;
               width: $flowtext-narrow-width;
+              line-height: $line-height-sm;
               @include media-breakpoint-down("lg") {
                 width: inherit;
               }
@@ -6774,6 +6793,7 @@ body {
                     float: right;
                     @include media-breakpoint-down("sm") {
                       float:none;
+                      margin-bottom: 50px;
                     }
                     .btn.btn-primary.share {
                       color: $petrol;
@@ -6785,10 +6805,20 @@ body {
                         font-size: $font-size-small;
                       }
                       @include media-breakpoint-down("sm") {
+                        position: absolute;
+                        right: 22px;
+                        width: auto;
+                        margin-top: 68px;
                         padding: 0 19px;
                       }
                       &:last-child {
                         padding-right: 0;
+                      }
+                    }
+                    .btn.btn-primary {
+                      &:last-child {
+                        margin-top:15px;
+                        right: 37px;
                       }
                     }
                   }
