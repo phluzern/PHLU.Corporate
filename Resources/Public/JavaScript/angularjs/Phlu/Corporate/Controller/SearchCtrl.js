@@ -628,6 +628,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Phlu.Neos.NodeTypes:Course.Study.FurtherEducation': 0.125,
         'Phlu.Neos.NodeTypes:Course.Module.FurtherEducation': 0.125,
         'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.125,
+        'Phlu.Neos.NodeTypes:Publication': 0.0001,
+        'Phlu.Neos.NodeTypes:Project': 0.0001,
         'Phlu.Corporate:Location': 100
 
     };
