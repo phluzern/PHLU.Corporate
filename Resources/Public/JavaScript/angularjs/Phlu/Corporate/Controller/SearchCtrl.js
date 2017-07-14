@@ -633,18 +633,18 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var NodeUrlBoostFactor = {
-        '/studium/studiengaenge/': 1,
-        '/studium/': 4,
-        '/studium/zulassung-und-anmeldung': 10,
-        '/studium/informationsveranstaltungen': 10,
-        '/weiterbildung/': 1,
-        '/beratungen-angebote/': 3,
-        '/forschung/': 2,
+        '/studium/studiengaenge/': {'*': 1, 'phlu-corporate-contact': 0.0001},
+        '/studium/':  {'*': 4, 'phlu-corporate-contact': 0.0001},
+        '/studium/zulassung-und-anmeldung': {'*': 10, 'phlu-corporate-contact': 0.0001},
+        '/studium/informationsveranstaltungen': {'*': 10, 'phlu-corporate-contact': 0.0001},
+        '/weiterbildung/': {'*': 1, 'phlu-corporate-contact': 0.0001},
+        '/beratungen-angebote/': {'*': 3, 'phlu-corporate-contact': 0.0001},
+        '/forschung/': {'*': 2, 'phlu-corporate-contact': 0.0001},
         '/forschung/publikationen/': 0.0001,
         '/forschung/projekte/': 0.0001,
-        '/faecher-und-schwerpunkte/': 5,
+        '/faecher-und-schwerpunkte/': {'*': 5, 'phlu-corporate-contact': 0.0001},
         '/ueber-uns/organisation-personen/': {'*': 1, 'phlu-corporate-contact': 100},
-        '/ueber-uns/arbeiten-an-der-ph-luzern/stellen': 100,
+        '/ueber-uns/arbeiten-an-der-ph-luzern/stellen': {'*': 100, 'phlu-corporate-contact': 0.0001},
         '/ueber-uns/': {'*': 0.5, 'phlu-corporate-contact': 1000}
 
     };
