@@ -847,7 +847,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     } else {
         $("#searchInput").keypress(function (e) {
             if (e.which == 13) {
-                if ($rootScope.quickNode !== undefined && $rootScope.quickNode.getUrl()) {
+                if ($rootScope.quickNode !== undefined && $rootScope.quickNode !== undefined && $rootScope.quickNode.getUrl()) {
                     window.location.href = $rootScope.quickNode.getUrl();
                 }
             }
