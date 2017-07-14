@@ -611,7 +611,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'url': -1,
         'label': 1,
         'parent': 1,
-        'grandparent': -1
+        'grandparent': 1
 
 
     };
@@ -641,9 +641,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '/beratungen-angebote/': 3,
         '/forschung/': 2,
         '/forschung/publikationen/': 0.0001,
-        '/forschung/projekte/': 0.005,
+        '/forschung/projekte/': 0.0001,
         '/faecher-und-schwerpunkte/': 5,
-        '/ueber-uns/organisation-personen/': {'*': 0.001, 'phlu-corporate-contact': 1},
+        '/ueber-uns/organisation-personen/': {'*': 1, 'phlu-corporate-contact': 100},
         '/ueber-uns/arbeiten-an-der-ph-luzern/stellen': 100,
         '/ueber-uns/': {'*': 0.5, 'phlu-corporate-contact': 1000}
 
