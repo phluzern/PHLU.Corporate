@@ -497,6 +497,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var boost = {
 
 
+        'phlu-corporate-contact-lastname': 1000,
+        'phlu-corporate-contact-firstname': 1000,
         'phlu-corporate-contact-phone': 1000,
         'phlu-corporate-contact-shorthand': 1000,
         'phlu-corporate-contact-parent': -1, // dont'search here
@@ -622,7 +624,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var boostNodeType = {
         'Phlu.Qmpilot.NodeTypes:File': 0.125,
-        'Phlu.Corporate:Contact': 0.25,
+        'Phlu.Corporate:Contact': 100,
         'Phlu.Neos.NodeTypes:Course.Study.FurtherEducation': 0.125,
         'Phlu.Neos.NodeTypes:Course.Module.FurtherEducation': 0.125,
         'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.125,
@@ -643,7 +645,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '/faecher-und-schwerpunkte/': 5,
         '/ueber-uns/organisation-personen/': {'*': 0.001, 'phlu-corporate-contact': 1},
         '/ueber-uns/arbeiten-an-der-ph-luzern/stellen': 100,
-        '/ueber-uns/': {'*': 0.5, 'phlu-corporate-contact': 100}
+        '/ueber-uns/': {'*': 0.5, 'phlu-corporate-contact': 1000}
 
     };
 
