@@ -630,7 +630,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.125,
         'Phlu.Neos.NodeTypes:Publication': 0.0001,
         'Phlu.Neos.NodeTypes:Project': 0.0001,
-        'Phlu.Corporate:Location': 100
+        'Phlu.Corporate:Location': 10000
 
     };
 
@@ -647,7 +647,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '/faecher-und-schwerpunkte/': {'*': 5, 'phlu-corporate-contact': 0.0001},
         '/ueber-uns/organisation-personen/': {'*': 1, 'phlu-corporate-contact': 100},
         '/ueber-uns/arbeiten-an-der-ph-luzern/stellen': {'*': 100, 'phlu-corporate-contact': 0.0001},
-        '/ueber-uns/': {'*': 0.5, 'phlu-corporate-contact': 1000}
+        '/ueber-uns/': {'*': 0.5, 'phlu-corporate-contact': 1000,'phlu-corporate-location': 1000}
 
     };
 
