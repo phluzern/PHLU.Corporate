@@ -604,9 +604,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-qmpilot-nodetypes-file-title': -1,
 
 
-        'phlu-corporate-location-name': 20000,
-        'phlu-corporate-location-street': 20000,
-        'phlu-corporate-location-phone': 20000,
+        'phlu-corporate-location-name': 1000,
+        'phlu-corporate-location-street': 1000,
+        'phlu-corporate-location-phone': 1000,
 
         'url': -1,
         'label': 1,
