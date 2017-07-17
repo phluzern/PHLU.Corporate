@@ -7,6 +7,7 @@
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
+
 #
 #'Phlu.Neos.NodeTypes:Project':
 #  superTypes:
