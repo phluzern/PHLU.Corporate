@@ -12,9 +12,9 @@
   superTypes:
     'Neoslive.Hybridsearch:Content': true
 
-'Phlu.Neos.NodeTypes:Publication':
-  superTypes:
-    'Neoslive.Hybridsearch:Content': true
+#'Phlu.Neos.NodeTypes:Publication':
+#  superTypes:
+#    'Neoslive.Hybridsearch:Content': true
 
 'Phlu.Corporate:Location':
   superTypes:
