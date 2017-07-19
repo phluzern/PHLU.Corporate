@@ -500,7 +500,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-lastname': 1000,
         'phlu-corporate-contact-firstname': 1000,
         'phlu-corporate-contact-phone': 1000,
-        'phlu-corporate-contact-shorthand': 1000,
+        'phlu-corporate-contact-shorthandsymbol': 1000,
         'phlu-corporate-contact-parent': -1, // dont'search here
         'phlu-corporate-contact-grandparent': -1, // dont'search here
         'phlu-corporate-contact-education': -1, // dont'search here
