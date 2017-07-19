@@ -611,20 +611,24 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'url': -1,
         'label': 1,
         'parent': 1,
-        'grandparent': 1
+        'grandparent': 1,
+        'breadcrumb': 1000
 
 
     };
 
 
     var boostParentNodeType = {
-        'Phlu.Corporate:Page.FurtherEducation.Detail.Study': 2,
+        'Phlu.Corporate:Page.FurtherEducation.Detail.Study': 12,
+        'Phlu.Corporate:Content.Page.HeaderDefault': 5,
         'Phlu.Corporate:ContactsGroup': 0.25
     };
 
     var boostNodeType = {
         'Phlu.Qmpilot.NodeTypes:File': 0.125,
-        'Phlu.Corporate:Contact': 100,
+        'Phlu.Corporate:Contact': 1,
+        'Phlu.Corporate:TextPlain': 2,
+        'Phlu.Corporate:Text': 0.001,
         'Phlu.Neos.NodeTypes:Course.Study.FurtherEducation': 0.125,
         'Phlu.Neos.NodeTypes:Course.Module.FurtherEducation': 0.125,
         'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.125,
@@ -640,7 +644,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '/studium/zulassung-und-anmeldung': {'*': 10, 'phlu-corporate-contact': 0.0001},
         '/studium/informationsveranstaltungen': {'*': 10, 'phlu-corporate-contact': 0.0001},
         '/weiterbildung/': {'*': 1, 'phlu-corporate-contact': 0.0001},
-        '/beratungen-angebote/': {'*': 3, 'phlu-corporate-contact': 0.0001},
+        '/beratungen-angebote/': {'*': 10, 'phlu-corporate-contact': 0.0001},
         '/forschung/': {'*': 2, 'phlu-corporate-contact': 0.0001},
         '/forschung/publikationen/': 0.0001,
         '/forschung/projekte/': 0.0001,
