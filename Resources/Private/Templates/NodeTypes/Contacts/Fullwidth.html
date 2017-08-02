@@ -42,7 +42,7 @@
                             <f:if condition="{node.properties.street} != ''">{node.properties.street}<br></f:if>
                             <f:if condition="{node.properties.street2} != ''">{node.properties.street2}<br></f:if>
                             <f:if condition="{node.properties.city} != ''">{node.properties.zip}
-                                {node.properties.city}
+                                {node.properties.city}<br>
                             </f:if>
                             <f:if condition="{node.properties.phone} != ''">
                                 <div class="telephone">
@@ -52,7 +52,9 @@
                                     <br>
                                 </div>
                             </f:if>
-                            <f:if condition="{node.properties.email} != ''"><a class="content-link-email-contact-person" href="mailto:{node.properties.email}">{node.properties.email}<br></a></f:if>
+                            <f:if condition="{node.properties.email} != ''">
+                                <a class="content-link-email-contact-person {f:if(condition:'{node.properties.phone}', then:'', else:'no-phone')}" href="mailto:{node.properties.email}">{node.properties.email}<br></a>
+                            </f:if>
                             <portrait:link node="{node}">Portrait</portrait:link>
                         </address>
                     </div>
