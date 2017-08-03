@@ -3964,6 +3964,7 @@ body {
       }
       .panel-body {
         padding: 20px 0 20px;
+        @include gutter-width(10);
         @include media-breakpoint-down('sm') {
           padding: 15px 0 15px;
           @include gutter-width(8);
@@ -6200,7 +6201,7 @@ body {
             bottom: inherit;
             height: 30px;
             width: 30px;
-            margin-top: 25%;
+            margin-top: 28%;
             text-align: initial;
             .icon-next, .icon-prev {
               position:relative;

@@ -10747,7 +10747,12 @@ body {
     body .all .phlu-team-members .panel-heading, body .all .phlu-team-members a {
       color: #9f632a; }
     body .all .phlu-team-members .panel-body {
-      padding: 20px 0 20px; }
+      padding: 20px 0 20px;
+      margin-right: -10px;
+      margin-left: -10px; }
+      body .all .phlu-team-members .panel-body > [class^="col-"], body .all .phlu-team-members .panel-body > [class^=" col-"] {
+        padding-right: 10px;
+        padding-left: 10px; }
       @media (max-width: 767px) {
         body .all .phlu-team-members .panel-body {
           padding: 15px 0 15px;
@@ -12229,7 +12234,7 @@ body {
         bottom: inherit;
         height: 30px;
         width: 30px;
-        margin-top: 25%;
+        margin-top: 28%;
         text-align: initial; }
         body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control .icon-prev {
           position: relative;
