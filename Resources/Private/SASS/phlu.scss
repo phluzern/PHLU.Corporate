@@ -6049,7 +6049,7 @@ body {
             }
           }
           .no-phone {
-            margin-top:10px;
+            margin-top: 10px;
             display: block;
           }
           .map {
@@ -6166,14 +6166,19 @@ body {
         }
         .phlu-corporate-media-container {
           .phlu-teaser {
-            padding: 0 0 25px;
+            padding: 0;
             margin-bottom: 30px;
+            width:80%;
+            @include media-breakpoint-down("lg") {
+              width: 100%;
+            }
             .carousel-indicators {
-              bottom: -35px;
               width: $flowtext-narrow-width;
-              @include media-breakpoint-down("lg") {
-                width: 100%;
-              }
+              margin-bottom: 0;
+              top: 15px;
+              position: relative;
+              width: 100%;
+
               li {
                 border-color: transparent $lightgrey transparent transparent;
                 background-color: inherit;
@@ -6182,30 +6187,34 @@ body {
                 }
               }
             }
+            .carousel-item {
+              .phlu-corporate-image {
+
+                    .img-and-caption {
+                      width: initial;
+                }
+              }
+            }
           }
           .carousel-control {
-            @include media-breakpoint-down("sm") {
-              color: white;
-            }
+            bottom: inherit;
+            height: 30px;
+            width: 30px;
+            margin-top: 25%;
+            text-align: initial;
             .icon-next, .icon-prev {
-              top: 47%;
-
+              position:relative;
+              top:-2px;
+              margin-top:inherit;
             }
             .icon-next {
-              @include media-breakpoint-down("md") {
-                margin-right: -50%;
-              }
-              @include media-breakpoint-down("sm") {
-                margin-right: -10%;
-              }
+              right:-1px;
+
             }
             .icon-prev {
-              margin-left: -79%;
-              @include media-breakpoint-down("md") {
-                margin-left: -50%;
-              }
+              left:30px;
               @include media-breakpoint-down("sm") {
-                margin-left: -10%;
+                left:27px;
               }
             }
           }
@@ -7082,7 +7091,7 @@ body {
       //
       .flowtext-phlu-event, .flowtext-phlu-news {
         @include media-breakpoint-down("sm") {
-          margin-top:30px;
+          margin-top: 30px;
         }
         a, a:hover {
           color: $grey;

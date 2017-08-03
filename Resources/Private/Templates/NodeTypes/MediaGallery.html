@@ -50,15 +50,14 @@
 </div>
 
 <f:section name="carousel">
-    <f:render section="indicators"
-              arguments="{carouselItems: carouselItems, spliceNum: spliceNum, itemClass: 'col-xs-12', targetId: targetId}"></f:render>
+
     <div id="blueimpgallery-{targetId}" class="carousel-inner" role="listbox">
         <f:for each="{phlu:SpliceArray(items: carouselItems, spliceNum:spliceNum)}" as="item" iteration="iterator">
             <div class="carousel-item {f:if(condition: iterator.isFirst, then: 'active', else: '')}">
                 <div class=" phlu-corporate-image">
-                    <div class="row">
+
                         <f:for each="{item}" as="col" iteration="coliterator">
-                            <div class="{itemClass}">
+
                                 <div class="img-and-caption">
                                     <a href="{media:uri.image(image: col.properties.image)}"
                                        title="{col.properties.title}">
@@ -73,14 +72,16 @@
                                         </div>
                                     </f:if>
                                 </div>
-                            </div>
+
                         </f:for>
-                    </div>
+
                 </div>
             </div>
         </f:for>
     </div>
-    <f:comment>
+    <f:render section="indicators"
+              arguments="{carouselItems: carouselItems, spliceNum: spliceNum, itemClass: 'col-xs-12', targetId: targetId}"></f:render>
+
         <f:if condition="{carouselItems}">
             <a class="left carousel-control" href="#{targetId}" role="button" data-slide="prev">
                 <span class="icon-prev" aria-hidden="true"></span>
@@ -91,7 +92,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </f:if>
-    </f:comment>
+
 </f:section>
 <f:section name="indicators">
     <ol class="carousel-indicators">

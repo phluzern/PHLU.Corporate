@@ -12206,38 +12206,42 @@ body {
         body .all .main > .row .phlu-corporate-textwithimage .img-and-caption, body .all .main > .row-fullwidth-content > .row .phlu-corporate-textwithimage .img-and-caption {
           width: 237px; } }
       body .all .main > .row .phlu-corporate-media-container .phlu-teaser, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .phlu-teaser {
-        padding: 0 0 25px;
-        margin-bottom: 30px; }
+        padding: 0;
+        margin-bottom: 30px;
+        width: 80%; }
+        @media (max-width: 1279px) {
+          body .all .main > .row .phlu-corporate-media-container .phlu-teaser, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .phlu-teaser {
+            width: 100%; } }
         body .all .main > .row .phlu-corporate-media-container .phlu-teaser .carousel-indicators, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .phlu-teaser .carousel-indicators {
-          bottom: -35px;
-          width: 80%; }
-          @media (max-width: 1279px) {
-            body .all .main > .row .phlu-corporate-media-container .phlu-teaser .carousel-indicators, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .phlu-teaser .carousel-indicators {
-              width: 100%; } }
+          width: 80%;
+          margin-bottom: 0;
+          top: 15px;
+          position: relative;
+          width: 100%; }
           body .all .main > .row .phlu-corporate-media-container .phlu-teaser .carousel-indicators li, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .phlu-teaser .carousel-indicators li {
             border-color: transparent #edeae8 transparent transparent;
             background-color: inherit; }
             body .all .main > .row .phlu-corporate-media-container .phlu-teaser .carousel-indicators li.active, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .phlu-teaser .carousel-indicators li.active {
               border-color: transparent #171815 transparent transparent; }
-      @media (max-width: 767px) {
-        body .all .main > .row .phlu-corporate-media-container .carousel-control, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control {
-          color: white; } }
-      body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control .icon-prev {
-        top: 47%; }
-      @media (max-width: 991px) {
+        body .all .main > .row .phlu-corporate-media-container .phlu-teaser .carousel-item .phlu-corporate-image .img-and-caption, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .phlu-teaser .carousel-item .phlu-corporate-image .img-and-caption {
+          width: initial; }
+      body .all .main > .row .phlu-corporate-media-container .carousel-control, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control {
+        bottom: inherit;
+        height: 30px;
+        width: 30px;
+        margin-top: 25%;
+        text-align: initial; }
+        body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control .icon-prev {
+          position: relative;
+          top: -2px;
+          margin-top: inherit; }
         body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control .icon-next {
-          margin-right: -50%; } }
-      @media (max-width: 767px) {
-        body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-next, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control .icon-next {
-          margin-right: -10%; } }
-      body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control .icon-prev {
-        margin-left: -79%; }
-        @media (max-width: 991px) {
-          body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control .icon-prev {
-            margin-left: -50%; } }
-        @media (max-width: 767px) {
-          body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control .icon-prev {
-            margin-left: -10%; } }
+          right: -1px; }
+        body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control .icon-prev {
+          left: 30px; }
+          @media (max-width: 767px) {
+            body .all .main > .row .phlu-corporate-media-container .carousel-control .icon-prev, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .carousel-control .icon-prev {
+              left: 27px; } }
       body .all .main > .row .phlu-corporate-media-container > .row > div, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container > .row > div {
         margin-bottom: 30px; }
       body .all .main > .row .phlu-corporate-media-container .caption, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .caption {
