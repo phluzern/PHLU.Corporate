@@ -261,6 +261,38 @@ function initFrontend() {
         }
     );
 
+    /*
+     * scroll to clicked accordion element if outside of viewport
+     */
+    scrollToViewport();
+
+
+}
+
+
+function scrollToViewport() {
+    $('.panel-heading a').on('click', function () {
+
+        $(this).closest('.phlu-corporate-accordeonelement').on('shown.bs.collapse', function () {
+            var element_position = $(this).offset().top;
+            var scroll_position = $(window).scrollTop();
+            var viewport_height = $(window).height();
+
+            if((scroll_position + viewport_height) > element_position && scroll_position < element_position){
+                // Do something because the element is in the viewport
+                //console.log('is in viewport');
+            }
+            else {
+                //console.log('out of viewport');
+                $('html, body').stop().animate({
+                    'scrollTop': $(this).offset().top - 10
+                }, 100, 'swing', function () {
+
+                });
+            }
+        });
+
+    });
 }
 
 function initSmoothScrolling() {

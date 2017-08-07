@@ -11960,7 +11960,6 @@ body {
             body .all .table-responsive .table tbody tr th .mobile-view-columns, body .all .table-responsive .table tbody tr td .mobile-view-columns {
               font-weight: normal;
               display: block;
-              margin-top: 10px;
               font-size: 0.8rem; }
               body .all .table-responsive .table tbody tr th .mobile-view-columns > span, body .all .table-responsive .table tbody tr td .mobile-view-columns > span {
                 display: table-cell; }
