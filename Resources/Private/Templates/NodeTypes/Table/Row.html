@@ -12,10 +12,10 @@
                     <div class="mobile-view-columns">
                         <f:if condition="{th1}">
                     <span class="header">
-                        {neos:contentElement.editable(property: 'th1', tag: 'div')}
+                        {neos:contentElement.editable(property: 'th1', tag: 'span')}
                     </span>
                             </f:if>
-                        {neos:contentElement.editable(property: 'cell1', tag: 'div')}
+                        {neos:contentElement.editable(property: 'cell1', tag: 'span')}
                     </div>
                 </f:if>
                 <f:render partial="TableCols" arguments="{_all}"/>
@@ -27,12 +27,12 @@
             <f:if condition="{firstColHidden}">
                 <div class="mobile-view-columns">
                     <span class="header">
-                         {neos:contentElement.editable(property: 'th1', tag: 'div')}
+                         {neos:contentElement.editable(property: 'th1', tag: 'span')}
                      </span>
-                        {neos:contentElement.editable(property: 'cell1', tag: 'div')}
+                        {neos:contentElement.editable(property: 'cell1', tag: 'span')}
                     </div>
             </f:if>
-            {neos:contentElement.editable(property: 'cell1', tag: 'div')}
+            {neos:contentElement.editable(property: 'cell1', tag: 'div', class:'desktop-view')}
             <f:render partial="TableCols" arguments="{_all}"/>
         </td>
     </f:if>
