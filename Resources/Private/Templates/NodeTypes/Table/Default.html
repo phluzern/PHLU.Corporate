@@ -9,44 +9,46 @@
         <tr>
             <f:if condition="{firstColHidden}">
                 <f:else>
-                    <th scope="col" class="{class0} {firstColWithClass} {cell0isCurrencyClass}">
-                        {neos:contentElement.editable(property: 'cell0', tag: 'h3')}
-                    </th>
+                    <f:if condition="{cell0}">
+                        <th scope="col" class="{class0} {firstColWithClass} {cell0isCurrencyClass}">
+                            {neos:contentElement.editable(property: 'cell0', tag: 'h3')}
+                        </th>
+                    </f:if>
                 </f:else>
             </f:if>
-            <f:if condition="{cols} > 1">
+            <f:if condition="{cols} > 1 && {cell1}">
                 <th scope="col" class="{class1} {cell1isCurrencyClass}">{neos:contentElement.editable(property: 'cell1', tag: 'span')}</th>
             </f:if>
 
-            <f:if condition="{cols} > 2">
+            <f:if condition="{cols} > 2 && {cell2}">
                 <th scope="col" class="{class2} {cell2isCurrencyClass}">{neos:contentElement.editable(property: 'cell2', tag: 'span')}</th>
             </f:if>
 
-            <f:if condition="{cols} > 3">
+            <f:if condition="{cols} > 3 && {cell3}">
                 <th scope="col" class="{class3} {cell3isCurrencyClass}">{neos:contentElement.editable(property: 'cell3', tag: 'span')}</th>
             </f:if>
 
-            <f:if condition="{cols} > 4">
+            <f:if condition="{cols} > 4 && {cell4}">
                 <th scope="col" class="{class4} {cell4isCurrencyClass}">{neos:contentElement.editable(property: 'cell4', tag: 'span')}</th>
             </f:if>
 
-            <f:if condition="{cols} > 5">
+            <f:if condition="{cols} > 5 && {cell5}">
                 <th scope="col" class="{class5} {cell5isCurrencyClass}">{neos:contentElement.editable(property: 'cell5', tag: 'span')}</th>
             </f:if>
 
-            <f:if condition="{cols} > 6">
+            <f:if condition="{cols} > 6 && {cell6}">
                 <th scope="col" class="{class6} {cell6isCurrencyClass}">{neos:contentElement.editable(property: 'cell6', tag: 'span')}</th>
             </f:if>
 
-            <f:if condition="{cols} > 7">
+            <f:if condition="{cols} > 7 && {cell7}">
                 <th scope="col" class="{class7} {cell7isCurrencyClass}">{neos:contentElement.editable(property: 'cell7', tag: 'span')}</th>
             </f:if>
 
-            <f:if condition="{cols} > 8">
+            <f:if condition="{cols} > 8 && {cell8}">
                 <th scope="col" class="{class8} {cell8isCurrencyClass}">{neos:contentElement.editable(property: 'cell8', tag: 'span')}</th>
             </f:if>
 
-            <f:if condition="{cols} > 9">
+            <f:if condition="{cols} > 9 && {cell9}">
                 <th scope="col" class="{class9} {cell9isCurrencyClass}">{neos:contentElement.editable(property: 'cell9', tag: 'span')}</th>
             </f:if>
 
