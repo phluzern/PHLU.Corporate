@@ -11615,8 +11615,8 @@ body {
       width: auto;
       height: auto;
       max-width: 100%; }
-    body .all .phlu-qmpilot-nodetypes-files.last, body .all .phlu-qmpilot-nodetypes-file.last {
-      margin-bottom: 15px; }
+    body .all .phlu-qmpilot-nodetypes-files .content-link-wrapper, body .all .phlu-qmpilot-nodetypes-file .content-link-wrapper {
+      margin-bottom: 10px; }
     body .all .phlu-qmpilot-nodetypes-file[data-prev='phlu-corporate-accordeonelement'] {
       padding-top: 31px; }
     body .all .phlu-qmpilot-nodetypes-file[data-prev='phlu-corporate-table'] {
@@ -12288,35 +12288,19 @@ body {
       body .all .main > .row .content-link-wrapper, body .all .main > .row-fullwidth-content > .row .content-link-wrapper {
         font-size: 1.125rem;
         display: block;
-        width: 100%; }
+        width: 100%;
+        margin-left: 25px; }
         @media (max-width: 1279px) {
           body .all .main > .row .content-link-wrapper, body .all .main > .row-fullwidth-content > .row .content-link-wrapper {
             font-size: 1rem; } }
-        body .all .main > .row .content-link-wrapper .content-link-default-file, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file {
-          display: inline-flex;
-          text-overflow: ellipsis; }
-          @media (max-width: 767px) {
-            body .all .main > .row .content-link-wrapper .content-link-default-file, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file {
-              width: 100% !important; } }
-          body .all .main > .row .content-link-wrapper .content-link-default-file span:first-child, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file span:first-child {
-            margin-left: 10px;
-            width: auto;
-            align-self: flex-start; }
-            @media (max-width: 991px) {
-              body .all .main > .row .content-link-wrapper .content-link-default-file span:first-child, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file span:first-child {
-                width: 80% !important; } }
-          body .all .main > .row .content-link-wrapper .content-link-default-file span:last-child, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file span:last-child {
-            margin-left: 10px;
-            width: auto;
-            color: #685f56;
-            align-self: flex-start;
-            text-overflow: ellipsis;
-            white-space: nowrap; }
-            @media (min-width: 1280px) {
-              body .all .main > .row .content-link-wrapper .content-link-default-file span:last-child, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file span:last-child {
-                overflow: visible; } }
-          body .all .main > .row .content-link-wrapper .content-link-default-file span.nofiledesc, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file span.nofiledesc {
-            margin-left: 0; }
+        body .all .main > .row .content-link-wrapper .content-link-default-file::before, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file::before {
+          position: absolute;
+          margin-left: -25px; }
+        body .all .main > .row .content-link-wrapper .content-link-default-file span:last-child, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file span:last-child {
+          color: #685f56;
+          white-space: nowrap; }
+        body .all .main > .row .content-link-wrapper .content-link-default-file span.nofiledesc, body .all .main > .row-fullwidth-content > .row .content-link-wrapper .content-link-default-file span.nofiledesc {
+          margin-left: 0; }
       body .all .main > .row .content-link-email, body .all .main > .row-fullwidth-content > .row .content-link-email {
         background-image: url("../Images/linkbottomline.png");
         color: #9f632a;
