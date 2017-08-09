@@ -8,9 +8,7 @@ $(document).ready(function () {
 });
 
 
-
 function initFrontend() {
-
 
 
     var isBackend = jQuery("body").hasClass("neos-backend");
@@ -23,14 +21,13 @@ function initFrontend() {
 
     /* click on nav brand home button */
     $('a.navbar-brand').click(function (e) {
-           if (window.location.pathname == "/") {
+        if (window.location.pathname == "/") {
             location.reload();
             e.preventDefault();
             return false;
         }
 
     });
-
 
 
     /* close tabs in pane */
@@ -44,7 +41,7 @@ function initFrontend() {
     $('ul.nav.nav-pills li.nav-item a.nav-link, .nav-item .a.nav-link').click(function (event) {
 
 
-            event.preventDefault();
+        event.preventDefault();
 
 
         if ($(this).hasClass('active')) {
@@ -244,7 +241,7 @@ function initFrontend() {
      */
     if(location.hash != null && location.hash != ""){
         $('.collapse').removeClass('in');
-        location.hash = location.hash.replace('\#/','');
+        location.hash = location.hash.replace('\#/', '');
         //console.log(location.hash);
         $(location.hash + '.collapse').collapse('show');
     }
@@ -253,11 +250,11 @@ function initFrontend() {
      * target-group-codes
      * show fullname
      */
-    $( ".target-group-codes .code" ).hover(
-        function() {
-            $( this ).find('.fullname').addClass( "show" );
-        }, function() {
-            $( this ).find('.fullname').removeClass( "show" );
+    $(".target-group-codes .code").hover(
+        function () {
+            $(this).find('.fullname').addClass("show");
+        }, function () {
+            $(this).find('.fullname').removeClass("show");
         }
     );
 
@@ -272,26 +269,32 @@ function initFrontend() {
 
 function scrollToViewport() {
     $('.panel-heading a').on('click', function () {
-
-        $(this).closest('.phlu-corporate-accordeonelement').on('shown.bs.collapse', function () {
+        var container = '';
+        var c = 0;
+        if ($(this).closest('.phlu-corporate-accordeonelement').length) {
+            container = '.phlu-corporate-accordeonelement';
+        }
+        if ($(this).closest('.phlu-corporate-contactsgroup').length) {
+            container = '.phlu-corporate-contactsgroup';
+        }
+        $(this).closest(container).on('shown.bs.collapse', function () {
             var element_position = $(this).offset().top;
             var scroll_position = $(window).scrollTop();
             var viewport_height = $(window).height();
-
-            if((scroll_position + viewport_height) > element_position && scroll_position < element_position){
-                // Do something because the element is in the viewport
+            if ((scroll_position + viewport_height) > element_position && scroll_position < element_position) {
                 //console.log('is in viewport');
             }
             else {
-                //console.log('out of viewport');
-                $('html, body').stop().animate({
-                    'scrollTop': $(this).offset().top - 10
-                }, 100, 'swing', function () {
-
-                });
+                if (c == 0) {
+                    //console.log('out of viewport');
+                    $('html, body').stop().animate({
+                        'scrollTop': $(this).offset().top - 10
+                    }, 100, 'swing', function () {
+                        c = 1;
+                    });
+                }
             }
         });
-
     });
 }
 
@@ -308,7 +311,6 @@ function initSmoothScrolling() {
             var target = this.hash != '' ? this.hash : $(e.target).closest("a").get(0).attr('href');
             var $target = $(target);
         }
-
 
 
         if (target != "#") {
@@ -355,7 +357,7 @@ function initCarousel() {
 
 function initBackend() {
     $('.neos-tooltip-inner').click(function () {
-            $(this).hide();
+        $(this).hide();
     });
 }
 

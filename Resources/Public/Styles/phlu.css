@@ -8985,7 +8985,7 @@ body {
         body .all h2 {
           margin: 36px 0; } }
     body .all h3 {
-      margin: 30px 0 20px;
+      margin: 15px 0 15px;
       letter-spacing: 0.2px;
       -webkit-font-smoothing: subpixel-antialiased; }
     body .all h4 {
@@ -9017,9 +9017,6 @@ body {
       list-style-type: square;
       padding-left: 20px;
       margin-bottom: 15px; }
-      @media (max-width: 767px) {
-        body .all ul {
-          margin-bottom: 10px; } }
       @media (min-width: 1280px) {
         body .all ul {
           font-size: 1.125rem; } }
@@ -10453,12 +10450,7 @@ body {
       margin: 0 0 0; }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection {
       margin: 15px 0 0;
-      padding-bottom: 0; }
-      body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection h3 {
-        font-size: 1.125rem; }
-      body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection p {
-        margin: 0;
-        padding-bottom: 15px; }
+      padding-bottom: 1px; }
       body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection ol ul {
         margin-top: 15px; }
       body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection .nav-teaser-item {
@@ -10495,14 +10487,10 @@ body {
                   margin-right: 0;
                   margin-top: 14px;
                   top: inherit; } }
-      body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection .phlu-corporate-text > div > *:last-child {
-        padding-bottom: 0; }
       body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection > .phlu-qmpilot-nodetypes-file.last {
         margin-bottom: 0; }
         body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection > .phlu-qmpilot-nodetypes-file.last[data-next='empty'] {
           padding-bottom: 15px; }
-      body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection > .phlu-qmpilot-nodetypes-file[data-prev='phlu-corporate-text'] {
-        padding-top: 15px; }
       body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection > .nav-teaser-item {
         padding-top: 15px; }
       body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection *:last-child .nav-teaser-item {
@@ -10520,7 +10508,9 @@ body {
           right: 20px; } }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement .phlu-corporate-textwithimage .img-and-caption {
       margin-top: 29px; }
-    body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-prev='phlu-corporate-text'], body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-prev='phlu-corporate-accordeonelement'] {
+    body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-prev='phlu-corporate-text'] {
+      margin-top: 0; }
+    body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-prev='phlu-corporate-accordeonelement'] {
       margin-top: 20px; }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-next='empty'] > div {
       padding: 0; }
@@ -10645,8 +10635,6 @@ body {
       body .all .phlu-accordion .panel > .panel-collapse .panel-collapse .panel-body img, body .all .phlu-corporate-section .panel > .panel-collapse .panel-collapse .panel-body img {
         width: 100%;
         height: auto; }
-    body .all .phlu-team-members[data-prev='phlu-corporate-text'] {
-      padding-top: 15px; }
     @media (max-width: 767px) {
       body .all .phlu-team-members h3 {
         margin: 0px; } }
@@ -11874,7 +11862,7 @@ body {
     body .all .table-responsive {
       overflow-x: inherit; }
       body .all .table-responsive .table thead tr th {
-        padding: 12px 20px 12px 20px;
+        padding: 12px 20px 12px 0;
         line-height: 1.5;
         vertical-align: top;
         border-top: 0; }
@@ -12117,10 +12105,11 @@ body {
         background-position: top center;
         background-size: cover; }
       body .all .main > .row p, body .all .main > .row-fullwidth-content > .row p {
-        margin-bottom: 15px; }
+        margin: 0;
+        padding-bottom: 15px; }
         @media (max-width: 767px) {
           body .all .main > .row p, body .all .main > .row-fullwidth-content > .row p {
-            margin-bottom: 10px; } }
+            padding-bottom: 10px; } }
       body .all .main > .row hr, body .all .main > .row-fullwidth-content > .row hr {
         margin-top: 53px;
         margin-bottom: 0;
@@ -12276,15 +12265,19 @@ body {
         height: 47px; }
         body .all .main > .row .phlu-corporate-media-container .caption span, body .all .main > .row-fullwidth-content > .row .phlu-corporate-media-container .caption span {
           position: absolute; }
-      body .all .main > .row .phlu-corporate-image .img-and-caption, body .all .main > .row-fullwidth-content > .row .phlu-corporate-image .img-and-caption {
-        margin: 0;
-        width: 80%; }
-        @media (max-width: 1279px) {
-          body .all .main > .row .phlu-corporate-image .img-and-caption, body .all .main > .row-fullwidth-content > .row .phlu-corporate-image .img-and-caption {
-            width: 100%; } }
-        body .all .main > .row .phlu-corporate-image .img-and-caption img, body .all .main > .row-fullwidth-content > .row .phlu-corporate-image .img-and-caption img {
-          width: 100%;
-          height: auto; }
+      body .all .main > .row .phlu-corporate-image, body .all .main > .row-fullwidth-content > .row .phlu-corporate-image {
+        padding-bottom: 15px; }
+        body .all .main > .row .phlu-corporate-image .img-and-caption, body .all .main > .row-fullwidth-content > .row .phlu-corporate-image .img-and-caption {
+          margin: 0;
+          width: 80%; }
+          @media (max-width: 1279px) {
+            body .all .main > .row .phlu-corporate-image .img-and-caption, body .all .main > .row-fullwidth-content > .row .phlu-corporate-image .img-and-caption {
+              width: 100%; } }
+          body .all .main > .row .phlu-corporate-image .img-and-caption img, body .all .main > .row-fullwidth-content > .row .phlu-corporate-image .img-and-caption img {
+            width: 100%;
+            height: auto; }
+        body .all .main > .row .phlu-corporate-image .caption, body .all .main > .row-fullwidth-content > .row .phlu-corporate-image .caption {
+          display: none; }
       body .all .main > .row .content-link-wrapper, body .all .main > .row-fullwidth-content > .row .content-link-wrapper {
         font-size: 1.125rem;
         display: block;
@@ -12596,10 +12589,9 @@ body {
         background-position: top center;
         background-size: cover;
         margin-top: 48px; }
-
-@media (min-width: 1600px) and (max-width: 1774px) {
-  body .all .main > .row.ambient-img-body, body .all .main > .row-fullwidth-content > .row.ambient-img-body {
-    padding-bottom: 430px; } }
+        @media (min-width: 1600px) {
+          body .all .main > .row.ambient-img-body, body .all .main > .row-fullwidth-content > .row.ambient-img-body {
+            padding-bottom: 430px; } }
 
 @media (min-width: 992px) and (max-width: 1279px) {
   body .all .main > .row.ambient-img-body, body .all .main > .row-fullwidth-content > .row.ambient-img-body {
