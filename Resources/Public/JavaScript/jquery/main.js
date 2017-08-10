@@ -290,10 +290,11 @@ function scrollToViewport() {
                     $('html, body').stop().animate({
                         'scrollTop': $(this).offset().top - 10
                     }, 100, 'swing', function () {
-                        c = 1;
+
                     });
                 }
             }
+            c = 1;
         });
     });
 }

@@ -8985,9 +8985,11 @@ body {
         body .all h2 {
           margin: 36px 0; } }
     body .all h3 {
-      margin: 15px 0 15px;
+      margin: 20px 0 15px;
       letter-spacing: 0.2px;
       -webkit-font-smoothing: subpixel-antialiased; }
+      body .all h3[data-prev='phlu-corporate-accordeonelement'] {
+        margin: 30px 0 20px; }
     body .all h4 {
       text-transform: uppercase; }
     @media (max-width: 767px) {
@@ -9016,7 +9018,8 @@ body {
     body .all ul {
       list-style-type: square;
       padding-left: 20px;
-      margin-bottom: 15px; }
+      padding-bottom: 15px;
+      margin-bottom: 0; }
       @media (min-width: 1280px) {
         body .all ul {
           font-size: 1.125rem; } }
@@ -9958,6 +9961,9 @@ body {
             -moz-hyphens: auto;
             -webkit-hyphens: auto;
             hyphens: auto; }
+          body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody .phlu-qmpilot-nodetypes-file .content-link-wrapper, body .all .phlu-teaser .publication.singleitem .phlu-teaser-body .scrollbody .phlu-qmpilot-nodetypes-file .content-link-wrapper, body .all .phlu-teaser .news.singleitem .phlu-teaser-body .scrollbody .phlu-qmpilot-nodetypes-file .content-link-wrapper {
+            font-size: 0.875rem;
+            margin: 0; }
       body .all .phlu-teaser .event.singleitem .teaser-image, body .all .phlu-teaser .publication.singleitem .teaser-image, body .all .phlu-teaser .news.singleitem .teaser-image {
         height: 180px;
         background-size: cover; }
@@ -10509,7 +10515,7 @@ body {
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement .phlu-corporate-textwithimage .img-and-caption {
       margin-top: 29px; }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-prev='phlu-corporate-text'] {
-      margin-top: 0; }
+      margin-top: 10px; }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-prev='phlu-corporate-accordeonelement'] {
       margin-top: 20px; }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement[data-next='empty'] > div {
@@ -11605,10 +11611,18 @@ body {
       max-width: 100%; }
     body .all .phlu-qmpilot-nodetypes-files .content-link-wrapper, body .all .phlu-qmpilot-nodetypes-file .content-link-wrapper {
       margin-bottom: 10px; }
+      @media (max-width: 767px) {
+        body .all .phlu-qmpilot-nodetypes-files .content-link-wrapper, body .all .phlu-qmpilot-nodetypes-file .content-link-wrapper {
+          padding-right: 15px; } }
+    body .all .phlu-qmpilot-nodetypes-file.last[data-next='empty'] .content-link-wrapper {
+      padding-bottom: 15px;
+      margin-bottom: 0; }
     body .all .phlu-qmpilot-nodetypes-file[data-prev='phlu-corporate-accordeonelement'] {
       padding-top: 31px; }
     body .all .phlu-qmpilot-nodetypes-file[data-prev='phlu-corporate-table'] {
       padding-top: 20px; }
+    body .all .phlu-qmpilot-nodetypes-file[data-next='phlu-corporate-accordeonelement'] {
+      padding-bottom: 31px; }
     body .all .row.subjectsfilternav.phlu-filelinks {
       margin-bottom: 35px; }
       body .all .row.subjectsfilternav.phlu-filelinks .nav-pills li .nav-link {
@@ -12033,6 +12047,8 @@ body {
       body .all .main .onepage-teaser-content .phlu-corporate-content-page-headerdefault .phlu-corporate-textplain p {
         width: 100%;
         font-size: 1.125rem; }
+      body .all .main .onepage-teaser-content .btn-primary {
+        margin-bottom: 20px; }
       body .all .main .onepage img {
         margin-bottom: 53px; }
       body .all .main .backend-img-fullwidth {
@@ -12476,8 +12492,7 @@ body {
           padding: inherit; } }
       body .all .main > .row.bluebg, body .all .main > .row-fullwidth-content > .row.bluebg {
         background-color: #DADCE8;
-        margin-top: 50px;
-        margin-bottom: 35px; }
+        margin-top: 50px; }
         @media (min-width: 992px) {
           body .all .main > .row.bluebg h2, body .all .main > .row-fullwidth-content > .row.bluebg h2 {
             margin: 35px 0 32px; } }
@@ -12606,17 +12621,14 @@ body {
           margin-top: 0;
           margin-bottom: 0; }
       @media (min-width: 768px) {
-        body .all .main > .row .phlu-corporate-section .phlu-corporate-text ul, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ul {
+        body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ul, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ul {
           width: 80%; } }
-      body .all .main > .row .phlu-corporate-section .phlu-corporate-text ul li, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ul li {
+      body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ul li, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ul li {
         margin-bottom: 5px;
         line-height: 1.8; }
-        body .all .main > .row .phlu-corporate-section .phlu-corporate-text ul li:last-child, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ul li:last-child {
-          margin-bottom: 15px; }
-          @media (max-width: 767px) {
-            body .all .main > .row .phlu-corporate-section .phlu-corporate-text ul li:last-child, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ul li:last-child {
-              margin-bottom: 10px; } }
-      body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol {
+        body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ul li:last-child, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ul li:last-child {
+          margin-bottom: 0; }
+      body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol {
         padding: 0;
         margin-bottom: 15px;
         width: 80%;
@@ -12624,49 +12636,53 @@ body {
         counter-reset: item;
         list-style: none; }
         @media (max-width: 767px) {
-          body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol {
+          body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol {
             margin-bottom: 10px; } }
         @media (max-width: 1279px) {
-          body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol {
+          body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol {
             width: inherit; } }
-        body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li::before {
+        body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li::before {
           content: counter(item) ".";
           counter-increment: item; }
-        body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li {
+        body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li {
           padding-left: 20px;
           padding-bottom: 10px; }
-          body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li a, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li a {
+          body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li a, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li a {
             color: #9f632a; }
-          body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li ul li:last-child, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li ul li:last-child {
+          body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li ul li:last-child, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li ul li:last-child {
             margin-bottom: inherit; }
-          body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li:last-child, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li:last-child {
+          body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li:last-child, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li:last-child {
             padding-bottom: 0; }
-          body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li::before {
+          body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li::before {
             position: absolute;
             left: 14px;
             content: " " counter(item) ". "; }
             @media (min-width: 992px) {
-              body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li::before {
+              body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li::before {
                 left: 39px; } }
             @media (min-width: 1600px) {
-              body .all .main > .row .phlu-corporate-section .phlu-corporate-text ol > li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text ol > li::before {
+              body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li::before, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li::before {
                 left: 0; } }
-      body .all .main > .row .phlu-corporate-section .phlu-corporate-text a[href^='http://phlu.ch'], body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text a[href^='http://phlu.ch'] {
+      body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text a[href^='http://phlu.ch'], body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text a[href^='http://phlu.ch'] {
         background-image: url("../Images/linkbottomline.png");
         color: #9f632a;
         background-repeat: repeat-x;
         background-position: bottom;
         padding-bottom: 4px; }
-        body .all .main > .row .phlu-corporate-section .phlu-corporate-text a[href^='http://phlu.ch']:hover, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-text a[href^='http://phlu.ch']:hover {
+        body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text a[href^='http://phlu.ch']:hover, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text a[href^='http://phlu.ch']:hover {
           background-position: 0 0;
           background-repeat: repeat; }
-      body .all .main > .row .phlu-corporate-section .phlu-corporate-table[data-next='phlu-corporate-accordeonelement'], body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-table[data-next='phlu-corporate-accordeonelement'] {
+      body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text[data-next='empty'] p:last-child, body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text[data-next='empty'] ul:last-child, body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text[data-next='empty'] ol:last-child, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text[data-next='empty'] p:last-child, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text[data-next='empty'] ul:last-child, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text[data-next='empty'] ol:last-child {
+        padding-bottom: 0; }
+      body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-table[data-next='phlu-corporate-accordeonelement'], body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-table[data-next='phlu-corporate-accordeonelement'] {
         margin-bottom: 40px; }
       @media (max-width: 767px) {
-        body .all .main > .row .phlu-corporate-section .phlu-corporate-table .phlu-corporate-table-row .desktop-view, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .phlu-corporate-table .phlu-corporate-table-row .desktop-view {
+        body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-table .phlu-corporate-table-row .desktop-view, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-table .phlu-corporate-table-row .desktop-view {
           display: none; } }
-      body .all .main > .row .phlu-corporate-section .single-publication i, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .single-publication i {
+      body .all .main > .row .phlu-corporate-section .neos-contentcollection .single-publication i, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .single-publication i {
         font-style: italic; }
+      body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-qmpilot-nodetypes-file:last-child .content-link-wrapper, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-qmpilot-nodetypes-file:last-child .content-link-wrapper {
+        padding-bottom: 0; }
       @media (min-width: 1775px) {
         body .all .main.col-xl-8, body .all .main.col-xl-10 {
           max-width: inherit; } }

@@ -1475,10 +1475,13 @@ body {
       font-size: $font-size-h2-desktop;
     }
     h3 {
-      margin: 15px 0 15px;
+      margin: 20px 0 15px;
       letter-spacing: $h3-letter-spacing;
       -webkit-font-smoothing: subpixel-antialiased;
       //font-weight: $font-weight-bold;
+      &[data-prev='phlu-corporate-accordeonelement'] {
+        margin:30px 0 20px;
+      }
     }
     h4 {
       text-transform: uppercase;
@@ -1508,7 +1511,8 @@ body {
     ul {
       list-style-type: square;
       padding-left: 20px;
-      margin-bottom: 15px;
+      padding-bottom: 15px;
+      margin-bottom: 0;
       @include media-breakpoint-up("xl") {
         font-size: $font-size-paragraph-desktop;
       }
@@ -2725,6 +2729,12 @@ body {
                 @include word-wrap;
 
               }
+              .phlu-qmpilot-nodetypes-file {
+                .content-link-wrapper {
+                  font-size:$font-size-nav-teasers;
+                  margin:0;
+                }
+              }
             }
           }
           .teaser-image {
@@ -3577,7 +3587,7 @@ body {
           }
         }
         &[data-prev='phlu-corporate-text'] {
-          margin-top: 0;
+          margin-top: 10px;
         }
 
         &[data-prev='phlu-corporate-accordeonelement'] {
@@ -5309,14 +5319,28 @@ body {
       }
       .content-link-wrapper {
         margin-bottom: 10px;
+        @include media-breakpoint-down("sm") {
+          padding-right: 15px;
+        }
       }
     }
     .phlu-qmpilot-nodetypes-file {
+      &.last {
+        &[data-next='empty'] {
+          .content-link-wrapper {
+            padding-bottom: 15px;
+            margin-bottom: 0;
+          }
+        }
+      }
       &[data-prev='phlu-corporate-accordeonelement'] {
         padding-top: 31px;
       }
       &[data-prev='phlu-corporate-table'] {
         padding-top: 20px;
+      }
+      &[data-next='phlu-corporate-accordeonelement'] {
+        padding-bottom: 31px;
       }
     }
     //
@@ -5948,6 +5972,9 @@ body {
             }
           }
         }
+        .btn-primary {
+          margin-bottom: 20px;
+        }
       }
       .onepage {
         img {
@@ -6374,7 +6401,6 @@ body {
         &.bluebg {
           background-color: $lightblue;
           margin-top: 50px;
-          margin-bottom: 35px;
           h2 {
             @include media-breakpoint-up("lg") {
               margin: 35px 0 32px;
@@ -6529,7 +6555,6 @@ body {
         // sections in content
         //
         .phlu-corporate-section {
-
           &[data-next='empty'] {
             margin-bottom: 90px;
             @include media-breakpoint-down("sm") {
@@ -6541,82 +6566,93 @@ body {
               margin-bottom: 0;
             }
           }
-          .phlu-corporate-text {
-            ul {
-              @include media-breakpoint-up("md") {
-                width: $flowtext-narrow-width;
-              }
-              li {
-                margin-bottom: 5px;
-                line-height: $line-height-sm;
-                &:last-child {
-                  margin-bottom: 15px;
-                  @include media-breakpoint-down("sm") {
-                    margin-bottom: 10px;
+          .neos-contentcollection {
+            .phlu-corporate-text {
+              ul {
+                @include media-breakpoint-up("md") {
+                  width: $flowtext-narrow-width;
+                }
+                li {
+                  margin-bottom: 5px;
+                  line-height: $line-height-sm;
+                  &:last-child {
+                    margin-bottom: 0;
                   }
                 }
               }
-            }
-            ol {
-              padding: 0;
-              margin-bottom: 15px;
-              @include media-breakpoint-down("sm") {
-                margin-bottom: 10px;
-              }
-              width: $flowtext-narrow-width;
-              line-height: $line-height-sm;
-              @include media-breakpoint-down("lg") {
-                width: inherit;
-              }
-              @include custList;
-              > li {
-                padding-left: 20px;
-                padding-bottom: 10px;
-                a {
-                  color: $hazelbrowndark;
+              ol {
+                padding: 0;
+                margin-bottom: 15px;
+                @include media-breakpoint-down("sm") {
+                  margin-bottom: 10px;
                 }
-                ul {
-                  li {
-                    &:last-child {
-                      margin-bottom: inherit;
+                width: $flowtext-narrow-width;
+                line-height: $line-height-sm;
+                @include media-breakpoint-down("lg") {
+                  width: inherit;
+                }
+                @include custList;
+                > li {
+                  padding-left: 20px;
+                  padding-bottom: 10px;
+                  a {
+                    color: $hazelbrowndark;
+                  }
+                  ul {
+                    li {
+                      &:last-child {
+                        margin-bottom: inherit;
+                      }
                     }
                   }
+                  &:last-child {
+                    padding-bottom: 0;
+                  }
+                  &::before {
+                    position: absolute;
+                    left: 14px;
+                    @include media-breakpoint-up("lg") {
+                      left: 39px;
+                    }
+                    @include media-breakpoint-up("xxxl") {
+                      left: 0;
+                    }
+                    content: " " counter(item) ". ";
+                  }
                 }
-                &:last-child {
+              }
+              a[href^='http://phlu.ch'] {
+                @include content-link("internal");
+              }
+              &[data-next='empty']  {
+                p:last-child, ul:last-child, ol:last-child {
                   padding-bottom: 0;
                 }
-                &::before {
-                  position: absolute;
-                  left: 14px;
-                  @include media-breakpoint-up("lg") {
-                    left: 39px;
+              }
+            }
+            .phlu-corporate-table {
+              &[data-next='phlu-corporate-accordeonelement'] {
+                margin-bottom: 40px;
+              }
+              .phlu-corporate-table-row {
+                .desktop-view {
+                  @include media-breakpoint-down("sm") {
+                    display: none;
                   }
-                  @include media-breakpoint-up("xxxl") {
-                    left: 0;
-                  }
-                  content: " " counter(item) ". ";
                 }
               }
             }
-            a[href^='http://phlu.ch'] {
-              @include content-link("internal");
-            }
-          }
-          .phlu-corporate-table {
-            &[data-next='phlu-corporate-accordeonelement'] {
-              margin-bottom: 40px;
-            }
-            .phlu-corporate-table-row {
-              .desktop-view {
-                @include media-breakpoint-down("sm") {
-                  display: none;
-                }
+            .single-publication {
+              i {
+                font-style: italic;
               }
             }
-          }
-          .single-publication {
-            i {
-              font-style: italic;
+            .phlu-qmpilot-nodetypes-file {
+              &:last-child {
+                .content-link-wrapper {
+                  padding-bottom: 0;
+                }
+              }
             }
           }
         }

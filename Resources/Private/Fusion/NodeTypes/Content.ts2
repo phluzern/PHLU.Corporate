@@ -33,3 +33,11 @@ prototype(Phlu.Corporate:CarouselImage) < prototype(Phlu.Corporate:Image) {
 	templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Image.html'
 }
 
+prototype(Phlu.Corporate:Text) < prototype(Neos.Neos:Content) {
+
+
+    attributes.data-next = ${q(node).next().get() ? String.toLowerCase(String.pregReplace(q(node).next().get(0).nodeType.name, '/[[:^alnum:]]/', '-')) : 'empty'}
+    attributes.data-prev = ${q(node).prev().get() ? String.toLowerCase(String.pregReplace(q(node).prev().get(0).nodeType.name, '/[[:^alnum:]]/', '-')) : 'empty'}
+
+
+}
