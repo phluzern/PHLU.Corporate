@@ -8990,6 +8990,8 @@ body {
       -webkit-font-smoothing: subpixel-antialiased; }
       body .all h3[data-prev='phlu-corporate-accordeonelement'] {
         margin: 30px 0 20px; }
+      body .all h3[data-prev='phlu-corporate-text'] {
+        margin-top: 10px; }
     body .all h4 {
       text-transform: uppercase; }
     @media (max-width: 767px) {
@@ -10499,6 +10501,8 @@ body {
           padding-bottom: 15px; }
       body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection > .nav-teaser-item {
         padding-top: 15px; }
+      body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection > .phlu-corporate-text[data-next='empty'] {
+        padding-bottom: 10px; }
       body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection *:last-child .nav-teaser-item {
         padding-bottom: 40px; }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default .panel-heading .panel-title a::after {
@@ -12115,7 +12119,7 @@ body {
   body .all .main .ambient-img-fullwidth img {
     width: 100%; } }
       body .all .main .ambient-img-footer {
-        background-image: url("../Images/ambienteexample.jpg");
+        background-image: url("../Images/ambientImgStartpageMobile.jpg");
         background-repeat: no-repeat;
         padding-bottom: 330px;
         background-position: top center;
@@ -12645,7 +12649,7 @@ body {
           content: counter(item) ".";
           counter-increment: item; }
         body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li {
-          padding-left: 20px;
+          padding-left: 25px;
           padding-bottom: 10px; }
           body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li a, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-text ol > li a {
             color: #9f632a; }

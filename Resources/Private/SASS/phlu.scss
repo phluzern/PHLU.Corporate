@@ -1482,6 +1482,9 @@ body {
       &[data-prev='phlu-corporate-accordeonelement'] {
         margin:30px 0 20px;
       }
+      &[data-prev='phlu-corporate-text'] {
+        margin-top:10px;
+      }
     }
     h4 {
       text-transform: uppercase;
@@ -3551,6 +3554,11 @@ body {
               }
               > .nav-teaser-item {
                 padding-top: 15px;
+              }
+              > .phlu-corporate-text {
+                &[data-next='empty'] {
+                  padding-bottom: 10px;
+                }
               }
               * {
                 &:last-child {
@@ -6041,7 +6049,7 @@ body {
         }
       }
       .ambient-img-footer {
-        background-image: url("../Images/ambienteexample.jpg");
+        background-image: url("../Images/ambientImgStartpageMobile.jpg");
         background-repeat: no-repeat;
         padding-bottom: 330px;
         background-position: top center;
@@ -6593,7 +6601,7 @@ body {
                 }
                 @include custList;
                 > li {
-                  padding-left: 20px;
+                  padding-left: 25px;
                   padding-bottom: 10px;
                   a {
                     color: $hazelbrowndark;
