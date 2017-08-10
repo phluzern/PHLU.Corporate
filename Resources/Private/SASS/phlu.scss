@@ -1482,6 +1482,9 @@ body {
       &[data-prev='phlu-corporate-accordeonelement'] {
         margin:30px 0 20px;
       }
+      &[data-prev='phlu-qmpilot-nodetypes-file'] {
+        margin-top:30px;
+      }
       &[data-prev='phlu-corporate-text'] {
         margin-top:10px;
       }
@@ -2426,12 +2429,10 @@ body {
           .panel-collapse {
             > div {
               > div {
+                margin-top: 15px;
                 p {
                   font-size: $font-size-paragraph-mobile;
                   padding-bottom: 17px;
-                }
-                &:first-child {
-                  margin-top: 15px;
                 }
                 &:last-child {
                   p {
@@ -5925,6 +5926,12 @@ body {
           }
         }
       }
+    }
+    //
+    // legacy content iframe
+    //
+    .legacy-content-iframe {
+      margin-bottom: 90px;
     }
     //
     // Video Node
