@@ -10453,9 +10453,15 @@ body {
           @media (max-width: 1599px) {
             body .all .phlu-accordion.list-multiple .phlu-corporate-contactsgroup .panel-heading .panel-title a::after {
               right: 60px; } }
+          @media (max-width: 1599px) {
+            body .all .phlu-accordion.list-multiple .phlu-corporate-contactsgroup .panel-heading .panel-title a::after {
+              right: 55px; } }
           @media (max-width: 991px) {
             body .all .phlu-accordion.list-multiple .phlu-corporate-contactsgroup .panel-heading .panel-title a::after {
               right: 35px; } }
+          @media (max-width: 543px) {
+            body .all .phlu-accordion.list-multiple .phlu-corporate-contactsgroup .panel-heading .panel-title a::after {
+              right: 20px; } }
     body .all .phlu-corporate-section .phlu-accordion {
       margin: 0 0 0; }
     body .all .phlu-corporate-section .phlu-corporate-accordeonelement > .panel-default > .panel-collapse > .neos-contentcollection {
