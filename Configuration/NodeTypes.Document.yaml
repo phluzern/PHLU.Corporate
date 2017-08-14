@@ -357,6 +357,7 @@
   superTypes:
     'Phlu.Neos.NodeTypes:Page': true
     'Phlu.Neos.NodeTypes:Course.Module': true
+    'Phlu.Neos.NodeTypes:Shorturl': true
   hybridsearch:
     skip: TRUE
   properties:
@@ -378,6 +379,7 @@
   superTypes:
     'Phlu.Neos.NodeTypes:Page': true
     'Phlu.Neos.NodeTypes:Course.Study': true
+    'Phlu.Neos.NodeTypes:Shorturl': true
   hybridsearch:
     skip: TRUE
   properties:
@@ -398,6 +400,7 @@
   superTypes:
     'Phlu.Neos.NodeTypes:Page': true
     'Phlu.Neos.NodeTypes:Course.Event': true
+    'Phlu.Neos.NodeTypes:Shorturl': true
   hybridsearch:
     skip: TRUE
   properties:
