@@ -3476,8 +3476,14 @@ body {
                   @include media-breakpoint-down('xxl') {
                     right: 60px;
                   }
+                  @include media-breakpoint-down('xxl') {
+                    right: 55px;
+                  }
                   @include media-breakpoint-down('md') {
                     right: 35px;
+                  }
+                  @include media-breakpoint-down('xs') {
+                    right: 20px;
                   }
                 }
               }
