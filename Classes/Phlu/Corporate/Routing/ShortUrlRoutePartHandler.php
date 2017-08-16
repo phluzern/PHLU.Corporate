@@ -23,6 +23,7 @@ use Phlu\Corporate\Eel\Helper\NodeHelper;
 use Phlu\Corporate\ViewHelpers\Uri\ResourceViewHelper;
 use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
 use Neos\Flow\Mvc\ActionRequest;
+use Phlu\Neos\Models\AssetRepository;
 
 /**
  * A route part handler for finding nodes specifically in the website's frontend.
@@ -43,6 +44,13 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
      * @var NodeDataRepository
      */
     protected $nodeDataRepository;
+
+
+    /**
+     * @Flow\Inject
+     * @var AssetRepository
+     */
+    protected $assetRepository;
 
 
     /**
@@ -71,7 +79,7 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 
 
         /* TODO refactoring */
-        if (substr_count($requestPath,"media/")) {
+        if (substr_count($requestPath, "media/")) {
             return false;
         }
 
@@ -166,19 +174,43 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
         }
 
         if ($node == null) {
+
+
             /* @var ContentContext $context */
-            $node = $context->getNodeByIdentifier($requestPath);
-            if ($node) {
-                $query = new FlowQuery(array($node));
-                $documentNode = $query->closest("[instanceof Neos.NodeTypes:Page]")->get(0);
-                if ($documentNode) {
-                    $node = $documentNode;
-                }
+            $asset = $this->assetRepository->findByIdentifier($requestPath);
+            if (!$asset) {
+                $asset = $this->assetRepository->findByIdentifier('qmpilot-objectid-'.$requestPath);
             }
 
+            if ($asset) {
+                $uri = $this->resourceViewHelper->render(null, null, $asset->getResource());
+
+                $redirectUriSegments = explode("://", $uri);
+
+                if (isset($redirectUriSegments[1]) && ($redirectUriSegments[1] == "www.phlu.ch/" . $requestPath || $redirectUriSegments[1] == "www.phlu.ch/" . $requestPath . "/")) {
+                    /** @var NodeInterface $node */
+                    $node = new Node($n, $context);
+
+                    $flowquery = new FlowQuery(array($node));
+                    $documentNode = $flowquery->closest("[instanceof Neos.NodeTypes:Page]")->get(0);
+
+                    if ($documentNode) {
+                        $request = new ActionRequest(new Request(array(), array(), array(), array()));
+                        $redirectUri = $this->nodeHelper->getEmbeddedLink($node, $uri, $request);
+                        if ($redirectUri) {
+                            header("Location: " . $redirectUri);
+                            exit;
+                        }
+                    }
+
+                } else {
+                    header("Location: " . $uri);
+                    exit;
+                }
+
+
+            }
         }
-
-
 
 
         if ($node == null) {
