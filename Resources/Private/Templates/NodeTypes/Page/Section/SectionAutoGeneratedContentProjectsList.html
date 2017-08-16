@@ -162,7 +162,7 @@
                                         </span>
                                     </div>
                                 </td>
-                                <td class="researchmainfocus">
+                                <td class="researchmainfocus" rowspan="2">
                                     <span>
                                             <ul>
                                                 <li data-ng-repeat="focus in node.getProperty('researchmainfocus') track by $index"
@@ -177,7 +177,7 @@
                                 </td>
                             </tr>
                             <tr class="result-preview" data-ng-show="isOpen(node)">
-                                <td colspan="2">
+                                <td >
                                     <div class="project-preview">
                                         <p ng-bind-html="node.getProperty('teasertextgerman').substr(0,255)"></p>
                                         <a class="btn btn-primary" href="{{node.getUrl()}}">

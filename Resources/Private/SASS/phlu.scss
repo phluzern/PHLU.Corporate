@@ -3806,7 +3806,9 @@ body {
               }
             }
             .panel-body {
-              margin-top: 20px;
+              margin-top: 15px;
+              margin-bottom: 15px;
+              @include gutter-width(10);
               @include media-breakpoint-down('sm') {
                 margin-top: 10px;
                 @include gutter-width(8);
@@ -4362,6 +4364,14 @@ body {
           }
         }
       }
+      .course-description {
+        ol {
+          padding-left:19px;
+          li {
+            padding-left:10px;
+          }
+        }
+      }
     }
     //
     // phlu about pages
@@ -4618,6 +4628,10 @@ body {
 
                     }
                   }
+                  &.researchmainfocus {
+                    width: 170px;
+                    padding-left:0;
+                  }
                   .mobile-view-columns.researchmainfocus {
                     span {
                       display: block;
@@ -4685,6 +4699,9 @@ body {
                         > .btn-primary {
                           margin-left: 0;
                           margin-right: 0;
+                        }
+                        p {
+                          font-size: $teaser-body-font-size;
                         }
                       }
                     }
