@@ -268,7 +268,7 @@ function initFrontend() {
 
 
 function scrollToViewport() {
-    $('.panel-heading a').on('click', function () {
+    $('.panel-heading').on('click', function () {
         var container = '';
         var c = 0;
         if ($(this).closest('.phlu-corporate-accordeonelement').length) {
