@@ -277,6 +277,9 @@ function scrollToViewport() {
         if ($(this).closest('.phlu-corporate-contactsgroup').length) {
             container = '.phlu-corporate-contactsgroup';
         }
+        if ($(this).closest('.phlu-corporate-contact').length) {
+            container = '.phlu-corporate-contact';
+        }
         $(this).closest(container).on('shown.bs.collapse', function () {
             var element_position = $(this).offset().top;
             var scroll_position = $(window).scrollTop();
