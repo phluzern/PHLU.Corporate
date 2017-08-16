@@ -174,8 +174,14 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
         }
 
         if ($node == null) {
+
+
             /* @var ContentContext $context */
             $asset = $this->assetRepository->findByIdentifier($requestPath);
+            if (!$asset) {
+                $asset = $this->assetRepository->findByIdentifier('qmpilot-objectid-'.$requestPath);
+            }
+
             if ($asset) {
                 $uri = $this->resourceViewHelper->render(null, null, $asset->getResource());
 
