@@ -170,7 +170,7 @@ class NodeHelper implements ProtectedContextAwareInterface
             return $link;
         }
 
-        if ($uri['host'] == 'www.phlu.ch' || $uri['host'] == 'phlu.ch') {
+        if ($uri['host'] == 'www.phlu.ch' || $uri['host'] == 'phlu.ch' || $uri['host'] == 'iframe.phlu.ch') {
 
             $flowQuery = new FlowQuery(array($node));
             $documentNode = $flowQuery->closest('[instanceof Neos.NodeTypes:Page]')->get(0);
@@ -194,8 +194,10 @@ class NodeHelper implements ProtectedContextAwareInterface
                 ->setFormat('html')
                 ->uriFor('view', array('node' => $documentNode, 'identifier' => $node->getIdentifier()), 'Embedded', 'Phlu.Corporate');
 
+
             return $uri;
         }
+
 
         return $link;
 

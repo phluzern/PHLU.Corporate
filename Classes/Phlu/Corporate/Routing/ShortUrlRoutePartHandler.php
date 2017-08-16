@@ -81,6 +81,8 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
         $nodes = $this->nodeDataRepository->findByProperties($requestPath, 'Phlu.Neos.NodeTypes:Shorturl', $context->getWorkspace(), $context->getDimensions());
 
         foreach ($nodes as $n) {
+
+
             if ($node == null && $n->hasProperty('phluNeosNodeTypesShorturl') && $n->getProperty('phluNeosNodeTypesShorturl') == $requestPath) {
 
                 /* @var \Neos\ContentRepository\Domain\Model\Node $node */
@@ -92,17 +94,25 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
                 if ($node == null && $n->getNodeType()->isOfType("Phlu.Qmpilot.NodeTypes:File")) {
 
                     $asset = $n->getProperty('asset');
+
+
                     if ($asset && $asset->getResource()) {
                         $redirectUri = $this->resourceViewHelper->render(null, null, $asset->getResource());
-                        header("Location: " . $redirectUri);
-                        exit;
-                    }
 
+                        $request = new ActionRequest(new Request(array(), array(), array(), array()));
+                        /** @var NodeInterface $node */
+                        $nNode = new Node($n, $context);
+                        $redirectUriFinal = $this->nodeHelper->getEmbeddedLink($nNode, $redirectUri, $request);
+
+                        header("Location: " . $redirectUriFinal);
+                        exit;
+
+                    }
 
                 }
 
-
             }
+
         }
 
 
@@ -140,6 +150,35 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
                 }
             }
         }
+
+
+        if ($node == null) {
+            /* @var ContentContext $context */
+            $node = $context->getNodeByIdentifier($requestPath);
+            if ($node) {
+                $query = new FlowQuery(array($node));
+                $documentNode = $query->closest("[instanceof Neos.NodeTypes:Page]")->get(0);
+                if ($documentNode) {
+                    $node = $documentNode;
+                }
+            }
+
+        }
+
+        if ($node == null) {
+            /* @var ContentContext $context */
+            $node = $context->getNodeByIdentifier($requestPath);
+            if ($node) {
+                $query = new FlowQuery(array($node));
+                $documentNode = $query->closest("[instanceof Neos.NodeTypes:Page]")->get(0);
+                if ($documentNode) {
+                    $node = $documentNode;
+                }
+            }
+
+        }
+
+
 
 
         if ($node == null) {
