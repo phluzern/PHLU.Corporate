@@ -204,6 +204,8 @@ class NodeHelper implements ProtectedContextAwareInterface
     }
 
 
+
+
     /**
      * Order contact nodes collection
      *
@@ -216,6 +218,7 @@ class NodeHelper implements ProtectedContextAwareInterface
         $contactCollectionUnorderedArray = array();
         $contactCollectionOrdered = array();
         $collectionCount = $collection->count() > 0 ? $collection->count() : 1;
+
 
         /* @var Node $contact */
         foreach ($collection as $contact) {
