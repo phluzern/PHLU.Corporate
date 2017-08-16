@@ -41,6 +41,7 @@ Neos:
   Fusion:
     defaultContext:
       Phlu.Corporate: Phlu\Corporate\Eel\Helper\NodeHelper
+
   Flow:
     error:
       exceptionHandler:

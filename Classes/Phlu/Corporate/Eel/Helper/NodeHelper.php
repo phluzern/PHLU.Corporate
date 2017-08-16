@@ -138,9 +138,9 @@ class NodeHelper implements ProtectedContextAwareInterface
         $qmpilotNode = $flowQuery->find('#' . $route['identifier'])->first()->get(0);
 
         $link = $qmpilotNode->getProperty('asset')->getResource()->getLink();
-        $link = str_replace("//phlu.ch","//iframe.phlu.ch",$link);
-        $link = str_replace("www.phlu.ch","iframe.phlu.ch",$link);
-        $link = str_replace("http:","https:",$link);
+        $link = str_replace("//phlu.ch", "//iframe.phlu.ch", $link);
+        $link = str_replace("www.phlu.ch", "iframe.phlu.ch", $link);
+        $link = str_replace("http:", "https:", $link);
 
 
         return array(
@@ -200,6 +200,55 @@ class NodeHelper implements ProtectedContextAwareInterface
 
 
         return $link;
+
+    }
+
+
+    /**
+     * Order contact nodes collection
+     *
+     * @param mixed $collection
+     * @return mixed
+     */
+    public function orderContacts($collection)
+    {
+
+        $contactCollectionUnorderedArray = array();
+        $contactCollectionOrdered = array();
+        $collectionCount = $collection->count() > 0 ? $collection->count() : 1;
+
+        /* @var Node $contact */
+        foreach ($collection as $contact) {
+
+
+            if ($contact->getProperty('manualOrderingIndex') && $contact->getProperty('manualOrderingIndex') > 0) {
+                $index = $contact->getProperty('manualOrderingIndex');
+            } else {
+                $index = $collectionCount + $contact->getIndex();
+            }
+
+            $contactCollectionUnorderedArray[$index][] = $contact;
+
+
+        }
+
+
+        ksort($contactCollectionUnorderedArray);
+
+        foreach ($contactCollectionUnorderedArray as $key => $items) {
+
+
+            foreach ($items as $item) {
+
+                array_push($contactCollectionOrdered, $item);
+
+            }
+
+        }
+
+
+        return $contactCollectionOrdered;
+
 
     }
 

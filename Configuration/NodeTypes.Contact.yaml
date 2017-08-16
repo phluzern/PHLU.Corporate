@@ -164,6 +164,15 @@
         inspector:
           group: evento
           position: 1
+    manualOrderingIndex:
+      type: integer
+      defaultValue: 0
+      ui:
+        label: 'Benutzerdefinierte Sortierung'
+        reloadIfChanged: true
+        inspector:
+          group: evento
+          position: 10
     shorthandSymbol:
       type: string
       ui:
