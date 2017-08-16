@@ -143,6 +143,35 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 
 
         if ($node == null) {
+            /* @var ContentContext $context */
+            $node = $context->getNodeByIdentifier($requestPath);
+            if ($node) {
+                $query = new FlowQuery(array($node));
+                $documentNode = $query->closest("[instanceof Neos.NodeTypes:Page]")->get(0);
+                if ($documentNode) {
+                    $node = $documentNode;
+                }
+            }
+
+        }
+
+        if ($node == null) {
+            /* @var ContentContext $context */
+            $node = $context->getNodeByIdentifier($requestPath);
+            if ($node) {
+                $query = new FlowQuery(array($node));
+                $documentNode = $query->closest("[instanceof Neos.NodeTypes:Page]")->get(0);
+                if ($documentNode) {
+                    $node = $documentNode;
+                }
+            }
+
+        }
+
+
+
+
+        if ($node == null) {
             throw new PageNotFoundException('Page ' . $requestPath . ' was not found.', 1346950755);
             return false;
         }
