@@ -10636,7 +10636,13 @@ body {
       body .all .phlu-accordion .panel > .panel-collapse .nestedAccordionContactItem .panel-heading[aria-expanded=true]::before, body .all .phlu-corporate-section .panel > .panel-collapse .nestedAccordionContactItem .panel-heading[aria-expanded=true]::before {
         content: "\e02d"; }
       body .all .phlu-accordion .panel > .panel-collapse .nestedAccordionContactItem .panel-body, body .all .phlu-corporate-section .panel > .panel-collapse .nestedAccordionContactItem .panel-body {
-        margin-top: 20px; }
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-right: -10px;
+        margin-left: -10px; }
+        body .all .phlu-accordion .panel > .panel-collapse .nestedAccordionContactItem .panel-body > [class^="col-"], body .all .phlu-accordion .panel > .panel-collapse .nestedAccordionContactItem .panel-body > [class^=" col-"], body .all .phlu-corporate-section .panel > .panel-collapse .nestedAccordionContactItem .panel-body > [class^="col-"], body .all .phlu-corporate-section .panel > .panel-collapse .nestedAccordionContactItem .panel-body > [class^=" col-"] {
+          padding-right: 10px;
+          padding-left: 10px; }
         @media (max-width: 767px) {
           body .all .phlu-accordion .panel > .panel-collapse .nestedAccordionContactItem .panel-body, body .all .phlu-corporate-section .panel > .panel-collapse .nestedAccordionContactItem .panel-body {
             margin-top: 10px;
@@ -10971,6 +10977,10 @@ body {
           margin-bottom: 5px;
           font-size: 0.8rem;
           display: inline-block; }
+    body .all .ppdb-detail .course-description ol {
+      padding-left: 19px; }
+      body .all .ppdb-detail .course-description ol li {
+        padding-left: 10px; }
     body .all .phlu-about-detailview .row.subjectsfilternav .nav-pills {
       padding-top: 0; }
     body .all .ppdb-list .searchQueryInputWrapper::before {
@@ -11138,6 +11148,9 @@ body {
       @media (min-width: 768px) {
         body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td:first-child {
           border-left: 0; } }
+      body .all .ppdb-list .results-table .table-responsive .table tbody tr td.researchmainfocus, body .all .further-education-list .results-table .table-responsive .table tbody tr td.researchmainfocus, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td.researchmainfocus {
+        width: 170px;
+        padding-left: 0; }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span, body .all .further-education-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span {
         display: block; }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span ul, body .all .further-education-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span ul, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span ul {
@@ -11183,6 +11196,8 @@ body {
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div.project-preview > .btn-primary, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div.project-preview > .btn-primary, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div.project-preview > .btn-primary {
           margin-left: 0;
           margin-right: 0; }
+        body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div.project-preview p, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div.project-preview p, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div.project-preview p {
+          font-size: 0.875rem; }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header {
           padding-left: 0; }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .btn.dropdown-toggle, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .btn.dropdown-toggle, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .btn.dropdown-toggle {
@@ -12796,11 +12811,14 @@ body {
         body .all .main .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-calendar:hover::after {
           content: 'Veranstaltung'; }
       body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
+        font-size: 0.875rem;
         margin: 0 30px;
         margin-bottom: 15px; }
         @media (max-width: 767px) {
           body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
             margin: 0 20px 20px; } }
+        body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents > span {
+          font-size: 0.875rem; }
         body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle span {
           display: block;
           float: left;

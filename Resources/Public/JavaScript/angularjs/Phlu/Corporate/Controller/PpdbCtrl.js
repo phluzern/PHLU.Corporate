@@ -133,6 +133,29 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
      */
     $scope.setOpen = function (node, index) {
         $scope.isopen = $scope.isopen === node.identifier ? 0 : node.identifier;
+
+
+
+        if (index !== undefined) {
+            window.setTimeout(function () {
+
+                var element_position = $("#node-" + index).offset().top;
+                var scroll_position = $(window).scrollTop();
+                if (scroll_position > element_position) {
+                    $('html, body').stop().animate({
+                        'scrollTop': element_position -10
+                    }, 100, 'swing', function () {
+
+                    });
+                }
+            }, 100);
+
+        }
+
+
+
+
+
     };
 
     /**

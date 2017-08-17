@@ -265,7 +265,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         }, 10);
 
 
-
     }
 
     /**
@@ -314,9 +313,20 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
         if (containerId !== undefined) {
             index = containerId + "-" + index;
-            window.setTimeout(function() {
-                addthis.button("#share-"+index, {}, {});
-            },100);
+            window.setTimeout(function () {
+                addthis.button("#share-" + index, {}, {});
+
+                var element_position = $("#node-" + index).offset().top;
+                var scroll_position = $(window).scrollTop();
+                if (scroll_position > element_position) {
+                    $('html, body').stop().animate({
+                        'scrollTop': element_position -10
+                    }, 100, 'swing', function () {
+
+                    });
+                }
+            }, 100);
+
         }
 
     };
@@ -437,7 +447,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.setOrderBy = function (orderby) {
 
 
-
         if (orderby != 0) {
 
             $scope.list.setOrderBy({'*': orderby})
@@ -484,27 +493,26 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             if (hasManualFilter == false) {
 
                 var ordering = {
-                    'Certificate of Advanced Studies' : 'A',
-                    'Diploma of Advanced Studies' : 'B',
-                    'Master of Advanced Studies' : 'C',
-                    'Event' : 'D',
-                    'Module' : 'E'
+                    'Certificate of Advanced Studies': 'A',
+                    'Diploma of Advanced Studies': 'B',
+                    'Master of Advanced Studies': 'C',
+                    'Event': 'D',
+                    'Module': 'E'
                 };
 
                 $scope.list.setOrderBy({
                     'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
-                        return ordering[node.properties['phlu-neos-nodetypes-course-study-furthereducation-graduation']]+" "+node.properties['phlu-neos-nodetypes-course-study-furthereducation-title'];
+                        return ordering[node.properties['phlu-neos-nodetypes-course-study-furthereducation-graduation']] + " " + node.properties['phlu-neos-nodetypes-course-study-furthereducation-title'];
                     },
                     'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
-                        return ordering[node.properties['Module']]+" "+node.properties['phlu-neos-nodetypes-course-module-furthereducation-title'];
+                        return ordering[node.properties['Module']] + " " + node.properties['phlu-neos-nodetypes-course-module-furthereducation-title'];
                     },
                     'phlu-neos-nodetypes-course-event-furthereducation': function (node) {
-                        return ordering[node.properties['Event']]+" "+node.properties['phlu-neos-nodetypes-course-event-furthereducation-title'];
+                        return ordering[node.properties['Event']] + " " + node.properties['phlu-neos-nodetypes-course-event-furthereducation-title'];
                     }
                 })
 
             }
-
 
 
         }
@@ -573,13 +581,13 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     }
 
     /** @private **/
-    $.fn.isOnScreen = function(){
+    $.fn.isOnScreen = function () {
 
         var win = $(window);
 
         var viewport = {
-            top : win.scrollTop(),
-            left : win.scrollLeft()
+            top: win.scrollTop(),
+            left: win.scrollLeft()
         };
         viewport.right = viewport.left + win.width();
         viewport.bottom = viewport.top + win.height();
@@ -650,7 +658,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     $scope.toggleFilterSelection = function (filterObject, category, filtername, event) {
 
 
-
         if (category == undefined) {
             category = 'all';
         }
@@ -695,8 +702,6 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                 }
             }, 1);
         }
-
-
 
 
         return filterObject;
@@ -936,18 +941,16 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     });
 
 
-
     $scope.list.run();
 
 
     // autocomplate$
     var keybinded = false;
 
-    $scope.$watch('searchquery',function() {
+    $scope.$watch('searchquery', function () {
 
         if (keybinded == false) {
             jQuery(document).keydown(function (e) {
-
 
 
                 if (jQuery(e.target).hasClass('searchQueryInput')) {
