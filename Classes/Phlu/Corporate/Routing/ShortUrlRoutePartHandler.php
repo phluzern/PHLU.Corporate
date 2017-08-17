@@ -19,17 +19,31 @@ use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Http\Request;
 use Neos\Neos\Routing\FrontendNodeRoutePartHandler;
 use Neos\Neos\Routing\Exception;
+use Neos\Neos\Service\LinkingService;
 use Phlu\Corporate\Eel\Helper\NodeHelper;
+use Phlu\Corporate\Factory\ContextFactory;
 use Phlu\Corporate\ViewHelpers\Uri\ResourceViewHelper;
 use Neos\ContentRepository\Domain\Repository\NodeDataRepository;
 use Neos\Flow\Mvc\ActionRequest;
 use Phlu\Neos\Models\AssetRepository;
+use Neos\Flow\Mvc\Controller\ControllerContext;
+use Neos\Flow\Http\Response;
+use Neos\Flow\Mvc\Controller\Arguments;
+use Neos\Flow\Mvc\Routing\UriBuilder;
 
 /**
  * A route part handler for finding nodes specifically in the website's frontend.
  */
 class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 {
+
+
+
+    /**
+     * @Flow\Inject
+     * @var LinkingService
+     */
+    protected $linkingService;
 
 
     /**
@@ -83,6 +97,8 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
             return false;
         }
 
+
+
         $context = current($this->contextFactory->getInstances());
         $node = null;
 
@@ -103,8 +119,19 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 
                     $asset = $n->getProperty('asset');
 
-
                     if ($asset && $asset->getResource()) {
+
+
+                        if (is_string($asset->getResource()->getLink()) && substr($asset->getResource()->getLink(), 0, 7) === 'node://') {
+                            $node = new Node($n, $context);
+                            $request = new ActionRequest(new Request(array(), array(), array(), array()));
+                            $controllerContext = new ControllerContext($request, new Response(), new Arguments(array()), new UriBuilder());
+                            header("Location: " . $this->linkingService->resolveNodeUri($asset->getResource()->getLink(), $node, $controllerContext));
+                               exit;
+
+                        }
+
+
                         $redirectUri = $this->resourceViewHelper->render(null, null, $asset->getResource());
 
                         $request = new ActionRequest(new Request(array(), array(), array(), array()));
@@ -124,6 +151,8 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
         }
 
 
+
+
         if ($node == null) {
 
             $nodes = $this->nodeDataRepository->findByProperties("%", 'Phlu.Qmpilot.NodeTypes:File', $context->getWorkspace(), $context->getDimensions());
@@ -135,6 +164,8 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
                 if ($node == null && $n->hasProperty('asset') && $n->getProperty('asset') && $n->getProperty('asset')->getResource()) {
 
                     $asset = $n->getProperty('asset');
+
+
                     $uri = $this->resourceViewHelper->render(null, null, $asset->getResource());
                     $redirectUriSegments = explode("://", $uri);
 
@@ -173,6 +204,8 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 
         }
 
+
+
         if ($node == null) {
 
 
@@ -183,6 +216,7 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
             }
 
             if ($asset) {
+
                 $uri = $this->resourceViewHelper->render(null, null, $asset->getResource());
 
                 $redirectUriSegments = explode("://", $uri);
