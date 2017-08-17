@@ -12811,11 +12811,14 @@ body {
         body .all .main .further-education-special-search .table-responsive .table tbody tr td.course-type i.fa-calendar:hover::after {
           content: 'Veranstaltung'; }
       body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
+        font-size: 0.875rem;
         margin: 0 30px;
         margin-bottom: 15px; }
         @media (max-width: 767px) {
           body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents {
             margin: 0 20px 20px; } }
+        body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents > span {
+          font-size: 0.875rem; }
         body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-toggle span {
           display: block;
           float: left;

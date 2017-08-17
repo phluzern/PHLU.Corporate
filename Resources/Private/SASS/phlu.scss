@@ -6882,11 +6882,15 @@ body {
                 }
                 &.result-preview {
                   .result-preview-contents {
+                    font-size: $font-size-nav-teasers;
                     margin: 0 30px;
                     @include media-breakpoint-down("sm") {
                       margin: 0 20px 20px;
                     }
                     margin-bottom: 15px;
+                    > span {
+                      font-size: $font-size-nav-teasers;
+                    }
                     .dropdown-toggle {
                       span {
                         display: block;
