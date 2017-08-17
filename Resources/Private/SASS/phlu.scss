@@ -4611,9 +4611,6 @@ body {
                     span {
                       display: table-cell;
                       overflow: hidden;
-                      @include media-breakpoint-up("xl") {
-                        font-size: $font-size-paragraph-desktop;
-                      }
                       &.oi-caret-right, &.oi-caret-bottom {
                         width: 30px;
                         font-size: $font-size-caption;

@@ -11135,9 +11135,6 @@ body {
       body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td:first-child span {
         display: table-cell;
         overflow: hidden; }
-        @media (min-width: 1280px) {
-          body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td:first-child span {
-            font-size: 1.125rem; } }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom {
           width: 30px;
           font-size: 0.8rem; }
