@@ -248,6 +248,16 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
             .addPropertyFilter('title', '', null, true)
 
 
+        $scope.list.connectEventSlot('before_redirect',function(data) {
+            ga('send', 'event', {
+                'category': 'Projekte',
+                'action': data.query.length ? data.query : '.',
+                'label': data.node.uriResource === undefined ? data.node.getUrl() : data.node.uriResource.path
+            });
+        });
+
+
+
         if ($scope.nodesByIdentifier.length) {
             $scope.list.addNodesByIdentifier($scope.nodesByIdentifier);
         } else {
@@ -450,6 +460,16 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         .addPropertyFilter('organisations.OrganisationId', 'organisations', $scope)
         .$bind('result', $scope)
         .run();
+
+
+
+    $scope.list.connectEventSlot('before_redirect',function(data) {
+        ga('send', 'event', {
+            'category': 'Publikationen',
+            'action': data.query.length ? data.query : '.',
+            'label': data.node.uriResource === undefined ? data.node.getUrl() : data.node.uriResource.path
+        });
+    });
 
 
     // autocomplate

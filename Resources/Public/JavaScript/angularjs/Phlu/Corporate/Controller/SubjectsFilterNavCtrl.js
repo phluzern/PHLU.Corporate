@@ -45,6 +45,7 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
 
 
 
+
     $scope.toggleFilter = function(id) {
 
 
