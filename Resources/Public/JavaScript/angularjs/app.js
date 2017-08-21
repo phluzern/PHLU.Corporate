@@ -98,6 +98,26 @@ PhluCorporateApp.filter('orderObjectBy', function () {
     };
 });
 
+PhluCorporateApp.filter('groupByProperty', function () {
+
+    return function (items, property) {
+        var filtered = [];
+        var filteredObject = {};
+
+        angular.forEach(items, function (item) {
+            filteredObject[item.getProperty(property)] = item;
+        });
+
+        angular.forEach(filteredObject, function (item) {
+            filtered.push(item);
+        });
+
+
+
+        return filtered;
+    };
+});
+
 
 PhluCorporateApp.filter('debug', function () {
     return function (input) {

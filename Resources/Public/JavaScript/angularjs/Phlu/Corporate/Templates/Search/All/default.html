@@ -2,18 +2,21 @@
     <a class="content-link-internal" href="{{node.getUrl()}}">{{node.getDocumentNode().getProperty('title')}}</a>
 </h3>
 <div class="searchresult-body">
+
     <span data-ng-bind="node.getPreview('text')"></span>
 
     <div data-ng-repeat="(nodeType,nodes) in node.getGroupedByNodeType('_document.identifier')">
         <div data-ng-switch="nodeType">
             <div class="quickinfo-wrapper" data-ng-switch-when="phlu-qmpilot-nodetypes-file"
                  data-ng-init="node.more = 3;">
-                <div class="quickinfo" data-ng-repeat="groupedNode in nodes"
+                <div class="quickinfo" data-ng-repeat="groupedNode in nodes | groupByProperty:'asset.url'"
                      data-ng-if="$index <= node.more">
                     <a class="content-link-internal" data-ng-if="groupedNode.getProperty('asset').url"
                        href="{{groupedNode.getProperty('asset').url}}" target="_blank"><span
                             data-ng-if="groupedNode.getProperty('asset').title == ''">{{groupedNode.getProperty('asset').name}}</span><span
-                            data-ng-if="groupedNode.getProperty('asset').title !== ''">{{groupedNode.getProperty('asset').title}}</span>
+                            data-ng-if="groupedNode.getProperty('asset').title !== ''"
+                            data-ng-init="lastUrl = groupedNode.getProperty('asset.url')"
+                    >{{groupedNode.getProperty('asset').title}}</span>
                     </a>
                 </div>
                 <span class="more-link-dots" data-ng-if="nodes.length-1 > node.more"
@@ -21,7 +24,6 @@
             </div>
         </div>
     </div>
-
 
 </div>
 <div class="rcrumbs-wrapper">
