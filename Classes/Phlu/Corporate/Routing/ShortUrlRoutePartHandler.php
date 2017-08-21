@@ -117,15 +117,19 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 
                     $asset = $n->getProperty('asset');
 
+
                     if ($asset && $asset->getResource()) {
 
 
                         if (is_string($asset->getResource()->getLink()) && substr($asset->getResource()->getLink(), 0, 7) === 'node://') {
                             $node = new Node($n, $context);
-                            $request = new ActionRequest(new Request(array(), array(), array(), array()));
-                            $controllerContext = new ControllerContext($request, new Response(), new Arguments(array()), new UriBuilder());
-                            header("Location: " . $this->linkingService->resolveNodeUri($asset->getResource()->getLink(), $node, $controllerContext));
-                            exit;
+                                      $linkedNode = $this->linkingService->convertUriToObject($asset->getResource()->getLink(), $node);
+                            if ($linkedNode) {
+                                header("Location: " . "/" . $linkedNode->getIdentifier());
+                                exit;
+
+                            }
+
 
                         }
 
