@@ -778,6 +778,17 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     search.addPropertyFilter('uri.path', '/formulare.html', null, true);
     search.setExternalSources(external);
 
+    search.connectEventSlot('before_redirect',function(data) {
+        //console.log(data.node.getUrl(),data.node.nodeType,data.query);
+
+        ga('send', 'event', {
+            'category': 'Globale Suche',
+            'action': data.query,
+            'label': data.node.getUrl()
+        })
+
+    });
+
     search.setGroupedBy(groupedBy).setNodeUrlBoostFactor(NodeUrlBoostFactor).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setNodeTypeBoostFactor(boostNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
         $rootScope.siteSearchTopSetFocus();
