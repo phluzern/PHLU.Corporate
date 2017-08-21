@@ -779,14 +779,11 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     search.setExternalSources(external);
 
     search.connectEventSlot('before_redirect',function(data) {
-        //console.log(data.node.getUrl(),data.node.nodeType,data.query);
-
         ga('send', 'event', {
-            'category': 'Globale Suche',
-            'action': data.query,
-            'label': data.node.getUrl()
-        })
-
+            'eventCategory': 'Globale Suche',
+            'eventAction': data.query,
+            'eventLabel': data.node.uriResource === undefined ? data.node.getUrl() : data.node.uriResource.path
+        });
     });
 
     search.setGroupedBy(groupedBy).setNodeUrlBoostFactor(NodeUrlBoostFactor).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setNodeTypeBoostFactor(boostNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
