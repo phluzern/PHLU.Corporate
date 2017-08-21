@@ -943,9 +943,9 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     $scope.list.connectEventSlot('before_redirect',function(data) {
         ga('send', 'event', {
-            'category': 'Weiterbildung '+$scope.nodetypesFilterCurrentLabel,
-            'action': data.query.length ? data.query : '.',
-            'label': data.node.uriResource === undefined ? data.node.getUrl() : data.node.uriResource.path
+            'eventCategory': 'Weiterbildung '+$scope.nodetypesFilterCurrentLabel,
+            'eventAction': data.query.length ? data.query : '.',
+            'eventLabel': data.node.uriResource === undefined ? data.node.getUrl() : data.node.uriResource.path
         });
     });
 

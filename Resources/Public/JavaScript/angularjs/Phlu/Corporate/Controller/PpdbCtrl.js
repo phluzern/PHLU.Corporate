@@ -250,9 +250,9 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
         $scope.list.connectEventSlot('before_redirect',function(data) {
             ga('send', 'event', {
-                'category': 'Projekte',
-                'action': data.query.length ? data.query : '.',
-                'label': data.node.uriResource === undefined ? data.node.getUrl() : data.node.uriResource.path
+                'eventCategory': 'Projekte',
+                'eventAction': data.query.length ? data.query : '.',
+                'eventLabel': data.node.uriResource === undefined ? data.node.getUrl() : data.node.uriResource.path
             });
         });
 
@@ -462,12 +462,11 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         .run();
 
 
-
     $scope.list.connectEventSlot('before_redirect',function(data) {
         ga('send', 'event', {
-            'category': 'Publikationen',
-            'action': data.query.length ? data.query : '.',
-            'label': data.node.uriResource === undefined ? data.node.getUrl() : data.node.uriResource.path
+            'eventCategory': 'Publikationen',
+            'eventAction': data.query.length ? data.query : '.',
+            'eventLabel': data.node.uriResource === undefined ? data.node.getUrl() : data.node.uriResource.path
         });
     });
 
