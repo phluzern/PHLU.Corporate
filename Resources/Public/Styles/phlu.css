@@ -13532,43 +13532,4 @@ body .all .startpage .breadcrumb-bottom {
 body .all .subpage.breadcrumb-bottom .nosubnav .sidebar:nth-child(1) {
   display: none; }
 
-body:after {
-  display: block;
-  clear: both;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  padding: 5px;
-  z-index: 4;
-  content: "xs: 0px";
-  background-color: red; }
-  @media (min-width: 544px) {
-    body:after {
-      content: "sm: 544px";
-      background-color: orange; } }
-  @media (min-width: 768px) {
-    body:after {
-      content: "md: 768px";
-      background-color: yellow; } }
-  @media (min-width: 992px) {
-    body:after {
-      content: "lg: 992px";
-      background-color: green;
-      color: lightgrey; } }
-  @media (min-width: 1280px) {
-    body:after {
-      content: "xl: 1280px";
-      background-color: blue;
-      color: white; } }
-  @media (min-width: 1400px) {
-    body:after {
-      content: "xxl: 1400px";
-      background-color: lightblue;
-      color: white; } }
-  @media (min-width: 1600px) {
-    body:after {
-      content: "xxxl: 1600px";
-      background-color: deepskyblue;
-      color: white; } }
-
 /*# sourceMappingURL=phlu.css.map */

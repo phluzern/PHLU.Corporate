@@ -7981,45 +7981,45 @@ body {
 }
 
 // Debug only
-body:after {
-  display: block;
-  clear: both; // if you need to break floating elements
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  padding: 5px;
-  z-index: 4;
-  @include media-breakpoint-up("xs") {
-    content: "xs: 0px";
-    background-color: red;
-  }
-  @include media-breakpoint-up("sm") {
-    content: "sm: 544px";
-    background-color: orange;
-  }
-  @include media-breakpoint-up("md") {
-    content: "md: 768px";
-    background-color: yellow;
-  }
-  @include media-breakpoint-up("lg") {
-    content: "lg: 992px";
-    background-color: green;
-    color: lightgrey;
-  }
-  @include media-breakpoint-up("xl") {
-    content: "xl: 1280px";
-    background-color: blue;
-    color: white;
-  }
-  @include media-breakpoint-up("xxl") {
-    content: "xxl: 1400px";
-    background-color: lightblue;
-    color: white;
-  }
-  @include media-breakpoint-up("xxxl") {
-    content: "xxxl: 1600px";
-    background-color: deepskyblue;
-    color: white;
-  }
-
-}
+//body:after {
+//  display: block;
+//  clear: both; // if you need to break floating elements
+//  bottom: 0;
+//  right: 0;
+//  position: fixed;
+//  padding: 5px;
+//  z-index: 4;
+//  @include media-breakpoint-up("xs") {
+//    content: "xs: 0px";
+//    background-color: red;
+//  }
+//  @include media-breakpoint-up("sm") {
+//    content: "sm: 544px";
+//    background-color: orange;
+//  }
+//  @include media-breakpoint-up("md") {
+//    content: "md: 768px";
+//    background-color: yellow;
+//  }
+//  @include media-breakpoint-up("lg") {
+//    content: "lg: 992px";
+//    background-color: green;
+//    color: lightgrey;
+//  }
+//  @include media-breakpoint-up("xl") {
+//    content: "xl: 1280px";
+//    background-color: blue;
+//    color: white;
+//  }
+//  @include media-breakpoint-up("xxl") {
+//    content: "xxl: 1400px";
+//    background-color: lightblue;
+//    color: white;
+//  }
+//  @include media-breakpoint-up("xxxl") {
+//    content: "xxxl: 1600px";
+//    background-color: deepskyblue;
+//    color: white;
+//  }
+//
+//}
