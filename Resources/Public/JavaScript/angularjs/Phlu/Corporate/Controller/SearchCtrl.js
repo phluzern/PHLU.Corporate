@@ -780,9 +780,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     search.connectEventSlot('before_redirect',function(data) {
         ga('send', 'event', {
-            'category': 'Globale Suche',
-            'action': data.query,
-            'label': data.node.uriResource === undefined ? data.node.getUrl() : data.node.uriResource.path
+            'eventCategory': 'Globale Suche',
+            'eventAction': data.query,
+            'eventLabel': data.node.uriResource === undefined ? data.node.getUrl() : data.node.uriResource.path
         });
     });
 
