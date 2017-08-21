@@ -133,9 +133,6 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
      */
     $scope.setOpen = function (node, index) {
         $scope.isopen = $scope.isopen === node.identifier ? 0 : node.identifier;
-
-
-
         if (index !== undefined) {
             window.setTimeout(function () {
 
@@ -149,13 +146,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
                     });
                 }
             }, 100);
-
         }
-
-
-
-
-
     };
 
     /**
@@ -373,6 +364,23 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
     $scope.setFilterPublicationType = function (f) {
         $scope.publicationtype = f;
         $scope.initialFilters['publicationtype'] = true;
+    };
+
+    $scope.setOpen = function (node, index) {
+        if (index !== undefined) {
+            window.setTimeout(function () {
+                var element_position = $("#node-" + node + index).offset().top;
+                var scroll_position = $(window).scrollTop();
+                console.log(scroll_position, element_position);
+                if (scroll_position > element_position) {
+                    $('html, body').stop().animate({
+                        'scrollTop': element_position -10
+                    }, 100, 'swing', function () {
+
+                    });
+                }
+            }, 500);
+        }
     };
 
     $scope.loadMore = function (group, objId) {

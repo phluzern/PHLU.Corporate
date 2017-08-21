@@ -306,10 +306,11 @@
                              data-ng-repeat="(groupkey,group) in result.getGrouped().getItems() | orderBy:'getProperty(\'type.sorting\')'">
                             <div class="panel-heading" role="tab">
                                 <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse"
+                                    <a data-ng-click="setOpen('{node.identifier}-',$index);" class="collapsed" data-toggle="collapse"
                                        data-parent="#phlu-accordion-publications-{node.identifier}"
                                        href="javascript:void(0)"
                                        data-target="#phlu-accordion-publications-{node.identifier}-{{$index}}"
+                                       id="node-{node.identifier}-{{$index}}"
                                        aria-expanded="false"
                                        aria-controls="#phlu-accordion-publications-{iterator.index}">
                                         <span data-ng-bind="group.getLabel()"></span> (<span

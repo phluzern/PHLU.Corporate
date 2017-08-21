@@ -4611,9 +4611,6 @@ body {
                     span {
                       display: table-cell;
                       overflow: hidden;
-                      @include media-breakpoint-up("xl") {
-                        font-size: $font-size-paragraph-desktop;
-                      }
                       &.oi-caret-right, &.oi-caret-bottom {
                         width: 30px;
                         font-size: $font-size-caption;
@@ -4640,6 +4637,7 @@ body {
                         margin-top: 5px;
                       }
                       &.header {
+                        padding-top:12px;
                         padding-left: 20px;
                       }
                     }
@@ -4699,6 +4697,9 @@ body {
                         > .btn-primary {
                           margin-left: 0;
                           margin-right: 0;
+                          @include media-breakpoint-down("sm") {
+                            margin-top:30px;
+                          }
                         }
                         p {
                           font-size: $teaser-body-font-size;

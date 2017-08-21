@@ -11135,9 +11135,6 @@ body {
       body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td:first-child span {
         display: table-cell;
         overflow: hidden; }
-        @media (min-width: 1280px) {
-          body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td:first-child span {
-            font-size: 1.125rem; } }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .ppdb-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .further-education-list .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-right, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td:first-child span.oi-caret-bottom {
           width: 30px;
           font-size: 0.8rem; }
@@ -11157,6 +11154,7 @@ body {
           margin-left: 14px;
           margin-top: 5px; }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span.header, body .all .further-education-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span.header, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus span.header {
+          padding-top: 12px;
           padding-left: 20px; }
       body .all .ppdb-list .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .ppdb-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus ul li, body .all .further-education-list .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .further-education-list .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus ul li, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td.researchmainfocus ul li, body .all .further-education-special-search .results-table .table-responsive .table tbody tr td .mobile-view-columns.researchmainfocus ul li {
         font-size: 0.8rem;
@@ -11196,6 +11194,9 @@ body {
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div.project-preview > .btn-primary, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div.project-preview > .btn-primary, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div.project-preview > .btn-primary {
           margin-left: 0;
           margin-right: 0; }
+          @media (max-width: 767px) {
+            body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div.project-preview > .btn-primary, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div.project-preview > .btn-primary, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div.project-preview > .btn-primary {
+              margin-top: 30px; } }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div.project-preview p, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div.project-preview p, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div.project-preview p {
           font-size: 0.875rem; }
         body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td .mobile-view-columns .header {
