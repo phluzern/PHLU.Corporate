@@ -38,7 +38,6 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 {
 
 
-
     /**
      * @Flow\Inject
      * @var LinkingService
@@ -98,7 +97,6 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
         }
 
 
-
         $context = current($this->contextFactory->getInstances());
         $node = null;
 
@@ -127,7 +125,7 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
                             $request = new ActionRequest(new Request(array(), array(), array(), array()));
                             $controllerContext = new ControllerContext($request, new Response(), new Arguments(array()), new UriBuilder());
                             header("Location: " . $this->linkingService->resolveNodeUri($asset->getResource()->getLink(), $node, $controllerContext));
-                               exit;
+                            exit;
 
                         }
 
@@ -149,8 +147,6 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
             }
 
         }
-
-
 
 
         if ($node == null) {
@@ -205,14 +201,13 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
         }
 
 
-
         if ($node == null) {
 
 
             /* @var ContentContext $context */
             $asset = $this->assetRepository->findByIdentifier($requestPath);
             if (!$asset) {
-                $asset = $this->assetRepository->findByIdentifier('qmpilot-objectid-'.$requestPath);
+                $asset = $this->assetRepository->findByIdentifier('qmpilot-objectid-' . $requestPath);
             }
 
             if ($asset) {
