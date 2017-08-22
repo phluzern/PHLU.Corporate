@@ -76,8 +76,8 @@ PhluCorporateApp.controller('initController', ['$scope', '$hybridsearch', functi
         PhluCorporateApp.$$conf.workspaceName = workspaceName !== '' ? workspaceName : 'live';
         PhluCorporateApp.$$conf.siteNodeName = siteNodeName !== '' ? siteNodeName : 'corporate';
         PhluCorporateApp.$$conf.dimensionHash = dimensionHash !== '' ? dimensionHash : 'fb11fdde869d0a8fcfe00a2fd35c031d';
-        PhluCorporateApp.$$conf.cdnHost = window.location.host == 'phlu.ch.phlu-eduweb5.nine.ch' || window.location.host == 'phlu.ch'  || window.location.host == 'www.phlu.ch' ? 'https://dhummbq34u1xf.cloudfront.net' : undefined;
-        PhluCorporateApp.$$conf.cdnStaticHost = window.location.host == 'phlu.ch.phlu-eduweb5.nine.ch' || window.location.host == 'phlu.ch'  || window.location.host == 'www.phlu.ch' ? 'https://d912ndzw4fx9a.cloudfront.net' : undefined;
+        //PhluCorporateApp.$$conf.cdnHost = window.location.host == 'phlu.ch.phlu-eduweb5.nine.ch' || window.location.host == 'phlu.ch'  || window.location.host == 'www.phlu.ch' ? 'https://dhummbq34u1xf.cloudfront.net' : undefined;
+        //PhluCorporateApp.$$conf.cdnStaticHost = window.location.host == 'phlu.ch.phlu-eduweb5.nine.ch' || window.location.host == 'phlu.ch'  || window.location.host == 'www.phlu.ch' ? 'https://d912ndzw4fx9a.cloudfront.net' : undefined;
     };
 
 
