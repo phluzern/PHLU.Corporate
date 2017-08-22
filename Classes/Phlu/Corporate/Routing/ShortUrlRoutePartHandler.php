@@ -110,11 +110,16 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
         $node = null;
 
         $nodes = $this->nodeDataRepository->findByProperties($requestPath, 'Phlu.Neos.NodeTypes:Shorturl', $context->getWorkspace(), $context->getDimensions());
+        if (count($nodes) === 0) {
+            $requestPathMasced = str_replace("/","\/",$requestPath);
+            $nodes = $this->nodeDataRepository->findByProperties($requestPathMasced, 'Phlu.Neos.NodeTypes:Shorturl', $context->getWorkspace(), $context->getDimensions());
+        }
+
 
         foreach ($nodes as $n) {
 
 
-            if ($node == null && $n->hasProperty('phluNeosNodeTypesShorturl') && $n->getProperty('phluNeosNodeTypesShorturl') == $requestPath) {
+            if ($node == null && $n->hasProperty('phluNeosNodeTypesShorturl') && ($n->getProperty('phluNeosNodeTypesShorturl') == $requestPath || $requestPathMasced == $requestPath)) {
 
                 /* @var \Neos\ContentRepository\Domain\Model\Node $node */
                 if ($node == null && $n->getNodeType()->isOfType("Neos.NodeTypes:Page")) {
@@ -153,8 +158,6 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
             }
 
         }
-
-
 
 
         if ($node == null) {
