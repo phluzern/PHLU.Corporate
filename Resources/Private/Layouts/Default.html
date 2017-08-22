@@ -40,24 +40,27 @@
 
     <f:section name="headScripts">
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PMZdx5E8mJbm1hurLezMYjt6yPIFrY4"></script>
-        <script src="{f:uri.resource(path: 'Vendor/angularjs/angular.min.js', package: 'Phlu.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'Vendor/angular-cookies/angular-cookies.min.js', package: 'Phlu.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'Vendor/firebase/firebase.js', package: 'Neoslive.Hybridsearch')}"></script>
-        <script src="{f:uri.resource(path: 'Vendor/angular-sanitize/angular-sanitize.min.js', package: 'Neoslive.Hybridsearch')}"></script>
-        <script src="{f:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'Neoslive.Hybridsearch')}"></script>
-        <script src="{f:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'Phlu.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'Vendor/iframe-resizer/js/iframeResizer.min.js', package: 'Phlu.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'Vendor/algoliasearch/dist/algoliasearch.min.js', package: 'Neoslive.Hybridsearch')}"></script>
-        <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
-        <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'Phlu.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'Phlu.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/ContactsCtrl.js', package: 'Phlu.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/SearchCtrl.js', package: 'Phlu.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/PpdbCtrl.js', package: 'Phlu.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/EventoCtrl.js', package: 'Phlu.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/LocationCtrl.js', package: 'Phlu.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/LogCtrl.js', package: 'Phlu.Corporate')}"></script>
-        <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/NewsCtrl.js', package: 'Phlu.Corporate')}"></script>
+        <f:comment>
+            <script src="{f:uri.resource(path: 'Vendor/angularjs/angular.min.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'Vendor/angular-cookies/angular-cookies.min.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'Vendor/firebase/firebase.js', package: 'Neoslive.Hybridsearch')}"></script>
+            <script src="{f:uri.resource(path: 'Vendor/angular-sanitize/angular-sanitize.min.js', package: 'Neoslive.Hybridsearch')}"></script>
+            <script src="{f:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'Neoslive.Hybridsearch')}"></script>
+            <script src="{f:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'Vendor/iframe-resizer/js/iframeResizer.min.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'Vendor/algoliasearch/dist/algoliasearch.min.js', package: 'Neoslive.Hybridsearch')}"></script>
+            <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
+            <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/ContactsCtrl.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/SearchCtrl.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/PpdbCtrl.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/EventoCtrl.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/LocationCtrl.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/LogCtrl.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/NewsCtrl.js', package: 'Phlu.Corporate')}"></script>
+        </f:comment>
+            <script src="{f:uri.resource(path: 'JavaScript/jsHead.js', package: 'Phlu.Corporate')}"></script>
     </f:section>
 
 </head>
@@ -251,6 +254,7 @@
 
 </f:section>
 <f:section name="bodyScripts">
+    <f:comment>
     <!-- Put your scripts inclusions for the end of the body here, they will be included in your website by TypoScript -->
     <script src="{f:uri.resource(path: 'blueimp/js/blueimp-gallery.min.js', package: 'Phlu.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/jquery/jquery.mobile.custom.min.js', package: 'Phlu.Corporate')}"></script>
@@ -261,6 +265,8 @@
     <script src="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/locales/bootstrap-datepicker.de.min.js', package: 'Phlu.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.js', package: 'Phlu.Corporate')}"></script>
     <script src="{f:uri.resource(path: 'JavaScript/jquery/main.js', package: 'Phlu.Corporate')}"></script>
+    </f:comment>
+        <script src="{f:uri.resource(path: 'JavaScript/jsBody.min.js', package: 'Phlu.Corporate')}"></script>
 
     <f:if condition="{neos:rendering.inBackend()}">
         <f:then>

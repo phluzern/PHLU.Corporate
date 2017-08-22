@@ -1,6 +1,4 @@
 // Phlu.Corporate:Page.View.Default filter tag navigation
-
-
 PhluCorporateApp.directive('search', function ($sce) {
 
 
@@ -147,7 +145,6 @@ PhluCorporateApp.directive('nodeType', function ($sce) {
 
 });
 
-
 PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
     $scope.siteSearchSearchMobile = '';
@@ -283,7 +280,6 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
 
 
 }]);
-
 
 PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$compile', '$document', function ($scope, $rootScope, $sce, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $compile, $document) {
 
