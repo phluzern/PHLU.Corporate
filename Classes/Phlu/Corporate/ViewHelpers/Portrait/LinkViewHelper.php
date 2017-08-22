@@ -90,7 +90,7 @@ class LinkViewHelper extends AbstractViewHelper
                 if ($this->renderChildren() == '') {
                     return $this->controllerContext->getUriBuilder()->reset()->setCreateAbsoluteUri(true)->setFormat('html')->uriFor('viewPortrait', array('contact' => $contactShortId), 'Portrait', 'Phlu.Corporate');
                 } else {
-                    return '<a class="content-link-portrait" href="' . $this->controllerContext->getUriBuilder()->reset()->setCreateAbsoluteUri(true)->setFormat('html')->uriFor('viewPortrait', array('contact' => $contactShortId), 'Portrait', 'Phlu.Corporate') . '">' . $this->renderChildren() . '</a>';
+                    return '<a class="content-link-portrait" href="/' . $this->controllerContext->getUriBuilder()->reset()->setCreateAbsoluteUri(false)->setFormat('html')->uriFor('viewPortrait', array('contact' => $contactShortId), 'Portrait', 'Phlu.Corporate') . '">' . $this->renderChildren() . '</a>';
                 }
             }
 
