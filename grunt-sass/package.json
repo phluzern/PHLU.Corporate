@@ -32,7 +32,9 @@
     "each-async": "^1.0.0",
     "node-sass": "^4.0.0",
     "object-assign": "^4.0.1",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-concat": "~1.0.0",
+    "grunt-contrib-uglify": "~3.0.1"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
