@@ -66,11 +66,6 @@ module.exports = function (grunt) {
             options: {
                 sourceMap: true
             },
-            jshead: {
-                src: '../Resources/Public/JavaScript/jsHead.js',
-                dest: '../Resources/Public/JavaScript/jsHead.min.js',
-                nonull: true
-            },
             jsbody: {
                 src: '../Resources/Public/JavaScript/jsBody.js',
                 dest: '../Resources/Public/JavaScript/jsBody.min.js',
