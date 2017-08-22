@@ -140,7 +140,7 @@ class NodeHelper implements ProtectedContextAwareInterface
         $link = $qmpilotNode->getProperty('asset')->getResource()->getLink();
         $link = str_replace("//phlu.ch", "//iframe.phlu.ch", $link);
         $link = str_replace("www.phlu.ch", "iframe.phlu.ch", $link);
-        $link = str_replace("http:", "https:", $link);
+        //$link = str_replace("http:", "https:", $link);
 
 
         return array(
