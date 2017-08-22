@@ -60,8 +60,7 @@ PhluCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsear
         PhluCorporateApp.$$conf.workspaceName,
         PhluCorporateApp.$$conf.dimensionHash,
         PhluCorporateApp.$$conf.siteNodeName,
-        PhluCorporateApp.$$conf.cdnHost,
-        PhluCorporateApp.$$conf.cdnStaticHost
+        PhluCorporateApp.$$conf.cdnHost
     );
 
 
@@ -76,8 +75,7 @@ PhluCorporateApp.controller('initController', ['$scope', '$hybridsearch', functi
         PhluCorporateApp.$$conf.workspaceName = workspaceName !== '' ? workspaceName : 'live';
         PhluCorporateApp.$$conf.siteNodeName = siteNodeName !== '' ? siteNodeName : 'corporate';
         PhluCorporateApp.$$conf.dimensionHash = dimensionHash !== '' ? dimensionHash : 'fb11fdde869d0a8fcfe00a2fd35c031d';
-        PhluCorporateApp.$$conf.cdnHost = window.location.host == window.location.host == 'www.phlu.ch'  ? 'https://d1ablfrhie1735.cloudfront.net' : undefined;
-        PhluCorporateApp.$$conf.cdnStaticHost = window.location.host == 'www.phlu.ch' ? 'https://d3iynkir7cmkd3.cloudfront.net' : undefined;
+        PhluCorporateApp.$$conf.cdnHost = window.location.host == window.location.host == 'www.phlu.ch'  ? 'https://d1ablfrhie1735.cloudfront.net' : undefined
     };
 
 
