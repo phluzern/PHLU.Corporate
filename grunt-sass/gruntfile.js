@@ -64,8 +64,14 @@ module.exports = function (grunt) {
         },
         uglify: {
             options: {
-                sourceMap: true
+                sourceMap: true,
+                mangleProperties: true
             },
+/*            jshead: {
+                src: '../Resources/Public/JavaScript/jsHead.js',
+                dest: '../Resources/Public/JavaScript/jsHead.min.js',
+                nonull: true
+            },*/
             jsbody: {
                 src: '../Resources/Public/JavaScript/jsBody.js',
                 dest: '../Resources/Public/JavaScript/jsBody.min.js',
@@ -75,7 +81,6 @@ module.exports = function (grunt) {
     });
 
 // Load the plugin that provides the "concat" task.
-
 
 
     grunt.loadTasks('tasks');
