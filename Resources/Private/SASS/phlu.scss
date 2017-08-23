@@ -1208,7 +1208,19 @@ body.neos-backend {
         display: block;
       }
     }
+
+
   }
+
+  div[data-isreference="1"] {
+    opacity: 0.8;
+    &::before {
+      content: 'Referenzierte Node';
+      color: orange;
+      display: block;
+    }
+  }
+
 
   .phlu-corporate-contacts {
     .neos-empty-contentcollection-overlay {

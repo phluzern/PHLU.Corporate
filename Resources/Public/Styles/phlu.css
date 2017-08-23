@@ -8793,6 +8793,13 @@ body.neos-backend .neos-contentelement.neos-contentelement-active .disabled-for-
     color: red;
     display: block; }
 
+body.neos-backend div[data-isreference="1"] {
+  opacity: 0.8; }
+  body.neos-backend div[data-isreference="1"]::before {
+    content: 'Referenzierte Node';
+    color: orange;
+    display: block; }
+
 body.neos-backend .phlu-corporate-contacts .neos-empty-contentcollection-overlay {
   margin: 30px; }
 
