@@ -3,7 +3,9 @@ prototype(Phlu.Corporate:Section) < prototype(Phlu.Corporate:Content) {
 
     templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/Section/Default.html'
     collectionRenderer = Phlu.Corporate:ContentCollection
-    main = ${q(node).children('main').get(0)}
+
+    main = ${q(node).property('reference') ? q(q(node).property('reference')).children('main').get(0) : q(node).children('main').get(0)}
+
     sectionCount = ${q(node).parent().find('[instanceof Phlu.Corporate:Section]').count()}
     attributes.id = ${'node-' + node.Identifier}
 

@@ -19,6 +19,16 @@
     nodeTypes:
       '*': false
   properties:
+    reference:
+      type: reference
+      ui:
+        label: Bestehender Abschnitt referenzieren
+        inspector:
+          group: general
+          position: 50
+          editorOptions:
+            nodeTypes: ['Phlu.Corporate:Section']
+        reloadIfChanged: true
     title:
       type: string
       defaultValue: ' Titel'
