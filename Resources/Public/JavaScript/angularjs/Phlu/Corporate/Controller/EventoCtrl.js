@@ -922,7 +922,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         .setNodeType('nodetypes', $scope)
         .setOrderBy({'*': '-id'})
         .addPropertyFilter('detailpage.hidden', 'false')
-        .addPropertyFilter('deleted', 'false')
+        .addPropertyFilter('deleted', false)
         .$watch(function (i) {
 
             if ($rootScope.isLoadedFirst == false && $scope.isLoadingFirst == false) {
