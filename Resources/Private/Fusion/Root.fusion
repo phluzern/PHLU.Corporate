@@ -19,10 +19,14 @@ page = Page {
 
 
     head {
+
+
+
         metadata = Neos.Fusion:Template {
             templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
             sectionName = 'metadata'
         }
+
         csslinks = Neos.Fusion:Template {
             templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
             sectionName = 'csslinks'
@@ -30,6 +34,7 @@ page = Page {
 
         javascripts.site = Neos.Fusion:Template {
             templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
+            isProductionContext = ${Configuration.setting('Neos.Flow.core.context') == 'Production' ? true : false}
             sectionName = 'headScripts'
         }
 
@@ -37,7 +42,7 @@ page = Page {
             tagName = 'meta'
             attributes {
                 name = 'robots'
-                content = 'noindex,nofollow'
+                content = 'all'
             }
         }
 
@@ -48,6 +53,7 @@ page = Page {
         sectionName = 'body'
 
         firebaseEndpoint = ${Configuration.setting('Neoslive.Hybridsearch.Firebase.endpoint')}
+
 
         parts {
 
@@ -187,6 +193,7 @@ page = Page {
         javascripts.site = Neos.Fusion:Template {
             templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
             sectionName = 'bodyScripts'
+            isProductionContext = ${Configuration.setting('Neos.Flow.core.context') == 'Production' ? true : false}
         }
     }
     bodyTag.attributes {
