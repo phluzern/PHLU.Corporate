@@ -768,7 +768,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     search.setEmojis(emojs);
     search.addPropertyFilter('title', '', null, true, false, 'phlu-neos-nodetypes-project');
     search.addPropertyFilter('lastname', '', null, true, false, 'phlu-corporate-contact');
-    search.addPropertyFilter('phone', '', null, true, false, 'phlu-corporate-contact');
+    //search.addPropertyFilter('phone', '', null, true, false, 'phlu-corporate-contact');
     search.addPropertyFilter('asset.extension', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
     search.addPropertyFilter('street', '', null, true, false, 'phlu-corporate-location');
     search.addPropertyFilter('uri.path', '/formulare.html', null, true);
