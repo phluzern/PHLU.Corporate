@@ -1797,8 +1797,8 @@ function goToTargetNode() {
 
                 var interval = window.setInterval(function () {
 
-                    if (lastScrolltop == targetNodeElement.offset().top - 50) {
-                        $('html, body').scrollTop(targetNodeElement.offset().top - 50);
+                    if (lastScrolltop == targetNodeElement.offset().top - 75) {
+                        $('html, body').scrollTop(targetNodeElement.offset().top - 75);
                     }
 
                     intervalCounter++;
@@ -1806,7 +1806,7 @@ function goToTargetNode() {
                         window.clearInterval(interval);
                     }
 
-                    lastScrolltop = targetNodeElement.offset().top - 50;
+                    lastScrolltop = targetNodeElement.offset().top - 75;
 
 
                 }, 10);
@@ -1821,7 +1821,7 @@ function goToTargetNode() {
                         $(dynamicContentsSelector).each(function () {
                             $(this).removeClass('tmpFixedHeight');
                         });
-                        $('html, body').scrollTop(targetNodeElement.offset().top - 50);
+                        $('html, body').scrollTop(targetNodeElement.offset().top - 75);
                         observerWasApplied = true;
                     }
                 }
