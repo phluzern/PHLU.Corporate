@@ -165,7 +165,6 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 
             $nodes = $this->nodeDataRepository->findByProperties("%", 'Phlu.Qmpilot.NodeTypes:File', $context->getWorkspace(), $context->getDimensions());
 
-
             foreach ($nodes as $n) {
 
 
@@ -177,7 +176,7 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
                     $uri = $this->resourceViewHelper->render(null, null, $asset->getResource());
                     $redirectUriSegments = explode("://", $uri);
 
-                    if (isset($redirectUriSegments[1]) && ($redirectUriSegments[1] == "www.phlu.ch/" . $requestPath || $redirectUriSegments[1] == "www.phlu.ch/" . $requestPath . "/")) {
+                    if (isset($redirectUriSegments[1]) && ($redirectUriSegments[1] == "www.phlu.ch/" . $requestPath || $redirectUriSegments[1] == "www.phlu.ch/" . $requestPath . "/" || $redirectUriSegments[1] == "iframe.phlu.ch/" . $requestPath || $redirectUriSegments[1] == "iframe.phlu.ch/" . $requestPath . "/")) {
                         /** @var NodeInterface $node */
                         $node = new Node($n, $context);
 
@@ -239,7 +238,9 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 
                 $redirectUriSegments = explode("://", $uri);
 
-                if (isset($redirectUriSegments[1]) && ($redirectUriSegments[1] == "www.phlu.ch/" . $requestPath || $redirectUriSegments[1] == "www.phlu.ch/" . $requestPath . "/")) {
+
+
+                if (isset($redirectUriSegments[1]) && ($redirectUriSegments[1] == "www.phlu.ch/" . $requestPath || $redirectUriSegments[1] == "www.phlu.ch/" . $requestPath . "/" || $redirectUriSegments[1] == "iframe.phlu.ch/" . $requestPath || $redirectUriSegments[1] == "iframe.phlu.ch/" . $requestPath . "/")) {
                     /** @var NodeInterface $node */
                     $node = new Node($n, $context);
 
