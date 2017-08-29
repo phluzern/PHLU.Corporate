@@ -17,6 +17,7 @@ use Neos\ContentRepository\Exception\PageNotFoundException;
 use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Http\Request;
+use Neos\Media\Domain\Model\Asset;
 use Neos\Neos\Routing\FrontendNodeRoutePartHandler;
 use Neos\Neos\Routing\Exception;
 use Neos\Neos\Service\LinkingService;
@@ -38,12 +39,18 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 {
 
 
-
     /**
      * @Flow\Inject
      * @var LinkingService
      */
     protected $linkingService;
+
+
+    /**
+     * @Flow\Inject
+     * @var AssetRepository
+     */
+    protected $assetRepository;
 
 
     /**
@@ -58,13 +65,6 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
      * @var NodeDataRepository
      */
     protected $nodeDataRepository;
-
-
-    /**
-     * @Flow\Inject
-     * @var AssetRepository
-     */
-    protected $assetRepository;
 
 
     /**
@@ -108,10 +108,11 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 
         $context = current($this->contextFactory->getInstances());
         $node = null;
+        $requestPathMasced = '';
 
         $nodes = $this->nodeDataRepository->findByProperties($requestPath, 'Phlu.Neos.NodeTypes:Shorturl', $context->getWorkspace(), $context->getDimensions());
         if (count($nodes) === 0) {
-            $requestPathMasced = str_replace("/","\/",$requestPath);
+            $requestPathMasced = str_replace("/", "\/", $requestPath);
             $nodes = $this->nodeDataRepository->findByProperties($requestPathMasced, 'Phlu.Neos.NodeTypes:Shorturl', $context->getWorkspace(), $context->getDimensions());
         }
 
@@ -138,7 +139,7 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
                             $node = new Node($n, $context);
                             $controllerContext = new ControllerContext($this->request, new Response(), new Arguments(array()), new UriBuilder());
                             header("Location: " . $this->linkingService->resolveNodeUri($asset->getResource()->getLink(), $node, $controllerContext));
-                               exit;
+                            exit;
 
                         }
 
@@ -211,15 +212,26 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
         }
 
 
-
         if ($node == null) {
 
 
             /* @var ContentContext $context */
             $asset = $this->assetRepository->findByIdentifier($requestPath);
             if (!$asset) {
-                $asset = $this->assetRepository->findByIdentifier('qmpilot-objectid-'.$requestPath);
+                $asset = $this->assetRepository->findByIdentifier('qmpilot-objectid-' . $requestPath);
             }
+
+
+            if (!$asset) {
+
+                foreach ($this->assetRepository->findBySearchIndex($requestPath) as $a) {
+                    /* @var Asset $a */
+                    if (!$asset && substr_count($a->getSearchIndex(), 'oid=' . $requestPath)) {
+                        $asset = $a;
+                    }
+                }
+            }
+
 
             if ($asset) {
 
@@ -235,7 +247,7 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
                     $documentNode = $flowquery->closest("[instanceof Neos.NodeTypes:Page]")->get(0);
 
                     if ($documentNode) {
-                          $redirectUri = $this->nodeHelper->getEmbeddedLink($node, $uri, $this->request);
+                        $redirectUri = $this->nodeHelper->getEmbeddedLink($node, $uri, $this->request);
                         if ($redirectUri) {
                             header("Location: " . $redirectUri);
                             exit;
