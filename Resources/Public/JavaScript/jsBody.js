@@ -1769,7 +1769,7 @@ function goToTargetNode() {
     var targetNodeElement = $('.targetnode').first();
     var targetNodeElementId = targetNodeElement.attr('data-targetnode');
     var dynamicContentsSelector = '.sectionWithDynamicContent';
-    var offsetPadding = 80;
+    var offsetPadding = 40;
 
     if (targetNodeElement.length) {
 
@@ -1795,11 +1795,13 @@ function goToTargetNode() {
 
                 var intervalCounter = 0;
                 var lastScrolltop = 0;
+                var minScrolltop = 170;
+                var ScrollTop = targetNodeElement.offset().top < minScrolltop ? 0 : targetNodeElement.offset().top;
 
                 var interval = window.setInterval(function () {
 
-                    if (lastScrolltop == targetNodeElement.offset().top - offsetPadding) {
-                        $('html, body').scrollTop(targetNodeElement.offset().top - offsetPadding);
+                    if (lastScrolltop == ScrollTop - offsetPadding) {
+                        $('html, body').scrollTop(ScrollTop - offsetPadding);
                     }
 
                     intervalCounter++;
@@ -1807,11 +1809,10 @@ function goToTargetNode() {
                         window.clearInterval(interval);
                     }
 
-                    lastScrolltop = targetNodeElement.offset().top - offsetPadding;
+                    lastScrolltop = ScrollTop - offsetPadding;
 
 
                 }, 10);
-
 
                 var observerWasApplied = false;
 
@@ -1822,7 +1823,8 @@ function goToTargetNode() {
                         $(dynamicContentsSelector).each(function () {
                             $(this).removeClass('tmpFixedHeight');
                         });
-                        $('html, body').scrollTop(targetNodeElement.offset().top - offsetPadding);
+                        var ScrollTop = targetNodeElement.offset().top < minScrolltop ? 0 : targetNodeElement.offset().top;
+                        $('html, body').scrollTop(ScrollTop - offsetPadding);
                         observerWasApplied = true;
                     }
                 }

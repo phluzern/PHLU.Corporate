@@ -381,7 +381,6 @@ function goToTargetNode() {
 
                 }, 10);
 
-
                 var observerWasApplied = false;
 
                 var observeScroll = function () {
