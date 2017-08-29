@@ -362,7 +362,7 @@ function goToTargetNode() {
 
                 var intervalCounter = 0;
                 var lastScrolltop = 0;
-                var minScrolltop = 170;
+                var minScrolltop = 250;
                 var ScrollTop = targetNodeElement.offset().top < minScrolltop ? 0 : targetNodeElement.offset().top;
 
                 var interval = window.setInterval(function () {
