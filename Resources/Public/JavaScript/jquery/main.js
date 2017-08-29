@@ -239,7 +239,7 @@ function initFrontend() {
     /*
      *  Open accordion panel from url hash
      */
-    if(location.hash != null && location.hash != ""){
+    if (location.hash != null && location.hash != "") {
         $('.collapse').removeClass('in');
         location.hash = location.hash.replace('\#/', '');
         //console.log(location.hash);
@@ -262,7 +262,7 @@ function initFrontend() {
      * scroll to clicked accordion element if outside of viewport
      */
     scrollToViewport();
-
+    goToTargetNode();
 
 }
 
@@ -328,6 +328,89 @@ function initSmoothScrolling() {
 
 
     });
+}
+
+function goToTargetNode() {
+
+
+    var targetNodeElement = $('.targetnode').first();
+    var targetNodeElementId = targetNodeElement.attr('data-targetnode');
+    var dynamicContentsSelector = '.sectionWithDynamicContent';
+    if (targetNodeElement) {
+
+        $(dynamicContentsSelector).each(function () {
+            $(this).addClass('tmpFixedHeight');
+        });
+
+        if (targetNodeElement.is(':visible') === false) {
+
+            // open collapses from outer to inner
+            $('[data-toggle="collapse"]').each(function () {
+                if ($(this).closest('.panel').find('[data-targetnode="' + targetNodeElementId + '"]').length) {
+                    $(this).trigger('click');
+                }
+            });
+
+            targetNodeElement.find('[data-toggle="collapse"]').first().trigger('click')
+
+
+        }
+
+        window.setTimeout(function () {
+
+            var intervalCounter = 0;
+            var lastScrolltop = 0;
+
+            var interval = window.setInterval(function () {
+
+                if (lastScrolltop == targetNodeElement.offset().top - 50) {
+                    $('html, body').scrollTop(targetNodeElement.offset().top - 50);
+                }
+
+                intervalCounter++;
+                if (intervalCounter > 50) {
+                    window.clearInterval(interval);
+                }
+
+                lastScrolltop = targetNodeElement.offset().top - 50;
+
+
+            }, 10);
+
+
+            var observerWasApplied = false;
+
+            var observeScroll = function () {
+
+                if (observerWasApplied === false) {
+                    window.clearInterval(interval);
+                    $(dynamicContentsSelector).each(function () {
+                        $(this).removeClass('tmpFixedHeight');
+                    });
+                    $('html, body').scrollTop(targetNodeElement.offset().top - 50);
+                    observerWasApplied = true;
+                }
+            }
+
+            document.addEventListener('mousewheel', function (e) {
+                observeScroll();
+            });
+
+            document.addEventListener('mousedown', function (e) {
+                observeScroll();
+            });
+
+            document.addEventListener('keydown', function (e) {
+                observeScroll();
+            });
+
+
+        }, 100);
+
+
+    }
+
+
 }
 
 function initCarousel() {
