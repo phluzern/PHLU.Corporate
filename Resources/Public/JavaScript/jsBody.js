@@ -1768,7 +1768,13 @@ function goToTargetNode() {
 
     var targetNodeElement = $('.targetnode').first();
     var targetNodeElementId = targetNodeElement.attr('data-targetnode');
-    if (targetNodeElement) {
+    var dynamicContentsSelector = '.sectionWithDynamicContent';
+
+    if (targetNodeElement.length) {
+
+        $(dynamicContentsSelector).each(function () {
+            $(this).addClass('tmpFixedHeight');
+        });
 
         if (targetNodeElement.is(':visible') === false) {
 
@@ -1784,52 +1790,57 @@ function goToTargetNode() {
 
         }
 
-        window.setTimeout(function() {
+            window.setTimeout(function () {
 
-        var intervalCounter = 0;
-        var lastScrolltop = 0;
+                var intervalCounter = 0;
+                var lastScrolltop = 0;
 
-        var interval = window.setInterval(function() {
+                var interval = window.setInterval(function () {
 
-            if (lastScrolltop == targetNodeElement.offset().top - 30) {
-                $('html, body').stop().animate({
-                    'scrollTop': lastScrolltop
-                }, 200, 'swing', function () {
+                    if (lastScrolltop == targetNodeElement.offset().top - 50) {
+                        $('html, body').scrollTop(targetNodeElement.offset().top - 50);
+                    }
 
+                    intervalCounter++;
+                    if (intervalCounter > 50) {
+                        window.clearInterval(interval);
+                    }
+
+                    lastScrolltop = targetNodeElement.offset().top - 50;
+
+
+                }, 10);
+
+
+                var observerWasApplied = false;
+
+                var observeScroll = function () {
+
+                    if (observerWasApplied === false) {
+                        window.clearInterval(interval);
+                        $(dynamicContentsSelector).each(function () {
+                            $(this).removeClass('tmpFixedHeight');
+                        });
+                        $('html, body').scrollTop(targetNodeElement.offset().top - 50);
+                        observerWasApplied = true;
+                    }
+                }
+
+                document.addEventListener('mousewheel', function (e) {
+                    observeScroll();
                 });
-            }
 
-            intervalCounter++;
-            if (intervalCounter > 50) {
-                window.clearInterval(interval);
-            }
+                document.addEventListener('mousedown', function (e) {
+                    observeScroll();
+                });
 
-            lastScrolltop = targetNodeElement.offset().top  - 30;
-
-
-
-        },100);
+                document.addEventListener('keydown', function (e) {
+                    observeScroll();
+                });
 
 
+            }, 100);
 
-        var observeScroll = function () {
-            window.clearInterval(interval);
-        }
-
-        document.addEventListener('mousewheel', function(e){
-            observeScroll();
-        });
-
-        document.addEventListener('mousedown', function(e){
-            observeScroll();
-        });
-
-        document.addEventListener('keydown', function(e){
-            observeScroll();
-        });
-
-
-        },100);
 
 
     }
