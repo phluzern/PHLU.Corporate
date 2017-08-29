@@ -1769,7 +1769,7 @@ function goToTargetNode() {
     var targetNodeElement = $('.targetnode').first();
     var targetNodeElementId = targetNodeElement.attr('data-targetnode');
     var dynamicContentsSelector = '.sectionWithDynamicContent';
-    var offsetPadding = 40;
+    var offsetPadding = 17;
 
     if (targetNodeElement.length) {
 
@@ -1789,6 +1789,8 @@ function goToTargetNode() {
             targetNodeElement.find('[data-toggle="collapse"]').first().trigger('click')
 
 
+        } else {
+            targetNodeElement.find('[data-toggle="collapse"]').first().trigger('click')
         }
 
             window.setTimeout(function () {
