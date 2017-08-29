@@ -1769,6 +1769,7 @@ function goToTargetNode() {
     var targetNodeElement = $('.targetnode').first();
     var targetNodeElementId = targetNodeElement.attr('data-targetnode');
     var dynamicContentsSelector = '.sectionWithDynamicContent';
+    var offsetPadding = 80;
 
     if (targetNodeElement.length) {
 
@@ -1797,8 +1798,8 @@ function goToTargetNode() {
 
                 var interval = window.setInterval(function () {
 
-                    if (lastScrolltop == targetNodeElement.offset().top - 75) {
-                        $('html, body').scrollTop(targetNodeElement.offset().top - 75);
+                    if (lastScrolltop == targetNodeElement.offset().top - offsetPadding) {
+                        $('html, body').scrollTop(targetNodeElement.offset().top - offsetPadding);
                     }
 
                     intervalCounter++;
@@ -1806,7 +1807,7 @@ function goToTargetNode() {
                         window.clearInterval(interval);
                     }
 
-                    lastScrolltop = targetNodeElement.offset().top - 75;
+                    lastScrolltop = targetNodeElement.offset().top - offsetPadding;
 
 
                 }, 10);
@@ -1821,7 +1822,7 @@ function goToTargetNode() {
                         $(dynamicContentsSelector).each(function () {
                             $(this).removeClass('tmpFixedHeight');
                         });
-                        $('html, body').scrollTop(targetNodeElement.offset().top - 75);
+                        $('html, body').scrollTop(targetNodeElement.offset().top - offsetPadding);
                         observerWasApplied = true;
                     }
                 }
