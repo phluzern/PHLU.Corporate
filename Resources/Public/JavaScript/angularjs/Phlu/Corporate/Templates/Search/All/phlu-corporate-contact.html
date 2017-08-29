@@ -1,15 +1,21 @@
 <h3>
-    <a data-ng-if="!node.getProperty('portrait').HybridsearchResultsValue().findUri()" class="content-link-internal"
-       href="{{node.getUrl()}}">{{node.getProperty('lastname')}}
+
+    <a class="content-link-internal"
+       href="{{node.getUrl()}}?{{node.getIdentifier()}}">{{node.getProperty('lastname')}}
         {{node.getProperty('firstname')}}</a>
 
-    <a data-ng-if="node.getProperty('portrait').HybridsearchResultsValue().findUri()" class="content-link-internal"
-       href="{{node.getProperty('portrait').HybridsearchResultsValue().findUri()}}">{{node.getProperty('lastname')}}
-        {{node.getProperty('firstname')}}</a>
+    <address data-ng-if="node.getProperty('portrait').length > 0" style="float:right">
+
+        <a class="content-link-portrait" title="Portrait" class="content-link-internal"
+           href="{{node.getProperty('portrait') | extractUri}}"></a>
+    </address>
 
 </h3>
 
 <div class="searchresult-body">
+
+    <span>
+
 
     <span data-ng-if="node.getParent() && node.getParent().getProperty('title')">
         <span data-ng-bind="node.getParent().getProperty('title')"></span>,<br>
@@ -22,6 +28,9 @@
                 </span>
     <span data-ng-show="node.getProperty('phone') != ''">{{node.getProperty('phone')}},</span>
     {{node.getProperty('email')}}
+
+
+    </span>
 
     <div data-ng-repeat="(nodeType,nodes) in node.getGroupedByNodeType('_document.identifier')">
         <div data-ng-switch="nodeType" class="quickinfo-wrapper quickinfo">
