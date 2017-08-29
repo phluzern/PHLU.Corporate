@@ -121,11 +121,7 @@ PhluCorporateApp.filter('groupByProperty', function () {
 
 PhluCorporateApp.filter('extractUri', function () {
     return function (input) {
-
-        var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-        var urls = input.match(urlRegex);
-        return urls && urls.length == 1 ? urls[0] : urls;
-
+        return $(input).attr('href');
     };
 });
 
