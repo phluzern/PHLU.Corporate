@@ -247,14 +247,9 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
              .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
              .addPropertyFilter('title', '', null, true);
 
-
-        $scope.$watch('hasAddedNodesByIdentifier',function() {
             if ($scope.hasAddedNodesByIdentifier === false) {
                 $scope.list.addPropertyFilter('projecttype', 'projecttype', $scope);
-            } else {
-                $scope.list.addPropertyFilter('projecttype', '', null, true);
             }
-        });
 
 
         $scope.list.connectEventSlot('before_redirect',function(data) {
