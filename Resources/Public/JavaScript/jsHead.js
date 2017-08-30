@@ -65684,6 +65684,13 @@ PhluCorporateApp.filter('groupByProperty', function () {
 });
 
 
+PhluCorporateApp.filter('searchTerm', function ($rootScope) {
+    return function () {
+        return $rootScope.siteSearch;
+    };
+});
+
+
 PhluCorporateApp.filter('extractUri', function () {
     return function (input) {
         return $(input).attr('href');
