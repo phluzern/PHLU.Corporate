@@ -236,15 +236,6 @@ function initFrontend() {
         $('.extendedSearchBg').toggleClass('on');
         $('.extendedSearchFilter').toggle();
     });
-    /*
-     *  Open accordion panel from url hash
-     */
-    if (location.hash != null && location.hash != "") {
-        $('.collapse').removeClass('in');
-        location.hash = location.hash.replace('\#/', '');
-        //console.log(location.hash);
-        $(location.hash + '.collapse').collapse('show');
-    }
 
     /*
      * target-group-codes
@@ -339,6 +330,17 @@ function goToTargetNode() {
     var offsetPadding = 17;
 
     if (targetNodeElement.length) {
+
+
+        if (window.location.hash.substring(2).length) {
+            targetNodeElement.attr('data-searchterm', 'Ihre Suche: "'+decodeURIComponent(window.location.hash.substring(2))+'"');
+            window.setTimeout(function () {
+                targetNodeElement.addClass('on');
+            }, 300);
+            window.setTimeout(function () {
+                targetNodeElement.removeClass('on');
+            }, 3000);
+        }
 
         $(dynamicContentsSelector).each(function () {
             $(this).addClass('tmpFixedHeight');

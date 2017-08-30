@@ -1,6 +1,6 @@
 <div data-ng-if="node.getProperty('url') == ''">
     <h3>
-        <a class="content-link-internal" href="{{node.getBreadcrumb().HybridsearchResultsValue().findLastUriInBreadcrumb()}}?{{node.getIdentifier()}}">{{node.getProperty('type.name')}}</a>
+        <a class="content-link-internal" href="{{node.getBreadcrumb().HybridsearchResultsValue().findLastUriInBreadcrumb()}}?{{node.getIdentifier()}}#{{1|searchTerm}}">{{node.getProperty('type.name')}}</a>
     </h3>
     <span data-ng-if="node.getProperty('citationstyle') != ''" data-ng-bind-html="node.getProperty('citationstyle')"></span>
     <span data-ng-if="node.getProperty('citationstyle') == ''">{{node.getProperty('title')}}</span>

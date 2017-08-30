@@ -1,5 +1,5 @@
 <h3>
-    <a class="content-link-internal" href="{{node.getUrl()}}?{{node.getIdentifier()}}">{{node.getProperty('title')}}</a>
+    <a class="content-link-internal" href="{{node.getUrl()}}?{{node.getIdentifier()}}#{{1|searchTerm}}">{{node.getProperty('title')}}</a>
 </h3>
 <div class="searchresult-body">
     <p data-ng-bind="node.getProperty('nr')"></p>
