@@ -13431,6 +13431,9 @@ body .all .startpage .main > .row.mobileBg {
 body .all .startpage .main > .row.aktuelles {
   background-image: url("../Images/ambientImgStartpage.jpg");
   background-size: cover; }
+  @media screen and (max-height: 650px) {
+    body .all .startpage .main > .row.aktuelles {
+      background-size: cover; } }
   @media (max-width: 1279px) {
     body .all .startpage .main > .row.aktuelles {
       background-image: none;
@@ -13439,6 +13442,21 @@ body .all .startpage .main > .row.aktuelles {
     body .all .startpage .main > .row.aktuelles {
       margin-bottom: 0;
       min-height: 800px; } }
+  @media screen and (min-width: 1280px) and (max-height: 850px) and (min-height: 800px) {
+    body .all .startpage .main > .row.aktuelles {
+      min-height: 750px; } }
+  @media screen and (min-width: 1280px) and (max-height: 800px) and (min-height: 750px) {
+    body .all .startpage .main > .row.aktuelles {
+      min-height: 700px; } }
+  @media screen and (min-width: 1280px) and (max-height: 750px) and (min-height: 700px) {
+    body .all .startpage .main > .row.aktuelles {
+      min-height: 650px; } }
+  @media screen and (min-width: 1280px) and (max-height: 700px) and (min-height: 650px) {
+    body .all .startpage .main > .row.aktuelles {
+      min-height: 600px; } }
+  @media screen and (min-width: 1280px) and (max-height: 650px) {
+    body .all .startpage .main > .row.aktuelles {
+      min-height: 560px; } }
   @media (min-width: 1280px) {
     body .all .startpage .main > .row.aktuelles > .col-xs-12 {
       max-width: inherit; } }
@@ -13459,6 +13477,33 @@ body .all .startpage .main > .row.aktuelles {
   @media (min-width: 1280px) {
     body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
       margin-top: 490px; } }
+  @media screen and (max-height: 1000px) and (min-height: 950px) {
+    body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+      margin-top: 440px; } }
+  @media screen and (max-height: 950px) and (min-height: 900px) {
+    body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+      margin-top: 390px; } }
+  @media screen and (max-height: 900px) and (min-height: 850px) {
+    body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+      margin-top: 340px; } }
+  @media screen and (max-height: 850px) and (min-height: 800px) {
+    body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+      margin-top: 290px; } }
+  @media screen and (max-height: 800px) and (min-height: 750px) {
+    body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+      margin-top: 240px; } }
+  @media screen and (max-height: 750px) and (min-height: 700px) {
+    body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+      margin-top: 190px; } }
+  @media screen and (max-height: 700px) and (min-height: 650px) {
+    body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+      margin-top: 140px; } }
+  @media screen and (max-height: 650px) and (min-height: 600px) {
+    body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+      margin-top: 90px; } }
+  @media screen and (max-height: 600px) {
+    body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+      margin-top: 80px; } }
 
 body .all .startpage .phlu-teaser {
   padding: 0; }
