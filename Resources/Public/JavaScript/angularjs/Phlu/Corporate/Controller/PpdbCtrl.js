@@ -54,10 +54,10 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     };
 
     $scope.addNodesByIdentifier = function (nodes) {
+        $scope.hasAddedNodesByIdentifier = true;
         angular.forEach(nodes, function (node) {
             $scope.nodesByIdentifier.push(node);
         });
-        $scope.hasAddedNodesByIdentifier = true;
     }
 
     $scope.addPropertyFilter = function (property, value) {
@@ -245,11 +245,12 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
              .addPropertyFilter('researchunit.ID', 'researchunit', $scope)
              .addPropertyFilter('financingtypes', 'financingtype', $scope)
              .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
-             .addPropertyFilter('title', '', null, true);
+             //.addPropertyFilter('projecttype', 'projecttype', $scope)
+             .addPropertyFilter('title', '', null, true)
 
-            if ($scope.hasAddedNodesByIdentifier === false) {
-                $scope.list.addPropertyFilter('projecttype', 'projecttype', $scope);
-            }
+        if ($scope.hasAddedNodesByIdentifier === false) {
+            $scope.list.addPropertyFilter('projecttype', 'projecttype', $scope);
+        }
 
 
         $scope.list.connectEventSlot('before_redirect',function(data) {
