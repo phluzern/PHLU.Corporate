@@ -248,8 +248,6 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
              .addPropertyFilter('title', '', null, true);
 
 
-        $scope.list.addPropertyFilter('projecttype', 'projecttype', $scope);
-
         $scope.$watch('hasAddedNodesByIdentifier',function() {
             if ($scope.hasAddedNodesByIdentifier === false) {
                 $scope.list.addPropertyFilter('projecttype', 'projecttype', $scope);
@@ -258,11 +256,6 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
             }
         });
 
-
-        $scope.list.$watch(function(data) {
-            console.log($scope.projecttype);
-           console.log(data.getNodes());
-        });
 
         $scope.list.connectEventSlot('before_redirect',function(data) {
             ga('send', 'event', {
