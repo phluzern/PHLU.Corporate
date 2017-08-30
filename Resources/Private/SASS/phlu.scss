@@ -341,6 +341,7 @@ $input-search-field-big: 55px;
   hyphens: auto;
 }
 
+// Orderedlist auto increment
 @mixin custList {
   counter-reset: item;
   list-style: none;
@@ -7892,6 +7893,9 @@ body {
         }
         > .row.aktuelles {
           background-image: url("../Images/ambientImgStartpage.jpg");
+          @media screen and ( max-height: 650px ) {
+            background-size: cover;
+          }
           background-size: cover;
           @include media-breakpoint-down("lg") {
             background-image: none;
@@ -7900,6 +7904,21 @@ body {
           @include media-breakpoint-up("xl") {
             margin-bottom: 0;
             min-height: 800px;
+            @media screen and ( max-height: 850px ) and (min-height: 800px) {
+              min-height: 750px;
+            }
+            @media screen and ( max-height: 800px ) and (min-height: 750px) {
+              min-height: 700px;
+            }
+            @media screen and ( max-height: 750px ) and (min-height: 700px) {
+              min-height: 650px;
+            }
+            @media screen and ( max-height: 700px ) and (min-height: 650px) {
+              min-height: 600px;
+            }
+            @media screen and ( max-height: 650px ) {
+              min-height: 560px;
+            }
           }
           > .col-xs-12 {
             @include media-breakpoint-up("xl") {
@@ -7927,6 +7946,33 @@ body {
             #carousel-phlu-teaser-xl {
               @include media-breakpoint-up("xl") {
                 margin-top: 490px;
+              }
+              @media screen and ( max-height: 1000px ) and (min-height: 950px) {
+                margin-top: 440px
+              }
+              @media screen and ( max-height: 950px ) and (min-height: 900px) {
+                margin-top: 390px
+              }
+              @media screen and ( max-height: 900px ) and (min-height: 850px) {
+                margin-top: 340px
+              }
+              @media screen and ( max-height: 850px ) and (min-height: 800px) {
+                margin-top: 290px
+              }
+              @media screen and ( max-height: 800px ) and (min-height: 750px) {
+                margin-top: 240px
+              }
+              @media screen and ( max-height: 750px ) and (min-height: 700px) {
+                margin-top: 190px
+              }
+              @media screen and ( max-height: 700px ) and (min-height: 650px) {
+                margin-top: 140px
+              }
+              @media screen and ( max-height: 650px ) and (min-height: 600px) {
+                margin-top: 90px
+              }
+              @media screen and ( max-height: 600px ) {
+                margin-top: 80px
               }
             }
           }
@@ -8050,47 +8096,3 @@ body {
   }
 
 }
-
-// Debug only
-//body:after {
-//  display: block;
-//  clear: both; // if you need to break floating elements
-//  bottom: 0;
-//  right: 0;
-//  position: fixed;
-//  padding: 5px;
-//  z-index: 4;
-//  @include media-breakpoint-up("xs") {
-//    content: "xs: 0px";
-//    background-color: red;
-//  }
-//  @include media-breakpoint-up("sm") {
-//    content: "sm: 544px";
-//    background-color: orange;
-//  }
-//  @include media-breakpoint-up("md") {
-//    content: "md: 768px";
-//    background-color: yellow;
-//  }
-//  @include media-breakpoint-up("lg") {
-//    content: "lg: 992px";
-//    background-color: green;
-//    color: lightgrey;
-//  }
-//  @include media-breakpoint-up("xl") {
-//    content: "xl: 1280px";
-//    background-color: blue;
-//    color: white;
-//  }
-//  @include media-breakpoint-up("xxl") {
-//    content: "xxl: 1400px";
-//    background-color: lightblue;
-//    color: white;
-//  }
-//  @include media-breakpoint-up("xxxl") {
-//    content: "xxxl: 1600px";
-//    background-color: deepskyblue;
-//    color: white;
-//  }
-//
-//}
