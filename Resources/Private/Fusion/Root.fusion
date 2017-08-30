@@ -30,6 +30,7 @@ page = Page {
         csslinks = Neos.Fusion:Template {
             templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
             sectionName = 'csslinks'
+            isProductionContext = ${Configuration.setting('Neos.Flow.core.context') == 'Production' ? true : false}
         }
 
         javascripts.site = Neos.Fusion:Template {
