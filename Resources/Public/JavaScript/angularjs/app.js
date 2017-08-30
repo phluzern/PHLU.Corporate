@@ -119,6 +119,13 @@ PhluCorporateApp.filter('groupByProperty', function () {
 });
 
 
+PhluCorporateApp.filter('extractUri', function () {
+    return function (input) {
+        return $(input).attr('href');
+    };
+});
+
+
 PhluCorporateApp.filter('debug', function () {
     return function (input) {
         console.log(input);

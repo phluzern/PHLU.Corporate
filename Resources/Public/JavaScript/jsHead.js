@@ -54045,41 +54045,6 @@ module.exports = '3.24.0';
                 };
 
 
-                /**
-                 *
-                 * @param value {mixed} a value
-                 * @constructor
-                 */
-                var HybridsearchResultsValue = function (value) {
-
-                    var self = this;
-
-                    self.value = value;
-
-                };
-
-                HybridsearchResultsValue.prototype = {
-                    findUri: function () {
-
-                        var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-                        var urls = this.value.match(urlRegex)
-                        return urls && urls.length == 1 ? urls[0] : urls;
-                    },
-
-                    findLastUriInBreadcrumb: function () {
-
-                        var urlRegex = /(href="|href=')[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|]("|')/ig;
-                        var urls = this.value.match(urlRegex)
-                        return urls[urls.length - 1].replace("href=", "").replace(/"/g, '').replace(/'/g, '');
-                    },
-
-
-                    toString: function () {
-                        return this.value;
-                    }
-
-                };
-
 
                 /**
                  *
@@ -54396,7 +54361,9 @@ module.exports = '3.24.0';
                             return this.breadcrumb
                         }
 
+
                         return value;
+
 
                     },
 
@@ -55726,6 +55693,13 @@ module.exports = '3.24.0';
                         var hasDistinct = self.getResults().hasDistincts();
 
 
+
+                        results.getApp().setNotFound(true);
+                        window.setTimeout(function() {
+                            results.getApp().setSearchCounter(1);
+                            },1000);
+
+
                         if (self.getFilter().getQuery().length == 0) {
                             self.getResults().getApp().clearQuickNodes();
                         }
@@ -56108,6 +56082,7 @@ module.exports = '3.24.0';
                         }
 
 
+                      
                     }
                     ,
 
@@ -56597,6 +56572,8 @@ module.exports = '3.24.0';
                                 self.search();
                             }
                         }
+
+
 
 
                     }
@@ -58905,6 +58882,7 @@ module.exports = '3.24.0';
                      */
                     setResults: function (results, nodes, object, skipAutocompleteUpdate, caller) {
 
+                        this.setNotFound(false);
 
                         if (self.$$data.isStartedFirstTime == false) {
                             this.setIsStartedFirstTime();
@@ -58954,14 +58932,14 @@ module.exports = '3.24.0';
                             window.clearTimeout(self.$$data._updateTimeout);
                         }
                         if (self.isStarted()) {
+
                             self.$$data._updateTimeout = window.setTimeout(function () {
-                                self.getApp().setNotFound(false);
                                 self.updateNodesGroupedBy();
                                 object.executeCallbackMethod(self);
                                 if (skipAutocompleteUpdate !== true) {
                                     self.updateAutocomplete(null, null, caller);
                                 }
-                            }, 5);
+                            }, 1);
 
                         }
 
@@ -58989,14 +58967,31 @@ module.exports = '3.24.0';
                      * @private
                      */
                     setNotFound: function (status) {
-                        var selfthis = this;
+
                         self.$$data.notfound = status;
 
+                        var selfthis = this;
+
                         if (this.getScope() !== undefined) {
-                            selfthis.getScope().$digest(function () {
-                            });
+                            window.setTimeout(function () {
+                                selfthis.getScope().$digest(function () {
+                                });
+                            }, 1);
                         }
+
+
                     },
+
+                    /**
+                     * @param {integer} counter
+                     * @private
+                     */
+                    setSearchCounter: function (counter) {
+
+                        self.$$data.searchCounter = counter;
+
+                    },
+
                     /**
                      * @private
                      * @returns {HybridsearchResultsDataObject|*}
@@ -59211,23 +59206,10 @@ module.exports = '3.24.0';
                  */
                 isLoading: function () {
 
-                    //
-                    // if (this.$$data.isrunningfirsttimestamp === 0) {
-                    //     return false;
-                    // } else {
-                    //     if (this.$$data.isrunningfirsttimestamp > 0) {
-                    //         if (Date.now() - this.$$data.isrunningfirsttimestamp < 100) {
-                    //             //return false;
-                    //         } else {
-                    //             this.$$data.isrunningfirsttimestamp = -1;
-                    //         }
-                    //     }
-                    // }
-
                     if (this.$$data.searchCounter === 0) {
-                        return false;
+                        return true;
                     } else {
-                        return this.$$data.notfound == true ? false : (this.countAll() > 0) ? false : true;
+                        return false;
                     }
 
                 },
@@ -65702,6 +65684,13 @@ PhluCorporateApp.filter('groupByProperty', function () {
 });
 
 
+PhluCorporateApp.filter('extractUri', function () {
+    return function (input) {
+        return $(input).attr('href');
+    };
+});
+
+
 PhluCorporateApp.filter('debug', function () {
     return function (input) {
         console.log(input);
@@ -67090,6 +67079,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.isopen = 0;
     $scope.nodesByIdentifier = [];
     $scope.autocompleteLastPosition = 0;
+    $scope.hasAddedNodesByIdentifier = false;
 
     $scope.clearFilter = function (filtertype) {
         $scope[filtertype] = {};
@@ -67122,6 +67112,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     };
 
     $scope.addNodesByIdentifier = function (nodes) {
+        $scope.hasAddedNodesByIdentifier = true;
         angular.forEach(nodes, function (node) {
             $scope.nodesByIdentifier.push(node);
         });
@@ -67306,15 +67297,18 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.run = function () {
 
         $scope.list
-        //.disableRealtime()
-            .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
-            .addPropertyFilter('lifetime', 'filterLifetime', $scope)
-            .addPropertyFilter('researchmainfocus.ID', 'researchmainfocus', $scope)
-            .addPropertyFilter('researchunit.ID', 'researchunit', $scope)
-            .addPropertyFilter('financingtypes', 'financingtype', $scope)
-            .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
-            .addPropertyFilter('projecttype', 'projecttype', $scope)
-            .addPropertyFilter('title', '', null, true)
+             .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
+             .addPropertyFilter('lifetime', 'filterLifetime', $scope)
+             .addPropertyFilter('researchmainfocus.ID', 'researchmainfocus', $scope)
+             .addPropertyFilter('researchunit.ID', 'researchunit', $scope)
+             .addPropertyFilter('financingtypes', 'financingtype', $scope)
+             .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
+             //.addPropertyFilter('projecttype', 'projecttype', $scope)
+             .addPropertyFilter('title', '', null, true)
+
+        if ($scope.hasAddedNodesByIdentifier === false) {
+            $scope.list.addPropertyFilter('projecttype', 'projecttype', $scope);
+        }
 
 
         $scope.list.connectEventSlot('before_redirect',function(data) {

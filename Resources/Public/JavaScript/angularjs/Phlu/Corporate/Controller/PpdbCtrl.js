@@ -21,6 +21,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.isopen = 0;
     $scope.nodesByIdentifier = [];
     $scope.autocompleteLastPosition = 0;
+    $scope.hasAddedNodesByIdentifier = false;
 
     $scope.clearFilter = function (filtertype) {
         $scope[filtertype] = {};
@@ -53,6 +54,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     };
 
     $scope.addNodesByIdentifier = function (nodes) {
+        $scope.hasAddedNodesByIdentifier = true;
         angular.forEach(nodes, function (node) {
             $scope.nodesByIdentifier.push(node);
         });
@@ -237,15 +239,18 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.run = function () {
 
         $scope.list
-        //.disableRealtime()
-            .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
-            .addPropertyFilter('lifetime', 'filterLifetime', $scope)
-            .addPropertyFilter('researchmainfocus.ID', 'researchmainfocus', $scope)
-            .addPropertyFilter('researchunit.ID', 'researchunit', $scope)
-            .addPropertyFilter('financingtypes', 'financingtype', $scope)
-            .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
-            .addPropertyFilter('projecttype', 'projecttype', $scope)
-            .addPropertyFilter('title', '', null, true)
+             .addPropertyFilter('organisationunits.id', 'organisationunits', $scope)
+             .addPropertyFilter('lifetime', 'filterLifetime', $scope)
+             .addPropertyFilter('researchmainfocus.ID', 'researchmainfocus', $scope)
+             .addPropertyFilter('researchunit.ID', 'researchunit', $scope)
+             .addPropertyFilter('financingtypes', 'financingtype', $scope)
+             .addPropertyFilter('participants.*.EventoID', 'projectparticipants', $scope)
+             //.addPropertyFilter('projecttype', 'projecttype', $scope)
+             .addPropertyFilter('title', '', null, true)
+
+        if ($scope.hasAddedNodesByIdentifier === false) {
+            $scope.list.addPropertyFilter('projecttype', 'projecttype', $scope);
+        }
 
 
         $scope.list.connectEventSlot('before_redirect',function(data) {

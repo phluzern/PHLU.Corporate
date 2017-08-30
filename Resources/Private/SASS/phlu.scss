@@ -565,6 +565,8 @@ html {
   min-height: 100%;
 }
 
+
+
 //
 // loading indicator
 //
@@ -1439,6 +1441,21 @@ body {
 
   .all {
     display: block !important;
+
+    // search result (target page) highlight
+    .targetnode {
+      @include teaser-transition(0.3);
+      &.on {
+        @include teaser-transform-scale(1.1);
+      }
+      &.off {
+        @include teaser-transform-scale(1);
+      }
+    }
+    .tmpFixedHeight {
+      height:600px;
+      overflow: hidden;
+    }
 
     // neos specific
     .neos-contentcollection {

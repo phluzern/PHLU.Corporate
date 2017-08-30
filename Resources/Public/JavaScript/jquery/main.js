@@ -239,7 +239,7 @@ function initFrontend() {
     /*
      *  Open accordion panel from url hash
      */
-    if(location.hash != null && location.hash != ""){
+    if (location.hash != null && location.hash != "") {
         $('.collapse').removeClass('in');
         location.hash = location.hash.replace('\#/', '');
         //console.log(location.hash);
@@ -262,7 +262,7 @@ function initFrontend() {
      * scroll to clicked accordion element if outside of viewport
      */
     scrollToViewport();
-
+    goToTargetNode();
 
 }
 
@@ -328,6 +328,96 @@ function initSmoothScrolling() {
 
 
     });
+}
+
+function goToTargetNode() {
+
+
+    var targetNodeElement = $('.targetnode').first();
+    var targetNodeElementId = targetNodeElement.attr('data-targetnode');
+    var dynamicContentsSelector = '.sectionWithDynamicContent';
+    var offsetPadding = 17;
+
+    if (targetNodeElement.length) {
+
+        $(dynamicContentsSelector).each(function () {
+            $(this).addClass('tmpFixedHeight');
+        });
+
+        if (targetNodeElement.is(':visible') === false) {
+
+            // open collapses from outer to inner
+            $('[data-toggle="collapse"]').each(function () {
+                if ($(this).closest('.panel').find('[data-targetnode="' + targetNodeElementId + '"]').length) {
+                    $(this).trigger('click');
+                }
+            });
+
+            targetNodeElement.find('[data-toggle="collapse"]').first().trigger('click')
+
+
+        } else {
+            targetNodeElement.find('[data-toggle="collapse"]').first().trigger('click')
+        }
+
+            window.setTimeout(function () {
+
+                var intervalCounter = 0;
+                var lastScrolltop = 0;
+                var minScrolltop = 250;
+                var ScrollTop = targetNodeElement.offset().top < minScrolltop ? 0 : targetNodeElement.offset().top;
+
+                var interval = window.setInterval(function () {
+
+                    if (lastScrolltop == ScrollTop - offsetPadding) {
+                        $('html, body').scrollTop(ScrollTop - offsetPadding);
+                    }
+
+                    intervalCounter++;
+                    if (intervalCounter > 50) {
+                        window.clearInterval(interval);
+                    }
+
+                    lastScrolltop = ScrollTop - offsetPadding;
+
+
+                }, 10);
+
+                var observerWasApplied = false;
+
+                var observeScroll = function () {
+
+                    if (observerWasApplied === false) {
+                        window.clearInterval(interval);
+                        $(dynamicContentsSelector).each(function () {
+                            $(this).removeClass('tmpFixedHeight');
+                        });
+                        var ScrollTop = targetNodeElement.offset().top < minScrolltop ? 0 : targetNodeElement.offset().top;
+                        $('html, body').scrollTop(ScrollTop - offsetPadding);
+                        observerWasApplied = true;
+                    }
+                }
+
+                document.addEventListener('mousewheel', function (e) {
+                    observeScroll();
+                });
+
+                document.addEventListener('mousedown', function (e) {
+                    observeScroll();
+                });
+
+                document.addEventListener('keydown', function (e) {
+                    observeScroll();
+                });
+
+
+            }, 100);
+
+
+
+    }
+
+
 }
 
 function initCarousel() {
