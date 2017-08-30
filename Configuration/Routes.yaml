@@ -1,3 +1,15 @@
+##
+# Neos Seo: XML Sitemap
+
+-
+  name: 'Neos Seo'
+  uriPattern: '<NeosSeoSubroutes>'
+  subRoutes:
+    'NeosSeoSubroutes':
+      package: 'Neos.Seo'
+      variables:
+        'xmlSitemapPath': 'sitemap.xml'
+
 #
 # Phlu corporate routes
 #
