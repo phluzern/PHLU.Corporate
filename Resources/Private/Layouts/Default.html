@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
+{namespace vc=Phlu\Corporate\ViewHelpers\VersionControl}
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
       xmlns:f="http://xsd.helmut-hummel.de/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <head>
@@ -44,11 +45,10 @@
     </f:section>
 
     <f:section name="headScripts">
-
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PMZdx5E8mJbm1hurLezMYjt6yPIFrY4"></script>
         <f:if condition="{isProductionContext}">
             <f:then>
-                <script src="{f:uri.resource(path: 'JavaScript/jsHead.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{f:uri.resource(path: 'JavaScript/jsHead.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
             </f:then>
             <f:else>
                 <script src="{f:uri.resource(path: 'Vendor/angularjs/angular.min.js', package: 'Phlu.Corporate')}"></script>
@@ -268,7 +268,7 @@
 
     <f:if condition="{isProductionContext}">
         <f:then>
-            <script src="{f:uri.resource(path: 'JavaScript/jsBody.min.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'JavaScript/jsBody.min.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
         </f:then>
         <f:else>
             <!-- Put your scripts inclusions for the end of the body here, they will be included in your website by TypoScript -->
@@ -287,7 +287,7 @@
 
     <f:if condition="{neos:rendering.inBackend()}">
         <f:then>
-            <script src="{f:uri.resource(path: 'JavaScript/jquery/backend.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{f:uri.resource(path: 'JavaScript/jquery/backend.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
         </f:then>
         <f:else>
             <script async>
