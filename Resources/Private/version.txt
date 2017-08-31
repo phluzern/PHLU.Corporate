@@ -1,1 +1,2 @@
-1
+74bcdc1
+cd Packages/Sites/Phlu.Corporate/ | git rev-parse --short HEAD > ./Resources/Private/version.txt
