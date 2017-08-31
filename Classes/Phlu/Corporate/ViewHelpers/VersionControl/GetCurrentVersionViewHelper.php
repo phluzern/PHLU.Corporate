@@ -37,7 +37,7 @@ class GetCurrentVersionViewHelper extends AbstractViewHelper
      */
     public function render()
     {
-        return file_get_contents('resource://Phlu.Corporate/Private/version.txt');
+        return trim(file_get_contents('resource://Phlu.Corporate/Private/version.txt'));
     }
 
 
