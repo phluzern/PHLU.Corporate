@@ -142,6 +142,9 @@ $carousel-control-opacity: 1;
 
 // phlu buttons
 $btn-primary-bg: $iceblue;
+$btn-secondary-color: white;
+$btn-secondary-bg: $font-color;
+$btn-secondary-border-radius: 2px;
 $btn-info-bg: $lightblue;
 $btn-info-color: $grey;
 $btn-border-radius: 0;
@@ -564,8 +567,6 @@ html {
   position: relative;
   min-height: 100%;
 }
-
-
 
 //
 // loading indicator
@@ -1453,7 +1454,7 @@ body {
       }
     }
     .tmpFixedHeight {
-      height:600px;
+      height: 600px;
       overflow: hidden;
     }
 
@@ -1585,6 +1586,58 @@ body {
         &:hover {
           background-color: $iceblueDark;
           border-color: $iceblueDark;
+        }
+      }
+      &.btn-secondary {
+        border-radius: $btn-secondary-border-radius;
+        font-weight: $font-weight-bold;
+        padding:0;
+        &:hover {
+          color:$font-color;
+          background-color: $grey13;
+          border-color: $grey13;
+        }
+        &.twitter, &.facebook {
+          font-size:$font-size-href;
+          width: 33px;
+          height: 33px;
+          margin-right: 6px;
+          &.tooltipTitle {
+            &:hover {
+              &::after {
+                position: absolute;
+                color: $darkgrey;
+                font-size: $font-size-small;
+                background-color: $grey13;
+                border-radius: $btn-secondary-border-radius;
+                padding: 4px;
+                margin-left: 30px;
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+        &.twitter {
+          &.tooltipTitle {
+            &:hover {
+              &:after {
+                content: 'Twitter';
+                top: 43px;
+                left: 26px;
+              }
+            }
+          }
+        }
+        &.facebook {
+          &.tooltipTitle {
+            &:hover {
+              &:after {
+                content: 'Facebook';
+                top: 43px;
+                left: -15px;
+              }
+            }
+          }
         }
       }
       &.loadMore {
@@ -4385,9 +4438,9 @@ body {
       }
       .course-description {
         ol {
-          padding-left:19px;
+          padding-left: 19px;
           li {
-            padding-left:10px;
+            padding-left: 10px;
           }
         }
       }
@@ -4646,7 +4699,7 @@ body {
                   }
                   &.researchmainfocus {
                     width: 170px;
-                    padding-left:0;
+                    padding-left: 0;
                   }
                   .mobile-view-columns.researchmainfocus {
                     span {
@@ -4656,7 +4709,7 @@ body {
                         margin-top: 5px;
                       }
                       &.header {
-                        padding-top:12px;
+                        padding-top: 12px;
                         padding-left: 20px;
                       }
                     }
@@ -4717,7 +4770,7 @@ body {
                           margin-left: 0;
                           margin-right: 0;
                           @include media-breakpoint-down("sm") {
-                            margin-top:30px;
+                            margin-top: 30px;
                           }
                         }
                         p {
@@ -6736,7 +6789,7 @@ body {
                   padding-bottom: 15px;
                 }
               }
-              }
+            }
           }
         }
       }
@@ -7514,10 +7567,12 @@ body {
         }
       }
       .sociallinks {
-        display: none;
         margin-bottom: 50px;
-        @include media-breakpoint-up("xl") {
-          margin-top: 110px;
+        @include media-breakpoint-down("lg") {
+          margin-top: 100px;
+        }
+        @include media-breakpoint-down("md") {
+          margin-top: 15px;
         }
       }
       .flexfirst {
@@ -7526,6 +7581,10 @@ body {
         }
       }
       .footerLogoMobile, .footerAddressMobile {
+        @include media-breakpoint-down("md") {
+          margin-top: -15px;
+
+        }
         @include media-breakpoint-up("lg") {
           display: none;
         }
@@ -7562,7 +7621,7 @@ body {
         }
       }
       .copyright {
-        padding-top: 90px;
+        padding-top: 70px;
         @include media-breakpoint-up("lg") {
           text-align: right;
         }
@@ -7849,7 +7908,7 @@ body {
         }
         > .row.aktuelles {
           background-image: url("../Images/ambientImgStartpage.jpg");
-          @media screen and ( max-height: 650px ) {
+          @media screen and (max-height: 650px) {
             background-size: cover;
           }
           background-size: cover;
@@ -7860,19 +7919,19 @@ body {
           @include media-breakpoint-up("xl") {
             margin-bottom: 0;
             min-height: 800px;
-            @media screen and ( max-height: 850px ) and (min-height: 800px) {
+            @media screen and (max-height: 850px) and (min-height: 800px) {
               min-height: 750px;
             }
-            @media screen and ( max-height: 800px ) and (min-height: 750px) {
+            @media screen and (max-height: 800px) and (min-height: 750px) {
               min-height: 700px;
             }
-            @media screen and ( max-height: 750px ) and (min-height: 700px) {
+            @media screen and (max-height: 750px) and (min-height: 700px) {
               min-height: 650px;
             }
-            @media screen and ( max-height: 700px ) and (min-height: 650px) {
+            @media screen and (max-height: 700px) and (min-height: 650px) {
               min-height: 600px;
             }
-            @media screen and ( max-height: 650px ) {
+            @media screen and (max-height: 650px) {
               min-height: 560px;
             }
           }
@@ -7903,31 +7962,31 @@ body {
               @include media-breakpoint-up("xl") {
                 margin-top: 490px;
               }
-              @media screen and ( max-height: 1000px ) and (min-height: 950px) {
+              @media screen and (max-height: 1000px) and (min-height: 950px) {
                 margin-top: 440px
               }
-              @media screen and ( max-height: 950px ) and (min-height: 900px) {
+              @media screen and (max-height: 950px) and (min-height: 900px) {
                 margin-top: 390px
               }
-              @media screen and ( max-height: 900px ) and (min-height: 850px) {
+              @media screen and (max-height: 900px) and (min-height: 850px) {
                 margin-top: 340px
               }
-              @media screen and ( max-height: 850px ) and (min-height: 800px) {
+              @media screen and (max-height: 850px) and (min-height: 800px) {
                 margin-top: 290px
               }
-              @media screen and ( max-height: 800px ) and (min-height: 750px) {
+              @media screen and (max-height: 800px) and (min-height: 750px) {
                 margin-top: 240px
               }
-              @media screen and ( max-height: 750px ) and (min-height: 700px) {
+              @media screen and (max-height: 750px) and (min-height: 700px) {
                 margin-top: 190px
               }
-              @media screen and ( max-height: 700px ) and (min-height: 650px) {
+              @media screen and (max-height: 700px) and (min-height: 650px) {
                 margin-top: 140px
               }
-              @media screen and ( max-height: 650px ) and (min-height: 600px) {
+              @media screen and (max-height: 650px) and (min-height: 600px) {
                 margin-top: 90px
               }
-              @media screen and ( max-height: 600px ) {
+              @media screen and (max-height: 600px) {
                 margin-top: 80px
               }
             }

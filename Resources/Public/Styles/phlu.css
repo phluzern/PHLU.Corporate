@@ -2132,35 +2132,35 @@ fieldset[disabled] a.btn {
     border-color: #2a818d; }
 
 .btn-secondary {
-  color: #373a3c;
-  background-color: #fff;
+  color: white;
+  background-color: #5c5c5c;
   border-color: #ccc; }
   .btn-secondary:hover {
-    color: #373a3c;
-    background-color: #e6e5e5;
+    color: white;
+    background-color: #434242;
     border-color: #adadad; }
   .btn-secondary:focus, .btn-secondary.focus {
-    color: #373a3c;
-    background-color: #e6e5e5;
+    color: white;
+    background-color: #434242;
     border-color: #adadad; }
   .btn-secondary:active, .btn-secondary.active,
   .open > .btn-secondary.dropdown-toggle {
-    color: #373a3c;
-    background-color: #e6e5e5;
+    color: white;
+    background-color: #434242;
     border-color: #adadad;
     background-image: none; }
     .btn-secondary:active:hover, .btn-secondary:active:focus, .btn-secondary:active.focus, .btn-secondary.active:hover, .btn-secondary.active:focus, .btn-secondary.active.focus,
     .open > .btn-secondary.dropdown-toggle:hover,
     .open > .btn-secondary.dropdown-toggle:focus,
     .open > .btn-secondary.dropdown-toggle.focus {
-      color: #373a3c;
-      background-color: #d4d4d4;
+      color: white;
+      background-color: #313131;
       border-color: #8c8c8c; }
   .btn-secondary.disabled:focus, .btn-secondary.disabled.focus, .btn-secondary:disabled:focus, .btn-secondary:disabled.focus {
-    background-color: #fff;
+    background-color: #5c5c5c;
     border-color: #ccc; }
   .btn-secondary.disabled:hover, .btn-secondary:disabled:hover {
-    background-color: #fff;
+    background-color: #5c5c5c;
     border-color: #ccc; }
 
 .btn-info {
@@ -9079,6 +9079,36 @@ body {
         body .all .btn.btn-primary:hover {
           background-color: #0A626C;
           border-color: #0A626C; }
+      body .all .btn.btn-secondary {
+        border-radius: 2px;
+        font-weight: 700;
+        padding: 0; }
+        body .all .btn.btn-secondary:hover {
+          color: #5c5c5c;
+          background-color: #DEDBD9;
+          border-color: #DEDBD9; }
+        body .all .btn.btn-secondary.twitter, body .all .btn.btn-secondary.facebook {
+          font-size: 1.125rem;
+          width: 33px;
+          height: 33px;
+          margin-right: 6px; }
+          body .all .btn.btn-secondary.twitter.tooltipTitle:hover::after, body .all .btn.btn-secondary.facebook.tooltipTitle:hover::after {
+            position: absolute;
+            color: #545454;
+            font-size: 0.8rem;
+            background-color: #DEDBD9;
+            border-radius: 2px;
+            padding: 4px;
+            margin-left: 30px;
+            white-space: nowrap; }
+        body .all .btn.btn-secondary.twitter.tooltipTitle:hover:after {
+          content: 'Twitter';
+          top: 43px;
+          left: 26px; }
+        body .all .btn.btn-secondary.facebook.tooltipTitle:hover:after {
+          content: 'Facebook';
+          top: 43px;
+          left: -15px; }
       body .all .btn.loadMore {
         background-color: #e6e6e6;
         margin: 30px 0 0;
@@ -13241,14 +13271,19 @@ body {
         body .all .footer .langnav a.active {
           font-weight: 700; }
       body .all .footer .sociallinks {
-        display: none;
         margin-bottom: 50px; }
-        @media (min-width: 1280px) {
+        @media (max-width: 1279px) {
           body .all .footer .sociallinks {
-            margin-top: 110px; } }
+            margin-top: 100px; } }
+        @media (max-width: 991px) {
+          body .all .footer .sociallinks {
+            margin-top: 15px; } }
       @media (min-width: 1280px) {
         body .all .footer .flexfirst {
           order: -1; } }
+      @media (max-width: 991px) {
+        body .all .footer .footerLogoMobile, body .all .footer .footerAddressMobile {
+          margin-top: -15px; } }
       @media (min-width: 992px) {
         body .all .footer .footerLogoMobile, body .all .footer .footerAddressMobile {
           display: none; } }
@@ -13277,7 +13312,7 @@ body {
         body .all .footer .footerAddressLogoDesktop .footerLogo {
           width: 200px; }
       body .all .footer .copyright {
-        padding-top: 90px; }
+        padding-top: 70px; }
         @media (min-width: 992px) {
           body .all .footer .copyright {
             text-align: right; } }
