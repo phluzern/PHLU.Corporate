@@ -55695,7 +55695,7 @@ module.exports = '3.24.0';
 
                         window.setTimeout(function() {
                             self.searchExecute(nodesFromInput, booleanmode, customquery);
-                        },100);
+                        },10);
 
 
                     },
