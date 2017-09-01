@@ -98,13 +98,28 @@ class NodeHelper implements ProtectedContextAwareInterface
      * Get contact based on http request
      *
      * @param Node $node
-     * @return boolean
+     * @return mixed
      */
     public function getContact(Node $node)
     {
 
         $route = $this->router->route($this->httpRequest);
         return isset($route['contact']['__identity']) ? $this->contactRepository->findByIdentifier($route['contact']['__identity']) : null;
+
+    }
+
+    /**
+     * Get contact based on http request
+     *
+     * @param Node $node
+     * @return string
+     */
+    public function getContactTitle(Node $node)
+    {
+
+      $contact = $this->getContact($node);
+
+      return $contact ? $contact->getName() : '';
 
     }
 

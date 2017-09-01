@@ -1,10 +1,15 @@
-
-
 portrait < page
 
 portrait {
 
+    head {
 
+            titleTag = Neos.Fusion:Tag {
+                tagName = 'title'
+                content = ${Phlu.Corporate.getContactTitle(node)}
+            }
+
+    }
 
     body {
 
