@@ -36,6 +36,8 @@
         inspector:
           group: 'teaser'
           position: 86
+      validation:
+        'Neos.Neos/Validation/NotEmptyValidator': []
     reference:
       type: reference
       ui:
