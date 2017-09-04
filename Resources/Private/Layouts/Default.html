@@ -28,7 +28,7 @@
               media="all"/>
         <link rel="stylesheet"
               href="{f:uri.resource(path: 'blueimp/css/blueimp-gallery.css', package: 'Phlu.Corporate')}" media="all"/>
-        <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/phlu.css', package: 'Phlu.Corporate')}" media="all"/>
+        <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/phlu.css', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}" media="all"/>
         <f:if condition="{isProductionContext}">
             <f:else>
                 <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/debug.css', package: 'Phlu.Corporate')}" media="all"/>
