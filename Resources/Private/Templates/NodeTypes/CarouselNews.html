@@ -20,7 +20,10 @@
 
         <f:if condition="{neos:rendering.inBackend()}">
             <f:else>
-
+                <div id="carousel-phlu-teaser-xxl" class="phlu-teaser carousel slide">
+                    <f:render section="carousel"
+                              arguments="{carouselItems: carouselItems, spliceNum: 3, itemClass: 'col-xl-4', targetId: 'carousel-phlu-teaser-xxl'}"></f:render>
+                </div>
             <div id="carousel-phlu-teaser-xl" class="phlu-teaser carousel slide">
                 <f:render section="carousel"
                           arguments="{carouselItems: carouselItems, spliceNum: 3, itemClass: 'col-xl-4', targetId: 'carousel-phlu-teaser-xl'}"></f:render>
