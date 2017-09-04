@@ -3,40 +3,32 @@
 {namespace phlu=Phlu\Neos\NodeTypes\ViewHelpers}
 
 <div id="aktuelles">
-
     <div class="col-xs-12">
-
-
-
-
+            <div id="carousel-phlu-teaser-xxl" class="phlu-teaser carousel slide">
+                <f:render section="carousel"
+                          arguments="{carouselItems: carouselItems, spliceNum: 4, itemClass: 'col-xl-3', targetId: 'carousel-phlu-teaser-xxl'}"></f:render>
+            </div>
             <div id="carousel-phlu-teaser-xl" class="phlu-teaser carousel slide">
                 <f:render section="carousel"
-                          arguments="{carouselItems: carouselItems, spliceNum: 4, itemClass: 'col-xl-3', targetId: 'carousel-phlu-teaser-xl'}"></f:render>
+                          arguments="{carouselItems: carouselItems, spliceNum: 3, itemClass: 'col-xl-4', targetId: 'carousel-phlu-teaser-xl'}"></f:render>
             </div>
-
             <div id="carousel-phlu-teaser-lg" class="phlu-teaser carousel slide">
                 <f:render section="carousel"
                           arguments="{carouselItems: carouselItems, spliceNum: 3, itemClass: 'col-lg-4', targetId: 'carousel-phlu-teaser-lg'}"></f:render>
             </div>
-
             <div id="carousel-phlu-teaser-md" class="phlu-teaser carousel slide">
                 <f:render section="carousel"
                           arguments="{carouselItems: carouselItems, spliceNum: 3, itemClass: 'col-md-4', targetId: 'carousel-phlu-teaser-md'}"></f:render>
             </div>
-
             <div id="carousel-phlu-teaser-sm" class="phlu-teaser carousel slide">
                 <f:render section="carousel"
                           arguments="{carouselItems: carouselItems, spliceNum: 2, itemClass: 'col-sm-6', targetId: 'carousel-phlu-teaser-sm'}"></f:render>
             </div>
-
             <div id="carousel-phlu-teaser-xs" class="phlu-teaser carousel slide">
                 <f:render section="carousel"
                           arguments="{carouselItems: carouselItems, spliceNum: 1 , itemClass: 'col-xs-12', targetId: 'carousel-phlu-teaser-xs'}"></f:render>
             </div>
-
-
     </div>
-
 </div>
 
 
