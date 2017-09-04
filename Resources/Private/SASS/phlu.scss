@@ -334,14 +334,14 @@ $input-search-field-big: 55px;
 
 // wrap too long words in headers
 @mixin word-wrap() {
-  overflow-wrap: break-word;
+/*  overflow-wrap: break-word;
   word-wrap: break-word;
   -ms-word-break: normal;
   word-break: break-word;
   -ms-hyphens: none;
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
-  hyphens: auto;
+  hyphens: auto;*/
 }
 
 // Orderedlist auto increment
@@ -547,6 +547,40 @@ $input-search-field-big: 55px;
     input {
       height: 40px;
     }
+  }
+}
+
+// Keep Service Links in Viewport on Startpage also if screen height is below 1000px
+@mixin serviceLinksTopMargin() {
+  @include media-breakpoint-up("xl") {
+    margin-top: 490px;
+  }
+  @media screen and (max-height: 1000px) and (min-height: 950px) {
+    margin-top: 440px
+  }
+  @media screen and (max-height: 950px) and (min-height: 900px) {
+    margin-top: 390px
+  }
+  @media screen and (max-height: 900px) and (min-height: 850px) {
+    margin-top: 340px
+  }
+  @media screen and (max-height: 850px) and (min-height: 800px) {
+    margin-top: 290px
+  }
+  @media screen and (max-height: 800px) and (min-height: 750px) {
+    margin-top: 240px
+  }
+  @media screen and (max-height: 750px) and (min-height: 700px) {
+    margin-top: 190px
+  }
+  @media screen and (max-height: 700px) and (min-height: 650px) {
+    margin-top: 140px
+  }
+  @media screen and (max-height: 650px) and (min-height: 600px) {
+    margin-top: 90px
+  }
+  @media screen and (max-height: 600px) {
+    margin-top: 80px
   }
 }
 
@@ -3158,6 +3192,20 @@ body {
             display: none;
           }
           @include media-breakpoint-up("xl") {
+            display: block;
+          }
+          @include media-breakpoint-up("xxl") {
+            display: none;
+          }
+        }
+        &#carousel-phlu-teaser-xxl {
+          @include media-breakpoint-up("xs") {
+            display: none;
+          }
+          @include media-breakpoint-up("xl") {
+            display: none;
+          }
+          @include media-breakpoint-up("xxl") {
             display: block;
           }
         }
@@ -8003,36 +8051,10 @@ body {
               }
             }
             #carousel-phlu-teaser-xl {
-              @include media-breakpoint-up("xl") {
-                margin-top: 490px;
-              }
-              @media screen and (max-height: 1000px) and (min-height: 950px) {
-                margin-top: 440px
-              }
-              @media screen and (max-height: 950px) and (min-height: 900px) {
-                margin-top: 390px
-              }
-              @media screen and (max-height: 900px) and (min-height: 850px) {
-                margin-top: 340px
-              }
-              @media screen and (max-height: 850px) and (min-height: 800px) {
-                margin-top: 290px
-              }
-              @media screen and (max-height: 800px) and (min-height: 750px) {
-                margin-top: 240px
-              }
-              @media screen and (max-height: 750px) and (min-height: 700px) {
-                margin-top: 190px
-              }
-              @media screen and (max-height: 700px) and (min-height: 650px) {
-                margin-top: 140px
-              }
-              @media screen and (max-height: 650px) and (min-height: 600px) {
-                margin-top: 90px
-              }
-              @media screen and (max-height: 600px) {
-                margin-top: 80px
-              }
+              @include serviceLinksTopMargin();
+            }
+            #carousel-phlu-teaser-xxl {
+              @include serviceLinksTopMargin();
             }
           }
         }
