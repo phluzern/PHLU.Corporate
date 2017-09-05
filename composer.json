@@ -20,10 +20,5 @@
         "neos": {
             "package-key": "Phlu.Corporate"
         }
-    },
-    "scripts": {
-        "post-package-update": [
-            "git rev-parse --short HEAD > ./Resources/Private/version.txt"
-        ]
     }
 }
