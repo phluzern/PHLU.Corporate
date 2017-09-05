@@ -14,13 +14,15 @@
                 <span data-ng-bind="node.getProperty('function')"></span>
             </span>
 
-
             <span data-ng-if="node.getProperty('street')">
-             <br> <span data-ng-bind="node.getProperty('street')"></span>
+             <br> <span data-ng-bind="node.getProperty('street')"></span><span
+                    data-ng-if="node.getProperty('officeid')">, Büro <span data-ng-bind="node.getProperty('officeid')"></span>
+            </span>
             </span>
 
             <span data-ng-if="node.getProperty('zip')">
-             <br> <span data-ng-bind="node.getProperty('zip')"></span> <span data-ng-bind="node.getProperty('city')"></span>
+             <br> <span data-ng-bind="node.getProperty('zip')"></span> <span
+                    data-ng-bind="node.getProperty('city')"></span>
             </span>
 
             <div class="telephone" data-ng-if="node.getProperty('phone')">

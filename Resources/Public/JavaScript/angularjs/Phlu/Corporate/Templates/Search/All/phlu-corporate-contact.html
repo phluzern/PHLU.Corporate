@@ -26,11 +26,13 @@
     <span data-ng-if="!node.getProperty('functioncustom') && node.getProperty('function')">
                     <span data-ng-bind="node.getProperty('function')"></span>
                 </span>
-    <span data-ng-show="node.getProperty('phone') != ''">{{node.getProperty('phone')}},</span>
+    <span data-ng-show="node.getProperty('phone') != ''"><br/>{{node.getProperty('phone')}},</span>
     {{node.getProperty('email')}}
-
-
     </span>
+
+    <span data-ng-bind="node.getProperty('street')"></span><span
+        data-ng-if="node.getProperty('officeid')">, Büro <span data-ng-bind="node.getProperty('officeid')"></span>
+            </span>
 
     <div data-ng-repeat="(nodeType,nodes) in node.getGroupedByNodeType('_document.identifier')">
         <div data-ng-switch="nodeType" class="quickinfo-wrapper quickinfo">
