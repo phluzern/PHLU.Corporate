@@ -11652,10 +11652,26 @@ body {
                 max-height: 150px;
                 margin-bottom: 10px; } }
           body .all .infoboxes > div > div > div .box2 {
-            position: relative;
-            overflow: hidden; }
-            body .all .infoboxes > div > div > div .box2 .centeredBox {
+            display: table-cell;
+            height: 320px;
+            width: 280px;
+            vertical-align: middle; }
+            @media (max-width: 767px) {
+              body .all .infoboxes > div > div > div .box2 {
+                display: flex;
+                width: 100%; } }
+            body .all .infoboxes > div > div > div .box2 .smalltext {
               position: absolute;
+              top: 0;
+              width: 96%; }
+              @media (max-width: 767px) {
+                body .all .infoboxes > div > div > div .box2 .smalltext {
+                  width: 98%; } }
+              @media (max-width: 543px) {
+                body .all .infoboxes > div > div > div .box2 .smalltext {
+                  width: 97%; } }
+            body .all .infoboxes > div > div > div .box2 .centeredBox {
+              position: relative;
               top: 0;
               bottom: 0;
               left: 0;
@@ -11663,7 +11679,7 @@ body {
               margin: auto;
               width: 100%;
               height: auto;
-              display: table; }
+              display: inline-block; }
               body .all .infoboxes > div > div > div .box2 .centeredBox p::after {
                 display: block;
                 content: ' ';
