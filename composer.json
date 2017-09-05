@@ -22,7 +22,7 @@
         }
     },
     "scripts": {
-        "post-update-cmd": [
+        "post-package-update": [
             "git rev-parse --short HEAD > ./Resources/Private/version.txt"
         ]
     }
