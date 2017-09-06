@@ -77,6 +77,36 @@ module.exports = function (grunt) {
                 dest: '../Resources/Public/JavaScript/jsBody.min.js',
                 nonull: true
             }
+        },
+        phpdocumentor: {
+
+            // Place here Task level options (i.e common to all your phpDocumentor targets)
+            options : {
+                command : 'run',
+            },
+
+            // Grunt Target used to generate a first documentation
+            sites : {
+                options: {
+                    directory : '../../../Sites/*',
+                    target : '../Documentation/Sites'
+                }
+            },
+
+            applications : {
+                options: {
+                    directory : '../../../Application/Phlu.*',
+                    target : '../Documentation/Application/Phlu.Evento'
+                }
+            },
+
+            // Sample target used to display the phpDocumentor help
+            display_help : {
+                options : {
+                    command : 'help'
+                }
+            }
+
         }
     });
 
@@ -87,9 +117,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-phpdocumentor');
 
-
-    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'watch']);
+    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'watch','phpdocumentor']);
 
 
 };

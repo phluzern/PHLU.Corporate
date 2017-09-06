@@ -41,6 +41,7 @@
     "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-phpdocumentor": "^0.4.1",
     "xo": "^0.16.0"
   },
   "peerDependencies": {
