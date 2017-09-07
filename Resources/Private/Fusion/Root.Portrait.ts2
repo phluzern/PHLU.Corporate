@@ -9,6 +9,17 @@ portrait {
                 content = ${Phlu.Corporate.getContactTitle(node)}
             }
 
+
+        alternateLanguageLinks.templatePath = 'resource://Phlu.Corporate/Private/Templates/FusionObjects/AlternateLanguageLinksPortrait.html'
+        alternateLanguageLinks.contact = ${Phlu.Corporate.getContact(node)}
+
+        canonicalLink = Neos.Fusion:Template {
+            templatePath = 'resource://Phlu.Corporate/Private/Templates/FusionObjects/CanonicalLinksPortrait.html'
+            contact = ${Phlu.Corporate.getContact(node)}
+            node = ${q(node).get(0)}
+        }
+
+
     }
 
     body {
