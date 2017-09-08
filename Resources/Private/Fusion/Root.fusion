@@ -221,3 +221,11 @@ itemRenderer = BreadcrumbMenu
 templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/Partials/Breadcrumb.html'
 }
 
+
+breadcrumb = Neos.Fusion:Collection {
+collection = ${q(node)}
+itemName = 'node'
+itemRenderer = BreadcrumbMenu
+templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/Partials/Breadcrumb.html'
+}
+
