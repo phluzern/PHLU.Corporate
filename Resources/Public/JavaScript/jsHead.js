@@ -55657,9 +55657,6 @@ module.exports = '3.24.0';
                         }
 
 
-
-
-
                         angular.forEach(nodes, function (node) {
                             if (nodesIndexed[node.hash] == undefined) {
                                 nodesToIndex.push({node: node});
@@ -55684,18 +55681,88 @@ module.exports = '3.24.0';
                      * @params {string} customquery
                      * @returns mixed
                      */
-                    search: function(nodesFromInput, booleanmode, customquery) {
+                    search: function (nodesFromInput, booleanmode, customquery) {
 
                         var self = this;
+
+
+
+                        if (lastSearchInstance.$$data.autocomplete !== undefined) {
+
+
+                            var query = self.getFilter().getQuery().substr(0, self.getFilter().getQuery().length);
+                            var resultsSearch = lunrSearch.search(query, {
+                                fields: {
+                                    '_autocomplete': {boost: 2}
+                                },
+                                bool: "AND",
+                                expand: true
+                            });
+
+                            if (resultsSearch.length == 0) {
+                                var query = self.getFilter().getQuery().substr(0, 4);
+                                resultsSearch = lunrSearch.search(query, {
+                                    fields: {
+                                        '_autocomplete': {boost: 2}
+                                    },
+                                    bool: "AND",
+                                    expand: true
+                                });
+                            }
+
+                            if (resultsSearch.length == 0) {
+                                query = self.getFilter().getQuery().substr(0, self.getFilter().getQuery().length);
+                                resultsSearch = lunrSearch.search(query, {
+                                    bool: "AND",
+                                    expand: true
+                                });
+                            }
+
+                            if (resultsSearch.length) {
+
+                                var a = {};
+
+                                if (resultsSearch[0] !== undefined) {
+                                    a[resultsSearch[0].doc['_autocomplete'].toLowerCase()] = resultsSearch[0].doc['_autocomplete'].toLowerCase();
+                                }
+                                if (resultsSearch[1] !== undefined) {
+                                    a[resultsSearch[1].doc['_autocomplete'].toLowerCase()] = resultsSearch[1].doc['_autocomplete'].toLowerCase();
+                                }
+                                if (resultsSearch[2] !== undefined) {
+                                    a[resultsSearch[2].doc['_autocomplete'].toLowerCase()] = resultsSearch[2].doc['_autocomplete'].toLowerCase();
+                                }
+                                if (resultsSearch[3] !== undefined) {
+                                    a[resultsSearch[3].doc['_autocomplete'].toLowerCase()] = resultsSearch[3].doc['_autocomplete'].toLowerCase();
+                                }
+                                if (resultsSearch[4] !== undefined) {
+                                    a[resultsSearch[4].doc['_autocomplete'].toLowerCase()] = resultsSearch[4].doc['_autocomplete'].toLowerCase();
+                                }
+                                if (resultsSearch[5] !== undefined) {
+                                    a[resultsSearch[5].doc['_autocomplete'].toLowerCase()] = resultsSearch[5].doc['_autocomplete'].toLowerCase();
+                                }
+                                if (resultsSearch[6] !== undefined) {
+                                    a[resultsSearch[6].doc['_autocomplete'].toLowerCase()] = resultsSearch[6].doc['_autocomplete'].toLowerCase();
+                                }
+                                if (resultsSearch[7] !== undefined) {
+                                    a[resultsSearch[7].doc['_autocomplete'].toLowerCase()] = resultsSearch[7].doc['_autocomplete'].toLowerCase();
+                                }
+
+
+
+                                self.setAutocomplete(a);
+
+
+                            }
+                        }
 
                         if (searchTimeout) {
                             clearTimeout(searchTimeout);
 
                         }
 
-                        window.setTimeout(function() {
+                        window.setTimeout(function () {
                             self.searchExecute(nodesFromInput, booleanmode, customquery);
-                        },10);
+                        }, 10);
 
 
                     },
@@ -55719,8 +55786,10 @@ module.exports = '3.24.0';
                         var hasDistinct = self.getResults().hasDistincts();
 
 
-
                         results.getApp().setNotFound(true);
+
+
+
                         window.setTimeout(function () {
                             results.getApp().setSearchCounter(1);
                         }, 10);
@@ -56636,20 +56705,20 @@ module.exports = '3.24.0';
 
                             if (Object.keys(keywords).length > 0) {
 
-                                keywordsordered = keywords.sort(function(a, b) {
+                                keywordsordered = keywords.sort(function (a, b) {
                                     return b.length - a.length;
                                 });
 
                                 angular.forEach(keywordsordered, function (keyword, c) {
 
-                                    if (keyword.indexOf(" ") === -1 && c < keywordsordered.length / 3*2) {
+                                    if (keyword.indexOf(" ") === -1 && c < keywordsordered.length / 3 * 2) {
                                         keywordsreduced.push(keyword);
                                     }
 
                                 });
 
                                 angular.forEach(keywordsreduced, function (keyword) {
-                                        self.getKeywords(keyword, instance);
+                                    self.getKeywords(keyword, instance);
                                 });
                             } else {
                                 instance.$$data.running++;
@@ -57709,8 +57778,12 @@ module.exports = '3.24.0';
                                         }
 
 
+                                        doc['_autocomplete'] = '';
                                         if (value.node.properties['_nodeLabel'] != undefined) {
                                             doc['_nodeLabel'] = value.node.properties['_nodeLabel'];
+                                            if (doc['_nodeLabel'].length < 24) {
+                                                doc['_autocomplete'] = doc['_nodeLabel'];
+                                            }
                                         }
 
 
@@ -58848,6 +58921,7 @@ module.exports = '3.24.0';
                 var applyTimeout = false;
                 var executeCallbackTimeout = false;
 
+
                 /**
                  * HybridsearchResultsDataObject
                  * @constructor
@@ -58878,7 +58952,8 @@ module.exports = '3.24.0';
                     autocompleteKeys: {},
                     distinctsConfiguration: {},
                     unfilteredResultNodes: [],
-                    identifier: generateUUID()
+                    identifier: generateUUID(),
+                    lunrSearch: null
 
                 };
 
@@ -59124,7 +59199,7 @@ module.exports = '3.24.0';
                         var self = this;
                         applyTimeout = setTimeout(function () {
                             self.callbackMethod(obj);
-                        },10);
+                        }, 10);
 
                     },
                     /**
@@ -59477,7 +59552,11 @@ module.exports = '3.24.0';
                  */
                 updateAutocomplete: function (autocomplete, querysegment, caller) {
 
+
                     var self = this;
+
+
+
 
                     if (self.$$data.hasautocomplete === undefined || self.$$data.hasautocomplete == false) {
                         return null;
@@ -59495,13 +59574,13 @@ module.exports = '3.24.0';
                         querysegment = '';
                     }
 
-
                     var query = self.getApp().getScope()['__query'] ? self.getApp().getScope()[self.getApp().getScope()['__query']] : querysegment;
                     query = query.toLowerCase();
 
                     angular.forEach(Object.keys(autocomplete), function (a) {
                         a = a.replace(/-/g, " ").trim().split(" ", 6).join(" ");
-                        if (self.$$data.autocompleteKeys[a] == undefined) {
+                        //a = a.replace(/-/g, " ").trim();
+                        if (a.length > 1 && self.$$data.autocompleteKeys[a] == undefined) {
                             self.$$data.autocompleteKeys[a] = true;
                         }
                     });
@@ -59561,14 +59640,23 @@ module.exports = '3.24.0';
                     });
 
 
+
+                   if (self.$$data.autocomplete.length > 0) {
+                       self.$$data.autocompleteKeys = {};
+                       return true;
+                   }
+
+
                     var counter = 0;
-                    angular.forEach(Object.keys(self.$$data.autocompleteKeys).sort(), function (a) {
+                    angular.forEach(Object.keys(self.$$data.autocompleteKeys), function (a) {
+                        //if (query !== a.toLowerCase() && autocompleteTemp[a] == undefined) {
                         if (query !== a.toLowerCase() && a.indexOf(query) == 0 && autocompleteTemp[a] == undefined) {
                             self.$$data.autocomplete.push(a);
                             autocompleteTemp[a] = true;
                         }
                         counter++;
                     });
+
 
 
                     var autocompleteTempPostProcessed = [];
@@ -59610,8 +59698,17 @@ module.exports = '3.24.0';
                             autocompleteTemp[a] = true
                             ;
                         });
+
+
+
                         self.$$data.autocomplete = autocompleteTempPostProcessed;
+
+
                     }
+
+
+
+
 
                     this.getApp().applyScope();
                     return this;
