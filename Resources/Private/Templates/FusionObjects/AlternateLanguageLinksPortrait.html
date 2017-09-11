@@ -1,5 +1,9 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace portrait=Phlu\Corporate\ViewHelpers\Portrait}
-<f:for each="{items}" as="item"><f:if condition="{item.node}">
-<link rel="alternate" hreflang="{ts:render(path: 'localeToLanguage', context: {item: item, dimension: dimension})}" href="{portrait:link(node: node, eventoId: contact.eventoId)}"/></f:if></f:for>
+
+<f:for each="{items}" as="item">
+    <f:if condition="{item.node}">
+        <link rel="alternate" hreflang="{ts:render(path: 'localeToLanguage', context: {item: item, dimension: dimension})}" href="{portrait:link(node: item.node, eventoId: contact.eventoId)}"/>
+    </f:if>
+</f:for>
