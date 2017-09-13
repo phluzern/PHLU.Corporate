@@ -65,8 +65,7 @@ PhluCorporateApp.controller('LogCtrl', ['$scope', '$cookies','$window', function
             }
         });
 
-        console.log();
-
+     
 
     }
 
