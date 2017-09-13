@@ -66931,6 +66931,12 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
                     'eventLabel': 'Globale Suche://' + data.query
                 });
 
+            } else {
+                ga('send', 'event', {
+                    'eventCategory': 'Dateien',
+                    'eventAction': data.node.getProperty('asset.url'),
+                    'eventLabel': 'Globale Suche://' + data.query
+                });
             }
 
         }
