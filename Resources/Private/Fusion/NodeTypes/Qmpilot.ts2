@@ -33,6 +33,7 @@ prototype(Phlu.Qmpilot.NodeTypes:File) < prototype(Phlu.Corporate:Content) {
 
 
     assetcount = ${q(node).property('asset') ? '1' : '0'}
+    assetTargetIdentifier = ${Phlu.Corporate.getAssetTargetIdentifier(this.node, this.linkRaw, request)}
 
     attributes.class = ${(q(node).next().get(0).nodeType.name != 'Phlu.Qmpilot.NodeTypes:File' ? 'last ' : '')}
 

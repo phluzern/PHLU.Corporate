@@ -168,6 +168,42 @@ class NodeHelper implements ProtectedContextAwareInterface
     }
 
     /**
+     * Get public identifier for asset
+     *
+     * @param Node $node
+     * @param string $link
+     * @param Request $request
+     * @return boolean§
+     */
+    public function getAssetTargetIdentifier(Node $node, $link, $request)
+    {
+
+
+        $identifier = 0;
+
+
+        if ($node->getProperty('asset') && $node->getProperty('asset')->getResource() && $node->getProperty('asset')->getResource()->getQmpilot()) {
+            return 'qmpilot://' . $node->getProperty('asset')->getResource()->getQmpilot()->getObjectid();
+        }
+
+       if ($node->getProperty('asset') && $node->getProperty('asset')->getResource() && $node->getProperty('asset')->getResource()->getLink() !== '' && !$node->getProperty('asset')->getResource()->getQmpilot()) {
+           return $node->getProperty('asset')->getResource()->getLink();
+
+        }
+
+       if ($node->getProperty('asset') && $node->getProperty('asset')) {
+           return 'asset://' . $node->getProperty('asset')->getIdentifier();
+
+        }
+
+
+
+
+
+    }
+
+
+    /**
      * Get embeded url based on http request
      *
      * @param Node $node

@@ -21,14 +21,14 @@ PhluCorporateApp.controller('LogCtrl', ['$scope', '$cookies','$window', function
             }
         }
 
-    };
+    }
+
 
     $scope.setLogStore = function (identifier, nodeType, uri) {
 
         var log = new NodeLogger(identifier, nodeType, uri);
 
         if (log.getNodeType() == 'Phlu.Corporate:Page.FurtherEducation.Detail.Study' || log.getNodeType() == 'Phlu.Corporate:Page.FurtherEducation.Detail.Module') {
-
             var storage = $window.localStorage['furtherEducationNodesVisited'];
             var visited = {};
 
@@ -45,11 +45,27 @@ PhluCorporateApp.controller('LogCtrl', ['$scope', '$cookies','$window', function
                 $window.localStorage['furtherEducationNodesVisited'] = {};
             }
 
-
             visited[log.getUri()] = new Date().getTime();
             $window.localStorage['furtherEducationNodesVisited'] = angular.toJson(visited);
 
         }
+
+        // create ga event for qmpilot downloads
+
+        jQuery(document).click(function(e) {
+            var c = jQuery(e.target).closest('.phlu-qmpilot-nodetypes-file');
+            if (c.length) {
+
+                ga('send', 'event', {
+                    'eventCategory': 'Dateien',
+                    'eventAction': c.attr('data-asset-target'),
+                    'eventLabel': 'Referrer://' + log.getUrl()
+                });
+
+            }
+        });
+
+        console.log();
 
 
     }
