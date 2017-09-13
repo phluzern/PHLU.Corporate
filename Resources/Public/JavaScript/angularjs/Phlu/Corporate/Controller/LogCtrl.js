@@ -59,13 +59,13 @@ PhluCorporateApp.controller('LogCtrl', ['$scope', '$cookies','$window', function
                 ga('send', 'event', {
                     'eventCategory': 'Dateien',
                     'eventAction': c.attr('data-asset-target'),
-                    'eventLabel': 'Referrer://' + log.getUrl()
+                    'eventLabel': 'Referrer://' + log.getUri()
                 });
 
             }
         });
 
-     
+
 
     }
 
