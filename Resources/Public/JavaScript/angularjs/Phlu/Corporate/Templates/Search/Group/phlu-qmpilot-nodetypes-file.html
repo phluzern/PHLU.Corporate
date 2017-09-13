@@ -1,8 +1,6 @@
 <h3>
     <a class="content-link-internal" data-ng-if="node.getProperty('asset').url"
-       href="{{node.getProperty('asset').url}}" target="_blank"><span
-            data-ng-if="node.getProperty('asset').title == ''">{{node.getProperty('asset').name}}</span><span
-            data-ng-if="node.getProperty('asset').title !== ''">{{node.getProperty('asset').title}}</span>
+       href="{{node.getProperty('asset').url}}" target="_blank" data-ng-bind="node.getProperty('file-title') | debug">
     </a>
     <a class="content-link-internal" data-ng-if="!node.getProperty('asset').url"
        href="{{node.getUrl()}}"><span
