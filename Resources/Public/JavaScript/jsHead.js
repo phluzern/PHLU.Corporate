@@ -66452,7 +66452,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         if (jQuery(event.target).hasClass('goodluck')) {
             search.$$app.search(null, null, query);
             search.$watch(function (i) {
-               var node = i.getNodes(1);
+                var node = i.getNodes(1);
                 if (node) {
                     node = node[0];
                     if (node.getProperty('portrait')) {
@@ -66657,7 +66657,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-corporate-contact-ishidden': -1, // dont'search here
 
 
-
         'phlu-neos-nodetypes-project-participants': 15,
         'phlu-neos-nodetypes-project-status': 1,
         'phlu-neos-nodetypes-project-statuslifetime': 1,
@@ -66778,7 +66777,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     var NodeUrlBoostFactor = {
         '/studium/studiengaenge/': {'*': 1, 'phlu-corporate-contact': 0.0001},
-        '/studium/':  {'*': 4, 'phlu-corporate-contact': 0.0001},
+        '/studium/': {'*': 4, 'phlu-corporate-contact': 0.0001},
         '/studium/zulassung-und-anmeldung': {'*': 10, 'phlu-corporate-contact': 0.0001},
         '/studium/informationsveranstaltungen': {'*': 10, 'phlu-corporate-contact': 0.0001},
         '/weiterbildung/': {'*': 1, 'phlu-corporate-contact': 0.0001},
@@ -66789,7 +66788,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '/faecher-und-schwerpunkte/': {'*': 5, 'phlu-corporate-contact': 0.0001},
         '/ueber-uns/organisation-personen/': {'*': 1, 'phlu-corporate-contact': 100},
         '/ueber-uns/arbeiten-an-der-ph-luzern/stellen': {'*': 100, 'phlu-corporate-contact': 0.0001},
-        '/ueber-uns/': {'*': 0.5, 'phlu-corporate-contact': 1000,'phlu-corporate-location': 1000}
+        '/ueber-uns/': {'*': 0.5, 'phlu-corporate-contact': 1000, 'phlu-corporate-location': 1000}
 
     };
 
@@ -66916,12 +66915,34 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     search.addPropertyFilter('uri.path', '/formulare.html', null, true);
     search.setExternalSources(external);
 
-    search.connectEventSlot('before_redirect',function(data) {
+    search.connectEventSlot('before_redirect', function (data) {
+
+
+        if (data.node.getNodeType() == 'phlu-qmpilot-nodetypes-file') {
+
+
+            if (data.node.getProperty('asset.identifier').length && data.node.getProperty('asset.identifier').indexOf('qmpilot-objectid-') == 0) {
+
+                var r = data.node.getProperty('asset.identifier').substr(17);
+
+                ga('send', 'event', {
+                    'eventCategory': 'Dateien',
+                    'eventAction': 'qmpilot://' + r,
+                    'eventLabel': 'Globale Suche://' + data.query
+                });
+
+            }
+
+        }
+
+
         ga('send', 'event', {
             'eventCategory': 'Globale Suche',
             'eventAction': data.query,
             'eventLabel': data.node.uriResource === undefined ? data.node.getUrl() : data.node.uriResource.path
         });
+
+
     });
 
     search.setGroupedBy(groupedBy).setNodeUrlBoostFactor(NodeUrlBoostFactor).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setNodeTypeBoostFactor(boostNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
@@ -67111,7 +67132,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     var filterAllNodesByNodeType = {
-       'phlu-corporate-location': true
+        'phlu-corporate-location': true
     };
 
 
@@ -67200,7 +67221,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     // set focus
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
         jQuery("#siteSearchTop input").focus();
 
     });
