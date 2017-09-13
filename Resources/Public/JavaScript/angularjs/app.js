@@ -139,3 +139,9 @@ PhluCorporateApp.filter('debug', function () {
         return input;
     };
 });
+
+PhluCorporateApp.filter('striptags', function () {
+    return function (input) {
+        return input.replace(/<\/?[^>]+(>|$)/g, "");
+    };
+});

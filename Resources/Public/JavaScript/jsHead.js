@@ -65850,6 +65850,12 @@ PhluCorporateApp.filter('debug', function () {
         return input;
     };
 });
+
+PhluCorporateApp.filter('striptags', function () {
+    return function (input) {
+        return input.replace(/<\/?[^>]+(>|$)/g, "");
+    };
+});
 // Phlu.Corporate:Page.View.Default filter tag navigation
 PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$timeout', '$cookies', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $timeout, $cookies) {
 
