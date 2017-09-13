@@ -62,6 +62,11 @@ PhluCorporateApp.controller('LogCtrl', ['$scope', '$cookies','$window', function
                     'eventLabel': 'Referrer://' + log.getUri()
                 });
 
+                ga('send', 'event', 'outbound', 'click', log.getUri(), {
+                    'transport': 'beacon',
+                    'hitCallback': function(){}
+                });
+
             }
         });
 
