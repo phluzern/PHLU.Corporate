@@ -172,6 +172,7 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
     $scope.setOrderBy = function (orderby) {
 
         if (orderby != 0) {
+            orderby = orderby.replace('lastmodified','lastmodify.TIMESTAMP');
             $scope.list.setOrderBy({'*': orderby})
         } else {
             $scope.list.setOrderBy({'*': '__index'})
