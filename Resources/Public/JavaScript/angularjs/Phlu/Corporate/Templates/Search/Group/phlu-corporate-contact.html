@@ -6,11 +6,7 @@
                 {{node.getProperty('lastname')}} {{node.getProperty('firstname')}}
             </b>
 
-
-            <span data-ng-if="node.getProperty('functioncustom')"><br>
-                <span data-ng-bind="node.getProperty('functioncustom')"></span>
-            </span>
-            <span data-ng-if="!node.getProperty('functioncustom') && node.getProperty('function')"><br>
+            <span data-ng-if="node.getProperty('function')"><br>
                 <span data-ng-bind="node.getProperty('function')"></span>
             </span>
 

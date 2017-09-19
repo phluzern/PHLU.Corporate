@@ -20,10 +20,8 @@
     <span data-ng-if="node.getParent() && node.getParent().getProperty('title')">
         <span data-ng-bind="node.getParent().getProperty('title')"></span>,<br>
     </span>
-    <span data-ng-if="node.getProperty('functioncustom')">
-                    <span data-ng-bind="node.getProperty('functioncustom')"></span>
-                </span>
-    <span data-ng-if="!node.getProperty('functioncustom') && node.getProperty('function')">
+
+    <span data-ng-if="node.getProperty('function')">
                     <span data-ng-bind="node.getProperty('function')"></span>
                 </span>
     <span data-ng-show="node.getProperty('phone') != ''"><br/>{{node.getProperty('phone')}},</span>
