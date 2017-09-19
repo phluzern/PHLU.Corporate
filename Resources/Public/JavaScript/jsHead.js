@@ -65781,14 +65781,14 @@ PhluCorporateApp.factory('hybridsearch', ['$hybridsearch', function ($hybridsear
 PhluCorporateApp.controller('initController', ['$scope', '$hybridsearch', function ($scope, $hybridsearch) {
 
 
-    $scope.init = function (firebaseEndpoint, siteNodeName, workspaceName, dimensionHash) {
+    $scope.init = function (firebaseEndpoint, siteNodeName, workspaceName, dimensionHash,cdnHost, cdnHostStatic) {
 
         PhluCorporateApp.$$conf.firebaseEndpoint = firebaseEndpoint;
         PhluCorporateApp.$$conf.workspaceName = workspaceName !== '' ? workspaceName : 'live';
         PhluCorporateApp.$$conf.siteNodeName = siteNodeName !== '' ? siteNodeName : 'corporate';
         PhluCorporateApp.$$conf.dimensionHash = dimensionHash !== '' ? dimensionHash : 'fb11fdde869d0a8fcfe00a2fd35c031d';
-        PhluCorporateApp.$$conf.cdnHost = window.location.host == 'www.phlu.ch'  ? 'https://d1ablfrhie1735.cloudfront.net' : undefined;
-        PhluCorporateApp.$$conf.cdnHostStatic = window.location.host == 'www.phlu.ch'  ? 'https://d3iynkir7cmkd3.cloudfront.net' : undefined;
+        PhluCorporateApp.$$conf.cdnHost = cdnHost  ? cdnHost : undefined;
+        PhluCorporateApp.$$conf.cdnHostStatic = cdnHostStatic ? cdnHostStatic : undefined;
     };
 
 
@@ -65844,9 +65844,22 @@ PhluCorporateApp.filter('extractUri', function () {
 });
 
 
+PhluCorporateApp.filter('rewriteUrl', function () {
+    return function (input) {
+
+       if (input.indexOf("iframe.phlu") > -1 && input.indexOf("index.php") == -1) {
+         return input.replace("iframe.phlu.ch","www.phlu.ch");
+
+       }
+
+        return input;
+    };
+});
+
+
 PhluCorporateApp.filter('debug', function () {
     return function (input) {
-        console.log(input);
+
         return input;
     };
 });
