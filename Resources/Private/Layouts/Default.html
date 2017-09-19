@@ -90,7 +90,7 @@
     </f:if>
 
     <span data-ng-controller="initController"
-          data-ng-init="init('{firebaseEndpoint}','{site.context.currentSite.nodeName}','{site.workspace.name}','{site.nodeData.dimensionsHash}')"></span>
+          data-ng-init="init('{firebaseEndpoint}','{site.context.currentSite.nodeName}','{site.workspace.name}','{site.nodeData.dimensionsHash}','{cdnHost}','{cdnHostStatic}')"></span>
 
     <nav class="navbar">
         <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
@@ -305,7 +305,7 @@
                     m.parentNode.insertBefore(a, m)
                 })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-                ga('create', 'UA-85360922-1', 'auto');
+                ga('create', '<f:format.raw>{ga}</f:format.raw>', 'auto');
                 ga('send', 'pageview');
 
             </script>

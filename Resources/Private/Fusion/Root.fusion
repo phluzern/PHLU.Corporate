@@ -48,160 +48,164 @@ page = Page {
         }
 
 
-}
+    }
 
-body {
-templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
-sectionName = 'body'
+    body {
+        templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
+        sectionName = 'body'
 
-firebaseEndpoint = ${Configuration.setting('Neoslive.Hybridsearch.Firebase.endpoint')}
-
-
-parts {
-
-site = ${q(site).get(0)}
-neosliveHybridsearchFirebaseEndpoint = ${Configuration.setting('Neoslive.Hybridsearch.Firebase.endpoint')}
-
-navBarMenu = Neos.Fusion:Case {
-
-isStartpage {
-condition = ${q(node).is('[!instanceof Phlu.Corporate:Page.Home]')}
-renderer = Neos.Fusion:Template {
-menuItems = BreadcrumbMenu
-itemCollection = ${q(node).add(q(node).parents('[instanceof Neos.Neos:Document]')).get()}
-templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/NavBarMenu.html'
-}
-}
-}
-
-
-sideBarLevel0Menu = Menu {
-entryLevel = 1
-templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel0.html'
-maximumLevels = 1
-filter = '!Phlu.Corporate:Page.NotInMenu, Phlu.Corporate:Page'
-
-}
-
-sideBarLevel1Menu = Menu {
-entryLevel = 2
-templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1.html'
-filter = 'Phlu.Corporate:Page, !Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage'
-maximumLevels = 1
-}
-
-sideBarLevel1MenuGetClass = Menu {
-entryLevel = 2
-templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1GetClass.html'
-filter = '!Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage, Phlu.Corporate:Page'
-maximumLevels = 1
-}
-
-breadcrumbFooter = BreadcrumbMenu {
-entryLevel = 2
-templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/BreadcrumbFooter.html'
-filter = '!Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage, Phlu.Corporate:Page'
-maximumLevels = 1
-attributes = sideBarLevel1MenuGetClassRow
-
-}
-
-ambientImage = Neos.Fusion:Template {
-moodimage = ${q(node).property('moodimage')}
-templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/AmbientImage/Default.html'
-}
-
-sideBarLevel1MenuGetClassRow = Menu {
-entryLevel = 2
-templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1GetClassRow.html'
-filter = '!Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage, Phlu.Corporate:Page'
-maximumLevels = 1
-}
-
-logoAndSearchBarGetClass = Menu {
-entryLevel = 2
-templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/LogoAndSearchBarGetClass.html'
-filter = '!Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage, Phlu.Corporate:Page'
-maximumLevels = 1
-}
-
-teaserMenu = Neos.Fusion:Case {
-isStartpage {
-condition = ${q(node).is('[instanceof Phlu.Corporate:Page.Home]')}
-renderer = Menu {
-entryLevel = 1
-templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/TeaserMenu.html'
-maximumLevels = 1
-filter = '!Phlu.Corporate:Page.NotInMenu, Phlu.Corporate:Page'
-startingPoint = ${q(site).get(0)}
-pageClass = ''
-itemClass = 'col-lg-4'
-defaultRenderer = Phlu.Neos.NodeTypes:Page {
-templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/TeaserMenuContent.html'
-teaser = ${q(node).children('teaser').get(0)}
-defaultRenderer = Neos.Neos:ContentCase
-}
-header = ${q(node).children('header').get(0)}
-teaser = ${q(node).children('teaser').get(0)}
-}
-}
-}
-
-breadcrumb = BreadcrumbMenu {
-templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/Partials/Breadcrumb.html'
-}
-}
-
-pageLevelTypeClass = Neos.Fusion:Case {
-isStartpage {
-condition = ${q(node).is('[instanceof Phlu.Corporate:Page.Home]')}
-renderer = 'startpage'
-}
-isSubpage {
-condition = ${q(node).is('[instanceof Phlu.Corporate:Page]')}
-renderer = 'subpage'
-}
-fallback {
-condition = ${true}
-renderer = 'subpage'
-}
-}
+        firebaseEndpoint = ${Configuration.setting('Neoslive.Hybridsearch.Firebase.endpoint')}
+        cdnHost = ${Configuration.setting('Neoslive.Hybridsearch.Firebase.cdn')}
+        cdnHostStatic = ${Configuration.setting('Phlu.Corporate.cdn')}
 
 
 
-// A shared footer which can be edited from all pages
+        parts {
+
+            site = ${q(site).get(0)}
+            neosliveHybridsearchFirebaseEndpoint = ${Configuration.setting('Neoslive.Hybridsearch.Firebase.endpoint')}
+
+            navBarMenu = Neos.Fusion:Case {
+
+                isStartpage {
+                    condition = ${q(node).is('[!instanceof Phlu.Corporate:Page.Home]')}
+                    renderer = Neos.Fusion:Template {
+                        menuItems = BreadcrumbMenu
+                        itemCollection = ${q(node).add(q(node).parents('[instanceof Neos.Neos:Document]')).get()}
+                        templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/NavBarMenu.html'
+                    }
+                }
+            }
+
+
+            sideBarLevel0Menu = Menu {
+                entryLevel = 1
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel0.html'
+                maximumLevels = 1
+                filter = '!Phlu.Corporate:Page.NotInMenu, Phlu.Corporate:Page'
+
+            }
+
+            sideBarLevel1Menu = Menu {
+                entryLevel = 2
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1.html'
+                filter = 'Phlu.Corporate:Page, !Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage'
+                maximumLevels = 1
+            }
+
+            sideBarLevel1MenuGetClass = Menu {
+                entryLevel = 2
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1GetClass.html'
+                filter = '!Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage, Phlu.Corporate:Page'
+                maximumLevels = 1
+            }
+
+            breadcrumbFooter = BreadcrumbMenu {
+                entryLevel = 2
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/BreadcrumbFooter.html'
+                filter = '!Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage, Phlu.Corporate:Page'
+                maximumLevels = 1
+                attributes = sideBarLevel1MenuGetClassRow
+
+            }
+
+            ambientImage = Neos.Fusion:Template {
+                moodimage = ${q(node).property('moodimage')}
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/AmbientImage/Default.html'
+            }
+
+            sideBarLevel1MenuGetClassRow = Menu {
+                entryLevel = 2
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/SideBarMenuLevel1GetClassRow.html'
+                filter = '!Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage, Phlu.Corporate:Page'
+                maximumLevels = 1
+            }
+
+            logoAndSearchBarGetClass = Menu {
+                entryLevel = 2
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/LogoAndSearchBarGetClass.html'
+                filter = '!Phlu.Corporate:Page.NotInMenu, !Phlu.Corporate:Page.View.Default.Default, !Phlu.Corporate:Page.View.Onepage, Phlu.Corporate:Page'
+                maximumLevels = 1
+            }
+
+            teaserMenu = Neos.Fusion:Case {
+                isStartpage {
+                    condition = ${q(node).is('[instanceof Phlu.Corporate:Page.Home]')}
+                    renderer = Menu {
+                        entryLevel = 1
+                        templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/TeaserMenu.html'
+                        maximumLevels = 1
+                        filter = '!Phlu.Corporate:Page.NotInMenu, Phlu.Corporate:Page'
+                        startingPoint = ${q(site).get(0)}
+                        pageClass = ''
+                        itemClass = 'col-lg-4'
+                        defaultRenderer = Phlu.Neos.NodeTypes:Page {
+                            templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/TeaserMenuContent.html'
+                            teaser = ${q(node).children('teaser').get(0)}
+                            defaultRenderer = Neos.Neos:ContentCase
+                        }
+                        header = ${q(node).children('header').get(0)}
+                        teaser = ${q(node).children('teaser').get(0)}
+                    }
+                }
+            }
+
+            breadcrumb = BreadcrumbMenu {
+                templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/Partials/Breadcrumb.html'
+            }
+        }
+
+        pageLevelTypeClass = Neos.Fusion:Case {
+            isStartpage {
+                condition = ${q(node).is('[instanceof Phlu.Corporate:Page.Home]')}
+                renderer = 'startpage'
+            }
+            isSubpage {
+                condition = ${q(node).is('[instanceof Phlu.Corporate:Page]')}
+                renderer = 'subpage'
+            }
+            fallback {
+                condition = ${true}
+                renderer = 'subpage'
+            }
+        }
+
+
+
+        // A shared footer which can be edited from all pages
         footer = Menu {
-entryLevel = 1
-templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/FooterMenu.html'
-maximumLevels = 1
-filter = 'Phlu.Corporate:Page.Service, Neos.Neos:Shortcut'
-startingPoint = ${q(site).get(0)}
-}
+            entryLevel = 1
+            templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/FooterMenu.html'
+            maximumLevels = 1
+            filter = 'Phlu.Corporate:Page.Service, Neos.Neos:Shortcut'
+            startingPoint = ${q(site).get(0)}
+        }
 
-// These are your content areas, you can define as many as you want, just name them and the nodePath.
+        // These are your content areas, you can define as many as you want, just name them and the nodePath.
         content {
-// The default content section
+            // The default content section
           main = Phlu.Corporate:PrimaryContent
 
 
-}
+        }
 
-database = Neos.Fusion:Collection {
-collection = ${q(node).find('database').children()}
-itemName = 'node'
-itemRenderer = Phlu.Corporate:Database
-}
+        database = Neos.Fusion:Collection {
+            collection = ${q(node).find('database').children()}
+            itemName = 'node'
+            itemRenderer = Phlu.Corporate:Database
+        }
 
-javascripts.site = Neos.Fusion:Template {
-templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
-sectionName = 'bodyScripts'
-isProductionContext = ${Configuration.setting('Neos.Flow.core.context') == 'Production' ? true : false}
-}
-}
-bodyTag.attributes {
-data-spy = 'scroll'
-id = 'top'
-}
+        javascripts.site = Neos.Fusion:Template {
+            templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
+            sectionName = 'bodyScripts'
+            isProductionContext = ${Configuration.setting('Neos.Flow.core.context') == 'Production' ? true : false}
+            ga = ${Configuration.setting('Phlu.Corporate.ga')}
+        }
+    }
+    bodyTag.attributes {
+        data-spy = 'scroll'
+        id = 'top'
+    }
 
 
 }
@@ -209,23 +213,23 @@ id = 'top'
 
 
 neosliveHybridsearch = Neos.Fusion:Collection {
-collection = ${q(node)}
-itemName = 'node'
-itemRenderer = Neos.Neos:ContentCase
+    collection = ${q(node)}
+    itemName = 'node'
+    itemRenderer = Neos.Neos:ContentCase
 }
 
 neosliveHybridsearchBreadcrumb = Neos.Fusion:Collection {
-collection = ${q(node)}
-itemName = 'node'
-itemRenderer = BreadcrumbMenu
-templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/Partials/Breadcrumb.html'
+    collection = ${q(node)}
+    itemName = 'node'
+    itemRenderer = BreadcrumbMenu
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/Partials/Breadcrumb.html'
 }
 
 
 breadcrumb = Neos.Fusion:Collection {
-collection = ${q(node)}
-itemName = 'node'
-itemRenderer = BreadcrumbMenu
-templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/Partials/Breadcrumb.html'
+    collection = ${q(node)}
+    itemName = 'node'
+    itemRenderer = BreadcrumbMenu
+    templatePath = 'resource://Phlu.Corporate/Private/Templates/TypoScriptObjects/Partials/Breadcrumb.html'
 }
 

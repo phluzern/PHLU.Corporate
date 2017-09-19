@@ -54,3 +54,7 @@ Neos:
                variables:
                  errorTitle: 'Nicht gefunden'
                  errorDescription: 'Die angeforderte Seite konnte nicht gefunden werden.'
+
+Phlu:
+  Corporate:
+    ga: 'UA-85360922-1'
