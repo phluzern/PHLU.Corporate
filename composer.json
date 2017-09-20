@@ -2,7 +2,7 @@
     "description": "Phlu Corporate Neos Site",
     "type": "neos-site",
     "require": {
-        "neos/neos": "*",
+        "neos/neos": "~3.0 || dev-master",
         "neos/nodetypes": "*",
         "phlu/evento": "*",
         "phlu/ppdb": "*"
