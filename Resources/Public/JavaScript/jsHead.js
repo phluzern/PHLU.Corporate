@@ -68762,8 +68762,8 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
     $scope.list
         .setPropertiesBoost(boost)
-        //.enableCache()
-        .disableRealtime()
+        .enableCache()
+        //.disableRealtime()
         .setQuery('searchquery', $scope)
         .setNodeType('nodetypes', $scope)
         .setOrderBy({'*': '-id'})
