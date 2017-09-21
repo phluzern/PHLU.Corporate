@@ -28,10 +28,13 @@
               media="all"/>
         <link rel="stylesheet"
               href="{f:uri.resource(path: 'blueimp/css/blueimp-gallery.css', package: 'Phlu.Corporate')}" media="all"/>
-        <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/phlu.css', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}" media="all"/>
+        <link rel="stylesheet"
+              href="{f:uri.resource(path: 'Styles/phlu.css', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"
+              media="all"/>
         <f:if condition="{isProductionContext}">
             <f:else>
-                <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/debug.css', package: 'Phlu.Corporate')}" media="all"/>
+                <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/debug.css', package: 'Phlu.Corporate')}"
+                      media="all"/>
             </f:else>
         </f:if>
         <link rel="stylesheet"
@@ -112,16 +115,26 @@
                                  onerror="this.onerror=null; this.src='Images/phluLogo.png'"/>
                         </a>
 
-                        <div class="site-search-field" id="siteSearchTop" data-ng-class="{'hasautocomplete': siteSearchTopFocus &&  autocomplete.length > 0 && siteSearch !== ''}">
-                            <input autocomplete="off" data-ng-focus="x()" data-ng-mouseover="autocompleteLastPos = -1;" data-ng-click="siteSearchTopSetFocus()" data-ng-blur="siteSearchTopBlur()" id="searchInput" type="text" class="c-input form-control" data-ng-model="siteSearch"
+                        <div class="site-search-field" id="siteSearchTop"
+                             data-ng-class="{'hasautocomplete': siteSearchTopFocus &&  autocomplete.length > 0 && siteSearch !== ''}">
+                            <input autocomplete="off" data-ng-focus="x()" data-ng-mouseover="autocompleteLastPos = -1;"
+                                   data-ng-click="siteSearchTopSetFocus()" data-ng-blur="siteSearchTopBlur()"
+                                   id="searchInput" type="text" class="c-input form-control" data-ng-model="siteSearch"
                                    data-ng-click="startSearch();">
-                             <i class="fa fa-search" aria-hidden="true"
+                            <i class="fa fa-search" aria-hidden="true"
                                data-ng-class="{'fa-search-plus': quickNode}"></i>
 
-                            <div data-ng-mouseout="siteSearchTopBlurAutocomplete();" id="siteSearchAutocomplete" class="hidden-xs-up" data-ng-show="siteSearchTopFocus && siteSearch && autocomplete.length > 0 && siteSearch !== ''" data-ng-class="{'hidden-xs-up': siteSearch == '' || !siteSearchTopFocus || !autocomplete || autocomplete.length == 0}">
+                            <div data-ng-mouseout="siteSearchTopBlurAutocomplete();" id="siteSearchAutocomplete"
+                                 class="hidden-xs-up"
+                                 data-ng-show="siteSearchTopFocus && siteSearch && autocomplete.length > 0 && siteSearch !== ''"
+                                 data-ng-class="{'hidden-xs-up': siteSearch == '' || !siteSearchTopFocus || !autocomplete || autocomplete.length == 0}">
                                 <ul>
-                                    <li data-ng-repeat="item in autocomplete" data-ng-class="{current: autocompleteLastPos == $index}" data-ng-click="setSiteSearch(item, $event);" data-ng-if="$index < 8">
-                                        <span data-ng-bind="item"></span><i data-ng-click="" class="goodluck fa fa-angle-double-right" aria-hidden="true"></i>
+                                    <li data-ng-repeat="item in autocomplete"
+                                        data-ng-class="{current: autocompleteLastPos == $index}"
+                                        data-ng-click="setSiteSearch(item, $event);" data-ng-if="$index < 8">
+                                        <span data-ng-bind="item"></span><i data-ng-click=""
+                                                                            class="goodluck fa fa-angle-double-right"
+                                                                            aria-hidden="true"></i>
                                     </li>
                                 </ul>
                             </div>
@@ -157,22 +170,31 @@
     </div>
 
 
-    <div class="container-fluid footer" id="footer" data-ng-controller="SearchMobileCtrl" data-ng-class="{hasSearchResults: siteSearchSearchMobile != '' && siteSearch !== ''}">
+    <div class="container-fluid footer" id="footer" data-ng-controller="SearchMobileCtrl"
+         data-ng-class="{hasSearchResults: siteSearchSearchMobile != '' && siteSearch !== ''}">
         <div class="row">
 
-            <div data-ng-show="autocompleteIsShowing && getAutocompleteMobile().length !== 0" id="siteSearchMobileAutocomplete" class="hidden-xs-up"  data-ng-class="{'loading bar': getAutocompleteMobile().length == 0, 'hidden-xs-up': siteSearchSearchMobile == ''}">
+            <div data-ng-show="autocompleteIsShowing && getAutocompleteMobile().length !== 0"
+                 id="siteSearchMobileAutocomplete" class="hidden-xs-up"
+                 data-ng-class="{'loading bar': getAutocompleteMobile().length == 0, 'hidden-xs-up': siteSearchSearchMobile == ''}">
                 <ul>
-                    <li data-ng-repeat="item in getAutocompleteMobile()" data-ng-class="{current: autocompleteLastPos == $index}"  data-ng-click="setSiteSearch(item);" data-ng-if="$index < 25">
+                    <li data-ng-repeat="item in getAutocompleteMobile()"
+                        data-ng-class="{current: autocompleteLastPos == $index}" data-ng-click="setSiteSearch(item);"
+                        data-ng-if="$index < 25">
                         <span data-ng-bind="item"></span>
                     </li>
                 </ul>
             </div>
             <div class="col-xs-12 site-search-field" id="siteSearchMobileWrapper">
-                <form data-ng-submit="siteSearchMobileSubmit()" >
-                    <input autocomplete="off" data-ng-focus="siteSearchTopSetFocus()" data-ng-mouseover="autocompleteLastPos = -1;" data-ng-click="siteSearchMobileSetFocus()" data-ng-blur="siteSearchMobileBlur()"  type="text" class="c-input form-control"
+                <form data-ng-submit="siteSearchMobileSubmit()">
+                    <input autocomplete="off" data-ng-focus="siteSearchTopSetFocus()"
+                           data-ng-mouseover="autocompleteLastPos = -1;" data-ng-click="siteSearchMobileSetFocus()"
+                           data-ng-blur="siteSearchMobileBlur()" type="text" class="c-input form-control"
                            id="siteSearchSearchMobile" data-ng-model="siteSearchSearchMobile">
-                    <i data-ng-if="siteSearchSearchMobile == ''" class="fa fa-search" aria-hidden="true" data-ng-click="siteSearchMobileSubmit()"></i>
-                    <i data-ng-if="siteSearchSearchMobile != ''" class="fa fa-times" aria-hidden="true" data-ng-click="siteSearchMobileClose()"></i>
+                    <i data-ng-if="siteSearchSearchMobile == ''" class="fa fa-search" aria-hidden="true"
+                       data-ng-click="siteSearchMobileSubmit()"></i>
+                    <i data-ng-if="siteSearchSearchMobile != ''" class="fa fa-times" aria-hidden="true"
+                       data-ng-click="siteSearchMobileClose()"></i>
                     <input type="submit" id="submit" value="Submit" style="display: none"/>
 
                 </form>
@@ -187,11 +209,28 @@
                     <a class="" href="#">EN</a>
                 </nav>
                 <hr>-->
-                <a class="facebook tooltipTitle btn btn-secondary" href="http://www.facebook.com/phluzern" alt="Facebook" target="_blank">
-                    F
+                <a class="socialBtnSvg tooltipTitle btn btn-secondary" href="http://www.facebook.com/phluzern"
+                   alt="Facebook" target="_blank">
+                    <svg version="1.1" id="facebookLetter" class="facebookLetterSvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 135 291" style="enable-background:new 0 0 135 291;" xml:space="preserve">
+                        <g>
+                            <path class="facebookLetterPath" d="M130.4,145.5l-39.9,0l0,145.9H35.8V145.5H-0.7V95.2l36.5,0l-0.1-29.6c0-41,11.1-66,59.4-66h40.2v50.3h-25.2
+                                c-18.8,0-19.7,7-19.7,20.1l-0.1,25.2h45.2L130.4,145.5z"/>
+                        </g>
+                    </svg>
                 </a>
-                <a class="twitter tooltipTitle btn btn-secondary" href="http://www.twitter.com/phluzern" alt="Twitter" target="_blank">
-                    T
+                <a class="socialBtnSvg tooltipTitle btn btn-secondary" href="http://www.twitter.com/phluzern"
+                   alt="Twitter" target="_blank">
+                    <svg version="1.1" id="twitterBird" class="twitterBirdSvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 416" style="enable-background:new 0 0 512 416;" xml:space="preserve">
+                        <g>
+                            <path class="twitterBirdPath" d="M512,49.2c-18.8,8.4-39.1,14-60.3,16.5c21.7-13,38.3-33.6,46.2-58.1c-20.3,12-42.8,20.8-66.7,25.5
+                                C412,12.7,384.7,0,354.5,0c-58,0-105,47-105,105c0,8.2,0.9,16.2,2.7,23.9C164.9,124.6,87.5,82.7,35.6,19.2
+                                c-9,15.5-14.2,33.6-14.2,52.8c0,36.4,18.5,68.6,46.7,87.4c-17.2-0.5-33.4-5.3-47.6-13.1c0,0.4,0,0.9,0,1.3
+                                c0,50.9,36.2,93.3,84.3,103c-8.8,2.4-18.1,3.7-27.7,3.7c-6.8,0-13.3-0.7-19.8-1.9c13.4,41.7,52.2,72.1,98.1,72.9
+                                c-35.9,28.2-81.2,45-130.5,45c-8.5,0-16.8-0.5-25.1-1.5C46.5,398.7,101.7,416,161,416c193.2,0,298.9-160.1,298.9-298.9
+                                c0-4.6-0.1-9.1-0.3-13.6C480.1,88.8,497.9,70.3,512,49.2z"/>
+                        </g>
+                        </svg>
+
                 </a>
             </div>
             <div class="col-xs-6 footerLogoMobile">
@@ -261,7 +300,8 @@
     {database -> f:format.raw()}
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" async src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-593fa48787c8ed42"></script>
+    <script type="text/javascript" async
+            src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-593fa48787c8ed42"></script>
 
 
 </f:section>
@@ -296,8 +336,8 @@
                 (function (i, s, o, g, r, a, m) {
                     i['GoogleAnalyticsObject'] = r;
                     i[r] = i[r] || function () {
-                            (i[r].q = i[r].q || []).push(arguments)
-                        }, i[r].l = 1 * new Date();
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
                     a = s.createElement(o),
                         m = s.getElementsByTagName(o)[0];
                     a.async = 1;

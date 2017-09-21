@@ -8919,7 +8919,7 @@ body.neos-backend #neos-shortcut ul {
     text-align: left;
     padding-bottom: 15px; }
 
-body.neos-backend .link {
+body.neos-backend .link, body.neos-backend .aloha-link-text {
   color: #0275d8;
   text-decoration: none;
   cursor: pointer; }
@@ -9120,7 +9120,23 @@ body {
           width: 33px;
           height: 33px;
           margin-right: 6px; }
-          body .all .btn.btn-secondary.twitter.tooltipTitle:hover::after, body .all .btn.btn-secondary.facebook.tooltipTitle:hover::after {
+        body .all .btn.btn-secondary.socialBtnSvg {
+          width: 33px;
+          height: 33px;
+          margin-right: 6px; }
+          body .all .btn.btn-secondary.socialBtnSvg .facebookLetterSvg {
+            height: 19px;
+            margin-top: 7px; }
+          body .all .btn.btn-secondary.socialBtnSvg .twitterBirdSvg {
+            height: 16px; }
+            @media (max-width: 767px) {
+              body .all .btn.btn-secondary.socialBtnSvg .twitterBirdSvg {
+                margin-top: 8px; } }
+          body .all .btn.btn-secondary.socialBtnSvg .facebookLetterPath, body .all .btn.btn-secondary.socialBtnSvg .twitterBirdPath {
+            fill: white; }
+          body .all .btn.btn-secondary.socialBtnSvg:hover .facebookLetterPath, body .all .btn.btn-secondary.socialBtnSvg:hover .twitterBirdPath {
+            fill: #5c5c5c; }
+          body .all .btn.btn-secondary.socialBtnSvg.tooltipTitle:hover::after {
             position: absolute;
             color: #545454;
             font-size: 0.8rem;
