@@ -8218,3 +8218,19 @@ body {
   }
 
 }
+
+//
+// Print Version
+//
+body {
+  @media print {
+    margin-bottom: inherit;
+  }
+  .all {
+    .footer {
+      @media print {
+        display: none;
+      }
+    }
+  }
+}
