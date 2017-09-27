@@ -38,7 +38,7 @@
       ui:
         label: Abschnittstitel
         inspector:
-          group: additional
+          group: ~
     image:
       ui:
         label: ''
