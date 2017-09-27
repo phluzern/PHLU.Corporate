@@ -2,6 +2,7 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace vc=Phlu\Corporate\ViewHelpers\VersionControl}
+{namespace p=Phlu\Corporate\ViewHelpers}
 <html lang="de" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <f:section name="metadata">
@@ -25,12 +26,12 @@
         <link rel="stylesheet"
               href="{f:uri.external(uri: 'https://fonts.googleapis.com/css?family=Droid+Sans:400,700')}" media="all"/>
         <link rel="stylesheet"
-              href="{f:uri.resource(path: 'Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.css', package: 'Phlu.Corporate')}"
+              href="{p:uri.resource(path: 'Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.css', package: 'Phlu.Corporate')}"
               media="all"/>
         <link rel="stylesheet"
-              href="{f:uri.resource(path: 'blueimp/css/blueimp-gallery.css', package: 'Phlu.Corporate')}" media="all"/>
+              href="{p:uri.resource(path: 'blueimp/css/blueimp-gallery.css', package: 'Phlu.Corporate')}" media="all"/>
         <link rel="stylesheet"
-              href="{f:uri.resource(path: 'Styles/phlu.css', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"
+              href="{p:uri.resource(path: 'Styles/phlu.css', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"
               media="all"/>
         <f:if condition="{isProductionContext}">
             <f:else>
@@ -39,10 +40,10 @@
             </f:else>
         </f:if>
         <link rel="stylesheet"
-              href="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css', package: 'Phlu.Corporate')}"
+              href="{p:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css', package: 'Phlu.Corporate')}"
               media="all"/>
         <link rel="stylesheet"
-              href="{f:uri.resource(path: 'Vendor/animate.css/animate.css', package: 'Phlu.Corporate')}"
+              href="{p:uri.resource(path: 'Vendor/animate.css/animate.css', package: 'Phlu.Corporate')}"
               media="all"/>
 
 
@@ -52,27 +53,27 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PMZdx5E8mJbm1hurLezMYjt6yPIFrY4"></script>
         <f:if condition="{isProductionContext}">
             <f:then>
-                <script src="{f:uri.resource(path: 'JavaScript/jsHead.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/jsHead.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
             </f:then>
             <f:else>
-                <script src="{f:uri.resource(path: 'Vendor/angularjs/angular.min.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{f:uri.resource(path: 'Vendor/angular-cookies/angular-cookies.min.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{f:uri.resource(path: 'Vendor/firebase/firebase.js', package: 'Neoslive.Hybridsearch')}"></script>
-                <script src="{f:uri.resource(path: 'Vendor/angular-sanitize/angular-sanitize.min.js', package: 'Neoslive.Hybridsearch')}"></script>
-                <script src="{f:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'Neoslive.Hybridsearch')}"></script>
-                <script src="{f:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{f:uri.resource(path: 'Vendor/iframe-resizer/js/iframeResizer.min.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{f:uri.resource(path: 'Vendor/algoliasearch/dist/algoliasearch.min.js', package: 'Neoslive.Hybridsearch')}"></script>
-                <script src="{f:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
-                <script src="{f:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/ContactsCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/SearchCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/PpdbCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/EventoCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/LocationCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/LogCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{f:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/NewsCtrl.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'Vendor/angularjs/angular.min.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'Vendor/angular-cookies/angular-cookies.min.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'Vendor/firebase/firebase.js', package: 'Neoslive.Hybridsearch')}"></script>
+                <script src="{p:uri.resource(path: 'Vendor/angular-sanitize/angular-sanitize.min.js', package: 'Neoslive.Hybridsearch')}"></script>
+                <script src="{p:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'Neoslive.Hybridsearch')}"></script>
+                <script src="{p:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'Vendor/iframe-resizer/js/iframeResizer.min.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'Vendor/algoliasearch/dist/algoliasearch.min.js', package: 'Neoslive.Hybridsearch')}"></script>
+                <script src="{p:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/ContactsCtrl.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/SearchCtrl.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/PpdbCtrl.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/EventoCtrl.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/LocationCtrl.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/LogCtrl.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/NewsCtrl.js', package: 'Phlu.Corporate')}"></script>
             </f:else>
         </f:if>
 
@@ -98,7 +99,7 @@
 
     <nav class="navbar">
         <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
-            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/phluLogo.svg')}"
+            <img src="{p:uri.resource(package: 'Phlu.Corporate', path: 'Images/phluLogo.svg')}"
                  alt="PH Luzern Logo"
                  onerror="this.onerror=null; this.src='Images/phluLogo.png'"/>
         </a>
@@ -111,7 +112,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <a class="navbar-brand" href="{neos:uri.node(node: '~')}">
-                            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/phluLogo.svg')}"
+                            <img src="{p:uri.resource(package: 'Phlu.Corporate', path: 'Images/phluLogo.svg')}"
                                  alt="PH Luzern Logo"
                                  onerror="this.onerror=null; this.src='Images/phluLogo.png'"/>
                         </a>
@@ -235,7 +236,7 @@
                 </a>
             </div>
             <div class="col-xs-6 footerLogoMobile">
-                <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/phluLogoFooter.svg')}"
+                <img src="{p:uri.resource(package: 'Phlu.Corporate', path: 'Images/phluLogoFooter.svg')}"
                      alt="Ph Luzern Logo"/>
             </div>
             <div class="col-xs-6 footerAddressMobile">
@@ -259,7 +260,7 @@
                         </div>
                         <div>
                             <img class="footerLogo"
-                                 src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/phluLogoFooter.svg')}"
+                                 src="{p:uri.resource(package: 'Phlu.Corporate', path: 'Images/phluLogoFooter.svg')}"
                                  alt="Ph Luzern Logo"/>
                         </div>
                     </div>
@@ -278,7 +279,7 @@
 
     <span id="top-link-block" class="img-rectangle">
                     <a href="#top" class="anchor-nav">
-                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/spacer.png')}" width="80"
+                        <img src="{p:uri.resource(package: 'Phlu.Corporate', path: 'Images/spacer.png')}" width="80"
                              height="80"
                              alt="spacer"/>
                         <span class="oi oi-caret-top"></span>
@@ -311,7 +312,7 @@
 
     <f:if condition="{isProductionContext}">
         <f:then>
-            <script src="{f:uri.resource(path: 'JavaScript/jsBody.min.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
+            <script src="{p:uri.resource(path: 'JavaScript/jsBody.min.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
         </f:then>
         <f:else>
             <!-- Put your scripts inclusions for the end of the body here, they will be included in your website by TypoScript -->
