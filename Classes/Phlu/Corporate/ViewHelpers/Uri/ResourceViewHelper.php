@@ -91,7 +91,9 @@ class ResourceViewHelper extends \Neos\FluidAdaptor\ViewHelpers\Uri\ResourceView
             $cdn = $this->configurationManager->getConfiguration('Settings', 'Phlu.Corporate.cdn');
             if ($cdn) {
                 $url = parse_url($uri);
-                return $cdn.$url['path'];
+                if ($url['host'] == 'www.phlu.ch') {
+                    return $cdn . $url['path'];
+                }
             }
 
 
