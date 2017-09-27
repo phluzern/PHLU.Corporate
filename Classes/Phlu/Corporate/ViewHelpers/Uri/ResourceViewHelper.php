@@ -27,6 +27,12 @@ class ResourceViewHelper extends \Neos\FluidAdaptor\ViewHelpers\Uri\ResourceView
 {
 
 
+    /**
+     * @Flow\Inject
+     * @var \Neos\Flow\Configuration\ConfigurationManager
+     */
+    protected $configurationManager;
+
 
     /**
      * Render the URI to the resource. The filename is used from child content.
@@ -51,10 +57,9 @@ class ResourceViewHelper extends \Neos\FluidAdaptor\ViewHelpers\Uri\ResourceView
         } else {
 
             // redirect shortcuts
-            if ('application/x-ms-shortcut' == $resource->getMediaType()) {
-                \Neos\Flow\var_dump(file_get_contents("resource://".$resource->getSha1()));
+            if ($resource && 'application/x-ms-shortcut' == $resource->getMediaType()) {
+                return file_get_contents("resource://".$resource->getSha1());
             }
-
 
 
             if ($path === null) {
@@ -81,6 +86,15 @@ class ResourceViewHelper extends \Neos\FluidAdaptor\ViewHelpers\Uri\ResourceView
             }
             $uri = $this->resourceManager->getPublicPackageResourceUri($package, $path);
         }
+
+
+            $cdn = $this->configurationManager->getConfiguration('Settings', 'Phlu.Corporate.cdn');
+            if ($cdn) {
+                $url = parse_url($uri);
+                return $cdn.$url['path'];
+            }
+
+
         return $uri;
     }
 }
