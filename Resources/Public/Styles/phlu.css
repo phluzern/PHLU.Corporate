@@ -8425,13 +8425,13 @@ span.loading.bar {
       color: #9f632a;
       cursor: pointer;
       /*  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -ms-word-break: normal;
-  word-break: break-word;
-  -ms-hyphens: none;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;*/ }
+    word-wrap: break-word;
+    -ms-word-break: normal;
+    word-break: break-word;
+    -ms-hyphens: none;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;*/ }
       #siteSearchAutocomplete ul li.current {
         background-color: #e6e6e6;
         color: black; }
@@ -9043,13 +9043,13 @@ body {
     @media (max-width: 767px) {
       body .all h1, body .all h2, body .all h3, body .all h4 {
         /*  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -ms-word-break: normal;
-  word-break: break-word;
-  -ms-hyphens: none;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;*/ } }
+    word-wrap: break-word;
+    -ms-word-break: normal;
+    word-break: break-word;
+    -ms-hyphens: none;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;*/ } }
     body .all p {
       line-height: 1.8; }
       @media (min-width: 1280px) {
@@ -10028,13 +10028,13 @@ body {
           letter-spacing: 0.2px;
           font-weight: 400;
           /*  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -ms-word-break: normal;
-  word-break: break-word;
-  -ms-hyphens: none;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;*/ }
+    word-wrap: break-word;
+    -ms-word-break: normal;
+    word-break: break-word;
+    -ms-hyphens: none;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;*/ }
           body .all .phlu-teaser .phlu-teaser-body h3 a {
             color: #545454; }
         body .all .phlu-teaser .phlu-teaser-body p {
@@ -10051,13 +10051,13 @@ body {
           body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody p, body .all .phlu-teaser .publication.singleitem .phlu-teaser-body .scrollbody p, body .all .phlu-teaser .news.singleitem .phlu-teaser-body .scrollbody p {
             margin-bottom: inherit;
             /*  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -ms-word-break: normal;
-  word-break: break-word;
-  -ms-hyphens: none;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;*/ }
+    word-wrap: break-word;
+    -ms-word-break: normal;
+    word-break: break-word;
+    -ms-hyphens: none;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;*/ }
           body .all .phlu-teaser .event.singleitem .phlu-teaser-body .scrollbody .phlu-qmpilot-nodetypes-file .content-link-wrapper, body .all .phlu-teaser .publication.singleitem .phlu-teaser-body .scrollbody .phlu-qmpilot-nodetypes-file .content-link-wrapper, body .all .phlu-teaser .news.singleitem .phlu-teaser-body .scrollbody .phlu-qmpilot-nodetypes-file .content-link-wrapper {
             font-size: 0.875rem;
             margin: 0; }
@@ -10300,13 +10300,13 @@ body {
               overflow: hidden;
               height: 73px;
               /*  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -ms-word-break: normal;
-  word-break: break-word;
-  -ms-hyphens: none;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;*/ }
+    word-wrap: break-word;
+    -ms-word-break: normal;
+    word-break: break-word;
+    -ms-hyphens: none;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;*/ }
             body .all .overview-tiles-bg .phlu-teaser.navigation .nav-teaser-item div h3 a, body .all .overview-tiles-bg .phlu-teaser.navigation .nav-teaser-item div p {
               color: #9f632a; }
           body .all .overview-tiles-bg .phlu-teaser.navigation .nav-teaser-item:hover a, body .all .overview-tiles-bg .phlu-teaser.navigation .nav-teaser-item:hover p {
@@ -13740,10 +13740,31 @@ body .all .subpage.breadcrumb-bottom .nosubnav .sidebar:nth-child(1) {
 
 @media print {
   body {
-    margin-bottom: inherit; } }
-
-@media print {
-  body .all .footer {
-    display: none; } }
+    margin: 0;
+    padding: 0 !important;
+    min-width: 768px;
+    margin-bottom: inherit;
+    font-size: 12px !important; }
+    body .logoAndSearchBar, body .sidebar {
+      display: none !important; }
+    body .container-fluid {
+      width: auto; }
+    body .all .navbar {
+      display: none !important; }
+    body .all .row {
+      display: block !important; }
+    body .all .main.contents {
+      margin-top: 0 !important; }
+      body .all .main.contents p {
+        font-size: 12px !important;
+        width: 100% !important; }
+      body .all .main.contents .col-sm-12, body .all .main.contents .col-xs-12 {
+        width: 100% !important; }
+    body .all .breadcrumb a, body .all .breadcrumbs a {
+      font-family: "Droid Sans", sans-serif !important;
+      font-weight: bold !important;
+      font-size: 0.875rem !important; }
+    body .all .footer {
+      display: none; } }
 
 /*# sourceMappingURL=phlu.css.map */
