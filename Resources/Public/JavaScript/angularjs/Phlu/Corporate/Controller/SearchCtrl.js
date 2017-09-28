@@ -378,18 +378,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         }, 1);
 
         if (keybinded == false) {
-
-            // jQuery(document).mousedown(function (e) {
-            //
-            //     if (jQuery(e.target).attr('href') && jQuery(e.target).attr('href').indexOf(window.location.href) == 0) {
-            //         location.reload();
-            //         e.preventDefault();
-            //         return false;
-            //
-            //     }
-            //
-            // });
-
             jQuery(document).keyup(function (e) {
 
                 if (jQuery(e.target).attr('id') == 'searchInput') {
