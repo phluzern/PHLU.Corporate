@@ -7,8 +7,6 @@
   ui:
     group: 'teaserNewContent'
   properties:
-    teaserText:
-      ui: ~
     ishiddendetaillink:
       type: boolean
       ui:
