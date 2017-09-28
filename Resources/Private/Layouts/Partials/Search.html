@@ -19,13 +19,6 @@
                      alt="loading"/>
             </div>
 
-            <div class="turbo-link-result" data-ng-if="result.countTurboNodes()">
-                <div class="result turbonode"
-                     ng-repeat="(index,node) in result.getTurboNodes() | orderBy:'-score'"
-                     ng-if="index === 0">
-                    <search data="node"></search>
-                </div>
-            </div>
 
             <div class="phlu-corporate-tags-menu" data-ng-if="result.getGrouped().count() > 1">
                 <div class="row subjectsfilternav ">
@@ -1084,8 +1077,7 @@
                             <div class="table-responsive" data-ng-switch-default>
                                 <table class="table">
                                     <tbody>
-                                    <tr ng-repeat="node in group.getNodes()"
-                                        data-ng-if="!node.isTurboNode()">
+                                    <tr ng-repeat="node in group.getNodes()">
                                         <td>
                                             <search data="node" view="group"></search>
                                         </td>
@@ -1113,8 +1105,7 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
-                                <tr ng-repeat="node in group.getNodes()"
-                                    data-ng-if="!node.isTurboNode()">
+                                <tr ng-repeat="node in group.getNodes()">
                                     <td class="clickable">
                                         <search data="node" view="group"></search>
                                     </td>
