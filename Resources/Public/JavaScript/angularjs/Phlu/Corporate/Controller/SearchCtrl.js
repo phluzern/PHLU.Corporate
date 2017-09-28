@@ -379,17 +379,16 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         if (keybinded == false) {
 
-
-            jQuery(document).mousedown(function (e) {
-
-                if (jQuery(e.target).attr('href') && jQuery(e.target).attr('href').indexOf(window.location.href) == 0) {
-                    location.reload();
-                    e.preventDefault();
-                    return false;
-
-                }
-
-            });
+            // jQuery(document).mousedown(function (e) {
+            //
+            //     if (jQuery(e.target).attr('href') && jQuery(e.target).attr('href').indexOf(window.location.href) == 0) {
+            //         location.reload();
+            //         e.preventDefault();
+            //         return false;
+            //
+            //     }
+            //
+            // });
 
             jQuery(document).keyup(function (e) {
 

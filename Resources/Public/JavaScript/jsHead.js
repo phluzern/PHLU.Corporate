@@ -57266,6 +57266,8 @@ module.exports = '3.24.0';
 
                         querysegment = this.getEmoijQuery(querysegment).replace(/[^A-z0-9]/, "");
 
+
+
                         var m = metaphone(querysegment.replace(/\./g, "")).toUpperCase();
                         if (m == '0000' || m == '') {
                             return querysegment.replace(/[^0-9]/, "");
@@ -66702,17 +66704,16 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         if (keybinded == false) {
 
-
-            jQuery(document).mousedown(function (e) {
-
-                if (jQuery(e.target).attr('href') && jQuery(e.target).attr('href').indexOf(window.location.href) == 0) {
-                    location.reload();
-                    e.preventDefault();
-                    return false;
-
-                }
-
-            });
+            // jQuery(document).mousedown(function (e) {
+            //
+            //     if (jQuery(e.target).attr('href') && jQuery(e.target).attr('href').indexOf(window.location.href) == 0) {
+            //         location.reload();
+            //         e.preventDefault();
+            //         return false;
+            //
+            //     }
+            //
+            // });
 
             jQuery(document).keyup(function (e) {
 
