@@ -57270,12 +57270,14 @@ module.exports = '3.24.0';
 
                         querysegment = this.getEmoijQuery(querysegment).replace(/[^A-z0-9]/, "");
 
+
+
                         var m = metaphone(querysegment.replace(/\./g, "")).toUpperCase();
                         if (m == '0000' || m == '') {
                             return querysegment.replace(/[^0-9]/, "");
                         }
  
-                        return m.substr(0,4);
+                        return m;
 
                     }
 
