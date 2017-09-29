@@ -1,6 +1,6 @@
 'use strict';
 
-var PhluCorporateApp = angular.module('PhluCorporateApp', ['ngCookies', 'hybridsearch', 'ngSanitize']);
+var PhluCorporateApp = angular.module('PhluCorporateApp', ['ngCookies', 'hybridsearch', 'ngSanitize','ngMaterial']);
 PhluCorporateApp.$$conf = {};
 
 

@@ -21,6 +21,7 @@ var Lightbox = (function ($) {
 		title: '',
 		footer: '',
 		showArrows: true, //display the left / right arrows or not
+		wrapping: true, //if true, gallery loops infinitely
 		type: null, //force the lightbox into image / youtube mode. if null, or not image|youtube|vimeo; detect it
 		alwaysShowClose: false, //always show the close button, even if there is no title
 		loadingMessage: '<div class="ekko-lightbox-loader"><div><div></div><div></div></div></div>', // http://tobiasahlin.com/spinkit/
@@ -87,12 +88,20 @@ var Lightbox = (function ($) {
 			this._footerIsShown = false;
 			this._wantedWidth = 0;
 			this._wantedHeight = 0;
+			this._touchstartX = 0;
+			this._touchendX = 0;
+
 			this._modalId = 'ekkoLightbox-' + Math.floor(Math.random() * 1000 + 1);
 			this._$element = $element instanceof jQuery ? $element : $($element);
 
-			var header = '<div class="modal-header"' + (this._config.title || this._config.alwaysShowClose ? '' : ' style="display:none"') + '><button type="button" class="close" data-dismiss="modal" aria-label="' + this._config.strings.close + '"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">' + (this._config.title || "&nbsp;") + '</h4></div>';
-			var footer = '<div class="modal-footer"' + (this._config.footer ? '' : ' style="display:none"') + '>' + (this._config.footer || "&nbsp;") + '</div>';
-			var body = '<div class="modal-body"><div class="ekko-lightbox-container"><div class="ekko-lightbox-item fade in"></div><div class="ekko-lightbox-item fade"></div></div></div>';
+			this._isBootstrap3 = $.fn.modal.Constructor.VERSION[0] == 3;
+
+			var h4 = '<h4 class="modal-title">' + (this._config.title || "&nbsp;") + '</h4>';
+			var btn = '<button type="button" class="close" data-dismiss="modal" aria-label="' + this._config.strings.close + '"><span aria-hidden="true">&times;</span></button>';
+
+			var header = '<div class="modal-header' + (this._config.title || this._config.alwaysShowClose ? '' : ' hide') + '">' + (this._isBootstrap3 ? btn + h4 : h4 + btn) + '</div>';
+			var footer = '<div class="modal-footer' + (this._config.footer ? '' : ' hide') + '">' + (this._config.footer || "&nbsp;") + '</div>';
+			var body = '<div class="modal-body"><div class="ekko-lightbox-container"><div class="ekko-lightbox-item fade in show"></div><div class="ekko-lightbox-item fade"></div></div></div>';
 			var dialog = '<div class="modal-dialog" role="document"><div class="modal-content">' + header + body + footer + '</div></div>';
 			$(this._config.doc.body).append('<div id="' + this._modalId + '" class="ekko-lightbox modal fade" tabindex="-1" tabindex="-1" role="dialog" aria-hidden="true">' + dialog + '</div>');
 
@@ -128,6 +137,7 @@ var Lightbox = (function ($) {
 						event.preventDefault();
 						return _this.navigateRight();
 					});
+					this.updateNavigation();
 				}
 			}
 
@@ -146,6 +156,12 @@ var Lightbox = (function ($) {
 
 			$(window).on('resize.ekkoLightbox', function () {
 				_this._resize(_this._wantedWidth, _this._wantedHeight);
+			});
+			this._$lightboxContainer.on('touchstart', function () {
+				_this._touchstartX = event.changedTouches[0].screenX;
+			}).on('touchend', function () {
+				_this._touchendX = event.changedTouches[0].screenX;
+				_this._swipeGesure();
 			});
 		}
 
@@ -167,6 +183,8 @@ var Lightbox = (function ($) {
 
 				this._galleryIndex = index;
 
+				this.updateNavigation();
+
 				this._$element = $(this._$galleryItems.get(this._galleryIndex));
 				this._handle();
 			}
@@ -174,9 +192,13 @@ var Lightbox = (function ($) {
 			key: 'navigateLeft',
 			value: function navigateLeft() {
 
+				if (!this._$galleryItems) return;
+
 				if (this._$galleryItems.length === 1) return;
 
-				if (this._galleryIndex === 0) this._galleryIndex = this._$galleryItems.length - 1;else //circular
+				if (this._galleryIndex === 0) {
+					if (this._config.wrapping) this._galleryIndex = this._$galleryItems.length - 1;else return;
+				} else //circular
 					this._galleryIndex--;
 
 				this._config.onNavigate.call(this, 'left', this._galleryIndex);
@@ -186,13 +208,27 @@ var Lightbox = (function ($) {
 			key: 'navigateRight',
 			value: function navigateRight() {
 
+				if (!this._$galleryItems) return;
+
 				if (this._$galleryItems.length === 1) return;
 
-				if (this._galleryIndex === this._$galleryItems.length - 1) this._galleryIndex = 0;else //circular
+				if (this._galleryIndex === this._$galleryItems.length - 1) {
+					if (this._config.wrapping) this._galleryIndex = 0;else return;
+				} else //circular
 					this._galleryIndex++;
 
 				this._config.onNavigate.call(this, 'right', this._galleryIndex);
 				return this.navigateTo(this._galleryIndex);
+			}
+		}, {
+			key: 'updateNavigation',
+			value: function updateNavigation() {
+				if (!this._config.wrapping) {
+					var $nav = this._$lightboxContainer.find('div.ekko-lightbox-nav-overlay');
+					if (this._galleryIndex === 0) $nav.find('a:first-child').addClass('disabled');else $nav.find('a:first-child').removeClass('disabled');
+
+					if (this._galleryIndex === this._$galleryItems.length - 1) $nav.find('a:last-child').addClass('disabled');else $nav.find('a:last-child').removeClass('disabled');
+				}
 			}
 		}, {
 			key: 'close',
@@ -244,13 +280,13 @@ var Lightbox = (function ($) {
 					$current = this._$lightboxBodyTwo;
 				}
 
-				$current.removeClass('in');
+				$current.removeClass('in show');
 				setTimeout(function () {
 					if (!_this2._$lightboxBodyTwo.hasClass('in')) _this2._$lightboxBodyTwo.empty();
 					if (!_this2._$lightboxBodyOne.hasClass('in')) _this2._$lightboxBodyOne.empty();
 				}, 500);
 
-				$toUse.addClass('in');
+				$toUse.addClass('in show');
 				return $toUse;
 			}
 		}, {
@@ -315,11 +351,11 @@ var Lightbox = (function ($) {
 				show = show || false;
 				if (show) {
 					this._$modalDialog.css('display', 'none');
-					this._$modal.removeClass('in');
+					this._$modal.removeClass('in show');
 					$('.modal-backdrop').append(this._config.loadingMessage);
 				} else {
 					this._$modalDialog.css('display', 'block');
-					this._$modal.addClass('in');
+					this._$modal.addClass('in show');
 					$('.modal-backdrop').find('.ekko-lightbox-loader').remove();
 				}
 				return this;
@@ -381,7 +417,7 @@ var Lightbox = (function ($) {
 		}, {
 			key: '_showVimeoVideo',
 			value: function _showVimeoVideo(id, $containerForElement) {
-				var width = 500;
+				var width = this._$element.data('width') || 500;
 				var height = this._$element.data('height') || width / (560 / 315);
 				return this._showVideoIframe(id + '?autoplay=1', width, height, $containerForElement);
 			}
@@ -510,6 +546,10 @@ var Lightbox = (function ($) {
 							var image = $('<img />');
 							image.attr('src', img.src);
 							image.addClass('img-fluid');
+
+							// backward compatibility for bootstrap v3
+							image.css('width', '100%');
+
 							$containerForImage.html(image);
 							if (_this4._$modalArrows) _this4._$modalArrows.css('display', ''); // remove display to default to css property
 
@@ -526,6 +566,16 @@ var Lightbox = (function ($) {
 
 				img.src = src;
 				return img;
+			}
+		}, {
+			key: '_swipeGesure',
+			value: function _swipeGesure() {
+				if (this._touchendX < this._touchstartX) {
+					return this.navigateRight();
+				}
+				if (this._touchendX > this._touchstartX) {
+					return this.navigateLeft();
+				}
 			}
 		}, {
 			key: '_resize',
@@ -567,7 +617,15 @@ var Lightbox = (function ($) {
 				this._$lightboxContainer.css('height', maxHeight);
 				this._$modalDialog.css('width', 'auto').css('maxWidth', width);
 
-				this._$modal.modal('_handleUpdate');
+				var modal = this._$modal.data('bs.modal');
+				if (modal) {
+					// v4 method is mistakenly protected
+					try {
+						modal._handleUpdate();
+					} catch (Exception) {
+						modal.handleUpdate();
+					}
+				}
 				return this;
 			}
 		}], [{

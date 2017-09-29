@@ -1,5 +1,5 @@
 const Lightbox = (($) => {
-
+	
 	const NAME = 'ekkoLightbox'
 	const JQUERY_NO_CONFLICT = $.fn[NAME]
 
@@ -7,6 +7,7 @@ const Lightbox = (($) => {
 		title: '',
 		footer: '',
 		showArrows: true, //display the left / right arrows or not
+		wrapping: true, //if true, gallery loops infinitely
 		type: null, //force the lightbox into image / youtube mode. if null, or not image|youtube|vimeo; detect it
 		alwaysShowClose: false, //always show the close button, even if there is no title
 		loadingMessage: '<div class="ekko-lightbox-loader"><div><div></div><div></div></div></div>', // http://tobiasahlin.com/spinkit/
@@ -69,12 +70,20 @@ const Lightbox = (($) => {
 			this._footerIsShown = false
 			this._wantedWidth = 0
 			this._wantedHeight = 0
+			this._touchstartX = 0
+			this._touchendX = 0
+			
 			this._modalId = `ekkoLightbox-${Math.floor((Math.random() * 1000) + 1)}`;
 			this._$element = $element instanceof jQuery ? $element : $($element)
 
-			let header = `<div class="modal-header"${this._config.title || this._config.alwaysShowClose ? '' : ' style="display:none"'}><button type="button" class="close" data-dismiss="modal" aria-label="${this._config.strings.close}"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">${this._config.title || "&nbsp;"}</h4></div>`;
-			let footer = `<div class="modal-footer"${this._config.footer ? '' : ' style="display:none"'}>${this._config.footer || "&nbsp;"}</div>`;
-			let body = '<div class="modal-body"><div class="ekko-lightbox-container"><div class="ekko-lightbox-item fade in"></div><div class="ekko-lightbox-item fade"></div></div></div>'
+			this._isBootstrap3 = $.fn.modal.Constructor.VERSION[0] == 3;
+
+			let h4 = `<h4 class="modal-title">${this._config.title || "&nbsp;"}</h4>`;
+			let btn = `<button type="button" class="close" data-dismiss="modal" aria-label="${this._config.strings.close}"><span aria-hidden="true">&times;</span></button>`;
+
+			let header = `<div class="modal-header${this._config.title || this._config.alwaysShowClose ? '' : ' hide'}">`+(this._isBootstrap3 ? btn+h4 : h4+btn)+`</div>`;
+			let footer = `<div class="modal-footer${this._config.footer ? '' : ' hide'}">${this._config.footer || "&nbsp;"}</div>`;
+			let body = '<div class="modal-body"><div class="ekko-lightbox-container"><div class="ekko-lightbox-item fade in show"></div><div class="ekko-lightbox-item fade"></div></div></div>'
 			let dialog = `<div class="modal-dialog" role="document"><div class="modal-content">${header}${body}${footer}</div></div>`
 			$(this._config.doc.body).append(`<div id="${this._modalId}" class="ekko-lightbox modal fade" tabindex="-1" tabindex="-1" role="dialog" aria-hidden="true">${dialog}</div>`)
 
@@ -110,6 +119,7 @@ const Lightbox = (($) => {
 						event.preventDefault()
 						return this.navigateRight()
 					})
+					this.updateNavigation()
 				}
 			}
 
@@ -134,6 +144,15 @@ const Lightbox = (($) => {
 			$(window).on('resize.ekkoLightbox', () => {
 				this._resize(this._wantedWidth, this._wantedHeight)
 			})
+			this._$lightboxContainer
+			.on('touchstart', () => {
+				this._touchstartX = event.changedTouches[0].screenX;
+
+			})
+			.on('touchend', () => {
+				this._touchendX = event.changedTouches[0].screenX;
+			    this._swipeGesure();
+			})
 		}
 
 		element() {
@@ -151,17 +170,26 @@ const Lightbox = (($) => {
 
 			this._galleryIndex = index
 
+			this.updateNavigation()
+
 			this._$element = $(this._$galleryItems.get(this._galleryIndex))
 			this._handle();
 		}
 
 		navigateLeft() {
 
+			if(!this._$galleryItems)
+				return;
+      
 			if (this._$galleryItems.length === 1)
 				return
 
-			if (this._galleryIndex === 0)
-				this._galleryIndex = this._$galleryItems.length - 1
+			if (this._galleryIndex === 0) {
+				if (this._config.wrapping)
+					this._galleryIndex = this._$galleryItems.length - 1
+				else
+					return
+			}
 			else //circular
 				this._galleryIndex--
 
@@ -171,16 +199,38 @@ const Lightbox = (($) => {
 
 		navigateRight() {
 
+			if(!this._$galleryItems)
+				return;
+      
 			if (this._$galleryItems.length === 1)
 				return
 
-			if (this._galleryIndex === this._$galleryItems.length - 1)
-				this._galleryIndex = 0
+			if (this._galleryIndex === this._$galleryItems.length - 1) {
+				if (this._config.wrapping)
+					this._galleryIndex = 0
+				else
+					return
+			}
 			else //circular
 				this._galleryIndex++
 
 			this._config.onNavigate.call(this, 'right', this._galleryIndex)
 			return this.navigateTo(this._galleryIndex)
+		}
+
+		updateNavigation() {
+			if (!this._config.wrapping) {
+				let $nav = this._$lightboxContainer.find('div.ekko-lightbox-nav-overlay')
+				if (this._galleryIndex === 0)
+					$nav.find('a:first-child').addClass('disabled')
+				else
+					$nav.find('a:first-child').removeClass('disabled')
+
+				if (this._galleryIndex === this._$galleryItems.length - 1)
+					$nav.find('a:last-child').addClass('disabled')
+				else
+					$nav.find('a:last-child').removeClass('disabled')
+			}
 		}
 
 		close() {
@@ -230,7 +280,7 @@ const Lightbox = (($) => {
 				$current = this._$lightboxBodyTwo
 			}
 
-			$current.removeClass('in')
+			$current.removeClass('in show')
 			setTimeout(() => {
 				if(!this._$lightboxBodyTwo.hasClass('in'))
 					this._$lightboxBodyTwo.empty()
@@ -238,7 +288,7 @@ const Lightbox = (($) => {
 					this._$lightboxBodyOne.empty()
 			}, 500)
 
-			$toUse.addClass('in')
+			$toUse.addClass('in show')
 			return $toUse
 		}
 
@@ -298,12 +348,12 @@ const Lightbox = (($) => {
 			show = show || false
 			if(show) {
 				this._$modalDialog.css('display', 'none')
-				this._$modal.removeClass('in')
+				this._$modal.removeClass('in show')
 				$('.modal-backdrop').append(this._config.loadingMessage)
 			}
 			else {
 				this._$modalDialog.css('display', 'block')
-				this._$modal.addClass('in')
+				this._$modal.addClass('in show')
 				$('.modal-backdrop').find('.ekko-lightbox-loader').remove()
 			}
 			return this;
@@ -370,7 +420,7 @@ const Lightbox = (($) => {
 		}
 
 		_showVimeoVideo(id, $containerForElement) {
-			let width = 500
+			let width = this._$element.data('width') || 500
 			let height = this._$element.data('height') ||  width / ( 560/315 )
 			return this._showVideoIframe(id + '?autoplay=1', width, height, $containerForElement)
 		}
@@ -495,6 +545,10 @@ const Lightbox = (($) => {
 					let image = $('<img />');
 					image.attr('src', img.src);
 					image.addClass('img-fluid');
+
+					// backward compatibility for bootstrap v3
+					image.css('width', '100%');
+
 					$containerForImage.html(image);
 					if (this._$modalArrows)
 						this._$modalArrows.css('display', '') // remove display to default to css property
@@ -511,6 +565,15 @@ const Lightbox = (($) => {
 
 			img.src = src;
 			return img;
+		}
+
+		_swipeGesure() {
+		    if (this._touchendX < this._touchstartX) {
+		        return this.navigateRight();
+		    }
+		    if (this._touchendX > this._touchstartX) {
+		        return this.navigateLeft();
+		    }
 		}
 
 		_resize( width, height ) {
@@ -554,7 +617,15 @@ const Lightbox = (($) => {
 			this._$lightboxContainer.css('height', maxHeight)
 			this._$modalDialog.css('width', 'auto') .css('maxWidth', width);
 
-			this._$modal.modal('_handleUpdate');
+			let modal = this._$modal.data('bs.modal');
+			if (modal) {
+				// v4 method is mistakenly protected
+				try {
+					modal._handleUpdate();
+				} catch(Exception) {
+					modal.handleUpdate();
+				}
+			}
 			return this;
 		}
 
