@@ -61774,7 +61774,7 @@ module.exports = '3.24.4';
                     });
 
 
-                    self.$$data.autocomplete = [];
+                   // self.$$data.autocomplete = [];
                     var autocompleteTemp = {};
 
 
@@ -61817,7 +61817,8 @@ module.exports = '3.24.4';
                                     }
                                     b = b.trim();
                                     if (b.length > query.length && query !== b && autocompleteTemp[b] == undefined && i >= -1 && i < 64) {
-                                        self.$$data.autocomplete.push(b);
+                                       // self.$$data.autocomplete.push(b);
+                                        self.$$data.autocompleteKeys[b] = true;
                                         autocompleteTemp[b] = true;
                                     }
                                 }
@@ -61835,27 +61836,25 @@ module.exports = '3.24.4';
 
 
                     var counter = 0;
+                    var autocompleteprocess = [];
                     angular.forEach(Object.keys(self.$$data.autocompleteKeys), function (a) {
                         // if (query !== a.toLowerCase() && a.indexOf(query) >= 0 && autocompleteTemp[a] == undefined) {
-                        self.$$data.autocomplete.push(a);
-                        autocompleteTemp[a] = true;
-                        // }
-                        counter++;
+                        autocompleteprocess.push(a);
                     });
 
                     var autocompleteTempPostProcessed = [];
                     var autocompleteTemp = {};
 
-                    angular.forEach(self.$$data.autocomplete.reverse(), function (a) {
+
+
+                    angular.forEach(autocompleteprocess.reverse(), function (a) {
 
                         var a = a.trim();
-                        var b = metaphone(a,7);
-                            if (a.indexOf(query) >= 0 && autocompleteTemp[a] == undefined && autocompleteTemp[b] == undefined && a !== query && a.substr(-5,5).indexOf(" ") == -1) {
+                        var b = a.indexOf(" ") == query.length-2 ? a : metaphone(a,7);
+                            if (a.indexOf(query) >= 0 && autocompleteTemp[b] == undefined && a !== query) {
                                 autocompleteTempPostProcessed.push(a);
                                 autocompleteTemp[b] = true;
-                                autocompleteTemp[a] = true;
                             }
-
                     });
                     
 
