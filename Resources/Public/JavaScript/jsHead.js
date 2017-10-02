@@ -61846,12 +61846,13 @@ module.exports = '3.24.4';
                     var autocompleteTempPostProcessed = [];
                     var autocompleteTemp = {};
 
-                    angular.forEach(self.$$data.autocomplete, function (a) {
+                    angular.forEach(self.$$data.autocomplete.reverse(), function (a) {
 
                         var a = a.trim();
-
-                            if (a.indexOf(query) >= 0 && autocompleteTemp[a] == undefined && a !== query) {
+                        var b = metaphone(a,6);
+                            if (a.indexOf(query) >= 0 && autocompleteTemp[a] == undefined && autocompleteTemp[b] == undefined && a !== query) {
                                 autocompleteTempPostProcessed.push(a);
+                                autocompleteTemp[b] = true;
                             }
                             autocompleteTemp[a] = true;
                     });
