@@ -59505,6 +59505,8 @@ module.exports = '3.24.4';
 
                         ref.socket.once("value", function (data) {
                             if (data.val()) {
+                                
+
 
                                 var kwds = [];
                                 var ac = {};
@@ -59518,8 +59520,8 @@ module.exports = '3.24.4';
                                 angular.forEach(kwds, function (v, k) {
                                     if (ismatch == false && v.term == query) {
                                         ismatch = true;
-                                        ac[v.term] = v.term;
                                     }
+                                    ac[v.term] = v.term;
                                 });
 
                                 if (ismatch == false) {
@@ -59540,7 +59542,6 @@ module.exports = '3.24.4';
                                     });
 
                                 }
-
 
                                 self.setAutocomplete(ac, querysegment);
 
