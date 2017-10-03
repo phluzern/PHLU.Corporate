@@ -135,7 +135,7 @@
                                     <li data-ng-repeat="item in autocomplete"
                                         data-ng-class="{current: autocompleteLastPos == $index}"
                                         data-ng-click="setSiteSearch(item, $event);" data-ng-if="$index < 8">
-                                        <span data-ng-bind="item"></span><i data-ng-click=""
+                                        <span data-ng-bind-html="item"></span><i data-ng-click=""
                                                                             class="goodluck fa fa-angle-double-right"
                                                                             aria-hidden="true"></i>
                                     </li>
