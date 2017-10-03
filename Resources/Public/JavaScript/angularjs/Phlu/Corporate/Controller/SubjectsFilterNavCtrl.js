@@ -155,7 +155,9 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
     $scope.addFilterItem = function(nodeId,filterId) {
         if ($scope.filterItems[nodeId] === undefined) $scope.filterItems[nodeId] = {};
         $scope.filterItems[nodeId][filterId] = true;
+
         $scope.ishidden = false;
+
     };
 
 

@@ -3,13 +3,14 @@
   "dependencies": {
     "bootstrap": "v4.0.0-alpha.3",
     "grunt-modernizr": "*",
-    "angularjs": "1.5.*",
-    "angular-cookies": "1.5.*",
+    "angularjs": "1.6.*",
+    "angular-cookies": "1.6.*",
     "tether": "*",
     "font-awesome": "4.6.*",
     "animate.css": "*",
     "jquery-rcrumbs": "*",
     "bootstrap-datepicker": "*",
-    "iframe-resizer": "*"
+    "iframe-resizer": "*",
+    "angular-material": "1.1.*"
   }
 }

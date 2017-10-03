@@ -796,10 +796,15 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     });
 
+
+
+
     search.setGroupedBy(groupedBy).setNodeUrlBoostFactor(NodeUrlBoostFactor).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setNodeTypeBoostFactor(boostNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
         $rootScope.siteSearchTopSetFocus();
-        $rootScope.autocomplete = data.getAutocomplete();
+
+
+
         if (searchResultApplyTimer) {
             window.clearTimeout(searchResultApplyTimer);
         }
@@ -895,10 +900,12 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     }
 
 
-    $scope.$watch('result.getAutocomplete()', function (i) {
+    $scope.result.getAutocomplete();
 
-        // jQuery("#siteSearchAutocomplete").css('zIndex',9).css('width',jQuery("#searchInput").innerWidth()+4);
-        $rootScope.autocomplete = i;
+
+    $scope.$watch('result.getAutocomplete()', function (i) {
+        $rootScope.siteSearchTopFocus = true;
+        $rootScope.autocomplete = $scope.result.$$data.autocomplete;
         window.setTimeout(function () {
             $rootScope.$digest();
         }, 1);

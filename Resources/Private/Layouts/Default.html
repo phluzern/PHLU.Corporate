@@ -63,6 +63,7 @@
                 <script src="{p:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'Neoslive.Hybridsearch')}"></script>
                 <script src="{p:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'Phlu.Corporate')}"></script>
                 <script src="{p:uri.resource(path: 'Vendor/iframe-resizer/js/iframeResizer.min.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'Vendor/angular-animate/angular-animate.min.js', package: 'Phlu.Corporate')}"></script>
                 <script src="{p:uri.resource(path: 'Vendor/algoliasearch/dist/algoliasearch.min.js', package: 'Neoslive.Hybridsearch')}"></script>
                 <script src="{p:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
                 <script src="{p:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'Phlu.Corporate')}"></script>
@@ -175,6 +176,8 @@
     <div class="container-fluid footer" id="footer" data-ng-controller="SearchMobileCtrl"
          data-ng-class="{hasSearchResults: siteSearchSearchMobile != '' && siteSearch !== ''}">
         <div class="row">
+
+
 
             <div data-ng-show="autocompleteIsShowing && getAutocompleteMobile().length !== 0"
                  id="siteSearchMobileAutocomplete" class="hidden-xs-up"
