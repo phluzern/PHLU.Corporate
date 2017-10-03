@@ -57939,7 +57939,7 @@ module.exports = '3.24.4';
 
                         window.setTimeout(function () {
                             self.searchExecute(nodesFromInput, booleanmode, customquery);
-                        }, 10);
+                        }, 1);
 
 
                     },
@@ -57968,7 +57968,7 @@ module.exports = '3.24.4';
 
                         window.setTimeout(function () {
                             results.getApp().setSearchCounter(1);
-                        }, 10);
+                        }, 1);
 
 
                         if (self.getFilter().getQuery().length == 0) {
@@ -58811,7 +58811,7 @@ module.exports = '3.24.4';
                                         lastSearchInstance.execute(self, lastSearchInstance);
                                         self.search(nodes);
                                     }
-                                }, 25);
+                                }, 5);
 
 
                             } else {
@@ -59160,6 +59160,7 @@ module.exports = '3.24.4';
                                                                                 if (group.ref.http !== undefined) {
                                                                                     self.addPendingRequest($http(req).then(function (data) {
                                                                                             data = data.data;
+
                                                                                             if (data) {
                                                                                                 angular.forEach(groupedByNodeType[nodetype].nodes, function (node, identifier) {
                                                                                                     groupedByNodeTypeNodes.push(data[identifier]);
@@ -59168,6 +59169,8 @@ module.exports = '3.24.4';
                                                                                                 if (staticCachedNodes[nodetype] == undefined) {
                                                                                                     staticCachedNodes[nodetype] = data;
                                                                                                 }
+                                                                                            } else {
+                                                                                                requestCountDone++;
                                                                                             }
                                                                                             //execute(keyword, groupedByNodeType[nodetype]['nodes'], ref);
                                                                                             if (requestCountDone == requestCount) {
@@ -59498,6 +59501,7 @@ module.exports = '3.24.4';
                         var ref = {};
                         ref.socket = hybridsearch.$firebase().database().ref("sites/" + hybridsearch.$$conf.site + "/" + "keywords/" + hybridsearch.$$conf.workspace + "/" + hybridsearch.$$conf.branch + "/" + hybridsearch.$$conf.dimension + "/" + q);
                         ref.http = (hybridsearch.$$conf.cdnDatabaseURL == undefined ? hybridsearch.$$conf.databaseURL : hybridsearch.$$conf.cdnDatabaseURL) + ("/sites/" + hybridsearch.$$conf.site + "/" + "keywords/" + hybridsearch.$$conf.workspace + "/" + hybridsearch.$$conf.branch + "/" + hybridsearch.$$conf.dimension + "/" + q + ".json");
+
 
 
                         instance.$$data.keywords.push({term: query, metaphone: q});
@@ -60169,7 +60173,7 @@ module.exports = '3.24.4';
                                 self.$$app.setSearchIndex();
                             }
 
-                        }, 10);
+                        }, 2);
 
                         self.$$app.getHybridsearch().$$conf.branchInitialized = true;
 
@@ -60409,7 +60413,7 @@ module.exports = '3.24.4';
                                 execute(nodesArray);
                             }
 
-                        }, 5);
+                        }, 1);
                     } else {
                         execute(nodesArray);
                     }
@@ -61373,7 +61377,7 @@ module.exports = '3.24.4';
                             applyTimeout = setTimeout(function () {
                                 self.getScope().$digest(function () {
                                 });
-                            }, 10);
+                            }, 1);
                         }
 
                     },
@@ -61392,7 +61396,7 @@ module.exports = '3.24.4';
                         var self = this;
                         applyTimeout = setTimeout(function () {
                             self.callbackMethod(obj);
-                        }, 10);
+                        }, 1);
 
                     },
                     /**
@@ -61753,10 +61757,6 @@ module.exports = '3.24.4';
                         return null;
                     }
 
-                    if (self.count() == 1) {
-                        return null;
-                    }
-
                     if (!autocomplete) {
                         autocomplete = {};
                     }
@@ -61805,35 +61805,36 @@ module.exports = '3.24.4';
                         self.$$data.autocompleteKeys = {};
                     }
 
+                    if (self.count() > 0) {
+                        angular.forEach(self.getNodes(60), function (node) {
 
-                    angular.forEach(self.getNodes(60), function (node) {
-
-                        var a = node.getProperty(foundinproperty);
-
-
-                        if (a && typeof a != 'object') {
-                            if (a.length < 50 && (caller == undefined || caller.isFiltered(node) == false)) {
+                            var a = node.getProperty(foundinproperty);
 
 
-                                var i = a.toLowerCase().indexOf(query);
-                                var b = a.substr(i).toLowerCase();
-                                if (b == query && i >= 0) {
-                                    b = a.substr(0, i + query.length).toLowerCase();
+                            if (a && typeof a != 'object') {
+                                if (a.length < 50 && (caller == undefined || caller.isFiltered(node) == false)) {
+
+
+                                    var i = a.toLowerCase().indexOf(query);
+                                    var b = a.substr(i).toLowerCase();
+                                    if (b == query && i >= 0) {
+                                        b = a.substr(0, i + query.length).toLowerCase();
+                                        b = b.trim();
+                                    }
                                     b = b.trim();
-                                }
-                                b = b.trim();
-                                if (b.length > query.length && query !== b && autocompleteTemp[b] == undefined && i >= -1 && i < 64) {
-                                    // self.$$data.autocomplete.push(b);
-                                    self.$$data.autocompleteKeys[b] = true;
-                                    autocompleteTemp[b] = true;
+                                    if (b.length > query.length && query !== b && autocompleteTemp[b] == undefined && i >= -1 && i < 64) {
+                                        // self.$$data.autocomplete.push(b);
+                                        self.$$data.autocompleteKeys[b] = true;
+                                        autocompleteTemp[b] = true;
 
+                                    }
                                 }
+
                             }
 
-                        }
 
-
-                    });
+                        });
+                    }
 
 
                     var autocompleteTempPostProcessed = [];
@@ -61859,9 +61860,10 @@ module.exports = '3.24.4';
                     self.$$data.autocomplete = autocompleteTempPostProcessed.sort();
 
 
+
                     window.setTimeout(function () {
-                        //      self.getApp().applyScope();
-                    });
+                        self.getApp().applyScope();
+                    }, 1);
 
 
                     return this;
@@ -69274,10 +69276,15 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     });
 
+
+
+
     search.setGroupedBy(groupedBy).setNodeUrlBoostFactor(NodeUrlBoostFactor).setOrderBy(orderBy).setParentNodeTypeBoostFactor(boostParentNodeType).setNodeTypeBoostFactor(boostNodeType).setPropertiesBoost(boost).setNodeTypeLabels(labels).setQuery('siteSearch', $rootScope).$bind('result', $scope).$watch(function (data) {
 
         $rootScope.siteSearchTopSetFocus();
-        $rootScope.autocomplete = data.getAutocomplete();
+
+
+
         if (searchResultApplyTimer) {
             window.clearTimeout(searchResultApplyTimer);
         }
@@ -69373,10 +69380,12 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     }
 
 
-    $scope.$watch('result.getAutocomplete()', function (i) {
+    $scope.result.getAutocomplete();
 
-        // jQuery("#siteSearchAutocomplete").css('zIndex',9).css('width',jQuery("#searchInput").innerWidth()+4);
-        $rootScope.autocomplete = i;
+
+    $scope.$watch('result.getAutocomplete()', function (i) {
+        $rootScope.siteSearchTopFocus = true;
+        $rootScope.autocomplete = $scope.result.$$data.autocomplete;
         window.setTimeout(function () {
             $rootScope.$digest();
         }, 1);
