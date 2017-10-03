@@ -61780,6 +61780,7 @@ module.exports = '3.24.4';
 
                     var foundinproperty = null;
                     var foundinpropertyNodeType = null;
+                    var foundinpropertyParentNodeType = null;
                     var foundinpropertyTmp = null;
 
                     if (self.count() > 0) {
@@ -61795,6 +61796,7 @@ module.exports = '3.24.4';
                                         if (foundinpropertyTmp == property) {
                                             foundinproperty = property;
                                             foundinpropertyNodeType = node.getNodeType();
+                                            foundinpropertyParentNodeType = node.grandParentNode.nodeType;
                                         }
                                         if (foundinpropertyTmp == null) {
                                             foundinpropertyTmp = property;
@@ -61809,8 +61811,9 @@ module.exports = '3.24.4';
                     if (foundinproperty === null) {
                         foundinproperty = '_nodeLabel';
                         foundinpropertyNodeType = null;
+                        foundinpropertyParentNodeType = null;
                     } else {
-                        self.$$data.autocompleteKeys = {};
+                       self.$$data.autocompleteKeys = {};
                     }
 
 
@@ -61818,12 +61821,13 @@ module.exports = '3.24.4';
                     if (self.count() > 0) {
                         angular.forEach(self.getNodes(32), function (node) {
 
-                            if (foundinpropertyNodeType === null || node.getNodeType() == foundinpropertyNodeType) {
+                            if ((foundinpropertyNodeType === null || node.getNodeType() == foundinpropertyNodeType) && (foundinpropertyParentNodeType == null || node.grandParentNode.nodeType == foundinpropertyParentNodeType)) {
                                 var a = node.getProperty(foundinproperty);
+
 
                                 if (a && typeof a != 'object') {
 
-                                    if (a.length < 128 && a.length > query.length && (caller == undefined || caller.isFiltered(node) == false)) {
+                                    if (a.length < 64 && a.length > query.length && (caller == undefined || caller.isFiltered(node) == false)) {
                                             self.$$data.autocompleteKeys[a.toLowerCase()] = true;
                                     }
 
@@ -68960,8 +68964,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var boost = {
 
 
-        'phlu-corporate-contact-lastname': 1000,
-        'phlu-corporate-contact-firstname': 1000,
+        'phlu-corporate-contact-label': 10000,
+        'phlu-corporate-contact-lastname': 10000,
+        'phlu-corporate-contact-firstname': 10000,
         'phlu-corporate-contact-phone': 1000,
         'phlu-corporate-contact-shorthandsymbol': 1000,
         'phlu-corporate-contact-parent': 1, // dont'search here
@@ -69112,7 +69117,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '/forschung/projekte/': 0.0001,
         '/faecher-und-schwerpunkte/': {'*': 5, 'phlu-corporate-contact': 0.0001},
         '/ueber-uns/arbeiten-an-der-ph-luzern/stellen': {'*': 100, 'phlu-corporate-contact': 0.0001},
-        '/ueber-uns/': {'*': 0.5, 'phlu-corporate-contact': 100, 'phlu-corporate-location': 1000}
+        '/ueber-uns/': {'*': 0.5, 'phlu-corporate-contact': 1, 'phlu-corporate-location': 1000}
 
     };
 

@@ -480,8 +480,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var boost = {
 
 
-        'phlu-corporate-contact-lastname': 1000,
-        'phlu-corporate-contact-firstname': 1000,
+        'phlu-corporate-contact-label': 10000,
+        'phlu-corporate-contact-lastname': 10000,
+        'phlu-corporate-contact-firstname': 10000,
         'phlu-corporate-contact-phone': 1000,
         'phlu-corporate-contact-shorthandsymbol': 1000,
         'phlu-corporate-contact-parent': 1, // dont'search here
@@ -632,7 +633,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '/forschung/projekte/': 0.0001,
         '/faecher-und-schwerpunkte/': {'*': 5, 'phlu-corporate-contact': 0.0001},
         '/ueber-uns/arbeiten-an-der-ph-luzern/stellen': {'*': 100, 'phlu-corporate-contact': 0.0001},
-        '/ueber-uns/': {'*': 0.5, 'phlu-corporate-contact': 100, 'phlu-corporate-location': 1000}
+        '/ueber-uns/': {'*': 0.5, 'phlu-corporate-contact': 1, 'phlu-corporate-location': 1000}
 
     };
 
