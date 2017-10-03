@@ -61148,6 +61148,7 @@ module.exports = '3.24.4';
                     isrunningfirsttimestamp: 0,
                     autocomplete: [],
                     autocompleteKeys: {},
+                    autocompleteKeysCollection: {},
                     distinctsConfiguration: {},
                     unfilteredResultNodes: [],
                     identifier: generateUUID(),
@@ -61771,6 +61772,7 @@ module.exports = '3.24.4';
 
                     angular.forEach(Object.keys(autocomplete), function (a) {
                         self.$$data.autocompleteKeys[a] = true;
+                        self.$$data.autocompleteKeysCollection[a] = true;
                     });
 
 
@@ -61813,9 +61815,8 @@ module.exports = '3.24.4';
                         foundinpropertyNodeType = null;
                         foundinpropertyParentNodeType = null;
                     } else {
-                       self.$$data.autocompleteKeys = {};
+                        self.$$data.autocompleteKeys = {};
                     }
-
 
 
                     if (self.count() > 0) {
@@ -61824,22 +61825,15 @@ module.exports = '3.24.4';
                             if ((foundinpropertyNodeType === null || node.getNodeType() == foundinpropertyNodeType) && (foundinpropertyParentNodeType == null || node.grandParentNode.nodeType == foundinpropertyParentNodeType)) {
                                 var a = node.getProperty(foundinproperty);
 
-
                                 if (a && typeof a != 'object') {
-
                                     if (a.length < 64 && a.length > query.length && (caller == undefined || caller.isFiltered(node) == false)) {
                                             self.$$data.autocompleteKeys[a.toLowerCase()] = true;
                                     }
-
                                 }
                             }
 
                         });
-
-
                     }
-
-
 
 
                     var autocompleteTempPostProcessed = [];
@@ -61854,15 +61848,36 @@ module.exports = '3.24.4';
                             b = a;
                         }
 
-                        if ((typeof a !== 'string' || a.indexOf(query) >= 0) && autocompleteTemp[b] == undefined && a !== query) {
+                        if ((typeof a !== 'string' || a.indexOf(query) >= 0) && autocompleteTemp[a] == undefined && autocompleteTemp[b] == undefined && a !== query) {
                             autocompleteTempPostProcessed.push(a);
+                            autocompleteTemp[a] = true;
                             autocompleteTemp[b] = true;
                         }
 
                     });
 
 
-                    self.$$data.autocomplete = autocompleteTempPostProcessed.sort();
+                    var autocompleteTempPostProcessedTwo = [];
+
+                    
+                    angular.forEach(Object.keys(self.$$data.autocompleteKeysCollection), function (a) {
+
+                        var b = typeof a == 'string' ? (a.indexOf(" ") == query.length - 2 ? a : metaphone(a,5)) : a;
+                        if (b.length == 0) {
+                            b = a;
+                        }
+
+                        if ((typeof a !== 'string' || a.indexOf(query) >= 0) && autocompleteTemp[a] == undefined && autocompleteTemp[b] == undefined && a !== query) {
+                            autocompleteTempPostProcessedTwo.push(a);
+                            autocompleteTemp[a] = true;
+                            autocompleteTemp[b] = true;
+                        }
+
+
+                    });
+
+
+                    self.$$data.autocomplete = autocompleteTempPostProcessed.sort().concat(autocompleteTempPostProcessedTwo);
 
 
                     window.setTimeout(function () {
