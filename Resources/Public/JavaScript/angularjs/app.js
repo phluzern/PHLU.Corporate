@@ -77,7 +77,7 @@ PhluCorporateApp.controller('initController', ['$scope', '$hybridsearch', functi
         PhluCorporateApp.$$conf.siteNodeName = siteNodeName !== '' ? siteNodeName : 'corporate';
         PhluCorporateApp.$$conf.dimensionHash = dimensionHash !== '' ? dimensionHash : 'fb11fdde869d0a8fcfe00a2fd35c031d';
         PhluCorporateApp.$$conf.cdnHost = cdnHost  ? cdnHost : undefined;
-        PhluCorporateApp.$$conf.cdnHostStatic = cdnHostStatic ? cdnHostStatic : undefined;
+        //PhluCorporateApp.$$conf.cdnHostStatic = cdnHostStatic ? cdnHostStatic : undefined;
     };
 
 
