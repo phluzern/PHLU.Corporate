@@ -58205,11 +58205,12 @@ module.exports = '3.24.4';
                                             }
                                         });
                                         if (result.length - filteredNodes === 0) {
-                                            result = lunrSearch.search(self.getFilter().getQuery(), {
+                                            result = lunrSearch.search(self.getFilter().getQuery().substr(0,self.getFilter().getQuery().length-2), {
                                                 fields: fields,
                                                 bool: "OR",
                                                 expand: true
                                             });
+
                                         }
 
                                     }
