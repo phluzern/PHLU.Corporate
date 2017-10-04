@@ -28,12 +28,12 @@
         <f:if condition="{isProductionContext}">
             <f:then>
                 <link rel="stylesheet"
-                      href="{p:uri.resource(path: 'Styles/phlu-all.min.css', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"
+                      href="{p:uri.resource(path: 'Styles/phlu-all.min.css', package: 'Phlu.Corporate')}"
                       media="all"/>
             </f:then>
             <f:else>
                 <link rel="stylesheet"
-                      href="{p:uri.resource(path: 'Styles/phlu-all.css', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"
+                      href="{p:uri.resource(path: 'Styles/phlu-all.css', package: 'Phlu.Corporate')}"
                       media="all"/>
                 <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/debug.css', package: 'Phlu.Corporate')}"
                       media="all"/>
@@ -47,12 +47,20 @@
 
         <f:if condition="{isProductionContext}">
             <f:then>
-                <script src="{p:uri.resource(path: 'JavaScript/application.min.js', package: 'Phlu.Corporate')}"
-                        async></script>
+
+                <f:if condition="{neos:rendering.inBackend()}">
+                    <f:then>
+                        <script src="{p:uri.resource(path: 'JavaScript/application.js', package: 'Phlu.Corporate')}"></script>
+                    </f:then>
+                    <f:else>
+                        <script src="{p:uri.resource(path: 'JavaScript/application.min.js', package: 'Phlu.Corporate')}" async></script>
+                    </f:else>
+                </f:if>
+
+
             </f:then>
             <f:else>
-                <script src="{p:uri.resource(path: 'JavaScript/application.js', package: 'Phlu.Corporate')}"
-                        async></script>
+                <script src="{p:uri.resource(path: 'JavaScript/application.js', package: 'Phlu.Corporate')}"></script>
             </f:else>
         </f:if>
 

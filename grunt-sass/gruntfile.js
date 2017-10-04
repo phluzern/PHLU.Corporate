@@ -31,12 +31,12 @@ module.exports = function (grunt) {
             js: {
                 src: [
                     // header
+                    '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/jquery/dist/jquery.js',
                     '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/angularjs/angular.js',
                     '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/angular-cookies/angular-cookies.js',
                     '../../../Application/Neoslive.Hybridsearch/Resources/Public/Vendor/firebase/firebase.js',
                     '../../../Application/Neoslive.Hybridsearch/Resources/Public/Vendor/angular-sanitize/angular-sanitize.js',
                     '../../../Application/Neoslive.Hybridsearch/Resources/Public/Vendor/elasticlunr.js/elasticlunr.js',
-                    '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/jquery/dist/jquery.js',
                     '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/iframe-resizer/js/iframeResizer.js',
                     '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/angular-animate/angular-animate.min.js',
                     '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/angular-aria/angular-aria.min.js',
