@@ -16,9 +16,7 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
     $scope.filterItemsWithPath = {};
     $scope.ishidden = true;
     $scope.autocompleteLastPosition = 0;
-
     $scope.animated = true;
-
 
     var boost = {
 

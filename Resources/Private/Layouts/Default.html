@@ -26,55 +26,25 @@
         <link rel="stylesheet"
               href="{f:uri.external(uri: 'https://fonts.googleapis.com/css?family=Droid+Sans:400,700')}" media="all"/>
         <link rel="stylesheet"
-              href="{p:uri.resource(path: 'Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.css', package: 'Phlu.Corporate')}"
-              media="all"/>
-        <link rel="stylesheet"
-              href="{p:uri.resource(path: 'blueimp/css/blueimp-gallery.css', package: 'Phlu.Corporate')}" media="all"/>
-        <link rel="stylesheet"
-              href="{p:uri.resource(path: 'Styles/phlu.css', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"
+              href="{p:uri.resource(path: 'Styles/phlu-all.css', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"
               media="all"/>
         <f:if condition="{isProductionContext}">
             <f:else>
                 <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/debug.css', package: 'Phlu.Corporate')}"
                       media="all"/>
-            </f:else>
+              </f:else>
         </f:if>
-        <link rel="stylesheet"
-              href="{p:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css', package: 'Phlu.Corporate')}"
-              media="all"/>
-        <link rel="stylesheet"
-              href="{p:uri.resource(path: 'Vendor/animate.css/animate.css', package: 'Phlu.Corporate')}"
-              media="all"/>
-
 
     </f:section>
 
     <f:section name="headScripts">
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PMZdx5E8mJbm1hurLezMYjt6yPIFrY4"></script>
+
         <f:if condition="{isProductionContext}">
             <f:then>
-                <script src="{p:uri.resource(path: 'JavaScript/jsHead.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/jsHead.min.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
             </f:then>
             <f:else>
-                <script src="{p:uri.resource(path: 'Vendor/angularjs/angular.min.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{p:uri.resource(path: 'Vendor/angular-cookies/angular-cookies.min.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{p:uri.resource(path: 'Vendor/firebase/firebase.js', package: 'Neoslive.Hybridsearch')}"></script>
-                <script src="{p:uri.resource(path: 'Vendor/angular-sanitize/angular-sanitize.min.js', package: 'Neoslive.Hybridsearch')}"></script>
-                <script src="{p:uri.resource(path: 'Vendor/elasticlunr.js/elasticlunr.min.js', package: 'Neoslive.Hybridsearch')}"></script>
-                <script src="{p:uri.resource(path: 'Vendor/jquery/dist/jquery.min.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{p:uri.resource(path: 'Vendor/iframe-resizer/js/iframeResizer.min.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{p:uri.resource(path: 'Vendor/angular-animate/angular-animate.min.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{p:uri.resource(path: 'Vendor/algoliasearch/dist/algoliasearch.min.js', package: 'Neoslive.Hybridsearch')}"></script>
-                <script src="{p:uri.resource(path: 'hybridsearch.js', package: 'Neoslive.Hybridsearch')}"></script>
-                <script src="{p:uri.resource(path: 'JavaScript/angularjs/app.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/SubjectsFilterNavCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/ContactsCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/SearchCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/PpdbCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/EventoCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/LocationCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/LogCtrl.js', package: 'Phlu.Corporate')}"></script>
-                <script src="{p:uri.resource(path: 'JavaScript/angularjs/Phlu/Corporate/Controller/NewsCtrl.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/jsHead.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
             </f:else>
         </f:if>
 
@@ -85,6 +55,8 @@
 
 
 <f:section name="body">
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PMZdx5E8mJbm1hurLezMYjt6yPIFrY4"></script>
 
     <div class="all" data-ng-app="PhluCorporateApp" {f:if(condition:
     '{neos:rendering.inBackend()}',then:'style="display: none"', else: '')}>
@@ -301,16 +273,15 @@
         <ol class="indicator"></ol>
     </div>
 
-
     {database -> f:format.raw()}
+
+</f:section>
+<f:section name="bodyScripts">
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" async
             src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-593fa48787c8ed42"></script>
 
-
-</f:section>
-<f:section name="bodyScripts">
 
 
     <f:if condition="{isProductionContext}">
@@ -318,19 +289,9 @@
             <script src="{p:uri.resource(path: 'JavaScript/jsBody.min.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
         </f:then>
         <f:else>
-            <!-- Put your scripts inclusions for the end of the body here, they will be included in your website by TypoScript -->
-            <script src="{f:uri.resource(path: 'blueimp/js/blueimp-gallery.min.js', package: 'Phlu.Corporate')}"></script>
-            <script src="{f:uri.resource(path: 'JavaScript/jquery/jquery.mobile.custom.min.js', package: 'Phlu.Corporate')}"></script>
-            <script src="{f:uri.resource(path: 'Vendor/grunt-modernizr/lib/build-files/modernizr-latest.js', package: 'Phlu.Corporate')}"></script>
-            <script src="{f:uri.resource(path: 'Vendor/tether/dist/js/tether.min.js', package: 'Phlu.Corporate')}"></script>
-            <script src="{f:uri.resource(path: 'Vendor/bootstrap/dist/js/bootstrap.min.js', package: 'Phlu.Corporate')}"></script>
-            <script src="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js', package: 'Phlu.Corporate')}"></script>
-            <script src="{f:uri.resource(path: 'Vendor/bootstrap-datepicker/dist/locales/bootstrap-datepicker.de.min.js', package: 'Phlu.Corporate')}"></script>
-            <script src="{f:uri.resource(path: 'Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.js', package: 'Phlu.Corporate')}"></script>
-            <script src="{f:uri.resource(path: 'JavaScript/jquery/main.js', package: 'Phlu.Corporate')}"></script>
+            <script src="{p:uri.resource(path: 'JavaScript/jsBody.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
         </f:else>
     </f:if>
-
 
     <f:if condition="{neos:rendering.inBackend()}">
         <f:then>

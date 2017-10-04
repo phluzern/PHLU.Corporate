@@ -59005,11 +59005,11 @@ module.exports = '3.24.4';
                                                             indexdata['__'] = [];
                                                         }
 
-                                                        angular.forEach(data, function (node, id) {
-                                                            if (node !== undefined && node.node !== undefined) {
-                                                                nodes[node.node.identifier] = node.node;
-                                                                indexdata['__'].push(node);
-                                                            }
+                                                        angular.forEach(data, function (n, id) {
+                                                            if (n !== undefined && n.node !== undefined) {
+                                                                    nodes[n.node.identifier] = n.node;
+                                                                }
+                                                            indexdata['__'].push(n);
                                                         });
 
                                                         if (setIndexTimeout) {
@@ -68065,7 +68065,6 @@ if (typeof document.addEventListener === 'function') {
 
     }, false);
 
-
 }
 
 
@@ -68166,11 +68165,11 @@ PhluCorporateApp.filter('groupByProperty', function () {
 });
 
 
-PhluCorporateApp.filter('searchTerm', function ($rootScope) {
+PhluCorporateApp.filter('searchTerm', ['$rootScope', function ($rootScope) {
     return function () {
         return $rootScope.siteSearch;
     };
-});
+}]);
 
 
 PhluCorporateApp.filter('extractUri', function () {
@@ -68223,9 +68222,7 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
     $scope.filterItemsWithPath = {};
     $scope.ishidden = true;
     $scope.autocompleteLastPosition = 0;
-
     $scope.animated = true;
-
 
     var boost = {
 
@@ -68457,7 +68454,7 @@ PhluCorporateApp.controller('SubjectsFilterNavCtrl', ['$scope', 'hybridsearch', 
 
 
 // Phlu.Corporate:Page.View.Default filter tag navigation
-PhluCorporateApp.controller('ContactsCtrl', ['$scope','$timeout','$cookies',function($scope,$timeout,$cookies) {
+PhluCorporateApp.controller('ContactsCtrl', ['$scope','$timeout',function($scope,$timeout) {
 
 
 
@@ -68498,7 +68495,7 @@ PhluCorporateApp.controller('ContactsCtrl', ['$scope','$timeout','$cookies',func
 
 
 // Phlu.Corporate:Page.View.Default filter tag navigation
-PhluCorporateApp.directive('search', function ($sce) {
+PhluCorporateApp.directive('search', function () {
 
 
     var template = '/_Resources/Static/Packages/Phlu.Corporate/JavaScript/angularjs/Phlu/Corporate/Templates/Search/';
@@ -68510,7 +68507,7 @@ PhluCorporateApp.directive('search', function ($sce) {
             view: '@view'
         },
         restrict: 'E',
-        controller: function ($scope) {
+        controller: ['$scope', function($scope) {
 
             $scope.getTemplateUrl = function () {
 
@@ -68621,14 +68618,15 @@ PhluCorporateApp.directive('search', function ($sce) {
 
             };
 
-        }
+        }]
+
     };
 
 
 });
 
 
-PhluCorporateApp.directive('nodeType', function ($sce) {
+PhluCorporateApp.directive('nodeType', function () {
 
     var labels = {};
 
@@ -70175,7 +70173,7 @@ PhluCorporateApp.filter('inArrayFilter', function () {
 
 
 
-PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$window', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $window) {
+PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
     $scope.list = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();

@@ -1,5 +1,5 @@
 // Phlu.Corporate:Page.View.Default filter tag navigation
-PhluCorporateApp.directive('search', function ($sce) {
+PhluCorporateApp.directive('search', function () {
 
 
     var template = '/_Resources/Static/Packages/Phlu.Corporate/JavaScript/angularjs/Phlu/Corporate/Templates/Search/';
@@ -11,7 +11,7 @@ PhluCorporateApp.directive('search', function ($sce) {
             view: '@view'
         },
         restrict: 'E',
-        controller: function ($scope) {
+        controller: ['$scope', function($scope) {
 
             $scope.getTemplateUrl = function () {
 
@@ -122,14 +122,15 @@ PhluCorporateApp.directive('search', function ($sce) {
 
             };
 
-        }
+        }]
+
     };
 
 
 });
 
 
-PhluCorporateApp.directive('nodeType', function ($sce) {
+PhluCorporateApp.directive('nodeType', function () {
 
     var labels = {};
 

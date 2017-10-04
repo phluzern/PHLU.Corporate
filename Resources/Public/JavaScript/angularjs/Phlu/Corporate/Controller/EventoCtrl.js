@@ -1,4 +1,4 @@
-PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$window', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $window) {
+PhluCorporateApp.controller('EventoCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject) {
 
     $scope.list = new $hybridsearchObject(hybridsearch);
     $scope.result = new $hybridsearchResultsObject();

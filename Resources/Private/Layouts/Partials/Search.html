@@ -99,7 +99,6 @@
                             </div>
                         </div>
 
-
                         <div class="table-responsive">
 
                             <table class="table">
@@ -110,26 +109,13 @@
                                     </td>
                                 </tr>
 
-                                <tfoot class="">
-                                <tr>
-                                    <td class="col-center">
-                                        <a data-ng-click="limit['all'] === undefined ? limit['all'] = 10 : limit['all'] = limit['all'] + 10"
-                                           class="btn loadMore"
-                                           data-ng-if="result.count() > limit['all'] || (result.count() > 9 && limit['all'] === undefined)">
-                                            mehr anzeigen
-                                            <span>
-                                                <span data-ng-if="limit['all'] === undefined ? limit['all'] = 10 : limit['all'] = limit['all']"
-                                                      data-ng-bind="limit['all']"></span>
-                                                <span class="counter-divider">von</span>
-                                                <span data-ng-bind="result.count()"></span>
-                                            </span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                </tfoot>
+
                                 </tbody>
+
+
                             </table>
                         </div>
+
                     </div>
 
                     <div class="result-panel tab-pane nofilter fade "

@@ -5,7 +5,11 @@ module.exports = function (grunt) {
         watch: {
             sass: {
                 files: ['../Resources/Private/SASS/phlu.scss'],
-                tasks: ['sass']
+                tasks: ['sass','concat']
+            },
+            js: {
+                files: ['../Resources/Public/JavaScript/angularjs/Phlu/Corporate/Controller/*','../Resources/Public/JavaScript/jquery/*.js','../../../Application/Neoslive.Hybridsearch/Resources/Public/hybridsearch.js'],
+                tasks: ['concat','uglify']
             }
         },
         sass: {
@@ -63,6 +67,17 @@ module.exports = function (grunt) {
                     '../../../Sites/Phlu.Corporate/Resources/Public/JavaScript/jquery/main.js'
                 ],
                 dest: '../Resources/Public/JavaScript/jsBody.js'
+            },
+            css: {
+                src: [
+                    '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.css',
+                    '../../../Sites/Phlu.Corporate/Resources/Public/blueimp/css/blueimp-gallery.min.css',
+                    '../../../Sites/Phlu.Corporate/Resources/Public/Styles/phlu.css',
+                    '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
+                    '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/animate.css/animate.css'
+
+                ],
+                dest: '../Resources/Public/Styles/phlu-all.css'
             }
         },
         uglify: {
@@ -70,11 +85,11 @@ module.exports = function (grunt) {
                 sourceMap: true,
                 mangleProperties: true
             },
-/*            jshead: {
+            jshead: {
                 src: '../Resources/Public/JavaScript/jsHead.js',
                 dest: '../Resources/Public/JavaScript/jsHead.min.js',
                 nonull: true
-            },*/
+            },
             jsbody: {
                 src: '../Resources/Public/JavaScript/jsBody.js',
                 dest: '../Resources/Public/JavaScript/jsBody.min.js',
@@ -88,11 +103,11 @@ module.exports = function (grunt) {
 
 
     grunt.loadTasks('tasks');
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
-    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'watch']);
+    grunt.registerTask('default', ['sass', 'concat', 'uglify', 'watch']);
 
 
 };

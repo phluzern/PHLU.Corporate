@@ -18,7 +18,6 @@ if (typeof document.addEventListener === 'function') {
 
     }, false);
 
-
 }
 
 
@@ -119,11 +118,11 @@ PhluCorporateApp.filter('groupByProperty', function () {
 });
 
 
-PhluCorporateApp.filter('searchTerm', function ($rootScope) {
+PhluCorporateApp.filter('searchTerm', ['$rootScope', function ($rootScope) {
     return function () {
         return $rootScope.siteSearch;
     };
-});
+}]);
 
 
 PhluCorporateApp.filter('extractUri', function () {
