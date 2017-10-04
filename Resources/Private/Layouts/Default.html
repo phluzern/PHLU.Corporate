@@ -25,14 +25,20 @@
         <!-- Put your stylesheet inclusions here, they will be included in your website by TypoScript -->
         <link rel="stylesheet"
               href="{f:uri.external(uri: 'https://fonts.googleapis.com/css?family=Droid+Sans:400,700')}" media="all"/>
-        <link rel="stylesheet"
-              href="{p:uri.resource(path: 'Styles/phlu-all.css', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"
-              media="all"/>
         <f:if condition="{isProductionContext}">
+            <f:then>
+                <link rel="stylesheet"
+                      href="{p:uri.resource(path: 'Styles/phlu-all.min.css', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"
+                      media="all"/>
+            </f:then>
             <f:else>
+                <link rel="stylesheet"
+                      href="{p:uri.resource(path: 'Styles/phlu-all.css', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"
+                      media="all"/>
                 <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/debug.css', package: 'Phlu.Corporate')}"
                       media="all"/>
-              </f:else>
+            </f:else>
+
         </f:if>
 
     </f:section>
@@ -41,12 +47,15 @@
 
         <f:if condition="{isProductionContext}">
             <f:then>
-                <script src="{p:uri.resource(path: 'JavaScript/jsHead.min.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/application.min.js', package: 'Phlu.Corporate')}"
+                        async></script>
             </f:then>
             <f:else>
-                <script src="{p:uri.resource(path: 'JavaScript/jsHead.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/application.js', package: 'Phlu.Corporate')}"
+                        async></script>
             </f:else>
         </f:if>
+
 
     </f:section>
 
@@ -108,8 +117,8 @@
                                         data-ng-class="{current: autocompleteLastPos == $index}"
                                         data-ng-click="setSiteSearch(item, $event);" data-ng-if="$index < 8">
                                         <span data-ng-bind-html="item"></span><i data-ng-click=""
-                                                                            class="goodluck fa fa-angle-double-right"
-                                                                            aria-hidden="true"></i>
+                                                                                 class="goodluck fa fa-angle-double-right"
+                                                                                 aria-hidden="true"></i>
                                     </li>
                                 </ul>
                             </div>
@@ -148,7 +157,6 @@
     <div class="container-fluid footer" id="footer" data-ng-controller="SearchMobileCtrl"
          data-ng-class="{hasSearchResults: siteSearchSearchMobile != '' && siteSearch !== ''}">
         <div class="row">
-
 
 
             <div data-ng-show="autocompleteIsShowing && getAutocompleteMobile().length !== 0"
@@ -282,16 +290,6 @@
     <script type="text/javascript" async
             src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-593fa48787c8ed42"></script>
 
-
-
-    <f:if condition="{isProductionContext}">
-        <f:then>
-            <script src="{p:uri.resource(path: 'JavaScript/jsBody.min.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
-        </f:then>
-        <f:else>
-            <script src="{p:uri.resource(path: 'JavaScript/jsBody.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
-        </f:else>
-    </f:if>
 
     <f:if condition="{neos:rendering.inBackend()}">
         <f:then>

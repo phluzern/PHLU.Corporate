@@ -28,8 +28,9 @@ module.exports = function (grunt) {
             }
         },
         concat: {
-            jshead: {
+            js: {
                 src: [
+                    // header
                     '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/angularjs/angular.js',
                     '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/angular-cookies/angular-cookies.js',
                     '../../../Application/Neoslive.Hybridsearch/Resources/Public/Vendor/firebase/firebase.js',
@@ -50,12 +51,8 @@ module.exports = function (grunt) {
                     '../../../Sites/Phlu.Corporate/Resources/Public/JavaScript/angularjs/Phlu/Corporate/Controller/EventoCtrl.js',
                     '../../../Sites/Phlu.Corporate/Resources/Public/JavaScript/angularjs/Phlu/Corporate/Controller/LocationCtrl.js',
                     '../../../Sites/Phlu.Corporate/Resources/Public/JavaScript/angularjs/Phlu/Corporate/Controller/LogCtrl.js',
-                    '../../../Sites/Phlu.Corporate/Resources/Public/JavaScript/angularjs/Phlu/Corporate/Controller/NewsCtrl.js'
-                ],
-                dest: '../Resources/Public/JavaScript/jsHead.js'
-            },
-            jsbody: {
-                src: [
+                    '../../../Sites/Phlu.Corporate/Resources/Public/JavaScript/angularjs/Phlu/Corporate/Controller/NewsCtrl.js',
+                    // footer
                     '../../../Sites/Phlu.Corporate/Resources/Public/blueimp/js/blueimp-gallery.min.js',
                     '../../../Sites/Phlu.Corporate/Resources/Public/JavaScript/jquery/jquery.mobile.custom.min.js',
                     '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/grunt-modernizr/lib/build-files/modernizr-latest.js',
@@ -66,7 +63,7 @@ module.exports = function (grunt) {
                     '../../../Sites/Phlu.Corporate/Resources/Public/Vendor/jquery-rcrumbs/dist/jquery.rcrumbs.min.js',
                     '../../../Sites/Phlu.Corporate/Resources/Public/JavaScript/jquery/main.js'
                 ],
-                dest: '../Resources/Public/JavaScript/jsBody.js'
+                dest: '../Resources/Public/JavaScript/application.js'
             },
             css: {
                 src: [
@@ -85,15 +82,20 @@ module.exports = function (grunt) {
                 sourceMap: true,
                 mangleProperties: true
             },
-            jshead: {
-                src: '../Resources/Public/JavaScript/jsHead.js',
-                dest: '../Resources/Public/JavaScript/jsHead.min.js',
+            js: {
+                src: '../Resources/Public/JavaScript/application.js',
+                dest: '../Resources/Public/JavaScript/application.min.js',
                 nonull: true
-            },
-            jsbody: {
-                src: '../Resources/Public/JavaScript/jsBody.js',
-                dest: '../Resources/Public/JavaScript/jsBody.min.js',
-                nonull: true
+            }
+        },
+        cssmin: {
+            target: {
+                files: [{
+                    expand: true,
+                    src: ['../Resources/Public/Styles/phlu-all.css'],
+                    dest: '.',
+                    ext: '.min.css'
+                }]
             }
         }
 
@@ -106,8 +108,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.registerTask('default', ['sass', 'concat', 'uglify', 'watch']);
+    grunt.registerTask('default', ['sass', 'concat', 'uglify', 'cssmin','watch']);
 
 
 };
