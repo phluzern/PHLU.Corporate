@@ -44,7 +44,7 @@
 
         <f:if condition="{isProductionContext}">
             <f:then>
-                <script src="{p:uri.resource(path: 'JavaScript/application.min.js', package: 'Phlu.Corporate')}" {f:if(condition:'{neos:rendering.inBackend()}',then:'', else: ' defer')}></script>
+                <script src="{p:uri.resource(path: 'JavaScript/application.min.js', package: 'Phlu.Corporate')}"></script>
             </f:then>
             <f:else>
                 <script src="{p:uri.resource(path: 'JavaScript/application.js', package: 'Phlu.Corporate')}"></script>
