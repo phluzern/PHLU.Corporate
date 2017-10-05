@@ -1069,12 +1069,12 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         $scope.isopen = $scope.isopen === node.identifier ? 0 : node.identifier;
         $scope.setCurrentYear(node);
 
-        if (containerId !== undefined) {
-            index = containerId + "-" + index;
-            window.setTimeout(function () {
-                addthis.button("#share-" + index, {}, {});
-            }, 100);
-        }
+        // if (containerId !== undefined) {
+        //     index = containerId + "-" + index;
+        //     window.setTimeout(function () {
+        //         addthis.button("#share-" + index, {}, {});
+        //     }, 100);
+        // }
 
     };
 
