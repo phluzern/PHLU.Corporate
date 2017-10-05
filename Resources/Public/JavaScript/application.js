@@ -57934,14 +57934,19 @@ module.exports = '3.24.4';
                             }
                         }
 
-                        if (searchTimeout) {
+
+
+                        if (searchTimeout > 0) {
                             clearTimeout(searchTimeout);
-
+                            searchTimeout = 0;
+                            searchTimeout = window.setTimeout(function () {
+                                self.searchExecute(nodesFromInput, booleanmode, customquery);
+                            }, 100);
+                        } else {
+                            searchTimeout = window.setTimeout(function () {
+                                self.searchExecute(nodesFromInput, booleanmode, customquery);
+                            }, 1);
                         }
-
-                        window.setTimeout(function () {
-                            self.searchExecute(nodesFromInput, booleanmode, customquery);
-                        }, 1);
 
 
                     },
@@ -57978,7 +57983,13 @@ module.exports = '3.24.4';
                         }
 
 
-                        self.createSearchIndexOnDemand();
+                        if (self.getFilter().getFullSearchQuery()) {
+                            self.createSearchIndexOnDemand();
+                        } else {
+                            window.setTimeout(function () {
+                                self.createSearchIndexOnDemand();
+                            }, 1000);
+                        }
 
                         items['_nodes'] = {};
                         items['_nodesOrdered'] = [];
@@ -58358,7 +58369,6 @@ module.exports = '3.24.4';
                             results.getApp().setResults(items, nodes, self, customquery == undefined ? false : true, self);
                             lastSearchApplyTimeout = null;
                         }
-
 
                     }
                     ,
@@ -59007,8 +59017,8 @@ module.exports = '3.24.4';
 
                                                         angular.forEach(data, function (n, id) {
                                                             if (n !== undefined && n.node !== undefined) {
-                                                                    nodes[n.node.identifier] = n.node;
-                                                                }
+                                                                nodes[n.node.identifier] = n.node;
+                                                            }
                                                             indexdata['__'].push(n);
                                                         });
 
@@ -59500,62 +59510,61 @@ module.exports = '3.24.4';
 
                         instance.$$data.running++;
 
-                            var ref = {};
-                            ref.socket = hybridsearch.$firebase().database().ref("sites/" + hybridsearch.$$conf.site + "/" + "keywords/" + hybridsearch.$$conf.workspace + "/" + hybridsearch.$$conf.branch + "/" + hybridsearch.$$conf.dimension + "/" + q);
-                            ref.http = (hybridsearch.$$conf.cdnDatabaseURL == undefined ? hybridsearch.$$conf.databaseURL : hybridsearch.$$conf.cdnDatabaseURL) + ("/sites/" + hybridsearch.$$conf.site + "/" + "keywords/" + hybridsearch.$$conf.workspace + "/" + hybridsearch.$$conf.branch + "/" + hybridsearch.$$conf.dimension + "/" + q + ".json");
+                        var ref = {};
+                        ref.socket = hybridsearch.$firebase().database().ref("sites/" + hybridsearch.$$conf.site + "/" + "keywords/" + hybridsearch.$$conf.workspace + "/" + hybridsearch.$$conf.branch + "/" + hybridsearch.$$conf.dimension + "/" + q);
+                        ref.http = (hybridsearch.$$conf.cdnDatabaseURL == undefined ? hybridsearch.$$conf.databaseURL : hybridsearch.$$conf.cdnDatabaseURL) + ("/sites/" + hybridsearch.$$conf.site + "/" + "keywords/" + hybridsearch.$$conf.workspace + "/" + hybridsearch.$$conf.branch + "/" + hybridsearch.$$conf.dimension + "/" + q + ".json");
 
-                            instance.$$data.keywords.push({term: query, metaphone: q});
-                            ref.socket.once("value", function (data) {
-                                if (data.val()) {
+                        instance.$$data.keywords.push({term: query, metaphone: q});
+                        ref.socket.once("value", function (data) {
+                            if (data.val()) {
 
-                                    var kwds = [];
-                                    var ac = {};
+                                var kwds = [];
+                                var ac = {};
 
-                                    angular.forEach(data.val(), function (v, k) {
-                                        kwds.push({term: k, metaphone: q});
-                                    });
+                                angular.forEach(data.val(), function (v, k) {
+                                    kwds.push({term: k, metaphone: q});
+                                });
 
-                                    var ismatch = false;
+                                var ismatch = false;
+
+                                angular.forEach(kwds, function (v, k) {
+                                    if (ismatch == false && v.term == query) {
+                                        ismatch = true;
+                                    }
+                                    ac[v.term] = v.term;
+                                });
+
+                                if (ismatch == false) {
 
                                     angular.forEach(kwds, function (v, k) {
-                                        if (ismatch == false && v.term == query) {
-                                            ismatch = true;
-                                        }
+                                        // if (query.indexOf(v.term.substr(0, 3)) >= 0) {
+                                        instance.$$data.keywords.push({term: v.term, metaphone: q});
+                                        ismatch = true;
                                         ac[v.term] = v.term;
+                                        //}
                                     });
 
-                                    if (ismatch == false) {
-
-                                        angular.forEach(kwds, function (v, k) {
-                                            // if (query.indexOf(v.term.substr(0, 3)) >= 0) {
-                                            instance.$$data.keywords.push({term: v.term, metaphone: q});
-                                            ismatch = true;
-                                            ac[v.term] = v.term;
-                                            //}
-                                        });
-
-                                    }
-
-                                    if (ismatch == false) {
-                                        angular.forEach(kwds, function (v, k) {
-                                            instance.$$data.keywords.push({term: v.term, metaphone: q});
-                                        });
-
-                                    }
-
-                                    self.setAutocomplete(ac, querysegment);
-
-                                    instance.$$data.proceeded.push(1);
-
-                                } else {
-                                    instance.$$data.proceeded.push(1);
                                 }
 
-                            });
+                                if (ismatch == false) {
+                                    angular.forEach(kwds, function (v, k) {
+                                        instance.$$data.keywords.push({term: v.term, metaphone: q});
+                                    });
 
-                            instance.$$data.proceeded.push(1);
-                            lastAutocomplateQuery = q;
+                                }
 
+                                self.setAutocomplete(ac, querysegment);
+
+                                instance.$$data.proceeded.push(1);
+
+                            } else {
+                                instance.$$data.proceeded.push(1);
+                            }
+
+                        });
+
+                        instance.$$data.proceeded.push(1);
+                        lastAutocomplateQuery = q;
 
 
                     }
@@ -61768,7 +61777,9 @@ module.exports = '3.24.4';
                     }
 
                     var query = self.getApp().getScope()['__query'] ? self.getApp().getScope()[self.getApp().getScope()['__query']] : querysegment;
-                    query = query.toLowerCase();
+                    if (query) {
+                        query = query.toLowerCase();
+                    }
 
                     angular.forEach(Object.keys(autocomplete), function (a) {
                         self.$$data.autocompleteKeys[a] = true;
@@ -61819,7 +61830,6 @@ module.exports = '3.24.4';
                     }
 
 
-
                     if (self.count() > 0) {
                         angular.forEach(self.getNodes(32), function (node) {
 
@@ -61828,7 +61838,7 @@ module.exports = '3.24.4';
 
                                 if (a && typeof a != 'object') {
                                     if (a.length < 64 && a.length > query.length && (caller == undefined || caller.isFiltered(node) == false)) {
-                                            self.$$data.autocompleteKeys[a.toLowerCase()] = true;
+                                        self.$$data.autocompleteKeys[a.toLowerCase()] = true;
                                     }
                                 }
                             }
@@ -61860,10 +61870,10 @@ module.exports = '3.24.4';
 
                     var autocompleteTempPostProcessedTwo = [];
 
-                    
+
                     angular.forEach(Object.keys(self.$$data.autocompleteKeysCollection), function (a) {
 
-                        var b = typeof a == 'string' ? (a.indexOf(" ") == query.length - 2 ? a : metaphone(a,5)) : a;
+                        var b = typeof a == 'string' ? (a.indexOf(" ") == query.length - 2 ? a : metaphone(a, 5)) : a;
                         if (b.length == 0) {
                             b = a;
                         }
