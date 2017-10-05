@@ -60,14 +60,6 @@
 
 <f:section name="body">
 
-    <f:if condition="{isProductionContext}">
-        <f:then>
-            <script src="{p:uri.resource(path: 'JavaScript/application.min.js', package: 'Phlu.Corporate')}"></script>
-        </f:then>
-        <f:else>
-            <script src="{p:uri.resource(path: 'JavaScript/application.js', package: 'Phlu.Corporate')}"></script>
-        </f:else>
-    </f:if>
 
     <div class="all" data-ng-app="PhluCorporateApp" {f:if(condition:
     '{neos:rendering.inBackend()}',then:'style="display: none"', else: '')}>
