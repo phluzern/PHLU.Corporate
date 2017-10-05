@@ -61793,7 +61793,7 @@ module.exports = '3.24.4';
 
                                 angular.forEach(node.getProperties(), function (value, property) {
 
-                                    if (foundinproperty === null && query && typeof value == 'string' && value.length < 64 && value.toLowerCase().indexOf(query) >= 0 && value.substr(query.length, 1) != '.' && value.indexOf("<") == -1) {
+                                    if (foundinproperty === null && query && property !== 'url' && typeof value == 'string' && value.length < 64 && value.toLowerCase().indexOf(query) >= 0 && value.substr(query.length, 1) != '.' && value.indexOf("<") == -1) {
 
                                         if (foundinpropertyTmp == property) {
                                             foundinproperty = property;
@@ -61817,6 +61817,7 @@ module.exports = '3.24.4';
                     } else {
                         self.$$data.autocompleteKeys = {};
                     }
+
 
 
                     if (self.count() > 0) {
@@ -70259,6 +70260,14 @@ PhluCorporateApp.controller('EventoLastVisitedCtrl', ['$scope', '$window', funct
 
 PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsearch', '$hybridsearchObject', '$hybridsearchResultsObject', '$rootScope', '$window', function ($scope, hybridsearch, $hybridsearchObject, $hybridsearchResultsObject, $rootScope, $window) {
 
+    if (typeof addthis !== 'object') {
+        var fileref = document.createElement('script');
+        fileref.setAttribute("type", "text/javascript");
+        fileref.setAttribute("src", 'https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-593fa48787c8ed42');
+        if (typeof fileref != "undefined") {
+            document.getElementsByTagName("head")[0].appendChild(fileref);
+        }
+    }
 
     $scope.list = new $hybridsearchObject(hybridsearch);
 
@@ -70489,13 +70498,14 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         if (containerId !== undefined) {
             index = containerId + "-" + index;
             window.setTimeout(function () {
+
                 addthis.button("#share-" + index, {}, {});
 
                 var element_position = $("#node-" + index).offset().top;
                 var scroll_position = $(window).scrollTop();
                 if (scroll_position > element_position) {
                     $('html, body').stop().animate({
-                        'scrollTop': element_position -10
+                        'scrollTop': element_position - 10
                     }, 100, 'swing', function () {
 
                     });
@@ -71118,9 +71128,9 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     });
 
 
-    $scope.list.connectEventSlot('before_redirect',function(data) {
+    $scope.list.connectEventSlot('before_redirect', function (data) {
         ga('send', 'event', {
-            'eventCategory': 'Weiterbildung '+$scope.nodetypesFilterCurrentLabel,
+            'eventCategory': 'Weiterbildung ' + $scope.nodetypesFilterCurrentLabel,
             'eventAction': data.query.length ? data.query : '.',
             'eventLabel': data.node.uriResource === undefined ? data.node.getUrl() : data.node.uriResource.path
         });
