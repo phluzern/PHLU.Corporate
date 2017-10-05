@@ -22,9 +22,6 @@
 
     <f:section name="csslinks">
 
-        <!-- Put your stylesheet inclusions here, they will be included in your website by TypoScript -->
-        <link rel="stylesheet"
-              href="{f:uri.external(uri: 'https://fonts.googleapis.com/css?family=Droid+Sans:400,700')}" media="all"/>
         <f:if condition="{isProductionContext}">
             <f:then>
                 <link rel="stylesheet"
@@ -47,7 +44,7 @@
 
         <f:if condition="{isProductionContext}">
             <f:then>
-                <script src="{p:uri.resource(path: 'JavaScript/application.min.js', package: 'Phlu.Corporate')}"></script>
+                <script src="{p:uri.resource(path: 'JavaScript/application.min.js', package: 'Phlu.Corporate')}" {f:if(condition:'{neos:rendering.inBackend()}',then:'', else: ' defer')}></script>
             </f:then>
             <f:else>
                 <script src="{p:uri.resource(path: 'JavaScript/application.js', package: 'Phlu.Corporate')}"></script>
@@ -63,7 +60,14 @@
 
 <f:section name="body">
 
-
+    <f:if condition="{isProductionContext}">
+        <f:then>
+            <script src="{p:uri.resource(path: 'JavaScript/application.min.js', package: 'Phlu.Corporate')}"></script>
+        </f:then>
+        <f:else>
+            <script src="{p:uri.resource(path: 'JavaScript/application.js', package: 'Phlu.Corporate')}"></script>
+        </f:else>
+    </f:if>
 
     <div class="all" data-ng-app="PhluCorporateApp" {f:if(condition:
     '{neos:rendering.inBackend()}',then:'style="display: none"', else: '')}>
