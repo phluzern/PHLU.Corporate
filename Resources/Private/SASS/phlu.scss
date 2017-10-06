@@ -7497,6 +7497,9 @@ body {
             }
             .date-location-title, .date-title-preview-text {
               padding-left: 20px;
+              @include media-breakpoint-down("xs") {
+                padding-left: 15px;
+              }
               overflow: hidden;
               a {
                 font-size: 20px;
@@ -7520,7 +7523,7 @@ body {
                 max-width: 86%;
               }
               @include media-breakpoint-up("xs") {
-                max-width: 80%;
+                max-width: 75%;
               }
 
             }
