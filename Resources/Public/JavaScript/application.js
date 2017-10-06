@@ -73503,15 +73503,15 @@ function goToTargetNode() {
     if (targetNodeElement.length) {
 
 
-        if (window.location.hash.substring(2).length) {
-            targetNodeElement.attr('data-searchterm', 'Ihre Suche: "'+decodeURIComponent(window.location.hash.substring(2))+'"');
-            window.setTimeout(function () {
-                targetNodeElement.addClass('on');
-            }, 300);
-            window.setTimeout(function () {
-                targetNodeElement.removeClass('on');
-            }, 3000);
-        }
+        // if (window.location.hash.substring(2).length) {
+        //     targetNodeElement.attr('data-searchterm', 'Ihre Suche: "'+decodeURIComponent(window.location.hash.substring(2))+'"');
+        //     window.setTimeout(function () {
+        //         targetNodeElement.addClass('on');
+        //     }, 300);
+        //     window.setTimeout(function () {
+        //         targetNodeElement.removeClass('on');
+        //     }, 3000);
+        // }
 
         $(dynamicContentsSelector).each(function () {
             $(this).addClass('tmpFixedHeight');
