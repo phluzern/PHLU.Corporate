@@ -59,8 +59,15 @@
                         data-ng-init="setFilterProjectparticipants({projectparticipants});"></span></f:if>
                 <f:if condition="{organisations} != 'null'"><span
                         data-ng-init="setFilterOrganisations({organisations});"></span></f:if>
-                <f:if condition="{projecttype} != 'null'"><span
-                        data-ng-init="setFilterProjectType({projecttype});"></span></f:if>
+
+                <f:if condition="{node.identifier} !== 'fc3e89af-ca93-4f2d-ab77-a2bd698f291f'">
+                    <f:then>
+                        <f:if condition="{projecttype} != 'null'"><span
+                                data-ng-init="setFilterProjectType({projecttype});"></span></f:if>
+                    </f:then>
+                </f:if>
+
+
                 <f:if condition="{query}"><span data-ng-init="setQueryInitial('{query}')"></span></f:if>
                 <f:if condition="{maxitems} > 0"><span data-ng-init="setMaxItems({maxitems})"></span></f:if>
                 <f:if condition="{orderby} != ''"><span data-ng-init="setOrderBy('{orderby}')"></span></f:if>
