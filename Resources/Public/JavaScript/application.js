@@ -49361,7 +49361,7 @@ lunr.SortedSet.prototype.toJSON = function () {
 
 })();
 
-/*! algoliasearch 3.24.4 | © 2014, 2015 Algolia SAS | github.com/algolia/algoliasearch-client-js */
+/*! algoliasearch 3.24.5 | © 2014, 2015 Algolia SAS | github.com/algolia/algoliasearch-client-js */
 (function(f){var g;if(typeof window!=='undefined'){g=window}else if(typeof self!=='undefined'){g=self}g.ALGOLIA_MIGRATION_LAYER=f()})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 
 module.exports = function load (src, opts, cb) {
@@ -53559,7 +53559,7 @@ Index.prototype.saveObject = function(object, callback) {
     hostType: 'write',
     callback: callback
   });
-}
+};
 
 /*
 * Override the content of several objects
@@ -53673,8 +53673,9 @@ Index.prototype.deleteObjects = function(objectIDs, callback) {
 * @param params the optional query parameters
 * @param callback (optional) the result callback called with one argument
 *  error: null or Error('message')
+* @deprecated see index.deleteBy
 */
-Index.prototype.deleteByQuery = function(query, params, callback) {
+Index.prototype.deleteByQuery = deprecate(function(query, params, callback) {
   var clone = require(25);
   var map = require(30);
 
@@ -53745,6 +53746,31 @@ Index.prototype.deleteByQuery = function(query, params, callback) {
       callback(err);
     }, client._setTimeout || setTimeout);
   }
+}, deprecatedMessage('index.deleteByQuery()', 'index.deleteBy()'));
+
+/**
+* Delete all objects matching a query
+*
+* the query parameters that can be used are:
+* - query
+* - filters (numeric, facet, tag)
+* - geo
+*
+* you can not send an empty query or filters
+*
+* @param params the optional query parameters
+* @param callback (optional) the result callback called with one argument
+*  error: null or Error('message')
+*/
+Index.prototype.deleteBy = function(params, callback) {
+  var indexObj = this;
+  return this.as._jsonRequest({
+    method: 'POST',
+    url: '/1/indexes/' + encodeURIComponent(indexObj.indexName) + '/deleteByQuery',
+    body: {params: indexObj.as._getSearchParams(params, '')},
+    hostType: 'write',
+    callback: callback
+  });
 };
 
 /*
@@ -55715,7 +55741,7 @@ function cleanup() {
 },{"1":1}],35:[function(require,module,exports){
 'use strict';
 
-module.exports = '3.24.4';
+module.exports = '3.24.5';
 
 },{}]},{},[19])(19)
 });
@@ -57879,6 +57905,8 @@ module.exports = '3.24.4';
                                 expand: true
                             });
 
+
+
                             if (resultsSearch.length == 0) {
                                 var query = self.getFilter().getQuery().substr(0, 4);
                                 resultsSearch = lunrSearch.search(query, {
@@ -58122,7 +58150,7 @@ module.exports = '3.24.4';
                                     resultsSearch[0] = lunrSearch.search(customquery == undefined ? self.getFilter().getQuery() : customquery, {
                                         fields: fields,
                                         bool: "AND",
-                                        expand: false
+                                        expand: true
                                     });
 
 
@@ -58234,6 +58262,7 @@ module.exports = '3.24.4';
                                             angular.forEach(result, function (item) {
                                                     if (nodes[item.ref] !== undefined) {
                                                         unfilteredResult.push(nodes[item.ref]);
+
                                                     }
                                                 }
                                             );
@@ -58269,7 +58298,8 @@ module.exports = '3.24.4';
 
                                 var preOrdered = $filter('orderBy')(preOrdered, function (item) {
 
-                                    item.score = Math.floor((item.score * self.getParentNodeTypeBoostFactor(nodes[item.ref]) * self.getNodeTypeBoostFactor(nodes[item.ref]) * self.getNodeUrlBoostFactor(nodes[item.ref])));
+
+                                    item.score = 1+Math.floor((item.score * self.getParentNodeTypeBoostFactor(nodes[item.ref]) * self.getNodeTypeBoostFactor(nodes[item.ref]) * self.getNodeUrlBoostFactor(nodes[item.ref])));
 
 
                                     if (nodes[item.ref]['__algoliaranking'] !== undefined) {
@@ -59552,6 +59582,8 @@ module.exports = '3.24.4';
                                     });
 
                                 }
+
+
 
                                 self.setAutocomplete(ac, querysegment);
 
@@ -69120,7 +69152,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'Phlu.Corporate:Contact': 0.5,
         'Phlu.Corporate:TextPlain': 2,
         'Phlu.Corporate:Text': 0.78,
-        'Phlu.Neos.NodeTypes:Course.Study.FurtherEducation': 0.125,
+        'Phlu.Neos.NodeTypes:Course.Study.FurtherEducation': 0.500,
         'Phlu.Neos.NodeTypes:Course.Module.FurtherEducation': 0.125,
         'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.125,
         'Phlu.Neos.NodeTypes:Publication': 0.0001,
