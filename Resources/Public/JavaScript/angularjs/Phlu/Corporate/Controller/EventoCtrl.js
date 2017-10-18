@@ -194,7 +194,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             'reverse': true
         },
         'requestable': {
-            'property': 'Requestable.indexOf(true)',
+            'property': 'isRequestable.indexOf(true)',
             'categories': ['Kurs'],
             'reverse': true
         }

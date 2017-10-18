@@ -440,9 +440,9 @@
                             </div>
                         </div>
                         <div class="row input-group">
-                            <div class="input-item-col col-sm-6 col-md-3 disabled">
+                            <div class="input-item-col col-sm-6 col-md-3">
                                 <div class="checkbox">
-                                    <input type="checkbox" id="nur-holkurse" name="nur-holkurse"/>
+                                    <input type="checkbox" id="nur-holkurse" name="nur-holkurse" data-ng-model="requestable.Kurs" data-ng-change="changeRequestable('Kurs')" data-ng-true-value="1" data-ng-false-value="0">
                                     <label for="nur-holkurse"><span>&nbsp;</span>Nur Holkurse</label>
                                 </div>
                             </div>
