@@ -58639,7 +58639,6 @@ module.exports = '3.24.5';
                                         }
 
 
-
                                         // filter is null
                                         if (filterApplied === false && filter.value === null) {
                                             propertyMatching++;
@@ -58692,6 +58691,7 @@ module.exports = '3.24.5';
                                         if (filterApplied === false && Object.keys(filterobject).length > 0) {
 
                                             var isMatching = 0;
+
 
                                             angular.forEach(filterobject, function (value, key) {
 
@@ -70413,9 +70413,8 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             'reverse': true
         },
         'requestable': {
-            'property': 'isRequestable.indexOf(true)',
-            'categories': ['Kurs'],
-            'reverse': true
+            'property': 'isrequestable',
+            'categories': ['Kurs']
         }
     };
 
@@ -71168,7 +71167,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
     if (window.location.href.indexOf("weiterbildung.html") == -1) {
         $scope.list.enableCache();
     } else {
-        $scope.list.disableRealtime()
+        //$scope.list.disableRealtime()
     }
 
     $scope.list.setQuery('searchquery', $scope)
