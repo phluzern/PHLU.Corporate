@@ -179,7 +179,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
             'fulltext': true
         },
         'leaders': {
-            'property': 'furthereducation-leaders.Fullname',
+            'property': 'furthereducation-leaders.0.Fullname',
             'categories': ['Kurs', 'Studiengang', 'Alle']
         },
         'bookable': {
@@ -923,12 +923,16 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * Initialize hybridsearch list
      */
 
+    console.log(window.location.href.indexOf("weiterbildung.html"));
+    $scope.list.setPropertiesBoost(boost);
 
-    $scope.list
-        .setPropertiesBoost(boost)
-        .enableCache()
-        //.disableRealtime()
-        .setQuery('searchquery', $scope)
+
+    if (window.location.href.indexOf("weiterbildung.html") == -1) {
+        $scope.list.enableCache();
+        //$scope.list.disableRealtime()
+    }
+
+    $scope.list.setQuery('searchquery', $scope)
         .setNodeType('nodetypes', $scope)
         .setOrderBy({'*': '-id'})
         .addPropertyFilter('detailpage.hidden', 'false')
