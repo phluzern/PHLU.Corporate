@@ -51,7 +51,7 @@
         <tr class="result-preview" data-ng-show="isOpen(node)">
             <td colspan="4">
                 <div class="result-preview-contents">
-                        <span data-ng-bind="node.getProperty('description').substr(0,500) + (node.getProperty('description').length >= 500 ? '...' : '')"></span>
+                    <span data-ng-bind="node.getProperty('description').substr(0,500) + (node.getProperty('description').length >= 500 ? '...' : '')"></span>
 
                     <table class="table">
                         <tbody>
@@ -117,7 +117,8 @@
                                 Beginn
                                 <div class="mobile-view-columns">
                                     <div class="input-group-btn" data-ng-if="node.getProperty('years').length > 1">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                        <button type="button" class="btn btn-default dropdown-toggle"
+                                                data-toggle="dropdown"
                                                 aria-haspopup="true" aria-expanded="false">
                                             <span data-ng-bind="node.currentyear.StartText | castDate"></span>
                                         </button>
@@ -159,12 +160,16 @@
                                 </div>
                             </td>
                         </tr>
+
                         </tbody>
                     </table>
 
                 </div>
-                <div class="details">
 
+                <div class="status" data-ng-if="node.currentyear.statusDescription">
+                    <span data-ng-bind="node.currentyear.statusDescription"></span>
+                </div>
+                <div class="details">
 
                     <a class="btn btn-primary" data-ng-if="currentYears[node.identifier].url"
                        data-ng-href="{{currentYears[node.identifier].url}}">
@@ -176,20 +181,26 @@
                     </a>
                 </div>
                 <div class="shareAndRegister">
-                    <a class="btn btn-primary share" id="share-{{result.getIdentifier()}}-{{$index}}" addthis:url="{{node.getUrl(true)}}" addthis:title="{{node.getProperty('title')}}">
-                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/wb-share-btn.svg')}" width="32" height="32" border="0" alt="Share" />
+                    <a class="btn btn-primary share" id="share-{{result.getIdentifier()}}-{{$index}}"
+                       addthis:url="{{node.getUrl(true)}}" addthis:title="{{node.getProperty('title')}}">
+                        <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/wb-share-btn.svg')}"
+                             width="32" height="32" border="0" alt="Share"/>
                         <br>
                         <span class="shareText">
                                             Teilen
                                         </span>
                     </a>
 
-                    <a class="btn btn-primary" data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') < 0" data-ng-show="currentYears[node.identifier].RegistrationLink"
+                    <a class="btn btn-primary"
+                       data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') < 0"
+                       data-ng-show="currentYears[node.identifier].RegistrationLink"
                        data-ng-href="{{currentYears[node.identifier].RegistrationLink}}">
                         Anmelden
                     </a>
 
-                    <a class="btn btn-primary" data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') > 0" data-ng-show="currentYears[node.identifier].RegistrationLink"
+                    <a class="btn btn-primary"
+                       data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') > 0"
+                       data-ng-show="currentYears[node.identifier].RegistrationLink"
                        data-ng-href="{{node.getUrl()}}">
                         Anmelden
                     </a>
