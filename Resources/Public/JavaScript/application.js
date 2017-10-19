@@ -70335,6 +70335,11 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         'Studiengang': null,
         'Kurs': null
     };
+    $scope.requestable = {
+        'Alle': null,
+        'Studiengang': null,
+        'Kurs': null
+    };
 
     $scope.graduation = {};
     $scope.nodetypes = ['phlu-neos-nodetypes-course-study-furthereducation', 'phlu-neos-nodetypes-course-module-furthereducation', 'phlu-neos-nodetypes-course-event-furthereducation'];
@@ -70399,12 +70404,17 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         },
         'leaders': {
             'property': 'furthereducation-leaders.0.Fullname',
-            'categories': ['Kurs', 'Studiengang', 'Alle']
+            'categories': ['Kurs', 'Studiengang', 'Alle'],
+            'fulltext': true
         },
         'bookable': {
             'property': 'years.Bookable.indexOf(true)',
             'categories': ['Kurs', 'Studiengang'],
             'reverse': true
+        },
+        'requestable': {
+            'property': 'isrequestable',
+            'categories': ['Kurs']
         }
     };
 
@@ -70566,6 +70576,15 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      */
     $scope.changeBookable = function (category) {
         $scope.setFilter([-1], 'bookable', category);
+    };
+
+    /**
+     * @public
+     * Set node type filter
+     * @returns void
+     */
+    $scope.changeRequestable = function (category) {
+        $scope.setFilter([-1], 'requestable', category);
     };
 
     /**
@@ -70844,6 +70863,8 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
 
 
         var filter = getFilterByName(filtername);
+
+
 
         if (filter === null) {
             filter = getFilterFromFilterObject(filterObject);
@@ -71141,13 +71162,11 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * @private
      * Initialize hybridsearch list
      */
-
-    console.log(window.location.href.indexOf("weiterbildung.html"));
     $scope.list.setPropertiesBoost(boost);
 
-
     if (window.location.href.indexOf("weiterbildung.html") == -1) {
-        $scope.listenableCache();
+        $scope.list.enableCache();
+    } else {
         //$scope.list.disableRealtime()
     }
 
@@ -71157,12 +71176,9 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         .addPropertyFilter('detailpage.hidden', 'false')
         .addPropertyFilter('deleted', false)
         .$watch(function (i) {
-
             if ($rootScope.isLoadedFirst == false && $scope.isLoadingFirst == false) {
                 $scope.setIsLoadedFirst();
             }
-
-
         })
         .$bind('result', $scope);
 
