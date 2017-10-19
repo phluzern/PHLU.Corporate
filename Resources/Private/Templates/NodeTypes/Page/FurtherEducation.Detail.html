@@ -306,6 +306,19 @@
                                 </tr>
                             </f:if>
                             <ts:render path="overviewRenderer" context="{node: overview}"/>
+                            <f:if condition="{year.StatusDescription}">
+                                <tr>
+                                    <td>
+                                        Hinweis
+                                        <div class="mobile-view-columns">
+                                            {year.StatusDescription}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {year.StatusDescription}
+                                    </td>
+                                </tr>
+                            </f:if>
                             </tbody>
                         </table>
                     </div>
@@ -317,12 +330,16 @@
                                                            identifier="1"></course:RegistrationButton>
                             </f:then>
                             <f:else>
-                                <f:if condition="{StatusLabel}">
-                                    <f:then>
-                                        <a>{StatusLabel}</a>
-                                    </f:then>
+                                <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Module'">
                                     <f:else>
+                                        <f:if condition="{StatusLabel}">
+                                            <f:then>
+                                                <a>{StatusLabel}</a>
+                                            </f:then>
+                                            <f:else>
 
+                                            </f:else>
+                                        </f:if>
                                     </f:else>
                                 </f:if>
                             </f:else>

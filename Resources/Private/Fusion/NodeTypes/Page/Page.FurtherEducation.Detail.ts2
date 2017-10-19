@@ -9,6 +9,7 @@ prototype(Phlu.Corporate:Page.FurtherEducation.Detail) < prototype(Phlu.Corporat
         graduation = ${q(node).property('graduation')}
         genre = ${q(node).property('genre')}
         fee = ${q(node).property('fee')}
+        statusDescription = ${q(node).property('statusDescription')}
         SubsidizedFee = ${q(node).property('subsidizedFee')}
 
         sectionsInPage = ${q(node).children('main').find('[instanceof Phlu.Corporate:Section]').get()}
