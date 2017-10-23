@@ -307,7 +307,7 @@
                     </script>
 
                     <!-- Facebook Pixel Code -->
-                    <script>
+                    <script async>
                         !function(f,b,e,v,n,t,s)
                         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
                             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -315,9 +315,34 @@
                             n.queue=[];t=b.createElement(e);t.async=!0;
                             t.src=v;s=b.getElementsByTagName(e)[0];
                             s.parentNode.insertBefore(t,s)}(window,document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
-                        fbq('init', '139211143380947');
+                        fbq('init', '2052793394949379');
                         fbq('track', 'PageView');
                     </script>
+                    <!-- set facebook event codes
+                    if is startpage -->
+                    <f:if condition="{site.identifier} == 'dc6fd786-df6a-4841-8938-42e71719d0c1'">
+                        <script async>
+                            fbq('track', 'ViewContent');
+                            </script>
+                    </f:if>
+                    <!-- if is studium/informationsveranstaltungen page -->
+                    <f:if condition="{site.identifier} == '00eae5eb-88b7-4563-b638-aa9eba715e37'">
+                        <script async>
+                            fbq('track', 'ViewContent');
+                        </script>
+                    </f:if>
+                    <!-- if is studium/informationsveranstaltungen page with embedded Infonachmittag form -->
+                    <f:if condition="{embedded.node.nodedata.identifier} == 'f637c339-b667-4be6-a21f-be3dfd1e7d79'">
+                        <script async>
+                            fbq('track', 'CompleteRegistration');
+                        </script>
+                    </f:if>
+                    <!-- if is studium/informationsveranstaltungen page with embedded Aufnahme sur dossier form -->
+                    <f:if condition="{embedded.node.nodedata.identifier} == '8ddd6a58-41fd-4e67-a850-857a93d3bc08'">
+                        <script async>
+                            fbq('track', 'CompleteRegistration');
+                        </script>
+                    </f:if>
                     <noscript>
                         <img height="1" width="1"
                              src="https://www.facebook.com/tr?id=139211143380947&ev=PageView&noscript=1"/>
