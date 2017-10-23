@@ -286,7 +286,7 @@
             <script src="{f:uri.resource(path: 'JavaScript/jquery/backend.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
         </f:then>
         <f:else>
-            <f:if condition="!{isProductionContext}">
+            <f:if condition="{isProductionContext}">
                 <f:then>
                     <script async>
                         (function (i, s, o, g, r, a, m) {
