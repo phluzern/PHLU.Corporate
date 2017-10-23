@@ -286,7 +286,7 @@
             <script src="{f:uri.resource(path: 'JavaScript/jquery/backend.js', package: 'Phlu.Corporate')}?nc={vc:GetCurrentVersion()}"></script>
         </f:then>
         <f:else>
-            <f:if condition="{isProductionContext}">
+            <f:if condition="!{isProductionContext}">
                 <f:then>
                     <script async>
                         (function (i, s, o, g, r, a, m) {
@@ -318,27 +318,27 @@
                         fbq('init', '2052793394949379');
                         fbq('track', 'PageView');
                     </script>
-                    <!-- set facebook event codes
-                    if is startpage -->
-                    <f:if condition="{site.identifier} == 'dc6fd786-df6a-4841-8938-42e71719d0c1'">
+
+                    <f:if condition="{node.identifier} == 'dc6fd786-df6a-4841-8938-42e71719d0c1'">
+                        <!-- set facebook event codes if is startpage -->
                         <script async>
                             fbq('track', 'ViewContent');
                             </script>
                     </f:if>
-                    <!-- if is studium/informationsveranstaltungen page -->
-                    <f:if condition="{site.identifier} == '00eae5eb-88b7-4563-b638-aa9eba715e37'">
+                    <f:if condition="{node.identifier} == '00eae5eb-88b7-4563-b638-aa9eba715e37'">
+                        <!-- if is studium/informationsveranstaltungen page -->
                         <script async>
                             fbq('track', 'ViewContent');
                         </script>
                     </f:if>
-                    <!-- if is studium/informationsveranstaltungen page with embedded Infonachmittag form -->
                     <f:if condition="{embedded.node.nodedata.identifier} == 'f637c339-b667-4be6-a21f-be3dfd1e7d79'">
+                        <!-- if is studium/informationsveranstaltungen page with embedded Infonachmittag form -->
                         <script async>
                             fbq('track', 'CompleteRegistration');
                         </script>
                     </f:if>
-                    <!-- if is studium/informationsveranstaltungen page with embedded Aufnahme sur dossier form -->
                     <f:if condition="{embedded.node.nodedata.identifier} == '8ddd6a58-41fd-4e67-a850-857a93d3bc08'">
+                        <!-- if is studium/informationsveranstaltungen page with embedded Aufnahme sur dossier form -->
                         <script async>
                             fbq('track', 'CompleteRegistration');
                         </script>

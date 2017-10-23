@@ -200,8 +200,8 @@ page = Page {
             sectionName = 'bodyScripts'
             isProductionContext = ${Configuration.setting('Neos.Flow.core.context') == 'Production' ? true : false}
             ga = ${Configuration.setting('Phlu.Corporate.ga')}
-            site = ${q(node).get(0)}
-            embedded = ${Phlu.Corporate.getEmbedded(node)}
+            node = ${q(node).get(0)}
+            //embedded = ${Phlu.Corporate.getEmbedded(node)}
         }
     }
     bodyTag.attributes {
