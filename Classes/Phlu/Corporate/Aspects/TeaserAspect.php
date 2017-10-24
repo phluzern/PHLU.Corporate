@@ -222,7 +222,7 @@ class TeaserAspect
         $detailNode = $this->nodeDataRepository->findOneByIdentifier($object->getProperty('reference'),$object->getWorkspace());
 
 
-        if (!$detailNode) {
+        if (!$detailNode && $this->nodeDataRepository->findByNodeIdentifier($object->getProperty('reference'))->getFirst()) {
             $detailNode = $this->nodeFactory->createFromNodeData($this->nodeDataRepository->findByNodeIdentifier($object->getProperty('reference'))->getFirst(), $context);
         }
 
