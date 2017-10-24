@@ -318,31 +318,6 @@
                         fbq('init', '2052793394949379');
                         fbq('track', 'PageView');
                     </script>
-
-                    <f:if condition="{node.identifier} == 'dc6fd786-df6a-4841-8938-42e71719d0c1'">
-                        <!-- set facebook event codes if is startpage -->
-                        <script async>
-                            fbq('track', 'ViewContent');
-                            </script>
-                    </f:if>
-                    <f:if condition="{node.identifier} == '00eae5eb-88b7-4563-b638-aa9eba715e37'">
-                        <!-- if is studium/informationsveranstaltungen page -->
-                        <script async>
-                            fbq('track', 'ViewContent');
-                        </script>
-                    </f:if>
-                    <f:if condition="{embedded.node.nodedata.identifier} == 'f637c339-b667-4be6-a21f-be3dfd1e7d79'">
-                        <!-- if is studium/informationsveranstaltungen page with embedded Infonachmittag form -->
-                        <script async>
-                            fbq('track', 'CompleteRegistration');
-                        </script>
-                    </f:if>
-                    <f:if condition="{embedded.node.nodedata.identifier} == '8ddd6a58-41fd-4e67-a850-857a93d3bc08'">
-                        <!-- if is studium/informationsveranstaltungen page with embedded Aufnahme sur dossier form -->
-                        <script async>
-                            fbq('track', 'CompleteRegistration');
-                        </script>
-                    </f:if>
                     <noscript>
                         <img height="1" width="1"
                              src="https://www.facebook.com/tr?id=139211143380947&ev=PageView&noscript=1"/>
