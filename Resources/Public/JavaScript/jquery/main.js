@@ -104,6 +104,7 @@ function initFrontend() {
     initSmoothScrolling();
 
 
+
     /*
      Various height adjustments see further comments below
      */
@@ -570,3 +571,4 @@ $('.rcrumbs-container').rcrumbs({
         }
     }
 });
+

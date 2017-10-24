@@ -201,7 +201,6 @@ page = Page {
             isProductionContext = ${Configuration.setting('Neos.Flow.core.context') == 'Production' ? true : false}
             ga = ${Configuration.setting('Phlu.Corporate.ga')}
             node = ${q(node).get(0)}
-            //embedded = ${Phlu.Corporate.getEmbedded(node)}
         }
     }
     bodyTag.attributes {
