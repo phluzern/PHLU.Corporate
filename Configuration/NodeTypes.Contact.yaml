@@ -103,6 +103,8 @@
         inspector:
           group: contact
           position: 80
+    officeid:
+      type: string
     eventoid:
       type: string
       ui:
