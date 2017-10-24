@@ -5,25 +5,25 @@
 
 <div {attributes -> f:format.raw()}>
 
-    <div class="panel panel-default">
-        <div class="panel-heading" role="tab">
-            <h4 class="panel-title">
-                <a href="#" data-toggle="collapse"
-                   data-parent="#accordeon-{node.Identifier}"
-                   data-target="#accordeon-{node.Identifier}"
->                    {neos:contentElement.editable(property: 'title', tag: 'span')}
-                </a>
-            </h4>
-        </div>
+    <f:if condition="{ts:render(path: 'collectionRenderer')} == ''">
+        <f:else>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                        <a href="#" data-toggle="collapse"
+                           data-parent="#accordeon-{node.Identifier}"
+                           data-target="#accordeon-{node.Identifier}">
+                            {neos:contentElement.editable(property: 'title', tag: 'span')}</a>
+                    </h4>
+                </div>
 
-        <div id="accordeon-{node.Identifier}"
-             class="panel-collapse collapse"
-             role="tab" >
+                <div id="accordeon-{node.Identifier}"
+                     class="panel-collapse collapse"
+                     role="tab">
+                    <ts:render path="collectionRenderer"/>
+                </div>
 
-            <ts:render path="collectionRenderer"/>
-
-        </div>
-
-    </div>
-
+            </div>
+        </f:else>
+    </f:if>
 </div>
