@@ -456,6 +456,18 @@
                                                                     </div>
                                                                 </td>
                                                             </tr>
+                                                            <tr class="desktop-view" data-ng-if="node.getProperty('statusdescription')">
+                                                                <td>
+                                                                    Hinweis
+                                                                    <div class="mobile-view-columns"
+                                                                         data-ng-bind="node.getProperty('statusdescription')">
+
+                                                                    </div>
+                                                                </td>
+                                                                <td data-ng-bind="node.getProperty('statusdescription')">
+
+                                                                </td>
+                                                            </tr>
                                                             </tbody>
                                                         </table>
 
