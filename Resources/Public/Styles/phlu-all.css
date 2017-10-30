@@ -8811,6 +8811,11 @@ body.neos-backend .neos-contentelement.neos-contentelement-active .disabled-for-
     color: red;
     display: block; }
 
+body.neos-backend .neos-contentelement.neos-contentelement-active[data-isreference="1"]::before {
+  content: "Achtung: Inhalt ist referenziert von " attr(data-isreferencedescription) "";
+  color: red;
+  display: block; }
+
 body.neos-backend .phlu-corporate-contacts .neos-empty-contentcollection-overlay {
   margin: 30px; }
 

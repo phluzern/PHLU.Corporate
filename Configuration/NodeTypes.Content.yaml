@@ -134,12 +134,26 @@
     label: 'Accordion Element'
     icon: icon-accordion
     inlineEditable: true
+    inspector:
+      groups:
+        general:
+          label: Allgemein
   constraints:
     nodeTypes:
       '*': false
   properties:
     title:
       defaultValue: 'Hier kommt ein Titel'
+    reference:
+      type: reference
+      ui:
+        label: Bestehendes Accordion referenzieren
+        inspector:
+          group: general
+          position: 50
+          editorOptions:
+            nodeTypes: ['Phlu.Corporate:AccordeonElement']
+        reloadIfChanged: true
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Accordeon'

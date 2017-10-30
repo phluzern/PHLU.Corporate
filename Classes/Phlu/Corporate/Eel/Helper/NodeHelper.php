@@ -95,6 +95,35 @@ class NodeHelper implements ProtectedContextAwareInterface
 
 
     /**
+     * @param $node
+     * @return string
+     */
+    public function getDocumentUrl($node,$request) {
+
+
+
+
+        $flowQuery = new FlowQuery(array($node));
+        $documentNode = $flowQuery->closest('[instanceof Neos.NodeTypes:Page]')->get(0);
+
+
+        if (!$documentNode) {
+            return '';
+        }
+
+
+        $controllerContext = new ControllerContext($request, new Response(), new Arguments(array()), new UriBuilder());
+
+
+        return $this->linkingService->resolveNodeUri('node://'.$documentNode->getIdentifier(),$documentNode,$controllerContext);
+
+
+
+
+
+    }
+
+    /**
      * Get contact based on http request
      *
      * @param Node $node

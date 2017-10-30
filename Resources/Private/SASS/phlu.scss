@@ -1256,6 +1256,9 @@ body.neos-backend {
     display: none;
   }
 
+
+
+
   .neos-contentelement.neos-contentelement-active {
     .disabled-for-editing {
       opacity: 0.8;
@@ -1265,6 +1268,17 @@ body.neos-backend {
         display: block;
       }
     }
+  }
+
+
+  .neos-contentelement.neos-contentelement-active[data-isreference="1"] {
+
+      &::before {
+        content: "Achtung: Inhalt ist referenziert von " attr(data-isreferencedescription) "";
+        color: red;
+        display: block;
+      }
+
   }
 
   .phlu-corporate-contacts {
