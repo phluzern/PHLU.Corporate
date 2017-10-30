@@ -11,6 +11,7 @@ prototype(Phlu.Corporate:Page.FurtherEducation.Detail) < prototype(Phlu.Corporat
         fee = ${q(node).property('fee')}
         statusDescription = ${q(node).property('statusDescription')}
         SubsidizedFee = ${q(node).property('subsidizedFee')}
+        hideContacts = ${q(node).property('hideContacts')}
 
         sectionsInPage = ${q(node).children('main').find('[instanceof Phlu.Corporate:Section]').get()}
 		sectionsCountInPage = ${q(node).children('main').find('[instanceof Phlu.Corporate:Section]').count()}

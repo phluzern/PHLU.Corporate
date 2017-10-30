@@ -358,11 +358,24 @@
     'Phlu.Neos.NodeTypes:Page': true
     'Phlu.Neos.NodeTypes:Course.Module': true
     'Phlu.Neos.NodeTypes:Shorturl': true
+  ui:
+    inspector:
+      groups:
+        special:
+          label: 'Erweiterte Einstellungen'
   hybridsearch:
     skip: TRUE
   properties:
     internalid:
       type: integer
+    hideContacts:
+      type: boolean
+      ui:
+        label: Kontakte verbergen
+        defaultValue: false
+        inspector:
+          group: special
+        reloadIfChanged: true
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.FurtherEducation.Detail'
@@ -380,11 +393,23 @@
     'Phlu.Neos.NodeTypes:Page': true
     'Phlu.Neos.NodeTypes:Course.Study': true
     'Phlu.Neos.NodeTypes:Shorturl': true
+  ui:
+    inspector:
+      groups:
+        special:
+          label: 'Erweiterte Einstellungen'
   hybridsearch:
     skip: TRUE
   properties:
     internalid:
       type: integer
+    hideContacts:
+      type: boolean
+      ui:
+        label: Kontakte verbergen
+        defaultValue: false
+        inspector:
+          group: special
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.FurtherEducation.Detail'
@@ -401,11 +426,23 @@
     'Phlu.Neos.NodeTypes:Page': true
     'Phlu.Neos.NodeTypes:Course.Event': true
     'Phlu.Neos.NodeTypes:Shorturl': true
+  ui:
+    inspector:
+      groups:
+        special:
+          label: 'Erweiterte Einstellungen'
   hybridsearch:
     skip: TRUE
   properties:
     internalid:
       type: integer
+    hideContacts:
+      type: boolean
+      ui:
+        label: Kontakte verbergen
+        defaultValue: false
+        inspector:
+          group: special
   childNodes:
     main:
       type: 'Phlu.Corporate:ContentCollection.Page.FurtherEducation.Detail'

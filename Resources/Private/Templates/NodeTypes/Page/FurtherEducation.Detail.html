@@ -364,87 +364,91 @@
                 <ts:render path="collectionRenderer" context="{node: main}"/>
             </div>
         </div>
-        <div class="row further-education-detail">
-            <div class="col-xs-12 phlu-team-members">
-                <h2 id="kontakt">Kontakt</h2>
-                <div class="row phlu-teaser navigation subpage">
-                    <div class="col-xs-12 col-md-6 nav-teaser-item">
-                        <f:for each="{leaders}" as="leader">
 
-                            <f:if condition="{leader.IsPrimary}">
-                                <div class="row">
-                                    <div class="phlu-teaser-body col-xs-8">
+        <f:if condition="{hideContacts} == true">
+            <f:else>
+                <div class="row further-education-detail">
+                    <div class="col-xs-12 phlu-team-members">
+                        <h2 id="kontakt">Kontakt</h2>
+                        <div class="row phlu-teaser navigation subpage">
+                            <div class="col-xs-12 col-md-6 nav-teaser-item">
+                                <f:for each="{leaders}" as="leader">
+
+                                    <f:if condition="{leader.IsPrimary}">
+                                        <div class="row">
+                                            <div class="phlu-teaser-body col-xs-8">
 
 
-                                        <address>
-                                            <b>{leader.Fullname}</b><br>
-                                            Leitung
+                                                <address>
+                                                    <b>{leader.Fullname}</b><br>
+                                                    Leitung
 
-                                            <div class="telephone">
-                                                <f:if condition="{leader.Phone}">
-                                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                                    {leader.Phone}<br>
+                                                    <div class="telephone">
+                                                        <f:if condition="{leader.Phone}">
+                                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                                            {leader.Phone}<br>
+                                                        </f:if>
+                                                    </div>
+
+                                                    <a class="content-link-email-contact-person"
+                                                       href="mailto:{leader.Email}">{leader.Email}</a><br>
+                                                    <f:if condition="{leader.eventoId}">
+                                                        <portrait:link node="null" eventoId="{leader.eventoId}">Portrait
+                                                        </portrait:link>
+                                                    </f:if>
+                                                </address>
+
+
+                                            </div>
+
+                                            <div class="phlu-teaser-caret-right col-xs-4">
+                                                <f:if condition="{leader.ImgeUrl}">
+                                                    <img src="{leader.ImgeUrl}" class="img-fluid"/>
                                                 </f:if>
                                             </div>
+                                        </div>
 
-                                            <a class="content-link-email-contact-person"
-                                               href="mailto:{leader.Email}">{leader.Email}</a><br>
-                                            <f:if condition="{leader.eventoId}">
-                                                <portrait:link node="null" eventoId="{leader.eventoId}">Portrait
-                                                </portrait:link>
-                                            </f:if>
-                                        </address>
-
-
-                                    </div>
-
-                                    <div class="phlu-teaser-caret-right col-xs-4">
-                                        <f:if condition="{leader.ImgeUrl}">
-                                            <img src="{leader.ImgeUrl}" class="img-fluid"/>
-                                        </f:if>
-                                    </div>
-                                </div>
-
-                            </f:if>
-
-                        </f:for>
-
-                    </div>
-                    <f:for each="{contacts}" as="leader">
-                        <div class="col-xs-12 col-md-6 nav-teaser-item">
-                            <div class="row">
-                                <div class="phlu-teaser-body col-xs-8">
-                                    <address>
-                                        <b>{leader.Fullname}</b><br>
-                                        Administration
-                                        <f:if condition="{leader.Phone}">
-                                            <div class="telephone">
-                                                <i class="fa fa-phone" aria-hidden="true"></i>
-                                                {leader.Phone}<br>
-                                            </div>
-                                        </f:if>
-                                        <a class="content-link-email-contact-person"
-                                           href="mailto:{leader.Email}">{leader.Email}</a><br>
-                                        <f:if condition="{leader.eventoId}">
-                                            <portrait:link node="null" eventoId="{leader.eventoId}">Portrait
-                                            </portrait:link>
-                                        </f:if>
-                                    </address>
-                                </div>
-                                <div class="phlu-teaser-caret-right col-xs-4">
-                                    <f:if condition="{leader.ImgeUrl}">
-                                        <img src="{leader.ImgeUrl}" class="img-fluid"/>
                                     </f:if>
-                                </div>
+
+                                </f:for>
+
                             </div>
+                            <f:for each="{contacts}" as="leader">
+                                <div class="col-xs-12 col-md-6 nav-teaser-item">
+                                    <div class="row">
+                                        <div class="phlu-teaser-body col-xs-8">
+                                            <address>
+                                                <b>{leader.Fullname}</b><br>
+                                                Administration
+                                                <f:if condition="{leader.Phone}">
+                                                    <div class="telephone">
+                                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                                        {leader.Phone}<br>
+                                                    </div>
+                                                </f:if>
+                                                <a class="content-link-email-contact-person"
+                                                   href="mailto:{leader.Email}">{leader.Email}</a><br>
+                                                <f:if condition="{leader.eventoId}">
+                                                    <portrait:link node="null" eventoId="{leader.eventoId}">Portrait
+                                                    </portrait:link>
+                                                </f:if>
+                                            </address>
+                                        </div>
+                                        <div class="phlu-teaser-caret-right col-xs-4">
+                                            <f:if condition="{leader.ImgeUrl}">
+                                                <img src="{leader.ImgeUrl}" class="img-fluid"/>
+                                            </f:if>
+                                        </div>
+                                    </div>
+                                </div>
+                            </f:for>
+
                         </div>
-                    </f:for>
-
+                        <hr>
+                    </div>
                 </div>
-                <hr>
-            </div>
-        </div>
-
+            </f:else>
+        </f:if>
         <div class="row further-education-detail " id="anmeldung">
             <div class="col-xs-12 ">
                 <h2>Anmeldung</h2>
