@@ -6927,6 +6927,9 @@ body {
                 margin-bottom: 40px;
               }
               .phlu-corporate-table-row {
+                p {
+                  font-size: inherit;
+                }
                 .desktop-view {
                   @include media-breakpoint-down("sm") {
                     display: none;
