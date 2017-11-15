@@ -13,7 +13,7 @@
                 <div class="quickinfo" data-ng-repeat="groupedNode in nodes | groupByProperty:'asset.url'"
                      data-ng-if="$index <= node.more">
                     <a class="content-link-internal" data-ng-if="groupedNode.getProperty('asset').url"
-                       href="{{groupedNode.getProperty('asset').url}}" target="_blank"><span
+                       href="/{{groupedNode.getProperty('asset.identifier')}}" target="_blank"><span
                             data-ng-if="groupedNode.getProperty('asset').title == ''">{{groupedNode.getProperty('asset').name}}</span><span
                             data-ng-if="groupedNode.getProperty('asset').title !== ''">{{groupedNode.getProperty('asset').title}}</span>
                     </a>

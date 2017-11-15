@@ -1,6 +1,6 @@
 <h3>
     <a class="content-link-internal" data-ng-if="node.getProperty('asset').url"
-       href="{{node.getProperty('asset').url | rewriteUrl }}" target="_blank">
+       href="/{{node.getProperty('asset.identifier')}}" target="_blank">
         <span data-ng-if="node.getProperty('file-title').length" data-ng-bind="node.getProperty('file-title')  | striptags"></span>
         <span data-ng-if="!node.getProperty('file-title').length && node.getProperty('asset').title.length" data-ng-bind="node.getProperty('asset').title | striptags"></span>
         <span data-ng-if="!node.getProperty('file-title').length && !node.getProperty('asset').title.length" data-ng-bind="node.getProperty('asset').name | striptags"></span>

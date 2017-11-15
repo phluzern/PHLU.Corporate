@@ -77,14 +77,19 @@ PhluCorporateApp.controller('LogCtrl', ['$scope', '$cookies','$window', function
 
 
         if (ViewContentTrackingIdentifiers[identifier] === true) {
+
             window.setTimeout(function() {
-                fbq('track', 'ViewContent');
+                if (fbq !== undefined) {
+                    fbq('track', 'ViewContent');
+                }
             },3000);
         }
 
         if (jQuery("#iframe"+identifier).attr('src') !== undefined && ViewContentTrackingIframeUrls[jQuery("#iframe"+identifier).attr('src')]) {
             window.setTimeout(function() {
-                fbq('track', 'CompleteRegistration');
+                if (fbq !== undefined) {
+                    fbq('track', 'CompleteRegistration');
+                }
             },3000);
         }
 
