@@ -56,6 +56,12 @@
         </div>
     </div>
 
+    <div data-ng-repeat="gnode in node.getGroupedNodes()" data-ng-if="gnode.getParent() && gnode.getParent().getNodeType() == 'Phlu.Corporate:ContactsGroup' && gnode.getDocumentNode().getNodeType() == 'Phlu.Corporate:Page.View.Default'">
+        <div class="quickinfo">
+            <a class="content-link-internal" href="{{gnode.getUrl()}}"><span>{{gnode.getDocumentNode().getProperty('title')}}</span></a>
+        </div>
+    </div>
+
 
 </div>
 <div class="rcrumbs-wrapper">
