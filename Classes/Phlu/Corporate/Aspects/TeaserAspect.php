@@ -48,6 +48,12 @@ class TeaserAspect
 
     /**
      * @Flow\Inject
+     * @var \Neos\ContentRepository\Domain\Service\NodeServiceInterface
+     */
+    protected $nodeService;
+
+    /**
+     * @Flow\Inject
      * @var PersistenceManagerInterface
      */
     protected $persistenceManager;
@@ -58,6 +64,8 @@ class TeaserAspect
      * @var NodeUriPathSegmentGenerator
      */
     protected $nodeUriPathSegmentGenerator;
+
+
 
 
     /**
@@ -258,8 +266,14 @@ class TeaserAspect
 
         if ($detailNode) {
 
+            if ($detailNode instanceof NodeData) {
+                $context = $this->nodeFactory->createContextMatchingNodeData($object);
+                $detailNode = $this->nodeFactory->createFromNodeData($detailNode, $context);
+            }
+
             if (strlen($object->getProperty('teaserHeadline'))) {
-                $detailNode->setProperty('uriPathSegment', $this->nodeUriPathSegmentGenerator->generateUriPathSegment(null, $object->getProperty('teaserHeadline')));
+                $detailNode->setProperty('uriPathSegment', $this->nodeUriPathSegmentGenerator->generateUriPathSegment($detailNode, $object->getProperty('teaserHeadline')));
+                $this->nodeUriPathSegmentGenerator->setUniqueUriPathSegment($detailNode);
             }
 
             $detailNode->setProperty('teaserHeadline', $object->getProperty('teaserHeadline'));
@@ -283,7 +297,7 @@ class TeaserAspect
             if ($parentPageNode) {
                 $detailNode->setProperty('documentNode', $parentPageNode->getIdentifier());
             }
-            $this->nodeDataRepository->update($detailNode);
+            $this->nodeDataRepository->update($detailNode instanceof NodeData ? $detailNode : $detailNode->getNodeData());
 
 
         }
