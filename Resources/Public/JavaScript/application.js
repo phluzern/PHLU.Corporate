@@ -69162,6 +69162,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var NodeUrlBoostFactor = {
+        '/ueber-uns/organisation-kontakte/ausbildung/bildungs-und-sozialwissenschaften': {'*': 1, 'phlu-corporate-contact': 0.0000001},
         '/studium/studiengaenge/': {'*': 1, 'phlu-corporate-contact': 0.0001},
         '/studium/': {'*': 4, 'phlu-corporate-contact': 0.0001},
         '/studium/zulassung-und-anmeldung': {'*': 10, 'phlu-corporate-contact': 0.0001},
