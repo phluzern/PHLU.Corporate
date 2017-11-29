@@ -13620,9 +13620,13 @@ body .all .startpage .main > .row.aktuelles {
   @media (min-width: 544px) {
     body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-sm {
       padding: 0 10px 61px; } }
+  body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-sm .carousel-item {
+    zoom: 0.9; }
   @media (min-width: 768px) {
     body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-md {
       padding: 0 25px 61px; } }
+  body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-md .carousel-item {
+    zoom: 0.8; }
   @media (min-width: 1280px) {
     body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
       margin-top: 490px; } }
