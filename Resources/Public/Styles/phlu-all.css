@@ -13627,6 +13627,10 @@ body .all .startpage .main > .row.aktuelles {
       padding: 0 25px 61px; } }
   body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-md .carousel-item {
     zoom: 0.8; }
+
+@media (min-width: 992px) and (max-width: 1279px) {
+  body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-lg {
+    zoom: 0.9; } }
   @media (min-width: 1280px) {
     body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
       margin-top: 490px; } }
@@ -13687,6 +13691,10 @@ body .all .startpage .main > .row.aktuelles {
   @media screen and (max-height: 600px) {
     body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xxl {
       margin-top: 80px; } }
+
+@media (min-width: 1400px) and (max-width: 1599px) {
+  body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xxl .carousel-item {
+    zoom: 0.9; } }
 
 body .all .startpage .phlu-teaser {
   padding: 0; }

@@ -8135,11 +8135,21 @@ body {
                 zoom:0.8;
               }
             }
+            #carousel-phlu-teaser-lg {
+              @include media-breakpoint-only("lg") {
+                zoom: 0.9;
+              }
+            }
             #carousel-phlu-teaser-xl {
               @include serviceLinksTopMargin();
             }
             #carousel-phlu-teaser-xxl {
               @include serviceLinksTopMargin();
+              .carousel-item {
+                @include media-breakpoint-only("xxl") {
+                  zoom: 0.9;
+                }
+              }
             }
           }
         }
