@@ -5,7 +5,7 @@ module.exports = function (grunt) {
         watch: {
             sass: {
                 files: ['../Resources/Private/SASS/phlu.scss'],
-                tasks: ['sass','concat','cssmin']
+                tasks: ['sass','concat']
             },
             js: {
                 files: ['../Resources/Public/JavaScript/angularjs/Phlu/Corporate/Controller/*','../Resources/Public/JavaScript/jquery/*.js','../../../Application/Neoslive.Hybridsearch/Resources/Public/hybridsearch.js'],
@@ -110,7 +110,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.registerTask('default', ['sass', 'concat', 'cssmin', 'uglify', 'watch']);
+    grunt.registerTask('default', ['sass', 'concat', 'uglify', 'watch']);
 
 
 };

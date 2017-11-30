@@ -12294,7 +12294,7 @@ body {
   body .all .main .ambient-img-fullwidth img {
     width: 100%; } }
       body .all .main .ambient-img-footer {
-        background-image: url("../Images/ambientImgStartpageMobile.jpg");
+        background-image: url("../Images/ambientImgStartpageChristmasMobile.jpg");
         background-repeat: no-repeat;
         padding-bottom: 330px;
         background-position: top center;
@@ -13568,7 +13568,7 @@ body:last-child .blueimp-gallery-playing > .play-pause {
 
 body .all .startpage .main > .row.mobileBg {
   display: none;
-  background-image: url("../Images/ambientImgStartpageMobile.jpg");
+  background-image: url("../Images/ambientImgStartpageChristmasMobile.jpg");
   background-size: cover;
   height: 150px; }
   @media (max-width: 1279px) {
@@ -13576,7 +13576,7 @@ body .all .startpage .main > .row.mobileBg {
       display: block; } }
 
 body .all .startpage .main > .row.aktuelles {
-  background-image: url("../Images/ambientImgStartpage.jpg");
+  background-image: url("../Images/ambientImgStartpageChristmas.jpg");
   background-size: cover; }
   @media screen and (max-height: 650px) {
     body .all .startpage .main > .row.aktuelles {

@@ -6335,11 +6335,12 @@ body {
         }
       }
       .ambient-img-footer {
-        background-image: url("../Images/ambientImgStartpageMobile.jpg");
+        background-image: url("../Images/ambientImgStartpageChristmasMobile.jpg");
         background-repeat: no-repeat;
         padding-bottom: 330px;
         background-position: top center;
         background-size: cover;
+
       }
       > .row, > .row-fullwidth-content > .row {
         p {
@@ -8070,7 +8071,7 @@ body {
         }
         > .row.mobileBg {
           display: none;
-          background-image: url("../Images/ambientImgStartpageMobile.jpg");
+          background-image: url("../Images/ambientImgStartpageChristmasMobile.jpg");
           background-size: cover;
           height: 150px;
           @include media-breakpoint-down("lg") {
@@ -8078,7 +8079,7 @@ body {
           }
         }
         > .row.aktuelles {
-          background-image: url("../Images/ambientImgStartpage.jpg");
+          background-image: url("../Images/ambientImgStartpageChristmas.jpg");
           @media screen and (max-height: 650px) {
             background-size: cover;
           }
