@@ -17,6 +17,7 @@ use Neos\Flow\ResourceManagement\Exception;
 use Neos\Flow\ResourceManagement\ResourceManager;
 use Neos\Flow\ResourceManagement\PersistentResource;
 use Neos\FluidAdaptor\Core\ViewHelper\Exception\InvalidVariableException;
+use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 
 /**
  * A view helper for creating URIs to resources.
@@ -33,70 +34,81 @@ class ResourceViewHelper extends \Neos\FluidAdaptor\ViewHelpers\Uri\ResourceView
      */
     protected $configurationManager;
 
-
     /**
      * Render the URI to the resource. The filename is used from child content.
      *
-     * @param string $path The location of the resource, can be either a path relative to the Public resource directory of the package or a resource://... URI
-     * @param string $package Target package key. If not set, the current package key will be used
-     * @param PersistentResource $resource If specified, this resource object is used instead of the path and package information
-     * @param boolean $localize Whether resource localization should be attempted or not
      * @return string The absolute URI to the resource
      * @throws InvalidVariableException
      * @api
      */
-    public function render($path = null, $package = null, PersistentResource $resource = null, $localize = true)
+    public function render()
     {
+        return self::renderNow($this->arguments, $this->buildRenderChildrenClosure(), $this->renderingContext);
+    }
 
 
-        if ($resource !== null) {
-            $uri = $this->resourceManager->getPublicPersistentResourceUri($resource);
+    /**
+     * @param array $arguments
+     * @param \Closure $renderChildrenClosure
+     * @param RenderingContextInterface $renderingContext
+     * @return string
+     * @throws InvalidVariableException
+     */
+    public function renderNow(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext) {
+
+
+        if ($arguments['resource'] !== null) {
+            $uri = $this->resourceManager->getPublicPersistentResourceUri($arguments['resource']);
             if ($uri === false) {
                 $uri = '404-Resource-Not-Found';
             }
         } else {
 
             // redirect shortcuts
-            if ($resource && 'application/x-ms-shortcut' == $resource->getMediaType()) {
-                return file_get_contents("resource://".$resource->getSha1());
+            if ($arguments['resource'] && 'application/x-ms-shortcut' == $arguments['resource']->getMediaType()) {
+                return file_get_contents("resource://".$arguments['resource']->getSha1());
             }
 
 
-            if ($path === null) {
+            if ($arguments['path'] === null) {
                 throw new InvalidVariableException('The ResourceViewHelper did neither contain a valuable "resource" nor "path" argument.', 1353512742);
             }
-            if ($package === null) {
-                $package = $this->controllerContext->getRequest()->getControllerPackageKey();
+            if ($arguments['package'] === null) {
+                $arguments['package'] = $this->controllerContext->getRequest()->getControllerPackageKey();
             }
-            if (strpos($path, 'resource://') === 0) {
+            if (strpos($arguments['path'], 'resource://') === 0) {
                 try {
-                    list($package, $path) = $this->resourceManager->getPackageAndPathByPublicPath($path);
+                    list($arguments['package'], $arguments['path']) = $this->resourceManager->getPackageAndPathByPublicPath($arguments['path']);
                 } catch (Exception $exception) {
-                    throw new InvalidVariableException(sprintf('The specified path "%s" does not point to a public resource.', $path), 1386458851);
+                    throw new InvalidVariableException(sprintf('The specified path "%s" does not point to a public resource.', $arguments['path']), 1386458851);
                 }
             }
-            if ($localize === true) {
-                $resourcePath = 'resource://' . $package . '/Public/' . $path;
+            if ($arguments['localize'] === true) {
+                $resourcePath = 'resource://' . $arguments['package'] . '/Public/' . $arguments['path'];
                 $localizedResourcePathData = $this->i18nService->getLocalizedFilename($resourcePath);
                 $matches = array();
                 if (preg_match('#resource://([^/]+)/Public/(.*)#', current($localizedResourcePathData), $matches) === 1) {
-                    $package = $matches[1];
-                    $path = $matches[2];
+                    $arguments['package'] = $matches[1];
+                    $arguments['path'] = $matches[2];
                 }
             }
-            $uri = $this->resourceManager->getPublicPackageResourceUri($package, $path);
+            $uri = $this->resourceManager->getPublicPackageResourceUri($arguments['package'], $arguments['path']);
         }
 
 
-            $cdn = $this->configurationManager->getConfiguration('Settings', 'Phlu.Corporate.cdn');
-            if ($cdn) {
-                $url = parse_url($uri);
-                if (isset($url['host']) && $url['host'] == 'www.phlu.ch' && substr($url['path'],0,11) == '/_Resources') {
-                    return $cdn . $url['path'];
-                }
+        $cdn = $this->configurationManager->getConfiguration('Settings', 'Phlu.Corporate.cdn');
+        if ($cdn) {
+            $url = parse_url($uri);
+            if (isset($url['host']) && $url['host'] == 'www.phlu.ch' && substr($url['path'],0,11) == '/_Resources') {
+                return $cdn . $url['path'];
             }
+        }
 
 
         return $uri;
+
+
     }
+
+
 }
