@@ -809,7 +809,7 @@ span.loading {
   z-index: 999999;
   bottom: 0;
   width: 100%;
-  height: 573px;
+  height: 433px;
   background-color: $grey8;
   padding: 7px;
   color: white;
@@ -1501,7 +1501,7 @@ body {
   &.siteSearchActive {
     overflow: hidden;
   }
-  margin-bottom: 573px;
+  margin-bottom: 433px;
   @include media-breakpoint-up("xxxl") {
     background-color: #efefef;
   }
@@ -7635,7 +7635,7 @@ body {
       z-index: 1;
       bottom: 0;
       width: 100%;
-      height: 573px;
+      height: 433px;
       background-color: $black;
       padding-top: 20px;
       color: white;
@@ -7790,10 +7790,12 @@ body {
         }
         .footerLogo {
           width: 200px;
+          margin-right:20px;
         }
       }
       .copyright {
         padding-top: 70px;
+        margin-right: 20px;
         @include media-breakpoint-up("lg") {
           text-align: right;
         }
