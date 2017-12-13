@@ -13661,6 +13661,22 @@ body .all .startpage .main > .row.aktuelles {
   @media screen and (max-height: 600px) {
     body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
       margin-top: 80px; } }
+
+@media screen and (min-width: 1400px) and (max-width: 1599px) and (max-height: 900px) and (min-height: 850px) {
+  body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+    margin-top: 391px; } }
+
+@media screen and (min-width: 1400px) and (max-width: 1599px) and (max-height: 850px) and (min-height: 800px) {
+  body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+    margin-top: 350px; } }
+
+@media screen and (min-width: 1400px) and (max-width: 1599px) and (max-height: 800px) and (min-height: 750px) {
+  body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+    margin-top: 300px; } }
+
+@media screen and (min-width: 1400px) and (max-width: 1599px) and (max-height: 750px) {
+  body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xl {
+    margin-top: 250px; } }
   @media (min-width: 1280px) {
     body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xxl {
       margin-top: 490px; } }
@@ -13691,6 +13707,22 @@ body .all .startpage .main > .row.aktuelles {
   @media screen and (max-height: 600px) {
     body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xxl {
       margin-top: 80px; } }
+
+@media screen and (min-width: 1400px) and (max-width: 1599px) and (max-height: 900px) and (min-height: 850px) {
+  body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xxl {
+    margin-top: 391px; } }
+
+@media screen and (min-width: 1400px) and (max-width: 1599px) and (max-height: 850px) and (min-height: 800px) {
+  body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xxl {
+    margin-top: 350px; } }
+
+@media screen and (min-width: 1400px) and (max-width: 1599px) and (max-height: 800px) and (min-height: 750px) {
+  body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xxl {
+    margin-top: 300px; } }
+
+@media screen and (min-width: 1400px) and (max-width: 1599px) and (max-height: 750px) {
+  body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xxl {
+    margin-top: 250px; } }
 
 @media (min-width: 1400px) and (max-width: 1599px) {
   body .all .startpage .main > .row.aktuelles > .col-xs-12 #carousel-phlu-teaser-xxl .carousel-item {

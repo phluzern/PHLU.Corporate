@@ -601,6 +601,21 @@ $input-search-field-big: 55px;
   @media screen and (max-height: 600px) {
     margin-top: 80px
   }
+  
+  @include media-breakpoint-only("xxl") {
+    @media screen and (max-height: 900px) and (min-height: 850px) {
+      margin-top: 391px
+    }
+    @media screen and (max-height: 850px) and (min-height: 800px) {
+      margin-top: 350px
+    }
+    @media screen and (max-height: 800px) and (min-height: 750px) {
+      margin-top: 300px
+    }
+    @media screen and (max-height: 750px) {
+      margin-top: 250px
+    }
+  }
 }
 
 // remove blue border around elements in google chrome browser
