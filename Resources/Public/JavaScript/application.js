@@ -73327,8 +73327,15 @@ function initFrontend() {
     });
 
 
-    /* top link nav */
+    /*
+    * show elements on scroll
+    * */
+    var wrap = $("#rcrumbs-wrapper").parent().parent();
+    var wrapMobile = $(".navbar");
+
     $(window).scroll(function () {
+        /* top link nav
+           * */
         spaceToTop = $(window).scrollTop();
         // $('[data-spy="scroll"]').scrollspy('refresh');
         if (spaceToTop > $(window).height()) {
@@ -73337,6 +73344,23 @@ function initFrontend() {
         else {
             $('#top-link-block').fadeOut('slow');
         }
+        /*
+        * fixed breadcrumb on scroll
+        */
+        if (spaceToTop > 65) {
+            wrap.addClass("fix-crumb");
+        } else {
+            wrap.removeClass("fix-crumb");
+        }
+        /*
+        * fixed navbar on scroll
+        */
+        if (spaceToTop > 107) {
+            wrapMobile.addClass("fix-navbar");
+        } else {
+            wrapMobile.removeClass("fix-navbar");
+        }
+
     });
     /* added hyphenator for chrome support
      Hyphenator.run();*/
@@ -73355,32 +73379,7 @@ function initFrontend() {
 
 
 
-    /*
-     Various height adjustments see further comments below
-     */
-    /*
-     Adjust height of main content so that the footer navigation is visible after page ist loaded
-     On Startpage only!
-     */
-    // if($(document).height() > $( window ).height()) {
-    //     var marginTopHeight = 0;
-    //     if(($( window ).height() - $('#carousel-phlu-teaser-xl').height() - 70) >= 0) {
-    //
-    //         marginTopHeight = $( window ).height() -$('#carousel-phlu-teaser-xl').height() - 70;
-    //         console.log('main ist höher als fenster. fenster:', $( window ).height(), 'main:', $( window ).height());
-    //     }
-    //     else {
-    //         console.log('fenster ist höher als main & die level0 navi ist höher als main',$('.sidebar > .row').height() . $('.main').height());
-    //         if($('.sidebar > .row').height() < $('.main').height()) {
-    //
-    //         }
-    //         else {
-    //             /* Add enough margin to have same height as sidebar (otherwise the background image does not cover the whole content area) */
-    //             marginTopHeight = $('.sidebar > .row').height() - $('#carousel-phlu-teaser-xl > .carousel-inner').height() + 5;
-    //         }
-    //     }
-    //     $("#carousel-phlu-teaser-xl").css('margin-top',marginTopHeight);
-    // }
+
 
     var resize = function () {
         if ($(window).outerWidth() > 1266) {
@@ -73414,27 +73413,6 @@ function initFrontend() {
         $('.navbar-toggler').removeClass('close-btn');
     });
 
-    /*
-     * load separate stylesheet file for ie11
-     * */
-    /*    window.location.hash = !!window.MSInputMethodContext;
-     console.log(window.location.hash);
-     if (window.location.hash !== '#false') {
-     var $head = $("head");
-     var $headlinklast = $head.find("link[rel='stylesheet']:last");
-     var $removeNonIeFile = $head.find("#phluCss");
-     var linkElement = "<link rel='stylesheet' href='../css/phluNoFlex.css' type='text/css' media='screen'>";
-
-     if ($headlinklast.length) {
-     $headlinklast.after(linkElement);
-     }
-     else {
-     $head.append(linkElement);
-     }
-     if($removeNonIeFile.length) {
-     $removeNonIeFile.remove();
-     }
-     }*/
 
     $('[data-toggle="filterCountTag"]').tooltip('show');
 
@@ -73708,7 +73686,7 @@ function initBackend() {
     });
 }
 
-/* init rcrumbs */
+/* init rcrumbs
 $(document).mousemove(function (event) {
     window.mouseLastEvent = event;
 });
@@ -73822,3 +73800,4 @@ $('.rcrumbs-container').rcrumbs({
     }
 });
 
+*/

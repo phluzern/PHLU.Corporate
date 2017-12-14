@@ -1,4 +1,3 @@
-
 /* latin */
 @font-face {
   font-family: 'Droid Sans';
@@ -7,6 +6,7 @@
   src: local('Droid Sans Regular'), local('DroidSans-Regular'), url(https://cdn.phlu.ch/s/droidsans/v7/s-BiyweUPV0v-yRb-cjciAzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
+
 /* latin */
 @font-face {
   font-family: 'Droid Sans';
@@ -15,7 +15,6 @@
   src: local('Droid Sans Bold'), local('DroidSans-Bold'), url(https://cdn.phlu.ch/s/droidsans/v7/EFpQQyG9GqCrobXxL-KRMWaVI6zN22yiurzcBKxPjFE.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
-
 
 $enable-flex: true;
 $font-family-sans-serif: 'Droid Sans', sans-serif;
@@ -339,6 +338,12 @@ $input-search-field-big: 55px;
   box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, $opacity);
 }
 
+@mixin fixed-breadcrumb-shadow($opacity) {
+  -webkit-box-shadow: 3px 17px 33px -13px rgba(0, 0, 0, $opacity);
+  -moz-box-shadow: 3px 17px 33px -13px rgba(0, 0, 0, $opacity);
+  box-shadow: 3px 17px 33px -13px rgba(0, 0, 0, $opacity);
+}
+
 @mixin teaser-transition($seconds) {
   -moz-transition: all $seconds+s;
   -webkit-transition: all $seconds+s;
@@ -601,7 +606,7 @@ $input-search-field-big: 55px;
   @media screen and (max-height: 600px) {
     margin-top: 80px
   }
-  
+
   @include media-breakpoint-only("xxl") {
     @media screen and (max-height: 900px) and (min-height: 850px) {
       margin-top: 391px
@@ -1271,9 +1276,6 @@ body.neos-backend {
     display: none;
   }
 
-
-
-
   .neos-contentelement.neos-contentelement-active {
     .disabled-for-editing {
       opacity: 0.8;
@@ -1285,14 +1287,13 @@ body.neos-backend {
     }
   }
 
-
   .neos-contentelement.neos-contentelement-active[data-isreference="1"] {
 
-      &::before {
-        content: "Achtung: Inhalt ist referenziert von " attr(data-isreferencedescription) "";
-        color: red;
-        display: block;
-      }
+    &::before {
+      content: "Achtung: Inhalt ist referenziert von " attr(data-isreferencedescription) "";
+      color: red;
+      display: block;
+    }
 
   }
 
@@ -2586,6 +2587,27 @@ body {
             position: absolute;
           }
         }
+      }
+    }
+    .fix-crumb {
+      position: fixed;
+      background-color: $beigelight;
+      z-index: 99;
+      width: 100%;
+      @include media-breakpoint-down("xxl") {
+        max-width: inherit;
+      }
+      @include media-breakpoint-down("lg") {
+        background-color: transparent;
+      }
+      @include fixed-breadcrumb-shadow(0.25);
+    }
+    .fix-navbar {
+      position: fixed;
+      width: 100%;
+      @include fixed-breadcrumb-shadow(0.25);
+      .navbar-brand {
+        display: none;
       }
     }
     .subpage {
@@ -7805,7 +7827,7 @@ body {
         }
         .footerLogo {
           width: 200px;
-          margin-right:20px;
+          margin-right: 20px;
         }
       }
       .copyright {
@@ -8142,7 +8164,7 @@ body {
                 padding: 0 10px 61px;
               }
               .carousel-item {
-                zoom:0.9;
+                zoom: 0.9;
               }
             }
             #carousel-phlu-teaser-md {
@@ -8150,7 +8172,7 @@ body {
                 padding: 0 25px 61px;
               }
               .carousel-item {
-                zoom:0.8;
+                zoom: 0.8;
               }
             }
             #carousel-phlu-teaser-lg {
@@ -8300,7 +8322,7 @@ body {
     padding: 0 !important;
     min-width: 768px;
     margin-bottom: inherit;
-    font-size:12px!important;
+    font-size: 12px !important;
     .logoAndSearchBar, .sidebar {
       display: none !important;
     }
@@ -8313,12 +8335,12 @@ body {
         display: none !important;
       }
       .row {
-        display: block!important;
+        display: block !important;
       }
       .main {
         &.contents {
           p {
-            font-size:12px!important;
+            font-size: 12px !important;
             width: 100% !important;
           }
           margin-top: 0 !important;
