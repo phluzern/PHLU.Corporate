@@ -830,6 +830,12 @@ span.loading {
   bottom: 0;
   width: 100%;
   height: 433px;
+  @include media-breakpoint-down("md") {
+    height: 565px;
+  }
+  @include media-breakpoint-down("xs") {
+    height: 589px;
+  }
   background-color: $grey8;
   padding: 7px;
   color: white;
@@ -1518,6 +1524,12 @@ body {
     overflow: hidden;
   }
   margin-bottom: 433px;
+  @include media-breakpoint-down("md") {
+    margin-bottom: 565px;
+  }
+  @include media-breakpoint-down("xs") {
+    margin-bottom: 589px;
+  }
   @include media-breakpoint-up("xxxl") {
     background-color: #efefef;
   }
@@ -7673,6 +7685,12 @@ body {
       bottom: 0;
       width: 100%;
       height: 433px;
+      @include media-breakpoint-down("md") {
+        height: 565px;
+      }
+      @include media-breakpoint-down("xs") {
+        height: 589px;
+      }
       background-color: $black;
       padding-top: 20px;
       color: white;
@@ -7835,6 +7853,11 @@ body {
         margin-right: 20px;
         @include media-breakpoint-up("lg") {
           text-align: right;
+        }
+        @include media-breakpoint-down("xs") {
+          span {
+            display: block;
+          }
         }
       }
       > div > .copyright {

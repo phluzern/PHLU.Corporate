@@ -8514,6 +8514,12 @@ span.loading.bar {
   padding: 7px;
   color: white;
   height: 55px; }
+  @media (max-width: 991px) {
+    #footer.hasSearchResults {
+      height: 565px; } }
+  @media (max-width: 543px) {
+    #footer.hasSearchResults {
+      height: 589px; } }
 
 #search .hasSearchResults {
   background-color: #FFFCFA;
@@ -8967,6 +8973,12 @@ body {
     -moz-osx-font-smoothing: grayscale; }
   body.siteSearchActive {
     overflow: hidden; }
+  @media (max-width: 991px) {
+    body {
+      margin-bottom: 565px; } }
+  @media (max-width: 543px) {
+    body {
+      margin-bottom: 589px; } }
   @media (min-width: 1600px) {
     body {
       background-color: #efefef; } }
@@ -13315,6 +13327,12 @@ body {
         max-width: 1648px;
       }
       */ }
+      @media (max-width: 991px) {
+        body .all .footer {
+          height: 565px; } }
+      @media (max-width: 543px) {
+        body .all .footer {
+          height: 589px; } }
       @media (min-width: 1280px) {
         body .all .footer {
           padding-left: 28px; } }
@@ -13437,6 +13455,9 @@ body {
         @media (min-width: 992px) {
           body .all .footer .copyright {
             text-align: right; } }
+        @media (max-width: 543px) {
+          body .all .footer .copyright span {
+            display: block; } }
       @media (min-width: 992px) {
         body .all .footer > div > .copyright {
           display: none; } }
