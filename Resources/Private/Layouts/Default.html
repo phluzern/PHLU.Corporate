@@ -357,6 +357,16 @@
                     <!-- End Siteimprove Analytics Script -->
 
                 </f:then>
+                <f:else>
+                    <script src="{f:uri.resource(path: 'dist/inline.bundle.js', package: 'Phlu.App')}"></script>
+                    <script src="{f:uri.resource(path: 'dist/polyfills.bundle.js', package: 'Phlu.App')}"></script>
+                    <script src="{f:uri.resource(path: 'dist/styles.bundle.js', package: 'Phlu.App')}"></script>
+                    <script src="{f:uri.resource(path: 'dist/vendor.bundle.js', package: 'Phlu.App')}"></script>
+                    <script src="{f:uri.resource(path: 'dist/main.bundle.js', package: 'Phlu.App')}"></script>
+                    <link rel="stylesheet"
+                          href="{f:uri.resource(path: 'mobiscroll/css/mobiscroll.min.css', package: 'Phlu.App')}"
+                          media="all"/>
+                </f:else>
             </f:if>
         </f:else>
     </f:if>
