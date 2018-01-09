@@ -73542,7 +73542,7 @@ function initSmoothScrolling() {
         if (target != "#") {
 
             $('html, body').stop().animate({
-                'scrollTop': $target.offset().top - 40
+                'scrollTop': $target.offset().top - 140
             }, 900, 'swing', function () {
 
             });

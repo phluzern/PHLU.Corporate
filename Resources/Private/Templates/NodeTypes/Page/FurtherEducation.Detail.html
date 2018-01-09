@@ -8,12 +8,14 @@
 <course:getYear node="{node}" variable="year">
 
     <f:if condition="{year}">
+        <div class="row ">
+            <div class="col-xs-12">
+                {breadcrumb -> f:format.raw()}
+            </div>
+        </div>
         <div class="row further-education-detail">
             <div class="col-xs-12">
                 <div class="row ">
-                    <div class="col-xs-12">
-                        {breadcrumb -> f:format.raw()}
-                    </div>
                     <div class="col-xs-12">
                         <ts:render path="defaultRenderer" context="{node: header}"/>
                     </div>
