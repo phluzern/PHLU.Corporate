@@ -831,10 +831,10 @@ span.loading {
   width: 100%;
   height: 433px;
   @include media-breakpoint-down("md") {
-    height: 565px;
+    height: 674px;
   }
   @include media-breakpoint-down("xs") {
-    height: 589px;
+    height: 754px;
   }
   background-color: $grey8;
   padding: 7px;
@@ -1525,10 +1525,10 @@ body {
   }
   margin-bottom: 433px;
   @include media-breakpoint-down("md") {
-    margin-bottom: 565px;
+    margin-bottom: 674px;
   }
   @include media-breakpoint-down("xs") {
-    margin-bottom: 589px;
+    margin-bottom: 754px;
   }
   @include media-breakpoint-up("xxxl") {
     background-color: #efefef;
@@ -7686,10 +7686,10 @@ body {
       width: 100%;
       height: 433px;
       @include media-breakpoint-down("md") {
-        height: 565px;
+        height: 674px;
       }
       @include media-breakpoint-down("xs") {
-        height: 589px;
+        height: 754px;
       }
       background-color: $black;
       padding-top: 20px;
@@ -7833,7 +7833,10 @@ body {
         @include media-breakpoint-down("md") {
           display: none;
         }
-        > div > div {
+        > div > div.copyright {
+          padding-top:70px;
+        }
+        > div > div.copyright, > div > div.footerAddress {
           flex-grow: 1;
           max-width: inherit;
         }
@@ -7848,11 +7851,67 @@ body {
           margin-right: 20px;
         }
       }
+      .qualitylabels {
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        @include media-breakpoint-down("lg") {
+          left: 0;
+        }
+        a {
+          float: left;
+          &#akkreditierungsrat {
+            img {
+              height: 95px;
+            }
+          }
+          &#swissuniversities {
+            margin-left: 15px;
+            margin-top: 63px;
+            img {
+              height: 30px;
+            }
+          }
+        }
+      }
+      .qualitylabelsMobile {
+        padding-top:40px;
+        display: none;
+        @include media-breakpoint-down("md") {
+          display: block;
+        }
+        a {
+          float: left;
+          @include media-breakpoint-down("xs") {
+            float: none;
+            display: block;
+          }
+          &#akkreditierungsrat {
+            img {
+              height: 95px;
+            }
+          }
+          &#swissuniversities {
+            margin-left: 15px;
+            margin-top: 63px;
+            @include media-breakpoint-down("xs") {
+              margin-top: 15px;
+              margin-left: 0;
+            }
+            img {
+              height: 30px;
+            }
+          }
+        }
+      }
       .copyright {
-        padding-top: 70px;
+        padding-top: 40px;
         margin-right: 20px;
         @include media-breakpoint-up("lg") {
           text-align: right;
+        }
+        @include media-breakpoint-down("sm") {
+          white-space: nowrap;
         }
         @include media-breakpoint-down("xs") {
           span {

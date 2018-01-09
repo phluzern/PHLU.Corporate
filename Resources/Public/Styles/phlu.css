@@ -8516,10 +8516,10 @@ span.loading.bar {
   height: 55px; }
   @media (max-width: 991px) {
     #footer.hasSearchResults {
-      height: 565px; } }
+      height: 674px; } }
   @media (max-width: 543px) {
     #footer.hasSearchResults {
-      height: 589px; } }
+      height: 754px; } }
 
 #search .hasSearchResults {
   background-color: #FFFCFA;
@@ -8975,10 +8975,10 @@ body {
     overflow: hidden; }
   @media (max-width: 991px) {
     body {
-      margin-bottom: 565px; } }
+      margin-bottom: 674px; } }
   @media (max-width: 543px) {
     body {
-      margin-bottom: 589px; } }
+      margin-bottom: 754px; } }
   @media (min-width: 1600px) {
     body {
       background-color: #efefef; } }
@@ -13329,10 +13329,10 @@ body {
       */ }
       @media (max-width: 991px) {
         body .all .footer {
-          height: 565px; } }
+          height: 674px; } }
       @media (max-width: 543px) {
         body .all .footer {
-          height: 589px; } }
+          height: 754px; } }
       @media (min-width: 1280px) {
         body .all .footer {
           padding-left: 28px; } }
@@ -13438,7 +13438,9 @@ body {
         @media (max-width: 991px) {
           body .all .footer .footerAddressLogoDesktop {
             display: none; } }
-        body .all .footer .footerAddressLogoDesktop > div > div {
+        body .all .footer .footerAddressLogoDesktop > div > div.copyright {
+          padding-top: 70px; }
+        body .all .footer .footerAddressLogoDesktop > div > div.copyright, body .all .footer .footerAddressLogoDesktop > div > div.footerAddress {
           flex-grow: 1;
           max-width: inherit; }
         body .all .footer .footerAddressLogoDesktop > div > div > div {
@@ -13449,12 +13451,54 @@ body {
         body .all .footer .footerAddressLogoDesktop .footerLogo {
           width: 200px;
           margin-right: 20px; }
+      body .all .footer .qualitylabels {
+        position: absolute;
+        bottom: 0;
+        left: 15px; }
+        @media (max-width: 1279px) {
+          body .all .footer .qualitylabels {
+            left: 0; } }
+        body .all .footer .qualitylabels a {
+          float: left; }
+          body .all .footer .qualitylabels a#akkreditierungsrat img {
+            height: 95px; }
+          body .all .footer .qualitylabels a#swissuniversities {
+            margin-left: 15px;
+            margin-top: 63px; }
+            body .all .footer .qualitylabels a#swissuniversities img {
+              height: 30px; }
+      body .all .footer .qualitylabelsMobile {
+        padding-top: 40px;
+        display: none; }
+        @media (max-width: 991px) {
+          body .all .footer .qualitylabelsMobile {
+            display: block; } }
+        body .all .footer .qualitylabelsMobile a {
+          float: left; }
+          @media (max-width: 543px) {
+            body .all .footer .qualitylabelsMobile a {
+              float: none;
+              display: block; } }
+          body .all .footer .qualitylabelsMobile a#akkreditierungsrat img {
+            height: 95px; }
+          body .all .footer .qualitylabelsMobile a#swissuniversities {
+            margin-left: 15px;
+            margin-top: 63px; }
+            @media (max-width: 543px) {
+              body .all .footer .qualitylabelsMobile a#swissuniversities {
+                margin-top: 15px;
+                margin-left: 0; } }
+            body .all .footer .qualitylabelsMobile a#swissuniversities img {
+              height: 30px; }
       body .all .footer .copyright {
-        padding-top: 70px;
+        padding-top: 40px;
         margin-right: 20px; }
         @media (min-width: 992px) {
           body .all .footer .copyright {
             text-align: right; } }
+        @media (max-width: 767px) {
+          body .all .footer .copyright {
+            white-space: nowrap; } }
         @media (max-width: 543px) {
           body .all .footer .copyright span {
             display: block; } }
