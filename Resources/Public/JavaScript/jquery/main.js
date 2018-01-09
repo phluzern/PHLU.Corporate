@@ -285,12 +285,12 @@ function initSmoothScrolling() {
             var target = this.hash != '' ? this.hash : $(e.target).closest("a").get(0).attr('href');
             var $target = $(target);
         }
-
+console.log($target.attr('class'));
 
         if (target != "#") {
 
             $('html, body').stop().animate({
-                'scrollTop': $target.offset().top - 140
+                'scrollTop': $target.offset().top - ($target.hasClass('phlu-corporate-section') || $target.attr('class') == undefined  || $target.hasClass('sectionWithDynamicContent') ? 200:160 )
             }, 900, 'swing', function () {
 
             });
