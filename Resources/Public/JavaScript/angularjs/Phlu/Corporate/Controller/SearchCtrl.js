@@ -746,7 +746,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '🎭': 'Theater'
     }
 
-
     var searchResultApplyTimer = null;
     var lasthash = null;
 
