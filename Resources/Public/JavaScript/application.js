@@ -69285,7 +69285,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         '🎭': 'Theater'
     }
 
-
     var searchResultApplyTimer = null;
     var lasthash = null;
 
@@ -69299,6 +69298,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     search.addPropertyFilter('asset.extension', '', null, true, false, 'phlu-qmpilot-nodetypes-file');
     search.addPropertyFilter('street', '', null, true, false, 'phlu-corporate-location');
     search.addPropertyFilter('uri.path', '/formulare.html', null, true);
+    search.addPropertyFilter('uri.path.substr(1,10)', 'prototypen', null, true);
+
     search.setExternalSources(external);
 
     search.connectEventSlot('before_redirect', function (data) {
