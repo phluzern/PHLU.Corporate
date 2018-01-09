@@ -30,9 +30,12 @@ class GetYearViewHelper extends AbstractViewHelper
 
 
     /**
-     * @param Node $node
-     * @param string $variable
-     * @return array
+     * @param $node
+     * @param $variable
+     *
+     * @return mixed
+     * @throws \Neos\Flow\Mvc\Routing\Exception\MissingActionNameException
+     * @throws \TYPO3Fluid\Fluid\Core\Variables\Exception\InvalidVariableException
      */
     public function render($node, $variable)
     {
