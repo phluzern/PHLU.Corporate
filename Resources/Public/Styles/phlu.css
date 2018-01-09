@@ -9890,7 +9890,7 @@ body {
     body .all .fix-crumb {
       position: fixed;
       background-color: #FFFCFA;
-      z-index: 99;
+      z-index: 999;
       width: 100%;
       -webkit-box-shadow: 3px 17px 33px -13px rgba(0, 0, 0, 0.25);
       -moz-box-shadow: 3px 17px 33px -13px rgba(0, 0, 0, 0.25);
