@@ -43,7 +43,11 @@ class ResourceViewHelper extends \Neos\FluidAdaptor\ViewHelpers\Uri\ResourceView
      */
     public function render()
     {
-        return self::renderNow($this->arguments, $this->buildRenderChildrenClosure(), $this->renderingContext);
+        if ($this->renderingContext) {
+            return self::renderNow($this->arguments, $this->buildRenderChildrenClosure(), $this->renderingContext);
+        } else {
+            return '';
+        }
     }
 
 
