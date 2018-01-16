@@ -73331,8 +73331,12 @@ function initFrontend() {
     /*
     * show elements on scroll
     * */
-    var wrap = $("#rcrumbs-wrapper").parent().parent();
-    var wrapMobile = $(".navbar");
+    var wrap = $("#rcrumbs-wrapper").parent().parent(),
+        wrapMobile = $(".navbar"),
+        wrapMobileHeight = wrapMobile.height(),
+        wrapMobileOffsetTop = wrapMobile.find('.navbar-toggler').offset().top;
+
+    console.log(wrapMobileOffsetTop);
 
     $(window).scroll(function () {
         /* top link nav
@@ -73350,16 +73354,20 @@ function initFrontend() {
         */
         if (spaceToTop > 65) {
             wrap.addClass("fix-crumb");
+            wrap.next().css('margin-top',wrap.height());
         } else {
             wrap.removeClass("fix-crumb");
+            wrap.next().css('margin-top',0);
         }
         /*
         * fixed navbar on scroll
         */
-        if (spaceToTop > 107) {
+        if (spaceToTop > wrapMobileOffsetTop) {
+            wrapMobile.next().css('margin-top',wrapMobileHeight);
             wrapMobile.addClass("fix-navbar");
         } else {
             wrapMobile.removeClass("fix-navbar");
+            wrapMobile.next().css('margin-top',0);
         }
 
     });

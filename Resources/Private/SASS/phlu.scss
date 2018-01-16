@@ -2616,6 +2616,7 @@ body {
     }
     .fix-navbar {
       position: fixed;
+      top:0;
       width: 100%;
       @include fixed-breadcrumb-shadow(0.25);
       .navbar-brand {
