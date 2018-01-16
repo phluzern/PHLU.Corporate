@@ -13662,7 +13662,7 @@ body:last-child .blueimp-gallery-playing > .play-pause {
 
 body .all .startpage .main > .row.mobileBg {
   display: none;
-  background-image: url("../Images/ambientImgStartpageChristmasMobile.jpg");
+  background-image: url("../Images/ambientImgStartpageSpingtimeMobile.jpg");
   background-size: cover;
   height: 150px; }
   @media (max-width: 1279px) {
@@ -13670,7 +13670,7 @@ body .all .startpage .main > .row.mobileBg {
       display: block; } }
 
 body .all .startpage .main > .row.aktuelles {
-  background-image: url("../Images/ambientImgStartpageChristmas.jpg");
+  background-image: url("../Images/ambientImgStartpageSpingtime.jpg");
   background-size: cover; }
   @media screen and (max-height: 650px) {
     body .all .startpage .main > .row.aktuelles {
