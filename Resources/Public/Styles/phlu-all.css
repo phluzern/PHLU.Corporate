@@ -12889,6 +12889,8 @@ body {
         padding-bottom: 0; }
       body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-table[data-next='phlu-corporate-accordeonelement'], body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-table[data-next='phlu-corporate-accordeonelement'] {
         margin-bottom: 40px; }
+      body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-table[data-next='phlu-corporate-headline'], body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-table[data-next='phlu-corporate-headline'] {
+        margin-bottom: 30px; }
       body .all .main > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-table .phlu-corporate-table-row p, body .all .main > .row-fullwidth-content > .row .phlu-corporate-section .neos-contentcollection .phlu-corporate-table .phlu-corporate-table-row p {
         font-size: inherit; }
       @media (max-width: 767px) {
