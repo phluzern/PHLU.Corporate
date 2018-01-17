@@ -162,6 +162,17 @@
                     <input type="submit" id="submit" value="Submit" style="display: none"/>
 
                 </form>
+
+                <div id="siteSearchMobileAutocomplete" ng-if="getSiteSearch()">
+                    <ul class="">
+                        <li data-ng-repeat="item in getAutocompleteMobile()"
+                            data-ng-class="{current: autocompleteLastPos == $index}"
+                            data-ng-click="setSiteSearch(item, $event);siteSearchMobileSubmit()" data-ng-if="$index < 8">
+                            <span data-ng-bind-html="item"></span>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
 
             {footer -> f:format.raw()}

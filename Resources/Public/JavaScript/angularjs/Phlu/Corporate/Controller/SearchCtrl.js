@@ -1,4 +1,6 @@
 // Phlu.Corporate:Page.View.Default filter tag navigation
+
+
 PhluCorporateApp.directive('search', function () {
 
 
@@ -153,33 +155,34 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
     $scope.autocomplete = [];
     $scope.autocompleteLastPos = -1;
     $scope.lastOffsetTop = 0;
+    $rootScope.siteSearchHasActiveSearch = false;
 
     var timer = null;
     $scope.$watch('siteSearchSearchMobile', function (query, oldquery) {
 
 
-        // window.setTimeout(function () {
-        //
-        //     $rootScope.siteSearch = $scope.siteSearchSearchMobile;
-        //
-        //     if (oldquery !== query && query == '') {
-        //         $scope.autocompleteIsShowing = true;
-        //     }
-        //     if ($rootScope.autocomplete.length > 0) {
-        //         $scope.autocompleteIsShowing = true;
-        //     } else {
-        //         $scope.autocompleteIsShowing = false;
-        //         window.setTimeout(function () {
-        //             $scope.$digest();
-        //         }, 1);
-        //     }
-        //
-        //     window.setTimeout(function () {
-        //         $scope.$digest();
-        //         $rootScope.$digest();
-        //     }, 10);
-        //
-        // }, 5);
+        window.setTimeout(function () {
+
+            $rootScope.siteSearch = $scope.siteSearchSearchMobile;
+
+            if (oldquery !== query && query == '') {
+                $scope.autocompleteIsShowing = true;
+            }
+            if ($rootScope.autocomplete.length > 0) {
+                $scope.autocompleteIsShowing = true;
+            } else {
+                $scope.autocompleteIsShowing = false;
+                window.setTimeout(function () {
+                    $scope.$digest();
+                }, 1);
+            }
+
+            window.setTimeout(function () {
+                $scope.$digest();
+                $rootScope.$digest();
+            }, 10);
+
+        }, 5);
 
     });
 
@@ -246,9 +249,9 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
     }
 
     $scope.siteSearchMobileSubmit = function () {
-        $rootScope.siteSearch = $scope.siteSearchSearchMobile;
         $rootScope.lastOffsetTop = $(window).scrollTop();
-        console.log($scope.lastOffsetTop);
+        $rootScope.siteSearchHasActiveSearch = true;
+        $rootScope.applyGlobalSearch($scope.siteSearchSearchMobile);
         jQuery("#siteSearchSearchMobile").blur();
 
         window.setTimeout(function () {
@@ -262,24 +265,15 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
         return false;
     }
 
-    $scope.siteSearchMobileClose = function () {
-
-        $scope.siteSearchSearchMobile = '';
-        $rootScope.siteSearch = $scope.siteSearchSearchMobile;
-
-        jQuery("#siteSearchSearchMobile").blur();
-
-        window.setTimeout(function () {
-            $scope.$digest();
-            $rootScope.$digest();
-        }, 1);
-
-        return false;
-    }
 
     $scope.getAutocompleteMobile = function () {
 
         return $rootScope.autocomplete;
+    }
+
+    $scope.getSiteSearch = function () {
+
+        return $rootScope.siteSearch;
     }
 
 
@@ -919,6 +913,9 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
     $scope.stopSearch = function () {
 
+        $rootScope.siteSearchHasActiveSearch = false;
+        $rootScope.applyGlobalSearch('');
+
         if ($rootScope.lastOffsetTop) {
             $('html, body').stop().animate({
                 'scrollTop': $rootScope.lastOffsetTop
@@ -933,7 +930,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         $scope.results = [];
         wasClosed = true;
         $scope.isSearch = false;
-        jQuery("#siteSearchSearchMobile").val("");
         window.setTimeout(function () {
             $rootScope.$digest();
             $scope.$digest();
@@ -973,36 +969,49 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     var isbinded = false;
+    var isMobileViewWithActiveSearch = (!$rootScope.siteSearchHasActiveSearch && jQuery("#siteSearchSearchMobile").is(":visible")) ? true : false;
 
-    $rootScope.$watch('siteSearch', function (i) {
+    $rootScope.$watch('siteSearch', function (searchTerm) {
+        $rootScope.applyGlobalSearch(searchTerm);
+    });
 
-        $scope.siteSearch = i;
-        if (i === '' && wasClosed == false) {
-            $scope.siteSearchLastQuery = '';
-            $scope.isSearch = false;
-            $(".sidebar").removeClass('siteSearchActive');
-            $("body").removeClass('siteSearchActive');
-            $("#search div").addClass('noSearchResults');
-            isbinded = false;
+    $rootScope.applyGlobalSearch = function(searchTerm) {
+        isMobileViewWithActiveSearch = (searchTerm.length && !$rootScope.siteSearchHasActiveSearch && jQuery("#siteSearchSearchMobile").is(":visible")) ? true : false;
 
+
+        if (isMobileViewWithActiveSearch) {
+            search.run();
         } else {
+            $scope.siteSearch = searchTerm;
+            if (searchTerm === '' && wasClosed == false) {
+                $scope.siteSearchLastQuery = '';
+                $scope.isSearch = false;
 
-
-            if (wasClosed) {
+                $(".sidebar").removeClass('siteSearchActive');
                 $("body").removeClass('siteSearchActive');
-                wasClosed = false;
-            }
-            else {
-                $(".sidebar").addClass('siteSearchActive');
-                $("body").addClass('siteSearchActive');
-                $("#search div").removeClass('noSearchResults');
-                search.run();
-            }
+                $("#search div").addClass('noSearchResults');
 
-            isbinded = true;
+                isbinded = false;
+
+            } else {
+
+                if (wasClosed) {
+                    $("body").removeClass('siteSearchActive');
+                    wasClosed = false;
+                }
+                else {
+                    $(".sidebar").addClass('siteSearchActive');
+                    $("body").addClass('siteSearchActive');
+                    $("#search div").removeClass('noSearchResults');
+                    search.run();
+                }
+
+                isbinded = true;
+
+            }
 
         }
-    });
+    }
 
 
     var filterAllNodesByNodeType = {
