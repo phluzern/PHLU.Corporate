@@ -829,7 +829,7 @@ span.loading {
   z-index: 999999;
   bottom: 0;
   width: 100%;
-  height: 573px;
+  height: 433px;
   @include media-breakpoint-down("md") {
     height: 674px;
   }
@@ -7689,7 +7689,7 @@ body {
       z-index: 1;
       bottom: 0;
       width: 100%;
-      height: 573px;
+      height: 433px;
       @include media-breakpoint-down("md") {
         height: 674px;
       }
