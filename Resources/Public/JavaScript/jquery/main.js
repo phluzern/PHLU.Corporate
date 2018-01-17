@@ -83,9 +83,12 @@ function initFrontend() {
     var wrap = $("#rcrumbs-wrapper").parent().parent(),
         wrapMobile = $(".navbar"),
         wrapMobileHeight = wrapMobile.height(),
-        wrapMobileOffsetTop = wrapMobile.find('.navbar-toggler').offset().top;
+        wrapMobileOffsetTop = wrapMobile.find('.navbar-toggler').length ? wrapMobile.find('.navbar-toggler').offset().top : null;
 
-    console.log(wrapMobileOffsetTop);
+    $(window).resize(function () {
+        wrapMobileOffsetTop = wrapMobile.find('.navbar-toggler').length ? wrapMobile.find('.navbar-toggler').offset().top : null;
+    });
+
 
     $(window).scroll(function () {
         /* top link nav
@@ -111,14 +114,15 @@ function initFrontend() {
         /*
         * fixed navbar on scroll
         */
-        if (spaceToTop > wrapMobileOffsetTop) {
-            wrapMobile.next().css('margin-top',wrapMobileHeight);
-            wrapMobile.addClass("fix-navbar");
-        } else {
-            wrapMobile.removeClass("fix-navbar");
-            wrapMobile.next().css('margin-top',0);
+        if(wrapMobileOffsetTop) {
+            if (spaceToTop > wrapMobileOffsetTop) {
+                wrapMobile.next().css('margin-top',wrapMobileHeight);
+                wrapMobile.addClass("fix-navbar");
+            } else {
+                wrapMobile.removeClass("fix-navbar");
+                wrapMobile.next().css('margin-top',0);
+            }
         }
-
     });
     /* added hyphenator for chrome support
      Hyphenator.run();*/
@@ -293,7 +297,6 @@ function initSmoothScrolling() {
             var target = this.hash != '' ? this.hash : $(e.target).closest("a").get(0).attr('href');
             var $target = $(target);
         }
-console.log($target.attr('class'));
 
         if (target != "#") {
 

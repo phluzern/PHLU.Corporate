@@ -829,7 +829,7 @@ span.loading {
   z-index: 999999;
   bottom: 0;
   width: 100%;
-  height: 433px;
+  height: 573px;
   @include media-breakpoint-down("md") {
     height: 674px;
   }
@@ -2605,6 +2605,7 @@ body {
       position: fixed;
       background-color: $beigelight;
       z-index: 999;
+      top:0;
       width: 100%;
       @include media-breakpoint-down("xxl") {
         max-width: inherit;
@@ -7688,7 +7689,7 @@ body {
       z-index: 1;
       bottom: 0;
       width: 100%;
-      height: 433px;
+      height: 573px;
       @include media-breakpoint-down("md") {
         height: 674px;
       }
@@ -7839,6 +7840,9 @@ body {
         }
         > div > div.copyright {
           padding-top:70px;
+        }
+        > div > div.footerAddress {
+          margin-bottom: 55px;
         }
         > div > div.copyright, > div > div.footerAddress {
           flex-grow: 1;
