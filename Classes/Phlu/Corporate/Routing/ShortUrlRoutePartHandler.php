@@ -146,10 +146,12 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
                         }
 
 
-                        $redirectUri = $this->resourceViewHelper->render(null, null, $asset->getResource());
+                        $redirectUri = $this->resourceViewHelper->renderResource($asset->getResource());
                         /** @var NodeInterface $node */
                         $nNode = new Node($n, $context);
+
                         $redirectUriFinal = $this->nodeHelper->getEmbeddedLink($nNode, $redirectUri, $this->request);
+
 
                         header("Location: " . $redirectUriFinal);
                         exit;
