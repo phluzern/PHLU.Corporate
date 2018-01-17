@@ -68550,7 +68550,7 @@ PhluCorporateApp.directive('search', function () {
             view: '@view'
         },
         restrict: 'E',
-        controller: ['$scope', function($scope) {
+        controller: ['$scope', function ($scope) {
 
             $scope.getTemplateUrl = function () {
 
@@ -68691,33 +68691,34 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
     $scope.autocompleteIsShowing = true;
     $scope.autocomplete = [];
     $scope.autocompleteLastPos = -1;
+    $scope.lastOffsetTop = 0;
 
     var timer = null;
     $scope.$watch('siteSearchSearchMobile', function (query, oldquery) {
 
 
-        window.setTimeout(function () {
-
-            $rootScope.siteSearch = $scope.siteSearchSearchMobile;
-
-            if (oldquery !== query && query == '') {
-                $scope.autocompleteIsShowing = true;
-            }
-            if ($rootScope.autocomplete.length > 0) {
-                $scope.autocompleteIsShowing = true;
-            } else {
-                $scope.autocompleteIsShowing = false;
-                window.setTimeout(function () {
-                    $scope.$digest();
-                }, 1);
-            }
-
-            window.setTimeout(function () {
-                $scope.$digest();
-                $rootScope.$digest();
-            }, 10);
-
-        }, 5);
+        // window.setTimeout(function () {
+        //
+        //     $rootScope.siteSearch = $scope.siteSearchSearchMobile;
+        //
+        //     if (oldquery !== query && query == '') {
+        //         $scope.autocompleteIsShowing = true;
+        //     }
+        //     if ($rootScope.autocomplete.length > 0) {
+        //         $scope.autocompleteIsShowing = true;
+        //     } else {
+        //         $scope.autocompleteIsShowing = false;
+        //         window.setTimeout(function () {
+        //             $scope.$digest();
+        //         }, 1);
+        //     }
+        //
+        //     window.setTimeout(function () {
+        //         $scope.$digest();
+        //         $rootScope.$digest();
+        //     }, 10);
+        //
+        // }, 5);
 
     });
 
@@ -68785,7 +68786,8 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
 
     $scope.siteSearchMobileSubmit = function () {
         $rootScope.siteSearch = $scope.siteSearchSearchMobile;
-
+        $rootScope.lastOffsetTop = $(window).scrollTop();
+        console.log($scope.lastOffsetTop);
         jQuery("#siteSearchSearchMobile").blur();
 
         window.setTimeout(function () {
@@ -68800,6 +68802,7 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
     }
 
     $scope.siteSearchMobileClose = function () {
+
         $scope.siteSearchSearchMobile = '';
         $rootScope.siteSearch = $scope.siteSearchSearchMobile;
 
@@ -69162,7 +69165,10 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var NodeUrlBoostFactor = {
-        '/ueber-uns/organisation-kontakte/ausbildung/bildungs-und-sozialwissenschaften': {'*': 1, 'phlu-corporate-contact': 0.0000001},
+        '/ueber-uns/organisation-kontakte/ausbildung/bildungs-und-sozialwissenschaften': {
+            '*': 1,
+            'phlu-corporate-contact': 0.0000001
+        },
         '/studium/studiengaenge/': {'*': 1, 'phlu-corporate-contact': 0.0001},
         '/studium/': {'*': 4, 'phlu-corporate-contact': 0.0001},
         '/studium/zulassung-und-anmeldung': {'*': 10, 'phlu-corporate-contact': 0.0001},
@@ -69344,7 +69350,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         $rootScope.siteSearchTopSetFocus();
 
 
-
         if (searchResultApplyTimer) {
             window.clearTimeout(searchResultApplyTimer);
         }
@@ -69452,6 +69457,16 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     });
 
     $scope.stopSearch = function () {
+
+        if ($rootScope.lastOffsetTop) {
+            $('html, body').stop().animate({
+                'scrollTop': $rootScope.lastOffsetTop
+            }, 10, 'swing', function () {
+
+            });
+        }
+        $rootScope.lastOffsetTop = 0;
+
         $scope.siteSearchLastQuery = $scope.siteSearch;
         $rootScope.siteSearch = '';
         $scope.results = [];
