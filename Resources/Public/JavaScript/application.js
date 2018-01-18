@@ -73362,10 +73362,11 @@ function initFrontend() {
 
     $(window).resize(function () {
         wrapMobileOffsetTop = wrapMobile.find('.navbar-toggler').length ? wrapMobile.find('.navbar-toggler').offset().top : null;
+        calculateScroll();
     });
 
+    var calculateScroll = function () {
 
-    $(window).scroll(function () {
         /* top link nav
            * */
         spaceToTop = $(window).scrollTop();
@@ -73379,25 +73380,33 @@ function initFrontend() {
         /*
         * fixed breadcrumb on scroll
         */
-        if (spaceToTop > 65) {
+        if (spaceToTop > 65 && wrap.is(':visible')) {
             wrap.addClass("fix-crumb");
-            wrap.next().css('margin-top',wrap.height());
+            wrap.next().css('margin-top', wrap.height());
         } else {
             wrap.removeClass("fix-crumb");
-            wrap.next().css('margin-top',0);
+            wrap.next().css('margin-top', 0);
         }
         /*
         * fixed navbar on scroll
         */
-        if(wrapMobileOffsetTop) {
+
+        if (wrapMobileOffsetTop) {
+            console.log(spaceToTop, wrapMobileOffsetTop);
             if (spaceToTop > wrapMobileOffsetTop) {
-                wrapMobile.next().css('margin-top',wrapMobileHeight);
+                wrapMobile.next().css('margin-top', wrapMobileHeight);
                 wrapMobile.addClass("fix-navbar");
             } else {
                 wrapMobile.removeClass("fix-navbar");
-                wrapMobile.next().css('margin-top',0);
+                wrapMobile.next().css('margin-top', 0);
             }
+        } else {
+            wrapMobile.next().css('margin-top', 0);
         }
+    };
+
+    $(window).scroll(function () {
+        calculateScroll();
     });
     /* added hyphenator for chrome support
      Hyphenator.run();*/
@@ -73413,9 +73422,6 @@ function initFrontend() {
 
 
     initSmoothScrolling();
-
-
-
 
 
     var resize = function () {
@@ -73576,7 +73582,7 @@ function initSmoothScrolling() {
         if (target != "#") {
 
             $('html, body').stop().animate({
-                'scrollTop': $target.offset().top - ($target.hasClass('phlu-corporate-section') || $target.attr('class') == undefined  || $target.hasClass('sectionWithDynamicContent') ? 200:160 )
+                'scrollTop': $target.offset().top - ($target.hasClass('phlu-corporate-section') || $target.attr('class') == undefined || $target.hasClass('sectionWithDynamicContent') ? 200 : 160)
             }, 900, 'swing', function () {
 
             });
@@ -73627,59 +73633,58 @@ function goToTargetNode() {
             targetNodeElement.find('[data-toggle="collapse"]').first().trigger('click')
         }
 
-            window.setTimeout(function () {
+        window.setTimeout(function () {
 
-                var intervalCounter = 0;
-                var lastScrolltop = 0;
-                var minScrolltop = 250;
-                var ScrollTop = targetNodeElement.offset().top < minScrolltop ? 0 : targetNodeElement.offset().top;
+            var intervalCounter = 0;
+            var lastScrolltop = 0;
+            var minScrolltop = 250;
+            var ScrollTop = targetNodeElement.offset().top < minScrolltop ? 0 : targetNodeElement.offset().top;
 
-                var interval = window.setInterval(function () {
+            var interval = window.setInterval(function () {
 
-                    if (lastScrolltop == ScrollTop - offsetPadding) {
-                        $('html, body').scrollTop(ScrollTop - offsetPadding);
-                    }
-
-                    intervalCounter++;
-                    if (intervalCounter > 50) {
-                        window.clearInterval(interval);
-                    }
-
-                    lastScrolltop = ScrollTop - offsetPadding;
-
-
-                }, 10);
-
-                var observerWasApplied = false;
-
-                var observeScroll = function () {
-
-                    if (observerWasApplied === false) {
-                        window.clearInterval(interval);
-                        $(dynamicContentsSelector).each(function () {
-                            $(this).removeClass('tmpFixedHeight');
-                        });
-                        var ScrollTop = targetNodeElement.offset().top < minScrolltop ? 0 : targetNodeElement.offset().top;
-                        $('html, body').scrollTop(ScrollTop - offsetPadding);
-                        observerWasApplied = true;
-                    }
+                if (lastScrolltop == ScrollTop - offsetPadding) {
+                    $('html, body').scrollTop(ScrollTop - offsetPadding);
                 }
 
-                document.addEventListener('mousewheel', function (e) {
-                    observeScroll();
-                });
+                intervalCounter++;
+                if (intervalCounter > 50) {
+                    window.clearInterval(interval);
+                }
 
-                document.addEventListener('mousedown', function (e) {
-                    observeScroll();
-                });
-
-                document.addEventListener('keydown', function (e) {
-                    observeScroll();
-                });
+                lastScrolltop = ScrollTop - offsetPadding;
 
 
-            }, 100);
+            }, 10);
 
+            var observerWasApplied = false;
+
+            var observeScroll = function () {
+
+                if (observerWasApplied === false) {
+                    window.clearInterval(interval);
+                    $(dynamicContentsSelector).each(function () {
+                        $(this).removeClass('tmpFixedHeight');
+                    });
+                    var ScrollTop = targetNodeElement.offset().top < minScrolltop ? 0 : targetNodeElement.offset().top;
+                    $('html, body').scrollTop(ScrollTop - offsetPadding);
+                    observerWasApplied = true;
+                }
+            }
+
+            document.addEventListener('mousewheel', function (e) {
+                observeScroll();
+            });
+
+            document.addEventListener('mousedown', function (e) {
+                observeScroll();
+            });
+
+            document.addEventListener('keydown', function (e) {
+                observeScroll();
+            });
+
+
+        }, 100);
 
 
     }
