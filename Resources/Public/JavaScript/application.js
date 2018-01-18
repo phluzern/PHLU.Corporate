@@ -68538,6 +68538,8 @@ PhluCorporateApp.controller('ContactsCtrl', ['$scope','$timeout',function($scope
 
 
 // Phlu.Corporate:Page.View.Default filter tag navigation
+
+
 PhluCorporateApp.directive('search', function () {
 
 
@@ -68550,7 +68552,7 @@ PhluCorporateApp.directive('search', function () {
             view: '@view'
         },
         restrict: 'E',
-        controller: ['$scope', function($scope) {
+        controller: ['$scope', function ($scope) {
 
             $scope.getTemplateUrl = function () {
 
@@ -68691,6 +68693,8 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
     $scope.autocompleteIsShowing = true;
     $scope.autocomplete = [];
     $scope.autocompleteLastPos = -1;
+    $scope.lastOffsetTop = 0;
+    $rootScope.siteSearchHasActiveSearch = false;
 
     var timer = null;
     $scope.$watch('siteSearchSearchMobile', function (query, oldquery) {
@@ -68784,8 +68788,9 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
     }
 
     $scope.siteSearchMobileSubmit = function () {
-        $rootScope.siteSearch = $scope.siteSearchSearchMobile;
-
+        $rootScope.lastOffsetTop = $(window).scrollTop();
+        $rootScope.siteSearchHasActiveSearch = true;
+        $rootScope.applyGlobalSearch($scope.siteSearchSearchMobile);
         jQuery("#siteSearchSearchMobile").blur();
 
         window.setTimeout(function () {
@@ -68799,23 +68804,15 @@ PhluCorporateApp.controller('SearchMobileCtrl', ['$scope', '$rootScope', functio
         return false;
     }
 
-    $scope.siteSearchMobileClose = function () {
-        $scope.siteSearchSearchMobile = '';
-        $rootScope.siteSearch = $scope.siteSearchSearchMobile;
-
-        jQuery("#siteSearchSearchMobile").blur();
-
-        window.setTimeout(function () {
-            $scope.$digest();
-            $rootScope.$digest();
-        }, 1);
-
-        return false;
-    }
 
     $scope.getAutocompleteMobile = function () {
 
         return $rootScope.autocomplete;
+    }
+
+    $scope.getSiteSearch = function () {
+
+        return $rootScope.siteSearch;
     }
 
 
@@ -69162,7 +69159,10 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     };
 
     var NodeUrlBoostFactor = {
-        '/ueber-uns/organisation-kontakte/ausbildung/bildungs-und-sozialwissenschaften': {'*': 1, 'phlu-corporate-contact': 0.0000001},
+        '/ueber-uns/organisation-kontakte/ausbildung/bildungs-und-sozialwissenschaften': {
+            '*': 1,
+            'phlu-corporate-contact': 0.0000001
+        },
         '/studium/studiengaenge/': {'*': 1, 'phlu-corporate-contact': 0.0001},
         '/studium/': {'*': 4, 'phlu-corporate-contact': 0.0001},
         '/studium/zulassung-und-anmeldung': {'*': 10, 'phlu-corporate-contact': 0.0001},
@@ -69344,7 +69344,6 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         $rootScope.siteSearchTopSetFocus();
 
 
-
         if (searchResultApplyTimer) {
             window.clearTimeout(searchResultApplyTimer);
         }
@@ -69452,12 +69451,24 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     });
 
     $scope.stopSearch = function () {
+
+        $rootScope.siteSearchHasActiveSearch = false;
+        $rootScope.applyGlobalSearch('');
+
+        if ($rootScope.lastOffsetTop) {
+            $('html, body').stop().animate({
+                'scrollTop': $rootScope.lastOffsetTop
+            }, 10, 'swing', function () {
+
+            });
+        }
+        $rootScope.lastOffsetTop = 0;
+
         $scope.siteSearchLastQuery = $scope.siteSearch;
         $rootScope.siteSearch = '';
         $scope.results = [];
         wasClosed = true;
         $scope.isSearch = false;
-        jQuery("#siteSearchSearchMobile").val("");
         window.setTimeout(function () {
             $rootScope.$digest();
             $scope.$digest();
@@ -69497,36 +69508,49 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
 
     var isbinded = false;
+    var isMobileViewWithActiveSearch = (!$rootScope.siteSearchHasActiveSearch && jQuery("#siteSearchSearchMobile").is(":visible")) ? true : false;
 
-    $rootScope.$watch('siteSearch', function (i) {
+    $rootScope.$watch('siteSearch', function (searchTerm) {
+        $rootScope.applyGlobalSearch(searchTerm);
+    });
 
-        $scope.siteSearch = i;
-        if (i === '' && wasClosed == false) {
-            $scope.siteSearchLastQuery = '';
-            $scope.isSearch = false;
-            $(".sidebar").removeClass('siteSearchActive');
-            $("body").removeClass('siteSearchActive');
-            $("#search div").addClass('noSearchResults');
-            isbinded = false;
+    $rootScope.applyGlobalSearch = function(searchTerm) {
+        isMobileViewWithActiveSearch = (searchTerm.length && !$rootScope.siteSearchHasActiveSearch && jQuery("#siteSearchSearchMobile").is(":visible")) ? true : false;
 
+
+        if (isMobileViewWithActiveSearch) {
+            search.run();
         } else {
+            $scope.siteSearch = searchTerm;
+            if (searchTerm === '' && wasClosed == false) {
+                $scope.siteSearchLastQuery = '';
+                $scope.isSearch = false;
 
-
-            if (wasClosed) {
+                $(".sidebar").removeClass('siteSearchActive');
                 $("body").removeClass('siteSearchActive');
-                wasClosed = false;
-            }
-            else {
-                $(".sidebar").addClass('siteSearchActive');
-                $("body").addClass('siteSearchActive');
-                $("#search div").removeClass('noSearchResults');
-                search.run();
-            }
+                $("#search div").addClass('noSearchResults');
 
-            isbinded = true;
+                isbinded = false;
+
+            } else {
+
+                if (wasClosed) {
+                    $("body").removeClass('siteSearchActive');
+                    wasClosed = false;
+                }
+                else {
+                    $(".sidebar").addClass('siteSearchActive');
+                    $("body").addClass('siteSearchActive');
+                    $("#search div").removeClass('noSearchResults');
+                    search.run();
+                }
+
+                isbinded = true;
+
+            }
 
         }
-    });
+    }
 
 
     var filterAllNodesByNodeType = {
@@ -73338,10 +73362,11 @@ function initFrontend() {
 
     $(window).resize(function () {
         wrapMobileOffsetTop = wrapMobile.find('.navbar-toggler').length ? wrapMobile.find('.navbar-toggler').offset().top : null;
+        calculateScroll();
     });
 
+    var calculateScroll = function () {
 
-    $(window).scroll(function () {
         /* top link nav
            * */
         spaceToTop = $(window).scrollTop();
@@ -73357,23 +73382,31 @@ function initFrontend() {
         */
         if (spaceToTop > 65 && wrap.is(':visible')) {
             wrap.addClass("fix-crumb");
-            wrap.next().css('margin-top',wrap.height());
+            wrap.next().css('margin-top', wrap.height());
         } else {
             wrap.removeClass("fix-crumb");
-            wrap.next().css('margin-top',0);
+            wrap.next().css('margin-top', 0);
         }
         /*
         * fixed navbar on scroll
         */
-        if(wrapMobileOffsetTop) {
+
+        if (wrapMobileOffsetTop) {
+            console.log(spaceToTop, wrapMobileOffsetTop);
             if (spaceToTop > wrapMobileOffsetTop) {
-                wrapMobile.next().css('margin-top',wrapMobileHeight);
+                wrapMobile.next().css('margin-top', wrapMobileHeight);
                 wrapMobile.addClass("fix-navbar");
             } else {
                 wrapMobile.removeClass("fix-navbar");
-                wrapMobile.next().css('margin-top',0);
+                wrapMobile.next().css('margin-top', 0);
             }
+        } else {
+            wrapMobile.next().css('margin-top', 0);
         }
+    };
+
+    $(window).scroll(function () {
+        calculateScroll();
     });
     /* added hyphenator for chrome support
      Hyphenator.run();*/
@@ -73389,9 +73422,6 @@ function initFrontend() {
 
 
     initSmoothScrolling();
-
-
-
 
 
     var resize = function () {
@@ -73552,7 +73582,7 @@ function initSmoothScrolling() {
         if (target != "#") {
 
             $('html, body').stop().animate({
-                'scrollTop': $target.offset().top - ($target.hasClass('phlu-corporate-section') || $target.attr('class') == undefined  || $target.hasClass('sectionWithDynamicContent') ? 200:160 )
+                'scrollTop': $target.offset().top - ($target.hasClass('phlu-corporate-section') || $target.attr('class') == undefined || $target.hasClass('sectionWithDynamicContent') ? 200 : 160)
             }, 900, 'swing', function () {
 
             });
@@ -73603,59 +73633,58 @@ function goToTargetNode() {
             targetNodeElement.find('[data-toggle="collapse"]').first().trigger('click')
         }
 
-            window.setTimeout(function () {
+        window.setTimeout(function () {
 
-                var intervalCounter = 0;
-                var lastScrolltop = 0;
-                var minScrolltop = 250;
-                var ScrollTop = targetNodeElement.offset().top < minScrolltop ? 0 : targetNodeElement.offset().top;
+            var intervalCounter = 0;
+            var lastScrolltop = 0;
+            var minScrolltop = 250;
+            var ScrollTop = targetNodeElement.offset().top < minScrolltop ? 0 : targetNodeElement.offset().top;
 
-                var interval = window.setInterval(function () {
+            var interval = window.setInterval(function () {
 
-                    if (lastScrolltop == ScrollTop - offsetPadding) {
-                        $('html, body').scrollTop(ScrollTop - offsetPadding);
-                    }
-
-                    intervalCounter++;
-                    if (intervalCounter > 50) {
-                        window.clearInterval(interval);
-                    }
-
-                    lastScrolltop = ScrollTop - offsetPadding;
-
-
-                }, 10);
-
-                var observerWasApplied = false;
-
-                var observeScroll = function () {
-
-                    if (observerWasApplied === false) {
-                        window.clearInterval(interval);
-                        $(dynamicContentsSelector).each(function () {
-                            $(this).removeClass('tmpFixedHeight');
-                        });
-                        var ScrollTop = targetNodeElement.offset().top < minScrolltop ? 0 : targetNodeElement.offset().top;
-                        $('html, body').scrollTop(ScrollTop - offsetPadding);
-                        observerWasApplied = true;
-                    }
+                if (lastScrolltop == ScrollTop - offsetPadding) {
+                    $('html, body').scrollTop(ScrollTop - offsetPadding);
                 }
 
-                document.addEventListener('mousewheel', function (e) {
-                    observeScroll();
-                });
+                intervalCounter++;
+                if (intervalCounter > 50) {
+                    window.clearInterval(interval);
+                }
 
-                document.addEventListener('mousedown', function (e) {
-                    observeScroll();
-                });
-
-                document.addEventListener('keydown', function (e) {
-                    observeScroll();
-                });
+                lastScrolltop = ScrollTop - offsetPadding;
 
 
-            }, 100);
+            }, 10);
 
+            var observerWasApplied = false;
+
+            var observeScroll = function () {
+
+                if (observerWasApplied === false) {
+                    window.clearInterval(interval);
+                    $(dynamicContentsSelector).each(function () {
+                        $(this).removeClass('tmpFixedHeight');
+                    });
+                    var ScrollTop = targetNodeElement.offset().top < minScrolltop ? 0 : targetNodeElement.offset().top;
+                    $('html, body').scrollTop(ScrollTop - offsetPadding);
+                    observerWasApplied = true;
+                }
+            }
+
+            document.addEventListener('mousewheel', function (e) {
+                observeScroll();
+            });
+
+            document.addEventListener('mousedown', function (e) {
+                observeScroll();
+            });
+
+            document.addEventListener('keydown', function (e) {
+                observeScroll();
+            });
+
+
+        }, 100);
 
 
     }
