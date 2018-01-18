@@ -110,6 +110,8 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
         $node = null;
         $requestPathMasced = '';
 
+
+
         $nodes = $this->nodeDataRepository->findByProperties($requestPath, 'Phlu.Neos.NodeTypes:Shorturl', $context->getWorkspace(), $context->getDimensions());
         if (count($nodes) === 0) {
             $requestPathMasced = str_replace("/", "\/", $requestPath);
@@ -144,10 +146,12 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
                         }
 
 
-                        $redirectUri = $this->resourceViewHelper->render(null, null, $asset->getResource());
+                        $redirectUri = $this->resourceViewHelper->renderResource($asset->getResource());
                         /** @var NodeInterface $node */
                         $nNode = new Node($n, $context);
+
                         $redirectUriFinal = $this->nodeHelper->getEmbeddedLink($nNode, $redirectUri, $this->request);
+
 
                         header("Location: " . $redirectUriFinal);
                         exit;
@@ -234,10 +238,9 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 
             if ($asset) {
 
-                $uri = $this->resourceViewHelper->render(null, null, $asset->getResource());
+                $uri = $this->resourceViewHelper->renderResource($asset->getResource(), $context);
 
                 $redirectUriSegments = explode("://", $uri);
-
 
 
                 if (isset($redirectUriSegments[1]) && ($redirectUriSegments[1] == "www.phlu.ch/" . $requestPath || $redirectUriSegments[1] == "www.phlu.ch/" . $requestPath . "/" || $redirectUriSegments[1] == "iframe.phlu.ch/" . $requestPath || $redirectUriSegments[1] == "iframe.phlu.ch/" . $requestPath . "/")) {
@@ -263,6 +266,7 @@ class ShortUrlRoutePartHandler extends FrontendNodeRoutePartHandler
 
             }
         }
+
 
 
         if ($node == null) {

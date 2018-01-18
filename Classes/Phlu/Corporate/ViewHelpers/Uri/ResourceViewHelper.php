@@ -1,4 +1,5 @@
 <?php
+
 namespace Phlu\Corporate\ViewHelpers\Uri;
 
 /*
@@ -22,7 +23,7 @@ use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 /**
  * A view helper for creating URIs to resources.
  *
-  * @api
+ * @api
  */
 class ResourceViewHelper extends \Neos\FluidAdaptor\ViewHelpers\Uri\ResourceViewHelper
 {
@@ -36,13 +37,14 @@ class ResourceViewHelper extends \Neos\FluidAdaptor\ViewHelpers\Uri\ResourceView
 
     /**
      * Render the URI to the resource. The filename is used from child content.
-     *
      * @return string The absolute URI to the resource
      * @throws InvalidVariableException
      * @api
      */
     public function render()
     {
+
+
         if ($this->renderingContext) {
             return self::renderNow($this->arguments, $this->buildRenderChildrenClosure(), $this->renderingContext);
         } else {
@@ -50,15 +52,32 @@ class ResourceViewHelper extends \Neos\FluidAdaptor\ViewHelpers\Uri\ResourceView
         }
     }
 
+    /**
+     * @param $resource
+     *
+     * @return bool|string
+     * @throws \Neos\Flow\Configuration\Exception\InvalidConfigurationTypeException
+     * @throws \Neos\FluidAdaptor\Core\ViewHelper\Exception\InvalidVariableException
+     */
+    public function renderResource($resource)
+    {
+
+        $this->arguments['resource'] = $resource;
+        return self::renderNow($this->arguments, $this->buildRenderChildrenClosure());
+
+    }
+
 
     /**
-     * @param array $arguments
+     * @param array    $arguments
      * @param \Closure $renderChildrenClosure
-     * @param RenderingContextInterface $renderingContext
-     * @return string
-     * @throws InvalidVariableException
+     *
+     * @return bool|string
+     * @throws \Neos\Flow\Configuration\Exception\InvalidConfigurationTypeException
+     * @throws \Neos\FluidAdaptor\Core\ViewHelper\Exception\InvalidVariableException
      */
-    public function renderNow(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext) {
+    public function renderNow(array $arguments, \Closure $renderChildrenClosure)
+    {
 
 
         if ($arguments['resource'] !== null) {
@@ -70,7 +89,7 @@ class ResourceViewHelper extends \Neos\FluidAdaptor\ViewHelpers\Uri\ResourceView
 
             // redirect shortcuts
             if ($arguments['resource'] && 'application/x-ms-shortcut' == $arguments['resource']->getMediaType()) {
-                return file_get_contents("resource://".$arguments['resource']->getSha1());
+                return file_get_contents("resource://" . $arguments['resource']->getSha1());
             }
 
 
@@ -103,7 +122,7 @@ class ResourceViewHelper extends \Neos\FluidAdaptor\ViewHelpers\Uri\ResourceView
         $cdn = $this->configurationManager->getConfiguration('Settings', 'Phlu.Corporate.cdn');
         if ($cdn) {
             $url = parse_url($uri);
-            if (isset($url['host']) && $url['host'] == 'www.phlu.ch' && substr($url['path'],0,11) == '/_Resources') {
+            if (isset($url['host']) && $url['host'] == 'www.phlu.ch' && substr($url['path'], 0, 11) == '/_Resources') {
                 return $cdn . $url['path'];
             }
         }
