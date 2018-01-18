@@ -5644,10 +5644,13 @@ body {
         }
 
       }
-      .content-link-wrapper {
-        margin-bottom: 10px;
-        @include media-breakpoint-down("sm") {
-          padding-right: 15px;
+      &:not([data-next='phlu-qmpilot-nodetypes-file']) {
+        .content-link-wrapper {
+          margin-bottom: 15px;
+          @include media-breakpoint-down("sm") {
+            margin-bottom: 10px;
+            padding-right: 15px;
+          }
         }
       }
     }
