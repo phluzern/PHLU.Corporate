@@ -47,8 +47,12 @@
                                                    append="...">{node.properties.functionCustom}</f:format.crop><br>
                                 </f:then>
                                 <f:else>
+                                    <f:if condition="{node.properties.function}">
+                                        <f:then>
                                 <f:format.crop maxCharacters="31"
                                                append="...">{node.properties.function}</f:format.crop><br>
+                                        </f:then>
+                                    </f:if>
                                 </f:else>
                             </f:if>
 

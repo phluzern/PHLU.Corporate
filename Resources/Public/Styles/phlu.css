@@ -11810,10 +11810,11 @@ body {
       width: auto;
       height: auto;
       max-width: 100%; }
-    body .all .phlu-qmpilot-nodetypes-files .content-link-wrapper, body .all .phlu-qmpilot-nodetypes-file .content-link-wrapper {
-      margin-bottom: 10px; }
+    body .all .phlu-qmpilot-nodetypes-files:not([data-next='phlu-qmpilot-nodetypes-file']) .content-link-wrapper, body .all .phlu-qmpilot-nodetypes-file:not([data-next='phlu-qmpilot-nodetypes-file']) .content-link-wrapper {
+      margin-bottom: 15px; }
       @media (max-width: 767px) {
-        body .all .phlu-qmpilot-nodetypes-files .content-link-wrapper, body .all .phlu-qmpilot-nodetypes-file .content-link-wrapper {
+        body .all .phlu-qmpilot-nodetypes-files:not([data-next='phlu-qmpilot-nodetypes-file']) .content-link-wrapper, body .all .phlu-qmpilot-nodetypes-file:not([data-next='phlu-qmpilot-nodetypes-file']) .content-link-wrapper {
+          margin-bottom: 10px;
           padding-right: 15px; } }
     body .all .phlu-qmpilot-nodetypes-file.last[data-next='empty'] .content-link-wrapper {
       padding-bottom: 15px;
