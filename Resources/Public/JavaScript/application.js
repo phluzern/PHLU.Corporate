@@ -73355,7 +73355,7 @@ function initFrontend() {
         /*
         * fixed breadcrumb on scroll
         */
-        if (spaceToTop > 65) {
+        if (spaceToTop > 65 && wrap.is(':visible')) {
             wrap.addClass("fix-crumb");
             wrap.next().css('margin-top',wrap.height());
         } else {
