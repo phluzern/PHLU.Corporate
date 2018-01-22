@@ -149,6 +149,16 @@
                                             data-ng-click="setCurrentYear(node,year)">
                                             <a data-ng-click="node.currentyear = year;">
                                                 <span data-ng-bind="year.StartText | castDate"></span>
+
+
+
+                                                <span class="oi"
+                                                      data-ng-class="{'oi-check': node.currentyear == year}"
+                                                      aria-hidden="true"></span>
+
+
+
+
                                             </a>
                                         </li>
                                     </ul>

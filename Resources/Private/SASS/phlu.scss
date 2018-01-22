@@ -7197,6 +7197,7 @@ body {
                       font-size: $font-size-nav-teasers;
                     }
                     .dropdown-toggle {
+                      padding-right:20px;
                       span {
                         display: block;
                         float: left;
@@ -7204,11 +7205,20 @@ body {
                       }
                     }
                     .dropdown-menu {
-                      a {
-                        font-size: $font-size-form-dropdown;
+                      min-width: 145px;
+                      li {
+                        padding-right:50px;
+                        a {
+                          font-size: $font-size-form-dropdown;
+                          .oi.oi-check {
+                            position: absolute;
+                            right: 20px;
+                            top: 17px;
+                            margin-left:20px;
+                          }
+                        }
                       }
                     }
-
                   }
                   .details {
                     float: left;
