@@ -7207,14 +7207,10 @@ body {
                     .dropdown-menu {
                       min-width: 145px;
                       li {
-                        padding-right:50px;
                         a {
                           font-size: $font-size-form-dropdown;
                           .oi.oi-check {
-                            position: absolute;
-                            right: 20px;
-                            top: 17px;
-                            margin-left:20px;
+                            padding-left:20px;
                           }
                         }
                       }

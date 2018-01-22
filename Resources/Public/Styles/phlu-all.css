@@ -13014,15 +13014,10 @@ body {
             padding-right: 10px; }
         body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu {
           min-width: 145px; }
-          body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu li {
-            padding-right: 50px; }
-            body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu li a {
-              font-size: 1rem; }
-              body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu li a .oi.oi-check {
-                position: absolute;
-                right: 20px;
-                top: 17px;
-                margin-left: 20px; }
+          body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu li a {
+            font-size: 1rem; }
+            body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .result-preview-contents .dropdown-menu li a .oi.oi-check {
+              padding-left: 20px; }
       body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .details {
         float: left;
         margin-left: 0; }
