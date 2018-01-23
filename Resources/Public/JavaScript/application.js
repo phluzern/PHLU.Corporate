@@ -73420,11 +73420,7 @@ function initFrontend() {
 
     });
     $('#top-link-block > a').click(function () {
-        $('#search > div').stop().animate({
-            'scrollTop': 0
-        }, 200, 'swing', function () {
-
-        });
+        $('#search > div').scrollTop(0);
     });
 
     /* added hyphenator for chrome support
