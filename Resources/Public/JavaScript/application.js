@@ -73411,7 +73411,7 @@ function initFrontend() {
     $('#search > div').on('scroll',function () {
 
         spaceToTop = $('#search > div').scrollTop();
-        if (spaceToTop > $(window).height()) {
+        if (spaceToTop > 500) {
             $('#top-link-block').fadeIn('slow');
         }
         else {
