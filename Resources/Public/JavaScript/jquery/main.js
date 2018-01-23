@@ -130,9 +130,28 @@ function initFrontend() {
         }
     };
 
-    $(window).scroll(function () {
+    $(window).on('scroll',function () {
         calculateScroll();
     });
+    $('#search > div').on('scroll',function () {
+
+        spaceToTop = $('#search > div').scrollTop();
+        if (spaceToTop > $(window).height()) {
+            $('#top-link-block').fadeIn('slow');
+        }
+        else {
+            $('#top-link-block').fadeOut('slow');
+        }
+
+    });
+    $('#top-link-block > a').click(function () {
+        $('#search > div').stop().animate({
+            'scrollTop': 0
+        }, 200, 'swing', function () {
+
+        });
+    });
+
     /* added hyphenator for chrome support
      Hyphenator.run();*/
 
