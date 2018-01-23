@@ -8607,6 +8607,10 @@ span.loading.bar {
     #search .hasSearchResults .phlu-searchresults .rcrumbs-container {
       height: 30px;
       overflow: visible; }
+      #search .hasSearchResults .phlu-searchresults .rcrumbs-container.rcrumbs {
+        white-space: normal; }
+        #search .hasSearchResults .phlu-searchresults .rcrumbs-container.rcrumbs li {
+          height: auto; }
     #search .hasSearchResults .phlu-searchresults .rcrumbs-wrapper {
       padding: 0; }
     #search .hasSearchResults .phlu-searchresults .breadcrumb {

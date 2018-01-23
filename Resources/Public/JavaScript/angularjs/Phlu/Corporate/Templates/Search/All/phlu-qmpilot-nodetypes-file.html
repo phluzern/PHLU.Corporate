@@ -15,4 +15,6 @@
     <span data-ng-bind="node.getProperty('label')"></span>
     <span data-ng-if="node.getProperty('asset').size > 100" data-ng-if="node.getProperty('asset').extension != 'lnk'"> ({{node.getProperty('asset').extension}}, {{node.getProperty('asset').sizeH}})</span>
 </div>
-<div ng-bind-html="node.getBreadcrumb()"></div>
+<div class="rcrumbs-wrapper">
+    <div class="rcrumbs-container rcrumbs" ng-bind-html="node.getBreadcrumb()"></div>
+</div>
