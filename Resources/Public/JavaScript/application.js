@@ -73411,11 +73411,11 @@ function initFrontend() {
     $('#search > div').on('scroll',function () {
 
         spaceToTop = $('#search > div').scrollTop();
-        if (spaceToTop > 500) {
+        if (spaceToTop >= $(window).height()) {
             $('#top-link-block').fadeIn('slow');
         }
         else {
-            $('#top-link-block').fadeOut('slow');
+            $('#top-link-block:visible').fadeOut('slow');
         }
 
     });
