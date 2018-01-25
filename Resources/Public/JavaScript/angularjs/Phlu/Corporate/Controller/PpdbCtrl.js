@@ -191,9 +191,11 @@ PhluCorporateApp.controller('PpdbCtrl', ['$scope', 'hybridsearch', '$hybridsearc
 
         $scope.limit = $scope.limit + $scope.limitChunkSize;
         window.setTimeout(function () {
+            - fixcrumbHeight
             if (jQuery(objId).length) {
+                var fixcrumbHeight = jQuery('.fix-crumb').height() ? jQuery('.fix-crumb').height() : 0;
                 jQuery('html, body').stop().animate({
-                    'scrollTop': jQuery(objId).offset().top
+                    'scrollTop': jQuery(objId).offset().top - fixcrumbHeight
                 }, 900, 'swing', function () {
 
                 });
@@ -408,8 +410,9 @@ PhluCorporateApp.controller('PpdbPublicationCtrl', ['$scope', 'hybridsearch', '$
         $scope.limit[group] = $scope.limit[group] + $scope.limitChunkSize;
         window.setTimeout(function () {
             if (jQuery(objId).length) {
+                var fixcrumbHeight = jQuery('.fix-crumb').height() ? jQuery('.fix-crumb').height() : 0;
                 jQuery('html, body').stop().animate({
-                    'scrollTop': jQuery(objId).offset().top
+                    'scrollTop': jQuery(objId).offset().top - fixcrumbHeight
                 }, 900, 'swing', function () {
 
                 });

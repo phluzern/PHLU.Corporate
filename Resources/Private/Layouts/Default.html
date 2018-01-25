@@ -352,10 +352,12 @@
                     </script>
                     <!-- End Siteimprove Analytics Script -->
                     <!-- maydaymax.com snippet -->
-                    <script async type="text/javascript" src="https://app.maydaymax.com/JavaScripts/modalAlert.js"></script>
-                    <script async type="text/javascript">
-                        loadScript("https://app.maydaymax.com/static/js/u_39.js?t="+(new Date()).getTime());
-                    </script>
+                    <script type="text/javascript" src="https://app.maydaymax.com/JavaScripts/modalAlert.js"></script>
+                    <script type="text/javascript">
+                        if(window.location.hostname.indexOf('dev.phlu.ch') >= 0) {
+                            loadScript("https://app.maydaymax.com/static/js/u_39.js?t="+(new Date()).getTime());
+                          }
+                     </script>
                     <!-- End maydaymax.com snippet -->
 
 
