@@ -11829,6 +11829,8 @@ body {
       padding-top: 20px; }
     body .all .phlu-qmpilot-nodetypes-file[data-next='phlu-corporate-accordeonelement'] {
       padding-bottom: 31px; }
+      body .all .phlu-qmpilot-nodetypes-file[data-next='phlu-corporate-accordeonelement'] .content-link-wrapper {
+        margin-bottom: 0; }
     body .all .row.subjectsfilternav.phlu-filelinks {
       margin-bottom: 35px; }
       body .all .row.subjectsfilternav.phlu-filelinks .nav-pills li .nav-link {

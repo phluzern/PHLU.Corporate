@@ -5677,6 +5677,9 @@ body {
       }
       &[data-next='phlu-corporate-accordeonelement'] {
         padding-bottom: 31px;
+        .content-link-wrapper {
+          margin-bottom: 0;
+        }
       }
     }
     //
