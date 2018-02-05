@@ -73397,7 +73397,7 @@ function initFrontend() {
         */
 
         if (wrapMobileOffsetTop) {
-            console.log(spaceToTop, wrapMobileOffsetTop);
+            //console.log(spaceToTop, wrapMobileOffsetTop);
             if (spaceToTop > wrapMobileOffsetTop) {
                 wrapMobile.next().css('margin-top', wrapMobileHeight);
                 wrapMobile.addClass("fix-navbar");
