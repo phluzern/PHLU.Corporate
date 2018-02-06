@@ -58147,12 +58147,10 @@ module.exports = '3.24.5';
                                     });
 
 
-                                    resultsSearch[0] = lunrSearch.search(customquery == undefined ? self.getFilter().getQuery() : customquery, {
-                                        fields: fields,
-                                        bool: "AND",
+                                    resultsSearch[0] = lunrSearch.search(self.getResults().$$data.autocomplete.splice(0,20).join(" ") + " " + (customquery == undefined ? self.getFilter().getQuery() : customquery), {
+                                        bool: "OR",
                                         expand: true
                                     });
-
 
                                     if (resultsSearch[0].length == 0) {
                                         resultsSearch[1] = lunrSearch.search(self.getFilter().getQuery(), {
@@ -58940,6 +58938,10 @@ module.exports = '3.24.5';
 
                                 });
 
+                                self.getResults().$$data.autocomplete.splice(0,5).forEach(function (keyword) {
+                                    self.getKeywords(keyword, instance);
+                                });
+
                                 angular.forEach(keywordsreduced, function (keyword) {
                                     self.getKeywords(keyword, instance);
                                 });
@@ -58967,8 +58969,12 @@ module.exports = '3.24.5';
                                 var uniquarrayfinal = [];
                                 var uniquarrayfinalTerms = {};
 
+
                                 if (lastSearchInstance.$$data.keywords.length) {
                                     var unique = {};
+
+
+                                    lastSearchInstance.$$data.keywords.push({term: 'test', metaphone: 'TTT'});
 
                                     angular.forEach(lastSearchInstance.$$data.keywords, function (v) {
                                         if (unique[v.metaphone] === undefined) {
@@ -59544,9 +59550,11 @@ module.exports = '3.24.5';
                         ref.socket = hybridsearch.$firebase().database().ref("sites/" + hybridsearch.$$conf.site + "/" + "keywords/" + hybridsearch.$$conf.workspace + "/" + hybridsearch.$$conf.branch + "/" + hybridsearch.$$conf.dimension + "/" + q);
                         ref.http = (hybridsearch.$$conf.cdnDatabaseURL == undefined ? hybridsearch.$$conf.databaseURL : hybridsearch.$$conf.cdnDatabaseURL) + ("/sites/" + hybridsearch.$$conf.site + "/" + "keywords/" + hybridsearch.$$conf.workspace + "/" + hybridsearch.$$conf.branch + "/" + hybridsearch.$$conf.dimension + "/" + q + ".json");
 
+
                         instance.$$data.keywords.push({term: query, metaphone: q});
                         ref.socket.once("value", function (data) {
                             if (data.val()) {
+
 
                                 var kwds = [];
                                 var ac = {};
@@ -59582,7 +59590,6 @@ module.exports = '3.24.5';
                                     });
 
                                 }
-
 
 
                                 self.setAutocomplete(ac, querysegment);
