@@ -11831,6 +11831,8 @@ body {
       padding-top: 20px; }
     body .all .phlu-qmpilot-nodetypes-file[data-next='phlu-corporate-accordeonelement'] {
       padding-bottom: 31px; }
+      body .all .phlu-qmpilot-nodetypes-file[data-next='phlu-corporate-accordeonelement'] .content-link-wrapper {
+        margin-bottom: 0; }
     body .all .row.subjectsfilternav.phlu-filelinks {
       margin-bottom: 35px; }
       body .all .row.subjectsfilternav.phlu-filelinks .nav-pills li .nav-link {
@@ -12663,6 +12665,15 @@ body {
         body .all .main > .row .content-link-pdf-file::before, body .all .main > .row-fullwidth-content > .row .content-link-pdf-file::before {
           font-family: FontAwesome;
           content: "\f1c1 \2000"; }
+      body .all .main > .row .content-link-powerpoint-file, body .all .main > .row-fullwidth-content > .row .content-link-powerpoint-file {
+        background-image: inherit;
+        color: #9f632a;
+        background-repeat: repeat-x;
+        background-position: bottom;
+        padding-bottom: 4px; }
+        body .all .main > .row .content-link-powerpoint-file::before, body .all .main > .row-fullwidth-content > .row .content-link-powerpoint-file::before {
+          font-family: FontAwesome;
+          content: "\f1c4 \2000"; }
       body .all .main > .row .content-link-excel-file, body .all .main > .row-fullwidth-content > .row .content-link-excel-file {
         background-image: inherit;
         color: #9f632a;

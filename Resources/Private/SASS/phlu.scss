@@ -277,6 +277,12 @@ $input-search-field-big: 55px;
       font-family: FontAwesome;
       content: "\f1c1 \2000";
     }
+  }@else if $type == powerpointFile {
+    background-image: inherit;
+    &::before {
+      font-family: FontAwesome;
+      content: "\f1c4 \2000";
+    }
   } @else if $type == defaultFile {
     background-image: inherit;
     &::before {
@@ -5677,6 +5683,9 @@ body {
       }
       &[data-next='phlu-corporate-accordeonelement'] {
         padding-bottom: 31px;
+        .content-link-wrapper {
+          margin-bottom: 0;
+        }
       }
     }
     //
@@ -6711,6 +6720,9 @@ body {
         }
         .content-link-pdf-file {
           @include content-link("pdfFile");
+        }
+        .content-link-powerpoint-file {
+          @include content-link("powerpointFile");
         }
         .content-link-excel-file {
           @include content-link("excelFile");
