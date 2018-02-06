@@ -58,3 +58,6 @@ Neos:
 Phlu:
   Corporate:
     ga: 'UA-85360922-1'
+    domainRedirection:
+      studorg.phlu.ch:
+        target: 'node://ce0bc808-96a9-4640-a02f-6a8be0852615'
