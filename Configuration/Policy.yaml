@@ -11,6 +11,10 @@ privilegeTargets:
     'Phlu.Corporate:Embedded':
       matcher: 'method(Phlu\Corporate\Controller\EmbeddedController->(view|viewPortrait)Action())'
 
+    'Phlu.Dashboard:Public':
+      matcher: 'within(Phlu\Dashboard\Controller\AuthenticationController) && method(public .*->(?!initialize).*Action())'
+
+
   'Neos\Flow\Security\Authorization\Privilege\Entity\Doctrine\EntityPrivilege':
 
     'Phlu.Neos.Models.RestrictableEntity.AssetCollections':
@@ -30,6 +34,10 @@ roles:
 
       -
         privilegeTarget: 'Phlu.Corporate:Embedded'
+        permission: GRANT
+
+      -
+        privilegeTarget: 'Phlu.Dashboard:Public'
         permission: GRANT
 
 
