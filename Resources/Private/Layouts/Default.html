@@ -68,6 +68,7 @@
     '{neos:rendering.inBackend()}',then:'style="display: none"', else: '')}>
     <f:if condition="{neos:rendering.inBackend()}">
         <f:else>
+            <app-toolbar></app-toolbar>
             <span data-ng-controller="LogCtrl"
                   data-ng-init="setLogStore('{node.Identifier}','{node.nodeType.name}','{neos:uri.node(node: node, absolute: false)}');"></span>
         </f:else>
@@ -366,7 +367,6 @@
 
                 </f:then>
                 <f:else>
-                    <app-dashboard-toolbar></app-dashboard-toolbar>
                     <script type="text/javascript" src="{f:uri.resource(path: 'inline.bundle.js', package: 'Phlu.Dashboard')}"></script>
                     <script type="text/javascript" src="{f:uri.resource(path: 'polyfills.bundle.js', package: 'Phlu.Dashboard')}"></script>
                     <script type="text/javascript" src="{f:uri.resource(path: 'styles.bundle.js', package: 'Phlu.Dashboard')}"></script>
