@@ -365,6 +365,14 @@
 
 
                 </f:then>
+                <f:else>
+                    <app-dashboard-toolbar></app-dashboard-toolbar>
+                    <script type="text/javascript" src="{f:uri.resource(path: 'inline.bundle.js', package: 'Phlu.Dashboard')}"></script>
+                    <script type="text/javascript" src="{f:uri.resource(path: 'polyfills.bundle.js', package: 'Phlu.Dashboard')}"></script>
+                    <script type="text/javascript" src="{f:uri.resource(path: 'styles.bundle.js', package: 'Phlu.Dashboard')}"></script>
+                    <script type="text/javascript" src="{f:uri.resource(path: 'vendor.bundle.js', package: 'Phlu.Dashboard')}"></script>
+                    <script type="text/javascript" src="{f:uri.resource(path: 'main.bundle.js', package: 'Phlu.Dashboard')}"></script></body>
+                </f:else>
             </f:if>
         </f:else>
     </f:if>

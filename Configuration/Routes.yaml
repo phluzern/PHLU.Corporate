@@ -11,6 +11,17 @@
         'xmlSitemapPath': 'sitemap.xml'
 
 #
+# Phlu dashboard routes
+#
+#
+-
+  name: 'Phlu Dashboard'
+  uriPattern: '<PhluDashboardSubroutes>'
+  subRoutes:
+    'PhluDashboardSubroutes':
+      package: 'Phlu.Dashboard'
+
+#
 # Phlu corporate routes
 #
 #
