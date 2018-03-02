@@ -58146,46 +58146,39 @@ module.exports = '3.24.5';
 
                                     });
 
-
-                                    resultsSearch[0] = lunrSearch.search(self.getFilter().getQuery(), {
+                                    resultsSearch = lunrSearch.search(self.getFilter().getQuery(), {
                                         fields: fields,
                                         bool: "AND",
-                                        expand: false
-                                    });
-
-
-                                    if (resultsSearch[0].length == 0) {
-                                    resultsSearch[1] = lunrSearch.search(self.getResults().$$data.autocomplete.splice(0,20).join(" ") + " " + (customquery == undefined ? self.getFilter().getQuery() : customquery), {
-                                        bool: "OR",
                                         expand: true
                                     });
-                                    }
 
 
+                                    if (resultsSearch.length == 0) {
 
-                                    if (resultsSearch[1] != undefined && resultsSearch[1].length == 0) {
-
-                                        resultsSearch[2] = lunrSearch.search(self.getFilter().getQuery(), {
+                                        resultsSearch = lunrSearch.search(self.getFilter().getQuery(), {
                                             fields: fields,
-                                            bool: "AND",
+                                            bool: "OR",
                                             expand: true
                                         });
                                     }
 
 
-                                    if (resultsSearch[2] != undefined && resultsSearch[2].length == 0) {
+                                    if (resultsSearch.length == 0) {
 
-                                        resultsSearch[3] = lunrSearch.search(sq, {
+                                        resultsSearch = lunrSearch.search(sq, {
                                             fields: fields,
-                                            bool: "AND",
-                                            expand: false
+                                            bool: "AND"
                                         });
+
+
                                     }
 
 
-                                    if (resultsSearch[3] != undefined && resultsSearch[3].length == 0) {
-                                        resultsSearch[4] = lunrSearch.search(self.getFilter().getQuery(), {
+                                    if (resultsSearch.length == 0) {
+
+                                        resultsSearch = lunrSearch.search(sq, {
                                             fields: fields,
+                                            expand: true,
                                             bool: "OR"
                                         });
 
@@ -58193,9 +58186,9 @@ module.exports = '3.24.5';
                                     }
 
 
-                                    if (resultsSearch[4] != undefined && resultsSearch[4].length == 0) {
+                                    if (resultsSearch.length == 0) {
 
-                                        resultsSearch[5] = lunrSearch.search(self.getFilter().getQuery(), {
+                                        resultsSearch = lunrSearch.search(query, {
                                             fields: fields,
                                             bool: "OR",
                                             expand: true
@@ -58203,27 +58196,9 @@ module.exports = '3.24.5';
                                     }
 
 
-                                    if (resultsSearch[5] != undefined && resultsSearch[5].length == 0) {
+                                    if (resultsSearch.length == 0) {
 
-                                        resultsSearch[6] = lunrSearch.search(sq, {
-                                            fields: fields,
-                                            bool: "OR",
-                                            expand: false
-                                        });
-                                    }
-
-
-                                    if (resultsSearch[6] != undefined && resultsSearch[6].length == 0) {
-                                        resultsSearch[7] = lunrSearch.search(query, {
-                                            fields: fields,
-                                            bool: "OR",
-                                            expand: true
-                                        });
-                                    }
-
-
-                                    if (resultsSearch[7] != undefined && resultsSearch[7].length == 0) {
-                                        resultsSearch[8] = lunrSearch.search(self.getFilter().getQuery() + " " + query, {
+                                        resultsSearch = lunrSearch.search(self.getFilter().getQuery() + " " + query, {
                                             fields: fields,
                                             bool: "OR",
                                             expand: true
@@ -58232,8 +58207,7 @@ module.exports = '3.24.5';
                                     }
 
 
-                                    var result = resultsSearch[resultsSearch.length - 1];
-
+                                    var result = resultsSearch;
 
                                     // check if result has filtered results
 
@@ -59945,7 +59919,7 @@ module.exports = '3.24.5';
                             return null;
                         }
 
-
+                        var lunrFields = lunrSearch.getFields();
                         angular.forEach(data, function (value, key) {
                                 if (value && (nodesIndexed[value.node.hash] == undefined || value.objectID !== undefined)) {
                                     var doc = {};
@@ -60050,7 +60024,7 @@ module.exports = '3.24.5';
                                             }
 
                                             var eachObjecKeys = Object.keys(doc);
-                                            var lunrFields = lunrSearch.getFields();
+
                                             angular.forEach(eachObjecKeys, function (key) {
                                                 if (lunrFields.indexOf(key) < 0) {
                                                     lunrSearch.addField(key);
