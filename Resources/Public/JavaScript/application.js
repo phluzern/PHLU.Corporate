@@ -56015,7 +56015,6 @@ module.exports = '3.24.5';
                 });
                 elasticlunr.clearStopWords();
 
-
                 /**
                  * @private
                  * global function get property from object
@@ -57112,8 +57111,7 @@ module.exports = '3.24.5';
                             property = nodetype + "-" + property;
                         }
 
-                        var pb = propertiesBoost !== undefined && propertiesBoost[property] !== undefined ? propertiesBoost[property] : property == 'breadcrumb' ? 50 : property == 'neoslivehybridsearchkeywords' ? 500 : 10;
-
+                        var pb = propertiesBoost !== undefined && propertiesBoost[property] !== undefined ? propertiesBoost[property] : property == 'breadcrumb' ? 50 : property.substr(-28) == 'neoslivehybridsearchkeywords' ? 500 : 10;
                         propertiesBoost[property] = pb;
 
                         return pb;
@@ -58148,39 +58146,46 @@ module.exports = '3.24.5';
 
                                     });
 
-                                    resultsSearch = lunrSearch.search(self.getFilter().getQuery(), {
+
+                                    resultsSearch[0] = lunrSearch.search(self.getFilter().getQuery(), {
                                         fields: fields,
                                         bool: "AND",
-                                        expand: true
+                                        expand: false
                                     });
 
 
-                                    if (resultsSearch.length == 0) {
+                                    if (resultsSearch[0].length == 0) {
+                                    resultsSearch[1] = lunrSearch.search(self.getResults().$$data.autocomplete.splice(0,20).join(" ") + " " + (customquery == undefined ? self.getFilter().getQuery() : customquery), {
+                                        bool: "OR",
+                                        expand: true
+                                    });
+                                    }
 
-                                        resultsSearch = lunrSearch.search(self.getFilter().getQuery(), {
+
+
+                                    if (resultsSearch[1] != undefined && resultsSearch[1].length == 0) {
+
+                                        resultsSearch[2] = lunrSearch.search(self.getFilter().getQuery(), {
                                             fields: fields,
-                                            bool: "OR",
+                                            bool: "AND",
                                             expand: true
                                         });
                                     }
 
 
-                                    if (resultsSearch.length == 0) {
+                                    if (resultsSearch[2] != undefined && resultsSearch[2].length == 0) {
 
-                                        resultsSearch = lunrSearch.search(sq, {
+                                        resultsSearch[3] = lunrSearch.search(sq, {
                                             fields: fields,
-                                            bool: "AND"
+                                            bool: "AND",
+                                            expand: false
                                         });
-
-
                                     }
 
 
-                                    if (resultsSearch.length == 0) {
-
-                                        resultsSearch = lunrSearch.search(sq, {
+                                    if (resultsSearch[3] != undefined && resultsSearch[3].length == 0) {
+                                        resultsSearch[4] = lunrSearch.search(self.getFilter().getQuery(), {
                                             fields: fields,
-                                            expand: true,
                                             bool: "OR"
                                         });
 
@@ -58188,9 +58193,9 @@ module.exports = '3.24.5';
                                     }
 
 
-                                    if (resultsSearch.length == 0) {
+                                    if (resultsSearch[4] != undefined && resultsSearch[4].length == 0) {
 
-                                        resultsSearch = lunrSearch.search(query, {
+                                        resultsSearch[5] = lunrSearch.search(self.getFilter().getQuery(), {
                                             fields: fields,
                                             bool: "OR",
                                             expand: true
@@ -58198,9 +58203,27 @@ module.exports = '3.24.5';
                                     }
 
 
-                                    if (resultsSearch.length == 0) {
+                                    if (resultsSearch[5] != undefined && resultsSearch[5].length == 0) {
 
-                                        resultsSearch = lunrSearch.search(self.getFilter().getQuery() + " " + query, {
+                                        resultsSearch[6] = lunrSearch.search(sq, {
+                                            fields: fields,
+                                            bool: "OR",
+                                            expand: false
+                                        });
+                                    }
+
+
+                                    if (resultsSearch[6] != undefined && resultsSearch[6].length == 0) {
+                                        resultsSearch[7] = lunrSearch.search(query, {
+                                            fields: fields,
+                                            bool: "OR",
+                                            expand: true
+                                        });
+                                    }
+
+
+                                    if (resultsSearch[7] != undefined && resultsSearch[7].length == 0) {
+                                        resultsSearch[8] = lunrSearch.search(self.getFilter().getQuery() + " " + query, {
                                             fields: fields,
                                             bool: "OR",
                                             expand: true
@@ -58209,7 +58232,7 @@ module.exports = '3.24.5';
                                     }
 
 
-                                    var result = resultsSearch;
+                                    var result = resultsSearch[resultsSearch.length - 1];
 
 
                                     // check if result has filtered results
@@ -59923,8 +59946,6 @@ module.exports = '3.24.5';
                         }
 
 
-                        var lunrFields = lunrSearch.getFields();
-
                         angular.forEach(data, function (value, key) {
                                 if (value && (nodesIndexed[value.node.hash] == undefined || value.objectID !== undefined)) {
                                     var doc = {};
@@ -60024,13 +60045,12 @@ module.exports = '3.24.5';
                                                 doc['__google'] = value.node.properties['__google'];
                                             }
 
-                                            if (value.node.properties[value.nodeType + '-neoslivehybridsearchkeywords'] !== undefined) {
-                                                doc['neoslivehybridsearchkeywords'] = value.node.properties[value.nodeType + '-neoslivehybridsearchkeywords'];
-
+                                            if (value.node.properties[value.nodeType + '-neoslivehybridsearchkeywords'] != undefined) {
+                                                doc[value.nodeType + '-neoslivehybridsearchkeywords'] = value.node.properties[value.nodeType + '-neoslivehybridsearchkeywords'];
                                             }
 
                                             var eachObjecKeys = Object.keys(doc);
-
+                                            var lunrFields = lunrSearch.getFields();
                                             angular.forEach(eachObjecKeys, function (key) {
                                                 if (lunrFields.indexOf(key) < 0) {
                                                     lunrSearch.addField(key);
