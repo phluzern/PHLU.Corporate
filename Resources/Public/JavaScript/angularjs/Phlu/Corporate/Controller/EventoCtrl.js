@@ -93,6 +93,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         }
     }
 
+
     $scope.list = new $hybridsearchObject(hybridsearch);
 
     if ($rootScope.isLoadedFirst === undefined) {
@@ -214,6 +215,11 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         'grandparent': -1
 
 
+    };
+
+    var NodeUrlBoostFactor = {
+        '/weiterbildung/studiengaenge': {'*': 1500},
+        '/weiterbildung/veranstaltungen/einfuhrung-in-den-aufgabenbereich': {'*': 1000}
     };
 
 
@@ -945,6 +951,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * Initialize hybridsearch list
      */
     $scope.list.setPropertiesBoost(boost);
+    $scope.list.setNodeUrlBoostFactor(NodeUrlBoostFactor);
 
     if (window.location.href.indexOf("weiterbildung.html") == -1) {
         $scope.list.enableCache();
@@ -952,9 +959,10 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         //$scope.list.disableRealtime()
     }
 
+
     $scope.list.setQuery('searchquery', $scope)
         .setNodeType('nodetypes', $scope)
-        .setOrderBy({'*': '-id'})
+        // .setOrderBy({'*': '-id'})
         .addPropertyFilter('detailpage.hidden', 'false')
         .addPropertyFilter('deleted', false)
         .$watch(function (i) {

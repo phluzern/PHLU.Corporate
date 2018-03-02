@@ -536,6 +536,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         'phlu-corporate-textplain-grandparent': 1,
         'phlu-corporate-textplain-parent': 10,
+        'phlu-corporate-textplain-neoslivehybridsearchkeywords': 9000,
 
         'phlu-corporate-text-grandparent': 1,
         'phlu-corporate-text-parent': 1,
@@ -606,11 +607,11 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var boostNodeType = {
         'Phlu.Qmpilot.NodeTypes:File': 0.125,
         'Phlu.Corporate:Contact': 0.5,
-        'Phlu.Corporate:TextPlain': 2,
+        'Phlu.Corporate:TextPlain': 2.5,
         'Phlu.Corporate:Text': 0.78,
         'Phlu.Neos.NodeTypes:Course.Study.FurtherEducation': 0.500,
         'Phlu.Neos.NodeTypes:Course.Module.FurtherEducation': 0.125,
-        'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.125,
+        'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.100,
         'Phlu.Neos.NodeTypes:Publication': 0.0001,
         'Phlu.Neos.NodeTypes:Project': 0.0001,
         'Phlu.Corporate:Location': 10000
