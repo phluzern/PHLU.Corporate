@@ -517,10 +517,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-project-projecttype': 1,
         'phlu-neos-nodetypes-project-lastmodify': 1,
         'phlu-neos-nodetypes-project-financingtypes': 1,
-        'phlu-neos-nodetypes-project-financingtypes': 1,
         'phlu-neos-nodetypes-project-enddate': 1,
         'phlu-neos-nodetypes-project-abstracttextgerman': 1,
-        'phlu-neos-nodetypes-project-abstracttextenglish': 1,
         'phlu-neos-nodetypes-project-abstracttextenglish': 1,
 
 
