@@ -314,10 +314,22 @@
                                         Hinweis
                                         <div class="mobile-view-columns">
                                             {year.StatusDescription}
+                                            <f:if condition="{year.Shortdescription}">
+
+                                                <f:then>
+                                                    <br/>{year.Shortdescription}
+                                                </f:then>
+                                            </f:if>
                                         </div>
                                     </td>
                                     <td>
                                         {year.StatusDescription}
+                                        <f:if condition="{year.Shortdescription}">
+
+                                            <f:then>
+                                                <br/>{year.Shortdescription}
+                                            </f:then>
+                                        </f:if>
                                     </td>
                                 </tr>
                             </f:if>
