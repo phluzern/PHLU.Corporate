@@ -7,6 +7,7 @@ prototype(Phlu.Corporate:Page.FurtherEducation.Detail) < prototype(Phlu.Corporat
         years = ${q(node).property('years')}
         isinstock = ${q(node).property('isinstock')}
         graduation = ${q(node).property('graduation')}
+        region = ${q(node).property('region')}
         genre = ${q(node).property('genre')}
         fee = ${q(node).property('fee')}
         statusDescription = ${q(node).property('statusDescription')}
