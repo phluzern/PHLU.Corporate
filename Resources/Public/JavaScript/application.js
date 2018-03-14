@@ -56013,7 +56013,7 @@ module.exports = '3.24.5';
                 lunrSearch = elasticlunr(function () {
                     this.setRef('id');
                 });
-
+                elasticlunr.clearStopWords();
 
                 /**
                  * @private
@@ -58146,46 +58146,39 @@ module.exports = '3.24.5';
 
                                     });
 
-
-                                    resultsSearch[0] = lunrSearch.search(customquery == undefined ? self.getFilter().getQuery() : customquery, {
+                                    resultsSearch = lunrSearch.search(self.getFilter().getQuery(), {
                                         fields: fields,
                                         bool: "AND",
                                         expand: true
                                     });
 
 
-                                    if (resultsSearch[0].length == 0) {
-                                        resultsSearch[1] = lunrSearch.search(self.getFilter().getQuery(), {
+                                    if (resultsSearch.length == 0) {
+
+                                        resultsSearch = lunrSearch.search(self.getFilter().getQuery(), {
                                             fields: fields,
-                                            bool: "AND",
-                                            expand: false
-                                        });
-                                    }
-
-
-                                    if (resultsSearch[1] != undefined && resultsSearch[1].length == 0) {
-
-                                        resultsSearch[2] = lunrSearch.search(self.getFilter().getQuery(), {
-                                            fields: fields,
-                                            bool: "AND",
+                                            bool: "OR",
                                             expand: true
                                         });
                                     }
 
 
-                                    if (resultsSearch[2] != undefined && resultsSearch[2].length == 0) {
+                                    if (resultsSearch.length == 0) {
 
-                                        resultsSearch[3] = lunrSearch.search(sq, {
+                                        resultsSearch = lunrSearch.search(sq, {
                                             fields: fields,
-                                            bool: "AND",
-                                            expand: false
+                                            bool: "AND"
                                         });
+
+
                                     }
 
 
-                                    if (resultsSearch[3] != undefined && resultsSearch[3].length == 0) {
-                                        resultsSearch[4] = lunrSearch.search(self.getFilter().getQuery(), {
+                                    if (resultsSearch.length == 0) {
+
+                                        resultsSearch = lunrSearch.search(sq, {
                                             fields: fields,
+                                            expand: true,
                                             bool: "OR"
                                         });
 
@@ -58193,9 +58186,9 @@ module.exports = '3.24.5';
                                     }
 
 
-                                    if (resultsSearch[4] != undefined && resultsSearch[4].length == 0) {
+                                    if (resultsSearch.length == 0) {
 
-                                        resultsSearch[5] = lunrSearch.search(self.getFilter().getQuery(), {
+                                        resultsSearch = lunrSearch.search(query, {
                                             fields: fields,
                                             bool: "OR",
                                             expand: true
@@ -58203,27 +58196,9 @@ module.exports = '3.24.5';
                                     }
 
 
-                                    if (resultsSearch[5] != undefined && resultsSearch[5].length == 0) {
+                                    if (resultsSearch.length == 0) {
 
-                                        resultsSearch[6] = lunrSearch.search(sq, {
-                                            fields: fields,
-                                            bool: "OR",
-                                            expand: false
-                                        });
-                                    }
-
-
-                                    if (resultsSearch[6] != undefined && resultsSearch[6].length == 0) {
-                                        resultsSearch[7] = lunrSearch.search(query, {
-                                            fields: fields,
-                                            bool: "OR",
-                                            expand: true
-                                        });
-                                    }
-
-
-                                    if (resultsSearch[7] != undefined && resultsSearch[7].length == 0) {
-                                        resultsSearch[8] = lunrSearch.search(self.getFilter().getQuery() + " " + query, {
+                                        resultsSearch = lunrSearch.search(self.getFilter().getQuery() + " " + query, {
                                             fields: fields,
                                             bool: "OR",
                                             expand: true
@@ -58232,8 +58207,7 @@ module.exports = '3.24.5';
                                     }
 
 
-                                    var result = resultsSearch[resultsSearch.length - 1];
-
+                                    var result = resultsSearch;
 
                                     // check if result has filtered results
 
@@ -58940,6 +58914,10 @@ module.exports = '3.24.5';
 
                                 });
 
+                                self.getResults().$$data.autocomplete.splice(0,5).forEach(function (keyword) {
+                                    self.getKeywords(keyword, instance);
+                                });
+
                                 angular.forEach(keywordsreduced, function (keyword) {
                                     self.getKeywords(keyword, instance);
                                 });
@@ -58967,8 +58945,12 @@ module.exports = '3.24.5';
                                 var uniquarrayfinal = [];
                                 var uniquarrayfinalTerms = {};
 
+
                                 if (lastSearchInstance.$$data.keywords.length) {
                                     var unique = {};
+
+
+                                    lastSearchInstance.$$data.keywords.push({term: 'test', metaphone: 'TTT'});
 
                                     angular.forEach(lastSearchInstance.$$data.keywords, function (v) {
                                         if (unique[v.metaphone] === undefined) {
@@ -59544,9 +59526,11 @@ module.exports = '3.24.5';
                         ref.socket = hybridsearch.$firebase().database().ref("sites/" + hybridsearch.$$conf.site + "/" + "keywords/" + hybridsearch.$$conf.workspace + "/" + hybridsearch.$$conf.branch + "/" + hybridsearch.$$conf.dimension + "/" + q);
                         ref.http = (hybridsearch.$$conf.cdnDatabaseURL == undefined ? hybridsearch.$$conf.databaseURL : hybridsearch.$$conf.cdnDatabaseURL) + ("/sites/" + hybridsearch.$$conf.site + "/" + "keywords/" + hybridsearch.$$conf.workspace + "/" + hybridsearch.$$conf.branch + "/" + hybridsearch.$$conf.dimension + "/" + q + ".json");
 
+
                         instance.$$data.keywords.push({term: query, metaphone: q});
                         ref.socket.once("value", function (data) {
                             if (data.val()) {
+
 
                                 var kwds = [];
                                 var ac = {};
@@ -59582,7 +59566,6 @@ module.exports = '3.24.5';
                                     });
 
                                 }
-
 
 
                                 self.setAutocomplete(ac, querysegment);
@@ -69056,10 +69039,8 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
         'phlu-neos-nodetypes-project-projecttype': 1,
         'phlu-neos-nodetypes-project-lastmodify': 1,
         'phlu-neos-nodetypes-project-financingtypes': 1,
-        'phlu-neos-nodetypes-project-financingtypes': 1,
         'phlu-neos-nodetypes-project-enddate': 1,
         'phlu-neos-nodetypes-project-abstracttextgerman': 1,
-        'phlu-neos-nodetypes-project-abstracttextenglish': 1,
         'phlu-neos-nodetypes-project-abstracttextenglish': 1,
 
 
@@ -69077,6 +69058,7 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
 
         'phlu-corporate-textplain-grandparent': 1,
         'phlu-corporate-textplain-parent': 10,
+        'phlu-corporate-textplain-neoslivehybridsearchkeywords': 9000,
 
         'phlu-corporate-text-grandparent': 1,
         'phlu-corporate-text-parent': 1,
@@ -69147,11 +69129,11 @@ PhluCorporateApp.controller('SearchCtrl', ['$scope', '$rootScope', '$sce', 'hybr
     var boostNodeType = {
         'Phlu.Qmpilot.NodeTypes:File': 0.125,
         'Phlu.Corporate:Contact': 0.5,
-        'Phlu.Corporate:TextPlain': 2,
+        'Phlu.Corporate:TextPlain': 2.5,
         'Phlu.Corporate:Text': 0.78,
         'Phlu.Neos.NodeTypes:Course.Study.FurtherEducation': 0.500,
         'Phlu.Neos.NodeTypes:Course.Module.FurtherEducation': 0.125,
-        'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.125,
+        'Phlu.Neos.NodeTypes:Course.Event.FurtherEducation': 0.100,
         'Phlu.Neos.NodeTypes:Publication': 0.0001,
         'Phlu.Neos.NodeTypes:Project': 0.0001,
         'Phlu.Corporate:Location': 10000
@@ -70339,6 +70321,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         }
     }
 
+
     $scope.list = new $hybridsearchObject(hybridsearch);
 
     if ($rootScope.isLoadedFirst === undefined) {
@@ -70460,6 +70443,11 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         'grandparent': -1
 
 
+    };
+
+    var NodeUrlBoostFactor = {
+        '/weiterbildung/studiengaenge': {'*': 1500},
+        '/weiterbildung/veranstaltungen/einfuhrung-in-den-aufgabenbereich': {'*': 1000}
     };
 
 
@@ -70734,14 +70722,14 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                 hasManualFilter = true;
                 $scope.list.setOrderBy({
                     'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
-                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-id']].counter
+                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-id']] !== undefined ? $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-id']].counter : 0
                     },
                     'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
 
-                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-id']].counter
+                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-id']] !== undefined ? $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-id']].counter : 0
                     },
                     'phlu-neos-nodetypes-course-event-furthereducation': function (node) {
-                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-id']].counter
+                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-id']] !== undefined ? $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-id']].counter : 0
                     }
                 })
 
@@ -70751,13 +70739,13 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                 hasManualFilter = true;
                 $scope.list.setOrderBy({
                     'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
-                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-nr']].counter
+                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-nr']] !== undefined ? $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-nr']].counter : 0
                     },
                     'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
-                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-nr']].counter
+                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-nr']] !== undefined ? $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-nr']].counter : 0
                     },
                     'phlu-neos-nodetypes-course-event-furthereducation': function (node) {
-                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-nr']].counter
+                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-nr']] !== undefined ? $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-nr']].counter : 0
                     }
                 })
 
@@ -71191,6 +71179,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * Initialize hybridsearch list
      */
     $scope.list.setPropertiesBoost(boost);
+    $scope.list.setNodeUrlBoostFactor(NodeUrlBoostFactor);
 
     if (window.location.href.indexOf("weiterbildung.html") == -1) {
         $scope.list.enableCache();
@@ -71198,9 +71187,10 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         //$scope.list.disableRealtime()
     }
 
+
     $scope.list.setQuery('searchquery', $scope)
         .setNodeType('nodetypes', $scope)
-        .setOrderBy({'*': '-id'})
+        // .setOrderBy({'*': '-id'})
         .addPropertyFilter('detailpage.hidden', 'false')
         .addPropertyFilter('deleted', false)
         .$watch(function (i) {

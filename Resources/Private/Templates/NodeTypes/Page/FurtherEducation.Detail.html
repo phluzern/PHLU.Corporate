@@ -158,7 +158,6 @@
                                 </f:if>
                             </f:for>
 
-
                             <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Module'">
                                 <f:if condition="{node.properties.lessons}">
                                     <tr>
@@ -181,9 +180,21 @@
                                             </f:for>
                                         </td>
                                     </tr>
+                                    <f:if condition="{region}">
+                                        <tr>
+                                            <td>
+                                                Region
+                                                <div class="mobile-view-columns">
+                                                    {region}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {region}
+                                            </td>
+                                        </tr>
+                                    </f:if>
                                 </f:if>
                             </f:if>
-
                             <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Study'">
                                 <f:if condition="{course:Date(date: year.BookableUntil.date, format: 'Y')} > 1970">
                                     <f:if condition="{year.BookableUntil}">
@@ -321,6 +332,7 @@
                                     </td>
                                 </tr>
                             </f:if>
+
                             </tbody>
                         </table>
                     </div>

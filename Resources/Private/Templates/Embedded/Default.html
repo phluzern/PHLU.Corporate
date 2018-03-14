@@ -15,7 +15,20 @@
 
                  <iframe id="iframe{node.Identifier}" src="{embedded.link}" frameborder="0" seamless allowTransparency="true" scrolling="yes" width="100%" height="100px"></iframe>
 
-                 <script>iFrameResize({checkOrigin:false},'#iframe{node.Identifier}')</script>
+                               <script>
+                    var iframeLastHeight = 0;
+                    iFrameResize({
+                        checkOrigin: false,
+                        resizedCallback:
+                            function (iframe) {
+                                if (parseInt(iframe.height) < iframeLastHeight) {
+                                    $('html, body').scrollTop(0);
+                                }
+                                iframeLastHeight = iframe.height;
+                            }
+                    }, '#iframe<f:format.raw>{node.Identifier}</f:format.raw>');
+
+                </script>
 
 
             </div>

@@ -93,6 +93,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         }
     }
 
+
     $scope.list = new $hybridsearchObject(hybridsearch);
 
     if ($rootScope.isLoadedFirst === undefined) {
@@ -214,6 +215,11 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         'grandparent': -1
 
 
+    };
+
+    var NodeUrlBoostFactor = {
+        '/weiterbildung/studiengaenge': {'*': 1500},
+        '/weiterbildung/veranstaltungen/einfuhrung-in-den-aufgabenbereich': {'*': 1000}
     };
 
 
@@ -488,14 +494,14 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                 hasManualFilter = true;
                 $scope.list.setOrderBy({
                     'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
-                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-id']].counter
+                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-id']] !== undefined ? $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-id']].counter : 0
                     },
                     'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
 
-                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-id']].counter
+                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-id']] !== undefined ? $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-id']].counter : 0
                     },
                     'phlu-neos-nodetypes-course-event-furthereducation': function (node) {
-                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-id']].counter
+                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-id']] !== undefined ? $scope.filters.id.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-id']].counter : 0
                     }
                 })
 
@@ -505,13 +511,13 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
                 hasManualFilter = true;
                 $scope.list.setOrderBy({
                     'phlu-neos-nodetypes-course-study-furthereducation': function (node) {
-                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-nr']].counter
+                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-nr']] !== undefined ? $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-study-furthereducation-nr']].counter : 0
                     },
                     'phlu-neos-nodetypes-course-module-furthereducation': function (node) {
-                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-nr']].counter
+                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-nr']] !== undefined ? $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-module-furthereducation-nr']].counter : 0
                     },
                     'phlu-neos-nodetypes-course-event-furthereducation': function (node) {
-                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-nr']].counter
+                        return $scope.filters.nr.selected.Alle == undefined ? 0 : $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-nr']] !== undefined ? $scope.filters.nr.selected.Alle[node.properties['phlu-neos-nodetypes-course-event-furthereducation-nr']].counter : 0
                     }
                 })
 
@@ -945,6 +951,7 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
      * Initialize hybridsearch list
      */
     $scope.list.setPropertiesBoost(boost);
+    $scope.list.setNodeUrlBoostFactor(NodeUrlBoostFactor);
 
     if (window.location.href.indexOf("weiterbildung.html") == -1) {
         $scope.list.enableCache();
@@ -952,9 +959,10 @@ PhluCorporateApp.controller('EventoFurtherEducationCtrl', ['$scope', 'hybridsear
         //$scope.list.disableRealtime()
     }
 
+
     $scope.list.setQuery('searchquery', $scope)
         .setNodeType('nodetypes', $scope)
-        .setOrderBy({'*': '-id'})
+        // .setOrderBy({'*': '-id'})
         .addPropertyFilter('detailpage.hidden', 'false')
         .addPropertyFilter('deleted', false)
         .$watch(function (i) {

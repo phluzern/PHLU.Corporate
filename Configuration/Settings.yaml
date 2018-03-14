@@ -61,7 +61,9 @@ Phlu:
     domainRedirection:
       studorg.phlu.ch:
         target: 'node://ce0bc808-96a9-4640-a02f-6a8be0852615'
-      projektunterricht.ch:
-        target: 'node://e760df01-b440-4f04-b62d-36bd84a5c761'
+      www.studorg.phlu.ch:
+        target: 'node://ce0bc808-96a9-4640-a02f-6a8be0852615'
       www.projektunterricht.ch:
+        target: 'node://e760df01-b440-4f04-b62d-36bd84a5c761'
+      projektunterricht.ch:
         target: 'node://e760df01-b440-4f04-b62d-36bd84a5c761'
