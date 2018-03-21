@@ -14,6 +14,7 @@ prototype(Phlu.Corporate:Page.FurtherEducation.Detail) < prototype(Phlu.Corporat
         SubsidizedFee = ${q(node).property('subsidizedFee')}
         hideContacts = ${q(node).property('hideContacts')}
 
+
         sectionsInPage = ${q(node).children('main').find('[instanceof Phlu.Corporate:Section]').get()}
 		sectionsCountInPage = ${q(node).children('main').find('[instanceof Phlu.Corporate:Section]').count()}
 
@@ -44,6 +45,7 @@ prototype(Phlu.Corporate:Page.FurtherEducation.Detail) < prototype(Phlu.Corporat
 prototype(Phlu.Corporate:Page.FurtherEducation.Detail.Module) < prototype(Phlu.Corporate:Page.FurtherEducation.Detail) {
 
 templatePath = 'resource://Phlu.Corporate/Private/Templates/NodeTypes/Page/FurtherEducation.Detail.html'
+region = ${q(node).property('region')}
 
 }
 
