@@ -54,7 +54,10 @@ class RegistrationButtonViewHelper extends AbstractViewHelper
 
         $url = str_replace("//phlu.ch","//iframe.phlu.ch",$url);
         $url = str_replace("www.phlu.ch","iframe.phlu.ch",$url);
-        $url = str_replace("http:","https:",$url);
+
+        if (substr_count("phlu.ch",$url)) {
+            $url = str_replace("http:", "https:", $url);
+        }
 
         if (substr_count($url,"iframe.phlu.ch")) {
 
