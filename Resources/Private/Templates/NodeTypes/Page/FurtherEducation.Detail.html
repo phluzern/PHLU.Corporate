@@ -293,6 +293,67 @@
                                 </f:if>
                             </f:if>
 
+                            <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Module'">
+                                <f:then>
+                                    <f:if condition="{subsidizedFee} !== NULL">
+                                        <tr>
+                                            <td>
+                                                Subventionierte Kosten
+                                                <div class="mobile-view-columns">
+                                                    {course:formatFee(fee: SubsidizedFee)}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {course:formatFee(fee: SubsidizedFee)}
+                                            </td>
+                                        </tr>
+                                    </f:if>
+                                    <f:if condition="{fee} !== NULL">
+                                        <tr>
+                                            <td>
+                                                Kosten
+                                                <div class="mobile-view-columns">
+                                                    {course:formatFee(fee: fee)}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {course:formatFee(fee: fee)}
+                                            </td>
+                                        </tr>
+                                    </f:if>
+                                </f:then>
+                                <f:else>
+
+                                    <f:if condition="{subsidizedFee}">
+                                        <tr>
+                                            <td>
+                                                Subventionierte Kosten
+                                                <div class="mobile-view-columns">
+                                                    {course:formatFee(fee: SubsidizedFee)}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {course:formatFee(fee: SubsidizedFee)}
+                                            </td>
+                                        </tr>
+                                    </f:if>
+                                    <f:if condition="{fee}">
+                                        <tr>
+                                            <td>
+                                                Kosten
+                                                <div class="mobile-view-columns">
+                                                    {course:formatFee(fee: fee)}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {course:formatFee(fee: fee)}
+                                            </td>
+                                        </tr>
+                                    </f:if>
+
+                                </f:else>
+                            </f:if>
+
                             <f:if condition="{subsidizedFee} !== NULL">
                                 <tr>
                                     <td>
