@@ -354,33 +354,6 @@
                                 </f:else>
                             </f:if>
 
-                            <f:if condition="{subsidizedFee} !== NULL">
-                                <tr>
-                                    <td>
-                                        Subventionierte Kosten
-                                        <div class="mobile-view-columns">
-                                            {course:formatFee(fee: SubsidizedFee)}
-                                        </div>
-                                    </td>
-                                    <td>
-                                        {course:formatFee(fee: SubsidizedFee)}
-                                    </td>
-                                </tr>
-                            </f:if>
-                            <f:if condition="{fee} !== NULL">
-                                <tr>
-                                    <td>
-                                        Kosten
-                                        <div class="mobile-view-columns">
-                                            {course:formatFee(fee: fee)}
-                                        </div>
-                                    </td>
-                                    <td>
-                                        {course:formatFee(fee: fee)}
-                                    </td>
-                                </tr>
-                            </f:if>
-
                             <ts:render path="overviewRenderer" context="{node: overview}"/>
                             <f:if condition="{year.StatusDescription}">
                                 <tr>
