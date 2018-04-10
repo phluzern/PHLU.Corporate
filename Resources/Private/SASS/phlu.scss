@@ -7240,6 +7240,12 @@ body {
                     @include media-breakpoint-down("sm") {
                       float: none;
                     }
+                    a {
+                      &::after {
+                        background-image:none;
+                        content:none;
+                      }
+                    }
                   }
                   .shareAndRegister {
                     float: right;

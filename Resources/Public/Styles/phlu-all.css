@@ -13039,6 +13039,9 @@ body {
         @media (max-width: 767px) {
           body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .details {
             float: none; } }
+        body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .details a::after {
+          background-image: none;
+          content: none; }
       body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister {
         float: right; }
         @media (max-width: 767px) {
