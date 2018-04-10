@@ -8,6 +8,9 @@
             <th>
                 Nummer
             </th>
+            <th>
+                Beginn
+            </th>
             <th class="centered-column">
                 Buchbar
             </th>
@@ -30,6 +33,16 @@
             <td class="course-number">
                 <span data-ng-bind="node.getProperty('nr')"></span>
             </td>
+            <td style="white-space: nowrap" data-ng-if="node.getProperty('years').length == 1">
+                <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+            </td>
+            <td style="white-space: nowrap" data-ng-if="node.getProperty('years').length != 1">
+                <div data-ng-repeat="year in node.getProperty('years')"
+                     data-ng-click="node.currentyear = year;">
+                    <span data-ng-bind="year.StartText | castDate"></span>
+                </div>
+
+            </td>
             <td class="centered-column">
                 <i class="fa fa-circle bookable" aria-hidden="true"
                    data-ng-if="node.getProperty('years.Bookable').indexOf(true) > -1"></i>
@@ -49,7 +62,7 @@
             </td>
         </tr>
         <tr class="result-preview" data-ng-show="isOpen(node)">
-            <td colspan="4">
+            <td colspan="5">
                 <div class="result-preview-contents">
                     <span data-ng-bind="node.getProperty('description').substr(0,500) + (node.getProperty('description').length >= 500 ? '...' : '')"></span>
 

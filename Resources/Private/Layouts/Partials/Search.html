@@ -272,7 +272,8 @@
 
                             </div>
 
-                            <div class="ppdb-list further-education-special-search" data-ng-switch-when="Weiterbildungsskurse">
+                            <div class="ppdb-list further-education-special-search"
+                                 data-ng-switch-when="Weiterbildungsskurse">
 
                                 <div class="results-table">
                                     <div class="table-responsive">
@@ -284,6 +285,9 @@
                                                 </th>
                                                 <th>
                                                     Nummer
+                                                </th>
+                                                <th>
+                                                    Beginn
                                                 </th>
                                                 <th class="centered-column">
                                                     Buchbar
@@ -308,6 +312,16 @@
                                                 </td>
                                                 <td class="course-number">
                                                     <span data-ng-bind="node.getProperty('nr')"></span>
+                                                </td>
+                                                <td style="white-space: nowrap" data-ng-if="node.getProperty('years').length == 1">
+                                                    <span data-ng-bind="node.currentyear.StartText | castDate"></span>
+                                                </td>
+                                                <td style="white-space: nowrap" data-ng-if="node.getProperty('years').length != 1">
+                                                    <div data-ng-repeat="year in node.getProperty('years')"
+                                                         data-ng-click="node.currentyear = year;">
+                                                        <span data-ng-bind="year.StartText | castDate"></span>
+                                                    </div>
+
                                                 </td>
                                                 <td class="centered-column">
                                                     <i class="fa fa-circle bookable" aria-hidden="true"
@@ -456,7 +470,8 @@
                                                                     </div>
                                                                 </td>
                                                             </tr>
-                                                            <tr class="desktop-view" data-ng-if="node.getProperty('statusdescription')">
+                                                            <tr class="desktop-view"
+                                                                data-ng-if="node.getProperty('statusdescription')">
                                                                 <td>
                                                                     Hinweis
                                                                     <div class="mobile-view-columns"
@@ -744,7 +759,8 @@
                                 </div>
                             </div>
 
-                            <div class="ppdb-list further-education-special-search" data-ng-switch-when="Weiterbildungsveranstaltungen">
+                            <div class="ppdb-list further-education-special-search"
+                                 data-ng-switch-when="Weiterbildungsveranstaltungen">
 
                                 <div class="results-table">
                                     <div class="table-responsive">
