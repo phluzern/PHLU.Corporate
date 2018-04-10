@@ -9,7 +9,7 @@
                 Nummer
             </th>
             <th>
-                Beginn
+                Schuljahr
             </th>
             <th class="centered-column">
                 Buchbar
@@ -33,16 +33,20 @@
             <td class="course-number">
                 <span data-ng-bind="node.getProperty('nr')"></span>
             </td>
-            <td style="white-space: nowrap" data-ng-if="node.getProperty('years').length == 1">
-                <span data-ng-bind="node.currentyear.StartText | castDate"></span>
-            </td>
-            <td style="white-space: nowrap" data-ng-if="node.getProperty('years').length != 1">
-                <div data-ng-repeat="year in node.getProperty('years')"
-                     data-ng-click="node.currentyear = year;">
-                    <span data-ng-bind="year.StartText | castDate"></span>
+            <td style="white-space: nowrap" >
+                
+                <div data-ng-if="!node.currentyear.Year" data-ng-bind="node.currentyear.StartText"></div>
+
+                <div data-ng-repeat="year in node.currentyear.Year">
+
+                    <span data-ng-bind="year"></span>
+
                 </div>
 
+                <span data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-module-furthereducation'" data-ng-bind="node.currentyear.Year"></span>
+
             </td>
+
             <td class="centered-column">
                 <i class="fa fa-circle bookable" aria-hidden="true"
                    data-ng-if="node.getProperty('years.Bookable').indexOf(true) > -1"></i>
