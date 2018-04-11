@@ -354,6 +354,22 @@
                                 </f:else>
                             </f:if>
 
+
+                            <f:if condition="{materialCosts}">
+                            <tr>
+                                <td>
+                                    Materialkosten
+                                    <div class="mobile-view-columns">
+                                        {materialCosts}
+                                    </div>
+                                </td>
+                                <td>
+                                    {materialCosts}
+                                </td>
+                            </tr>
+                            </f:if>
+
+
                             <ts:render path="overviewRenderer" context="{node: overview}"/>
                             <f:if condition="{year.StatusDescription}">
                                 <tr>

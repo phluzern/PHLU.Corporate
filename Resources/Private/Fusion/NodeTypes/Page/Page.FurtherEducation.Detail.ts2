@@ -12,6 +12,7 @@ prototype(Phlu.Corporate:Page.FurtherEducation.Detail) < prototype(Phlu.Corporat
         fee = ${q(node).property('fee')}
         statusDescription = ${q(node).property('statusDescription')}
         SubsidizedFee = ${q(node).property('subsidizedFee')}
+        materialCosts = ${q(node).property('materialCosts')}
         hideContacts = ${q(node).property('hideContacts')}
 
 
