@@ -371,6 +371,19 @@
 
 
                             <ts:render path="overviewRenderer" context="{node: overview}"/>
+                            <f:if condition="{duration}">
+                                <tr>
+                                    <td>
+                                        Kursdauer (Tage)
+                                        <div class="mobile-view-columns">
+                                            {duration}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {duration}
+                                    </td>
+                                </tr>
+                            </f:if>
                             <f:if condition="{year.StatusDescription}">
                                 <tr>
                                     <td>
@@ -384,6 +397,22 @@
                                     </td>
                                 </tr>
                             </f:if>
+                            <f:if condition="{holKursComment}">
+                                <f:if condition="{isRequestable}">
+                                <tr>
+                                    <td>
+                                        Kommentar zu Holkurs
+                                        <div class="mobile-view-columns">
+                                            {holKursComment}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {holKursComment}
+                                    </td>
+                                </tr>
+                                </f:if>
+                            </f:if>
+
 
                             </tbody>
                         </table>

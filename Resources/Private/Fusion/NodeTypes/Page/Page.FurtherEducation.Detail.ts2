@@ -13,7 +13,10 @@ prototype(Phlu.Corporate:Page.FurtherEducation.Detail) < prototype(Phlu.Corporat
         statusDescription = ${q(node).property('statusDescription')}
         SubsidizedFee = ${q(node).property('subsidizedFee')}
         materialCosts = ${q(node).property('materialCosts')}
+        isRequestable = ${q(node).property('isRequestable')}
+        holKursComment = ${q(node).property('holKursComment')}
         hideContacts = ${q(node).property('hideContacts')}
+        duration = ${q(node).property('duration')}
 
 
         sectionsInPage = ${q(node).children('main').find('[instanceof Phlu.Corporate:Section]').get()}
