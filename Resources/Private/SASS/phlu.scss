@@ -7313,7 +7313,11 @@ body {
             padding: 0;
             .nav-teaser-item {
               margin-bottom: inherit;
+              &:nth-child(n+3) {
+                margin-top:30px;
+              }
             }
+
           }
         }
         .phlu-accordion {
