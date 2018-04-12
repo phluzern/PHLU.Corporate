@@ -203,6 +203,8 @@
 
                 </div>
 
+                <!--<div class="test" data-ng-bind="node.getProperty('years.RegistrationLinkLabel')"></div>-->
+
                 <div class="details">
 
                     <a class="btn btn-primary" data-ng-if="currentYears[node.identifier].url"
@@ -230,6 +232,7 @@
                        data-ng-show="currentYears[node.identifier].RegistrationLink"
                        data-ng-href="{{currentYears[node.identifier].RegistrationLink}}">
                         Anmelden
+                        <span data-ng-bind="node.getProperty('year.RegistrationLinkLabel')"></span>
                     </a>
 
                     <a class="btn btn-primary"
@@ -237,6 +240,7 @@
                        data-ng-show="currentYears[node.identifier].RegistrationLink"
                        data-ng-href="{{node.getUrl()}}">
                         Anmelden
+
                     </a>
                 </div>
 

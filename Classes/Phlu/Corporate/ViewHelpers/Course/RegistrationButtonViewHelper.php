@@ -44,11 +44,12 @@ class RegistrationButtonViewHelper extends AbstractViewHelper
 
     /**
      * @param string $url
+     * @param string $label
      * @param string $identifier avoid cache behaviour
      * @param mixed
      * @return array
      */
-    public function render($url, $identifier, $node = null)
+    public function render($url, $identifier, $node = null, $label = 'Anmelden')
     {
 
 
@@ -73,12 +74,12 @@ class RegistrationButtonViewHelper extends AbstractViewHelper
                 $html .= '<a class="btn btn-primary anmeldenlink" href="javascript:void(0)" onclick="iframe' . $hash . '(this);">Anmelden</a>';
             } else {
                 $url = str_replace("iframe.phlu.ch","www.phlu.ch",$url);
-                $html = '<a class="btn btn-primary " href="'.$url.'">Anmelden</a>';
+                $html = '<a class="btn btn-primary " href="'.$url.'">'. $label .'</a>';
             }
 
 
         } else {
-            $html = '<a class="btn btn-primary " href="'.$url.'">Anmelden</a>';
+            $html = '<a class="btn btn-primary " href="'.$url.'">'. $label .'</a>';
         }
 
 
