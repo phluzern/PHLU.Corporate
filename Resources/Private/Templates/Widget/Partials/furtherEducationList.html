@@ -246,14 +246,16 @@
                        data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') < 0"
                        data-ng-show="currentYears[node.identifier].RegistrationLink"
                        data-ng-href="{{currentYears[node.identifier].RegistrationLink}}">
-                        <span data-ng-bind="currentYears[node.identifier].RegistrationLinkLabel"></span>
+                        <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length > 1" data-ng-bind="currentYears[node.identifier].RegistrationLinkLabel"></span>
+                        <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length == NULL" >Anmelden</span>
                     </a>
 
                     <a class="btn btn-primary"
                        data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') > 0"
                        data-ng-show="currentYears[node.identifier].RegistrationLink"
                        data-ng-href="{{node.getUrl()}}">
-                        <span data-ng-bind="currentYears[node.identifier].RegistrationLinkLabel"></span>
+                        <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length > 1" data-ng-bind="currentYears[node.identifier].RegistrationLinkLabel"></span>
+                        <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length == NULL" >Anmelden</span>
                     </a>
                 </div>
 
