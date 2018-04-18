@@ -4966,6 +4966,12 @@ body {
                             background-color: inherit;
                           }
                         }
+                        span {
+                          @include media-breakpoint-down("sm") {
+                            font-size:$font-size-btn-mobile;
+                            display: initial;
+                          }
+                        }
                       }
                       &.project-preview {
                         > * {

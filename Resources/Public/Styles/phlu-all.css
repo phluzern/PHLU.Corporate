@@ -11348,6 +11348,10 @@ body {
             background-color: #216A75; }
           body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn.share:hover, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn.share:hover, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn.share:hover {
             background-color: inherit; }
+          @media (max-width: 767px) {
+            body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div .btn span, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div .btn span, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div .btn span {
+              font-size: 1rem;
+              display: initial; } }
         @media (min-width: 768px) {
           body .all .ppdb-list .results-table .table-responsive .table tbody tr.result-preview td div.project-preview > *, body .all .further-education-list .results-table .table-responsive .table tbody tr.result-preview td div.project-preview > *, body .all .further-education-special-search .results-table .table-responsive .table tbody tr.result-preview td div.project-preview > * {
             padding-left: 30px;
