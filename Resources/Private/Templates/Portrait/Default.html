@@ -237,7 +237,7 @@
                         <div class="col-xs-12">
                             <div id="phlu-accordion-projects" class="phlu-accordion">
                                 <f:for each="{contact.projects}" as="projects" key="projecttype" iteration="iterator">
-                                    <f:for each="{projects}" as="project">
+                                    <f:for each="{projects->portrait:sort(order:'DESC', sortBy:'LastModify', sortFlags:'SORT_REGULAR')}" as="project">
                                         <div class="panel panel-default">
                                             <div class="panel-heading" role="tab">
                                                 <h4 class="panel-title">
