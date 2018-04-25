@@ -421,8 +421,16 @@
 
                         <f:if condition="{year.Bookable}">
                             <f:then>
-                                <course:RegistrationButton label="{year.RegistrationLinkLabel}" url="{year.RegistrationLink}"
-                                                           identifier="1"></course:RegistrationButton>
+                                <f:if condition="{year.RegistrationLinkLabel}">
+                                    <f:then>
+                                        <course:RegistrationButton label="{year.RegistrationLinkLabel}" url="{year.RegistrationLink}"
+                                                                   identifier="1"></course:RegistrationButton>
+                                    </f:then>
+                                    <f:else>
+                                        <course:RegistrationButton label="Anmelden" url="{year.RegistrationLink}"
+                                                                   identifier="1"></course:RegistrationButton>
+                                    </f:else>
+                                </f:if>
                             </f:then>
                             <f:else>
                                 <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Module'">
@@ -564,8 +572,16 @@
                                     <div class="shareAndRegister shareAndRegisterFurtherEducationDetail">
                                         <f:if condition="{year.Bookable}">
                                             <f:then>
-                                                <course:RegistrationButton label="{year.RegistrationLinkLabel}" url="{year.RegistrationLink}"
-                                                                           identifier="2"></course:RegistrationButton>
+                                                <f:if condition="{year.RegistrationLinkLabel}">
+                                                    <f:then>
+                                                        <course:RegistrationButton label="{year.RegistrationLinkLabel}" url="{year.RegistrationLink}"
+                                                                                   identifier="1"></course:RegistrationButton>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <course:RegistrationButton label="Anmelden" url="{year.RegistrationLink}"
+                                                                                   identifier="1"></course:RegistrationButton>
+                                                    </f:else>
+                                                </f:if>
                                             </f:then>
                                             <f:else>
                                                 <f:if condition="{StatusLabel}">
