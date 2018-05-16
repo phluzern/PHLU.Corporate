@@ -8,8 +8,19 @@
             <th>
                 Nummer
             </th>
-            <th>
-                Schuljahr
+            <th class="centered-column">
+                <span data-ng-if="nodetypesFilterCurrentLabel === 'Kurse'">
+                    Schuljahr
+                    </span>
+                <span data-ng-if="nodetypesFilterCurrentLabel === 'Studiengänge'">
+                    Beginn
+                    </span>
+                <span data-ng-if="nodetypesFilterCurrentLabel === 'Alle'">
+                    Beginn
+                    </span>
+                <span data-ng-if="nodetypesFilterCurrentLabel === 'Veranstaltungen'">
+                    Beginn
+                    </span>
             </th>
             <th class="centered-column">
                 Buchbar
@@ -33,7 +44,7 @@
             <td class="course-number">
                 <span data-ng-bind="node.getProperty('nr')"></span>
             </td>
-            <td style="white-space: nowrap" >
+            <td style="white-space: nowrap;text-align:right;">
 
                 <div data-ng-if="!node.currentyear.Year" data-ng-bind="node.currentyear.StartText"></div>
 
@@ -44,6 +55,9 @@
                 </div>
 
                 <span data-ng-if="node.getNodeType() == 'phlu-neos-nodetypes-course-module-furthereducation'" data-ng-bind="node.currentyear.Year"></span>
+
+
+                <span data-ng-if="nodetypesFilterCurrentLabel === 'Veranstaltungen'" data-ng-bind="node.currentyear.StartText  | castDate"></span>
 
             </td>
 
@@ -246,16 +260,18 @@
                        data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') < 0"
                        data-ng-show="currentYears[node.identifier].RegistrationLink"
                        data-ng-href="{{currentYears[node.identifier].RegistrationLink}}">
-                        <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length > 1" data-ng-bind="currentYears[node.identifier].RegistrationLinkLabel"></span>
-                        <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length == NULL" >Anmelden</span>
+                        <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length > 1"
+                              data-ng-bind="currentYears[node.identifier].RegistrationLinkLabel"></span>
+                        <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length == NULL">Anmelden</span>
                     </a>
 
                     <a class="btn btn-primary"
                        data-ng-if="currentYears[node.identifier].RegistrationLink.indexOf('www.phlu.ch/') > 0"
                        data-ng-show="currentYears[node.identifier].RegistrationLink"
                        data-ng-href="{{node.getUrl()}}">
-                        <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length > 1" data-ng-bind="currentYears[node.identifier].RegistrationLinkLabel"></span>
-                        <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length == NULL" >Anmelden</span>
+                        <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length > 1"
+                              data-ng-bind="currentYears[node.identifier].RegistrationLinkLabel"></span>
+                        <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length == NULL">Anmelden</span>
                     </a>
                 </div>
 
