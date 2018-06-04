@@ -8,6 +8,7 @@
 <course:getYear node="{node}" variable="year">
 
     <f:if condition="{year}">
+        <f:then>
         <div class="row ">
             <div class="col-xs-12">
                 {breadcrumb -> f:format.raw()}
@@ -698,6 +699,429 @@ Startdatum:
                 </f:if>
             </div>
         </div>-->
+        </f:then>
+        <f:else>
 
+            <div class="row ">
+                <div class="col-xs-12">
+                    {breadcrumb -> f:format.raw()}
+                </div>
+            </div>
+            <div class="row further-education-detail">
+                <div class="col-xs-12">
+                    <div class="row ">
+                        <div class="col-xs-12">
+                            <ts:render path="defaultRenderer" context="{node: header}"/>
+                        </div>
+
+
+
+
+
+                        <f:if condition="{targetgroups}">
+                            <div class="col-xs-12 target-group-codes">
+                                <f:for each="{targetgroups}" as="targetgroup">
+                    <span class="code">
+                            <f:if condition="{targetgroup.Bezeichnung}">
+                                <f:then>
+                                    <f:if condition="{targetgroups -> f:count()} > 3">
+                                        <f:then><span class="fullname">{targetgroup.Bezeichnung}</span></f:then>
+                                        <f:else>{targetgroup.Zg}</f:else>
+                                    </f:if>
+                                </f:then>
+                                <f:else>
+                                    {targetgroup.Zg}
+                                </f:else>
+                            </f:if>
+                         <f:if condition="{targetgroup.Zg}"><f:then>
+                             <f:if condition="{targetgroups -> f:count()} > 3">
+                                 <f:then>{targetgroup.Zg}</f:then>
+                                 <f:else>{targetgroup.Bezeichnung}</f:else>
+                             </f:if>
+                            </f:then>
+                            <f:else>
+                                {targetgroup.Bezeichnung}
+                            </f:else></f:if>
+                    </span>
+                                </f:for>
+                            </div>
+                        </f:if>
+                    </div>
+                </div>
+            </div>
+            <div class="row infoboxes">
+                <div class="col-xs-12">
+                    <ts:render path="heroRenderer" context="{node: hero}"/>
+                </div>
+            </div>
+
+            <div class="row greyBgFullwidth2colTable">
+                <div class="col-xs-12 " id="uebersicht">
+                    <h2>Übersicht</h2>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                            <f:if condition="{graduation}">
+                                <tr>
+                                    <td>
+                                        Studienziel
+                                        <div class="mobile-view-columns">
+                                            {graduation}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {graduation}
+                                    </td>
+                                </tr>
+                            </f:if>
+                            <f:if condition="{year.EctsPunkte}">
+                                <tr>
+                                    <td>
+                                        ECTS-Punkte
+                                        <div class="mobile-view-columns">
+                                            {year.EctsPunkte}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {year.EctsPunkte}
+                                    </td>
+                                </tr>
+                            </f:if>
+
+                            <f:for each="{node.properties.sections}" as="section">
+                                <f:if condition="{section.Nr} == 4">
+                                    <f:then>
+                                        <tr>
+                                            <td>
+                                                Teilnehmende
+                                                <div class="mobile-view-columns">
+                                                    {section.Text}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {section.Text}
+                                            </td>
+                                        </tr>
+                                    </f:then>
+                                </f:if>
+                            </f:for>
+
+                            <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Module'">
+                                <f:if condition="{node.properties.lessons}">
+                                    <tr>
+                                        <td>
+                                            Daten
+                                            <div class="mobile-view-columns">
+                                                <f:for each="{node.properties.lessons}" as="lesson">
+                                                    {course:formatDate(datestring: lesson.DatumVon)} <span
+                                                        class="delim">-</span> {course:formatDate(datestring:
+                                                    lesson.DatumBis, type: 'hour')}<br/>
+                                                </f:for>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <f:for each="{node.properties.lessons}" as="lesson">
+                                                {course:formatDate(datestring: lesson.DatumVon)} <span
+                                                    class="delim">-</span> {course:formatDate(datestring:
+                                                lesson.DatumBis,
+                                                type: 'hour')}<br/>
+                                            </f:for>
+                                        </td>
+                                    </tr>
+                                    <f:if condition="{region}">
+                                        <tr>
+                                            <td>
+                                                Region
+                                                <div class="mobile-view-columns">
+                                                    {region}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {region}
+                                            </td>
+                                        </tr>
+                                    </f:if>
+                                </f:if>
+                            </f:if>
+                            <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Study'">
+                                <f:if condition="{course:Date(date: year.BookableUntil.date, format: 'Y')} > 1970">
+                                    <f:if condition="{year.BookableUntil}">
+                                        <tr>
+                                            <td>
+                                                Anmeldeschluss
+                                                <div class="mobile-view-columns">
+                                                    {course:Date(date: year.BookableUntil.date, format: 'd.m.Y')}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {course:Date(date: year.BookableUntil.date, format: 'd.m.Y')}
+                                            </td>
+                                        </tr>
+                                    </f:if>
+                                </f:if>
+
+
+                            </f:if>
+
+                            <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Module'">
+                                <f:then>
+                                    <f:if condition="{subsidizedFee} !== NULL">
+                                        <tr>
+                                            <td>
+                                                Subventionierte Kosten
+                                                <div class="mobile-view-columns">
+                                                    {course:formatFee(fee: SubsidizedFee)}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {course:formatFee(fee: SubsidizedFee)}
+                                            </td>
+                                        </tr>
+                                    </f:if>
+                                    <f:if condition="{fee} !== NULL">
+                                        <tr>
+                                            <td>
+                                                Kosten
+                                                <div class="mobile-view-columns">
+                                                    {course:formatFee(fee: fee)}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {course:formatFee(fee: fee)}
+                                            </td>
+                                        </tr>
+                                    </f:if>
+                                </f:then>
+                                <f:else>
+
+                                    <f:if condition="{subsidizedFee}">
+                                        <tr>
+                                            <td>
+                                                Subventionierte Kosten
+                                                <div class="mobile-view-columns">
+                                                    {course:formatFee(fee: SubsidizedFee)}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {course:formatFee(fee: SubsidizedFee)}
+                                            </td>
+                                        </tr>
+                                    </f:if>
+                                    <f:if condition="{fee}">
+                                        <tr>
+                                            <td>
+                                                Kosten
+                                                <div class="mobile-view-columns">
+                                                    {course:formatFee(fee: fee)}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {course:formatFee(fee: fee)}
+                                            </td>
+                                        </tr>
+                                    </f:if>
+
+                                </f:else>
+                            </f:if>
+
+
+                            <f:if condition="{materialCosts}">
+                                <tr>
+                                    <td>
+                                        Materialkosten
+                                        <div class="mobile-view-columns">
+                                            {materialCosts}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {materialCosts}
+                                    </td>
+                                </tr>
+                            </f:if>
+
+
+                            <ts:render path="overviewRenderer" context="{node: overview}"/>
+                            <f:if condition="{duration}">
+                                <tr>
+                                    <td>
+                                        Kursdauer (Stunden)
+                                        <div class="mobile-view-columns">
+                                            {duration}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {duration}
+                                    </td>
+                                </tr>
+                            </f:if>
+                            <f:if condition="{year.StatusDescription}">
+                                <tr>
+                                    <td>
+                                        Hinweis
+                                        <div class="mobile-view-columns">
+                                            {year.StatusDescription}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {year.StatusDescription}
+                                    </td>
+                                </tr>
+                            </f:if>
+                            <f:if condition="{holKursComment}">
+                                <f:if condition="{isRequestable}">
+                                    <tr>
+                                        <td>
+                                            Kommentar zu Holkurs
+                                            <div class="mobile-view-columns">
+                                                {holKursComment}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            {holKursComment}
+                                        </td>
+                                    </tr>
+                                </f:if>
+                            </f:if>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="shareAndRegister shareAndRegisterFurtherEducationDetail">
+
+                        <f:if condition="{year.Bookable}">
+                            <f:then>
+                                <f:if condition="{year.RegistrationLinkLabel}">
+                                    <f:then>
+                                        <course:RegistrationButton label="{year.RegistrationLinkLabel}" url="{year.RegistrationLink}"
+                                                                   identifier="1"></course:RegistrationButton>
+                                    </f:then>
+                                    <f:else>
+                                        <course:RegistrationButton label="Anmelden" url="{year.RegistrationLink}"
+                                                                   identifier="1"></course:RegistrationButton>
+                                    </f:else>
+                                </f:if>
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Module'">
+                                    <f:else>
+                                        <f:if condition="{StatusLabel}">
+                                            <f:then>
+                                                <a>{StatusLabel}</a>
+                                            </f:then>
+                                            <f:else>
+
+                                            </f:else>
+                                        </f:if>
+                                    </f:else>
+                                </f:if>
+                            </f:else>
+                        </f:if>
+
+                        <a class="btn btn-primary share addthis_button" addthis:url="{{node.getUrl(true)}}"
+                           addthis:title="{{node.getProperty('title')}}">
+                            <img src="{f:uri.resource(package: 'Phlu.Corporate', path: 'Images/wb-share-btn.svg')}"
+                                 width="32" height="32" border="0" alt="Share"/>
+                            <br>
+                            <span class="shareText">
+                                            Teilen
+                                        </span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row further-education-detail">
+                <div class="col-xs-12">
+                    <ts:render path="collectionRenderer" context="{node: main}"/>
+                </div>
+            </div>
+            <f:if condition="{hideContacts} == true">
+                <f:else>
+                    <div class="row further-education-detail">
+                        <div class="col-xs-12 phlu-team-members">
+                            <h2 id="kontakt">Kontakt</h2>
+                            <div class="row phlu-teaser navigation subpage">
+
+                                <f:for each="{leaders}" as="leader">
+                                    <div class="col-xs-12 col-md-6 nav-teaser-item">
+
+
+                                        <div class="row">
+                                            <div class="phlu-teaser-body col-xs-8">
+
+
+                                                <address>
+                                                    <b>{leader.Fullname}</b><br>
+                                                    Leitung
+
+                                                    <div class="telephone">
+                                                        <f:if condition="{leader.Phone}">
+                                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                                            {leader.Phone}<br>
+                                                        </f:if>
+                                                    </div>
+
+                                                    <a class="content-link-email-contact-person"
+                                                       href="mailto:{leader.Email}">{leader.Email}</a><br>
+                                                    <f:if condition="{leader.eventoId}">
+                                                        <portrait:link node="null" eventoId="{leader.eventoId}">Portrait
+                                                        </portrait:link>
+                                                    </f:if>
+                                                </address>
+
+
+                                            </div>
+
+                                            <div class="phlu-teaser-caret-right col-xs-4">
+                                                <f:if condition="{leader.ImgeUrl}">
+                                                    <img src="{leader.ImgeUrl}" class="img-fluid"/>
+                                                </f:if>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </f:for>
+
+                                <f:for each="{contacts}" as="leader">
+                                    <div class="col-xs-12 col-md-6 nav-teaser-item">
+                                        <div class="row">
+                                            <div class="phlu-teaser-body col-xs-8">
+                                                <address>
+                                                    <b>{leader.Fullname}</b><br>
+                                                    Administration
+                                                    <f:if condition="{leader.Phone}">
+                                                        <div class="telephone">
+                                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                                            {leader.Phone}<br>
+                                                        </div>
+                                                    </f:if>
+                                                    <a class="content-link-email-contact-person"
+                                                       href="mailto:{leader.Email}">{leader.Email}</a><br>
+                                                    <f:if condition="{leader.eventoId}">
+                                                        <portrait:link node="null" eventoId="{leader.eventoId}">Portrait
+                                                        </portrait:link>
+                                                    </f:if>
+                                                </address>
+                                            </div>
+                                            <div class="phlu-teaser-caret-right col-xs-4">
+                                                <f:if condition="{leader.ImgeUrl}">
+                                                    <img src="{leader.ImgeUrl}" class="img-fluid"/>
+                                                </f:if>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </f:for>
+
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </f:else>
+            </f:if>
+
+
+        </f:else>
     </f:if>
 </course:getYear>
