@@ -565,7 +565,16 @@
                                         Beginn
                                     </div>
                                     <div>
-                                        <span>{course:Date(date: year.StartText, format: 'd.m.Y')}</span>
+                                        <f:if condition="{node.nodeType.name} == 'Phlu.Corporate:Page.FurtherEducation.Detail.Module'">
+                                            <f:then>
+                                                <span>{course:Date(date: year.StartText, format: 'd.m.Y')}</span>
+                                            </f:then>
+                                            <f:else>
+                                                <span>{year.StartText}</span>
+                                            </f:else>
+
+                                        </f:if>
+
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-5">
