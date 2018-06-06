@@ -25,6 +25,7 @@ page = Page {
         metadata = Neos.Fusion:Template {
             templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
             sectionName = 'metadata'
+            facebookImage = ${q(node).property('openGraphImage')}
         }
 
         csslinks = Neos.Fusion:Template {
