@@ -22,10 +22,18 @@ page = Page {
 
 
 
+
+
         metadata = Neos.Fusion:Template {
             templatePath = 'resource://Phlu.Corporate/Private/Layouts/Default.html'
             sectionName = 'metadata'
-            facebookImage = ${q(node).property('openGraphImage')}
+            facebookImage = Neos.Neos:ImageUri {
+                asset = ${q(node).property('openGraphImage')}
+                width = 270
+                height = 270
+                allowCropping = TRUE
+                allowUpScaling = TRUE
+            }
         }
 
         csslinks = Neos.Fusion:Template {

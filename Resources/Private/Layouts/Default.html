@@ -21,7 +21,7 @@
 
 	    <f:if condition="{facebookImage}">
             <f:then>
-                <meta property="og:image" content="{neos.media:uri.image(image:facebookImage,maximumWidth:240,maximumHeight:240,allowCropping:1)}"/>
+                <meta property="og:image" content="{facebookImage}"/>
             </f:then>
             <f:else>
                 <meta property="og:image" content="{p:uri.resource(path: 'Images/phluLogoFb.png', package: 'Phlu.Corporate')}" />
