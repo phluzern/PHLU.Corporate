@@ -21,7 +21,8 @@
 
 	    <f:if condition="{facebookImage}">
             <f:then>
-                <meta property="og:image" content="{facebookImage}"/>
+                <meta property="og:image" content="{p:uri.image(image: facebookImage, relativeUri: true)}" />
+
             </f:then>
             <f:else>
                 <meta property="og:image" content="{p:uri.resource(path: 'Images/phluLogoFb.png', package: 'Phlu.Corporate')}" />
