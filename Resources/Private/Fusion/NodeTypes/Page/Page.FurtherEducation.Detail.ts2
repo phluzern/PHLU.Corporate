@@ -15,6 +15,7 @@ prototype(Phlu.Corporate:Page.FurtherEducation.Detail) < prototype(Phlu.Corporat
         materialCosts = ${q(node).property('materialCosts')}
         isRequestable = ${q(node).property('isRequestable')}
         holKursComment = ${q(node).property('holKursComment')}
+        holKursAnmeldeLink = ${q(node).property('holKursAnmeldeLink')}
         hideContacts = ${q(node).property('hideContacts')}
         duration = ${q(node).property('duration')}
 

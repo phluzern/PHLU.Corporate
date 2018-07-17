@@ -582,6 +582,12 @@
                                     <div class="shareAndRegister shareAndRegisterFurtherEducationDetail">
                                         <f:if condition="{year.Bookable}">
                                             <f:then>
+                                                <f:if condition="{year.HolKursAnmeldeLink}">
+                                                    <f:then>
+                                                        <course:RegistrationButton label="Als Holkurs anmelden" url="{year.HolKursAnmeldeLink}"
+                                                                                   identifier="1"></course:RegistrationButton>
+                                                    </f:then>
+                                                </f:if>
                                                 <f:if condition="{year.RegistrationLinkLabel}">
                                                     <f:then>
                                                         <course:RegistrationButton label="{year.RegistrationLinkLabel}" url="{year.RegistrationLink}"
