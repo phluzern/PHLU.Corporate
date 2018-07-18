@@ -255,9 +255,7 @@
                                             Teilen
                                         </span>
                     </a>
-                    -----
-<span data-ng-bind="node.getProperty('holkursAnmeldeLink')"></span>
-                    -----
+
 
 
 
@@ -278,6 +276,7 @@
                               data-ng-bind="currentYears[node.identifier].RegistrationLinkLabel"></span>
                         <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length == NULL">Anmelden</span>
                     </a>
+                    <span data-ng-bind="node.getProperty('holkursAnmeldeLink')"></span>
                 </div>
 
 
