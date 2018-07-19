@@ -13070,6 +13070,8 @@ body {
         body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.btn-primary:last-child {
           margin-top: 15px;
           right: 37px; }
+        body .all .main .further-education-special-search .table-responsive .table tbody tr.result-preview .shareAndRegister .btn.btn-primary.btn-holkurs-anmeldung {
+          margin-left: 10px; }
       body .all .main .further-education-special-search .table-responsive .table tbody tr.mobile-view-tablerow-only {
         display: none; }
         @media (max-width: 767px) {
