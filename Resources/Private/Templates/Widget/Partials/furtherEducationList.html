@@ -276,7 +276,8 @@
                               data-ng-bind="currentYears[node.identifier].RegistrationLinkLabel"></span>
                         <span data-ng-if="currentYears[node.identifier].RegistrationLinkLabel.length == NULL">Anmelden</span>
                     </a>
-                    <a class="btn btn-primary" data-ng-if="node.getProperty('holkursAnmeldeLink')" data-ng-href="{{node.getProperty('holkursAnmeldeLink')}}">
+
+                    <a class="btn btn-primary" data-ng-if="node.getProperty('years.HolkursAnmeldeLink')" data-ng-href="{{node.getProperty('years.HolkursAnmeldeLink')}}">
                         Holkurs Anmeldung
                     </a>
                 </div>
