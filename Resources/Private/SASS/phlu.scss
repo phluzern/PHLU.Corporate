@@ -7417,6 +7417,11 @@ body {
                   color: $petroldark;
                 }
               }
+              .btn.btn-primary {
+                &.btn-holkurs-anmeldung {
+                  margin-left:10px;
+                }
+              }
             }
           }
         }
@@ -8244,7 +8249,7 @@ body {
         }
         > .row.mobileBg {
           display: none;
-          background-image: url("../Images/ambientImgStartpageSpingtimeMobile.jpg");
+          background-image: url("../Images/ambientImgStartpageSummerMobile.jpg");
           background-size: cover;
           height: 150px;
           @include media-breakpoint-down("lg") {
@@ -8252,7 +8257,7 @@ body {
           }
         }
         > .row.aktuelles {
-          background-image: url("../Images/ambientImgStartpageSpingtime.jpg");
+          background-image: url("../Images/ambientImgStartpageSummer.jpg");
           @media screen and (max-height: 650px) {
             background-size: cover;
           }

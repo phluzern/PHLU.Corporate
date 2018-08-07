@@ -13146,6 +13146,8 @@ body {
                 margin-top: 30px; } }
             body .all .main .further-education-detail .registration .greybgBody .shareAndRegister .btn.btn-primary.share:hover {
               color: #216A75; }
+            body .all .main .further-education-detail .registration .greybgBody .shareAndRegister .btn.btn-primary.btn-holkurs-anmeldung {
+              margin-left: 10px; }
       body .all .main .further-education-detail .phlu-corporate-section[data-next='empty'] {
         margin-bottom: 0; }
       @media (max-width: 543px) {
@@ -13693,7 +13695,7 @@ body:last-child .blueimp-gallery-playing > .play-pause {
 
 body .all .startpage .main > .row.mobileBg {
   display: none;
-  background-image: url("../Images/ambientImgStartpageSpingtimeMobile.jpg");
+  background-image: url("../Images/ambientImgStartpageSummerMobile.jpg");
   background-size: cover;
   height: 150px; }
   @media (max-width: 1279px) {
@@ -13701,7 +13703,7 @@ body .all .startpage .main > .row.mobileBg {
       display: block; } }
 
 body .all .startpage .main > .row.aktuelles {
-  background-image: url("../Images/ambientImgStartpageSpingtime.jpg");
+  background-image: url("../Images/ambientImgStartpageSummer.jpg");
   background-size: cover; }
   @media screen and (max-height: 650px) {
     body .all .startpage .main > .row.aktuelles {
