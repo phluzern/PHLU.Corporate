@@ -73532,6 +73532,18 @@ function initFrontend() {
     );
 
     /*
+ * further education course fees infotext icon
+ * show description
+ */
+    $(".fees-infotext").hover(
+        function () {
+            $(this).find('span').addClass("show");
+        }, function () {
+            $(this).find('span').removeClass("show");
+        }
+    );
+
+    /*
      * scroll to clicked accordion element if outside of viewport
      */
     scrollToViewport();

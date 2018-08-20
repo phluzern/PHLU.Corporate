@@ -300,7 +300,13 @@
                                         <f:if condition="{subsidizedFee} !== NULL">
                                             <tr>
                                                 <td>
-                                                    Subventionierte Kosten
+                                                    <div class="fees-infotext">
+                                                        Subventionierte Kosten <i class="fee-infotext-icon fa fa-info-circle"></i>
+                                                        <span>
+                                                        Die subventionierten Kosten gelten für alle Lehrpersonen der Volksschule sowie für alle Gymnasiallehrpersonen des Kantons Luzern.
+                                                    </span>
+                                                    </div>
+
                                                     <div class="mobile-view-columns">
                                                         {course:formatFee(fee: SubsidizedFee)}
                                                     </div>
@@ -313,7 +319,12 @@
                                         <f:if condition="{fee} !== NULL">
                                             <tr>
                                                 <td>
-                                                    Kosten
+                                                    <div class="fees-infotext">
+                                                        Vollkosten <i class="fee-infotext-icon fa fa-info-circle"></i>
+                                                        <span>
+                                                        Die Vollkosten gelten für alle auswärtigen Lehrpersonen wie auch gesamtschweizerisch für alle Berufsfachschullehrpersonen.
+                                                    </span>
+                                                    </div>
                                                     <div class="mobile-view-columns">
                                                         {course:formatFee(fee: fee)}
                                                     </div>

@@ -7504,6 +7504,37 @@ body {
                       background-color: $petrol;
                     }
                   }
+                  .fees-infotext {
+                    cursor:pointer;
+                    i {
+                      color:$darkgrey;
+                    }
+                    span {
+                      position: absolute;
+                      margin-top: 7px;
+                      margin-left: 10px;
+                      @include media-breakpoint-down("sm") {
+                        margin-left:0;
+                      }
+                      @include media-breakpoint-down("md") {
+                        margin-right:15px;
+                      }
+                      display: none;
+                      @include media-breakpoint-down("sm") {
+                        margin-top:30px;
+                      }
+                      padding:10px 15px;
+                      color:$font-color;
+                      background-color: $lightgrey;
+                      &.show {
+                        display: inline-block;
+                        @include media-breakpoint-down("sm") {
+                          display: block;
+                        }
+                      }
+                    }
+
+                  }
                   &:first-child {
                     padding-left: 0;
                     border-right: 2px solid $grey7;

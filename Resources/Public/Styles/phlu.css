@@ -13203,6 +13203,32 @@ body {
               body .all .main .greyBgFullwidth2colTable .table-responsive table tbody tr td .input-group-btn button {
                 color: white;
                 background-color: #28818f; }
+              body .all .main .greyBgFullwidth2colTable .table-responsive table tbody tr td .fees-infotext {
+                cursor: pointer; }
+                body .all .main .greyBgFullwidth2colTable .table-responsive table tbody tr td .fees-infotext i {
+                  color: #545454; }
+                body .all .main .greyBgFullwidth2colTable .table-responsive table tbody tr td .fees-infotext span {
+                  position: absolute;
+                  margin-top: 7px;
+                  margin-left: 10px;
+                  display: none;
+                  padding: 10px 15px;
+                  color: #5c5c5c;
+                  background-color: #edeae8; }
+                  @media (max-width: 767px) {
+                    body .all .main .greyBgFullwidth2colTable .table-responsive table tbody tr td .fees-infotext span {
+                      margin-left: 0; } }
+                  @media (max-width: 991px) {
+                    body .all .main .greyBgFullwidth2colTable .table-responsive table tbody tr td .fees-infotext span {
+                      margin-right: 15px; } }
+                  @media (max-width: 767px) {
+                    body .all .main .greyBgFullwidth2colTable .table-responsive table tbody tr td .fees-infotext span {
+                      margin-top: 30px; } }
+                  body .all .main .greyBgFullwidth2colTable .table-responsive table tbody tr td .fees-infotext span.show {
+                    display: inline-block; }
+                    @media (max-width: 767px) {
+                      body .all .main .greyBgFullwidth2colTable .table-responsive table tbody tr td .fees-infotext span.show {
+                        display: block; } }
               body .all .main .greyBgFullwidth2colTable .table-responsive table tbody tr td:first-child {
                 padding-left: 0;
                 border-right: 2px solid #dcdcdc; }
